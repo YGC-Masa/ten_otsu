@@ -4,8 +4,8 @@
     { "text": "⑦雪乃と遊ぶ", "action": "jump", "jump": "aqua.json" },
     { "text": "⑧美空と遊ぶ", "action": "jump", "jump": "purple.json" },
     { "text": "⑨夜空と遊ぶ", "action": "jump", "jump": "twins.json" },
-    { "text": "⑩桃で遊ぶ", "action": "jump", "jump": "allstart.json" },
-    { "text": "次のメニュー", "action": "list", "list": "title03.json" },
-    { "text": "前のメニュー", "action": "list", "list": "title.json" }
+    { "text": "⑩桃と遊ぶ", "action": "jump", "jump": "allstart.json" },
+    { "text": "前のメニュー", "action": "list", "list": "title.json" },
+    { "text": "次のメニュー", "action": "list", "list": "title03.json" }
   ]
 }
