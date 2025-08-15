@@ -1,7 +1,7 @@
 {
   "items": [
     { "text": "⑥真花と遊ぶ", "action": "list", "list": "f_story_list01.json" },
-    { "text": "⑦雪乃と遊ぶ", "action": "jump", "jump": "aqua.json" },
+    { "text": "⑦雪乃と遊ぶ", "action": "list", "list": "g_story_list01.json" },
     { "text": "⑧美空と遊ぶ", "action": "jump", "jump": "purple.json" },
     { "text": "⑨夜空と遊ぶ", "action": "jump", "jump": "twins.json" },
     { "text": "⑩桃と遊ぶ", "action": "jump", "jump": "allstart.json" },
