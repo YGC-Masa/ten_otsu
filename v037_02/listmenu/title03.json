@@ -1,8 +1,8 @@
 {
   "items": [
-    { "text": "⑪彩愛と遊ぶ", "action": "jump", "jump": "pink.json" },
+    { "text": "⑪彩愛と遊ぶ", "action": "list", "list": "k_story_list01.json" },
     { "text": "⑫里美と遊ぶ","action": "list", "list": "l_story_list01.json" },
-    { "text": "⑬萌と遊ぶ", "action": "jump", "jump": "purple.json" },
+    { "text": "⑬萌と遊ぶ", "action": "list", "list": "m_story_list01.json" },
     { "text": "みんなで遊ぶ", "action": "jump", "jump": "twins.json" },
     { "text": "前のメニュー", "action": "list", "list": "title02.json" },
     { "text": "最初のメニュー", "action": "list", "list": "title.json" },
