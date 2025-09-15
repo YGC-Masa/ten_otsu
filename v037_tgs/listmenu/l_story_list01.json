@@ -1,0 +1,6 @@
+{
+  "items": [
+    { "text": "里美の自己紹介", "action": "jump", "jump": "l10001.json" },
+    { "text": "前のメニュー", "action": "list", "list": "title.json" }
+  ]
+}

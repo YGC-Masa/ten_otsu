@@ -1,0 +1,6 @@
+{
+  "items": [
+    { "text": "こがねの自己紹介", "action": "jump", "jump": "d10001.json" },
+    { "text": "前のメニュー", "action": "list", "list": "title.json" }
+  ]
+}
