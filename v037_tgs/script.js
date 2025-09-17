@@ -1,4 +1,4 @@
-// script.js - v037 外部読み込み仕様（背景修正版統合済み）
+// script.js - v037 完全版（wait対応、背景フェード修正版、外部依存対応）
 // 依存: config.js, characterStyles.js, effects.js, randomShows.js, menu.js, list.js
 
 let currentScenario = "000start.json";
@@ -31,6 +31,7 @@ const charSlots = {
   right: document.getElementById("char-right")
 };
 
+// ------------------------- 基本機能 -------------------------
 function isMobilePortrait() {
   return window.innerWidth <= 768 && window.innerHeight > window.innerWidth;
 }
@@ -86,7 +87,7 @@ function updateCharacterDisplay() {
 }
 
 async function applyEffect(el, effectName, duration) {
-  const time = duration || 1000; // 1秒デフォルト
+  const time = duration || 1000; // デフォルト1秒
   if (window.effects && effectName && window.effects[effectName]) {
     return await window.effects[effectName](el, time);
   } else if (window.effects?.fadein) {
@@ -99,7 +100,7 @@ function updateTextAreaVisibility(show) {
   dialogueBox.classList.toggle("hidden", !show);
 }
 
-// === showScene 修正版（背景エフェクト統合済み） ===
+// ------------------------- シーン表示 -------------------------
 async function showScene(scene) {
   if (!scene) return;
   if (typingInterval) clearInterval(typingInterval);
@@ -113,9 +114,7 @@ async function showScene(scene) {
   if (scene.auto === true) isAutoMode = true;
   if (scene.auto === false) isAutoMode = false;
 
-  if (scene.textareashow !== undefined) {
-    updateTextAreaVisibility(scene.textareashow);
-  }
+  if (scene.textareashow !== undefined) updateTextAreaVisibility(scene.textareashow);
 
   // ランダム画像
   if (scene.randomimageson === false && typeof randomImagesOff === "function") randomImagesOff();
@@ -130,23 +129,17 @@ async function showScene(scene) {
     }
   }
 
-  // 背景切替（修正版）
+  // ------------------------- 背景 -------------------------
   if (scene.bg) {
+    await applyEffect(bgEl, scene.bgEffect || "fadeout", scene.effectTime);
     await new Promise((resolve) => {
       bgEl.onload = resolve;
       bgEl.src = config.bgPath + scene.bg;
     });
-
-    const effectName = scene.bgEffect || "fadein";
-    const duration = scene.effectTime || 1000;
-    if (window.effects && window.effects[effectName]) {
-      await window.effects[effectName](bgEl, duration);
-    } else {
-      await window.effects.fadein(bgEl, duration);
-    }
+    await applyEffect(bgEl, scene.bgEffect || "fadein", scene.effectTime);
   }
 
-  // EV
+  // ------------------------- EV -------------------------
   if (scene.showev) {
     const evImg = document.createElement("img");
     evImg.src = config.evPath + scene.showev;
@@ -155,7 +148,7 @@ async function showScene(scene) {
     evLayer.appendChild(evImg);
   }
 
-  // CG
+  // ------------------------- CG -------------------------
   if (scene.showcg) {
     const cgImg = document.createElement("img");
     cgImg.src = config.cgPath + scene.showcg;
@@ -164,12 +157,9 @@ async function showScene(scene) {
     evLayer.appendChild(cgImg);
   }
 
-  // BGM
+  // ------------------------- BGM -------------------------
   if (scene.bgm !== undefined) {
-    if (bgm) {
-      bgm.pause();
-      bgm = null;
-    }
+    if (bgm) { bgm.pause(); bgm = null; }
     if (scene.bgm) {
       bgm = new Audio(config.bgmPath + scene.bgm);
       bgm.loop = true;
@@ -178,7 +168,7 @@ async function showScene(scene) {
     }
   }
 
-  // キャラクター
+  // ------------------------- キャラクター -------------------------
   if (scene.characters) {
     lastActiveSide = scene.characters[scene.characters.length - 1]?.side || null;
     ["left", "center", "right"].forEach(async (pos) => {
@@ -199,27 +189,18 @@ async function showScene(scene) {
 
   updateCharacterDisplay();
 
-  // 名前とテキスト
+  // ------------------------- テキスト表示 -------------------------
   if (scene.name !== undefined && scene.text !== undefined) {
     nameEl.textContent = scene.name;
     setCharacterStyle(scene.name, scene);
     setTextWithSpeed(scene.text, currentSpeed);
   }
 
-  // ボイス・SE
-  if (scene.voice) {
-    const voice = new Audio(config.voicePath + scene.voice);
-    voice.muted = isMuted;
-    voice.play();
-  }
+  // ------------------------- ボイス・SE -------------------------
+  if (scene.voice) { const voice = new Audio(config.voicePath + scene.voice); voice.muted = isMuted; voice.play(); }
+  if (scene.se) { const se = new Audio(config.sePath + scene.se); se.muted = isMuted; se.play(); }
 
-  if (scene.se) {
-    const se = new Audio(config.sePath + scene.se);
-    se.muted = isMuted;
-    se.play();
-  }
-
-  // 選択肢
+  // ------------------------- 選択肢 -------------------------
   if (scene.choices) {
     scene.choices.forEach((choice) => {
       const btn = document.createElement("button");
@@ -236,38 +217,40 @@ async function showScene(scene) {
     });
   }
 
-  // メニュー・リスト
+  // ------------------------- メニュー・リスト -------------------------
   if (scene.showmenu) loadMenu(scene.showmenu);
   if (scene.showlist) {
     loadList(scene.showlist).then(data => showList(data));
   }
 
-  if (scene.auto && scene.choices === undefined && scene.text === undefined) {
+  // ------------------------- 自動進行・wait対応 -------------------------
+  if (scene.wait && scene.auto && scene.choices === undefined && scene.text === undefined) {
+    setTimeout(() => {
+      if (!isPlaying) next();
+    }, scene.wait);
+  } else if (scene.auto && scene.choices === undefined && scene.text === undefined) {
     setTimeout(() => {
       if (!isPlaying) next();
     }, autoWaitTime);
   }
 }
 
-// 次のシーン
+// ------------------------- 次のシーン -------------------------
 function next() {
   fetch(config.scenarioPath + currentScenario + "?t=" + Date.now())
-    .then((res) => res.json())
-    .then((data) => {
+    .then(res => res.json())
+    .then(data => {
       currentIndex++;
       const scenes = Array.isArray(data) ? data : data.scenes;
       if (currentIndex < scenes.length) showScene(scenes[currentIndex]);
       else {
-        if (textAreaVisible) {
-          nameEl.textContent = "";
-          textEl.innerHTML = "（物語は つづく・・・）";
-        }
+        if (textAreaVisible) { nameEl.textContent = ""; textEl.innerHTML = "（物語は つづく・・・）"; }
         isAutoMode = false;
       }
     });
 }
 
-// シナリオ読み込み
+// ------------------------- シナリオ読み込み -------------------------
 function loadScenario(filename) {
   if (typeof randomImagesOff === "function") randomImagesOff();
   if (typeof randomTextsOff === "function") randomTextsOff();
@@ -284,19 +267,20 @@ function loadScenario(filename) {
   updateTextAreaVisibility(true);
 
   fetch(config.scenarioPath + filename + "?t=" + Date.now())
-    .then((res) => res.json())
-    .then((data) => {
+    .then(res => res.json())
+    .then(data => {
       const scenes = Array.isArray(data) ? data : data.scenes;
       showScene(scenes[0]);
     });
 }
 
-// VH変数設定（モバイル対応）
+// ------------------------- 高さ調整 -------------------------
 function setVhVariable() {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
 }
 
+// ------------------------- イベント -------------------------
 window.addEventListener("resize", () => {
   setVhVariable();
   updateCharacterDisplay();
@@ -307,10 +291,7 @@ window.addEventListener("load", () => {
   loadScenario(currentScenario);
 });
 
-// クリック・ダブルタップ制御
-clickLayer.addEventListener("dblclick", () => {
-  loadMenu("menu01.json");
-});
+clickLayer.addEventListener("dblclick", () => { loadMenu("menu01.json"); });
 
 let lastTouch = 0;
 clickLayer.addEventListener("touchend", () => {
@@ -320,11 +301,6 @@ clickLayer.addEventListener("touchend", () => {
 });
 
 clickLayer.addEventListener("click", () => {
-  if (!menuPanel.classList.contains("hidden")) {
-    menuPanel.classList.add("hidden");
-    return;
-  }
-  if (!isPlaying && choicesEl.children.length === 0) {
-    next();
-  }
+  if (!menuPanel.classList.contains("hidden")) { menuPanel.classList.add("hidden"); return; }
+  if (!isPlaying && choicesEl.children.length === 0) next();
 });
