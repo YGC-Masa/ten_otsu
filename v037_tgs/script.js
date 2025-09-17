@@ -106,6 +106,14 @@ async function showScene(scene) {
   evLayer.innerHTML = "";
   choicesEl.innerHTML = "";
 
+  // オートモード切替
+if (scene.auto === true) {
+  isAutoMode = true;
+}
+if (scene.auto === false) {
+  isAutoMode = false;
+}
+
   if (scene.textareashow !== undefined) {
     updateTextAreaVisibility(scene.textareashow);
   }
