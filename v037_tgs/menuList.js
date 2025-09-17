@@ -24,3 +24,16 @@ function hideListPanel() {
 function listPanelVisible() {
   return listPanelElement && !listPanelElement.classList.contains("hidden");
 }
+
+// ★ これを追加
+function loadList(listPath) {
+  return fetch(listPath)
+    .then(response => {
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      return response.json();
+    })
+    .catch(err => {
+      console.error("リストの読み込みに失敗しました:", err);
+      return [];
+    });
+}
