@@ -233,7 +233,9 @@ async function showScene(scene) {
   }
 
   if (scene.showmenu) loadMenu(scene.showmenu);
-  if (scene.showlist) loadList(scene.showlist);
+  if (scene.showlist) {
+  loadList(scene.showlist).then(data => showList(data));
+}
 
   if (scene.auto && scene.choices === undefined && scene.text === undefined) {
     setTimeout(() => {
