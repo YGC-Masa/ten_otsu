@@ -1,5 +1,5 @@
 window.characterStyles = {
-  "": { fontSize: "60em", speed: 40, color: "#C0C0C0" },
+  "": { fontSize: "60px", speed: 40, color: "#C0C0C0" },
   "緋奈": { fontSize: "1.2em", speed: 40, color: "#d3381c" },
   "藍": { fontSize: "1.1em", speed: 50, color: "#0279e0" },
   "翠": { fontSize: "1.2em", speed: 35, color: "#02b308" },
@@ -15,6 +15,7 @@ window.characterStyles = {
   "萌": { fontSize: "1.1em", speed: 40, color: "#33CC99" },
   "店長": { fontSize: "1.2em", speed: 40, color: "#00ffff" }
 };
+
 
 
 
