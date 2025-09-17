@@ -25,9 +25,8 @@ function listPanelVisible() {
   return listPanelElement && !listPanelElement.classList.contains("hidden");
 }
 
-// ★ これを追加
-function loadList(listPath) {
-  return fetch(listPath)
+function loadList(filename) {
+  return fetch(config.listPath + filename + "?t=" + Date.now())
     .then(response => {
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       return response.json();
@@ -37,3 +36,4 @@ function loadList(listPath) {
       return [];
     });
 }
+
