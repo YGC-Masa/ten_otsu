@@ -1,4 +1,4 @@
-// script.js - v037 外部読み込み仕様
+// script.js - v037 外部読み込み仕様（背景修正版統合済み）
 // 依存: config.js, characterStyles.js, effects.js, randomShows.js, menu.js, list.js
 
 let currentScenario = "000start.json";
@@ -30,9 +30,6 @@ const charSlots = {
   center: document.getElementById("char-center"),
   right: document.getElementById("char-right")
 };
-
-console.log("config.listPath =", config.listPath);
-
 
 function isMobilePortrait() {
   return window.innerWidth <= 768 && window.innerHeight > window.innerWidth;
@@ -102,6 +99,7 @@ function updateTextAreaVisibility(show) {
   dialogueBox.classList.toggle("hidden", !show);
 }
 
+// === showScene 修正版（背景エフェクト統合済み） ===
 async function showScene(scene) {
   if (!scene) return;
   if (typingInterval) clearInterval(typingInterval);
@@ -132,14 +130,20 @@ async function showScene(scene) {
     }
   }
 
-  // 背景
+  // 背景切替（修正版）
   if (scene.bg) {
-    await applyEffect(bgEl, scene.bgEffect || "fadeout", scene.effectTime);
     await new Promise((resolve) => {
       bgEl.onload = resolve;
       bgEl.src = config.bgPath + scene.bg;
     });
-    await applyEffect(bgEl, scene.bgEffect || "fadein", scene.effectTime);
+
+    const effectName = scene.bgEffect || "fadein";
+    const duration = scene.effectTime || 1000;
+    if (window.effects && window.effects[effectName]) {
+      await window.effects[effectName](bgEl, duration);
+    } else {
+      await window.effects.fadein(bgEl, duration);
+    }
   }
 
   // EV
@@ -174,7 +178,7 @@ async function showScene(scene) {
     }
   }
 
-  // キャラ
+  // キャラクター
   if (scene.characters) {
     lastActiveSide = scene.characters[scene.characters.length - 1]?.side || null;
     ["left", "center", "right"].forEach(async (pos) => {
@@ -195,12 +199,14 @@ async function showScene(scene) {
 
   updateCharacterDisplay();
 
+  // 名前とテキスト
   if (scene.name !== undefined && scene.text !== undefined) {
     nameEl.textContent = scene.name;
     setCharacterStyle(scene.name, scene);
     setTextWithSpeed(scene.text, currentSpeed);
   }
 
+  // ボイス・SE
   if (scene.voice) {
     const voice = new Audio(config.voicePath + scene.voice);
     voice.muted = isMuted;
@@ -213,6 +219,7 @@ async function showScene(scene) {
     se.play();
   }
 
+  // 選択肢
   if (scene.choices) {
     scene.choices.forEach((choice) => {
       const btn = document.createElement("button");
@@ -222,20 +229,18 @@ async function showScene(scene) {
         textEl.innerHTML = "";
         nameEl.textContent = "";
         evLayer.innerHTML = "";
-        if (choice.jump) {
-          loadScenario(choice.jump);
-        } else if (choice.url) {
-          location.href = choice.url;
-        }
+        if (choice.jump) loadScenario(choice.jump);
+        else if (choice.url) location.href = choice.url;
       };
       choicesEl.appendChild(btn);
     });
   }
 
+  // メニュー・リスト
   if (scene.showmenu) loadMenu(scene.showmenu);
   if (scene.showlist) {
-  loadList(scene.showlist).then(data => showList(data));
-}
+    loadList(scene.showlist).then(data => showList(data));
+  }
 
   if (scene.auto && scene.choices === undefined && scene.text === undefined) {
     setTimeout(() => {
@@ -244,15 +249,15 @@ async function showScene(scene) {
   }
 }
 
+// 次のシーン
 function next() {
   fetch(config.scenarioPath + currentScenario + "?t=" + Date.now())
     .then((res) => res.json())
     .then((data) => {
       currentIndex++;
       const scenes = Array.isArray(data) ? data : data.scenes;
-      if (currentIndex < scenes.length) {
-        showScene(scenes[currentIndex]);
-      } else {
+      if (currentIndex < scenes.length) showScene(scenes[currentIndex]);
+      else {
         if (textAreaVisible) {
           nameEl.textContent = "";
           textEl.innerHTML = "（物語は つづく・・・）";
@@ -262,6 +267,7 @@ function next() {
     });
 }
 
+// シナリオ読み込み
 function loadScenario(filename) {
   if (typeof randomImagesOff === "function") randomImagesOff();
   if (typeof randomTextsOff === "function") randomTextsOff();
@@ -285,6 +291,7 @@ function loadScenario(filename) {
     });
 }
 
+// VH変数設定（モバイル対応）
 function setVhVariable() {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
@@ -300,7 +307,7 @@ window.addEventListener("load", () => {
   loadScenario(currentScenario);
 });
 
-// === クリック・タッチ ===
+// クリック・ダブルタップ制御
 clickLayer.addEventListener("dblclick", () => {
   loadMenu("menu01.json");
 });
