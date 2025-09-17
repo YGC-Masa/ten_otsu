@@ -31,6 +31,9 @@ const charSlots = {
   right: document.getElementById("char-right")
 };
 
+console.log("config.listPath =", config.listPath);
+
+
 function isMobilePortrait() {
   return window.innerWidth <= 768 && window.innerHeight > window.innerWidth;
 }
