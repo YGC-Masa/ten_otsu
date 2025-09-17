@@ -31,16 +31,6 @@ const charSlots = {
   right: document.getElementById("char-right")
 };
 
-function loadList(listPath) {
-  return fetch(listPath)
-    .then(response => response.json())
-    .catch(err => {
-      console.error("リストの読み込みに失敗しました:", err);
-      return [];
-    });
-}
-
-
 function isMobilePortrait() {
   return window.innerWidth <= 768 && window.innerHeight > window.innerWidth;
 }
