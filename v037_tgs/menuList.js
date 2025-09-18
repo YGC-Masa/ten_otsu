@@ -1,9 +1,14 @@
-// menuList.js - v037 用
+// menuList.js - v037 完全版
 
+// -------------------------------
+// パネル要素の参照
+// -------------------------------
 const menuPanelElement = document.getElementById("menu-panel");
 const listPanelElement = document.getElementById("list-panel");
 
-// --- メニューパネル ---
+// -------------------------------
+// メニューパネル制御
+// -------------------------------
 function showMenuPanel() {
   if (menuPanelElement) menuPanelElement.classList.remove("hidden");
 }
@@ -16,7 +21,9 @@ function menuPanelVisible() {
   return menuPanelElement && !menuPanelElement.classList.contains("hidden");
 }
 
-// --- リストパネル ---
+// -------------------------------
+// リストパネル制御
+// -------------------------------
 function showListPanel() {
   if (listPanelElement) listPanelElement.classList.remove("hidden");
 }
@@ -29,37 +36,55 @@ function listPanelVisible() {
   return listPanelElement && !listPanelElement.classList.contains("hidden");
 }
 
-// --- リスト読み込み ---
-function loadList(filename) {
-  const path = (window.config?.listPath || "./") + filename + "?t=" + Date.now();
-  return fetch(path)
+// -------------------------------
+// JSONメニューリストを読み込む
+// -------------------------------
+function loadMenu(menuPath) {
+  return fetch(menuPath)
     .then(response => {
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       return response.json();
     })
-    .then(data => {
-      showList(data); // 読み込み後に表示
-      return data;
-    })
     .catch(err => {
-      console.error("リストの読み込みに失敗しました:", err);
+      console.error("メニューの読み込みに失敗しました:", err);
       return [];
     });
 }
 
-// --- リスト表示 ---
-function showList(listData) {
-  if (!listPanelElement) return;
-  listPanelElement.innerHTML = "";
-  listPanelElement.classList.remove("hidden");
+// -------------------------------
+// メニュー項目クリック時の処理
+// -------------------------------
+function handleMenuAction(action) {
+  switch (action) {
+    case "start":
+      if (typeof startGame === "function") {
+        startGame();
+      } else {
+        console.warn("startGame() が未定義です");
+      }
+      break;
 
-  listData.items?.slice(0, 7).forEach(item => {
-    const btn = document.createElement("button");
-    btn.textContent = item.text;
-    btn.onclick = () => {
-      hideListPanel();
-      handleMenuAction(item);
-    };
-    listPanelElement.appendChild(btn);
-  });
+    case "load":
+      if (typeof showLoadPanel === "function") {
+        showLoadPanel();
+      } else {
+        console.warn("showLoadPanel() が未定義です");
+      }
+      break;
+
+    case "config":
+      if (typeof showConfigPanel === "function") {
+        showConfigPanel();
+      } else {
+        console.warn("showConfigPanel() が未定義です");
+      }
+      break;
+
+    case "title":
+      location.reload();
+      break;
+
+    default:
+      console.warn("未対応のメニューアクション:", action);
+  }
 }
