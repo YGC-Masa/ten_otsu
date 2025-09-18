@@ -14,7 +14,6 @@ let defaultSpeed = 40;
 let defaultFontSize = "1em";
 let textAreaVisible = true;
 
-// -------------------- DOM要素 --------------------
 const bgEl = document.getElementById("background");
 const nameEl = document.getElementById("name");
 const textEl = document.getElementById("text");
@@ -22,6 +21,7 @@ const choicesEl = document.getElementById("choices");
 const menuPanel = document.getElementById("menu-panel");
 const listPanel = document.getElementById("list-panel");
 const evLayer = document.getElementById("ev-layer");
+const clickLayer = document.getElementById("click-layer");
 const dialogueBox = document.getElementById("dialogue-box");
 
 const charSlots = {
@@ -52,9 +52,7 @@ function setTextWithSpeed(text, speed, callback) {
       isPlaying = false;
       if (callback) callback();
       if (isAutoMode && choicesEl.children.length === 0) {
-        setTimeout(() => {
-          next();
-        }, autoWaitTime);
+        setTimeout(() => next(), autoWaitTime);
       }
     }
   }, speed);
@@ -90,7 +88,7 @@ function updateCharacterDisplay() {
 }
 
 async function applyEffect(el, effectName, duration) {
-  const time = duration || 1000; // 1秒デフォルト
+  const time = duration || 1000;
   if (window.effects && effectName && window.effects[effectName]) {
     return await window.effects[effectName](el, time);
   } else if (window.effects?.fadein) {
@@ -113,7 +111,6 @@ async function showScene(scene) {
   evLayer.innerHTML = "";
   choicesEl.innerHTML = "";
 
-  // オートモード切替
   if (scene.auto === true) isAutoMode = true;
   if (scene.auto === false) isAutoMode = false;
 
@@ -121,7 +118,6 @@ async function showScene(scene) {
     updateTextAreaVisibility(scene.textareashow);
   }
 
-  // ランダム画像・テキスト
   if (scene.randomimageson === false && typeof randomImagesOff === "function") randomImagesOff();
   else if (scene.randomimageson === true && typeof randomImagesOn === "function") randomImagesOn();
 
@@ -136,10 +132,7 @@ async function showScene(scene) {
   // 背景
   if (scene.bg) {
     await applyEffect(bgEl, scene.bgEffect || "fadeout", scene.effectTime);
-    await new Promise((resolve) => {
-      bgEl.onload = resolve;
-      bgEl.src = config.bgPath + scene.bg;
-    });
+    await new Promise(resolve => { bgEl.onload = resolve; bgEl.src = config.bgPath + scene.bg; });
     await applyEffect(bgEl, scene.bgEffect || "fadein", scene.effectTime);
   }
 
@@ -163,10 +156,7 @@ async function showScene(scene) {
 
   // BGM
   if (scene.bgm !== undefined) {
-    if (bgm) {
-      bgm.pause();
-      bgm = null;
-    }
+    if (bgm) { bgm.pause(); bgm = null; }
     if (scene.bgm) {
       bgm = new Audio(config.bgmPath + scene.bgm);
       bgm.loop = true;
@@ -178,9 +168,9 @@ async function showScene(scene) {
   // キャラクター
   if (scene.characters) {
     lastActiveSide = scene.characters[scene.characters.length - 1]?.side || null;
-    ["left", "center", "right"].forEach(async (pos) => {
+    ["left","center","right"].forEach(async pos => {
       const slot = charSlots[pos];
-      const charData = scene.characters.find((c) => c.side === pos);
+      const charData = scene.characters.find(c => c.side === pos);
       if (charData && charData.src && charData.src !== "NULL") {
         const img = document.createElement("img");
         img.src = config.charPath + charData.src;
@@ -202,36 +192,23 @@ async function showScene(scene) {
     setCharacterStyle(scene.name, scene);
     setTextWithSpeed(scene.text, currentSpeed, () => {
       if (scene.wait) {
-        setTimeout(() => {
-          if (isAutoMode && choicesEl.children.length === 0) next();
-        }, scene.wait);
+        setTimeout(() => { if (isAutoMode && choicesEl.children.length === 0) next(); }, scene.wait);
       } else if (isAutoMode && choicesEl.children.length === 0) {
         setTimeout(() => next(), autoWaitTime);
       }
     });
-  } else {
-    if (scene.auto && choicesEl.children.length === 0) {
-      const delay = scene.wait || autoWaitTime;
-      setTimeout(() => next(), delay);
-    }
+  } else if (scene.auto && choicesEl.children.length === 0) {
+    const delay = scene.wait || autoWaitTime;
+    setTimeout(() => next(), delay);
   }
 
   // 効果音・ボイス
-  if (scene.voice) {
-    const voice = new Audio(config.voicePath + scene.voice);
-    voice.muted = isMuted;
-    voice.play();
-  }
-
-  if (scene.se) {
-    const se = new Audio(config.sePath + scene.se);
-    se.muted = isMuted;
-    se.play();
-  }
+  if (scene.voice) { const voice = new Audio(config.voicePath + scene.voice); voice.muted = isMuted; voice.play(); }
+  if (scene.se) { const se = new Audio(config.sePath + scene.se); se.muted = isMuted; se.play(); }
 
   // 選択肢
   if (scene.choices) {
-    scene.choices.forEach((choice) => {
+    scene.choices.forEach(choice => {
       const btn = document.createElement("button");
       btn.textContent = choice.text;
       btn.onclick = () => {
@@ -308,26 +285,13 @@ window.addEventListener("load", () => {
   loadScenario(currentScenario);
 });
 
-// -------------------- クリック操作（メニュー連携） --------------------
-const clickLayer = document.getElementById("click-layer");
-
-clickLayer.addEventListener("dblclick", () => {
-  openMenu("menu01.json");
-});
+// -------------------- クリック操作 --------------------
+// dblclick / touchend → openMenu 連携
+clickLayer.addEventListener("dblclick", () => openMenu("menu01.json"));
 
 let lastTouch = 0;
 clickLayer.addEventListener("touchend", () => {
   const now = Date.now();
-  if (now - lastTouch < 300) {
-    openMenu("menu01.json");
-  }
+  if (now - lastTouch < 300) openMenu("menu01.json");
   lastTouch = now;
-});
-
-clickLayer.addEventListener("click", () => {
-  if (!menuPanel.classList.contains("hidden")) {
-    menuPanel.classList.add("hidden");
-    return;
-  }
-  if (!isPlaying && choicesEl.children.length === 0) next();
 });
