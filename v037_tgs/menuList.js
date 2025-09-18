@@ -88,3 +88,7 @@ function handleMenuAction(action) {
       console.warn("未対応のメニューアクション:", action);
   }
 }
+
+window.loadMenu = loadMenu;
+window.handleMenuAction = handleMenuAction;
+
