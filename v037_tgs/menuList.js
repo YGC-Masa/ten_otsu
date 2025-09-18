@@ -7,34 +7,31 @@ const menuPanelElement = document.getElementById("menu-panel");
 const listPanelElement = document.getElementById("list-panel");
 
 // -------------------------------
-// メニューパネル制御
+// 共通ユーティリティ
 // -------------------------------
-function showMenuPanel() {
-  if (menuPanelElement) menuPanelElement.classList.remove("hidden");
+function isVisible(el) {
+  return el && !el.classList.contains("hidden");
 }
-
-function hideMenuPanel() {
-  if (menuPanelElement) menuPanelElement.classList.add("hidden");
+function showElement(el) {
+  if (el) el.classList.remove("hidden");
 }
-
-function menuPanelVisible() {
-  return menuPanelElement && !menuPanelElement.classList.contains("hidden");
+function hideElement(el) {
+  if (el) el.classList.add("hidden");
 }
 
 // -------------------------------
-// リストパネル制御
+// メニュー制御
 // -------------------------------
-function showListPanel() {
-  if (listPanelElement) listPanelElement.classList.remove("hidden");
-}
+function showMenuPanel() { showElement(menuPanelElement); }
+function hideMenuPanel() { hideElement(menuPanelElement); }
+function menuPanelVisible() { return isVisible(menuPanelElement); }
 
-function hideListPanel() {
-  if (listPanelElement) listPanelElement.classList.add("hidden");
-}
-
-function listPanelVisible() {
-  return listPanelElement && !listPanelElement.classList.contains("hidden");
-}
+// -------------------------------
+// リスト制御
+// -------------------------------
+function showListPanel() { showElement(listPanelElement); }
+function hideListPanel() { hideElement(listPanelElement); }
+function listPanelVisible() { return isVisible(listPanelElement); }
 
 // -------------------------------
 // JSONメニューリストを読み込む
@@ -45,9 +42,42 @@ function loadMenu(menuPath) {
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       return response.json();
     })
+    .then(data => {
+      if (!menuPanelElement) return;
+      menuPanelElement.innerHTML = "";
+      data.forEach(item => {
+        const btn = document.createElement("button");
+        btn.textContent = item.label || item.text || "未設定";
+        btn.onclick = () => handleMenuAction(item.action);
+        menuPanelElement.appendChild(btn);
+      });
+    })
     .catch(err => {
       console.error("メニューの読み込みに失敗しました:", err);
-      return [];
+    });
+}
+
+// -------------------------------
+// JSONリストを読み込む
+// -------------------------------
+function loadList(listPath) {
+  return fetch(listPath)
+    .then(response => {
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      return response.json();
+    })
+    .then(data => {
+      if (!listPanelElement) return;
+      listPanelElement.innerHTML = "";
+      data.forEach(item => {
+        const btn = document.createElement("button");
+        btn.textContent = item.label || item.text || "未設定";
+        btn.onclick = () => handleListAction(item.action, item.value);
+        listPanelElement.appendChild(btn);
+      });
+    })
+    .catch(err => {
+      console.error("リストの読み込みに失敗しました:", err);
     });
 }
 
@@ -57,27 +87,18 @@ function loadMenu(menuPath) {
 function handleMenuAction(action) {
   switch (action) {
     case "start":
-      if (typeof startGame === "function") {
-        startGame();
-      } else {
-        console.warn("startGame() が未定義です");
-      }
+      if (typeof startGame === "function") startGame();
+      else console.warn("startGame() が未定義です");
       break;
 
     case "load":
-      if (typeof showLoadPanel === "function") {
-        showLoadPanel();
-      } else {
-        console.warn("showLoadPanel() が未定義です");
-      }
+      if (typeof showLoadPanel === "function") showLoadPanel();
+      else console.warn("showLoadPanel() が未定義です");
       break;
 
     case "config":
-      if (typeof showConfigPanel === "function") {
-        showConfigPanel();
-      } else {
-        console.warn("showConfigPanel() が未定義です");
-      }
+      if (typeof showConfigPanel === "function") showConfigPanel();
+      else console.warn("showConfigPanel() が未定義です");
       break;
 
     case "title":
@@ -89,52 +110,22 @@ function handleMenuAction(action) {
   }
 }
 
-// JSONを読み込んでメニュー描画＆表示
-function openMenu(menuPath) {
-  loadMenu(menuPath).then(data => {
-    menuPanelElement.innerHTML = "";
-    data.forEach(item => {
-      const btn = document.createElement("div");
-      btn.className = "menu-item";
-      btn.textContent = item.label;
-      btn.onclick = () => handleMenuAction(item.action);
-      menuPanelElement.appendChild(btn);
-    });
-    showMenuPanel();
-  });
-}
-window.openMenu = openMenu;
-
-// JSONを読み込んでリスト描画＆表示
-function showList(data) {
-  listPanelElement.innerHTML = "";
-  data.forEach(item => {
-    const div = document.createElement("div");
-    div.className = "list-item";
-    div.textContent = item.label;
-    div.onclick = () => {
-      if (item.jump) loadScenario(item.jump);
-      if (item.url) location.href = item.url;
-    };
-    listPanelElement.appendChild(div);
-  });
-  showListPanel();
-}
-window.showList = showList;
-
-
-
-
 // -------------------------------
-// グローバル公開
+// リスト項目クリック時の処理
 // -------------------------------
-window.showMenuPanel = showMenuPanel;
-window.hideMenuPanel = hideMenuPanel;
-window.menuPanelVisible = menuPanelVisible;
+function handleListAction(action, value) {
+  switch (action) {
+    case "scenario":
+      if (typeof loadScenario === "function") {
+        loadScenario(value);
+        hideListPanel();
+        hideMenuPanel();
+      } else {
+        console.warn("loadScenario() が未定義です");
+      }
+      break;
 
-window.showListPanel = showListPanel;
-window.hideListPanel = hideListPanel;
-window.listPanelVisible = listPanelVisible;
-
-window.loadMenu = loadMenu;
-window.handleMenuAction = handleMenuAction;
+    default:
+      console.warn("未対応のリストアクション:", action, value);
+  }
+}
