@@ -1,84 +1,86 @@
-// menuList.js - v037 完全版
+// menuList.js - v037 完全版（config パス利用版）
 
-// -------------------------------
-// パネル要素の参照
-// -------------------------------
 const menuPanelElement = document.getElementById("menu-panel");
 const listPanelElement = document.getElementById("list-panel");
 
 // -------------------------------
-// 共通ユーティリティ
+// メニューパネル制御
 // -------------------------------
-function isVisible(el) {
-  return el && !el.classList.contains("hidden");
+function showMenuPanel() {
+  menuPanelElement?.classList.remove("hidden");
 }
-function showElement(el) {
-  if (el) el.classList.remove("hidden");
+
+function hideMenuPanel() {
+  menuPanelElement?.classList.add("hidden");
 }
-function hideElement(el) {
-  if (el) el.classList.add("hidden");
+
+function menuPanelVisible() {
+  return menuPanelElement && !menuPanelElement.classList.contains("hidden");
 }
 
 // -------------------------------
-// メニュー制御
+// リストパネル制御
 // -------------------------------
-function showMenuPanel() { showElement(menuPanelElement); }
-function hideMenuPanel() { hideElement(menuPanelElement); }
-function menuPanelVisible() { return isVisible(menuPanelElement); }
+function showListPanel() {
+  listPanelElement?.classList.remove("hidden");
+}
 
-// -------------------------------
-// リスト制御
-// -------------------------------
-function showListPanel() { showElement(listPanelElement); }
-function hideListPanel() { hideElement(listPanelElement); }
-function listPanelVisible() { return isVisible(listPanelElement); }
+function hideListPanel() {
+  listPanelElement?.classList.add("hidden");
+}
+
+function listPanelVisible() {
+  return listPanelElement && !listPanelElement.classList.contains("hidden");
+}
 
 // -------------------------------
 // JSONメニューリストを読み込む
 // -------------------------------
-function loadMenu(menuPath) {
-  return fetch(menuPath)
-    .then(response => {
-      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-      return response.json();
-    })
-    .then(data => {
-      if (!menuPanelElement) return;
-      menuPanelElement.innerHTML = "";
-      data.forEach(item => {
-        const btn = document.createElement("button");
-        btn.textContent = item.label || item.text || "未設定";
-        btn.onclick = () => handleMenuAction(item.action);
-        menuPanelElement.appendChild(btn);
-      });
-    })
-    .catch(err => {
-      console.error("メニューの読み込みに失敗しました:", err);
-    });
+async function loadMenu(menuFile) {
+  try {
+    const res = await fetch(config.menuPath + menuFile + "?t=" + Date.now());
+    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+    return await res.json();
+  } catch (err) {
+    console.error("メニューの読み込みに失敗しました:", err);
+    return [];
+  }
 }
 
 // -------------------------------
 // JSONリストを読み込む
 // -------------------------------
-function loadList(listPath) {
-  return fetch(listPath)
-    .then(response => {
-      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-      return response.json();
-    })
-    .then(data => {
-      if (!listPanelElement) return;
-      listPanelElement.innerHTML = "";
-      data.forEach(item => {
-        const btn = document.createElement("button");
-        btn.textContent = item.label || item.text || "未設定";
-        btn.onclick = () => handleListAction(item.action, item.value);
-        listPanelElement.appendChild(btn);
-      });
-    })
-    .catch(err => {
-      console.error("リストの読み込みに失敗しました:", err);
-    });
+async function loadList(listFile) {
+  try {
+    const res = await fetch(config.listPath + listFile + "?t=" + Date.now());
+    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+    return await res.json();
+  } catch (err) {
+    console.error("リストの読み込みに失敗しました:", err);
+    return [];
+  }
+}
+
+// -------------------------------
+// リスト表示
+// -------------------------------
+function showList(data) {
+  if (!listPanelElement) return;
+  listPanelElement.innerHTML = "";
+  if (!Array.isArray(data)) return;
+
+  data.forEach(item => {
+    const btn = document.createElement("button");
+    btn.textContent = item.text || "未設定";
+    btn.onclick = () => {
+      if (item.jump) loadScenario(item.jump);
+      else if (item.url) location.href = item.url;
+      hideListPanel();
+    };
+    listPanelElement.appendChild(btn);
+  });
+
+  showListPanel();
 }
 
 // -------------------------------
@@ -90,42 +92,38 @@ function handleMenuAction(action) {
       if (typeof startGame === "function") startGame();
       else console.warn("startGame() が未定義です");
       break;
-
     case "load":
       if (typeof showLoadPanel === "function") showLoadPanel();
       else console.warn("showLoadPanel() が未定義です");
       break;
-
     case "config":
       if (typeof showConfigPanel === "function") showConfigPanel();
       else console.warn("showConfigPanel() が未定義です");
       break;
-
     case "title":
       location.reload();
       break;
-
     default:
       console.warn("未対応のメニューアクション:", action);
   }
 }
 
 // -------------------------------
-// リスト項目クリック時の処理
+// メニュー表示のユーティリティ
 // -------------------------------
-function handleListAction(action, value) {
-  switch (action) {
-    case "scenario":
-      if (typeof loadScenario === "function") {
-        loadScenario(value);
-        hideListPanel();
+function openMenu(menuFile) {
+  loadMenu(menuFile).then(menuItems => {
+    if (!menuPanelElement) return;
+    menuPanelElement.innerHTML = "";
+    menuItems.forEach(item => {
+      const btn = document.createElement("button");
+      btn.textContent = item.text || "未設定";
+      btn.onclick = () => {
+        handleMenuAction(item.action);
         hideMenuPanel();
-      } else {
-        console.warn("loadScenario() が未定義です");
-      }
-      break;
-
-    default:
-      console.warn("未対応のリストアクション:", action, value);
-  }
+      };
+      menuPanelElement.appendChild(btn);
+    });
+    showMenuPanel();
+  });
 }
