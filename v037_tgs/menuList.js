@@ -1,52 +1,52 @@
-// menuList.js - v037 完全版（fetch パスを listmenu に統一）
+// menuList.js - v037 完全版
 
 // -------------------------------
 // パネル要素の参照
 // -------------------------------
-const menuPanelElement = document.getElementById("menu-panel");
-const listPanelElement = document.getElementById("list-panel");
+const menuPanel = document.getElementById("menu-panel");
+const listPanel = document.getElementById("list-panel");
 
 // -------------------------------
 // メニューパネル制御
 // -------------------------------
 function showMenuPanel() {
-  if (menuPanelElement) menuPanelElement.classList.remove("hidden");
+  if (menuPanel) menuPanel.classList.remove("hidden");
 }
 
 function hideMenuPanel() {
-  if (menuPanelElement) menuPanelElement.classList.add("hidden");
+  if (menuPanel) menuPanel.classList.add("hidden");
 }
 
 function menuPanelVisible() {
-  return menuPanelElement && !menuPanelElement.classList.contains("hidden");
+  return menuPanel && !menuPanel.classList.contains("hidden");
 }
 
 // -------------------------------
 // リストパネル制御
 // -------------------------------
 function showListPanel() {
-  if (listPanelElement) listPanelElement.classList.remove("hidden");
+  if (listPanel) listPanel.classList.remove("hidden");
 }
 
 function hideListPanel() {
-  if (listPanelElement) listPanelElement.classList.add("hidden");
+  if (listPanel) listPanel.classList.add("hidden");
 }
 
 function listPanelVisible() {
-  return listPanelElement && !listPanelElement.classList.contains("hidden");
+  return listPanel && !listPanel.classList.contains("hidden");
 }
 
 // -------------------------------
-// JSON メニューリストを読み込む
+// JSONメニューリストを読み込む
 // -------------------------------
 function loadMenu(menuFile) {
-  return fetch(config.menuPath + menuFile + "?t=" + Date.now())
+  return fetch("./listmenu/" + menuFile + "?t=" + Date.now())
     .then(response => {
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       return response.json();
     })
     .catch(err => {
-      console.error("メニュー読み込み失敗:", err);
+      console.error("メニューの読み込みに失敗しました:", err);
       return [];
     });
 }
@@ -81,58 +81,72 @@ function handleMenuAction(action) {
 }
 
 // -------------------------------
-// JSON リストを読み込む
+// リスト表示（修正版 v037）
 // -------------------------------
-function loadList(listFile) {
-  return fetch(config.listPath + listFile + "?t=" + Date.now())
-    .then(response => {
-      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-      return response.json();
-    })
-    .catch(err => {
-      console.error("リスト読み込み失敗:", err);
-      return [];
-    });
-}
+function showList(data) {
+  // data が配列でなければ items プロパティを参照
+  let items = Array.isArray(data) ? data : data.items;
 
-// -------------------------------
-// リスト表示
-// -------------------------------
-function showList(items) {
-  if (!listPanelElement) return;
-  listPanelElement.innerHTML = "";
+  if (!items || !Array.isArray(items)) {
+    console.error("リストの構造が不正です:", data);
+    return;
+  }
+
+  // listPanel をクリアして表示
+  listPanel.innerHTML = "";
+  listPanel.classList.remove("hidden");
 
   items.forEach(item => {
     const btn = document.createElement("button");
-    btn.textContent = item.text || "無題";
+    btn.textContent = item.text || "未設定";
     btn.onclick = () => {
+      clearCharacters();
+      textEl.innerHTML = "";
+      nameEl.textContent = "";
+      evLayer.innerHTML = "";
+      listPanel.classList.add("hidden");
       if (item.jump) loadScenario(item.jump);
       else if (item.url) location.href = item.url;
-      hideListPanel();
     };
-    listPanelElement.appendChild(btn);
+    listPanel.appendChild(btn);
   });
-
-  showListPanel();
 }
 
 // -------------------------------
-// メニュー開閉（script.js から呼ぶ）
+// メニュー・リストを開く共通関数
 // -------------------------------
-function openMenu(menuFile = "menu01.json") {
+function openMenu(menuFile) {
   if (menuPanelVisible()) {
     hideMenuPanel();
-  } else {
-    loadMenu(menuFile).then(items => {
-      if (!menuPanelElement) return;
-      menuPanelElement.innerHTML = "";
-      items.forEach(item => {
-        const btn = document.createElement("button");
-        btn.textContent = item.text || "無題";
-        btn.onclick = () => handleMenuAction(item.action);
-        menuPanelElement.appendChild(btn);
-      });
-      showMenuPanel();
-    });
+    return;
   }
+
+  loadMenu(menuFile).then(data => {
+    if (!data || data.length === 0) return;
+    menuPanel.innerHTML = "";
+    menuPanel.classList.remove("hidden");
+
+    data.forEach(item => {
+      const btn = document.createElement("button");
+      btn.textContent = item.text || "未設定";
+      btn.onclick = () => {
+        hideMenuPanel();
+        handleMenuAction(item.action);
+      };
+      menuPanel.appendChild(btn);
+    });
+  }).catch(err => console.error("メニュー読み込み失敗:", err));
 }
+
+// -------------------------------
+// クリック / タッチでメニューを開く
+// -------------------------------
+const clickLayer = document.getElementById("click-layer");
+let lastTouch = 0;
+
+clickLayer.addEventListener("dblclick", () => openMenu("menu01.json"));
+clickLayer.addEventListener("touchend", () => {
+  const now = Date.now();
+  if (now - lastTouch < 300) openMenu("menu01.json");
+  lastTouch = now;
+});
