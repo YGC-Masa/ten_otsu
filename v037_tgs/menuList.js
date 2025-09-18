@@ -89,6 +89,41 @@ function handleMenuAction(action) {
   }
 }
 
+// JSONを読み込んでメニュー描画＆表示
+function openMenu(menuPath) {
+  loadMenu(menuPath).then(data => {
+    menuPanelElement.innerHTML = "";
+    data.forEach(item => {
+      const btn = document.createElement("div");
+      btn.className = "menu-item";
+      btn.textContent = item.label;
+      btn.onclick = () => handleMenuAction(item.action);
+      menuPanelElement.appendChild(btn);
+    });
+    showMenuPanel();
+  });
+}
+window.openMenu = openMenu;
+
+// JSONを読み込んでリスト描画＆表示
+function showList(data) {
+  listPanelElement.innerHTML = "";
+  data.forEach(item => {
+    const div = document.createElement("div");
+    div.className = "list-item";
+    div.textContent = item.label;
+    div.onclick = () => {
+      if (item.jump) loadScenario(item.jump);
+      if (item.url) location.href = item.url;
+    };
+    listPanelElement.appendChild(div);
+  });
+  showListPanel();
+}
+window.showList = showList;
+
+
+
 
 // -------------------------------
 // グローバル公開
