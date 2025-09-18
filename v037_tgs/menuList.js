@@ -89,6 +89,17 @@ function handleMenuAction(action) {
   }
 }
 
+
+// -------------------------------
+// グローバル公開
+// -------------------------------
+window.showMenuPanel = showMenuPanel;
+window.hideMenuPanel = hideMenuPanel;
+window.menuPanelVisible = menuPanelVisible;
+
+window.showListPanel = showListPanel;
+window.hideListPanel = hideListPanel;
+window.listPanelVisible = listPanelVisible;
+
 window.loadMenu = loadMenu;
 window.handleMenuAction = handleMenuAction;
-
