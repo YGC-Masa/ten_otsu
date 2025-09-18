@@ -310,19 +310,12 @@ window.addEventListener("load", () => {
 });
 
 // -------------------- クリック操作 --------------------
-clickLayer.addEventListener("dblclick", () => loadMenu("menu01.json"));
+// dblclick / touchend → openMenu呼び出しに変更
+clickLayer.addEventListener("dblclick", () => openMenu("menu01.json"));
 
 let lastTouch = 0;
 clickLayer.addEventListener("touchend", () => {
   const now = Date.now();
-  if (now - lastTouch < 300) loadMenu("menu01.json");
+  if (now - lastTouch < 300) openMenu("menu01.json");
   lastTouch = now;
-});
-
-clickLayer.addEventListener("click", () => {
-  if (!menuPanel.classList.contains("hidden")) {
-    menuPanel.classList.add("hidden");
-    return;
-  }
-  if (!isPlaying && choicesEl.children.length === 0) next();
 });
