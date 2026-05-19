@@ -3,13 +3,14 @@
 // 操作はメンバーのシングルタップで通常接客、ダブルタップで必殺接客。通常敵HP2、レアHP3。ターゲットは選択メンバーに最適な家電星人へ自動Fix。彩愛の必殺は盤面整理＋敵チェンジ短縮。店長HELP・必殺カットイン・タイムセール演出あり。
 
 (function () {
-  const BATTLE_VERSION = "v037_02";
+  const BATTLE_VERSION = "v037_05";
   const BATTLE_SECONDS = 30;
   const MAX_ENEMIES = 3;
   const CHANGE_SECONDS = 2.0;
   const CHANGE_SECONDS_BUFFED = 1.0;
-  const AUTO_ACTION_INTERVAL = 0.45;
-  const AUTO_CT_MULTIPLIER = 1.5; // オート営業ペナルティ：自動操作時のみCT1.5倍
+  const AUTO_ACTION_INTERVAL = 0.75;
+  const AUTO_CT_MULTIPLIER = 2.0; // オート営業ペナルティ：自動操作時のみCT2倍
+  const AUTO_SCORE_MULTIPLIER = 0.7; // オート営業ペナルティ：自動成約の売上Pt70%
   const HELP_STOCK_MAX = 3;
   const HELP_STOCK_STEP = 10;
   const CHANGE_MESSAGES = [
@@ -20,20 +21,19 @@
 
   const staffMaster = [
     { id: "aa", name: "緋奈", color: "#d3381c", attr: "映像", power: 1, ctMax: 2.4, skillName: "全力おすすめ！", skillType: "powerBuff", skillDesc: "8秒間、接客力アップ。成約を一気に伸ばします。" },
-    { id: "ab", name: "藍", color: "#0067C0", attr: "美容", power: 1, ctMax: 3.0, skillName: "やさしい案内", skillType: "extendTime", skillDesc: "全敵の受付時間を延長し、営業残り時間も少し増やします。" },
+    { id: "ab", name: "藍", color: "#0067C0", attr: "ドライヤー", power: 1, ctMax: 3.0, skillName: "やさしい案内", skillType: "extendTime", skillDesc: "全敵の受付時間を延長し、営業残り時間も少し増やします。" },
     { id: "ac", name: "翠", color: "#02b308", attr: "PC", power: 1, ctMax: 3.5, skillName: "最適解プレゼン", skillType: "pcSweep", skillDesc: "PC属性をまとめて成約し、6秒間マッチ性能を上げます。" },
     { id: "ad", name: "こがね", color: "#FFF450", attr: "スマホ", power: 1, ctMax: 1.7, skillName: "即決トーク", skillType: "ctReduce", skillDesc: "全メンバーのCTを短縮し、6秒間テンポを上げます。" },
     { id: "ae", name: "琥珀", color: "#F68B1F", attr: "オーディオ", power: 1, ctMax: 2.7, skillName: "フロアダッシュ", skillType: "rushBuff", skillDesc: "8秒間ラッシュ対応力アップ。コンボを守りやすくします。" },
     { id: "af", name: "真花", color: "#C0C0C0", attr: "美容", power: 1, ctMax: 2.8, skillName: "お嬢様スマイル", skillType: "comboPlus", skillDesc: "成約時のコンボ補助。丁寧な接客で満足度を伸ばします。" },
     { id: "ag", name: "雪乃", color: "#6495ED", attr: "調理", power: 1, ctMax: 3.2, skillName: "静かな提案", skillType: "freezeTime", skillDesc: "敵の受付時間を一時停止し、店内を落ち着かせます。" },
-    { id: "ah", name: "美空", color: "#fffef6", attr: "季節", power: 1, ctMax: 2.6, skillName: "夏空接客", skillType: "rescue", skillDesc: "受付時間が短い敵を追加フォローする安定型スキル。" },
-    { id: "ai", name: "夜空", color: "#00152d", attr: "季節", power: 1, ctMax: 2.9, skillName: "冬空フォーカス", skillType: "rareKiller", skillDesc: "レア敵への追加ダメージで一点突破します。" },
-    { id: "aj", name: "桃", color: "#F7ADC3", attr: "映像", power: 1, ctMax: 2.1, skillName: "店内配信", skillType: "buzz", skillDesc: "売上Ptとレア出現率を上げる代わりに混雑しやすくなります。" },
+    { id: "ah", name: "美空", color: "#fffef6", attr: "除湿", power: 1, ctMax: 2.6, skillName: "夏空接客", skillType: "rescue", skillDesc: "受付時間が短い敵を追加フォローする安定型スキル。" },
+    { id: "ai", name: "夜空", color: "#00152d", attr: "加湿", power: 1, ctMax: 2.9, skillName: "冬空フォーカス", skillType: "rareKiller", skillDesc: "レア敵への追加ダメージで一点突破します。" },
+    { id: "aj", name: "桃", color: "#F7ADC3", attr: "配信", power: 1, ctMax: 2.1, skillName: "店内配信", skillType: "buzz", skillDesc: "売上Ptとレア出現率を上げる代わりに混雑しやすくなります。" },
     { id: "ak", name: "彩愛", color: "#694D9F", attr: "生活", power: 1, ctMax: 3.0, skillName: "優雅な家事導線", skillType: "ayameRoute", skillDesc: "敵最大2体に1ダメージ。6秒間、敵チェンジを2秒から1秒に短縮。" },
-    { id: "al", name: "里美", color: "#8d5025", attr: "生活", power: 1, ctMax: 3.1, skillName: "受付整理", skillType: "changeSupport", skillDesc: "受付を整理して、チェンジやCT管理を補助します。" },
+    { id: "al", name: "里美", color: "#8d5025", attr: "事務", power: 1, ctMax: 3.1, skillName: "受付整理", skillType: "changeSupport", skillDesc: "受付を整理して、チェンジやCT管理を補助します。" },
     { id: "am", name: "萌", color: "#33CC99", attr: "季節", power: 1, ctMax: 2.9, skillName: "おにいちゃん助けて", skillType: "managerBoost", skillDesc: "店長ヘルプゲージが溜まりやすくなるサポートスキル。" }
-  ];
-  const DEFAULT_STAFF_IDS = ["aa", "ab", "ac", "ad", "ae"];
+  ];  const DEFAULT_STAFF_IDS = ["aa", "ab", "ac", "ad", "ae"];
   const DECK_STORAGE_KEY = "tenotsu_battle_deck_v1";
   let activeStaffIds = loadDeckIds();
 
@@ -58,41 +58,98 @@
 
 
   const attrColors = {
-    "映像": "#e53935",
-    "美容": "#1e88e5",
-    "PC": "#43a047",
-    "スマホ": "#fdd835",
-    "オーディオ": "#fb8c00",
-    "季節": "#64b5f6",
-    "生活": "#ab47bc",
-    "調理": "#ffb74d"
+    "映像": "#d3381c",
+    "ドライヤー": "#0067C0",
+    "PC": "#02b308",
+    "スマホ": "#FFF450",
+    "オーディオ": "#F68B1F",
+    "美容": "#C0C0C0",
+    "調理": "#6495ED",
+    "除湿": "#fffef6",
+    "加湿": "#00152d",
+    "配信": "#F7ADC3",
+    "生活": "#694D9F",
+    "事務": "#8d5025",
+    "季節": "#33CC99"
   };
-
   const enemyTypes = [
-    { attr: "映像", icon: "📺", name: "テレビ星人", text: "大画面で見たい！", baseGauge: 78, basePatience: 6.8, score: 120 },
-    { attr: "美容", icon: "💨", name: "美容家電星人", text: "髪を早く乾かしたい", baseGauge: 72, basePatience: 7.3, score: 125 },
-    { attr: "PC", icon: "💻", name: "PC星人", text: "初期設定して！", baseGauge: 92, basePatience: 7.8, score: 150 },
-    { attr: "スマホ", icon: "📱", name: "スマホ星人", text: "充電器どれ？", baseGauge: 62, basePatience: 5.2, score: 105 },
-    { attr: "オーディオ", icon: "🎧", name: "オーディオ星人", text: "いい音が欲しい！", baseGauge: 86, basePatience: 6.7, score: 140 },
-    { attr: "季節", icon: "❄️", name: "季節家電星人", text: "加湿器ある？", baseGauge: 76, basePatience: 6.2, score: 115 },
-    { attr: "生活", icon: "🧺", name: "生活家電星人", text: "掃除機ほしい", baseGauge: 82, basePatience: 6.4, score: 130 }
+    { attr: "映像", icon: "📺", name: "テレビ星人", text: "大画面で見たい！", baseGauge: 2, basePatience: 6.8, score: 120 },
+    { attr: "ドライヤー", icon: "💨", name: "ドライヤー星人", text: "髪を早く乾かしたい", baseGauge: 2, basePatience: 7.3, score: 125 },
+    { attr: "PC", icon: "💻", name: "PC星人", text: "初期設定して！", baseGauge: 2, basePatience: 7.8, score: 150 },
+    { attr: "スマホ", icon: "📱", name: "スマホ星人", text: "充電器どれ？", baseGauge: 2, basePatience: 5.2, score: 105 },
+    { attr: "オーディオ", icon: "🎧", name: "オーディオ星人", text: "いい音が欲しい！", baseGauge: 2, basePatience: 6.7, score: 140 },
+    { attr: "美容", icon: "✨", name: "美容家電星人", text: "美顔器を見たいです", baseGauge: 2, basePatience: 7.0, score: 130 },
+    { attr: "調理", icon: "🍳", name: "調理器具星人", text: "おいしく作りたい", baseGauge: 2, basePatience: 7.2, score: 135 },
+    { attr: "除湿", icon: "☀️", name: "除湿機星人", text: "ジメジメを何とかしたい", baseGauge: 2, basePatience: 6.1, score: 118 },
+    { attr: "加湿", icon: "🌙", name: "加湿器星人", text: "乾燥がつらい", baseGauge: 2, basePatience: 6.3, score: 118 },
+    { attr: "配信", icon: "🎮", name: "配信機材星人", text: "配信を始めたい！", baseGauge: 2, basePatience: 5.9, score: 145 },
+    { attr: "生活", icon: "🧺", name: "生活家電星人", text: "掃除機ほしい", baseGauge: 2, basePatience: 6.4, score: 130 },
+    { attr: "事務", icon: "🧾", name: "レジ伝票星人", text: "会計処理を楽にしたい", baseGauge: 2, basePatience: 7.1, score: 128 },
+    { attr: "季節", icon: "🌿", name: "季節家電星人", text: "エアコン相談したい", baseGauge: 2, basePatience: 6.5, score: 122 }
   ];
-
   let root = null;
   let state = null;
   let timerId = null;
   let lastTick = 0;
-  const DOUBLE_TAP_MS = 300;
+  const DOUBLE_TAP_MS = 220;
   let staffTapTimer = null;
   let pendingStaffTapId = null;
   let pendingStaffTapAt = 0;
-  const ENEMY_DOUBLE_TAP_MS = 300;
+  const ENEMY_DOUBLE_TAP_MS = 260;
   let pendingEnemyTapId = null;
   let pendingEnemyTapAt = 0;
   let surfaceTimers = [];
 
   function makeState() {
-    return {
+  
+  function getActiveEnemyAttributes() {
+    const attrs = new Set();
+    state.enemies.forEach(enemy => {
+      if (!enemy || enemy.isChanging) return;
+      if (enemy.attribute) attrs.add(enemy.attribute);
+    });
+    return attrs;
+  }
+
+  function hasMatchingEnemyForMember(member) {
+    if (!member || !state.enemies || state.enemies.length === 0) return false;
+    return state.enemies.some(enemy => {
+      if (!enemy || enemy.isChanging) return false;
+      return enemy.attribute === member.attribute;
+    });
+  }
+
+  function countMatchingEnemiesForMember(member) {
+    if (!member || !state.enemies) return 0;
+    return state.enemies.filter(enemy => {
+      if (!enemy || enemy.isChanging) return false;
+      return enemy.attribute === member.attribute;
+    }).length;
+  }
+
+
+
+  function getAttributeColor(attribute) {
+    const colors = {
+      video: "#d3381c",
+      dryer: "#0067C0",
+      pc: "#02b308",
+      phone: "#FFF450",
+      audio: "#F68B1F",
+      beauty: "#C0C0C0",
+      cooking: "#6495ED",
+      dehumid: "#fffef6",
+      humid: "#00152d",
+      stream: "#F7ADC3",
+      life: "#694D9F",
+      office: "#8d5025",
+      season: "#33CC99"
+    };
+    return colors[attribute] || "#ffffff";
+  }
+
+
+  return {
       running: false,
       finished: false,
       timeLeft: BATTLE_SECONDS,
@@ -107,6 +164,7 @@
       targetPreviewId: null,
       autoMode: false,
       autoTimer: 0,
+      autoResolving: false,
       helpStock: 0,
       helpEarnCounter: 0,
       nextHitId: 1,
@@ -202,7 +260,7 @@
     state.autoMode = !!autoMode;
     state.autoTimer = 0;
     state.lastActionText = autoMode
-      ? "オート営業準備中。開店後、自動操作はCT1.5倍です。"
+      ? "オート営業準備中。開店後、自動操作はCT2倍です。"
       : "開店準備中。メンバータップで接客、敵ダブルタップでチェンジできます。";
     render();
     runOpeningCountdown(autoMode);
@@ -213,7 +271,7 @@
       { title: "3", sub: "開店準備中", ms: 650 },
       { title: "2", sub: "スタッフ配置確認", ms: 650 },
       { title: "1", sub: "レジ起動OK", ms: 650 },
-      { title: "開店！", sub: autoMode ? "オート営業開始" : "店舗営業開始", ms: 720 }
+      { title: "開店！", sub: autoMode ? "オート営業開始（CT2倍・売上70%・必殺なし）" : "店舗営業開始", ms: 720 }
     ];
 
     let delay = 0;
@@ -240,7 +298,7 @@
     state.autoMode = !!autoMode;
     state.autoTimer = 0;
     state.lastActionText = state.autoMode
-      ? "オート営業開始！ 自動操作はCT1.5倍です。店長ヘルプを活用できます。"
+      ? "オート営業開始！ 自動操作はCT2倍です。店長ヘルプを活用できます。"
       : "開店！ メンバータップで接客、敵ダブルタップでチェンジできます。";
     spawnEnemy(true);
     spawnEnemy(true);
@@ -544,7 +602,8 @@
     const comboBonus = Math.min(3.0, 1 + state.combo * 0.05);
     const rareBonus = enemy.rare ? 2.0 : 1.0;
     const matchBonus = isMatch ? 1.25 : 1.0;
-    const point = Math.round(enemy.score * comboBonus * rareBonus * matchBonus);
+    let point = Math.round(enemy.score * comboBonus * rareBonus * matchBonus);
+    if (state.autoResolving) point = Math.max(1, Math.floor(point * AUTO_SCORE_MULTIPLIER));
     state.score += point;
     state.lastActionText = `レジ誘導成功！ +${point}Pt`;
   }
@@ -638,31 +697,32 @@
 
     for (const s of state.staff) {
       if (s.ct > 0) continue;
-      const canSpecial = s.skill >= 100;
-      const e = findBestTarget(s, canSpecial);
+      const canSpecial = false; // v037_05: オートは必殺技を使わない
+      const e = findBestTarget(s, false);
       if (!e) continue;
 
       const specialScore = canSpecial ? 35 : 0;
       const score =
         (s.attr === e.attr ? 120 : 0) +
         (1 - e.patience / e.maxPatience) * 72 +
-        getAttackDamage(s, e, canSpecial) * 24 +
+        getAttackDamage(s, e, false) * 24 +
         specialScore;
 
       if (score > bestScore) {
         bestScore = score;
         bestStaff = s;
         bestEnemy = e;
-        useSpecial = canSpecial;
+        useSpecial = false;
       }
     }
 
     if (bestStaff && bestEnemy) {
       state.targetPreviewId = bestEnemy.id;
-      resolveContact(bestStaff, bestEnemy, useSpecial);
-      if (useSpecial) useSkill(bestStaff);
-      bestStaff.ct = bestStaff.ctMax * (useSpecial ? 0.65 : 1) * AUTO_CT_MULTIPLIER;
-      bestStaff.skill = useSpecial ? 0 : Math.min(100, bestStaff.skill + 18);
+      state.autoResolving = true;
+      resolveContact(bestStaff, bestEnemy, false);
+      state.autoResolving = false;
+      bestStaff.ct = bestStaff.ctMax * AUTO_CT_MULTIPLIER;
+      bestStaff.skill = Math.min(100, bestStaff.skill + 10);
       return true;
     }
 
@@ -686,7 +746,7 @@
     if (!state || !state.running) return;
     state.autoMode = !state.autoMode;
     state.autoTimer = 0;
-    state.lastActionText = state.autoMode ? "オート営業ON：自動操作はCT1.5倍です。" : "オート営業OFF";
+    state.lastActionText = state.autoMode ? "オート営業ON：CT2倍・売上70%・必殺技なしです。" : "オート営業OFF";
     render();
   }
 
@@ -745,6 +805,7 @@
           <div class="battle-message">${escapeHtml(state.lastActionText)}</div>
         </section>
 
+        ${state.running ? renderHelpButtons("battle-help-large") : ""}
         ${renderCutinOverlay()}
         ${renderSurfaceOverlay()}
 
@@ -775,7 +836,6 @@
     return `
       <div class="battle-hud-actions">
         <button class="battle-auto-toggle ${state.autoMode ? "on" : ""}" data-action="autoToggle">${state.autoMode ? "オートON" : "オートOFF"}</button>
-        ${renderHelpButtons("battle-help-inline")}
       </div>
     `;
   }
@@ -833,7 +893,7 @@
             </div>
           ` : `
             <div class="battle-result-title">店舗営業プロトタイプ</div>
-            <p class="battle-control-help">30秒で家電星人をどれだけ接客できるか。メンバーはシングルタップ通常、ダブルタップ必殺。デッキ編成で5人を選んで営業できます。</p>
+            <p class="battle-control-help">30秒で家電星人をどれだけ接客できるか。メンバーはシングルタップ通常、ダブルタップ必殺。オートはCT2倍・売上70%・必殺なしです。</p>
           `}
           <div class="battle-control-buttons battle-main-buttons">
             <button data-action="start">${isResult ? "もう一度営業" : "営業開始"}</button>
@@ -1063,6 +1123,14 @@
     else if (action === "help") useManagerHelp();
   });
 
+  document.addEventListener("pointerdown", (event) => {
+    if (!root || root.classList.contains("hidden")) return;
+
+    const staffButton = event.target.closest("button[data-staff-id]");
+    if (!staffButton || !root.contains(staffButton)) return;
+    handleStaffPointer(staffButton.dataset.staffId, event);
+  }, { passive: false });
+
   document.addEventListener("pointerup", (event) => {
     if (!root || root.classList.contains("hidden")) return;
 
@@ -1071,11 +1139,7 @@
       handleEnemyPointerUp(Number(enemyCard.dataset.enemyId), event);
       return;
     }
-
-    const staffButton = event.target.closest("button[data-staff-id]");
-    if (!staffButton || !root.contains(staffButton)) return;
-    handleStaffPointer(staffButton.dataset.staffId, event);
-  });
+  }, { passive: false });
 
   window.BattleProto = { openBattle, closeBattle, startBattle, autoOneMove, toggleAutoBattle, useManagerHelp };
   window.startDeckBattlePrototype = openBattle;

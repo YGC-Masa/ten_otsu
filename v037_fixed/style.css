@@ -2885,3 +2885,198 @@ body {
   #battle-root .member-skill-name { font-size: 8px !important; }
   #battle-root .battle-bar { height: 4px !important; margin: 1px 0 2px !important; }
 }
+
+/* === v037_05: 13属性追加 + 店長HELP大型配置 === */
+#battle-root .battle-stage {
+  grid-template-rows: auto auto 1fr auto !important;
+}
+
+#battle-root .battle-help-inline {
+  display: none !important;
+}
+
+#battle-root .battle-help-large {
+  position: relative;
+  z-index: 8;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(84px, 1fr));
+  gap: 10px;
+  padding: 8px 12px 6px;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, rgba(25, 19, 45, 0.96), rgba(14, 10, 28, 0.92));
+  border-top: 1px solid rgba(255,255,255,0.18);
+  border-bottom: 2px solid rgba(160,120,255,0.45);
+}
+
+#battle-root .battle-help-large .battle-help-btn {
+  min-height: 42px;
+  border-radius: 14px;
+  border: 2px solid rgba(255,255,255,0.55);
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  color: #2b1d00;
+  background: linear-gradient(180deg, #fff3a5, #ffcc30);
+  box-shadow: 0 0 18px rgba(255, 225, 90, 0.55), inset 0 1px 0 rgba(255,255,255,0.85);
+  text-shadow: 0 1px rgba(255,255,255,0.65);
+}
+
+#battle-root .battle-help-large .battle-help-btn.empty,
+#battle-root .battle-help-large .battle-help-btn:disabled {
+  color: rgba(255,255,255,0.42);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.18);
+  box-shadow: none;
+  text-shadow: none;
+}
+
+#battle-root .battle-hud-actions {
+  justify-content: flex-end !important;
+}
+
+#battle-root .battle-auto-toggle {
+  min-width: 88px;
+}
+
+@media screen and (orientation: landscape) {
+  #battle-root .battle-stage {
+    grid-template-rows: auto 54px 1fr 106px !important;
+  }
+  #battle-root .battle-help-large {
+    padding: 6px 14px;
+    gap: 12px;
+  }
+  #battle-root .battle-help-large .battle-help-btn {
+    min-height: 40px;
+    font-size: 17px;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-height: 430px) {
+  #battle-root .battle-stage {
+    grid-template-rows: auto 40px 1fr 82px !important;
+  }
+  #battle-root .battle-help-large {
+    padding: 4px 10px;
+    gap: 8px;
+  }
+  #battle-root .battle-help-large .battle-help-btn {
+    min-height: 30px;
+    border-radius: 10px;
+    font-size: 13px;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  #battle-root .battle-stage {
+    grid-template-rows: auto auto minmax(360px, 1fr) auto !important;
+  }
+  #battle-root .battle-help-large {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 8px 10px;
+  }
+  #battle-root .battle-help-large .battle-help-btn {
+    min-height: 44px;
+    font-size: 16px;
+  }
+}
+
+
+/* v037_05: 場の敵と相性が良いメンバーを発光表示 */
+.member-card.member-has-target {
+  border-color: var(--member-match-color, #ffffff) !important;
+  box-shadow:
+    0 0 12px var(--member-match-color, rgba(255,255,255,0.9)),
+    0 0 22px rgba(255,255,255,0.35);
+  animation: memberTargetPulse 1.05s ease-in-out infinite alternate;
+}
+
+.member-card.member-has-target::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.03));
+  mix-blend-mode: screen;
+}
+
+.member-match-badge {
+  position: absolute;
+  top: 5px;
+  right: 6px;
+  z-index: 2;
+  padding: 2px 6px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 800;
+  color: #111;
+  background: #fff;
+  box-shadow: 0 0 8px var(--member-match-color, rgba(255,255,255,0.9));
+  line-height: 1.2;
+}
+
+@keyframes memberTargetPulse {
+  from {
+    filter: brightness(1.05);
+    transform: translateY(0);
+  }
+  to {
+    filter: brightness(1.25);
+    transform: translateY(-1px);
+  }
+}
+
+/* 必殺OKの白反転と相性発光が同時に出た時の見やすさ調整 */
+.member-card.member-skill-ready.member-has-target,
+.member-card.skill-ready.member-has-target {
+  outline: 3px solid #ffffff;
+  outline-offset: -5px;
+}
+
+@media screen and (orientation: landscape) and (max-height: 520px) {
+  .member-match-badge {
+    font-size: 9px;
+    top: 3px;
+    right: 4px;
+    padding: 1px 5px;
+  }
+
+  .member-card.member-has-target {
+    box-shadow:
+      0 0 9px var(--member-match-color, rgba(255,255,255,0.9)),
+      0 0 16px rgba(255,255,255,0.25);
+  }
+}
+
+
+/* v037_05: タップ感度改善 */
+#battle-root .battle-member-card,
+#battle-root .battle-enemy-card,
+#battle-root button {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#battle-root .battle-member-card {
+  min-height: 92px;
+  position: relative;
+}
+
+#battle-root .battle-member-card::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+@media screen and (orientation: landscape) and (max-height: 520px) {
+  #battle-root .battle-member-card {
+    min-height: 78px;
+  }
+
+  #battle-root .battle-member-card::after {
+    inset: -4px;
+  }
+}
