@@ -3,7 +3,7 @@
 // 操作はメンバーのシングルタップで通常接客、ダブルタップで必殺接客。通常敵HP2、レアHP3。ターゲットは選択メンバーに最適な家電星人へ自動Fix。彩愛の必殺は盤面整理＋敵チェンジ短縮。店長HELP・必殺カットイン・タイムセール演出あり。
 
 (function () {
-  const BATTLE_VERSION = "v037_05";
+  const BATTLE_VERSION = "v037_06";
   const BATTLE_SECONDS = 30;
   const MAX_ENEMIES = 3;
   const CHANGE_SECONDS = 2.0;
@@ -20,7 +20,7 @@
   ];
 
   const staffMaster = [
-    { id: "aa", name: "緋奈", color: "#d3381c", attr: "映像", power: 1, ctMax: 2.4, skillName: "全力おすすめ！", skillType: "powerBuff", skillDesc: "8秒間、接客力アップ。成約を一気に伸ばします。" },
+    { id: "aa", name: "緋奈", cardImage: "./assets2/card/aa_hina_card_test.png", color: "#d3381c", attr: "映像", power: 1, ctMax: 2.4, skillName: "全力おすすめ！", skillType: "powerBuff", skillDesc: "8秒間、接客力アップ。成約を一気に伸ばします。" },
     { id: "ab", name: "藍", color: "#0067C0", attr: "ドライヤー", power: 1, ctMax: 3.0, skillName: "やさしい案内", skillType: "extendTime", skillDesc: "全敵の受付時間を延長し、営業残り時間も少し増やします。" },
     { id: "ac", name: "翠", color: "#02b308", attr: "PC", power: 1, ctMax: 3.5, skillName: "最適解プレゼン", skillType: "pcSweep", skillDesc: "PC属性をまとめて成約し、6秒間マッチ性能を上げます。" },
     { id: "ad", name: "こがね", color: "#FFF450", attr: "スマホ", power: 1, ctMax: 1.7, skillName: "即決トーク", skillType: "ctReduce", skillDesc: "全メンバーのCTを短縮し、6秒間テンポを上げます。" },
@@ -608,9 +608,9 @@
     state.lastActionText = `レジ誘導成功！ +${point}Pt`;
   }
 
-  function showCutin(title, color = "#ffffff", subText = "", descText = "") {
+  function showCutin(title, color = "#ffffff", subText = "", descText = "", image = "") {
     if (!state) return;
-    state.cutin = { title, color, subText, descText, createdAt: performance.now(), life: descText ? 1550 : 1150 };
+    state.cutin = { title, color, subText, descText, image, createdAt: performance.now(), life: descText || image ? 1650 : 1150 };
     state.cutinUntil = state.cutin.createdAt + state.cutin.life;
   }
 
@@ -653,7 +653,7 @@
 
   function useSkill(staff) {
     const now = performance.now();
-    showCutin(staff.skillName, staff.color, staff.name, staff.skillDesc || "");
+    showCutin(staff.skillName, staff.color, staff.name, staff.skillDesc || "", staff.skillCutin || "");
     if (staff.skillType === "powerBuff") {
       state.buffPowerUntil = now + 8000;
       state.lastActionText = "緋奈：全力おすすめ！ 接客力アップ！";
@@ -697,7 +697,7 @@
 
     for (const s of state.staff) {
       if (s.ct > 0) continue;
-      const canSpecial = false; // v037_05: オートは必殺技を使わない
+      const canSpecial = false; // v037_06: オートは必殺技を使わない
       const e = findBestTarget(s, false);
       if (!e) continue;
 
@@ -805,13 +805,14 @@
           <div class="battle-message">${escapeHtml(state.lastActionText)}</div>
         </section>
 
-        ${state.running ? renderHelpButtons("battle-help-large") : ""}
         ${renderCutinOverlay()}
         ${renderSurfaceOverlay()}
 
         <section class="battle-enemies">
-          ${state.enemies.map(renderEnemy).join("") || `<div class="battle-empty">営業開始で家電星人が来店します</div>`}
+          ${(state.enemies.length ? state.enemies.map(renderEnemy).join("") : renderEnemyDummies())}
         </section>
+
+        ${renderHelpButtons("battle-help-large")}
 
         <section class="battle-members">
           ${state.staff.map(renderStaff).join("")}
@@ -851,11 +852,14 @@
     const progress = Math.max(0, Math.min(1, (now - state.cutin.createdAt) / state.cutin.life));
     const opacity = progress < 0.8 ? 1 : Math.max(0, 1 - (progress - 0.8) / 0.2);
     return `
-      <div class="battle-cutin" style="--cutin-color:${state.cutin.color}; opacity:${opacity};">
+      <div class="battle-cutin ${state.cutin.image ? "with-image" : ""}" style="--cutin-color:${state.cutin.color}; opacity:${opacity};">
         <div class="battle-cutin-band">
-          ${state.cutin.subText ? `<small>${escapeHtml(state.cutin.subText)}</small>` : ""}
-          <b>${escapeHtml(state.cutin.title)}</b>
-          ${state.cutin.descText ? `<p>${escapeHtml(state.cutin.descText)}</p>` : ""}
+          ${state.cutin.image ? `<div class="battle-cutin-image"><img src="${escapeHtml(state.cutin.image)}" alt=""></div>` : ""}
+          <div class="battle-cutin-text">
+            ${state.cutin.subText ? `<small>${escapeHtml(state.cutin.subText)}</small>` : ""}
+            <b>${escapeHtml(state.cutin.title)}</b>
+            ${state.cutin.descText ? `<p>${escapeHtml(state.cutin.descText)}</p>` : ""}
+          </div>
         </div>
       </div>
     `;
@@ -952,6 +956,20 @@
     `;
   }
 
+
+  function renderEnemyDummies() {
+    return Array.from({ length: 3 }, (_, i) => `
+      <article class="battle-enemy-card battle-enemy-dummy" aria-hidden="true">
+        <div class="enemy-head"><span class="enemy-icon">◇</span><span class="enemy-name">開店準備中</span></div>
+        <div class="enemy-attr">家電星人 待機枠 ${i + 1}</div>
+        <div class="enemy-label">HP</div>
+        <div class="battle-bar"><i style="width:0%"></i></div>
+        <div class="enemy-label">受付時間</div>
+        <div class="battle-bar patience"><i style="width:0%"></i></div>
+      </article>
+    `).join("");
+  }
+
   function renderEnemy(e) {
     const gaugeRate = Math.max(0, Math.min(100, (e.gauge / e.maxGauge) * 100));
     const patienceRate = Math.max(0, Math.min(100, (e.patience / e.maxPatience) * 100));
@@ -1007,16 +1025,20 @@
     const ctReady = s.ct <= 0;
     const ctRate = Math.max(0, Math.min(100, 100 - (s.ct / s.ctMax) * 100));
     const skillReady = s.skill >= 100;
+    const hasCardImage = !!s.cardImage;
     return `
-      <button class="battle-member-card ${ctReady ? "ready" : "cooldown"} ${skillReady ? "skill-ready" : ""}" style="--member-color:${s.color};" data-staff-id="${s.id}">
-        <div class="member-name">${escapeHtml(s.name)}</div>
-        <div class="member-attr">${escapeHtml(s.attr)}</div>
-        <div class="member-power">通常1 / 特攻2</div>
-        <div class="member-label">CT</div>
-        <div class="battle-bar member-ct"><i style="width:${ctRate}%"></i></div>
-        <div class="member-label">必殺 ${Math.floor(s.skill)}%</div>
-        <div class="battle-bar member-skill"><i style="width:${Math.min(100, s.skill)}%"></i></div>
-        <div class="member-skill-name">${skillReady ? `必殺OK：${escapeHtml(s.skillName)}` : escapeHtml(s.skillName)}</div>
+      <button class="battle-member-card ${ctReady ? "ready" : "cooldown"} ${skillReady ? "skill-ready" : ""} ${hasCardImage ? "has-card-art" : ""}" style="--member-color:${s.color};" data-staff-id="${s.id}">
+        ${hasCardImage ? `<div class="member-card-art"><img src="${escapeHtml(s.cardImage)}" alt=""></div>` : ""}
+        <div class="member-card-info">
+          <div class="member-name">${escapeHtml(s.name)}</div>
+          <div class="member-attr">${escapeHtml(s.attr)}</div>
+          <div class="member-power">通常1 / 特攻2</div>
+          <div class="member-label">CT</div>
+          <div class="battle-bar member-ct"><i style="width:${ctRate}%"></i></div>
+          <div class="member-label">必殺 ${Math.floor(s.skill)}%</div>
+          <div class="battle-bar member-skill"><i style="width:${Math.min(100, s.skill)}%"></i></div>
+          <div class="member-skill-name">${skillReady ? `必殺OK：${escapeHtml(s.skillName)}` : escapeHtml(s.skillName)}</div>
+        </div>
       </button>
     `;
   }

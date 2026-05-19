@@ -2886,7 +2886,7 @@ body {
   #battle-root .battle-bar { height: 4px !important; margin: 1px 0 2px !important; }
 }
 
-/* === v037_05: 13属性追加 + 店長HELP大型配置 === */
+/* === v037_06: 13属性追加 + 店長HELP大型配置 === */
 #battle-root .battle-stage {
   grid-template-rows: auto auto 1fr auto !important;
 }
@@ -2982,7 +2982,7 @@ body {
 }
 
 
-/* v037_05: 場の敵と相性が良いメンバーを発光表示 */
+/* v037_06: 場の敵と相性が良いメンバーを発光表示 */
 .member-card.member-has-target {
   border-color: var(--member-match-color, #ffffff) !important;
   box-shadow:
@@ -3050,7 +3050,7 @@ body {
 }
 
 
-/* v037_05: タップ感度改善 */
+/* v037_06: タップ感度改善 */
 #battle-root .battle-member-card,
 #battle-root .battle-enemy-card,
 #battle-root button {
@@ -3078,5 +3078,282 @@ body {
 
   #battle-root .battle-member-card::after {
     inset: -4px;
+  }
+}
+
+
+/* v037_06: 緋奈テスト画像・敵ダミー枠・HELP導線調整 */
+#battle-root .battle-stage {
+  grid-template-rows: minmax(66px, auto) minmax(116px, 1fr) minmax(44px, auto) minmax(112px, 25vh) !important;
+}
+
+#battle-root .battle-enemy-dummy {
+  opacity: 0.42;
+  border-style: dashed;
+  --enemy-color: rgba(255,255,255,0.38);
+  background: rgba(255,255,255,0.035);
+  box-shadow: none;
+}
+
+#battle-root .battle-enemy-dummy .enemy-head,
+#battle-root .battle-enemy-dummy .enemy-attr,
+#battle-root .battle-enemy-dummy .enemy-label {
+  color: rgba(255,255,255,0.55);
+}
+
+#battle-root .battle-help-large {
+  position: relative;
+  z-index: 8;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(74px, 1fr));
+  gap: clamp(6px, 1.6vw, 14px);
+  padding: 5px clamp(10px, 3vw, 34px);
+  box-sizing: border-box;
+  background: linear-gradient(180deg, rgba(22, 16, 42, 0.96), rgba(10, 8, 20, 0.94));
+  border-top: 1px solid rgba(255,255,255,0.18);
+  border-bottom: 2px solid rgba(160,120,255,0.45);
+}
+
+#battle-root .battle-help-large .battle-help-btn {
+  min-height: clamp(32px, 6.4vh, 52px);
+  border-radius: 14px;
+  font-size: clamp(13px, 2vw, 22px);
+}
+
+#battle-root .battle-member-card.has-card-art {
+  padding: 0 !important;
+  isolation: isolate;
+}
+
+#battle-root .member-card-art {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#battle-root .member-card-art img {
+  position: absolute;
+  right: -12%;
+  bottom: -6%;
+  height: 122%;
+  width: auto;
+  opacity: 0.92;
+  filter: saturate(1.05) contrast(1.02);
+}
+
+#battle-root .member-card-info {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  box-sizing: border-box;
+  padding: clamp(5px, 1.0vw, 10px);
+  background: linear-gradient(90deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.62) 54%, rgba(0,0,0,0.14) 100%);
+}
+
+#battle-root .battle-member-card.has-card-art .member-name,
+#battle-root .battle-member-card.has-card-art .member-attr,
+#battle-root .battle-member-card.has-card-art .member-power,
+#battle-root .battle-member-card.has-card-art .member-label,
+#battle-root .battle-member-card.has-card-art .member-skill-name {
+  max-width: 66%;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.9);
+}
+
+#battle-root .battle-member-card.has-card-art.skill-ready .member-card-art img,
+#battle-root .battle-member-card.has-card-art.member-has-target .member-card-art img {
+  filter: brightness(1.12) saturate(1.15) contrast(1.04);
+}
+
+@media screen and (orientation: landscape) and (max-height: 520px) {
+  #battle-root .battle-stage {
+    grid-template-rows: minmax(48px, auto) minmax(92px, 1fr) minmax(34px, auto) minmax(82px, 24vh) !important;
+  }
+
+  #battle-root .battle-help-large {
+    padding: 3px 10px;
+  }
+
+  #battle-root .battle-help-large .battle-help-btn {
+    min-height: 28px;
+    font-size: 12px;
+    border-radius: 10px;
+  }
+
+  #battle-root .member-card-art img {
+    right: -18%;
+    height: 130%;
+  }
+
+  #battle-root .battle-member-card.has-card-art .member-name,
+  #battle-root .battle-member-card.has-card-art .member-attr,
+  #battle-root .battle-member-card.has-card-art .member-power,
+  #battle-root .battle-member-card.has-card-art .member-label,
+  #battle-root .battle-member-card.has-card-art .member-skill-name {
+    max-width: 70%;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  #battle-root .battle-stage {
+    grid-template-rows: auto minmax(360px, 1fr) auto auto !important;
+  }
+
+  #battle-root .battle-help-large {
+    order: 3;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 7px 10px;
+  }
+
+  #battle-root .battle-members {
+    order: 4;
+  }
+
+  #battle-root .member-card-art img {
+    right: -4%;
+    bottom: -8%;
+    height: 118%;
+  }
+}
+
+
+/* v037_07: 必殺技スライドカットイン画像 */
+#battle-root .battle-cutin.with-image .battle-cutin-band {
+  min-height: clamp(116px, 24vh, 230px);
+  padding: 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(38%, 0.48fr) minmax(42%, 0.52fr);
+  align-items: stretch;
+  background:
+    linear-gradient(90deg,
+      color-mix(in srgb, var(--cutin-color, #fff) 46%, rgba(0,0,0,0.96)) 0%,
+      rgba(0,0,0,0.92) 48%,
+      rgba(0,0,0,0.72) 100%);
+  border-top: 3px solid var(--cutin-color, #fff);
+  border-bottom: 3px solid var(--cutin-color, #fff);
+  box-shadow: 0 0 28px color-mix(in srgb, var(--cutin-color, #fff) 65%, transparent);
+  animation: cutinSlideBand 0.22s ease-out both;
+}
+
+#battle-root .battle-cutin-image {
+  position: relative;
+  height: 100%;
+  min-width: 0;
+  overflow: hidden;
+  clip-path: polygon(0 0, 92% 0, 100% 100%, 0% 100%);
+}
+
+#battle-root .battle-cutin-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.06), rgba(0,0,0,0.0) 56%, rgba(0,0,0,0.45)),
+    linear-gradient(180deg, transparent, rgba(0,0,0,0.32));
+  pointer-events: none;
+}
+
+#battle-root .battle-cutin-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
+  transform: scale(1.04);
+  filter: saturate(1.08) contrast(1.03);
+}
+
+#battle-root .battle-cutin-text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4px;
+  min-width: 0;
+  padding: clamp(12px, 2vw, 28px);
+  text-align: left;
+}
+
+#battle-root .battle-cutin.with-image .battle-cutin-text small {
+  color: var(--cutin-color, #fff);
+  font-size: clamp(14px, 2.2vw, 26px);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+#battle-root .battle-cutin.with-image .battle-cutin-text b {
+  font-size: clamp(24px, 5.2vw, 60px);
+  line-height: 1.03;
+  white-space: normal;
+  text-shadow:
+    0 3px 10px rgba(0,0,0,0.9),
+    0 0 18px color-mix(in srgb, var(--cutin-color, #fff) 70%, transparent);
+}
+
+#battle-root .battle-cutin.with-image .battle-cutin-text p {
+  max-width: 100%;
+  margin: 4px 0 0;
+  font-size: clamp(11px, 1.5vw, 18px);
+  line-height: 1.35;
+  opacity: 0.92;
+  text-align: left;
+}
+
+@keyframes cutinSlideBand {
+  from {
+    transform: translateX(-7%) skewX(-3deg);
+    filter: brightness(1.3);
+  }
+  to {
+    transform: translateX(0) skewX(0);
+    filter: brightness(1);
+  }
+}
+
+@media screen and (orientation: landscape) and (max-height: 520px) {
+  #battle-root .battle-cutin.with-image .battle-cutin-band {
+    min-height: clamp(86px, 28vh, 150px);
+    grid-template-columns: 44% 56%;
+  }
+
+  #battle-root .battle-cutin-text {
+    padding: 8px 12px;
+  }
+
+  #battle-root .battle-cutin.with-image .battle-cutin-text b {
+    font-size: clamp(20px, 4.6vw, 40px);
+  }
+
+  #battle-root .battle-cutin.with-image .battle-cutin-text p {
+    font-size: clamp(9px, 1.3vw, 13px);
+    line-height: 1.25;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  #battle-root .battle-cutin.with-image .battle-cutin-band {
+    min-height: 190px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 95px 1fr;
+  }
+
+  #battle-root .battle-cutin-image {
+    clip-path: none;
+  }
+
+  #battle-root .battle-cutin-image img {
+    object-position: center 45%;
+  }
+
+  #battle-root .battle-cutin-text {
+    align-items: center;
+    text-align: center;
+    padding: 10px 14px 16px;
+  }
+
+  #battle-root .battle-cutin.with-image .battle-cutin-text p {
+    text-align: center;
   }
 }
