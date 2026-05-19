@@ -1,9 +1,15 @@
 [
   {
+    "auto": true,
     "bg": "title.jpg",
     "effect": "whitein",
-    "name": "System",
-    "text": "White・Black Twinsのシナリオは現在準備中です。"
+    "textareashow": false
+  },
+  {
+    "auto": true,
+    "randomimageson": true,
+    "randomtexts": true,
+    "wait": 1750
   },
   {
     "auto": false,
