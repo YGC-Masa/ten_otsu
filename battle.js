@@ -154,13 +154,13 @@
       : "待機中";
 
     root.innerHTML = `
-      <div class="battle-panel">
+      <div class="battle-panel battle-vertical ${state.running ? "running" : ""}">
         <div class="battle-header">
           <div>
             <div class="battle-title">店舗営業：デッキ接客バトル試作</div>
-            <div class="battle-subtitle">30秒で家電星人をどれだけ接客できるか</div>
+            <div class="battle-subtitle">上：状況 / 中央：家電星人 / 下：メンバー5人</div>
           </div>
-          <button class="battle-close" data-action="close">×</button>
+          ${state.running ? "" : `<button class="battle-close" data-action="close">×</button>`}
         </div>
 
         <div class="battle-status ${state.rush ? "rush" : ""}">
@@ -176,25 +176,31 @@
           <div class="customer-area">
             ${state.customers.map(renderCustomer).join("") || `<div class="battle-empty">営業開始で家電星人が来店します</div>`}
           </div>
-
-          <div class="staff-area">
-            ${state.staff.map(renderStaff).join("")}
-          </div>
         </div>
 
-        <div class="battle-footer">
-          <div class="battle-actions">
-            <button data-action="start">${state.running ? "リスタート" : "営業開始"}</button>
-            <button data-action="auto">おまかせ1手</button>
-            <button data-action="finish">終了</button>
-          </div>
-          <div class="battle-help">
-            ${selected ? `${selected.name}を選択中。家電星人をタップして接客。` : "店員カードをタップして選択してください。"}
-          </div>
-          <div class="battle-log">
-            ${state.log.map((line) => `<div>${line}</div>`).join("")}
-          </div>
+        <div class="staff-area battle-member-dock">
+          ${state.staff.map(renderStaff).join("")}
         </div>
+
+        ${state.running ? `
+          <div class="battle-running-help">
+            メンバーをタップすると即対応します。必殺技はカード下のボタンから発動します。
+          </div>
+        ` : `
+          <div class="battle-footer">
+            <div class="battle-actions">
+              <button data-action="start">${state.served || state.missed || state.score ? "もう一度営業" : "営業開始"}</button>
+              <button data-action="auto" ${state.customers.length ? "" : "disabled"}>おまかせ1手</button>
+              <button data-action="finish">終了</button>
+            </div>
+            <div class="battle-help">
+              ${selected ? `${selected.name}の接客確認中。営業中はメンバータップで即対応します。` : "営業開始後は、下部メンバーをタップするだけで接客します。"}
+            </div>
+            <div class="battle-log">
+              ${state.log.map((line) => `<div>${line}</div>`).join("")}
+            </div>
+          </div>
+        `}
       </div>
     `;
   }
@@ -243,7 +249,7 @@
     selectedStaffId = null;
     spawnCustomer(true);
     spawnCustomer(true);
-    pushLog("営業開始！30秒でできるだけ多く接客しよう。残り10秒からラッシュ。")
+    pushLog("営業開始！店員をタップすると即対応。残り10秒からラッシュ。")
     lastTimestamp = performance.now();
     timerId = window.setInterval(tick, 100);
     render();
@@ -311,9 +317,41 @@
   function selectStaff(id) {
     const s = state.staff.find((x) => x.id === id);
     if (!s) return;
+    if (state.running) {
+      serveBestCustomerForStaff(id);
+      return;
+    }
     selectedStaffId = id;
-    pushLog(`${s.name}を選択。`);
+    pushLog(`${s.name}を確認。営業中はタップ時点で即対応します。`);
     render();
+  }
+
+  function serveBestCustomerForStaff(staffId) {
+    if (!state.running) return;
+    const s = state.staff.find((x) => x.id === staffId);
+    if (!s) return;
+    if (s.ct > 0) {
+      pushLog(`${s.name}は準備中です。`);
+      render();
+      return;
+    }
+    if (!state.customers.length) {
+      pushLog("今は対応できる家電星人がいません。");
+      render();
+      return;
+    }
+
+    let best = null;
+    for (const c of state.customers) {
+      const matchScore = s.attr === c.attr ? 120 : 0;
+      const urgentScore = (1 - c.patience / c.maxPatience) * 70;
+      const finishScore = c.gauge <= s.power * 1.5 ? 30 : 0;
+      const rareScore = c.rare ? 20 : 0;
+      const score = matchScore + urgentScore + finishScore + rareScore;
+      if (!best || score > best.score) best = { c, score };
+    }
+    selectedStaffId = staffId;
+    serveCustomer(best.c.id);
   }
 
   function serveCustomer(customerId) {
@@ -441,7 +479,14 @@
     else if (action === "auto") autoOneMove();
     else if (staffId) selectStaff(staffId);
     else if (skillId) useSkill(skillId);
-    else if (customerId) serveCustomer(Number(customerId));
+    else if (customerId) {
+      if (state.running) {
+        pushLog("家電星人ではなく、店員カードをタップしてください。");
+        render();
+      } else {
+        serveCustomer(Number(customerId));
+      }
+    }
   });
 
   window.startDeckBattlePrototype = function () {

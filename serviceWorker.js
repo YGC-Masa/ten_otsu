@@ -1,5 +1,5 @@
 // serviceWorker.js - v037 修正版
-const CACHE_NAME = "tenotsu-v037-battle-iospwa-20260519";
+const CACHE_NAME = "tenotsu-v037-battle-bottomdeck-20260519";
 const URLS_TO_CACHE = [
   "./",
   "./index.html",
