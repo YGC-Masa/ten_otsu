@@ -1,25 +1,59 @@
 // battle.js - v037 integrated deck battle prototype
 // 店舗営業：上=情報 / 中央=家電星人 / 下=メンバー5人
-// 操作はメンバーのシングルタップで通常接客、ダブルタップで必殺接客。通常敵HP2、レアHP3。ターゲットは選択メンバーに最適な家電星人へ自動Fix。
+// 操作はメンバーのシングルタップで通常接客、ダブルタップで必殺接客。通常敵HP2、レアHP3。ターゲットは選択メンバーに最適な家電星人へ自動Fix。彩愛の必殺は盤面整理＋敵チェンジ短縮。
 
 (function () {
   const BATTLE_SECONDS = 30;
   const MAX_ENEMIES = 3;
-  const MAX_CHANGES = 3;
-  const CHANGE_SECONDS = 1.0;
+  const CHANGE_SECONDS = 2.0;
+  const CHANGE_SECONDS_BUFFED = 1.0;
+  const AUTO_ACTION_INTERVAL = 0.45;
+  const AUTO_CT_MULTIPLIER = 1.5; // オート営業ペナルティ：自動操作時のみCT1.5倍
+  const HELP_STOCK_MAX = 3;
+  const HELP_STOCK_STEP = 10;
   const CHANGE_MESSAGES = [
     "今回は別スタッフへ案内",
     "少々お待ちください",
     "別のお客様を先に対応"
   ];
 
-  const staffBase = [
+  const staffMaster = [
     { id: "aa", name: "緋奈", color: "#d3381c", attr: "映像", power: 1, ctMax: 2.4, skillName: "全力おすすめ！", skillType: "powerBuff" },
     { id: "ab", name: "藍", color: "#0067C0", attr: "美容", power: 1, ctMax: 3.0, skillName: "やさしい案内", skillType: "extendTime" },
     { id: "ac", name: "翠", color: "#02b308", attr: "PC", power: 1, ctMax: 3.5, skillName: "最適解プレゼン", skillType: "pcSweep" },
     { id: "ad", name: "こがね", color: "#FFF450", attr: "スマホ", power: 1, ctMax: 1.7, skillName: "即決トーク", skillType: "ctReduce" },
-    { id: "ae", name: "琥珀", color: "#F68B1F", attr: "オーディオ", power: 1, ctMax: 2.7, skillName: "フロアダッシュ", skillType: "rushBuff" }
+    { id: "ae", name: "琥珀", color: "#F68B1F", attr: "オーディオ", power: 1, ctMax: 2.7, skillName: "フロアダッシュ", skillType: "rushBuff" },
+    { id: "af", name: "真花", color: "#C0C0C0", attr: "美容", power: 1, ctMax: 2.8, skillName: "お嬢様スマイル", skillType: "comboPlus" },
+    { id: "ag", name: "雪乃", color: "#6495ED", attr: "調理", power: 1, ctMax: 3.2, skillName: "静かな提案", skillType: "freezeTime" },
+    { id: "ah", name: "美空", color: "#fffef6", attr: "季節", power: 1, ctMax: 2.6, skillName: "夏空接客", skillType: "rescue" },
+    { id: "ai", name: "夜空", color: "#00152d", attr: "季節", power: 1, ctMax: 2.9, skillName: "冬空フォーカス", skillType: "rareKiller" },
+    { id: "aj", name: "桃", color: "#F7ADC3", attr: "映像", power: 1, ctMax: 2.1, skillName: "店内配信", skillType: "buzz" },
+    { id: "ak", name: "彩愛", color: "#694D9F", attr: "生活", power: 1, ctMax: 3.0, skillName: "優雅な家事導線", skillType: "ayameRoute" },
+    { id: "al", name: "里美", color: "#8d5025", attr: "生活", power: 1, ctMax: 3.1, skillName: "受付整理", skillType: "changeSupport" },
+    { id: "am", name: "萌", color: "#33CC99", attr: "季節", power: 1, ctMax: 2.9, skillName: "おにいちゃん助けて", skillType: "managerBoost" }
   ];
+  const DEFAULT_STAFF_IDS = ["aa", "ab", "ac", "ad", "ae"];
+  const DECK_STORAGE_KEY = "tenotsu_battle_deck_v1";
+  let activeStaffIds = loadDeckIds();
+
+  function loadDeckIds() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(DECK_STORAGE_KEY) || "null");
+      if (Array.isArray(saved) && saved.length === 5 && saved.every(id => staffMaster.some(s => s.id === id))) {
+        return saved;
+      }
+    } catch (e) {}
+    return [...DEFAULT_STAFF_IDS];
+  }
+
+  function saveDeckIds(ids) {
+    activeStaffIds = [...ids];
+    try { localStorage.setItem(DECK_STORAGE_KEY, JSON.stringify(activeStaffIds)); } catch (e) {}
+  }
+
+  function getStaffBase() {
+    return activeStaffIds.map(id => staffMaster.find(s => s.id === id)).filter(Boolean);
+  }
 
 
   const attrColors = {
@@ -29,7 +63,8 @@
     "スマホ": "#fdd835",
     "オーディオ": "#fb8c00",
     "季節": "#64b5f6",
-    "生活": "#ab47bc"
+    "生活": "#ab47bc",
+    "調理": "#ffb74d"
   };
 
   const enemyTypes = [
@@ -50,6 +85,9 @@
   let staffTapTimer = null;
   let pendingStaffTapId = null;
   let pendingStaffTapAt = 0;
+  const ENEMY_DOUBLE_TAP_MS = 300;
+  let pendingEnemyTapId = null;
+  let pendingEnemyTapAt = 0;
 
   function makeState() {
     return {
@@ -65,15 +103,23 @@
       spawnTimer: 0,
       rush: false,
       targetPreviewId: null,
-      changesLeft: MAX_CHANGES,
-      changePointer: null,
+      autoMode: false,
+      autoTimer: 0,
+      helpStock: 0,
+      helpEarnCounter: 0,
+      nextHitId: 1,
+      hitEffects: [],
+
       lastActionText: "営業開始を押してください。",
       buffPowerUntil: 0,
       buffMatchUntil: 0,
       buffSpeedUntil: 0,
+      buffChangeUntil: 0,
       buffRushUntil: 0,
       comboShield: false,
-      staff: staffBase.map(s => ({ ...s, ct: 0, skill: 0 })),
+      deckEdit: false,
+      deckSelection: [...activeStaffIds],
+      staff: getStaffBase().map(s => ({ ...s, ct: 0, skill: 0 })),
       enemies: []
     };
   }
@@ -97,6 +143,7 @@
 
   function closeBattle() {
     clearPendingStaffTap();
+    clearPendingEnemyTap();
     stopLoop();
     if (root) root.classList.add("hidden");
   }
@@ -108,18 +155,28 @@
     pendingStaffTapAt = 0;
   }
 
+  function clearPendingEnemyTap() {
+    pendingEnemyTapId = null;
+    pendingEnemyTapAt = 0;
+  }
+
   function stopLoop() {
     if (timerId) window.clearInterval(timerId);
     timerId = null;
   }
 
-  function startBattle() {
+  function startBattle(autoMode = false) {
     clearPendingStaffTap();
+    clearPendingEnemyTap();
     stopLoop();
     state = makeState();
     state.running = true;
     state.finished = false;
-    state.lastActionText = "営業開始！ メンバータップで接客、敵フリックでチェンジできます。";
+    state.autoMode = !!autoMode;
+    state.autoTimer = 0;
+    state.lastActionText = state.autoMode
+      ? "オート営業開始！ 自動操作はCT1.5倍です。店長ヘルプは右上から使用できます。"
+      : "営業開始！ メンバータップで接客、敵ダブルタップでチェンジできます。";
     spawnEnemy(true);
     spawnEnemy(true);
     spawnEnemy(true);
@@ -157,7 +214,9 @@
 
     updateStaff(dt, now);
     updateEnemies(dt);
+    updateHitEffects(now);
     maintainEnemies();
+    runAutoBattle(dt);
 
     if (state.timeLeft <= 0) {
       finishBattle();
@@ -177,6 +236,14 @@
   function updateEnemies(dt) {
     for (let i = state.enemies.length - 1; i >= 0; i--) {
       const e = state.enemies[i];
+
+      if (e.defeating) {
+        e.defeatLeft -= dt;
+        if (e.defeatLeft <= 0) {
+          completeEnemy(e, !!e.defeatMatch);
+        }
+        continue;
+      }
 
       if (e.exchanging) {
         e.exchangeLeft -= dt;
@@ -226,7 +293,11 @@
       rare,
       exchanging: false,
       exchangeLeft: 0,
-      exchangeMessage: ""
+      exchangeMax: CHANGE_SECONDS,
+      exchangeMessage: "",
+      defeating: false,
+      defeatLeft: 0,
+      defeatMatch: false
     };
   }
 
@@ -323,6 +394,7 @@
 
     state.targetPreviewId = target.id;
     resolveContact(s, target, true);
+    useSkill(s);
     s.skill = 0;
     s.ct = s.ctMax * 0.65;
     render();
@@ -333,7 +405,7 @@
     let bestScore = -Infinity;
 
     for (const e of state.enemies) {
-      if (e.exchanging) continue;
+      if (e.exchanging || e.defeating) continue;
       const matchScore = staff.attr === e.attr ? 120 : 0;
       const urgentScore = (1 - e.patience / e.maxPatience) * 72;
       const finishScore = e.gauge <= getAttackDamage(staff, e, isSpecial) ? 48 : 0;
@@ -361,16 +433,41 @@
     const damage = getAttackDamage(staff, enemy, isSpecial);
 
     enemy.gauge -= damage;
+    addHitEffect(enemy, staff, damage, isSpecial, isMatch);
     state.lastActionText = `${staff.name} → ${enemy.name}：${damage}ダメージ ${isSpecial ? "必殺" : "通常"} ${isMatch ? "特攻◎" : "等倍"}`;
 
-    if (enemy.gauge <= 0) completeEnemy(enemy, isMatch);
+    if (enemy.gauge <= 0) {
+      enemy.gauge = 0;
+      enemy.defeating = true;
+      enemy.defeatLeft = 0.32;
+      enemy.defeatMatch = isMatch;
+    }
   }
 
-  function completeEnemy(enemy, isMatch) {
+  function addHitEffect(enemy, staff, damage, isSpecial, isMatch, customText = null) {
+    if (!state) return;
+    state.hitEffects.push({
+      id: state.nextHitId++,
+      enemyId: enemy.id,
+      color: staff.color || "#ffffff",
+      text: `${customText || (isSpecial ? "必殺HIT!" : "HIT!")} ${damage}`,
+      subText: isMatch ? "特攻" : "",
+      createdAt: performance.now(),
+      life: 620
+    });
+  }
+
+  function updateHitEffects(now) {
+    if (!state || !state.hitEffects) return;
+    state.hitEffects = state.hitEffects.filter(effect => now - effect.createdAt < effect.life);
+  }
+
+  function completeEnemy(enemy, isMatch, options = {}) {
     const idx = state.enemies.findIndex(x => x.id === enemy.id);
     if (idx >= 0) state.enemies.splice(idx, 1);
 
     state.served += 1;
+    addHelpProgress(1);
     state.combo += 1;
     state.maxCombo = Math.max(state.maxCombo, state.combo);
 
@@ -382,28 +479,33 @@
     state.lastActionText = `レジ誘導成功！ +${point}Pt`;
   }
 
+  function getCurrentChangeSeconds() {
+    return performance.now() < state.buffChangeUntil ? CHANGE_SECONDS_BUFFED : CHANGE_SECONDS;
+  }
+
+  function applyFlatDamageToEnemy(enemy, damage, sourceStaff, label = "追加HIT!") {
+    if (!enemy || enemy.exchanging || enemy.defeating || damage <= 0) return;
+    enemy.gauge -= damage;
+    addHitEffect(enemy, sourceStaff, damage, false, false, label);
+    if (enemy.gauge <= 0) {
+      enemy.gauge = 0;
+      enemy.defeating = true;
+      enemy.defeatLeft = 0.32;
+      enemy.defeatMatch = false;
+    }
+  }
+
   function requestEnemyChange(enemyId) {
     if (!state || !state.running) return;
     const enemy = state.enemies.find(e => e.id === enemyId);
-    if (!enemy || enemy.exchanging) return;
-
-    if (state.changesLeft <= 0) {
-      state.lastActionText = "チェンジ回数が残っていません。";
-      render();
-      return;
-    }
-
-    if (enemy.rare) {
-      state.lastActionText = "RARE家電星人はチェンジできません。";
-      render();
-      return;
-    }
+    if (!enemy || enemy.exchanging || enemy.defeating) return;
 
     const message = CHANGE_MESSAGES[Math.floor(Math.random() * CHANGE_MESSAGES.length)];
     enemy.exchanging = true;
-    enemy.exchangeLeft = CHANGE_SECONDS;
+    const changeSeconds = getCurrentChangeSeconds();
+    enemy.exchangeLeft = changeSeconds;
+    enemy.exchangeMax = changeSeconds;
     enemy.exchangeMessage = message;
-    state.changesLeft -= 1;
     state.combo = 0;
     state.targetPreviewId = null;
     state.lastActionText = message;
@@ -431,6 +533,14 @@
       state.staff.forEach(s => { s.ct = Math.min(s.ct, 0.35); });
       state.buffSpeedUntil = now + 6000;
       state.lastActionText = "こがね：即決トーク！CT短縮。";
+    } else if (staff.skillType === "ayameRoute") {
+      const extras = state.enemies
+        .filter(e => !e.exchanging && !e.defeating)
+        .sort((a, b) => a.gauge - b.gauge || a.patience - b.patience)
+        .slice(0, 2);
+      extras.forEach(e => applyFlatDamageToEnemy(e, 1, staff, "導線HIT!"));
+      state.buffChangeUntil = now + 6000;
+      state.lastActionText = "彩愛：優雅な家事導線！敵2体に1ダメージ、6秒間チェンジ1秒。";
     } else if (staff.skillType === "rushBuff") {
       state.buffRushUntil = now + 8000;
       state.comboShield = true;
@@ -438,32 +548,98 @@
     }
   }
 
-  function autoOneMove() {
-    if (!state || !state.running) return;
+  function autoOneMove(showMessage = true) {
+    if (!state || !state.running) return false;
     let bestStaff = null;
     let bestEnemy = null;
+    let useSpecial = false;
     let bestScore = -Infinity;
 
     for (const s of state.staff) {
       if (s.ct > 0) continue;
-      const e = findBestTarget(s);
+      const canSpecial = s.skill >= 100;
+      const e = findBestTarget(s, canSpecial);
       if (!e) continue;
-      const score = (s.attr === e.attr ? 120 : 0) + (1 - e.patience / e.maxPatience) * 72 + getAttackDamage(s, e, false) * 20;
+
+      const specialScore = canSpecial ? 35 : 0;
+      const score =
+        (s.attr === e.attr ? 120 : 0) +
+        (1 - e.patience / e.maxPatience) * 72 +
+        getAttackDamage(s, e, canSpecial) * 24 +
+        specialScore;
+
       if (score > bestScore) {
         bestScore = score;
         bestStaff = s;
         bestEnemy = e;
+        useSpecial = canSpecial;
       }
     }
 
     if (bestStaff && bestEnemy) {
       state.targetPreviewId = bestEnemy.id;
-      resolveContact(bestStaff, bestEnemy);
-      bestStaff.ct = bestStaff.ctMax;
-      bestStaff.skill = Math.min(100, bestStaff.skill + 18);
-    } else {
-      state.lastActionText = "おまかせ：今は動けるメンバーがいません。";
+      resolveContact(bestStaff, bestEnemy, useSpecial);
+      if (useSpecial) useSkill(bestStaff);
+      bestStaff.ct = bestStaff.ctMax * (useSpecial ? 0.65 : 1) * AUTO_CT_MULTIPLIER;
+      bestStaff.skill = useSpecial ? 0 : Math.min(100, bestStaff.skill + 18);
+      return true;
     }
+
+    if (showMessage) {
+      state.lastActionText = "オート：今は動けるメンバーがいません。";
+      render();
+    }
+    return false;
+  }
+
+  function runAutoBattle(dt) {
+    if (!state || !state.running || !state.autoMode) return;
+    state.autoTimer -= dt;
+    if (state.autoTimer > 0) return;
+
+    const moved = autoOneMove(false);
+    state.autoTimer = moved ? AUTO_ACTION_INTERVAL : 0.18;
+  }
+
+  function toggleAutoBattle() {
+    if (!state || !state.running) return;
+    state.autoMode = !state.autoMode;
+    state.autoTimer = 0;
+    state.lastActionText = state.autoMode ? "オート営業ON：自動操作はCT1.5倍です。" : "オート営業OFF";
+    render();
+  }
+
+  function addHelpProgress(count) {
+    if (!state) return;
+    state.helpEarnCounter += count;
+    while (state.helpEarnCounter >= HELP_STOCK_STEP && state.helpStock < HELP_STOCK_MAX) {
+      state.helpEarnCounter -= HELP_STOCK_STEP;
+      state.helpStock += 1;
+      state.lastActionText = `店長ヘルプが1つ溜まりました！ 残り${state.helpStock}/${HELP_STOCK_MAX}`;
+    }
+    if (state.helpStock >= HELP_STOCK_MAX) {
+      state.helpEarnCounter = Math.min(state.helpEarnCounter, HELP_STOCK_STEP - 1);
+    }
+  }
+
+  function useManagerHelp() {
+    if (!state || !state.running) return;
+    if (state.helpStock <= 0) {
+      state.lastActionText = "店長ヘルプのストックがありません。成約10件で1つ溜まります。";
+      render();
+      return;
+    }
+
+    state.helpStock -= 1;
+    state.staff.forEach(s => { s.ct = 0; });
+
+    const targets = [...state.enemies.filter(e => !e.exchanging)];
+    targets.forEach(e => completeEnemy(e, true, { help: true }));
+    state.enemies = state.enemies.filter(e => e.exchanging);
+    while (state.enemies.length < MAX_ENEMIES) spawnEnemy(true);
+
+    state.targetPreviewId = null;
+    state.lastActionText = `店長ヘルプ発動！ リキャストクリア＋${targets.length}体を一掃成約、オールチェンジ！`;
     render();
   }
 
@@ -482,8 +658,8 @@
             <span>離脱：<b>${state.missed}</b></span>
             <span>コンボ：<b>${state.combo}</b></span>
             <span>売上Pt：<b>${state.score}</b></span>
-            <span>チェンジ：<b>${state.changesLeft}</b>/${MAX_CHANGES}</span>
           </div>
+          ${renderHudActions()}
           <div class="battle-message">${escapeHtml(state.lastActionText)}</div>
         </section>
 
@@ -500,7 +676,27 @@
     `;
   }
 
+  function renderHudActions() {
+    if (!state.running) return "";
+    const helpButtons = Array.from({ length: HELP_STOCK_MAX }, (_, i) => {
+      const available = i < state.helpStock;
+      return `<button class="battle-help-btn ${available ? "available" : "empty"}" data-action="help" ${available ? "" : "disabled"}>店長</button>`;
+    }).join("");
+
+    return `
+      <div class="battle-hud-actions">
+        <button class="battle-auto-toggle ${state.autoMode ? "on" : ""}" data-action="autoToggle">${state.autoMode ? "オートON" : "オートOFF"}</button>
+        <div class="battle-help-stock" title="成約10件で1つ、最大3つまでストック">
+          <span>店長ヘルプ</span>
+          ${helpButtons}
+        </div>
+      </div>
+    `;
+  }
+
   function renderControlOverlay() {
+    if (state.deckEdit) return renderDeckEditorOverlay();
+
     const isResult = state.finished;
     return `
       <div class="battle-control-overlay">
@@ -515,11 +711,12 @@
             </div>
           ` : `
             <div class="battle-result-title">店舗営業プロトタイプ</div>
-            <p class="battle-control-help">30秒で家電星人をどれだけ接客できるか。敵HPは通常2・レア3。メンバーはシングルタップ通常、ダブルタップ必殺。不要な敵は左右フリックで1秒かけてチェンジできます。</p>
+            <p class="battle-control-help">30秒で家電星人をどれだけ接客できるか。メンバーはシングルタップ通常、ダブルタップ必殺。デッキ編成で5人を選んで営業できます。</p>
           `}
-          <div class="battle-control-buttons">
+          <div class="battle-control-buttons battle-main-buttons">
             <button data-action="start">${isResult ? "もう一度営業" : "営業開始"}</button>
-            <button data-action="auto" ${state.enemies.length ? "" : "disabled"}>おまかせ1手</button>
+            <button data-action="auto">${isResult ? "オートプレイでもう一度" : "オートプレイ"}</button>
+            <button data-action="deckEdit">デッキ編成</button>
             <button data-action="close">戻る</button>
           </div>
         </div>
@@ -527,10 +724,57 @@
     `;
   }
 
+  function renderDeckEditorOverlay() {
+    const selected = state.deckSelection || [];
+    const canDecide = selected.length === 5;
+    const row1 = ["aa", "ab", "ac", "ad", "ae"];
+    const row2 = ["af", "ag", "ah", "ai", "aj"];
+    const row3 = ["ak", "al", "am"];
+
+    return `
+      <div class="battle-control-overlay deck-edit-overlay">
+        <div class="battle-deck-box">
+          <div class="battle-result-title">デッキ編成</div>
+          <p class="battle-control-help">出撃するメンバーを5人選択してください。選択中のキャラは白反転します。選択数：${selected.length}/5</p>
+          <div class="deck-select-grid">
+            <div class="deck-select-row deck-row-five">${row1.map(renderDeckSelectCard).join("")}</div>
+            <div class="deck-select-row deck-row-five">${row2.map(renderDeckSelectCard).join("")}</div>
+            <div class="deck-select-row deck-row-bottom">
+              ${row3.map(renderDeckSelectCard).join("")}
+              <div class="deck-decision-area">
+                <button class="deck-decision-main" data-action="deckDecide" ${canDecide ? "" : "disabled"}>決定</button>
+                <div class="deck-small-buttons">
+                  <button data-action="deckReset">リセット</button>
+                  <button data-action="deckCancel">キャンセル</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  function renderDeckSelectCard(staffId) {
+    const s = staffMaster.find(x => x.id === staffId);
+    if (!s) return "";
+    const selected = state.deckSelection && state.deckSelection.includes(staffId);
+    const order = selected ? state.deckSelection.indexOf(staffId) + 1 : "";
+    return `
+      <button class="deck-select-card ${selected ? "selected" : ""}" style="--member-color:${s.color};" data-action="deckToggle" data-deck-id="${s.id}">
+        <span class="deck-select-order">${order}</span>
+        <b>${escapeHtml(s.name)}</b>
+        <small>${escapeHtml(s.attr)}</small>
+        <em>${escapeHtml(s.skillName)}</em>
+      </button>
+    `;
+  }
+
   function renderEnemy(e) {
     const gaugeRate = Math.max(0, Math.min(100, (e.gauge / e.maxGauge) * 100));
     const patienceRate = Math.max(0, Math.min(100, (e.patience / e.maxPatience) * 100));
-    const exchangeRate = e.exchanging ? Math.max(0, Math.min(100, (1 - e.exchangeLeft / CHANGE_SECONDS) * 100)) : 0;
+    const exchangeMax = e.exchangeMax || CHANGE_SECONDS;
+    const exchangeRate = e.exchanging ? Math.max(0, Math.min(100, (1 - e.exchangeLeft / exchangeMax) * 100)) : 0;
     const target = e.id === state.targetPreviewId;
     const enemyColor = attrColors[e.attr] || "#ff841f";
 
@@ -541,20 +785,40 @@
           <div class="enemy-exchange-message">${escapeHtml(e.exchangeMessage)}</div>
           <div class="enemy-label">交換中 ${Math.max(0, e.exchangeLeft).toFixed(1)}秒</div>
           <div class="battle-bar exchange"><i style="width:${exchangeRate}%"></i></div>
+          ${renderHitEffects(e.id)}
         </article>
       `;
     }
 
     return `
-      <article class="battle-enemy-card ${e.rare ? "rare" : ""} ${target ? "target" : ""}" data-enemy-id="${e.id}" style="--enemy-color:${enemyColor};">
+      <article class="battle-enemy-card ${e.rare ? "rare" : ""} ${target ? "target" : ""} ${e.defeating ? "defeating" : ""}" data-enemy-id="${e.id}" style="--enemy-color:${enemyColor};">
         <div class="enemy-head"><span class="enemy-icon">${e.icon}</span><span class="enemy-name">${escapeHtml(e.name)}</span>${e.rare ? "<b>RARE</b>" : ""}</div>
         <div class="enemy-attr">${escapeHtml(e.attr)} / ${escapeHtml(e.text)}</div>
         <div class="enemy-label">HP</div>
         <div class="battle-bar"><i style="width:${gaugeRate}%"></i></div>
-        <div class="enemy-label">受付時間 ${Math.max(0, e.patience).toFixed(1)}秒　↔フリックでチェンジ</div>
+        <div class="enemy-label">受付時間 ${Math.max(0, e.patience).toFixed(1)}秒　ダブルタップでチェンジ</div>
         <div class="battle-bar patience"><i style="width:${patienceRate}%"></i></div>
+        ${e.defeating ? `<div class="enemy-contract-label">成約!</div>` : ""}
+        ${renderHitEffects(e.id)}
       </article>
     `;
+  }
+
+  function renderHitEffects(enemyId) {
+    if (!state || !state.hitEffects) return "";
+    const now = performance.now();
+    const effects = state.hitEffects.filter(effect => effect.enemyId === enemyId);
+    if (!effects.length) return "";
+
+    return `<div class="enemy-hit-layer">${effects.map(effect => {
+      const progress = Math.max(0, Math.min(1, (now - effect.createdAt) / effect.life));
+      const opacity = Math.max(0, 1 - progress);
+      const y = -22 * progress;
+      const scale = 1 + progress * 0.18;
+      return `<div class="enemy-hit-pop" style="--hit-color:${effect.color}; opacity:${opacity}; transform:translate(-50%, calc(-50% + ${y}px)) scale(${scale});">
+        <span>${escapeHtml(effect.text)}</span>${effect.subText ? `<small>${escapeHtml(effect.subText)}</small>` : ""}
+      </div>`;
+    }).join("")}</div>`;
   }
 
   function renderStaff(s) {
@@ -588,29 +852,73 @@
       .replace(/'/g, "&#039;");
   }
 
-  function handleEnemyPointerDown(enemyId, event) {
+  function handleEnemyPointerUp(enemyId, event) {
     if (!state || !state.running) return;
-    state.changePointer = {
-      enemyId,
-      x: event.clientX,
-      y: event.clientY,
-      time: performance.now()
-    };
+
+    const now = performance.now();
+    const isDoubleTap =
+      pendingEnemyTapId === enemyId &&
+      now - pendingEnemyTapAt <= ENEMY_DOUBLE_TAP_MS;
+
+    if (isDoubleTap) {
+      clearPendingEnemyTap();
+      if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      requestEnemyChange(enemyId);
+      return;
+    }
+
+    pendingEnemyTapId = enemyId;
+    pendingEnemyTapAt = now;
   }
 
-  function handleEnemyPointerUp(enemyId, event) {
-    if (!state || !state.running || !state.changePointer) return;
-    if (state.changePointer.enemyId !== enemyId) return;
+  function openDeckEditor() {
+    if (!state || state.running) return;
+    state.deckEdit = true;
+    state.deckSelection = [...activeStaffIds];
+    render();
+  }
 
-    const dx = event.clientX - state.changePointer.x;
-    const dy = event.clientY - state.changePointer.y;
-    state.changePointer = null;
-
-    if (Math.abs(dx) >= 40 && Math.abs(dx) > Math.abs(dy) * 1.25) {
-      event.preventDefault();
-      event.stopPropagation();
-      requestEnemyChange(enemyId);
+  function toggleDeckStaff(staffId) {
+    if (!state || !state.deckEdit) return;
+    const selected = state.deckSelection || [];
+    if (selected.includes(staffId)) {
+      state.deckSelection = selected.filter(id => id !== staffId);
+    } else if (selected.length < 5) {
+      state.deckSelection = [...selected, staffId];
+    } else {
+      state.lastActionText = "デッキは5人までです。入れ替える場合は先に誰かを外してください。";
     }
+    render();
+  }
+
+  function decideDeckSelection() {
+    if (!state || !state.deckEdit) return;
+    if (!state.deckSelection || state.deckSelection.length !== 5) {
+      state.lastActionText = "メンバーを5人選ぶと決定できます。";
+      render();
+      return;
+    }
+    saveDeckIds(state.deckSelection);
+    state.staff = getStaffBase().map(s => ({ ...s, ct: 0, skill: 0 }));
+    state.deckEdit = false;
+    state.lastActionText = `デッキを更新しました：${state.staff.map(s => s.name).join(" / ")}`;
+    render();
+  }
+
+  function resetDeckSelection() {
+    if (!state || !state.deckEdit) return;
+    state.deckSelection = [...DEFAULT_STAFF_IDS];
+    render();
+  }
+
+  function cancelDeckEditor() {
+    if (!state || !state.deckEdit) return;
+    state.deckEdit = false;
+    state.deckSelection = [...activeStaffIds];
+    render();
   }
 
   document.addEventListener("click", (event) => {
@@ -621,16 +929,16 @@
     const action = button.dataset.action;
     const staffId = button.dataset.staffId;
 
-    if (action === "start") startBattle();
+    if (action === "start") startBattle(false);
     else if (action === "close") closeBattle();
-    else if (action === "auto") autoOneMove();
-  });
-
-  document.addEventListener("pointerdown", (event) => {
-    if (!root || root.classList.contains("hidden")) return;
-    const enemyCard = event.target.closest("[data-enemy-id]");
-    if (!enemyCard || !root.contains(enemyCard)) return;
-    handleEnemyPointerDown(Number(enemyCard.dataset.enemyId), event);
+    else if (action === "auto") startBattle(true);
+    else if (action === "deckEdit") openDeckEditor();
+    else if (action === "deckToggle") toggleDeckStaff(button.dataset.deckId);
+    else if (action === "deckDecide") decideDeckSelection();
+    else if (action === "deckReset") resetDeckSelection();
+    else if (action === "deckCancel") cancelDeckEditor();
+    else if (action === "autoToggle") toggleAutoBattle();
+    else if (action === "help") useManagerHelp();
   });
 
   document.addEventListener("pointerup", (event) => {
@@ -647,6 +955,6 @@
     handleStaffPointer(staffButton.dataset.staffId, event);
   });
 
-  window.BattleProto = { openBattle, closeBattle, startBattle, autoOneMove };
+  window.BattleProto = { openBattle, closeBattle, startBattle, autoOneMove, toggleAutoBattle, useManagerHelp };
   window.startDeckBattlePrototype = openBattle;
 })();

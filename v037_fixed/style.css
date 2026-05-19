@@ -1593,9 +1593,9 @@ body {
   #battle-root .battle-control-box { padding: 12px; }
 }
 
-/* v037 deck battle: enemy flick change */
+/* v037 deck battle: enemy double-tap change */
 #battle-root .battle-enemy-card {
-  touch-action: pan-y;
+  touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
 }
@@ -1631,4 +1631,334 @@ body {
     gap: 6px;
     font-size: 10px;
   }
+}
+
+/* v037 deck battle: auto battle + manager help */
+#battle-root .battle-hud {
+  position: relative;
+}
+#battle-root .battle-hud-actions {
+  position: absolute;
+  right: 8px;
+  top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 2;
+}
+#battle-root .battle-auto-toggle,
+#battle-root .battle-help-btn {
+  border: 1px solid rgba(255,255,255,0.45);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  min-height: 28px;
+  padding: 4px 10px;
+  font-size: clamp(10px, 1.4vw, 13px);
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+#battle-root .battle-auto-toggle.on {
+  border-color: #5dff9a;
+  background: rgba(20, 160, 80, 0.55);
+  box-shadow: 0 0 12px rgba(93,255,154,0.45);
+}
+#battle-root .battle-help-stock {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 5px;
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 999px;
+  background: rgba(0,0,0,0.25);
+}
+#battle-root .battle-help-stock span {
+  font-size: clamp(9px, 1.3vw, 12px);
+  color: rgba(255,255,255,0.85);
+  font-weight: 800;
+  white-space: nowrap;
+}
+#battle-root .battle-help-btn {
+  min-width: 36px;
+  padding: 4px 7px;
+  border-color: rgba(255, 224, 100, 0.85);
+  background: rgba(180, 120, 15, 0.72);
+  color: #fff4ad;
+}
+#battle-root .battle-help-btn.available {
+  box-shadow: 0 0 12px rgba(255, 224, 100, 0.75);
+}
+#battle-root .battle-help-btn.empty {
+  opacity: 0.35;
+  border-color: rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.55);
+}
+#battle-root .battle-help-btn:disabled {
+  pointer-events: none;
+}
+
+@media screen and (orientation: landscape) and (max-height: 520px) {
+  #battle-root .battle-hud-actions {
+    right: 5px;
+    top: 4px;
+    gap: 4px;
+  }
+  #battle-root .battle-auto-toggle,
+  #battle-root .battle-help-btn {
+    min-height: 22px;
+    padding: 3px 6px;
+    font-size: 9px;
+  }
+  #battle-root .battle-help-stock {
+    gap: 2px;
+    padding: 2px 3px;
+  }
+  #battle-root .battle-help-stock span {
+    display: none;
+  }
+  #battle-root .battle-help-btn {
+    min-width: 28px;
+  }
+  #battle-root .battle-hud-title {
+    max-width: 42vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* v037 deck battle: character-colored HIT feedback */
+#battle-root .battle-enemy-card {
+  position: relative;
+}
+#battle-root .battle-enemy-card.defeating {
+  filter: brightness(1.24);
+  box-shadow: 0 0 22px var(--enemy-color, #ff841f), inset 0 0 18px rgba(255, 255, 255, 0.24);
+}
+#battle-root .enemy-hit-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 6;
+  overflow: visible;
+}
+#battle-root .enemy-hit-pop {
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  min-width: 72px;
+  padding: 4px 9px;
+  border: 2px solid var(--hit-color, #fff);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--hit-color, #fff) 28%, rgba(0, 0, 0, 0.84));
+  color: #fff;
+  font-weight: 900;
+  font-size: clamp(14px, 2.5vw, 26px);
+  text-align: center;
+  text-shadow: 0 2px 4px #000, 0 0 8px var(--hit-color, #fff);
+  box-shadow: 0 0 18px var(--hit-color, #fff);
+  will-change: transform, opacity;
+}
+#battle-root .enemy-hit-pop span {
+  white-space: nowrap;
+}
+#battle-root .enemy-hit-pop small {
+  display: block;
+  margin-top: -2px;
+  font-size: 0.48em;
+  letter-spacing: 0.08em;
+}
+#battle-root .enemy-contract-label {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  z-index: 5;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 2px solid #fff;
+  background: rgba(255, 212, 74, 0.92);
+  color: #2a1600;
+  font-weight: 900;
+  font-size: clamp(12px, 1.8vw, 18px);
+  box-shadow: 0 0 14px rgba(255, 212, 74, 0.95);
+}
+@media screen and (orientation: landscape) and (max-height: 520px) {
+  #battle-root .enemy-hit-pop {
+    min-width: 52px;
+    padding: 2px 6px;
+    font-size: 13px;
+  }
+  #battle-root .enemy-contract-label {
+    right: 5px;
+    top: 5px;
+    padding: 2px 6px;
+    font-size: 11px;
+  }
+}
+
+/* v037 deck formation UI */
+#battle-root .battle-main-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(96px, 1fr));
+  gap: 10px;
+  width: min(560px, 92vw);
+  margin: 0 auto;
+}
+#battle-root .battle-main-buttons button {
+  min-width: 0;
+  width: 100%;
+}
+#battle-root .deck-edit-overlay {
+  place-items: center;
+}
+#battle-root .battle-deck-box {
+  width: min(1040px, 94vw);
+  max-height: min(92vh, var(--app-height, 100vh));
+  border: 2px solid rgba(255,255,255,0.35);
+  border-radius: 18px;
+  background: rgba(8, 10, 14, 0.97);
+  padding: 14px;
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.48);
+  overflow: hidden;
+}
+#battle-root .deck-select-grid {
+  display: grid;
+  grid-template-rows: repeat(3, minmax(78px, 1fr));
+  gap: 10px;
+  margin-top: 8px;
+}
+#battle-root .deck-select-row {
+  display: grid;
+  gap: 10px;
+}
+#battle-root .deck-row-five {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+#battle-root .deck-row-bottom {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(160px, 1.15fr);
+}
+#battle-root .deck-select-card {
+  position: relative;
+  min-width: 0;
+  border: 3px solid var(--member-color, #10c765);
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(5, 34, 16, 0.96), rgba(4, 14, 8, 0.96));
+  color: #fff;
+  padding: 8px;
+  box-sizing: border-box;
+  text-align: left;
+  overflow: hidden;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+#battle-root .deck-select-card b {
+  display: block;
+  font-size: clamp(13px, 2vw, 20px);
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#battle-root .deck-select-card small,
+#battle-root .deck-select-card em {
+  display: block;
+  margin-top: 2px;
+  font-size: clamp(9px, 1.3vw, 12px);
+  color: rgba(255,255,255,0.84);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-style: normal;
+}
+#battle-root .deck-select-card.selected {
+  background: #ffffff;
+  color: #08090c;
+  box-shadow: 0 0 18px rgba(255,255,255,0.75), inset 0 0 0 2px var(--member-color, #10c765);
+}
+#battle-root .deck-select-card.selected small,
+#battle-root .deck-select-card.selected em {
+  color: rgba(0,0,0,0.72);
+}
+#battle-root .deck-select-order {
+  position: absolute;
+  top: 5px;
+  right: 7px;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: var(--member-color, #10c765);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+}
+#battle-root .deck-decision-area {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 8px;
+  min-width: 0;
+}
+#battle-root .deck-decision-main {
+  border: 2px solid rgba(255,255,255,0.42);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.10));
+  color: #fff;
+  font-size: clamp(18px, 2.7vw, 26px);
+  font-weight: 900;
+}
+#battle-root .deck-decision-main:disabled {
+  opacity: 0.38;
+}
+#battle-root .deck-small-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+#battle-root .deck-small-buttons button {
+  border: 1px solid rgba(255,255,255,0.36);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  padding: 7px 8px;
+  font-size: clamp(11px, 1.5vw, 14px);
+}
+@media screen and (orientation: landscape) and (max-height: 520px) {
+  #battle-root .battle-deck-box {
+    width: min(1040px, 95vw);
+    padding: 8px 10px;
+  }
+  #battle-root .deck-select-grid {
+    grid-template-rows: repeat(3, 74px);
+    gap: 7px;
+    margin-top: 5px;
+  }
+  #battle-root .deck-select-row { gap: 7px; }
+  #battle-root .deck-select-card {
+    border-width: 3px;
+    border-radius: 10px;
+    padding: 6px;
+  }
+  #battle-root .deck-select-card b { font-size: 13px; }
+  #battle-root .deck-select-card small,
+  #battle-root .deck-select-card em { font-size: 9px; }
+  #battle-root .deck-select-order {
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+  }
+  #battle-root .battle-deck-box .battle-control-help {
+    display: block;
+    margin: 4px 0 6px;
+    font-size: 10px;
+    line-height: 1.25;
+  }
+  #battle-root .deck-decision-main { font-size: 18px; }
+  #battle-root .deck-small-buttons button { padding: 5px 4px; font-size: 11px; }
 }
