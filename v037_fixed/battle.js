@@ -1,6 +1,6 @@
 // battle.js - v037 integrated deck battle prototype
 // 店舗営業：上=情報 / 中央=家電星人 / 下=メンバー5人
-// 操作はメンバーのシングルタップで通常接客、ダブルタップで必殺接客。通常敵HP2、レアHP3。ターゲットは選択メンバーに最適な家電星人へ自動Fix。彩愛の必殺は盤面整理＋敵チェンジ短縮。
+// 操作はメンバーのシングルタップで通常接客、ダブルタップで必殺接客。通常敵HP2、レアHP3。ターゲットは選択メンバーに最適な家電星人へ自動Fix。彩愛の必殺は盤面整理＋敵チェンジ短縮。店長HELP・必殺カットイン・タイムセール演出あり。
 
 (function () {
   const BATTLE_SECONDS = 30;
@@ -109,6 +109,8 @@
       helpEarnCounter: 0,
       nextHitId: 1,
       hitEffects: [],
+      cutin: null,
+      cutinUntil: 0,
 
       lastActionText: "営業開始を押してください。",
       buffPowerUntil: 0,
@@ -202,7 +204,12 @@
     lastTick = now;
 
     state.timeLeft = Math.max(0, state.timeLeft - dt);
+    const wasRush = state.rush;
     state.rush = state.timeLeft <= 10;
+    if (!wasRush && state.rush) {
+      state.lastActionText = "タイムセール開始！来店ラッシュです。";
+      showTimeSaleCutin();
+    }
 
     state.spawnTimer -= dt;
     const elapsed = BATTLE_SECONDS - state.timeLeft;
@@ -479,6 +486,16 @@
     state.lastActionText = `レジ誘導成功！ +${point}Pt`;
   }
 
+  function showCutin(title, color = "#ffffff", subText = "") {
+    if (!state) return;
+    state.cutin = { title, color, subText, createdAt: performance.now(), life: 1150 };
+    state.cutinUntil = state.cutin.createdAt + state.cutin.life;
+  }
+
+  function showTimeSaleCutin() {
+    showCutin("タイムセール開始！", "#ffdd33", "ラッシュタイム");
+  }
+
   function getCurrentChangeSeconds() {
     return performance.now() < state.buffChangeUntil ? CHANGE_SECONDS_BUFFED : CHANGE_SECONDS;
   }
@@ -514,6 +531,7 @@
 
   function useSkill(staff) {
     const now = performance.now();
+    showCutin(staff.skillName, staff.color, staff.name);
     if (staff.skillType === "powerBuff") {
       state.buffPowerUntil = now + 8000;
       state.lastActionText = "緋奈：全力おすすめ！ 接客力アップ！";
@@ -631,6 +649,7 @@
     }
 
     state.helpStock -= 1;
+    showCutin("店長HELP！", "#ffe06a", "店長出動");
     state.staff.forEach(s => { s.ct = 0; });
 
     const targets = [...state.enemies.filter(e => !e.exchanging)];
@@ -663,6 +682,9 @@
           <div class="battle-message">${escapeHtml(state.lastActionText)}</div>
         </section>
 
+        ${renderSideHelpButtons()}
+        ${renderCutinOverlay()}
+
         <section class="battle-enemies">
           ${state.enemies.map(renderEnemy).join("") || `<div class="battle-empty">営業開始で家電星人が来店します</div>`}
         </section>
@@ -678,17 +700,33 @@
 
   function renderHudActions() {
     if (!state.running) return "";
-    const helpButtons = Array.from({ length: HELP_STOCK_MAX }, (_, i) => {
-      const available = i < state.helpStock;
-      return `<button class="battle-help-btn ${available ? "available" : "empty"}" data-action="help" ${available ? "" : "disabled"}>店長</button>`;
-    }).join("");
-
     return `
       <div class="battle-hud-actions">
         <button class="battle-auto-toggle ${state.autoMode ? "on" : ""}" data-action="autoToggle">${state.autoMode ? "オートON" : "オートOFF"}</button>
-        <div class="battle-help-stock" title="成約10件で1つ、最大3つまでストック">
-          <span>店長ヘルプ</span>
-          ${helpButtons}
+      </div>
+    `;
+  }
+
+  function renderSideHelpButtons() {
+    const buttons = Array.from({ length: HELP_STOCK_MAX }, (_, i) => {
+      const available = state.running && i < state.helpStock;
+      return `<button class="battle-help-btn ${available ? "available" : "empty"}" data-action="help" ${available ? "" : "disabled"}>HELP!</button>`;
+    }).join("");
+
+    return `<div class="battle-help-side" title="成約10件で1つ、最大3つまでストック">${buttons}</div>`;
+  }
+
+  function renderCutinOverlay() {
+    if (!state.cutin) return "";
+    const now = performance.now();
+    if (now > state.cutinUntil) return "";
+    const progress = Math.max(0, Math.min(1, (now - state.cutin.createdAt) / state.cutin.life));
+    const opacity = progress < 0.8 ? 1 : Math.max(0, 1 - (progress - 0.8) / 0.2);
+    return `
+      <div class="battle-cutin" style="--cutin-color:${state.cutin.color}; opacity:${opacity};">
+        <div class="battle-cutin-band">
+          ${state.cutin.subText ? `<small>${escapeHtml(state.cutin.subText)}</small>` : ""}
+          <b>${escapeHtml(state.cutin.title)}</b>
         </div>
       </div>
     `;
@@ -834,7 +872,7 @@
         <div class="battle-bar member-ct"><i style="width:${ctRate}%"></i></div>
         <div class="member-label">必殺 ${Math.floor(s.skill)}%</div>
         <div class="battle-bar member-skill"><i style="width:${Math.min(100, s.skill)}%"></i></div>
-        <div class="member-skill-name">${skillReady ? "ダブルタップ：必殺2/特攻3" : escapeHtml(s.skillName)}</div>
+        <div class="member-skill-name">${skillReady ? `必殺OK：${escapeHtml(s.skillName)}` : escapeHtml(s.skillName)}</div>
       </button>
     `;
   }
