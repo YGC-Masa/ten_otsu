@@ -2329,3 +2329,222 @@ body {
     font-size: 9px !important;
   }
 }
+
+/* === v037 portrait HELP layout fix v2 ===
+   縦画面では右側固定HELPを消し、HUD内に横並び表示する。
+   さらに縦画面は無理に圧縮せず、必要なら縦スクロールできる高さを確保する。 */
+#battle-root .battle-help-inline {
+  display: none;
+}
+#battle-root .battle-help-inline .battle-help-btn {
+  width: 44px;
+  height: 30px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 224, 100, 0.92);
+  background: radial-gradient(circle at 35% 25%, rgba(255,255,255,0.25), rgba(210,140,18,0.92));
+  color: #fff4ad;
+  font-size: 10px;
+  font-weight: 1000;
+  padding: 0;
+  min-width: 0;
+  box-shadow: 0 0 10px rgba(255, 224, 100, 0.55);
+}
+#battle-root .battle-help-inline .battle-help-btn.empty {
+  opacity: 0.24;
+  border-color: rgba(255,255,255,0.30);
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.55);
+  box-shadow: none;
+}
+
+@media screen and (orientation: portrait) {
+  #battle-root.battle-root {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #battle-root .battle-stage {
+    position: relative !important;
+    min-height: max(100dvh, 720px) !important;
+    height: auto !important;
+    display: grid !important;
+    grid-template-rows: auto minmax(300px, 1fr) auto !important;
+    overflow: visible !important;
+  }
+
+  #battle-root .battle-help-side {
+    display: none !important;
+  }
+
+  #battle-root .battle-hud {
+    margin-right: 6px !important;
+    overflow: visible !important;
+  }
+
+  #battle-root .battle-hud-actions {
+    position: static !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 6px !important;
+    margin-top: 5px !important;
+    width: 100% !important;
+  }
+
+  #battle-root .battle-help-inline {
+    display: flex !important;
+    gap: 5px !important;
+    align-items: center !important;
+  }
+
+  #battle-root .battle-auto-toggle {
+    min-height: 30px !important;
+    height: 30px !important;
+    padding: 3px 8px !important;
+    font-size: 10px !important;
+    white-space: nowrap !important;
+  }
+
+  #battle-root .battle-enemies {
+    padding-right: 10px !important;
+    min-height: 300px !important;
+  }
+
+  #battle-root .battle-members {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-height: 700px) {
+  #battle-root .battle-stage {
+    min-height: 700px !important;
+  }
+}
+
+
+/* === v037 portrait final fix + cutin description v3 ===
+   縦画面で短く潰れる問題を、最後尾の強制上書きで解消。
+   縦画面はスクロール許可・十分な最小高さを確保する。 */
+#battle-root .battle-cutin-band p {
+  display: block;
+  transform: skewX(10deg);
+  margin: 8px auto 0;
+  max-width: min(760px, 86vw);
+  color: rgba(255,255,255,0.96);
+  font-size: clamp(12px, 1.7vw, 20px);
+  line-height: 1.35;
+  font-weight: 800;
+  text-shadow: 0 2px 4px #000;
+}
+
+@media screen and (orientation: portrait) {
+  html, body {
+    min-height: 100dvh !important;
+  }
+
+  #battle-root.battle-root:not(.hidden) {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    display: block !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  #battle-root .battle-stage {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    min-height: max(100dvh, 860px) !important;
+    height: auto !important;
+    max-height: none !important;
+    display: grid !important;
+    grid-template-rows: auto minmax(360px, 1fr) auto !important;
+    overflow: visible !important;
+    padding-bottom: max(10px, env(safe-area-inset-bottom)) !important;
+  }
+
+  #battle-root .battle-hud {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  #battle-root .battle-message {
+    display: block !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    line-height: 1.25 !important;
+  }
+
+  #battle-root .battle-enemies {
+    min-height: 360px !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 10px !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: repeat(3, minmax(108px, 1fr)) !important;
+  }
+
+  #battle-root .battle-enemy-card {
+    min-height: 108px !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  #battle-root .battle-members {
+    min-height: 330px !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-auto-rows: minmax(96px, auto) !important;
+  }
+
+  #battle-root .battle-member-card {
+    min-height: 96px !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  #battle-root .member-skill-name,
+  #battle-root .member-label {
+    display: block !important;
+  }
+
+  #battle-root .battle-help-side {
+    display: none !important;
+  }
+
+  #battle-root .battle-help-inline {
+    display: flex !important;
+  }
+
+  #battle-root .battle-control-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    min-height: 100dvh !important;
+    overflow-y: auto !important;
+    padding: 16px 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  #battle-root .battle-deck-box {
+    max-height: none !important;
+  }
+
+  #battle-root .battle-cutin-band p {
+    font-size: 12px !important;
+    line-height: 1.35 !important;
+    margin-top: 6px !important;
+  }
+}

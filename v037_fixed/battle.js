@@ -18,19 +18,19 @@
   ];
 
   const staffMaster = [
-    { id: "aa", name: "緋奈", color: "#d3381c", attr: "映像", power: 1, ctMax: 2.4, skillName: "全力おすすめ！", skillType: "powerBuff" },
-    { id: "ab", name: "藍", color: "#0067C0", attr: "美容", power: 1, ctMax: 3.0, skillName: "やさしい案内", skillType: "extendTime" },
-    { id: "ac", name: "翠", color: "#02b308", attr: "PC", power: 1, ctMax: 3.5, skillName: "最適解プレゼン", skillType: "pcSweep" },
-    { id: "ad", name: "こがね", color: "#FFF450", attr: "スマホ", power: 1, ctMax: 1.7, skillName: "即決トーク", skillType: "ctReduce" },
-    { id: "ae", name: "琥珀", color: "#F68B1F", attr: "オーディオ", power: 1, ctMax: 2.7, skillName: "フロアダッシュ", skillType: "rushBuff" },
-    { id: "af", name: "真花", color: "#C0C0C0", attr: "美容", power: 1, ctMax: 2.8, skillName: "お嬢様スマイル", skillType: "comboPlus" },
-    { id: "ag", name: "雪乃", color: "#6495ED", attr: "調理", power: 1, ctMax: 3.2, skillName: "静かな提案", skillType: "freezeTime" },
-    { id: "ah", name: "美空", color: "#fffef6", attr: "季節", power: 1, ctMax: 2.6, skillName: "夏空接客", skillType: "rescue" },
-    { id: "ai", name: "夜空", color: "#00152d", attr: "季節", power: 1, ctMax: 2.9, skillName: "冬空フォーカス", skillType: "rareKiller" },
-    { id: "aj", name: "桃", color: "#F7ADC3", attr: "映像", power: 1, ctMax: 2.1, skillName: "店内配信", skillType: "buzz" },
-    { id: "ak", name: "彩愛", color: "#694D9F", attr: "生活", power: 1, ctMax: 3.0, skillName: "優雅な家事導線", skillType: "ayameRoute" },
-    { id: "al", name: "里美", color: "#8d5025", attr: "生活", power: 1, ctMax: 3.1, skillName: "受付整理", skillType: "changeSupport" },
-    { id: "am", name: "萌", color: "#33CC99", attr: "季節", power: 1, ctMax: 2.9, skillName: "おにいちゃん助けて", skillType: "managerBoost" }
+    { id: "aa", name: "緋奈", color: "#d3381c", attr: "映像", power: 1, ctMax: 2.4, skillName: "全力おすすめ！", skillType: "powerBuff", skillDesc: "8秒間、接客力アップ。成約を一気に伸ばします。" },
+    { id: "ab", name: "藍", color: "#0067C0", attr: "美容", power: 1, ctMax: 3.0, skillName: "やさしい案内", skillType: "extendTime", skillDesc: "全敵の受付時間を延長し、営業残り時間も少し増やします。" },
+    { id: "ac", name: "翠", color: "#02b308", attr: "PC", power: 1, ctMax: 3.5, skillName: "最適解プレゼン", skillType: "pcSweep", skillDesc: "PC属性をまとめて成約し、6秒間マッチ性能を上げます。" },
+    { id: "ad", name: "こがね", color: "#FFF450", attr: "スマホ", power: 1, ctMax: 1.7, skillName: "即決トーク", skillType: "ctReduce", skillDesc: "全メンバーのCTを短縮し、6秒間テンポを上げます。" },
+    { id: "ae", name: "琥珀", color: "#F68B1F", attr: "オーディオ", power: 1, ctMax: 2.7, skillName: "フロアダッシュ", skillType: "rushBuff", skillDesc: "8秒間ラッシュ対応力アップ。コンボを守りやすくします。" },
+    { id: "af", name: "真花", color: "#C0C0C0", attr: "美容", power: 1, ctMax: 2.8, skillName: "お嬢様スマイル", skillType: "comboPlus", skillDesc: "成約時のコンボ補助。丁寧な接客で満足度を伸ばします。" },
+    { id: "ag", name: "雪乃", color: "#6495ED", attr: "調理", power: 1, ctMax: 3.2, skillName: "静かな提案", skillType: "freezeTime", skillDesc: "敵の受付時間を一時停止し、店内を落ち着かせます。" },
+    { id: "ah", name: "美空", color: "#fffef6", attr: "季節", power: 1, ctMax: 2.6, skillName: "夏空接客", skillType: "rescue", skillDesc: "受付時間が短い敵を追加フォローする安定型スキル。" },
+    { id: "ai", name: "夜空", color: "#00152d", attr: "季節", power: 1, ctMax: 2.9, skillName: "冬空フォーカス", skillType: "rareKiller", skillDesc: "レア敵への追加ダメージで一点突破します。" },
+    { id: "aj", name: "桃", color: "#F7ADC3", attr: "映像", power: 1, ctMax: 2.1, skillName: "店内配信", skillType: "buzz", skillDesc: "売上Ptとレア出現率を上げる代わりに混雑しやすくなります。" },
+    { id: "ak", name: "彩愛", color: "#694D9F", attr: "生活", power: 1, ctMax: 3.0, skillName: "優雅な家事導線", skillType: "ayameRoute", skillDesc: "敵最大2体に1ダメージ。6秒間、敵チェンジを2秒から1秒に短縮。" },
+    { id: "al", name: "里美", color: "#8d5025", attr: "生活", power: 1, ctMax: 3.1, skillName: "受付整理", skillType: "changeSupport", skillDesc: "受付を整理して、チェンジやCT管理を補助します。" },
+    { id: "am", name: "萌", color: "#33CC99", attr: "季節", power: 1, ctMax: 2.9, skillName: "おにいちゃん助けて", skillType: "managerBoost", skillDesc: "店長ヘルプゲージが溜まりやすくなるサポートスキル。" }
   ];
   const DEFAULT_STAFF_IDS = ["aa", "ab", "ac", "ad", "ae"];
   const DECK_STORAGE_KEY = "tenotsu_battle_deck_v1";
@@ -486,14 +486,14 @@
     state.lastActionText = `レジ誘導成功！ +${point}Pt`;
   }
 
-  function showCutin(title, color = "#ffffff", subText = "") {
+  function showCutin(title, color = "#ffffff", subText = "", descText = "") {
     if (!state) return;
-    state.cutin = { title, color, subText, createdAt: performance.now(), life: 1150 };
+    state.cutin = { title, color, subText, descText, createdAt: performance.now(), life: descText ? 1550 : 1150 };
     state.cutinUntil = state.cutin.createdAt + state.cutin.life;
   }
 
   function showTimeSaleCutin() {
-    showCutin("タイムセール開始！", "#ffdd33", "ラッシュタイム");
+    showCutin("タイムセール開始！", "#ffdd33", "ラッシュタイム", "残り10秒。来店ラッシュで成約チャンスが増加します。");
   }
 
   function getCurrentChangeSeconds() {
@@ -531,7 +531,7 @@
 
   function useSkill(staff) {
     const now = performance.now();
-    showCutin(staff.skillName, staff.color, staff.name);
+    showCutin(staff.skillName, staff.color, staff.name, staff.skillDesc || "");
     if (staff.skillType === "powerBuff") {
       state.buffPowerUntil = now + 8000;
       state.lastActionText = "緋奈：全力おすすめ！ 接客力アップ！";
@@ -649,7 +649,7 @@
     }
 
     state.helpStock -= 1;
-    showCutin("店長HELP！", "#ffe06a", "店長出動");
+    showCutin("店長HELP！", "#ffe06a", "店長出動", "全メンバーのCTをクリアし、画面上の敵を一掃成約してオールチェンジします。");
     state.staff.forEach(s => { s.ct = 0; });
 
     const targets = [...state.enemies.filter(e => !e.exchanging)];
@@ -698,22 +698,27 @@
     `;
   }
 
-  function renderHudActions() {
-    if (!state.running) return "";
-    return `
-      <div class="battle-hud-actions">
-        <button class="battle-auto-toggle ${state.autoMode ? "on" : ""}" data-action="autoToggle">${state.autoMode ? "オートON" : "オートOFF"}</button>
-      </div>
-    `;
-  }
-
-  function renderSideHelpButtons() {
+  function renderHelpButtons(className) {
     const buttons = Array.from({ length: HELP_STOCK_MAX }, (_, i) => {
       const available = state.running && i < state.helpStock;
       return `<button class="battle-help-btn ${available ? "available" : "empty"}" data-action="help" ${available ? "" : "disabled"}>HELP!</button>`;
     }).join("");
 
-    return `<div class="battle-help-side" title="成約10件で1つ、最大3つまでストック">${buttons}</div>`;
+    return `<div class="${className}" title="成約10件で1つ、最大3つまでストック">${buttons}</div>`;
+  }
+
+  function renderHudActions() {
+    if (!state.running) return "";
+    return `
+      <div class="battle-hud-actions">
+        <button class="battle-auto-toggle ${state.autoMode ? "on" : ""}" data-action="autoToggle">${state.autoMode ? "オートON" : "オートOFF"}</button>
+        ${renderHelpButtons("battle-help-inline")}
+      </div>
+    `;
+  }
+
+  function renderSideHelpButtons() {
+    return renderHelpButtons("battle-help-side");
   }
 
   function renderCutinOverlay() {
@@ -727,6 +732,7 @@
         <div class="battle-cutin-band">
           ${state.cutin.subText ? `<small>${escapeHtml(state.cutin.subText)}</small>` : ""}
           <b>${escapeHtml(state.cutin.title)}</b>
+          ${state.cutin.descText ? `<p>${escapeHtml(state.cutin.descText)}</p>` : ""}
         </div>
       </div>
     `;
