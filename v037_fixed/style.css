@@ -2091,3 +2091,241 @@ body {
   #battle-root .battle-cutin-band small { font-size: 12px; }
   #battle-root .battle-cutin-band b { font-size: 30px; }
 }
+
+/* === v037 portrait battle CSS fix: 縦画面の高さ不足・横画面専用UIの圧縮対策 === */
+@supports (height: 100dvh) {
+  #battle-root.battle-root {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  #battle-root.battle-root {
+    width: 100vw !important;
+    height: var(--app-height, 100svh) !important;
+    min-height: var(--app-height, 100svh) !important;
+    overflow: hidden !important;
+  }
+
+  #battle-root .battle-stage {
+    grid-template-rows: auto minmax(0, 1fr) auto !important;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left) !important;
+    min-height: var(--app-height, 100svh) !important;
+  }
+
+  #battle-root .battle-hud {
+    margin: 5px 6px 4px !important;
+    padding: 6px 8px !important;
+    border-width: 2px !important;
+    border-radius: 10px !important;
+  }
+
+  #battle-root .battle-hud-title {
+    font-size: 16px !important;
+    max-width: calc(100vw - 22px) !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  #battle-root .battle-hud-stats {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 3px 7px !important;
+    font-size: 11px !important;
+    white-space: normal !important;
+  }
+
+  #battle-root .battle-hud-stats span {
+    min-width: 0 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  #battle-root .battle-message {
+    font-size: 10px !important;
+    margin-top: 3px !important;
+    white-space: nowrap !important;
+  }
+
+  #battle-root .battle-hud-actions {
+    right: 6px !important;
+    top: 6px !important;
+  }
+
+  #battle-root .battle-auto-toggle {
+    min-height: 24px !important;
+    padding: 3px 7px !important;
+    font-size: 10px !important;
+  }
+
+  #battle-root .battle-help-side {
+    right: max(6px, env(safe-area-inset-right)) !important;
+    top: 104px !important;
+    gap: 7px !important;
+  }
+
+  #battle-root .battle-help-side .battle-help-btn {
+    width: 42px !important;
+    height: 42px !important;
+    border-width: 2px !important;
+    font-size: 10px !important;
+  }
+
+  #battle-root .battle-enemies {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: repeat(3, minmax(82px, 1fr)) !important;
+    gap: 8px !important;
+    padding: 8px 54px 8px 10px !important;
+    align-items: stretch !important;
+  }
+
+  #battle-root .battle-enemy-card {
+    height: 100% !important;
+    min-height: 78px !important;
+    max-height: none !important;
+    border-width: 3px !important;
+    border-radius: 12px !important;
+    padding: 6px 8px !important;
+  }
+
+  #battle-root .enemy-head {
+    font-size: 13px !important;
+  }
+
+  #battle-root .enemy-attr,
+  #battle-root .enemy-label {
+    font-size: 10px !important;
+  }
+
+  #battle-root .battle-bar {
+    height: 5px !important;
+    margin: 2px 0 3px !important;
+  }
+
+  #battle-root .battle-members {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-auto-rows: minmax(72px, auto) !important;
+    gap: 6px !important;
+    padding: 7px 8px max(7px, env(safe-area-inset-bottom)) !important;
+    max-height: 244px !important;
+    overflow: hidden !important;
+  }
+
+  #battle-root .battle-member-card:nth-child(5) {
+    grid-column: 1 / -1 !important;
+  }
+
+  #battle-root .battle-member-card {
+    min-height: 70px !important;
+    border-width: 3px !important;
+    border-radius: 10px !important;
+    padding: 6px 7px !important;
+  }
+
+  #battle-root .member-name {
+    font-size: 14px !important;
+  }
+
+  #battle-root .member-attr,
+  #battle-root .member-power,
+  #battle-root .member-label,
+  #battle-root .member-skill-name {
+    font-size: 10px !important;
+  }
+
+  #battle-root .battle-control-box {
+    width: min(92vw, 520px) !important;
+    padding: 14px !important;
+  }
+
+  #battle-root .battle-main-buttons {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    gap: 8px !important;
+  }
+
+  #battle-root .battle-main-buttons button {
+    min-width: 0 !important;
+    padding: 9px 8px !important;
+    font-size: 13px !important;
+  }
+
+  #battle-root .battle-control-help {
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+  }
+
+  #battle-root .battle-deck-box {
+    width: min(94vw, 560px) !important;
+    max-height: calc(var(--app-height, 100svh) - 24px) !important;
+    overflow-y: auto !important;
+    padding: 10px !important;
+  }
+
+  #battle-root .deck-select-grid {
+    display: grid !important;
+    grid-template-rows: none !important;
+    grid-auto-rows: auto !important;
+    gap: 7px !important;
+  }
+
+  #battle-root .deck-select-row,
+  #battle-root .deck-row-five,
+  #battle-root .deck-row-bottom {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 7px !important;
+  }
+
+  #battle-root .deck-select-card {
+    min-height: 66px !important;
+    padding: 6px !important;
+    border-width: 3px !important;
+  }
+
+  #battle-root .deck-decision-area {
+    grid-column: 1 / -1 !important;
+    grid-template-rows: 44px 34px !important;
+  }
+
+  #battle-root .deck-decision-main {
+    font-size: 18px !important;
+  }
+
+  #battle-root .deck-small-buttons button {
+    font-size: 12px !important;
+    padding: 6px !important;
+  }
+
+  #battle-root .battle-cutin-band {
+    width: min(88vw, 520px) !important;
+    padding: 10px 14px !important;
+  }
+
+  #battle-root .battle-cutin-band small { font-size: 13px !important; }
+  #battle-root .battle-cutin-band b { font-size: 30px !important; }
+}
+
+@media screen and (orientation: portrait) and (max-height: 700px) {
+  #battle-root .battle-members {
+    max-height: 210px !important;
+    grid-auto-rows: minmax(62px, auto) !important;
+  }
+  #battle-root .battle-member-card {
+    min-height: 60px !important;
+    padding: 5px !important;
+  }
+  #battle-root .member-skill-name,
+  #battle-root .member-label {
+    display: none !important;
+  }
+  #battle-root .battle-help-side {
+    top: 96px !important;
+  }
+  #battle-root .battle-help-side .battle-help-btn {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 9px !important;
+  }
+}
