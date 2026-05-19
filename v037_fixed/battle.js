@@ -3,6 +3,7 @@
 // 操作はメンバーのシングルタップで通常接客、ダブルタップで必殺接客。通常敵HP2、レアHP3。ターゲットは選択メンバーに最適な家電星人へ自動Fix。彩愛の必殺は盤面整理＋敵チェンジ短縮。店長HELP・必殺カットイン・タイムセール演出あり。
 
 (function () {
+  const BATTLE_VERSION = "v037_02";
   const BATTLE_SECONDS = 30;
   const MAX_ENEMIES = 3;
   const CHANGE_SECONDS = 2.0;
@@ -731,7 +732,7 @@
     root.innerHTML = `
       <div class="battle-stage ${state.running ? "is-running" : ""} ${state.rush ? "is-rush" : ""}">
         <section class="battle-hud">
-          <div class="battle-hud-title">店舗営業：デッキ接客バトル</div>
+          <div class="battle-hud-title">店舗営業：デッキ接客バトル <span class="battle-version">${BATTLE_VERSION}</span></div>
           <div class="battle-hud-stats">
             <span>状態：<b>${statusText}</b></span>
             <span>残り：<b>${Math.ceil(state.timeLeft)}</b>秒</span>
