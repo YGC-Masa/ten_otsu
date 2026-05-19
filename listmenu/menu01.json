@@ -6,6 +6,10 @@
       "list": "mainmenu.json"
     },
     {
+      "text": "キャッシュクリア・再読み込み",
+      "action": "cacheclear"
+    },
+    {
       "text": "① タイトルへ戻る",
       "action": "jump",
       "jump": "000start.json"
