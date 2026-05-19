@@ -2666,7 +2666,7 @@ body {
   }
 }
 
-/* === Battle version badge v037_09 === */
+/* === Battle version badge v037_10 === */
 .battle-version {
   display: inline-block;
   margin-left: 8px;
@@ -2689,7 +2689,7 @@ body {
 }
 
 
-/* === v037_09 landscape final check/fix ===
+/* === v037_10 landscape final check/fix ===
    横画面では、上HUD・中央敵3体・下メンバー5人を固定し、
    HELP/オートはHUD右側に収めて重なりを避ける。 */
 @media screen and (orientation: landscape) {
@@ -2886,7 +2886,7 @@ body {
   #battle-root .battle-bar { height: 4px !important; margin: 1px 0 2px !important; }
 }
 
-/* === v037_09: 13属性追加 + 店長HELP大型配置 === */
+/* === v037_10: 13属性追加 + 店長HELP大型配置 === */
 #battle-root .battle-stage {
   grid-template-rows: auto auto 1fr auto !important;
 }
@@ -2982,7 +2982,7 @@ body {
 }
 
 
-/* v037_09: 場の敵と相性が良いメンバーを発光表示 */
+/* v037_10: 場の敵と相性が良いメンバーを発光表示 */
 .member-card.member-has-target {
   border-color: var(--member-match-color, #ffffff) !important;
   box-shadow:
@@ -3050,7 +3050,7 @@ body {
 }
 
 
-/* v037_09: タップ感度改善 */
+/* v037_10: タップ感度改善 */
 #battle-root .battle-member-card,
 #battle-root .battle-enemy-card,
 #battle-root button {
@@ -3082,7 +3082,7 @@ body {
 }
 
 
-/* v037_09: 緋奈テスト画像・敵ダミー枠・HELP導線調整 */
+/* v037_10: 緋奈テスト画像・敵ダミー枠・HELP導線調整 */
 #battle-root .battle-stage {
   grid-template-rows: minmax(66px, auto) minmax(116px, 1fr) minmax(44px, auto) minmax(112px, 25vh) !important;
 }
@@ -3218,7 +3218,7 @@ body {
 }
 
 
-/* v037_09: 必殺技スライドカットイン画像 */
+/* v037_10: 必殺技スライドカットイン画像 */
 #battle-root .battle-cutin.with-image .battle-cutin-band {
   min-height: clamp(116px, 24vh, 230px);
   padding: 0;
@@ -3359,7 +3359,7 @@ body {
 }
 
 
-/* v037_09: 最前面演出がHELP/メンバー操作を塞がないようにする */
+/* v037_10: 最前面演出がHELP/メンバー操作を塞がないようにする */
 #battle-root .battle-cutin,
 #battle-root .battle-cutin *,
 #battle-root .battle-surface,
@@ -3375,7 +3375,7 @@ body {
 }
 
 
-/* v037_09: HELP任意化・白フラッシュ・カットイン/表示調整 */
+/* v037_10: HELP任意化・白フラッシュ・カットイン/表示調整 */
 #battle-root .battle-help-large {
   z-index: 4 !important;
 }
@@ -3552,5 +3552,148 @@ body {
   #battle-root .battle-cutin.with-image .battle-cutin-image {
     width: min(88vw, 520px);
     height: 82px;
+  }
+}
+
+
+/* v037_10: 必殺技カットイン画像をキャラ名横・右上へ */
+#battle-root .battle-cutin.with-image .battle-cutin-band {
+  min-height: clamp(150px, 32vh, 280px) !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+}
+
+#battle-root .battle-cutin.with-image .battle-cutin-text {
+  width: min(88vw, 820px) !important;
+  min-height: 0 !important;
+  padding: clamp(12px, 2vw, 24px) !important;
+  display: grid !important;
+  grid-template-rows: auto auto auto;
+  gap: 4px !important;
+  text-align: left !important;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.42), rgba(0,0,0,0.14));
+}
+
+#battle-root .battle-cutin.with-image .battle-cutin-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 42%);
+  align-items: center;
+  gap: clamp(10px, 2vw, 22px);
+  width: 100%;
+}
+
+#battle-root .battle-cutin.with-image .battle-cutin-head small {
+  display: block;
+  min-width: 0;
+  color: var(--cutin-color, #fff);
+  font-size: clamp(16px, 2.4vw, 30px);
+  font-weight: 900;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#battle-root .battle-cutin.with-image .battle-cutin-image {
+  justify-self: end;
+  width: min(42vw, 360px) !important;
+  height: clamp(42px, 10vh, 82px) !important;
+  margin: 0 !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  clip-path: none !important;
+  border: 2px solid color-mix(in srgb, var(--cutin-color, #fff) 65%, white) !important;
+  box-shadow:
+    0 0 16px color-mix(in srgb, var(--cutin-color, #fff) 65%, transparent),
+    inset 0 0 14px rgba(255,255,255,0.22) !important;
+}
+
+#battle-root .battle-cutin.with-image .battle-cutin-image img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 46% !important;
+  transform: scale(1.03) !important;
+}
+
+#battle-root .battle-cutin.with-image .battle-cutin-text b {
+  display: block;
+  font-size: clamp(30px, 5.4vw, 62px);
+  line-height: 1.03;
+  text-align: left;
+  text-shadow:
+    0 3px 10px rgba(0,0,0,0.9),
+    0 0 18px color-mix(in srgb, var(--cutin-color, #fff) 70%, transparent);
+}
+
+#battle-root .battle-cutin.with-image .battle-cutin-text p {
+  margin: 2px 0 0;
+  max-width: min(82vw, 760px) !important;
+  font-size: clamp(11px, 1.45vw, 18px);
+  line-height: 1.35;
+  opacity: 0.94;
+  text-align: left;
+}
+
+@media screen and (orientation: landscape) and (max-height: 520px) {
+  #battle-root .battle-cutin.with-image .battle-cutin-band {
+    min-height: clamp(118px, 35vh, 170px) !important;
+  }
+
+  #battle-root .battle-cutin.with-image .battle-cutin-text {
+    padding: 7px 12px !important;
+    gap: 1px !important;
+  }
+
+  #battle-root .battle-cutin.with-image .battle-cutin-head {
+    grid-template-columns: minmax(0, 1fr) minmax(150px, 38%);
+    gap: 8px;
+  }
+
+  #battle-root .battle-cutin.with-image .battle-cutin-image {
+    width: min(34vw, 280px) !important;
+    height: clamp(32px, 9vh, 58px) !important;
+  }
+
+  #battle-root .battle-cutin.with-image .battle-cutin-head small {
+    font-size: clamp(13px, 2vw, 20px);
+  }
+
+  #battle-root .battle-cutin.with-image .battle-cutin-text b {
+    font-size: clamp(24px, 4.7vw, 44px);
+  }
+
+  #battle-root .battle-cutin.with-image .battle-cutin-text p {
+    font-size: clamp(9px, 1.25vw, 13px);
+    line-height: 1.25;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  #battle-root .battle-cutin.with-image .battle-cutin-text {
+    width: min(92vw, 560px) !important;
+    text-align: center !important;
+  }
+
+  #battle-root .battle-cutin.with-image .battle-cutin-head {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 6px;
+  }
+
+  #battle-root .battle-cutin.with-image .battle-cutin-image {
+    justify-self: center;
+    width: min(82vw, 440px) !important;
+    height: 66px !important;
+  }
+
+  #battle-root .battle-cutin.with-image .battle-cutin-text b,
+  #battle-root .battle-cutin.with-image .battle-cutin-text p {
+    text-align: center;
   }
 }

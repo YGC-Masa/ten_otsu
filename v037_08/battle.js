@@ -3,7 +3,7 @@
 // 操作はメンバーのシングルタップで通常接客、ダブルタップで必殺接客。通常敵HP2、レアHP3。ターゲットは選択メンバーに最適な家電星人へ自動Fix。彩愛の必殺は盤面整理＋敵チェンジ短縮。店長HELP・必殺カットイン・タイムセール演出あり。
 
 (function () {
-  const BATTLE_VERSION = "v037_09";
+  const BATTLE_VERSION = "v037_10";
   const BATTLE_SECONDS = 30;
   const MAX_ENEMIES = 3;
   const CHANGE_SECONDS = 2.0;
@@ -509,15 +509,16 @@
     }
 
     if (s.skill < 100) {
-      state.lastActionText = `${s.name}の必殺ゲージが足りません。ダブルタップは必殺技用です。`;
-      render();
+      // v037_10: ダブルタップ時に必殺不可でも、通常接客が可能なら通常クリックとして処理する
+      state.lastActionText = `${s.name}の必殺ゲージが足りません。通常接客として対応します。`;
+      onStaffSingleTap(staffId);
       return;
     }
 
     const target = findBestTarget(s, true);
     if (!target) {
-      state.lastActionText = "必殺接客の対象がいません。";
-      render();
+      state.lastActionText = "必殺接客の対象がいません。通常接客を試みます。";
+      onStaffSingleTap(staffId);
       return;
     }
 
@@ -697,7 +698,7 @@
   function autoOneMove(showMessage = true) {
     if (!state || !state.running) return false;
 
-    // v037_09: オート優先順位 = 必殺技 → 通常攻撃
+    // v037_10: オート優先順位 = 必殺技 → 通常攻撃
     // 店長HELPは強力な切り札なので、オートでは使わず任意操作にする。
     let bestStaff = null;
     let bestEnemy = null;
@@ -873,8 +874,10 @@
       <div class="battle-cutin ${state.cutin.image ? "with-image" : ""}" style="--cutin-color:${state.cutin.color}; opacity:${opacity};">
         <div class="battle-cutin-band">
           <div class="battle-cutin-text">
-            ${state.cutin.image ? `<div class="battle-cutin-image"><img src="${escapeHtml(state.cutin.image)}" alt=""></div>` : ""}
-            ${state.cutin.subText ? `<small>${escapeHtml(state.cutin.subText)}</small>` : ""}
+            <div class="battle-cutin-head">
+              ${state.cutin.subText ? `<small>${escapeHtml(state.cutin.subText)}</small>` : ""}
+              ${state.cutin.image ? `<div class="battle-cutin-image"><img src="${escapeHtml(state.cutin.image)}" alt=""></div>` : ""}
+            </div>
             <b>${escapeHtml(state.cutin.title)}</b>
             ${state.cutin.descText ? `<p>${escapeHtml(state.cutin.descText)}</p>` : ""}
           </div>
