@@ -2666,7 +2666,7 @@ body {
   }
 }
 
-/* === Battle version badge v037_08 === */
+/* === Battle version badge v037_09 === */
 .battle-version {
   display: inline-block;
   margin-left: 8px;
@@ -2689,7 +2689,7 @@ body {
 }
 
 
-/* === v037_08 landscape final check/fix ===
+/* === v037_09 landscape final check/fix ===
    横画面では、上HUD・中央敵3体・下メンバー5人を固定し、
    HELP/オートはHUD右側に収めて重なりを避ける。 */
 @media screen and (orientation: landscape) {
@@ -2886,7 +2886,7 @@ body {
   #battle-root .battle-bar { height: 4px !important; margin: 1px 0 2px !important; }
 }
 
-/* === v037_08: 13属性追加 + 店長HELP大型配置 === */
+/* === v037_09: 13属性追加 + 店長HELP大型配置 === */
 #battle-root .battle-stage {
   grid-template-rows: auto auto 1fr auto !important;
 }
@@ -2982,7 +2982,7 @@ body {
 }
 
 
-/* v037_08: 場の敵と相性が良いメンバーを発光表示 */
+/* v037_09: 場の敵と相性が良いメンバーを発光表示 */
 .member-card.member-has-target {
   border-color: var(--member-match-color, #ffffff) !important;
   box-shadow:
@@ -3050,7 +3050,7 @@ body {
 }
 
 
-/* v037_08: タップ感度改善 */
+/* v037_09: タップ感度改善 */
 #battle-root .battle-member-card,
 #battle-root .battle-enemy-card,
 #battle-root button {
@@ -3082,7 +3082,7 @@ body {
 }
 
 
-/* v037_08: 緋奈テスト画像・敵ダミー枠・HELP導線調整 */
+/* v037_09: 緋奈テスト画像・敵ダミー枠・HELP導線調整 */
 #battle-root .battle-stage {
   grid-template-rows: minmax(66px, auto) minmax(116px, 1fr) minmax(44px, auto) minmax(112px, 25vh) !important;
 }
@@ -3218,7 +3218,7 @@ body {
 }
 
 
-/* v037_08: 必殺技スライドカットイン画像 */
+/* v037_09: 必殺技スライドカットイン画像 */
 #battle-root .battle-cutin.with-image .battle-cutin-band {
   min-height: clamp(116px, 24vh, 230px);
   padding: 0;
@@ -3359,7 +3359,7 @@ body {
 }
 
 
-/* v037_08: 最前面演出がHELP/メンバー操作を塞がないようにする */
+/* v037_09: 最前面演出がHELP/メンバー操作を塞がないようにする */
 #battle-root .battle-cutin,
 #battle-root .battle-cutin *,
 #battle-root .battle-surface,
@@ -3372,4 +3372,185 @@ body {
 #battle-root .battle-members,
 #battle-root .battle-member-card {
   pointer-events: auto;
+}
+
+
+/* v037_09: HELP任意化・白フラッシュ・カットイン/表示調整 */
+#battle-root .battle-help-large {
+  z-index: 4 !important;
+}
+
+#battle-root .battle-enemies,
+#battle-root .battle-members {
+  z-index: 5;
+}
+
+#battle-root .battle-cutin,
+#battle-root .battle-surface,
+#battle-root .battle-control-overlay,
+#battle-root .battle-white-flash {
+  z-index: 30 !important;
+}
+
+#battle-root .battle-cutin,
+#battle-root .battle-cutin *,
+#battle-root .battle-surface,
+#battle-root .battle-surface *,
+#battle-root .battle-white-flash {
+  pointer-events: none !important;
+}
+
+#battle-root .battle-control-overlay,
+#battle-root .battle-control-overlay * {
+  pointer-events: auto;
+}
+
+#battle-root .battle-white-flash {
+  position: absolute;
+  inset: 0;
+  background: #ffffff;
+  mix-blend-mode: screen;
+  animation: battleWhiteFlash 0.36s ease-out forwards;
+}
+
+@keyframes battleWhiteFlash {
+  from { opacity: 0.95; }
+  to { opacity: 0; }
+}
+
+/* 必殺可能時はカード白反転をやめ、名前帯だけをキャラカラーにする */
+#battle-root .battle-member-card.skill-ready {
+  background: linear-gradient(180deg, rgba(5, 34, 16, 0.96), rgba(4, 14, 8, 0.96)) !important;
+  color: #fff !important;
+  box-shadow: 0 0 18px var(--member-color, rgba(255, 240, 90, 0.9));
+}
+
+#battle-root .battle-member-card.skill-ready .member-name {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 7px;
+  color: #111 !important;
+  background: var(--member-color, #fff06a);
+  text-shadow: none !important;
+  box-shadow: 0 0 10px var(--member-color, rgba(255,255,255,0.7));
+}
+
+#battle-root .battle-member-card.skill-ready .member-skill-name {
+  color: #fff6a3 !important;
+}
+
+/* 画像あり必殺カットイン：画像はキャラ名の上に表示 */
+#battle-root .battle-cutin.with-image .battle-cutin-band {
+  min-height: clamp(152px, 31vh, 280px);
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(90deg,
+      color-mix(in srgb, var(--cutin-color, #fff) 36%, rgba(0,0,0,0.96)) 0%,
+      rgba(0,0,0,0.92) 50%,
+      rgba(0,0,0,0.74) 100%);
+  border-top: 3px solid var(--cutin-color, #fff);
+  border-bottom: 3px solid var(--cutin-color, #fff);
+  box-shadow: 0 0 30px color-mix(in srgb, var(--cutin-color, #fff) 65%, transparent);
+  animation: cutinSlideBand 0.22s ease-out both;
+}
+
+#battle-root .battle-cutin.with-image .battle-cutin-text {
+  width: min(92vw, 920px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: clamp(10px, 2vw, 22px);
+  text-align: center;
+}
+
+#battle-root .battle-cutin.with-image .battle-cutin-image {
+  width: min(72vw, 720px);
+  height: clamp(62px, 15vh, 126px);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid color-mix(in srgb, var(--cutin-color, #fff) 65%, white);
+  box-shadow:
+    0 0 18px color-mix(in srgb, var(--cutin-color, #fff) 65%, transparent),
+    inset 0 0 18px rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.08);
+}
+
+#battle-root .battle-cutin.with-image .battle-cutin-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
+  transform: scale(1.035);
+  filter: saturate(1.08) contrast(1.04);
+}
+
+#battle-root .battle-cutin.with-image .battle-cutin-text small {
+  margin-top: 2px;
+  color: var(--cutin-color, #fff);
+  font-size: clamp(14px, 2vw, 26px);
+  font-weight: 900;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+#battle-root .battle-cutin.with-image .battle-cutin-text b {
+  font-size: clamp(26px, 5.2vw, 60px);
+  line-height: 1.03;
+  text-shadow:
+    0 3px 10px rgba(0,0,0,0.9),
+    0 0 18px color-mix(in srgb, var(--cutin-color, #fff) 70%, transparent);
+}
+
+#battle-root .battle-cutin.with-image .battle-cutin-text p {
+  margin: 4px 0 0;
+  max-width: min(88vw, 760px);
+  font-size: clamp(11px, 1.45vw, 18px);
+  line-height: 1.35;
+  opacity: 0.94;
+}
+
+@keyframes cutinSlideBand {
+  from {
+    transform: translateX(-7%) skewX(-3deg);
+    filter: brightness(1.25);
+  }
+  to {
+    transform: translateX(0) skewX(0);
+    filter: brightness(1);
+  }
+}
+
+@media screen and (orientation: landscape) and (max-height: 520px) {
+  #battle-root .battle-cutin.with-image .battle-cutin-band {
+    min-height: clamp(118px, 33vh, 165px);
+  }
+  #battle-root .battle-cutin.with-image .battle-cutin-image {
+    height: clamp(46px, 13vh, 78px);
+    border-radius: 10px;
+  }
+  #battle-root .battle-cutin.with-image .battle-cutin-text {
+    gap: 2px;
+    padding: 6px 12px;
+  }
+  #battle-root .battle-cutin.with-image .battle-cutin-text b {
+    font-size: clamp(22px, 4.5vw, 42px);
+  }
+  #battle-root .battle-cutin.with-image .battle-cutin-text p {
+    font-size: clamp(9px, 1.25vw, 13px);
+    line-height: 1.25;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  #battle-root .battle-cutin.with-image .battle-cutin-band {
+    min-height: 220px;
+  }
+  #battle-root .battle-cutin.with-image .battle-cutin-image {
+    width: min(88vw, 520px);
+    height: 82px;
+  }
 }

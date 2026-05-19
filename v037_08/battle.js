@@ -3,7 +3,7 @@
 // 操作はメンバーのシングルタップで通常接客、ダブルタップで必殺接客。通常敵HP2、レアHP3。ターゲットは選択メンバーに最適な家電星人へ自動Fix。彩愛の必殺は盤面整理＋敵チェンジ短縮。店長HELP・必殺カットイン・タイムセール演出あり。
 
 (function () {
-  const BATTLE_VERSION = "v037_08";
+  const BATTLE_VERSION = "v037_09";
   const BATTLE_SECONDS = 30;
   const MAX_ENEMIES = 3;
   const CHANGE_SECONDS = 2.0;
@@ -172,6 +172,7 @@
       cutin: null,
       cutinUntil: 0,
       surface: null,
+      whiteFlashUntil: 0,
       countingDown: false,
 
       lastActionText: "営業開始を押してください。",
@@ -271,7 +272,7 @@
       { title: "3", sub: "開店準備中", ms: 650 },
       { title: "2", sub: "スタッフ配置確認", ms: 650 },
       { title: "1", sub: "レジ起動OK", ms: 650 },
-      { title: "開店！", sub: autoMode ? "オート営業開始（HELP→必殺→通常）" : "店舗営業開始", ms: 720 }
+      { title: "開店！", sub: autoMode ? "オート営業開始（必殺→通常）" : "店舗営業開始", ms: 720 }
     ];
 
     let delay = 0;
@@ -608,6 +609,11 @@
     state.lastActionText = `レジ誘導成功！ +${point}Pt`;
   }
 
+  function triggerWhiteFlash() {
+    if (!state) return;
+    state.whiteFlashUntil = performance.now() + 360;
+  }
+
   function showCutin(title, color = "#ffffff", subText = "", descText = "", image = "") {
     if (!state) return;
     state.cutin = { title, color, subText, descText, image, createdAt: performance.now(), life: descText || image ? 1650 : 1150 };
@@ -691,12 +697,8 @@
   function autoOneMove(showMessage = true) {
     if (!state || !state.running) return false;
 
-    // v037_08: オート優先順位 = 店長HELP → 必殺技 → 通常攻撃
-    if (state.helpStock > 0) {
-      useManagerHelp(true);
-      return true;
-    }
-
+    // v037_09: オート優先順位 = 必殺技 → 通常攻撃
+    // 店長HELPは強力な切り札なので、オートでは使わず任意操作にする。
     let bestStaff = null;
     let bestEnemy = null;
     let useSpecial = false;
@@ -712,7 +714,7 @@
       const damage = getAttackDamage(s, e, canSpecial);
       const willDefeat = e.gauge <= damage;
       const score =
-        (canSpecial ? 220 : 0) +
+        (canSpecial ? 240 : 0) +
         (s.attr === e.attr ? 120 : 0) +
         (willDefeat ? 90 : 0) +
         (1 - e.patience / e.maxPatience) * 72 +
@@ -760,7 +762,7 @@
     if (!state || !state.running) return;
     state.autoMode = !state.autoMode;
     state.autoTimer = 0;
-    state.lastActionText = state.autoMode ? "オート営業ON：店長HELP→必殺→通常の順で行動します。CT2倍・売上70%。" : "オート営業OFF";
+    state.lastActionText = state.autoMode ? "オート営業ON：必殺→通常の順で行動します。店長HELPは任意操作です。CT2倍・売上70%。" : "オート営業OFF";
     render();
   }
 
@@ -786,6 +788,7 @@
     }
 
     state.helpStock -= 1;
+    triggerWhiteFlash();
     showCutin("店長HELP！", "#ffe06a", "店長出動", "全メンバーのCTをクリアし、画面上の敵を一掃成約してオールチェンジします。");
     state.staff.forEach(s => { s.ct = 0; });
 
@@ -821,6 +824,7 @@
 
         ${renderCutinOverlay()}
         ${renderSurfaceOverlay()}
+        ${renderWhiteFlashOverlay()}
 
         <section class="battle-enemies">
           ${(state.enemies.length ? state.enemies.map(renderEnemy).join("") : renderEnemyDummies())}
@@ -868,8 +872,8 @@
     return `
       <div class="battle-cutin ${state.cutin.image ? "with-image" : ""}" style="--cutin-color:${state.cutin.color}; opacity:${opacity};">
         <div class="battle-cutin-band">
-          ${state.cutin.image ? `<div class="battle-cutin-image"><img src="${escapeHtml(state.cutin.image)}" alt=""></div>` : ""}
           <div class="battle-cutin-text">
+            ${state.cutin.image ? `<div class="battle-cutin-image"><img src="${escapeHtml(state.cutin.image)}" alt=""></div>` : ""}
             ${state.cutin.subText ? `<small>${escapeHtml(state.cutin.subText)}</small>` : ""}
             <b>${escapeHtml(state.cutin.title)}</b>
             ${state.cutin.descText ? `<p>${escapeHtml(state.cutin.descText)}</p>` : ""}
@@ -877,6 +881,14 @@
         </div>
       </div>
     `;
+  }
+
+  function renderWhiteFlashOverlay() {
+    if (!state || !state.whiteFlashUntil) return "";
+    const now = performance.now();
+    if (now > state.whiteFlashUntil) return "";
+    const opacity = Math.max(0, Math.min(1, (state.whiteFlashUntil - now) / 360));
+    return `<div class="battle-white-flash" style="opacity:${opacity};"></div>`;
   }
 
   function renderSurfaceOverlay() {
@@ -911,7 +923,7 @@
             </div>
           ` : `
             <div class="battle-result-title">店舗営業プロトタイプ</div>
-            <p class="battle-control-help">30秒で家電星人をどれだけ接客できるか。メンバーはシングルタップ通常、ダブルタップ必殺。オートは店長HELP→必殺→通常の順。CT2倍・売上70%。</p>
+            <p class="battle-control-help">30秒で家電星人をどれだけ接客できるか。メンバーはシングルタップ通常、ダブルタップ必殺。オートは必殺→通常の順。店長HELPは任意操作。CT2倍・売上70%。</p>
           `}
           <div class="battle-control-buttons battle-main-buttons">
             <button data-action="start">${isResult ? "もう一度営業" : "営業開始"}</button>
