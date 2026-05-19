@@ -14,6 +14,17 @@
     { id: "ae", name: "琥珀", color: "#F68B1F", attr: "オーディオ", power: 38, ctMax: 2.7, skillName: "フロアダッシュ", skillType: "rushBuff" }
   ];
 
+
+  const attrColors = {
+    "映像": "#e53935",
+    "美容": "#1e88e5",
+    "PC": "#43a047",
+    "スマホ": "#fdd835",
+    "オーディオ": "#fb8c00",
+    "季節": "#64b5f6",
+    "生活": "#ab47bc"
+  };
+
   const enemyTypes = [
     { attr: "映像", icon: "📺", name: "テレビ星人", text: "大画面で見たい！", baseGauge: 78, basePatience: 6.8, score: 120 },
     { attr: "美容", icon: "💨", name: "美容家電星人", text: "髪を早く乾かしたい", baseGauge: 72, basePatience: 7.3, score: 125 },
@@ -392,8 +403,9 @@
     const gaugeRate = Math.max(0, Math.min(100, (e.gauge / e.maxGauge) * 100));
     const patienceRate = Math.max(0, Math.min(100, (e.patience / e.maxPatience) * 100));
     const target = e.id === state.targetPreviewId;
+    const enemyColor = attrColors[e.attr] || "#ff841f";
     return `
-      <article class="battle-enemy-card ${e.rare ? "rare" : ""} ${target ? "target" : ""}">
+      <article class="battle-enemy-card ${e.rare ? "rare" : ""} ${target ? "target" : ""}" style="--enemy-color:${enemyColor};">
         <div class="enemy-head"><span class="enemy-icon">${e.icon}</span><span class="enemy-name">${escapeHtml(e.name)}</span>${e.rare ? "<b>RARE</b>" : ""}</div>
         <div class="enemy-attr">${escapeHtml(e.attr)} / ${escapeHtml(e.text)}</div>
         <div class="enemy-label">迷いゲージ</div>

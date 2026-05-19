@@ -1373,17 +1373,17 @@ body {
   height: min(100%, 210px);
   min-height: 112px;
   box-sizing: border-box;
-  border: 4px solid #ff841f;
+  border: 4px solid var(--enemy-color, #ff841f);
   border-radius: 12px;
-  background: linear-gradient(180deg, rgba(46, 25, 8, 0.92), rgba(18, 14, 10, 0.92));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--enemy-color, #ff841f) 22%, rgba(18, 14, 10, 0.92)), rgba(18, 14, 10, 0.92));
   padding: clamp(6px, 1.3vw, 14px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
 }
-#battle-root .battle-enemy-card.rare { border-color: #ffd44a; }
-#battle-root .battle-enemy-card.target { box-shadow: 0 0 22px rgba(255, 230, 100, 0.95); transform: translateY(-2px); }
+#battle-root .battle-enemy-card.rare { box-shadow: inset 0 0 0 2px #ffd44a, 0 0 12px rgba(255, 212, 74, 0.45); }
+#battle-root .battle-enemy-card.target { box-shadow: 0 0 22px var(--enemy-color, rgba(255, 230, 100, 0.95)); transform: translateY(-2px); }
 #battle-root .enemy-head {
   display: flex;
   gap: 6px;

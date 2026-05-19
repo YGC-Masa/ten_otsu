@@ -1,5 +1,5 @@
 // serviceWorker.js - v037 battle prototype cache clear対応版
-const CACHE_NAME = "tenotsu-v037-integrated-battle-layout-20260519-2";
+const CACHE_NAME = "tenotsu-v037-integrated-weakcolor-20260519-1";
 const URLS_TO_CACHE = [
   "./",
   "./index.html",
