@@ -1,0 +1,877 @@
+:root {
+  --fontSize: 1em;
+  --vh: 1vh;
+  --app-height: 100vh;
+}
+
+html, body {
+  width: 100%;
+  height: var(--app-height);
+  min-height: var(--app-height);
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: manipulation;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  font-family: "Arial", sans-serif;
+  font-size: var(--fontSize);
+  overflow: hidden;
+}
+
+#game-container {
+  position: relative;
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
+}
+
+/* 背景 */
+#background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* キャラ表示レイヤー */
+#char-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.char-slot {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  pointer-events: none;
+  display: none;
+}
+
+.char-slot.active {
+  display: flex !important;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.char-image {
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+/* キャラ位置 */
+#char-left {
+  left: 5%;
+  width: 30%;
+}
+
+#char-center {
+  left: 35%;
+  width: 30%;
+}
+
+#char-right {
+  left: 65%;
+  width: 30%;
+}
+
+/* EV/CG 表示レイヤー */
+#ev-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ev-image,
+.cg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* クリックレイヤー（透過） */
+#click-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: transparent;
+  pointer-events: auto;
+}
+
+/* テキストボックス */
+#dialogue-box {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 1em;
+  z-index: 9;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.name-area {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  font-size: 1.1em;
+}
+
+.text-area {
+  line-height: 1.6;
+  min-height: 3em;
+}
+
+/* 選択肢 */
+.choices-area {
+  position: absolute;
+  top: 60%;
+  width: 100%;
+  text-align: center;
+  z-index: 11;
+}
+
+.choices-area button {
+  margin: 0.5em;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+
+.choices-area button:hover {
+  background-color: #555;
+}
+
+/* LISTパネル（右） */
+.list-panel {
+  position: absolute;
+  right: 0;
+  top: 5%;
+  width: 25%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: stretch;
+  padding: 0.5em;
+  box-sizing: border-box;
+  background-color: rgba(255, 192, 203, 0.85);
+  z-index: 11;
+  font-size: 14px;
+}
+
+.list-panel button {
+  flex: 1;
+  margin: 0.2em 0;
+  padding: 0.4em;
+  font-size: 1em;
+  background: rgba(255, 105, 180, 0.9);
+  color: white;
+  border: 1px solid #d36c8d;
+  border-radius: 0.4em;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-panel button:hover {
+  background: rgba(255, 20, 147, 0.95);
+}
+
+/* メニューパネル（左） */
+.menu-panel {
+  position: absolute;
+  left: 0;
+  top: 5%;
+  width: 35%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: stretch;
+  padding: 0.5em;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 12;
+  font-size: 14px;
+}
+
+.menu-panel button {
+  flex: 1;
+  margin: 0.2em 0;
+  padding: 0.4em;
+  font-size: 1em;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  border: 1px solid #666;
+  border-radius: 0.4em;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-panel button:hover {
+  background: #444;
+}
+
+/* 音声トグル専用 */
+.menu-sound-toggle {
+  font-weight: bold;
+  padding: 0.8em 0.5em;
+  background: #222;
+  border: 2px solid #888;
+  border-radius: 0.5em;
+}
+
+/* モバイル横画面用 */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  .menu-panel,
+  .list-panel {
+    top: 5%;
+    height: 75%;
+    width: 45%;
+    font-size: 12px;
+  }
+}
+
+/* モバイル縦画面用 */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+  .menu-panel,
+  .list-panel {
+    top: 20%;
+    height: 50%;
+    width: 45%;
+    font-size: 13px;
+  }
+}
+
+/* PC画面用 */
+@media screen and (min-width: 769px) {
+  .menu-panel,
+  .list-panel {
+    top: 5%;
+    height: 75%;
+    width: 35%;
+    font-size: 14px;
+  }
+}
+
+/* 共通非表示ユーティリティ */
+.hidden {
+  display: none !important;
+}
+
+/* ランダム画像 */
+.random-image {
+  position: absolute;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* ランダムテキスト（付箋） */
+/* ランダムテキストレイヤー */
+#random-text-layer {
+  position: absolute;
+  bottom: 0;
+  left: 5vw;
+  width: 90vw;
+  height: 10vh;
+  z-index: 3;
+  pointer-events: none;
+  user-select: none;
+  font-family: 'Arial', sans-serif;
+}
+
+/* 付箋本体 */
+.random-text-note {
+  position: absolute;
+  font-size: 0.9em;
+  border-radius: 0.5em;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  white-space: nowrap;
+  border-left: 8px solid var(--char-color, gray);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  padding: 0.5em 1em 0.5em 1.4em;
+  background-color: rgba(255, 255, 255, 0.9); /* JSで上書きされる */
+}
+
+
+
+/* 非表示用 */
+#random-text-layer.hidden {
+  display: none !important;
+}
+
+/* === 店舗営業：デッキ接客バトル試作 === */
+.battle-root {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: rgba(0, 0, 0, 0.82);
+  color: #fff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.battle-panel {
+  position: absolute;
+  inset: 3vh 3vw;
+  border: 2px solid rgba(255,255,255,0.35);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(32,34,42,0.96), rgba(12,12,18,0.96));
+  box-shadow: 0 0 24px rgba(0,0,0,0.7);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.battle-header,
+.battle-status,
+.battle-footer {
+  padding: 0.7rem 1rem;
+  background: rgba(255,255,255,0.08);
+}
+
+.battle-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.battle-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.battle-subtitle,
+.battle-help,
+.skill-desc,
+.mini-label {
+  font-size: 0.75rem;
+  opacity: 0.82;
+}
+
+.battle-close {
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 50%;
+  border: 0;
+  font-size: 1.5rem;
+}
+
+.battle-status {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.battle-status.rush {
+  background: rgba(211, 56, 28, 0.28);
+  animation: battlePulse 0.8s infinite alternate;
+}
+
+@keyframes battlePulse {
+  from { filter: brightness(1); }
+  to { filter: brightness(1.35); }
+}
+
+.battle-main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1rem;
+  padding: 1rem;
+  min-height: 0;
+}
+
+.customer-area,
+.staff-area {
+  display: grid;
+  gap: 0.75rem;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.customer-area {
+  grid-template-columns: 1fr;
+}
+
+.staff-area {
+  grid-template-columns: repeat(5, minmax(110px, 1fr));
+  align-content: start;
+}
+
+.customer-card,
+.staff-card,
+.battle-actions button,
+.skill-btn,
+.staff-select {
+  border-radius: 14px;
+}
+
+.customer-card,
+.staff-select,
+.skill-btn,
+.battle-actions button {
+  border: 1px solid rgba(255,255,255,0.22);
+  color: #fff;
+  background: rgba(255,255,255,0.09);
+  cursor: pointer;
+}
+
+.customer-card {
+  padding: 0.8rem;
+  text-align: left;
+}
+
+.customer-card.rare {
+  border-color: #ffd966;
+  box-shadow: 0 0 12px rgba(255,217,102,0.35);
+}
+
+.customer-top {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+  font-weight: bold;
+}
+
+.customer-icon {
+  font-size: 1.4rem;
+}
+
+.customer-text {
+  margin: 0.45rem 0;
+  font-size: 1rem;
+}
+
+.staff-card {
+  border: 2px solid var(--staff-color);
+  background: rgba(255,255,255,0.075);
+  padding: 0.45rem;
+  box-shadow: inset 0 0 18px color-mix(in srgb, var(--staff-color), transparent 78%);
+}
+
+.staff-card.selected {
+  outline: 3px solid #fff;
+  transform: translateY(-2px);
+}
+
+.staff-card.cooldown .staff-select {
+  opacity: 0.65;
+}
+
+.staff-select {
+  width: 100%;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.staff-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--staff-color);
+}
+
+.staff-attr,
+.staff-stat {
+  font-size: 0.75rem;
+}
+
+.skill-btn {
+  width: 100%;
+  margin-top: 0.45rem;
+  padding: 0.45rem;
+  font-weight: bold;
+  background: color-mix(in srgb, var(--staff-color), #111 65%);
+}
+
+.skill-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.bar {
+  height: 8px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 0.15rem 0 0.35rem;
+}
+
+.bar > div {
+  height: 100%;
+  background: #fff;
+}
+
+.bar.patience > div { background: #65d9ff; }
+.bar.ct > div { background: #ff7665; }
+.bar.skill > div { background: #ffd966; }
+
+.battle-footer {
+  display: grid;
+  grid-template-columns: auto 1fr 1.2fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.battle-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.battle-actions button {
+  padding: 0.6rem 0.9rem;
+}
+
+.battle-log {
+  font-size: 0.75rem;
+  line-height: 1.45;
+  opacity: 0.9;
+}
+
+.battle-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed rgba(255,255,255,0.25);
+  border-radius: 14px;
+  min-height: 12rem;
+  opacity: 0.75;
+}
+
+@media screen and (max-width: 900px) {
+  .battle-panel { inset: 2vh 2vw; }
+  .battle-main { grid-template-columns: 1fr; }
+  .staff-area { grid-template-columns: repeat(3, minmax(100px, 1fr)); }
+  .battle-footer { grid-template-columns: 1fr; }
+}
+
+/* === 店舗営業：デッキ接客バトル表示修正版 v037-battle-viewfix === */
+.battle-root.hidden {
+  display: none !important;
+}
+
+.battle-root:not(.hidden) {
+  display: block !important;
+}
+
+.battle-root,
+.battle-root * {
+  box-sizing: border-box;
+}
+
+.battle-root {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 12000 !important;
+  width: 100vw !important;
+  height: var(--app-height) !important;
+  min-height: var(--app-height);
+  overflow: hidden !important;
+  background: rgba(5, 7, 12, 0.96) !important;
+  color: #fff !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+
+.battle-panel {
+  position: absolute !important;
+  inset: max(8px, env(safe-area-inset-top)) max(8px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom)) max(8px, env(safe-area-inset-left)) !important;
+  width: auto !important;
+  height: auto !important;
+  display: grid !important;
+  grid-template-rows: auto auto minmax(0, 1fr) auto !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  background: linear-gradient(180deg, rgba(35,37,48,0.98), rgba(10,12,18,0.98)) !important;
+}
+
+.battle-header,
+.battle-status,
+.battle-footer {
+  flex: unset !important;
+  min-height: 0 !important;
+}
+
+.battle-header {
+  padding: 8px 12px !important;
+}
+
+.battle-title {
+  font-size: clamp(15px, 2.1vw, 22px) !important;
+  line-height: 1.15 !important;
+}
+
+.battle-subtitle {
+  font-size: clamp(10px, 1.2vw, 13px) !important;
+  line-height: 1.2 !important;
+}
+
+.battle-close {
+  flex: 0 0 auto !important;
+  width: 36px !important;
+  height: 36px !important;
+  color: #111 !important;
+  background: #fff !important;
+}
+
+.battle-status {
+  display: grid !important;
+  grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+  gap: 6px !important;
+  padding: 6px 10px !important;
+  font-size: clamp(10px, 1.25vw, 14px) !important;
+}
+
+.battle-status span {
+  min-width: 0 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  text-align: center !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,0.08) !important;
+  padding: 4px 6px !important;
+}
+
+.battle-main {
+  min-height: 0 !important;
+  height: 100% !important;
+  display: grid !important;
+  grid-template-columns: minmax(240px, 0.95fr) minmax(420px, 1.55fr) !important;
+  gap: 10px !important;
+  padding: 10px !important;
+  overflow: hidden !important;
+}
+
+.customer-area,
+.staff-area {
+  min-height: 0 !important;
+  height: 100% !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  padding-right: 2px !important;
+}
+
+.customer-area {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  grid-auto-rows: minmax(96px, auto) !important;
+  align-content: start !important;
+  gap: 8px !important;
+}
+
+.staff-area {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(130px, 1fr)) !important;
+  align-content: start !important;
+  gap: 8px !important;
+}
+
+.customer-card,
+.staff-card {
+  min-width: 0 !important;
+}
+
+.customer-card {
+  padding: 8px !important;
+}
+
+.customer-icon {
+  font-size: clamp(18px, 2.5vw, 28px) !important;
+}
+
+.customer-text {
+  font-size: clamp(12px, 1.5vw, 16px) !important;
+  line-height: 1.25 !important;
+  margin: 4px 0 !important;
+}
+
+.staff-card {
+  padding: 6px !important;
+  border-width: 2px !important;
+  background: rgba(255,255,255,0.07) !important;
+  box-shadow: none !important;
+}
+
+.staff-select {
+  padding: 6px !important;
+}
+
+.staff-name {
+  font-size: clamp(13px, 1.55vw, 17px) !important;
+  line-height: 1.15 !important;
+}
+
+.staff-attr,
+.staff-stat,
+.skill-desc,
+.mini-label,
+.battle-log,
+.battle-help {
+  font-size: clamp(9px, 1.05vw, 12px) !important;
+  line-height: 1.25 !important;
+}
+
+.skill-btn {
+  margin-top: 4px !important;
+  padding: 5px 4px !important;
+  font-size: clamp(10px, 1.1vw, 12px) !important;
+  line-height: 1.15 !important;
+}
+
+.bar {
+  height: 6px !important;
+  margin: 2px 0 4px !important;
+}
+
+.battle-footer {
+  display: grid !important;
+  grid-template-columns: minmax(220px, auto) minmax(180px, 0.8fr) minmax(240px, 1.2fr) !important;
+  gap: 8px !important;
+  align-items: center !important;
+  padding: 8px 10px !important;
+}
+
+.battle-actions {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 6px !important;
+}
+
+.battle-actions button {
+  padding: 8px 10px !important;
+  min-width: 0 !important;
+  white-space: nowrap !important;
+  font-size: clamp(11px, 1.2vw, 14px) !important;
+}
+
+.battle-log {
+  max-height: 48px !important;
+  overflow-y: auto !important;
+}
+
+.battle-empty {
+  min-height: 100% !important;
+  padding: 16px !important;
+  text-align: center !important;
+}
+
+@media screen and (orientation: portrait) {
+  .battle-root:not(.hidden) {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 960px), screen and (max-height: 560px) {
+  .battle-panel {
+    border-radius: 10px !important;
+  }
+
+  .battle-header {
+    padding: 6px 8px !important;
+  }
+
+  .battle-subtitle,
+  .skill-desc {
+    display: none !important;
+  }
+
+  .battle-status {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 4px !important;
+    padding: 5px 6px !important;
+  }
+
+  .battle-main {
+    grid-template-columns: minmax(190px, 0.78fr) minmax(300px, 1.22fr) !important;
+    gap: 6px !important;
+    padding: 6px !important;
+  }
+
+  .customer-area,
+  .staff-area {
+    gap: 6px !important;
+  }
+
+  .staff-area {
+    grid-template-columns: repeat(3, minmax(96px, 1fr)) !important;
+  }
+
+  .customer-area {
+    grid-auto-rows: minmax(78px, auto) !important;
+  }
+
+  .customer-card,
+  .staff-select {
+    padding: 5px !important;
+  }
+
+  .staff-stat {
+    display: none !important;
+  }
+
+  .battle-footer {
+    grid-template-columns: auto 1fr !important;
+    padding: 6px !important;
+  }
+
+  .battle-log {
+    display: none !important;
+  }
+}
+
+@media screen and (max-height: 430px) {
+  .battle-header {
+    display: none !important;
+  }
+
+  .battle-status {
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+  }
+
+  .battle-footer {
+    grid-template-columns: auto 1fr !important;
+  }
+
+  .battle-actions button {
+    padding: 6px 8px !important;
+  }
+}
