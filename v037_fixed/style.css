@@ -1,6 +1,16 @@
 :root {
   --fontSize: 1em;
   --vh: 1vh;
+  --app-height: 100vh;
+}
+
+html, body {
+  width: 100%;
+  height: var(--app-height);
+  min-height: var(--app-height);
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: manipulation;
 }
 
 body {
@@ -572,4 +582,468 @@ body {
   .battle-main { grid-template-columns: 1fr; }
   .staff-area { grid-template-columns: repeat(3, minmax(100px, 1fr)); }
   .battle-footer { grid-template-columns: 1fr; }
+}
+
+/* === 店舗営業：デッキ接客バトル表示修正版 v037-battle-viewfix === */
+.battle-root.hidden {
+  display: none !important;
+}
+
+.battle-root:not(.hidden) {
+  display: block !important;
+}
+
+.battle-root,
+.battle-root * {
+  box-sizing: border-box;
+}
+
+.battle-root {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 12000 !important;
+  width: 100vw !important;
+  height: var(--app-height) !important;
+  min-height: var(--app-height);
+  overflow: hidden !important;
+  background: rgba(5, 7, 12, 0.96) !important;
+  color: #fff !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+
+.battle-panel {
+  position: absolute !important;
+  inset: max(8px, env(safe-area-inset-top)) max(8px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom)) max(8px, env(safe-area-inset-left)) !important;
+  width: auto !important;
+  height: auto !important;
+  display: grid !important;
+  grid-template-rows: auto auto minmax(0, 1fr) auto !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  background: linear-gradient(180deg, rgba(35,37,48,0.98), rgba(10,12,18,0.98)) !important;
+}
+
+.battle-header,
+.battle-status,
+.battle-footer {
+  flex: unset !important;
+  min-height: 0 !important;
+}
+
+.battle-header {
+  padding: 8px 12px !important;
+}
+
+.battle-title {
+  font-size: clamp(15px, 2.1vw, 22px) !important;
+  line-height: 1.15 !important;
+}
+
+.battle-subtitle {
+  font-size: clamp(10px, 1.2vw, 13px) !important;
+  line-height: 1.2 !important;
+}
+
+.battle-close {
+  flex: 0 0 auto !important;
+  width: 36px !important;
+  height: 36px !important;
+  color: #111 !important;
+  background: #fff !important;
+}
+
+.battle-status {
+  display: grid !important;
+  grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+  gap: 6px !important;
+  padding: 6px 10px !important;
+  font-size: clamp(10px, 1.25vw, 14px) !important;
+}
+
+.battle-status span {
+  min-width: 0 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  text-align: center !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,0.08) !important;
+  padding: 4px 6px !important;
+}
+
+.battle-main {
+  min-height: 0 !important;
+  height: 100% !important;
+  display: grid !important;
+  grid-template-columns: minmax(240px, 0.95fr) minmax(420px, 1.55fr) !important;
+  gap: 10px !important;
+  padding: 10px !important;
+  overflow: hidden !important;
+}
+
+.customer-area,
+.staff-area {
+  min-height: 0 !important;
+  height: 100% !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  padding-right: 2px !important;
+}
+
+.customer-area {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  grid-auto-rows: minmax(96px, auto) !important;
+  align-content: start !important;
+  gap: 8px !important;
+}
+
+.staff-area {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(130px, 1fr)) !important;
+  align-content: start !important;
+  gap: 8px !important;
+}
+
+.customer-card,
+.staff-card {
+  min-width: 0 !important;
+}
+
+.customer-card {
+  padding: 8px !important;
+}
+
+.customer-icon {
+  font-size: clamp(18px, 2.5vw, 28px) !important;
+}
+
+.customer-text {
+  font-size: clamp(12px, 1.5vw, 16px) !important;
+  line-height: 1.25 !important;
+  margin: 4px 0 !important;
+}
+
+.staff-card {
+  padding: 6px !important;
+  border-width: 2px !important;
+  background: rgba(255,255,255,0.07) !important;
+  box-shadow: none !important;
+}
+
+.staff-select {
+  padding: 6px !important;
+}
+
+.staff-name {
+  font-size: clamp(13px, 1.55vw, 17px) !important;
+  line-height: 1.15 !important;
+}
+
+.staff-attr,
+.staff-stat,
+.skill-desc,
+.mini-label,
+.battle-log,
+.battle-help {
+  font-size: clamp(9px, 1.05vw, 12px) !important;
+  line-height: 1.25 !important;
+}
+
+.skill-btn {
+  margin-top: 4px !important;
+  padding: 5px 4px !important;
+  font-size: clamp(10px, 1.1vw, 12px) !important;
+  line-height: 1.15 !important;
+}
+
+.bar {
+  height: 6px !important;
+  margin: 2px 0 4px !important;
+}
+
+.battle-footer {
+  display: grid !important;
+  grid-template-columns: minmax(220px, auto) minmax(180px, 0.8fr) minmax(240px, 1.2fr) !important;
+  gap: 8px !important;
+  align-items: center !important;
+  padding: 8px 10px !important;
+}
+
+.battle-actions {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 6px !important;
+}
+
+.battle-actions button {
+  padding: 8px 10px !important;
+  min-width: 0 !important;
+  white-space: nowrap !important;
+  font-size: clamp(11px, 1.2vw, 14px) !important;
+}
+
+.battle-log {
+  max-height: 48px !important;
+  overflow-y: auto !important;
+}
+
+.battle-empty {
+  min-height: 100% !important;
+  padding: 16px !important;
+  text-align: center !important;
+}
+
+@media screen and (orientation: portrait) {
+  .battle-root:not(.hidden) {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 960px), screen and (max-height: 560px) {
+  .battle-panel {
+    border-radius: 10px !important;
+  }
+
+  .battle-header {
+    padding: 6px 8px !important;
+  }
+
+  .battle-subtitle,
+  .skill-desc {
+    display: none !important;
+  }
+
+  .battle-status {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 4px !important;
+    padding: 5px 6px !important;
+  }
+
+  .battle-main {
+    grid-template-columns: minmax(190px, 0.78fr) minmax(300px, 1.22fr) !important;
+    gap: 6px !important;
+    padding: 6px !important;
+  }
+
+  .customer-area,
+  .staff-area {
+    gap: 6px !important;
+  }
+
+  .staff-area {
+    grid-template-columns: repeat(3, minmax(96px, 1fr)) !important;
+  }
+
+  .customer-area {
+    grid-auto-rows: minmax(78px, auto) !important;
+  }
+
+  .customer-card,
+  .staff-select {
+    padding: 5px !important;
+  }
+
+  .staff-stat {
+    display: none !important;
+  }
+
+  .battle-footer {
+    grid-template-columns: auto 1fr !important;
+    padding: 6px !important;
+  }
+
+  .battle-log {
+    display: none !important;
+  }
+}
+
+@media screen and (max-height: 430px) {
+  .battle-header {
+    display: none !important;
+  }
+
+  .battle-status {
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+  }
+
+  .battle-footer {
+    grid-template-columns: auto 1fr !important;
+  }
+
+  .battle-actions button {
+    padding: 6px 8px !important;
+  }
+}
+
+/* === iPhone Safari landscape compact battle layout v037-battle-ios-compact === */
+@media screen and (orientation: landscape) and (max-height: 760px) {
+  .battle-root {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+  }
+
+  .battle-panel {
+    inset: max(4px, env(safe-area-inset-top)) max(6px, env(safe-area-inset-right)) max(4px, env(safe-area-inset-bottom)) max(6px, env(safe-area-inset-left)) !important;
+    grid-template-rows: 42px 34px minmax(0, 1fr) 44px !important;
+    border-radius: 10px !important;
+  }
+
+  .battle-header {
+    padding: 4px 8px !important;
+    min-height: 0 !important;
+  }
+
+  .battle-title {
+    font-size: clamp(14px, 2.1vw, 20px) !important;
+    line-height: 1.05 !important;
+  }
+
+  .battle-subtitle {
+    display: none !important;
+  }
+
+  .battle-close {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 20px !important;
+    line-height: 1 !important;
+  }
+
+  .battle-status {
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+    gap: 4px !important;
+    padding: 4px 6px !important;
+    font-size: clamp(9px, 1.4vw, 12px) !important;
+    align-items: center !important;
+  }
+
+  .battle-status span {
+    padding: 3px 4px !important;
+  }
+
+  .battle-main {
+    grid-template-columns: minmax(220px, 0.95fr) minmax(440px, 1.6fr) !important;
+    gap: 6px !important;
+    padding: 6px !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .customer-area {
+    grid-auto-rows: minmax(70px, auto) !important;
+    gap: 5px !important;
+  }
+
+  .staff-area {
+    grid-template-columns: repeat(5, minmax(78px, 1fr)) !important;
+    gap: 5px !important;
+  }
+
+  .customer-card,
+  .staff-card,
+  .staff-select {
+    border-radius: 9px !important;
+  }
+
+  .customer-card {
+    padding: 5px !important;
+  }
+
+  .customer-top {
+    gap: 4px !important;
+    font-size: 11px !important;
+    line-height: 1.05 !important;
+  }
+
+  .customer-icon {
+    font-size: 17px !important;
+  }
+
+  .customer-text {
+    font-size: 11px !important;
+    line-height: 1.1 !important;
+    margin: 2px 0 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .staff-card {
+    padding: 4px !important;
+    border-width: 2px !important;
+  }
+
+  .staff-select {
+    padding: 4px !important;
+  }
+
+  .staff-name {
+    font-size: 13px !important;
+    line-height: 1.05 !important;
+  }
+
+  .staff-attr {
+    font-size: 10px !important;
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .staff-stat,
+  .skill-desc,
+  .mini-label {
+    display: none !important;
+  }
+
+  .bar {
+    height: 4px !important;
+    margin: 3px 0 !important;
+  }
+
+  .skill-btn {
+    margin-top: 3px !important;
+    padding: 4px 3px !important;
+    font-size: 9px !important;
+    line-height: 1.05 !important;
+    min-height: 24px !important;
+    white-space: normal !important;
+  }
+
+  .battle-footer {
+    grid-template-columns: auto minmax(0, 1fr) !important;
+    gap: 6px !important;
+    padding: 5px 6px !important;
+    align-items: center !important;
+    min-height: 0 !important;
+  }
+
+  .battle-actions {
+    gap: 5px !important;
+  }
+
+  .battle-actions button {
+    padding: 6px 8px !important;
+    font-size: 11px !important;
+    border-radius: 10px !important;
+  }
+
+  .battle-help {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .battle-log {
+    display: none !important;
+  }
+
+  .battle-empty {
+    min-height: 100% !important;
+    padding: 10px !important;
+    font-size: 12px !important;
+  }
 }

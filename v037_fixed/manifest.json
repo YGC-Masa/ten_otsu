@@ -1,7 +1,7 @@
 {
   "name": "Ten-Otsu Novel Game v037",
   "short_name": "Ten-Otsu",
-  "start_url": "./index.html",
+  "start_url": "./index.html?source=pwa",
   "scope": "./",
   "display": "standalone",
   "background_color": "#000000",
@@ -18,5 +18,7 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "orientation": "landscape",
+  "id": "./index.html"
 }
