@@ -55,3 +55,30 @@ v037/
 ## 注意
 
 GitHub PagesではService Workerのキャッシュが残りやすいため、更新後に反映されない場合はDevToolsのApplication > Service WorkersからUnregisterしてください。
+
+## v037 デッキ接客バトル試作追加
+
+店舗営業プロトタイプとして、`battle.js` を追加しました。
+
+### 基本仕様
+
+- 制限時間：30秒
+- デッキ：5人
+- 最大同時来店：家電星人3体
+- 20秒経過後、残り10秒からラッシュ状態
+- 店員カードをタップして選択し、家電星人をタップして接客
+- 属性一致で大きく接客ゲージを減らす
+- 各店員にCTと必殺ゲージあり
+- 必殺技：接客力アップ、受付時間延長、PC一括対応、CT短縮、ラッシュ対応強化
+- `listmenu/title.json` の「店舗営業プロトタイプ」から起動可能
+- `listmenu/mainmenu.json` に6項目メニュー案を追加
+
+### 追加ファイル
+
+- `battle.js`
+- `listmenu/mainmenu.json`
+- `listmenu/home.json`
+- `listmenu/members.json`
+- `listmenu/shop.json`
+- `scenario/town_placeholder.json`
+

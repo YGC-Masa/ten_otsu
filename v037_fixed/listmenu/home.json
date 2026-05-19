@@ -1,0 +1,7 @@
+{
+  "items": [
+    { "text": "自店ステータス：準備中", "action": "list", "list": "mainmenu.json" },
+    { "text": "連絡ノート：準備中", "action": "list", "list": "mainmenu.json" },
+    { "text": "戻る", "action": "list", "list": "mainmenu.json" }
+  ]
+}

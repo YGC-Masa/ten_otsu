@@ -340,6 +340,12 @@ function handleMenuAction(item) {
     loadMenu(item.menu);
   } else if (item.action === "list" && item.list) {
     loadList(item.list);
+  } else if (item.action === "battle") {
+    if (typeof window.startDeckBattlePrototype === "function") {
+      window.startDeckBattlePrototype();
+    } else {
+      showError("バトルプロトタイプが読み込まれていません");
+    }
   } else if (item.action === "url" && item.url) {
     location.href = item.url;
   }

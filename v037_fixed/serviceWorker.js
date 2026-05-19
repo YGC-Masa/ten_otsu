@@ -1,5 +1,5 @@
 // serviceWorker.js - v037 修正版
-const CACHE_NAME = "tenotsu-v037-20260519";
+const CACHE_NAME = "tenotsu-v037-battle-proto-20260519";
 const URLS_TO_CACHE = [
   "./",
   "./index.html",
@@ -12,6 +12,7 @@ const URLS_TO_CACHE = [
   "./randomShows.js",
   "./utils.js",
   "./script.js",
+  "./battle.js",
   "./manifest.json",
   "./favicon.ico",
   "./favicon.png",
@@ -23,7 +24,12 @@ const URLS_TO_CACHE = [
   "./scenario/gamestart.json",
   "./listmenu/title.json",
   "./listmenu/menu01.json",
-  "./listmenu/list01.json"
+  "./listmenu/list01.json",
+  "./listmenu/mainmenu.json",
+  "./listmenu/home.json",
+  "./listmenu/members.json",
+  "./listmenu/shop.json",
+  "./scenario/town_placeholder.json",
 ];
 
 self.addEventListener("install", (event) => {
