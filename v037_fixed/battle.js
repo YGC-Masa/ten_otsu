@@ -88,6 +88,7 @@
   const ENEMY_DOUBLE_TAP_MS = 300;
   let pendingEnemyTapId = null;
   let pendingEnemyTapAt = 0;
+  let surfaceTimers = [];
 
   function makeState() {
     return {
@@ -111,6 +112,8 @@
       hitEffects: [],
       cutin: null,
       cutinUntil: 0,
+      surface: null,
+      countingDown: false,
 
       lastActionText: "営業開始を押してください。",
       buffPowerUntil: 0,
@@ -146,6 +149,7 @@
   function closeBattle() {
     clearPendingStaffTap();
     clearPendingEnemyTap();
+    clearSurfaceTimers();
     stopLoop();
     if (root) root.classList.add("hidden");
   }
@@ -167,18 +171,76 @@
     timerId = null;
   }
 
+  function clearSurfaceTimers() {
+    surfaceTimers.forEach(id => window.clearTimeout(id));
+    surfaceTimers = [];
+  }
+
+  function showSurface(title, subText = "", kind = "notice", duration = 1200) {
+    if (!state) return;
+    state.surface = { title, subText, kind };
+    render();
+    if (duration > 0) {
+      const id = window.setTimeout(() => {
+        if (state && state.surface && state.surface.title === title) {
+          state.surface = null;
+          render();
+        }
+      }, duration);
+      surfaceTimers.push(id);
+    }
+  }
+
   function startBattle(autoMode = false) {
     clearPendingStaffTap();
     clearPendingEnemyTap();
+    clearSurfaceTimers();
     stopLoop();
     state = makeState();
+    state.countingDown = true;
+    state.autoMode = !!autoMode;
+    state.autoTimer = 0;
+    state.lastActionText = autoMode
+      ? "オート営業準備中。開店後、自動操作はCT1.5倍です。"
+      : "開店準備中。メンバータップで接客、敵ダブルタップでチェンジできます。";
+    render();
+    runOpeningCountdown(autoMode);
+  }
+
+  function runOpeningCountdown(autoMode) {
+    const steps = [
+      { title: "3", sub: "開店準備中", ms: 650 },
+      { title: "2", sub: "スタッフ配置確認", ms: 650 },
+      { title: "1", sub: "レジ起動OK", ms: 650 },
+      { title: "開店！", sub: autoMode ? "オート営業開始" : "店舗営業開始", ms: 720 }
+    ];
+
+    let delay = 0;
+    steps.forEach((step, index) => {
+      const id = window.setTimeout(() => {
+        if (!state || !state.countingDown) return;
+        state.surface = { title: step.title, subText: step.sub, kind: index === steps.length - 1 ? "open" : "count" };
+        render();
+      }, delay);
+      surfaceTimers.push(id);
+      delay += step.ms;
+    });
+
+    const startId = window.setTimeout(() => beginBattle(autoMode), delay);
+    surfaceTimers.push(startId);
+  }
+
+  function beginBattle(autoMode = false) {
+    if (!state) return;
+    state.countingDown = false;
+    state.surface = null;
     state.running = true;
     state.finished = false;
     state.autoMode = !!autoMode;
     state.autoTimer = 0;
     state.lastActionText = state.autoMode
-      ? "オート営業開始！ 自動操作はCT1.5倍です。店長ヘルプは右上から使用できます。"
-      : "営業開始！ メンバータップで接客、敵ダブルタップでチェンジできます。";
+      ? "オート営業開始！ 自動操作はCT1.5倍です。店長ヘルプを活用できます。"
+      : "開店！ メンバータップで接客、敵ダブルタップでチェンジできます。";
     spawnEnemy(true);
     spawnEnemy(true);
     spawnEnemy(true);
@@ -194,7 +256,7 @@
     state.timeLeft = Math.max(0, state.timeLeft);
     state.lastActionText = `営業終了：成約${state.served}件 / 売上Pt ${state.score}`;
     stopLoop();
-    render();
+    showSurface("営業終了！", `成約${state.served}件 / 売上Pt ${state.score}`, "close", 1350);
   }
 
   function tick() {
@@ -682,8 +744,8 @@
           <div class="battle-message">${escapeHtml(state.lastActionText)}</div>
         </section>
 
-        ${renderSideHelpButtons()}
         ${renderCutinOverlay()}
+        ${renderSurfaceOverlay()}
 
         <section class="battle-enemies">
           ${state.enemies.map(renderEnemy).join("") || `<div class="battle-empty">営業開始で家電星人が来店します</div>`}
@@ -693,7 +755,7 @@
           ${state.staff.map(renderStaff).join("")}
         </section>
 
-        ${state.running ? "" : renderControlOverlay()}
+        ${state.running || state.countingDown ? "" : renderControlOverlay()}
       </div>
     `;
   }
@@ -718,7 +780,7 @@
   }
 
   function renderSideHelpButtons() {
-    return renderHelpButtons("battle-help-side");
+    return "";
   }
 
   function renderCutinOverlay() {
@@ -733,6 +795,21 @@
           ${state.cutin.subText ? `<small>${escapeHtml(state.cutin.subText)}</small>` : ""}
           <b>${escapeHtml(state.cutin.title)}</b>
           ${state.cutin.descText ? `<p>${escapeHtml(state.cutin.descText)}</p>` : ""}
+        </div>
+      </div>
+    `;
+  }
+
+  function renderSurfaceOverlay() {
+    if (!state || !state.surface) return "";
+    const title = state.surface.title || "";
+    const subText = state.surface.subText || "";
+    const kind = state.surface.kind || "notice";
+    return `
+      <div class="battle-surface ${kind}">
+        <div class="battle-surface-card">
+          ${subText ? `<small>${escapeHtml(subText)}</small>` : ""}
+          <b>${escapeHtml(title)}</b>
         </div>
       </div>
     `;
