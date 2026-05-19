@@ -1,5 +1,5 @@
-// serviceWorker.js - v037 修正版
-const CACHE_NAME = "tenotsu-v037-battle-ioscompact-20260519";
+// serviceWorker.js - v037 battle prototype cache clear対応版
+const CACHE_NAME = "tenotsu-v037-integrated-battle-layout-20260519-2";
 const URLS_TO_CACHE = [
   "./",
   "./index.html",
@@ -48,8 +48,39 @@ self.addEventListener("activate", (event) => {
   );
 });
 
+self.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "CLEAR_CACHE") {
+    event.waitUntil(
+      caches.keys().then((keys) => Promise.all(keys.map((key) => caches.delete(key))))
+    );
+  }
+});
+
+function isCoreFile(url) {
+  return /\.(html|css|js|json|webmanifest)$/i.test(url.pathname) || url.pathname.endsWith("/");
+}
+
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
+
+  const url = new URL(event.request.url);
+
+  // HTML/CSS/JS/JSONは更新確認しやすいようにネットワーク優先。
+  // オフライン時だけキャッシュを返す。
+  if (isCoreFile(url)) {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+          return response;
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
+  // 画像・音声などはキャッシュ優先。
   event.respondWith(
     caches.match(event.request).then((cached) => {
       if (cached) return cached;

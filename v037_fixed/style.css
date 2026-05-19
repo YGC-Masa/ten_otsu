@@ -1047,3 +1047,541 @@ body {
     font-size: 12px !important;
   }
 }
+
+/* === v037-battle-tapfix: 営業中は操作メニュー非表示・店員タップ即対応 === */
+.battle-panel.running {
+  grid-template-rows: auto auto minmax(0, 1fr) !important;
+}
+
+.battle-panel.running .battle-main {
+  padding-bottom: 28px !important;
+}
+
+.battle-running-help {
+  position: absolute !important;
+  left: max(8px, env(safe-area-inset-left)) !important;
+  right: max(8px, env(safe-area-inset-right)) !important;
+  bottom: max(6px, env(safe-area-inset-bottom)) !important;
+  min-height: 20px !important;
+  padding: 4px 8px !important;
+  border-radius: 999px !important;
+  background: rgba(0,0,0,0.55) !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+  color: rgba(255,255,255,0.9) !important;
+  font-size: clamp(10px, 1.2vw, 13px) !important;
+  line-height: 1.2 !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  pointer-events: none !important;
+  z-index: 5 !important;
+}
+
+.battle-panel.running .customer-card {
+  cursor: default !important;
+}
+
+.battle-panel.running .staff-select:not(:disabled) {
+  cursor: pointer !important;
+}
+
+@media screen and (orientation: landscape) and (max-height: 760px) {
+  .battle-panel.running {
+    grid-template-rows: 38px 30px minmax(0, 1fr) !important;
+  }
+
+  .battle-panel.running .battle-main {
+    padding-bottom: 22px !important;
+  }
+
+  .battle-running-help {
+    bottom: max(3px, env(safe-area-inset-bottom)) !important;
+    min-height: 18px !important;
+    padding: 3px 6px !important;
+    font-size: 10px !important;
+  }
+}
+
+
+/* === v037-battle-bottomdeck: 上=表示 / 中央=家電星人 / 下=メンバー5人 === */
+.battle-panel.battle-vertical {
+  grid-template-rows: auto auto minmax(0, 1fr) auto auto !important;
+}
+
+.battle-panel.battle-vertical.running {
+  grid-template-rows: auto auto minmax(0, 1fr) auto !important;
+}
+
+.battle-panel.battle-vertical .battle-main {
+  grid-template-columns: 1fr !important;
+  padding: 8px 10px !important;
+  overflow: hidden !important;
+}
+
+.battle-panel.battle-vertical .customer-area {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  grid-auto-rows: minmax(100px, 1fr) !important;
+  gap: 8px !important;
+  align-content: stretch !important;
+  overflow: hidden !important;
+}
+
+.battle-panel.battle-vertical .customer-card {
+  height: 100% !important;
+  min-height: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+.battle-panel.battle-vertical .battle-member-dock {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: 150px !important;
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  gap: 8px !important;
+  padding: 8px 10px !important;
+  overflow: hidden !important;
+  border-top: 1px solid rgba(255,255,255,0.16) !important;
+  background: rgba(0,0,0,0.24) !important;
+}
+
+.battle-panel.battle-vertical .staff-card {
+  min-height: 0 !important;
+  padding: 5px !important;
+}
+
+.battle-panel.battle-vertical .staff-select {
+  min-height: 0 !important;
+  padding: 5px !important;
+}
+
+.battle-panel.battle-vertical .staff-stat,
+.battle-panel.battle-vertical .skill-desc {
+  display: none !important;
+}
+
+.battle-panel.battle-vertical .skill-btn {
+  min-height: 24px !important;
+  padding: 4px 3px !important;
+  font-size: clamp(9px, 1.1vw, 12px) !important;
+}
+
+.battle-panel.battle-vertical .battle-footer {
+  max-height: 74px !important;
+  padding: 6px 10px !important;
+}
+
+.battle-panel.battle-vertical.running .battle-main {
+  padding-bottom: 22px !important;
+}
+
+@media screen and (orientation: landscape) and (max-height: 760px) {
+  .battle-panel.battle-vertical {
+    grid-template-rows: 36px 30px minmax(0, 1fr) 94px 38px !important;
+  }
+
+  .battle-panel.battle-vertical.running {
+    grid-template-rows: 30px 28px minmax(0, 1fr) 90px !important;
+  }
+
+  .battle-panel.battle-vertical .battle-header {
+    padding: 3px 8px !important;
+  }
+
+  .battle-panel.battle-vertical .battle-title {
+    font-size: 16px !important;
+  }
+
+  .battle-panel.battle-vertical .battle-status {
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+    padding: 3px 6px !important;
+  }
+
+  .battle-panel.battle-vertical .battle-main {
+    padding: 5px 8px !important;
+  }
+
+  .battle-panel.battle-vertical .customer-area {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    grid-auto-rows: minmax(0, 1fr) !important;
+    gap: 6px !important;
+  }
+
+  .battle-panel.battle-vertical .customer-card {
+    padding: 6px !important;
+  }
+
+  .battle-panel.battle-vertical .battle-member-dock {
+    max-height: none !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 5px !important;
+    padding: 5px 8px !important;
+  }
+
+  .battle-panel.battle-vertical .staff-card {
+    padding: 4px !important;
+  }
+
+  .battle-panel.battle-vertical .staff-name {
+    font-size: 13px !important;
+  }
+
+  .battle-panel.battle-vertical .staff-attr {
+    font-size: 10px !important;
+  }
+
+  .battle-panel.battle-vertical .mini-label {
+    display: none !important;
+  }
+
+  .battle-panel.battle-vertical .bar {
+    height: 4px !important;
+    margin: 3px 0 !important;
+  }
+
+  .battle-panel.battle-vertical .skill-btn {
+    min-height: 22px !important;
+    font-size: 9px !important;
+    line-height: 1.05 !important;
+  }
+
+  .battle-panel.battle-vertical .battle-footer {
+    max-height: none !important;
+    grid-template-columns: auto minmax(0, 1fr) !important;
+    padding: 4px 8px !important;
+  }
+
+  .battle-panel.battle-vertical .battle-actions button {
+    padding: 5px 8px !important;
+  }
+
+  .battle-panel.battle-vertical .battle-running-help {
+    bottom: max(2px, env(safe-area-inset-bottom)) !important;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-height: 430px) {
+  .battle-panel.battle-vertical.running {
+    grid-template-rows: 26px minmax(0, 1fr) 82px !important;
+  }
+
+  .battle-panel.battle-vertical.running .battle-header {
+    display: none !important;
+  }
+
+  .battle-panel.battle-vertical .customer-text {
+    font-size: 10px !important;
+  }
+
+  .battle-panel.battle-vertical .customer-icon {
+    font-size: 16px !important;
+  }
+
+  .battle-panel.battle-vertical .skill-btn {
+    min-height: 20px !important;
+    padding: 3px 2px !important;
+  }
+}
+
+/* === v037 integrated battle layout: top HUD / center enemies / bottom members === */
+#battle-root.battle-root {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 30000 !important;
+  width: 100vw !important;
+  height: var(--app-height, 100vh) !important;
+  display: block;
+  background: #050506;
+  color: #fff;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+#battle-root.hidden { display: none !important; }
+
+#battle-root .battle-stage {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-rows: minmax(74px, 15vh) 1fr minmax(112px, 25vh);
+  gap: 0;
+  box-sizing: border-box;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  background: radial-gradient(circle at center, rgba(38, 35, 28, 0.88), #050506 72%);
+}
+
+#battle-root .battle-hud {
+  box-sizing: border-box;
+  border: 3px solid #ff2636;
+  border-radius: 0 0 12px 12px;
+  margin: 6px 8px 4px;
+  padding: 6px 12px;
+  background: rgba(12, 12, 18, 0.94);
+  min-width: 0;
+  overflow: hidden;
+}
+#battle-root .battle-hud-title {
+  font-size: clamp(14px, 2.3vw, 24px);
+  font-weight: 800;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+#battle-root .battle-hud-stats {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: clamp(8px, 1.8vw, 24px);
+  align-items: center;
+  margin-top: 4px;
+  font-size: clamp(11px, 1.75vw, 18px);
+  white-space: nowrap;
+}
+#battle-root .battle-hud-stats b { font-size: 1.08em; }
+#battle-root .battle-message {
+  margin-top: 3px;
+  font-size: clamp(10px, 1.45vw, 15px);
+  color: rgba(255,255,255,0.82);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#battle-root .battle-stage.is-rush .battle-hud {
+  animation: battleHudRush 0.55s infinite alternate;
+}
+@keyframes battleHudRush {
+  from { box-shadow: 0 0 0 rgba(255, 80, 80, 0); }
+  to { box-shadow: 0 0 18px rgba(255, 80, 80, 0.88); }
+}
+
+#battle-root .battle-enemies {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(10px, 3vw, 36px);
+  align-items: center;
+  justify-items: stretch;
+  box-sizing: border-box;
+  padding: 8px clamp(14px, 5vw, 54px);
+  min-height: 0;
+  overflow: hidden;
+}
+#battle-root .battle-enemy-card {
+  height: min(100%, 210px);
+  min-height: 112px;
+  box-sizing: border-box;
+  border: 4px solid #ff841f;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(46, 25, 8, 0.92), rgba(18, 14, 10, 0.92));
+  padding: clamp(6px, 1.3vw, 14px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+#battle-root .battle-enemy-card.rare { border-color: #ffd44a; }
+#battle-root .battle-enemy-card.target { box-shadow: 0 0 22px rgba(255, 230, 100, 0.95); transform: translateY(-2px); }
+#battle-root .enemy-head {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  min-width: 0;
+  font-weight: 800;
+  font-size: clamp(12px, 2vw, 20px);
+}
+#battle-root .enemy-icon { font-size: 1.15em; }
+#battle-root .enemy-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#battle-root .enemy-head b { margin-left: auto; color: #ffe56f; font-size: 0.78em; }
+#battle-root .enemy-attr,
+#battle-root .enemy-label {
+  font-size: clamp(9px, 1.4vw, 13px);
+  color: rgba(255,255,255,0.82);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#battle-root .battle-members {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(6px, 1.8vw, 18px);
+  box-sizing: border-box;
+  border-top: 2px solid rgba(255,255,255,0.18);
+  padding: 8px clamp(8px, 2.5vw, 28px) max(8px, env(safe-area-inset-bottom));
+  background: rgba(0, 16, 8, 0.96);
+  min-height: 0;
+  overflow: hidden;
+}
+#battle-root .battle-member-card {
+  position: relative;
+  height: 100%;
+  min-width: 0;
+  border: 4px solid #10c765;
+  border-color: var(--member-color, #10c765);
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(5, 34, 16, 0.96), rgba(4, 14, 8, 0.96));
+  color: #fff;
+  padding: clamp(5px, 1.0vw, 10px);
+  box-sizing: border-box;
+  text-align: left;
+  overflow: hidden;
+  cursor: pointer;
+}
+#battle-root .battle-member-card:active { transform: scale(0.97); }
+#battle-root .battle-member-card.cooldown { opacity: 0.52; }
+#battle-root .battle-member-card.skill-ready {
+  box-shadow: 0 0 20px rgba(255, 240, 90, 0.9);
+}
+#battle-root .member-name {
+  font-size: clamp(12px, 2vw, 20px);
+  font-weight: 900;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+#battle-root .member-attr,
+#battle-root .member-power,
+#battle-root .member-label,
+#battle-root .member-skill-name {
+  font-size: clamp(8px, 1.25vw, 12px);
+  color: rgba(255,255,255,0.86);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#battle-root .member-skill-name { margin-top: 2px; color: #fff6a3; }
+
+#battle-root .battle-bar {
+  width: 100%;
+  height: clamp(5px, 1.2vh, 10px);
+  margin: 2px 0 4px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.18);
+  overflow: hidden;
+}
+#battle-root .battle-bar i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #ffae34;
+}
+#battle-root .battle-bar.patience i { background: #5fc3ff; }
+#battle-root .battle-bar.member-ct i { background: #45ff89; }
+#battle-root .battle-bar.member-skill i { background: #fff06a; }
+
+#battle-root .battle-empty {
+  grid-column: 1 / -1;
+  align-self: center;
+  justify-self: center;
+  padding: 18px 28px;
+  border: 2px dashed rgba(255,255,255,0.3);
+  border-radius: 12px;
+  color: rgba(255,255,255,0.75);
+  font-size: clamp(13px, 2vw, 20px);
+}
+
+#battle-root .battle-control-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.38);
+  z-index: 5;
+}
+#battle-root .battle-control-box {
+  width: min(560px, 84vw);
+  border: 2px solid rgba(255,255,255,0.35);
+  border-radius: 18px;
+  background: rgba(14, 16, 22, 0.96);
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.45);
+}
+#battle-root .battle-result-title {
+  font-size: clamp(18px, 3vw, 28px);
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+#battle-root .battle-control-help {
+  margin: 8px 0 14px;
+  font-size: clamp(12px, 1.7vw, 15px);
+  line-height: 1.5;
+  color: rgba(255,255,255,0.84);
+}
+#battle-root .battle-result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 14px;
+  margin: 10px auto 16px;
+  max-width: 320px;
+  text-align: left;
+}
+#battle-root .battle-result-grid b { text-align: right; }
+#battle-root .battle-control-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+#battle-root .battle-control-buttons button {
+  min-width: 104px;
+  border: 1px solid rgba(255,255,255,0.36);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.13);
+  color: #fff;
+  padding: 9px 16px;
+  font-size: 15px;
+}
+#battle-root .battle-control-buttons button:disabled { opacity: 0.45; }
+
+@media screen and (orientation: landscape) and (max-height: 520px) {
+  #battle-root .battle-stage {
+    grid-template-rows: 58px 1fr 104px;
+  }
+  #battle-root .battle-hud {
+    margin: 4px 6px 2px;
+    padding: 4px 8px;
+    border-width: 2px;
+  }
+  #battle-root .battle-hud-title {
+    font-size: 14px;
+  }
+  #battle-root .battle-hud-stats {
+    gap: 8px;
+    font-size: 11px;
+    margin-top: 2px;
+  }
+  #battle-root .battle-message {
+    display: none;
+  }
+  #battle-root .battle-enemies {
+    padding: 6px 20px;
+    gap: 18px;
+  }
+  #battle-root .battle-enemy-card {
+    min-height: 92px;
+    height: 100%;
+    border-width: 3px;
+    padding: 5px;
+  }
+  #battle-root .enemy-head { font-size: 12px; }
+  #battle-root .enemy-attr,
+  #battle-root .enemy-label { font-size: 9px; }
+  #battle-root .battle-members {
+    padding: 6px 10px max(6px, env(safe-area-inset-bottom));
+    gap: 8px;
+  }
+  #battle-root .battle-member-card {
+    border-width: 3px;
+    padding: 5px;
+  }
+  #battle-root .member-name { font-size: 12px; }
+  #battle-root .member-attr,
+  #battle-root .member-power,
+  #battle-root .member-label,
+  #battle-root .member-skill-name { font-size: 9px; }
+  #battle-root .battle-bar { height: 5px; margin: 1px 0 2px; }
+  #battle-root .battle-control-box { padding: 12px; }
+}

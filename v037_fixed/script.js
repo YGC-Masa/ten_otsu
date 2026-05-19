@@ -331,6 +331,43 @@ window.addEventListener("load", () => {
   loadScenario(currentScenario);
 });
 
+
+
+// === キャッシュクリア ===
+async function clearAppCacheAndReload() {
+  const ok = window.confirm(
+    "アプリキャッシュをクリアして再読み込みします。\n" +
+    "画面が古いまま表示される時に使ってください。\n\n" +
+    "※ セーブ用localStorageは消しません。"
+  );
+  if (!ok) return;
+
+  try {
+    if (typeof showError === "function") {
+      showError("キャッシュをクリア中です……");
+    }
+
+    if (window.caches) {
+      const keys = await caches.keys();
+      await Promise.all(keys.map((key) => caches.delete(key)));
+    }
+
+    if (navigator.serviceWorker) {
+      const regs = await navigator.serviceWorker.getRegistrations();
+      await Promise.all(regs.map((reg) => reg.unregister()));
+    }
+
+    const url = new URL(window.location.href);
+    url.searchParams.set("reload", Date.now().toString());
+    window.location.replace(url.toString());
+  } catch (err) {
+    console.error(err);
+    alert("キャッシュクリアに失敗しました。Safariの履歴/サイトデータ削除、またはホーム画面追加のやり直しを試してください。");
+  }
+}
+
+window.clearAppCacheAndReload = clearAppCacheAndReload;
+
 // === メニュー関連 ===
 function handleMenuAction(item) {
   if (!item) return;
@@ -346,6 +383,8 @@ function handleMenuAction(item) {
     } else {
       showError("バトルプロトタイプが読み込まれていません");
     }
+  } else if (item.action === "cacheclear") {
+    clearAppCacheAndReload();
   } else if (item.action === "url" && item.url) {
     location.href = item.url;
   }
