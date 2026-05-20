@@ -1,0 +1,10 @@
+{
+  "items": [
+    { "text": "① ホーム", "action": "list", "list": "home.json" },
+    { "text": "② メンバー", "action": "list", "list": "members.json" },
+    { "text": "③ 店舗営業", "action": "battle" },
+    { "text": "④ 外回り", "action": "jump", "jump": "town_placeholder.json" },
+    { "text": "⑤ ショップ", "action": "list", "list": "shop.json" },
+    { "text": "⑥ 設定", "action": "menu", "menu": "menu01.json" }
+  ]
+}
