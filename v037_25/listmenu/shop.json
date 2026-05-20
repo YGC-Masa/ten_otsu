@@ -1,0 +1,8 @@
+{
+  "items": [
+    { "text": "通常ショップ：準備中", "action": "list", "list": "mainmenu.json" },
+    { "text": "イベント交換：準備中", "action": "list", "list": "mainmenu.json" },
+    { "text": "ガチャ：準備中", "action": "list", "list": "mainmenu.json" },
+    { "text": "戻る", "action": "list", "list": "mainmenu.json" }
+  ]
+}
