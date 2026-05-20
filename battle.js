@@ -3,8 +3,9 @@
 // 操作はメンバーのシングルタップで通常接客、ダブルタップで必殺接客。通常敵HP2、レアHP3。ターゲットは選択メンバーに最適な家電星人へ自動Fix。彩愛の必殺は盤面整理＋敵チェンジ短縮。店長HELP・必殺カットイン・タイムセール演出あり。
 
 (function () {
-  const BATTLE_VERSION = "v037_08";
+  const BATTLE_VERSION = "v037_51";
   const BATTLE_SECONDS = 30;
+  const TIME_SALE_SECONDS = 15;
   const MAX_ENEMIES = 3;
   const CHANGE_SECONDS = 2.0;
   const CHANGE_SECONDS_BUFFED = 1.0;
@@ -13,26 +14,41 @@
   const AUTO_SCORE_MULTIPLIER = 0.7; // オート営業ペナルティ：自動成約の売上Pt70%
   const HELP_STOCK_MAX = 3;
   const HELP_STOCK_STEP = 10;
+  const HELP_INPUT_LOCK_MS = 320;
+  const HELP_EMPTY_MESSAGE_LOCK_MS = 520;
   const CHANGE_MESSAGES = [
     "今回は別スタッフへ案内",
     "少々お待ちください",
     "別のお客様を先に対応"
   ];
 
+
+  const battleBackgrounds = {
+    hidamari_store_battle_lv1: {
+      label: "ひだまりストア通常営業 Lv1",
+      path: "./assets2/bg/battle_store_lv1.png"
+    }
+  };
+  const DEFAULT_BATTLE_BG_ID = "hidamari_store_battle_lv1";
+
+  function getBattleBackground(id = DEFAULT_BATTLE_BG_ID) {
+    return battleBackgrounds[id] || battleBackgrounds[DEFAULT_BATTLE_BG_ID];
+  }
+
   const staffMaster = [
-    { id: "aa", name: "緋奈", cardImage: "./assets2/card/aa_hina_card_test.png", color: "#d3381c", attr: "映像", power: 1, ctMax: 2.4, skillName: "全力おすすめ！", skillType: "powerBuff", skillDesc: "8秒間、接客力アップ。成約を一気に伸ばします。" },
-    { id: "ab", name: "藍", color: "#0067C0", attr: "ドライヤー", power: 1, ctMax: 3.0, skillName: "やさしい案内", skillType: "extendTime", skillDesc: "全敵の受付時間を延長し、営業残り時間も少し増やします。" },
-    { id: "ac", name: "翠", color: "#02b308", attr: "PC", power: 1, ctMax: 3.5, skillName: "最適解プレゼン", skillType: "pcSweep", skillDesc: "PC属性をまとめて成約し、6秒間マッチ性能を上げます。" },
-    { id: "ad", name: "こがね", color: "#FFF450", attr: "スマホ", power: 1, ctMax: 1.7, skillName: "即決トーク", skillType: "ctReduce", skillDesc: "全メンバーのCTを短縮し、6秒間テンポを上げます。" },
-    { id: "ae", name: "琥珀", color: "#F68B1F", attr: "オーディオ", power: 1, ctMax: 2.7, skillName: "フロアダッシュ", skillType: "rushBuff", skillDesc: "8秒間ラッシュ対応力アップ。コンボを守りやすくします。" },
-    { id: "af", name: "真花", color: "#C0C0C0", attr: "美容", power: 1, ctMax: 2.8, skillName: "お嬢様スマイル", skillType: "comboPlus", skillDesc: "成約時のコンボ補助。丁寧な接客で満足度を伸ばします。" },
-    { id: "ag", name: "雪乃", color: "#6495ED", attr: "調理", power: 1, ctMax: 3.2, skillName: "静かな提案", skillType: "freezeTime", skillDesc: "敵の受付時間を一時停止し、店内を落ち着かせます。" },
-    { id: "ah", name: "美空", color: "#fffef6", attr: "除湿", power: 1, ctMax: 2.6, skillName: "夏空接客", skillType: "rescue", skillDesc: "受付時間が短い敵を追加フォローする安定型スキル。" },
-    { id: "ai", name: "夜空", color: "#00152d", attr: "加湿", power: 1, ctMax: 2.9, skillName: "冬空フォーカス", skillType: "rareKiller", skillDesc: "レア敵への追加ダメージで一点突破します。" },
-    { id: "aj", name: "桃", color: "#F7ADC3", attr: "配信", power: 1, ctMax: 2.1, skillName: "店内配信", skillType: "buzz", skillDesc: "売上Ptとレア出現率を上げる代わりに混雑しやすくなります。" },
-    { id: "ak", name: "彩愛", color: "#694D9F", attr: "生活", power: 1, ctMax: 3.0, skillName: "優雅な家事導線", skillType: "ayameRoute", skillDesc: "敵最大2体に1ダメージ。6秒間、敵チェンジを2秒から1秒に短縮。" },
-    { id: "al", name: "里美", color: "#8d5025", attr: "事務", power: 1, ctMax: 3.1, skillName: "受付整理", skillType: "changeSupport", skillDesc: "受付を整理して、チェンジやCT管理を補助します。" },
-    { id: "am", name: "萌", color: "#33CC99", attr: "季節", power: 1, ctMax: 2.9, skillName: "おにいちゃん助けて", skillType: "managerBoost", skillDesc: "店長ヘルプゲージが溜まりやすくなるサポートスキル。" }
+    { id: "aa", name: "緋奈", skillCutin: "./assets2/cutin/aa_hina_skill_cutin_test.png", cardImage: "./assets2/card/aa_hina_card_test.png", color: "#d3381c", attr: "映像", power: 1, ctMax: 2.4, skillName: "全力おすすめ！", skillType: "powerBuff", skillDesc: "8秒間、接客力アップ。成約を一気に伸ばします。" },
+    { id: "ab", name: "藍", color: "#0067C0", attr: "ドライヤー", power: 1, ctMax: 3.0, skillName: "やさしい案内", skillType: "extendTime", skillDesc: "全敵の受付時間を延長し、営業残り時間も少し増やします。" , cardImage: "./assets2/character/card_ai_test.png", cutinImage: "./assets2/cutin/cutin_ai_test.png", skillCutin: "./assets2/cutin/cutin_ai_test.png"},
+    { id: "ac", name: "翠", color: "#02b308", attr: "PC", power: 1, ctMax: 3.5, skillName: "最適解プレゼン", skillType: "pcSweep", skillDesc: "PC属性をまとめて成約し、6秒間マッチ性能を上げます。" , cardImage: "./assets2/character/card_midori_test.png", cutinImage: "./assets2/cutin/cutin_midori_test.png", skillCutin: "./assets2/cutin/cutin_midori_test.png"},
+    { id: "ad", name: "こがね", color: "#FFF450", attr: "スマホ", power: 1, ctMax: 1.7, skillName: "即決トーク", skillType: "ctReduce", skillDesc: "全メンバーのCTを短縮し、6秒間テンポを上げます。" , cardImage: "./assets2/character/card_kogane_test.png", cutinImage: "./assets2/cutin/cutin_kogane_test.png", skillCutin: "./assets2/cutin/cutin_kogane_test.png"},
+    { id: "ae", name: "琥珀", color: "#F68B1F", attr: "オーディオ", power: 1, ctMax: 2.7, skillName: "フロアダッシュ", skillType: "rushBuff", skillDesc: "8秒間ラッシュ対応力アップ。コンボを守りやすくします。" , cardImage: "./assets2/character/card_kohaku_test.png", cutinImage: "./assets2/cutin/cutin_kohaku_test.png", skillCutin: "./assets2/cutin/cutin_kohaku_test.png"},
+    { id: "af", name: "真花", color: "#C0C0C0", attr: "美容", power: 1, ctMax: 2.8, skillName: "お嬢様スマイル", skillType: "comboPlus", skillDesc: "成約時のコンボ補助。丁寧な接客で満足度を伸ばします。" , cardImage: "./assets2/character/card_manaka_test.png", cutinImage: "./assets2/cutin/cutin_manaka_test.png", skillCutin: "./assets2/cutin/cutin_manaka_test.png"},
+    { id: "ag", name: "雪乃", color: "#6495ED", attr: "調理", power: 1, ctMax: 3.2, skillName: "静かな提案", skillType: "freezeTime", skillDesc: "敵の受付時間を一時停止し、店内を落ち着かせます。" , cardImage: "./assets2/character/card_yukino_test.png", cutinImage: "./assets2/cutin/cutin_yukino_test.png", skillCutin: "./assets2/cutin/cutin_yukino_test.png"},
+    { id: "ah", name: "美空", color: "#fffef6", attr: "除湿", power: 1, ctMax: 2.6, skillName: "夏空接客", skillType: "rescue", skillDesc: "受付時間が短い敵を追加フォローする安定型スキル。" , cardImage: "./assets2/character/card_misora_test.png", cutinImage: "./assets2/cutin/cutin_misora_test.png", skillCutin: "./assets2/cutin/cutin_misora_test.png"},
+    { id: "ai", name: "夜空", color: "#00152d", attr: "加湿", power: 1, ctMax: 2.9, skillName: "冬空フォーカス", skillType: "rareKiller", skillDesc: "レア敵への追加ダメージで一点突破します。" , cardImage: "./assets2/character/card_yozora_test.png", cutinImage: "./assets2/cutin/cutin_yozora_test.png", skillCutin: "./assets2/cutin/cutin_yozora_test.png"},
+    { id: "aj", name: "桃", color: "#F7ADC3", attr: "配信", power: 1, ctMax: 2.1, skillName: "店内配信", skillType: "buzz", skillDesc: "売上Ptとレア出現率を上げる代わりに混雑しやすくなります。" , cardImage: "./assets2/character/card_momo_test.png", cutinImage: "./assets2/cutin/cutin_momo_test.png", skillCutin: "./assets2/cutin/cutin_momo_test.png"},
+    { id: "ak", name: "彩愛", color: "#694D9F", attr: "生活", power: 1, ctMax: 3.0, skillName: "優雅な家事導線", skillType: "ayameRoute", skillDesc: "敵最大2体に1ダメージ。6秒間、敵チェンジを2秒から1秒に短縮。" , cardImage: "./assets2/character/card_ayame_test.png", cutinImage: "./assets2/cutin/cutin_ayame_test.png", skillCutin: "./assets2/cutin/cutin_ayame_test.png"},
+    { id: "al", name: "里美", color: "#8d5025", attr: "事務", power: 1, ctMax: 3.1, skillName: "受付整理", skillType: "changeSupport", skillDesc: "受付を整理して、チェンジやCT管理を補助します。" , cardImage: "./assets2/character/card_satomi_test.png", cutinImage: "./assets2/cutin/cutin_satomi_test.png", skillCutin: "./assets2/cutin/cutin_satomi_test.png"},
+    { id: "am", name: "萌", color: "#33CC99", attr: "リラックス", power: 1, ctMax: 2.9, skillName: "おにいちゃん助けて", skillType: "managerBoost", skillDesc: "店長ヘルプゲージが溜まりやすくなるサポートスキル。" , cardImage: "./assets2/character/card_moe_test.png", cutinImage: "./assets2/cutin/cutin_moe_test.png", skillCutin: "./assets2/cutin/cutin_moe_test.png"}
   ];  const DEFAULT_STAFF_IDS = ["aa", "ab", "ac", "ad", "ae"];
   const DECK_STORAGE_KEY = "tenotsu_battle_deck_v1";
   let activeStaffIds = loadDeckIds();
@@ -73,19 +89,19 @@
     "季節": "#33CC99"
   };
   const enemyTypes = [
-    { attr: "映像", icon: "📺", name: "テレビ星人", text: "大画面で見たい！", baseGauge: 2, basePatience: 6.8, score: 120 },
-    { attr: "ドライヤー", icon: "💨", name: "ドライヤー星人", text: "髪を早く乾かしたい", baseGauge: 2, basePatience: 7.3, score: 125 },
-    { attr: "PC", icon: "💻", name: "PC星人", text: "初期設定して！", baseGauge: 2, basePatience: 7.8, score: 150 },
-    { attr: "スマホ", icon: "📱", name: "スマホ星人", text: "充電器どれ？", baseGauge: 2, basePatience: 5.2, score: 105 },
-    { attr: "オーディオ", icon: "🎧", name: "オーディオ星人", text: "いい音が欲しい！", baseGauge: 2, basePatience: 6.7, score: 140 },
-    { attr: "美容", icon: "✨", name: "美容家電星人", text: "美顔器を見たいです", baseGauge: 2, basePatience: 7.0, score: 130 },
-    { attr: "調理", icon: "🍳", name: "調理器具星人", text: "おいしく作りたい", baseGauge: 2, basePatience: 7.2, score: 135 },
-    { attr: "除湿", icon: "☀️", name: "除湿機星人", text: "ジメジメを何とかしたい", baseGauge: 2, basePatience: 6.1, score: 118 },
-    { attr: "加湿", icon: "🌙", name: "加湿器星人", text: "乾燥がつらい", baseGauge: 2, basePatience: 6.3, score: 118 },
-    { attr: "配信", icon: "🎮", name: "配信機材星人", text: "配信を始めたい！", baseGauge: 2, basePatience: 5.9, score: 145 },
-    { attr: "生活", icon: "🧺", name: "生活家電星人", text: "掃除機ほしい", baseGauge: 2, basePatience: 6.4, score: 130 },
-    { attr: "事務", icon: "🧾", name: "レジ伝票星人", text: "会計処理を楽にしたい", baseGauge: 2, basePatience: 7.1, score: 128 },
-    { attr: "季節", icon: "🌿", name: "季節家電星人", text: "エアコン相談したい", baseGauge: 2, basePatience: 6.5, score: 122 }
+    { attr: "映像", icon: "📺", name: "テレビポップコーン星人", text: "映画みたいに楽しみたい！", baseGauge: 2, basePatience: 6.8, score: 120, image: "./assets2/enemy/enemy_tv_popcorn_test.png" },
+    { attr: "ドライヤー", icon: "🍫", name: "チョコドライヤ星人", text: "あったか〜いチョコ風でうるおいを〜！", baseGauge: 2, basePatience: 7.3, score: 125, image: "./assets2/enemy/enemy_choco_dryer_test.png" },
+    { attr: "PC", icon: "🍕", name: "パソコンピザ星人", text: "処理が重い…チーズ追加！", baseGauge: 2, basePatience: 7.8, score: 150, image: "./assets2/enemy/enemy_pc_pizza_test.png" },
+    { attr: "スマホ", icon: "🍬", name: "スマホキャンディ星人", text: "通知だよ〜！キャンディどうぞ〜", baseGauge: 2, basePatience: 6.5, score: 130, image: "./assets2/enemy/enemy_smartphone_candy_test.png" },
+    { attr: "オーディオ", icon: "🍬", name: "イヤホングミ星人", text: "よーし！きょうもリズムにのるぞ〜！", baseGauge: 2, basePatience: 7.1, score: 135, image: "./assets2/enemy/enemy_earphone_gummy_test.png" },
+    { attr: "美容", icon: "🪞", name: "ビューティマカロン星人", text: "きれいはこれから…ふふっ", baseGauge: 2, basePatience: 7.0, score: 130, image: "./assets2/enemy/enemy_beauty_macaron_test.png" },
+    { attr: "オーブン", icon: "🍮", name: "プリンオーブン星人", text: "ふんわり、とろ〜り焼き上げ中…", baseGauge: 2, basePatience: 7.2, score: 140, image: "./assets2/enemy/enemy_pudding_oven_test.png" },
+    { attr: "除湿", icon: "🍧", name: "カキゴーリエアコン星人", text: "つめた〜い風、さらさらでお願い！", baseGauge: 2, basePatience: 6.1, score: 118, image: "./assets2/enemy/enemy_kakigori_aircon_test.png" },
+    { attr: "加湿", icon: "💧", name: "ゼリーカシツ星人", text: "うるおい、ふわっとおとどけします…", baseGauge: 2, basePatience: 6.3, score: 120, image: "./assets2/enemy/enemy_jelly_humidifier_test.png" },
+    { attr: "配信", icon: "🍟", name: "ゲームポテト星人", text: "レベルUP！まだまだいける〜！", baseGauge: 2, basePatience: 5.9, score: 145, image: "./assets2/enemy/enemy_game_potato_test.png" },
+    { attr: "生活", icon: "🍩", name: "ドーナツセンタク星人", text: "ぐるぐる回って、ピカピカにするよ！", baseGauge: 2, basePatience: 6.4, score: 130, image: "./assets2/enemy/enemy_donut_washer_test.png" },
+    { attr: "レジ", icon: "🍡", name: "モチモチレジスター星人", text: "いらっしゃいませ！お会計いきま〜す", baseGauge: 2, basePatience: 6.4, score: 128, image: "./assets2/enemy/enemy_mochimochi_register_test.png" },
+    { attr: "リラックス", icon: "☁️", name: "マシュマロマッサージ星人", text: "ふわふわマッサージでリラックスしたいです〜", baseGauge: 2, basePatience: 6.5, score: 122, image: "./assets2/enemy/enemy_marshmallow_massage_test.png" }
   ];
   let root = null;
   let state = null;
@@ -98,6 +114,10 @@
   const ENEMY_DOUBLE_TAP_MS = 260;
   let pendingEnemyTapId = null;
   let pendingEnemyTapAt = 0;
+  let pendingHelpTapAt = 0;
+  let lastHelpInputAt = 0;
+  let lastHelpEmptyMessageAt = 0;
+  let helpTapTimer = null;
   let surfaceTimers = [];
 
   function makeState() {
@@ -153,6 +173,13 @@
       running: false,
       finished: false,
       timeLeft: BATTLE_SECONDS,
+      battleBgId: DEFAULT_BATTLE_BG_ID,
+      wave: 1,
+      waveLabel: "第1WAVE",
+      timeSalePending: false,
+      timeSaleActive: false,
+      timeSaleCountdown: false,
+      timeSaleAnnounced: false,
       score: 0,
       served: 0,
       missed: 0,
@@ -172,6 +199,7 @@
       cutin: null,
       cutinUntil: 0,
       surface: null,
+      whiteFlashUntil: 0,
       countingDown: false,
 
       lastActionText: "営業開始を押してください。",
@@ -183,7 +211,7 @@
       comboShield: false,
       deckEdit: false,
       deckSelection: [...activeStaffIds],
-      staff: getStaffBase().map(s => ({ ...s, ct: 0, skill: 0 })),
+      staff: getStaffBase().map((s, index) => ({ ...s, isLeader: index === 0, ct: 0, skill: index === 0 ? 50 : 0 })),
       enemies: []
     };
   }
@@ -208,6 +236,7 @@
   function closeBattle() {
     clearPendingStaffTap();
     clearPendingEnemyTap();
+    clearPendingHelpTap();
     clearSurfaceTimers();
     stopLoop();
     if (root) root.classList.add("hidden");
@@ -223,6 +252,12 @@
   function clearPendingEnemyTap() {
     pendingEnemyTapId = null;
     pendingEnemyTapAt = 0;
+  }
+
+  function clearPendingHelpTap() {
+    if (helpTapTimer) window.clearTimeout(helpTapTimer);
+    helpTapTimer = null;
+    pendingHelpTapAt = 0;
   }
 
   function stopLoop() {
@@ -253,6 +288,7 @@
   function startBattle(autoMode = false) {
     clearPendingStaffTap();
     clearPendingEnemyTap();
+    clearPendingHelpTap();
     clearSurfaceTimers();
     stopLoop();
     state = makeState();
@@ -271,7 +307,7 @@
       { title: "3", sub: "開店準備中", ms: 650 },
       { title: "2", sub: "スタッフ配置確認", ms: 650 },
       { title: "1", sub: "レジ起動OK", ms: 650 },
-      { title: "開店！", sub: autoMode ? "オート営業開始（HELP→必殺→通常）" : "店舗営業開始", ms: 720 }
+      { title: "開店！", sub: autoMode ? "サポートプレイ開始（必殺→通常）" : "店舗営業開始", ms: 720 }
     ];
 
     let delay = 0;
@@ -298,8 +334,8 @@
     state.autoMode = !!autoMode;
     state.autoTimer = 0;
     state.lastActionText = state.autoMode
-      ? "オート営業開始！ 自動操作はCT2倍です。店長ヘルプを活用できます。"
-      : "開店！ メンバータップで接客、敵ダブルタップでチェンジできます。";
+      ? "サポートプレイ開始！ 第1WAVE開始。左端リーダーは必殺ゲージ50%スタートです。"
+      : "開店！ 第1WAVE開始。左端リーダーは必殺ゲージ50%スタートです。";
     spawnEnemy(true);
     spawnEnemy(true);
     spawnEnemy(true);
@@ -308,10 +344,73 @@
     render();
   }
 
+
+  function beginTimeSaleCountdown() {
+    if (!state || !state.running || state.timeSaleCountdown || state.timeSaleActive) return;
+    state.timeSalePending = true;
+    state.timeSaleCountdown = true;
+    state.finished = false;
+    state.running = false;
+    state.rush = false;
+    state.surface = null;
+    state.lastActionText = "通常営業終了。これよりタイムセールを行います。";
+    stopLoop();
+
+    const steps = [
+      { title: "通常営業終了", sub: "これよりタイムセールを行います", kind: "timesale-intro", ms: 2000 },
+      { title: "3", sub: "タイムセール開始まで", kind: "timesale-count", ms: 650 },
+      { title: "2", sub: "売場加速中", kind: "timesale-count", ms: 650 },
+      { title: "1", sub: "呼び込み開始", kind: "timesale-count", ms: 650 },
+      { title: "タイムセール開始！", sub: "15秒勝負", kind: "timesale-open", ms: 760 }
+    ];
+
+    let delay = 0;
+    steps.forEach((step) => {
+      const id = window.setTimeout(() => {
+        if (!state || !state.timeSaleCountdown) return;
+        state.surface = { title: step.title, subText: step.sub, kind: step.kind };
+        render();
+      }, delay);
+      surfaceTimers.push(id);
+      delay += step.ms;
+    });
+
+    const startId = window.setTimeout(() => beginTimeSaleWave(), delay);
+    surfaceTimers.push(startId);
+    render();
+  }
+
+  function beginTimeSaleWave() {
+    if (!state) return;
+    state.timeSaleCountdown = false;
+    state.timeSalePending = false;
+    state.timeSaleActive = true;
+    state.timeSaleAnnounced = true;
+    state.wave = 2;
+    state.waveLabel = "タイムセール";
+    state.running = true;
+    state.finished = false;
+    state.rush = true;
+    state.timeLeft = TIME_SALE_SECONDS;
+    state.surface = null;
+    state.spawnTimer = 0;
+    state.lastActionText = "タイムセール実施中！15秒間の来店ラッシュです。";
+    showTimeSaleCutin();
+    lastTick = performance.now();
+    timerId = window.setInterval(tick, 100);
+    render();
+  }
+
+
   function finishBattle() {
     if (!state) return;
     state.running = false;
     state.finished = true;
+    state.timeSaleActive = false;
+    state.timeSalePending = false;
+    state.timeSaleCountdown = false;
+    state.rush = false;
+    state.waveLabel = "営業終了";
     state.timeLeft = Math.max(0, state.timeLeft);
     state.lastActionText = `営業終了：成約${state.served}件 / 売上Pt ${state.score}`;
     stopLoop();
@@ -325,16 +424,24 @@
     lastTick = now;
 
     state.timeLeft = Math.max(0, state.timeLeft - dt);
-    const wasRush = state.rush;
-    state.rush = state.timeLeft <= 10;
-    if (!wasRush && state.rush) {
-      state.lastActionText = "タイムセール開始！来店ラッシュです。";
-      showTimeSaleCutin();
+
+    // 第1WAVEは30秒。終了後、3カウントを挟んでタイムセールへ。
+    if (state.wave === 1 && state.timeLeft <= 0) {
+      beginTimeSaleCountdown();
+      return;
     }
 
+    // 第2WAVE：15秒のタイムセール。終了で営業終了。
+    if (state.timeSaleActive && state.timeLeft <= 0) {
+      finishBattle();
+      return;
+    }
+
+    state.rush = !!state.timeSaleActive;
+
     state.spawnTimer -= dt;
-    const elapsed = BATTLE_SECONDS - state.timeLeft;
-    const spawnInterval = state.rush ? 0.85 : elapsed > 10 ? 1.25 : 1.8;
+    const elapsed = state.timeSaleActive ? TIME_SALE_SECONDS - state.timeLeft : BATTLE_SECONDS - state.timeLeft;
+    const spawnInterval = state.timeSaleActive ? 0.65 : elapsed > 10 ? 1.25 : 1.8;
     if (state.spawnTimer <= 0) {
       spawnEnemy();
       state.spawnTimer = spawnInterval;
@@ -346,10 +453,6 @@
     maintainEnemies();
     runAutoBattle(dt);
 
-    if (state.timeLeft <= 0) {
-      finishBattle();
-      return;
-    }
     render();
   }
 
@@ -361,9 +464,55 @@
     });
   }
 
+
+  function getEnemySlots() {
+    const slots = Array.from({ length: MAX_ENEMIES }, () => null);
+    (state.enemies || []).forEach((enemy, index) => {
+      if (!enemy) return;
+      const slot = Number.isInteger(enemy.slot) ? enemy.slot : index;
+      if (slot >= 0 && slot < MAX_ENEMIES && !slots[slot]) {
+        enemy.slot = slot;
+        slots[slot] = enemy;
+      }
+    });
+    return slots;
+  }
+
+  function compactEnemySlotsOnce() {
+    // 初期移行用。営業中は左詰めしない。
+    (state.enemies || []).forEach((enemy, index) => {
+      if (enemy && !Number.isInteger(enemy.slot)) enemy.slot = index;
+    });
+  }
+
+  function getOpenEnemySlot() {
+    const slots = getEnemySlots();
+    return slots.findIndex(slot => !slot);
+  }
+
+  function replaceEnemyInSameSlot(oldEnemy, newEnemy = createEnemy()) {
+    const slot = oldEnemy && Number.isInteger(oldEnemy.slot) ? oldEnemy.slot : getOpenEnemySlot();
+    newEnemy.slot = slot < 0 ? 0 : slot;
+    const idx = state.enemies.findIndex(e => e && oldEnemy && e.id === oldEnemy.id);
+    if (idx >= 0) {
+      state.enemies[idx] = newEnemy;
+    } else {
+      state.enemies.push(newEnemy);
+    }
+    return newEnemy;
+  }
+
+  function removeEnemyKeepSlot(enemy) {
+    const idx = state.enemies.findIndex(e => e && enemy && e.id === enemy.id);
+    if (idx >= 0) state.enemies.splice(idx, 1);
+  }
+
   function updateEnemies(dt) {
+    compactEnemySlotsOnce();
+
     for (let i = state.enemies.length - 1; i >= 0; i--) {
       const e = state.enemies[i];
+      if (!e) continue;
 
       if (e.defeating) {
         e.defeatLeft -= dt;
@@ -376,14 +525,14 @@
       if (e.exchanging) {
         e.exchangeLeft -= dt;
         if (e.exchangeLeft <= 0) {
-          state.enemies[i] = createEnemy();
+          replaceEnemyInSameSlot(e, createEnemy());
         }
         continue;
       }
 
       e.patience -= dt;
       if (e.patience <= 0) {
-        state.enemies.splice(i, 1);
+        removeEnemyKeepSlot(e);
         state.missed += 1;
         if (state.comboShield) {
           state.comboShield = false;
@@ -397,7 +546,7 @@
   }
 
   function maintainEnemies() {
-    while (state.running && state.enemies.length < MAX_ENEMIES) spawnEnemy(true);
+    while (state.running && getOpenEnemySlot() >= 0) spawnEnemy(true);
   }
 
   function createEnemy() {
@@ -413,6 +562,7 @@
       icon: base.icon,
       name: base.name,
       text: base.text,
+      image: base.image || "",
       gauge,
       maxGauge: gauge,
       patience,
@@ -430,9 +580,13 @@
   }
 
   function spawnEnemy(force = false) {
-    if (!state || state.enemies.length >= MAX_ENEMIES) return;
+    if (!state) return;
+    const slot = getOpenEnemySlot();
+    if (slot < 0) return;
     if (!force && Math.random() < 0.25) return;
-    state.enemies.push(createEnemy());
+    const enemy = createEnemy();
+    enemy.slot = slot;
+    state.enemies.push(enemy);
   }
 
   function handleStaffPointer(staffId, event) {
@@ -508,15 +662,16 @@
     }
 
     if (s.skill < 100) {
-      state.lastActionText = `${s.name}の必殺ゲージが足りません。ダブルタップは必殺技用です。`;
-      render();
+      // v037_51: ダブルタップ時に必殺不可でも、通常接客が可能なら通常クリックとして処理する
+      state.lastActionText = `${s.name}の必殺ゲージが足りません。通常接客として対応します。`;
+      onStaffSingleTap(staffId);
       return;
     }
 
     const target = findBestTarget(s, true);
     if (!target) {
-      state.lastActionText = "必殺接客の対象がいません。";
-      render();
+      state.lastActionText = "必殺接客の対象がいません。通常接客を試みます。";
+      onStaffSingleTap(staffId);
       return;
     }
 
@@ -591,8 +746,7 @@
   }
 
   function completeEnemy(enemy, isMatch, options = {}) {
-    const idx = state.enemies.findIndex(x => x.id === enemy.id);
-    if (idx >= 0) state.enemies.splice(idx, 1);
+    removeEnemyKeepSlot(enemy);
 
     state.served += 1;
     addHelpProgress(1);
@@ -608,14 +762,20 @@
     state.lastActionText = `レジ誘導成功！ +${point}Pt`;
   }
 
+  function triggerWhiteFlash() {
+    if (!state) return;
+    state.whiteFlashUntil = performance.now() + 360;
+  }
+
   function showCutin(title, color = "#ffffff", subText = "", descText = "", image = "") {
     if (!state) return;
-    state.cutin = { title, color, subText, descText, image, createdAt: performance.now(), life: descText || image ? 1650 : 1150 };
+    state.cutin = { title, color, subText, descText,
+      image: image || "", image, createdAt: performance.now(), life: descText || image ? 1650 : 1150 };
     state.cutinUntil = state.cutin.createdAt + state.cutin.life;
   }
 
   function showTimeSaleCutin() {
-    showCutin("タイムセール開始！", "#ffdd33", "ラッシュタイム", "残り10秒。来店ラッシュで成約チャンスが増加します。");
+    showCutin("タイムセール開始！", "#ff3030", "ラッシュタイム", "15秒間、来店ラッシュで成約チャンスが増加します。");
   }
 
   function getCurrentChangeSeconds() {
@@ -653,7 +813,7 @@
 
   function useSkill(staff) {
     const now = performance.now();
-    showCutin(staff.skillName, staff.color, staff.name, staff.skillDesc || "", staff.skillCutin || "");
+    showCutin(staff.skillName, staff.color, staff.name, staff.skillDesc || "", staff.skillCutin || (staff.id === "aa" ? "./assets2/cutin/aa_hina_skill_cutin_test.png" : ""));
     if (staff.skillType === "powerBuff") {
       state.buffPowerUntil = now + 8000;
       state.lastActionText = "緋奈：全力おすすめ！ 接客力アップ！";
@@ -691,12 +851,8 @@
   function autoOneMove(showMessage = true) {
     if (!state || !state.running) return false;
 
-    // v037_08: オート優先順位 = 店長HELP → 必殺技 → 通常攻撃
-    if (state.helpStock > 0) {
-      useManagerHelp(true);
-      return true;
-    }
-
+    // v037_51: オート優先順位 = 必殺技 → 通常攻撃
+    // 店長HELPは強力な切り札なので、サポートでは使わず任意操作にする。
     let bestStaff = null;
     let bestEnemy = null;
     let useSpecial = false;
@@ -712,7 +868,7 @@
       const damage = getAttackDamage(s, e, canSpecial);
       const willDefeat = e.gauge <= damage;
       const score =
-        (canSpecial ? 220 : 0) +
+        (canSpecial ? 240 : 0) +
         (s.attr === e.attr ? 120 : 0) +
         (willDefeat ? 90 : 0) +
         (1 - e.patience / e.maxPatience) * 72 +
@@ -734,14 +890,14 @@
       if (useSpecial) useSkill(bestStaff);
       state.autoResolving = false;
 
-      // オートは便利な代わりにCTを重くする
+      // サポートは便利な代わりにCTを重くする
       bestStaff.ct = bestStaff.ctMax * (useSpecial ? 1.15 : 1) * AUTO_CT_MULTIPLIER;
       bestStaff.skill = useSpecial ? 0 : Math.min(100, bestStaff.skill + 10);
       return true;
     }
 
     if (showMessage) {
-      state.lastActionText = "オート：今は動けるメンバーがいません。";
+      state.lastActionText = "サポート：今は動けるメンバーがいません。";
       render();
     }
     return false;
@@ -760,7 +916,7 @@
     if (!state || !state.running) return;
     state.autoMode = !state.autoMode;
     state.autoTimer = 0;
-    state.lastActionText = state.autoMode ? "オート営業ON：店長HELP→必殺→通常の順で行動します。CT2倍・売上70%。" : "オート営業OFF";
+    state.lastActionText = state.autoMode ? "サポートプレイON：必殺→通常の順で行動します。店長HELPは任意操作です。CT2倍・売上70%。" : "サポートプレイOFF";
     render();
   }
 
@@ -778,37 +934,74 @@
   }
 
   function useManagerHelp(fromAuto = false) {
-    if (!state || !state.running) return;
+    if (!state || !state.running) return false;
     if (state.helpStock <= 0) {
-      state.lastActionText = "店長ヘルプのストックがありません。成約10件で1つ溜まります。";
+      state.lastActionText = "店長HELP準備中。成約10件で1ストック溜まります。";
       render();
-      return;
+      return false;
     }
 
     state.helpStock -= 1;
+    triggerWhiteFlash();
     showCutin("店長HELP！", "#ffe06a", "店長出動", "全メンバーのCTをクリアし、画面上の敵を一掃成約してオールチェンジします。");
     state.staff.forEach(s => { s.ct = 0; });
 
     const targets = [...state.enemies.filter(e => !e.exchanging)];
     targets.forEach(e => completeEnemy(e, true, { help: true }));
-    state.enemies = state.enemies.filter(e => e.exchanging);
-    while (state.enemies.length < MAX_ENEMIES) spawnEnemy(true);
+    state.enemies = getEnemySlots().map((e, slot) => {
+      const next = createEnemy();
+      next.slot = slot;
+      return next;
+    });
 
     state.targetPreviewId = null;
     state.lastActionText = `店長ヘルプ発動！ リキャストクリア＋${targets.length}体を一掃成約、オールチェンジ！`;
     if (!fromAuto) render();
+    return true;
+    return true;
+    return true;
+  }
+
+
+  function handleHelpClick(event) {
+    if (!state || !state.running) return false;
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    const now = performance.now();
+
+    // v037_51: 乱連打前提。押せるなら即発動、連打による多重発動だけ短時間ロック。
+    if (now - lastHelpInputAt < HELP_INPUT_LOCK_MS) return;
+    lastHelpInputAt = now;
+
+    clearPendingHelpTap();
+
+    if (state.helpStock > 0) {
+      useManagerHelp();
+      return;
+    }
+
+    // ストックなし時はメッセージを出しすぎない
+    if (now - lastHelpEmptyMessageAt > HELP_EMPTY_MESSAGE_LOCK_MS) {
+      lastHelpEmptyMessageAt = now;
+      state.lastActionText = "店長HELP準備中。成約10件で1ストック溜まります。";
+      render();
+    }
   }
 
   function render() {
     if (!root || !state) return;
-    const statusText = state.running ? (state.rush ? "ラッシュ中" : "営業中") : state.finished ? "終了" : "待機中";
+    const statusText = state.running ? (state.timeSaleActive ? "タイムセール中" : "営業中") : state.finished ? "営業終了" : state.timeSaleCountdown ? "タイムセール準備中" : "待機中";
 
     root.innerHTML = `
-      <div class="battle-stage ${state.running ? "is-running" : ""} ${state.rush ? "is-rush" : ""}">
+      <div class="battle-stage ${state.running ? "is-running" : ""} ${state.rush ? "is-rush" : ""}" style="--battle-bg-url: url(${getBattleBackground(state.battleBgId).path});">
         <section class="battle-hud">
           <div class="battle-hud-title">店舗営業：デッキ接客バトル <span class="battle-version">${BATTLE_VERSION}</span></div>
           <div class="battle-hud-stats">
             <span>状態：<b>${statusText}</b></span>
+            <span>WAVE：<b>${escapeHtml(state.waveLabel || "第1WAVE")}</b></span>
             <span>残り：<b>${Math.ceil(state.timeLeft)}</b>秒</span>
             <span>成約：<b>${state.served}</b></span>
             <span>離脱：<b>${state.missed}</b></span>
@@ -817,13 +1010,15 @@
           </div>
           ${renderHudActions()}
           <div class="battle-message">${escapeHtml(state.lastActionText)}</div>
+          ${state.finished ? `<div class="battle-finished-banner">営業終了</div>` : (!state.finished && state.running && state.timeSaleActive) ? `<div class="battle-timesale-banner">＞＞＞タイムセール実施中！＜＜＜</div>` : ""}
         </section>
 
         ${renderCutinOverlay()}
         ${renderSurfaceOverlay()}
+        ${renderWhiteFlashOverlay()}
 
         <section class="battle-enemies">
-          ${(state.enemies.length ? state.enemies.map(renderEnemy).join("") : renderEnemyDummies())}
+          ${renderEnemySlots()}
         </section>
 
         ${renderHelpButtons("battle-help-large")}
@@ -832,7 +1027,7 @@
           ${state.staff.map(renderStaff).join("")}
         </section>
 
-        ${state.running || state.countingDown ? "" : renderControlOverlay()}
+        ${state.running || state.countingDown || state.timeSaleCountdown || state.timeSalePending ? "" : renderControlOverlay()}
       </div>
     `;
   }
@@ -840,7 +1035,7 @@
   function renderHelpButtons(className) {
     const buttons = Array.from({ length: HELP_STOCK_MAX }, (_, i) => {
       const available = state.running && i < state.helpStock;
-      return `<button class="battle-help-btn ${available ? "available" : "empty"}" data-action="help" ${available ? "" : "disabled"}>HELP!</button>`;
+      return `<button class="battle-help-btn ${available ? "available" : "empty"}" data-action="help">HELP!</button>`;
     }).join("");
 
     return `<div class="${className}" title="成約10件で1つ、最大3つまでストック">${buttons}</div>`;
@@ -850,7 +1045,7 @@
     if (!state.running) return "";
     return `
       <div class="battle-hud-actions">
-        <button class="battle-auto-toggle ${state.autoMode ? "on" : ""}" data-action="autoToggle">${state.autoMode ? "オートON" : "オートOFF"}</button>
+        <button class="battle-auto-toggle ${state.autoMode ? "on" : ""}" data-action="autoToggle">${state.autoMode ? "サポートON" : "サポートOFF"}</button>
       </div>
     `;
   }
@@ -865,18 +1060,37 @@
     if (now > state.cutinUntil) return "";
     const progress = Math.max(0, Math.min(1, (now - state.cutin.createdAt) / state.cutin.life));
     const opacity = progress < 0.8 ? 1 : Math.max(0, 1 - (progress - 0.8) / 0.2);
-    return `
-      <div class="battle-cutin ${state.cutin.image ? "with-image" : ""}" style="--cutin-color:${state.cutin.color}; opacity:${opacity};">
-        <div class="battle-cutin-band">
-          ${state.cutin.image ? `<div class="battle-cutin-image"><img src="${escapeHtml(state.cutin.image)}" alt=""></div>` : ""}
-          <div class="battle-cutin-text">
-            ${state.cutin.subText ? `<small>${escapeHtml(state.cutin.subText)}</small>` : ""}
-            <b>${escapeHtml(state.cutin.title)}</b>
-            ${state.cutin.descText ? `<p>${escapeHtml(state.cutin.descText)}</p>` : ""}
-          </div>
+
+    const portrait = state.cutin.image ? `
+      <div class="skillPortraitFixedV19" style="--cutin-color:${state.cutin.color}; opacity:${opacity};">
+        <img src="${escapeHtml(state.cutin.image)}" alt="">
+      </div>
+    ` : "";
+
+    const text = `
+      <div class="skillTextSurfaceV19" style="--cutin-color:${state.cutin.color}; opacity:${opacity};">
+        <div class="skillTextInnerV19">
+          ${state.cutin.subText ? `<small>${escapeHtml(state.cutin.subText)}</small>` : ""}
+          <b>${escapeHtml(state.cutin.title)}</b>
+          ${state.cutin.descText ? `<p>${escapeHtml(state.cutin.descText)}</p>` : ""}
         </div>
       </div>
     `;
+
+    return `
+      <div class="skillCutinLayerV19">
+        ${text}
+        ${portrait}
+      </div>
+    `;
+  }
+
+  function renderWhiteFlashOverlay() {
+    if (!state || !state.whiteFlashUntil) return "";
+    const now = performance.now();
+    if (now > state.whiteFlashUntil) return "";
+    const opacity = Math.max(0, Math.min(1, (state.whiteFlashUntil - now) / 360));
+    return `<div class="battle-white-flash" style="opacity:${opacity};"></div>`;
   }
 
   function renderSurfaceOverlay() {
@@ -911,11 +1125,11 @@
             </div>
           ` : `
             <div class="battle-result-title">店舗営業プロトタイプ</div>
-            <p class="battle-control-help">30秒で家電星人をどれだけ接客できるか。メンバーはシングルタップ通常、ダブルタップ必殺。オートは店長HELP→必殺→通常の順。CT2倍・売上70%。</p>
+            <p class="battle-control-help">30秒で家電星人をどれだけ接客できるか。メンバーはシングルタップ通常、ダブルタップ必殺。サポートは必殺→通常の順。店長HELPは任意操作。CT2倍・売上70%。</p>
           `}
           <div class="battle-control-buttons battle-main-buttons">
             <button data-action="start">${isResult ? "もう一度営業" : "営業開始"}</button>
-            <button data-action="auto">${isResult ? "オートプレイでもう一度" : "オートプレイ"}</button>
+            <button data-action="auto">${isResult ? "サポートプレイでもう一度" : "サポートプレイ"}</button>
             <button data-action="deckEdit">デッキ編成</button>
             <button data-action="close">戻る</button>
           </div>
@@ -971,17 +1185,23 @@
   }
 
 
-  function renderEnemyDummies() {
-    return Array.from({ length: 3 }, (_, i) => `
+
+  function renderEnemySlots() {
+    const slots = getEnemySlots();
+    return slots.map((enemy, index) => enemy ? renderEnemy(enemy) : renderEnemyDummy(index)).join("");
+  }
+
+  function renderEnemyDummy(index) {
+    return `
       <article class="battle-enemy-card battle-enemy-dummy" aria-hidden="true">
         <div class="enemy-head"><span class="enemy-icon">◇</span><span class="enemy-name">開店準備中</span></div>
-        <div class="enemy-attr">家電星人 待機枠 ${i + 1}</div>
+        <div class="enemy-attr">家電星人 待機枠 ${index + 1}</div>
         <div class="enemy-label">HP</div>
         <div class="battle-bar"><i style="width:0%"></i></div>
         <div class="enemy-label">受付時間</div>
         <div class="battle-bar patience"><i style="width:0%"></i></div>
       </article>
-    `).join("");
+    `;
   }
 
   function renderEnemy(e) {
@@ -1007,6 +1227,7 @@
     return `
       <article class="battle-enemy-card ${e.rare ? "rare" : ""} ${target ? "target" : ""} ${e.defeating ? "defeating" : ""}" data-enemy-id="${e.id}" style="--enemy-color:${enemyColor};">
         <div class="enemy-head"><span class="enemy-icon">${e.icon}</span><span class="enemy-name">${escapeHtml(e.name)}</span>${e.rare ? "<b>RARE</b>" : ""}</div>
+        ${e.image ? `<div class="enemy-art"><img src="${escapeHtml(e.image)}" alt=""></div>` : ""}
         <div class="enemy-attr">${escapeHtml(e.attr)} / ${escapeHtml(e.text)}</div>
         <div class="enemy-label">HP</div>
         <div class="battle-bar"><i style="width:${gaugeRate}%"></i></div>
@@ -1041,10 +1262,10 @@
     const skillReady = s.skill >= 100;
     const hasCardImage = !!s.cardImage;
     return `
-      <button class="battle-member-card ${ctReady ? "ready" : "cooldown"} ${skillReady ? "skill-ready" : ""} ${hasCardImage ? "has-card-art" : ""}" style="--member-color:${s.color};" data-staff-id="${s.id}">
+      <button class="battle-member-card ${ctReady ? "ready" : "cooldown"} ${skillReady ? "skill-ready" : ""} ${s.isLeader ? "leader-card" : ""} ${hasCardImage ? "has-card-art" : ""}" style="--member-color:${s.color};" data-staff-id="${s.id}">${staff.cardImage ? `<div class="member-card-image"><img src="${escapeHtml(staff.cardImage)}" alt=""></div>` : ""}
         ${hasCardImage ? `<div class="member-card-art"><img src="${escapeHtml(s.cardImage)}" alt=""></div>` : ""}
         <div class="member-card-info">
-          <div class="member-name">${escapeHtml(s.name)}</div>
+          <div class="member-name">${escapeHtml(s.name)}${s.isLeader ? `<em class="leader-badge">LEADER</em>` : ""}</div>
           <div class="member-attr">${escapeHtml(s.attr)}</div>
           <div class="member-power">通常1 / 特攻2</div>
           <div class="member-label">CT</div>
@@ -1156,11 +1377,17 @@
     else if (action === "deckReset") resetDeckSelection();
     else if (action === "deckCancel") cancelDeckEditor();
     else if (action === "autoToggle") toggleAutoBattle();
-    else if (action === "help") useManagerHelp();
+    else if (action === "help") return;
   });
 
   document.addEventListener("pointerdown", (event) => {
     if (!root || root.classList.contains("hidden")) return;
+
+    const helpButton = event.target.closest('button[data-action="help"]');
+    if (helpButton && root.contains(helpButton)) {
+      handleHelpClick(event);
+      return;
+    }
 
     const staffButton = event.target.closest("button[data-staff-id]");
     if (!staffButton || !root.contains(staffButton)) return;
