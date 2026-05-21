@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "text": "メンバーステータス：準備中",
+      "action": "list",
+      "list": "mainmenu.json"
+    },
+    {
+      "text": "戻る",
+      "action": "list",
+      "list": "mainmenu.json"
+    },
+    {
+      "text": "思い出アルバム",
+      "action": "custom",
+      "custom": "album"
+    },
+    {
+      "text": "シナリオ素材を見る",
+      "action": "list",
+      "list": "scenario_index.json"
+    }
+  ]
+}
