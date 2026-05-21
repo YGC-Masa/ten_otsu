@@ -3,7 +3,7 @@
 // 操作はメンバーのシングルタップで通常接客、ダブルタップで必殺接客。通常敵HP2、レアHP3。ターゲットは選択メンバーに最適な家電星人へ自動Fix。彩愛の必殺は盤面整理＋敵チェンジ短縮。店長HELP・必殺カットイン・タイムセール演出あり。
 
 (function () {
-  const BATTLE_VERSION = "v037_51";
+  const BATTLE_VERSION = "v037_60";
   const BATTLE_SECONDS = 30;
   const TIME_SALE_SECONDS = 15;
   const MAX_ENEMIES = 3;
@@ -11,7 +11,7 @@
   const CHANGE_SECONDS_BUFFED = 1.0;
   const AUTO_ACTION_INTERVAL = 0.75;
   const AUTO_CT_MULTIPLIER = 2.0; // オート営業ペナルティ：自動操作時のみCT2倍
-  const AUTO_SCORE_MULTIPLIER = 0.7; // オート営業ペナルティ：自動成約の売上Pt70%
+  const AUTO_SCORE_MULTIPLIER = 0.7; // オート営業ペナルティ：自動成約の売上70%
   const HELP_STOCK_MAX = 3;
   const HELP_STOCK_STEP = 10;
   const HELP_INPUT_LOCK_MS = 320;
@@ -23,7 +23,90 @@
   ];
 
 
-  const battleBackgrounds = {
+  
+  
+  const MANAGER_EXP_STORAGE_KEY = "tenotsu_manager_exp_v1";
+
+  function loadManagerExpData() {
+    try { return JSON.parse(localStorage.getItem(MANAGER_EXP_STORAGE_KEY) || "{}"); }
+    catch (_) { return {}; }
+  }
+
+  function calcManagerLevelFromExp(totalExp) {
+    const exp = Math.max(0, Math.floor(Number(totalExp) || 0));
+    let level = 1;
+    let used = 0;
+    for (let lv = 1; lv < 60; lv++) {
+      const need = Math.floor(140 + 22 * Math.pow(lv - 1, 1.45));
+      if (used + need > exp) break;
+      used += need;
+      level = lv + 1;
+    }
+    return level;
+  }
+
+  function addManagerExp(amount, source = "店舗営業") {
+    const value = Math.max(0, Math.floor(Number(amount) || 0));
+    const data = loadManagerExpData();
+    data.totalExp = Math.max(0, Math.floor(Number(data.totalExp) || 0)) + value;
+    data.level = calcManagerLevelFromExp(data.totalExp);
+    data.updatedAt = new Date().toISOString();
+    data.history = Array.isArray(data.history) ? data.history : [];
+    data.history.unshift({ source, exp: value, at: data.updatedAt });
+    data.history = data.history.slice(0, 30);
+    try { localStorage.setItem(MANAGER_EXP_STORAGE_KEY, JSON.stringify(data)); } catch (_) {}
+    return data;
+  }
+
+
+const ECONOMY_STORAGE_KEY = "tenotsu_economy_v1";
+  const ALBUM_STORAGE_KEY = "tenotsu_album_v1";
+
+  function loadEconomy() {
+    try { return JSON.parse(localStorage.getItem(ECONOMY_STORAGE_KEY) || "{}"); }
+    catch (_) { return {}; }
+  }
+
+  function saveEconomy(data) {
+    try { localStorage.setItem(ECONOMY_STORAGE_KEY, JSON.stringify(data)); }
+    catch (_) {}
+  }
+
+  function unlockAlbumMemory(id, title, text) {
+    try {
+      const data = JSON.parse(localStorage.getItem(ALBUM_STORAGE_KEY) || "{}");
+      data.memories = Array.isArray(data.memories) ? data.memories : [];
+      if (!data.memories.some(m => m.id === id)) {
+        data.memories.unshift({ id, title, text, at: new Date().toISOString() });
+        localStorage.setItem(ALBUM_STORAGE_KEY, JSON.stringify(data));
+      }
+    } catch (_) {}
+  }
+
+  function addSalesToEconomy(amount, source = "店舗営業") {
+    const value = Math.max(0, Math.floor(Number(amount) || 0));
+    const data = loadEconomy();
+    data.totalSales = Math.max(0, Math.floor(Number(data.totalSales) || 0)) + value;
+    data.availableSales = Math.max(0, Math.floor(Number(data.availableSales) || 0)) + value;
+    data.battleCount = Math.max(0, Math.floor(Number(data.battleCount) || 0)) + 1;
+    data.lastSales = value;
+    data.updatedAt = new Date().toISOString();
+    data.history = Array.isArray(data.history) ? data.history : [];
+    data.history.unshift({ type: "sales", source, amount: value, at: data.updatedAt });
+    data.history = data.history.slice(0, 30);
+    saveEconomy(data);
+    unlockAlbumMemory("battle_first_sales", "はじめての店舗営業", "店舗営業で売上を記録しました。");
+    return data;
+  }
+
+  window.TenotsuEconomy = window.TenotsuEconomy || {};
+  window.TenotsuEconomy.load = loadEconomy;
+  window.TenotsuEconomy.save = saveEconomy;
+  window.TenotsuEconomy.addSales = addSalesToEconomy;
+  window.TenotsuEconomy.unlockMemory = unlockAlbumMemory;
+
+
+const battleBackgrounds = {
     hidamari_store_battle_lv1: {
       label: "ひだまりストア通常営業 Lv1",
       path: "./assets2/bg/battle_store_lv1.png"
@@ -36,7 +119,7 @@
   }
 
   const staffMaster = [
-    { id: "aa", name: "緋奈", skillCutin: "./assets2/cutin/aa_hina_skill_cutin_test.png", cardImage: "./assets2/card/aa_hina_card_test.png", color: "#d3381c", attr: "映像", power: 1, ctMax: 2.4, skillName: "全力おすすめ！", skillType: "powerBuff", skillDesc: "8秒間、接客力アップ。成約を一気に伸ばします。" },
+    { id: "aa", name: "緋奈", color: "#d3381c", attr: "映像", power: 1, ctMax: 2.4, skillName: "全力おすすめ！", skillType: "powerBuff", skillDesc: "8秒間、接客力アップ。成約を一気に伸ばします。" , cardImage: "./assets2/character/card_hina_test.png", cutinImage: "./assets2/cutin/cutin_hina_test.png", skillCutin: "./assets2/cutin/cutin_hina_test.png"},
     { id: "ab", name: "藍", color: "#0067C0", attr: "ドライヤー", power: 1, ctMax: 3.0, skillName: "やさしい案内", skillType: "extendTime", skillDesc: "全敵の受付時間を延長し、営業残り時間も少し増やします。" , cardImage: "./assets2/character/card_ai_test.png", cutinImage: "./assets2/cutin/cutin_ai_test.png", skillCutin: "./assets2/cutin/cutin_ai_test.png"},
     { id: "ac", name: "翠", color: "#02b308", attr: "PC", power: 1, ctMax: 3.5, skillName: "最適解プレゼン", skillType: "pcSweep", skillDesc: "PC属性をまとめて成約し、6秒間マッチ性能を上げます。" , cardImage: "./assets2/character/card_midori_test.png", cutinImage: "./assets2/cutin/cutin_midori_test.png", skillCutin: "./assets2/cutin/cutin_midori_test.png"},
     { id: "ad", name: "こがね", color: "#FFF450", attr: "スマホ", power: 1, ctMax: 1.7, skillName: "即決トーク", skillType: "ctReduce", skillDesc: "全メンバーのCTを短縮し、6秒間テンポを上げます。" , cardImage: "./assets2/character/card_kogane_test.png", cutinImage: "./assets2/cutin/cutin_kogane_test.png", skillCutin: "./assets2/cutin/cutin_kogane_test.png"},
@@ -45,7 +128,7 @@
     { id: "ag", name: "雪乃", color: "#6495ED", attr: "調理", power: 1, ctMax: 3.2, skillName: "静かな提案", skillType: "freezeTime", skillDesc: "敵の受付時間を一時停止し、店内を落ち着かせます。" , cardImage: "./assets2/character/card_yukino_test.png", cutinImage: "./assets2/cutin/cutin_yukino_test.png", skillCutin: "./assets2/cutin/cutin_yukino_test.png"},
     { id: "ah", name: "美空", color: "#fffef6", attr: "除湿", power: 1, ctMax: 2.6, skillName: "夏空接客", skillType: "rescue", skillDesc: "受付時間が短い敵を追加フォローする安定型スキル。" , cardImage: "./assets2/character/card_misora_test.png", cutinImage: "./assets2/cutin/cutin_misora_test.png", skillCutin: "./assets2/cutin/cutin_misora_test.png"},
     { id: "ai", name: "夜空", color: "#00152d", attr: "加湿", power: 1, ctMax: 2.9, skillName: "冬空フォーカス", skillType: "rareKiller", skillDesc: "レア敵への追加ダメージで一点突破します。" , cardImage: "./assets2/character/card_yozora_test.png", cutinImage: "./assets2/cutin/cutin_yozora_test.png", skillCutin: "./assets2/cutin/cutin_yozora_test.png"},
-    { id: "aj", name: "桃", color: "#F7ADC3", attr: "配信", power: 1, ctMax: 2.1, skillName: "店内配信", skillType: "buzz", skillDesc: "売上Ptとレア出現率を上げる代わりに混雑しやすくなります。" , cardImage: "./assets2/character/card_momo_test.png", cutinImage: "./assets2/cutin/cutin_momo_test.png", skillCutin: "./assets2/cutin/cutin_momo_test.png"},
+    { id: "aj", name: "桃", color: "#F7ADC3", attr: "配信", power: 1, ctMax: 2.1, skillName: "店内配信", skillType: "buzz", skillDesc: "売上とレア出現率を上げる代わりに混雑しやすくなります。" , cardImage: "./assets2/character/card_momo_test.png", cutinImage: "./assets2/cutin/cutin_momo_test.png", skillCutin: "./assets2/cutin/cutin_momo_test.png"},
     { id: "ak", name: "彩愛", color: "#694D9F", attr: "生活", power: 1, ctMax: 3.0, skillName: "優雅な家事導線", skillType: "ayameRoute", skillDesc: "敵最大2体に1ダメージ。6秒間、敵チェンジを2秒から1秒に短縮。" , cardImage: "./assets2/character/card_ayame_test.png", cutinImage: "./assets2/cutin/cutin_ayame_test.png", skillCutin: "./assets2/cutin/cutin_ayame_test.png"},
     { id: "al", name: "里美", color: "#8d5025", attr: "事務", power: 1, ctMax: 3.1, skillName: "受付整理", skillType: "changeSupport", skillDesc: "受付を整理して、チェンジやCT管理を補助します。" , cardImage: "./assets2/character/card_satomi_test.png", cutinImage: "./assets2/cutin/cutin_satomi_test.png", skillCutin: "./assets2/cutin/cutin_satomi_test.png"},
     { id: "am", name: "萌", color: "#33CC99", attr: "リラックス", power: 1, ctMax: 2.9, skillName: "おにいちゃん助けて", skillType: "managerBoost", skillDesc: "店長ヘルプゲージが溜まりやすくなるサポートスキル。" , cardImage: "./assets2/character/card_moe_test.png", cutinImage: "./assets2/cutin/cutin_moe_test.png", skillCutin: "./assets2/cutin/cutin_moe_test.png"}
@@ -212,7 +295,8 @@
       deckEdit: false,
       deckSelection: [...activeStaffIds],
       staff: getStaffBase().map((s, index) => ({ ...s, isLeader: index === 0, ct: 0, skill: index === 0 ? 50 : 0 })),
-      enemies: []
+      enemies: [],
+      salesRecorded: false
     };
   }
 
@@ -406,15 +490,20 @@
     if (!state) return;
     state.running = false;
     state.finished = true;
+    if (!state.salesRecorded) {
+      state.salesRecorded = true;
+      addSalesToEconomy(state.score, state.timeSaleActive ? "店舗営業＋タイムセール" : "店舗営業");
+      addManagerExp(80, "店舗営業");
+    }
     state.timeSaleActive = false;
     state.timeSalePending = false;
     state.timeSaleCountdown = false;
     state.rush = false;
     state.waveLabel = "営業終了";
     state.timeLeft = Math.max(0, state.timeLeft);
-    state.lastActionText = `営業終了：成約${state.served}件 / 売上Pt ${state.score}`;
+    state.lastActionText = `営業終了：成約${state.served}件 / 売上 ${state.score.toLocaleString()}円 / 店長EXP +80`;
     stopLoop();
-    showSurface("営業終了！", `成約${state.served}件 / 売上Pt ${state.score}`, "close", 1350);
+    showSurface("営業終了！", `成約${state.served}件 / 売上 ${state.score.toLocaleString()}円 / 店長EXP +80`, "close", 1350);
   }
 
   function tick() {
@@ -662,7 +751,7 @@
     }
 
     if (s.skill < 100) {
-      // v037_51: ダブルタップ時に必殺不可でも、通常接客が可能なら通常クリックとして処理する
+      // v037_60: ダブルタップ時に必殺不可でも、通常接客が可能なら通常クリックとして処理する
       state.lastActionText = `${s.name}の必殺ゲージが足りません。通常接客として対応します。`;
       onStaffSingleTap(staffId);
       return;
@@ -759,7 +848,7 @@
     let point = Math.round(enemy.score * comboBonus * rareBonus * matchBonus);
     if (state.autoResolving) point = Math.max(1, Math.floor(point * AUTO_SCORE_MULTIPLIER));
     state.score += point;
-    state.lastActionText = `レジ誘導成功！ +${point}Pt`;
+    state.lastActionText = `レジ誘導成功！ +${point}円`;
   }
 
   function triggerWhiteFlash() {
@@ -813,7 +902,7 @@
 
   function useSkill(staff) {
     const now = performance.now();
-    showCutin(staff.skillName, staff.color, staff.name, staff.skillDesc || "", staff.skillCutin || (staff.id === "aa" ? "./assets2/cutin/aa_hina_skill_cutin_test.png" : ""));
+    showCutin(staff.skillName, staff.color, staff.name, staff.skillDesc || "", staff.skillCutin || (staff.id === "aa" ? "./assets2/cutin/cutin_hina_test.png" : ""));
     if (staff.skillType === "powerBuff") {
       state.buffPowerUntil = now + 8000;
       state.lastActionText = "緋奈：全力おすすめ！ 接客力アップ！";
@@ -851,7 +940,7 @@
   function autoOneMove(showMessage = true) {
     if (!state || !state.running) return false;
 
-    // v037_51: オート優先順位 = 必殺技 → 通常攻撃
+    // v037_60: オート優先順位 = 必殺技 → 通常攻撃
     // 店長HELPは強力な切り札なので、サポートでは使わず任意操作にする。
     let bestStaff = null;
     let bestEnemy = null;
@@ -972,7 +1061,7 @@
 
     const now = performance.now();
 
-    // v037_51: 乱連打前提。押せるなら即発動、連打による多重発動だけ短時間ロック。
+    // v037_60: 乱連打前提。押せるなら即発動、連打による多重発動だけ短時間ロック。
     if (now - lastHelpInputAt < HELP_INPUT_LOCK_MS) return;
     lastHelpInputAt = now;
 
@@ -1006,7 +1095,7 @@
             <span>成約：<b>${state.served}</b></span>
             <span>離脱：<b>${state.missed}</b></span>
             <span>コンボ：<b>${state.combo}</b></span>
-            <span>売上Pt：<b>${state.score}</b></span>
+            <span>売上：<b>${state.score}</b></span>
           </div>
           ${renderHudActions()}
           <div class="battle-message">${escapeHtml(state.lastActionText)}</div>
@@ -1121,7 +1210,7 @@
               <span>成約</span><b>${state.served}</b>
               <span>離脱</span><b>${state.missed}</b>
               <span>最大コンボ</span><b>${state.maxCombo}</b>
-              <span>売上Pt</span><b>${state.score}</b>
+              <span>売上</span><b>${state.score}</b>
             </div>
           ` : `
             <div class="battle-result-title">店舗営業プロトタイプ</div>
@@ -1262,7 +1351,7 @@
     const skillReady = s.skill >= 100;
     const hasCardImage = !!s.cardImage;
     return `
-      <button class="battle-member-card ${ctReady ? "ready" : "cooldown"} ${skillReady ? "skill-ready" : ""} ${s.isLeader ? "leader-card" : ""} ${hasCardImage ? "has-card-art" : ""}" style="--member-color:${s.color};" data-staff-id="${s.id}">${staff.cardImage ? `<div class="member-card-image"><img src="${escapeHtml(staff.cardImage)}" alt=""></div>` : ""}
+      <button class="battle-member-card ${ctReady ? "ready" : "cooldown"} ${skillReady ? "skill-ready" : ""} ${s.isLeader ? "leader-card" : ""} ${hasCardImage ? "has-card-art" : ""}" style="--member-color:${s.color};" data-staff-id="${s.id}">
         ${hasCardImage ? `<div class="member-card-art"><img src="${escapeHtml(s.cardImage)}" alt=""></div>` : ""}
         <div class="member-card-info">
           <div class="member-name">${escapeHtml(s.name)}${s.isLeader ? `<em class="leader-badge">LEADER</em>` : ""}</div>
