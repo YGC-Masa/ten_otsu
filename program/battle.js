@@ -3,7 +3,7 @@
 // 操作はメンバーのシングルタップで通常接客、ダブルタップで必殺接客。通常敵HP2、レアHP3。ターゲットは選択メンバーに最適な家電星人へ自動Fix。彩愛の必殺は盤面整理＋敵チェンジ短縮。店長HELP・必殺カットイン・タイムセール演出あり。
 
 (function () {
-  const BATTLE_VERSION = "v037_62";
+  const BATTLE_VERSION = "v037_64";
   const BATTLE_SECONDS = 30;
   const TIME_SALE_SECONDS = 15;
   const MAX_ENEMIES = 3;
@@ -109,7 +109,7 @@ const ECONOMY_STORAGE_KEY = "tenotsu_economy_v1";
 const battleBackgrounds = {
     hidamari_store_battle_lv1: {
       label: "ひだまりストア通常営業 Lv1",
-      path: "../images/assets/bg/battle_store_lv1.png"
+      path: "images/assets/bg/battle_store_lv1.png"
     }
   };
   const DEFAULT_BATTLE_BG_ID = "hidamari_store_battle_lv1";
@@ -119,19 +119,19 @@ const battleBackgrounds = {
   }
 
   const staffMaster = [
-    { id: "aa", name: "緋奈", color: "#d3381c", attr: "映像", power: 1, ctMax: 2.4, skillName: "全力おすすめ！", skillType: "powerBuff", skillDesc: "8秒間、接客力アップ。成約を一気に伸ばします。" , cardImage: "../images/assets/character/card_hina_test.png", cutinImage: "../images/assets/cutin/cutin_hina_test.png", skillCutin: "../images/assets/cutin/cutin_hina_test.png"},
-    { id: "ab", name: "藍", color: "#0067C0", attr: "ドライヤー", power: 1, ctMax: 3.0, skillName: "やさしい案内", skillType: "extendTime", skillDesc: "全敵の受付時間を延長し、営業残り時間も少し増やします。" , cardImage: "../images/assets/character/card_ai_test.png", cutinImage: "../images/assets/cutin/cutin_ai_test.png", skillCutin: "../images/assets/cutin/cutin_ai_test.png"},
-    { id: "ac", name: "翠", color: "#02b308", attr: "PC", power: 1, ctMax: 3.5, skillName: "最適解プレゼン", skillType: "pcSweep", skillDesc: "PC属性をまとめて成約し、6秒間マッチ性能を上げます。" , cardImage: "../images/assets/character/card_midori_test.png", cutinImage: "../images/assets/cutin/cutin_midori_test.png", skillCutin: "../images/assets/cutin/cutin_midori_test.png"},
-    { id: "ad", name: "こがね", color: "#FFF450", attr: "スマホ", power: 1, ctMax: 1.7, skillName: "即決トーク", skillType: "ctReduce", skillDesc: "全メンバーのCTを短縮し、6秒間テンポを上げます。" , cardImage: "../images/assets/character/card_kogane_test.png", cutinImage: "../images/assets/cutin/cutin_kogane_test.png", skillCutin: "../images/assets/cutin/cutin_kogane_test.png"},
-    { id: "ae", name: "琥珀", color: "#F68B1F", attr: "オーディオ", power: 1, ctMax: 2.7, skillName: "フロアダッシュ", skillType: "rushBuff", skillDesc: "8秒間ラッシュ対応力アップ。コンボを守りやすくします。" , cardImage: "../images/assets/character/card_kohaku_test.png", cutinImage: "../images/assets/cutin/cutin_kohaku_test.png", skillCutin: "../images/assets/cutin/cutin_kohaku_test.png"},
-    { id: "af", name: "真花", color: "#C0C0C0", attr: "美容", power: 1, ctMax: 2.8, skillName: "お嬢様スマイル", skillType: "comboPlus", skillDesc: "成約時のコンボ補助。丁寧な接客で満足度を伸ばします。" , cardImage: "../images/assets/character/card_manaka_test.png", cutinImage: "../images/assets/cutin/cutin_manaka_test.png", skillCutin: "../images/assets/cutin/cutin_manaka_test.png"},
-    { id: "ag", name: "雪乃", color: "#6495ED", attr: "調理", power: 1, ctMax: 3.2, skillName: "静かな提案", skillType: "freezeTime", skillDesc: "敵の受付時間を一時停止し、店内を落ち着かせます。" , cardImage: "../images/assets/character/card_yukino_test.png", cutinImage: "../images/assets/cutin/cutin_yukino_test.png", skillCutin: "../images/assets/cutin/cutin_yukino_test.png"},
-    { id: "ah", name: "美空", color: "#fffef6", attr: "除湿", power: 1, ctMax: 2.6, skillName: "夏空接客", skillType: "rescue", skillDesc: "受付時間が短い敵を追加フォローする安定型スキル。" , cardImage: "../images/assets/character/card_misora_test.png", cutinImage: "../images/assets/cutin/cutin_misora_test.png", skillCutin: "../images/assets/cutin/cutin_misora_test.png"},
-    { id: "ai", name: "夜空", color: "#00152d", attr: "加湿", power: 1, ctMax: 2.9, skillName: "冬空フォーカス", skillType: "rareKiller", skillDesc: "レア敵への追加ダメージで一点突破します。" , cardImage: "../images/assets/character/card_yozora_test.png", cutinImage: "../images/assets/cutin/cutin_yozora_test.png", skillCutin: "../images/assets/cutin/cutin_yozora_test.png"},
-    { id: "aj", name: "桃", color: "#F7ADC3", attr: "配信", power: 1, ctMax: 2.1, skillName: "店内配信", skillType: "buzz", skillDesc: "売上とレア出現率を上げる代わりに混雑しやすくなります。" , cardImage: "../images/assets/character/card_momo_test.png", cutinImage: "../images/assets/cutin/cutin_momo_test.png", skillCutin: "../images/assets/cutin/cutin_momo_test.png"},
-    { id: "ak", name: "彩愛", color: "#694D9F", attr: "生活", power: 1, ctMax: 3.0, skillName: "優雅な家事導線", skillType: "ayameRoute", skillDesc: "敵最大2体に1ダメージ。6秒間、敵チェンジを2秒から1秒に短縮。" , cardImage: "../images/assets/character/card_ayame_test.png", cutinImage: "../images/assets/cutin/cutin_ayame_test.png", skillCutin: "../images/assets/cutin/cutin_ayame_test.png"},
-    { id: "al", name: "里美", color: "#8d5025", attr: "事務", power: 1, ctMax: 3.1, skillName: "受付整理", skillType: "changeSupport", skillDesc: "受付を整理して、チェンジやCT管理を補助します。" , cardImage: "../images/assets/character/card_satomi_test.png", cutinImage: "../images/assets/cutin/cutin_satomi_test.png", skillCutin: "../images/assets/cutin/cutin_satomi_test.png"},
-    { id: "am", name: "萌", color: "#33CC99", attr: "リラックス", power: 1, ctMax: 2.9, skillName: "おにいちゃん助けて", skillType: "managerBoost", skillDesc: "店長ヘルプゲージが溜まりやすくなるサポートスキル。" , cardImage: "../images/assets/character/card_moe_test.png", cutinImage: "../images/assets/cutin/cutin_moe_test.png", skillCutin: "../images/assets/cutin/cutin_moe_test.png"}
+    { id: "aa", name: "緋奈", color: "#d3381c", attr: "映像", power: 1, ctMax: 2.4, skillName: "全力おすすめ！", skillType: "powerBuff", skillDesc: "8秒間、接客力アップ。成約を一気に伸ばします。" , cardImage: "images/assets/character/card_hina_test.png", cutinImage: "images/assets/cutin/cutin_hina_test.png", skillCutin: "images/assets/cutin/cutin_hina_test.png"},
+    { id: "ab", name: "藍", color: "#0067C0", attr: "ドライヤー", power: 1, ctMax: 3.0, skillName: "やさしい案内", skillType: "extendTime", skillDesc: "全敵の受付時間を延長し、営業残り時間も少し増やします。" , cardImage: "images/assets/character/card_ai_test.png", cutinImage: "images/assets/cutin/cutin_ai_test.png", skillCutin: "images/assets/cutin/cutin_ai_test.png"},
+    { id: "ac", name: "翠", color: "#02b308", attr: "PC", power: 1, ctMax: 3.5, skillName: "最適解プレゼン", skillType: "pcSweep", skillDesc: "PC属性をまとめて成約し、6秒間マッチ性能を上げます。" , cardImage: "images/assets/character/card_midori_test.png", cutinImage: "images/assets/cutin/cutin_midori_test.png", skillCutin: "images/assets/cutin/cutin_midori_test.png"},
+    { id: "ad", name: "こがね", color: "#FFF450", attr: "スマホ", power: 1, ctMax: 1.7, skillName: "即決トーク", skillType: "ctReduce", skillDesc: "全メンバーのCTを短縮し、6秒間テンポを上げます。" , cardImage: "images/assets/character/card_kogane_test.png", cutinImage: "images/assets/cutin/cutin_kogane_test.png", skillCutin: "images/assets/cutin/cutin_kogane_test.png"},
+    { id: "ae", name: "琥珀", color: "#F68B1F", attr: "オーディオ", power: 1, ctMax: 2.7, skillName: "フロアダッシュ", skillType: "rushBuff", skillDesc: "8秒間ラッシュ対応力アップ。コンボを守りやすくします。" , cardImage: "images/assets/character/card_kohaku_test.png", cutinImage: "images/assets/cutin/cutin_kohaku_test.png", skillCutin: "images/assets/cutin/cutin_kohaku_test.png"},
+    { id: "af", name: "真花", color: "#C0C0C0", attr: "美容", power: 1, ctMax: 2.8, skillName: "お嬢様スマイル", skillType: "comboPlus", skillDesc: "成約時のコンボ補助。丁寧な接客で満足度を伸ばします。" , cardImage: "images/assets/character/card_manaka_test.png", cutinImage: "images/assets/cutin/cutin_manaka_test.png", skillCutin: "images/assets/cutin/cutin_manaka_test.png"},
+    { id: "ag", name: "雪乃", color: "#6495ED", attr: "調理", power: 1, ctMax: 3.2, skillName: "静かな提案", skillType: "freezeTime", skillDesc: "敵の受付時間を一時停止し、店内を落ち着かせます。" , cardImage: "images/assets/character/card_yukino_test.png", cutinImage: "images/assets/cutin/cutin_yukino_test.png", skillCutin: "images/assets/cutin/cutin_yukino_test.png"},
+    { id: "ah", name: "美空", color: "#fffef6", attr: "除湿", power: 1, ctMax: 2.6, skillName: "夏空接客", skillType: "rescue", skillDesc: "受付時間が短い敵を追加フォローする安定型スキル。" , cardImage: "images/assets/character/card_misora_test.png", cutinImage: "images/assets/cutin/cutin_misora_test.png", skillCutin: "images/assets/cutin/cutin_misora_test.png"},
+    { id: "ai", name: "夜空", color: "#00152d", attr: "加湿", power: 1, ctMax: 2.9, skillName: "冬空フォーカス", skillType: "rareKiller", skillDesc: "レア敵への追加ダメージで一点突破します。" , cardImage: "images/assets/character/card_yozora_test.png", cutinImage: "images/assets/cutin/cutin_yozora_test.png", skillCutin: "images/assets/cutin/cutin_yozora_test.png"},
+    { id: "aj", name: "桃", color: "#F7ADC3", attr: "配信", power: 1, ctMax: 2.1, skillName: "店内配信", skillType: "buzz", skillDesc: "売上とレア出現率を上げる代わりに混雑しやすくなります。" , cardImage: "images/assets/character/card_momo_test.png", cutinImage: "images/assets/cutin/cutin_momo_test.png", skillCutin: "images/assets/cutin/cutin_momo_test.png"},
+    { id: "ak", name: "彩愛", color: "#694D9F", attr: "生活", power: 1, ctMax: 3.0, skillName: "優雅な家事導線", skillType: "ayameRoute", skillDesc: "敵最大2体に1ダメージ。6秒間、敵チェンジを2秒から1秒に短縮。" , cardImage: "images/assets/character/card_ayame_test.png", cutinImage: "images/assets/cutin/cutin_ayame_test.png", skillCutin: "images/assets/cutin/cutin_ayame_test.png"},
+    { id: "al", name: "里美", color: "#8d5025", attr: "事務", power: 1, ctMax: 3.1, skillName: "受付整理", skillType: "changeSupport", skillDesc: "受付を整理して、チェンジやCT管理を補助します。" , cardImage: "images/assets/character/card_satomi_test.png", cutinImage: "images/assets/cutin/cutin_satomi_test.png", skillCutin: "images/assets/cutin/cutin_satomi_test.png"},
+    { id: "am", name: "萌", color: "#33CC99", attr: "リラックス", power: 1, ctMax: 2.9, skillName: "おにいちゃん助けて", skillType: "managerBoost", skillDesc: "店長ヘルプゲージが溜まりやすくなるサポートスキル。" , cardImage: "images/assets/character/card_moe_test.png", cutinImage: "images/assets/cutin/cutin_moe_test.png", skillCutin: "images/assets/cutin/cutin_moe_test.png"}
   ];  const DEFAULT_STAFF_IDS = ["aa", "ab", "ac", "ad", "ae"];
   const DECK_STORAGE_KEY = "tenotsu_battle_deck_v1";
   let activeStaffIds = loadDeckIds();
@@ -172,19 +172,19 @@ const battleBackgrounds = {
     "季節": "#33CC99"
   };
   const enemyTypes = [
-    { attr: "映像", icon: "📺", name: "テレビポップコーン星人", text: "映画みたいに楽しみたい！", baseGauge: 2, basePatience: 6.8, score: 120, image: "../images/assets/enemy/enemy_tv_popcorn_test.png" },
-    { attr: "ドライヤー", icon: "🍫", name: "チョコドライヤ星人", text: "あったか〜いチョコ風でうるおいを〜！", baseGauge: 2, basePatience: 7.3, score: 125, image: "../images/assets/enemy/enemy_choco_dryer_test.png" },
-    { attr: "PC", icon: "🍕", name: "パソコンピザ星人", text: "処理が重い…チーズ追加！", baseGauge: 2, basePatience: 7.8, score: 150, image: "../images/assets/enemy/enemy_pc_pizza_test.png" },
-    { attr: "スマホ", icon: "🍬", name: "スマホキャンディ星人", text: "通知だよ〜！キャンディどうぞ〜", baseGauge: 2, basePatience: 6.5, score: 130, image: "../images/assets/enemy/enemy_smartphone_candy_test.png" },
-    { attr: "オーディオ", icon: "🍬", name: "イヤホングミ星人", text: "よーし！きょうもリズムにのるぞ〜！", baseGauge: 2, basePatience: 7.1, score: 135, image: "../images/assets/enemy/enemy_earphone_gummy_test.png" },
-    { attr: "美容", icon: "🪞", name: "ビューティマカロン星人", text: "きれいはこれから…ふふっ", baseGauge: 2, basePatience: 7.0, score: 130, image: "../images/assets/enemy/enemy_beauty_macaron_test.png" },
-    { attr: "オーブン", icon: "🍮", name: "プリンオーブン星人", text: "ふんわり、とろ〜り焼き上げ中…", baseGauge: 2, basePatience: 7.2, score: 140, image: "../images/assets/enemy/enemy_pudding_oven_test.png" },
-    { attr: "除湿", icon: "🍧", name: "カキゴーリエアコン星人", text: "つめた〜い風、さらさらでお願い！", baseGauge: 2, basePatience: 6.1, score: 118, image: "../images/assets/enemy/enemy_kakigori_aircon_test.png" },
-    { attr: "加湿", icon: "💧", name: "ゼリーカシツ星人", text: "うるおい、ふわっとおとどけします…", baseGauge: 2, basePatience: 6.3, score: 120, image: "../images/assets/enemy/enemy_jelly_humidifier_test.png" },
-    { attr: "配信", icon: "🍟", name: "ゲームポテト星人", text: "レベルUP！まだまだいける〜！", baseGauge: 2, basePatience: 5.9, score: 145, image: "../images/assets/enemy/enemy_game_potato_test.png" },
-    { attr: "生活", icon: "🍩", name: "ドーナツセンタク星人", text: "ぐるぐる回って、ピカピカにするよ！", baseGauge: 2, basePatience: 6.4, score: 130, image: "../images/assets/enemy/enemy_donut_washer_test.png" },
-    { attr: "レジ", icon: "🍡", name: "モチモチレジスター星人", text: "いらっしゃいませ！お会計いきま〜す", baseGauge: 2, basePatience: 6.4, score: 128, image: "../images/assets/enemy/enemy_mochimochi_register_test.png" },
-    { attr: "リラックス", icon: "☁️", name: "マシュマロマッサージ星人", text: "ふわふわマッサージでリラックスしたいです〜", baseGauge: 2, basePatience: 6.5, score: 122, image: "../images/assets/enemy/enemy_marshmallow_massage_test.png" }
+    { attr: "映像", icon: "📺", name: "テレビポップコーン星人", text: "映画みたいに楽しみたい！", baseGauge: 2, basePatience: 6.8, score: 120, image: "images/assets/enemy/enemy_tv_popcorn_test.png" },
+    { attr: "ドライヤー", icon: "🍫", name: "チョコドライヤ星人", text: "あったか〜いチョコ風でうるおいを〜！", baseGauge: 2, basePatience: 7.3, score: 125, image: "images/assets/enemy/enemy_choco_dryer_test.png" },
+    { attr: "PC", icon: "🍕", name: "パソコンピザ星人", text: "処理が重い…チーズ追加！", baseGauge: 2, basePatience: 7.8, score: 150, image: "images/assets/enemy/enemy_pc_pizza_test.png" },
+    { attr: "スマホ", icon: "🍬", name: "スマホキャンディ星人", text: "通知だよ〜！キャンディどうぞ〜", baseGauge: 2, basePatience: 6.5, score: 130, image: "images/assets/enemy/enemy_smartphone_candy_test.png" },
+    { attr: "オーディオ", icon: "🍬", name: "イヤホングミ星人", text: "よーし！きょうもリズムにのるぞ〜！", baseGauge: 2, basePatience: 7.1, score: 135, image: "images/assets/enemy/enemy_earphone_gummy_test.png" },
+    { attr: "美容", icon: "🪞", name: "ビューティマカロン星人", text: "きれいはこれから…ふふっ", baseGauge: 2, basePatience: 7.0, score: 130, image: "images/assets/enemy/enemy_beauty_macaron_test.png" },
+    { attr: "オーブン", icon: "🍮", name: "プリンオーブン星人", text: "ふんわり、とろ〜り焼き上げ中…", baseGauge: 2, basePatience: 7.2, score: 140, image: "images/assets/enemy/enemy_pudding_oven_test.png" },
+    { attr: "除湿", icon: "🍧", name: "カキゴーリエアコン星人", text: "つめた〜い風、さらさらでお願い！", baseGauge: 2, basePatience: 6.1, score: 118, image: "images/assets/enemy/enemy_kakigori_aircon_test.png" },
+    { attr: "加湿", icon: "💧", name: "ゼリーカシツ星人", text: "うるおい、ふわっとおとどけします…", baseGauge: 2, basePatience: 6.3, score: 120, image: "images/assets/enemy/enemy_jelly_humidifier_test.png" },
+    { attr: "配信", icon: "🍟", name: "ゲームポテト星人", text: "レベルUP！まだまだいける〜！", baseGauge: 2, basePatience: 5.9, score: 145, image: "images/assets/enemy/enemy_game_potato_test.png" },
+    { attr: "生活", icon: "🍩", name: "ドーナツセンタク星人", text: "ぐるぐる回って、ピカピカにするよ！", baseGauge: 2, basePatience: 6.4, score: 130, image: "images/assets/enemy/enemy_donut_washer_test.png" },
+    { attr: "レジ", icon: "🍡", name: "モチモチレジスター星人", text: "いらっしゃいませ！お会計いきま〜す", baseGauge: 2, basePatience: 6.4, score: 128, image: "images/assets/enemy/enemy_mochimochi_register_test.png" },
+    { attr: "リラックス", icon: "☁️", name: "マシュマロマッサージ星人", text: "ふわふわマッサージでリラックスしたいです〜", baseGauge: 2, basePatience: 6.5, score: 122, image: "images/assets/enemy/enemy_marshmallow_massage_test.png" }
   ];
   let root = null;
   let state = null;
@@ -751,7 +751,7 @@ const battleBackgrounds = {
     }
 
     if (s.skill < 100) {
-      // v037_62: ダブルタップ時に必殺不可でも、通常接客が可能なら通常クリックとして処理する
+      // v037_64: ダブルタップ時に必殺不可でも、通常接客が可能なら通常クリックとして処理する
       state.lastActionText = `${s.name}の必殺ゲージが足りません。通常接客として対応します。`;
       onStaffSingleTap(staffId);
       return;
@@ -902,7 +902,7 @@ const battleBackgrounds = {
 
   function useSkill(staff) {
     const now = performance.now();
-    showCutin(staff.skillName, staff.color, staff.name, staff.skillDesc || "", staff.skillCutin || (staff.id === "aa" ? "../images/assets/cutin/cutin_hina_test.png" : ""));
+    showCutin(staff.skillName, staff.color, staff.name, staff.skillDesc || "", staff.skillCutin || (staff.id === "aa" ? "images/assets/cutin/cutin_hina_test.png" : ""));
     if (staff.skillType === "powerBuff") {
       state.buffPowerUntil = now + 8000;
       state.lastActionText = "緋奈：全力おすすめ！ 接客力アップ！";
@@ -940,7 +940,7 @@ const battleBackgrounds = {
   function autoOneMove(showMessage = true) {
     if (!state || !state.running) return false;
 
-    // v037_62: オート優先順位 = 必殺技 → 通常攻撃
+    // v037_64: オート優先順位 = 必殺技 → 通常攻撃
     // 店長HELPは強力な切り札なので、サポートでは使わず任意操作にする。
     let bestStaff = null;
     let bestEnemy = null;
@@ -1061,7 +1061,7 @@ const battleBackgrounds = {
 
     const now = performance.now();
 
-    // v037_62: 乱連打前提。押せるなら即発動、連打による多重発動だけ短時間ロック。
+    // v037_64: 乱連打前提。押せるなら即発動、連打による多重発動だけ短時間ロック。
     if (now - lastHelpInputAt < HELP_INPUT_LOCK_MS) return;
     lastHelpInputAt = now;
 

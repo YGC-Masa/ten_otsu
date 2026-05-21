@@ -2666,7 +2666,7 @@ body {
   }
 }
 
-/* === Battle version badge v037_62 === */
+/* === Battle version badge v037_64 === */
 .battle-version {
   display: inline-block;
   margin-left: 8px;
@@ -2689,7 +2689,7 @@ body {
 }
 
 
-/* === v037_62 landscape final check/fix ===
+/* === v037_64 landscape final check/fix ===
    横画面では、上HUD・中央敵3体・下メンバー5人を固定し、
    HELP/オートはHUD右側に収めて重なりを避ける。 */
 @media screen and (orientation: landscape) {
@@ -2886,7 +2886,7 @@ body {
   #battle-root .battle-bar { height: 4px !important; margin: 1px 0 2px !important; }
 }
 
-/* === v037_62: 13属性追加 + 店長HELP大型配置 === */
+/* === v037_64: 13属性追加 + 店長HELP大型配置 === */
 #battle-root .battle-stage {
   grid-template-rows: auto auto 1fr auto !important;
 }
@@ -2982,7 +2982,7 @@ body {
 }
 
 
-/* v037_62: 場の敵と相性が良いメンバーを発光表示 */
+/* v037_64: 場の敵と相性が良いメンバーを発光表示 */
 .member-card.member-has-target {
   border-color: var(--member-match-color, #ffffff) !important;
   box-shadow:
@@ -3050,7 +3050,7 @@ body {
 }
 
 
-/* v037_62: タップ感度改善 */
+/* v037_64: タップ感度改善 */
 #battle-root .battle-member-card,
 #battle-root .battle-enemy-card,
 #battle-root button {
@@ -3082,7 +3082,7 @@ body {
 }
 
 
-/* v037_62: 緋奈テスト画像・敵ダミー枠・HELP導線調整 */
+/* v037_64: 緋奈テスト画像・敵ダミー枠・HELP導線調整 */
 #battle-root .battle-stage {
   grid-template-rows: minmax(66px, auto) minmax(116px, 1fr) minmax(44px, auto) minmax(112px, 25vh) !important;
 }
@@ -3218,7 +3218,7 @@ body {
 }
 
 
-/* v037_62: 必殺技スライドカットイン画像 */
+/* v037_64: 必殺技スライドカットイン画像 */
 #battle-root .battle-cutin.with-image .battle-cutin-band {
   min-height: clamp(116px, 24vh, 230px);
   padding: 0;
@@ -3359,7 +3359,7 @@ body {
 }
 
 
-/* v037_62: 最前面演出がHELP/メンバー操作を塞がないようにする */
+/* v037_64: 最前面演出がHELP/メンバー操作を塞がないようにする */
 #battle-root .battle-cutin,
 #battle-root .battle-cutin *,
 #battle-root .battle-surface,
@@ -3375,7 +3375,7 @@ body {
 }
 
 
-/* v037_62: HELP任意化・白フラッシュ・カットイン/表示調整 */
+/* v037_64: HELP任意化・白フラッシュ・カットイン/表示調整 */
 #battle-root .battle-help-large {
   z-index: 4 !important;
 }
@@ -3556,7 +3556,7 @@ body {
 }
 
 
-/* v037_62: 必殺技カットイン画像をキャラ名横・右上へ */
+/* v037_64: 必殺技カットイン画像をキャラ名横・右上へ */
 #battle-root .battle-cutin.with-image .battle-cutin-band {
   min-height: clamp(150px, 32vh, 280px) !important;
   padding: 0 !important;
@@ -3699,7 +3699,7 @@ body {
 }
 
 
-/* v037_62: 敵3枠を常時固定表示 */
+/* v037_64: 敵3枠を常時固定表示 */
 #battle-root .battle-enemies {
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
 }
@@ -3709,7 +3709,7 @@ body {
 }
 
 
-/* v037_62: 緋奈必殺カットイン画像の表示補強 */
+/* v037_64: 緋奈必殺カットイン画像の表示補強 */
 #battle-root .battle-cutin.with-image .battle-cutin-head {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(160px, 40%);
@@ -3747,7 +3747,7 @@ body {
 }
 
 
-/* v037_62: リーダー/タイムセールWAVE */
+/* v037_64: リーダー/タイムセールWAVE */
 #battle-root .battle-timesale-banner {
   margin-top: 4px;
   padding: 3px 8px;
@@ -3802,7 +3802,7 @@ body {
 }
 
 
-/* v037_62: WAVE結果表示/必殺待機色/カットイン安定化修正 */
+/* v037_64: WAVE結果表示/必殺待機色/カットイン安定化修正 */
 
 /* 必殺待機中も説明文字は白系を維持 */
 #battle-root .battle-member-card.skill-ready .member-attr,
@@ -3915,7 +3915,7 @@ body {
 }
 
 
-/* v037_62: 人物カットインは必殺技説明サーフェス内に固定表示。画像自体にはエフェクトをかけない */
+/* v037_64: 人物カットインは必殺技説明サーフェス内に固定表示。画像自体にはエフェクトをかけない */
 #battle-root .battle-cutin.with-image {
   display: flex !important;
   align-items: center !important;
@@ -4025,7 +4025,7 @@ body {
 }
 
 
-/* v037_62: 人物画と技説明を完全に別サーフェス化 */
+/* v037_64: 人物画と技説明を完全に別サーフェス化 */
 #battle-root .battle-cutin.with-image.split-surface {
   display: grid !important;
   grid-template-columns: minmax(0, 1fr) minmax(160px, 30vw);
@@ -4085,7 +4085,7 @@ body {
   will-change: auto !important;
 }
 
-/* v037_62以前の同一サーフェス用画像枠を完全に殺す */
+/* v037_64以前の同一サーフェス用画像枠を完全に殺す */
 #battle-root .battle-cutin.with-image .battle-cutin-photo-fixed,
 #battle-root .battle-cutin.with-image .battle-cutin-photo-surface,
 #battle-root .battle-cutin.with-image .battle-cutin-image {
@@ -4157,7 +4157,7 @@ body {
 }
 
 
-/* v037_62: バトル背景画像 */
+/* v037_64: バトル背景画像 */
 #battle-root .battle-stage {
   background:
     linear-gradient(180deg, rgba(0,0,0,0.38), rgba(0,0,0,0.62)),
@@ -4219,7 +4219,7 @@ body {
 }
 
 
-/* v037_62: 必殺カットインCSS全面見直し
+/* v037_64: 必殺カットインCSS全面見直し
    人物画は技説明サーフェスから完全分離。画像側にはエフェクトを一切かけない。 */
 
 /* 親battle-cutin自体はただの透明コンテナにして、ここにもアニメーションをかけない */
@@ -4445,7 +4445,7 @@ body {
 }
 
 
-/* v037_62: 新必殺カットイン。旧battle-cutin系から完全分離 */
+/* v037_64: 新必殺カットイン。旧battle-cutin系から完全分離 */
 #battle-root .skillCutinLayerV19 {
   position: absolute;
   inset: 0;
@@ -4643,7 +4643,7 @@ body {
 }
 
 
-/* v037_62: ブラウザ版カットイン安定化・初期レイアウト補正 */
+/* v037_64: ブラウザ版カットイン安定化・初期レイアウト補正 */
 
 /* ブラウザ/PWA差を抑える基本高さ */
 html,
@@ -4886,7 +4886,7 @@ body {
 }
 
 
-/* v037_62: カウント中央寄せ・タイムセール演出強化 */
+/* v037_64: カウント中央寄せ・タイムセール演出強化 */
 #battle-root .battle-surface {
   position: absolute !important;
   inset: 0 !important;
@@ -5047,7 +5047,7 @@ body {
 }
 
 
-/* v037_62: 終了表示・店長フラッシュ・HELPダブルクリック修正 */
+/* v037_64: 終了表示・店長フラッシュ・HELPダブルクリック修正 */
 
 /* タイムセール終了後は点滅バナーではなく営業終了を固定表示 */
 #battle-root .battle-finished-banner {
@@ -5109,7 +5109,7 @@ body {
 }
 
 
-/* v037_62: z-index整理・リザルト優先・店長フラッシュ可視化 */
+/* v037_64: z-index整理・リザルト優先・店長フラッシュ可視化 */
 
 /*
 z-index設計:
@@ -5191,7 +5191,7 @@ z-index設計:
 }
 
 
-/* v037_62: 店長HELP押下復旧 */
+/* v037_64: 店長HELP押下復旧 */
 #battle-root .battle-help-large {
   position: relative !important;
   z-index: 90 !important;
@@ -5214,7 +5214,7 @@ z-index設計:
 }
 
 
-/* v037_62: 乱連打前提のHELPレスポンス改善 */
+/* v037_64: 乱連打前提のHELPレスポンス改善 */
 #battle-root .battle-help-large {
   position: relative !important;
   z-index: 90 !important;
@@ -5247,7 +5247,7 @@ z-index設計:
 }
 
 
-/* v037_62: 必殺説明・人物カットインの前面化と縦位置調整 */
+/* v037_64: 必殺説明・人物カットインの前面化と縦位置調整 */
 /*
 z-index微調整:
   90  HELPボタン
@@ -5326,7 +5326,7 @@ z-index微調整:
 }
 
 
-/* v037_62: 家電星人画像差し込み */
+/* v037_64: 家電星人画像差し込み */
 #battle-root .battle-enemy-card {
   position: relative;
   overflow: hidden;
@@ -5398,7 +5398,7 @@ z-index微調整:
 }
 
 
-/* v037_62: 藍・翠 バトルキャラカード画像 / 必殺カットイン画像 */
+/* v037_64: 藍・翠 バトルキャラカード画像 / 必殺カットイン画像 */
 #battle-root .battle-member-card {
   position: relative !important;
   overflow: hidden !important;
@@ -5467,29 +5467,29 @@ z-index微調整:
   }
 }
 
-/* v037_62: 美空カード/カットイン画像を追加 */
+/* v037_64: 美空カード/カットイン画像を追加 */
 #battle-root .skillPortraitFixedV19 img { object-position: center center !important; }
 
-/* v037_62: 夜空カード/カットイン画像を追加 */
+/* v037_64: 夜空カード/カットイン画像を追加 */
 #battle-root .skillPortraitFixedV19 img { object-position: center center !important; }
 
-/* v037_62: 桃カード/カットイン画像を追加 */
+/* v037_64: 桃カード/カットイン画像を追加 */
 #battle-root .skillPortraitFixedV19 img { object-position: center center !important; }
 
-/* v037_62: 彩愛カード/カットイン画像を追加 */
+/* v037_64: 彩愛カード/カットイン画像を追加 */
 #battle-root .skillPortraitFixedV19 img { object-position: center center !important; }
 
-/* v037_62: 里美カード/カットイン画像を追加 */
+/* v037_64: 里美カード/カットイン画像を追加 */
 #battle-root .skillPortraitFixedV19 img { object-position: center center !important; }
 
-/* v037_62: 萌カード/カットイン画像を追加 */
+/* v037_64: 萌カード/カットイン画像を追加 */
 #battle-root .skillPortraitFixedV19 img { object-position: center center !important; }
 
-/* v037_62: 緋奈カード/カットイン画像を既存アセット差し替え */
+/* v037_64: 緋奈カード/カットイン画像を既存アセット差し替え */
 #battle-root .skillPortraitFixedV19 img { object-position: center center !important; }
 
 
-/* v037_62 engine startup safety */
+/* v037_64 engine startup safety */
 #flash,
 .flash,
 .startup-flash,
@@ -5509,7 +5509,7 @@ z-index微調整:
 }
 
 
-/* v037_62: 起動フロー / タイトル表示 / 事務所6大メニュー */
+/* v037_64: 起動フロー / タイトル表示 / 事務所6大メニュー */
 .boot-flow {
   position: fixed;
   inset: 0;
@@ -5582,7 +5582,7 @@ z-index微調整:
 }
 
 
-/* v037_62: 事務所6大メニュー */
+/* v037_64: 事務所6大メニュー */
 #list-panel:not(.hidden),
 #menu-panel:not(.hidden) {
   max-width: min(720px, 94vw);
@@ -5609,7 +5609,7 @@ z-index微調整:
 }
 
 
-/* v037_62: 売上/店長ステータス/アルバム */
+/* v037_64: 売上/店長ステータス/アルバム */
 .status-card {
   width: min(680px, 92vw);
   margin: 0 auto;
@@ -5639,7 +5639,7 @@ z-index微調整:
 }
 
 
-/* v037_62: 店舗ランク/街Lv/店長ランク/装備 */
+/* v037_64: 店舗ランク/街Lv/店長ランク/装備 */
 .status-card hr {
   border: none;
   border-top: 1px solid rgba(255,255,255,0.24);
@@ -5652,7 +5652,7 @@ z-index微調整:
 }
 
 
-/* v037_62: 店長Lv60 EXP表示 */
+/* v037_64: 店長Lv60 EXP表示 */
 .status-card b {
   font-weight: 900;
 }
@@ -5662,7 +5662,7 @@ z-index微調整:
 }
 
 
-/* v037_62: 外回りADV / 3択コミュ / アイテム */
+/* v037_64: 外回りADV / 3択コミュ / アイテム */
 .adv-card h3 {
   letter-spacing: 0.04em;
 }

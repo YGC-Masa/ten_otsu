@@ -53,7 +53,7 @@ function updateCharacterDisplay(position, charId) {
   slot.innerHTML = "";
 
   const img = document.createElement("img");
-  const basePath = window.config?.charPath || "../images/assets/char/";
+  const basePath = window.config?.charPath || "images/assets/char/";
   img.src = basePath + charId;
   img.className = "char-image";
 
