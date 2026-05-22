@@ -1,10 +1,11 @@
 # GitHub配置 / 運用メモ
 
-## v037_80
+## v037_81
 
-- 自己紹介シナリオを軽量化。
-- 同じ立ち絵ファイルが続く場合、`characters` 指定を削除。
-- 表情変更がある場面だけ `characters.src` を指定。
-- 立ち絵指定を削除した場面では `expression` / `expressionLabel` も削除。
-- 同じ背景が続く場合、`bgEffect` / `effect` を削除。
-- `scenario/data/intro_scenario_slim_report.json` を追加。
+- 同一人物の表情差し替え時はフェードインしないよう修正。
+- 同じ表示位置にいる同一人物は `src` だけ即時差し替え。
+- 別人物/新規登場のみフェードイン。
+- オートプレイ処理を補強。
+  - オートON/OFFを `tenotsuSetAutoMode()` に統一。
+  - 文章表示完了後に自動で次へ進むタイマーを追加。
+  - 選択肢表示中/バトル中は自動進行しない。
