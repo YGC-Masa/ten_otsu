@@ -1,10 +1,10 @@
-# v037_77 → v037_78 差分
+# v037_78 → v037_79 差分
 
 ## 修正内容
 
-- `k100102.webp` を `k11002.webp` として正規採用。
-- `k40502.webp` を `k10502.webp` として正規採用。
-- 彩愛の表情差分として表情マスターに登録。
-- `character_expressions.json` の `variants` を更新。
+- 現在の画像データ/表情マスターをもとに、自己紹介シナリオをブラッシュアップ。
+- 各キャラクターのセリフごとに表情画像を割り当て。
+- `expression` / `expressionLabel` を各対象シーンに追加。
+- `scenario/data/intro_expression_polish_report.json` を追加。
 
 リポジトリ直下へ展開して上書きしてください。

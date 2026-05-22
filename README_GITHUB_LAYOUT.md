@@ -1,10 +1,8 @@
 # GitHub配置 / 運用メモ
 
-## v037_78
+## v037_79
 
-- `k100102.webp` を `k11002.webp` として正規採用。
-- `k40502.webp` を `k10502.webp` として正規採用。
-- 彩愛の表情差分として登録。
-  - `k10502.webp` = 彩愛 + 05(笑顔) + 02(2枚目)
-  - `k11002.webp` = 彩愛 + 10(軽い嫌悪) + 02(2枚目)
-- `scenario/data/character_expressions.json` に `variants` を追加/更新。
+- 現在の表情画像データをもとに、各キャラクター自己紹介シナリオをブラッシュアップ。
+- セリフ内容から表情を自動判定し、`characters.src` を表情ファイルへ差し替え。
+- 各シーンに `expression` / `expressionLabel` を付与。
+- `scenario/data/intro_expression_polish_report.json` を追加。

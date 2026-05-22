@@ -1,11 +1,11 @@
 # Story / Memory Management
 
-## 思い出
+## v037_79
 
-- 店長を先頭にする
-- 店長配下にチュートリアル/プロローグを置く
-- メンバーごとに思い出表を持つ
+自己紹介シナリオへ表情指定を反映。
 
-## ストーリー管理表
+- `characters.src`
+- `expression`
+- `expressionLabel`
 
-メンバー配下から閲覧する。
+割り当て詳細は `scenario/data/intro_expression_polish_report.json` を参照。

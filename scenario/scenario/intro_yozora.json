@@ -1,0 +1,596 @@
+[
+  {
+    "bg": "bg011.jpg",
+    "bgEffect": "fadein",
+    "effect": "fadein",
+    "bgm": "main.mp3",
+    "textareashow": true,
+    "name": "",
+    "text": "【自己紹介】双沢 夜空"
+  },
+  {
+    "bg": "bg011.jpg",
+    "bgEffect": "fadein",
+    "name": "",
+    "text": "（お、夜空がいる。）",
+    "effect": "fadein",
+    "textareashow": true,
+    "bgm": "main.mp3"
+  },
+  {
+    "name": "店長",
+    "text": "夜空、ちょっといいかな？"
+  },
+  {
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ]
+  },
+  {
+    "name": "夜空",
+    "text": "急用？ぼく、ちょっと忙しいのだけど？",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "店長",
+    "text": "カメラテストをしてるんだけどさ、ちょっと自己紹介してみてくれないかな。"
+  },
+  {
+    "name": "夜空",
+    "text": "なんでそんな事に付き合わなきゃ・・・たく。これに始めればいいの？",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10301.webp"
+      }
+    ],
+    "expression": "03",
+    "expressionLabel": "怒り"
+  },
+  {
+    "name": "夜空",
+    "text": "はじめまして、双沢 夜空（すごさわ よぞら）って言うんだ。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "夜空",
+    "text": "歳は20。双子なんだよ、姉の美空（みそら）がいる。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "夜空",
+    "text": "見た目は似てるって言われるけど、",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "夜空",
+    "text": "性格も趣味も、ほとんど逆だと思う。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "夜空",
+    "text": "ぼくはクールだとか言われるけど、",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "夜空",
+    "text": "別に冷たいわけじゃないんだよ。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "夜空",
+    "text": "ただ、空気を読むのは正直ちょっと苦手だ。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i11101.webp"
+      }
+    ],
+    "expression": "11",
+    "expressionLabel": "心配不安"
+  },
+  {
+    "name": "夜空",
+    "text": "お世辞とか、うまく返せないしさ。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "夜空",
+    "text": "美空は明るくて可愛いから、",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "夜空",
+    "text": "昔から何でも美空優先にしてきた。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10301.webp"
+      }
+    ],
+    "expression": "03",
+    "expressionLabel": "怒り"
+  },
+  {
+    "name": "夜空",
+    "text": "そしたら気がついたら、",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "夜空",
+    "text": "好きな物も、嫌いな物も、利き手まで真逆になってた。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i11001.webp"
+      }
+    ],
+    "expression": "10",
+    "expressionLabel": "軽い嫌悪"
+  },
+  {
+    "name": "夜空",
+    "text": "趣味はウィンターアクティビティ。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "夜空",
+    "text": "雪が好きでさ、滑るのも得意だし。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10901.webp"
+      }
+    ],
+    "expression": "09",
+    "expressionLabel": "得意げ"
+  },
+  {
+    "name": "夜空",
+    "text": "加湿器とか、冬物の管理は任せて。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10901.webp"
+      }
+    ],
+    "expression": "09",
+    "expressionLabel": "得意げ"
+  },
+  {
+    "name": "夜空",
+    "text": "弓道も好き。実は日本一なんだよ、これでも。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10901.webp"
+      }
+    ],
+    "expression": "09",
+    "expressionLabel": "得意げ"
+  },
+  {
+    "name": "夜空",
+    "text": "好きな食べ物は中華。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10801.webp"
+      }
+    ],
+    "expression": "08",
+    "expressionLabel": "期待"
+  },
+  {
+    "name": "夜空",
+    "text": "何でも美味しいし、辛いのも平気。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10301.webp"
+      }
+    ],
+    "expression": "03",
+    "expressionLabel": "怒り"
+  },
+  {
+    "name": "夜空",
+    "text": "お酒はダメなんだ、すぐ酔っちゃうから。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i11101.webp"
+      }
+    ],
+    "expression": "11",
+    "expressionLabel": "心配不安"
+  },
+  {
+    "name": "夜空",
+    "text": "だから飲むならソフトドリンクでいい。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "夜空",
+    "text": "嫌いな食べ物？　ほや。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i11001.webp"
+      }
+    ],
+    "expression": "10",
+    "expressionLabel": "軽い嫌悪"
+  },
+  {
+    "name": "夜空",
+    "text": "匂いが無理。ごめん、あれだけは無理。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i11101.webp"
+      }
+    ],
+    "expression": "11",
+    "expressionLabel": "心配不安"
+  },
+  {
+    "name": "夜空",
+    "text": "あ、ちなみに、ぼくの一人称は「ぼく」だから。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "夜空",
+    "text": "変だって言われても変える気はないよ。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "夜空",
+    "text": "呼び方？　あんたのことは「あんた」って呼ぶ。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "夜空",
+    "text": "緋奈さんは緋奈さん。真花ちゃんは真花ちゃん。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "夜空",
+    "text": "姉の美空のことは、美空って呼び捨てだよ。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "夜空",
+    "text": "ぼくにとっては、誰より大事だから。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "夜空",
+    "text": "美空のことは尊敬してるんだ。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "夜空",
+    "text": "ぼくにないものを全部持ってるからさ。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "夜空",
+    "text": "コンプレックス？　まぁ、あるけど…",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "夜空",
+    "text": "別にいいんだ。美空が幸せなら、ぼくもそれでいい。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10801.webp"
+      }
+    ],
+    "expression": "08",
+    "expressionLabel": "期待"
+  },
+  {
+    "name": "夜空",
+    "text": "得意なことは冬物管理と弓道。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10901.webp"
+      }
+    ],
+    "expression": "09",
+    "expressionLabel": "得意げ"
+  },
+  {
+    "name": "夜空",
+    "text": "苦手なのはお世辞と空気読むこと。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i11101.webp"
+      }
+    ],
+    "expression": "11",
+    "expressionLabel": "心配不安"
+  },
+  {
+    "name": "夜空",
+    "text": "でも、嘘はつかないから、そこは信用して。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "夜空",
+    "text": "約束は、守るから。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10801.webp"
+      }
+    ],
+    "expression": "08",
+    "expressionLabel": "期待"
+  },
+  {
+    "name": "夜空",
+    "text": "こんなぼくだけど、",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "夜空",
+    "text": "仲良くしてくれたら嬉しいな。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10801.webp"
+      }
+    ],
+    "expression": "08",
+    "expressionLabel": "期待"
+  },
+  {
+    "name": "夜空",
+    "text": "まぁ、無理に合わせなくていいよ。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i11101.webp"
+      }
+    ],
+    "expression": "11",
+    "expressionLabel": "心配不安"
+  },
+  {
+    "name": "夜空",
+    "text": "気が向いたときに、声かけてくれればいい。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "夜空",
+    "text": "…あんたのこと、ちょっと気に入ったら、",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "夜空",
+    "text": "たぶん、ちゃんと笑うから。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10501.webp"
+      }
+    ],
+    "expression": "05",
+    "expressionLabel": "笑顔"
+  },
+  {
+    "name": "夜空",
+    "text": "だからその時まで、覚えてて。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "夜空",
+    "text": "双沢 夜空を、よろしく。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "i10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
+  },
+  {
+    "name": "",
+    "text": "（夜空の自己紹介を思い出に登録しました）"
+  },
+  {
+    "auto": true,
+    "wait": 500
+  }
+]
