@@ -2,6 +2,12 @@
   "title": "メンバー一覧",
   "items": [
     {
+      "text": "店長",
+      "action": "custom",
+      "custom": "memory-character",
+      "characterId": "manager"
+    },
+    {
       "text": "星野 緋奈",
       "action": "custom",
       "custom": "memory-character",
@@ -30,6 +36,16 @@
       "action": "custom",
       "custom": "memory-character",
       "characterId": "ae"
+    },
+    {
+      "text": "タイトル後メニュー",
+      "action": "custom",
+      "custom": "title-return-archive"
+    },
+    {
+      "text": "ストーリー管理表",
+      "action": "custom",
+      "custom": "story-table"
     },
     {
       "text": "戻る",

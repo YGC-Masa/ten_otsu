@@ -3,8 +3,8 @@
   "items": [
     {
       "text": "メンバー一覧",
-      "action": "list",
-      "list": "member_list.json"
+      "action": "custom",
+      "custom": "member-list"
     },
     {
       "text": "思い出",
@@ -15,6 +15,11 @@
       "text": "ストーリー管理表",
       "action": "custom",
       "custom": "story-table"
+    },
+    {
+      "text": "タイトル後メニュー",
+      "action": "custom",
+      "custom": "title-return-archive"
     },
     {
       "text": "戻る",
