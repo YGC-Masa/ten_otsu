@@ -18,7 +18,7 @@ function createRandomImagesLayer() {
     left: "0",
     width: "100%",
     height: "100%",
-    zIndex: "2",
+    zIndex: "1",
     pointerEvents: "none"
   });
   document.body.appendChild(randomImagesLayer);
@@ -33,7 +33,7 @@ function createRandomTextLayer() {
     bottom: "0",
     left: "0",
     width: "100%",
-    zIndex: "3",
+    zIndex: "1",
     pointerEvents: "none"
   });
   document.body.appendChild(randomTextLayer);
@@ -308,3 +308,5 @@ function randomTextsOff() {
 window.addEventListener("resize", () => {
   updateRandomImagesPosition();
 });
+
+try { window.randomImagesOn = randomImagesOn; window.randomImagesOff = randomImagesOff; } catch (_) {}

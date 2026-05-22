@@ -1,9 +1,26 @@
 {
   "items": [
     {
+      "text": "オートプレイ",
+      "action": "auto"
+    },
+    {
+      "text": "スキップ",
+      "action": "skip"
+    },
+    {
       "text": "メインメニュー",
       "action": "list",
-      "list": "mainmenu.json"
+      "list": "office6.json"
+    },
+    {
+      "text": "タイトルに戻る",
+      "action": "list",
+      "list": "office6.json"
+    },
+    {
+      "text": "キャッシュ削除",
+      "action": "cacheclear"
     },
     {
       "text": "キャッシュクリア・再読み込み",
@@ -19,5 +36,6 @@
       "action": "url",
       "url": "https://www.google.com"
     }
-  ]
+  ],
+  "title": "システムメニュー"
 }

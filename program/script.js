@@ -1,6 +1,6 @@
 
-/* v037_70 engine guard: 起動停止対策 */
-window.TENOTSU_ENGINE_VERSION = "v037_70";
+/* v037_71 engine guard: 起動停止対策 */
+window.TENOTSU_ENGINE_VERSION = "v037_71";
 window.__TENOTSU_ENGINE_ERRORS__ = window.__TENOTSU_ENGINE_ERRORS__ || [];
 
 window.addEventListener("error", (event) => {
@@ -108,7 +108,7 @@ window.addEventListener("load", () => {
     }
   }, 2600);
 });
-/* /v037_70 engine guard */
+/* /v037_71 engine guard */
 
 // script.js - v037 修正版（wait/effectTime/Menu/List安定化）
 
@@ -368,8 +368,14 @@ async function showScene(scene) {
     });
   }
 
-  if (scene.showmenu) await loadMenu(scene.showmenu);
-  if (scene.showlist) await loadList(scene.showlist);
+  if (scene.showmenu) {
+    const isInitialScenario = currentScenario === "000start.json" || currentScenario === "start000.json";
+    if (!(window.__TENOTSU_MAIN_MENU_LOCK__ && isInitialScenario)) await loadMenu(scene.showmenu);
+  }
+  if (scene.showlist) {
+    const isInitialScenario = currentScenario === "000start.json" || currentScenario === "start000.json";
+    if (!(window.__TENOTSU_MAIN_MENU_LOCK__ && isInitialScenario && scene.showlist !== "office6.json")) await loadList(scene.showlist);
+  }
 
   if (scene.auto && scene.choices === undefined && scene.text === undefined) {
     setTimeout(() => {
@@ -482,16 +488,16 @@ window.clearAppCacheAndReload = clearAppCacheAndReload;
 // === メニュー関連 ===
 function handleMenuAction(item) {
   if (!item) return;
-  /* v037_70 town precheck */
+  /* v037_71 town precheck */
   if ((item.action === "jump" && item.jump === "town_placeholder.json") || (item.action === "outer")) {
     tenotsuShowOuterMenu();
     return;
   }
-  /* v037_70 scenario return precheck */
+  /* v037_71 scenario return precheck */
   if (item.action === "jump" && item.jump) {
     tenotsuPushReturnMenu("list", "office6.json");
   }
-  /* v037_70 handleMenuAction precheck */
+  /* v037_71 handleMenuAction precheck */
   if (item.action === "list" && item.list === "home.json") {
     tenotsuShowStoreStatus();
     return;
@@ -504,7 +510,22 @@ function handleMenuAction(item) {
     tenotsuShowShopMenu();
     return;
   }
-  /* v037_70 custom action precheck */
+  if (item.action === "auto") {
+    isAutoMode = !isAutoMode;
+    return;
+  }
+  if (item.action === "skip") {
+    while (isPlaying === false && currentIndex < 9999) {
+      next();
+      break;
+    }
+    return;
+  }
+  if (item.action === "cacheclear") {
+    if (typeof window.clearAppCacheAndReload === "function") window.clearAppCacheAndReload();
+    return;
+  }
+  /* v037_71 custom action precheck */
   if (item.action === "custom") {
     if (item.custom === "memory-list") tenotsuShowMemoryCharacterList();
     else if (item.custom === "member-list") tenotsuShowMemberListMenu();
@@ -652,15 +673,15 @@ clickLayer.addEventListener("click", () => {
   }
 });
 
-/* v037_70 expose engine functions */
+/* v037_71 expose engine functions */
 try { if (typeof loadMenu === "function") window.loadMenu = loadMenu; } catch (_) {}
 try { if (typeof loadList === "function") window.loadList = loadList; } catch (_) {}
 try { if (typeof loadScenario === "function") window.loadScenario = loadScenario; } catch (_) {}
 try { if (typeof clearAppCacheAndReload === "function") window.clearAppCacheAndReload = clearAppCacheAndReload; } catch (_) {}
 
 
-/* v037_70 boot flow: 起動フラッシュ → 初期化 → タイトル表示 → 事務所6大メニュー */
-window.TENOTSU_BOOT_FLOW_VERSION = "v037_70";
+/* v037_71 boot flow: 起動フラッシュ → 初期化 → タイトル表示 → 事務所6大メニュー */
+window.TENOTSU_BOOT_FLOW_VERSION = "v037_71";
 window.__TENOTSU_BOOT_DONE__ = false;
 
 function tenotsuSetOfficeText(title, text) {
@@ -680,6 +701,7 @@ function tenotsuShowOfficeSixMenu() {
   try {
     if (typeof window.loadList === "function") {
       window.loadList("office6.json");
+      tenotsuLockMainMenu();
       tenotsuSetOfficeText("ひだまりストア事務所", "上段：ステータス管理 / 中段：ゲームパート / 下段：その他");
       return;
     }
@@ -755,10 +777,10 @@ try {
   window.tenotsuRunBootFlow = tenotsuRunBootFlow;
   window.tenotsuShowOfficeSixMenu = tenotsuShowOfficeSixMenu;
 } catch (_) {}
-/* /v037_70 boot flow */
+/* /v037_71 boot flow */
 
 
-/* v037_70 economy/status/album helpers */
+/* v037_71 economy/status/album helpers */
 const TENOTSU_ECONOMY_KEY = "tenotsu_economy_v1";
 const TENOTSU_ALBUM_KEY = "tenotsu_album_v1";
 const TENOTSU_STORE_KEY = "tenotsu_store_v1";
@@ -934,7 +956,7 @@ function tenotsuShowShopMenu() {
 }
 
 
-/* v037_70 rank/equipment/unlock helpers */
+/* v037_71 rank/equipment/unlock helpers */
 function tenotsuRankCost(type, currentRank) {
   const rank = Math.max(1, Math.floor(Number(currentRank) || 1));
   if (type === "store") return rank * 10000;
@@ -1012,7 +1034,7 @@ function tenotsuRankUp(type) {
   tenotsuUnlockRankRewards(store);
   return true;
 }
-/* /v037_70 rank/equipment/unlock helpers */
+/* /v037_71 rank/equipment/unlock helpers */
 
 window.TenotsuData = {
   economy: tenotsuGetEconomy,
@@ -1039,10 +1061,10 @@ window.TenotsuData = {
   storyMaster: tenotsuGetStoryMaster,
   memoriesByCharacter: tenotsuGetStoriesByCharacter
 };
-/* /v037_70 economy/status/album helpers */
+/* /v037_71 economy/status/album helpers */
 
 
-/* v037_70 economy action listener */
+/* v037_71 economy action listener */
 document.addEventListener("click", (event) => {
   const btn = event.target.closest("[data-engine-action]");
   if (!btn) return;
@@ -1143,10 +1165,10 @@ document.addEventListener("click", (event) => {
     tenotsuShowStoreStatus();
   }
 }, true);
-/* /v037_70 economy action listener */
+/* /v037_71 economy action listener */
 
 
-/* v037_70 manager level/EXP helpers */
+/* v037_71 manager level/EXP helpers */
 const TENOTSU_MANAGER_EXP_KEY = "tenotsu_manager_exp_v1";
 const TENOTSU_MANAGER_MAX_LEVEL = 60;
 
@@ -1255,10 +1277,10 @@ function tenotsuClaimOuterExp() {
   tenotsuUnlockMemory("outer_exp_first", "外回りの記録", "外回りで経験を積みました。");
   return true;
 }
-/* /v037_70 manager level/EXP helpers */
+/* /v037_71 manager level/EXP helpers */
 
 
-/* v037_70 outer ADV / encounter / affection / item helpers */
+/* v037_71 outer ADV / encounter / affection / item helpers */
 const TENOTSU_STAMINA_KEY = "tenotsu_stamina_v1";
 const TENOTSU_AFFECTION_KEY = "tenotsu_affection_v1";
 const TENOTSU_ITEM_KEY = "tenotsu_items_v1";
@@ -1544,10 +1566,10 @@ function tenotsuGrantOuterTestItems() {
   tenotsuUnlockMemory("outer_items_test", "外回り道具セット", "神社のお守り、ひかるの眼鏡、USBメモリ、SDカードを受け取りました。");
   tenotsuShowOuterMenu();
 }
-/* /v037_70 outer ADV / encounter / affection / item helpers */
+/* /v037_71 outer ADV / encounter / affection / item helpers */
 
 
-/* v037_70: 左メニューをダブルクリックからクリックプレス/タップホールドへ変更 */
+/* v037_71: 左メニューをダブルクリックからクリックプレス/タップホールドへ変更 */
 (function setupTenotsuLongPressMenu() {
   if (window.__TENOTSU_LONG_PRESS_MENU_READY__) return;
   window.__TENOTSU_LONG_PRESS_MENU_READY__ = true;
@@ -1580,7 +1602,7 @@ function tenotsuGrantOuterTestItems() {
   }
 
   document.addEventListener("dblclick", (event) => {
-    // v037_70以降、左メニューはダブルクリックでは出さない。
+    // v037_71以降、左メニューはダブルクリックでは出さない。
     // 通常の会話進行ダブルクリックやバトル側処理を潰しすぎないため、バトル内は無視。
     if (!isBattleArea(event.target)) {
       event.stopPropagation();
@@ -1611,10 +1633,10 @@ function tenotsuGrantOuterTestItems() {
   document.addEventListener("pointerup", clearHold, true);
   document.addEventListener("pointercancel", clearHold, true);
 })();
-/* /v037_70 */
+/* /v037_71 */
 
 
-/* v037_70: 左メニュー内容 / 思い出ストーリー管理 */
+/* v037_71: 左メニュー内容 / 思い出ストーリー管理 */
 const TENOTSU_STORY_MASTER = [
   { characterId: "manager", characterName: "店長", storyId: "tutorial_001", title: "チュートリアル", type: "tutorial", unlock: "初期", album: true, scenario: "000start.json" },
   { characterId: "manager", characterName: "店長", storyId: "prologue_001", title: "プロローグ", type: "prologue", unlock: "初期", album: true, scenario: "gamestart.json" },
@@ -1648,17 +1670,18 @@ function tenotsuGetStoriesByCharacter() {
 }
 
 function tenotsuOpenLeftOfficeMenu() {
+  // v037_71: 長押しで出る左メニューの中身は旧メニュー(menu01)に戻す。
+  // 表示動作はクリックプレス/タップホールドのまま。
+  if (typeof window.loadMenu === "function") {
+    window.loadMenu("menu01.json");
+    return;
+  }
   const html = `
-    <div class="left-office-menu">
-      <div class="left-office-menu-title">メインメニュー</div>
-      <div class="left-office-menu-note">長押しで開くメニューです</div>
+    <div class="left-office-menu left-system-menu">
+      <div class="left-office-menu-title">システムメニュー</div>
       <div class="left-office-grid">
-        <button class="menu-item office-menu-main office-status" data-engine-action="store">⓪ 店舗</button>
-        <button class="menu-item office-menu-main office-status" data-engine-action="members">② メンバー</button>
-        <button class="menu-item office-menu-main office-game" data-engine-action="battle">① 店舗営業</button>
-        <button class="menu-item office-menu-main office-game" data-engine-action="outer-menu">③ 外回り</button>
-        <button class="menu-item office-menu-main office-other" data-engine-action="shop">④ ショップ</button>
-        <button class="menu-item office-menu-main office-other" data-engine-action="settings">⑤ 設定</button>
+        <button class="menu-item" data-engine-action="office6">メインメニュー</button>
+        <button class="menu-item" data-engine-action="cacheclear">キャッシュ削除</button>
       </div>
     </div>
   `;
@@ -1772,10 +1795,10 @@ function tenotsuShowStoryManagementTable() {
     </div>
   `);
 }
-/* /v037_70 */
+/* /v037_71 */
 
 
-/* v037_70: 「タイトルに戻る」後メニューをメンバー配下へ移設 */
+/* v037_71: 「タイトルに戻る」後メニューをメンバー配下へ移設 */
 function tenotsuShowTitleReturnMenuArchive() {
   tenotsuShowDynamicPanel("タイトルメニュー保管", `
     <div class="status-card memory-card">
@@ -1826,10 +1849,10 @@ function tenotsuShowMemberListMenu() {
     </div>
   `);
 }
-/* /v037_70 */
+/* /v037_71 */
 
 
-/* v037_70: ストーリー終了後に元メニューへフェード復帰 */
+/* v037_71: ストーリー終了後に元メニューへフェード復帰 */
 window.__TENOTSU_RETURN_MENU_STACK__ = window.__TENOTSU_RETURN_MENU_STACK__ || [];
 window.__TENOTSU_STORY_ENDING__ = false;
 
@@ -1901,4 +1924,47 @@ function tenotsuHandleStoryEndReturn() {
     tenotsuReturnToPreviousMenu();
   }, 1350);
 }
-/* /v037_70 */
+/* /v037_71 */
+
+
+/* v037_71: タイトルタイル表示後も右メニューを6大メニュー固定 */
+window.__TENOTSU_MAIN_MENU_LOCK__ = window.__TENOTSU_MAIN_MENU_LOCK__ || false;
+
+function tenotsuLockMainMenu() {
+  window.__TENOTSU_MAIN_MENU_LOCK__ = true;
+}
+
+function tenotsuUnlockMainMenu() {
+  window.__TENOTSU_MAIN_MENU_LOCK__ = false;
+}
+
+function tenotsuEnsureOfficeSixMenuVisible() {
+  const listPanel = document.getElementById("list-panel");
+  const menuPanel = document.getElementById("menu-panel");
+  const battleRoot = document.getElementById("battle-root");
+  if (battleRoot && !battleRoot.classList.contains("hidden")) return;
+  if (typeof window.loadList === "function") {
+    window.loadList("office6.json");
+    tenotsuLockMainMenu();
+  }
+}
+/* /v037_71 */
+
+
+/* v037_71 randomImagesOn office6 reassert wrapper */
+window.addEventListener("load", () => {
+  window.setTimeout(() => {
+    if (typeof window.randomImagesOn === "function" && !window.__TENOTSU_RANDOM_WRAPPED__) {
+      const originalRandomImagesOn = window.randomImagesOn;
+      window.randomImagesOn = function wrappedRandomImagesOn(...args) {
+        const result = originalRandomImagesOn.apply(this, args);
+        window.setTimeout(() => {
+          if (window.__TENOTSU_MAIN_MENU_LOCK__) tenotsuEnsureOfficeSixMenuVisible();
+        }, 120);
+        return result;
+      };
+      window.__TENOTSU_RANDOM_WRAPPED__ = true;
+    }
+  }, 0);
+});
+/* /v037_71 */
