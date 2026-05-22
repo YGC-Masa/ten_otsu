@@ -1,5 +1,5 @@
 {
-  "version": "v037_76",
+  "version": "v037_77",
   "namingRule": {
     "pattern": "{characterLetter}1{expressionNo}{variantNo}.webp",
     "example": {
@@ -1250,7 +1250,7 @@
           "path": "images/assets/char/k10101.webp",
           "engineSrc": "k10101.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "02": {
           "label": "微笑み",
@@ -1258,7 +1258,7 @@
           "path": "images/assets/char/k10201.webp",
           "engineSrc": "k10201.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "03": {
           "label": "怒り",
@@ -1266,7 +1266,7 @@
           "path": "images/assets/char/k10301.webp",
           "engineSrc": "k10301.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "04": {
           "label": "悲しみ",
@@ -1274,7 +1274,7 @@
           "path": "images/assets/char/k10401.webp",
           "engineSrc": "k10401.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "05": {
           "label": "笑顔",
@@ -1282,7 +1282,7 @@
           "path": "images/assets/char/k10501.webp",
           "engineSrc": "k10501.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "06": {
           "label": "驚き",
@@ -1290,7 +1290,7 @@
           "path": "images/assets/char/k10601.webp",
           "engineSrc": "k10601.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "07": {
           "label": "照れ",
@@ -1298,7 +1298,7 @@
           "path": "images/assets/char/k10701.webp",
           "engineSrc": "k10701.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "08": {
           "label": "期待",
@@ -1306,7 +1306,7 @@
           "path": "images/assets/char/k10801.webp",
           "engineSrc": "k10801.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "09": {
           "label": "得意げ",
@@ -1314,7 +1314,7 @@
           "path": "images/assets/char/k10901.webp",
           "engineSrc": "k10901.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "10": {
           "label": "軽い嫌悪",
@@ -1322,7 +1322,7 @@
           "path": "images/assets/char/k11001.webp",
           "engineSrc": "k11001.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "11": {
           "label": "心配不安",
@@ -1330,7 +1330,7 @@
           "path": "images/assets/char/k11101.webp",
           "engineSrc": "k11101.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "12": {
           "label": "動揺",
@@ -1338,7 +1338,7 @@
           "path": "images/assets/char/k11201.webp",
           "engineSrc": "k11201.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         }
       }
     },
@@ -1354,7 +1354,7 @@
           "path": "images/assets/char/l10101.webp",
           "engineSrc": "l10101.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "02": {
           "label": "微笑み",
@@ -1362,7 +1362,7 @@
           "path": "images/assets/char/l10201.webp",
           "engineSrc": "l10201.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "03": {
           "label": "怒り",
@@ -1370,7 +1370,7 @@
           "path": "images/assets/char/l10301.webp",
           "engineSrc": "l10301.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "04": {
           "label": "悲しみ",
@@ -1378,7 +1378,7 @@
           "path": "images/assets/char/l10401.webp",
           "engineSrc": "l10401.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "05": {
           "label": "笑顔",
@@ -1386,7 +1386,7 @@
           "path": "images/assets/char/l10501.webp",
           "engineSrc": "l10501.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "06": {
           "label": "驚き",
@@ -1394,7 +1394,7 @@
           "path": "images/assets/char/l10601.webp",
           "engineSrc": "l10601.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "07": {
           "label": "照れ",
@@ -1402,7 +1402,7 @@
           "path": "images/assets/char/l10701.webp",
           "engineSrc": "l10701.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "08": {
           "label": "期待",
@@ -1410,7 +1410,7 @@
           "path": "images/assets/char/l10801.webp",
           "engineSrc": "l10801.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "09": {
           "label": "得意げ",
@@ -1418,7 +1418,7 @@
           "path": "images/assets/char/l10901.webp",
           "engineSrc": "l10901.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "10": {
           "label": "軽い嫌悪",
@@ -1426,7 +1426,7 @@
           "path": "images/assets/char/l11001.webp",
           "engineSrc": "l11001.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "11": {
           "label": "心配不安",
@@ -1434,7 +1434,7 @@
           "path": "images/assets/char/l11101.webp",
           "engineSrc": "l11101.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "12": {
           "label": "動揺",
@@ -1442,7 +1442,7 @@
           "path": "images/assets/char/l11201.webp",
           "engineSrc": "l11201.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         }
       }
     },
@@ -1458,7 +1458,7 @@
           "path": "images/assets/char/m10101.webp",
           "engineSrc": "m10101.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "02": {
           "label": "微笑み",
@@ -1466,7 +1466,7 @@
           "path": "images/assets/char/m10201.webp",
           "engineSrc": "m10201.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "03": {
           "label": "怒り",
@@ -1474,7 +1474,7 @@
           "path": "images/assets/char/m10301.webp",
           "engineSrc": "m10301.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "04": {
           "label": "悲しみ",
@@ -1482,7 +1482,7 @@
           "path": "images/assets/char/m10401.webp",
           "engineSrc": "m10401.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "05": {
           "label": "笑顔",
@@ -1490,7 +1490,7 @@
           "path": "images/assets/char/m10501.webp",
           "engineSrc": "m10501.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "06": {
           "label": "驚き",
@@ -1498,7 +1498,7 @@
           "path": "images/assets/char/m10601.webp",
           "engineSrc": "m10601.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "07": {
           "label": "照れ",
@@ -1506,7 +1506,7 @@
           "path": "images/assets/char/m10701.webp",
           "engineSrc": "m10701.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "08": {
           "label": "期待",
@@ -1514,7 +1514,7 @@
           "path": "images/assets/char/m10801.webp",
           "engineSrc": "m10801.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "09": {
           "label": "得意げ",
@@ -1522,7 +1522,7 @@
           "path": "images/assets/char/m10901.webp",
           "engineSrc": "m10901.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "10": {
           "label": "軽い嫌悪",
@@ -1530,7 +1530,7 @@
           "path": "images/assets/char/m11001.webp",
           "engineSrc": "m11001.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "11": {
           "label": "心配不安",
@@ -1538,7 +1538,7 @@
           "path": "images/assets/char/m11101.webp",
           "engineSrc": "m11101.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         },
         "12": {
           "label": "動揺",
@@ -1546,7 +1546,7 @@
           "path": "images/assets/char/m11201.webp",
           "engineSrc": "m11201.webp",
           "variant": "01",
-          "exists": false
+          "exists": true
         }
       }
     }
