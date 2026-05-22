@@ -10,10 +10,8 @@
   },
   {
     "bg": "bg011.jpg",
-    "bgEffect": "fadein",
     "name": "",
     "text": "（あ、真花がいる。よし。）",
-    "effect": "fadein",
     "textareashow": true,
     "bgm": "main.mp3"
   },
@@ -31,15 +29,7 @@
   },
   {
     "name": "真花",
-    "text": "あ、店長。お疲れ様です。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "f10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "あ、店長。お疲れ様です。"
   },
   {
     "name": "店長",
@@ -119,63 +109,23 @@
   },
   {
     "name": "真花",
-    "text": "年齢は22歳、血液型はO型です。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "f10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "年齢は22歳、血液型はO型です。"
   },
   {
     "name": "真花",
-    "text": "身長は152センチで…小さいほう、かな。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "f10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "身長は152センチで…小さいほう、かな。"
   },
   {
     "name": "真花",
-    "text": "周りからは「お嬢様っぽい」って言われるんですけど…",
-    "characters": [
-      {
-        "side": "center",
-        "src": "f10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "周りからは「お嬢様っぽい」って言われるんですけど…"
   },
   {
     "name": "真花",
-    "text": "そ、そんな立派なものじゃないんです…っ。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "f10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "そ、そんな立派なものじゃないんです…っ。"
   },
   {
     "name": "真花",
-    "text": "実家は建築会社で、現場には屈強な男性がいっぱいで…。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "f10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "実家は建築会社で、現場には屈強な男性がいっぱいで…。"
   },
   {
     "name": "真花",
@@ -203,15 +153,7 @@
   },
   {
     "name": "真花",
-    "text": "でも、弱いだけじゃないつもりです。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "f10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "でも、弱いだけじゃないつもりです。"
   },
   {
     "name": "真花",
@@ -275,15 +217,7 @@
   },
   {
     "name": "真花",
-    "text": "好きな色はグレーで、落ち着きと品を意識してます…できてるかは別として…。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "f10801.webp"
-      }
-    ],
-    "expression": "08",
-    "expressionLabel": "期待"
+    "text": "好きな色はグレーで、落ち着きと品を意識してます…できてるかは別として…。"
   },
   {
     "name": "真花",
@@ -299,27 +233,11 @@
   },
   {
     "name": "真花",
-    "text": "速水川さんや氷神さんのような落ち着いた方は安心します。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "f10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "速水川さんや氷神さんのような落ち着いた方は安心します。"
   },
   {
     "name": "真花",
-    "text": "草壁おねぇ様や彩愛様には、つい甘えてしまいそうです。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "f10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "草壁おねぇ様や彩愛様には、つい甘えてしまいそうです。"
   },
   {
     "name": "真花",
@@ -359,15 +277,7 @@
   },
   {
     "name": "真花",
-    "text": "その分、ちゃんと恥ずかしくない中身になりたいと思ってます。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "f10701.webp"
-      }
-    ],
-    "expression": "07",
-    "expressionLabel": "照れ"
+    "text": "その分、ちゃんと恥ずかしくない中身になりたいと思ってます。"
   },
   {
     "name": "真花",
@@ -395,15 +305,7 @@
   },
   {
     "name": "真花",
-    "text": "そ、そんな感じのわたしですが…これから、よろしくお願いしますっ。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "f10501.webp"
-      }
-    ],
-    "expression": "05",
-    "expressionLabel": "笑顔"
+    "text": "そ、そんな感じのわたしですが…これから、よろしくお願いしますっ。"
   },
   {
     "name": "",

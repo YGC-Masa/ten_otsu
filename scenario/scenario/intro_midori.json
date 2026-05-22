@@ -10,10 +10,8 @@
   },
   {
     "bg": "bg011.jpg",
-    "bgEffect": "fadein",
     "name": "",
     "text": "（あ、翠さんだ。）",
-    "effect": "fadein",
     "textareashow": true,
     "bgm": "main.mp3"
   },
@@ -31,15 +29,7 @@
   },
   {
     "name": "翠",
-    "text": "はい？どうしました？",
-    "characters": [
-      {
-        "side": "center",
-        "src": "c10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "はい？どうしました？"
   },
   {
     "name": "店長",
@@ -47,99 +37,35 @@
   },
   {
     "name": "翠",
-    "text": "またあなたは変なことを・・。で、これに向かってすればいいのね？",
-    "characters": [
-      {
-        "side": "center",
-        "src": "c10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "またあなたは変なことを・・。で、これに向かってすればいいのね？"
   },
   {
     "name": "翠",
-    "text": "皆さん、はじめまして。草壁 翠(くさかべ みどり)といいます。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "c10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "皆さん、はじめまして。草壁 翠(くさかべ みどり)といいます。"
   },
   {
     "name": "翠",
-    "text": "名前は“みどり”、漢字は翡翠の「翠」です。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "c10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "名前は“みどり”、漢字は翡翠の「翠」です。"
   },
   {
     "name": "翠",
-    "text": "年齢は27歳。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "c10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "年齢は27歳。"
   },
   {
     "name": "翠",
-    "text": "おひつじ座の春生まれで、血液型はO型です。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "c10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "おひつじ座の春生まれで、血液型はO型です。"
   },
   {
     "name": "翠",
-    "text": "身長は153センチ。左利きです。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "c10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "身長は153センチ。左利きです。"
   },
   {
     "name": "翠",
-    "text": "体型は細めで、小柄と言われます。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "c10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "体型は細めで、小柄と言われます。"
   },
   {
     "name": "翠",
-    "text": "服は動きやすくシンプルなものが多いですね。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "c10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "服は動きやすくシンプルなものが多いですね。"
   },
   {
     "name": "翠",
@@ -167,15 +93,7 @@
   },
   {
     "name": "翠",
-    "text": "海外ドラマを一気見して夜更かし……なんてこともあります。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "c10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "海外ドラマを一気見して夜更かし……なんてこともあります。"
   },
   {
     "name": "翠",
@@ -191,15 +109,7 @@
   },
   {
     "name": "翠",
-    "text": "パソコンを触る時間が長く、設定やトラブル解決は得意です。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "c10902.webp"
-      }
-    ],
-    "expression": "09",
-    "expressionLabel": "得意げ"
+    "text": "パソコンを触る時間が長く、設定やトラブル解決は得意です。"
   },
   {
     "name": "翠",
@@ -215,15 +125,7 @@
   },
   {
     "name": "翠",
-    "text": "可愛いとは思うんですけど……自分の距離感やペースが保てず苦手ですかね。。。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "c11101.webp"
-      }
-    ],
-    "expression": "11",
-    "expressionLabel": "心配不安"
+    "text": "可愛いとは思うんですけど……自分の距離感やペースが保てず苦手ですかね。。。"
   },
   {
     "name": "翠",
@@ -275,15 +177,7 @@
   },
   {
     "name": "翠",
-    "text": "お酒は弱いので、飲み会では控えめです。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "c10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "お酒は弱いので、飲み会では控えめです。"
   },
   {
     "name": "翠",
@@ -311,27 +205,11 @@
   },
   {
     "name": "翠",
-    "text": "あまり感情を表に出さない方ですが、",
-    "characters": [
-      {
-        "side": "center",
-        "src": "c10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "あまり感情を表に出さない方ですが、"
   },
   {
     "name": "翠",
-    "text": "人並みに冗談を言ったり、人をからかうこともあります。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "c10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "人並みに冗談を言ったり、人をからかうこともあります。"
   },
   {
     "name": "翠",
@@ -371,15 +249,7 @@
   },
   {
     "name": "翠",
-    "text": "映画やドラマも悲しいシーンだけじゃなく、優しいシーンでもすぐ涙が出てしまいます。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "c10401.webp"
-      }
-    ],
-    "expression": "04",
-    "expressionLabel": "悲しみ"
+    "text": "映画やドラマも悲しいシーンだけじゃなく、優しいシーンでもすぐ涙が出てしまいます。"
   },
   {
     "name": "翠",
@@ -407,51 +277,19 @@
   },
   {
     "name": "翠",
-    "text": "緋奈さんや速水川さん、小麦沢さん、みんな個性的で面白いですね。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "c10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "緋奈さんや速水川さん、小麦沢さん、みんな個性的で面白いですね。"
   },
   {
     "name": "翠",
-    "text": "萌は妹です。可愛いですが、肉親故に甘やかしすぎないようにしています。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "c10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "萌は妹です。可愛いですが、肉親故に甘やかしすぎないようにしています。"
   },
   {
     "name": "翠",
-    "text": "店長のことは……まぁ、時々からかってます。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "c10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "店長のことは……まぁ、時々からかってます。"
   },
   {
     "name": "翠",
-    "text": "反応がわかりやすくて、つい。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "c10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "反応がわかりやすくて、つい。"
   },
   {
     "name": "翠",

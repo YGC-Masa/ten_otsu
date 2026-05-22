@@ -10,10 +10,8 @@
   },
   {
     "bg": "bg011.jpg",
-    "bgEffect": "fadein",
     "name": "",
     "text": "（お、萌ちゃんだ。）",
-    "effect": "fadein",
     "textareashow": true,
     "bgm": "main.mp3"
   },
@@ -31,15 +29,7 @@
   },
   {
     "name": "萌",
-    "text": "あっ。どうしたの？お兄ちゃん？",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "あっ。どうしたの？お兄ちゃん？"
   },
   {
     "name": "店長",
@@ -47,15 +37,7 @@
   },
   {
     "name": "萌",
-    "text": "えっと……自己紹介、ですか？",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "えっと……自己紹介、ですか？"
   },
   {
     "name": "萌",
@@ -83,63 +65,23 @@
   },
   {
     "name": "萌",
-    "text": "改めまして、草壁萌（くさかべ もえ）といいます。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "改めまして、草壁萌（くさかべ もえ）といいます。"
   },
   {
     "name": "萌",
-    "text": "21歳で、血液型はO型。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "21歳で、血液型はO型。"
   },
   {
     "name": "萌",
-    "text": "誕生日は10月10日で、星座はてんびん座です。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "誕生日は10月10日で、星座はてんびん座です。"
   },
   {
     "name": "萌",
-    "text": "身長は151センチ。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "身長は151センチ。"
   },
   {
     "name": "萌",
-    "text": "スリーサイズは・・あぶな。お兄ちゃん相手だから喋っちゃうところだった・・",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "スリーサイズは・・あぶな。お兄ちゃん相手だから喋っちゃうところだった・・"
   },
   {
     "name": "萌",
@@ -167,15 +109,7 @@
   },
   {
     "name": "萌",
-    "text": "お姉ちゃんは草壁翠。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "お姉ちゃんは草壁翠。"
   },
   {
     "name": "萌",
@@ -203,51 +137,19 @@
   },
   {
     "name": "萌",
-    "text": "性格は……そうですね。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "性格は……そうですね。"
   },
   {
     "name": "萌",
-    "text": "人からは「甘えん坊だね」って言われることが多いです。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "人からは「甘えん坊だね」って言われることが多いです。"
   },
   {
     "name": "萌",
-    "text": "実際、おにいちゃんに甘えちゃうことも多いから、当たってるのかも。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "実際、おにいちゃんに甘えちゃうことも多いから、当たってるのかも。"
   },
   {
     "name": "萌",
-    "text": "趣味は森林ウォーキング。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "趣味は森林ウォーキング。"
   },
   {
     "name": "萌",
@@ -299,27 +201,11 @@
   },
   {
     "name": "萌",
-    "text": "そんなに本格的じゃないけど、みんなの気持ちを後押しするくらいならできると思います。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10901.webp"
-      }
-    ],
-    "expression": "09",
-    "expressionLabel": "得意げ"
+    "text": "そんなに本格的じゃないけど、みんなの気持ちを後押しするくらいならできると思います。"
   },
   {
     "name": "萌",
-    "text": "得意なものは、エアコンとか季節家電の調整。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10901.webp"
-      }
-    ],
-    "expression": "09",
-    "expressionLabel": "得意げ"
+    "text": "得意なものは、エアコンとか季節家電の調整。"
   },
   {
     "name": "萌",
@@ -479,51 +365,19 @@
   },
   {
     "name": "萌",
-    "text": "馴れ馴れしいかな？",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "馴れ馴れしいかな？"
   },
   {
     "name": "萌",
-    "text": "そう呼べる存在がいるのは、すごく心強くて。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "そう呼べる存在がいるのは、すごく心強くて。"
   },
   {
     "name": "萌",
-    "text": "……だから、つい甘えちゃうんです。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "……だから、つい甘えちゃうんです。"
   },
   {
     "name": "萌",
-    "text": "でも、甘えるだけじゃなくて……。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "でも、甘えるだけじゃなくて……。"
   },
   {
     "name": "萌",
@@ -575,15 +429,7 @@
   },
   {
     "name": "萌",
-    "text": "こんなわたしですが……。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "こんなわたしですが……。"
   },
   {
     "name": "萌",
@@ -599,15 +445,7 @@
   },
   {
     "name": "萌",
-    "text": "これから、どうぞよろしくお願いします。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10501.webp"
-      }
-    ],
-    "expression": "05",
-    "expressionLabel": "笑顔"
+    "text": "これから、どうぞよろしくお願いします。"
   },
   {
     "name": "",

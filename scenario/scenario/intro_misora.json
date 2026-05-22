@@ -10,10 +10,8 @@
   },
   {
     "bg": "bg011.jpg",
-    "bgEffect": "fadein",
     "name": "",
     "text": "（お、美空がいる。）",
-    "effect": "fadein",
     "textareashow": true,
     "bgm": "main.mp3"
   },
@@ -31,15 +29,7 @@
   },
   {
     "name": "美空",
-    "text": "あら？お疲れ様。店長。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "あら？お疲れ様。店長。"
   },
   {
     "name": "店長",
@@ -83,51 +73,19 @@
   },
   {
     "name": "美空",
-    "text": "「ふたざわ」とかじゃないから、間違えないでね？",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "「ふたざわ」とかじゃないから、間違えないでね？"
   },
   {
     "name": "美空",
-    "text": "名前の通り、空みたいに明るく自由でいたいなって思ってるの。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "名前の通り、空みたいに明るく自由でいたいなって思ってるの。"
   },
   {
     "name": "美空",
-    "text": "じつは双子なんだけど、わたしがお姉ちゃんで、",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "じつは双子なんだけど、わたしがお姉ちゃんで、"
   },
   {
     "name": "美空",
-    "text": "妹の夜空（よぞら）とは正反対のタイプって、よく言われるよ。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "妹の夜空（よぞら）とは正反対のタイプって、よく言われるよ。"
   },
   {
     "name": "美空",
@@ -155,15 +113,7 @@
   },
   {
     "name": "美空",
-    "text": "自分の意見はちゃんと言わなきゃって思ってるから。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "自分の意見はちゃんと言わなきゃって思ってるから。"
   },
   {
     "name": "美空",
@@ -203,15 +153,7 @@
   },
   {
     "name": "美空",
-    "text": "海もプールも、太陽の下で動くのが大好き。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h10801.webp"
-      }
-    ],
-    "expression": "08",
-    "expressionLabel": "期待"
+    "text": "海もプールも、太陽の下で動くのが大好き。"
   },
   {
     "name": "美空",
@@ -287,27 +229,11 @@
   },
   {
     "name": "美空",
-    "text": "それから、わたしお酒弱いから、",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "それから、わたしお酒弱いから、"
   },
   {
     "name": "美空",
-    "text": "いつもソフトドリンク派！",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "いつもソフトドリンク派！"
   },
   {
     "name": "美空",
@@ -323,15 +249,7 @@
   },
   {
     "name": "美空",
-    "text": "あ、あと苦手なものと言えば英語……",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h11101.webp"
-      }
-    ],
-    "expression": "11",
-    "expressionLabel": "心配不安"
+    "text": "あ、あと苦手なものと言えば英語……"
   },
   {
     "name": "美空",
@@ -359,27 +277,11 @@
   },
   {
     "name": "美空",
-    "text": "わたし剣道は全国レベルなんだよ？",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "わたし剣道は全国レベルなんだよ？"
   },
   {
     "name": "美空",
-    "text": "小さい頃からやってて、",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "小さい頃からやってて、"
   },
   {
     "name": "美空",
@@ -407,27 +309,11 @@
   },
   {
     "name": "美空",
-    "text": "いざとなったら竹刀一本で守ってあげるから。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "いざとなったら竹刀一本で守ってあげるから。"
   },
   {
     "name": "美空",
-    "text": "呼び方はみんなのことはちゃん付けかさん付けで呼んでるよ。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "呼び方はみんなのことはちゃん付けかさん付けで呼んでるよ。"
   },
   {
     "name": "美空",
@@ -455,27 +341,11 @@
   },
   {
     "name": "美空",
-    "text": "ちょっと特別感あるでしょ？",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "ちょっと特別感あるでしょ？"
   },
   {
     "name": "美空",
-    "text": "こんなわたしだけど、",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "こんなわたしだけど、"
   },
   {
     "name": "美空",

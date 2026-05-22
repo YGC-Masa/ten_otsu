@@ -10,10 +10,8 @@
   },
   {
     "bg": "bg011.jpg",
-    "bgEffect": "fadein",
     "name": "",
     "text": "（あ、こがねがいるな。）",
-    "effect": "fadein",
     "textareashow": true,
     "bgm": "main.mp3"
   },
@@ -31,15 +29,7 @@
   },
   {
     "name": "こがね",
-    "text": "なぁに～？店長～？",
-    "characters": [
-      {
-        "side": "center",
-        "src": "d10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "なぁに～？店長～？"
   },
   {
     "name": "店長",
@@ -71,15 +61,7 @@
   },
   {
     "name": "こがね",
-    "text": "年齢は……二十歳！　見た目？　まあ、ギャルっぽい？てよくいわれるかな～？",
-    "characters": [
-      {
-        "side": "center",
-        "src": "d10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "年齢は……二十歳！　見た目？　まあ、ギャルっぽい？てよくいわれるかな～？"
   },
   {
     "name": "こがね",
@@ -143,15 +125,7 @@
   },
   {
     "name": "こがね",
-    "text": "好きな食べ物はアイス！　真冬でも食べちゃう派ね。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "d10801.webp"
-      }
-    ],
-    "expression": "08",
-    "expressionLabel": "期待"
+    "text": "好きな食べ物はアイス！　真冬でも食べちゃう派ね。"
   },
   {
     "name": "こがね",
@@ -203,15 +177,7 @@
   },
   {
     "name": "こがね",
-    "text": "意外と英語しゃべれちゃうんだよね～。正確な英語でわないけど伝わってるみたい",
-    "characters": [
-      {
-        "side": "center",
-        "src": "d10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "意外と英語しゃべれちゃうんだよね～。正確な英語でわないけど伝わってるみたい"
   },
   {
     "name": "こがね",
@@ -287,39 +253,15 @@
   },
   {
     "name": "こがね",
-    "text": "職場の人や仲間のことはめっちゃ大事にしてるよ。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "d10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "職場の人や仲間のことはめっちゃ大事にしてるよ。"
   },
   {
     "name": "こがね",
-    "text": "みんなが頑張ってるの見てると、あーしも負けてらんないって思うし。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "d10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "みんなが頑張ってるの見てると、あーしも負けてらんないって思うし。"
   },
   {
     "name": "こがね",
-    "text": "ギャルだってちゃんと仲間をリスペクトするし、",
-    "characters": [
-      {
-        "side": "center",
-        "src": "d10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "ギャルだってちゃんと仲間をリスペクトするし、"
   },
   {
     "name": "こがね",
@@ -359,15 +301,7 @@
   },
   {
     "name": "こがね",
-    "text": "みんなもこれからもあーしと一緒に遊んでくれるの、約束ね☆",
-    "characters": [
-      {
-        "side": "center",
-        "src": "d10801.webp"
-      }
-    ],
-    "expression": "08",
-    "expressionLabel": "期待"
+    "text": "みんなもこれからもあーしと一緒に遊んでくれるの、約束ね☆"
   },
   {
     "name": "",

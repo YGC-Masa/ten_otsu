@@ -10,10 +10,8 @@
   },
   {
     "bg": "bg011.jpg",
-    "bgEffect": "fadein",
     "name": "",
     "text": "（あ、いたいた里美ちゃん）",
-    "effect": "fadein",
     "textareashow": true,
     "bgm": "main.mp3"
   },
@@ -31,15 +29,7 @@
   },
   {
     "name": "里美",
-    "text": "はい～、おつかれさまです～てんちょ～",
-    "characters": [
-      {
-        "side": "center",
-        "src": "l10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "はい～、おつかれさまです～てんちょ～"
   },
   {
     "name": "店長",
@@ -47,15 +37,7 @@
   },
   {
     "name": "里美",
-    "text": "えっと……自己紹介ですか～？",
-    "characters": [
-      {
-        "side": "center",
-        "src": "l10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "えっと……自己紹介ですか～？"
   },
   {
     "name": "里美",
@@ -83,27 +65,11 @@
   },
   {
     "name": "里美",
-    "text": "“もちづき”って名前、もちもちしてるみたいで、ちょっと気に入ってます～。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "l10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "“もちづき”って名前、もちもちしてるみたいで、ちょっと気に入ってます～。"
   },
   {
     "name": "里美",
-    "text": "身長は155cmで、ちょっとぽっちゃりな感じです～。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "l10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "身長は155cmで、ちょっとぽっちゃりな感じです～。"
   },
   {
     "name": "里美",
@@ -131,27 +97,11 @@
   },
   {
     "name": "里美",
-    "text": "お仕事は家電屋さんの事務をやってます～。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "l10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "お仕事は家電屋さんの事務をやってます～。"
   },
   {
     "name": "里美",
-    "text": "伝票とか、数字とか…そういうのをパソコンでぽちぽちしてるのがメインです～。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "l10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "伝票とか、数字とか…そういうのをパソコンでぽちぽちしてるのがメインです～。"
   },
   {
     "name": "里美",
@@ -179,15 +129,7 @@
   },
   {
     "name": "里美",
-    "text": "便利そうなキッチン家電とか見てると「これならあのメニューが楽になるかな～」なんて、つい想像しちゃいます～。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "l10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "便利そうなキッチン家電とか見てると「これならあのメニューが楽になるかな～」なんて、つい想像しちゃいます～。"
   },
   {
     "name": "里美",

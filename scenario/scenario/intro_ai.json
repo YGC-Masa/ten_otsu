@@ -10,10 +10,8 @@
   },
   {
     "bg": "bg011.jpg",
-    "bgEffect": "fadein",
     "name": "",
     "text": "（あ、藍ちゃんがいるな。）",
-    "effect": "fadein",
     "textareashow": true,
     "bgm": "main.mp3"
   },
@@ -59,63 +57,23 @@
   },
   {
     "name": "藍",
-    "text": "はい、はじめまして。速水川 藍(はやみがわ あい)といいます。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "b10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "はい、はじめまして。速水川 藍(はやみがわ あい)といいます。"
   },
   {
     "name": "藍",
-    "text": "年齢は……こう見えて二十四歳です。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "b10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "年齢は……こう見えて二十四歳です。"
   },
   {
     "name": "藍",
-    "text": "よく“中学生くらい？”って言われるんですけど……もう慣れました。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "b10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "よく“中学生くらい？”って言われるんですけど……もう慣れました。"
   },
   {
     "name": "藍",
-    "text": "背は150センチで、一般的には小さい方だと思います。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "b10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "背は150センチで、一般的には小さい方だと思います。"
   },
   {
     "name": "藍",
-    "text": "ええと、あまり目立つタイプじゃないのですが、おとなしいわけでもありません。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "b10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "ええと、あまり目立つタイプじゃないのですが、おとなしいわけでもありません。"
   },
   {
     "name": "藍",
@@ -227,15 +185,7 @@
   },
   {
     "name": "藍",
-    "text": "味も香りも…どうしても苦手なのです…。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "b11101.webp"
-      }
-    ],
-    "expression": "11",
-    "expressionLabel": "心配不安"
+    "text": "味も香りも…どうしても苦手なのです…。"
   },
   {
     "name": "藍",
@@ -263,15 +213,7 @@
   },
   {
     "name": "藍",
-    "text": "このアンテナ毛……頑張って直すんですけど、数時間で元に戻っちゃうんですよね。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "b10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "このアンテナ毛……頑張って直すんですけど、数時間で元に戻っちゃうんですよね。"
   },
   {
     "name": "藍",
@@ -299,15 +241,7 @@
   },
   {
     "name": "藍",
-    "text": "もし必要なときは、翠さんとか詳しい人に助けてもらってます。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "b10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "もし必要なときは、翠さんとか詳しい人に助けてもらってます。"
   },
   {
     "name": "藍",
@@ -347,15 +281,7 @@
   },
   {
     "name": "藍",
-    "text": "えと、あと。今のお仕事場も楽しくて好きです。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "b10201.webp"
-      }
-    ],
-    "expression": "02",
-    "expressionLabel": "微笑み"
+    "text": "えと、あと。今のお仕事場も楽しくて好きです。"
   },
   {
     "name": "藍",
@@ -371,15 +297,7 @@
   },
   {
     "name": "藍",
-    "text": "ひなちゃんとは……あ、星野さんとは、よく趣味の話をしますね。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "b10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "ひなちゃんとは……あ、星野さんとは、よく趣味の話をしますね。"
   },
   {
     "name": "藍",
@@ -407,27 +325,11 @@
   },
   {
     "name": "藍",
-    "text": "結構、年相応に活動的ではないかな？と思います。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "b10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "結構、年相応に活動的ではないかな？と思います。"
   },
   {
     "name": "藍",
-    "text": "ええと、こんなくらいでどうでしょう？",
-    "characters": [
-      {
-        "side": "center",
-        "src": "b10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "ええと、こんなくらいでどうでしょう？"
   },
   {
     "name": "藍",

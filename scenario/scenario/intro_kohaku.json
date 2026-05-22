@@ -10,10 +10,8 @@
   },
   {
     "bg": "bg011.jpg",
-    "bgEffect": "fadein",
     "name": "",
     "text": "（あ、琥珀がいる。）",
-    "effect": "fadein",
     "textareashow": true,
     "bgm": "main.mp3"
   },
@@ -31,15 +29,7 @@
   },
   {
     "name": "琥珀",
-    "text": "お、店長？オレに用か？",
-    "characters": [
-      {
-        "side": "center",
-        "src": "e10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "お、店長？オレに用か？"
   },
   {
     "name": "店長",
@@ -95,15 +85,7 @@
   },
   {
     "name": "琥珀",
-    "text": "見た目もだが、中身も野生児ってよく言われる！",
-    "characters": [
-      {
-        "side": "center",
-        "src": "e10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "見た目もだが、中身も野生児ってよく言われる！"
   },
   {
     "name": "琥珀",
@@ -131,27 +113,11 @@
   },
   {
     "name": "琥珀",
-    "text": "あとイヤホン集めも趣味なんだ！自己トレ中に使えるからいっぱい持ってるぞー！",
-    "characters": [
-      {
-        "side": "center",
-        "src": "e10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "あとイヤホン集めも趣味なんだ！自己トレ中に使えるからいっぱい持ってるぞー！"
   },
   {
     "name": "琥珀",
-    "text": "水泳用の防水とか、ランニング用に外の音が聞こえるとか色々使い分けてるぞ！",
-    "characters": [
-      {
-        "side": "center",
-        "src": "e10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "水泳用の防水とか、ランニング用に外の音が聞こえるとか色々使い分けてるぞ！"
   },
   {
     "name": "琥珀",
@@ -167,15 +133,7 @@
   },
   {
     "name": "琥珀",
-    "text": "好きな食べ物はもちろんお肉！ステーキも焼き肉もガンガンいく！",
-    "characters": [
-      {
-        "side": "center",
-        "src": "e10801.webp"
-      }
-    ],
-    "expression": "08",
-    "expressionLabel": "期待"
+    "text": "好きな食べ物はもちろんお肉！ステーキも焼き肉もガンガンいく！"
   },
   {
     "name": "琥珀",
@@ -299,87 +257,31 @@
   },
   {
     "name": "琥珀",
-    "text": "まぁ、落ち込むより次！ってすぐ切り替えるんだ！",
-    "characters": [
-      {
-        "side": "center",
-        "src": "e10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "まぁ、落ち込むより次！ってすぐ切り替えるんだ！"
   },
   {
     "name": "琥珀",
-    "text": "オレ、単純明快！悩んでもすぐ忘れちゃうタイプ！",
-    "characters": [
-      {
-        "side": "center",
-        "src": "e10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "オレ、単純明快！悩んでもすぐ忘れちゃうタイプ！"
   },
   {
     "name": "琥珀",
-    "text": "店長のことは旦那って呼んでるぞ！",
-    "characters": [
-      {
-        "side": "center",
-        "src": "e10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "店長のことは旦那って呼んでるぞ！"
   },
   {
     "name": "琥珀",
-    "text": "緋奈は緋奈！藍は藍！翠は翠！こがねはこがね！",
-    "characters": [
-      {
-        "side": "center",
-        "src": "e10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "緋奈は緋奈！藍は藍！翠は翠！こがねはこがね！"
   },
   {
     "name": "琥珀",
-    "text": "他のみんなも呼び捨てか短く呼んでるな！",
-    "characters": [
-      {
-        "side": "center",
-        "src": "e10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "他のみんなも呼び捨てか短く呼んでるな！"
   },
   {
     "name": "琥珀",
-    "text": "敬語？そんなの普段はあんまり使わない！でも礼儀はあるつもり！",
-    "characters": [
-      {
-        "side": "center",
-        "src": "e10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "敬語？そんなの普段はあんまり使わない！でも礼儀はあるつもり！"
   },
   {
     "name": "琥珀",
-    "text": "相性？誰とでも仲良くやれる方だぞ！",
-    "characters": [
-      {
-        "side": "center",
-        "src": "e10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "相性？誰とでも仲良くやれる方だぞ！"
   },
   {
     "name": "琥珀",
@@ -395,15 +297,7 @@
   },
   {
     "name": "琥珀",
-    "text": "運動会やったら絶対優勝させるからなー！",
-    "characters": [
-      {
-        "side": "center",
-        "src": "e10901.webp"
-      }
-    ],
-    "expression": "09",
-    "expressionLabel": "得意げ"
+    "text": "運動会やったら絶対優勝させるからなー！"
   },
   {
     "name": "琥珀",
@@ -419,27 +313,11 @@
   },
   {
     "name": "琥珀",
-    "text": "ストレス？走ってるうちにぶっとんじゃうんだ！",
-    "characters": [
-      {
-        "side": "center",
-        "src": "e10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "ストレス？走ってるうちにぶっとんじゃうんだ！"
   },
   {
     "name": "琥珀",
-    "text": "イヤホンで音楽聴いてるときは話しかけんなよ！集中してるからな！",
-    "characters": [
-      {
-        "side": "center",
-        "src": "e10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "イヤホンで音楽聴いてるときは話しかけんなよ！集中してるからな！"
   },
   {
     "name": "琥珀",
