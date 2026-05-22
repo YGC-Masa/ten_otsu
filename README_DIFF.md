@@ -1,9 +1,10 @@
-# v037_76 → v037_77 差分
+# v037_77 → v037_78 差分
 
 ## 修正内容
 
-- `f120102.webp` を `f11201.webp` として正規化。
-- `m11201.zip` の有効な表情素材を取り込み。
-- `scenario/data/character_expressions.json` を再構築。
+- `k100102.webp` を `k11002.webp` として正規採用。
+- `k40502.webp` を `k10502.webp` として正規採用。
+- 彩愛の表情差分として表情マスターに登録。
+- `character_expressions.json` の `variants` を更新。
 
 リポジトリ直下へ展開して上書きしてください。
