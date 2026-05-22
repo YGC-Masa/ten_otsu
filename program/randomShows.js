@@ -18,7 +18,7 @@ function createRandomImagesLayer() {
     left: "0",
     width: "100%",
     height: "100%",
-    zIndex: "2.5",
+    zIndex: "2",
     pointerEvents: "none"
   });
   document.body.appendChild(randomImagesLayer);
@@ -73,6 +73,13 @@ function shuffleArray(array) {
   }
 }
 
+function resolveRandomImagePath(base, name) {
+  if (!name) return "";
+  if (/^(https?:|data:|blob:|\/)/.test(name)) return name;
+  if (name.startsWith("images/") || name.startsWith("program/") || name.startsWith("scenario/")) return name;
+  return (base || "") + name;
+}
+
 // ▼ ランダム画像表示
 function randomImagesOn() {
   if (!window.config || !config.randomPath) return;
@@ -113,10 +120,10 @@ function buildRandomImages(data) {
 
   const base = data.picpath || config.randomPath;
   const list = [];
-  if (data.fixed) list.push(base + data.fixed);
+  if (data.fixed) list.push(resolveRandomImagePath(base, data.fixed));
   const rand = [...data.random];
   shuffleArray(rand);
-  while (list.length < 8 && rand.length) list.push(base + rand.shift());
+  while (list.length < 8 && rand.length) list.push(resolveRandomImagePath(base, rand.shift()));
   imagePathsCache = list;
 
   const selected = imagePathsCache.slice(0, positions.length);
@@ -127,6 +134,7 @@ function buildRandomImages(data) {
     // 画像がプリロード済みなら reuse、なければ preload & reuse
     if (!preloadedImages[src]) {
       const img = new Image();
+      img.onerror = () => console.warn("[TENOTSU RANDOM IMAGE LOAD ERROR]", src);
       img.src = src;
       // 非表示領域に置いておく
       img.style.position = "fixed";
