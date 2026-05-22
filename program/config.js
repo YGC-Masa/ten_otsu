@@ -1,5 +1,5 @@
 window.config = {
-  bgPath: "images/assets/bg/",
+  bgPath: "images/assets/bgev/",
   charPath: "images/assets/char/",
   bgmPath: "images/assets/bgm/",
   sePath: "images/assets/se/",
