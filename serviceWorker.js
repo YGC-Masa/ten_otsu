@@ -1,5 +1,5 @@
 // serviceWorker.js - v037 battle prototype cache clear対応版
-const CACHE_NAME = "tenotsu-v037-65-root-root";
+const CACHE_NAME = "tenotsu-v037-66-root-root";
 const URLS_TO_CACHE = [
   "./",
   "./index.html",
@@ -15,7 +15,6 @@ const URLS_TO_CACHE = [
   "./scenario/listmenu/mainmenu.json",
   "./scenario/listmenu/office6.json",
   "./scenario/scenario/000start.json",
-  "./scenario/scenario/start000.json",
   "./program/style.css",
   "./program/chardispsetting.css",
   "./program/config.js",
