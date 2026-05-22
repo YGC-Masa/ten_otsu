@@ -1,11 +1,8 @@
 # GitHub配置 / 運用メモ
 
-## v037_75
+## v037_76
 
-- キャラクター表情マスターを追加。
-- 命名規則：`キャラID+1 + 表情番号 + 01.webp`
-- 例：`a10101.webp` = 緋奈 + 澄まし + 1枚目
-- 例：`b10501.webp` = 藍 + 笑顔 + 1枚目
-- `scenario/data/character_expressions.json` を追加。
-- `scenario/listmenu/expression_master.json` を追加。
-- メンバー > 表情マスター から確認可能。
+- `c10102 .webp` を `c10102.webp` に正規化。
+- 文字と拡張子の間に空白がある表情ファイル名を正規化。
+- `j11201.zip` 内の有効な表情画像を命名規則に従って `images/assets/char/` へ取り込み。
+- `character_expressions.json` の exists/file/path を再構築。
