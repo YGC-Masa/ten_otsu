@@ -3,7 +3,7 @@
 // 操作はメンバーのシングルタップで通常接客、ダブルタップで必殺接客。通常敵HP2、レアHP3。ターゲットは選択メンバーに最適な家電星人へ自動Fix。彩愛の必殺は盤面整理＋敵チェンジ短縮。店長HELP・必殺カットイン・タイムセール演出あり。
 
 (function () {
-  const BATTLE_VERSION = "v037_81";
+  const BATTLE_VERSION = "v037_82";
   const BATTLE_SECONDS = 30;
   const TIME_SALE_SECONDS = 15;
   const MAX_ENEMIES = 3;
@@ -751,7 +751,7 @@ const battleBackgrounds = {
     }
 
     if (s.skill < 100) {
-      // v037_81: ダブルタップ時に必殺不可でも、通常接客が可能なら通常クリックとして処理する
+      // v037_82: ダブルタップ時に必殺不可でも、通常接客が可能なら通常クリックとして処理する
       state.lastActionText = `${s.name}の必殺ゲージが足りません。通常接客として対応します。`;
       onStaffSingleTap(staffId);
       return;
@@ -940,7 +940,7 @@ const battleBackgrounds = {
   function autoOneMove(showMessage = true) {
     if (!state || !state.running) return false;
 
-    // v037_81: オート優先順位 = 必殺技 → 通常攻撃
+    // v037_82: オート優先順位 = 必殺技 → 通常攻撃
     // 店長HELPは強力な切り札なので、サポートでは使わず任意操作にする。
     let bestStaff = null;
     let bestEnemy = null;
@@ -1061,7 +1061,7 @@ const battleBackgrounds = {
 
     const now = performance.now();
 
-    // v037_81: 乱連打前提。押せるなら即発動、連打による多重発動だけ短時間ロック。
+    // v037_82: 乱連打前提。押せるなら即発動、連打による多重発動だけ短時間ロック。
     if (now - lastHelpInputAt < HELP_INPUT_LOCK_MS) return;
     lastHelpInputAt = now;
 
