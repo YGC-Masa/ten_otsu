@@ -1,6 +1,6 @@
 
-/* v037_73 engine guard: 起動停止対策 */
-window.TENOTSU_ENGINE_VERSION = "v037_73";
+/* v037_75 engine guard: 起動停止対策 */
+window.TENOTSU_ENGINE_VERSION = "v037_75";
 window.__TENOTSU_ENGINE_ERRORS__ = window.__TENOTSU_ENGINE_ERRORS__ || [];
 
 window.addEventListener("error", (event) => {
@@ -108,7 +108,7 @@ window.addEventListener("load", () => {
     }
   }, 2600);
 });
-/* /v037_73 engine guard */
+/* /v037_75 engine guard */
 
 // script.js - v037 修正版（wait/effectTime/Menu/List安定化）
 
@@ -488,16 +488,16 @@ window.clearAppCacheAndReload = clearAppCacheAndReload;
 // === メニュー関連 ===
 function handleMenuAction(item) {
   if (!item) return;
-  /* v037_73 town precheck */
+  /* v037_75 town precheck */
   if ((item.action === "jump" && item.jump === "town_placeholder.json") || (item.action === "outer")) {
     tenotsuShowOuterMenu();
     return;
   }
-  /* v037_73 scenario return precheck */
+  /* v037_75 scenario return precheck */
   if (item.action === "jump" && item.jump) {
     tenotsuPushReturnMenu("list", "office6.json");
   }
-  /* v037_73 handleMenuAction precheck */
+  /* v037_75 handleMenuAction precheck */
   if (item.action === "list" && item.list === "home.json") {
     tenotsuShowStoreStatus();
     return;
@@ -525,9 +525,11 @@ function handleMenuAction(item) {
     if (typeof window.clearAppCacheAndReload === "function") window.clearAppCacheAndReload();
     return;
   }
-  /* v037_73 custom action precheck */
+  /* v037_75 custom action precheck */
   if (item.action === "custom") {
-    if (item.custom === "memory-list") tenotsuShowMemoryCharacterList();
+    if (item.custom === "expression-master") tenotsuShowExpressionMasterMenu();
+    else if (item.custom === "expression-character") tenotsuShowExpressionCharacter(item.characterId || "aa");
+    else if (item.custom === "memory-list") tenotsuShowMemoryCharacterList();
     else if (item.custom === "member-list") tenotsuShowMemberListMenu();
     else if (item.custom === "story-table") tenotsuShowStoryManagementTable();
     else if (item.custom === "title-return-archive") tenotsuShowTitleReturnMenuArchive();
@@ -656,18 +658,18 @@ function showList(listData) {
 
 // === 操作レイヤー：クリック・タッチ対応 ===
 clickLayer.addEventListener("dblclick", (event) => {
-  // v037_73: 左メニューはダブルクリックではなく長押しで出す。
+  // v037_75: 左メニューはダブルクリックではなく長押しで出す。
   event.preventDefault();
 });
 
 let lastTouch = 0;
 clickLayer.addEventListener("touchend", () => {
-  // v037_73: ダブルタップメニューは廃止。長押しメニューへ統一。
+  // v037_75: ダブルタップメニューは廃止。長押しメニューへ統一。
   lastTouch = Date.now();
 });
 
 clickLayer.addEventListener("click", () => {
-  /* v037_73: 右メニュー非表示時タップ再表示 */
+  /* v037_75: 右メニュー非表示時タップ再表示 */
   if (!menuPanel.classList.contains("hidden")) {
     menuPanel.classList.add("hidden");
     return;
@@ -683,15 +685,15 @@ clickLayer.addEventListener("click", () => {
   }
 });
 
-/* v037_73 expose engine functions */
+/* v037_75 expose engine functions */
 try { if (typeof loadMenu === "function") window.loadMenu = loadMenu; } catch (_) {}
 try { if (typeof loadList === "function") window.loadList = loadList; } catch (_) {}
 try { if (typeof loadScenario === "function") window.loadScenario = loadScenario; } catch (_) {}
 try { if (typeof clearAppCacheAndReload === "function") window.clearAppCacheAndReload = clearAppCacheAndReload; } catch (_) {}
 
 
-/* v037_73 boot flow: 起動フラッシュ → 初期化 → タイトル表示 → 事務所6大メニュー */
-window.TENOTSU_BOOT_FLOW_VERSION = "v037_73";
+/* v037_75 boot flow: 起動フラッシュ → 初期化 → タイトル表示 → 事務所6大メニュー */
+window.TENOTSU_BOOT_FLOW_VERSION = "v037_75";
 window.__TENOTSU_BOOT_DONE__ = false;
 
 function tenotsuSetOfficeText(title, text) {
@@ -789,10 +791,10 @@ try {
   window.tenotsuRunBootFlow = tenotsuRunBootFlow;
   window.tenotsuShowOfficeSixMenu = tenotsuShowOfficeSixMenu;
 } catch (_) {}
-/* /v037_73 boot flow */
+/* /v037_75 boot flow */
 
 
-/* v037_73 economy/status/album helpers */
+/* v037_75 economy/status/album helpers */
 const TENOTSU_ECONOMY_KEY = "tenotsu_economy_v1";
 const TENOTSU_ALBUM_KEY = "tenotsu_album_v1";
 const TENOTSU_STORE_KEY = "tenotsu_store_v1";
@@ -969,7 +971,7 @@ function tenotsuShowShopMenu() {
 }
 
 
-/* v037_73 rank/equipment/unlock helpers */
+/* v037_75 rank/equipment/unlock helpers */
 function tenotsuRankCost(type, currentRank) {
   const rank = Math.max(1, Math.floor(Number(currentRank) || 1));
   if (type === "store") return rank * 10000;
@@ -1047,7 +1049,7 @@ function tenotsuRankUp(type) {
   tenotsuUnlockRankRewards(store);
   return true;
 }
-/* /v037_73 rank/equipment/unlock helpers */
+/* /v037_75 rank/equipment/unlock helpers */
 
 window.TenotsuData = {
   economy: tenotsuGetEconomy,
@@ -1072,17 +1074,19 @@ window.TenotsuData = {
   items: tenotsuGetItems,
   affection: tenotsuGetAffection,
   storyMaster: tenotsuGetStoryMaster,
+  expressionFile: tenotsuExpressionFile,
+  expressionPath: tenotsuExpressionPath,
   memoriesByCharacter: tenotsuGetStoriesByCharacter
 };
-/* /v037_73 economy/status/album helpers */
+/* /v037_75 economy/status/album helpers */
 
 
-/* v037_73 economy action listener */
+/* v037_75 economy action listener */
 document.addEventListener("click", (event) => {
   const btn = event.target.closest("[data-engine-action]");
   if (!btn) return;
   const action = btn.dataset.engineAction;
-  if (!["office6","member-list","album","memory-list","memory-character","memory-play","story-table","title-return-archive","facility-up","event-exchange","expense-use","store","members","shop","secret-word","secret-word-submit","secret-word-hint","rank-store","rank-town","rank-manager","equipment-menu","equip-item","event-gift-test","claim-login-exp","claim-daily-exp","claim-outer-exp","outer-menu","outer-start","outer-glasses","outer-item-test","adv-answer","stamina-test-recover","album-remodel","review-challenge","settings"].includes(action)) return;
+  if (!["office6","member-list","album","memory-list","memory-character","memory-play","story-table","title-return-archive","expression-master","expression-character","facility-up","event-exchange","expense-use","store","members","shop","secret-word","secret-word-submit","secret-word-hint","rank-store","rank-town","rank-manager","equipment-menu","equip-item","event-gift-test","claim-login-exp","claim-daily-exp","claim-outer-exp","outer-menu","outer-start","outer-glasses","outer-item-test","adv-answer","stamina-test-recover","album-remodel","review-challenge","settings"].includes(action)) return;
 
   event.preventDefault();
   event.stopPropagation();
@@ -1117,13 +1121,17 @@ document.addEventListener("click", (event) => {
     tenotsuShowMemberListMenu();
   } else if (action === "title-return-archive") {
     tenotsuShowTitleReturnMenuArchive();
+  } else if (action === "expression-master") {
+    tenotsuShowExpressionMasterMenu();
+  } else if (action === "expression-character") {
+    tenotsuShowExpressionCharacter(btn.dataset.characterId || "aa");
   } else if (action === "album" || action === "memory-list") {
     tenotsuShowMemoryCharacterList();
   } else if (action === "memory-character") {
     tenotsuShowMemoryCharacterStories(btn.dataset.characterId || "manager");
   } else if (action === "memory-play") {
     const scenario = btn.dataset.scenario;
-    const characterId = btn.closest(".memory-card")?.querySelector("[data-character-id]")?.dataset.characterId || window.__TENOTSU_LAST_MEMORY_CHARACTER__ || "manager";
+    const characterId = btn.dataset.characterId || window.__TENOTSU_LAST_MEMORY_CHARACTER__ || "manager";
     tenotsuPushReturnMenu("memory-character", characterId);
     if (scenario && typeof window.loadScenario === "function") window.loadScenario(scenario);
   } else if (action === "story-table") {
@@ -1184,10 +1192,10 @@ document.addEventListener("click", (event) => {
     tenotsuShowStoreStatus();
   }
 }, true);
-/* /v037_73 economy action listener */
+/* /v037_75 economy action listener */
 
 
-/* v037_73 manager level/EXP helpers */
+/* v037_75 manager level/EXP helpers */
 const TENOTSU_MANAGER_EXP_KEY = "tenotsu_manager_exp_v1";
 const TENOTSU_MANAGER_MAX_LEVEL = 60;
 
@@ -1296,10 +1304,10 @@ function tenotsuClaimOuterExp() {
   tenotsuUnlockMemory("outer_exp_first", "外回りの記録", "外回りで経験を積みました。");
   return true;
 }
-/* /v037_73 manager level/EXP helpers */
+/* /v037_75 manager level/EXP helpers */
 
 
-/* v037_73 outer ADV / encounter / affection / item helpers */
+/* v037_75 outer ADV / encounter / affection / item helpers */
 const TENOTSU_STAMINA_KEY = "tenotsu_stamina_v1";
 const TENOTSU_AFFECTION_KEY = "tenotsu_affection_v1";
 const TENOTSU_ITEM_KEY = "tenotsu_items_v1";
@@ -1585,10 +1593,10 @@ function tenotsuGrantOuterTestItems() {
   tenotsuUnlockMemory("outer_items_test", "外回り道具セット", "神社のお守り、ひかるの眼鏡、USBメモリ、SDカードを受け取りました。");
   tenotsuShowOuterMenu();
 }
-/* /v037_73 outer ADV / encounter / affection / item helpers */
+/* /v037_75 outer ADV / encounter / affection / item helpers */
 
 
-/* v037_73: 左メニューをダブルクリックからクリックプレス/タップホールドへ変更 */
+/* v037_75: 左メニューをダブルクリックからクリックプレス/タップホールドへ変更 */
 (function setupTenotsuLongPressMenu() {
   if (window.__TENOTSU_LONG_PRESS_MENU_READY__) return;
   window.__TENOTSU_LONG_PRESS_MENU_READY__ = true;
@@ -1621,7 +1629,7 @@ function tenotsuGrantOuterTestItems() {
   }
 
   document.addEventListener("dblclick", (event) => {
-    // v037_73以降、左メニューはダブルクリックでは出さない。
+    // v037_75以降、左メニューはダブルクリックでは出さない。
     // 通常の会話進行ダブルクリックやバトル側処理を潰しすぎないため、バトル内は無視。
     if (!isBattleArea(event.target)) {
       event.stopPropagation();
@@ -1652,27 +1660,291 @@ function tenotsuGrantOuterTestItems() {
   document.addEventListener("pointerup", clearHold, true);
   document.addEventListener("pointercancel", clearHold, true);
 })();
-/* /v037_73 */
+/* /v037_75 */
 
 
-/* v037_73: 左メニュー内容 / 思い出ストーリー管理 */
+/* v037_75: 左メニュー内容 / 思い出ストーリー管理 */
 const TENOTSU_STORY_MASTER = [
-  { characterId: "manager", characterName: "店長", storyId: "tutorial_001", title: "チュートリアル", type: "tutorial", unlock: "初期", album: true, scenario: "000start.json" },
-  { characterId: "manager", characterName: "店長", storyId: "prologue_001", title: "プロローグ", type: "prologue", unlock: "初期", album: true, scenario: "gamestart.json" },
-
-  { characterId: "aa", characterName: "緋奈", storyId: "hina_outer_001", title: "外回り：緋奈", type: "outer", unlock: "GOODで思い出追加", album: false, scenario: "" },
-  { characterId: "ab", characterName: "藍", storyId: "ai_outer_001", title: "外回り：藍", type: "outer", unlock: "GOODで思い出追加", album: false, scenario: "" },
-  { characterId: "ac", characterName: "翠", storyId: "midori_outer_001", title: "外回り：翠", type: "outer", unlock: "GOODで思い出追加", album: false, scenario: "" },
-  { characterId: "ad", characterName: "こがね", storyId: "kogane_sample_001", title: "こがねサンプル", type: "sample", unlock: "初期", album: true, scenario: "kogane_sample.json" },
-  { characterId: "ae", characterName: "琥珀", storyId: "kohaku_sample_001", title: "琥珀サンプル", type: "sample", unlock: "初期", album: true, scenario: "kohaku_sample.json" },
-  { characterId: "af", characterName: "真花", storyId: "manaka_outer_001", title: "外回り：真花", type: "outer", unlock: "GOODで思い出追加", album: false, scenario: "" },
-  { characterId: "ag", characterName: "雪乃", storyId: "yukino_outer_001", title: "外回り：雪乃", type: "outer", unlock: "GOODで思い出追加", album: false, scenario: "" },
-  { characterId: "ah", characterName: "美空", storyId: "misora_outer_001", title: "外回り：美空", type: "outer", unlock: "GOODで思い出追加", album: false, scenario: "" },
-  { characterId: "ai", characterName: "夜空", storyId: "yozora_outer_001", title: "外回り：夜空", type: "outer", unlock: "GOODで思い出追加", album: false, scenario: "" },
-  { characterId: "aj", characterName: "桃", storyId: "momo_outer_001", title: "外回り：桃", type: "outer", unlock: "GOODで思い出追加", album: false, scenario: "" },
-  { characterId: "ak", characterName: "彩愛", storyId: "ayame_outer_001", title: "外回り：彩愛", type: "outer", unlock: "GOODで思い出追加", album: false, scenario: "" },
-  { characterId: "al", characterName: "里美", storyId: "satomi_outer_001", title: "外回り：里美", type: "outer", unlock: "GOODで思い出追加", album: false, scenario: "" },
-  { characterId: "am", characterName: "萌", storyId: "moe_outer_001", title: "外回り：萌", type: "outer", unlock: "GOODで思い出追加", album: false, scenario: "" }
+  {
+    "characterId": "manager",
+    "characterName": "店長",
+    "storyId": "tutorial_001",
+    "title": "チュートリアル",
+    "type": "tutorial",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "000start.json"
+  },
+  {
+    "characterId": "manager",
+    "characterName": "店長",
+    "storyId": "prologue_001",
+    "title": "プロローグ",
+    "type": "prologue",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "gamestart.json"
+  },
+  {
+    "characterId": "aa",
+    "characterName": "緋奈",
+    "storyId": "aa_intro_001",
+    "title": "緋奈の自己紹介",
+    "type": "intro",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "intro_hina.json"
+  },
+  {
+    "characterId": "aa",
+    "characterName": "緋奈",
+    "storyId": "aa_outer_001",
+    "title": "外回り：緋奈",
+    "type": "outer",
+    "unlock": "GOODで思い出追加",
+    "album": false,
+    "scenario": ""
+  },
+  {
+    "characterId": "ab",
+    "characterName": "藍",
+    "storyId": "ab_intro_001",
+    "title": "藍の自己紹介",
+    "type": "intro",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "intro_ai.json"
+  },
+  {
+    "characterId": "ab",
+    "characterName": "藍",
+    "storyId": "ab_outer_001",
+    "title": "外回り：藍",
+    "type": "outer",
+    "unlock": "GOODで思い出追加",
+    "album": false,
+    "scenario": ""
+  },
+  {
+    "characterId": "ac",
+    "characterName": "翠",
+    "storyId": "ac_intro_001",
+    "title": "翠の自己紹介",
+    "type": "intro",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "intro_midori.json"
+  },
+  {
+    "characterId": "ac",
+    "characterName": "翠",
+    "storyId": "ac_outer_001",
+    "title": "外回り：翠",
+    "type": "outer",
+    "unlock": "GOODで思い出追加",
+    "album": false,
+    "scenario": ""
+  },
+  {
+    "characterId": "ad",
+    "characterName": "こがね",
+    "storyId": "ad_intro_001",
+    "title": "こがねの自己紹介",
+    "type": "intro",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "intro_kogane.json"
+  },
+  {
+    "characterId": "ad",
+    "characterName": "こがね",
+    "storyId": "ad_outer_001",
+    "title": "外回り：こがね",
+    "type": "outer",
+    "unlock": "GOODで思い出追加",
+    "album": false,
+    "scenario": ""
+  },
+  {
+    "characterId": "ae",
+    "characterName": "琥珀",
+    "storyId": "ae_intro_001",
+    "title": "琥珀の自己紹介",
+    "type": "intro",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "intro_kohaku.json"
+  },
+  {
+    "characterId": "ae",
+    "characterName": "琥珀",
+    "storyId": "ae_outer_001",
+    "title": "外回り：琥珀",
+    "type": "outer",
+    "unlock": "GOODで思い出追加",
+    "album": false,
+    "scenario": ""
+  },
+  {
+    "characterId": "af",
+    "characterName": "真花",
+    "storyId": "af_intro_001",
+    "title": "真花の自己紹介",
+    "type": "intro",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "intro_manaka.json"
+  },
+  {
+    "characterId": "af",
+    "characterName": "真花",
+    "storyId": "af_outer_001",
+    "title": "外回り：真花",
+    "type": "outer",
+    "unlock": "GOODで思い出追加",
+    "album": false,
+    "scenario": ""
+  },
+  {
+    "characterId": "ag",
+    "characterName": "雪乃",
+    "storyId": "ag_intro_001",
+    "title": "雪乃の自己紹介",
+    "type": "intro",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "intro_yukino.json"
+  },
+  {
+    "characterId": "ag",
+    "characterName": "雪乃",
+    "storyId": "ag_outer_001",
+    "title": "外回り：雪乃",
+    "type": "outer",
+    "unlock": "GOODで思い出追加",
+    "album": false,
+    "scenario": ""
+  },
+  {
+    "characterId": "ah",
+    "characterName": "美空",
+    "storyId": "ah_intro_001",
+    "title": "美空の自己紹介",
+    "type": "intro",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "intro_misora.json"
+  },
+  {
+    "characterId": "ah",
+    "characterName": "美空",
+    "storyId": "ah_outer_001",
+    "title": "外回り：美空",
+    "type": "outer",
+    "unlock": "GOODで思い出追加",
+    "album": false,
+    "scenario": ""
+  },
+  {
+    "characterId": "ai",
+    "characterName": "夜空",
+    "storyId": "ai_intro_001",
+    "title": "夜空の自己紹介",
+    "type": "intro",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "intro_yozora.json"
+  },
+  {
+    "characterId": "ai",
+    "characterName": "夜空",
+    "storyId": "ai_outer_001",
+    "title": "外回り：夜空",
+    "type": "outer",
+    "unlock": "GOODで思い出追加",
+    "album": false,
+    "scenario": ""
+  },
+  {
+    "characterId": "aj",
+    "characterName": "桃",
+    "storyId": "aj_intro_001",
+    "title": "桃の自己紹介",
+    "type": "intro",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "intro_momo.json"
+  },
+  {
+    "characterId": "aj",
+    "characterName": "桃",
+    "storyId": "aj_outer_001",
+    "title": "外回り：桃",
+    "type": "outer",
+    "unlock": "GOODで思い出追加",
+    "album": false,
+    "scenario": ""
+  },
+  {
+    "characterId": "ak",
+    "characterName": "彩愛",
+    "storyId": "ak_intro_001",
+    "title": "彩愛の自己紹介",
+    "type": "intro",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "intro_ayame.json"
+  },
+  {
+    "characterId": "ak",
+    "characterName": "彩愛",
+    "storyId": "ak_outer_001",
+    "title": "外回り：彩愛",
+    "type": "outer",
+    "unlock": "GOODで思い出追加",
+    "album": false,
+    "scenario": ""
+  },
+  {
+    "characterId": "al",
+    "characterName": "里美",
+    "storyId": "al_intro_001",
+    "title": "里美の自己紹介",
+    "type": "intro",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "intro_satomi.json"
+  },
+  {
+    "characterId": "al",
+    "characterName": "里美",
+    "storyId": "al_outer_001",
+    "title": "外回り：里美",
+    "type": "outer",
+    "unlock": "GOODで思い出追加",
+    "album": false,
+    "scenario": ""
+  },
+  {
+    "characterId": "am",
+    "characterName": "萌",
+    "storyId": "am_intro_001",
+    "title": "萌の自己紹介",
+    "type": "intro",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "intro_moe.json"
+  },
+  {
+    "characterId": "am",
+    "characterName": "萌",
+    "storyId": "am_outer_001",
+    "title": "外回り：萌",
+    "type": "outer",
+    "unlock": "GOODで思い出追加",
+    "album": false,
+    "scenario": ""
+  }
 ];
 
 function tenotsuGetStoryMaster() {
@@ -1689,7 +1961,7 @@ function tenotsuGetStoriesByCharacter() {
 }
 
 function tenotsuOpenLeftOfficeMenu() {
-  // v037_73: 左は旧システムメニュー(menu01)専用。
+  // v037_75: 左は旧システムメニュー(menu01)専用。
   const listPanel = document.getElementById("list-panel");
   if (listPanel) listPanel.classList.add("hidden");
   if (typeof window.loadMenu === "function") {
@@ -1740,7 +2012,7 @@ function tenotsuShowMemoryCharacterStories(characterId) {
     const albumHit = story.album || album.memories.some(m => (m.id || "").includes(story.characterId) || (m.title || "").includes(story.characterName));
     const fav = story.characterId === "manager" ? "-" : (affection[story.characterId] ?? 0);
     const playButton = story.scenario
-      ? `<button class="mini-action" data-engine-action="memory-play" data-scenario="${story.scenario}">再生</button>`
+      ? `<button class="mini-action" data-engine-action="memory-play" data-scenario="${story.scenario}" data-character-id="${story.characterId}">再生</button>`
       : `<button class="mini-action" disabled>未実装</button>`;
     return `
       <tr>
@@ -1815,10 +2087,10 @@ function tenotsuShowStoryManagementTable() {
     </div>
   `);
 }
-/* /v037_73 */
+/* /v037_75 */
 
 
-/* v037_73: 「タイトルに戻る」後メニューをメンバー配下へ移設 */
+/* v037_75: 「タイトルに戻る」後メニューをメンバー配下へ移設 */
 function tenotsuShowTitleReturnMenuArchive() {
   tenotsuShowDynamicPanel("タイトルメニュー保管", `
     <div class="status-card memory-card">
@@ -1869,10 +2141,10 @@ function tenotsuShowMemberListMenu() {
     </div>
   `);
 }
-/* /v037_73 */
+/* /v037_75 */
 
 
-/* v037_73: ストーリー終了後に元メニューへフェード復帰 */
+/* v037_75: ストーリー終了後に元メニューへフェード復帰 */
 window.__TENOTSU_RETURN_MENU_STACK__ = window.__TENOTSU_RETURN_MENU_STACK__ || [];
 window.__TENOTSU_STORY_ENDING__ = false;
 
@@ -1944,10 +2216,10 @@ function tenotsuHandleStoryEndReturn() {
     tenotsuReturnToPreviousMenu();
   }, 1350);
 }
-/* /v037_73 */
+/* /v037_75 */
 
 
-/* v037_73: タイトルタイル表示後も右メニューを6大メニュー固定 */
+/* v037_75: タイトルタイル表示後も右メニューを6大メニュー固定 */
 window.__TENOTSU_MAIN_MENU_LOCK__ = window.__TENOTSU_MAIN_MENU_LOCK__ || false;
 
 function tenotsuLockMainMenu() {
@@ -1970,10 +2242,10 @@ function tenotsuEnsureOfficeSixMenuVisible() {
     tenotsuLockMainMenu();
   }
 }
-/* /v037_73 */
+/* /v037_75 */
 
 
-/* v037_73 randomImagesOn office6 reassert wrapper */
+/* v037_75 randomImagesOn office6 reassert wrapper */
 window.addEventListener("load", () => {
   window.setTimeout(() => {
     if (typeof window.randomImagesOn === "function" && !window.__TENOTSU_RANDOM_WRAPPED__) {
@@ -1989,10 +2261,10 @@ window.addEventListener("load", () => {
     }
   }, 0);
 });
-/* /v037_73 */
+/* /v037_75 */
 
 
-/* v037_73: ショップ 秘密の言葉 */
+/* v037_75: ショップ 秘密の言葉 */
 const TENOTSU_SECRET_WORD_KEY = "tenotsu_secret_words_v1";
 
 const TENOTSU_SECRET_WORDS = {
@@ -2120,4 +2392,77 @@ function tenotsuSubmitSecretWord() {
 function tenotsuShowSecretWordHint() {
   tenotsuShowSecretWordMenu("ヒント：店長へのあいさつ、店の名前、協力店の名前など。");
 }
-/* /v037_73 */
+/* /v037_75 */
+
+
+/* v037_75: キャラクター表情マスター */
+const TENOTSU_EXPRESSION_MASTER_PATH = "scenario/data/character_expressions.json";
+window.__TENOTSU_EXPRESSION_MASTER__ = window.__TENOTSU_EXPRESSION_MASTER__ || null;
+
+async function tenotsuLoadExpressionMaster() {
+  if (window.__TENOTSU_EXPRESSION_MASTER__) return window.__TENOTSU_EXPRESSION_MASTER__;
+  const data = await safeFetchJson(TENOTSU_EXPRESSION_MASTER_PATH + "?t=" + Date.now(), "character_expressions.json");
+  window.__TENOTSU_EXPRESSION_MASTER__ = data;
+  return data;
+}
+
+function tenotsuExpressionFile(characterId, expressionNo = "01", variantNo = "01") {
+  const master = window.__TENOTSU_EXPRESSION_MASTER__;
+  if (!master || !master.assets || !master.assets[characterId]) return "";
+  const exp = master.assets[characterId].expressions[String(expressionNo).padStart(2, "0")];
+  return exp ? exp.engineSrc : "";
+}
+
+function tenotsuExpressionPath(characterId, expressionNo = "01", variantNo = "01") {
+  const file = tenotsuExpressionFile(characterId, expressionNo, variantNo);
+  return file ? (config.charPath + file) : "";
+}
+
+async function tenotsuShowExpressionCharacter(characterId) {
+  const master = await tenotsuLoadExpressionMaster();
+  const char = master.assets[characterId];
+  if (!char) {
+    tenotsuShowDynamicPanel("表情マスター", `<div class="status-card"><p>表情データがありません。</p><button class="menu-item" data-engine-action="members">戻る</button></div>`);
+    return;
+  }
+
+  const rows = Object.entries(char.expressions).map(([no, exp]) => `
+    <tr>
+      <td>${no}</td>
+      <td>${exp.label}</td>
+      <td><code>${exp.file}</code></td>
+      <td>${exp.exists ? "配置済" : "未配置"}</td>
+    </tr>
+  `).join("");
+
+  tenotsuShowDynamicPanel(`${char.fullName} 表情一覧`, `
+    <div class="status-card memory-card">
+      <h3>${char.fullName} 表情一覧</h3>
+      <p>命名規則：${char.base}+表情番号+01.webp</p>
+      <div class="memory-table-wrap">
+        <table class="memory-table">
+          <thead><tr><th>No</th><th>表情</th><th>ファイル</th><th>状態</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+      <button class="menu-item" data-engine-action="expression-master">表情マスターへ</button>
+      <button class="menu-item" data-engine-action="members">メンバーへ戻る</button>
+    </div>
+  `);
+}
+
+async function tenotsuShowExpressionMasterMenu() {
+  const master = await tenotsuLoadExpressionMaster();
+  const buttons = Object.entries(master.assets).map(([id, char]) => `
+    <button class="menu-item" data-engine-action="expression-character" data-character-id="${id}">${char.fullName}</button>
+  `).join("");
+  tenotsuShowDynamicPanel("表情マスター", `
+    <div class="status-card memory-card">
+      <h3>表情マスター</h3>
+      <p>01澄まし / 02微笑み / 03怒り / 04悲しみ / 05笑顔 / 06驚き / 07照れ / 08期待 / 09得意げ / 10軽い嫌悪 / 11心配不安 / 12動揺</p>
+      ${buttons}
+      <button class="menu-item" data-engine-action="members">戻る</button>
+    </div>
+  `);
+}
+/* /v037_75 */

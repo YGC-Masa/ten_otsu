@@ -1,19 +1,11 @@
 # GitHub配置 / 運用メモ
 
-## 基本配置
+## v037_75
 
-```text
-repo-root/
-├─ index.html
-├─ serviceWorker.js
-├─ program/
-├─ scenario/
-└─ images/
-```
-
-## v037_73
-
-- ショップに「秘密の言葉」メニューを追加。
-- 特定キーワードで売上、店長EXP、外回り系アイテムなどを付与。
-- 右メニューが非表示のとき、画面タップで6大メニューを再表示。
-- 左メニューの色を明るく調整。
+- キャラクター表情マスターを追加。
+- 命名規則：`キャラID+1 + 表情番号 + 01.webp`
+- 例：`a10101.webp` = 緋奈 + 澄まし + 1枚目
+- 例：`b10501.webp` = 藍 + 笑顔 + 1枚目
+- `scenario/data/character_expressions.json` を追加。
+- `scenario/listmenu/expression_master.json` を追加。
+- メンバー > 表情マスター から確認可能。
