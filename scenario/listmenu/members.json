@@ -1,24 +1,25 @@
 {
+  "title": "メンバー",
   "items": [
     {
-      "text": "メンバーステータス：準備中",
+      "text": "メンバー一覧",
       "action": "list",
-      "list": "mainmenu.json"
+      "list": "member_list.json"
+    },
+    {
+      "text": "思い出",
+      "action": "custom",
+      "custom": "memory-list"
+    },
+    {
+      "text": "ストーリー管理表",
+      "action": "custom",
+      "custom": "story-table"
     },
     {
       "text": "戻る",
       "action": "list",
-      "list": "mainmenu.json"
-    },
-    {
-      "text": "思い出アルバム",
-      "action": "custom",
-      "custom": "album"
-    },
-    {
-      "text": "シナリオ素材を見る",
-      "action": "list",
-      "list": "scenario_index.json"
+      "list": "office6.json"
     }
   ]
 }
