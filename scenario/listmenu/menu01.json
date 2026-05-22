@@ -1,4 +1,5 @@
 {
+  "title": "システムメニュー",
   "items": [
     {
       "text": "オートプレイ",
@@ -21,21 +22,6 @@
     {
       "text": "キャッシュ削除",
       "action": "cacheclear"
-    },
-    {
-      "text": "キャッシュクリア・再読み込み",
-      "action": "cacheclear"
-    },
-    {
-      "text": "① タイトルへ戻る",
-      "action": "jump",
-      "jump": "000start.json"
-    },
-    {
-      "text": "② アンケート",
-      "action": "url",
-      "url": "https://www.google.com"
     }
-  ],
-  "title": "システムメニュー"
+  ]
 }
