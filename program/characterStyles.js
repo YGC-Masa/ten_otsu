@@ -8,7 +8,7 @@ window.characterStyles = {
   "店長": { fontSize: "1em", speed: 40, color: "#00ffff" }
 };
 
-/* v037_83: 全13人キャラカラー/文字速度補完 */
+/* v037_85: 全13人キャラカラー/文字速度補完 */
 window.TENOTSU_CHARACTER_STYLE_MAP = {
   "緋奈": {
     "color": "#d3381c",

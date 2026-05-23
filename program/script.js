@@ -1,6 +1,6 @@
 
-/* v037_83 engine guard: 起動停止対策 */
-window.TENOTSU_ENGINE_VERSION = "v037_83";
+/* v037_85 engine guard: 起動停止対策 */
+window.TENOTSU_ENGINE_VERSION = "v037_85";
 window.__TENOTSU_ENGINE_ERRORS__ = window.__TENOTSU_ENGINE_ERRORS__ || [];
 
 window.addEventListener("error", (event) => {
@@ -108,7 +108,7 @@ window.addEventListener("load", () => {
     }
   }, 2600);
 });
-/* /v037_83 engine guard */
+/* /v037_85 engine guard */
 
 // script.js - v037 修正版（wait/effectTime/Menu/List安定化）
 
@@ -205,7 +205,7 @@ function clearCharacters() {
 }
 
 function updateCharacterDisplay() {
-  // v037_83:
+  // v037_85:
   // 同じslotに同一人物(a1/b1...)の別表情を出す場合はフェードなし。
   // 新規人物/別人物のみフェード。
   window.__TENOTSU_CHAR_SLOT_STATE__ = window.__TENOTSU_CHAR_SLOT_STATE__ || {};
@@ -427,7 +427,7 @@ async function showScene(scene) {
     if (!(window.__TENOTSU_MAIN_MENU_LOCK__ && isInitialScenario && scene.showlist !== "office6.json")) await loadList(scene.showlist);
   }
 
-  /* v037_83: characters-only scene auto schedule */
+  /* v037_85: characters-only scene auto schedule */
   if (scene.name === undefined && scene.text === undefined && !scene.choices && isAutoMode) {
     tenotsuScheduleAutoPlay();
   }
@@ -544,16 +544,16 @@ window.clearAppCacheAndReload = clearAppCacheAndReload;
 // === メニュー関連 ===
 function handleMenuAction(item) {
   if (!item) return;
-  /* v037_83 town precheck */
+  /* v037_85 town precheck */
   if ((item.action === "jump" && item.jump === "town_placeholder.json") || (item.action === "outer")) {
     tenotsuShowOuterMenu();
     return;
   }
-  /* v037_83 scenario return precheck */
+  /* v037_85 scenario return precheck */
   if (item.action === "jump" && item.jump) {
     tenotsuPushReturnMenu("list", "office6.json");
   }
-  /* v037_83 handleMenuAction precheck */
+  /* v037_85 handleMenuAction precheck */
   if (item.action === "list" && item.list === "home.json") {
     tenotsuShowStoreStatus();
     return;
@@ -581,9 +581,10 @@ function handleMenuAction(item) {
     if (typeof window.clearAppCacheAndReload === "function") window.clearAppCacheAndReload();
     return;
   }
-  /* v037_83 custom action precheck */
+  /* v037_85 custom action precheck */
   if (item.action === "custom") {
-    if (item.custom === "expression-master") tenotsuShowExpressionMasterMenu();
+    if (item.custom === "memory-album") tenotsuShowMemoryAlbum();
+    else if (item.custom === "expression-master") tenotsuShowExpressionMasterMenu();
     else if (item.custom === "expression-character") tenotsuShowExpressionCharacter(item.characterId || "aa");
     else if (item.custom === "memory-list") tenotsuShowMemoryCharacterList();
     else if (item.custom === "member-list") tenotsuShowMemberListMenu();
@@ -714,18 +715,18 @@ function showList(listData) {
 
 // === 操作レイヤー：クリック・タッチ対応 ===
 clickLayer.addEventListener("dblclick", (event) => {
-  // v037_83: 左メニューはダブルクリックではなく長押しで出す。
+  // v037_85: 左メニューはダブルクリックではなく長押しで出す。
   event.preventDefault();
 });
 
 let lastTouch = 0;
 clickLayer.addEventListener("touchend", () => {
-  // v037_83: ダブルタップメニューは廃止。長押しメニューへ統一。
+  // v037_85: ダブルタップメニューは廃止。長押しメニューへ統一。
   lastTouch = Date.now();
 });
 
 clickLayer.addEventListener("click", () => {
-  /* v037_83: 右メニュー非表示時タップ再表示 */
+  /* v037_85: 右メニュー非表示時タップ再表示 */
   if (!menuPanel.classList.contains("hidden")) {
     menuPanel.classList.add("hidden");
     return;
@@ -741,15 +742,15 @@ clickLayer.addEventListener("click", () => {
   }
 });
 
-/* v037_83 expose engine functions */
+/* v037_85 expose engine functions */
 try { if (typeof loadMenu === "function") window.loadMenu = loadMenu; } catch (_) {}
 try { if (typeof loadList === "function") window.loadList = loadList; } catch (_) {}
 try { if (typeof loadScenario === "function") window.loadScenario = loadScenario; } catch (_) {}
 try { if (typeof clearAppCacheAndReload === "function") window.clearAppCacheAndReload = clearAppCacheAndReload; } catch (_) {}
 
 
-/* v037_83 boot flow: 起動フラッシュ → 初期化 → タイトル表示 → 事務所6大メニュー */
-window.TENOTSU_BOOT_FLOW_VERSION = "v037_83";
+/* v037_85 boot flow: 起動フラッシュ → 初期化 → タイトル表示 → 事務所6大メニュー */
+window.TENOTSU_BOOT_FLOW_VERSION = "v037_85";
 window.__TENOTSU_BOOT_DONE__ = false;
 
 function tenotsuSetOfficeText(title, text) {
@@ -847,10 +848,10 @@ try {
   window.tenotsuRunBootFlow = tenotsuRunBootFlow;
   window.tenotsuShowOfficeSixMenu = tenotsuShowOfficeSixMenu;
 } catch (_) {}
-/* /v037_83 boot flow */
+/* /v037_85 boot flow */
 
 
-/* v037_83 economy/status/album helpers */
+/* v037_85 economy/status/album helpers */
 const TENOTSU_ECONOMY_KEY = "tenotsu_economy_v1";
 const TENOTSU_ALBUM_KEY = "tenotsu_album_v1";
 const TENOTSU_STORE_KEY = "tenotsu_store_v1";
@@ -989,7 +990,7 @@ function tenotsuShowAlbum() {
 function tenotsuShowMemberMenu() {
   tenotsuShowDynamicPanel("メンバー", `
     <button class="menu-item" data-engine-action="member-list">メンバー一覧</button>
-    <button class="menu-item" data-engine-action="memory-list">思い出</button>
+    <button class="menu-item" data-engine-action="memory-album">思い出アルバム</button>
     <button class="menu-item" data-engine-action="story-table">ストーリー管理表</button>
     <button class="menu-item" data-engine-action="title-return-archive">タイトル後メニュー</button>
     <button class="menu-item" data-engine-action="office6">戻る</button>
@@ -1027,7 +1028,7 @@ function tenotsuShowShopMenu() {
 }
 
 
-/* v037_83 rank/equipment/unlock helpers */
+/* v037_85 rank/equipment/unlock helpers */
 function tenotsuRankCost(type, currentRank) {
   const rank = Math.max(1, Math.floor(Number(currentRank) || 1));
   if (type === "store") return rank * 10000;
@@ -1105,7 +1106,7 @@ function tenotsuRankUp(type) {
   tenotsuUnlockRankRewards(store);
   return true;
 }
-/* /v037_83 rank/equipment/unlock helpers */
+/* /v037_85 rank/equipment/unlock helpers */
 
 window.TenotsuData = {
   economy: tenotsuGetEconomy,
@@ -1134,15 +1135,15 @@ window.TenotsuData = {
   expressionPath: tenotsuExpressionPath,
   memoriesByCharacter: tenotsuGetStoriesByCharacter
 };
-/* /v037_83 economy/status/album helpers */
+/* /v037_85 economy/status/album helpers */
 
 
-/* v037_83 economy action listener */
+/* v037_85 economy action listener */
 document.addEventListener("click", (event) => {
   const btn = event.target.closest("[data-engine-action]");
   if (!btn) return;
   const action = btn.dataset.engineAction;
-  if (!["office6","member-list","album","memory-list","memory-character","memory-play","story-table","title-return-archive","expression-master","expression-character","facility-up","event-exchange","expense-use","store","members","shop","auto","skip","cacheclear","secret-word","secret-word-submit","secret-word-hint","rank-store","rank-town","rank-manager","equipment-menu","equip-item","event-gift-test","claim-login-exp","claim-daily-exp","claim-outer-exp","outer-menu","outer-start","outer-glasses","outer-item-test","adv-answer","stamina-test-recover","album-remodel","review-challenge","settings"].includes(action)) return;
+  if (!["office6","member-list","album","memory-list","memory-character","memory-play","story-table","title-return-archive","expression-master","expression-character","memory-album","event-cg-view","album-story-play","center-surface-close","facility-up","event-exchange","expense-use","store","members","shop","auto","skip","cacheclear","secret-word","secret-word-submit","secret-word-hint","rank-store","rank-town","rank-manager","equipment-menu","equip-item","event-gift-test","claim-login-exp","claim-daily-exp","claim-outer-exp","outer-menu","outer-start","outer-glasses","outer-item-test","adv-answer","stamina-test-recover","album-remodel","review-challenge","settings"].includes(action)) return;
 
   event.preventDefault();
   event.stopPropagation();
@@ -1181,8 +1182,18 @@ document.addEventListener("click", (event) => {
     tenotsuShowExpressionMasterMenu();
   } else if (action === "expression-character") {
     tenotsuShowExpressionCharacter(btn.dataset.characterId || "aa");
-  } else if (action === "album" || action === "memory-list") {
-    tenotsuShowMemoryCharacterList();
+  } else if (action === "album" || action === "memory-list" || action === "memory-album") {
+    tenotsuShowMemoryAlbum();
+  } else if (action === "event-cg-view") {
+    tenotsuShowEventCgViewer(btn.dataset.cgPath || "", btn.dataset.cgTitle || "イベントCG", btn.dataset.cgScenario || "", btn.dataset.characterId || "manager");
+  } else if (action === "album-story-play") {
+    const scenario = btn.dataset.scenario;
+    const characterId = btn.dataset.characterId || "manager";
+    tenotsuPushReturnMenu("memory-album", characterId);
+    tenotsuCloseCenterSurface();
+    if (scenario && typeof window.loadScenario === "function") window.loadScenario(scenario);
+  } else if (action === "center-surface-close") {
+    tenotsuCloseCenterSurface();
   } else if (action === "memory-character") {
     tenotsuShowMemoryCharacterStories(btn.dataset.characterId || "manager");
   } else if (action === "memory-play") {
@@ -1248,10 +1259,10 @@ document.addEventListener("click", (event) => {
     tenotsuShowStoreStatus();
   }
 }, true);
-/* /v037_83 economy action listener */
+/* /v037_85 economy action listener */
 
 
-/* v037_83 manager level/EXP helpers */
+/* v037_85 manager level/EXP helpers */
 const TENOTSU_MANAGER_EXP_KEY = "tenotsu_manager_exp_v1";
 const TENOTSU_MANAGER_MAX_LEVEL = 60;
 
@@ -1360,10 +1371,10 @@ function tenotsuClaimOuterExp() {
   tenotsuUnlockMemory("outer_exp_first", "外回りの記録", "外回りで経験を積みました。");
   return true;
 }
-/* /v037_83 manager level/EXP helpers */
+/* /v037_85 manager level/EXP helpers */
 
 
-/* v037_83 outer ADV / encounter / affection / item helpers */
+/* v037_85 outer ADV / encounter / affection / item helpers */
 const TENOTSU_STAMINA_KEY = "tenotsu_stamina_v1";
 const TENOTSU_AFFECTION_KEY = "tenotsu_affection_v1";
 const TENOTSU_ITEM_KEY = "tenotsu_items_v1";
@@ -1649,10 +1660,10 @@ function tenotsuGrantOuterTestItems() {
   tenotsuUnlockMemory("outer_items_test", "外回り道具セット", "神社のお守り、ひかるの眼鏡、USBメモリ、SDカードを受け取りました。");
   tenotsuShowOuterMenu();
 }
-/* /v037_83 outer ADV / encounter / affection / item helpers */
+/* /v037_85 outer ADV / encounter / affection / item helpers */
 
 
-/* v037_83: 左メニューをダブルクリックからクリックプレス/タップホールドへ変更 */
+/* v037_85: 左メニューをダブルクリックからクリックプレス/タップホールドへ変更 */
 (function setupTenotsuLongPressMenu() {
   if (window.__TENOTSU_LONG_PRESS_MENU_READY__) return;
   window.__TENOTSU_LONG_PRESS_MENU_READY__ = true;
@@ -1686,7 +1697,7 @@ function tenotsuGrantOuterTestItems() {
   }
 
   document.addEventListener("dblclick", (event) => {
-    // v037_83以降、左メニューはダブルクリックでは出さない。
+    // v037_85以降、左メニューはダブルクリックでは出さない。
     // 通常の会話進行ダブルクリックやバトル側処理を潰しすぎないため、バトル内は無視。
     if (!isBattleArea(event.target)) {
       event.stopPropagation();
@@ -1717,10 +1728,70 @@ function tenotsuGrantOuterTestItems() {
   document.addEventListener("pointerup", clearHold, true);
   document.addEventListener("pointercancel", clearHold, true);
 })();
-/* /v037_83 */
+/* /v037_85 */
+
+/* v037_85: 思い出アルバム / イベントCG鑑賞 */
+async function tenotsuLoadEventCgAlbumData() {
+  if (window.__TENOTSU_EVENT_CG_ALBUM__) return window.__TENOTSU_EVENT_CG_ALBUM__;
+  const data = await safeFetchJson("scenario/data/event_cg_album.json?t=" + Date.now(), "event_cg_album.json");
+  window.__TENOTSU_EVENT_CG_ALBUM__ = data;
+  return data;
+}
+
+async function tenotsuShowMemoryAlbum() {
+  const data = await tenotsuLoadEventCgAlbumData();
+  const items = Array.isArray(data.items) ? data.items : [];
+  const cards = items.map(item => {
+    const isUnlocked = item.isUnlocked !== false;
+    const thumb = isUnlocked ? (item.thumbnailColor || item.path) : (item.thumbnailMono || item.thumbnailColor || item.path);
+    const mono = item.thumbnailMono || "";
+    const scenarioButton = item.scenario ? `<button class="mini-action" data-engine-action="album-story-play" data-scenario="${item.scenario}" data-character-id="${item.characterId || "manager"}">シナリオ再生</button>` : "";
+    return `
+      <div class="album-card ${isUnlocked ? "unlocked" : "locked"}">
+        <button class="album-thumb" data-engine-action="event-cg-view" data-cg-path="${item.path}" data-cg-title="${item.title}" data-cg-scenario="${item.scenario || ""}" data-character-id="${item.characterId || "manager"}">
+          <img src="${thumb}" alt="${item.title}" loading="lazy">
+          <span>${item.title}</span>
+        </button>
+        <div class="album-card-meta">
+          <span>${item.characterName || item.type || "CG"}</span>
+          ${mono ? `<span class="album-mono-note">モノクロサムネ登録済</span>` : ""}
+        </div>
+        <div class="album-card-actions">
+          <button class="mini-action" data-engine-action="event-cg-view" data-cg-path="${item.path}" data-cg-title="${item.title}" data-cg-scenario="${item.scenario || ""}" data-character-id="${item.characterId || "manager"}">CG鑑賞</button>
+          ${scenarioButton}
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  tenotsuShowCenterSurface("思い出アルバム", `
+    <div class="status-card memory-card memory-album-surface">
+      <h3>思い出アルバム</h3>
+      <p class="surface-note">イベントCG鑑賞モードです。カラー/モノクロサムネとシナリオ再生を管理します。</p>
+      <div class="album-grid">
+        ${cards || "<p>表示できるイベントCGがまだありません。</p>"}
+      </div>
+      <button class="menu-item" data-engine-action="members">メンバーへ戻る</button>
+    </div>
+  `);
+}
+
+function tenotsuShowEventCgViewer(path, title, scenario = "", characterId = "manager") {
+  const playButton = scenario ? `<button class="menu-item" data-engine-action="album-story-play" data-scenario="${scenario}" data-character-id="${characterId || "manager"}">この思い出を再生</button>` : "";
+  tenotsuShowCenterSurface(title || "イベントCG", `
+    <div class="status-card memory-card event-cg-viewer">
+      <img src="${path}" alt="${title || "イベントCG"}">
+      <div class="event-cg-caption">${title || ""}</div>
+      ${playButton}
+      <button class="menu-item" data-engine-action="memory-album">思い出アルバムへ戻る</button>
+    </div>
+  `);
+}
+/* /v037_85 */
 
 
-/* v037_83: 左メニュー内容 / 思い出ストーリー管理 */
+
+/* v037_85: 左メニュー内容 / 思い出ストーリー管理 */
 const TENOTSU_STORY_MASTER = [
   {
     "characterId": "manager",
@@ -1751,6 +1822,19 @@ const TENOTSU_STORY_MASTER = [
     "unlock": "初期",
     "album": true,
     "scenario": "intro_hina.json"
+  },
+  {
+    "characterId": "aa",
+    "characterName": "緋奈",
+    "storyId": "aa_memory_spring_bento_001",
+    "title": "春の公園でのお弁当タイム",
+    "type": "memory",
+    "unlock": "思い出アルバム解放",
+    "album": true,
+    "scenario": "memory_hina_spring_bento.json",
+    "cg": "images/assets/cg/aa_memory_spring_bento_cg.png",
+    "thumbnailColor": "images/assets/thumb/aa_memory_spring_bento_thumb_color.png",
+    "thumbnailMono": "images/assets/thumb/aa_memory_spring_bento_thumb_mono.png"
   },
   {
     "characterId": "aa",
@@ -2018,7 +2102,7 @@ function tenotsuGetStoriesByCharacter() {
 }
 
 function tenotsuOpenLeftOfficeMenu() {
-  // v037_83: 左は旧システムメニュー(menu01)専用。
+  // v037_85: 左は旧システムメニュー(menu01)専用。
   const listPanel = document.getElementById("list-panel");
   if (listPanel) listPanel.classList.add("hidden");
   if (typeof window.loadMenu === "function") {
@@ -2050,7 +2134,7 @@ function tenotsuShowMemoryCharacterList() {
 
   tenotsuShowDynamicPanel("思い出", `
     <div class="status-card memory-card">
-      <h3>思い出</h3>
+      <h3>思い出アルバム</h3>
       <p>先頭は店長の思い出です。チュートリアルやプロローグをここに整理します。</p>
       ${buttons}
       <button class="menu-item" data-engine-action="members">戻る</button>
@@ -2103,7 +2187,7 @@ function tenotsuShowMemoryCharacterStories(characterId) {
       </div>
       <button class="menu-item" data-engine-action="title-return-archive">タイトル後メニュー</button>
       <button class="menu-item" data-engine-action="title-return-archive">タイトル後メニュー</button>
-      <button class="menu-item" data-engine-action="memory-list">思い出一覧へ</button>
+      <button class="menu-item" data-engine-action="memory-list">思い出アルバムへ</button>
       <button class="menu-item" data-engine-action="members">メンバーへ戻る</button>
     </div>
   `);
@@ -2121,9 +2205,10 @@ function tenotsuShowStoryManagementTable() {
     </tr>
   `).join("");
 
-  tenotsuShowDynamicPanel("ストーリー管理表", `
+  tenotsuShowCenterSurface("ストーリー管理表", `
     <div class="status-card memory-card story-management-surface center-between-side-menus">
       <h3>メンバーごとの思い出表</h3>
+      <p class="surface-note">左メニューと右メニューの間に表示しています。表内はスクロールできます。</p>
       <div class="memory-table-wrap">
         <table class="memory-table">
           <thead>
@@ -2139,22 +2224,22 @@ function tenotsuShowStoryManagementTable() {
           <tbody>${rows}</tbody>
         </table>
       </div>
-      <button class="menu-item" data-engine-action="memory-list">思い出一覧へ</button>
+      <button class="menu-item" data-engine-action="memory-album">思い出アルバムへ</button>
       <button class="menu-item" data-engine-action="members">メンバーへ戻る</button>
     </div>
   `);
 }
-/* /v037_83 */
+/* /v037_85 */
 
 
-/* v037_83: 「タイトルに戻る」後メニューをメンバー配下へ移設 */
+/* v037_85: 「タイトルに戻る」後メニューをメンバー配下へ移設 */
 function tenotsuShowTitleReturnMenuArchive() {
   tenotsuShowDynamicPanel("タイトルメニュー保管", `
     <div class="status-card memory-card">
       <h3>タイトルに戻る後メニュー</h3>
       <p>以前「タイトルに戻る」後に表示していたメニューです。今後は、6大メニュー ＞ メンバー ＞ メンバー一覧/ストーリー管理表 から確認できます。</p>
       <button class="menu-item" data-engine-action="office6">6大メニューへ戻る</button>
-      <button class="menu-item" data-engine-action="memory-list">思い出</button>
+      <button class="menu-item" data-engine-action="memory-album">思い出アルバム</button>
       <button class="menu-item" data-engine-action="story-table">ストーリー管理表</button>
       <button class="menu-item" data-engine-action="member-list">メンバー一覧</button>
       <button class="menu-item" data-engine-action="battle">店舗営業プロトタイプ</button>
@@ -2198,10 +2283,10 @@ function tenotsuShowMemberListMenu() {
     </div>
   `);
 }
-/* /v037_83 */
+/* /v037_85 */
 
 
-/* v037_83: ストーリー終了後に元メニューへフェード復帰 */
+/* v037_85: ストーリー終了後に元メニューへフェード復帰 */
 window.__TENOTSU_RETURN_MENU_STACK__ = window.__TENOTSU_RETURN_MENU_STACK__ || [];
 window.__TENOTSU_STORY_ENDING__ = false;
 
@@ -2224,6 +2309,8 @@ function tenotsuReturnToPreviousMenu() {
     tenotsuShowMemberMenu();
   } else if (target.kind === "memory-list") {
     tenotsuShowMemoryCharacterList();
+  } else if (target.kind === "memory-album") {
+    tenotsuShowMemoryAlbum();
   } else if (target.kind === "story-table") {
     tenotsuShowStoryManagementTable();
   } else if (target.kind === "left-menu") {
@@ -2273,10 +2360,10 @@ function tenotsuHandleStoryEndReturn() {
     tenotsuReturnToPreviousMenu();
   }, 1350);
 }
-/* /v037_83 */
+/* /v037_85 */
 
 
-/* v037_83: タイトルタイル表示後も右メニューを6大メニュー固定 */
+/* v037_85: タイトルタイル表示後も右メニューを6大メニュー固定 */
 window.__TENOTSU_MAIN_MENU_LOCK__ = window.__TENOTSU_MAIN_MENU_LOCK__ || false;
 
 function tenotsuLockMainMenu() {
@@ -2299,10 +2386,10 @@ function tenotsuEnsureOfficeSixMenuVisible() {
     tenotsuLockMainMenu();
   }
 }
-/* /v037_83 */
+/* /v037_85 */
 
 
-/* v037_83 randomImagesOn office6 reassert wrapper */
+/* v037_85 randomImagesOn office6 reassert wrapper */
 window.addEventListener("load", () => {
   window.setTimeout(() => {
     if (typeof window.randomImagesOn === "function" && !window.__TENOTSU_RANDOM_WRAPPED__) {
@@ -2318,10 +2405,10 @@ window.addEventListener("load", () => {
     }
   }, 0);
 });
-/* /v037_83 */
+/* /v037_85 */
 
 
-/* v037_83: ショップ 秘密の言葉 */
+/* v037_85: ショップ 秘密の言葉 */
 const TENOTSU_SECRET_WORD_KEY = "tenotsu_secret_words_v1";
 
 const TENOTSU_SECRET_WORDS = {
@@ -2449,10 +2536,10 @@ function tenotsuSubmitSecretWord() {
 function tenotsuShowSecretWordHint() {
   tenotsuShowSecretWordMenu("ヒント：店長へのあいさつ、店の名前、協力店の名前など。");
 }
-/* /v037_83 */
+/* /v037_85 */
 
 
-/* v037_83: キャラクター表情マスター */
+/* v037_85: キャラクター表情マスター */
 const TENOTSU_EXPRESSION_MASTER_PATH = "scenario/data/character_expressions.json";
 window.__TENOTSU_EXPRESSION_MASTER__ = window.__TENOTSU_EXPRESSION_MASTER__ || null;
 
@@ -2522,10 +2609,10 @@ async function tenotsuShowExpressionMasterMenu() {
     </div>
   `);
 }
-/* /v037_83 */
+/* /v037_85 */
 
 
-/* v037_83: オートプレイ実行補強 */
+/* v037_85: オートプレイ実行補強 */
 window.__TENOTSU_AUTO_TIMER__ = null;
 window.__TENOTSU_AUTO_DELAY_MS__ = 1450;
 
@@ -2571,9 +2658,9 @@ function tenotsuSetAutoMode(value) {
   if (isAutoMode) tenotsuScheduleAutoPlay();
   else tenotsuStopAutoPlayTimer();
 }
-/* /v037_83 */
+/* /v037_85 */
 
-/* v037_83: UI操作中HOLD抑制 */
+/* v037_85: UI操作中HOLD抑制 */
 document.addEventListener("pointerdown", (event) => {
   if (event.target.closest && event.target.closest("#menu-panel, #list-panel, .status-card, .memory-card, .memory-table-wrap, .story-management-surface, .center-surface-window")) {
     window.__TENOTSU_UI_POINTER_ACTIVE__ = true;
@@ -2581,3 +2668,27 @@ document.addEventListener("pointerdown", (event) => {
 }, true);
 document.addEventListener("pointerup", () => { window.__TENOTSU_UI_POINTER_ACTIVE__ = false; }, true);
 document.addEventListener("pointercancel", () => { window.__TENOTSU_UI_POINTER_ACTIVE__ = false; }, true);
+
+
+/* v037_85: 中央サーフェス表示 */
+function tenotsuCloseCenterSurface() {
+  const old = document.getElementById("center-surface-panel");
+  if (old) old.remove();
+}
+
+function tenotsuShowCenterSurface(title, html) {
+  tenotsuCloseCenterSurface();
+  const panel = document.createElement("div");
+  panel.id = "center-surface-panel";
+  panel.className = "center-surface-panel";
+  panel.innerHTML = `
+    <div class="center-surface-header">
+      <strong>${title || ""}</strong>
+      <button class="center-surface-close" data-engine-action="center-surface-close">×</button>
+    </div>
+    <div class="center-surface-body">${html}</div>
+  `;
+  document.body.appendChild(panel);
+  return panel;
+}
+/* /v037_85 */

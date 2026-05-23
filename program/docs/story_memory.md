@@ -1,7 +1,14 @@
 # Story / Memory Management
 
-## v037_83
+## v037_85
 
-自己紹介シナリオの表情指定は、基本表情＋強い感情のみに抑制。
+追加ストーリー：
 
-詳細は `scenario/data/intro_expression_reduce_report.json` を参照。
+| 項目 | 内容 |
+|---|---|
+| キャラ | 星野 緋奈 |
+| Story ID | `aa_memory_spring_bento_001` |
+| シナリオ | `memory_hina_spring_bento.json` |
+| CG | `aa_memory_spring_bento_cg.png` |
+| カラーサムネ | `aa_memory_spring_bento_thumb_color.png` |
+| モノクロサムネ | `aa_memory_spring_bento_thumb_mono.png` |
