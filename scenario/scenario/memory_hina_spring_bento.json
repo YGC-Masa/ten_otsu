@@ -1,6 +1,6 @@
 [
   {
-    "bg": "bg011.jpg",
+    "bg": "bg_park_spring.png",
     "bgEffect": "fadein",
     "bgm": "main.mp3",
     "textareashow": true,
@@ -63,7 +63,7 @@
   },
   {
     "name": "",
-    "text": "緋奈は頬を赤くしながら、赤い箸で小さなハンバーグをつまみ、こちらへ差し出してくる。"
+    "text": "緋奈は頬を赤くしながら、赤い箸で、お弁当のハンバーグをひと口分だけ切り分けてこちらへ差し出してくる。"
   },
   {
     "name": "緋奈",
@@ -110,6 +110,8 @@
     "text": "あ、あたし。もう戻りますね！"
   },
   {
+    "bg": "bg_park_spring.png",
+    "bgEffect": "fadein",
     "name": "店長",
     "text": "え？　もう行くのか？"
   },
