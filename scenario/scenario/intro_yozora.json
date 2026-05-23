@@ -29,27 +29,7 @@
   },
   {
     "name": "夜空",
-    "text": "急用？ぼく、ちょっと忙しいのだけど？"
-  },
-  {
-    "name": "店長",
-    "text": "カメラテストをしてるんだけどさ、ちょっと自己紹介してみてくれないかな。"
-  },
-  {
-    "name": "夜空",
-    "text": "なんでそんな事に付き合わなきゃ・・・たく。これに始めればいいの？",
-    "characters": [
-      {
-        "side": "center",
-        "src": "i10301.webp"
-      }
-    ],
-    "expression": "03",
-    "expressionLabel": "怒り"
-  },
-  {
-    "name": "夜空",
-    "text": "はじめまして、双沢 夜空（すごさわ よぞら）って言うんだ。",
+    "text": "急用？ぼく、ちょっと忙しいのだけど？",
     "characters": [
       {
         "side": "center",
@@ -58,6 +38,18 @@
     ],
     "expression": "01",
     "expressionLabel": "澄まし"
+  },
+  {
+    "name": "店長",
+    "text": "カメラテストをしてるんだけどさ、ちょっと自己紹介してみてくれないかな。"
+  },
+  {
+    "name": "夜空",
+    "text": "なんでそんな事に付き合わなきゃ・・・たく。これに始めればいいの？"
+  },
+  {
+    "name": "夜空",
+    "text": "はじめまして、双沢 夜空（すごさわ よぞら）って言うんだ。"
   },
   {
     "name": "夜空",
@@ -85,11 +77,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "i11101.webp"
+        "src": "i11001.webp"
       }
     ],
-    "expression": "11",
-    "expressionLabel": "心配不安"
+    "expression": "10",
+    "expressionLabel": "軽い嫌悪"
   },
   {
     "name": "夜空",
@@ -109,27 +101,11 @@
   },
   {
     "name": "夜空",
-    "text": "昔から何でも美空優先にしてきた。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "i10301.webp"
-      }
-    ],
-    "expression": "03",
-    "expressionLabel": "怒り"
+    "text": "昔から何でも美空優先にしてきた。"
   },
   {
     "name": "夜空",
-    "text": "そしたら気がついたら、",
-    "characters": [
-      {
-        "side": "center",
-        "src": "i10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "そしたら気がついたら、"
   },
   {
     "name": "夜空",
@@ -181,47 +157,23 @@
     "characters": [
       {
         "side": "center",
-        "src": "i10801.webp"
-      }
-    ],
-    "expression": "08",
-    "expressionLabel": "期待"
-  },
-  {
-    "name": "夜空",
-    "text": "何でも美味しいし、辛いのも平気。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "i10301.webp"
-      }
-    ],
-    "expression": "03",
-    "expressionLabel": "怒り"
-  },
-  {
-    "name": "夜空",
-    "text": "お酒はダメなんだ、すぐ酔っちゃうから。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "i11101.webp"
-      }
-    ],
-    "expression": "11",
-    "expressionLabel": "心配不安"
-  },
-  {
-    "name": "夜空",
-    "text": "だから飲むならソフトドリンクでいい。",
-    "characters": [
-      {
-        "side": "center",
         "src": "i10101.webp"
       }
     ],
     "expression": "01",
     "expressionLabel": "澄まし"
+  },
+  {
+    "name": "夜空",
+    "text": "何でも美味しいし、辛いのも平気。"
+  },
+  {
+    "name": "夜空",
+    "text": "お酒はダメなんだ、すぐ酔っちゃうから。"
+  },
+  {
+    "name": "夜空",
+    "text": "だから飲むならソフトドリンクでいい。"
   },
   {
     "name": "夜空",
@@ -237,15 +189,7 @@
   },
   {
     "name": "夜空",
-    "text": "匂いが無理。ごめん、あれだけは無理。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "i11101.webp"
-      }
-    ],
-    "expression": "11",
-    "expressionLabel": "心配不安"
+    "text": "匂いが無理。ごめん、あれだけは無理。"
   },
   {
     "name": "夜空",
@@ -293,15 +237,7 @@
   },
   {
     "name": "夜空",
-    "text": "別にいいんだ。美空が幸せなら、ぼくもそれでいい。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "i10801.webp"
-      }
-    ],
-    "expression": "08",
-    "expressionLabel": "期待"
+    "text": "別にいいんだ。美空が幸せなら、ぼくもそれでいい。"
   },
   {
     "name": "夜空",
@@ -321,11 +257,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "i11101.webp"
+        "src": "i11001.webp"
       }
     ],
-    "expression": "11",
-    "expressionLabel": "心配不安"
+    "expression": "10",
+    "expressionLabel": "軽い嫌悪"
   },
   {
     "name": "夜空",
@@ -341,39 +277,15 @@
   },
   {
     "name": "夜空",
-    "text": "約束は、守るから。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "i10801.webp"
-      }
-    ],
-    "expression": "08",
-    "expressionLabel": "期待"
+    "text": "約束は、守るから。"
   },
   {
     "name": "夜空",
-    "text": "こんなぼくだけど、",
-    "characters": [
-      {
-        "side": "center",
-        "src": "i10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "こんなぼくだけど、"
   },
   {
     "name": "夜空",
-    "text": "仲良くしてくれたら嬉しいな。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "i10801.webp"
-      }
-    ],
-    "expression": "08",
-    "expressionLabel": "期待"
+    "text": "仲良くしてくれたら嬉しいな。"
   },
   {
     "name": "夜空",
@@ -381,11 +293,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "i11101.webp"
+        "src": "i11001.webp"
       }
     ],
-    "expression": "11",
-    "expressionLabel": "心配不安"
+    "expression": "10",
+    "expressionLabel": "軽い嫌悪"
   },
   {
     "name": "夜空",
@@ -405,27 +317,11 @@
   },
   {
     "name": "夜空",
-    "text": "たぶん、ちゃんと笑うから。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "i10501.webp"
-      }
-    ],
-    "expression": "05",
-    "expressionLabel": "笑顔"
+    "text": "たぶん、ちゃんと笑うから。"
   },
   {
     "name": "夜空",
-    "text": "だからその時まで、覚えてて。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "i10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "だからその時まで、覚えてて。"
   },
   {
     "name": "夜空",

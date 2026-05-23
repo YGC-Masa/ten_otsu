@@ -29,7 +29,15 @@
   },
   {
     "name": "萌",
-    "text": "あっ。どうしたの？お兄ちゃん？"
+    "text": "あっ。どうしたの？お兄ちゃん？",
+    "characters": [
+      {
+        "side": "center",
+        "src": "m10201.webp"
+      }
+    ],
+    "expression": "02",
+    "expressionLabel": "微笑み"
   },
   {
     "name": "店長",
@@ -37,7 +45,15 @@
   },
   {
     "name": "萌",
-    "text": "えっと……自己紹介、ですか？"
+    "text": "えっと……自己紹介、ですか？",
+    "characters": [
+      {
+        "side": "center",
+        "src": "m10601.webp"
+      }
+    ],
+    "expression": "06",
+    "expressionLabel": "驚き"
   },
   {
     "name": "萌",
@@ -57,11 +73,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "m10101.webp"
+        "src": "m10201.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "02",
+    "expressionLabel": "微笑み"
   },
   {
     "name": "萌",
@@ -85,27 +101,11 @@
   },
   {
     "name": "萌",
-    "text": "小柄なんですけど……色々大人だねってよく言われちゃいます。何言ってるんだろう、わたし。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10301.webp"
-      }
-    ],
-    "expression": "03",
-    "expressionLabel": "怒り"
+    "text": "小柄なんですけど……色々大人だねってよく言われちゃいます。何言ってるんだろう、わたし。"
   },
   {
     "name": "萌",
-    "text": "……こういうの、自分から言っちゃだめですよね。。。。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "……こういうの、自分から言っちゃだめですよね。。。。"
   },
   {
     "name": "萌",
@@ -113,27 +113,11 @@
   },
   {
     "name": "萌",
-    "text": "すごくしっかりしていて、できる人だから……尊敬してます。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10901.webp"
-      }
-    ],
-    "expression": "09",
-    "expressionLabel": "得意げ"
+    "text": "すごくしっかりしていて、できる人だから……尊敬してます。"
   },
   {
     "name": "萌",
-    "text": "でも、憧れる分、比べちゃってコンプレックスになることもあります。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "でも、憧れる分、比べちゃってコンプレックスになることもあります。"
   },
   {
     "name": "萌",
@@ -153,43 +137,27 @@
   },
   {
     "name": "萌",
-    "text": "自然の中を歩いてると、気持ちが落ち着くんです。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10301.webp"
-      }
-    ],
-    "expression": "03",
-    "expressionLabel": "怒り"
+    "text": "自然の中を歩いてると、気持ちが落ち着くんです。"
   },
   {
     "name": "萌",
-    "text": "木の匂いとか、風の音とか、そういうのが好きで。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10801.webp"
-      }
-    ],
-    "expression": "08",
-    "expressionLabel": "期待"
+    "text": "木の匂いとか、風の音とか、そういうのが好きで。"
   },
   {
     "name": "萌",
-    "text": "ちょっとした特技もあって……。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "ちょっとした特技もあって……。"
   },
   {
     "name": "萌",
-    "text": "実はタロット占いができるんです。",
+    "text": "実はタロット占いができるんです。"
+  },
+  {
+    "name": "萌",
+    "text": "そんなに本格的じゃないけど、みんなの気持ちを後押しするくらいならできると思います。"
+  },
+  {
+    "name": "萌",
+    "text": "得意なものは、エアコンとか季節家電の調整。",
     "characters": [
       {
         "side": "center",
@@ -201,35 +169,19 @@
   },
   {
     "name": "萌",
-    "text": "そんなに本格的じゃないけど、みんなの気持ちを後押しするくらいならできると思います。"
-  },
-  {
-    "name": "萌",
-    "text": "得意なものは、エアコンとか季節家電の調整。"
-  },
-  {
-    "name": "萌",
     "text": "なんだか変ですよね。",
     "characters": [
       {
         "side": "center",
-        "src": "m10101.webp"
+        "src": "m10201.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "02",
+    "expressionLabel": "微笑み"
   },
   {
     "name": "萌",
-    "text": "でも、快適な環境をつくるのはけっこう好きなんです。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10301.webp"
-      }
-    ],
-    "expression": "03",
-    "expressionLabel": "怒り"
+    "text": "でも、快適な環境をつくるのはけっこう好きなんです。"
   },
   {
     "name": "萌",
@@ -237,11 +189,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "m11101.webp"
+        "src": "m11001.webp"
       }
     ],
-    "expression": "11",
-    "expressionLabel": "心配不安"
+    "expression": "10",
+    "expressionLabel": "軽い嫌悪"
   },
   {
     "name": "萌",
@@ -249,11 +201,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "m10601.webp"
+        "src": "m10401.webp"
       }
     ],
-    "expression": "06",
-    "expressionLabel": "驚き"
+    "expression": "04",
+    "expressionLabel": "悲しみ"
   },
   {
     "name": "萌",
@@ -273,59 +225,27 @@
     "characters": [
       {
         "side": "center",
-        "src": "m10101.webp"
+        "src": "m10201.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "02",
+    "expressionLabel": "微笑み"
   },
   {
     "name": "萌",
-    "text": "好きなのは鍋料理。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10801.webp"
-      }
-    ],
-    "expression": "08",
-    "expressionLabel": "期待"
+    "text": "好きなのは鍋料理。"
   },
   {
     "name": "萌",
-    "text": "みんなで囲むとあったかい気持ちになるし、一人でも安心できます。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "みんなで囲むとあったかい気持ちになるし、一人でも安心できます。"
   },
   {
     "name": "萌",
-    "text": "好きな飲み物はワイン。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10801.webp"
-      }
-    ],
-    "expression": "08",
-    "expressionLabel": "期待"
+    "text": "好きな飲み物はワイン。"
   },
   {
     "name": "萌",
-    "text": "でも強くはないから、あまり飲みすぎないようにしてます。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "でも強くはないから、あまり飲みすぎないようにしてます。"
   },
   {
     "name": "萌",
@@ -333,11 +253,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "m11101.webp"
+        "src": "m11001.webp"
       }
     ],
-    "expression": "11",
-    "expressionLabel": "心配不安"
+    "expression": "10",
+    "expressionLabel": "軽い嫌悪"
   },
   {
     "name": "萌",
@@ -345,23 +265,15 @@
     "characters": [
       {
         "side": "center",
-        "src": "m10801.webp"
+        "src": "m10201.webp"
       }
     ],
-    "expression": "08",
-    "expressionLabel": "期待"
+    "expression": "02",
+    "expressionLabel": "微笑み"
   },
   {
     "name": "萌",
-    "text": "おにいちゃんのことは、もちろん「おにいちゃん」って呼んでます。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "おにいちゃんのことは、もちろん「おにいちゃん」って呼んでます。"
   },
   {
     "name": "萌",
@@ -381,51 +293,19 @@
   },
   {
     "name": "萌",
-    "text": "わたしなりに、客観的に物事を見て、公正に判断できるつもりです。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10901.webp"
-      }
-    ],
-    "expression": "09",
-    "expressionLabel": "得意げ"
+    "text": "わたしなりに、客観的に物事を見て、公正に判断できるつもりです。"
   },
   {
     "name": "萌",
-    "text": "ちょっと一歩引いて考えるのが、癖みたいになってるから。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "ちょっと一歩引いて考えるのが、癖みたいになってるから。"
   },
   {
     "name": "萌",
-    "text": "だから、おにいちゃんやみんなの役に立てたら嬉しいです。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10801.webp"
-      }
-    ],
-    "expression": "08",
-    "expressionLabel": "期待"
+    "text": "だから、おにいちゃんやみんなの役に立てたら嬉しいです。"
   },
   {
     "name": "萌",
-    "text": "わたしなりに支えたいと思ってるので。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "わたしなりに支えたいと思ってるので。"
   },
   {
     "name": "萌",
@@ -433,15 +313,7 @@
   },
   {
     "name": "萌",
-    "text": "これから、どうぞよろしくお願いします。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "m10501.webp"
-      }
-    ],
-    "expression": "05",
-    "expressionLabel": "笑顔"
+    "text": "これから、どうぞよろしくお願いします。"
   },
   {
     "name": "萌",

@@ -1,5 +1,5 @@
 {
-  "version": "v037_81",
+  "version": "v037_83",
   "description": "自己紹介シナリオへ現在の表情画像データを反映",
   "rules": {
     "source": "scenario/data/character_expressions.json",
@@ -3548,5 +3548,5 @@
       }
     ]
   },
-  "note": "v037_81で同一立ち絵連続指定を削除。表情変更がある場面のみcharacters指定を残す。"
+  "note": "v037_83で同一立ち絵連続指定を削除。表情変更がある場面のみcharacters指定を残す。"
 }

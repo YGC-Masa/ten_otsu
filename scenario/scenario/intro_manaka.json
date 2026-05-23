@@ -29,7 +29,15 @@
   },
   {
     "name": "真花",
-    "text": "あ、店長。お疲れ様です。"
+    "text": "あ、店長。お疲れ様です。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "f10201.webp"
+      }
+    ],
+    "expression": "02",
+    "expressionLabel": "微笑み"
   },
   {
     "name": "店長",
@@ -53,11 +61,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "f11101.webp"
+        "src": "f11001.webp"
       }
     ],
-    "expression": "11",
-    "expressionLabel": "心配不安"
+    "expression": "10",
+    "expressionLabel": "軽い嫌悪"
   },
   {
     "name": "真花",
@@ -65,11 +73,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "f10101.webp"
+        "src": "f10601.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "06",
+    "expressionLabel": "驚き"
   },
   {
     "name": "真花",
@@ -89,11 +97,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "f11101.webp"
+        "src": "f10601.webp"
       }
     ],
-    "expression": "11",
-    "expressionLabel": "心配不安"
+    "expression": "06",
+    "expressionLabel": "驚き"
   },
   {
     "name": "真花",
@@ -101,11 +109,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "f10101.webp"
+        "src": "f10201.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "02",
+    "expressionLabel": "微笑み"
   },
   {
     "name": "真花",
@@ -133,11 +141,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "f11101.webp"
+        "src": "f11001.webp"
       }
     ],
-    "expression": "11",
-    "expressionLabel": "心配不安"
+    "expression": "10",
+    "expressionLabel": "軽い嫌悪"
   },
   {
     "name": "真花",
@@ -145,11 +153,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "f10101.webp"
+        "src": "f10201.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "02",
+    "expressionLabel": "微笑み"
   },
   {
     "name": "真花",
@@ -157,39 +165,15 @@
   },
   {
     "name": "真花",
-    "text": "意外と…芯は強いほうなんですよ？ たぶん…。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "f10301.webp"
-      }
-    ],
-    "expression": "03",
-    "expressionLabel": "怒り"
+    "text": "意外と…芯は強いほうなんですよ？ たぶん…。"
   },
   {
     "name": "真花",
-    "text": "趣味はエステに行ったり、美容品を試すこと。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "f10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "趣味はエステに行ったり、美容品を試すこと。"
   },
   {
     "name": "真花",
-    "text": "自分磨きは毎日の楽しみです。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "f10801.webp"
-      }
-    ],
-    "expression": "08",
-    "expressionLabel": "期待"
+    "text": "自分磨きは毎日の楽しみです。"
   },
   {
     "name": "真花",
@@ -197,11 +181,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "f11101.webp"
+        "src": "f11001.webp"
       }
     ],
-    "expression": "11",
-    "expressionLabel": "心配不安"
+    "expression": "10",
+    "expressionLabel": "軽い嫌悪"
   },
   {
     "name": "真花",
@@ -209,11 +193,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "f10801.webp"
+        "src": "f10201.webp"
       }
     ],
-    "expression": "08",
-    "expressionLabel": "期待"
+    "expression": "02",
+    "expressionLabel": "微笑み"
   },
   {
     "name": "真花",
@@ -221,15 +205,7 @@
   },
   {
     "name": "真花",
-    "text": "お話するときは、店長のことは「店長」とお呼びします。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "f10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "お話するときは、店長のことは「店長」とお呼びします。"
   },
   {
     "name": "真花",
@@ -241,15 +217,7 @@
   },
   {
     "name": "真花",
-    "text": "こがねちゃんや美空ちゃん、夜空ちゃんとは…たくさんおしゃべりしたいです。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "f10301.webp"
-      }
-    ],
-    "expression": "03",
-    "expressionLabel": "怒り"
+    "text": "こがねちゃんや美空ちゃん、夜空ちゃんとは…たくさんおしゃべりしたいです。"
   },
   {
     "name": "真花",
@@ -285,23 +253,15 @@
     "characters": [
       {
         "side": "center",
-        "src": "f11101.webp"
+        "src": "f10201.webp"
       }
     ],
-    "expression": "11",
-    "expressionLabel": "心配不安"
+    "expression": "02",
+    "expressionLabel": "微笑み"
   },
   {
     "name": "真花",
-    "text": "そのときは、ちょっと笑って見守ってください…。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "f10501.webp"
-      }
-    ],
-    "expression": "05",
-    "expressionLabel": "笑顔"
+    "text": "そのときは、ちょっと笑って見守ってください…。"
   },
   {
     "name": "真花",

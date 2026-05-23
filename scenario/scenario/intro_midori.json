@@ -29,7 +29,15 @@
   },
   {
     "name": "翠",
-    "text": "はい？どうしました？"
+    "text": "はい？どうしました？",
+    "characters": [
+      {
+        "side": "center",
+        "src": "c10101.webp"
+      }
+    ],
+    "expression": "01",
+    "expressionLabel": "澄まし"
   },
   {
     "name": "店長",
@@ -69,27 +77,11 @@
   },
   {
     "name": "翠",
-    "text": "緑色が好きで、何かと身につける色も緑系になりがちです。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "c10201.webp"
-      }
-    ],
-    "expression": "02",
-    "expressionLabel": "微笑み"
+    "text": "緑色が好きで、何かと身につける色も緑系になりがちです。"
   },
   {
     "name": "翠",
-    "text": "趣味はVODで映画やドラマを観ること。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "c10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "趣味はVODで映画やドラマを観ること。"
   },
   {
     "name": "翠",
@@ -101,7 +93,7 @@
     "characters": [
       {
         "side": "center",
-        "src": "c10902.webp"
+        "src": "c10101.webp"
       }
     ],
     "expression": "09",
@@ -117,11 +109,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "c11101.webp"
+        "src": "c11001.webp"
       }
     ],
-    "expression": "11",
-    "expressionLabel": "心配不安"
+    "expression": "10",
+    "expressionLabel": "軽い嫌悪"
   },
   {
     "name": "翠",
@@ -133,18 +125,6 @@
     "characters": [
       {
         "side": "center",
-        "src": "c10201.webp"
-      }
-    ],
-    "expression": "02",
-    "expressionLabel": "微笑み"
-  },
-  {
-    "name": "翠",
-    "text": "蒸しただけ、焼いただけなどのシンプルな調理が一番美味しいと思います。",
-    "characters": [
-      {
-        "side": "center",
         "src": "c10101.webp"
       }
     ],
@@ -153,27 +133,15 @@
   },
   {
     "name": "翠",
-    "text": "好きな飲み物はコーヒー。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "c10201.webp"
-      }
-    ],
-    "expression": "02",
-    "expressionLabel": "微笑み"
+    "text": "蒸しただけ、焼いただけなどのシンプルな調理が一番美味しいと思います。"
   },
   {
     "name": "翠",
-    "text": "ヘビーカフェインユーザーですかね。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "c10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "好きな飲み物はコーヒー。"
+  },
+  {
+    "name": "翠",
+    "text": "ヘビーカフェインユーザーですかね。"
   },
   {
     "name": "翠",
@@ -317,15 +285,7 @@
   },
   {
     "name": "翠",
-    "text": "これからもよろしくお願いしますね。店長。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "c10501.webp"
-      }
-    ],
-    "expression": "05",
-    "expressionLabel": "笑顔"
+    "text": "これからもよろしくお願いしますね。店長。"
   },
   {
     "name": "",

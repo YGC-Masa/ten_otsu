@@ -1,5 +1,5 @@
 {
-  "version": "v037_81",
+  "version": "v037_83",
   "policy": {
     "characters": "同じside/srcが連続する場合はcharacters指定を削除。表情が変わる時だけ指定。",
     "expression": "characters指定を削除した場面ではexpression/expressionLabelも削除。",

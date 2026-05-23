@@ -29,7 +29,15 @@
   },
   {
     "name": "美空",
-    "text": "あら？お疲れ様。店長。"
+    "text": "あら？お疲れ様。店長。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "h10201.webp"
+      }
+    ],
+    "expression": "02",
+    "expressionLabel": "微笑み"
   },
   {
     "name": "店長",
@@ -41,18 +49,6 @@
     "characters": [
       {
         "side": "center",
-        "src": "h10601.webp"
-      }
-    ],
-    "expression": "06",
-    "expressionLabel": "驚き"
-  },
-  {
-    "name": "美空",
-    "text": "えへへっ、こんにちは！",
-    "characters": [
-      {
-        "side": "center",
         "src": "h10701.webp"
       }
     ],
@@ -61,15 +57,19 @@
   },
   {
     "name": "美空",
-    "text": "わたし、双沢 美空(すごさわ みそら)って言います。",
+    "text": "えへへっ、こんにちは！",
     "characters": [
       {
         "side": "center",
-        "src": "h10101.webp"
+        "src": "h10201.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "02",
+    "expressionLabel": "微笑み"
+  },
+  {
+    "name": "美空",
+    "text": "わたし、双沢 美空(すごさわ みそら)って言います。"
   },
   {
     "name": "美空",
@@ -89,27 +89,11 @@
   },
   {
     "name": "美空",
-    "text": "性格は……そうだな、明るくて元気？",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h11201.webp"
-      }
-    ],
-    "expression": "12",
-    "expressionLabel": "動揺"
+    "text": "性格は……そうだな、明るくて元気？"
   },
   {
     "name": "美空",
-    "text": "でも実は芯が強いって言われることもあるんだ〜。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "でも実は芯が強いって言われることもあるんだ〜。"
   },
   {
     "name": "美空",
@@ -117,39 +101,15 @@
   },
   {
     "name": "美空",
-    "text": "夜空がすごく優しくて、なんでも譲ってくれるから、",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h10301.webp"
-      }
-    ],
-    "expression": "03",
-    "expressionLabel": "怒り"
+    "text": "夜空がすごく優しくて、なんでも譲ってくれるから、"
   },
   {
     "name": "美空",
-    "text": "わたしもお姉ちゃんとして、もっと返したいんだよね。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "わたしもお姉ちゃんとして、もっと返したいんだよね。"
   },
   {
     "name": "美空",
-    "text": "好きなことは夏のアクティビティ！",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h10801.webp"
-      }
-    ],
-    "expression": "08",
-    "expressionLabel": "期待"
+    "text": "好きなことは夏のアクティビティ！"
   },
   {
     "name": "美空",
@@ -173,35 +133,19 @@
     "characters": [
       {
         "side": "center",
-        "src": "h10101.webp"
+        "src": "h10201.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "02",
+    "expressionLabel": "微笑み"
   },
   {
     "name": "美空",
-    "text": "好きな食べ物は中華！",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h10801.webp"
-      }
-    ],
-    "expression": "08",
-    "expressionLabel": "期待"
+    "text": "好きな食べ物は中華！"
   },
   {
     "name": "美空",
-    "text": "特に麻婆豆腐は外せないっ。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "特に麻婆豆腐は外せないっ。"
   },
   {
     "name": "美空",
@@ -209,11 +153,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "h11101.webp"
+        "src": "h11001.webp"
       }
     ],
-    "expression": "11",
-    "expressionLabel": "心配不安"
+    "expression": "10",
+    "expressionLabel": "軽い嫌悪"
   },
   {
     "name": "美空",
@@ -221,11 +165,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "h10101.webp"
+        "src": "h10201.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "02",
+    "expressionLabel": "微笑み"
   },
   {
     "name": "美空",
@@ -249,7 +193,15 @@
   },
   {
     "name": "美空",
-    "text": "あ、あと苦手なものと言えば英語……"
+    "text": "あ、あと苦手なものと言えば英語……",
+    "characters": [
+      {
+        "side": "center",
+        "src": "h11001.webp"
+      }
+    ],
+    "expression": "10",
+    "expressionLabel": "軽い嫌悪"
   },
   {
     "name": "美空",
@@ -269,11 +221,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "h10101.webp"
+        "src": "h10201.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "02",
+    "expressionLabel": "微笑み"
   },
   {
     "name": "美空",
@@ -301,11 +253,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "h10101.webp"
+        "src": "h10201.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "02",
+    "expressionLabel": "微笑み"
   },
   {
     "name": "美空",
@@ -317,27 +269,11 @@
   },
   {
     "name": "美空",
-    "text": "わたしのことは「美空」って気軽に呼んでくれると嬉しいな。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h10801.webp"
-      }
-    ],
-    "expression": "08",
-    "expressionLabel": "期待"
+    "text": "わたしのことは「美空」って気軽に呼んでくれると嬉しいな。"
   },
   {
     "name": "美空",
-    "text": "あ、あなたのことは「あなた」って呼んでもいい？",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "あ、あなたのことは「あなた」って呼んでもいい？"
   },
   {
     "name": "美空",
@@ -349,39 +285,15 @@
   },
   {
     "name": "美空",
-    "text": "これからたくさん一緒に思い出作ろうね？",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h10301.webp"
-      }
-    ],
-    "expression": "03",
-    "expressionLabel": "怒り"
+    "text": "これからたくさん一緒に思い出作ろうね？"
   },
   {
     "name": "美空",
-    "text": "わたしも、あなたのこと……",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "わたしも、あなたのこと……"
   },
   {
     "name": "美空",
-    "text": "もっともっと知りたいからさっ！",
-    "characters": [
-      {
-        "side": "center",
-        "src": "h11201.webp"
-      }
-    ],
-    "expression": "12",
-    "expressionLabel": "動揺"
+    "text": "もっともっと知りたいからさっ！"
   },
   {
     "name": "",

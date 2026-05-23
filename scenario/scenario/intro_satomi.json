@@ -29,7 +29,15 @@
   },
   {
     "name": "里美",
-    "text": "はい～、おつかれさまです～てんちょ～"
+    "text": "はい～、おつかれさまです～てんちょ～",
+    "characters": [
+      {
+        "side": "center",
+        "src": "l10201.webp"
+      }
+    ],
+    "expression": "02",
+    "expressionLabel": "微笑み"
   },
   {
     "name": "店長",
@@ -37,7 +45,15 @@
   },
   {
     "name": "里美",
-    "text": "えっと……自己紹介ですか～？"
+    "text": "えっと……自己紹介ですか～？",
+    "characters": [
+      {
+        "side": "center",
+        "src": "l10601.webp"
+      }
+    ],
+    "expression": "06",
+    "expressionLabel": "驚き"
   },
   {
     "name": "里美",
@@ -57,11 +73,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "l10101.webp"
+        "src": "l10201.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "02",
+    "expressionLabel": "微笑み"
   },
   {
     "name": "里美",
@@ -73,27 +89,11 @@
   },
   {
     "name": "里美",
-    "text": "お菓子が大好きで、ついつい食べすぎちゃうこともあるんですけど……",
-    "characters": [
-      {
-        "side": "center",
-        "src": "l10801.webp"
-      }
-    ],
-    "expression": "08",
-    "expressionLabel": "期待"
+    "text": "お菓子が大好きで、ついつい食べすぎちゃうこともあるんですけど……"
   },
   {
     "name": "里美",
-    "text": "まあ、ゆる～く気にしてるくらいで、気楽にやってます～。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "l10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "まあ、ゆる～く気にしてるくらいで、気楽にやってます～。"
   },
   {
     "name": "里美",
@@ -105,27 +105,11 @@
   },
   {
     "name": "里美",
-    "text": "手先はけっこう器用で、細かい作業もわりと平気なんですよ～。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "l10301.webp"
-      }
-    ],
-    "expression": "03",
-    "expressionLabel": "怒り"
+    "text": "手先はけっこう器用で、細かい作業もわりと平気なんですよ～。"
   },
   {
     "name": "里美",
-    "text": "家電はそんなに詳しくないですけど、",
-    "characters": [
-      {
-        "side": "center",
-        "src": "l10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "家電はそんなに詳しくないですけど、"
   },
   {
     "name": "里美",
@@ -137,11 +121,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "l11101.webp"
+        "src": "l11001.webp"
       }
     ],
-    "expression": "11",
-    "expressionLabel": "心配不安"
+    "expression": "10",
+    "expressionLabel": "軽い嫌悪"
   },
   {
     "name": "里美",
@@ -149,11 +133,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "l10101.webp"
+        "src": "l10201.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "02",
+    "expressionLabel": "微笑み"
   },
   {
     "name": "里美",
@@ -173,11 +157,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "l10101.webp"
+        "src": "l10201.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "02",
+    "expressionLabel": "微笑み"
   },
   {
     "name": "里美",
@@ -185,11 +169,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "l11101.webp"
+        "src": "l11001.webp"
       }
     ],
-    "expression": "11",
-    "expressionLabel": "心配不安"
+    "expression": "10",
+    "expressionLabel": "軽い嫌悪"
   },
   {
     "name": "里美",
@@ -209,71 +193,31 @@
     "characters": [
       {
         "side": "center",
-        "src": "l10801.webp"
+        "src": "l10201.webp"
       }
     ],
-    "expression": "08",
-    "expressionLabel": "期待"
+    "expression": "02",
+    "expressionLabel": "微笑み"
   },
   {
     "name": "里美",
-    "text": "お菓子はやめられないので、その分少しだけ歩いたりして調整してる感じです～。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "l11001.webp"
-      }
-    ],
-    "expression": "10",
-    "expressionLabel": "軽い嫌悪"
+    "text": "お菓子はやめられないので、その分少しだけ歩いたりして調整してる感じです～。"
   },
   {
     "name": "里美",
-    "text": "休日は、ゆる～くカフェに行ったり、本を読んだり…",
-    "characters": [
-      {
-        "side": "center",
-        "src": "l10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "休日は、ゆる～くカフェに行ったり、本を読んだり…"
   },
   {
     "name": "里美",
-    "text": "かわいい雑貨屋さんをのぞくのも好きです～。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "l10801.webp"
-      }
-    ],
-    "expression": "08",
-    "expressionLabel": "期待"
+    "text": "かわいい雑貨屋さんをのぞくのも好きです～。"
   },
   {
     "name": "里美",
-    "text": "ちょっとしたプレゼントを探す時間は、なんだかワクワクします～。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "l10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "ちょっとしたプレゼントを探す時間は、なんだかワクワクします～。"
   },
   {
     "name": "里美",
-    "text": "こんな自分ですが、これからもよろしくお願いします～。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "l10501.webp"
-      }
-    ],
-    "expression": "05",
-    "expressionLabel": "笑顔"
+    "text": "こんな自分ですが、これからもよろしくお願いします～。"
   },
   {
     "name": "",

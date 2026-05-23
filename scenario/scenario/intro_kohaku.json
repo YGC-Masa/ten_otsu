@@ -29,7 +29,15 @@
   },
   {
     "name": "琥珀",
-    "text": "お、店長？オレに用か？"
+    "text": "お、店長？オレに用か？",
+    "characters": [
+      {
+        "side": "center",
+        "src": "e10501.webp"
+      }
+    ],
+    "expression": "05",
+    "expressionLabel": "笑顔"
   },
   {
     "name": "店長",
@@ -53,35 +61,19 @@
     "characters": [
       {
         "side": "center",
-        "src": "e10101.webp"
+        "src": "e10501.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "05",
+    "expressionLabel": "笑顔"
   },
   {
     "name": "琥珀",
-    "text": "年齢は25歳！しし座の自分でいうのもなんだが元気だけが取り柄だ！",
-    "characters": [
-      {
-        "side": "center",
-        "src": "e10901.webp"
-      }
-    ],
-    "expression": "09",
-    "expressionLabel": "得意げ"
+    "text": "年齢は25歳！しし座の自分でいうのもなんだが元気だけが取り柄だ！"
   },
   {
     "name": "琥珀",
-    "text": "身長は160センチ、でも筋肉でちょっとガッチリしてるんだ！",
-    "characters": [
-      {
-        "side": "center",
-        "src": "e10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "身長は160センチ、でも筋肉でちょっとガッチリしてるんだ！"
   },
   {
     "name": "琥珀",
@@ -89,27 +81,11 @@
   },
   {
     "name": "琥珀",
-    "text": "スポーツはだいたい全部大好き！走るのも跳ぶのも泳ぐのもぜーんぶ好き！",
-    "characters": [
-      {
-        "side": "center",
-        "src": "e10801.webp"
-      }
-    ],
-    "expression": "08",
-    "expressionLabel": "期待"
+    "text": "スポーツはだいたい全部大好き！走るのも跳ぶのも泳ぐのもぜーんぶ好き！"
   },
   {
     "name": "琥珀",
-    "text": "最近はバスケとランニングに夢中だ！",
-    "characters": [
-      {
-        "side": "center",
-        "src": "e10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "最近はバスケとランニングに夢中だ！"
   },
   {
     "name": "琥珀",
@@ -121,15 +97,7 @@
   },
   {
     "name": "琥珀",
-    "text": "やっぱ好きな音楽があるとテンションもパフォーマンスもアガるからな！",
-    "characters": [
-      {
-        "side": "center",
-        "src": "e10801.webp"
-      }
-    ],
-    "expression": "08",
-    "expressionLabel": "期待"
+    "text": "やっぱ好きな音楽があるとテンションもパフォーマンスもアガるからな！"
   },
   {
     "name": "琥珀",
@@ -141,11 +109,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "e11101.webp"
+        "src": "e11001.webp"
       }
     ],
-    "expression": "11",
-    "expressionLabel": "心配不安"
+    "expression": "10",
+    "expressionLabel": "軽い嫌悪"
   },
   {
     "name": "琥珀",
@@ -153,23 +121,15 @@
     "characters": [
       {
         "side": "center",
-        "src": "e10101.webp"
+        "src": "e10501.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "05",
+    "expressionLabel": "笑顔"
   },
   {
     "name": "琥珀",
-    "text": "水分補給は大事だからな、旦那もちゃんと飲めよ！",
-    "characters": [
-      {
-        "side": "center",
-        "src": "e11201.webp"
-      }
-    ],
-    "expression": "12",
-    "expressionLabel": "動揺"
+    "text": "水分補給は大事だからな、旦那もちゃんと飲めよ！"
   },
   {
     "name": "琥珀",
@@ -177,11 +137,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "e11101.webp"
+        "src": "e11001.webp"
       }
     ],
-    "expression": "11",
-    "expressionLabel": "心配不安"
+    "expression": "10",
+    "expressionLabel": "軽い嫌悪"
   },
   {
     "name": "琥珀",
@@ -213,11 +173,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "e10801.webp"
+        "src": "e10501.webp"
       }
     ],
-    "expression": "08",
-    "expressionLabel": "期待"
+    "expression": "05",
+    "expressionLabel": "笑顔"
   },
   {
     "name": "琥珀",
@@ -249,11 +209,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "e10101.webp"
+        "src": "e10501.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "05",
+    "expressionLabel": "笑顔"
   },
   {
     "name": "琥珀",
@@ -305,11 +265,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "e10101.webp"
+        "src": "e10501.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "05",
+    "expressionLabel": "笑顔"
   },
   {
     "name": "琥珀",
@@ -337,11 +297,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "e10101.webp"
+        "src": "e10501.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "05",
+    "expressionLabel": "笑顔"
   },
   {
     "name": "琥珀",
@@ -349,11 +309,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "e11101.webp"
+        "src": "e11001.webp"
       }
     ],
-    "expression": "11",
-    "expressionLabel": "心配不安"
+    "expression": "10",
+    "expressionLabel": "軽い嫌悪"
   },
   {
     "name": "琥珀",
@@ -397,11 +357,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "e10101.webp"
+        "src": "e10501.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "05",
+    "expressionLabel": "笑顔"
   },
   {
     "name": "琥珀",
@@ -421,23 +381,15 @@
     "characters": [
       {
         "side": "center",
-        "src": "e10901.webp"
-      }
-    ],
-    "expression": "09",
-    "expressionLabel": "得意げ"
-  },
-  {
-    "name": "琥珀",
-    "text": "こんなオレだけど、旦那もみんなもよろしくなー！",
-    "characters": [
-      {
-        "side": "center",
         "src": "e10501.webp"
       }
     ],
     "expression": "05",
     "expressionLabel": "笑顔"
+  },
+  {
+    "name": "琥珀",
+    "text": "こんなオレだけど、旦那もみんなもよろしくなー！"
   },
   {
     "name": "",

@@ -1,6 +1,6 @@
 
-/* v037_81 engine guard: 起動停止対策 */
-window.TENOTSU_ENGINE_VERSION = "v037_81";
+/* v037_83 engine guard: 起動停止対策 */
+window.TENOTSU_ENGINE_VERSION = "v037_83";
 window.__TENOTSU_ENGINE_ERRORS__ = window.__TENOTSU_ENGINE_ERRORS__ || [];
 
 window.addEventListener("error", (event) => {
@@ -108,7 +108,7 @@ window.addEventListener("load", () => {
     }
   }, 2600);
 });
-/* /v037_81 engine guard */
+/* /v037_83 engine guard */
 
 // script.js - v037 修正版（wait/effectTime/Menu/List安定化）
 
@@ -149,27 +149,51 @@ function isMobilePortrait() {
 
 function setTextWithSpeed(text, speed, callback) {
   if (typingInterval) clearInterval(typingInterval);
+  tenotsuStopAutoPlayTimer && tenotsuStopAutoPlayTimer();
   isPlaying = true;
   textEl.innerHTML = "";
+  const sourceText = String(text ?? "");
   let i = 0;
+
+  if (sourceText.length === 0) {
+    isPlaying = false;
+    if (callback) callback();
+    if (typeof tenotsuScheduleAutoPlay === "function") tenotsuScheduleAutoPlay();
+    return;
+  }
+
   typingInterval = setInterval(() => {
-    textEl.innerHTML += text[i++];
-    if (i >= text.length) {
+    textEl.innerHTML += sourceText[i++];
+    if (i >= sourceText.length) {
       clearInterval(typingInterval);
       typingInterval = null;
       isPlaying = false;
-  if (typeof tenotsuScheduleAutoPlay === 'function') tenotsuScheduleAutoPlay();
       if (callback) callback();
+      if (typeof tenotsuScheduleAutoPlay === "function") tenotsuScheduleAutoPlay();
     }
   }, speed);
 }
 
 function setCharacterStyle(name, scene = {}) {
-  const style = characterStyles[name] || characterStyles[""];
-  const fontSize = scene.fontSize || style.fontSize || defaultFontSize;
-  currentSpeed = scene.speed || style.speed || defaultSpeed;
-  nameEl.style.color = style.color || "#C0C0C0";
-  document.documentElement.style.setProperty("--fontSize", fontSize);
+  const style = (window.TENOTSU_CHARACTER_STYLE_MAP && window.TENOTSU_CHARACTER_STYLE_MAP[name]) || null;
+  if (nameEl) {
+    nameEl.style.color = style ? style.color : "";
+    nameEl.style.fontWeight = style ? (style.fontWeight || "700") : "";
+    nameEl.style.textShadow = style ? (style.textShadow || "") : "";
+  }
+  if (textEl) {
+    textEl.style.color = style ? style.color : "";
+    textEl.style.fontWeight = style ? (style.fontWeight || "600") : "";
+    textEl.style.textShadow = style ? (style.textShadow || "") : "";
+    textEl.style.fontSize = scene.fontSize || defaultFontSize || "1em";
+  }
+  if (style && typeof style.speed === "number") currentSpeed = style.speed;
+  else currentSpeed = scene.speed || defaultSpeed || 40;
+  if (scene.color) {
+    if (nameEl) nameEl.style.color = scene.color;
+    if (textEl) textEl.style.color = scene.color;
+  }
+  if (scene.speed) currentSpeed = scene.speed;
 }
 
 function clearCharacters() {
@@ -181,16 +205,40 @@ function clearCharacters() {
 }
 
 function updateCharacterDisplay() {
-  const isPortrait = isMobilePortrait();
-  for (const pos in charSlots) {
-    const slot = charSlots[pos];
-    const hasCharacter = slot.children.length > 0;
-    if (isPortrait) {
-      slot.classList.toggle("active", pos === lastActiveSide && hasCharacter);
-    } else {
-      slot.classList.toggle("active", hasCharacter);
+  // v037_83:
+  // 同じslotに同一人物(a1/b1...)の別表情を出す場合はフェードなし。
+  // 新規人物/別人物のみフェード。
+  window.__TENOTSU_CHAR_SLOT_STATE__ = window.__TENOTSU_CHAR_SLOT_STATE__ || {};
+  Object.entries(charSlots).forEach(([side, slot]) => {
+    if (!slot) return;
+    const img = slot.querySelector("img");
+    if (!img) {
+      window.__TENOTSU_CHAR_SLOT_STATE__[side] = null;
+      return;
     }
-  }
+    const srcAttr = img.getAttribute("src") || "";
+    const file = srcAttr.split("/").pop() || "";
+    const charKey = file.slice(0, 2);
+    const prev = window.__TENOTSU_CHAR_SLOT_STATE__[side];
+
+    img.classList.remove("char-fade-in", "char-same-expression-swap");
+
+    if (prev && prev.charKey === charKey && prev.file !== file) {
+      img.classList.add("char-same-expression-swap");
+      img.style.transition = "none";
+      img.style.animation = "none";
+      img.style.opacity = "1";
+      requestAnimationFrame(() => {
+        img.style.transition = "";
+        img.style.animation = "";
+        img.classList.remove("char-same-expression-swap");
+      });
+    } else if (!prev || prev.charKey !== charKey) {
+      img.classList.add("char-fade-in");
+    }
+
+    window.__TENOTSU_CHAR_SLOT_STATE__[side] = { file, charKey };
+  });
 }
 
 async function applyEffect(el, effectName, duration = 1000) {
@@ -379,6 +427,11 @@ async function showScene(scene) {
     if (!(window.__TENOTSU_MAIN_MENU_LOCK__ && isInitialScenario && scene.showlist !== "office6.json")) await loadList(scene.showlist);
   }
 
+  /* v037_83: characters-only scene auto schedule */
+  if (scene.name === undefined && scene.text === undefined && !scene.choices && isAutoMode) {
+    tenotsuScheduleAutoPlay();
+  }
+
   if (scene.auto && scene.choices === undefined && scene.text === undefined) {
     setTimeout(() => {
       if (!isPlaying) next();
@@ -491,16 +544,16 @@ window.clearAppCacheAndReload = clearAppCacheAndReload;
 // === メニュー関連 ===
 function handleMenuAction(item) {
   if (!item) return;
-  /* v037_81 town precheck */
+  /* v037_83 town precheck */
   if ((item.action === "jump" && item.jump === "town_placeholder.json") || (item.action === "outer")) {
     tenotsuShowOuterMenu();
     return;
   }
-  /* v037_81 scenario return precheck */
+  /* v037_83 scenario return precheck */
   if (item.action === "jump" && item.jump) {
     tenotsuPushReturnMenu("list", "office6.json");
   }
-  /* v037_81 handleMenuAction precheck */
+  /* v037_83 handleMenuAction precheck */
   if (item.action === "list" && item.list === "home.json") {
     tenotsuShowStoreStatus();
     return;
@@ -528,7 +581,7 @@ function handleMenuAction(item) {
     if (typeof window.clearAppCacheAndReload === "function") window.clearAppCacheAndReload();
     return;
   }
-  /* v037_81 custom action precheck */
+  /* v037_83 custom action precheck */
   if (item.action === "custom") {
     if (item.custom === "expression-master") tenotsuShowExpressionMasterMenu();
     else if (item.custom === "expression-character") tenotsuShowExpressionCharacter(item.characterId || "aa");
@@ -661,18 +714,18 @@ function showList(listData) {
 
 // === 操作レイヤー：クリック・タッチ対応 ===
 clickLayer.addEventListener("dblclick", (event) => {
-  // v037_81: 左メニューはダブルクリックではなく長押しで出す。
+  // v037_83: 左メニューはダブルクリックではなく長押しで出す。
   event.preventDefault();
 });
 
 let lastTouch = 0;
 clickLayer.addEventListener("touchend", () => {
-  // v037_81: ダブルタップメニューは廃止。長押しメニューへ統一。
+  // v037_83: ダブルタップメニューは廃止。長押しメニューへ統一。
   lastTouch = Date.now();
 });
 
 clickLayer.addEventListener("click", () => {
-  /* v037_81: 右メニュー非表示時タップ再表示 */
+  /* v037_83: 右メニュー非表示時タップ再表示 */
   if (!menuPanel.classList.contains("hidden")) {
     menuPanel.classList.add("hidden");
     return;
@@ -688,15 +741,15 @@ clickLayer.addEventListener("click", () => {
   }
 });
 
-/* v037_81 expose engine functions */
+/* v037_83 expose engine functions */
 try { if (typeof loadMenu === "function") window.loadMenu = loadMenu; } catch (_) {}
 try { if (typeof loadList === "function") window.loadList = loadList; } catch (_) {}
 try { if (typeof loadScenario === "function") window.loadScenario = loadScenario; } catch (_) {}
 try { if (typeof clearAppCacheAndReload === "function") window.clearAppCacheAndReload = clearAppCacheAndReload; } catch (_) {}
 
 
-/* v037_81 boot flow: 起動フラッシュ → 初期化 → タイトル表示 → 事務所6大メニュー */
-window.TENOTSU_BOOT_FLOW_VERSION = "v037_81";
+/* v037_83 boot flow: 起動フラッシュ → 初期化 → タイトル表示 → 事務所6大メニュー */
+window.TENOTSU_BOOT_FLOW_VERSION = "v037_83";
 window.__TENOTSU_BOOT_DONE__ = false;
 
 function tenotsuSetOfficeText(title, text) {
@@ -794,10 +847,10 @@ try {
   window.tenotsuRunBootFlow = tenotsuRunBootFlow;
   window.tenotsuShowOfficeSixMenu = tenotsuShowOfficeSixMenu;
 } catch (_) {}
-/* /v037_81 boot flow */
+/* /v037_83 boot flow */
 
 
-/* v037_81 economy/status/album helpers */
+/* v037_83 economy/status/album helpers */
 const TENOTSU_ECONOMY_KEY = "tenotsu_economy_v1";
 const TENOTSU_ALBUM_KEY = "tenotsu_album_v1";
 const TENOTSU_STORE_KEY = "tenotsu_store_v1";
@@ -974,7 +1027,7 @@ function tenotsuShowShopMenu() {
 }
 
 
-/* v037_81 rank/equipment/unlock helpers */
+/* v037_83 rank/equipment/unlock helpers */
 function tenotsuRankCost(type, currentRank) {
   const rank = Math.max(1, Math.floor(Number(currentRank) || 1));
   if (type === "store") return rank * 10000;
@@ -1052,7 +1105,7 @@ function tenotsuRankUp(type) {
   tenotsuUnlockRankRewards(store);
   return true;
 }
-/* /v037_81 rank/equipment/unlock helpers */
+/* /v037_83 rank/equipment/unlock helpers */
 
 window.TenotsuData = {
   economy: tenotsuGetEconomy,
@@ -1081,10 +1134,10 @@ window.TenotsuData = {
   expressionPath: tenotsuExpressionPath,
   memoriesByCharacter: tenotsuGetStoriesByCharacter
 };
-/* /v037_81 economy/status/album helpers */
+/* /v037_83 economy/status/album helpers */
 
 
-/* v037_81 economy action listener */
+/* v037_83 economy action listener */
 document.addEventListener("click", (event) => {
   const btn = event.target.closest("[data-engine-action]");
   if (!btn) return;
@@ -1195,10 +1248,10 @@ document.addEventListener("click", (event) => {
     tenotsuShowStoreStatus();
   }
 }, true);
-/* /v037_81 economy action listener */
+/* /v037_83 economy action listener */
 
 
-/* v037_81 manager level/EXP helpers */
+/* v037_83 manager level/EXP helpers */
 const TENOTSU_MANAGER_EXP_KEY = "tenotsu_manager_exp_v1";
 const TENOTSU_MANAGER_MAX_LEVEL = 60;
 
@@ -1307,10 +1360,10 @@ function tenotsuClaimOuterExp() {
   tenotsuUnlockMemory("outer_exp_first", "外回りの記録", "外回りで経験を積みました。");
   return true;
 }
-/* /v037_81 manager level/EXP helpers */
+/* /v037_83 manager level/EXP helpers */
 
 
-/* v037_81 outer ADV / encounter / affection / item helpers */
+/* v037_83 outer ADV / encounter / affection / item helpers */
 const TENOTSU_STAMINA_KEY = "tenotsu_stamina_v1";
 const TENOTSU_AFFECTION_KEY = "tenotsu_affection_v1";
 const TENOTSU_ITEM_KEY = "tenotsu_items_v1";
@@ -1596,10 +1649,10 @@ function tenotsuGrantOuterTestItems() {
   tenotsuUnlockMemory("outer_items_test", "外回り道具セット", "神社のお守り、ひかるの眼鏡、USBメモリ、SDカードを受け取りました。");
   tenotsuShowOuterMenu();
 }
-/* /v037_81 outer ADV / encounter / affection / item helpers */
+/* /v037_83 outer ADV / encounter / affection / item helpers */
 
 
-/* v037_81: 左メニューをダブルクリックからクリックプレス/タップホールドへ変更 */
+/* v037_83: 左メニューをダブルクリックからクリックプレス/タップホールドへ変更 */
 (function setupTenotsuLongPressMenu() {
   if (window.__TENOTSU_LONG_PRESS_MENU_READY__) return;
   window.__TENOTSU_LONG_PRESS_MENU_READY__ = true;
@@ -1623,6 +1676,7 @@ function tenotsuGrantOuterTestItems() {
   }
 
   function openHoldMenu() {
+    if (window.__TENOTSU_UI_POINTER_ACTIVE__) { clearHold(); return; }
     clearHold();
     if (typeof window.tenotsuOpenLeftOfficeMenu === "function") {
       window.tenotsuOpenLeftOfficeMenu();
@@ -1632,7 +1686,7 @@ function tenotsuGrantOuterTestItems() {
   }
 
   document.addEventListener("dblclick", (event) => {
-    // v037_81以降、左メニューはダブルクリックでは出さない。
+    // v037_83以降、左メニューはダブルクリックでは出さない。
     // 通常の会話進行ダブルクリックやバトル側処理を潰しすぎないため、バトル内は無視。
     if (!isBattleArea(event.target)) {
       event.stopPropagation();
@@ -1643,7 +1697,7 @@ function tenotsuGrantOuterTestItems() {
   document.addEventListener("pointerdown", (event) => {
     if (event.button !== undefined && event.button !== 0) return;
     if (isBattleArea(event.target)) return;
-    if (event.target.closest && event.target.closest("button, a, input, select, textarea, [data-engine-action], .menu-item, .list-item")) return;
+    if (event.target.closest && event.target.closest("button, a, input, select, textarea, [data-engine-action], .menu-item, .list-item, #menu-panel, #list-panel, .status-card, .memory-card, .memory-table-wrap, .story-management-surface, .center-surface-window, .secret-word-card")) return;
 
     holdStart = { x: event.clientX, y: event.clientY, t: Date.now() };
     moved = false;
@@ -1663,10 +1717,10 @@ function tenotsuGrantOuterTestItems() {
   document.addEventListener("pointerup", clearHold, true);
   document.addEventListener("pointercancel", clearHold, true);
 })();
-/* /v037_81 */
+/* /v037_83 */
 
 
-/* v037_81: 左メニュー内容 / 思い出ストーリー管理 */
+/* v037_83: 左メニュー内容 / 思い出ストーリー管理 */
 const TENOTSU_STORY_MASTER = [
   {
     "characterId": "manager",
@@ -1964,7 +2018,7 @@ function tenotsuGetStoriesByCharacter() {
 }
 
 function tenotsuOpenLeftOfficeMenu() {
-  // v037_81: 左は旧システムメニュー(menu01)専用。
+  // v037_83: 左は旧システムメニュー(menu01)専用。
   const listPanel = document.getElementById("list-panel");
   if (listPanel) listPanel.classList.add("hidden");
   if (typeof window.loadMenu === "function") {
@@ -2068,7 +2122,7 @@ function tenotsuShowStoryManagementTable() {
   `).join("");
 
   tenotsuShowDynamicPanel("ストーリー管理表", `
-    <div class="status-card memory-card">
+    <div class="status-card memory-card story-management-surface center-between-side-menus">
       <h3>メンバーごとの思い出表</h3>
       <div class="memory-table-wrap">
         <table class="memory-table">
@@ -2090,10 +2144,10 @@ function tenotsuShowStoryManagementTable() {
     </div>
   `);
 }
-/* /v037_81 */
+/* /v037_83 */
 
 
-/* v037_81: 「タイトルに戻る」後メニューをメンバー配下へ移設 */
+/* v037_83: 「タイトルに戻る」後メニューをメンバー配下へ移設 */
 function tenotsuShowTitleReturnMenuArchive() {
   tenotsuShowDynamicPanel("タイトルメニュー保管", `
     <div class="status-card memory-card">
@@ -2144,10 +2198,10 @@ function tenotsuShowMemberListMenu() {
     </div>
   `);
 }
-/* /v037_81 */
+/* /v037_83 */
 
 
-/* v037_81: ストーリー終了後に元メニューへフェード復帰 */
+/* v037_83: ストーリー終了後に元メニューへフェード復帰 */
 window.__TENOTSU_RETURN_MENU_STACK__ = window.__TENOTSU_RETURN_MENU_STACK__ || [];
 window.__TENOTSU_STORY_ENDING__ = false;
 
@@ -2219,10 +2273,10 @@ function tenotsuHandleStoryEndReturn() {
     tenotsuReturnToPreviousMenu();
   }, 1350);
 }
-/* /v037_81 */
+/* /v037_83 */
 
 
-/* v037_81: タイトルタイル表示後も右メニューを6大メニュー固定 */
+/* v037_83: タイトルタイル表示後も右メニューを6大メニュー固定 */
 window.__TENOTSU_MAIN_MENU_LOCK__ = window.__TENOTSU_MAIN_MENU_LOCK__ || false;
 
 function tenotsuLockMainMenu() {
@@ -2245,10 +2299,10 @@ function tenotsuEnsureOfficeSixMenuVisible() {
     tenotsuLockMainMenu();
   }
 }
-/* /v037_81 */
+/* /v037_83 */
 
 
-/* v037_81 randomImagesOn office6 reassert wrapper */
+/* v037_83 randomImagesOn office6 reassert wrapper */
 window.addEventListener("load", () => {
   window.setTimeout(() => {
     if (typeof window.randomImagesOn === "function" && !window.__TENOTSU_RANDOM_WRAPPED__) {
@@ -2264,10 +2318,10 @@ window.addEventListener("load", () => {
     }
   }, 0);
 });
-/* /v037_81 */
+/* /v037_83 */
 
 
-/* v037_81: ショップ 秘密の言葉 */
+/* v037_83: ショップ 秘密の言葉 */
 const TENOTSU_SECRET_WORD_KEY = "tenotsu_secret_words_v1";
 
 const TENOTSU_SECRET_WORDS = {
@@ -2395,10 +2449,10 @@ function tenotsuSubmitSecretWord() {
 function tenotsuShowSecretWordHint() {
   tenotsuShowSecretWordMenu("ヒント：店長へのあいさつ、店の名前、協力店の名前など。");
 }
-/* /v037_81 */
+/* /v037_83 */
 
 
-/* v037_81: キャラクター表情マスター */
+/* v037_83: キャラクター表情マスター */
 const TENOTSU_EXPRESSION_MASTER_PATH = "scenario/data/character_expressions.json";
 window.__TENOTSU_EXPRESSION_MASTER__ = window.__TENOTSU_EXPRESSION_MASTER__ || null;
 
@@ -2468,10 +2522,10 @@ async function tenotsuShowExpressionMasterMenu() {
     </div>
   `);
 }
-/* /v037_81 */
+/* /v037_83 */
 
 
-/* v037_81: オートプレイ実行補強 */
+/* v037_83: オートプレイ実行補強 */
 window.__TENOTSU_AUTO_TIMER__ = null;
 window.__TENOTSU_AUTO_DELAY_MS__ = 1450;
 
@@ -2485,21 +2539,26 @@ function tenotsuStopAutoPlayTimer() {
 function tenotsuScheduleAutoPlay() {
   tenotsuStopAutoPlayTimer();
   if (!isAutoMode) return;
-  if (isPlaying) return;
   if (choicesEl && choicesEl.children && choicesEl.children.length > 0) return;
   const battleRoot = document.getElementById("battle-root");
   if (battleRoot && !battleRoot.classList.contains("hidden")) return;
 
+  // 人物登場・画像ロード中でも、文章が終わっていれば進行できるようにする。
+  const delay = Number(window.__TENOTSU_AUTO_DELAY_MS__ || autoWaitTime || 1450);
   window.__TENOTSU_AUTO_TIMER__ = setTimeout(() => {
     window.__TENOTSU_AUTO_TIMER__ = null;
     if (!isAutoMode) return;
+    if (choicesEl && choicesEl.children && choicesEl.children.length > 0) return;
+    const battleRoot2 = document.getElementById("battle-root");
+    if (battleRoot2 && !battleRoot2.classList.contains("hidden")) return;
+
+    // タイピング中だけ待つ。人物画像のロード状態では止めない。
     if (isPlaying) {
       tenotsuScheduleAutoPlay();
       return;
     }
-    if (choicesEl && choicesEl.children && choicesEl.children.length > 0) return;
     next();
-  }, window.__TENOTSU_AUTO_DELAY_MS__);
+  }, delay);
 }
 
 function tenotsuSetAutoMode(value) {
@@ -2512,4 +2571,13 @@ function tenotsuSetAutoMode(value) {
   if (isAutoMode) tenotsuScheduleAutoPlay();
   else tenotsuStopAutoPlayTimer();
 }
-/* /v037_81 */
+/* /v037_83 */
+
+/* v037_83: UI操作中HOLD抑制 */
+document.addEventListener("pointerdown", (event) => {
+  if (event.target.closest && event.target.closest("#menu-panel, #list-panel, .status-card, .memory-card, .memory-table-wrap, .story-management-surface, .center-surface-window")) {
+    window.__TENOTSU_UI_POINTER_ACTIVE__ = true;
+  }
+}, true);
+document.addEventListener("pointerup", () => { window.__TENOTSU_UI_POINTER_ACTIVE__ = false; }, true);
+document.addEventListener("pointercancel", () => { window.__TENOTSU_UI_POINTER_ACTIVE__ = false; }, true);

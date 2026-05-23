@@ -29,7 +29,15 @@
   },
   {
     "name": "こがね",
-    "text": "なぁに～？店長～？"
+    "text": "なぁに～？店長～？",
+    "characters": [
+      {
+        "side": "center",
+        "src": "d10501.webp"
+      }
+    ],
+    "expression": "05",
+    "expressionLabel": "笑顔"
   },
   {
     "name": "店長",
@@ -37,27 +45,11 @@
   },
   {
     "name": "こがね",
-    "text": "あ、自己紹介？　えー、じゃあ改めて～♪",
-    "characters": [
-      {
-        "side": "center",
-        "src": "d10501.webp"
-      }
-    ],
-    "expression": "05",
-    "expressionLabel": "笑顔"
+    "text": "あ、自己紹介？　えー、じゃあ改めて～♪"
   },
   {
     "name": "こがね",
-    "text": "あーし、小麦沢こがねっていうの！　“こむぎさわ”に“こがね”ね、覚えやすいっしょ？",
-    "characters": [
-      {
-        "side": "center",
-        "src": "d10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "あーし、小麦沢こがねっていうの！　“こむぎさわ”に“こがね”ね、覚えやすいっしょ？"
   },
   {
     "name": "こがね",
@@ -65,27 +57,11 @@
   },
   {
     "name": "こがね",
-    "text": "誕生日は9月9日、おとめ座！　血液型はB型～。全後半年いつでもプレゼント受付中～♪",
-    "characters": [
-      {
-        "side": "center",
-        "src": "d10501.webp"
-      }
-    ],
-    "expression": "05",
-    "expressionLabel": "笑顔"
+    "text": "誕生日は9月9日、おとめ座！　血液型はB型～。全後半年いつでもプレゼント受付中～♪"
   },
   {
     "name": "こがね",
-    "text": "身長は159センチで、スタイルは……うん、悪くないってよく言われるかな。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "d10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "身長は159センチで、スタイルは……うん、悪くないってよく言われるかな。"
   },
   {
     "name": "こがね",
@@ -105,23 +81,15 @@
     "characters": [
       {
         "side": "center",
-        "src": "d10101.webp"
+        "src": "d10501.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "05",
+    "expressionLabel": "笑顔"
   },
   {
     "name": "こがね",
-    "text": "趣味はショッピング！　服もアクセも見てるだけで幸せ♡",
-    "characters": [
-      {
-        "side": "center",
-        "src": "d10801.webp"
-      }
-    ],
-    "expression": "08",
-    "expressionLabel": "期待"
+    "text": "趣味はショッピング！　服もアクセも見てるだけで幸せ♡"
   },
   {
     "name": "こがね",
@@ -133,27 +101,15 @@
     "characters": [
       {
         "side": "center",
-        "src": "d11101.webp"
+        "src": "d11001.webp"
       }
     ],
-    "expression": "11",
-    "expressionLabel": "心配不安"
+    "expression": "10",
+    "expressionLabel": "軽い嫌悪"
   },
   {
     "name": "こがね",
     "text": "人見知り？　ゼロ！　誰とでも仲良くなれるし、",
-    "characters": [
-      {
-        "side": "center",
-        "src": "d10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
-  },
-  {
-    "name": "こがね",
-    "text": "初対面でも“初めまして”じゃなくて“久しぶり～”って感じでいける☆",
     "characters": [
       {
         "side": "center",
@@ -165,15 +121,11 @@
   },
   {
     "name": "こがね",
-    "text": "あーし、こんな見た目だから良く街で英語で話しかけられたりするんだけど",
-    "characters": [
-      {
-        "side": "center",
-        "src": "d10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "初対面でも“初めまして”じゃなくて“久しぶり～”って感じでいける☆"
+  },
+  {
+    "name": "こがね",
+    "text": "あーし、こんな見た目だから良く街で英語で話しかけられたりするんだけど"
   },
   {
     "name": "こがね",
@@ -185,11 +137,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "d10201.webp"
+        "src": "d10501.webp"
       }
     ],
-    "expression": "02",
-    "expressionLabel": "微笑み"
+    "expression": "12",
+    "expressionLabel": "動揺"
   },
   {
     "name": "こがね",
@@ -197,11 +149,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "d10101.webp"
+        "src": "d10501.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "05",
+    "expressionLabel": "笑顔"
   },
   {
     "name": "こがね",
@@ -221,11 +173,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "d10101.webp"
+        "src": "d10501.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "05",
+    "expressionLabel": "笑顔"
   },
   {
     "name": "こがね",
@@ -245,11 +197,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "d10101.webp"
+        "src": "d10501.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "05",
+    "expressionLabel": "笑顔"
   },
   {
     "name": "こがね",
@@ -265,39 +217,15 @@
   },
   {
     "name": "こがね",
-    "text": "一緒にいる人のことは全力で応援するって決めてんの。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "d10901.webp"
-      }
-    ],
-    "expression": "09",
-    "expressionLabel": "得意げ"
+    "text": "一緒にいる人のことは全力で応援するって決めてんの。"
   },
   {
     "name": "こがね",
-    "text": "こんな感じ？　ま、会えばすぐわかると思うけど、",
-    "characters": [
-      {
-        "side": "center",
-        "src": "d10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "こんな感じ？　ま、会えばすぐわかると思うけど、"
   },
   {
     "name": "こがね",
-    "text": "あーしは楽しいこと大好きだから店長は・・あ。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "d10801.webp"
-      }
-    ],
-    "expression": "08",
-    "expressionLabel": "期待"
+    "text": "あーしは楽しいこと大好きだから店長は・・あ。"
   },
   {
     "name": "こがね",

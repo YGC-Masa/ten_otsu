@@ -33,11 +33,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "b10301.webp"
+        "src": "b10201.webp"
       }
     ],
-    "expression": "03",
-    "expressionLabel": "怒り"
+    "expression": "02",
+    "expressionLabel": "微笑み"
   },
   {
     "name": "店長",
@@ -49,15 +49,23 @@
     "characters": [
       {
         "side": "center",
-        "src": "b10101.webp"
+        "src": "b10601.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "06",
+    "expressionLabel": "驚き"
   },
   {
     "name": "藍",
-    "text": "はい、はじめまして。速水川 藍(はやみがわ あい)といいます。"
+    "text": "はい、はじめまして。速水川 藍(はやみがわ あい)といいます。",
+    "characters": [
+      {
+        "side": "center",
+        "src": "b10201.webp"
+      }
+    ],
+    "expression": "02",
+    "expressionLabel": "微笑み"
   },
   {
     "name": "藍",
@@ -77,75 +85,27 @@
   },
   {
     "name": "藍",
-    "text": "でも静かに過ごすほうが好き…なのかな？",
-    "characters": [
-      {
-        "side": "center",
-        "src": "b10201.webp"
-      }
-    ],
-    "expression": "02",
-    "expressionLabel": "微笑み"
+    "text": "でも静かに過ごすほうが好き…なのかな？"
   },
   {
     "name": "藍",
-    "text": "趣味は読書です。小説もエッセイも、ラノベなんかも、ジャンル問わず読みます。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "b10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "趣味は読書です。小説もエッセイも、ラノベなんかも、ジャンル問わず読みます。"
   },
   {
     "name": "藍",
-    "text": "カフェや図書館で新しい本を開く時間は、私にとって別の人生体験ができる楽しい時間なのです。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "b10901.webp"
-      }
-    ],
-    "expression": "09",
-    "expressionLabel": "得意げ"
+    "text": "カフェや図書館で新しい本を開く時間は、私にとって別の人生体験ができる楽しい時間なのです。"
   },
   {
     "name": "藍",
-    "text": "あ、パンも好きなので、パン屋さんに寄り道しちゃうことも多いですね。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "b10201.webp"
-      }
-    ],
-    "expression": "02",
-    "expressionLabel": "微笑み"
+    "text": "あ、パンも好きなので、パン屋さんに寄り道しちゃうことも多いですね。"
   },
   {
     "name": "藍",
-    "text": "体が小さいからか、いくつも食べられないけど、いろいろなパンを少しずつ味わうのが好きなんです。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "b10301.webp"
-      }
-    ],
-    "expression": "03",
-    "expressionLabel": "怒り"
+    "text": "体が小さいからか、いくつも食べられないけど、いろいろなパンを少しずつ味わうのが好きなんです。"
   },
   {
     "name": "藍",
-    "text": "好きな飲み物は……焼酎、です。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "b10201.webp"
-      }
-    ],
-    "expression": "02",
-    "expressionLabel": "微笑み"
+    "text": "好きな飲み物は……焼酎、です。"
   },
   {
     "name": "藍",
@@ -165,11 +125,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "b10101.webp"
+        "src": "b10201.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "02",
+    "expressionLabel": "微笑み"
   },
   {
     "name": "藍",
@@ -177,11 +137,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "b11101.webp"
+        "src": "b11001.webp"
       }
     ],
-    "expression": "11",
-    "expressionLabel": "心配不安"
+    "expression": "10",
+    "expressionLabel": "軽い嫌悪"
   },
   {
     "name": "藍",
@@ -205,11 +165,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "b10101.webp"
+        "src": "b10201.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "02",
+    "expressionLabel": "微笑み"
   },
   {
     "name": "藍",
@@ -221,11 +181,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "b10601.webp"
+        "src": "b11001.webp"
       }
     ],
-    "expression": "06",
-    "expressionLabel": "驚き"
+    "expression": "10",
+    "expressionLabel": "軽い嫌悪"
   },
   {
     "name": "藍",
@@ -233,11 +193,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "b10101.webp"
+        "src": "b10201.webp"
       }
     ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "expression": "02",
+    "expressionLabel": "微笑み"
   },
   {
     "name": "藍",
@@ -245,39 +205,15 @@
   },
   {
     "name": "藍",
-    "text": "あとは意外だと言われるんですが、爬虫類が大好きです。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "b10201.webp"
-      }
-    ],
-    "expression": "02",
-    "expressionLabel": "微笑み"
+    "text": "あとは意外だと言われるんですが、爬虫類が大好きです。"
   },
   {
     "name": "藍",
-    "text": "イラストやぬいぐるみだとヘビもトカゲも可愛いと思うんですよね。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "b10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "イラストやぬいぐるみだとヘビもトカゲも可愛いと思うんですよね。"
   },
   {
     "name": "藍",
-    "text": "かえるさんの可愛いグッズなんかも大好きです！",
-    "characters": [
-      {
-        "side": "center",
-        "src": "b10201.webp"
-      }
-    ],
-    "expression": "02",
-    "expressionLabel": "微笑み"
+    "text": "かえるさんの可愛いグッズなんかも大好きです！"
   },
   {
     "name": "藍",
@@ -285,15 +221,7 @@
   },
   {
     "name": "藍",
-    "text": "女子高みたいな？感じで、にぎやかだけど温かい雰囲気があります。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "b10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "女子高みたいな？感じで、にぎやかだけど温かい雰囲気があります。"
   },
   {
     "name": "藍",
@@ -301,27 +229,11 @@
   },
   {
     "name": "藍",
-    "text": "てんちょーは、見た目で判断せず、ちゃんと大人として見てくれるので嬉しいです。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "b10201.webp"
-      }
-    ],
-    "expression": "02",
-    "expressionLabel": "微笑み"
+    "text": "てんちょーは、見た目で判断せず、ちゃんと大人として見てくれるので嬉しいです。"
   },
   {
     "name": "藍",
-    "text": "見た目の印象のせいか、初対面ではよく“おとなしい子”で終わっちゃうんですが、",
-    "characters": [
-      {
-        "side": "center",
-        "src": "b10101.webp"
-      }
-    ],
-    "expression": "01",
-    "expressionLabel": "澄まし"
+    "text": "見た目の印象のせいか、初対面ではよく“おとなしい子”で終わっちゃうんですが、"
   },
   {
     "name": "藍",
@@ -333,15 +245,7 @@
   },
   {
     "name": "藍",
-    "text": "以上となりますが、これからもよろしくお願いします。",
-    "characters": [
-      {
-        "side": "center",
-        "src": "b10501.webp"
-      }
-    ],
-    "expression": "05",
-    "expressionLabel": "笑顔"
+    "text": "以上となりますが、これからもよろしくお願いします。"
   },
   {
     "name": "",
