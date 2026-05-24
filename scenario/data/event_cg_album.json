@@ -1,5 +1,5 @@
 {
-  "version": "v037_86",
+  "version": "v037_87",
   "description": "イベントCG鑑賞モード用アルバム索引",
   "items": [
     {
@@ -17,6 +17,38 @@
       "unlock": "緋奈と思い出ストーリー解放",
       "isUnlocked": true,
       "description": "春の公園で、緋奈の手作り弁当から切り分けたひと口ハンバーグを分けてもらう思い出。"
+    },
+    {
+      "id": "ab_memory_spring_book_bread_share_001",
+      "title": "桜木陰のしおり・半分こ",
+      "characterId": "ab",
+      "characterName": "速水川 藍",
+      "type": "memory_cg",
+      "file": "ab_memory_spring_book_bread_share_cg.png",
+      "path": "images/assets/cg/ab_memory_spring_book_bread_share_cg.png",
+      "thumbnailColor": "images/assets/thumb/ab_memory_spring_book_bread_share_thumb_color.png",
+      "thumbnailMono": "images/assets/thumb/ab_memory_spring_book_bread_share_thumb_mono.png",
+      "scenario": "memory_ai_spring_book_bread.json",
+      "storyId": "ab_memory_spring_book_bread_001",
+      "unlock": "藍と思い出ストーリー解放",
+      "isUnlocked": true,
+      "description": "若葉中央公園で、藍が桜モチーフのパンを差し出して半分こを提案する思い出。"
+    },
+    {
+      "id": "ab_memory_spring_book_bread_close_001",
+      "title": "桜木陰のしおり",
+      "characterId": "ab",
+      "characterName": "速水川 藍",
+      "type": "memory_cg",
+      "file": "ab_memory_spring_book_bread_close_cg.png",
+      "path": "images/assets/cg/ab_memory_spring_book_bread_close_cg.png",
+      "thumbnailColor": "images/assets/thumb/ab_memory_spring_book_bread_close_thumb_color.png",
+      "thumbnailMono": "images/assets/thumb/ab_memory_spring_book_bread_close_thumb_mono.png",
+      "scenario": "memory_ai_spring_book_bread.json",
+      "storyId": "ab_memory_spring_book_bread_001",
+      "unlock": "藍と思い出ストーリー解放",
+      "isUnlocked": true,
+      "description": "桜の木陰で、静かで穏やかな春の時間が好きだと藍が打ち明ける思い出。"
     },
     {
       "id": "a01ev02",

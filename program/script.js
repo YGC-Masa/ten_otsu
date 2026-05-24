@@ -1,6 +1,6 @@
 
 /* v037_85 engine guard: 起動停止対策 */
-window.TENOTSU_ENGINE_VERSION = "v037_85";
+window.TENOTSU_ENGINE_VERSION = "v037_87";
 window.__TENOTSU_ENGINE_ERRORS__ = window.__TENOTSU_ENGINE_ERRORS__ || [];
 
 window.addEventListener("error", (event) => {
@@ -1855,6 +1855,19 @@ const TENOTSU_STORY_MASTER = [
     "unlock": "初期",
     "album": true,
     "scenario": "intro_ai.json"
+  },
+  {
+    "characterId": "ab",
+    "characterName": "藍",
+    "storyId": "ab_memory_spring_book_bread_001",
+    "title": "桜木陰のしおり",
+    "type": "memory",
+    "unlock": "思い出アルバム解放",
+    "album": true,
+    "scenario": "memory_ai_spring_book_bread.json",
+    "cg": "images/assets/cg/ab_memory_spring_book_bread_close_cg.png",
+    "thumbnailColor": "images/assets/thumb/ab_memory_spring_book_bread_close_thumb_color.png",
+    "thumbnailMono": "images/assets/thumb/ab_memory_spring_book_bread_close_thumb_mono.png"
   },
   {
     "characterId": "ab",
