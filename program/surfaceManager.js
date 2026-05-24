@@ -1,11 +1,11 @@
-/* v038_07 Surface Manager
-   One late-loaded authority for screen modes, layers, office rendering, shop rendering,
-   and battle input priority. This intentionally neutralizes earlier diagnostic wrappers.
+/* v038_08 Surface Manager
+   Safe non-recursive surface authority.
+   Fixes v038_07 hang by avoiding MutationObserver -> enterOffice -> DOM rebuild loops.
 */
 (function(){
   "use strict";
 
-  const VERSION = "v038_07";
+  const VERSION = "v038_08";
   const BG_OFFICE = "images/assets/bgev/bg_office_hidamari.png";
   const BG_SHOP = "images/assets/bgev/bg_exchange_item_counter.png";
   const SAKUYA_INTRO_SCENARIO = "shop_exchange_intro_sakuya.json";
@@ -38,31 +38,23 @@
   const MENU_ITEMS = ["店舗","メンバー","店舗営業","外回り","ショップ","設定"];
 
   const Z = Object.freeze({
-    bg: 0,
-    title: 20,
-    storyChar: 120,
-    cg: 180,
-    click: 240,
-    dialogue: 420,
-    choice: 440,
-    officeChar: 520,
-    menu: 800,
-    comment: 900,
-    battle: 30000,
-    fade: 50000,
-    system: 70000,
-    boot: 200000
+    bg: 0, title: 20, storyChar: 120, cg: 180, click: 240,
+    dialogue: 420, choice: 440, officeChar: 520, menu: 800,
+    comment: 900, battle: 30000, fade: 50000, system: 70000, boot: 200000
   });
 
   window.TENOTSU_SURFACE_VERSION = VERSION;
   window.TENOTSU_LAYER_Z = Z;
+
+  let isRendering = false;
+  let installed = false;
 
   function qs(sel){ return document.querySelector(sel); }
   function qsa(sel){ return Array.from(document.querySelectorAll(sel)); }
   function setI(el, prop, val){ if (el) el.style.setProperty(prop, String(val), "important"); }
   function shuffle(a){
     const arr = a.slice();
-    for(let i=arr.length-1;i>0;i--){
+    for(let i = arr.length - 1; i > 0; i--){
       const j = Math.floor(Math.random() * (i + 1));
       [arr[i], arr[j]] = [arr[j], arr[i]];
     }
@@ -78,27 +70,20 @@
     document.body.classList.toggle("story-playing", mode === "story");
   }
 
-  function backgroundEl(){
-    return qs("#background");
-  }
-
   function setBackground(src){
-    const bg = backgroundEl();
+    const bg = qs("#background");
     if (bg) {
-      bg.src = src;
+      if (bg.getAttribute("src") !== src) bg.src = src;
       setI(bg, "display", "block");
       setI(bg, "visibility", "visible");
       setI(bg, "opacity", "1");
       setI(bg, "z-index", Z.bg);
     }
-
     const game = qs("#game-container");
     if (game) {
       setI(game, "background", "#000");
       setI(game, "background-image", "none");
     }
-
-    // Neutralize old body-level diagnostic backgrounds.
     document.body.style.removeProperty("background-image");
   }
 
@@ -125,7 +110,8 @@
   function renderComment(name, text){
     const box = ensureComment();
     box.style.display = "block";
-    box.innerHTML = "<span class='comment-speaker'>" + name + "</span><span class='comment-text'>" + text + "</span>";
+    const next = "<span class='comment-speaker'>" + name + "</span><span class='comment-text'>" + text + "</span>";
+    if (box.innerHTML !== next) box.innerHTML = next;
   }
 
   function hideOfficeLayer(){
@@ -149,7 +135,8 @@
     const current = layer.dataset.pickKey || "";
     if (forceNew || !current || !layer.children.length) {
       const picks = shuffle(OFFICE_CHARS).slice(0, 3);
-      layer.dataset.pickKey = picks.map(p => p[1]).join("|");
+      const key = picks.map(p => p[1]).join("|");
+      layer.dataset.pickKey = key;
       layer.innerHTML = "";
       picks.forEach((c, idx) => {
         const img = document.createElement("img");
@@ -158,7 +145,6 @@
         img.src = "images/assets/char/" + c[1];
         img.onerror = () => {
           img.onerror = null;
-          // Use a known fallback rather than leaving broken image icon.
           img.src = "images/assets/char/a10501.webp";
         };
         layer.appendChild(img);
@@ -168,12 +154,26 @@
     layer.style.display = "block";
   }
 
+  function menuAlreadyBuilt(panel){
+    if (!panel) return false;
+    const buttons = Array.from(panel.querySelectorAll(".tenotsu-six-main-button")).map(b => (b.textContent || "").trim());
+    return MENU_ITEMS.every(label => buttons.includes(label));
+  }
+
   function buildSixMenu(){
     const panel = qs("#list-panel");
     if (!panel) return;
 
     panel.classList.remove("hidden");
     panel.classList.add("show","open","visible","active","tenotsu-six-main-menu");
+
+    if (menuAlreadyBuilt(panel)) {
+      setI(panel, "display", "block");
+      setI(panel, "visibility", "visible");
+      setI(panel, "opacity", "1");
+      return;
+    }
+
     panel.innerHTML = "";
 
     const title = document.createElement("div");
@@ -216,9 +216,7 @@
         setMode("town");
         hideOfficeLayer();
         hideComment();
-        if (typeof window.loadScenario === "function") {
-          window.loadScenario("town_walk.json");
-        }
+        if (typeof window.loadScenario === "function") window.loadScenario("town_walk.json");
         break;
       case "設定":
         setMode("settings");
@@ -236,20 +234,23 @@
   }
 
   function enterOffice(forceNewCharacters = false){
-    setMode("office");
-    removeOldDiagnosticLayers();
-    setBackground(BG_OFFICE);
-
-    if (typeof window.tenotsuSetStoryPlayingFlag === "function") {
-      try { window.tenotsuSetStoryPlayingFlag(false); } catch (_) {}
+    if (isRendering) return;
+    isRendering = true;
+    try {
+      setMode("office");
+      removeOldDiagnosticLayers();
+      setBackground(BG_OFFICE);
+      if (typeof window.tenotsuSetStoryPlayingFlag === "function") {
+        try { window.tenotsuSetStoryPlayingFlag(false); } catch (_) {}
+      }
+      const dialogue = qs("#dialogue-box");
+      if (dialogue) dialogue.classList.add("hidden");
+      renderOfficeCharacters(forceNewCharacters);
+      buildSixMenu();
+      normalizeLayers();
+    } finally {
+      isRendering = false;
     }
-
-    const dialogue = qs("#dialogue-box");
-    if (dialogue) dialogue.classList.add("hidden");
-
-    renderOfficeCharacters(forceNewCharacters);
-    buildSixMenu();
-    normalizeLayers();
   }
 
   function showShopGreeting(){
@@ -258,18 +259,22 @@
   }
 
   function enterShop(){
-    setMode("shop");
-    setBackground(BG_SHOP);
-    hideOfficeLayer();
-    showShopGreeting();
-
-    const panel = qs("#list-panel");
-    if (panel) {
-      panel.classList.remove("hidden");
-      panel.classList.add("show","open","visible","active");
+    if (isRendering) return;
+    isRendering = true;
+    try {
+      setMode("shop");
+      setBackground(BG_SHOP);
+      hideOfficeLayer();
+      showShopGreeting();
+      const panel = qs("#list-panel");
+      if (panel) {
+        panel.classList.remove("hidden");
+        panel.classList.add("show","open","visible","active");
+      }
+      normalizeLayers();
+    } finally {
+      isRendering = false;
     }
-
-    normalizeLayers();
   }
 
   function openShop(){
@@ -329,10 +334,8 @@
   }
 
   function normalizeLayers(){
-    const bg = qs("#background");
-    if (bg) setI(bg, "z-index", Z.bg);
-
     [
+      ["#background", Z.bg],
       ["#random-images-layer,#random-text-layer", Z.title],
       ["#char-layer,#char-layer .char-slot,#char-layer .char-image", Z.storyChar],
       ["#ev-layer,#ev-layer .ev-image,#ev-layer .cg-image,.ev-image,.cg-image", Z.cg],
@@ -366,6 +369,8 @@
   }
 
   function installButtonDelegates(){
+    if (installed) return;
+    installed = true;
     document.addEventListener("click", ev => {
       const btn = ev.target && ev.target.closest ? ev.target.closest("button,.tenotsu-six-main-button,.menu-item,a,li") : null;
       if (!btn) return;
@@ -386,52 +391,29 @@
       setMode(mode || "office");
       normalizeLayers();
     };
-
     window.tenotsuEnterOfficeMode = function(reason){
       return enterOffice(reason === "story-end" || reason === "force" || reason === true);
     };
+    window.tenotsuShowOfficeSixMenu = function(){ buildSixMenu(); normalizeLayers(); };
+    window.tenotsuSetOfficeBackground = function(){ setBackground(BG_OFFICE); };
+    window.tenotsuRestoreOfficeBackground = function(){ setBackground(BG_OFFICE); };
+    window.tenotsuShowExchangeShopBackground = function(){ return enterShop(); };
+    window.tenotsuSetExchangeBackground = function(){ return enterShop(); };
+    window.tenotsuOpenShopWithSakuya = function(){ return openShop(); };
+    window.tenotsuNormalizeLayerIndex = function(){ normalizeLayers(); };
 
-    window.tenotsuShowOfficeSixMenu = function(){
-      buildSixMenu();
-      normalizeLayers();
-    };
-
-    window.tenotsuSetOfficeBackground = function(){
-      setBackground(BG_OFFICE);
-    };
-
-    window.tenotsuRestoreOfficeBackground = function(){
-      setBackground(BG_OFFICE);
-    };
-
-    window.tenotsuShowExchangeShopBackground = function(){
-      return enterShop();
-    };
-
-    window.tenotsuSetExchangeBackground = function(){
-      return enterShop();
-    };
-
-    window.tenotsuOpenShopWithSakuya = function(){
-      return openShop();
-    };
-
-    window.tenotsuNormalizeLayerIndex = function(){
-      normalizeLayers();
-    };
-
-    // Neutralize previous diagnostic functions that hid office backgrounds or drew force layers.
-    window.tenotsuHideOfficeBackgroundDirect = function(){ normalizeLayers(); };
-    window.tenotsuDisableOfficeBackground = function(){ normalizeLayers(); };
-    window.tenotsuForceOfficeForeground = function(){ normalizeLayers(); };
+    // Neutralize previous diagnostic functions without triggering render.
+    window.tenotsuHideOfficeBackgroundDirect = function(){};
+    window.tenotsuDisableOfficeBackground = function(){};
+    window.tenotsuForceOfficeForeground = function(){};
     window.TENOTSU_OFFICE_DISABLE_BACKGROUND = false;
   }
 
   function patchStoryEndShopReturn(){
     const previous = window.tenotsuHandleStoryEndReturn;
-    if (typeof previous !== "function") return;
+    if (typeof previous !== "function" || previous.__surfaceV03808) return;
 
-    window.tenotsuHandleStoryEndReturn = function(){
+    const wrapped = function(){
       const scenarioName = String(window.currentScenario || "");
       const shouldReturnShop = window.__TENOTSU_RETURN_TO_SHOP_AFTER_STORY__ || scenarioName.includes(SAKUYA_INTRO_SCENARIO);
       if (!shouldReturnShop) return previous.apply(this, arguments);
@@ -452,12 +434,10 @@
       if (typeof window.tenotsuBlackFadeOut === "function") {
         setTimeout(() => window.tenotsuBlackFadeOut(1000), 650);
       }
-
       setTimeout(() => {
         window.__TENOTSU_STORY_ENDING__ = false;
         enterShop();
       }, 1780);
-
       if (typeof window.tenotsuBlackFadeIn === "function") {
         setTimeout(() => window.tenotsuBlackFadeIn(850), 1980);
       }
@@ -465,6 +445,8 @@
         if (clickLayer) clickLayer.style.pointerEvents = "auto";
       }, 2100);
     };
+    wrapped.__surfaceV03808 = true;
+    window.tenotsuHandleStoryEndReturn = wrapped;
   }
 
   function detectOfficeCandidate(){
@@ -483,9 +465,7 @@
     installButtonDelegates();
     normalizeLayers();
 
-    if (detectOfficeCandidate()) {
-      enterOffice(false);
-    }
+    if (detectOfficeCandidate()) enterOffice(false);
 
     setTimeout(() => {
       patchExistingAPIs();
@@ -498,19 +478,9 @@
       if (detectOfficeCandidate()) enterOffice(false);
     }, 1000);
 
-    const observer = new MutationObserver(() => {
-      if (window.__tenotsuSurfaceTimer) clearTimeout(window.__tenotsuSurfaceTimer);
-      window.__tenotsuSurfaceTimer = setTimeout(() => {
-        normalizeLayers();
-        if (detectOfficeCandidate()) enterOffice(false);
-      }, 0);
-    });
-    observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["class","style","data-game-mode","src"] });
+    // No MutationObserver here. v038_07 hung because observer rebuilt office menu repeatedly.
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", boot);
-  } else {
-    boot();
-  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
 })();
