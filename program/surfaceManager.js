@@ -1,4 +1,4 @@
-/* v038_23 Surface Manager - Single Authority
+/* v038_24 Surface Manager - Single Authority
    Purpose:
    - office/shop visual surfaces are owned by this file only.
    - old randomShows/title/office comment layers are removed or hidden.
@@ -8,7 +8,7 @@
 (function(){
   "use strict";
 
-  const VERSION = "v038_23";
+  const VERSION = "v038_24";
   const BG_OFFICE = "images/assets/bgev/bg_office_hidamari.png";
   const BG_SHOP = "images/assets/bgev/bg_exchange_item_counter.png";
   const SAKUYA_INTRO_SCENARIO = "shop_exchange_intro_sakuya.json";
@@ -52,6 +52,7 @@
   window.TENOTSU_SURFACE_VERSION = VERSION;
   window.TENOTSU_LAYER_Z = Z;
   window.__TENOTSU_SURFACE_TAKEOVER__ = true;
+  window.__TENOTSU_DISABLE_RANDOMSHOW_VISUALS__ = true;
   window.__TENOTSU_DISABLE_LEGACY_OBSERVERS__ = true;
 
   let currentMode = "";
@@ -444,7 +445,7 @@
   }
 
   function renderShopPanel(){
-    // v038_23: shop action buttons live in #tenotsu-shop-menu.
+    // v038_24: shop action buttons live in #tenotsu-shop-menu.
     // Operation surface remains available but does not create a second submenu.
     const s = ensureOperationSurface();
     s.innerHTML = "";
@@ -505,7 +506,7 @@
 
 
   function updateOrientationWarning(){
-    // v038_23:
+    // v038_24:
     // Desktop / normal wide browser must be treated as landscape-ok.
     const w = Math.max(window.innerWidth || 0, document.documentElement.clientWidth || 0);
     const h = Math.max(window.innerHeight || 0, document.documentElement.clientHeight || 0);
@@ -799,7 +800,7 @@
     window.tenotsuOpenShopWithSakuya = function(){ openShop(); };
     window.tenotsuNormalizeLayerIndex = function(){ normalizeLayers(); };
     window.tenotsuRunBootFlow = function(){
-      // v038_23: script.js may call this after surfaceManager already entered office.
+      // v038_24: script.js may call this after surfaceManager already entered office.
       // Do not force a second random character render.
       const mode = document.body.dataset.gameMode || window.tenotsuGameMode || "";
       if (mode !== "office") enterOffice(true);

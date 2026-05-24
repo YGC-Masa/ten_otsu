@@ -1,4 +1,4 @@
-/* v038_23 randomShows takeover hard stop
+/* v038_24 randomShows takeover hard stop
    During surfaceManager takeover, randomShows must not create or preserve visual DOM.
 */
 (function(){
@@ -25,7 +25,7 @@
   setTimeout(kill, 1500);
 })();
 
-/* v038_23 randomShows hard visual noop
+/* v038_24 randomShows hard visual noop
    Visual random title/office characters are disabled during surface takeover.
 */
 (function(){
@@ -44,7 +44,7 @@
     return;
   }
 })();
-/* v038_23 surface takeover no visual output
+/* v038_24 surface takeover no visual output
    randomShows.js remains for compatibility/data only.
    Visual title/office random characters are rendered by surfaceManager.js.
 */
@@ -69,25 +69,27 @@ let imagePathsCache = null;
 let preloadedImages = {}; // src => <img>（非表示で保持）
 let randomImagesLoadPromise = null;
 
-// v038_23: surfaceManager takeover compatibility.
+// v038_24: surfaceManager takeover compatibility.
 // During office/shop operation, randomShows must not create separate character/comment surfaces.
 // It only provides data; actual display is owned by surfaceManager (#tenotsu-front-character-layer + #dialogue-box).
 function tenotsuIsSurfaceTakeoverActive() {
-  return !!window.__TENOTSU_SURFACE_TAKEOVER__ || !!window.TENOTSU_SURFACE_VERSION;
+  return !!window.__TENOTSU_DISABLE_RANDOMSHOW_VISUALS__ || !!window.__TENOTSU_SURFACE_TAKEOVER__ || !!window.TENOTSU_SURFACE_VERSION;
 }
 
 function tenotsuHideRandomShowLayers() {
-  const imgLayer = document.getElementById("random-images-layer");
-  const txtLayer = document.getElementById("random-text-layer");
-  [imgLayer, txtLayer].forEach(layer => {
-    if (!layer) return;
+  document.querySelectorAll("#random-images-layer,#random-text-layer,.random-images-layer,.random-text-layer,.random-show,.random-character,.title-character-layer,.title-comment-window,.title-comment,.boot-character-layer").forEach(layer => {
     layer.innerHTML = "";
     layer.style.setProperty("display", "none", "important");
     layer.style.setProperty("visibility", "hidden", "important");
     layer.style.setProperty("pointer-events", "none", "important");
+    layer.remove();
   });
+  randomImagesLayer = null;
+  randomTextLayer = null;
   randomImageElements = [];
   randomTextElements = [];
+  window.__TENOTSU_TITLE_RANDOM_SELECTED = [];
+  window.__TENOTSU_TITLE_RANDOM_READY = Promise.resolve([]);
 }
 
 
@@ -219,10 +221,7 @@ function loadRandomImagesData() {
 // ▼ タイトル立ち絵ランダム表示
 function randomImagesOn() {
   if (tenotsuIsSurfaceTakeoverActive()) {
-    if (typeof window.tenotsuRandomShowsHardKill === "function") window.tenotsuRandomShowsHardKill();
-    else tenotsuHideRandomShowLayers();
-    window.__TENOTSU_TITLE_RANDOM_SELECTED = [];
-    window.__TENOTSU_TITLE_RANDOM_READY = Promise.resolve([]);
+    tenotsuHideRandomShowLayers();
     return Promise.resolve([]);
   }
   if (!window.config || !config.randomPath) return Promise.resolve([]);
@@ -232,9 +231,9 @@ function randomImagesOn() {
 }
 
 function buildRandomImages(data) {
-  // v038_23 buildRandomImages takeover guard
+  // v038_24 buildRandomImages takeover guard
   if (tenotsuIsSurfaceTakeoverActive()) {
-    if (typeof window.tenotsuRandomShowsHardKill === 'function') window.tenotsuRandomShowsHardKill();
+    tenotsuHideRandomShowLayers();
     return [];
   }
   createRandomImagesLayer();
@@ -354,6 +353,10 @@ function chooseLinkedTitleComment(list) {
 function randomTextsOn() {
   if (tenotsuIsSurfaceTakeoverActive()) {
     tenotsuHideRandomShowLayers();
+    return [];
+  }
+  if (tenotsuIsSurfaceTakeoverActive()) {
+    tenotsuHideRandomShowLayers();
     return Promise.resolve();
   }
   const ready = window.__TENOTSU_TITLE_RANDOM_READY || Promise.resolve(window.__TENOTSU_TITLE_RANDOM_SELECTED || []);
@@ -416,7 +419,7 @@ function randomTextsOn() {
 }
 
 function tenotsuRefreshTitleRandomShow() {
-  // v038_23: surfaceManager takeover. Do not create separate title/office surfaces.
+  // v038_24: surfaceManager takeover. Do not create separate title/office surfaces.
   if (tenotsuIsSurfaceTakeoverActive()) {
     tenotsuHideRandomShowLayers();
     if (typeof window.tenotsuSurfaceRefreshOffice === "function") {
@@ -466,3 +469,18 @@ try {
   window.tenotsuRefreshTitleRandomShow = tenotsuRefreshTitleRandomShow;
   window.tenotsuHideRandomShowLayers = tenotsuHideRandomShowLayers;
 } catch (_) {}
+
+/* v038_24 preflight randomShows finalizer */
+(function(){
+  const kill = () => {
+    if (typeof tenotsuIsSurfaceTakeoverActive === "function" && tenotsuIsSurfaceTakeoverActive()) {
+      tenotsuHideRandomShowLayers();
+    }
+  };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", kill);
+  else kill();
+  window.addEventListener("load", kill);
+  setTimeout(kill, 50);
+  setTimeout(kill, 250);
+  setTimeout(kill, 1000);
+})();

@@ -1,5 +1,5 @@
 window.config = {
-  version: "v038_23",
+  version: "v038_24",
   bgPath: "images/assets/bgev/",
   charPath: "images/assets/char/",
   bgmPath: "images/assets/bgm/",
