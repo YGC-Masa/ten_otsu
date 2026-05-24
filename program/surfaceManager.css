@@ -1,4 +1,4 @@
-/* v038_24 Surface Takeover CSS
+/* v038_25 Surface Takeover CSS
    Best-practice implementation:
    - old menu surfaces are hidden
    - new surfaceManager owns office/shop menu and operation surfaces
@@ -378,7 +378,7 @@ body.mode-shop #tenotsu-operation-surface {
 }
 
 
-/* v038_24 boot rescue */
+/* v038_25 boot rescue */
 body[data-game-mode="office"] #boot-flow,
 body.mode-office #boot-flow,
 body[data-game-mode="shop"] #boot-flow,
@@ -397,7 +397,7 @@ body.mode-battle #boot-flow,
 }
 
 
-/* v038_24 unified comment / shop no-character */
+/* v038_25 unified comment / shop no-character */
 #office-comment-box,
 #title-comment-box,
 #office-message,
@@ -441,7 +441,7 @@ body.mode-shop #dialogue-box {
 }
 
 
-/* v038_24 randomShows unification and background fallback */
+/* v038_25 randomShows unification and background fallback */
 body[data-game-mode="office"] #game-container,
 body.mode-office #game-container {
   background-image: url("../images/assets/bgev/bg_office_hidamari.png") !important;
@@ -467,7 +467,7 @@ body.mode-shop #game-container {
 }
 
 
-/* v038_24 fade order fix */
+/* v038_25 fade order fix */
 #tenotsu-safe-fade {
   position: fixed !important;
   inset: 0 !important;
@@ -484,7 +484,7 @@ body:not(.mode-story):not(.mode-battle):not(.mode-office):not(.mode-shop) #tenot
 }
 
 
-/* v038_24 boot singleton / background / hold / text surface fix */
+/* v038_25 boot singleton / background / hold / text surface fix */
 
 /* suppress legacy/random title surfaces */
 #random-images-layer,
@@ -609,7 +609,7 @@ body.mode-shop #tenotsu-front-character-layer {
 }
 
 
-/* v038_24 single authority hard fix */
+/* v038_25 single authority hard fix */
 #random-images-layer,
 #random-text-layer,
 .random-images-layer,
@@ -807,7 +807,7 @@ body.mode-settings #dialogue-box {
 }
 
 
-/* v038_24 shop menu takeover */
+/* v038_25 shop menu takeover */
 #tenotsu-shop-menu {
   position: fixed !important;
   right: max(20px, env(safe-area-inset-right)) !important;
@@ -875,7 +875,7 @@ body.mode-office #tenotsu-main-menu {
 }
 
 
-/* v038_24 orientation warning fix
+/* v038_25 orientation warning fix
    PC / sufficiently wide browser should not show rotate warning.
    Only narrow portrait-like mobile viewport may show it.
 */
@@ -915,4 +915,47 @@ body.tenotsu-portrait-warning #orientation-warning {
   display: flex !important;
   visibility: visible !important;
   opacity: 1 !important;
+}
+
+
+/* v038_25 office back slot guard */
+body[data-game-mode="office"] #char-layer,
+body.mode-office #char-layer,
+body[data-game-mode="shop"] #char-layer,
+body.mode-shop #char-layer,
+body[data-game-mode="members"] #char-layer,
+body.mode-members #char-layer,
+body[data-game-mode="settings"] #char-layer,
+body.mode-settings #char-layer {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+body[data-game-mode="office"] #char-layer .char-slot,
+body.mode-office #char-layer .char-slot,
+body[data-game-mode="shop"] #char-layer .char-slot,
+body.mode-shop #char-layer .char-slot,
+body[data-game-mode="members"] #char-layer .char-slot,
+body.mode-members #char-layer .char-slot,
+body[data-game-mode="settings"] #char-layer .char-slot,
+body.mode-settings #char-layer .char-slot,
+body[data-game-mode="office"] #char-layer img,
+body.mode-office #char-layer img,
+body[data-game-mode="shop"] #char-layer img,
+body.mode-shop #char-layer img,
+body[data-game-mode="members"] #char-layer img,
+body.mode-members #char-layer img,
+body[data-game-mode="settings"] #char-layer img,
+body.mode-settings #char-layer img {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+body[data-game-mode="story"] #char-layer,
+body.mode-story #char-layer {
+  display: block !important;
+  visibility: visible !important;
 }
