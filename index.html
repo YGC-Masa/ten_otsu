@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no, maximum-scale=1.0" />
-  <title>ノベルゲームエンジン v038_08</title>
+  <title>ノベルゲームエンジン v038_09</title>
 
   <!-- メインスタイル -->
   <link rel="stylesheet" href="program/style.css" />
   <!-- キャラ表示位置・サイズ -->
   <link rel="stylesheet" href="program/chardispsetting.css" />
-  <!-- v038_08: surface/layer authoritative overrides -->
+  <!-- v038_09: surface/layer authoritative overrides -->
   <link rel="stylesheet" href="program/surfaceManager.css" />
 
   <!-- 通常ブラウザ向け -->
@@ -20,7 +20,7 @@
   <!-- ✅ PWA関連 -->
   <link rel="manifest" href="program/manifest.json">
   <meta name="theme-color" content="#000000" />
-  <meta name="tenotsu-version" content="v038_08" />
+  <meta name="tenotsu-version" content="v038_09" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="てんおつ" />
@@ -87,7 +87,7 @@
 
   
   <div id="game-container" data-layer-root="game">
-    <!-- v038_08 layer order: background(0) < random(10) < story-char(20) < ev/cg(30) < click(45) < dialogue(60) < choices(65) < office-char(70) < menu(120) < comment(140) < fade/dialog(9000+) -->
+    <!-- v038_09 layer order: background(0) < random(10) < story-char(20) < ev/cg(30) < click(45) < dialogue(60) < choices(65) < office-char(70) < menu(120) < comment(140) < fade/dialog(9000+) -->
     <!-- 背景画像 -->
     <img id="background" data-layer="background" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=" alt="背景画像" /> 
     <!-- キャラ -->
@@ -132,7 +132,7 @@
   <script src="program/utils.js"></script>
   <script src="program/battle.js"></script>
   <script src="program/script.js"></script>
-  <!-- v038_08: late-loaded surface manager -->
+  <!-- v038_09: late-loaded surface manager -->
   <script src="program/surfaceManager.js"></script>
 
   <!-- ✅ フルスクリーン・PWA対応 -->
@@ -180,7 +180,7 @@
     <div class="boot-flash"></div>
     <div class="boot-card">
       <div class="boot-logo">店長お疲れ様です</div>
-      <div class="boot-version">v038_08</div>
+      <div class="boot-version">v038_09</div>
       <div class="boot-sub">ひだまりストア業務システム 起動中</div>
     </div>
   </div>

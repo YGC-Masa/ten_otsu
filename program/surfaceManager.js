@@ -1,11 +1,14 @@
-/* v038_08 Surface Manager
-   Safe non-recursive surface authority.
-   Fixes v038_07 hang by avoiding MutationObserver -> enterOffice -> DOM rebuild loops.
+/* v038_09 Surface Manager
+   Adds an explicit operation surface and fixes shop interactions.
+   Important:
+   - #click-layer is for ADV/story only.
+   - #tenotsu-operation-surface is for office/shop/menu UI.
+   - Do not globally stop propagation for all menu clicks.
 */
 (function(){
   "use strict";
 
-  const VERSION = "v038_08";
+  const VERSION = "v038_09";
   const BG_OFFICE = "images/assets/bgev/bg_office_hidamari.png";
   const BG_SHOP = "images/assets/bgev/bg_exchange_item_counter.png";
   const SAKUYA_INTRO_SCENARIO = "shop_exchange_intro_sakuya.json";
@@ -38,9 +41,21 @@
   const MENU_ITEMS = ["店舗","メンバー","店舗営業","外回り","ショップ","設定"];
 
   const Z = Object.freeze({
-    bg: 0, title: 20, storyChar: 120, cg: 180, click: 240,
-    dialogue: 420, choice: 440, officeChar: 520, menu: 800,
-    comment: 900, battle: 30000, fade: 50000, system: 70000, boot: 200000
+    bg: 0,
+    title: 20,
+    storyChar: 120,
+    cg: 180,
+    click: 240,
+    dialogue: 420,
+    choice: 440,
+    officeChar: 520,
+    operation: 760,
+    menu: 800,
+    comment: 900,
+    battle: 30000,
+    fade: 50000,
+    system: 70000,
+    boot: 200000
   });
 
   window.TENOTSU_SURFACE_VERSION = VERSION;
@@ -68,6 +83,7 @@
       document.body.classList.toggle("mode-" + m, mode === m);
     });
     document.body.classList.toggle("story-playing", mode === "story");
+    updateInputSurfaces(mode);
   }
 
   function setBackground(src){
@@ -105,6 +121,48 @@
       document.body.appendChild(box);
     }
     return box;
+  }
+
+  function ensureOperationSurface(){
+    let surface = qs("#tenotsu-operation-surface");
+    if (!surface) {
+      surface = document.createElement("div");
+      surface.id = "tenotsu-operation-surface";
+      document.body.appendChild(surface);
+    }
+    return surface;
+  }
+
+  function clearOperationSurface(){
+    const surface = qs("#tenotsu-operation-surface");
+    if (surface) {
+      surface.innerHTML = "";
+      surface.style.display = "none";
+    }
+  }
+
+  function updateInputSurfaces(mode){
+    const click = qs("#click-layer");
+    const op = qs("#tenotsu-operation-surface");
+
+    if (mode === "story") {
+      if (click) {
+        click.style.removeProperty("display");
+        click.style.pointerEvents = "auto";
+      }
+      if (op) op.style.pointerEvents = "none";
+      return;
+    }
+
+    if (click) {
+      click.style.pointerEvents = "none";
+      if (mode === "battle") click.style.display = "none";
+      else click.style.removeProperty("display");
+    }
+
+    if (op) {
+      op.style.pointerEvents = (mode === "office" || mode === "shop" || mode === "settings" || mode === "town") ? "auto" : "none";
+    }
   }
 
   function renderComment(name, text){
@@ -190,15 +248,49 @@
       btn.className = "tenotsu-six-main-button";
       btn.textContent = label;
       btn.dataset.menuLabel = label;
-      btn.addEventListener("click", ev => {
-        ev.preventDefault();
-        ev.stopPropagation();
-        handleMainMenu(label);
-      });
+      btn.dataset.surfaceAction = "main-menu";
       grid.appendChild(btn);
     });
 
     panel.appendChild(grid);
+  }
+
+  function renderShopOperationSurface(){
+    const surface = ensureOperationSurface();
+    surface.style.display = "block";
+    surface.innerHTML = `
+      <div class="tenotsu-shop-panel" role="dialog" aria-label="交換所メニュー">
+        <div class="tenotsu-shop-title">アイテム交換所</div>
+        <button type="button" class="tenotsu-shop-button" data-surface-action="exchange-items">交換品を見る</button>
+        <button type="button" class="tenotsu-shop-button" data-surface-action="secret-word">秘密の言葉</button>
+        <button type="button" class="tenotsu-shop-button" data-surface-action="shop-help">交換所の説明</button>
+        <button type="button" class="tenotsu-shop-button" data-surface-action="back-office">事務所に戻る</button>
+      </div>
+    `;
+  }
+
+  function showShopNotice(text){
+    renderComment("朔夜", text);
+  }
+
+  function handleSurfaceAction(action, label){
+    switch(action){
+      case "main-menu":
+        handleMainMenu(label);
+        break;
+      case "exchange-items":
+        showShopNotice("現在交換できる品を確認しています。実交換リストは次の実装で接続します。");
+        break;
+      case "secret-word":
+        showShopNotice("秘密の言葉ですね。入力欄の実装までは、ここで合言葉イベントを受け付ける予定です。");
+        break;
+      case "shop-help":
+        showShopNotice("交換には、イベントの証や素材が必要です。時期によって品揃えが変わります。");
+        break;
+      case "back-office":
+        enterOffice(true);
+        break;
+    }
   }
 
   function handleMainMenu(label){
@@ -216,12 +308,14 @@
         setMode("town");
         hideOfficeLayer();
         hideComment();
+        clearOperationSurface();
         if (typeof window.loadScenario === "function") window.loadScenario("town_walk.json");
         break;
       case "設定":
         setMode("settings");
         hideOfficeLayer();
         hideComment();
+        clearOperationSurface();
         if (typeof window.tenotsuShowSettingsMenu === "function") window.tenotsuShowSettingsMenu();
         break;
       case "メンバー":
@@ -239,6 +333,7 @@
     try {
       setMode("office");
       removeOldDiagnosticLayers();
+      clearOperationSurface();
       setBackground(BG_OFFICE);
       if (typeof window.tenotsuSetStoryPlayingFlag === "function") {
         try { window.tenotsuSetStoryPlayingFlag(false); } catch (_) {}
@@ -266,11 +361,10 @@
       setBackground(BG_SHOP);
       hideOfficeLayer();
       showShopGreeting();
-      const panel = qs("#list-panel");
-      if (panel) {
-        panel.classList.remove("hidden");
-        panel.classList.add("show","open","visible","active");
-      }
+      renderShopOperationSurface();
+
+      // 右6大メニューは残す。ショップ中でも「店舗」で戻れる。
+      buildSixMenu();
       normalizeLayers();
     } finally {
       isRendering = false;
@@ -286,6 +380,7 @@
         setMode("story");
         hideOfficeLayer();
         hideComment();
+        clearOperationSurface();
         window.loadScenario(SAKUYA_INTRO_SCENARIO);
         return;
       }
@@ -297,6 +392,7 @@
     setMode("battle");
     hideOfficeLayer();
     hideComment();
+    clearOperationSurface();
     const click = qs("#click-layer");
     if (click) {
       click.style.display = "none";
@@ -343,6 +439,7 @@
       ["#dialogue-box", Z.dialogue],
       ["#choices,.choices-area", Z.choice],
       ["#tenotsu-surface-office-layer", Z.officeChar],
+      ["#tenotsu-operation-surface", Z.operation],
       ["#list-panel,#menu-panel,.right-menu,.right-panel,.menu-panel,.list-panel,.tenotsu-six-main-menu", Z.menu],
       ["#tenotsu-surface-comment,#office-comment-box,.office-comment-box,.title-comment-box", Z.comment],
       ["#battle-root", Z.battle],
@@ -353,33 +450,23 @@
 
     normalizeStoryCharacters();
     normalizeDialogue();
-
-    const mode = document.body.dataset.gameMode || window.tenotsuGameMode || "";
-    const click = qs("#click-layer");
-    if (mode === "battle") {
-      if (click) {
-        click.style.display = "none";
-        click.style.pointerEvents = "none";
-      }
-      qsa("#battle-root,#battle-root *").forEach(el => setI(el, "pointer-events", "auto"));
-    } else if (click) {
-      click.style.removeProperty("display");
-      click.style.pointerEvents = "auto";
-    }
+    updateInputSurfaces(document.body.dataset.gameMode || window.tenotsuGameMode || "");
   }
 
   function installButtonDelegates(){
     if (installed) return;
     installed = true;
+
     document.addEventListener("click", ev => {
-      const btn = ev.target && ev.target.closest ? ev.target.closest("button,.tenotsu-six-main-button,.menu-item,a,li") : null;
-      if (!btn) return;
-      const text = (btn.textContent || "").trim();
-      if (MENU_ITEMS.includes(text)) {
-        ev.preventDefault();
-        ev.stopPropagation();
-        handleMainMenu(text);
-      }
+      const actionEl = ev.target && ev.target.closest ? ev.target.closest("[data-surface-action], .tenotsu-six-main-button") : null;
+      if (!actionEl) return;
+
+      const action = actionEl.dataset.surfaceAction || (actionEl.classList.contains("tenotsu-six-main-button") ? "main-menu" : "");
+      const label = (actionEl.dataset.menuLabel || actionEl.textContent || "").trim();
+
+      if (!action) return;
+      ev.preventDefault();
+      handleSurfaceAction(action, label);
     }, true);
   }
 
@@ -401,8 +488,6 @@
     window.tenotsuSetExchangeBackground = function(){ return enterShop(); };
     window.tenotsuOpenShopWithSakuya = function(){ return openShop(); };
     window.tenotsuNormalizeLayerIndex = function(){ normalizeLayers(); };
-
-    // Neutralize previous diagnostic functions without triggering render.
     window.tenotsuHideOfficeBackgroundDirect = function(){};
     window.tenotsuDisableOfficeBackground = function(){};
     window.tenotsuForceOfficeForeground = function(){};
@@ -411,7 +496,7 @@
 
   function patchStoryEndShopReturn(){
     const previous = window.tenotsuHandleStoryEndReturn;
-    if (typeof previous !== "function" || previous.__surfaceV03808) return;
+    if (typeof previous !== "function" || previous.__surfaceV03809) return;
 
     const wrapped = function(){
       const scenarioName = String(window.currentScenario || "");
@@ -445,7 +530,7 @@
         if (clickLayer) clickLayer.style.pointerEvents = "auto";
       }, 2100);
     };
-    wrapped.__surfaceV03808 = true;
+    wrapped.__surfaceV03809 = true;
     window.tenotsuHandleStoryEndReturn = wrapped;
   }
 
@@ -453,7 +538,6 @@
     const mode = document.body.dataset.gameMode || window.tenotsuGameMode || "";
     if (mode === "office") return true;
     if (["title","story","shop","battle"].includes(mode)) return false;
-
     const panel = qs("#list-panel");
     const text = panel ? panel.textContent || "" : "";
     return text.includes("店舗") && text.includes("メンバー") && text.includes("ショップ");
@@ -477,8 +561,6 @@
       normalizeLayers();
       if (detectOfficeCandidate()) enterOffice(false);
     }, 1000);
-
-    // No MutationObserver here. v038_07 hung because observer rebuilt office menu repeatedly.
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);

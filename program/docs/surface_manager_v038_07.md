@@ -1,4 +1,4 @@
-# v038_08 Surface Manager 関係整理
+# v038_09 Surface Manager 関係整理
 
 ## 目的
 差分適用を重ねた結果、`script.js` / `style.css` 内に複数世代の事務所モード、ショップモード、z-index補正が残っていたため、最終権限を後読みの小さな管理ファイルへ分離する。
@@ -61,6 +61,10 @@
 - `#tenotsu-office-character-overlay`
 - `#office-character-layer`
 
-## v038_08 追記
+## v038_09 追記
 
-v038_08の `MutationObserver` は、メニュー表示後にDOM再構築を繰り返してハングアップする可能性があったため廃止。以後は起動時・メニュークリック時・API呼び出し時だけ必要な補正を行う。
+v038_09の `MutationObserver` は、メニュー表示後にDOM再構築を繰り返してハングアップする可能性があったため廃止。以後は起動時・メニュークリック時・API呼び出し時だけ必要な補正を行う。
+
+## v038_09 追記
+
+操作判定系サーフェスを `#tenotsu-operation-surface` として追加。`#click-layer` はストーリー送り専用に戻し、ショップや事務所では operation surface と右メニューが入力を受け取る。

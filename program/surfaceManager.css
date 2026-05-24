@@ -1,4 +1,4 @@
-/* v038_08 Surface Manager CSS
+/* v038_09 Surface Manager CSS
    Authoritative late-loaded layer rules.
    Purpose: replace accumulated surface test overrides without deleting historical comments.
 */
@@ -12,6 +12,7 @@
   --to-z-dialogue: 420;
   --to-z-choice: 440;
   --to-z-office-char: 520;
+  --to-z-operation: 760;
   --to-z-menu: 800;
   --to-z-comment: 900;
   --to-z-battle: 30000;
@@ -293,4 +294,83 @@ body.mode-battle #click-layer {
 #tenotsu-office-character-overlay,
 #office-character-layer {
   display: none !important;
+}
+
+
+/* v038_09 operation surface */
+#tenotsu-operation-surface {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: var(--to-z-operation, 760) !important;
+  pointer-events: none;
+}
+
+body[data-game-mode="office"] #tenotsu-operation-surface,
+body[data-game-mode="shop"] #tenotsu-operation-surface,
+body[data-game-mode="settings"] #tenotsu-operation-surface,
+body[data-game-mode="town"] #tenotsu-operation-surface,
+body.mode-office #tenotsu-operation-surface,
+body.mode-shop #tenotsu-operation-surface,
+body.mode-settings #tenotsu-operation-surface,
+body.mode-town #tenotsu-operation-surface {
+  pointer-events: auto !important;
+}
+
+.tenotsu-shop-panel {
+  position: fixed !important;
+  right: calc(300px + max(22px, env(safe-area-inset-right))) !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: min(360px, 34vw) !important;
+  padding: 16px !important;
+  border-radius: 18px !important;
+  background: rgba(18, 16, 28, .86) !important;
+  border: 1px solid rgba(185, 150, 255, .45) !important;
+  box-shadow: 0 14px 42px rgba(0,0,0,.42) !important;
+  color: #fff !important;
+  z-index: 770 !important;
+  pointer-events: auto !important;
+}
+
+.tenotsu-shop-title {
+  font-weight: 700 !important;
+  font-size: 18px !important;
+  margin-bottom: 12px !important;
+  color: #d7c5ff !important;
+  text-align: center !important;
+}
+
+.tenotsu-shop-button {
+  display: block !important;
+  width: 100% !important;
+  min-height: 44px !important;
+  margin: 8px 0 !important;
+  border: 1px solid rgba(210, 180, 255, .55) !important;
+  border-radius: 12px !important;
+  background: linear-gradient(180deg, rgba(75,55,125,.96), rgba(40,30,78,.96)) !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+
+.tenotsu-shop-button:hover,
+.tenotsu-shop-button:focus {
+  filter: brightness(1.08) !important;
+}
+
+body[data-game-mode="office"] #click-layer,
+body[data-game-mode="shop"] #click-layer,
+body[data-game-mode="settings"] #click-layer,
+body[data-game-mode="town"] #click-layer,
+body.mode-office #click-layer,
+body.mode-shop #click-layer,
+body.mode-settings #click-layer,
+body.mode-town #click-layer {
+  pointer-events: none !important;
+}
+
+body[data-game-mode="story"] #click-layer,
+body.mode-story #click-layer {
+  pointer-events: auto !important;
 }
