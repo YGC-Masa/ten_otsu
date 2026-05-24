@@ -6239,3 +6239,23 @@ button.active {
   min-height: 32px;
   border-radius: 10px;
 }
+
+
+/* v037_89: ストーリー中の右メニュー抑止と本文白固定 */
+body.story-playing #list-panel,
+body.story-playing .right-main-panel,
+body.story-playing .right-menu,
+body.story-playing .right-panel {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+body.story-playing #name,
+body.story-playing #text,
+body.story-playing #dialogue-box,
+body.story-playing .dialogue-box,
+body.story-playing .scenario-text,
+body.story-playing .message-text {
+  color: #ffffff !important;
+}
+/* /v037_89 */
