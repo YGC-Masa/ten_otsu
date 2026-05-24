@@ -1,4 +1,4 @@
-/* v038_17 Surface Takeover CSS
+/* v038_18 Surface Takeover CSS
    Best-practice implementation:
    - old menu surfaces are hidden
    - new surfaceManager owns office/shop menu and operation surfaces
@@ -378,7 +378,7 @@ body.mode-shop #tenotsu-operation-surface {
 }
 
 
-/* v038_17 boot rescue */
+/* v038_18 boot rescue */
 body[data-game-mode="office"] #boot-flow,
 body.mode-office #boot-flow,
 body[data-game-mode="shop"] #boot-flow,
@@ -397,7 +397,7 @@ body.mode-battle #boot-flow,
 }
 
 
-/* v038_17 unified comment / shop no-character */
+/* v038_18 unified comment / shop no-character */
 #office-comment-box,
 #title-comment-box,
 #office-message,
@@ -441,7 +441,7 @@ body.mode-shop #dialogue-box {
 }
 
 
-/* v038_17 randomShows unification and background fallback */
+/* v038_18 randomShows unification and background fallback */
 body[data-game-mode="office"] #game-container,
 body.mode-office #game-container {
   background-image: url("../images/assets/bgev/bg_office_hidamari.png") !important;
@@ -463,5 +463,22 @@ body.mode-shop #game-container {
 .title-comment-window {
   display: none !important;
   visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+
+/* v038_18 fade order fix */
+#tenotsu-safe-fade {
+  position: fixed !important;
+  inset: 0 !important;
+  background: #000 !important;
+  z-index: 50000 !important;
+  pointer-events: none !important;
+  opacity: 0;
+  display: none;
+  transition: none;
+}
+
+body:not(.mode-story):not(.mode-battle):not(.mode-office):not(.mode-shop) #tenotsu-safe-fade {
   pointer-events: none !important;
 }

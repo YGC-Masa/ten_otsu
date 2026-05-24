@@ -1,10 +1,10 @@
-/* v038_17 Surface Manager Takeover - verified boot candidate
+/* v038_18 Surface Manager Takeover - verified boot candidate
    Single authority for non-ADV surfaces. Designed to survive broken/old boot flow.
 */
 (function(){
   "use strict";
 
-  const VERSION = "v038_17";
+  const VERSION = "v038_18";
   const BG_OFFICE = "images/assets/bgev/bg_office_hidamari.png";
   const BG_SHOP = "images/assets/bgev/bg_exchange_item_counter.png";
   const SAKUYA_INTRO_SCENARIO = "shop_exchange_intro_sakuya.json";
@@ -108,7 +108,7 @@
     const game = qs("#game-container");
     if (game) {
       setI(game, "background-color", "#000");
-      // v038_17: CSS fallback. If the #background image is hidden or fails, this still displays the mode background.
+      // v038_18: CSS fallback. If the #background image is hidden or fails, this still displays the mode background.
       setI(game, "background-image", `url("${src}")`);
       setI(game, "background-size", "cover");
       setI(game, "background-position", "center center");
@@ -199,7 +199,7 @@
   }
 
   function hideLegacyComments(){
-    // v038_17: the only visible comment box outside ADV should be #dialogue-box at the bottom.
+    // v038_18: the only visible comment box outside ADV should be #dialogue-box at the bottom.
     qsa("#office-comment-box,#title-comment-box,#office-message,#office-comment,.office-comment-box,.title-comment-box,.office-message,.office-comment,.top-comment,.header-comment,.tenotsu-office-comment,#tenotsu-office-comment,#tenotsu-office-force-comment,#tenotsu-surface-comment").forEach(el => {
       el.classList.add("hidden");
       el.style.setProperty("display", "none", "important");
@@ -304,7 +304,7 @@
   }
 
   function renderShopCharacter(){
-    // v038_17: shop mode intentionally hides character display.
+    // v038_18: shop mode intentionally hides character display.
     // The exchange counter background and shop panel are the focus.
     const layer = ensureFrontLayer();
     layer.dataset.mode = "shop-hidden";
@@ -389,20 +389,41 @@
   }
 
   function safeFade(callback){
+    // v038_18:
+    // Correct order is:
+    // current screen -> fade to black -> switch screen while fully black -> fade in.
+    // The fade surface must never remain visible after the transition.
     const f = ensureFade();
     f.style.display = "block";
     f.style.pointerEvents = "none";
-    f.style.transition = "opacity 700ms linear";
+    f.style.transition = "none";
     f.style.opacity = "0";
-    requestAnimationFrame(() => { f.style.opacity = "1"; });
+    f.getBoundingClientRect();
+
+    requestAnimationFrame(() => {
+      f.style.transition = "opacity 700ms linear";
+      f.style.opacity = "1";
+    });
+
     setTimeout(() => {
-      try { if (typeof callback === "function") callback(); }
-      finally {
-        f.style.transition = "opacity 450ms linear";
-        f.style.opacity = "0";
-        setTimeout(() => { f.style.display = "none"; }, 520);
+      try {
+        if (typeof callback === "function") callback();
+      } finally {
+        // Keep one frame black after changing screen so the user never sees the intermediate office draw.
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            f.style.transition = "opacity 450ms linear";
+            f.style.opacity = "0";
+            setTimeout(() => {
+              f.style.display = "none";
+              f.style.pointerEvents = "none";
+              f.style.transition = "none";
+              f.style.opacity = "0";
+            }, 520);
+          });
+        });
       }
-    }, 760);
+    }, 730);
   }
 
   function enterOffice(forceNew){
@@ -545,9 +566,14 @@
         ev.preventDefault();
         ev.stopPropagation();
         if (typeof ev.stopImmediatePropagation === "function") ev.stopImmediatePropagation();
-        const root = qs("#battle-root");
-        if (root) root.classList.add("hidden");
-        safeFade(() => enterOffice(true));
+
+        // v038_18: Do not hide battle or draw office before black reaches full opacity.
+        // Hide/switch inside safeFade callback only.
+        safeFade(() => {
+          const root = qs("#battle-root");
+          if (root) root.classList.add("hidden");
+          enterOffice(true);
+        });
         return;
       }
 

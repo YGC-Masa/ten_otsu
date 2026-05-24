@@ -1,9 +1,10 @@
-# v038_16 → v038_17 randomShows unified 差分
+# v038_17 → v038_18 fade order fix 差分
 
-## 内容
-- randomShows.js の独自キャラ/コメント表示を surfaceManager takeover中は停止。
-- 表示サーフェスを `#tenotsu-front-character-layer` と `#dialogue-box` に統一。
-- `#random-images-layer` / `#random-text-layer` / `.title-comment-window` を非表示。
-- 背景が出ない場合に備え、`#game-container` へ背景フォールバックを追加。
+## 修正内容
+- バトル終了時のフェード順を修正。
+- 誤: バトル画面 → 事務所表示 → ブラックフェードアウト → フェードイン
+- 正: バトル画面 → ブラックフェードアウト → 事務所表示 → フェードイン
+- battle.jsの即時office復帰を抑止。
+- surfaceManagerのsafeFade内で画面切替を行う。
 
 リポジトリ直下へ展開して上書きしてください。

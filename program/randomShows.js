@@ -9,7 +9,7 @@ let imagePathsCache = null;
 let preloadedImages = {}; // src => <img>（非表示で保持）
 let randomImagesLoadPromise = null;
 
-// v038_17: surfaceManager takeover compatibility.
+// v038_18: surfaceManager takeover compatibility.
 // During office/shop operation, randomShows must not create separate character/comment surfaces.
 // It only provides data; actual display is owned by surfaceManager (#tenotsu-front-character-layer + #dialogue-box).
 function tenotsuIsSurfaceTakeoverActive() {
@@ -348,7 +348,7 @@ function randomTextsOn() {
 }
 
 function tenotsuRefreshTitleRandomShow() {
-  // v038_17: surfaceManager takeover. Do not create separate title/office surfaces.
+  // v038_18: surfaceManager takeover. Do not create separate title/office surfaces.
   if (tenotsuIsSurfaceTakeoverActive()) {
     tenotsuHideRandomShowLayers();
     if (typeof window.tenotsuSurfaceRefreshOffice === "function") {
