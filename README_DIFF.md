@@ -1,72 +1,9 @@
-{
-  "type": "titleCharacters",
-  "picpath": "images/assets/char/",
-  "characters": [
-    {
-      "id": "aa",
-      "name": "緋奈",
-      "src": "a10501.webp"
-    },
-    {
-      "id": "ab",
-      "name": "藍",
-      "src": "b10501.webp"
-    },
-    {
-      "id": "ac",
-      "name": "翠",
-      "src": "c10201.webp"
-    },
-    {
-      "id": "ad",
-      "name": "こがね",
-      "src": "d10501.webp"
-    },
-    {
-      "id": "ae",
-      "name": "琥珀",
-      "src": "e10501.webp"
-    },
-    {
-      "id": "af",
-      "name": "真花",
-      "src": "f10201.webp"
-    },
-    {
-      "id": "ag",
-      "name": "雪乃",
-      "src": "g10201.webp"
-    },
-    {
-      "id": "ah",
-      "name": "美空",
-      "src": "h10501.webp"
-    },
-    {
-      "id": "ai",
-      "name": "夜空",
-      "src": "i10201.webp"
-    },
-    {
-      "id": "aj",
-      "name": "桃",
-      "src": "j10501.webp"
-    },
-    {
-      "id": "ak",
-      "name": "彩愛",
-      "src": "k10201.webp"
-    },
-    {
-      "id": "al",
-      "name": "里美",
-      "src": "l10501.webp"
-    },
-    {
-      "id": "am",
-      "name": "萌",
-      "src": "m10501.webp"
-    }
-  ],
-  "version": "v038_00"
-}
+# v038_00 → v038_01 差分
+
+## 修正内容
+- index.htmlの主要レイヤーに `data-layer` を付与し、DOM構造上の役割を整理。
+- 背景 / 通常キャラ / EV・CG / クリック / 会話 / 選択肢 / 事務所キャラ / メニュー / コメントのz-indexを明示。
+- 通常ストーリーモード用キャラレイヤーを背景より前に固定。
+- 実行時のz-index再正規化処理を追加。
+
+リポジトリ直下へ展開して上書きしてください。

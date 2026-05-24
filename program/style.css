@@ -6260,7 +6260,7 @@ body.story-playing .message-text {
 }
 /* /v037_93 */
 
-/* v037_99: タイトル画面はメニュー表示を許可 */
+/* v038_01: タイトル画面はメニュー表示を許可 */
 body.title-screen #list-panel {
   pointer-events: auto !important;
 }
@@ -6367,11 +6367,11 @@ body.story-playing .text-body {
 }
 /* /v037_93 */
 
-/* v037_99: office right menu label cleanup */
+/* v038_01: office right menu label cleanup */
 .office6 .menu-item, .office-menu-main { letter-spacing: 0.03em; }
-/* /v037_99 */
+/* /v038_01 */
 
-/* v037_99: 事務所/タイトルのランダム立ち絵とコメント */
+/* v038_01: 事務所/タイトルのランダム立ち絵とコメント */
 body.office-screen #random-images-layer,
 body.office-screen #random-text-layer,
 body.title-screen #random-images-layer,
@@ -6391,7 +6391,7 @@ body.title-screen #random-text-layer {
 }
 
 
-/* v037_99 office mode hardening */
+/* v038_01 office mode hardening */
 body[data-game-mode="title"] #list-panel,
 body.mode-title #list-panel,
 body[data-game-mode="title"] .right-menu,
@@ -6453,10 +6453,10 @@ body.mode-story .office-comment-box,
 body[data-game-mode="battle"] .office-comment-box {
   display: none !important;
 }
-/* /v037_99 office mode hardening */
+/* /v038_01 office mode hardening */
 
 
-/* v037_99 office character layer visible fix */
+/* v038_01 office character layer visible fix */
 .office-character-layer {
   position: absolute !important;
   left: 0 !important;
@@ -6487,10 +6487,10 @@ body.mode-story .office-character-layer,
 body[data-game-mode="battle"] .office-character-layer,
 body[data-game-mode="title"] .office-character-layer,
 body.mode-title .office-character-layer { display: none !important; }
-/* /v037_99 office character layer visible fix */
+/* /v038_01 office character layer visible fix */
 
 
-/* v037_99 office character visible layer fix */
+/* v038_01 office character visible layer fix */
 #office-character-layer,
 .office-character-layer {
   position: fixed !important;
@@ -6554,10 +6554,10 @@ body[data-game-mode="shop"] .office-character-layer,
 body.mode-shop .office-character-layer {
   display: none !important;
 }
-/* /v037_99 office character visible layer fix */
+/* /v038_01 office character visible layer fix */
 
 
-/* v037_99 office character 3-position layout */
+/* v038_01 office character 3-position layout */
 #office-character-layer,
 .office-character-layer {
   position: fixed !important;
@@ -6623,4 +6623,257 @@ body.mode-shop .game-screen {
   background-size: cover;
   background-position: center center;
 }
-/* /v037_99 office character 3-position layout */
+/* /v038_01 office character 3-position layout */
+
+
+/* v038_01 office foreground overlay */
+#tenotsu-office-character-overlay,
+.tenotsu-office-character-overlay {
+  position: fixed !important;
+  left: 0 !important;
+  right: 300px !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  z-index: 70 !important;
+  pointer-events: none !important;
+  display: block;
+  overflow: visible !important;
+}
+
+.tenotsu-office-stand {
+  position: fixed !important;
+  top: auto !important;
+  bottom: 4% !important;
+  width: auto !important;
+  max-width: 440px !important;
+  max-height: 88vh !important;
+  height: auto !important;
+  object-fit: contain !important;
+  pointer-events: none !important;
+  display: block !important;
+  opacity: .985 !important;
+  filter: drop-shadow(0 14px 22px rgba(0,0,0,.42)) !important;
+}
+
+.tenotsu-office-stand-0 {
+  left: 32% !important;
+  transform: translateX(-50%) scale(1.03) !important;
+  z-index: 73 !important;
+}
+.tenotsu-office-stand-1 {
+  left: 15% !important;
+  transform: translateX(-50%) scale(.92) !important;
+  z-index: 72 !important;
+}
+.tenotsu-office-stand-2 {
+  left: 49% !important;
+  transform: translateX(-50%) scale(.92) !important;
+  z-index: 71 !important;
+}
+
+#list-panel,
+.right-menu,
+.right-panel,
+.tenotsu-six-main-menu {
+  z-index: 120 !important;
+}
+
+#tenotsu-bottom-comment,
+#office-comment-box,
+.office-comment-box,
+.title-comment-box {
+  z-index: 140 !important;
+}
+
+body[data-game-mode="title"] #tenotsu-office-character-overlay,
+body.mode-title #tenotsu-office-character-overlay,
+body[data-game-mode="story"] #tenotsu-office-character-overlay,
+body.mode-story #tenotsu-office-character-overlay,
+body[data-game-mode="shop"] #tenotsu-office-character-overlay,
+body.mode-shop #tenotsu-office-character-overlay,
+body[data-game-mode="battle"] #tenotsu-office-character-overlay {
+  display: none !important;
+}
+
+body[data-game-mode="office"],
+body.mode-office,
+body[data-game-mode="office"] #game,
+body.mode-office #game,
+body[data-game-mode="office"] #main,
+body.mode-office #main,
+body[data-game-mode="office"] .game-screen,
+body.mode-office .game-screen {
+  background-image: url("../images/assets/bgev/bg_office_hidamari.png") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+}
+
+body[data-game-mode="shop"],
+body.mode-shop,
+body[data-game-mode="shop"] #game,
+body.mode-shop #game,
+body[data-game-mode="shop"] #main,
+body.mode-shop #main,
+body[data-game-mode="shop"] .game-screen,
+body.mode-shop .game-screen {
+  background-image: url("../images/assets/bgev/bg_exchange_item_counter.png") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+}
+
+body[data-game-mode="shop"] #left-menu,
+body.mode-shop #left-menu,
+body[data-game-mode="shop"] .left-menu,
+body.mode-shop .left-menu,
+body[data-game-mode="shop"] #leftPanel,
+body.mode-shop #leftPanel {
+  pointer-events: none !important;
+}
+/* /v038_01 office foreground overlay */
+
+
+/* v038_01 canonical layer index cleanup
+   0   background
+   10  title/random decorative images
+   20  normal story ADV characters
+   30  event CG / CG background
+   45  click forwarding layer
+   60  dialogue box
+   65  choices
+   70  office foreground characters
+   120 right/left menus
+   140 bottom comment
+   9000+ fade/dialog/system
+*/
+:root {
+  --z-bg: 0;
+  --z-random: 10;
+  --z-story-char: 20;
+  --z-ev: 30;
+  --z-click: 45;
+  --z-dialogue: 60;
+  --z-choices: 65;
+  --z-office-char: 70;
+  --z-menu: 120;
+  --z-comment: 140;
+  --z-fade: 9000;
+  --z-system: 20000;
+  --z-boot: 200000;
+}
+
+#game-container {
+  position: relative !important;
+  isolation: isolate !important;
+  z-index: 0 !important;
+}
+
+#background,
+[data-layer="background"] {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: var(--z-bg) !important;
+  pointer-events: none !important;
+}
+
+#random-images-layer,
+#random-text-layer,
+[data-layer="title-random"] {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: var(--z-random) !important;
+  pointer-events: none !important;
+}
+
+#char-layer,
+[data-layer="story-character"] {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: var(--z-story-char) !important;
+  pointer-events: none !important;
+}
+
+#char-layer .char-slot,
+#char-layer .char-image,
+.char-slot,
+.char-image {
+  z-index: var(--z-story-char) !important;
+}
+
+#ev-layer,
+[data-layer="event-cg"] {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: var(--z-ev) !important;
+  pointer-events: none !important;
+}
+
+#ev-layer .ev-image,
+#ev-layer .cg-image,
+.ev-image,
+.cg-image {
+  z-index: var(--z-ev) !important;
+}
+
+#click-layer,
+[data-layer="click"] {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: var(--z-click) !important;
+}
+
+#dialogue-box,
+[data-layer="dialogue"] {
+  z-index: var(--z-dialogue) !important;
+}
+
+#choices,
+.choices-area,
+[data-layer="choices"] {
+  z-index: var(--z-choices) !important;
+}
+
+#tenotsu-office-character-overlay,
+.tenotsu-office-character-overlay {
+  z-index: var(--z-office-char) !important;
+}
+
+.tenotsu-office-stand-0 { z-index: calc(var(--z-office-char) + 3) !important; }
+.tenotsu-office-stand-1 { z-index: calc(var(--z-office-char) + 2) !important; }
+.tenotsu-office-stand-2 { z-index: calc(var(--z-office-char) + 1) !important; }
+
+#list-panel,
+#menu-panel,
+.right-menu,
+.right-panel,
+.menu-panel,
+.list-panel,
+.tenotsu-six-main-menu,
+[data-layer="right-menu"],
+[data-layer="left-menu"] {
+  z-index: var(--z-menu) !important;
+}
+
+#tenotsu-bottom-comment,
+#office-comment-box,
+.office-comment-box,
+.title-comment-box {
+  z-index: var(--z-comment) !important;
+}
+
+.fade-overlay,
+#fade-overlay,
+.black-fade,
+#black-fade,
+.screen-fade {
+  z-index: var(--z-fade) !important;
+}
+
+#ios-pwa-notice,
+#rotate-warning {
+  z-index: var(--z-system) !important;
+}
+
+.boot-flow {
+  z-index: var(--z-boot) !important;
+}
+/* /v038_01 canonical layer index cleanup */
