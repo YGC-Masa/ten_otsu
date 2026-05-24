@@ -1,9 +1,72 @@
-# v038_14 → v038_15 boot rescue 差分
-
-## 内容
-- `program/bootRescue.js` を追加し、`script.js` より前に読み込み。
-- 初期化中に固まる原因候補の旧MutationObserver/旧fallbackを事前に抑止。
-- office/shop/battle突入時にboot overlayを強制非表示。
-- 旧fallback関数をsurfaceManager経由に差し替え。
-
-リポジトリ直下へ展開して上書きしてください。
+{
+  "type": "titleCharacters",
+  "picpath": "images/assets/char/",
+  "characters": [
+    {
+      "id": "aa",
+      "name": "緋奈",
+      "src": "a10501.webp"
+    },
+    {
+      "id": "ab",
+      "name": "藍",
+      "src": "b10501.webp"
+    },
+    {
+      "id": "ac",
+      "name": "翠",
+      "src": "c10201.webp"
+    },
+    {
+      "id": "ad",
+      "name": "こがね",
+      "src": "d10501.webp"
+    },
+    {
+      "id": "ae",
+      "name": "琥珀",
+      "src": "e10501.webp"
+    },
+    {
+      "id": "af",
+      "name": "真花",
+      "src": "f10201.webp"
+    },
+    {
+      "id": "ag",
+      "name": "雪乃",
+      "src": "g10201.webp"
+    },
+    {
+      "id": "ah",
+      "name": "美空",
+      "src": "h10501.webp"
+    },
+    {
+      "id": "ai",
+      "name": "夜空",
+      "src": "i10201.webp"
+    },
+    {
+      "id": "aj",
+      "name": "桃",
+      "src": "j10501.webp"
+    },
+    {
+      "id": "ak",
+      "name": "彩愛",
+      "src": "k10201.webp"
+    },
+    {
+      "id": "al",
+      "name": "里美",
+      "src": "l10501.webp"
+    },
+    {
+      "id": "am",
+      "name": "萌",
+      "src": "m10501.webp"
+    }
+  ],
+  "version": "v038_16"
+}
