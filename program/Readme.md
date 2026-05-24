@@ -768,7 +768,7 @@ GitHub Pages / PWAで画面が変わらない場合は、メニューの「キ�
 - 既存シナリオは `scenario/scenario/` に整理し、`scenario/listmenu/scenario_index.json` を追加。
 
 
-## v038_05 更新メモ
+## v038_06 更新メモ
 
 - 右6大メニューの番号表示削除。
 - 起動/表示バージョンの毎版更新方針を反映。

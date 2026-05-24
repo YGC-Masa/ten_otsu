@@ -1,7 +1,7 @@
-window.TENOTSU_LATEST_VERSION = "v038_05";
+window.TENOTSU_LATEST_VERSION = "v038_06";
 
 /* v037_85 engine guard: 起動停止対策 */
-window.TENOTSU_ENGINE_VERSION = "v038_05";
+window.TENOTSU_ENGINE_VERSION = "v038_06";
 window.__TENOTSU_ENGINE_ERRORS__ = window.__TENOTSU_ENGINE_ERRORS__ || [];
 
 window.addEventListener("error", (event) => {
@@ -871,7 +871,7 @@ function tenotsuEnterOfficeMode(reason = "office") {
   try {
     tenotsuSetStoryPartActive(false, "office");
     window.__TENOTSU_STORY_ENDING__ = false;
-    // v038_05: 事務所へ戻るたびにランダム立ち絵/コメントを再抽選するため、ここではOFFにしない。
+    // v038_06: 事務所へ戻るたびにランダム立ち絵/コメントを再抽選するため、ここではOFFにしない。
     clearCharacters();
     if (evLayer) evLayer.innerHTML = "";
     if (choicesEl) choicesEl.innerHTML = "";
@@ -908,7 +908,7 @@ function tenotsuEnterBattleMode() {
 /* /v037_93 */
 
 
-/* v038_05: タイトル/事務所共通ランダム立ち絵＋コメント */
+/* v038_06: タイトル/事務所共通ランダム立ち絵＋コメント */
 function tenotsuStartOfficeRandomShow(reason = 'office') {
   try {
     if (typeof window.tenotsuRefreshTitleRandomShow === 'function') {
@@ -925,10 +925,10 @@ function tenotsuStartOfficeRandomShow(reason = 'office') {
     console.warn('[TENOTSU OFFICE RANDOM SHOW FAILED]', reason, err);
   }
 }
-/* /v038_05 */
+/* /v038_06 */
 
 /* v037_85 boot flow: 起動フラッシュ → 初期化 → タイトル表示 → 事務所6大メニュー */
-window.TENOTSU_BOOT_FLOW_VERSION = "v038_05";
+window.TENOTSU_BOOT_FLOW_VERSION = "v038_06";
 window.__TENOTSU_BOOT_DONE__ = false;
 
 function tenotsuSetOfficeText(title, text) {
@@ -1009,7 +1009,7 @@ function tenotsuRunBootFlow() {
       boot.setAttribute("aria-hidden", "false");
     }
     if (bootLogo) bootLogo.textContent = "店長お疲れ様です";
-    if (bootVersion) bootVersion.textContent = window.TENOTSU_BOOT_FLOW_VERSION || "v038_05";
+    if (bootVersion) bootVersion.textContent = window.TENOTSU_BOOT_FLOW_VERSION || "v038_06";
     if (bootSub) bootSub.textContent = "初期化中…";
 
     window.setTimeout(() => { if (bootSub) bootSub.textContent = "ひだまりストアへ接続中…"; }, 520);
@@ -2605,7 +2605,7 @@ function tenotsuHandleStoryEndReturn() {
   if (clickLayer) clickLayer.style.pointerEvents = "none";
 
   window.setTimeout(() => {
-    // v038_05: 「物語は つづく・・・」後、1秒かけてゆっくりブラックフェード。
+    // v038_06: 「物語は つづく・・・」後、1秒かけてゆっくりブラックフェード。
     tenotsuBlackFadeOut(1000);
     if (dialogueBox) dialogueBox.classList.add("story-end-fadeout");
   }, 650);
@@ -2993,7 +2993,7 @@ window.addEventListener("load", () => {
 /* /v037_93 */
 
 
-/* v038_05 office/menu/character stability patch */
+/* v038_06 office/menu/character stability patch */
 (function(){
   const OFFICE_MENU_LABELS = ["店舗","メンバー","店舗営業","外回り","ショップ","設定"];
   const OLD_MENU_PATTERNS = /(と遊ぶ|旧メニュー|プロトタイプ|⓪|①|②|③|④|⑤|ランダムSHOW|オートプレイ|スキップ|バックログ)/;
@@ -3169,12 +3169,12 @@ window.addEventListener("load", () => {
   });
   document.addEventListener("tenotsu:office", function(){ window.tenotsuEnterOfficeMode(); });
 })();
-/* /v038_05 office/menu/character stability patch */
+/* /v038_06 office/menu/character stability patch */
 
 
-/* v038_05 office character actual-path patch */
+/* v038_06 office character actual-path patch */
 (function(){
-  const VERSION = "v038_05";
+  const VERSION = "v038_06";
   const OFFICE_CHARS = [
     ["星野 緋奈","a10501.webp","店長、今日も一緒にがんばりましょう！"],
     ["速水川 藍","b10201.webp","てんちょー、少し休憩も大事ですよ。"],
@@ -3245,10 +3245,10 @@ window.addEventListener("load", () => {
   });
   window.tenotsuOfficeCharacterActualPathPatchVersion = VERSION;
 })();
-/* /v038_05 office character actual-path patch */
+/* /v038_06 office character actual-path patch */
 
 
-/* v038_05 exchange shop background + office character z-index fix */
+/* v038_06 exchange shop background + office character z-index fix */
 (function(){
   const EXCHANGE_BG = "images/assets/bgev/bg_exchange_item_counter.png";
 
@@ -3389,10 +3389,10 @@ window.addEventListener("load", () => {
     observer.observe(document.body, {childList:true, subtree:true, attributes:true, attributeFilter:["class","style","src"]});
   });
 })();
-/* /v038_05 exchange shop background + office character z-index fix */
+/* /v038_06 exchange shop background + office character z-index fix */
 
 
-/* v038_05 office return background + 3-character positioning fix */
+/* v038_06 office return background + 3-character positioning fix */
 (function(){
   const OFFICE_BG = "images/assets/bgev/bg_office_hidamari.png";
   const EXCHANGE_BG = "images/assets/bgev/bg_exchange_item_counter.png";
@@ -3602,10 +3602,10 @@ window.addEventListener("load", () => {
     observer.observe(document.body, { childList:true, subtree:true, attributes:true, attributeFilter:["class","style","src","data-game-mode"] });
   });
 })();
-/* /v038_05 office return background + 3-character positioning fix */
+/* /v038_06 office return background + 3-character positioning fix */
 
 
-/* v038_05 office foreground overlay + shop greeting + shop left-menu guard */
+/* v038_06 office foreground overlay + shop greeting + shop left-menu guard */
 (function(){
   const OFFICE_BG = "images/assets/bgev/bg_office_hidamari.png";
   const SHOP_BG = "images/assets/bgev/bg_exchange_item_counter.png";
@@ -3816,10 +3816,10 @@ window.addEventListener("load", () => {
     mo.observe(document.body, {childList:true, subtree:true, attributes:true, attributeFilter:["class","style","data-game-mode"]});
   });
 })();
-/* /v038_05 office foreground overlay + shop greeting + shop left-menu guard */
+/* /v038_06 office foreground overlay + shop greeting + shop left-menu guard */
 
 
-/* v038_05 layer normalization */
+/* v038_06 layer normalization */
 (function(){
   const Z = {
     bg: 0,
@@ -3877,10 +3877,10 @@ window.addEventListener("load", () => {
     observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["class", "style", "data-layer"] });
   });
 })();
-/* /v038_05 layer normalization */
+/* /v038_06 layer normalization */
 
 
-/* v038_05 Sakuya exchange intro implementation */
+/* v038_06 Sakuya exchange intro implementation */
 (function(){
   const SAKUYA_INTRO_SCENARIO = "shop_exchange_intro_sakuya.json";
   const SAKUYA_INTRO_KEY = "tenotsu_sakuya_exchange_intro_seen_v1";
@@ -3975,10 +3975,10 @@ window.addEventListener("load", () => {
   });
   document.addEventListener("click", () => setTimeout(bindShopButtonIntro, 0), true);
 })();
-/* /v038_05 Sakuya exchange intro implementation */
+/* /v038_06 Sakuya exchange intro implementation */
 
 
-/* v038_05 runtime layer/click/character fix */
+/* v038_06 runtime layer/click/character fix */
 (function(){
   const Z = Object.freeze({
     bg:0, random:40, storyChar:120, ev:180, click:260, dialogue:420, choices:440,
@@ -4077,10 +4077,10 @@ window.addEventListener("load", () => {
     mo.observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:["class","style","data-game-mode"]});
   });
 })();
-/* /v038_05 runtime layer/click/character fix */
+/* /v038_06 runtime layer/click/character fix */
 
 
-/* v038_05 office no-background test build */
+/* v038_06 office no-background test build */
 (function(){
   const TRANSPARENT_PIXEL = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
   window.TENOTSU_OFFICE_DISABLE_BACKGROUND = true;
@@ -4222,10 +4222,10 @@ window.addEventListener("load", () => {
     observer.observe(document.body, { childList:true, subtree:true, attributes:true, attributeFilter:["class","style","data-game-mode","src"] });
   });
 })();
-/* /v038_05 office no-background test build */
+/* /v038_06 office no-background test build */
 
 
-/* v038_05 office background direct filename detection */
+/* v038_06 office background direct filename detection */
 (function(){
   const TRANSPARENT_PIXEL = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
 
@@ -4350,4 +4350,202 @@ window.addEventListener("load", () => {
     observer.observe(document.body, { childList:true, subtree:true, attributes:true, attributeFilter:["src","style","class","data-game-mode"] });
   });
 })();
-/* /v038_05 office background direct filename detection */
+/* /v038_06 office background direct filename detection */
+
+
+/* v038_06 office forced foreground diagnostic render */
+(function(){
+  const OFFICE_FORCE_CHARS = [
+    ["星野 緋奈","a10501.webp","店長、今日も一緒にがんばりましょう！"],
+    ["速水川 藍","b10501.webp","てんちょー、事務所でお待ちしていました。"],
+    ["草壁 翠","c10201.webp","キミ、表示確認を続けよう。"],
+    ["小麦沢 こがね","d10501.webp","店長、ここなら見えてるっしょ？"],
+    ["春日原 琥珀","e10501.webp","旦那、前に出てきたぞ！"],
+    ["大道寺 真花","f10201.webp","店長、こちらにおります。"],
+    ["氷神 雪乃","g10201.webp","貴方様、姿は見えていますでしょうか。"],
+    ["双沢 美空","h10501.webp","店長、表示テストです。"],
+    ["双沢 夜空","i10201.webp","あんた、これなら見える？"],
+    ["芝桜 桃","j10501.webp","店長、ウチ参上！"],
+    ["紫藤 彩愛","k10201.webp","貴方、こちらで確認くださいませ。"],
+    ["餅月 里美","l10501.webp","てんちょ～、見えてますか～？"],
+    ["草壁 萌","m10501.webp","おにいちゃん、ここにいるよ。"]
+  ];
+
+  function qs(sel){ return document.querySelector(sel); }
+  function qsa(sel){ return Array.from(document.querySelectorAll(sel)); }
+  function setI(el, prop, val){ if (el) el.style.setProperty(prop, String(val), "important"); }
+  function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+
+  function isHardOfficeCandidate(){
+    const mode = document.body.dataset.gameMode || window.tenotsuGameMode || "";
+    if (mode === "office") return true;
+    if (mode === "shop" || mode === "story" || mode === "battle" || mode === "title") return false;
+
+    const rightText = ((qs("#list-panel") || qs(".right-menu") || {}).textContent || "");
+    if (rightText.includes("店舗") && rightText.includes("メンバー") && rightText.includes("ショップ")) return true;
+
+    const dialogue = qs("#dialogue-box");
+    const battle = qs("#battle-root:not(.hidden)");
+    const titleLike = qs(".title-screen,.boot-flow:not(.hidden)");
+    if (!battle && !titleLike && dialogue && getComputedStyle(dialogue).display !== "none") return true;
+
+    return false;
+  }
+
+  function ensureLayer(){
+    let layer = qs("#tenotsu-office-force-layer");
+    if (!layer) {
+      layer = document.createElement("div");
+      layer.id = "tenotsu-office-force-layer";
+      layer.className = "tenotsu-office-force-layer";
+      document.body.appendChild(layer);
+    }
+    return layer;
+  }
+
+  function ensureText(){
+    let box = qs("#tenotsu-office-force-comment");
+    if (!box) {
+      box = document.createElement("div");
+      box.id = "tenotsu-office-force-comment";
+      box.className = "tenotsu-office-force-comment";
+      document.body.appendChild(box);
+    }
+    return box;
+  }
+
+  window.tenotsuForceOfficeForeground = function(){
+    if (!isHardOfficeCandidate()) return;
+
+    document.body.dataset.gameMode = "office";
+    window.tenotsuGameMode = "office";
+    document.body.classList.add("mode-office");
+    document.body.classList.remove("mode-title","mode-story","mode-shop","mode-battle","story-playing");
+
+    // Keep office background hidden for this diagnostic build, but make base not black.
+    setI(document.body, "background", "linear-gradient(135deg, #1e2533, #11151d)");
+    setI(document.body, "background-image", "linear-gradient(135deg, #1e2533, #11151d)");
+    [qs("#game-container"), qs("#game"), qs("#main"), qs(".game-screen")].filter(Boolean).forEach(el=>{
+      setI(el, "background", "transparent");
+      setI(el, "background-image", "none");
+    });
+
+    qsa("#background,[data-layer='background'],#bg,#bgev,#game-bg,#gameBackground,.background,.bg,.bgev").forEach(el=>{
+      setI(el, "display", "none");
+      setI(el, "visibility", "hidden");
+      setI(el, "opacity", "0");
+      setI(el, "pointer-events", "none");
+    });
+
+    const layer = ensureLayer();
+    const existingKey = layer.dataset.pickKey;
+    if (!existingKey || !layer.children.length) {
+      const picks = shuffle(OFFICE_FORCE_CHARS).slice(0, 3);
+      layer.dataset.pickKey = picks.map(p=>p[1]).join("|");
+      layer.innerHTML = "";
+      picks.forEach((c, idx)=>{
+        const img = document.createElement("img");
+        img.className = "tenotsu-office-force-stand tenotsu-office-force-stand-" + idx;
+        img.alt = c[0];
+        img.src = "images/assets/char/" + c[1];
+        img.onerror = () => {
+          img.onerror = null;
+          img.src = "./images/assets/char/" + c[1];
+        };
+        layer.appendChild(img);
+      });
+      const box = ensureText();
+      box.innerHTML = "<span class='comment-speaker'>" + picks[0][0] + "</span><span class='comment-text'>" + picks[0][2] + "</span>";
+    }
+
+    setI(layer, "display", "block");
+    setI(layer, "visibility", "visible");
+    setI(layer, "opacity", "1");
+    setI(layer, "z-index", "600");
+
+    qsa("#tenotsu-office-force-layer img").forEach((img, idx)=>{
+      setI(img, "display", "block");
+      setI(img, "visibility", "visible");
+      setI(img, "opacity", "1");
+      setI(img, "position", "fixed");
+      setI(img, "bottom", "3.5%");
+      setI(img, "top", "auto");
+      setI(img, "width", "auto");
+      setI(img, "max-height", "88vh");
+      setI(img, "max-width", "440px");
+      setI(img, "height", "auto");
+      setI(img, "object-fit", "contain");
+      setI(img, "pointer-events", "none");
+      setI(img, "z-index", String(603 - idx));
+      if (idx === 0) { setI(img, "left", "32%"); setI(img, "transform", "translateX(-50%) scale(1.03)"); }
+      if (idx === 1) { setI(img, "left", "15%"); setI(img, "transform", "translateX(-50%) scale(.92)"); }
+      if (idx === 2) { setI(img, "left", "49%"); setI(img, "transform", "translateX(-50%) scale(.92)"); }
+    });
+
+    const box = ensureText();
+    setI(box, "display", "block");
+    setI(box, "visibility", "visible");
+    setI(box, "opacity", "1");
+    setI(box, "position", "fixed");
+    setI(box, "left", "5%");
+    setI(box, "right", "24%");
+    setI(box, "bottom", "max(18px, env(safe-area-inset-bottom))");
+    setI(box, "top", "auto");
+    setI(box, "z-index", "950");
+
+    const dialogue = qs("#dialogue-box");
+    if (dialogue) {
+      setI(dialogue, "position", "fixed");
+      setI(dialogue, "top", "auto");
+      setI(dialogue, "bottom", "max(18px, env(safe-area-inset-bottom))");
+      setI(dialogue, "left", "5%");
+      setI(dialogue, "right", "12%");
+      setI(dialogue, "width", "auto");
+      setI(dialogue, "z-index", "940");
+    }
+
+    const right = qs("#list-panel") || qs(".right-menu") || qs(".right-panel");
+    if (right) {
+      setI(right, "display", "block");
+      setI(right, "visibility", "visible");
+      setI(right, "opacity", "1");
+      setI(right, "z-index", "1000");
+      right.classList.remove("hidden");
+      right.classList.add("show","open","visible","active");
+    }
+  };
+
+  const oldEnter = window.tenotsuEnterOfficeMode;
+  if (typeof oldEnter === "function") {
+    window.tenotsuEnterOfficeMode = function(){
+      const result = oldEnter.apply(this, arguments);
+      setTimeout(window.tenotsuForceOfficeForeground, 0);
+      setTimeout(window.tenotsuForceOfficeForeground, 120);
+      setTimeout(window.tenotsuForceOfficeForeground, 500);
+      return result;
+    };
+  }
+
+  const oldNormalize = window.tenotsuNormalizeLayerIndex;
+  window.tenotsuNormalizeLayerIndex = function(){
+    if (typeof oldNormalize === "function") oldNormalize.apply(this, arguments);
+    window.tenotsuForceOfficeForeground();
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(window.tenotsuForceOfficeForeground, 0);
+    setTimeout(window.tenotsuForceOfficeForeground, 200);
+    setTimeout(window.tenotsuForceOfficeForeground, 800);
+  });
+
+  document.addEventListener("click", () => setTimeout(window.tenotsuForceOfficeForeground, 0), true);
+
+  const observer = new MutationObserver(() => {
+    if (window.__tenotsuForceOfficeTimer) clearTimeout(window.__tenotsuForceOfficeTimer);
+    window.__tenotsuForceOfficeTimer = setTimeout(window.tenotsuForceOfficeForeground, 0);
+  });
+  document.addEventListener("DOMContentLoaded", () => {
+    observer.observe(document.body, {childList:true, subtree:true, attributes:true, attributeFilter:["class","style","data-game-mode"]});
+  });
+})();
+/* /v038_06 office forced foreground diagnostic render */
