@@ -1,4 +1,4 @@
-/* v038_22 Surface Manager - Single Authority
+/* v038_23 Surface Manager - Single Authority
    Purpose:
    - office/shop visual surfaces are owned by this file only.
    - old randomShows/title/office comment layers are removed or hidden.
@@ -8,7 +8,7 @@
 (function(){
   "use strict";
 
-  const VERSION = "v038_22";
+  const VERSION = "v038_23";
   const BG_OFFICE = "images/assets/bgev/bg_office_hidamari.png";
   const BG_SHOP = "images/assets/bgev/bg_exchange_item_counter.png";
   const SAKUYA_INTRO_SCENARIO = "shop_exchange_intro_sakuya.json";
@@ -444,7 +444,7 @@
   }
 
   function renderShopPanel(){
-    // v038_22: shop action buttons live in #tenotsu-shop-menu.
+    // v038_23: shop action buttons live in #tenotsu-shop-menu.
     // Operation surface remains available but does not create a second submenu.
     const s = ensureOperationSurface();
     s.innerHTML = "";
@@ -503,7 +503,39 @@
     });
   }
 
+
+  function updateOrientationWarning(){
+    // v038_23:
+    // Desktop / normal wide browser must be treated as landscape-ok.
+    const w = Math.max(window.innerWidth || 0, document.documentElement.clientWidth || 0);
+    const h = Math.max(window.innerHeight || 0, document.documentElement.clientHeight || 0);
+    const coarse = !!(window.matchMedia && window.matchMedia("(pointer: coarse)").matches);
+    const hoverNone = !!(window.matchMedia && window.matchMedia("(hover: none)").matches);
+    const portrait = h > w;
+    const narrow = w < 900;
+    const shouldWarn = portrait && narrow && (coarse || hoverNone);
+
+    document.body.classList.toggle("tenotsu-portrait-warning", shouldWarn);
+    document.body.classList.toggle("tenotsu-landscape-ok", !shouldWarn);
+
+    qsa("#rotate-warning,.rotate-warning,.orientation-warning,#orientation-warning").forEach(el => {
+      if (shouldWarn) {
+        el.style.removeProperty("display");
+        el.style.removeProperty("visibility");
+        el.style.removeProperty("opacity");
+      } else {
+        el.classList.add("hidden");
+        setI(el, "display", "none");
+        setI(el, "visibility", "hidden");
+        setI(el, "opacity", "0");
+        setI(el, "pointer-events", "none");
+      }
+    });
+  }
+
+
   function normalizeLayers(){
+    updateOrientationWarning();
     [
       ["#background", Z.bg],
       ["#char-layer,#char-layer .char-slot,#char-layer .char-image", Z.storyChar],
@@ -767,7 +799,7 @@
     window.tenotsuOpenShopWithSakuya = function(){ openShop(); };
     window.tenotsuNormalizeLayerIndex = function(){ normalizeLayers(); };
     window.tenotsuRunBootFlow = function(){
-      // v038_22: script.js may call this after surfaceManager already entered office.
+      // v038_23: script.js may call this after surfaceManager already entered office.
       // Do not force a second random character render.
       const mode = document.body.dataset.gameMode || window.tenotsuGameMode || "";
       if (mode !== "office") enterOffice(true);
@@ -828,6 +860,9 @@
     patchApis();
     patchStoryEnd();
     installEvents();
+    updateOrientationWarning();
+    window.addEventListener('resize', updateOrientationWarning, { passive: true });
+    window.addEventListener('orientationchange', () => setTimeout(updateOrientationWarning, 120), { passive: true });
     removeLegacyVisualSurfaces();
     normalizeLayers();
 

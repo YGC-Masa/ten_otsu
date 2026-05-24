@@ -1,9 +1,9 @@
-/* v038_22 Boot Rescue
+/* v038_23 Boot Rescue
    Runs before legacy script.js. Prevents legacy MutationObserver/menu fallback loops from freezing boot.
 */
 (function(){
   "use strict";
-  window.TENOTSU_BOOT_RESCUE_VERSION = "v038_22";
+  window.TENOTSU_BOOT_RESCUE_VERSION = "v038_23";
   window.__TENOTSU_DISABLE_LEGACY_OBSERVERS__ = true;
   window.__TENOTSU_SURFACE_TAKEOVER__ = true;
 

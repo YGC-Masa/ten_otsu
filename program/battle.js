@@ -3,7 +3,7 @@
 // 操作はメンバーのシングルタップで通常接客、ダブルタップで必殺接客。通常敵HP2、レアHP3。ターゲットは選択メンバーに最適な家電星人へ自動Fix。彩愛の必殺は盤面整理＋敵チェンジ短縮。店長HELP・必殺カットイン・タイムセール演出あり。
 
 (function () {
-  const BATTLE_VERSION = "v038_22";
+  const BATTLE_VERSION = "v038_23";
   const BATTLE_SECONDS = 30;
   const TIME_SALE_SECONDS = 15;
   const MAX_ENEMIES = 3;
@@ -324,7 +324,7 @@ const battleBackgrounds = {
     clearSurfaceTimers();
     stopLoop();
     if (root) root.classList.add("hidden");
-    // v038_22: surfaceManager owns the visual battle -> office transition.
+    // v038_23: surfaceManager owns the visual battle -> office transition.
     // Do not call tenotsuEnterOfficeMode here, or the office draws before black fade.
     document.body.classList.remove("battle-screen");
   }
