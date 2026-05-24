@@ -1,0 +1,70 @@
+/* v038_15 Boot Rescue
+   Runs before legacy script.js. Prevents legacy MutationObserver/menu fallback loops from freezing boot.
+*/
+(function(){
+  "use strict";
+  window.TENOTSU_BOOT_RESCUE_VERSION = "v038_15";
+  window.__TENOTSU_DISABLE_LEGACY_OBSERVERS__ = true;
+  window.__TENOTSU_SURFACE_TAKEOVER__ = true;
+
+  // Disable legacy MutationObserver blocks that were repeatedly rebuilding menus.
+  if (window.MutationObserver && !window.MutationObserver.__tenotsuRescued) {
+    const NativeMutationObserver = window.MutationObserver;
+    function SafeMutationObserver(callback) {
+      this.__native = new NativeMutationObserver((mutations, observer) => {
+        if (window.__TENOTSU_DISABLE_LEGACY_OBSERVERS__) return;
+        try { callback(mutations, observer); } catch (err) { console.warn("[TENOTSU MUTATION OBSERVER SUPPRESSED ERROR]", err); }
+      });
+    }
+    SafeMutationObserver.prototype.observe = function(target, options) {
+      if (window.__TENOTSU_DISABLE_LEGACY_OBSERVERS__) return;
+      return this.__native.observe(target, options);
+    };
+    SafeMutationObserver.prototype.disconnect = function(){ return this.__native.disconnect(); };
+    SafeMutationObserver.prototype.takeRecords = function(){ return this.__native.takeRecords(); };
+    SafeMutationObserver.__tenotsuRescued = true;
+    SafeMutationObserver.NativeMutationObserver = NativeMutationObserver;
+    window.MutationObserver = SafeMutationObserver;
+  }
+
+  // Legacy guard checks #list-panel/#menu-panel only. Keep a non-visual placeholder so it won't run fallback.
+  function ensureLegacyGuardSatisfied(){
+    let list = document.getElementById("list-panel");
+    if (!list) {
+      list = document.createElement("div");
+      list.id = "list-panel";
+      document.body.appendChild(list);
+    }
+    list.classList.remove("hidden");
+    list.innerHTML = list.innerHTML || "<span data-tenotsu-rescue='1'>surface takeover active</span>";
+    list.style.setProperty("display", "none", "important");
+    list.style.setProperty("pointer-events", "none", "important");
+  }
+
+  function rescueBootOverlay(){
+    const boot = document.getElementById("boot-flow");
+    if (boot && (document.body.dataset.gameMode === "office" || window.tenotsuGameMode === "office")) {
+      boot.classList.add("hidden", "is-out");
+      boot.setAttribute("aria-hidden", "true");
+      boot.style.setProperty("display", "none", "important");
+      boot.style.setProperty("pointer-events", "none", "important");
+    }
+  }
+
+  window.tenotsuBootRescuePrepare = function(){
+    try { ensureLegacyGuardSatisfied(); } catch (_) {}
+    try { rescueBootOverlay(); } catch (_) {}
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", window.tenotsuBootRescuePrepare, { once: false });
+  } else {
+    window.tenotsuBootRescuePrepare();
+  }
+  window.addEventListener("load", () => {
+    window.tenotsuBootRescuePrepare();
+    setTimeout(window.tenotsuBootRescuePrepare, 300);
+    setTimeout(window.tenotsuBootRescuePrepare, 1200);
+    setTimeout(window.tenotsuBootRescuePrepare, 2400);
+  });
+})();

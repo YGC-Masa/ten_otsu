@@ -1,10 +1,10 @@
-/* v038_14 Surface Manager Takeover - verified boot candidate
+/* v038_15 Surface Manager Takeover - verified boot candidate
    Single authority for non-ADV surfaces. Designed to survive broken/old boot flow.
 */
 (function(){
   "use strict";
 
-  const VERSION = "v038_14";
+  const VERSION = "v038_15";
   const BG_OFFICE = "images/assets/bgev/bg_office_hidamari.png";
   const BG_SHOP = "images/assets/bgev/bg_exchange_item_counter.png";
   const SAKUYA_INTRO_SCENARIO = "shop_exchange_intro_sakuya.json";
@@ -150,6 +150,35 @@
       document.body.appendChild(f);
     }
     return f;
+  }
+
+  function hideBootOverlay(){
+    const boot = qs("#boot-flow");
+    if (boot) {
+      boot.classList.add("hidden", "is-out");
+      boot.setAttribute("aria-hidden", "true");
+      boot.style.setProperty("display", "none", "important");
+      boot.style.setProperty("pointer-events", "none", "important");
+    }
+  }
+
+  function satisfyLegacyGuard(){
+    let list = qs("#list-panel");
+    if (!list) {
+      list = document.createElement("div");
+      list.id = "list-panel";
+      document.body.appendChild(list);
+    }
+    list.classList.remove("hidden");
+    if (!list.innerHTML.trim()) list.innerHTML = "<span data-tenotsu-rescue='1'>surface takeover active</span>";
+    list.style.setProperty("display", "none", "important");
+    list.style.setProperty("pointer-events", "none", "important");
+
+    qsa("#menu-panel,.menu-panel,.left-menu,#left-menu,#leftPanel,.exchange-menu,.exchange-panel,.shop-submenu,.sub-menu,#tenotsu-office-force-layer,#tenotsu-office-force-comment,#tenotsu-surface-office-layer,#tenotsu-surface-comment,#office-character-layer").forEach(el => {
+      el.classList.add("hidden");
+      el.style.setProperty("display", "none", "important");
+      el.style.setProperty("pointer-events", "none", "important");
+    });
   }
 
   function hideFrontLayer(){
@@ -361,6 +390,8 @@
     busy = true;
     try {
       setMode("office");
+      hideBootOverlay();
+      satisfyLegacyGuard();
       document.body.classList.remove("battle-screen");
       const battle = qs("#battle-root");
       if (battle) battle.classList.add("hidden");
@@ -379,6 +410,8 @@
     busy = true;
     try {
       setMode("shop");
+      hideBootOverlay();
+      satisfyLegacyGuard();
       setBackground(BG_SHOP);
       renderShopCharacter();
       const g = SHOP_GREETINGS[Math.floor(Math.random() * SHOP_GREETINGS.length)];
@@ -540,6 +573,8 @@
       setTimeout(() => { f.style.display = "none"; }, (ms || 450) + 80);
     };
 
+    window.tenotsuRunBootFlow = function(){ if ((document.body.dataset.gameMode || window.tenotsuGameMode) !== "office") enterOffice(true); };
+    window.tenotsuForceShowMenuFallback = function(){ enterOffice(true); };
     window.tenotsuHideOfficeBackgroundDirect = function(){};
     window.tenotsuDisableOfficeBackground = function(){};
     window.tenotsuForceOfficeForeground = function(){};
@@ -575,6 +610,7 @@
   }
 
   function boot(){
+    try { if (typeof window.tenotsuBootRescuePrepare === "function") window.tenotsuBootRescuePrepare(); } catch (_) {}
     patchApis();
     patchStoryEnd();
     installEvents();
@@ -584,11 +620,13 @@
     setTimeout(() => {
       patchApis();
       patchStoryEnd();
+      try { if (typeof window.tenotsuBootRescuePrepare === "function") window.tenotsuBootRescuePrepare(); } catch (_) {}
       if (shouldEnterOfficeAfterBoot()) enterOffice(true);
       else normalizeLayers();
     }, 150);
 
     setTimeout(() => {
+      try { if (typeof window.tenotsuBootRescuePrepare === "function") window.tenotsuBootRescuePrepare(); } catch (_) {}
       if (shouldEnterOfficeAfterBoot()) enterOffice(true);
       else normalizeLayers();
     }, 800);

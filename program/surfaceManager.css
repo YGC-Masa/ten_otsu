@@ -1,4 +1,4 @@
-/* v038_14 Surface Takeover CSS
+/* v038_15 Surface Takeover CSS
    Best-practice implementation:
    - old menu surfaces are hidden
    - new surfaceManager owns office/shop menu and operation surfaces
@@ -374,5 +374,24 @@ body.mode-shop #tenotsu-operation-surface {
 .shop-submenu,
 .sub-menu {
   display: none !important;
+  pointer-events: none !important;
+}
+
+
+/* v038_15 boot rescue */
+body[data-game-mode="office"] #boot-flow,
+body.mode-office #boot-flow,
+body[data-game-mode="shop"] #boot-flow,
+body.mode-shop #boot-flow,
+body[data-game-mode="battle"] #boot-flow,
+body.mode-battle #boot-flow,
+#boot-flow.hidden,
+#boot-flow.is-out {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+#list-panel[data-tenotsu-rescue],
+#list-panel {
   pointer-events: none !important;
 }
