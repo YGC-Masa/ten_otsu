@@ -1,10 +1,10 @@
-/* v038_15 Surface Manager Takeover - verified boot candidate
+/* v038_16 Surface Manager Takeover - verified boot candidate
    Single authority for non-ADV surfaces. Designed to survive broken/old boot flow.
 */
 (function(){
   "use strict";
 
-  const VERSION = "v038_15";
+  const VERSION = "v038_16";
   const BG_OFFICE = "images/assets/bgev/bg_office_hidamari.png";
   const BG_SHOP = "images/assets/bgev/bg_exchange_item_counter.png";
   const SAKUYA_INTRO_SCENARIO = "shop_exchange_intro_sakuya.json";
@@ -181,6 +181,16 @@
     });
   }
 
+  function hideLegacyComments(){
+    // v038_16: the only visible comment box outside ADV should be #dialogue-box at the bottom.
+    qsa("#office-comment-box,#title-comment-box,#office-message,#office-comment,.office-comment-box,.title-comment-box,.office-message,.office-comment,.top-comment,.header-comment,.tenotsu-office-comment,#tenotsu-office-comment,#tenotsu-office-force-comment,#tenotsu-surface-comment").forEach(el => {
+      el.classList.add("hidden");
+      el.style.setProperty("display", "none", "important");
+      el.style.setProperty("visibility", "hidden", "important");
+      el.style.setProperty("pointer-events", "none", "important");
+    });
+  }
+
   function hideFrontLayer(){
     const layer = qs("#tenotsu-front-character-layer");
     if (layer) layer.style.display = "none";
@@ -228,6 +238,7 @@
   }
 
   function renderDialogueComment(name, text){
+    hideLegacyComments();
     const box = qs("#dialogue-box");
     const nameEl = qs("#name");
     const textEl = qs("#text");
@@ -276,21 +287,12 @@
   }
 
   function renderShopCharacter(){
+    // v038_16: shop mode intentionally hides character display.
+    // The exchange counter background and shop panel are the focus.
     const layer = ensureFrontLayer();
-    if (layer.dataset.mode !== "shop" || !layer.querySelector(".tenotsu-front-sakuya")) {
-      layer.dataset.mode = "shop";
-      layer.innerHTML = "";
-      const img = document.createElement("img");
-      img.className = "tenotsu-front-stand tenotsu-front-sakuya";
-      img.alt = "宵闇 朔夜";
-      img.src = "images/assets/char/sakuya_02_hood.webp";
-      img.onerror = () => {
-        img.onerror = null;
-        img.src = "images/assets/char/sakuya_01_hooddeep.webp";
-      };
-      layer.appendChild(img);
-    }
-    layer.style.display = "block";
+    layer.dataset.mode = "shop-hidden";
+    layer.innerHTML = "";
+    layer.style.display = "none";
   }
 
   function renderShopPanel(){
@@ -365,6 +367,7 @@
     ].forEach(([sel,z]) => qsa(sel).forEach(el => setI(el, "z-index", z)));
 
     normalizeStoryLayer();
+    if (currentMode === "office" || currentMode === "shop") hideLegacyComments();
     updateInputSurfaces();
   }
 
@@ -390,6 +393,7 @@
     busy = true;
     try {
       setMode("office");
+      hideLegacyComments();
       hideBootOverlay();
       satisfyLegacyGuard();
       document.body.classList.remove("battle-screen");
@@ -410,6 +414,7 @@
     busy = true;
     try {
       setMode("shop");
+      hideLegacyComments();
       hideBootOverlay();
       satisfyLegacyGuard();
       setBackground(BG_SHOP);
@@ -611,6 +616,7 @@
 
   function boot(){
     try { if (typeof window.tenotsuBootRescuePrepare === "function") window.tenotsuBootRescuePrepare(); } catch (_) {}
+    hideLegacyComments();
     patchApis();
     patchStoryEnd();
     installEvents();

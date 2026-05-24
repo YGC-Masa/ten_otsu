@@ -305,7 +305,7 @@ function randomTextsOn() {
 }
 
 function tenotsuRefreshTitleRandomShow() {
-  // v038_14: タイトル/事務所表示のたびにキャラとコメントを再抽選する。
+  // v038_16: タイトル/事務所表示のたびにキャラとコメントを再抽選する。
   try {
     clearRandomTexts();
     return randomImagesOn().then(() => randomTextsOn());

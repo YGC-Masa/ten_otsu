@@ -1,4 +1,4 @@
-/* v038_15 Surface Takeover CSS
+/* v038_16 Surface Takeover CSS
    Best-practice implementation:
    - old menu surfaces are hidden
    - new surfaceManager owns office/shop menu and operation surfaces
@@ -378,7 +378,7 @@ body.mode-shop #tenotsu-operation-surface {
 }
 
 
-/* v038_15 boot rescue */
+/* v038_16 boot rescue */
 body[data-game-mode="office"] #boot-flow,
 body.mode-office #boot-flow,
 body[data-game-mode="shop"] #boot-flow,
@@ -393,5 +393,49 @@ body.mode-battle #boot-flow,
 
 #list-panel[data-tenotsu-rescue],
 #list-panel {
+  pointer-events: none !important;
+}
+
+
+/* v038_16 unified comment / shop no-character */
+#office-comment-box,
+#title-comment-box,
+#office-message,
+#office-comment,
+.office-comment-box,
+.title-comment-box,
+.office-message,
+.office-comment,
+.top-comment,
+.header-comment,
+.tenotsu-office-comment,
+#tenotsu-office-comment,
+#tenotsu-office-force-comment,
+#tenotsu-surface-comment {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+body[data-game-mode="shop"] #tenotsu-front-character-layer,
+body.mode-shop #tenotsu-front-character-layer {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+body[data-game-mode="office"] #dialogue-box,
+body.mode-office #dialogue-box,
+body[data-game-mode="shop"] #dialogue-box,
+body.mode-shop #dialogue-box {
+  display: block !important;
+  visibility: visible !important;
+  position: fixed !important;
+  left: 5% !important;
+  right: 12% !important;
+  top: auto !important;
+  bottom: max(18px, env(safe-area-inset-bottom)) !important;
+  width: auto !important;
+  z-index: 900 !important;
   pointer-events: none !important;
 }
