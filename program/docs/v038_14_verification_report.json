@@ -1,0 +1,225 @@
+{
+  "version": "v038_14",
+  "static_repeated": [
+    {
+      "run": 1,
+      "js_ok": true,
+      "json_ok": true,
+      "js_errors": [],
+      "json_errors": []
+    },
+    {
+      "run": 2,
+      "js_ok": true,
+      "json_ok": true,
+      "js_errors": [],
+      "json_errors": []
+    },
+    {
+      "run": 3,
+      "js_ok": true,
+      "json_ok": true,
+      "js_errors": [],
+      "json_errors": []
+    },
+    {
+      "run": 4,
+      "js_ok": true,
+      "json_ok": true,
+      "js_errors": [],
+      "json_errors": []
+    },
+    {
+      "run": 5,
+      "js_ok": true,
+      "json_ok": true,
+      "js_errors": [],
+      "json_errors": []
+    },
+    {
+      "run": 6,
+      "js_ok": true,
+      "json_ok": true,
+      "js_errors": [],
+      "json_errors": []
+    },
+    {
+      "run": 7,
+      "js_ok": true,
+      "json_ok": true,
+      "js_errors": [],
+      "json_errors": []
+    },
+    {
+      "run": 8,
+      "js_ok": true,
+      "json_ok": true,
+      "js_errors": [],
+      "json_errors": []
+    },
+    {
+      "run": 9,
+      "js_ok": true,
+      "json_ok": true,
+      "js_errors": [],
+      "json_errors": []
+    },
+    {
+      "run": 10,
+      "js_ok": true,
+      "json_ok": true,
+      "js_errors": [],
+      "json_errors": []
+    }
+  ],
+  "http_repeated": [
+    {
+      "run": 1,
+      "results": [
+        {
+          "url": "index.html",
+          "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
+        },
+        {
+          "url": "program/surfaceManager.js",
+          "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
+        },
+        {
+          "url": "program/surfaceManager.css",
+          "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
+        },
+        {
+          "url": "images/assets/bgev/bg_office_hidamari.png",
+          "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
+        },
+        {
+          "url": "images/assets/bgev/bg_exchange_item_counter.png",
+          "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
+        }
+      ]
+    },
+    {
+      "run": 2,
+      "results": [
+        {
+          "url": "index.html",
+          "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
+        },
+        {
+          "url": "program/surfaceManager.js",
+          "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
+        },
+        {
+          "url": "program/surfaceManager.css",
+          "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
+        },
+        {
+          "url": "images/assets/bgev/bg_office_hidamari.png",
+          "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
+        },
+        {
+          "url": "images/assets/bgev/bg_exchange_item_counter.png",
+          "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
+        }
+      ]
+    },
+    {
+      "run": 3,
+      "results": [
+        {
+          "url": "index.html",
+          "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
+        },
+        {
+          "url": "program/surfaceManager.js",
+          "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
+        },
+        {
+          "url": "program/surfaceManager.css",
+          "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
+        },
+        {
+          "url": "images/assets/bgev/bg_office_hidamari.png",
+          "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
+        },
+        {
+          "url": "images/assets/bgev/bg_exchange_item_counter.png",
+          "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
+        }
+      ]
+    },
+    {
+      "run": 4,
+      "results": [
+        {
+          "url": "index.html",
+          "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
+        },
+        {
+          "url": "program/surfaceManager.js",
+          "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
+        },
+        {
+          "url": "program/surfaceManager.css",
+          "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
+        },
+        {
+          "url": "images/assets/bgev/bg_office_hidamari.png",
+          "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
+        },
+        {
+          "url": "images/assets/bgev/bg_exchange_item_counter.png",
+          "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
+        }
+      ]
+    },
+    {
+      "run": 5,
+      "results": [
+        {
+          "url": "index.html",
+          "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
+        },
+        {
+          "url": "program/surfaceManager.js",
+          "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
+        },
+        {
+          "url": "program/surfaceManager.css",
+          "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
+        },
+        {
+          "url": "images/assets/bgev/bg_office_hidamari.png",
+          "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
+        },
+        {
+          "url": "images/assets/bgev/bg_exchange_item_counter.png",
+          "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
+        }
+      ]
+    }
+  ],
+  "browser_attempts": [
+    {
+      "result": "not_completed",
+      "reason": "This execution environment blocks localhost navigation in Chromium with ERR_BLOCKED_BY_ADMINISTRATOR or crashes Chromium GPU/headless process. Static and HTTP tests passed, but real browser interaction could not be completed here."
+    }
+  ],
+  "notes": [],
+  "heuristics": {
+    "surfaceManager_loaded_in_index": true,
+    "surfaceManager_css_loaded_in_index": true,
+    "no_mutation_observer_in_surfaceManager": true,
+    "new_main_menu_used": true,
+    "old_list_panel_hidden": true,
+    "safe_fade_present": true,
+    "front_character_layer_present": true,
+    "operation_surface_present": true
+  },
+  "summary": {
+    "static_runs_ok": true,
+    "http_runs_ok": false,
+    "browser_runs_ok": false,
+    "browser_limitation": "real browser was blocked in this environment; user-side verification is still required"
+  }
+}

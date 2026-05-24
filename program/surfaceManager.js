@@ -1,14 +1,10 @@
-/* v038_13 Surface Manager Takeover
-   Best implementation:
-   - Single authority for non-ADV surfaces.
-   - Does not reuse #list-panel or old submenus.
-   - Existing #dialogue-box is the only comment/dialogue area.
-   - #click-layer is ADV/story only.
+/* v038_14 Surface Manager Takeover - verified boot candidate
+   Single authority for non-ADV surfaces. Designed to survive broken/old boot flow.
 */
 (function(){
   "use strict";
 
-  const VERSION = "v038_13";
+  const VERSION = "v038_14";
   const BG_OFFICE = "images/assets/bgev/bg_office_hidamari.png";
   const BG_SHOP = "images/assets/bgev/bg_exchange_item_counter.png";
   const SAKUYA_INTRO_SCENARIO = "shop_exchange_intro_sakuya.json";
@@ -20,8 +16,8 @@
     ["草壁 翠","c10201.webp","キミ、今日の予定は確認済みかな？"],
     ["小麦沢 こがね","d10501.webp","店長、今日もアゲてこー！"],
     ["春日原 琥珀","e10501.webp","旦那、困ったことがあったらオレに任せな！"],
-    ["大道寺 真花","f10201.webp","店長、本日もよろしくお願いします。"],
-    ["氷神 雪乃","g10201.webp","貴方様、無理はなさらないでくださいね。"],
+    ["大道寺 真花","f10501.webp","店長、本日もよろしくお願いします。"],
+    ["氷神 雪乃","g10501.webp","貴方様、無理はなさらないでくださいね。"],
     ["双沢 美空","h10501.webp","店長、今日も笑顔でいきましょう。"],
     ["双沢 夜空","i10501.webp","あんた、今日もちゃんと見てるから。"],
     ["芝桜 桃","j10501.webp","店長、ウチ参上！"],
@@ -63,6 +59,7 @@
   let currentMode = "";
   let busy = false;
   let installed = false;
+  let lastActionAt = 0;
 
   function qs(sel){ return document.querySelector(sel); }
   function qsa(sel){ return Array.from(document.querySelectorAll(sel)); }
@@ -74,6 +71,17 @@
       [arr[i], arr[j]] = [arr[j], arr[i]];
     }
     return arr;
+  }
+
+  function now(){
+    return (performance && performance.now) ? performance.now() : Date.now();
+  }
+
+  function throttle(){
+    const n = now();
+    if (n - lastActionAt < 120) return true;
+    lastActionAt = n;
+    return false;
   }
 
   function setMode(mode){
@@ -165,8 +173,7 @@
 
   function showMainMenu(){
     const menu = ensureMainMenu();
-    const existing = menu.dataset.built === "1";
-    if (!existing) {
+    if (menu.dataset.built !== "1") {
       menu.innerHTML = "";
       const title = document.createElement("div");
       title.className = "tenotsu-main-menu-title";
@@ -188,6 +195,7 @@
       menu.dataset.built = "1";
     }
     menu.style.display = "block";
+    menu.style.pointerEvents = "auto";
   }
 
   function renderDialogueComment(name, text){
@@ -335,17 +343,17 @@
     const f = ensureFade();
     f.style.display = "block";
     f.style.pointerEvents = "none";
-    f.style.transition = "opacity 1000ms linear";
+    f.style.transition = "opacity 700ms linear";
     f.style.opacity = "0";
     requestAnimationFrame(() => { f.style.opacity = "1"; });
     setTimeout(() => {
       try { if (typeof callback === "function") callback(); }
       finally {
-        f.style.transition = "opacity 650ms linear";
+        f.style.transition = "opacity 450ms linear";
         f.style.opacity = "0";
-        setTimeout(() => { f.style.display = "none"; }, 720);
+        setTimeout(() => { f.style.display = "none"; }, 520);
       }
-    }, 1080);
+    }, 760);
   }
 
   function enterOffice(forceNew){
@@ -362,7 +370,7 @@
       showMainMenu();
       normalizeLayers();
     } finally {
-      setTimeout(() => { busy = false; }, 80);
+      setTimeout(() => { busy = false; }, 50);
     }
   }
 
@@ -379,7 +387,7 @@
       showMainMenu();
       normalizeLayers();
     } finally {
-      setTimeout(() => { busy = false; }, 80);
+      setTimeout(() => { busy = false; }, 50);
     }
   }
 
@@ -413,6 +421,7 @@
       click.style.pointerEvents = "none";
     }
     if (typeof window.startBattle === "function") window.startBattle();
+    else if (typeof window.startDeckBattlePrototype === "function") window.startDeckBattlePrototype();
     normalizeLayers();
   }
 
@@ -449,6 +458,7 @@
   }
 
   function handleSurfaceAction(action, label){
+    if (throttle()) return;
     switch(action){
       case "main-menu":
         handleMenu(label);
@@ -519,18 +529,17 @@
       const f = ensureFade();
       f.style.display = "block";
       f.style.pointerEvents = "none";
-      f.style.transition = "opacity " + (ms || 1000) + "ms linear";
+      f.style.transition = "opacity " + (ms || 700) + "ms linear";
       f.style.opacity = "1";
     };
     window.tenotsuBlackFadeIn = function(ms){
       const f = ensureFade();
       f.style.pointerEvents = "none";
-      f.style.transition = "opacity " + (ms || 650) + "ms linear";
+      f.style.transition = "opacity " + (ms || 450) + "ms linear";
       f.style.opacity = "0";
-      setTimeout(() => { f.style.display = "none"; }, (ms || 650) + 80);
+      setTimeout(() => { f.style.display = "none"; }, (ms || 450) + 80);
     };
 
-    // old diagnostics neutralized
     window.tenotsuHideOfficeBackgroundDirect = function(){};
     window.tenotsuDisableOfficeBackground = function(){};
     window.tenotsuForceOfficeForeground = function(){};
@@ -539,7 +548,7 @@
 
   function patchStoryEnd(){
     const prev = window.tenotsuHandleStoryEndReturn;
-    if (typeof prev !== "function" || prev.__surfaceTakeoverV03813) return;
+    if (typeof prev !== "function" || prev.__surfaceTakeoverV03814) return;
 
     const wrapped = function(){
       const scenarioName = String(window.currentScenario || "");
@@ -552,7 +561,7 @@
         else enterOffice(true);
       });
     };
-    wrapped.__surfaceTakeoverV03813 = true;
+    wrapped.__surfaceTakeoverV03814 = true;
     window.tenotsuHandleStoryEndReturn = wrapped;
   }
 
@@ -562,7 +571,7 @@
     const bg = qs("#background");
     const src = bg ? String(bg.getAttribute("src") || "") : "";
     if (!mode || mode === "title") return true;
-    return src.includes("title");
+    return src.includes("title") || src.endsWith("title.jpg");
   }
 
   function boot(){
@@ -571,17 +580,24 @@
     installEvents();
     normalizeLayers();
 
+    // Robust boot takeover: if the old boot flow stalls, office still appears.
     setTimeout(() => {
       patchApis();
       patchStoryEnd();
       if (shouldEnterOfficeAfterBoot()) enterOffice(true);
       else normalizeLayers();
-    }, 250);
+    }, 150);
 
     setTimeout(() => {
       if (shouldEnterOfficeAfterBoot()) enterOffice(true);
       else normalizeLayers();
-    }, 1200);
+    }, 800);
+
+    // Last safety. No observers, no recursive rebuild.
+    setTimeout(() => {
+      const mode = document.body.dataset.gameMode || window.tenotsuGameMode || "";
+      if (!mode || mode === "title") enterOffice(true);
+    }, 1800);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
