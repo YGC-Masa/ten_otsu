@@ -1,4 +1,5 @@
 {
+  "title": "ショップ",
   "items": [
     {
       "text": "秘密の言葉",
@@ -7,23 +8,23 @@
     },
     {
       "text": "通常ショップ：準備中",
-      "action": "list",
-      "list": "mainmenu.json"
+      "action": "custom",
+      "custom": "shop-normal-placeholder"
     },
     {
-      "text": "イベント交換：準備中",
-      "action": "list",
-      "list": "mainmenu.json"
+      "text": "イベント交換",
+      "action": "custom",
+      "custom": "event-exchange-menu"
     },
     {
       "text": "ガチャ：準備中",
-      "action": "list",
-      "list": "mainmenu.json"
+      "action": "custom",
+      "custom": "shop-gacha-placeholder"
     },
     {
       "text": "戻る",
       "action": "list",
-      "list": "mainmenu.json"
+      "list": "office6.json"
     }
   ]
 }

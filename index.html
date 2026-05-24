@@ -1,40 +1,184 @@
-{
-  "title": "ひだまりストア 事務所メニュー",
-  "layout": "office6",
-  "items": [
-    {
-      "text": "店舗",
-      "action": "list",
-      "list": "home.json",
-      "group": "ステータス管理"
-    },
-    {
-      "text": "メンバー",
-      "action": "list",
-      "list": "members.json",
-      "group": "ステータス管理"
-    },
-    {
-      "text": "店舗営業",
-      "action": "battle",
-      "group": "ゲームパート"
-    },
-    {
-      "text": "外回り",
-      "action": "outer",
-      "group": "ゲームパート"
-    },
-    {
-      "text": "ショップ",
-      "action": "list",
-      "list": "shop.json",
-      "group": "その他"
-    },
-    {
-      "text": "設定",
-      "action": "menu",
-      "menu": "menu01.json",
-      "group": "その他"
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no, maximum-scale=1.0" />
+  <title>ノベルゲームエンジン v037_95</title>
+
+  <!-- メインスタイル -->
+  <link rel="stylesheet" href="program/style.css" />
+  <!-- キャラ表示位置・サイズ -->
+  <link rel="stylesheet" href="program/chardispsetting.css" />
+
+  <!-- 通常ブラウザ向け -->
+  <link rel="icon" href="program/favicon.ico" type="image/x-icon">
+  <!-- Retina対応 -->
+  <link rel="icon" type="image/png" sizes="64x64" href="program/favicon.png">
+
+  <!-- ✅ PWA関連 -->
+  <link rel="manifest" href="program/manifest.json">
+  <meta name="theme-color" content="#000000" />
+  <meta name="tenotsu-version" content="v037_95" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="てんおつ" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="apple-touch-icon" href="program/icon-192.png">
+  <link rel="apple-touch-startup-image" href="program/icon-512.png">
+
+  <style>
+    #ios-pwa-notice {
+      display: none;
+      position: fixed;
+      left: max(12px, env(safe-area-inset-left));
+      right: max(12px, env(safe-area-inset-right));
+      bottom: max(12px, env(safe-area-inset-bottom));
+      z-index: 20000;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(20, 22, 30, 0.94);
+      color: #fff;
+      font-size: 14px;
+      line-height: 1.45;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.45);
     }
-  ]
-}
+    #ios-pwa-notice button {
+      float: right;
+      margin-left: 10px;
+      border: 0;
+      border-radius: 999px;
+      padding: 5px 10px;
+      background: #fff;
+      color: #111;
+    }
+
+    #rotate-warning {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #000;
+      color: #fff;
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 1.2em;
+      padding: 2em;
+    }
+    @media screen and (orientation: portrait) {
+      #rotate-warning {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- iPhone Safari向け：PWA起動案内 -->
+  <div id="ios-pwa-notice">
+    <button type="button" id="ios-pwa-close">閉じる</button>
+    iPhoneではSafari表示中はURLバーが残ります。URLバーなしで遊ぶ場合は、共有ボタンから「ホーム画面に追加」して、追加したアイコンから起動してください。
+  </div>
+
+  <!-- 横画面警告 -->
+  <div id="rotate-warning">このゲームは横画面でお楽しみください。<br>端末を回転してください。</div>
+
+
+  
+  <div id="game-container">
+    <!-- 背景画像 -->
+    <img id="background" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=" alt="背景画像" /> 
+    <!-- キャラ -->
+    <div id="char-layer">
+      <div id="char-left" class="char-slot"></div>
+      <div id="char-center" class="char-slot"></div>
+      <div id="char-right" class="char-slot"></div>
+    </div>
+
+    <!-- EV/CG層 -->
+    <div id="ev-layer"></div>
+
+    <!-- ランダム画像層 -->
+    <div id="random-images-layer"></div>
+
+    <!-- クリックレイヤー -->
+    <div id="click-layer"></div>
+
+    <!-- セリフ -->
+    <div id="dialogue-box">
+      <div id="name" class="name-area"></div>
+      <div id="text" class="text-area"></div>
+    </div>
+
+    <!-- 選択肢 -->
+    <div id="choices" class="choices-area"></div>
+
+    <!-- リスト・メニュー -->
+    <div id="list-panel" class="list-panel hidden"></div>
+    <div id="menu-panel" class="menu-panel hidden"></div>
+  </div>
+
+  <!-- 店舗営業：デッキ接客バトル試作 -->
+  <div id="battle-root" class="battle-root hidden"></div>
+
+  <!-- スクリプト群 -->
+  <script src="program/config.js"></script>
+  <script src="program/characterStyles.js"></script>
+  <script src="program/effect.js"></script>
+  <script src="program/menuList.js"></script>
+  <script src="program/randomShows.js"></script>
+  <script src="program/utils.js"></script>
+  <script src="program/battle.js"></script>
+  <script src="program/script.js"></script>
+
+  <!-- ✅ フルスクリーン・PWA対応 -->
+  <script>
+    // iOS SafariのURLバー対策：実表示高をCSS変数に反映
+    function setAppViewportHeight() {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+      document.documentElement.style.setProperty("--app-height", `${window.innerHeight}px`);
+    }
+    setAppViewportHeight();
+    window.addEventListener("resize", setAppViewportHeight);
+    window.addEventListener("orientationchange", () => setTimeout(setAppViewportHeight, 250));
+
+    // iPhone/iPadはSafariで開いている限りURLバーが残るため、ホーム画面追加を案内
+    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    const isStandalone = window.navigator.standalone === true || window.matchMedia("(display-mode: standalone)").matches;
+    const pwaNoticeDismissed = localStorage.getItem("iosPwaNoticeDismissed") === "1";
+    if (isIOS && !isStandalone && !pwaNoticeDismissed) {
+      const notice = document.getElementById("ios-pwa-notice");
+      const close = document.getElementById("ios-pwa-close");
+      if (notice) notice.style.display = "block";
+      if (close) close.addEventListener("click", () => {
+        localStorage.setItem("iosPwaNoticeDismissed", "1");
+        notice.style.display = "none";
+      });
+    }
+
+    // 初回操作で全画面化。iPhone Safariでは原則効かないため、PWA起動を推奨。
+    document.addEventListener("click", () => {
+      const el = document.documentElement;
+      if (el.requestFullscreen) el.requestFullscreen().catch?.(() => {});
+      else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+    }, { once: true });
+
+    // serviceWorker登録
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./serviceWorker.js')
+        .then(() => console.log('Service Worker registered'))
+        .catch((err) => console.error('SW registration failed:', err));
+    }
+  </script>
+
+  <div id="boot-flow" class="boot-flow hidden" aria-hidden="true">
+    <div class="boot-flash"></div>
+    <div class="boot-card">
+      <div class="boot-logo">店長お疲れ様です</div>
+      <div class="boot-version">v037_95</div>
+      <div class="boot-sub">ひだまりストア業務システム 起動中</div>
+    </div>
+  </div>
+
+</body>
+</html>

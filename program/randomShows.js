@@ -304,6 +304,17 @@ function randomTextsOn() {
     });
 }
 
+function tenotsuRefreshTitleRandomShow() {
+  // v037_95: タイトル/事務所表示のたびにキャラとコメントを再抽選する。
+  try {
+    clearRandomTexts();
+    return randomImagesOn().then(() => randomTextsOn());
+  } catch (err) {
+    console.warn('[TENOTSU RANDOM REFRESH FAILED]', err);
+    return Promise.resolve([]);
+  }
+}
+
 // ▼ OFF系
 function randomImagesOff() {
   clearRandomImages();
@@ -334,4 +345,5 @@ try {
   window.randomImagesOff = randomImagesOff;
   window.randomTextsOn = randomTextsOn;
   window.randomTextsOff = randomTextsOff;
+  window.tenotsuRefreshTitleRandomShow = tenotsuRefreshTitleRandomShow;
 } catch (_) {}

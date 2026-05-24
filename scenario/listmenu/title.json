@@ -1,38 +1,40 @@
 {
+  "title": "ひだまりストア 事務所メニュー",
+  "layout": "office6",
   "items": [
     {
-      "text": "店舗営業プロトタイプ",
-      "action": "battle"
-    },
-    {
-      "text": "①緋奈と遊ぶ",
-      "action": "jump",
-      "jump": "gamestart.json"
-    },
-    {
-      "text": "②藍と遊ぶ",
-      "action": "jump",
-      "jump": "goto_library.json"
-    },
-    {
-      "text": "③翠と遊ぶ",
+      "text": "店舗",
       "action": "list",
-      "list": "c_story_list01.json"
+      "list": "home.json",
+      "group": "ステータス管理"
     },
     {
-      "text": "④こがねと遊ぶ",
-      "action": "jump",
-      "jump": "kogane_sample.json"
-    },
-    {
-      "text": "⑤琥珀と遊ぶ",
-      "action": "jump",
-      "jump": "kohaku_sample.json"
-    },
-    {
-      "text": "⑥次のメニュー",
+      "text": "メンバー",
       "action": "list",
-      "list": "title02.json"
+      "list": "members.json",
+      "group": "ステータス管理"
+    },
+    {
+      "text": "店舗営業",
+      "action": "battle",
+      "group": "ゲームパート"
+    },
+    {
+      "text": "外回り",
+      "action": "outer",
+      "group": "ゲームパート"
+    },
+    {
+      "text": "ショップ",
+      "action": "list",
+      "list": "shop.json",
+      "group": "その他"
+    },
+    {
+      "text": "設定",
+      "action": "menu",
+      "menu": "menu01.json",
+      "group": "その他"
     }
   ]
 }

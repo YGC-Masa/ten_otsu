@@ -1,30 +1,7 @@
-{
-  "title": "ショップ",
-  "items": [
-    {
-      "text": "秘密の言葉",
-      "action": "custom",
-      "custom": "secret-word"
-    },
-    {
-      "text": "通常ショップ：準備中",
-      "action": "custom",
-      "custom": "shop-normal-placeholder"
-    },
-    {
-      "text": "イベント交換",
-      "action": "custom",
-      "custom": "event-exchange-menu"
-    },
-    {
-      "text": "ガチャ：準備中",
-      "action": "custom",
-      "custom": "shop-gacha-placeholder"
-    },
-    {
-      "text": "戻る",
-      "action": "list",
-      "list": "office6.json"
-    }
-  ]
-}
+# v037_94 → v037_95 差分
+
+- 交換所背景 `bg_exchange_item_counter.png` 採用。
+- 物語終了後ブラックフェードを1秒化。
+- 事務所復帰時、ランダム立ち絵2〜3名＋連動下部コメントを毎回再抽選。
+- タイトル時の旧メニュー表示を抑止し、旧タイトルメニューJSONも6大メニューへ統一。
+- バージョン表記を v037_95 へ更新。

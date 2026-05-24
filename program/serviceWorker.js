@@ -1,5 +1,5 @@
-// serviceWorker.js - v037_94 cache clear対応版
-const CACHE_NAME = "tenotsu-v037-94";
+// serviceWorker.js - v037_95 cache clear対応版
+const CACHE_NAME = "tenotsu-v037-95";
 const URLS_TO_CACHE = [
   "./",
   "./index.html",
@@ -64,6 +64,7 @@ const URLS_TO_CACHE = [
   "./icon-512.png",
   "scenario/random/imageset01.json",
   "scenario/random/textset01.json",
+  "images/assets/bgev/bg_exchange_item_counter.png",
   "scenario/scenario/000start.json",
   "scenario/scenario/gamestart.json",
   "scenario/listmenu/title.json",

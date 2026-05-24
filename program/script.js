@@ -1,7 +1,7 @@
-window.TENOTSU_LATEST_VERSION = "v037_94";
+window.TENOTSU_LATEST_VERSION = "v037_95";
 
 /* v037_85 engine guard: 起動停止対策 */
-window.TENOTSU_ENGINE_VERSION = "v037_94";
+window.TENOTSU_ENGINE_VERSION = "v037_95";
 window.__TENOTSU_ENGINE_ERRORS__ = window.__TENOTSU_ENGINE_ERRORS__ || [];
 
 window.addEventListener("error", (event) => {
@@ -678,6 +678,9 @@ function handleMenuAction(item) {
     else if (item.custom === "story-table") tenotsuShowStoryManagementTable();
     else if (item.custom === "title-return-archive") tenotsuShowTitleReturnMenuArchive();
     else if (item.custom === "secret-word") tenotsuShowSecretWordMenu();
+    else if (item.custom === "event-exchange-menu") tenotsuShowExchangeCounterMenu();
+    else if (item.custom === "shop-normal-placeholder") tenotsuShowShopPlaceholder("通常ショップ", "通常ショップは準備中です。");
+    else if (item.custom === "shop-gacha-placeholder") tenotsuShowShopPlaceholder("ガチャ", "ガチャは準備中です。");
     else if (item.custom === "memory-character") tenotsuShowMemoryCharacterStories(item.characterId || "manager");
     return;
   }
@@ -868,8 +871,7 @@ function tenotsuEnterOfficeMode(reason = "office") {
   try {
     tenotsuSetStoryPartActive(false, "office");
     window.__TENOTSU_STORY_ENDING__ = false;
-    if (typeof randomImagesOff === "function") randomImagesOff();
-    if (typeof randomTextsOff === "function") randomTextsOff();
+    // v037_95: 事務所へ戻るたびにランダム立ち絵/コメントを再抽選するため、ここではOFFにしない。
     clearCharacters();
     if (evLayer) evLayer.innerHTML = "";
     if (choicesEl) choicesEl.innerHTML = "";
@@ -878,8 +880,10 @@ function tenotsuEnterOfficeMode(reason = "office") {
     tenotsuSetOfficeBackground();
     if (typeof window.loadList === "function") {
       window.loadList("office6.json");
+      tenotsuStartOfficeRandomShow("enter-office");
     } else if (listPanel) {
       listPanel.classList.remove("hidden");
+      tenotsuStartOfficeRandomShow("enter-office-fallback");
     }
     tenotsuLockMainMenu && tenotsuLockMainMenu();
   } catch (err) {
@@ -903,8 +907,28 @@ function tenotsuEnterBattleMode() {
 }
 /* /v037_93 */
 
+
+/* v037_95: タイトル/事務所共通ランダム立ち絵＋コメント */
+function tenotsuStartOfficeRandomShow(reason = 'office') {
+  try {
+    if (typeof window.tenotsuRefreshTitleRandomShow === 'function') {
+      window.tenotsuRefreshTitleRandomShow();
+    } else {
+      if (typeof randomImagesOn === 'function') {
+        const p = randomImagesOn();
+        Promise.resolve(p).then(() => { if (typeof randomTextsOn === 'function') randomTextsOn(); });
+      } else if (typeof randomTextsOn === 'function') {
+        randomTextsOn();
+      }
+    }
+  } catch (err) {
+    console.warn('[TENOTSU OFFICE RANDOM SHOW FAILED]', reason, err);
+  }
+}
+/* /v037_95 */
+
 /* v037_85 boot flow: 起動フラッシュ → 初期化 → タイトル表示 → 事務所6大メニュー */
-window.TENOTSU_BOOT_FLOW_VERSION = "v037_94";
+window.TENOTSU_BOOT_FLOW_VERSION = "v037_95";
 window.__TENOTSU_BOOT_DONE__ = false;
 
 function tenotsuSetOfficeText(title, text) {
@@ -929,6 +953,7 @@ function tenotsuShowOfficeSixMenu() {
       const menuPanel = document.getElementById("menu-panel");
       if (menuPanel) menuPanel.classList.add("hidden");
       window.loadList("office6.json");
+      tenotsuStartOfficeRandomShow("show-office-six");
       tenotsuLockMainMenu();
       return;
     }
@@ -946,6 +971,7 @@ function tenotsuShowOfficeSixMenu() {
       `;
     }
     tenotsuSetOfficeText("ひだまりストア事務所", "上段：ステータス管理 / 中段：ゲームパート / 下段：その他");
+    tenotsuStartOfficeRandomShow("show-office-six-fallback");
   } catch (err) {
     console.error("[TENOTSU OFFICE MENU FAILED]", err);
     if (typeof tenotsuForceShowMenuFallback === "function") tenotsuForceShowMenuFallback("事務所6大メニュー表示失敗");
@@ -983,7 +1009,7 @@ function tenotsuRunBootFlow() {
       boot.setAttribute("aria-hidden", "false");
     }
     if (bootLogo) bootLogo.textContent = "店長お疲れ様です";
-    if (bootVersion) bootVersion.textContent = window.TENOTSU_BOOT_FLOW_VERSION || "v037_94";
+    if (bootVersion) bootVersion.textContent = window.TENOTSU_BOOT_FLOW_VERSION || "v037_95";
     if (bootSub) bootSub.textContent = "初期化中…";
 
     window.setTimeout(() => { if (bootSub) bootSub.textContent = "ひだまりストアへ接続中…"; }, 520);
@@ -1188,6 +1214,36 @@ function tenotsuShowShopMenu() {
   `);
 }
 
+function tenotsuShowShopPlaceholder(title, message) {
+  tenotsuShowDynamicPanel(title, `
+    <div class="status-card">
+      <p>${message}</p>
+      <button class="menu-item" data-engine-action="shop">ショップへ戻る</button>
+      <button class="menu-item" data-engine-action="office6">事務所へ戻る</button>
+    </div>
+  `);
+}
+
+function tenotsuSetExchangeCounterBackground() {
+  try {
+    if (bgEl) bgEl.src = config.bgPath + "bg_exchange_item_counter.png";
+  } catch (_) {}
+}
+
+function tenotsuShowExchangeCounterMenu() {
+  const e = tenotsuGetEconomy();
+  tenotsuSetExchangeCounterBackground();
+  tenotsuShowDynamicPanel("アイテム交換所", `
+    <div class="status-card exchange-counter-card">
+      <h3>アイテム交換所</h3>
+      <p>採用背景：夜のアイテム交換所。イベント交換・限定品交換の画面背景として使用します。</p>
+      <p>使用可能売上：<b>${e.availableSales.toLocaleString()}円</b></p>
+      <button class="menu-item" data-engine-action="event-exchange">イベント交換クリップを交換（1,200円）</button>
+      <button class="menu-item" data-engine-action="shop">ショップへ戻る</button>
+      <button class="menu-item" data-engine-action="office6">事務所へ戻る</button>
+    </div>
+  `);
+}
 
 /* v037_85 rank/equipment/unlock helpers */
 function tenotsuRankCost(type, currentRank) {
@@ -1412,7 +1468,7 @@ document.addEventListener("click", (event) => {
       tenotsuGrantEquipment("event_manager_clip", "イベント交換クリップ", "イベントアイテム交換", "店長ランク経験に関係する予定");
       tenotsuUnlockMemory("event_exchange_001", "イベント交換の記録", "売上を使ってイベントアイテムを交換しました。");
     }
-    tenotsuShowShopMenu();
+    tenotsuShowExchangeCounterMenu();
   } else if (action === "expense-use") {
     if (tenotsuSpendSales(800, "外回り経費")) {
       const store = tenotsuGetStore();
@@ -2549,7 +2605,8 @@ function tenotsuHandleStoryEndReturn() {
   if (clickLayer) clickLayer.style.pointerEvents = "none";
 
   window.setTimeout(() => {
-    tenotsuBlackFadeOut(520);
+    // v037_95: 「物語は つづく・・・」後、1秒かけてゆっくりブラックフェード。
+    tenotsuBlackFadeOut(1000);
     if (dialogueBox) dialogueBox.classList.add("story-end-fadeout");
   }, 650);
 
@@ -2559,14 +2616,14 @@ function tenotsuHandleStoryEndReturn() {
       dialogueBox.classList.add("hidden");
     }
     window.__TENOTSU_STORY_ENDING__ = false;
-    tenotsuSetStoryPartActive(false, "office"); // v037_93 story end to office
+    tenotsuSetStoryPartActive(false, "office");
     tenotsuEnterOfficeMode("story-end");
-  }, 1250);
+  }, 1780);
 
   window.setTimeout(() => {
-    tenotsuBlackFadeIn(520);
+    tenotsuBlackFadeIn(850);
     if (clickLayer) clickLayer.style.pointerEvents = "auto";
-  }, 1480);
+  }, 1980);
 }
 /* /v037_85 */
 

@@ -6260,7 +6260,7 @@ body.story-playing .message-text {
 }
 /* /v037_93 */
 
-/* v037_94: タイトル画面はメニュー表示を許可 */
+/* v037_95: タイトル画面はメニュー表示を許可 */
 body.title-screen #list-panel {
   pointer-events: auto !important;
 }
@@ -6367,6 +6367,25 @@ body.story-playing .text-body {
 }
 /* /v037_93 */
 
-/* v037_94: office right menu label cleanup */
+/* v037_95: office right menu label cleanup */
 .office6 .menu-item, .office-menu-main { letter-spacing: 0.03em; }
-/* /v037_94 */
+/* /v037_95 */
+
+/* v037_95: 事務所/タイトルのランダム立ち絵とコメント */
+body.office-screen #random-images-layer,
+body.office-screen #random-text-layer,
+body.title-screen #random-images-layer,
+body.title-screen #random-text-layer {
+  display: block !important;
+  pointer-events: none !important;
+}
+
+.exchange-counter-card {
+  background: linear-gradient(180deg, rgba(12, 12, 26, 0.88), rgba(18, 10, 28, 0.92)) !important;
+  border: 1px solid rgba(174, 113, 255, 0.42) !important;
+  color: #f5ecff !important;
+  box-shadow: 0 18px 48px rgba(18, 0, 40, 0.44) !important;
+}
+.exchange-counter-card * {
+  color: #f5ecff !important;
+}

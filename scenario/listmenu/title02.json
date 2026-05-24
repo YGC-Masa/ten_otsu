@@ -1,10 +1,40 @@
 {
+  "title": "ひだまりストア 事務所メニュー",
+  "layout": "office6",
   "items": [
-    { "text": "⑥Pink？と遊ぶ", "action": "jump", "jump": "pink.json" },
-    { "text": "⑦Aqua？と遊ぶ", "action": "jump", "jump": "aqua.json" },
-    { "text": "⑧Purple？と遊ぶ", "action": "jump", "jump": "purple.json" },
-    { "text": "⑨White・Black？Twinsと遊ぶ", "action": "jump", "jump": "twins.json" },
-    { "text": "みんなで遊ぶ", "action": "jump", "jump": "allstart.json" },
-    { "text": "⑪前のメニュー", "action": "list", "list": "title.json" }
+    {
+      "text": "店舗",
+      "action": "list",
+      "list": "home.json",
+      "group": "ステータス管理"
+    },
+    {
+      "text": "メンバー",
+      "action": "list",
+      "list": "members.json",
+      "group": "ステータス管理"
+    },
+    {
+      "text": "店舗営業",
+      "action": "battle",
+      "group": "ゲームパート"
+    },
+    {
+      "text": "外回り",
+      "action": "outer",
+      "group": "ゲームパート"
+    },
+    {
+      "text": "ショップ",
+      "action": "list",
+      "list": "shop.json",
+      "group": "その他"
+    },
+    {
+      "text": "設定",
+      "action": "menu",
+      "menu": "menu01.json",
+      "group": "その他"
+    }
   ]
 }
