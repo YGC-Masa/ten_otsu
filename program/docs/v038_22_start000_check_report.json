@@ -1,0 +1,34 @@
+{
+  "version": "v038_22",
+  "har_findings": {
+    "000start_fetch_count": 7,
+    "000start_urls": [
+      "https://ygc-masa.github.io/ten_otsu/scenario/scenario/000start.json?t=1779659620336",
+      "https://ygc-masa.github.io/ten_otsu/scenario/scenario/000start.json?t=1779659622163",
+      "https://ygc-masa.github.io/ten_otsu/scenario/scenario/000start.json?t=1779659727798",
+      "https://ygc-masa.github.io/ten_otsu/scenario/scenario/000start.json",
+      "https://ygc-masa.github.io/ten_otsu/scenario/scenario/scenario/000start.json",
+      "https://ygc-masa.github.io/ten_otsu/scenario/scenario/000start.json?t=1779659731439",
+      "https://ygc-masa.github.io/ten_otsu/scenario/scenario/000start.json?t=1779659733384"
+    ],
+    "bg_office_fetch_count": 3,
+    "bg_office_statuses": [
+      200,
+      0,
+      200
+    ]
+  },
+  "000start_after": [
+    {
+      "auto": true,
+      "screenMode": "office",
+      "officeMode": true,
+      "textareashow": false,
+      "wait": 1
+    }
+  ],
+  "checks": {
+    "js_errors": [],
+    "json_errors": []
+  }
+}

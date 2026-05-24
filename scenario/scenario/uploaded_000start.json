@@ -1,21 +1,9 @@
 [
   {
     "auto": true,
-    "bg": "title.jpg",
-    "effect": "whitein",
+    "screenMode": "office",
+    "officeMode": true,
     "textareashow": false,
-    "bgEffect": "fadein",
-    "bgm": "main.mp3"
-  },
-  {
-    "auto": true,
-    "randomimageson": true,
-    "randomtexts": true,
-    "wait": 1750
-  },
-  {
-    "auto": false,
-    "showlist": "title.json",
-    "textareashow": false
+    "wait": 1
   }
 ]

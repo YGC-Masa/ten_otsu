@@ -1,7 +1,7 @@
-window.TENOTSU_LATEST_VERSION = "v038_21";
+window.TENOTSU_LATEST_VERSION = "v038_22";
 
 /* v037_85 engine guard: 起動停止対策 */
-window.TENOTSU_ENGINE_VERSION = "v038_21";
+window.TENOTSU_ENGINE_VERSION = "v038_22";
 window.__TENOTSU_ENGINE_ERRORS__ = window.__TENOTSU_ENGINE_ERRORS__ || [];
 
 window.addEventListener("error", (event) => {
@@ -105,7 +105,10 @@ window.addEventListener("load", () => {
     const hasVisibleMenu = menuPanel && !menuPanel.classList.contains("hidden") && menuPanel.innerHTML.trim();
     const hasVisibleList = listPanel && !listPanel.classList.contains("hidden") && listPanel.innerHTML.trim();
     const hasVisibleBattle = battleRoot && !battleRoot.classList.contains("hidden");
-    if (!hasVisibleMenu && !hasVisibleList && !hasVisibleBattle) {
+    const surfaceMode = document.body?.dataset?.gameMode || window.tenotsuGameMode || "";
+    const surfaceMenu = document.getElementById("tenotsu-main-menu");
+    const hasSurfaceMenu = surfaceMenu && getComputedStyle(surfaceMenu).display !== "none";
+    if (!surfaceMode && !hasSurfaceMenu && !hasVisibleMenu && !hasVisibleList && !hasVisibleBattle) {
       tenotsuForceShowMenuFallback("起動演出後の画面復帰フォールバック");
     }
   }, 2600);
@@ -159,6 +162,11 @@ function tenotsuGetScreenMode() {
 
 function tenotsuIsOfficeMode() {
   return tenotsuGetScreenMode() === "office";
+}
+
+
+function tenotsuIsSurfaceManagerBootActive() {
+  return !!(window.__TENOTSU_SURFACE_TAKEOVER__ || window.TENOTSU_SURFACE_VERSION || document.body?.dataset?.gameMode === "office");
 }
 
 function tenotsuShouldRightMenuBeVisible() {
@@ -543,6 +551,15 @@ function next() {
 
 function loadScenario(filename) {
   const isInitialTitle = ["000start.json", "start000.json"].includes(String(filename || ""));
+  if (isInitialTitle && tenotsuIsSurfaceManagerBootActive()) {
+    // v038_22: surfaceManager owns the office initial screen.
+    // Do not run 000start.json random/title scenes on boot.
+    tenotsuSetStoryPartActive(false, "office");
+    if (typeof window.tenotsuEnterOfficeMode === "function") {
+      window.tenotsuEnterOfficeMode("initial-surface");
+    }
+    return Promise.resolve([]);
+  }
   tenotsuSetStoryPartActive(!isInitialTitle, isInitialTitle ? "title" : "story"); // v037_93 loadScenario mode
   // ランダム表示類はリセット
   if (typeof randomImagesOff === "function") randomImagesOff();
@@ -587,6 +604,13 @@ window.addEventListener("resize", () => {
 
 window.addEventListener("load", () => {
   setVhVariable();
+  if (tenotsuIsSurfaceManagerBootActive()) {
+    // v038_22: skip 000start.json on initial surface boot.
+    if (typeof window.tenotsuEnterOfficeMode === "function") {
+      window.tenotsuEnterOfficeMode("initial-surface");
+    }
+    return;
+  }
   loadScenario(currentScenario);
 });
 
@@ -871,7 +895,7 @@ function tenotsuEnterOfficeMode(reason = "office") {
   try {
     tenotsuSetStoryPartActive(false, "office");
     window.__TENOTSU_STORY_ENDING__ = false;
-    // v038_21: 事務所へ戻るたびにランダム立ち絵/コメントを再抽選するため、ここではOFFにしない。
+    // v038_22: 事務所へ戻るたびにランダム立ち絵/コメントを再抽選するため、ここではOFFにしない。
     clearCharacters();
     if (evLayer) evLayer.innerHTML = "";
     if (choicesEl) choicesEl.innerHTML = "";
@@ -908,7 +932,7 @@ function tenotsuEnterBattleMode() {
 /* /v037_93 */
 
 
-/* v038_21: タイトル/事務所共通ランダム立ち絵＋コメント */
+/* v038_22: タイトル/事務所共通ランダム立ち絵＋コメント */
 function tenotsuStartOfficeRandomShow(reason = 'office') {
   try {
     if (typeof window.tenotsuRefreshTitleRandomShow === 'function') {
@@ -925,10 +949,10 @@ function tenotsuStartOfficeRandomShow(reason = 'office') {
     console.warn('[TENOTSU OFFICE RANDOM SHOW FAILED]', reason, err);
   }
 }
-/* /v038_21 */
+/* /v038_22 */
 
 /* v037_85 boot flow: 起動フラッシュ → 初期化 → タイトル表示 → 事務所6大メニュー */
-window.TENOTSU_BOOT_FLOW_VERSION = "v038_21";
+window.TENOTSU_BOOT_FLOW_VERSION = "v038_22";
 window.__TENOTSU_BOOT_DONE__ = false;
 
 function tenotsuSetOfficeText(title, text) {
@@ -1009,7 +1033,7 @@ function tenotsuRunBootFlow() {
       boot.setAttribute("aria-hidden", "false");
     }
     if (bootLogo) bootLogo.textContent = "店長お疲れ様です";
-    if (bootVersion) bootVersion.textContent = window.TENOTSU_BOOT_FLOW_VERSION || "v038_21";
+    if (bootVersion) bootVersion.textContent = window.TENOTSU_BOOT_FLOW_VERSION || "v038_22";
     if (bootSub) bootSub.textContent = "初期化中…";
 
     window.setTimeout(() => { if (bootSub) bootSub.textContent = "ひだまりストアへ接続中…"; }, 520);
@@ -2605,7 +2629,7 @@ function tenotsuHandleStoryEndReturn() {
   if (clickLayer) clickLayer.style.pointerEvents = "none";
 
   window.setTimeout(() => {
-    // v038_21: 「物語は つづく・・・」後、1秒かけてゆっくりブラックフェード。
+    // v038_22: 「物語は つづく・・・」後、1秒かけてゆっくりブラックフェード。
     tenotsuBlackFadeOut(1000);
     if (dialogueBox) dialogueBox.classList.add("story-end-fadeout");
   }, 650);
@@ -2993,7 +3017,7 @@ window.addEventListener("load", () => {
 /* /v037_93 */
 
 
-/* v038_21 office/menu/character stability patch */
+/* v038_22 office/menu/character stability patch */
 (function(){
   const OFFICE_MENU_LABELS = ["店舗","メンバー","店舗営業","外回り","ショップ","設定"];
   const OLD_MENU_PATTERNS = /(と遊ぶ|旧メニュー|プロトタイプ|⓪|①|②|③|④|⑤|ランダムSHOW|オートプレイ|スキップ|バックログ)/;
@@ -3169,12 +3193,12 @@ window.addEventListener("load", () => {
   });
   document.addEventListener("tenotsu:office", function(){ window.tenotsuEnterOfficeMode(); });
 })();
-/* /v038_21 office/menu/character stability patch */
+/* /v038_22 office/menu/character stability patch */
 
 
-/* v038_21 office character actual-path patch */
+/* v038_22 office character actual-path patch */
 (function(){
-  const VERSION = "v038_21";
+  const VERSION = "v038_22";
   const OFFICE_CHARS = [
     ["星野 緋奈","a10501.webp","店長、今日も一緒にがんばりましょう！"],
     ["速水川 藍","b10201.webp","てんちょー、少し休憩も大事ですよ。"],
@@ -3245,10 +3269,10 @@ window.addEventListener("load", () => {
   });
   window.tenotsuOfficeCharacterActualPathPatchVersion = VERSION;
 })();
-/* /v038_21 office character actual-path patch */
+/* /v038_22 office character actual-path patch */
 
 
-/* v038_21 exchange shop background + office character z-index fix */
+/* v038_22 exchange shop background + office character z-index fix */
 (function(){
   const EXCHANGE_BG = "images/assets/bgev/bg_exchange_item_counter.png";
 
@@ -3389,10 +3413,10 @@ window.addEventListener("load", () => {
     observer.observe(document.body, {childList:true, subtree:true, attributes:true, attributeFilter:["class","style","src"]});
   });
 })();
-/* /v038_21 exchange shop background + office character z-index fix */
+/* /v038_22 exchange shop background + office character z-index fix */
 
 
-/* v038_21 office return background + 3-character positioning fix */
+/* v038_22 office return background + 3-character positioning fix */
 (function(){
   const OFFICE_BG = "images/assets/bgev/bg_office_hidamari.png";
   const EXCHANGE_BG = "images/assets/bgev/bg_exchange_item_counter.png";
@@ -3602,10 +3626,10 @@ window.addEventListener("load", () => {
     observer.observe(document.body, { childList:true, subtree:true, attributes:true, attributeFilter:["class","style","src","data-game-mode"] });
   });
 })();
-/* /v038_21 office return background + 3-character positioning fix */
+/* /v038_22 office return background + 3-character positioning fix */
 
 
-/* v038_21 office foreground overlay + shop greeting + shop left-menu guard */
+/* v038_22 office foreground overlay + shop greeting + shop left-menu guard */
 (function(){
   const OFFICE_BG = "images/assets/bgev/bg_office_hidamari.png";
   const SHOP_BG = "images/assets/bgev/bg_exchange_item_counter.png";
@@ -3816,10 +3840,10 @@ window.addEventListener("load", () => {
     mo.observe(document.body, {childList:true, subtree:true, attributes:true, attributeFilter:["class","style","data-game-mode"]});
   });
 })();
-/* /v038_21 office foreground overlay + shop greeting + shop left-menu guard */
+/* /v038_22 office foreground overlay + shop greeting + shop left-menu guard */
 
 
-/* v038_21 layer normalization */
+/* v038_22 layer normalization */
 (function(){
   const Z = {
     bg: 0,
@@ -3877,10 +3901,10 @@ window.addEventListener("load", () => {
     observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["class", "style", "data-layer"] });
   });
 })();
-/* /v038_21 layer normalization */
+/* /v038_22 layer normalization */
 
 
-/* v038_21 Sakuya exchange intro implementation */
+/* v038_22 Sakuya exchange intro implementation */
 (function(){
   const SAKUYA_INTRO_SCENARIO = "shop_exchange_intro_sakuya.json";
   const SAKUYA_INTRO_KEY = "tenotsu_sakuya_exchange_intro_seen_v1";
@@ -3975,10 +3999,10 @@ window.addEventListener("load", () => {
   });
   document.addEventListener("click", () => setTimeout(bindShopButtonIntro, 0), true);
 })();
-/* /v038_21 Sakuya exchange intro implementation */
+/* /v038_22 Sakuya exchange intro implementation */
 
 
-/* v038_21 runtime layer/click/character fix */
+/* v038_22 runtime layer/click/character fix */
 (function(){
   const Z = Object.freeze({
     bg:0, random:40, storyChar:120, ev:180, click:260, dialogue:420, choices:440,
@@ -4077,10 +4101,10 @@ window.addEventListener("load", () => {
     mo.observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:["class","style","data-game-mode"]});
   });
 })();
-/* /v038_21 runtime layer/click/character fix */
+/* /v038_22 runtime layer/click/character fix */
 
 
-/* v038_21 office no-background test build */
+/* v038_22 office no-background test build */
 (function(){
   const TRANSPARENT_PIXEL = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
   window.TENOTSU_OFFICE_DISABLE_BACKGROUND = true;
@@ -4222,10 +4246,10 @@ window.addEventListener("load", () => {
     observer.observe(document.body, { childList:true, subtree:true, attributes:true, attributeFilter:["class","style","data-game-mode","src"] });
   });
 })();
-/* /v038_21 office no-background test build */
+/* /v038_22 office no-background test build */
 
 
-/* v038_21 office background direct filename detection */
+/* v038_22 office background direct filename detection */
 (function(){
   const TRANSPARENT_PIXEL = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
 
@@ -4350,10 +4374,10 @@ window.addEventListener("load", () => {
     observer.observe(document.body, { childList:true, subtree:true, attributes:true, attributeFilter:["src","style","class","data-game-mode"] });
   });
 })();
-/* /v038_21 office background direct filename detection */
+/* /v038_22 office background direct filename detection */
 
 
-/* v038_21 office forced foreground diagnostic render */
+/* v038_22 office forced foreground diagnostic render */
 (function(){
   const OFFICE_FORCE_CHARS = [
     ["星野 緋奈","a10501.webp","店長、今日も一緒にがんばりましょう！"],
@@ -4548,4 +4572,4 @@ window.addEventListener("load", () => {
     observer.observe(document.body, {childList:true, subtree:true, attributes:true, attributeFilter:["class","style","data-game-mode"]});
   });
 })();
-/* /v038_21 office forced foreground diagnostic render */
+/* /v038_22 office forced foreground diagnostic render */

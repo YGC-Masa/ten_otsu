@@ -1,5 +1,5 @@
-// serviceWorker.js - v038_21 cache clear対応版
-const CACHE_NAME = "tenotsu-v038-21";
+// serviceWorker.js - v038_22 cache clear対応版
+const CACHE_NAME = "tenotsu-v038-22";
 const URLS_TO_CACHE = [
   "./",
   "./index.html",

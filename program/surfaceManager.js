@@ -1,4 +1,4 @@
-/* v038_21 Surface Manager - Single Authority
+/* v038_22 Surface Manager - Single Authority
    Purpose:
    - office/shop visual surfaces are owned by this file only.
    - old randomShows/title/office comment layers are removed or hidden.
@@ -8,7 +8,7 @@
 (function(){
   "use strict";
 
-  const VERSION = "v038_21";
+  const VERSION = "v038_22";
   const BG_OFFICE = "images/assets/bgev/bg_office_hidamari.png";
   const BG_SHOP = "images/assets/bgev/bg_exchange_item_counter.png";
   const SAKUYA_INTRO_SCENARIO = "shop_exchange_intro_sakuya.json";
@@ -444,7 +444,7 @@
   }
 
   function renderShopPanel(){
-    // v038_21: shop action buttons live in #tenotsu-shop-menu.
+    // v038_22: shop action buttons live in #tenotsu-shop-menu.
     // Operation surface remains available but does not create a second submenu.
     const s = ensureOperationSurface();
     s.innerHTML = "";
@@ -756,7 +756,8 @@
       normalizeLayers();
     };
     window.tenotsuEnterOfficeMode = function(reason){
-      return enterOffice(reason === true || reason === "force" || reason === "story-end" || reason === "battle-end");
+      const force = reason === true || reason === "force" || reason === "story-end" || reason === "battle-end";
+      return enterOffice(force);
     };
     window.tenotsuShowOfficeSixMenu = function(){ showMainMenu(); normalizeLayers(); };
     window.tenotsuSetOfficeBackground = function(){ setBackground(BG_OFFICE); };
@@ -765,7 +766,13 @@
     window.tenotsuSetExchangeBackground = function(){ enterShop(); };
     window.tenotsuOpenShopWithSakuya = function(){ openShop(); };
     window.tenotsuNormalizeLayerIndex = function(){ normalizeLayers(); };
-    window.tenotsuRunBootFlow = function(){ if ((document.body.dataset.gameMode || window.tenotsuGameMode) !== "office") enterOffice(true); };
+    window.tenotsuRunBootFlow = function(){
+      // v038_22: script.js may call this after surfaceManager already entered office.
+      // Do not force a second random character render.
+      const mode = document.body.dataset.gameMode || window.tenotsuGameMode || "";
+      if (mode !== "office") enterOffice(true);
+      else enterOffice(false);
+    };
     window.tenotsuForceShowMenuFallback = function(){ enterOffice(true); };
     window.tenotsuBlackFadeOut = function(ms){
       const f = ensureFade();
