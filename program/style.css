@@ -6260,7 +6260,7 @@ body.story-playing .message-text {
 }
 /* /v037_93 */
 
-/* v038_03: タイトル画面はメニュー表示を許可 */
+/* v038_04: タイトル画面はメニュー表示を許可 */
 body.title-screen #list-panel {
   pointer-events: auto !important;
 }
@@ -6367,11 +6367,11 @@ body.story-playing .text-body {
 }
 /* /v037_93 */
 
-/* v038_03: office right menu label cleanup */
+/* v038_04: office right menu label cleanup */
 .office6 .menu-item, .office-menu-main { letter-spacing: 0.03em; }
-/* /v038_03 */
+/* /v038_04 */
 
-/* v038_03: 事務所/タイトルのランダム立ち絵とコメント */
+/* v038_04: 事務所/タイトルのランダム立ち絵とコメント */
 body.office-screen #random-images-layer,
 body.office-screen #random-text-layer,
 body.title-screen #random-images-layer,
@@ -6391,7 +6391,7 @@ body.title-screen #random-text-layer {
 }
 
 
-/* v038_03 office mode hardening */
+/* v038_04 office mode hardening */
 body[data-game-mode="title"] #list-panel,
 body.mode-title #list-panel,
 body[data-game-mode="title"] .right-menu,
@@ -6453,10 +6453,10 @@ body.mode-story .office-comment-box,
 body[data-game-mode="battle"] .office-comment-box {
   display: none !important;
 }
-/* /v038_03 office mode hardening */
+/* /v038_04 office mode hardening */
 
 
-/* v038_03 office character layer visible fix */
+/* v038_04 office character layer visible fix */
 .office-character-layer {
   position: absolute !important;
   left: 0 !important;
@@ -6487,10 +6487,10 @@ body.mode-story .office-character-layer,
 body[data-game-mode="battle"] .office-character-layer,
 body[data-game-mode="title"] .office-character-layer,
 body.mode-title .office-character-layer { display: none !important; }
-/* /v038_03 office character layer visible fix */
+/* /v038_04 office character layer visible fix */
 
 
-/* v038_03 office character visible layer fix */
+/* v038_04 office character visible layer fix */
 #office-character-layer,
 .office-character-layer {
   position: fixed !important;
@@ -6554,10 +6554,10 @@ body[data-game-mode="shop"] .office-character-layer,
 body.mode-shop .office-character-layer {
   display: none !important;
 }
-/* /v038_03 office character visible layer fix */
+/* /v038_04 office character visible layer fix */
 
 
-/* v038_03 office character 3-position layout */
+/* v038_04 office character 3-position layout */
 #office-character-layer,
 .office-character-layer {
   position: fixed !important;
@@ -6623,10 +6623,10 @@ body.mode-shop .game-screen {
   background-size: cover;
   background-position: center center;
 }
-/* /v038_03 office character 3-position layout */
+/* /v038_04 office character 3-position layout */
 
 
-/* v038_03 office foreground overlay */
+/* v038_04 office foreground overlay */
 #tenotsu-office-character-overlay,
 .tenotsu-office-character-overlay {
   position: fixed !important;
@@ -6729,10 +6729,10 @@ body[data-game-mode="shop"] #leftPanel,
 body.mode-shop #leftPanel {
   pointer-events: none !important;
 }
-/* /v038_03 office foreground overlay */
+/* /v038_04 office foreground overlay */
 
 
-/* v038_03 canonical layer index cleanup
+/* v038_04 canonical layer index cleanup
    0   background
    10  title/random decorative images
    20  normal story ADV characters
@@ -6876,10 +6876,10 @@ body.mode-shop #leftPanel {
 .boot-flow {
   z-index: var(--z-boot) !important;
 }
-/* /v038_03 canonical layer index cleanup */
+/* /v038_04 canonical layer index cleanup */
 
 
-/* v038_03 definitive layer/click/character fix */
+/* v038_04 definitive layer/click/character fix */
 :root {
   --z-bg: 0;
   --z-random: 40;
@@ -7080,4 +7080,70 @@ body.mode-battle #menu-panel {
 .boot-flow {
   z-index: var(--z-boot) !important;
 }
-/* /v038_03 definitive layer/click/character fix */
+/* /v038_04 definitive layer/click/character fix */
+
+
+/* v038_04 office no-background test build */
+body[data-game-mode="office"] #background,
+body.mode-office #background,
+body[data-game-mode="office"] [data-layer="background"],
+body.mode-office [data-layer="background"],
+body[data-game-mode="office"] #bg,
+body.mode-office #bg,
+body[data-game-mode="office"] #bgev,
+body.mode-office #bgev,
+body[data-game-mode="office"] .background,
+body.mode-office .background,
+body[data-game-mode="office"] .bg,
+body.mode-office .bg,
+body[data-game-mode="office"] .bgev {
+  display: none !important;
+  opacity: 0 !important;
+  background-image: none !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+body[data-game-mode="office"],
+body.mode-office,
+body[data-game-mode="office"] #game-container,
+body.mode-office #game-container,
+body[data-game-mode="office"] #game,
+body.mode-office #game,
+body[data-game-mode="office"] #main,
+body.mode-office #main,
+body[data-game-mode="office"] .game-screen,
+body.mode-office .game-screen {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+body[data-game-mode="office"] #tenotsu-office-character-overlay,
+body.mode-office #tenotsu-office-character-overlay {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 520 !important;
+}
+
+body[data-game-mode="office"] #tenotsu-office-character-overlay img,
+body.mode-office #tenotsu-office-character-overlay img,
+body[data-game-mode="office"] .tenotsu-office-stand,
+body.mode-office .tenotsu-office-stand {
+  display: block !important;
+  visibility: visible !important;
+  opacity: .985 !important;
+  z-index: 523 !important;
+}
+
+body[data-game-mode="office"] #dialogue-box,
+body.mode-office #dialogue-box {
+  position: fixed !important;
+  left: 5% !important;
+  right: 12% !important;
+  top: auto !important;
+  bottom: max(18px, env(safe-area-inset-bottom)) !important;
+  width: auto !important;
+  z-index: 900 !important;
+}
+/* /v038_04 office no-background test build */
