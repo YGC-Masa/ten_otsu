@@ -1,1516 +1,2993 @@
-// battle.js - v037 integrated deck battle prototype
-// 店舗営業：上=情報 / 中央=家電星人 / 下=メンバー5人
-// 操作はメンバーのシングルタップで通常接客、ダブルタップで必殺接客。通常敵HP2、レアHP3。ターゲットは選択メンバーに最適な家電星人へ自動Fix。彩愛の必殺は盤面整理＋敵チェンジ短縮。店長HELP・必殺カットイン・タイムセール演出あり。
+window.TENOTSU_LATEST_VERSION = "v037_95";
 
-(function () {
-  const BATTLE_VERSION = "v037_93";
-  const BATTLE_SECONDS = 30;
-  const TIME_SALE_SECONDS = 15;
-  const MAX_ENEMIES = 3;
-  const CHANGE_SECONDS = 2.0;
-  const CHANGE_SECONDS_BUFFED = 1.0;
-  const AUTO_ACTION_INTERVAL = 0.75;
-  const AUTO_CT_MULTIPLIER = 2.0; // オート営業ペナルティ：自動操作時のみCT2倍
-  const AUTO_SCORE_MULTIPLIER = 0.7; // オート営業ペナルティ：自動成約の売上70%
-  const HELP_STOCK_MAX = 3;
-  const HELP_STOCK_STEP = 10;
-  const HELP_INPUT_LOCK_MS = 320;
-  const HELP_EMPTY_MESSAGE_LOCK_MS = 520;
-  const CHANGE_MESSAGES = [
-    "今回は別スタッフへ案内",
-    "少々お待ちください",
-    "別のお客様を先に対応"
-  ];
+/* v037_85 engine guard: 起動停止対策 */
+window.TENOTSU_ENGINE_VERSION = "v037_95";
+window.__TENOTSU_ENGINE_ERRORS__ = window.__TENOTSU_ENGINE_ERRORS__ || [];
 
+window.addEventListener("error", (event) => {
+  try {
+    window.__TENOTSU_ENGINE_ERRORS__.push({
+      type: "error",
+      message: event.message || "",
+      source: event.filename || "",
+      line: event.lineno || 0,
+      col: event.colno || 0
+    });
+    console.error("[TENOTSU ENGINE ERROR]", event.message, event.error || "");
+  } catch (_) {}
+});
 
-  
-  
-  const MANAGER_EXP_STORAGE_KEY = "tenotsu_manager_exp_v1";
+window.addEventListener("unhandledrejection", (event) => {
+  try {
+    window.__TENOTSU_ENGINE_ERRORS__.push({
+      type: "promise",
+      message: String(event.reason && event.reason.message ? event.reason.message : event.reason)
+    });
+    console.error("[TENOTSU ENGINE PROMISE]", event.reason);
+  } catch (_) {}
+});
 
-  function loadManagerExpData() {
-    try { return JSON.parse(localStorage.getItem(MANAGER_EXP_STORAGE_KEY) || "{}"); }
-    catch (_) { return {}; }
-  }
+function tenotsuSafeEl(id) {
+  return document.getElementById(id);
+}
 
-  function calcManagerLevelFromExp(totalExp) {
-    const exp = Math.max(0, Math.floor(Number(totalExp) || 0));
-    let level = 1;
-    let used = 0;
-    for (let lv = 1; lv < 60; lv++) {
-      const need = Math.floor(140 + 22 * Math.pow(lv - 1, 1.45));
-      if (used + need > exp) break;
-      used += need;
-      level = lv + 1;
-    }
-    return level;
-  }
+function tenotsuForceShowMenuFallback(reason = "") {
+  try {
+    const menuPanel = tenotsuSafeEl("menu-panel");
+    const listPanel = tenotsuSafeEl("list-panel");
+    const dialogueBox = tenotsuSafeEl("dialogue-box");
+    const textEl = tenotsuSafeEl("text");
+    const nameEl = tenotsuSafeEl("name");
+    const clickLayer = tenotsuSafeEl("click-layer");
 
-  function addManagerExp(amount, source = "店舗営業") {
-    const value = Math.max(0, Math.floor(Number(amount) || 0));
-    const data = loadManagerExpData();
-    data.totalExp = Math.max(0, Math.floor(Number(data.totalExp) || 0)) + value;
-    data.level = calcManagerLevelFromExp(data.totalExp);
-    data.updatedAt = new Date().toISOString();
-    data.history = Array.isArray(data.history) ? data.history : [];
-    data.history.unshift({ source, exp: value, at: data.updatedAt });
-    data.history = data.history.slice(0, 30);
-    try { localStorage.setItem(MANAGER_EXP_STORAGE_KEY, JSON.stringify(data)); } catch (_) {}
-    return data;
-  }
+    if (clickLayer) clickLayer.style.pointerEvents = "auto";
+    if (dialogueBox) dialogueBox.classList.remove("hidden");
+    if (nameEl) nameEl.textContent = "ひだまりストア";
+    if (textEl) textEl.innerHTML = "起動しました。メニューから操作してください。" + (reason ? `<br><small>${reason}</small>` : "");
 
-
-const ECONOMY_STORAGE_KEY = "tenotsu_economy_v1";
-  const ALBUM_STORAGE_KEY = "tenotsu_album_v1";
-
-  function loadEconomy() {
-    try { return JSON.parse(localStorage.getItem(ECONOMY_STORAGE_KEY) || "{}"); }
-    catch (_) { return {}; }
-  }
-
-  function saveEconomy(data) {
-    try { localStorage.setItem(ECONOMY_STORAGE_KEY, JSON.stringify(data)); }
-    catch (_) {}
-  }
-
-  function unlockAlbumMemory(id, title, text) {
-    try {
-      const data = JSON.parse(localStorage.getItem(ALBUM_STORAGE_KEY) || "{}");
-      data.memories = Array.isArray(data.memories) ? data.memories : [];
-      if (!data.memories.some(m => m.id === id)) {
-        data.memories.unshift({ id, title, text, at: new Date().toISOString() });
-        localStorage.setItem(ALBUM_STORAGE_KEY, JSON.stringify(data));
+    if (listPanel) listPanel.classList.add("hidden");
+    if (menuPanel) {
+      menuPanel.classList.remove("hidden");
+      if (!menuPanel.innerHTML.trim()) {
+        menuPanel.innerHTML = `
+          <button class="menu-item" data-engine-action="battle">店舗営業</button>
+          <button class="menu-item" data-engine-action="mainmenu">メインメニュー</button>
+          <button class="menu-item" data-engine-action="cacheclear">キャッシュ削除</button>
+        `;
       }
-    } catch (_) {}
-  }
-
-  function addSalesToEconomy(amount, source = "店舗営業") {
-    const value = Math.max(0, Math.floor(Number(amount) || 0));
-    const data = loadEconomy();
-    data.totalSales = Math.max(0, Math.floor(Number(data.totalSales) || 0)) + value;
-    data.availableSales = Math.max(0, Math.floor(Number(data.availableSales) || 0)) + value;
-    data.battleCount = Math.max(0, Math.floor(Number(data.battleCount) || 0)) + 1;
-    data.lastSales = value;
-    data.updatedAt = new Date().toISOString();
-    data.history = Array.isArray(data.history) ? data.history : [];
-    data.history.unshift({ type: "sales", source, amount: value, at: data.updatedAt });
-    data.history = data.history.slice(0, 30);
-    saveEconomy(data);
-    unlockAlbumMemory("battle_first_sales", "はじめての店舗営業", "店舗営業で売上を記録しました。");
-    return data;
-  }
-
-  window.TenotsuEconomy = window.TenotsuEconomy || {};
-  window.TenotsuEconomy.load = loadEconomy;
-  window.TenotsuEconomy.save = saveEconomy;
-  window.TenotsuEconomy.addSales = addSalesToEconomy;
-  window.TenotsuEconomy.unlockMemory = unlockAlbumMemory;
-
-
-const battleBackgrounds = {
-    hidamari_store_battle_lv1: {
-      label: "ひだまりストア通常営業 Lv1",
-      path: "images/assets/bg/battle_store_lv1.png"
     }
-  };
-  const DEFAULT_BATTLE_BG_ID = "hidamari_store_battle_lv1";
-
-  function getBattleBackground(id = DEFAULT_BATTLE_BG_ID) {
-    return battleBackgrounds[id] || battleBackgrounds[DEFAULT_BATTLE_BG_ID];
+  } catch (err) {
+    console.error("[TENOTSU FALLBACK FAILED]", err);
   }
+}
 
-  const staffMaster = [
-    { id: "aa", name: "緋奈", color: "#d3381c", attr: "映像", power: 1, ctMax: 2.4, skillName: "全力おすすめ！", skillType: "powerBuff", skillDesc: "8秒間、接客力アップ。成約を一気に伸ばします。" , cardImage: "images/assets/character/card_hina_test.png", cutinImage: "images/assets/cutin/cutin_hina_test.png", skillCutin: "images/assets/cutin/cutin_hina_test.png"},
-    { id: "ab", name: "藍", color: "#0067C0", attr: "ドライヤー", power: 1, ctMax: 3.0, skillName: "やさしい案内", skillType: "extendTime", skillDesc: "全敵の受付時間を延長し、営業残り時間も少し増やします。" , cardImage: "images/assets/character/card_ai_test.png", cutinImage: "images/assets/cutin/cutin_ai_test.png", skillCutin: "images/assets/cutin/cutin_ai_test.png"},
-    { id: "ac", name: "翠", color: "#02b308", attr: "PC", power: 1, ctMax: 3.5, skillName: "最適解プレゼン", skillType: "pcSweep", skillDesc: "PC属性をまとめて成約し、6秒間マッチ性能を上げます。" , cardImage: "images/assets/character/card_midori_test.png", cutinImage: "images/assets/cutin/cutin_midori_test.png", skillCutin: "images/assets/cutin/cutin_midori_test.png"},
-    { id: "ad", name: "こがね", color: "#FFF450", attr: "スマホ", power: 1, ctMax: 1.7, skillName: "即決トーク", skillType: "ctReduce", skillDesc: "全メンバーのCTを短縮し、6秒間テンポを上げます。" , cardImage: "images/assets/character/card_kogane_test.png", cutinImage: "images/assets/cutin/cutin_kogane_test.png", skillCutin: "images/assets/cutin/cutin_kogane_test.png"},
-    { id: "ae", name: "琥珀", color: "#F68B1F", attr: "オーディオ", power: 1, ctMax: 2.7, skillName: "フロアダッシュ", skillType: "rushBuff", skillDesc: "8秒間ラッシュ対応力アップ。コンボを守りやすくします。" , cardImage: "images/assets/character/card_kohaku_test.png", cutinImage: "images/assets/cutin/cutin_kohaku_test.png", skillCutin: "images/assets/cutin/cutin_kohaku_test.png"},
-    { id: "af", name: "真花", color: "#C0C0C0", attr: "美容", power: 1, ctMax: 2.8, skillName: "お嬢様スマイル", skillType: "comboPlus", skillDesc: "成約時のコンボ補助。丁寧な接客で満足度を伸ばします。" , cardImage: "images/assets/character/card_manaka_test.png", cutinImage: "images/assets/cutin/cutin_manaka_test.png", skillCutin: "images/assets/cutin/cutin_manaka_test.png"},
-    { id: "ag", name: "雪乃", color: "#6495ED", attr: "調理", power: 1, ctMax: 3.2, skillName: "静かな提案", skillType: "freezeTime", skillDesc: "敵の受付時間を一時停止し、店内を落ち着かせます。" , cardImage: "images/assets/character/card_yukino_test.png", cutinImage: "images/assets/cutin/cutin_yukino_test.png", skillCutin: "images/assets/cutin/cutin_yukino_test.png"},
-    { id: "ah", name: "美空", color: "#fffef6", attr: "除湿", power: 1, ctMax: 2.6, skillName: "夏空接客", skillType: "rescue", skillDesc: "受付時間が短い敵を追加フォローする安定型スキル。" , cardImage: "images/assets/character/card_misora_test.png", cutinImage: "images/assets/cutin/cutin_misora_test.png", skillCutin: "images/assets/cutin/cutin_misora_test.png"},
-    { id: "ai", name: "夜空", color: "#00152d", attr: "加湿", power: 1, ctMax: 2.9, skillName: "冬空フォーカス", skillType: "rareKiller", skillDesc: "レア敵への追加ダメージで一点突破します。" , cardImage: "images/assets/character/card_yozora_test.png", cutinImage: "images/assets/cutin/cutin_yozora_test.png", skillCutin: "images/assets/cutin/cutin_yozora_test.png"},
-    { id: "aj", name: "桃", color: "#F7ADC3", attr: "配信", power: 1, ctMax: 2.1, skillName: "店内配信", skillType: "buzz", skillDesc: "売上とレア出現率を上げる代わりに混雑しやすくなります。" , cardImage: "images/assets/character/card_momo_test.png", cutinImage: "images/assets/cutin/cutin_momo_test.png", skillCutin: "images/assets/cutin/cutin_momo_test.png"},
-    { id: "ak", name: "彩愛", color: "#694D9F", attr: "生活", power: 1, ctMax: 3.0, skillName: "優雅な家事導線", skillType: "ayameRoute", skillDesc: "敵最大2体に1ダメージ。6秒間、敵チェンジを2秒から1秒に短縮。" , cardImage: "images/assets/character/card_ayame_test.png", cutinImage: "images/assets/cutin/cutin_ayame_test.png", skillCutin: "images/assets/cutin/cutin_ayame_test.png"},
-    { id: "al", name: "里美", color: "#8d5025", attr: "事務", power: 1, ctMax: 3.1, skillName: "受付整理", skillType: "changeSupport", skillDesc: "受付を整理して、チェンジやCT管理を補助します。" , cardImage: "images/assets/character/card_satomi_test.png", cutinImage: "images/assets/cutin/cutin_satomi_test.png", skillCutin: "images/assets/cutin/cutin_satomi_test.png"},
-    { id: "am", name: "萌", color: "#33CC99", attr: "リラックス", power: 1, ctMax: 2.9, skillName: "おにいちゃん助けて", skillType: "managerBoost", skillDesc: "店長ヘルプゲージが溜まりやすくなるサポートスキル。" , cardImage: "images/assets/character/card_moe_test.png", cutinImage: "images/assets/cutin/cutin_moe_test.png", skillCutin: "images/assets/cutin/cutin_moe_test.png"}
-  ];  const DEFAULT_STAFF_IDS = ["aa", "ab", "ac", "ad", "ae"];
-  const DECK_STORAGE_KEY = "tenotsu_battle_deck_v1";
-  let activeStaffIds = loadDeckIds();
-
-  function loadDeckIds() {
-    try {
-      const saved = JSON.parse(localStorage.getItem(DECK_STORAGE_KEY) || "null");
-      if (Array.isArray(saved) && saved.length === 5 && saved.every(id => staffMaster.some(s => s.id === id))) {
-        return saved;
-      }
-    } catch (e) {}
-    return [...DEFAULT_STAFF_IDS];
-  }
-
-  function saveDeckIds(ids) {
-    activeStaffIds = [...ids];
-    try { localStorage.setItem(DECK_STORAGE_KEY, JSON.stringify(activeStaffIds)); } catch (e) {}
-  }
-
-  function getStaffBase() {
-    return activeStaffIds.map(id => staffMaster.find(s => s.id === id)).filter(Boolean);
-  }
-
-
-  const attrColors = {
-    "映像": "#d3381c",
-    "ドライヤー": "#0067C0",
-    "PC": "#02b308",
-    "スマホ": "#FFF450",
-    "オーディオ": "#F68B1F",
-    "美容": "#C0C0C0",
-    "調理": "#6495ED",
-    "除湿": "#fffef6",
-    "加湿": "#00152d",
-    "配信": "#F7ADC3",
-    "生活": "#694D9F",
-    "事務": "#8d5025",
-    "季節": "#33CC99"
-  };
-  const enemyTypes = [
-    { attr: "映像", icon: "📺", name: "テレビポップコーン星人", text: "映画みたいに楽しみたい！", baseGauge: 2, basePatience: 6.8, score: 120, image: "images/assets/enemy/enemy_tv_popcorn_test.png" },
-    { attr: "ドライヤー", icon: "🍫", name: "チョコドライヤ星人", text: "あったか〜いチョコ風でうるおいを〜！", baseGauge: 2, basePatience: 7.3, score: 125, image: "images/assets/enemy/enemy_choco_dryer_test.png" },
-    { attr: "PC", icon: "🍕", name: "パソコンピザ星人", text: "処理が重い…チーズ追加！", baseGauge: 2, basePatience: 7.8, score: 150, image: "images/assets/enemy/enemy_pc_pizza_test.png" },
-    { attr: "スマホ", icon: "🍬", name: "スマホキャンディ星人", text: "通知だよ〜！キャンディどうぞ〜", baseGauge: 2, basePatience: 6.5, score: 130, image: "images/assets/enemy/enemy_smartphone_candy_test.png" },
-    { attr: "オーディオ", icon: "🍬", name: "イヤホングミ星人", text: "よーし！きょうもリズムにのるぞ〜！", baseGauge: 2, basePatience: 7.1, score: 135, image: "images/assets/enemy/enemy_earphone_gummy_test.png" },
-    { attr: "美容", icon: "🪞", name: "ビューティマカロン星人", text: "きれいはこれから…ふふっ", baseGauge: 2, basePatience: 7.0, score: 130, image: "images/assets/enemy/enemy_beauty_macaron_test.png" },
-    { attr: "オーブン", icon: "🍮", name: "プリンオーブン星人", text: "ふんわり、とろ〜り焼き上げ中…", baseGauge: 2, basePatience: 7.2, score: 140, image: "images/assets/enemy/enemy_pudding_oven_test.png" },
-    { attr: "除湿", icon: "🍧", name: "カキゴーリエアコン星人", text: "つめた〜い風、さらさらでお願い！", baseGauge: 2, basePatience: 6.1, score: 118, image: "images/assets/enemy/enemy_kakigori_aircon_test.png" },
-    { attr: "加湿", icon: "💧", name: "ゼリーカシツ星人", text: "うるおい、ふわっとおとどけします…", baseGauge: 2, basePatience: 6.3, score: 120, image: "images/assets/enemy/enemy_jelly_humidifier_test.png" },
-    { attr: "配信", icon: "🍟", name: "ゲームポテト星人", text: "レベルUP！まだまだいける〜！", baseGauge: 2, basePatience: 5.9, score: 145, image: "images/assets/enemy/enemy_game_potato_test.png" },
-    { attr: "生活", icon: "🍩", name: "ドーナツセンタク星人", text: "ぐるぐる回って、ピカピカにするよ！", baseGauge: 2, basePatience: 6.4, score: 130, image: "images/assets/enemy/enemy_donut_washer_test.png" },
-    { attr: "レジ", icon: "🍡", name: "モチモチレジスター星人", text: "いらっしゃいませ！お会計いきま〜す", baseGauge: 2, basePatience: 6.4, score: 128, image: "images/assets/enemy/enemy_mochimochi_register_test.png" },
-    { attr: "リラックス", icon: "☁️", name: "マシュマロマッサージ星人", text: "ふわふわマッサージでリラックスしたいです〜", baseGauge: 2, basePatience: 6.5, score: 122, image: "images/assets/enemy/enemy_marshmallow_massage_test.png" }
-  ];
-  let root = null;
-  let state = null;
-  let timerId = null;
-  let lastTick = 0;
-  const DOUBLE_TAP_MS = 220;
-  let staffTapTimer = null;
-  let pendingStaffTapId = null;
-  let pendingStaffTapAt = 0;
-  const ENEMY_DOUBLE_TAP_MS = 260;
-  let pendingEnemyTapId = null;
-  let pendingEnemyTapAt = 0;
-  let pendingHelpTapAt = 0;
-  let lastHelpInputAt = 0;
-  let lastHelpEmptyMessageAt = 0;
-  let helpTapTimer = null;
-  let surfaceTimers = [];
-
-  function makeState() {
-  
-  function getActiveEnemyAttributes() {
-    const attrs = new Set();
-    state.enemies.forEach(enemy => {
-      if (!enemy || enemy.isChanging) return;
-      if (enemy.attribute) attrs.add(enemy.attribute);
-    });
-    return attrs;
-  }
-
-  function hasMatchingEnemyForMember(member) {
-    if (!member || !state.enemies || state.enemies.length === 0) return false;
-    return state.enemies.some(enemy => {
-      if (!enemy || enemy.isChanging) return false;
-      return enemy.attribute === member.attribute;
-    });
-  }
-
-  function countMatchingEnemiesForMember(member) {
-    if (!member || !state.enemies) return 0;
-    return state.enemies.filter(enemy => {
-      if (!enemy || enemy.isChanging) return false;
-      return enemy.attribute === member.attribute;
-    }).length;
-  }
-
-
-
-  function getAttributeColor(attribute) {
-    const colors = {
-      video: "#d3381c",
-      dryer: "#0067C0",
-      pc: "#02b308",
-      phone: "#FFF450",
-      audio: "#F68B1F",
-      beauty: "#C0C0C0",
-      cooking: "#6495ED",
-      dehumid: "#fffef6",
-      humid: "#00152d",
-      stream: "#F7ADC3",
-      life: "#694D9F",
-      office: "#8d5025",
-      season: "#33CC99"
-    };
-    return colors[attribute] || "#ffffff";
-  }
-
-
-  return {
-      running: false,
-      finished: false,
-      timeLeft: BATTLE_SECONDS,
-      battleBgId: DEFAULT_BATTLE_BG_ID,
-      wave: 1,
-      waveLabel: "第1WAVE",
-      timeSalePending: false,
-      timeSaleActive: false,
-      timeSaleCountdown: false,
-      timeSaleAnnounced: false,
-      score: 0,
-      served: 0,
-      missed: 0,
-      combo: 0,
-      maxCombo: 0,
-      nextEnemyId: 1,
-      spawnTimer: 0,
-      rush: false,
-      targetPreviewId: null,
-      autoMode: false,
-      autoTimer: 0,
-      autoResolving: false,
-      helpStock: 0,
-      helpEarnCounter: 0,
-      nextHitId: 1,
-      hitEffects: [],
-      cutin: null,
-      cutinUntil: 0,
-      surface: null,
-      whiteFlashUntil: 0,
-      countingDown: false,
-
-      lastActionText: "営業開始を押してください。",
-      buffPowerUntil: 0,
-      buffMatchUntil: 0,
-      buffSpeedUntil: 0,
-      buffChangeUntil: 0,
-      buffRushUntil: 0,
-      comboShield: false,
-      deckEdit: false,
-      deckSelection: [...activeStaffIds],
-      staff: getStaffBase().map((s, index) => ({ ...s, isLeader: index === 0, ct: 0, skill: index === 0 ? 50 : 0 })),
-      enemies: [],
-      salesRecorded: false
-    };
-  }
-
-  function ensureRoot() {
-    root = document.getElementById("battle-root");
-    if (!root) {
-      root = document.createElement("div");
-      root.id = "battle-root";
-      root.className = "battle-root hidden";
-      document.body.appendChild(root);
-    }
-  }
-
-  function openBattle() {
-    ensureRoot();
-    state = makeState();
-    root.classList.remove("hidden");
-    render();
-  }
-
-  function closeBattle() {
-    clearPendingStaffTap();
-    clearPendingEnemyTap();
-    clearPendingHelpTap();
-    clearSurfaceTimers();
-    stopLoop();
-    if (root) root.classList.add("hidden");
-  }
-
-  function clearPendingStaffTap() {
-    if (staffTapTimer) window.clearTimeout(staffTapTimer);
-    staffTapTimer = null;
-    pendingStaffTapId = null;
-    pendingStaffTapAt = 0;
-  }
-
-  function clearPendingEnemyTap() {
-    pendingEnemyTapId = null;
-    pendingEnemyTapAt = 0;
-  }
-
-  function clearPendingHelpTap() {
-    if (helpTapTimer) window.clearTimeout(helpTapTimer);
-    helpTapTimer = null;
-    pendingHelpTapAt = 0;
-  }
-
-  function stopLoop() {
-    if (timerId) window.clearInterval(timerId);
-    timerId = null;
-  }
-
-  function clearSurfaceTimers() {
-    surfaceTimers.forEach(id => window.clearTimeout(id));
-    surfaceTimers = [];
-  }
-
-  function showSurface(title, subText = "", kind = "notice", duration = 1200) {
-    if (!state) return;
-    state.surface = { title, subText, kind };
-    render();
-    if (duration > 0) {
-      const id = window.setTimeout(() => {
-        if (state && state.surface && state.surface.title === title) {
-          state.surface = null;
-          render();
-        }
-      }, duration);
-      surfaceTimers.push(id);
-    }
-  }
-
-  function startBattle(autoMode = false) {
-    clearPendingStaffTap();
-    clearPendingEnemyTap();
-    clearPendingHelpTap();
-    clearSurfaceTimers();
-    stopLoop();
-    state = makeState();
-    state.countingDown = true;
-    state.autoMode = !!autoMode;
-    state.autoTimer = 0;
-    state.lastActionText = autoMode
-      ? "オート営業準備中。開店後、自動操作はCT2倍です。"
-      : "開店準備中。メンバータップで接客、敵ダブルタップでチェンジできます。";
-    render();
-    runOpeningCountdown(autoMode);
-  }
-
-  function runOpeningCountdown(autoMode) {
-    const steps = [
-      { title: "3", sub: "開店準備中", ms: 650 },
-      { title: "2", sub: "スタッフ配置確認", ms: 650 },
-      { title: "1", sub: "レジ起動OK", ms: 650 },
-      { title: "開店！", sub: autoMode ? "サポートプレイ開始（必殺→通常）" : "店舗営業開始", ms: 720 }
-    ];
-
-    let delay = 0;
-    steps.forEach((step, index) => {
-      const id = window.setTimeout(() => {
-        if (!state || !state.countingDown) return;
-        state.surface = { title: step.title, subText: step.sub, kind: index === steps.length - 1 ? "open" : "count" };
-        render();
-      }, delay);
-      surfaceTimers.push(id);
-      delay += step.ms;
-    });
-
-    const startId = window.setTimeout(() => beginBattle(autoMode), delay);
-    surfaceTimers.push(startId);
-  }
-
-  function beginBattle(autoMode = false) {
-    if (!state) return;
-    state.countingDown = false;
-    state.surface = null;
-    state.running = true;
-    state.finished = false;
-    state.autoMode = !!autoMode;
-    state.autoTimer = 0;
-    state.lastActionText = state.autoMode
-      ? "サポートプレイ開始！ 第1WAVE開始。左端リーダーは必殺ゲージ50%スタートです。"
-      : "開店！ 第1WAVE開始。左端リーダーは必殺ゲージ50%スタートです。";
-    spawnEnemy(true);
-    spawnEnemy(true);
-    spawnEnemy(true);
-    lastTick = performance.now();
-    timerId = window.setInterval(tick, 100);
-    render();
-  }
-
-
-  function beginTimeSaleCountdown() {
-    if (!state || !state.running || state.timeSaleCountdown || state.timeSaleActive) return;
-    state.timeSalePending = true;
-    state.timeSaleCountdown = true;
-    state.finished = false;
-    state.running = false;
-    state.rush = false;
-    state.surface = null;
-    state.lastActionText = "通常営業終了。これよりタイムセールを行います。";
-    stopLoop();
-
-    const steps = [
-      { title: "通常営業終了", sub: "これよりタイムセールを行います", kind: "timesale-intro", ms: 2000 },
-      { title: "3", sub: "タイムセール開始まで", kind: "timesale-count", ms: 650 },
-      { title: "2", sub: "売場加速中", kind: "timesale-count", ms: 650 },
-      { title: "1", sub: "呼び込み開始", kind: "timesale-count", ms: 650 },
-      { title: "タイムセール開始！", sub: "15秒勝負", kind: "timesale-open", ms: 760 }
-    ];
-
-    let delay = 0;
-    steps.forEach((step) => {
-      const id = window.setTimeout(() => {
-        if (!state || !state.timeSaleCountdown) return;
-        state.surface = { title: step.title, subText: step.sub, kind: step.kind };
-        render();
-      }, delay);
-      surfaceTimers.push(id);
-      delay += step.ms;
-    });
-
-    const startId = window.setTimeout(() => beginTimeSaleWave(), delay);
-    surfaceTimers.push(startId);
-    render();
-  }
-
-  function beginTimeSaleWave() {
-    if (!state) return;
-    state.timeSaleCountdown = false;
-    state.timeSalePending = false;
-    state.timeSaleActive = true;
-    state.timeSaleAnnounced = true;
-    state.wave = 2;
-    state.waveLabel = "タイムセール";
-    state.running = true;
-    state.finished = false;
-    state.rush = true;
-    state.timeLeft = TIME_SALE_SECONDS;
-    state.surface = null;
-    state.spawnTimer = 0;
-    state.lastActionText = "タイムセール実施中！15秒間の来店ラッシュです。";
-    showTimeSaleCutin();
-    lastTick = performance.now();
-    timerId = window.setInterval(tick, 100);
-    render();
-  }
-
-
-  function finishBattle() {
-    if (!state) return;
-    state.running = false;
-    state.finished = true;
-    if (!state.salesRecorded) {
-      state.salesRecorded = true;
-      addSalesToEconomy(state.score, state.timeSaleActive ? "店舗営業＋タイムセール" : "店舗営業");
-      addManagerExp(80, "店舗営業");
-    }
-    state.timeSaleActive = false;
-    state.timeSalePending = false;
-    state.timeSaleCountdown = false;
-    state.rush = false;
-    state.waveLabel = "営業終了";
-    state.timeLeft = Math.max(0, state.timeLeft);
-    state.lastActionText = `営業終了：成約${state.served}件 / 売上 ${state.score.toLocaleString()}円 / 店長EXP +80`;
-    stopLoop();
-    showSurface("営業終了！", `成約${state.served}件 / 売上 ${state.score.toLocaleString()}円 / 店長EXP +80`, "close", 1350);
-  }
-
-  function tick() {
-    if (!state || !state.running) return;
-    const now = performance.now();
-    const dt = Math.min(0.24, Math.max(0.05, (now - lastTick) / 1000));
-    lastTick = now;
-
-    state.timeLeft = Math.max(0, state.timeLeft - dt);
-
-    // 第1WAVEは30秒。終了後、3カウントを挟んでタイムセールへ。
-    if (state.wave === 1 && state.timeLeft <= 0) {
-      beginTimeSaleCountdown();
-      return;
-    }
-
-    // 第2WAVE：15秒のタイムセール。終了で営業終了。
-    if (state.timeSaleActive && state.timeLeft <= 0) {
-      finishBattle();
-      return;
-    }
-
-    state.rush = !!state.timeSaleActive;
-
-    state.spawnTimer -= dt;
-    const elapsed = state.timeSaleActive ? TIME_SALE_SECONDS - state.timeLeft : BATTLE_SECONDS - state.timeLeft;
-    const spawnInterval = state.timeSaleActive ? 0.65 : elapsed > 10 ? 1.25 : 1.8;
-    if (state.spawnTimer <= 0) {
-      spawnEnemy();
-      state.spawnTimer = spawnInterval;
-    }
-
-    updateStaff(dt, now);
-    updateEnemies(dt);
-    updateHitEffects(now);
-    maintainEnemies();
-    runAutoBattle(dt);
-
-    render();
-  }
-
-  function updateStaff(dt, now) {
-    const speedBuff = now < state.buffSpeedUntil ? 2.1 : 1.0;
-    state.staff.forEach(s => {
-      s.ct = Math.max(0, s.ct - dt * speedBuff);
-      if (state.running) s.skill = Math.min(100, s.skill + dt * 4.5);
-    });
-  }
-
-
-  function getEnemySlots() {
-    const slots = Array.from({ length: MAX_ENEMIES }, () => null);
-    (state.enemies || []).forEach((enemy, index) => {
-      if (!enemy) return;
-      const slot = Number.isInteger(enemy.slot) ? enemy.slot : index;
-      if (slot >= 0 && slot < MAX_ENEMIES && !slots[slot]) {
-        enemy.slot = slot;
-        slots[slot] = enemy;
-      }
-    });
-    return slots;
-  }
-
-  function compactEnemySlotsOnce() {
-    // 初期移行用。営業中は左詰めしない。
-    (state.enemies || []).forEach((enemy, index) => {
-      if (enemy && !Number.isInteger(enemy.slot)) enemy.slot = index;
-    });
-  }
-
-  function getOpenEnemySlot() {
-    const slots = getEnemySlots();
-    return slots.findIndex(slot => !slot);
-  }
-
-  function replaceEnemyInSameSlot(oldEnemy, newEnemy = createEnemy()) {
-    const slot = oldEnemy && Number.isInteger(oldEnemy.slot) ? oldEnemy.slot : getOpenEnemySlot();
-    newEnemy.slot = slot < 0 ? 0 : slot;
-    const idx = state.enemies.findIndex(e => e && oldEnemy && e.id === oldEnemy.id);
-    if (idx >= 0) {
-      state.enemies[idx] = newEnemy;
+document.addEventListener("click", (event) => {
+  const btn = event.target.closest("[data-engine-action]");
+  if (!btn) return;
+  const action = btn.dataset.engineAction;
+  if (action === "battle") {
+    if (window.BattleProto && typeof window.BattleProto.openBattle === "function") {
+      window.BattleProto.openBattle();
+    } else if (typeof window.startDeckBattlePrototype === "function") {
+      window.startDeckBattlePrototype();
     } else {
-      state.enemies.push(newEnemy);
+      alert("バトルエンジンが読み込まれていません");
     }
-    return newEnemy;
+  } else if (action === "mainmenu") {
+    if (typeof window.loadMenu === "function") window.loadMenu("mainmenu.json");
+    else tenotsuForceShowMenuFallback("loadMenu未初期化");
+  } else if (action === "store") {
+    if (typeof window.loadList === "function") window.loadList("home.json");
+    else tenotsuForceShowMenuFallback("店舗メニューは準備中です");
+  } else if (action === "members") {
+    if (typeof window.loadList === "function") window.loadList("members.json");
+    else tenotsuForceShowMenuFallback("メンバーメニューは準備中です");
+  } else if (action === "town") {
+    tenotsuShowOuterMenu();
+  } else if (action === "shop") {
+    if (typeof window.loadList === "function") window.loadList("shop.json");
+    else tenotsuForceShowMenuFallback("ショップは準備中です");
+  } else if (action === "settings") {
+    tenotsuSetStoryPartActive(false, "settings");
+    if (typeof window.loadMenu === "function") window.loadMenu("menu01.json");
+    else tenotsuForceShowMenuFallback("設定は準備中です");
+  } else if (action === "cacheclear") {
+    if (typeof window.clearAppCacheAndReload === "function") window.clearAppCacheAndReload();
+    else location.reload();
   }
+});
 
-  function removeEnemyKeepSlot(enemy) {
-    const idx = state.enemies.findIndex(e => e && enemy && e.id === enemy.id);
-    if (idx >= 0) state.enemies.splice(idx, 1);
-  }
-
-  function updateEnemies(dt) {
-    compactEnemySlotsOnce();
-
-    for (let i = state.enemies.length - 1; i >= 0; i--) {
-      const e = state.enemies[i];
-      if (!e) continue;
-
-      if (e.defeating) {
-        e.defeatLeft -= dt;
-        if (e.defeatLeft <= 0) {
-          completeEnemy(e, !!e.defeatMatch);
-        }
-        continue;
-      }
-
-      if (e.exchanging) {
-        e.exchangeLeft -= dt;
-        if (e.exchangeLeft <= 0) {
-          replaceEnemyInSameSlot(e, createEnemy());
-        }
-        continue;
-      }
-
-      e.patience -= dt;
-      if (e.patience <= 0) {
-        removeEnemyKeepSlot(e);
-        state.missed += 1;
-        if (state.comboShield) {
-          state.comboShield = false;
-          state.lastActionText = "琥珀のフォローでコンボ維持！";
-        } else {
-          state.combo = 0;
-          state.lastActionText = `${e.name}が離脱…`;
-        }
-      }
+window.addEventListener("load", () => {
+  window.setTimeout(() => {
+    const menuPanel = tenotsuSafeEl("menu-panel");
+    const listPanel = tenotsuSafeEl("list-panel");
+    const battleRoot = tenotsuSafeEl("battle-root");
+    const hasVisibleMenu = menuPanel && !menuPanel.classList.contains("hidden") && menuPanel.innerHTML.trim();
+    const hasVisibleList = listPanel && !listPanel.classList.contains("hidden") && listPanel.innerHTML.trim();
+    const hasVisibleBattle = battleRoot && !battleRoot.classList.contains("hidden");
+    if (!hasVisibleMenu && !hasVisibleList && !hasVisibleBattle) {
+      tenotsuForceShowMenuFallback("起動演出後の画面復帰フォールバック");
     }
+  }, 2600);
+});
+/* /v037_85 engine guard */
+
+// script.js - v037 修正版（wait/effectTime/Menu/List安定化）
+
+let currentScenario = "000start.json";
+let currentIndex = 0;
+let bgm = null;
+let lastActiveSide = null;
+let isMuted = true;
+let typingInterval = null;
+let isAutoMode = false;
+let autoWaitTime = 2000;
+let isPlaying = false;
+  if (typeof tenotsuScheduleAutoPlay === 'function') tenotsuScheduleAutoPlay();
+let currentSpeed = 40;
+let defaultSpeed = 40;
+let defaultFontSize = "1em";
+let textAreaVisible = true;
+let tenotsuStoryPartActive = false;
+window.__TENOTSU_SCREEN_MODE__ = window.__TENOTSU_SCREEN_MODE__ || "boot";
+
+function tenotsuIsInitialTitleScenario(filename = currentScenario) {
+  return ["000start.json", "start000.json"].includes(String(filename || ""));
+}
+
+function tenotsuIsTitleOnlyScene(scene) {
+  if (!scene) return false;
+  if (scene.titleScreen === true || scene.mode === "title" || scene.screenMode === "title") return true;
+  if (!tenotsuIsInitialTitleScenario()) return false;
+  const hasStoryText = scene.text !== undefined && scene.text !== null && String(scene.text).trim() !== "" && scene.textareashow !== false;
+  const isMenuOrTitleStage = scene.textareashow === false || scene.showlist || scene.showmenu || scene.randomimageson !== undefined || scene.randomtexts !== undefined;
+  return isMenuOrTitleStage && !hasStoryText;
+}
+
+function tenotsuSetScreenMode(mode) {
+  const normalized = mode || "story";
+  window.__TENOTSU_SCREEN_MODE__ = normalized;
+  ["boot", "title", "office", "story", "battle", "town", "shop", "settings"].forEach((m) => {
+    document.body.classList.toggle(`${m}-screen`, normalized === m);
+  });
+  document.body.dataset.tenotsuMode = normalized;
+}
+
+function tenotsuGetScreenMode() {
+  return window.__TENOTSU_SCREEN_MODE__ || "boot";
+}
+
+function tenotsuIsOfficeMode() {
+  return tenotsuGetScreenMode() === "office";
+}
+
+function tenotsuShouldRightMenuBeVisible() {
+  return ["office", "shop", "settings"].includes(tenotsuGetScreenMode());
+}
+
+const bgEl = document.getElementById("background");
+const nameEl = document.getElementById("name");
+const textEl = document.getElementById("text");
+const choicesEl = document.getElementById("choices");
+const menuPanel = document.getElementById("menu-panel");
+const listPanel = document.getElementById("list-panel");
+const evLayer = document.getElementById("ev-layer");
+const clickLayer = document.getElementById("click-layer");
+const dialogueBox = document.getElementById("dialogue-box");
+
+const charSlots = {
+  left: document.getElementById("char-left"),
+  center: document.getElementById("char-center"),
+  right: document.getElementById("char-right")
+};
+
+
+/* v037_93: ストーリー中の右メニュー抑止 */
+function tenotsuIsStoryPartActive() {
+  return !!tenotsuStoryPartActive && tenotsuGetScreenMode() === "story";
+}
+function tenotsuSetStoryPartActive(active, mode) {
+  if (mode) tenotsuSetScreenMode(mode);
+  tenotsuStoryPartActive = !!active && tenotsuGetScreenMode() === "story";
+  document.body.classList.toggle("story-playing", tenotsuStoryPartActive);
+  if (tenotsuStoryPartActive && listPanel) listPanel.classList.add("hidden");
+}
+function tenotsuApplyStoryTextWhite() {
+  // v037_93: 本文は白固定。キャラ名は setCharacterStyle() のキャラカラーを維持する。
+  if (textEl) {
+    textEl.style.color = "#ffffff";
+    textEl.style.textShadow = "0 1px 3px rgba(0,0,0,.75)";
+  }
+}
+/* /v037_93 */
+
+function isMobilePortrait() {
+  return window.innerWidth <= 768 && window.innerHeight > window.innerWidth;
+}
+
+function setTextWithSpeed(text, speed, callback) {
+  if (typingInterval) clearInterval(typingInterval);
+  tenotsuStopAutoPlayTimer && tenotsuStopAutoPlayTimer();
+  isPlaying = true;
+  textEl.innerHTML = "";
+  tenotsuApplyStoryTextWhite(); // v037_93 setText start
+  const sourceText = String(text ?? "");
+  let i = 0;
+
+  if (sourceText.length === 0) {
+    isPlaying = false;
+    if (callback) callback();
+    if (typeof tenotsuScheduleAutoPlay === "function") tenotsuScheduleAutoPlay();
+    return;
   }
 
-  function maintainEnemies() {
-    while (state.running && getOpenEnemySlot() >= 0) spawnEnemy(true);
-  }
-
-  function createEnemy() {
-    const base = enemyTypes[Math.floor(Math.random() * enemyTypes.length)];
-    const rare = Math.random() < (state.rush ? 0.16 : 0.07);
-    // HP仕様：通常敵HP2、レア敵HP3
-    const gauge = rare ? 3 : 2;
-    const patience = Math.max(3.2, base.basePatience + Math.random() * 1.6 + (rare ? 1.2 : 0) - (state.rush ? 1.0 : 0));
-
-    return {
-      id: state.nextEnemyId++,
-      attr: base.attr,
-      icon: base.icon,
-      name: base.name,
-      text: base.text,
-      image: base.image || "",
-      gauge,
-      maxGauge: gauge,
-      patience,
-      maxPatience: patience,
-      score: base.score + (rare ? 80 : 0),
-      rare,
-      exchanging: false,
-      exchangeLeft: 0,
-      exchangeMax: CHANGE_SECONDS,
-      exchangeMessage: "",
-      defeating: false,
-      defeatLeft: 0,
-      defeatMatch: false
-    };
-  }
-
-  function spawnEnemy(force = false) {
-    if (!state) return;
-    const slot = getOpenEnemySlot();
-    if (slot < 0) return;
-    if (!force && Math.random() < 0.25) return;
-    const enemy = createEnemy();
-    enemy.slot = slot;
-    state.enemies.push(enemy);
-  }
-
-  function handleStaffPointer(staffId, event) {
-    if (!state || !state.running) return;
-    if (event) {
-      event.preventDefault();
-      event.stopPropagation();
+  typingInterval = setInterval(() => {
+    textEl.innerHTML += sourceText[i++];
+    tenotsuApplyStoryTextWhite(); // v037_93 typing
+    if (i >= sourceText.length) {
+      clearInterval(typingInterval);
+      typingInterval = null;
+      isPlaying = false;
+      if (callback) callback();
+      if (typeof tenotsuScheduleAutoPlay === "function") tenotsuScheduleAutoPlay();
     }
+  }, speed);
+}
 
-    const now = performance.now();
-    const isDoubleTap =
-      staffTapTimer &&
-      pendingStaffTapId === staffId &&
-      now - pendingStaffTapAt <= DOUBLE_TAP_MS;
+function setCharacterStyle(name, scene = {}) {
+  const style = (window.TENOTSU_CHARACTER_STYLE_MAP && window.TENOTSU_CHARACTER_STYLE_MAP[name]) || (window.characterStyles && window.characterStyles[name]) || null;
+  // v037_93: キャラ名はキャラカラー、本文は白固定。
+  if (nameEl) {
+    nameEl.style.color = style ? (style.color || "#ffffff") : "#ffffff";
+    nameEl.style.fontWeight = style ? (style.fontWeight || "700") : "700";
+    nameEl.style.textShadow = (style && style.textShadow) || "0 1px 3px rgba(0,0,0,.75)";
+  }
+  if (textEl) {
+    textEl.style.color = "#ffffff";
+    textEl.style.fontWeight = style ? (style.fontWeight || "600") : "600";
+    textEl.style.textShadow = "0 1px 3px rgba(0,0,0,.75)";
+    textEl.style.fontSize = scene.fontSize || (style && style.fontSize) || defaultFontSize || "1em";
+  }
+  if (style && typeof style.speed === "number") currentSpeed = style.speed;
+  else currentSpeed = scene.speed || defaultSpeed || 40;
+  if (scene.speed) currentSpeed = scene.speed;
+}
 
-    if (isDoubleTap) {
-      clearPendingStaffTap();
-      onStaffDoubleTap(staffId);
+function clearCharacters() {
+  for (const pos in charSlots) {
+    charSlots[pos].innerHTML = "";
+    charSlots[pos].classList.remove("active");
+  }
+  lastActiveSide = null;
+}
+
+function updateCharacterDisplay() {
+  // v037_85:
+  // 同じslotに同一人物(a1/b1...)の別表情を出す場合はフェードなし。
+  // 新規人物/別人物のみフェード。
+  window.__TENOTSU_CHAR_SLOT_STATE__ = window.__TENOTSU_CHAR_SLOT_STATE__ || {};
+  Object.entries(charSlots).forEach(([side, slot]) => {
+    if (!slot) return;
+    const img = slot.querySelector("img");
+    if (!img) {
+      window.__TENOTSU_CHAR_SLOT_STATE__[side] = null;
       return;
     }
+    const srcAttr = img.getAttribute("src") || "";
+    const file = srcAttr.split("/").pop() || "";
+    const charKey = file.slice(0, 2);
+    const prev = window.__TENOTSU_CHAR_SLOT_STATE__[side];
 
-    if (staffTapTimer) {
-      const oldStaffId = pendingStaffTapId;
-      clearPendingStaffTap();
-      onStaffSingleTap(oldStaffId);
-    }
+    img.classList.remove("char-fade-in", "char-same-expression-swap");
 
-    pendingStaffTapId = staffId;
-    pendingStaffTapAt = now;
-    staffTapTimer = window.setTimeout(() => {
-      const targetStaffId = pendingStaffTapId;
-      clearPendingStaffTap();
-      onStaffSingleTap(targetStaffId);
-    }, DOUBLE_TAP_MS);
-  }
-
-  function onStaffSingleTap(staffId) {
-    if (!state || !state.running) return;
-    const s = state.staff.find(x => x.id === staffId);
-    if (!s) return;
-
-    if (s.ct > 0) {
-      state.lastActionText = `${s.name}は準備中です。`;
-      pulseStaff(staffId);
-      render();
-      return;
-    }
-
-    const target = findBestTarget(s);
-    if (!target) {
-      state.lastActionText = "対応できる家電星人がいません。";
-      render();
-      return;
-    }
-
-    state.targetPreviewId = target.id;
-    resolveContact(s, target);
-    s.ct = s.ctMax;
-    s.skill = Math.min(100, s.skill + (s.attr === target.attr ? 28 : 16));
-    render();
-  }
-
-  function onStaffDoubleTap(staffId) {
-    if (!state || !state.running) return;
-    const s = state.staff.find(x => x.id === staffId);
-    if (!s) return;
-
-    if (s.ct > 0) {
-      state.lastActionText = `${s.name}は準備中です。必殺技もまだ使えません。`;
-      pulseStaff(staffId);
-      render();
-      return;
-    }
-
-    if (s.skill < 100) {
-      // v037_93: ダブルタップ時に必殺不可でも、通常接客が可能なら通常クリックとして処理する
-      state.lastActionText = `${s.name}の必殺ゲージが足りません。通常接客として対応します。`;
-      onStaffSingleTap(staffId);
-      return;
-    }
-
-    const target = findBestTarget(s, true);
-    if (!target) {
-      state.lastActionText = "必殺接客の対象がいません。通常接客を試みます。";
-      onStaffSingleTap(staffId);
-      return;
-    }
-
-    state.targetPreviewId = target.id;
-    resolveContact(s, target, true);
-    useSkill(s);
-    s.skill = 0;
-    s.ct = s.ctMax * 0.65;
-    render();
-  }
-
-  function findBestTarget(staff, isSpecial = false) {
-    let best = null;
-    let bestScore = -Infinity;
-
-    for (const e of state.enemies) {
-      if (e.exchanging || e.defeating) continue;
-      const matchScore = staff.attr === e.attr ? 120 : 0;
-      const urgentScore = (1 - e.patience / e.maxPatience) * 72;
-      const finishScore = e.gauge <= getAttackDamage(staff, e, isSpecial) ? 48 : 0;
-      const rareScore = e.rare ? 38 : 0;
-      const highScore = e.score / 8;
-      const rushDangerScore = state.rush && e.patience <= 2.5 ? 32 : 0;
-      const score = matchScore + urgentScore + finishScore + rareScore + highScore + rushDangerScore;
-
-      if (score > bestScore) {
-        bestScore = score;
-        best = e;
-      }
-    }
-    return best;
-  }
-
-  function getAttackDamage(staff, enemy, isSpecial = false) {
-    const isMatch = staff.attr === enemy.attr;
-    if (isSpecial) return isMatch ? 3 : 2;
-    return isMatch ? 2 : 1;
-  }
-
-  function resolveContact(staff, enemy, isSpecial = false) {
-    const isMatch = staff.attr === enemy.attr;
-    const damage = getAttackDamage(staff, enemy, isSpecial);
-
-    enemy.gauge -= damage;
-    addHitEffect(enemy, staff, damage, isSpecial, isMatch);
-    state.lastActionText = `${staff.name} → ${enemy.name}：${damage}ダメージ ${isSpecial ? "必殺" : "通常"} ${isMatch ? "特攻◎" : "等倍"}`;
-
-    if (enemy.gauge <= 0) {
-      enemy.gauge = 0;
-      enemy.defeating = true;
-      enemy.defeatLeft = 0.32;
-      enemy.defeatMatch = isMatch;
-    }
-  }
-
-  function addHitEffect(enemy, staff, damage, isSpecial, isMatch, customText = null) {
-    if (!state) return;
-    state.hitEffects.push({
-      id: state.nextHitId++,
-      enemyId: enemy.id,
-      color: staff.color || "#ffffff",
-      text: `${customText || (isSpecial ? "必殺HIT!" : "HIT!")} ${damage}`,
-      subText: isMatch ? "特攻" : "",
-      createdAt: performance.now(),
-      life: 620
-    });
-  }
-
-  function updateHitEffects(now) {
-    if (!state || !state.hitEffects) return;
-    state.hitEffects = state.hitEffects.filter(effect => now - effect.createdAt < effect.life);
-  }
-
-  function completeEnemy(enemy, isMatch, options = {}) {
-    removeEnemyKeepSlot(enemy);
-
-    state.served += 1;
-    addHelpProgress(1);
-    state.combo += 1;
-    state.maxCombo = Math.max(state.maxCombo, state.combo);
-
-    const comboBonus = Math.min(3.0, 1 + state.combo * 0.05);
-    const rareBonus = enemy.rare ? 2.0 : 1.0;
-    const matchBonus = isMatch ? 1.25 : 1.0;
-    let point = Math.round(enemy.score * comboBonus * rareBonus * matchBonus);
-    if (state.autoResolving) point = Math.max(1, Math.floor(point * AUTO_SCORE_MULTIPLIER));
-    state.score += point;
-    state.lastActionText = `レジ誘導成功！ +${point}円`;
-  }
-
-  function triggerWhiteFlash() {
-    if (!state) return;
-    state.whiteFlashUntil = performance.now() + 360;
-  }
-
-  function showCutin(title, color = "#ffffff", subText = "", descText = "", image = "") {
-    if (!state) return;
-    state.cutin = { title, color, subText, descText,
-      image: image || "", image, createdAt: performance.now(), life: descText || image ? 1650 : 1150 };
-    state.cutinUntil = state.cutin.createdAt + state.cutin.life;
-  }
-
-  function showTimeSaleCutin() {
-    showCutin("タイムセール開始！", "#ff3030", "ラッシュタイム", "15秒間、来店ラッシュで成約チャンスが増加します。");
-  }
-
-  function getCurrentChangeSeconds() {
-    return performance.now() < state.buffChangeUntil ? CHANGE_SECONDS_BUFFED : CHANGE_SECONDS;
-  }
-
-  function applyFlatDamageToEnemy(enemy, damage, sourceStaff, label = "追加HIT!") {
-    if (!enemy || enemy.exchanging || enemy.defeating || damage <= 0) return;
-    enemy.gauge -= damage;
-    addHitEffect(enemy, sourceStaff, damage, false, false, label);
-    if (enemy.gauge <= 0) {
-      enemy.gauge = 0;
-      enemy.defeating = true;
-      enemy.defeatLeft = 0.32;
-      enemy.defeatMatch = false;
-    }
-  }
-
-  function requestEnemyChange(enemyId) {
-    if (!state || !state.running) return;
-    const enemy = state.enemies.find(e => e.id === enemyId);
-    if (!enemy || enemy.exchanging || enemy.defeating) return;
-
-    const message = CHANGE_MESSAGES[Math.floor(Math.random() * CHANGE_MESSAGES.length)];
-    enemy.exchanging = true;
-    const changeSeconds = getCurrentChangeSeconds();
-    enemy.exchangeLeft = changeSeconds;
-    enemy.exchangeMax = changeSeconds;
-    enemy.exchangeMessage = message;
-    state.combo = 0;
-    state.targetPreviewId = null;
-    state.lastActionText = message;
-    render();
-  }
-
-  function useSkill(staff) {
-    const now = performance.now();
-    showCutin(staff.skillName, staff.color, staff.name, staff.skillDesc || "", staff.skillCutin || (staff.id === "aa" ? "images/assets/cutin/cutin_hina_test.png" : ""));
-    if (staff.skillType === "powerBuff") {
-      state.buffPowerUntil = now + 8000;
-      state.lastActionText = "緋奈：全力おすすめ！ 接客力アップ！";
-    } else if (staff.skillType === "extendTime") {
-      state.enemies.forEach(e => {
-        e.patience = Math.min(e.maxPatience + 3, e.patience + 3);
-        e.maxPatience = Math.max(e.maxPatience, e.patience);
+    if (prev && prev.charKey === charKey && prev.file !== file) {
+      img.classList.add("char-same-expression-swap");
+      img.style.transition = "none";
+      img.style.animation = "none";
+      img.style.opacity = "1";
+      requestAnimationFrame(() => {
+        img.style.transition = "";
+        img.style.animation = "";
+        img.classList.remove("char-same-expression-swap");
       });
-      state.timeLeft = Math.min(BATTLE_SECONDS + 5, state.timeLeft + 2);
-      state.lastActionText = "藍：やさしい案内！受付時間を延長。";
-    } else if (staff.skillType === "pcSweep") {
-      const targets = [...state.enemies.filter(e => e.attr === "PC")];
-      targets.forEach(e => completeEnemy(e, true));
-      state.buffMatchUntil = now + 6000;
-      state.lastActionText = "翠：最適解プレゼン！PC対応＋相性倍率UP。";
-    } else if (staff.skillType === "ctReduce") {
-      state.staff.forEach(s => { s.ct = Math.min(s.ct, 0.35); });
-      state.buffSpeedUntil = now + 6000;
-      state.lastActionText = "こがね：即決トーク！CT短縮。";
-    } else if (staff.skillType === "ayameRoute") {
-      const extras = state.enemies
-        .filter(e => !e.exchanging && !e.defeating)
-        .sort((a, b) => a.gauge - b.gauge || a.patience - b.patience)
-        .slice(0, 2);
-      extras.forEach(e => applyFlatDamageToEnemy(e, 1, staff, "導線HIT!"));
-      state.buffChangeUntil = now + 6000;
-      state.lastActionText = "彩愛：優雅な家事導線！敵2体に1ダメージ、6秒間チェンジ1秒。";
-    } else if (staff.skillType === "rushBuff") {
-      state.buffRushUntil = now + 8000;
-      state.comboShield = true;
-      state.lastActionText = "琥珀：フロアダッシュ！ラッシュ対応力UP。";
+    } else if (!prev || prev.charKey !== charKey) {
+      img.classList.add("char-fade-in");
+    }
+
+    window.__TENOTSU_CHAR_SLOT_STATE__[side] = { file, charKey };
+  });
+}
+
+async function applyEffect(el, effectName, duration = 1000) {
+  if (!effectName) return;
+  if (window.effects && window.effects[effectName]) {
+    return await window.effects[effectName](el, duration);
+  }
+  if (window.effects?.fadein) {
+    return await window.effects.fadein(el, duration);
+  }
+}
+
+function getSceneWait(scene) {
+  return Number.isFinite(Number(scene?.wait)) ? Number(scene.wait) : autoWaitTime;
+}
+
+function getEffectTime(scene) {
+  return Number.isFinite(Number(scene?.effectTime)) ? Number(scene.effectTime) : 1000;
+}
+
+function normalizeItems(data) {
+  if (Array.isArray(data)) return data;
+  if (Array.isArray(data?.items)) return data.items;
+  return [];
+}
+
+function normalizeScenes(data) {
+  if (Array.isArray(data)) return data;
+  if (Array.isArray(data?.scenes)) return data.scenes;
+  return [];
+}
+
+async function safeFetchJson(url, label = "JSON") {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`${label}読み込み失敗: ${res.status} ${url}`);
+  return await res.json();
+}
+
+function updateTextAreaVisibility(show) {
+  textAreaVisible = show;
+  dialogueBox.classList.toggle("hidden", !show);
+}
+
+async function showScene(scene) {
+  if (!scene) return;
+  const isTitleScene = tenotsuIsTitleOnlyScene(scene);
+  const isOfficeScene = scene.mode === "office" || scene.screenMode === "office" || scene.officeMode === true || scene.showlist === "office6.json";
+  if (isOfficeScene) {
+    tenotsuSetStoryPartActive(false, "office");
+  } else {
+    tenotsuSetStoryPartActive(!isTitleScene, isTitleScene ? "title" : "story"); // v037_93 showScene mode flag
+  }
+  if (!isTitleScene && !isOfficeScene && listPanel) listPanel.classList.add("hidden");
+  if (typingInterval) clearInterval(typingInterval);
+
+  const sceneWaitTime = getSceneWait(scene);
+  const effectTime = getEffectTime(scene);
+  const sceneEffect = scene.effect || scene.bgEffect;
+
+  textEl.innerHTML = "";
+  nameEl.textContent = "";
+  evLayer.innerHTML = "";
+  choicesEl.innerHTML = "";
+
+  // v037_93: full-size event CG / memory background should not appear behind standing sprites.
+  // Use `hideCharacters: true` for scenario-controlled full CG scenes.
+  // Also auto-detect bg_memory_* backgrounds as full CG surfaces.
+  const isFullCgBackground = scene.hideCharacters === true ||
+    (typeof scene.bg === "string" && /^bg_memory_/i.test(scene.bg));
+  if (isFullCgBackground) {
+    clearCharacters();
+    window.__TENOTSU_CHAR_SLOT_STATE__ = {};
+  }
+
+  if (scene.textareashow !== undefined) {
+    updateTextAreaVisibility(scene.textareashow);
+  }
+
+  // ランダム画像表示のon/off
+  if (scene.randomimageson === false && typeof randomImagesOff === "function") {
+    randomImagesOff();
+  } else if (scene.randomimageson === true && typeof randomImagesOn === "function") {
+    randomImagesOn();
+  }
+
+  // ランダムテキスト表示のon/off
+  if (scene.randomtexts !== undefined) {
+    if (scene.randomtexts) {
+      if (typeof randomTextsOn === "function") randomTextsOn();
+    } else {
+      if (typeof randomTextsOff === "function") randomTextsOff();
     }
   }
 
-  function autoOneMove(showMessage = true) {
-    if (!state || !state.running) return false;
+  // 背景なしでも白/黒フラッシュ等を使えるようにする
+  if (!scene.bg && scene.effect) {
+    await applyEffect(bgEl, scene.effect, effectTime);
+  }
 
-    // v037_93: オート優先順位 = 必殺技 → 通常攻撃
-    // 店長HELPは強力な切り札なので、サポートでは使わず任意操作にする。
-    let bestStaff = null;
-    let bestEnemy = null;
-    let useSpecial = false;
-    let bestScore = -Infinity;
+  if (scene.bg) {
+    if (sceneEffect) await applyEffect(bgEl, sceneEffect, effectTime);
+    await new Promise((resolve) => {
+      bgEl.onload = resolve;
+      bgEl.onerror = resolve;
+      bgEl.src = config.bgPath + scene.bg;
+    });
+    if (scene.bgEffect) await applyEffect(bgEl, scene.bgEffect, effectTime);
+  }
 
-    for (const s of state.staff) {
-      if (s.ct > 0) continue;
+  if (scene.showev) {
+    const evImg = document.createElement("img");
+    evImg.src = config.evPath + scene.showev;
+    evImg.classList.add("ev-image");
+    evImg.onload = () => applyEffect(evImg, scene.evEffect || "fadein", effectTime);
+    evLayer.appendChild(evImg);
+  }
 
-      const canSpecial = s.skill >= 100;
-      const e = findBestTarget(s, canSpecial);
-      if (!e) continue;
+  if (scene.showcg) {
+    const cgImg = document.createElement("img");
+    cgImg.src = config.cgPath + scene.showcg;
+    cgImg.classList.add("cg-image");
+    cgImg.onload = () => applyEffect(cgImg, scene.cgEffect || "fadein", effectTime);
+    evLayer.appendChild(cgImg);
+  }
 
-      const damage = getAttackDamage(s, e, canSpecial);
-      const willDefeat = e.gauge <= damage;
-      const score =
-        (canSpecial ? 240 : 0) +
-        (s.attr === e.attr ? 120 : 0) +
-        (willDefeat ? 90 : 0) +
-        (1 - e.patience / e.maxPatience) * 72 +
-        damage * 24 +
-        (e.rare ? 35 : 0);
+  if (scene.bgm !== undefined) {
+    if (bgm) {
+      bgm.pause();
+      bgm = null;
+    }
+    if (scene.bgm) {
+      bgm = new Audio(config.bgmPath + scene.bgm);
+      bgm.loop = true;
+      bgm.muted = isMuted;
+      bgm.play().catch(() => {});
+    }
+  }
 
-      if (score > bestScore) {
-        bestScore = score;
-        bestStaff = s;
-        bestEnemy = e;
-        useSpecial = canSpecial;
+  if (scene.characters) {
+    lastActiveSide = scene.characters[scene.characters.length - 1]?.side || null;
+    for (const pos of ["left", "center", "right"]) {
+      const slot = charSlots[pos];
+      const charData = scene.characters.find((c) => c.side === pos);
+      if (charData && charData.src && charData.src !== "NULL") {
+        const img = document.createElement("img");
+        img.src = config.charPath + charData.src;
+        img.classList.add("char-image");
+        slot.innerHTML = "";
+        slot.appendChild(img);
+        await applyEffect(img, charData.effect || "fadein", effectTime);
+      } else if (charData && charData.src === "NULL") {
+        slot.innerHTML = "";
       }
     }
-
-    if (bestStaff && bestEnemy) {
-      state.targetPreviewId = bestEnemy.id;
-      state.autoResolving = true;
-      resolveContact(bestStaff, bestEnemy, useSpecial);
-      if (useSpecial) useSkill(bestStaff);
-      state.autoResolving = false;
-
-      // サポートは便利な代わりにCTを重くする
-      bestStaff.ct = bestStaff.ctMax * (useSpecial ? 1.15 : 1) * AUTO_CT_MULTIPLIER;
-      bestStaff.skill = useSpecial ? 0 : Math.min(100, bestStaff.skill + 10);
-      return true;
-    }
-
-    if (showMessage) {
-      state.lastActionText = "サポート：今は動けるメンバーがいません。";
-      render();
-    }
-    return false;
   }
 
-  function runAutoBattle(dt) {
-    if (!state || !state.running || !state.autoMode) return;
-    state.autoTimer -= dt;
-    if (state.autoTimer > 0) return;
+  updateCharacterDisplay();
 
-    const moved = autoOneMove(false);
-    state.autoTimer = moved ? AUTO_ACTION_INTERVAL : 0.18;
-  }
-
-  function toggleAutoBattle() {
-    if (!state || !state.running) return;
-    state.autoMode = !state.autoMode;
-    state.autoTimer = 0;
-    state.lastActionText = state.autoMode ? "サポートプレイON：必殺→通常の順で行動します。店長HELPは任意操作です。CT2倍・売上70%。" : "サポートプレイOFF";
-    render();
-  }
-
-  function addHelpProgress(count) {
-    if (!state) return;
-    state.helpEarnCounter += count;
-    while (state.helpEarnCounter >= HELP_STOCK_STEP && state.helpStock < HELP_STOCK_MAX) {
-      state.helpEarnCounter -= HELP_STOCK_STEP;
-      state.helpStock += 1;
-      state.lastActionText = `店長ヘルプが1つ溜まりました！ 残り${state.helpStock}/${HELP_STOCK_MAX}`;
-    }
-    if (state.helpStock >= HELP_STOCK_MAX) {
-      state.helpEarnCounter = Math.min(state.helpEarnCounter, HELP_STOCK_STEP - 1);
-    }
-  }
-
-  function useManagerHelp(fromAuto = false) {
-    if (!state || !state.running) return false;
-    if (state.helpStock <= 0) {
-      state.lastActionText = "店長HELP準備中。成約10件で1ストック溜まります。";
-      render();
-      return false;
-    }
-
-    state.helpStock -= 1;
-    triggerWhiteFlash();
-    showCutin("店長HELP！", "#ffe06a", "店長出動", "全メンバーのCTをクリアし、画面上の敵を一掃成約してオールチェンジします。");
-    state.staff.forEach(s => { s.ct = 0; });
-
-    const targets = [...state.enemies.filter(e => !e.exchanging)];
-    targets.forEach(e => completeEnemy(e, true, { help: true }));
-    state.enemies = getEnemySlots().map((e, slot) => {
-      const next = createEnemy();
-      next.slot = slot;
-      return next;
+  if (scene.name !== undefined && scene.text !== undefined) {
+    nameEl.textContent = scene.name;
+    setCharacterStyle(scene.name, scene);
+    tenotsuApplyStoryTextWhite(); // v037_93 after style
+    setTextWithSpeed(scene.text, currentSpeed, () => {
+      if (isAutoMode && choicesEl.children.length === 0) {
+        setTimeout(() => {
+          if (!isPlaying) next();
+        }, sceneWaitTime);
+      }
     });
-
-    state.targetPreviewId = null;
-    state.lastActionText = `店長ヘルプ発動！ リキャストクリア＋${targets.length}体を一掃成約、オールチェンジ！`;
-    if (!fromAuto) render();
-    return true;
-    return true;
-    return true;
   }
 
+  if (scene.voice) {
+    const voice = new Audio(config.voicePath + scene.voice);
+    voice.muted = isMuted;
+    voice.play().catch(() => {});
+  }
 
-  function handleHelpClick(event) {
-    if (!state || !state.running) return false;
-    if (event) {
-      event.preventDefault();
-      event.stopPropagation();
+  if (scene.se) {
+    const se = new Audio(config.sePath + scene.se);
+    se.muted = isMuted;
+    se.play().catch(() => {});
+  }
+
+  if (scene.choices) {
+    scene.choices.forEach((choice) => {
+      const btn = document.createElement("button");
+      btn.textContent = choice.text;
+      btn.onclick = () => {
+        clearCharacters();
+        textEl.innerHTML = "";
+        nameEl.textContent = "";
+        evLayer.innerHTML = "";
+        handleMenuAction(choice);
+      };
+      choicesEl.appendChild(btn);
+    });
+  }
+
+  if (scene.showmenu) {
+    const isInitialScenario = currentScenario === "000start.json" || currentScenario === "start000.json";
+    if (!(window.__TENOTSU_MAIN_MENU_LOCK__ && isInitialScenario)) await loadMenu(scene.showmenu);
+  }
+  if (scene.showlist) {
+    const isInitialScenario = currentScenario === "000start.json" || currentScenario === "start000.json";
+    const isTitleSceneForList = tenotsuIsTitleOnlyScene(scene);
+    const isOfficeList = scene.showlist === "office6.json";
+    // v037_93: タイトルからは事務所へ遷移。事務所モードでは右6大メニューを常時表示。
+    if (isOfficeList) {
+      tenotsuSetStoryPartActive(false, "office");
+      await loadList(scene.showlist);
+    } else if (isTitleSceneForList || (!tenotsuIsStoryPartActive() && !(window.__TENOTSU_MAIN_MENU_LOCK__ && isInitialScenario && scene.showlist !== "office6.json"))) {
+      await loadList(scene.showlist);
+    }
+  }
+
+  /* v037_85: characters-only scene auto schedule */
+  if (scene.name === undefined && scene.text === undefined && !scene.choices && isAutoMode) {
+    tenotsuScheduleAutoPlay();
+  }
+
+  if (scene.auto && scene.choices === undefined && scene.text === undefined) {
+    setTimeout(() => {
+      if (!isPlaying) next();
+    }, sceneWaitTime);
+  }
+}
+
+function next() {
+  if (typeof tenotsuStopAutoPlayTimer === 'function') tenotsuStopAutoPlayTimer();
+  safeFetchJson(config.scenarioPath + currentScenario + "?t=" + Date.now(), currentScenario)
+    .then((data) => {
+      currentIndex++;
+      const scenes = normalizeScenes(data);
+      if (currentIndex < scenes.length) {
+        showScene(scenes[currentIndex]);
+      } else {
+        if (textAreaVisible) {
+          tenotsuHandleStoryEndReturn();
+        }
+        isAutoMode = false;
+      }
+    })
+    .catch((err) => showError(err.message));
+}
+
+function loadScenario(filename) {
+  const isInitialTitle = ["000start.json", "start000.json"].includes(String(filename || ""));
+  tenotsuSetStoryPartActive(!isInitialTitle, isInitialTitle ? "title" : "story"); // v037_93 loadScenario mode
+  // ランダム表示類はリセット
+  if (typeof randomImagesOff === "function") randomImagesOff();
+  if (typeof randomTextsOff === "function") randomTextsOff();
+
+  currentScenario = filename;
+  currentIndex = 0;
+  clearCharacters();
+  textEl.innerHTML = "";
+  nameEl.textContent = "";
+  evLayer.innerHTML = "";
+  if (!isInitialTitle) listPanel.classList.add("hidden");
+  menuPanel.classList.add("hidden");
+  if (typingInterval) clearInterval(typingInterval);
+  updateTextAreaVisibility(true);
+
+  safeFetchJson(config.scenarioPath + filename + "?t=" + Date.now(), filename)
+    .then((data) => {
+      const scenes = normalizeScenes(data);
+      if (scenes.length === 0) throw new Error(`シナリオが空です: ${filename}`);
+      showScene(scenes[0]);
+    })
+    .catch((err) => showError(err.message));
+}
+
+function showError(message) {
+  console.error(message);
+  updateTextAreaVisibility(true);
+  nameEl.textContent = "System";
+  textEl.innerHTML = `読み込みエラー：${message}`;
+}
+
+function setVhVariable() {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+}
+
+window.addEventListener("resize", () => {
+  setVhVariable();
+  updateCharacterDisplay();
+});
+
+window.addEventListener("load", () => {
+  setVhVariable();
+  loadScenario(currentScenario);
+});
+
+
+
+// === キャッシュクリア ===
+async function clearAppCacheAndReload() {
+  const ok = window.confirm(
+    "アプリキャッシュをクリアして再読み込みします。\n" +
+    "画面が古いまま表示される時に使ってください。\n\n" +
+    "※ セーブ用localStorageは消しません。"
+  );
+  if (!ok) return;
+
+  try {
+    if (typeof showError === "function") {
+      showError("キャッシュをクリア中です……");
     }
 
-    const now = performance.now();
+    if (window.caches) {
+      const keys = await caches.keys();
+      await Promise.all(keys.map((key) => caches.delete(key)));
+    }
 
-    // v037_93: 乱連打前提。押せるなら即発動、連打による多重発動だけ短時間ロック。
-    if (now - lastHelpInputAt < HELP_INPUT_LOCK_MS) return;
-    lastHelpInputAt = now;
+    if (navigator.serviceWorker) {
+      const regs = await navigator.serviceWorker.getRegistrations();
+      await Promise.all(regs.map((reg) => reg.unregister()));
+    }
 
-    clearPendingHelpTap();
+    const url = new URL(window.location.href);
+    url.searchParams.set("reload", Date.now().toString());
+    window.location.replace(url.toString());
+  } catch (err) {
+    console.error(err);
+    alert("キャッシュクリアに失敗しました。Safariの履歴/サイトデータ削除、またはホーム画面追加のやり直しを試してください。");
+  }
+}
 
-    if (state.helpStock > 0) {
-      useManagerHelp();
+window.clearAppCacheAndReload = clearAppCacheAndReload;
+
+// === メニュー関連 ===
+function handleMenuAction(item) {
+  if (!item) return;
+  /* v037_85 town precheck */
+  if ((item.action === "jump" && item.jump === "town_placeholder.json") || (item.action === "outer")) {
+    tenotsuShowOuterMenu();
+    return;
+  }
+  /* v037_85 scenario return precheck */
+  if (item.action === "jump" && item.jump) {
+    tenotsuPushReturnMenu("list", "office6.json");
+  }
+  /* v037_85 handleMenuAction precheck */
+  if (item.action === "list" && item.list === "home.json") {
+    tenotsuShowStoreStatus();
+    return;
+  }
+  if (item.action === "list" && item.list === "members.json") {
+    tenotsuShowMemberMenu();
+    return;
+  }
+  if (item.action === "list" && item.list === "shop.json") {
+    tenotsuSetStoryPartActive(false, "shop");
+    tenotsuShowShopMenu();
+    return;
+  }
+  if (item.action === "auto") {
+    tenotsuSetAutoMode(!isAutoMode);
+    return;
+  }
+  if (item.action === "skip") {
+    while (isPlaying === false && currentIndex < 9999) {
+      next();
+      break;
+    }
+    return;
+  }
+  if (item.action === "cacheclear") {
+    if (typeof window.clearAppCacheAndReload === "function") window.clearAppCacheAndReload();
+    return;
+  }
+  /* v037_85 custom action precheck */
+  if (item.action === "custom") {
+    if (item.custom === "memory-album") tenotsuShowMemoryAlbum();
+    else if (item.custom === "expression-master") tenotsuShowExpressionMasterMenu();
+    else if (item.custom === "expression-character") tenotsuShowExpressionCharacter(item.characterId || "aa");
+    else if (item.custom === "memory-list") tenotsuShowMemoryCharacterList();
+    else if (item.custom === "member-list") tenotsuShowMemberListMenu();
+    else if (item.custom === "story-table") tenotsuShowStoryManagementTable();
+    else if (item.custom === "title-return-archive") tenotsuShowTitleReturnMenuArchive();
+    else if (item.custom === "secret-word") tenotsuShowSecretWordMenu();
+    else if (item.custom === "event-exchange-menu") tenotsuShowExchangeCounterMenu();
+    else if (item.custom === "shop-normal-placeholder") tenotsuShowShopPlaceholder("通常ショップ", "通常ショップは準備中です。");
+    else if (item.custom === "shop-gacha-placeholder") tenotsuShowShopPlaceholder("ガチャ", "ガチャは準備中です。");
+    else if (item.custom === "memory-character") tenotsuShowMemoryCharacterStories(item.characterId || "manager");
+    return;
+  }
+  if ((item.action === "jump" || !item.action) && item.jump) {
+    loadScenario(item.jump);
+  } else if (item.action === "menu" && item.menu) {
+    tenotsuSetStoryPartActive(false, item.menu === "menu01.json" ? "settings" : "office");
+    loadMenu(item.menu);
+  } else if (item.action === "list" && item.list) {
+    if (item.list === "office6.json") tenotsuEnterOfficeMode("list-office6");
+    else loadList(item.list);
+  } else if (item.action === "outer") {
+    tenotsuSetStoryPartActive(false, "town");
+    if (typeof tenotsuShowOuterMenu === "function") tenotsuShowOuterMenu();
+  } else if (item.action === "battle") {
+    tenotsuEnterBattleMode && tenotsuEnterBattleMode();
+    try {
+      if (window.BattleProto && typeof window.BattleProto.openBattle === "function") {
+        window.BattleProto.openBattle();
+      } else if (typeof window.startDeckBattlePrototype === "function") {
+        window.startDeckBattlePrototype();
+      } else {
+        showError("バトルプロトタイプが読み込まれていません");
+      }
+    } catch (err) {
+      console.error("[TENOTSU BATTLE OPEN FAILED]", err);
+      showError("バトル画面の起動に失敗しました: " + (err && err.message ? err.message : err));
+    }
+  } else if (item.action === "cacheclear") {
+    clearAppCacheAndReload();
+  } else if (item.action === "url" && item.url) {
+    location.href = item.url;
+  }
+}
+
+async function loadMenu(filename = "menu01.json") {
+  try {
+    const data = await safeFetchJson(config.menuPath + filename + "?t=" + Date.now(), filename);
+    showMenu(data);
+  } catch (err) {
+    showError(err.message);
+  }
+}
+
+function showMenu(menuData) {
+  menuPanel.innerHTML = "";
+  menuPanel.classList.add("left-system-panel");
+  menuPanel.classList.remove("hidden");
+
+  const audioBtn = document.createElement("button");
+  audioBtn.textContent = isMuted ? "音声ONへ" : "音声OFFへ";
+  audioBtn.onclick = () => {
+    isMuted = !isMuted;
+    if (bgm) bgm.muted = isMuted;
+    document.querySelectorAll("audio").forEach(a => a.muted = isMuted);
+    menuPanel.classList.add("hidden");
+  };
+  menuPanel.appendChild(audioBtn);
+
+  const autoBtn = document.createElement("button");
+  autoBtn.textContent = isAutoMode ? "オートモードOFF" : "オートモードON";
+  autoBtn.onclick = () => {
+    isAutoMode = !isAutoMode;
+    if (isAutoMode) {
+      textEl.innerHTML = "(AutoMode On)";
+      setTimeout(() => {
+        textEl.innerHTML = "";
+        setTimeout(() => {
+          if (!isPlaying && choicesEl.children.length === 0) next();
+        }, autoWaitTime);
+      }, 1000);
+    } else {
+      textEl.innerHTML = "(AutoMode Off)";
+      setTimeout(() => { textEl.innerHTML = ""; }, 1000);
+    }
+    menuPanel.classList.add("hidden");
+  };
+  menuPanel.appendChild(autoBtn);
+
+  const fullscreenBtn = document.createElement("button");
+  fullscreenBtn.textContent = document.fullscreenElement ? "全画面OFF" : "全画面ON";
+  fullscreenBtn.onclick = () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen?.();
+    } else {
+      document.exitFullscreen?.();
+    }
+    menuPanel.classList.add("hidden");
+  };
+  menuPanel.appendChild(fullscreenBtn);
+
+  normalizeItems(menuData).forEach(item => {
+    const btn = document.createElement("button");
+    btn.textContent = item.text;
+    btn.onclick = () => {
+      menuPanel.classList.add("hidden");
+      handleMenuAction(item);
+    };
+    menuPanel.appendChild(btn);
+  });
+}
+
+// === リスト関連 ===
+async function loadList(filename = "list01.json") {
+  if (tenotsuIsStoryPartActive && tenotsuIsStoryPartActive() && !tenotsuShouldRightMenuBeVisible()) { // v037_93 loadList story guard
+    if (listPanel) listPanel.classList.add("hidden");
+    return;
+  }
+  try {
+    const data = await safeFetchJson(config.listPath + filename + "?t=" + Date.now(), filename);
+    showList(data);
+  } catch (err) {
+    showError(err.message);
+  }
+}
+
+function showList(listData) {
+  // v037_93: タイトルは右メニュー表示可、通常ストーリー中のみ右メニューを出さない
+  if (tenotsuIsStoryPartActive && tenotsuIsStoryPartActive() && !tenotsuShouldRightMenuBeVisible()) {
+    if (listPanel) listPanel.classList.add("hidden");
+    return;
+  }
+  listPanel.innerHTML = "";
+  listPanel.classList.add("right-main-panel");
+  listPanel.classList.remove("hidden");
+
+  normalizeItems(listData).forEach(item => {
+    const btn = document.createElement("button");
+    btn.textContent = item.text;
+    btn.onclick = () => {
+      listPanel.classList.add("hidden");
+      handleMenuAction(item);
+    };
+    listPanel.appendChild(btn);
+  });
+}
+
+// === 操作レイヤー：クリック・タッチ対応 ===
+clickLayer.addEventListener("dblclick", (event) => {
+  // v037_85: 左メニューはダブルクリックではなく長押しで出す。
+  event.preventDefault();
+});
+
+let lastTouch = 0;
+clickLayer.addEventListener("touchend", () => {
+  // v037_85: ダブルタップメニューは廃止。長押しメニューへ統一。
+  lastTouch = Date.now();
+});
+
+clickLayer.addEventListener("click", () => {
+  // v037_93: ストーリーモード中のタップは必ずシナリオ送りを優先する。
+  if (tenotsuIsStoryPartActive && tenotsuIsStoryPartActive()) {
+    if (!isPlaying && choicesEl.children.length === 0) next();
+    return;
+  }
+  /* v037_85: 右メニュー非表示時タップ再表示 */
+  if (!menuPanel.classList.contains("hidden")) {
+    menuPanel.classList.add("hidden");
+    return;
+  }
+  const battleRoot = document.getElementById("battle-root");
+  const battleVisible = battleRoot && !battleRoot.classList.contains("hidden");
+  if (!battleVisible && listPanel.classList.contains("hidden") && choicesEl.children.length === 0 && !isPlaying) {
+    tenotsuEnsureOfficeSixMenuVisible();
+    return;
+  }
+  if (!isPlaying && choicesEl.children.length === 0) {
+    next();
+  }
+});
+
+/* v037_85 expose engine functions */
+try { if (typeof loadMenu === "function") window.loadMenu = loadMenu; } catch (_) {}
+try { if (typeof loadList === "function") window.loadList = loadList; } catch (_) {}
+try { if (typeof loadScenario === "function") window.loadScenario = loadScenario; } catch (_) {}
+try { if (typeof clearAppCacheAndReload === "function") window.clearAppCacheAndReload = clearAppCacheAndReload; } catch (_) {}
+
+
+
+/* v037_93: タイトル→事務所→各パート→事務所 の画面モード管理 */
+function tenotsuSetOfficeBackground() {
+  try {
+    if (bgEl) bgEl.src = config.bgPath + "bg_office_hidamari.png";
+  } catch (_) {}
+}
+
+function tenotsuEnterOfficeMode(reason = "office") {
+  try {
+    tenotsuSetStoryPartActive(false, "office");
+    window.__TENOTSU_STORY_ENDING__ = false;
+    // v037_95: 事務所へ戻るたびにランダム立ち絵/コメントを再抽選するため、ここではOFFにしない。
+    clearCharacters();
+    if (evLayer) evLayer.innerHTML = "";
+    if (choicesEl) choicesEl.innerHTML = "";
+    if (menuPanel) menuPanel.classList.add("hidden");
+    updateTextAreaVisibility(false);
+    tenotsuSetOfficeBackground();
+    if (typeof window.loadList === "function") {
+      window.loadList("office6.json");
+      tenotsuStartOfficeRandomShow("enter-office");
+    } else if (listPanel) {
+      listPanel.classList.remove("hidden");
+      tenotsuStartOfficeRandomShow("enter-office-fallback");
+    }
+    tenotsuLockMainMenu && tenotsuLockMainMenu();
+  } catch (err) {
+    console.error("[TENOTSU ENTER OFFICE FAILED]", reason, err);
+  }
+}
+
+function tenotsuEnterTitleMode() {
+  tenotsuSetStoryPartActive(false, "title");
+  if (listPanel) listPanel.classList.add("hidden");
+}
+
+function tenotsuEnterStoryMode() {
+  tenotsuSetStoryPartActive(true, "story");
+  if (listPanel) listPanel.classList.add("hidden");
+}
+
+function tenotsuEnterBattleMode() {
+  tenotsuSetStoryPartActive(false, "battle");
+  if (listPanel) listPanel.classList.add("hidden");
+}
+/* /v037_93 */
+
+
+/* v037_95: タイトル/事務所共通ランダム立ち絵＋コメント */
+function tenotsuStartOfficeRandomShow(reason = 'office') {
+  try {
+    if (typeof window.tenotsuRefreshTitleRandomShow === 'function') {
+      window.tenotsuRefreshTitleRandomShow();
+    } else {
+      if (typeof randomImagesOn === 'function') {
+        const p = randomImagesOn();
+        Promise.resolve(p).then(() => { if (typeof randomTextsOn === 'function') randomTextsOn(); });
+      } else if (typeof randomTextsOn === 'function') {
+        randomTextsOn();
+      }
+    }
+  } catch (err) {
+    console.warn('[TENOTSU OFFICE RANDOM SHOW FAILED]', reason, err);
+  }
+}
+/* /v037_95 */
+
+/* v037_85 boot flow: 起動フラッシュ → 初期化 → タイトル表示 → 事務所6大メニュー */
+window.TENOTSU_BOOT_FLOW_VERSION = "v037_95";
+window.__TENOTSU_BOOT_DONE__ = false;
+
+function tenotsuSetOfficeText(title, text) {
+  try {
+    const nameBox = document.getElementById("name");
+    const textBox = document.getElementById("text");
+    const dialogueBox = document.getElementById("dialogue-box");
+    if (dialogueBox) dialogueBox.classList.remove("hidden");
+    if (nameBox) nameBox.textContent = title || "";
+    if (textBox) textBox.innerHTML = text || "";
+  } catch (err) {
+    console.error("[TENOTSU OFFICE TEXT FAILED]", err);
+  }
+}
+
+function tenotsuShowOfficeSixMenu() {
+  try {
+    tenotsuSetStoryPartActive(false, "office");
+    tenotsuSetOfficeBackground && tenotsuSetOfficeBackground();
+    updateTextAreaVisibility(false);
+    if (typeof window.loadList === "function") {
+      const menuPanel = document.getElementById("menu-panel");
+      if (menuPanel) menuPanel.classList.add("hidden");
+      window.loadList("office6.json");
+      tenotsuStartOfficeRandomShow("show-office-six");
+      tenotsuLockMainMenu();
       return;
     }
 
-    // ストックなし時はメッセージを出しすぎない
-    if (now - lastHelpEmptyMessageAt > HELP_EMPTY_MESSAGE_LOCK_MS) {
-      lastHelpEmptyMessageAt = now;
-      state.lastActionText = "店長HELP準備中。成約10件で1ストック溜まります。";
-      render();
-    }
-  }
-
-  function render() {
-    if (!root || !state) return;
-    const statusText = state.running ? (state.timeSaleActive ? "タイムセール中" : "営業中") : state.finished ? "営業終了" : state.timeSaleCountdown ? "タイムセール準備中" : "待機中";
-
-    root.innerHTML = `
-      <div class="battle-stage ${state.running ? "is-running" : ""} ${state.rush ? "is-rush" : ""}" style="--battle-bg-url: url(${getBattleBackground(state.battleBgId).path});">
-        <section class="battle-hud">
-          <div class="battle-hud-title">店舗営業：デッキ接客バトル <span class="battle-version">${BATTLE_VERSION}</span></div>
-          <div class="battle-hud-stats">
-            <span>状態：<b>${statusText}</b></span>
-            <span>WAVE：<b>${escapeHtml(state.waveLabel || "第1WAVE")}</b></span>
-            <span>残り：<b>${Math.ceil(state.timeLeft)}</b>秒</span>
-            <span>成約：<b>${state.served}</b></span>
-            <span>離脱：<b>${state.missed}</b></span>
-            <span>コンボ：<b>${state.combo}</b></span>
-            <span>売上：<b>${state.score}</b></span>
-          </div>
-          ${renderHudActions()}
-          <div class="battle-message">${escapeHtml(state.lastActionText)}</div>
-          ${state.finished ? `<div class="battle-finished-banner">営業終了</div>` : (!state.finished && state.running && state.timeSaleActive) ? `<div class="battle-timesale-banner">＞＞＞タイムセール実施中！＜＜＜</div>` : ""}
-        </section>
-
-        ${renderCutinOverlay()}
-        ${renderSurfaceOverlay()}
-        ${renderWhiteFlashOverlay()}
-
-        <section class="battle-enemies">
-          ${renderEnemySlots()}
-        </section>
-
-        ${renderHelpButtons("battle-help-large")}
-
-        <section class="battle-members">
-          ${state.staff.map(renderStaff).join("")}
-        </section>
-
-        ${state.running || state.countingDown || state.timeSaleCountdown || state.timeSalePending ? "" : renderControlOverlay()}
-      </div>
-    `;
-  }
-
-  function renderHelpButtons(className) {
-    const buttons = Array.from({ length: HELP_STOCK_MAX }, (_, i) => {
-      const available = state.running && i < state.helpStock;
-      return `<button class="battle-help-btn ${available ? "available" : "empty"}" data-action="help">HELP!</button>`;
-    }).join("");
-
-    return `<div class="${className}" title="成約10件で1つ、最大3つまでストック">${buttons}</div>`;
-  }
-
-  function renderHudActions() {
-    if (!state.running) return "";
-    return `
-      <div class="battle-hud-actions">
-        <button class="battle-auto-toggle ${state.autoMode ? "on" : ""}" data-action="autoToggle">${state.autoMode ? "サポートON" : "サポートOFF"}</button>
-      </div>
-    `;
-  }
-
-  function renderSideHelpButtons() {
-    return "";
-  }
-
-  function renderCutinOverlay() {
-    if (!state.cutin) return "";
-    const now = performance.now();
-    if (now > state.cutinUntil) return "";
-    const progress = Math.max(0, Math.min(1, (now - state.cutin.createdAt) / state.cutin.life));
-    const opacity = progress < 0.8 ? 1 : Math.max(0, 1 - (progress - 0.8) / 0.2);
-
-    const portrait = state.cutin.image ? `
-      <div class="skillPortraitFixedV19" style="--cutin-color:${state.cutin.color}; opacity:${opacity};">
-        <img src="${escapeHtml(state.cutin.image)}" alt="">
-      </div>
-    ` : "";
-
-    const text = `
-      <div class="skillTextSurfaceV19" style="--cutin-color:${state.cutin.color}; opacity:${opacity};">
-        <div class="skillTextInnerV19">
-          ${state.cutin.subText ? `<small>${escapeHtml(state.cutin.subText)}</small>` : ""}
-          <b>${escapeHtml(state.cutin.title)}</b>
-          ${state.cutin.descText ? `<p>${escapeHtml(state.cutin.descText)}</p>` : ""}
-        </div>
-      </div>
-    `;
-
-    return `
-      <div class="skillCutinLayerV19">
-        ${text}
-        ${portrait}
-      </div>
-    `;
-  }
-
-  function renderWhiteFlashOverlay() {
-    if (!state || !state.whiteFlashUntil) return "";
-    const now = performance.now();
-    if (now > state.whiteFlashUntil) return "";
-    const opacity = Math.max(0, Math.min(1, (state.whiteFlashUntil - now) / 360));
-    return `<div class="battle-white-flash" style="opacity:${opacity};"></div>`;
-  }
-
-  function renderSurfaceOverlay() {
-    if (!state || !state.surface) return "";
-    const title = state.surface.title || "";
-    const subText = state.surface.subText || "";
-    const kind = state.surface.kind || "notice";
-    return `
-      <div class="battle-surface ${kind}">
-        <div class="battle-surface-card">
-          ${subText ? `<small>${escapeHtml(subText)}</small>` : ""}
-          <b>${escapeHtml(title)}</b>
-        </div>
-      </div>
-    `;
-  }
-
-  function renderControlOverlay() {
-    if (state.deckEdit) return renderDeckEditorOverlay();
-
-    const isResult = state.finished;
-    return `
-      <div class="battle-control-overlay">
-        <div class="battle-control-box">
-          ${isResult ? `
-            <div class="battle-result-title">営業結果</div>
-            <div class="battle-result-grid">
-              <span>成約</span><b>${state.served}</b>
-              <span>離脱</span><b>${state.missed}</b>
-              <span>最大コンボ</span><b>${state.maxCombo}</b>
-              <span>売上</span><b>${state.score}</b>
-            </div>
-          ` : `
-            <div class="battle-result-title">店舗営業プロトタイプ</div>
-            <p class="battle-control-help">30秒で家電星人をどれだけ接客できるか。メンバーはシングルタップ通常、ダブルタップ必殺。サポートは必殺→通常の順。店長HELPは任意操作。CT2倍・売上70%。</p>
-          `}
-          <div class="battle-control-buttons battle-main-buttons">
-            <button data-action="start">${isResult ? "もう一度営業" : "営業開始"}</button>
-            <button data-action="auto">${isResult ? "サポートプレイでもう一度" : "サポートプレイ"}</button>
-            <button data-action="deckEdit">デッキ編成</button>
-            <button data-action="close">戻る</button>
-          </div>
-        </div>
-      </div>
-    `;
-  }
-
-  function renderDeckEditorOverlay() {
-    const selected = state.deckSelection || [];
-    const canDecide = selected.length === 5;
-    const row1 = ["aa", "ab", "ac", "ad", "ae"];
-    const row2 = ["af", "ag", "ah", "ai", "aj"];
-    const row3 = ["ak", "al", "am"];
-
-    return `
-      <div class="battle-control-overlay deck-edit-overlay">
-        <div class="battle-deck-box">
-          <div class="battle-result-title">デッキ編成</div>
-          <p class="battle-control-help">出撃するメンバーを5人選択してください。選択中のキャラは白反転します。選択数：${selected.length}/5</p>
-          <div class="deck-select-grid">
-            <div class="deck-select-row deck-row-five">${row1.map(renderDeckSelectCard).join("")}</div>
-            <div class="deck-select-row deck-row-five">${row2.map(renderDeckSelectCard).join("")}</div>
-            <div class="deck-select-row deck-row-bottom">
-              ${row3.map(renderDeckSelectCard).join("")}
-              <div class="deck-decision-area">
-                <button class="deck-decision-main" data-action="deckDecide" ${canDecide ? "" : "disabled"}>決定</button>
-                <div class="deck-small-buttons">
-                  <button data-action="deckReset">リセット</button>
-                  <button data-action="deckCancel">キャンセル</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    `;
-  }
-
-  function renderDeckSelectCard(staffId) {
-    const s = staffMaster.find(x => x.id === staffId);
-    if (!s) return "";
-    const selected = state.deckSelection && state.deckSelection.includes(staffId);
-    const order = selected ? state.deckSelection.indexOf(staffId) + 1 : "";
-    return `
-      <button class="deck-select-card ${selected ? "selected" : ""}" style="--member-color:${s.color};" data-action="deckToggle" data-deck-id="${s.id}">
-        <span class="deck-select-order">${order}</span>
-        <b>${escapeHtml(s.name)}</b>
-        <small>${escapeHtml(s.attr)}</small>
-        <em>${escapeHtml(s.skillName)}</em>
-      </button>
-    `;
-  }
-
-
-
-  function renderEnemySlots() {
-    const slots = getEnemySlots();
-    return slots.map((enemy, index) => enemy ? renderEnemy(enemy) : renderEnemyDummy(index)).join("");
-  }
-
-  function renderEnemyDummy(index) {
-    return `
-      <article class="battle-enemy-card battle-enemy-dummy" aria-hidden="true">
-        <div class="enemy-head"><span class="enemy-icon">◇</span><span class="enemy-name">開店準備中</span></div>
-        <div class="enemy-attr">家電星人 待機枠 ${index + 1}</div>
-        <div class="enemy-label">HP</div>
-        <div class="battle-bar"><i style="width:0%"></i></div>
-        <div class="enemy-label">受付時間</div>
-        <div class="battle-bar patience"><i style="width:0%"></i></div>
-      </article>
-    `;
-  }
-
-  function renderEnemy(e) {
-    const gaugeRate = Math.max(0, Math.min(100, (e.gauge / e.maxGauge) * 100));
-    const patienceRate = Math.max(0, Math.min(100, (e.patience / e.maxPatience) * 100));
-    const exchangeMax = e.exchangeMax || CHANGE_SECONDS;
-    const exchangeRate = e.exchanging ? Math.max(0, Math.min(100, (1 - e.exchangeLeft / exchangeMax) * 100)) : 0;
-    const target = e.id === state.targetPreviewId;
-    const enemyColor = attrColors[e.attr] || "#ff841f";
-
-    if (e.exchanging) {
-      return `
-        <article class="battle-enemy-card exchanging" data-enemy-id="${e.id}" style="--enemy-color:${enemyColor};">
-          <div class="enemy-head"><span class="enemy-icon">↔</span><span class="enemy-name">ご案内中...</span></div>
-          <div class="enemy-exchange-message">${escapeHtml(e.exchangeMessage)}</div>
-          <div class="enemy-label">交換中 ${Math.max(0, e.exchangeLeft).toFixed(1)}秒</div>
-          <div class="battle-bar exchange"><i style="width:${exchangeRate}%"></i></div>
-          ${renderHitEffects(e.id)}
-        </article>
+    const menuPanel = document.getElementById("menu-panel");
+    if (menuPanel) {
+      menuPanel.classList.remove("hidden");
+      menuPanel.innerHTML = `
+        <button class="menu-item office-menu-main office-status" data-engine-action="store">店舗</button>
+        <button class="menu-item office-menu-main office-status" data-engine-action="members">メンバー</button>
+        <button class="menu-item office-menu-main office-game" data-engine-action="battle">店舗営業</button>
+        <button class="menu-item office-menu-main office-game" data-engine-action="town">外回り</button>
+        <button class="menu-item office-menu-main office-other" data-engine-action="shop">ショップ</button>
+        <button class="menu-item office-menu-main office-other" data-engine-action="settings">設定</button>
       `;
     }
-
-    return `
-      <article class="battle-enemy-card ${e.rare ? "rare" : ""} ${target ? "target" : ""} ${e.defeating ? "defeating" : ""}" data-enemy-id="${e.id}" style="--enemy-color:${enemyColor};">
-        <div class="enemy-head"><span class="enemy-icon">${e.icon}</span><span class="enemy-name">${escapeHtml(e.name)}</span>${e.rare ? "<b>RARE</b>" : ""}</div>
-        ${e.image ? `<div class="enemy-art"><img src="${escapeHtml(e.image)}" alt=""></div>` : ""}
-        <div class="enemy-attr">${escapeHtml(e.attr)} / ${escapeHtml(e.text)}</div>
-        <div class="enemy-label">HP</div>
-        <div class="battle-bar"><i style="width:${gaugeRate}%"></i></div>
-        <div class="enemy-label">受付時間 ${Math.max(0, e.patience).toFixed(1)}秒　ダブルタップでチェンジ</div>
-        <div class="battle-bar patience"><i style="width:${patienceRate}%"></i></div>
-        ${e.defeating ? `<div class="enemy-contract-label">成約!</div>` : ""}
-        ${renderHitEffects(e.id)}
-      </article>
-    `;
+    tenotsuSetOfficeText("ひだまりストア事務所", "上段：ステータス管理 / 中段：ゲームパート / 下段：その他");
+    tenotsuStartOfficeRandomShow("show-office-six-fallback");
+  } catch (err) {
+    console.error("[TENOTSU OFFICE MENU FAILED]", err);
+    if (typeof tenotsuForceShowMenuFallback === "function") tenotsuForceShowMenuFallback("事務所6大メニュー表示失敗");
   }
+}
 
-  function renderHitEffects(enemyId) {
-    if (!state || !state.hitEffects) return "";
-    const now = performance.now();
-    const effects = state.hitEffects.filter(effect => effect.enemyId === enemyId);
-    if (!effects.length) return "";
+function tenotsuRunBootFlow() {
+  if (window.__TENOTSU_BOOT_DONE__) return;
+  window.__TENOTSU_BOOT_DONE__ = true;
 
-    return `<div class="enemy-hit-layer">${effects.map(effect => {
-      const progress = Math.max(0, Math.min(1, (now - effect.createdAt) / effect.life));
-      const opacity = Math.max(0, 1 - progress);
-      const y = -22 * progress;
-      const scale = 1 + progress * 0.18;
-      return `<div class="enemy-hit-pop" style="--hit-color:${effect.color}; opacity:${opacity}; transform:translate(-50%, calc(-50% + ${y}px)) scale(${scale});">
-        <span>${escapeHtml(effect.text)}</span>${effect.subText ? `<small>${escapeHtml(effect.subText)}</small>` : ""}
-      </div>`;
-    }).join("")}</div>`;
-  }
+  const boot = document.getElementById("boot-flow");
+  const bootLogo = boot ? boot.querySelector(".boot-logo") : null;
+  const bootVersion = boot ? boot.querySelector(".boot-version") : null;
+  const bootSub = boot ? boot.querySelector(".boot-sub") : null;
 
-  function renderStaff(s) {
-    const ctReady = s.ct <= 0;
-    const ctRate = Math.max(0, Math.min(100, 100 - (s.ct / s.ctMax) * 100));
-    const skillReady = s.skill >= 100;
-    const hasCardImage = !!s.cardImage;
-    return `
-      <button class="battle-member-card ${ctReady ? "ready" : "cooldown"} ${skillReady ? "skill-ready" : ""} ${s.isLeader ? "leader-card" : ""} ${hasCardImage ? "has-card-art" : ""}" style="--member-color:${s.color};" data-staff-id="${s.id}">
-        ${hasCardImage ? `<div class="member-card-art"><img src="${escapeHtml(s.cardImage)}" alt=""></div>` : ""}
-        <div class="member-card-info">
-          <div class="member-name">${escapeHtml(s.name)}${s.isLeader ? `<em class="leader-badge">LEADER</em>` : ""}</div>
-          <div class="member-attr">${escapeHtml(s.attr)}</div>
-          <div class="member-power">通常1 / 特攻2</div>
-          <div class="member-label">CT</div>
-          <div class="battle-bar member-ct"><i style="width:${ctRate}%"></i></div>
-          <div class="member-label">必殺 ${Math.floor(s.skill)}%</div>
-          <div class="battle-bar member-skill"><i style="width:${Math.min(100, s.skill)}%"></i></div>
-          <div class="member-skill-name">${skillReady ? `必殺OK：${escapeHtml(s.skillName)}` : escapeHtml(s.skillName)}</div>
-        </div>
-      </button>
-    `;
-  }
-
-  function pulseStaff(staffId) {
-    state.targetPreviewId = null;
-  }
-
-  function escapeHtml(value) {
-    return String(value)
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
-  }
-
-  function handleEnemyPointerUp(enemyId, event) {
-    if (!state || !state.running) return;
-
-    const now = performance.now();
-    const isDoubleTap =
-      pendingEnemyTapId === enemyId &&
-      now - pendingEnemyTapAt <= ENEMY_DOUBLE_TAP_MS;
-
-    if (isDoubleTap) {
-      clearPendingEnemyTap();
-      if (event) {
-        event.preventDefault();
-        event.stopPropagation();
+  function finishBoot() {
+    try {
+      if (boot) {
+        boot.classList.add("is-out");
+        window.setTimeout(() => {
+          boot.classList.add("hidden");
+          boot.setAttribute("aria-hidden", "true");
+        }, 420);
       }
-      requestEnemyChange(enemyId);
-      return;
+      tenotsuShowOfficeSixMenu();
+    } catch (err) {
+      console.error("[TENOTSU BOOT FINISH FAILED]", err);
+      if (typeof tenotsuForceShowMenuFallback === "function") tenotsuForceShowMenuFallback("起動フロー終了失敗");
     }
-
-    pendingEnemyTapId = enemyId;
-    pendingEnemyTapAt = now;
   }
 
-  function openDeckEditor() {
-    if (!state || state.running) return;
-    state.deckEdit = true;
-    state.deckSelection = [...activeStaffIds];
-    render();
-  }
-
-  function toggleDeckStaff(staffId) {
-    if (!state || !state.deckEdit) return;
-    const selected = state.deckSelection || [];
-    if (selected.includes(staffId)) {
-      state.deckSelection = selected.filter(id => id !== staffId);
-    } else if (selected.length < 5) {
-      state.deckSelection = [...selected, staffId];
-    } else {
-      state.lastActionText = "デッキは5人までです。入れ替える場合は先に誰かを外してください。";
+  try {
+    if (boot) {
+      boot.classList.remove("hidden", "is-out");
+      boot.setAttribute("aria-hidden", "false");
     }
-    render();
-  }
+    if (bootLogo) bootLogo.textContent = "店長お疲れ様です";
+    if (bootVersion) bootVersion.textContent = window.TENOTSU_BOOT_FLOW_VERSION || "v037_95";
+    if (bootSub) bootSub.textContent = "初期化中…";
 
-  function decideDeckSelection() {
-    if (!state || !state.deckEdit) return;
-    if (!state.deckSelection || state.deckSelection.length !== 5) {
-      state.lastActionText = "メンバーを5人選ぶと決定できます。";
-      render();
-      return;
+    window.setTimeout(() => { if (bootSub) bootSub.textContent = "ひだまりストアへ接続中…"; }, 520);
+    window.setTimeout(() => {
+      if (bootLogo) bootLogo.textContent = "ひだまりストア";
+      if (bootSub) bootSub.textContent = "事務所6大メニューを準備しています";
+    }, 1150);
+    window.setTimeout(finishBoot, 1800);
+  } catch (err) {
+    console.error("[TENOTSU BOOT FAILED]", err);
+    finishBoot();
+  }
+}
+
+window.addEventListener("load", () => {
+  window.setTimeout(tenotsuRunBootFlow, 80);
+});
+
+try {
+  window.tenotsuRunBootFlow = tenotsuRunBootFlow;
+  window.tenotsuShowOfficeSixMenu = tenotsuShowOfficeSixMenu;
+  window.tenotsuEnterOfficeMode = tenotsuEnterOfficeMode;
+  window.tenotsuSetScreenMode = tenotsuSetScreenMode;
+} catch (_) {}
+/* /v037_85 boot flow */
+
+
+/* v037_85 economy/status/album helpers */
+const TENOTSU_ECONOMY_KEY = "tenotsu_economy_v1";
+const TENOTSU_ALBUM_KEY = "tenotsu_album_v1";
+const TENOTSU_STORE_KEY = "tenotsu_store_v1";
+
+function tenotsuLoadJsonStorage(key, fallback = {}) {
+  try { return JSON.parse(localStorage.getItem(key) || JSON.stringify(fallback)); }
+  catch (_) { return fallback; }
+}
+
+function tenotsuSaveJsonStorage(key, value) {
+  try { localStorage.setItem(key, JSON.stringify(value)); }
+  catch (_) {}
+}
+
+function tenotsuGetEconomy() {
+  const e = tenotsuLoadJsonStorage(TENOTSU_ECONOMY_KEY, {});
+  e.totalSales = Math.max(0, Math.floor(Number(e.totalSales) || 0));
+  e.availableSales = Math.max(0, Math.floor(Number(e.availableSales) || 0));
+  e.battleCount = Math.max(0, Math.floor(Number(e.battleCount) || 0));
+  e.lastSales = Math.max(0, Math.floor(Number(e.lastSales) || 0));
+  e.history = Array.isArray(e.history) ? e.history : [];
+  return e;
+}
+
+function tenotsuGetStore() {
+  const s = tenotsuLoadJsonStorage(TENOTSU_STORE_KEY, {});
+  s.storeRank = Math.max(1, Math.floor(Number(s.storeRank) || Number(s.storeLevel) || 1));
+  s.storeLevel = s.storeRank;
+  s.townLevel = Math.max(1, Math.floor(Number(s.townLevel) || 1));
+  s.managerRank = Math.max(1, Math.floor(Number(s.managerRank) || 1));
+  s.facilityLevel = Math.max(1, Math.floor(Number(s.facilityLevel) || 1));
+  s.expenseUsed = Math.max(0, Math.floor(Number(s.expenseUsed) || 0));
+  s.exchangeUsed = Math.max(0, Math.floor(Number(s.exchangeUsed) || 0));
+  s.equipment = Array.isArray(s.equipment) ? s.equipment : [];
+  s.equipped = s.equipped && typeof s.equipped === "object" ? s.equipped : {};
+  s.unlockedEpisodes = Array.isArray(s.unlockedEpisodes) ? s.unlockedEpisodes : [];
+  s.unlockedLandmarks = Array.isArray(s.unlockedLandmarks) ? s.unlockedLandmarks : [];
+  return s;
+}
+
+function tenotsuGetAlbum() {
+  const a = tenotsuLoadJsonStorage(TENOTSU_ALBUM_KEY, {});
+  a.memories = Array.isArray(a.memories) ? a.memories : [];
+  a.scenarios = Array.isArray(a.scenarios) ? a.scenarios : [];
+  a.images = Array.isArray(a.images) ? a.images : [];
+  return a;
+}
+
+function tenotsuSpendSales(amount, purpose) {
+  const price = Math.max(0, Math.floor(Number(amount) || 0));
+  const e = tenotsuGetEconomy();
+  if (e.availableSales < price) return false;
+  e.availableSales -= price;
+  e.history.unshift({ type: "spend", source: purpose || "支出", amount: -price, at: new Date().toISOString() });
+  e.history = e.history.slice(0, 30);
+  tenotsuSaveJsonStorage(TENOTSU_ECONOMY_KEY, e);
+  return true;
+}
+
+function tenotsuUnlockMemory(id, title, text) {
+  const a = tenotsuGetAlbum();
+  if (!a.memories.some(m => m.id === id)) {
+    a.memories.unshift({ id, title, text, at: new Date().toISOString() });
+    tenotsuSaveJsonStorage(TENOTSU_ALBUM_KEY, a);
+  }
+}
+
+function tenotsuShowDynamicPanel(title, html) {
+  tenotsuSetStoryPartActive(false); // v037_93 dynamic panel
+  const menuPanel = document.getElementById("menu-panel");
+  const listPanel = document.getElementById("list-panel");
+  const nameBox = document.getElementById("name");
+  const textBox = document.getElementById("text");
+  if (listPanel) listPanel.classList.add("hidden");
+  if (menuPanel) {
+    menuPanel.classList.remove("hidden");
+    menuPanel.innerHTML = html;
+  }
+  if (nameBox) nameBox.textContent = title || "";
+  if (textBox) textBox.innerHTML = "メニューを選択してください。";
+}
+
+function tenotsuShowStoreStatus() {
+  const e = tenotsuGetEconomy();
+  const s = tenotsuUnlockRankRewards(tenotsuGetStore());
+  const mxp = tenotsuGetManagerExpData();
+  const storeCost = tenotsuRankCost("store", s.storeRank);
+  const townCost = tenotsuRankCost("town", s.townLevel);
+  const managerCost = tenotsuRankCost("manager", s.managerRank);
+  const facilityCost = tenotsuRankCost("facility", s.facilityLevel);
+  const equipped = s.equipped.manager ? (s.equipment.find(eq => eq.id === s.equipped.manager)?.name || s.equipped.manager) : "なし";
+  tenotsuShowDynamicPanel("店舗・店長ステータス", `
+    <div class="status-card">
+      <h3>店長・店舗ステータス</h3>
+      <p>累計売上：<b>${e.totalSales.toLocaleString()}円</b></p>
+      <p>店長Lv：<b>${mxp.level}</b> / ${TENOTSU_MANAGER_MAX_LEVEL}　EXP：${mxp.level >= TENOTSU_MANAGER_MAX_LEVEL ? "MAX" : `${mxp.currentLevelExp.toLocaleString()} / ${mxp.nextLevelExp.toLocaleString()}`}</p>
+      <p>Lv60まで残り：${mxp.remainingToMax.toLocaleString()}EXP</p>
+      <p>使用可能売上：<b>${e.availableSales.toLocaleString()}円</b></p>
+      <p>直近売上：${e.lastSales.toLocaleString()}円 / 営業回数：${e.battleCount.toLocaleString()}回</p>
+      <hr>
+      <p>店舗ランク：<b>${s.storeRank}</b> / 街レベル：<b>${s.townLevel}</b></p>
+      <p>店長ランク：<b>${s.managerRank}</b> / 設備Lv：<b>${s.facilityLevel}</b></p>
+      <p>店長装備：<b>${equipped}</b></p>
+      <p>開放エピソード：${s.unlockedEpisodes.length} / 開放ランドマーク：${s.unlockedLandmarks.length}</p>
+      <button class="menu-item" data-engine-action="claim-login-exp">ログインEXP受取 +100</button>
+      <button class="menu-item" data-engine-action="claim-daily-exp">デイリーEXP受取 +250</button>
+      <button class="menu-item" data-engine-action="claim-outer-exp">外回りEXPテスト +60</button>
+      <button class="menu-item" data-engine-action="rank-store">店舗ランクUP ${storeCost.toLocaleString()}円</button>
+      <button class="menu-item" data-engine-action="rank-town">街レベルUP ${townCost.toLocaleString()}円</button>
+      <button class="menu-item" data-engine-action="rank-manager">店長ランクUP ${managerCost.toLocaleString()}円</button>
+      <button class="menu-item" data-engine-action="facility-up">設備増強 ${facilityCost.toLocaleString()}円</button>
+      <button class="menu-item" data-engine-action="equipment-menu">装備確認</button>
+      <button class="menu-item" data-engine-action="event-exchange">イベントアイテム交換</button>
+      <button class="menu-item" data-engine-action="expense-use">外回り経費に使う</button>
+      <button class="menu-item" data-engine-action="office6">戻る</button>
+    </div>
+  `);
+}
+
+function tenotsuShowAlbum() {
+  const a = tenotsuGetAlbum();
+  const memories = a.memories.length
+    ? a.memories.map(m => `<li><b>${m.title}</b><br><small>${m.text || ""}</small></li>`).join("")
+    : "<li>まだ思い出はありません。店舗営業やシナリオ進行で追加されます。</li>";
+  tenotsuShowDynamicPanel("思い出アルバム", `
+    <div class="status-card">
+      <h3>思い出アルバム</h3>
+      <p>シナリオ、画像、外回りGOOD、店長ランク解放エピソード、店舗ランク解放ランドマークがここに蓄積されます。USBメモリで改装、SDカードで復習チャレンジができます。</p>
+      <p>店長ランクでエピソード開放、店舗ランクでランドマーク開放。</p>
+      <ul class="album-list">${memories}</ul>
+      <button class="menu-item" data-engine-action="members">メンバーへ戻る</button>
+      <button class="menu-item" data-engine-action="office6">事務所へ戻る</button>
+    </div>
+  `);
+}
+
+function tenotsuShowMemberMenu() {
+  tenotsuShowDynamicPanel("メンバー", `
+    <button class="menu-item" data-engine-action="member-list">メンバー一覧</button>
+    <button class="menu-item" data-engine-action="memory-album">思い出アルバム</button>
+    <button class="menu-item" data-engine-action="story-table">ストーリー管理表</button>
+    <button class="menu-item" data-engine-action="title-return-archive">タイトル後メニュー</button>
+    <button class="menu-item" data-engine-action="office6">戻る</button>
+  `);
+}
+
+
+function tenotsuShowEquipmentMenu() {
+  const s = tenotsuGetStore();
+  const list = s.equipment.length
+    ? s.equipment.map(eq => `<button class="menu-item" data-engine-action="equip-item" data-equip-id="${eq.id}">${eq.name}<br><small>${eq.source} / ${eq.effectText || ""}</small></button>`).join("")
+    : `<p>装備品はまだありません。キャラからのプレゼントやイベント交換で入手できます。</p>`;
+  tenotsuShowDynamicPanel("店長装備", `
+    <div class="status-card">
+      <h3>店長装備</h3>
+      <p>キャラからのプレゼント、イベント交換品などを装備できます。</p>
+      ${list}
+      <button class="menu-item" data-engine-action="event-gift-test">テスト：プレゼント装備を受け取る</button>
+      <button class="menu-item" data-engine-action="store">戻る</button>
+    </div>
+  `);
+}
+
+function tenotsuShowShopMenu() {
+  const e = tenotsuGetEconomy();
+  tenotsuShowDynamicPanel("ショップ", `
+    <div class="status-card">
+      <p>使用可能売上：<b>${e.availableSales.toLocaleString()}円</b></p>
+      <button class="menu-item" data-engine-action="secret-word">秘密の言葉</button>
+      <button class="menu-item" data-engine-action="event-exchange">イベントアイテム交換</button>
+      <button class="menu-item" data-engine-action="facility-up">店舗設備増強アイテム</button>
+      <button class="menu-item" data-engine-action="office6">戻る</button>
+    </div>
+  `);
+}
+
+function tenotsuShowShopPlaceholder(title, message) {
+  tenotsuShowDynamicPanel(title, `
+    <div class="status-card">
+      <p>${message}</p>
+      <button class="menu-item" data-engine-action="shop">ショップへ戻る</button>
+      <button class="menu-item" data-engine-action="office6">事務所へ戻る</button>
+    </div>
+  `);
+}
+
+function tenotsuSetExchangeCounterBackground() {
+  try {
+    if (bgEl) bgEl.src = config.bgPath + "bg_exchange_item_counter.png";
+  } catch (_) {}
+}
+
+function tenotsuShowExchangeCounterMenu() {
+  const e = tenotsuGetEconomy();
+  tenotsuSetExchangeCounterBackground();
+  tenotsuShowDynamicPanel("アイテム交換所", `
+    <div class="status-card exchange-counter-card">
+      <h3>アイテム交換所</h3>
+      <p>採用背景：夜のアイテム交換所。イベント交換・限定品交換の画面背景として使用します。</p>
+      <p>使用可能売上：<b>${e.availableSales.toLocaleString()}円</b></p>
+      <button class="menu-item" data-engine-action="event-exchange">イベント交換クリップを交換（1,200円）</button>
+      <button class="menu-item" data-engine-action="shop">ショップへ戻る</button>
+      <button class="menu-item" data-engine-action="office6">事務所へ戻る</button>
+    </div>
+  `);
+}
+
+/* v037_85 rank/equipment/unlock helpers */
+function tenotsuRankCost(type, currentRank) {
+  const rank = Math.max(1, Math.floor(Number(currentRank) || 1));
+  if (type === "store") return rank * 10000;
+  if (type === "town") return rank * 8000;
+  if (type === "manager") return rank * 7000;
+  if (type === "facility") return rank * 5000;
+  return rank * 5000;
+}
+
+function tenotsuGrantEquipment(id, name, source, effectText) {
+  const store = tenotsuGetStore();
+  if (!store.equipment.some(eq => eq.id === id)) {
+    store.equipment.push({ id, name, source, effectText, at: new Date().toISOString() });
+    tenotsuSaveJsonStorage(TENOTSU_STORE_KEY, store);
+    tenotsuUnlockMemory("equipment_" + id, "装備品入手：" + name, source + "で装備品を入手しました。");
+  }
+  return store;
+}
+
+function tenotsuUnlockRankRewards(store) {
+  const s = store || tenotsuGetStore();
+
+  const episodeRules = [
+    { rank: 2, id: "manager_rank_2_episode", title: "店長ランク2エピソード", text: "店長としての一歩を踏み出した記録。" },
+    { rank: 3, id: "manager_rank_3_episode", title: "店長ランク3エピソード", text: "スタッフから頼られる場面が増えてきた。" },
+    { rank: 5, id: "manager_rank_5_episode", title: "店長ランク5エピソード", text: "ひだまりストアの中心として認められた。" }
+  ];
+
+  episodeRules.forEach(rule => {
+    if (s.managerRank >= rule.rank && !s.unlockedEpisodes.includes(rule.id)) {
+      s.unlockedEpisodes.push(rule.id);
+      tenotsuUnlockMemory(rule.id, rule.title, rule.text);
     }
-    saveDeckIds(state.deckSelection);
-    state.staff = getStaffBase().map(s => ({ ...s, ct: 0, skill: 0 }));
-    state.deckEdit = false;
-    state.lastActionText = `デッキを更新しました：${state.staff.map(s => s.name).join(" / ")}`;
-    render();
-  }
-
-  function resetDeckSelection() {
-    if (!state || !state.deckEdit) return;
-    state.deckSelection = [...DEFAULT_STAFF_IDS];
-    render();
-  }
-
-  function cancelDeckEditor() {
-    if (!state || !state.deckEdit) return;
-    state.deckEdit = false;
-    state.deckSelection = [...activeStaffIds];
-    render();
-  }
-
-  document.addEventListener("click", (event) => {
-    if (!root || root.classList.contains("hidden")) return;
-    const button = event.target.closest("button");
-    if (!button || !root.contains(button)) return;
-
-    const action = button.dataset.action;
-    const staffId = button.dataset.staffId;
-
-    if (action === "start") startBattle(false);
-    else if (action === "close") closeBattle();
-    else if (action === "auto") startBattle(true);
-    else if (action === "deckEdit") openDeckEditor();
-    else if (action === "deckToggle") toggleDeckStaff(button.dataset.deckId);
-    else if (action === "deckDecide") decideDeckSelection();
-    else if (action === "deckReset") resetDeckSelection();
-    else if (action === "deckCancel") cancelDeckEditor();
-    else if (action === "autoToggle") toggleAutoBattle();
-    else if (action === "help") return;
   });
+
+  const landmarkRules = [
+    { rank: 2, id: "landmark_techlab_tsukumo", title: "ランドマーク開放：テックラボつくも", text: "街にテックラボつくもが開放されました。" },
+    { rank: 3, id: "landmark_biribiri_denki", title: "ランドマーク開放：ビリビリ電機", text: "ライバル店ビリビリ電機が街に現れました。" },
+    { rank: 4, id: "landmark_mall_event", title: "ランドマーク開放：イベント広場", text: "イベント広場に行けるようになりました。" }
+  ];
+
+  landmarkRules.forEach(rule => {
+    if (s.storeRank >= rule.rank && !s.unlockedLandmarks.includes(rule.id)) {
+      s.unlockedLandmarks.push(rule.id);
+      tenotsuUnlockMemory(rule.id, rule.title, rule.text);
+    }
+  });
+
+  tenotsuSaveJsonStorage(TENOTSU_STORE_KEY, s);
+  return s;
+}
+
+function tenotsuEquipItem(id) {
+  const store = tenotsuGetStore();
+  const item = store.equipment.find(eq => eq.id === id);
+  if (!item) return false;
+  store.equipped.manager = id;
+  tenotsuSaveJsonStorage(TENOTSU_STORE_KEY, store);
+  tenotsuUnlockMemory("equip_" + id, "装備変更：" + item.name, "店長装備に設定しました。");
+  return true;
+}
+
+function tenotsuRankUp(type) {
+  const store = tenotsuGetStore();
+  const keyMap = { store: "storeRank", town: "townLevel", manager: "managerRank", facility: "facilityLevel" };
+  const key = keyMap[type];
+  if (!key) return false;
+  const cost = tenotsuRankCost(type, store[key]);
+  const labelMap = { store: "店舗ランクアップ", town: "街レベルアップ", manager: "店長ランクアップ", facility: "設備増強" };
+  if (!tenotsuSpendSales(cost, labelMap[type])) return false;
+  store[key] += 1;
+  if (type === "store") store.storeLevel = store.storeRank;
+  tenotsuSaveJsonStorage(TENOTSU_STORE_KEY, store);
+  tenotsuUnlockMemory(type + "_rank_" + store[key], labelMap[type], labelMap[type] + "しました。現在Lv/RANK：" + store[key]);
+  tenotsuUnlockRankRewards(store);
+  return true;
+}
+/* /v037_85 rank/equipment/unlock helpers */
+
+window.TenotsuData = {
+  economy: tenotsuGetEconomy,
+  store: tenotsuGetStore,
+  album: tenotsuGetAlbum,
+  spendSales: tenotsuSpendSales,
+  unlockMemory: tenotsuUnlockMemory,
+  showStoreStatus: tenotsuShowStoreStatus,
+  showAlbum: tenotsuShowAlbum,
+  showMemberMenu: tenotsuShowMemberMenu,
+  showShopMenu: tenotsuShowShopMenu,
+  showEquipmentMenu: tenotsuShowEquipmentMenu,
+  rankUp: tenotsuRankUp,
+  grantEquipment: tenotsuGrantEquipment,
+  equipItem: tenotsuEquipItem,
+  managerExp: tenotsuGetManagerExpData,
+  addManagerExp: tenotsuAddManagerExp,
+  claimLoginExp: tenotsuClaimLoginExp,
+  claimDailyExp: tenotsuClaimDailyExp,
+  outerMenu: tenotsuShowOuterMenu,
+  startOuterAdv: tenotsuStartOuterAdv,
+  items: tenotsuGetItems,
+  affection: tenotsuGetAffection,
+  storyMaster: tenotsuGetStoryMaster,
+  expressionFile: tenotsuExpressionFile,
+  expressionPath: tenotsuExpressionPath,
+  memoriesByCharacter: tenotsuGetStoriesByCharacter
+};
+/* /v037_85 economy/status/album helpers */
+
+
+/* v037_85 economy action listener */
+document.addEventListener("click", (event) => {
+  const btn = event.target.closest("[data-engine-action]");
+  if (!btn) return;
+  const action = btn.dataset.engineAction;
+  if (!["office6","member-list","album","memory-list","memory-character","memory-play","story-table","title-return-archive","expression-master","expression-character","memory-album","event-cg-view","album-story-play","center-surface-close","facility-up","event-exchange","expense-use","store","members","shop","auto","skip","cacheclear","secret-word","secret-word-submit","secret-word-hint","rank-store","rank-town","rank-manager","equipment-menu","equip-item","event-gift-test","claim-login-exp","claim-daily-exp","claim-outer-exp","outer-menu","outer-start","outer-glasses","outer-item-test","adv-answer","stamina-test-recover","album-remodel","review-challenge","settings"].includes(action)) return;
+
+  event.preventDefault();
+  event.stopPropagation();
+
+  if (action === "outer-menu") {
+    tenotsuShowOuterMenu();
+  } else if (action === "outer-start") {
+    tenotsuStartOuterAdv();
+  } else if (action === "outer-glasses") {
+    tenotsuUseHikaruGlasses();
+  } else if (action === "outer-item-test") {
+    tenotsuGrantOuterTestItems();
+  } else if (action === "adv-answer") {
+    tenotsuResolveAdvAnswer(btn.dataset.result);
+  } else if (action === "stamina-test-recover") {
+    tenotsuRecoverStamina(5);
+    tenotsuShowOuterMenu();
+  } else if (action === "album-remodel") {
+    tenotsuAlbumRemodel();
+  } else if (action === "review-challenge") {
+    tenotsuReviewChallenge();
+  } else if (action === "office6") {
+    if (typeof tenotsuEnterOfficeMode === "function") tenotsuEnterOfficeMode("action-office6");
+    else if (typeof window.loadList === "function") window.loadList("office6.json");
+    else if (typeof tenotsuShowOfficeSixMenu === "function") tenotsuShowOfficeSixMenu();
+  } else if (action === "store") {
+    tenotsuShowStoreStatus();
+  } else if (action === "members") {
+    tenotsuShowMemberMenu();
+  } else if (action === "shop") {
+    tenotsuSetStoryPartActive(false, "shop");
+    tenotsuShowShopMenu();
+  } else if (action === "member-list") {
+    tenotsuShowMemberListMenu();
+  } else if (action === "title-return-archive") {
+    tenotsuShowTitleReturnMenuArchive();
+  } else if (action === "expression-master") {
+    tenotsuShowExpressionMasterMenu();
+  } else if (action === "expression-character") {
+    tenotsuShowExpressionCharacter(btn.dataset.characterId || "aa");
+  } else if (action === "album" || action === "memory-list" || action === "memory-album") {
+    tenotsuShowMemoryAlbum();
+  } else if (action === "event-cg-view") {
+    tenotsuShowEventCgViewer(btn.dataset.cgPath || "", btn.dataset.cgTitle || "イベントCG", btn.dataset.cgScenario || "", btn.dataset.characterId || "manager");
+  } else if (action === "album-story-play") {
+    const scenario = btn.dataset.scenario;
+    const characterId = btn.dataset.characterId || "manager";
+    tenotsuPushReturnMenu("memory-album", characterId);
+    tenotsuCloseCenterSurface();
+    if (scenario && typeof window.loadScenario === "function") window.loadScenario(scenario);
+  } else if (action === "center-surface-close") {
+    tenotsuCloseCenterSurface();
+  } else if (action === "memory-character") {
+    tenotsuShowMemoryCharacterStories(btn.dataset.characterId || "manager");
+  } else if (action === "memory-play") {
+    const scenario = btn.dataset.scenario;
+    const characterId = btn.dataset.characterId || window.__TENOTSU_LAST_MEMORY_CHARACTER__ || "manager";
+    tenotsuPushReturnMenu("memory-character", characterId);
+    if (scenario && typeof window.loadScenario === "function") window.loadScenario(scenario);
+  } else if (action === "story-table") {
+    tenotsuShowStoryManagementTable();
+  } else if (action === "settings") {
+    tenotsuSetStoryPartActive(false, "settings");
+    if (typeof window.loadMenu === "function") window.loadMenu("menu01.json");
+  } else if (action === "claim-login-exp") {
+    tenotsuClaimLoginExp();
+    tenotsuShowStoreStatus();
+  } else if (action === "claim-daily-exp") {
+    tenotsuClaimDailyExp();
+    tenotsuShowStoreStatus();
+  } else if (action === "claim-outer-exp") {
+    tenotsuClaimOuterExp();
+    tenotsuShowStoreStatus();
+  } else if (action === "secret-word") {
+    tenotsuShowSecretWordMenu();
+  } else if (action === "secret-word-submit") {
+    tenotsuSubmitSecretWord();
+  } else if (action === "secret-word-hint") {
+    tenotsuShowSecretWordHint();
+  } else if (action === "rank-store") {
+    tenotsuRankUp("store");
+    tenotsuShowStoreStatus();
+  } else if (action === "rank-town") {
+    tenotsuRankUp("town");
+    tenotsuShowStoreStatus();
+  } else if (action === "rank-manager") {
+    tenotsuRankUp("manager");
+    tenotsuShowStoreStatus();
+  } else if (action === "facility-up") {
+    tenotsuRankUp("facility");
+    tenotsuShowStoreStatus();
+  } else if (action === "equipment-menu") {
+    tenotsuShowEquipmentMenu();
+  } else if (action === "equip-item") {
+    tenotsuEquipItem(btn.dataset.equipId);
+    tenotsuShowEquipmentMenu();
+  } else if (action === "event-gift-test") {
+    tenotsuGrantEquipment("gift_hina_badge", "緋奈の応援バッジ", "キャラからのプレゼント", "営業開始時の気分が上がる");
+    tenotsuShowEquipmentMenu();
+  } else if (action === "event-exchange") {
+    if (tenotsuSpendSales(1200, "イベントアイテム交換")) {
+      const store = tenotsuGetStore();
+      store.exchangeUsed += 1200;
+      tenotsuSaveJsonStorage(TENOTSU_STORE_KEY, store);
+      tenotsuGrantEquipment("event_manager_clip", "イベント交換クリップ", "イベントアイテム交換", "店長ランク経験に関係する予定");
+      tenotsuUnlockMemory("event_exchange_001", "イベント交換の記録", "売上を使ってイベントアイテムを交換しました。");
+    }
+    tenotsuShowExchangeCounterMenu();
+  } else if (action === "expense-use") {
+    if (tenotsuSpendSales(800, "外回り経費")) {
+      const store = tenotsuGetStore();
+      store.expenseUsed += 800;
+      tenotsuSaveJsonStorage(TENOTSU_STORE_KEY, store);
+      tenotsuUnlockMemory("expense_001", "外回りの準備", "外回り経費を使いました。");
+    }
+    tenotsuShowStoreStatus();
+  }
+}, true);
+/* /v037_85 economy action listener */
+
+
+/* v037_85 manager level/EXP helpers */
+const TENOTSU_MANAGER_EXP_KEY = "tenotsu_manager_exp_v1";
+const TENOTSU_MANAGER_MAX_LEVEL = 60;
+
+function tenotsuManagerNeedExp(level) {
+  const lv = Math.max(1, Math.floor(Number(level) || 1));
+  if (lv >= TENOTSU_MANAGER_MAX_LEVEL) return 0;
+  return Math.floor(140 + 22 * Math.pow(lv - 1, 1.45));
+}
+
+function tenotsuManagerTotalExpForLevel(level) {
+  const target = Math.max(1, Math.min(TENOTSU_MANAGER_MAX_LEVEL, Math.floor(Number(level) || 1)));
+  let total = 0;
+  for (let lv = 1; lv < target; lv++) total += tenotsuManagerNeedExp(lv);
+  return total;
+}
+
+function tenotsuManagerTotalExpToMax() {
+  return tenotsuManagerTotalExpForLevel(TENOTSU_MANAGER_MAX_LEVEL);
+}
+
+function tenotsuGetManagerExpData() {
+  const data = tenotsuLoadJsonStorage(TENOTSU_MANAGER_EXP_KEY, {});
+  data.totalExp = Math.max(0, Math.floor(Number(data.totalExp) || 0));
+  data.history = Array.isArray(data.history) ? data.history : [];
+  let level = 1;
+  let used = 0;
+  for (let lv = 1; lv < TENOTSU_MANAGER_MAX_LEVEL; lv++) {
+    const need = tenotsuManagerNeedExp(lv);
+    if (used + need > data.totalExp) break;
+    used += need;
+    level = lv + 1;
+  }
+  data.level = level;
+  data.currentLevelExp = Math.max(0, data.totalExp - used);
+  data.nextLevelExp = level >= TENOTSU_MANAGER_MAX_LEVEL ? 0 : tenotsuManagerNeedExp(level);
+  data.remainingToMax = Math.max(0, tenotsuManagerTotalExpToMax() - data.totalExp);
+  return data;
+}
+
+function tenotsuAddManagerExp(amount, source = "EXP") {
+  const value = Math.max(0, Math.floor(Number(amount) || 0));
+  const data = tenotsuGetManagerExpData();
+  const beforeLevel = data.level;
+  data.totalExp = Math.min(tenotsuManagerTotalExpToMax(), data.totalExp + value);
+  const next = tenotsuGetManagerExpDataFromValue(data.totalExp);
+  data.level = next.level;
+  data.currentLevelExp = next.currentLevelExp;
+  data.nextLevelExp = next.nextLevelExp;
+  data.remainingToMax = next.remainingToMax;
+  data.updatedAt = new Date().toISOString();
+  data.history.unshift({ source, exp: value, at: data.updatedAt });
+  data.history = data.history.slice(0, 30);
+  tenotsuSaveJsonStorage(TENOTSU_MANAGER_EXP_KEY, data);
+  if (data.level > beforeLevel) {
+    tenotsuUnlockMemory("manager_level_" + data.level, "店長Lv" + data.level + "到達", "店長レベルが" + data.level + "になりました。");
+  }
+  return data;
+}
+
+function tenotsuGetManagerExpDataFromValue(totalExp) {
+  const data = { totalExp: Math.max(0, Math.floor(Number(totalExp) || 0)), history: [] };
+  let level = 1;
+  let used = 0;
+  for (let lv = 1; lv < TENOTSU_MANAGER_MAX_LEVEL; lv++) {
+    const need = tenotsuManagerNeedExp(lv);
+    if (used + need > data.totalExp) break;
+    used += need;
+    level = lv + 1;
+  }
+  data.level = level;
+  data.currentLevelExp = Math.max(0, data.totalExp - used);
+  data.nextLevelExp = level >= TENOTSU_MANAGER_MAX_LEVEL ? 0 : tenotsuManagerNeedExp(level);
+  data.remainingToMax = Math.max(0, tenotsuManagerTotalExpToMax() - data.totalExp);
+  return data;
+}
+
+function tenotsuTodayKey() {
+  const d = new Date();
+  return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+}
+
+function tenotsuClaimLoginExp() {
+  const data = tenotsuGetManagerExpData();
+  const today = tenotsuTodayKey();
+  if (data.lastLoginExpDate === today) return false;
+  const updated = tenotsuAddManagerExp(100, "ログインボーナス");
+  updated.lastLoginExpDate = today;
+  tenotsuSaveJsonStorage(TENOTSU_MANAGER_EXP_KEY, updated);
+  tenotsuUnlockMemory("login_exp_" + today, "ログインボーナス", "店長EXPを100獲得しました。");
+  return true;
+}
+
+function tenotsuClaimDailyExp() {
+  const data = tenotsuGetManagerExpData();
+  const today = tenotsuTodayKey();
+  if (data.lastDailyExpDate === today) return false;
+  const updated = tenotsuAddManagerExp(250, "デイリー業務");
+  updated.lastDailyExpDate = today;
+  tenotsuSaveJsonStorage(TENOTSU_MANAGER_EXP_KEY, updated);
+  tenotsuUnlockMemory("daily_exp_" + today, "デイリー業務完了", "店長EXPを250獲得しました。");
+  return true;
+}
+
+function tenotsuClaimOuterExp() {
+  tenotsuAddManagerExp(60, "外回り");
+  tenotsuUnlockMemory("outer_exp_first", "外回りの記録", "外回りで経験を積みました。");
+  return true;
+}
+/* /v037_85 manager level/EXP helpers */
+
+
+/* v037_85 outer ADV / encounter / affection / item helpers */
+const TENOTSU_STAMINA_KEY = "tenotsu_stamina_v1";
+const TENOTSU_AFFECTION_KEY = "tenotsu_affection_v1";
+const TENOTSU_ITEM_KEY = "tenotsu_items_v1";
+const TENOTSU_ADV_LOG_KEY = "tenotsu_adv_log_v1";
+const TENOTSU_OUTER_STAMINA_COST = 1;
+const TENOTSU_OUTER_BASE_ENCOUNTER = 0.50;
+
+const TENOTSU_ADV_CHARACTERS = [
+  { id: "aa", name: "緋奈", good: "一緒にカレーでも食べに行く？", fine: "少し休憩する？", bad: "暗算の練習をしよう", topic: "商店街のカレー屋の前で、緋奈が立ち止まっている。" },
+  { id: "ab", name: "藍", good: "新しいパン屋、一緒に見に行く？", fine: "少し休憩する？", bad: "パソコン売り場の応援頼める？", topic: "パン屋の紙袋を抱えた藍と目が合った。" },
+  { id: "ac", name: "翠", good: "その分析、もう少し聞かせて", fine: "一緒に確認しよう", bad: "気合いで何とかなるだろ", topic: "翠がタブレット片手に通行量を調べている。" },
+  { id: "ad", name: "こがね", good: "新作スマホケース、似合いそう", fine: "買い物中？", bad: "今日は地味だね", topic: "こがねがショーウィンドウを楽しそうに眺めている。" },
+  { id: "ae", name: "琥珀", good: "そのイヤホン、音を聴かせて", fine: "元気そうだな", bad: "お化け屋敷に行こう", topic: "琥珀がスポーツショップの前で足を止めている。" },
+  { id: "af", name: "真花", good: "無理しなくて大丈夫だよ", fine: "買い物かな？", bad: "男の店員さんに聞いてみよう", topic: "真花が少し困った顔で案内板を見ている。" },
+  { id: "ag", name: "雪乃", good: "静かな和菓子屋に寄ってみる？", fine: "散歩中？", bad: "人混みのイベントへ行こう", topic: "雪乃が涼しげな表情で空を見上げている。" },
+  { id: "ah", name: "美空", good: "夏物売場の意見を聞かせて", fine: "外回り中？", bad: "英語で案内してみて", topic: "美空が爽やかに商店街を歩いている。" },
+  { id: "ai", name: "夜空", good: "加湿器の話、聞かせて", fine: "調子はどう？", bad: "お世辞でも言ってよ", topic: "夜空が静かに冬物家電のポスターを見ている。" },
+  { id: "aj", name: "桃", good: "その動画企画、面白そう", fine: "撮影中？", bad: "家事の配信にしよう", topic: "桃がアクションカメラを構えている。" },
+  { id: "ak", name: "彩愛", good: "その所作、すごく綺麗ですね", fine: "買い物ですか？", bad: "泳ぎに行きましょう", topic: "彩愛が商店街の掃除当番を手伝っている。" },
+  { id: "al", name: "里美", good: "美味しいお菓子、探しに行く？", fine: "お疲れさま", bad: "狭い倉庫の整理を頼む", topic: "里美がお菓子屋の前で幸せそうにしている。" },
+  { id: "am", name: "萌", good: "リラックスできる場所に寄ろう", fine: "大丈夫？", bad: "人の多い駅前へ行こう", topic: "萌が森林ウォーキングのパンフレットを見ている。" }
+];
+
+function tenotsuGetStamina() {
+  const s = tenotsuLoadJsonStorage(TENOTSU_STAMINA_KEY, {});
+  s.max = Math.max(5, Math.floor(Number(s.max) || 10));
+  s.current = Math.max(0, Math.min(s.max, Math.floor(Number(s.current ?? s.max) || s.max)));
+  s.updatedAt = s.updatedAt || new Date().toISOString();
+  return s;
+}
+
+function tenotsuSaveStamina(stamina) {
+  tenotsuSaveJsonStorage(TENOTSU_STAMINA_KEY, stamina);
+}
+
+function tenotsuUseStamina(amount) {
+  const cost = Math.max(1, Math.floor(Number(amount) || 1));
+  const s = tenotsuGetStamina();
+  if (s.current < cost) return false;
+  s.current -= cost;
+  s.updatedAt = new Date().toISOString();
+  tenotsuSaveStamina(s);
+  return true;
+}
+
+function tenotsuRecoverStamina(amount) {
+  const s = tenotsuGetStamina();
+  s.current = Math.min(s.max, s.current + Math.max(1, Math.floor(Number(amount) || 1)));
+  s.updatedAt = new Date().toISOString();
+  tenotsuSaveStamina(s);
+  return s;
+}
+
+function tenotsuGetItems() {
+  const data = tenotsuLoadJsonStorage(TENOTSU_ITEM_KEY, {});
+  data.items = data.items && typeof data.items === "object" ? data.items : {};
+  return data;
+}
+
+function tenotsuAddItem(id, count = 1) {
+  const data = tenotsuGetItems();
+  data.items[id] = Math.max(0, Math.floor(Number(data.items[id]) || 0)) + Math.max(1, Math.floor(Number(count) || 1));
+  tenotsuSaveJsonStorage(TENOTSU_ITEM_KEY, data);
+  return data;
+}
+
+function tenotsuUseItem(id, count = 1) {
+  const data = tenotsuGetItems();
+  const need = Math.max(1, Math.floor(Number(count) || 1));
+  const have = Math.max(0, Math.floor(Number(data.items[id]) || 0));
+  if (have < need) return false;
+  data.items[id] = have - need;
+  tenotsuSaveJsonStorage(TENOTSU_ITEM_KEY, data);
+  return true;
+}
+
+function tenotsuGetAffection() {
+  const data = tenotsuLoadJsonStorage(TENOTSU_AFFECTION_KEY, {});
+  data.characters = data.characters && typeof data.characters === "object" ? data.characters : {};
+  return data;
+}
+
+function tenotsuAddAffection(charId, amount) {
+  const data = tenotsuGetAffection();
+  const current = Math.max(0, Number(data.characters[charId]) || 0);
+  data.characters[charId] = Math.round((current + Number(amount || 0)) * 10) / 10;
+  tenotsuSaveJsonStorage(TENOTSU_AFFECTION_KEY, data);
+  return data.characters[charId];
+}
+
+function tenotsuLogAdv(entry) {
+  const data = tenotsuLoadJsonStorage(TENOTSU_ADV_LOG_KEY, {});
+  data.history = Array.isArray(data.history) ? data.history : [];
+  data.history.unshift({ ...entry, at: new Date().toISOString() });
+  data.history = data.history.slice(0, 50);
+  tenotsuSaveJsonStorage(TENOTSU_ADV_LOG_KEY, data);
+}
+
+function tenotsuRandomChoice(list) {
+  return list[Math.floor(Math.random() * list.length)];
+}
+
+function tenotsuShowOuterMenu() {
+  const stamina = tenotsuGetStamina();
+  const items = tenotsuGetItems().items;
+  tenotsuShowDynamicPanel("外回り", `
+    <div class="status-card adv-card">
+      <h3>外回り</h3>
+      <p>スタミナ：<b>${stamina.current} / ${stamina.max}</b>　消費：${TENOTSU_OUTER_STAMINA_COST}</p>
+      <p>通常遭遇率：${Math.round(TENOTSU_OUTER_BASE_ENCOUNTER * 100)}%</p>
+      <p>神社のお守り：${items.encounter_charm || 0} / ひかるの眼鏡：${items.hikaru_glasses || 0}</p>
+      <p>USBメモリ：${items.album_usb || 0} / SDカード：${items.review_sd || 0}</p>
+      <button class="menu-item" data-engine-action="outer-start">外回りへ行く</button>
+      <button class="menu-item" data-engine-action="outer-glasses">ひかるの眼鏡で気配を見る</button>
+      <button class="menu-item" data-engine-action="outer-item-test">テスト：外回りアイテムを受け取る</button>
+      <button class="menu-item" data-engine-action="album-remodel">アルバム改装 USBメモリ消費</button>
+      <button class="menu-item" data-engine-action="review-challenge">復習チャレンジ SDカード消費</button>
+      <button class="menu-item" data-engine-action="office6">戻る</button>
+    </div>
+  `);
+}
+
+function tenotsuStartOuterAdv() {
+  if (!tenotsuUseStamina(TENOTSU_OUTER_STAMINA_COST)) {
+    tenotsuShowDynamicPanel("外回り", `
+      <div class="status-card adv-card">
+        <h3>スタミナ不足</h3>
+        <p>外回りに行くにはスタミナが足りません。</p>
+        <button class="menu-item" data-engine-action="stamina-test-recover">テスト：スタミナ回復</button>
+        <button class="menu-item" data-engine-action="outer-menu">戻る</button>
+      </div>
+    `);
+    return;
+  }
+
+  let chance = TENOTSU_OUTER_BASE_ENCOUNTER;
+  let charmUsed = false;
+  if (tenotsuUseItem("encounter_charm", 1)) {
+    chance += 0.25;
+    charmUsed = true;
+  }
+
+  const encounter = Math.random() < chance;
+  tenotsuAddManagerExp(encounter ? 60 : 20, encounter ? "外回り遭遇" : "外回り");
+  if (!encounter) {
+    const lines = [
+      "……今日は誰にも会わなかったな。まあ、こういう日もあるか。",
+      "外回りというより、ただの散歩になってしまった……。",
+      "商店街の空気は悪くない。収穫はなかったけど、気分転換にはなったな。",
+      "次は誰かに会えるといいんだけどな。"
+    ];
+    const line = tenotsuRandomChoice(lines);
+    tenotsuLogAdv({ type: "outer_none", text: line, charmUsed });
+    tenotsuShowDynamicPanel("外回り", `
+      <div class="status-card adv-card">
+        <h3>遭遇なし</h3>
+        <p>店長「${line}」</p>
+        <p>店長EXP +20${charmUsed ? " / 神社のお守りを使用" : ""}</p>
+        <button class="menu-item" data-engine-action="office6">事務所へ戻る</button>
+      </div>
+    `);
+    return;
+  }
+
+  const chara = tenotsuRandomChoice(TENOTSU_ADV_CHARACTERS);
+  window.__TENOTSU_CURRENT_ADV__ = chara;
+  tenotsuLogAdv({ type: "outer_encounter", charId: chara.id, charName: chara.name, charmUsed });
+  tenotsuShowAdvEncounter(chara, charmUsed);
+}
+
+function tenotsuShowAdvEncounter(chara, charmUsed = false) {
+  tenotsuShowDynamicPanel("外回りコミュ", `
+    <div class="status-card adv-card">
+      <h3>${chara.name}と遭遇</h3>
+      <p>${chara.topic}</p>
+      <p>どう声をかける？${charmUsed ? "<br><small>神社のお守りのご利益で出会えた気がする。</small>" : ""}</p>
+      <button class="menu-item" data-engine-action="adv-answer" data-result="GOOD">${chara.good}</button>
+      <button class="menu-item" data-engine-action="adv-answer" data-result="FINE">${chara.fine}</button>
+      <button class="menu-item" data-engine-action="adv-answer" data-result="BAD">${chara.bad}</button>
+    </div>
+  `);
+}
+
+function tenotsuResolveAdvAnswer(result) {
+  const chara = window.__TENOTSU_CURRENT_ADV__;
+  if (!chara) {
+    tenotsuShowOuterMenu();
+    return;
+  }
+
+  let affection = 0;
+  let albumText = "";
+  if (result === "GOOD") {
+    affection = 1;
+    const total = tenotsuAddAffection(chara.id, 1);
+    albumText = `${chara.name}との外回りコミュでGOOD。好感度が${total}になりました。`;
+    tenotsuUnlockMemory(`outer_good_${chara.id}_${Date.now()}`, `${chara.name}との外回り`, albumText);
+  } else if (result === "FINE") {
+    affection = 0.5;
+    tenotsuAddAffection(chara.id, 0.5);
+    albumText = `${chara.name}との外回りコミュでFINE。`;
+  } else {
+    albumText = `${chara.name}との外回りコミュでBAD。`;
+  }
+
+  tenotsuLogAdv({ type: "outer_result", charId: chara.id, charName: chara.name, result, affection });
+  const msg = result === "GOOD"
+    ? "会話が弾んだ。思い出アルバムにも記録された。"
+    : result === "FINE"
+      ? "悪くない会話だった。少し距離が縮まった気がする。"
+      : "今日はうまく話が噛み合わなかった。";
+
+  window.__TENOTSU_CURRENT_ADV__ = null;
+
+  tenotsuShowDynamicPanel("外回り結果", `
+    <div class="status-card adv-card">
+      <h3>${result}</h3>
+      <p>${msg}</p>
+      <p>好感度：${affection > 0 ? "+" + affection : "変化なし"}</p>
+      <button class="menu-item" data-engine-action="office6">事務所へ戻る</button>
+    </div>
+  `);
+}
+
+function tenotsuUseHikaruGlasses() {
+  if (!tenotsuUseItem("hikaru_glasses", 1)) {
+    tenotsuShowDynamicPanel("ひかるの眼鏡", `
+      <div class="status-card adv-card">
+        <h3>ひかるの眼鏡</h3>
+        <p>手元にありません。キャラがいるかどうかを確認できる便利アイテムです。</p>
+        <button class="menu-item" data-engine-action="outer-menu">戻る</button>
+      </div>
+    `);
+    return;
+  }
+  const likely = Math.random() < 0.65;
+  tenotsuShowDynamicPanel("ひかるの眼鏡", `
+    <div class="status-card adv-card">
+      <h3>ひかるの眼鏡</h3>
+      <p>${likely ? "今日は誰かがいそうです。" : "今はあまり気配がありません。"}</p>
+      <p><small>次の外回り判断に使えます。</small></p>
+      <button class="menu-item" data-engine-action="outer-menu">戻る</button>
+    </div>
+  `);
+}
+
+function tenotsuAlbumRemodel() {
+  if (!tenotsuUseItem("album_usb", 1)) {
+    tenotsuShowDynamicPanel("アルバム改装", `
+      <div class="status-card adv-card">
+        <h3>USBメモリ不足</h3>
+        <p>アルバム改装にはUSBメモリが必要です。</p>
+        <button class="menu-item" data-engine-action="outer-menu">戻る</button>
+      </div>
+    `);
+    return;
+  }
+  tenotsuUnlockMemory("album_remodel_001", "アルバム改装", "USBメモリを使って、思い出アルバムを整理しました。");
+  tenotsuShowAlbum();
+}
+
+function tenotsuReviewChallenge() {
+  if (!tenotsuUseItem("review_sd", 1)) {
+    tenotsuShowDynamicPanel("復習チャレンジ", `
+      <div class="status-card adv-card">
+        <h3>SDカード不足</h3>
+        <p>復習チャレンジにはSDカードが必要です。</p>
+        <button class="menu-item" data-engine-action="outer-menu">戻る</button>
+      </div>
+    `);
+    return;
+  }
+  tenotsuAddManagerExp(120, "復習チャレンジ");
+  tenotsuUnlockMemory("review_challenge_001", "復習チャレンジ", "SDカードを使って、過去の思い出を復習しました。");
+  tenotsuShowAlbum();
+}
+
+function tenotsuGrantOuterTestItems() {
+  tenotsuAddItem("encounter_charm", 3);
+  tenotsuAddItem("hikaru_glasses", 2);
+  tenotsuAddItem("album_usb", 2);
+  tenotsuAddItem("review_sd", 2);
+  tenotsuUnlockMemory("outer_items_test", "外回り道具セット", "神社のお守り、ひかるの眼鏡、USBメモリ、SDカードを受け取りました。");
+  tenotsuShowOuterMenu();
+}
+/* /v037_85 outer ADV / encounter / affection / item helpers */
+
+
+/* v037_85: 左メニューをダブルクリックからクリックプレス/タップホールドへ変更 */
+(function setupTenotsuLongPressMenu() {
+  if (window.__TENOTSU_LONG_PRESS_MENU_READY__) return;
+  window.__TENOTSU_LONG_PRESS_MENU_READY__ = true;
+
+  const HOLD_MS = 620;
+  let holdTimer = null;
+  let holdStart = null;
+  let moved = false;
+
+  function isBattleArea(target) {
+    return !!(target && target.closest && target.closest("#battle-root"));
+  }
+
+  function clearHold() {
+    if (holdTimer) {
+      clearTimeout(holdTimer);
+      holdTimer = null;
+    }
+    holdStart = null;
+    moved = false;
+  }
+
+  function openHoldMenu() {
+    if (window.__TENOTSU_UI_POINTER_ACTIVE__) { clearHold(); return; }
+    clearHold();
+    if (typeof window.tenotsuOpenLeftOfficeMenu === "function") {
+      window.tenotsuOpenLeftOfficeMenu();
+    } else if (typeof window.loadList === "function") {
+      window.loadList("office6.json");
+    }
+  }
+
+  document.addEventListener("dblclick", (event) => {
+    // v037_85以降、左メニューはダブルクリックでは出さない。
+    // 通常の会話進行ダブルクリックやバトル側処理を潰しすぎないため、バトル内は無視。
+    if (!isBattleArea(event.target)) {
+      event.stopPropagation();
+      event.preventDefault();
+    }
+  }, true);
 
   document.addEventListener("pointerdown", (event) => {
-    if (!root || root.classList.contains("hidden")) return;
+    if (event.button !== undefined && event.button !== 0) return;
+    if (isBattleArea(event.target)) return;
+    if (event.target.closest && event.target.closest("button, a, input, select, textarea, [data-engine-action], .menu-item, .list-item, #menu-panel, #list-panel, .status-card, .memory-card, .memory-table-wrap, .story-management-surface, .center-surface-window, .secret-word-card")) return;
 
-    const helpButton = event.target.closest('button[data-action="help"]');
-    if (helpButton && root.contains(helpButton)) {
-      handleHelpClick(event);
-      return;
+    holdStart = { x: event.clientX, y: event.clientY, t: Date.now() };
+    moved = false;
+    holdTimer = setTimeout(openHoldMenu, HOLD_MS);
+  }, true);
+
+  document.addEventListener("pointermove", (event) => {
+    if (!holdStart) return;
+    const dx = Math.abs(event.clientX - holdStart.x);
+    const dy = Math.abs(event.clientY - holdStart.y);
+    if (dx > 16 || dy > 16) {
+      moved = true;
+      clearHold();
     }
+  }, true);
 
-    const staffButton = event.target.closest("button[data-staff-id]");
-    if (!staffButton || !root.contains(staffButton)) return;
-    handleStaffPointer(staffButton.dataset.staffId, event);
-  }, { passive: false });
-
-  document.addEventListener("pointerup", (event) => {
-    if (!root || root.classList.contains("hidden")) return;
-
-    const enemyCard = event.target.closest("[data-enemy-id]");
-    if (enemyCard && root.contains(enemyCard)) {
-      handleEnemyPointerUp(Number(enemyCard.dataset.enemyId), event);
-      return;
-    }
-  }, { passive: false });
-
-  window.BattleProto = { openBattle, closeBattle, startBattle, autoOneMove, toggleAutoBattle, useManagerHelp };
-  window.startDeckBattlePrototype = openBattle;
+  document.addEventListener("pointerup", clearHold, true);
+  document.addEventListener("pointercancel", clearHold, true);
 })();
+/* /v037_85 */
+
+/* v037_85: 思い出アルバム / イベントCG鑑賞 */
+async function tenotsuLoadEventCgAlbumData() {
+  if (window.__TENOTSU_EVENT_CG_ALBUM__) return window.__TENOTSU_EVENT_CG_ALBUM__;
+  const data = await safeFetchJson("scenario/data/event_cg_album.json?t=" + Date.now(), "event_cg_album.json");
+  window.__TENOTSU_EVENT_CG_ALBUM__ = data;
+  return data;
+}
+
+async function tenotsuShowMemoryAlbum() {
+  const data = await tenotsuLoadEventCgAlbumData();
+  const items = Array.isArray(data.items) ? data.items : [];
+  const cards = items.map(item => {
+    const isUnlocked = item.isUnlocked !== false;
+    const thumb = isUnlocked ? (item.thumbnailColor || item.path) : (item.thumbnailMono || item.thumbnailColor || item.path);
+    const mono = item.thumbnailMono || "";
+    const scenarioButton = item.scenario ? `<button class="mini-action" data-engine-action="album-story-play" data-scenario="${item.scenario}" data-character-id="${item.characterId || "manager"}">シナリオ再生</button>` : "";
+    return `
+      <div class="album-card ${isUnlocked ? "unlocked" : "locked"}">
+        <button class="album-thumb" data-engine-action="event-cg-view" data-cg-path="${item.path}" data-cg-title="${item.title}" data-cg-scenario="${item.scenario || ""}" data-character-id="${item.characterId || "manager"}">
+          <img src="${thumb}" alt="${item.title}" loading="lazy">
+          <span>${item.title}</span>
+        </button>
+        <div class="album-card-meta">
+          <span>${item.characterName || item.type || "CG"}</span>
+          ${mono ? `<span class="album-mono-note">モノクロサムネ登録済</span>` : ""}
+        </div>
+        <div class="album-card-actions">
+          <button class="mini-action" data-engine-action="event-cg-view" data-cg-path="${item.path}" data-cg-title="${item.title}" data-cg-scenario="${item.scenario || ""}" data-character-id="${item.characterId || "manager"}">CG鑑賞</button>
+          ${scenarioButton}
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  tenotsuShowCenterSurface("思い出アルバム", `
+    <div class="status-card memory-card memory-album-surface">
+      <h3>思い出アルバム</h3>
+      <p class="surface-note">イベントCG鑑賞モードです。カラー/モノクロサムネとシナリオ再生を管理します。</p>
+      <div class="album-grid">
+        ${cards || "<p>表示できるイベントCGがまだありません。</p>"}
+      </div>
+      <button class="menu-item" data-engine-action="members">メンバーへ戻る</button>
+    </div>
+  `);
+}
+
+function tenotsuShowEventCgViewer(path, title, scenario = "", characterId = "manager") {
+  const playButton = scenario ? `<button class="menu-item" data-engine-action="album-story-play" data-scenario="${scenario}" data-character-id="${characterId || "manager"}">この思い出を再生</button>` : "";
+  tenotsuShowCenterSurface(title || "イベントCG", `
+    <div class="status-card memory-card event-cg-viewer">
+      <img src="${path}" alt="${title || "イベントCG"}">
+      <div class="event-cg-caption">${title || ""}</div>
+      ${playButton}
+      <button class="menu-item" data-engine-action="memory-album">思い出アルバムへ戻る</button>
+    </div>
+  `);
+}
+/* /v037_85 */
 
 
-/* v037_93 office return after battle hide */
-(function(){
-  if (window.__TENOTSU_BATTLE_OFFICE_OBSERVER__) return;
-  window.__TENOTSU_BATTLE_OFFICE_OBSERVER__ = true;
-  window.addEventListener("load", function(){
-    const root = document.getElementById("battle-root");
-    if (!root || !window.MutationObserver) return;
-    const obs = new MutationObserver(function(){
-      if (root.classList.contains("hidden") && document.body.classList.contains("battle-screen")) {
-        if (typeof window.tenotsuEnterOfficeMode === "function") window.tenotsuEnterOfficeMode("battle-end");
-      }
-    });
-    obs.observe(root, { attributes: true, attributeFilter: ["class"] });
+
+/* v037_85: 左メニュー内容 / 思い出ストーリー管理 */
+const TENOTSU_STORY_MASTER = [
+  {
+    "characterId": "manager",
+    "characterName": "店長",
+    "storyId": "tutorial_001",
+    "title": "チュートリアル",
+    "type": "tutorial",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "000start.json"
+  },
+  {
+    "characterId": "manager",
+    "characterName": "店長",
+    "storyId": "prologue_001",
+    "title": "プロローグ",
+    "type": "prologue",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "gamestart.json"
+  },
+  {
+    "characterId": "aa",
+    "characterName": "緋奈",
+    "storyId": "aa_intro_001",
+    "title": "緋奈の自己紹介",
+    "type": "intro",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "intro_hina.json"
+  },
+  {
+    "characterId": "aa",
+    "characterName": "緋奈",
+    "storyId": "aa_memory_spring_bento_001",
+    "title": "春の公園でのお弁当タイム",
+    "type": "memory",
+    "unlock": "思い出アルバム解放",
+    "album": true,
+    "scenario": "memory_hina_spring_bento.json",
+    "cg": "images/assets/cg/aa_memory_spring_bento_cg.png",
+    "thumbnailColor": "images/assets/thumb/aa_memory_spring_bento_thumb_color.png",
+    "thumbnailMono": "images/assets/thumb/aa_memory_spring_bento_thumb_mono.png"
+  },
+  {
+    "characterId": "aa",
+    "characterName": "緋奈",
+    "storyId": "aa_outer_001",
+    "title": "外回り：緋奈",
+    "type": "outer",
+    "unlock": "GOODで思い出追加",
+    "album": false,
+    "scenario": ""
+  },
+  {
+    "characterId": "ab",
+    "characterName": "藍",
+    "storyId": "ab_intro_001",
+    "title": "藍の自己紹介",
+    "type": "intro",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "intro_ai.json"
+  },
+  {
+    "characterId": "ab",
+    "characterName": "藍",
+    "storyId": "ab_memory_spring_book_bread_001",
+    "title": "桜木陰のしおり",
+    "type": "memory",
+    "unlock": "思い出アルバム解放",
+    "album": true,
+    "scenario": "memory_ai_spring_book_bread.json",
+    "cg": "images/assets/cg/ab_memory_spring_book_bread_close_cg.png",
+    "thumbnailColor": "images/assets/thumb/ab_memory_spring_book_bread_close_thumb_color.png",
+    "thumbnailMono": "images/assets/thumb/ab_memory_spring_book_bread_close_thumb_mono.png"
+  },
+  {
+    "characterId": "ab",
+    "characterName": "藍",
+    "storyId": "ab_outer_001",
+    "title": "外回り：藍",
+    "type": "outer",
+    "unlock": "GOODで思い出追加",
+    "album": false,
+    "scenario": ""
+  },
+  {
+    "characterId": "ac",
+    "characterName": "翠",
+    "storyId": "ac_intro_001",
+    "title": "翠の自己紹介",
+    "type": "intro",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "intro_midori.json"
+  },
+  {
+    "characterId": "ac",
+    "characterName": "翠",
+    "storyId": "ac_outer_001",
+    "title": "外回り：翠",
+    "type": "outer",
+    "unlock": "GOODで思い出追加",
+    "album": false,
+    "scenario": ""
+  },
+  {
+    "characterId": "ad",
+    "characterName": "こがね",
+    "storyId": "ad_intro_001",
+    "title": "こがねの自己紹介",
+    "type": "intro",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "intro_kogane.json"
+  },
+  {
+    "characterId": "ad",
+    "characterName": "こがね",
+    "storyId": "ad_outer_001",
+    "title": "外回り：こがね",
+    "type": "outer",
+    "unlock": "GOODで思い出追加",
+    "album": false,
+    "scenario": ""
+  },
+  {
+    "characterId": "ae",
+    "characterName": "琥珀",
+    "storyId": "ae_intro_001",
+    "title": "琥珀の自己紹介",
+    "type": "intro",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "intro_kohaku.json"
+  },
+  {
+    "characterId": "ae",
+    "characterName": "琥珀",
+    "storyId": "ae_outer_001",
+    "title": "外回り：琥珀",
+    "type": "outer",
+    "unlock": "GOODで思い出追加",
+    "album": false,
+    "scenario": ""
+  },
+  {
+    "characterId": "af",
+    "characterName": "真花",
+    "storyId": "af_intro_001",
+    "title": "真花の自己紹介",
+    "type": "intro",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "intro_manaka.json"
+  },
+  {
+    "characterId": "af",
+    "characterName": "真花",
+    "storyId": "af_outer_001",
+    "title": "外回り：真花",
+    "type": "outer",
+    "unlock": "GOODで思い出追加",
+    "album": false,
+    "scenario": ""
+  },
+  {
+    "characterId": "ag",
+    "characterName": "雪乃",
+    "storyId": "ag_intro_001",
+    "title": "雪乃の自己紹介",
+    "type": "intro",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "intro_yukino.json"
+  },
+  {
+    "characterId": "ag",
+    "characterName": "雪乃",
+    "storyId": "ag_outer_001",
+    "title": "外回り：雪乃",
+    "type": "outer",
+    "unlock": "GOODで思い出追加",
+    "album": false,
+    "scenario": ""
+  },
+  {
+    "characterId": "ah",
+    "characterName": "美空",
+    "storyId": "ah_intro_001",
+    "title": "美空の自己紹介",
+    "type": "intro",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "intro_misora.json"
+  },
+  {
+    "characterId": "ah",
+    "characterName": "美空",
+    "storyId": "ah_outer_001",
+    "title": "外回り：美空",
+    "type": "outer",
+    "unlock": "GOODで思い出追加",
+    "album": false,
+    "scenario": ""
+  },
+  {
+    "characterId": "ai",
+    "characterName": "夜空",
+    "storyId": "ai_intro_001",
+    "title": "夜空の自己紹介",
+    "type": "intro",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "intro_yozora.json"
+  },
+  {
+    "characterId": "ai",
+    "characterName": "夜空",
+    "storyId": "ai_outer_001",
+    "title": "外回り：夜空",
+    "type": "outer",
+    "unlock": "GOODで思い出追加",
+    "album": false,
+    "scenario": ""
+  },
+  {
+    "characterId": "aj",
+    "characterName": "桃",
+    "storyId": "aj_intro_001",
+    "title": "桃の自己紹介",
+    "type": "intro",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "intro_momo.json"
+  },
+  {
+    "characterId": "aj",
+    "characterName": "桃",
+    "storyId": "aj_outer_001",
+    "title": "外回り：桃",
+    "type": "outer",
+    "unlock": "GOODで思い出追加",
+    "album": false,
+    "scenario": ""
+  },
+  {
+    "characterId": "ak",
+    "characterName": "彩愛",
+    "storyId": "ak_intro_001",
+    "title": "彩愛の自己紹介",
+    "type": "intro",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "intro_ayame.json"
+  },
+  {
+    "characterId": "ak",
+    "characterName": "彩愛",
+    "storyId": "ak_outer_001",
+    "title": "外回り：彩愛",
+    "type": "outer",
+    "unlock": "GOODで思い出追加",
+    "album": false,
+    "scenario": ""
+  },
+  {
+    "characterId": "al",
+    "characterName": "里美",
+    "storyId": "al_intro_001",
+    "title": "里美の自己紹介",
+    "type": "intro",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "intro_satomi.json"
+  },
+  {
+    "characterId": "al",
+    "characterName": "里美",
+    "storyId": "al_outer_001",
+    "title": "外回り：里美",
+    "type": "outer",
+    "unlock": "GOODで思い出追加",
+    "album": false,
+    "scenario": ""
+  },
+  {
+    "characterId": "am",
+    "characterName": "萌",
+    "storyId": "am_intro_001",
+    "title": "萌の自己紹介",
+    "type": "intro",
+    "unlock": "初期",
+    "album": true,
+    "scenario": "intro_moe.json"
+  },
+  {
+    "characterId": "am",
+    "characterName": "萌",
+    "storyId": "am_outer_001",
+    "title": "外回り：萌",
+    "type": "outer",
+    "unlock": "GOODで思い出追加",
+    "album": false,
+    "scenario": ""
+  }
+];
+
+function tenotsuGetStoryMaster() {
+  return TENOTSU_STORY_MASTER.slice();
+}
+
+function tenotsuGetStoriesByCharacter() {
+  const grouped = {};
+  TENOTSU_STORY_MASTER.forEach(story => {
+    if (!grouped[story.characterId]) grouped[story.characterId] = { characterId: story.characterId, characterName: story.characterName, stories: [] };
+    grouped[story.characterId].stories.push(story);
   });
-})();
+  return grouped;
+}
+
+function tenotsuOpenLeftOfficeMenu() {
+  // v037_85: 左は旧システムメニュー(menu01)専用。
+  const listPanel = document.getElementById("list-panel");
+  if (listPanel) listPanel.classList.add("hidden");
+  if (typeof window.loadMenu === "function") {
+    window.loadMenu("menu01.json");
+    return;
+  }
+  const html = `
+    <div class="left-office-menu left-system-menu">
+      <div class="left-office-menu-title">システムメニュー</div>
+      <div class="left-office-grid">
+        <button class="menu-item" data-engine-action="office6">メインメニュー</button>
+        <button class="menu-item" data-engine-action="cacheclear">キャッシュ削除</button>
+      </div>
+    </div>
+  `;
+  tenotsuShowDynamicPanel("左メニュー", html);
+}
+
+function tenotsuShowMemoryCharacterList() {
+  const grouped = tenotsuGetStoriesByCharacter();
+  const order = ["manager","aa","ab","ac","ad","ae","af","ag","ah","ai","aj","ak","al","am"];
+  const buttons = order
+    .filter(id => grouped[id])
+    .map(id => {
+      const g = grouped[id];
+      return `<button class="menu-item" data-engine-action="memory-character" data-character-id="${g.characterId}">${g.characterName}の思い出 <small>${g.stories.length}件</small></button>`;
+    })
+    .join("");
+
+  tenotsuShowDynamicPanel("思い出", `
+    <div class="status-card memory-card">
+      <h3>思い出アルバム</h3>
+      <p>先頭は店長の思い出です。チュートリアルやプロローグをここに整理します。</p>
+      ${buttons}
+      <button class="menu-item" data-engine-action="members">戻る</button>
+    </div>
+  `);
+}
+
+function tenotsuShowMemoryCharacterStories(characterId) {
+  window.__TENOTSU_LAST_MEMORY_CHARACTER__ = characterId || "manager";
+  const grouped = tenotsuGetStoriesByCharacter();
+  const group = grouped[characterId] || grouped.manager;
+  const affection = tenotsuGetAffection ? tenotsuGetAffection().characters || {} : {};
+  const album = tenotsuGetAlbum ? tenotsuGetAlbum() : { memories: [] };
+
+  const rows = group.stories.map(story => {
+    const albumHit = story.album || album.memories.some(m => (m.id || "").includes(story.characterId) || (m.title || "").includes(story.characterName));
+    const fav = story.characterId === "manager" ? "-" : (affection[story.characterId] ?? 0);
+    const playButton = story.scenario
+      ? `<button class="mini-action" data-engine-action="memory-play" data-scenario="${story.scenario}" data-character-id="${story.characterId}">再生</button>`
+      : `<button class="mini-action" disabled>未実装</button>`;
+    return `
+      <tr>
+        <td>${story.title}</td>
+        <td>${story.type}</td>
+        <td>${story.unlock}</td>
+        <td>${fav}</td>
+        <td>${albumHit ? "登録済" : "未登録"}</td>
+        <td>${playButton}</td>
+      </tr>
+    `;
+  }).join("");
+
+  tenotsuShowDynamicPanel(`${group.characterName}の思い出`, `
+    <div class="status-card memory-card">
+      <h3>${group.characterName}の思い出</h3>
+      <div class="memory-table-wrap">
+        <table class="memory-table">
+          <thead>
+            <tr>
+              <th>ストーリー</th>
+              <th>種別</th>
+              <th>開放条件</th>
+              <th>好感度</th>
+              <th>アルバム</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+      <button class="menu-item" data-engine-action="title-return-archive">タイトル後メニュー</button>
+      <button class="menu-item" data-engine-action="title-return-archive">タイトル後メニュー</button>
+      <button class="menu-item" data-engine-action="memory-list">思い出アルバムへ</button>
+      <button class="menu-item" data-engine-action="members">メンバーへ戻る</button>
+    </div>
+  `);
+}
+
+function tenotsuShowStoryManagementTable() {
+  const rows = TENOTSU_STORY_MASTER.map(story => `
+    <tr>
+      <td>${story.characterName}</td>
+      <td>${story.storyId}</td>
+      <td>${story.title}</td>
+      <td>${story.type}</td>
+      <td>${story.unlock}</td>
+      <td>${story.scenario || "-"}</td>
+    </tr>
+  `).join("");
+
+  tenotsuShowCenterSurface("ストーリー管理表", `
+    <div class="status-card memory-card story-management-surface center-between-side-menus">
+      <h3>メンバーごとの思い出表</h3>
+      <p class="surface-note">左メニューと右メニューの間に表示しています。表内はスクロールできます。</p>
+      <div class="memory-table-wrap">
+        <table class="memory-table">
+          <thead>
+            <tr>
+              <th>対象</th>
+              <th>ID</th>
+              <th>タイトル</th>
+              <th>種別</th>
+              <th>開放条件</th>
+              <th>シナリオ</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+      <button class="menu-item" data-engine-action="memory-album">思い出アルバムへ</button>
+      <button class="menu-item" data-engine-action="members">メンバーへ戻る</button>
+    </div>
+  `);
+}
+/* /v037_85 */
+
+
+/* v037_85: 「タイトルに戻る」後メニューをメンバー配下へ移設 */
+function tenotsuShowTitleReturnMenuArchive() {
+  tenotsuShowDynamicPanel("タイトルメニュー保管", `
+    <div class="status-card memory-card">
+      <h3>タイトルに戻る後メニュー</h3>
+      <p>以前「タイトルに戻る」後に表示していたメニューです。今後は、6大メニュー ＞ メンバー ＞ メンバー一覧/ストーリー管理表 から確認できます。</p>
+      <button class="menu-item" data-engine-action="office6">6大メニューへ戻る</button>
+      <button class="menu-item" data-engine-action="memory-album">思い出アルバム</button>
+      <button class="menu-item" data-engine-action="story-table">ストーリー管理表</button>
+      <button class="menu-item" data-engine-action="member-list">メンバー一覧</button>
+      <button class="menu-item" data-engine-action="battle">店舗営業プロトタイプ</button>
+      <button class="menu-item" data-engine-action="outer-menu">外回り</button>
+      <button class="menu-item" data-engine-action="shop">ショップ</button>
+      <button class="menu-item" data-engine-action="settings">設定</button>
+    </div>
+  `);
+}
+
+function tenotsuShowMemberListMenu() {
+  const order = [
+    ["manager", "店長"],
+    ["aa", "星野 緋奈"],
+    ["ab", "速水川 藍"],
+    ["ac", "草壁 翠"],
+    ["ad", "小麦沢 こがね"],
+    ["ae", "春日原 琥珀"],
+    ["af", "大道寺 真花"],
+    ["ag", "氷神 雪乃"],
+    ["ah", "双沢 美空"],
+    ["ai", "双沢 夜空"],
+    ["aj", "芝桜 桃"],
+    ["ak", "紫藤 彩愛"],
+    ["al", "餅月 里美"],
+    ["am", "草壁 萌"]
+  ];
+
+  const buttons = order.map(([id, name]) => `
+    <button class="menu-item" data-engine-action="memory-character" data-character-id="${id}">${name}</button>
+  `).join("");
+
+  tenotsuShowDynamicPanel("メンバー一覧", `
+    <div class="status-card memory-card">
+      <h3>メンバー一覧</h3>
+      <p>キャラクターごとの思い出/ストーリー管理へ移動します。先頭は店長です。</p>
+      ${buttons}
+      <button class="menu-item" data-engine-action="title-return-archive">タイトル後メニュー</button>
+      <button class="menu-item" data-engine-action="story-table">ストーリー管理表</button>
+      <button class="menu-item" data-engine-action="members">戻る</button>
+    </div>
+  `);
+}
+/* /v037_85 */
+
+
+/* v037_85: ストーリー終了後に元メニューへフェード復帰 */
+window.__TENOTSU_RETURN_MENU_STACK__ = window.__TENOTSU_RETURN_MENU_STACK__ || [];
+window.__TENOTSU_STORY_ENDING__ = false;
+
+function tenotsuPushReturnMenu(kind, value) {
+  window.__TENOTSU_RETURN_MENU_STACK__ = window.__TENOTSU_RETURN_MENU_STACK__ || [];
+  const last = window.__TENOTSU_RETURN_MENU_STACK__[window.__TENOTSU_RETURN_MENU_STACK__.length - 1];
+  if (last && last.kind === kind && last.value === value) return;
+  window.__TENOTSU_RETURN_MENU_STACK__.push({ kind, value });
+  window.__TENOTSU_RETURN_MENU_STACK__ = window.__TENOTSU_RETURN_MENU_STACK__.slice(-10);
+}
+
+function tenotsuReturnToPreviousMenu() {
+  const stack = window.__TENOTSU_RETURN_MENU_STACK__ || [];
+  const target = stack.pop() || { kind: "list", value: "office6.json" };
+  window.__TENOTSU_RETURN_MENU_STACK__ = stack;
+
+  if (target.kind === "memory-character") {
+    tenotsuShowMemoryCharacterStories(target.value || "manager");
+  } else if (target.kind === "members") {
+    tenotsuShowMemberMenu();
+  } else if (target.kind === "memory-list") {
+    tenotsuShowMemoryCharacterList();
+  } else if (target.kind === "memory-album") {
+    tenotsuShowMemoryAlbum();
+  } else if (target.kind === "story-table") {
+    tenotsuShowStoryManagementTable();
+  } else if (target.kind === "left-menu") {
+    tenotsuOpenLeftOfficeMenu();
+  } else if (target.kind === "list" && typeof window.loadList === "function") {
+    window.loadList(target.value || "office6.json");
+  } else if (target.kind === "menu" && typeof window.loadMenu === "function") {
+    window.loadMenu(target.value || "menu01.json");
+  } else {
+    if (typeof window.loadList === "function") window.loadList("office6.json");
+  }
+}
+
+
+/* v037_93: ストーリー終了時のブラックフェード */
+function tenotsuGetBlackFadeLayer() {
+  let layer = document.getElementById("tenotsu-black-fade-layer");
+  if (!layer) {
+    layer = document.createElement("div");
+    layer.id = "tenotsu-black-fade-layer";
+    document.body.appendChild(layer);
+  }
+  return layer;
+}
+function tenotsuBlackFadeOut(duration = 520) {
+  const layer = tenotsuGetBlackFadeLayer();
+  layer.style.transition = `opacity ${duration}ms ease`;
+  layer.style.opacity = "1";
+  layer.style.pointerEvents = "auto";
+}
+function tenotsuBlackFadeIn(duration = 520) {
+  const layer = tenotsuGetBlackFadeLayer();
+  layer.style.transition = `opacity ${duration}ms ease`;
+  layer.style.opacity = "0";
+  layer.style.pointerEvents = "none";
+}
+/* /v037_93 */
+
+function tenotsuHandleStoryEndReturn() {
+  if (window.__TENOTSU_STORY_ENDING__) return;
+  window.__TENOTSU_STORY_ENDING__ = true;
+
+  try {
+    if (typeof randomImagesOff === "function") randomImagesOff();
+    if (typeof randomTextsOff === "function") randomTextsOff();
+  } catch (_) {}
+
+  const dialogueBox = document.getElementById("dialogue-box");
+  const textBox = document.getElementById("text");
+  const nameBox = document.getElementById("name");
+  const clickLayer = document.getElementById("click-layer");
+
+  if (nameBox) nameBox.textContent = "";
+  if (textBox) textBox.innerHTML = "（物語は つづく・・・）";
+  if (dialogueBox) {
+    dialogueBox.classList.remove("hidden");
+    dialogueBox.classList.remove("story-end-fadeout");
+  }
+  if (clickLayer) clickLayer.style.pointerEvents = "none";
+
+  window.setTimeout(() => {
+    // v037_95: 「物語は つづく・・・」後、1秒かけてゆっくりブラックフェード。
+    tenotsuBlackFadeOut(1000);
+    if (dialogueBox) dialogueBox.classList.add("story-end-fadeout");
+  }, 650);
+
+  window.setTimeout(() => {
+    if (dialogueBox) {
+      dialogueBox.classList.remove("story-end-fadeout");
+      dialogueBox.classList.add("hidden");
+    }
+    window.__TENOTSU_STORY_ENDING__ = false;
+    tenotsuSetStoryPartActive(false, "office");
+    tenotsuEnterOfficeMode("story-end");
+  }, 1780);
+
+  window.setTimeout(() => {
+    tenotsuBlackFadeIn(850);
+    if (clickLayer) clickLayer.style.pointerEvents = "auto";
+  }, 1980);
+}
+/* /v037_85 */
+
+
+/* v037_85: タイトルタイル表示後も右メニューを6大メニュー固定 */
+window.__TENOTSU_MAIN_MENU_LOCK__ = window.__TENOTSU_MAIN_MENU_LOCK__ || false;
+
+function tenotsuLockMainMenu() {
+  window.__TENOTSU_MAIN_MENU_LOCK__ = true;
+}
+
+function tenotsuUnlockMainMenu() {
+  window.__TENOTSU_MAIN_MENU_LOCK__ = false;
+}
+
+function tenotsuEnsureOfficeSixMenuVisible() {
+  if (!tenotsuIsOfficeMode || !tenotsuIsOfficeMode()) return;
+  const listPanel = document.getElementById("list-panel");
+  const menuPanel = document.getElementById("menu-panel");
+  const battleRoot = document.getElementById("battle-root");
+  if (battleRoot && !battleRoot.classList.contains("hidden")) return;
+  if (typeof window.loadList === "function") {
+    const menuPanel = document.getElementById("menu-panel");
+    if (menuPanel) menuPanel.classList.add("hidden");
+    window.loadList("office6.json");
+    tenotsuLockMainMenu();
+  }
+}
+/* /v037_85 */
+
+
+/* v037_85 randomImagesOn office6 reassert wrapper */
+window.addEventListener("load", () => {
+  window.setTimeout(() => {
+    if (typeof window.randomImagesOn === "function" && !window.__TENOTSU_RANDOM_WRAPPED__) {
+      const originalRandomImagesOn = window.randomImagesOn;
+      window.randomImagesOn = function wrappedRandomImagesOn(...args) {
+        const result = originalRandomImagesOn.apply(this, args);
+        window.setTimeout(() => {
+          if (window.__TENOTSU_MAIN_MENU_LOCK__) tenotsuEnsureOfficeSixMenuVisible();
+        }, 120);
+        return result;
+      };
+      window.__TENOTSU_RANDOM_WRAPPED__ = true;
+    }
+  }, 0);
+});
+/* /v037_85 */
+
+
+/* v037_85: ショップ 秘密の言葉 */
+const TENOTSU_SECRET_WORD_KEY = "tenotsu_secret_words_v1";
+
+const TENOTSU_SECRET_WORDS = {
+  "てんおつ": {
+    id: "tenotsu_start",
+    title: "店長お疲れ様です",
+    message: "秘密の言葉を確認しました。店長EXP +300、売上 +3000円。",
+    exp: 300,
+    sales: 3000,
+    items: { encounter_charm: 2, album_usb: 1 }
+  },
+  "ひだまり": {
+    id: "hidamari_bonus",
+    title: "ひだまりボーナス",
+    message: "ひだまりストアからの支給品です。売上 +5000円。",
+    exp: 100,
+    sales: 5000,
+    items: { review_sd: 1 }
+  },
+  "おつかれさま": {
+    id: "otsukaresama",
+    title: "お疲れ様ボーナス",
+    message: "日々の頑張りが認められました。店長EXP +500。",
+    exp: 500,
+    sales: 1000,
+    items: { hikaru_glasses: 1 }
+  },
+  "つくも": {
+    id: "tsukumo_support",
+    title: "テックラボつくも支援",
+    message: "テックラボつくもから便利道具が届きました。",
+    exp: 150,
+    sales: 2000,
+    items: { album_usb: 2, review_sd: 1 }
+  }
+};
+
+function tenotsuNormalizeSecretWord(value) {
+  return String(value || "")
+    .trim()
+    .toLowerCase()
+    .replace(/[ 　]/g, "")
+    .replace(/[！!？?。.,、]/g, "");
+}
+
+function tenotsuGetSecretWordData() {
+  const data = tenotsuLoadJsonStorage(TENOTSU_SECRET_WORD_KEY, {});
+  data.used = Array.isArray(data.used) ? data.used : [];
+  data.history = Array.isArray(data.history) ? data.history : [];
+  return data;
+}
+
+function tenotsuSaveSecretWordData(data) {
+  tenotsuSaveJsonStorage(TENOTSU_SECRET_WORD_KEY, data);
+}
+
+function tenotsuGrantSecretReward(def) {
+  if (!def) return false;
+  if (def.exp) tenotsuAddManagerExp(def.exp, "秘密の言葉");
+  if (def.sales && typeof TenotsuEconomy !== "undefined" && TenotsuEconomy.addSales) {
+    TenotsuEconomy.addSales(def.sales, "秘密の言葉");
+  } else if (def.sales) {
+    const e = tenotsuGetEconomy();
+    e.totalSales += def.sales;
+    e.availableSales += def.sales;
+    e.history.unshift({ type: "sales", source: "秘密の言葉", amount: def.sales, at: new Date().toISOString() });
+    e.history = e.history.slice(0, 30);
+    tenotsuSaveJsonStorage(TENOTSU_ECONOMY_KEY, e);
+  }
+  if (def.items) {
+    Object.entries(def.items).forEach(([id, count]) => tenotsuAddItem(id, count));
+  }
+  tenotsuUnlockMemory("secret_word_" + def.id, "秘密の言葉：" + def.title, def.message);
+  return true;
+}
+
+function tenotsuShowSecretWordMenu(message = "") {
+  const data = tenotsuGetSecretWordData();
+  tenotsuShowDynamicPanel("秘密の言葉", `
+    <div class="status-card secret-word-card">
+      <h3>秘密の言葉</h3>
+      <p>特定キーワードを入力すると、アイテムやボーナスがもらえます。</p>
+      ${message ? `<p class="secret-word-message">${message}</p>` : ""}
+      <input id="secret-word-input" class="secret-word-input" type="text" autocomplete="off" placeholder="秘密の言葉を入力">
+      <button class="menu-item" data-engine-action="secret-word-submit">確認する</button>
+      <button class="menu-item" data-engine-action="secret-word-hint">ヒントを見る</button>
+      <button class="menu-item" data-engine-action="shop">ショップへ戻る</button>
+      <p class="secret-word-used">使用済み：${data.used.length}件</p>
+    </div>
+  `);
+  window.setTimeout(() => {
+    const input = document.getElementById("secret-word-input");
+    if (input) input.focus();
+  }, 50);
+}
+
+function tenotsuSubmitSecretWord() {
+  const input = document.getElementById("secret-word-input");
+  const raw = input ? input.value : "";
+  const key = tenotsuNormalizeSecretWord(raw);
+  const def = TENOTSU_SECRET_WORDS[key];
+  const data = tenotsuGetSecretWordData();
+
+  if (!key) {
+    tenotsuShowSecretWordMenu("言葉が入力されていません。");
+    return;
+  }
+  if (!def) {
+    tenotsuShowSecretWordMenu("その言葉では何も起きませんでした。");
+    return;
+  }
+  if (data.used.includes(def.id)) {
+    tenotsuShowSecretWordMenu("この秘密の言葉はすでに使用済みです。");
+    return;
+  }
+
+  tenotsuGrantSecretReward(def);
+  data.used.push(def.id);
+  data.history.unshift({ id: def.id, word: key, at: new Date().toISOString() });
+  data.history = data.history.slice(0, 30);
+  tenotsuSaveSecretWordData(data);
+  tenotsuShowSecretWordMenu(def.message);
+}
+
+function tenotsuShowSecretWordHint() {
+  tenotsuShowSecretWordMenu("ヒント：店長へのあいさつ、店の名前、協力店の名前など。");
+}
+/* /v037_85 */
+
+
+/* v037_85: キャラクター表情マスター */
+const TENOTSU_EXPRESSION_MASTER_PATH = "scenario/data/character_expressions.json";
+window.__TENOTSU_EXPRESSION_MASTER__ = window.__TENOTSU_EXPRESSION_MASTER__ || null;
+
+async function tenotsuLoadExpressionMaster() {
+  if (window.__TENOTSU_EXPRESSION_MASTER__) return window.__TENOTSU_EXPRESSION_MASTER__;
+  const data = await safeFetchJson(TENOTSU_EXPRESSION_MASTER_PATH + "?t=" + Date.now(), "character_expressions.json");
+  window.__TENOTSU_EXPRESSION_MASTER__ = data;
+  return data;
+}
+
+function tenotsuExpressionFile(characterId, expressionNo = "01", variantNo = "01") {
+  const master = window.__TENOTSU_EXPRESSION_MASTER__;
+  if (!master || !master.assets || !master.assets[characterId]) return "";
+  const exp = master.assets[characterId].expressions[String(expressionNo).padStart(2, "0")];
+  return exp ? exp.engineSrc : "";
+}
+
+function tenotsuExpressionPath(characterId, expressionNo = "01", variantNo = "01") {
+  const file = tenotsuExpressionFile(characterId, expressionNo, variantNo);
+  return file ? (config.charPath + file) : "";
+}
+
+async function tenotsuShowExpressionCharacter(characterId) {
+  const master = await tenotsuLoadExpressionMaster();
+  const char = master.assets[characterId];
+  if (!char) {
+    tenotsuShowDynamicPanel("表情マスター", `<div class="status-card"><p>表情データがありません。</p><button class="menu-item" data-engine-action="members">戻る</button></div>`);
+    return;
+  }
+
+  const rows = Object.entries(char.expressions).map(([no, exp]) => `
+    <tr>
+      <td>${no}</td>
+      <td>${exp.label}</td>
+      <td><code>${exp.file}</code></td>
+      <td>${exp.exists ? "配置済" : "未配置"}</td>
+    </tr>
+  `).join("");
+
+  tenotsuShowDynamicPanel(`${char.fullName} 表情一覧`, `
+    <div class="status-card memory-card">
+      <h3>${char.fullName} 表情一覧</h3>
+      <p>命名規則：${char.base}+表情番号+01.webp</p>
+      <div class="memory-table-wrap">
+        <table class="memory-table">
+          <thead><tr><th>No</th><th>表情</th><th>ファイル</th><th>状態</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+      <button class="menu-item" data-engine-action="expression-master">表情マスターへ</button>
+      <button class="menu-item" data-engine-action="members">メンバーへ戻る</button>
+    </div>
+  `);
+}
+
+async function tenotsuShowExpressionMasterMenu() {
+  const master = await tenotsuLoadExpressionMaster();
+  const buttons = Object.entries(master.assets).map(([id, char]) => `
+    <button class="menu-item" data-engine-action="expression-character" data-character-id="${id}">${char.fullName}</button>
+  `).join("");
+  tenotsuShowDynamicPanel("表情マスター", `
+    <div class="status-card memory-card">
+      <h3>表情マスター</h3>
+      <p>01澄まし / 02微笑み / 03怒り / 04悲しみ / 05笑顔 / 06驚き / 07照れ / 08期待 / 09得意げ / 10軽い嫌悪 / 11心配不安 / 12動揺</p>
+      ${buttons}
+      <button class="menu-item" data-engine-action="members">戻る</button>
+    </div>
+  `);
+}
+/* /v037_85 */
+
+
+/* v037_85: オートプレイ実行補強 */
+window.__TENOTSU_AUTO_TIMER__ = null;
+window.__TENOTSU_AUTO_DELAY_MS__ = 1450;
+
+function tenotsuStopAutoPlayTimer() {
+  if (window.__TENOTSU_AUTO_TIMER__) {
+    clearTimeout(window.__TENOTSU_AUTO_TIMER__);
+    window.__TENOTSU_AUTO_TIMER__ = null;
+  }
+}
+
+function tenotsuScheduleAutoPlay() {
+  tenotsuStopAutoPlayTimer();
+  if (!isAutoMode) return;
+  if (choicesEl && choicesEl.children && choicesEl.children.length > 0) return;
+  const battleRoot = document.getElementById("battle-root");
+  if (battleRoot && !battleRoot.classList.contains("hidden")) return;
+
+  // 人物登場・画像ロード中でも、文章が終わっていれば進行できるようにする。
+  const delay = Number(window.__TENOTSU_AUTO_DELAY_MS__ || autoWaitTime || 1450);
+  window.__TENOTSU_AUTO_TIMER__ = setTimeout(() => {
+    window.__TENOTSU_AUTO_TIMER__ = null;
+    if (!isAutoMode) return;
+    if (choicesEl && choicesEl.children && choicesEl.children.length > 0) return;
+    const battleRoot2 = document.getElementById("battle-root");
+    if (battleRoot2 && !battleRoot2.classList.contains("hidden")) return;
+
+    // タイピング中だけ待つ。人物画像のロード状態では止めない。
+    if (isPlaying) {
+      tenotsuScheduleAutoPlay();
+      return;
+    }
+    next();
+  }, delay);
+}
+
+function tenotsuSetAutoMode(value) {
+  isAutoMode = !!value;
+  const btns = document.querySelectorAll('[data-engine-action="auto"], [data-action="auto"]');
+  btns.forEach(btn => {
+    btn.classList.toggle("active", isAutoMode);
+    btn.textContent = isAutoMode ? "オートプレイ：ON" : "オートプレイ";
+  });
+  if (isAutoMode) tenotsuScheduleAutoPlay();
+  else tenotsuStopAutoPlayTimer();
+}
+/* /v037_85 */
+
+/* v037_85: UI操作中HOLD抑制 */
+document.addEventListener("pointerdown", (event) => {
+  if (event.target.closest && event.target.closest("#menu-panel, #list-panel, .status-card, .memory-card, .memory-table-wrap, .story-management-surface, .center-surface-window")) {
+    window.__TENOTSU_UI_POINTER_ACTIVE__ = true;
+  }
+}, true);
+document.addEventListener("pointerup", () => { window.__TENOTSU_UI_POINTER_ACTIVE__ = false; }, true);
+document.addEventListener("pointercancel", () => { window.__TENOTSU_UI_POINTER_ACTIVE__ = false; }, true);
+
+
+/* v037_85: 中央サーフェス表示 */
+function tenotsuCloseCenterSurface() {
+  const old = document.getElementById("center-surface-panel");
+  if (old) old.remove();
+}
+
+function tenotsuShowCenterSurface(title, html) {
+  tenotsuCloseCenterSurface();
+  const panel = document.createElement("div");
+  panel.id = "center-surface-panel";
+  panel.className = "center-surface-panel";
+  panel.innerHTML = `
+    <div class="center-surface-header">
+      <strong>${title || ""}</strong>
+      <button class="center-surface-close" data-engine-action="center-surface-close">×</button>
+    </div>
+    <div class="center-surface-body">${html}</div>
+  `;
+  document.body.appendChild(panel);
+  return panel;
+}
+/* /v037_85 */
+
+
+/* v037_93: ストーリー中の右メニュー系クリック抑止 */
+document.addEventListener("click", (event) => {
+  if (!tenotsuIsStoryPartActive || !tenotsuIsStoryPartActive()) return;
+  const target = event.target;
+  if (target && target.closest && target.closest("#list-panel, .right-main-panel, .right-menu, .right-panel")) {
+    event.preventDefault();
+    event.stopPropagation();
+    if (listPanel) listPanel.classList.add("hidden");
+  }
+}, true);
+/* /v037_93 */
+
+
+/* v037_93: バトル終了/閉じる後は事務所モードへ戻す補助 */
+window.addEventListener("load", () => {
+  window.setTimeout(() => {
+    try {
+      if (window.BattleProto && typeof window.BattleProto.openBattle === "function" && !window.BattleProto.__TENOTSU_OFFICE_WRAP__) {
+        const originalOpenBattle = window.BattleProto.openBattle;
+        window.BattleProto.openBattle = function wrappedOpenBattle(...args) {
+          tenotsuEnterBattleMode && tenotsuEnterBattleMode();
+          return originalOpenBattle.apply(this, args);
+        };
+        window.BattleProto.__TENOTSU_OFFICE_WRAP__ = true;
+      }
+    } catch (err) {
+      console.warn("[TENOTSU BATTLE MODE WRAP FAILED]", err);
+    }
+  }, 0);
+});
 /* /v037_93 */

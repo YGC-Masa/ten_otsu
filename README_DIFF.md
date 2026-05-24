@@ -1,9 +1,30 @@
-# v037_93 → v037_94 差分
-
-## 内容
-
-- 右6大メニューから `⓪〜⑤` の番号表示を削除。
-- index/起動カード/起動フロー/バトル/Service Worker/manifest のバージョンを v037_94 に更新。
-- タイトルのランダムSHOWとタイトル下部コメントをキャラ連動化。
-
-リポジトリ直下へ展開して上書きしてください。
+{
+  "title": "ショップ",
+  "items": [
+    {
+      "text": "秘密の言葉",
+      "action": "custom",
+      "custom": "secret-word"
+    },
+    {
+      "text": "通常ショップ：準備中",
+      "action": "custom",
+      "custom": "shop-normal-placeholder"
+    },
+    {
+      "text": "イベント交換",
+      "action": "custom",
+      "custom": "event-exchange-menu"
+    },
+    {
+      "text": "ガチャ：準備中",
+      "action": "custom",
+      "custom": "shop-gacha-placeholder"
+    },
+    {
+      "text": "戻る",
+      "action": "list",
+      "list": "office6.json"
+    }
+  ]
+}
