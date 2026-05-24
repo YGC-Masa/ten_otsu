@@ -1,10 +1,14 @@
-/* v038_19 Surface Manager Takeover - verified boot candidate
-   Single authority for non-ADV surfaces. Designed to survive broken/old boot flow.
+/* v038_20 Surface Manager - Single Authority
+   Purpose:
+   - office/shop visual surfaces are owned by this file only.
+   - old randomShows/title/office comment layers are removed or hidden.
+   - background is set through both #background and #game-container fallback.
+   - #dialogue-box is the only visible text surface outside ADV.
 */
 (function(){
   "use strict";
 
-  const VERSION = "v038_19";
+  const VERSION = "v038_20";
   const BG_OFFICE = "images/assets/bgev/bg_office_hidamari.png";
   const BG_SHOP = "images/assets/bgev/bg_exchange_item_counter.png";
   const SAKUYA_INTRO_SCENARIO = "shop_exchange_intro_sakuya.json";
@@ -13,7 +17,7 @@
   const OFFICE_CHARS = [
     ["星野 緋奈","a10501.webp","店長、今日も一緒にがんばりましょう！"],
     ["速水川 藍","b10501.webp","てんちょー、事務所でお待ちしていました。"],
-    ["草壁 翠","c10201.webp","キミ、今日の予定は確認済みかな？"],
+    ["草壁 翠","c10501.webp","キミ、今日の予定は確認済みかな？"],
     ["小麦沢 こがね","d10501.webp","店長、今日もアゲてこー！"],
     ["春日原 琥珀","e10501.webp","旦那、困ったことがあったらオレに任せな！"],
     ["大道寺 真花","f10501.webp","店長、本日もよろしくお願いします。"],
@@ -26,27 +30,19 @@
     ["草壁 萌","m10501.webp","おにいちゃん、ここにいるよ。"]
   ];
 
-  const SHOP_GREETINGS = [
-    ["朔夜","いらっしゃいませ。価値あるものとの交換をご希望ですか？"],
-    ["朔夜","ようこそ、交換カウンターへ。必要な品をお選びください。"],
-    ["朔夜","ふふ……本日は、どの品と縁を結びましょうか。"],
-    ["朔夜","交換品は一期一会。どうぞ、ゆっくりご覧ください。"],
-    ["朔夜","店長様、お待ちしておりました。本日の交換品はこちらです。"]
-  ];
-
   const MENU_ITEMS = ["店舗","メンバー","店舗営業","外回り","ショップ","設定"];
 
   const Z = Object.freeze({
     bg: 0,
-    title: 20,
     storyChar: 120,
     cg: 180,
     click: 240,
     frontChar: 720,
     operation: 760,
     menu: 820,
-    dialogue: 900,
-    choice: 920,
+    hold: 860,
+    dialogue: 1200,
+    choice: 1300,
     battle: 30000,
     fade: 50000,
     system: 70000,
@@ -55,17 +51,26 @@
 
   window.TENOTSU_SURFACE_VERSION = VERSION;
   window.TENOTSU_LAYER_Z = Z;
+  window.__TENOTSU_SURFACE_TAKEOVER__ = true;
+  window.__TENOTSU_DISABLE_LEGACY_OBSERVERS__ = true;
 
   let currentMode = "";
   let busy = false;
   let installed = false;
   let lastActionAt = 0;
-  let officeRenderKey = "";
   let bootOfficeEntered = false;
+  let officeRenderKey = "";
 
   function qs(sel){ return document.querySelector(sel); }
   function qsa(sel){ return Array.from(document.querySelectorAll(sel)); }
   function setI(el, prop, val){ if (el) el.style.setProperty(prop, String(val), "important"); }
+  function now(){ return (performance && performance.now) ? performance.now() : Date.now(); }
+  function throttle(){
+    const n = now();
+    if (n - lastActionAt < 120) return true;
+    lastActionAt = n;
+    return false;
+  }
   function shuffle(a){
     const arr = a.slice();
     for(let i = arr.length - 1; i > 0; i--){
@@ -75,60 +80,138 @@
     return arr;
   }
 
-  function now(){
-    return (performance && performance.now) ? performance.now() : Date.now();
-  }
-
-  function throttle(){
-    const n = now();
-    if (n - lastActionAt < 120) return true;
-    lastActionAt = n;
-    return false;
-  }
-
   function setMode(mode){
     currentMode = mode;
     window.tenotsuGameMode = mode;
     document.body.dataset.gameMode = mode;
-    ["title","office","story","shop","battle","town","settings"].forEach(m => {
+    ["title","office","story","shop","battle","town","settings","members"].forEach(m => {
       document.body.classList.toggle("mode-" + m, mode === m);
     });
     document.body.classList.toggle("story-playing", mode === "story");
     updateInputSurfaces();
   }
 
-  function setBackground(src){
-    const bg = qs("#background");
-    if (bg) {
-      if (bg.getAttribute("src") !== src) bg.src = src;
-      setI(bg, "display", "block");
-      setI(bg, "visibility", "visible");
-      setI(bg, "opacity", "1");
-      setI(bg, "z-index", Z.bg);
-      bg.onerror = () => console.warn("[TENOTSU BACKGROUND LOAD ERROR]", src);
+  function hideBootOverlay(){
+    const boot = qs("#boot-flow");
+    if (boot) {
+      boot.classList.add("hidden", "is-out");
+      boot.setAttribute("aria-hidden", "true");
+      setI(boot, "display", "none");
+      setI(boot, "pointer-events", "none");
     }
+  }
+
+  function removeLegacyVisualSurfaces(){
+    const removeSelectors = [
+      "#random-images-layer",
+      "#random-text-layer",
+      ".random-images-layer",
+      ".random-text-layer",
+      ".random-show",
+      ".random-character",
+      ".title-character-layer",
+      ".title-comment-window",
+      ".title-comment",
+      ".boot-character-layer",
+      "#tenotsu-surface-office-layer",
+      "#tenotsu-shop-character-layer",
+      "#tenotsu-office-force-layer",
+      "#office-character-layer",
+      "#tenotsu-office-character-overlay"
+    ];
+    qsa(removeSelectors.join(",")).forEach(el => {
+      if (el.id === "tenotsu-front-character-layer") return;
+      el.remove();
+    });
+
+    const hideSelectors = [
+      "#list-panel",
+      "#menu-panel",
+      ".menu-panel",
+      ".left-menu",
+      "#left-menu",
+      "#leftPanel",
+      ".exchange-menu",
+      ".exchange-panel",
+      ".shop-submenu",
+      ".sub-menu",
+      "#office-comment-box",
+      "#title-comment-box",
+      "#office-message",
+      "#office-comment",
+      ".office-comment-box",
+      ".title-comment-box",
+      ".office-message",
+      ".office-comment",
+      ".top-comment",
+      ".header-comment",
+      ".tenotsu-office-comment",
+      "#tenotsu-office-comment",
+      "#tenotsu-office-force-comment",
+      "#tenotsu-surface-comment",
+      ".tenotsu-bottom-comment",
+      "#tenotsu-bottom-comment"
+    ];
+    qsa(hideSelectors.join(",")).forEach(el => {
+      el.classList.add("hidden");
+      setI(el, "display", "none");
+      setI(el, "visibility", "hidden");
+      setI(el, "pointer-events", "none");
+      el.setAttribute("aria-hidden", "true");
+    });
+  }
+
+  function ensureLegacyGuard(){
+    // Keep placeholder in DOM for legacy checks, but do not allow visual area.
+    let list = qs("#list-panel");
+    if (!list) {
+      list = document.createElement("div");
+      list.id = "list-panel";
+      document.body.appendChild(list);
+    }
+    list.textContent = "";
+    list.dataset.tenotsuRescue = "1";
+    setI(list, "display", "none");
+    setI(list, "visibility", "hidden");
+    setI(list, "pointer-events", "none");
+  }
+
+  function ensureBackgroundElement(){
+    let bg = qs("#background");
+    if (!bg) {
+      const game = qs("#game-container") || document.body;
+      bg = document.createElement("img");
+      bg.id = "background";
+      bg.alt = "";
+      game.prepend(bg);
+    }
+    return bg;
+  }
+
+  function setBackground(src){
+    const bg = ensureBackgroundElement();
+    if (bg.getAttribute("src") !== src) bg.src = src;
+    bg.dataset.surfaceBg = src;
+    setI(bg, "position", "absolute");
+    setI(bg, "inset", "0");
+    setI(bg, "display", "block");
+    setI(bg, "visibility", "visible");
+    setI(bg, "opacity", "1");
+    setI(bg, "z-index", Z.bg);
+    setI(bg, "object-fit", "cover");
+    setI(bg, "width", "100%");
+    setI(bg, "height", "100%");
+    setI(bg, "pointer-events", "none");
+
     const game = qs("#game-container");
     if (game) {
       setI(game, "background-color", "#000");
-      // v038_19: CSS fallback. If the #background image is hidden or fails, this still displays the mode background.
-      setI(game, "background-image", `url("${src}")`);
+      setI(game, "background-image", "url('" + src + "')");
       setI(game, "background-size", "cover");
       setI(game, "background-position", "center center");
       setI(game, "background-repeat", "no-repeat");
     }
     document.body.style.removeProperty("background-image");
-  }
-
-  function hideRandomShowLayers(){
-    try {
-      if (typeof window.tenotsuHideRandomShowLayers === "function") window.tenotsuHideRandomShowLayers();
-    } catch (_) {}
-    qsa("#random-images-layer,#random-text-layer,.title-comment-window").forEach(el => {
-      el.innerHTML = "";
-      el.style.setProperty("display", "none", "important");
-      el.style.setProperty("visibility", "hidden", "important");
-      el.style.setProperty("pointer-events", "none", "important");
-    });
   }
 
   function ensureFrontLayer(){
@@ -141,6 +224,15 @@
     return layer;
   }
 
+  function hideFrontLayer(){
+    const layer = qs("#tenotsu-front-character-layer");
+    if (layer) {
+      layer.innerHTML = "";
+      layer.dataset.mode = "";
+      setI(layer, "display", "none");
+    }
+  }
+
   function ensureOperationSurface(){
     let surface = qs("#tenotsu-operation-surface");
     if (!surface) {
@@ -151,6 +243,15 @@
     return surface;
   }
 
+  function clearOperationSurface(){
+    const s = qs("#tenotsu-operation-surface");
+    if (s) {
+      s.innerHTML = "";
+      setI(s, "display", "none");
+      setI(s, "pointer-events", "none");
+    }
+  }
+
   function ensureMainMenu(){
     let menu = qs("#tenotsu-main-menu");
     if (!menu) {
@@ -159,74 +260,6 @@
       document.body.appendChild(menu);
     }
     return menu;
-  }
-
-  function ensureFade(){
-    let f = qs("#tenotsu-safe-fade");
-    if (!f) {
-      f = document.createElement("div");
-      f.id = "tenotsu-safe-fade";
-      document.body.appendChild(f);
-    }
-    return f;
-  }
-
-  function hideBootOverlay(){
-    const boot = qs("#boot-flow");
-    if (boot) {
-      boot.classList.add("hidden", "is-out");
-      boot.setAttribute("aria-hidden", "true");
-      boot.style.setProperty("display", "none", "important");
-      boot.style.setProperty("pointer-events", "none", "important");
-    }
-  }
-
-  function satisfyLegacyGuard(){
-    let list = qs("#list-panel");
-    if (!list) {
-      list = document.createElement("div");
-      list.id = "list-panel";
-      document.body.appendChild(list);
-    }
-    list.classList.remove("hidden");
-    if (!list.innerHTML.trim()) list.innerHTML = "<span data-tenotsu-rescue='1'>surface takeover active</span>";
-    list.style.setProperty("display", "none", "important");
-    list.style.setProperty("pointer-events", "none", "important");
-
-    qsa("#menu-panel,.menu-panel,.left-menu,#left-menu,#leftPanel,.exchange-menu,.exchange-panel,.shop-submenu,.sub-menu,#tenotsu-office-force-layer,#tenotsu-office-force-comment,#tenotsu-surface-office-layer,#tenotsu-surface-comment,#office-character-layer").forEach(el => {
-      el.classList.add("hidden");
-      el.style.setProperty("display", "none", "important");
-      el.style.setProperty("pointer-events", "none", "important");
-    });
-  }
-
-  function hideLegacyComments(){
-    // v038_19: the only visible comment box outside ADV should be #dialogue-box at the bottom.
-    qsa("#office-comment-box,#title-comment-box,#office-message,#office-comment,.office-comment-box,.title-comment-box,.office-message,.office-comment,.top-comment,.header-comment,.tenotsu-office-comment,#tenotsu-office-comment,#tenotsu-office-force-comment,#tenotsu-surface-comment").forEach(el => {
-      el.classList.add("hidden");
-      el.style.setProperty("display", "none", "important");
-      el.style.setProperty("visibility", "hidden", "important");
-      el.style.setProperty("pointer-events", "none", "important");
-    });
-  }
-
-  function hideFrontLayer(){
-    const layer = qs("#tenotsu-front-character-layer");
-    if (layer) layer.style.display = "none";
-  }
-
-  function clearOperationSurface(){
-    const s = qs("#tenotsu-operation-surface");
-    if (s) {
-      s.innerHTML = "";
-      s.style.display = "none";
-      s.style.pointerEvents = "none";
-    }
-  }
-
-  function hideMainMenu(){
-    const menu = qs("#tenotsu-main-menu");
-    if (menu) menu.style.display = "none";
   }
 
   function showMainMenu(){
@@ -252,27 +285,72 @@
       menu.appendChild(grid);
       menu.dataset.built = "1";
     }
-    menu.style.display = "block";
-    menu.style.pointerEvents = "auto";
+    setI(menu, "display", "block");
+    setI(menu, "pointer-events", "auto");
+  }
+
+  function hideMainMenu(){
+    const menu = qs("#tenotsu-main-menu");
+    if (menu) setI(menu, "display", "none");
+  }
+
+  function ensureFade(){
+    let f = qs("#tenotsu-safe-fade");
+    if (!f) {
+      f = document.createElement("div");
+      f.id = "tenotsu-safe-fade";
+      document.body.appendChild(f);
+    }
+    return f;
+  }
+
+  function ensureHoldSurface(){
+    let hold = qs("#tenotsu-hold-surface");
+    if (!hold) {
+      hold = document.createElement("div");
+      hold.id = "tenotsu-hold-surface";
+      hold.setAttribute("aria-hidden", "true");
+      hold.innerHTML = "<div class='tenotsu-hold-ring'></div>";
+      document.body.appendChild(hold);
+    }
+    return hold;
+  }
+
+  function showHoldSurface(x, y){
+    const hold = ensureHoldSurface();
+    hold.style.left = (x || Math.floor(window.innerWidth / 2)) + "px";
+    hold.style.top = (y || Math.floor(window.innerHeight / 2)) + "px";
+    hold.classList.add("is-holding");
+    setI(hold, "display", "block");
+  }
+
+  function hideHoldSurface(){
+    const hold = qs("#tenotsu-hold-surface");
+    if (hold) {
+      hold.classList.remove("is-holding");
+      setI(hold, "display", "none");
+    }
   }
 
   function renderDialogueComment(name, text){
-    hideLegacyComments();
     const box = qs("#dialogue-box");
     const nameEl = qs("#name");
     const textEl = qs("#text");
     if (!box || !nameEl || !textEl) return;
 
+    removeLegacyVisualSurfaces();
+
     box.classList.remove("hidden");
-    box.style.setProperty("display", "block", "important");
-    box.style.setProperty("position", "fixed", "important");
-    box.style.setProperty("left", "5%", "important");
-    box.style.setProperty("right", "12%", "important");
-    box.style.setProperty("top", "auto", "important");
-    box.style.setProperty("bottom", "max(18px, env(safe-area-inset-bottom))", "important");
-    box.style.setProperty("width", "auto", "important");
-    box.style.setProperty("z-index", String(Z.dialogue), "important");
-    box.style.setProperty("pointer-events", "none", "important");
+    setI(box, "display", "block");
+    setI(box, "visibility", "visible");
+    setI(box, "position", "fixed");
+    setI(box, "left", "5%");
+    setI(box, "right", "12%");
+    setI(box, "top", "auto");
+    setI(box, "bottom", "max(18px, env(safe-area-inset-bottom))");
+    setI(box, "width", "auto");
+    setI(box, "z-index", Z.dialogue);
+    setI(box, "pointer-events", currentMode === "story" ? "auto" : "none");
     nameEl.textContent = name || "";
     textEl.innerHTML = text || "";
   }
@@ -280,17 +358,18 @@
   function hideDialogueIfNonStory(){
     if (currentMode === "story") return;
     const box = qs("#dialogue-box");
-    if (box) box.classList.add("hidden");
+    if (box) {
+      box.classList.add("hidden");
+      setI(box, "display", "none");
+      setI(box, "pointer-events", "none");
+    }
   }
 
   function renderOfficeCharacters(forceNew){
     const layer = ensureFrontLayer();
-
-    // v038_19: one canonical office character render only.
-    // Repeated boot rescue / office enter calls must not create duplicate character layers.
-    const existingOffice = layer.dataset.mode === "office" && layer.children.length === 3;
-    if (!forceNew && existingOffice && officeRenderKey) {
-      layer.style.display = "block";
+    const existing = layer.dataset.mode === "office" && layer.children.length === 3;
+    if (!forceNew && existing && officeRenderKey) {
+      setI(layer, "display", "block");
       return;
     }
 
@@ -312,23 +391,12 @@
       layer.appendChild(img);
     });
 
+    setI(layer, "display", "block");
     renderDialogueComment(picks[0][0], picks[0][2]);
-    layer.style.display = "block";
-  }
-
-  function renderShopCharacter(){
-    // v038_19: shop mode intentionally hides character display.
-    // The exchange counter background and shop panel are the focus.
-    const layer = ensureFrontLayer();
-    layer.dataset.mode = "shop-hidden";
-    layer.innerHTML = "";
-    layer.style.display = "none";
   }
 
   function renderShopPanel(){
     const s = ensureOperationSurface();
-    s.style.display = "block";
-    s.style.pointerEvents = "auto";
     s.innerHTML = `
       <div id="tenotsu-shop-panel" role="dialog" aria-label="交換所メニュー">
         <div class="tenotsu-shop-title">アイテム交換所</div>
@@ -338,6 +406,21 @@
         <button type="button" class="tenotsu-shop-button" data-surface-action="back-office">事務所に戻る</button>
       </div>
     `;
+    setI(s, "display", "block");
+    setI(s, "pointer-events", "auto");
+  }
+
+  function renderSidePanel(title, body){
+    const s = ensureOperationSurface();
+    s.innerHTML = `
+      <div id="tenotsu-side-panel" role="dialog" aria-label="${title}">
+        <div class="tenotsu-shop-title">${title}</div>
+        <div class="tenotsu-side-panel-body">${body}</div>
+        <button type="button" class="tenotsu-shop-button" data-surface-action="back-office">事務所に戻る</button>
+      </div>
+    `;
+    setI(s, "display", "block");
+    setI(s, "pointer-events", "auto");
   }
 
   function updateInputSurfaces(){
@@ -356,7 +439,7 @@
         else click.style.removeProperty("display");
       }
       if (op) {
-        const active = currentMode === "shop";
+        const active = currentMode === "shop" || currentMode === "members" || currentMode === "settings";
         op.style.pointerEvents = active ? "auto" : "none";
         op.style.display = active && op.children.length ? "block" : "none";
       }
@@ -381,38 +464,30 @@
   function normalizeLayers(){
     [
       ["#background", Z.bg],
-      ["#random-images-layer,#random-text-layer", Z.title],
       ["#char-layer,#char-layer .char-slot,#char-layer .char-image", Z.storyChar],
       ["#ev-layer,#ev-layer .ev-image,#ev-layer .cg-image,.ev-image,.cg-image", Z.cg],
       ["#click-layer", Z.click],
       ["#tenotsu-front-character-layer,#tenotsu-front-character-layer img", Z.frontChar],
       ["#tenotsu-operation-surface", Z.operation],
       ["#tenotsu-main-menu", Z.menu],
+      ["#tenotsu-hold-surface", Z.hold],
       ["#dialogue-box", Z.dialogue],
       ["#choices,.choices-area", Z.choice],
       ["#battle-root", Z.battle],
       [".fade-overlay,#fade-overlay,.black-fade,#black-fade,.screen-fade,#tenotsu-safe-fade", Z.fade],
       ["#ios-pwa-notice,#rotate-warning", Z.system],
-      [".boot-flow", Z.boot]
+      [".boot-flow,#boot-flow", Z.boot]
     ].forEach(([sel,z]) => qsa(sel).forEach(el => setI(el, "z-index", z)));
 
     normalizeStoryLayer();
-    if (currentMode === "office" || currentMode === "shop") {
-      suppressOldRandomSurfaces();
-      hideLegacyComments();
-      cleanupEmptyDialogueSurface();
-    }
+    removeLegacyVisualSurfaces();
     updateInputSurfaces();
   }
 
   function safeFade(callback){
-    // v038_19:
-    // Correct order is:
-    // current screen -> fade to black -> switch screen while fully black -> fade in.
-    // The fade surface must never remain visible after the transition.
     const f = ensureFade();
-    f.style.display = "block";
-    f.style.pointerEvents = "none";
+    setI(f, "display", "block");
+    setI(f, "pointer-events", "none");
     f.style.transition = "none";
     f.style.opacity = "0";
     f.getBoundingClientRect();
@@ -426,14 +501,13 @@
       try {
         if (typeof callback === "function") callback();
       } finally {
-        // Keep one frame black after changing screen so the user never sees the intermediate office draw.
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
             f.style.transition = "opacity 450ms linear";
             f.style.opacity = "0";
             setTimeout(() => {
-              f.style.display = "none";
-              f.style.pointerEvents = "none";
+              setI(f, "display", "none");
+              setI(f, "pointer-events", "none");
               f.style.transition = "none";
               f.style.opacity = "0";
             }, 520);
@@ -448,10 +522,9 @@
     busy = true;
     try {
       setMode("office");
-      hideRandomShowLayers();
-      hideLegacyComments();
       hideBootOverlay();
-      satisfyLegacyGuard();
+      ensureLegacyGuard();
+      removeLegacyVisualSurfaces();
       document.body.classList.remove("battle-screen");
       const battle = qs("#battle-root");
       if (battle) battle.classList.add("hidden");
@@ -470,14 +543,12 @@
     busy = true;
     try {
       setMode("shop");
-      hideRandomShowLayers();
-      hideLegacyComments();
       hideBootOverlay();
-      satisfyLegacyGuard();
+      ensureLegacyGuard();
+      removeLegacyVisualSurfaces();
+      hideFrontLayer();
       setBackground(BG_SHOP);
-      renderShopCharacter();
-      const g = SHOP_GREETINGS[Math.floor(Math.random() * SHOP_GREETINGS.length)];
-      renderDialogueComment(g[0], g[1]);
+      renderDialogueComment("朔夜", "店長様、お待ちしておりました。本日の交換品はこちらです。");
       renderShopPanel();
       showMainMenu();
       normalizeLayers();
@@ -505,6 +576,9 @@
 
   function enterBattle(){
     setMode("battle");
+    hideBootOverlay();
+    ensureLegacyGuard();
+    removeLegacyVisualSurfaces();
     document.body.classList.add("battle-screen");
     hideFrontLayer();
     hideMainMenu();
@@ -517,6 +591,22 @@
     }
     if (typeof window.startBattle === "function") window.startBattle();
     else if (typeof window.startDeckBattlePrototype === "function") window.startDeckBattlePrototype();
+    normalizeLayers();
+  }
+
+  function enterMembers(){
+    setMode("members");
+    renderSidePanel("メンバー", "メンバー一覧は現在調整中です。ここでは後続実装でメンバー詳細画面へ接続します。");
+    renderDialogueComment("店長", "メンバー画面を確認します。");
+    showMainMenu();
+    normalizeLayers();
+  }
+
+  function enterSettings(){
+    setMode("settings");
+    renderSidePanel("設定", "設定画面は現在調整中です。音量・表示・データ設定をここへ接続予定です。");
+    renderDialogueComment("店長", "設定を確認します。");
+    showMainMenu();
     normalizeLayers();
   }
 
@@ -535,19 +625,14 @@
         setMode("town");
         hideFrontLayer();
         clearOperationSurface();
-        hideDialogueIfNonStory();
+        renderDialogueComment("店長", "外回りへ出ます。");
         if (typeof window.loadScenario === "function") window.loadScenario("town_walk.json");
         break;
       case "設定":
-        setMode("settings");
-        hideFrontLayer();
-        clearOperationSurface();
-        hideDialogueIfNonStory();
-        if (typeof window.tenotsuShowSettingsMenu === "function") window.tenotsuShowSettingsMenu();
+        enterSettings();
         break;
       case "メンバー":
-        enterOffice(false);
-        if (typeof window.tenotsuShowMemberMenu === "function") window.tenotsuShowMemberMenu();
+        enterMembers();
         break;
     }
   }
@@ -579,7 +664,7 @@
 
     document.addEventListener("pointerdown", ev => {
       if (currentMode === "story") return;
-      const target = ev.target && ev.target.closest ? ev.target.closest("[data-surface-action], #battle-root, #tenotsu-main-menu, #tenotsu-shop-panel") : null;
+      const target = ev.target && ev.target.closest ? ev.target.closest("[data-surface-action], #battle-root, #tenotsu-main-menu, #tenotsu-shop-panel, #tenotsu-side-panel") : null;
       if (target) showHoldSurface(ev.clientX, ev.clientY);
     }, true);
 
@@ -594,8 +679,6 @@
         ev.stopPropagation();
         if (typeof ev.stopImmediatePropagation === "function") ev.stopImmediatePropagation();
 
-        // v038_19: Do not hide battle or draw office before black reaches full opacity.
-        // Hide/switch inside safeFade callback only.
         safeFade(() => {
           const root = qs("#battle-root");
           if (root) root.classList.add("hidden");
@@ -635,33 +718,32 @@
     window.tenotsuSetExchangeBackground = function(){ enterShop(); };
     window.tenotsuOpenShopWithSakuya = function(){ openShop(); };
     window.tenotsuNormalizeLayerIndex = function(){ normalizeLayers(); };
+    window.tenotsuRunBootFlow = function(){ if ((document.body.dataset.gameMode || window.tenotsuGameMode) !== "office") enterOffice(true); };
+    window.tenotsuForceShowMenuFallback = function(){ enterOffice(true); };
     window.tenotsuBlackFadeOut = function(ms){
       const f = ensureFade();
-      f.style.display = "block";
-      f.style.pointerEvents = "none";
+      setI(f, "display", "block");
+      setI(f, "pointer-events", "none");
       f.style.transition = "opacity " + (ms || 700) + "ms linear";
       f.style.opacity = "1";
     };
     window.tenotsuBlackFadeIn = function(ms){
       const f = ensureFade();
-      f.style.pointerEvents = "none";
+      setI(f, "pointer-events", "none");
       f.style.transition = "opacity " + (ms || 450) + "ms linear";
       f.style.opacity = "0";
-      setTimeout(() => { f.style.display = "none"; }, (ms || 450) + 80);
+      setTimeout(() => { setI(f, "display", "none"); }, (ms || 450) + 80);
     };
 
-    window.tenotsuRunBootFlow = function(){ if ((document.body.dataset.gameMode || window.tenotsuGameMode) !== "office") enterOffice(true); };
-    window.tenotsuForceShowMenuFallback = function(){ enterOffice(true); };
     window.tenotsuHideOfficeBackgroundDirect = function(){};
     window.tenotsuDisableOfficeBackground = function(){};
     window.tenotsuForceOfficeForeground = function(){};
-    window.tenotsuSurfaceRefreshOffice = function(){ enterOffice(true); };
     window.TENOTSU_OFFICE_DISABLE_BACKGROUND = false;
   }
 
   function patchStoryEnd(){
     const prev = window.tenotsuHandleStoryEndReturn;
-    if (typeof prev !== "function" || prev.__surfaceTakeoverV03814) return;
+    if (typeof prev !== "function" || prev.__surfaceTakeoverV03820) return;
 
     const wrapped = function(){
       const scenarioName = String(window.currentScenario || "");
@@ -674,13 +756,13 @@
         else enterOffice(true);
       });
     };
-    wrapped.__surfaceTakeoverV03814 = true;
+    wrapped.__surfaceTakeoverV03820 = true;
     window.tenotsuHandleStoryEndReturn = wrapped;
   }
 
   function shouldEnterOfficeAfterBoot(){
     const mode = document.body.dataset.gameMode || window.tenotsuGameMode || "";
-    if (["story","shop","battle","office"].includes(mode)) return false;
+    if (["story","shop","battle","office","members","settings"].includes(mode)) return false;
     const bg = qs("#background");
     const src = bg ? String(bg.getAttribute("src") || "") : "";
     if (!mode || mode === "title") return true;
@@ -689,40 +771,34 @@
 
   function boot(){
     try { if (typeof window.tenotsuBootRescuePrepare === "function") window.tenotsuBootRescuePrepare(); } catch (_) {}
-    hideRandomShowLayers();
-    hideLegacyComments();
     patchApis();
     patchStoryEnd();
     installEvents();
+    removeLegacyVisualSurfaces();
     normalizeLayers();
 
-    // Robust boot takeover: if the old boot flow stalls, office still appears.
-    setTimeout(() => {
+    const tryEnterOffice = () => {
+      try { if (typeof window.tenotsuBootRescuePrepare === "function") window.tenotsuBootRescuePrepare(); } catch (_) {}
       patchApis();
       patchStoryEnd();
-      try { if (typeof window.tenotsuBootRescuePrepare === "function") window.tenotsuBootRescuePrepare(); } catch (_) {}
+      removeLegacyVisualSurfaces();
       if (shouldEnterOfficeAfterBoot()) {
         enterOffice(!bootOfficeEntered);
         bootOfficeEntered = true;
-      } else normalizeLayers();
-    }, 150);
+      } else {
+        normalizeLayers();
+      }
+    };
 
-    setTimeout(() => {
-      try { if (typeof window.tenotsuBootRescuePrepare === "function") window.tenotsuBootRescuePrepare(); } catch (_) {}
-      if (shouldEnterOfficeAfterBoot()) {
-        enterOffice(!bootOfficeEntered);
-        bootOfficeEntered = true;
-      } else normalizeLayers();
-    }, 800);
-
-    // Last safety. No observers, no recursive rebuild.
+    setTimeout(tryEnterOffice, 120);
+    setTimeout(tryEnterOffice, 700);
     setTimeout(() => {
       const mode = document.body.dataset.gameMode || window.tenotsuGameMode || "";
       if (!mode || mode === "title") {
         enterOffice(!bootOfficeEntered);
         bootOfficeEntered = true;
       }
-    }, 1800);
+    }, 1600);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);

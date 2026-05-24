@@ -1,4 +1,4 @@
-/* v038_19 Surface Takeover CSS
+/* v038_20 Surface Takeover CSS
    Best-practice implementation:
    - old menu surfaces are hidden
    - new surfaceManager owns office/shop menu and operation surfaces
@@ -378,7 +378,7 @@ body.mode-shop #tenotsu-operation-surface {
 }
 
 
-/* v038_19 boot rescue */
+/* v038_20 boot rescue */
 body[data-game-mode="office"] #boot-flow,
 body.mode-office #boot-flow,
 body[data-game-mode="shop"] #boot-flow,
@@ -397,7 +397,7 @@ body.mode-battle #boot-flow,
 }
 
 
-/* v038_19 unified comment / shop no-character */
+/* v038_20 unified comment / shop no-character */
 #office-comment-box,
 #title-comment-box,
 #office-message,
@@ -441,7 +441,7 @@ body.mode-shop #dialogue-box {
 }
 
 
-/* v038_19 randomShows unification and background fallback */
+/* v038_20 randomShows unification and background fallback */
 body[data-game-mode="office"] #game-container,
 body.mode-office #game-container {
   background-image: url("../images/assets/bgev/bg_office_hidamari.png") !important;
@@ -467,7 +467,7 @@ body.mode-shop #game-container {
 }
 
 
-/* v038_19 fade order fix */
+/* v038_20 fade order fix */
 #tenotsu-safe-fade {
   position: fixed !important;
   inset: 0 !important;
@@ -484,7 +484,7 @@ body:not(.mode-story):not(.mode-battle):not(.mode-office):not(.mode-shop) #tenot
 }
 
 
-/* v038_19 boot singleton / background / hold / text surface fix */
+/* v038_20 boot singleton / background / hold / text surface fix */
 
 /* suppress legacy/random title surfaces */
 #random-images-layer,
@@ -606,4 +606,202 @@ body.mode-shop #tenotsu-front-character-layer {
   display: none !important;
   visibility: hidden !important;
   pointer-events: none !important;
+}
+
+
+/* v038_20 single authority hard fix */
+#random-images-layer,
+#random-text-layer,
+.random-images-layer,
+.random-text-layer,
+.random-show,
+.random-character,
+.title-character-layer,
+.title-comment-window,
+.title-comment,
+.boot-character-layer,
+#tenotsu-surface-office-layer,
+#tenotsu-shop-character-layer,
+#tenotsu-office-force-layer,
+#office-character-layer,
+#tenotsu-office-character-overlay {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+#list-panel,
+#menu-panel,
+.menu-panel,
+.left-menu,
+#left-menu,
+#leftPanel,
+.exchange-menu,
+.exchange-panel,
+.shop-submenu,
+.sub-menu,
+#office-comment-box,
+#title-comment-box,
+#office-message,
+#office-comment,
+.office-comment-box,
+.title-comment-box,
+.office-message,
+.office-comment,
+.top-comment,
+.header-comment,
+.tenotsu-office-comment,
+#tenotsu-office-comment,
+#tenotsu-office-force-comment,
+#tenotsu-surface-comment,
+.tenotsu-bottom-comment,
+#tenotsu-bottom-comment {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+#game-container {
+  background-color: #000 !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+#background {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  object-fit: cover !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+#tenotsu-front-character-layer {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 720 !important;
+  pointer-events: none !important;
+  overflow: visible !important;
+}
+
+#tenotsu-front-character-layer img,
+.tenotsu-front-stand {
+  position: fixed !important;
+  bottom: 0 !important;
+  top: auto !important;
+  width: auto !important;
+  max-width: 470px !important;
+  max-height: 96vh !important;
+  height: auto !important;
+  object-fit: contain !important;
+  pointer-events: none !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: .99 !important;
+  transform-origin: bottom center !important;
+  filter: drop-shadow(0 16px 26px rgba(0,0,0,.55)) !important;
+}
+
+.tenotsu-front-stand-0 {
+  left: 32% !important;
+  transform: translateX(-50%) scale(1.03) !important;
+  z-index: 723 !important;
+}
+.tenotsu-front-stand-1 {
+  left: 15% !important;
+  transform: translateX(-50%) scale(.92) !important;
+  z-index: 722 !important;
+}
+.tenotsu-front-stand-2 {
+  left: 49% !important;
+  transform: translateX(-50%) scale(.92) !important;
+  z-index: 721 !important;
+}
+
+body[data-game-mode="shop"] #tenotsu-front-character-layer,
+body.mode-shop #tenotsu-front-character-layer,
+body[data-game-mode="battle"] #tenotsu-front-character-layer,
+body.mode-battle #tenotsu-front-character-layer {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+#dialogue-box {
+  z-index: 1200 !important;
+}
+
+body[data-game-mode="office"] #dialogue-box,
+body.mode-office #dialogue-box,
+body[data-game-mode="shop"] #dialogue-box,
+body.mode-shop #dialogue-box,
+body[data-game-mode="members"] #dialogue-box,
+body.mode-members #dialogue-box,
+body[data-game-mode="settings"] #dialogue-box,
+body.mode-settings #dialogue-box {
+  display: block !important;
+  visibility: visible !important;
+  position: fixed !important;
+  left: 5% !important;
+  right: 12% !important;
+  top: auto !important;
+  bottom: max(18px, env(safe-area-inset-bottom)) !important;
+  width: auto !important;
+  z-index: 1200 !important;
+  pointer-events: none !important;
+}
+
+#tenotsu-side-panel {
+  position: fixed !important;
+  right: calc(min(300px, 24vw) + max(44px, env(safe-area-inset-right))) !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: min(380px, 34vw) !important;
+  padding: 16px !important;
+  border-radius: 18px !important;
+  background: rgba(18,16,28,.86) !important;
+  border: 1px solid rgba(185,150,255,.45) !important;
+  box-shadow: 0 14px 42px rgba(0,0,0,.42) !important;
+  color: #fff !important;
+  z-index: 770 !important;
+  pointer-events: auto !important;
+}
+
+.tenotsu-side-panel-body {
+  line-height: 1.7 !important;
+  padding: 10px 4px 16px !important;
+  color: #fff !important;
+}
+
+#tenotsu-hold-surface {
+  position: fixed !important;
+  width: 64px !important;
+  height: 64px !important;
+  margin-left: -32px !important;
+  margin-top: -32px !important;
+  z-index: 860 !important;
+  pointer-events: none !important;
+  display: none;
+}
+
+#tenotsu-hold-surface .tenotsu-hold-ring {
+  width: 64px !important;
+  height: 64px !important;
+  border-radius: 50% !important;
+  border: 3px solid rgba(255, 220, 120, .92) !important;
+  box-shadow: 0 0 20px rgba(255, 195, 80, .75), inset 0 0 12px rgba(255,255,255,.35) !important;
+  animation: tenotsuHoldPulse .8s ease-in-out infinite alternate;
+}
+
+#tenotsu-hold-surface.is-holding {
+  display: block !important;
+}
+
+@keyframes tenotsuHoldPulse {
+  from { transform: scale(.82); opacity: .72; }
+  to { transform: scale(1.08); opacity: 1; }
 }
