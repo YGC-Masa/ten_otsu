@@ -1,4 +1,4 @@
-/* v038_09 Surface Manager
+/* v038_10 Surface Manager
    Adds an explicit operation surface and fixes shop interactions.
    Important:
    - #click-layer is for ADV/story only.
@@ -8,7 +8,7 @@
 (function(){
   "use strict";
 
-  const VERSION = "v038_09";
+  const VERSION = "v038_10";
   const BG_OFFICE = "images/assets/bgev/bg_office_hidamari.png";
   const BG_SHOP = "images/assets/bgev/bg_exchange_item_counter.png";
   const SAKUYA_INTRO_SCENARIO = "shop_exchange_intro_sakuya.json";
@@ -59,6 +59,7 @@
   });
 
   window.TENOTSU_SURFACE_VERSION = VERSION;
+  window.__TENOTSU_SURFACE_EVENT_LOCK__ = false;
   window.TENOTSU_LAYER_Z = Z;
 
   let isRendering = false;
@@ -138,6 +139,7 @@
     if (surface) {
       surface.innerHTML = "";
       surface.style.display = "none";
+      surface.style.pointerEvents = "none";
     }
   }
 
@@ -161,7 +163,9 @@
     }
 
     if (op) {
-      op.style.pointerEvents = (mode === "office" || mode === "shop" || mode === "settings" || mode === "town") ? "auto" : "none";
+      const activeUiMode = (mode === "office" || mode === "shop" || mode === "settings" || mode === "town");
+      op.style.pointerEvents = activeUiMode ? "auto" : "none";
+      op.style.display = activeUiMode ? (op.children.length ? "block" : "none") : "none";
     }
   }
 
@@ -332,6 +336,9 @@
     isRendering = true;
     try {
       setMode("office");
+      document.body.classList.remove("battle-screen");
+      const battleRoot = qs("#battle-root");
+      if (battleRoot) battleRoot.classList.add("hidden");
       removeOldDiagnosticLayers();
       clearOperationSurface();
       setBackground(BG_OFFICE);
@@ -362,6 +369,7 @@
       hideOfficeLayer();
       showShopGreeting();
       renderShopOperationSurface();
+      updateInputSurfaces("shop");
 
       // 右6大メニューは残す。ショップ中でも「店舗」で戻れる。
       buildSixMenu();
@@ -390,6 +398,7 @@
 
   function enterBattle(){
     setMode("battle");
+    document.body.classList.add("battle-screen");
     hideOfficeLayer();
     hideComment();
     clearOperationSurface();
@@ -458,6 +467,9 @@
     installed = true;
 
     document.addEventListener("click", ev => {
+      // Never touch battle-root buttons here; battle.js owns them.
+      if (ev.target && ev.target.closest && ev.target.closest("#battle-root")) return;
+
       const actionEl = ev.target && ev.target.closest ? ev.target.closest("[data-surface-action], .tenotsu-six-main-button") : null;
       if (!actionEl) return;
 
@@ -466,7 +478,16 @@
 
       if (!action) return;
       ev.preventDefault();
-      handleSurfaceAction(action, label);
+      ev.stopPropagation();
+      if (typeof ev.stopImmediatePropagation === "function") ev.stopImmediatePropagation();
+
+      if (window.__TENOTSU_SURFACE_EVENT_LOCK__) return;
+      window.__TENOTSU_SURFACE_EVENT_LOCK__ = true;
+      try {
+        handleSurfaceAction(action, label);
+      } finally {
+        setTimeout(() => { window.__TENOTSU_SURFACE_EVENT_LOCK__ = false; }, 120);
+      }
     }, true);
   }
 
@@ -543,10 +564,29 @@
     return text.includes("店舗") && text.includes("メンバー") && text.includes("ショップ");
   }
 
+
+  function patchBattleCloseReturn(){
+    // Battle.js uses button[data-action="close"]. Make it deterministic and prevent old handlers from double-firing.
+    document.addEventListener("click", ev => {
+      if (!ev.target || !ev.target.closest) return;
+      const btn = ev.target.closest("#battle-root button[data-action='close']");
+      if (!btn) return;
+      ev.preventDefault();
+      ev.stopPropagation();
+      if (typeof ev.stopImmediatePropagation === "function") ev.stopImmediatePropagation();
+
+      const root = qs("#battle-root");
+      if (root) root.classList.add("hidden");
+      document.body.classList.remove("battle-screen");
+      setTimeout(() => enterOffice(true), 0);
+    }, true);
+  }
+
   function boot(){
     patchExistingAPIs();
     patchStoryEndShopReturn();
     installButtonDelegates();
+    patchBattleCloseReturn();
     normalizeLayers();
 
     if (detectOfficeCandidate()) enterOffice(false);

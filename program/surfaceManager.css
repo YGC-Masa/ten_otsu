@@ -1,4 +1,4 @@
-/* v038_09 Surface Manager CSS
+/* v038_10 Surface Manager CSS
    Authoritative late-loaded layer rules.
    Purpose: replace accumulated surface test overrides without deleting historical comments.
 */
@@ -297,7 +297,7 @@ body.mode-battle #click-layer {
 }
 
 
-/* v038_09 operation surface */
+/* v038_10 operation surface */
 #tenotsu-operation-surface {
   position: fixed !important;
   inset: 0 !important;
@@ -372,5 +372,26 @@ body.mode-town #click-layer {
 
 body[data-game-mode="story"] #click-layer,
 body.mode-story #click-layer {
+  pointer-events: auto !important;
+}
+
+
+/* v038_10 input hang hardening */
+body[data-game-mode="battle"] #tenotsu-operation-surface,
+body.mode-battle #tenotsu-operation-surface,
+body[data-game-mode="story"] #tenotsu-operation-surface,
+body.mode-story #tenotsu-operation-surface {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+body[data-game-mode="shop"] #tenotsu-operation-surface,
+body.mode-shop #tenotsu-operation-surface {
+  display: block !important;
+  pointer-events: auto !important;
+}
+
+#battle-root,
+#battle-root * {
   pointer-events: auto !important;
 }
