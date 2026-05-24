@@ -1,14 +1,14 @@
-/* v038_12 Surface Manager
-   Adds an explicit operation surface and fixes shop interactions.
-   Important:
-   - #click-layer is for ADV/story only.
-   - #tenotsu-operation-surface is for office/shop/menu UI.
-   - Do not globally stop propagation for all menu clicks.
+/* v038_13 Surface Manager Takeover
+   Best implementation:
+   - Single authority for non-ADV surfaces.
+   - Does not reuse #list-panel or old submenus.
+   - Existing #dialogue-box is the only comment/dialogue area.
+   - #click-layer is ADV/story only.
 */
 (function(){
   "use strict";
 
-  const VERSION = "v038_12";
+  const VERSION = "v038_13";
   const BG_OFFICE = "images/assets/bgev/bg_office_hidamari.png";
   const BG_SHOP = "images/assets/bgev/bg_exchange_item_counter.png";
   const SAKUYA_INTRO_SCENARIO = "shop_exchange_intro_sakuya.json";
@@ -23,9 +23,9 @@
     ["大道寺 真花","f10201.webp","店長、本日もよろしくお願いします。"],
     ["氷神 雪乃","g10201.webp","貴方様、無理はなさらないでくださいね。"],
     ["双沢 美空","h10501.webp","店長、今日も笑顔でいきましょう。"],
-    ["双沢 夜空","i10201.webp","あんた、今日もちゃんと見てるから。"],
+    ["双沢 夜空","i10501.webp","あんた、今日もちゃんと見てるから。"],
     ["芝桜 桃","j10501.webp","店長、ウチ参上！"],
-    ["紫藤 彩愛","k10201.webp","貴方、こちらで確認くださいませ。"],
+    ["紫藤 彩愛","k10501.webp","貴方、こちらで確認くださいませ。"],
     ["餅月 里美","l10501.webp","てんちょ～、お茶でも飲んでいきます～？"],
     ["草壁 萌","m10501.webp","おにいちゃん、ここにいるよ。"]
   ];
@@ -46,13 +46,11 @@
     storyChar: 120,
     cg: 180,
     click: 240,
-    dialogue: 420,
-    choice: 440,
-    officeChar: 520,
     frontChar: 720,
     operation: 760,
-    menu: 800,
-    comment: 900,
+    menu: 820,
+    dialogue: 900,
+    choice: 920,
     battle: 30000,
     fade: 50000,
     system: 70000,
@@ -60,10 +58,10 @@
   });
 
   window.TENOTSU_SURFACE_VERSION = VERSION;
-  window.__TENOTSU_SURFACE_EVENT_LOCK__ = false;
   window.TENOTSU_LAYER_Z = Z;
 
-  let isRendering = false;
+  let currentMode = "";
+  let busy = false;
   let installed = false;
 
   function qs(sel){ return document.querySelector(sel); }
@@ -79,13 +77,14 @@
   }
 
   function setMode(mode){
+    currentMode = mode;
     window.tenotsuGameMode = mode;
     document.body.dataset.gameMode = mode;
     ["title","office","story","shop","battle","town","settings"].forEach(m => {
       document.body.classList.toggle("mode-" + m, mode === m);
     });
     document.body.classList.toggle("story-playing", mode === "story");
-    updateInputSurfaces(mode);
+    updateInputSurfaces();
   }
 
   function setBackground(src){
@@ -105,48 +104,14 @@
     document.body.style.removeProperty("background-image");
   }
 
-  function ensureOfficeLayer(){
-    let layer = qs("#tenotsu-surface-office-layer");
+  function ensureFrontLayer(){
+    let layer = qs("#tenotsu-front-character-layer");
     if (!layer) {
       layer = document.createElement("div");
-      layer.id = "tenotsu-surface-office-layer";
+      layer.id = "tenotsu-front-character-layer";
       document.body.appendChild(layer);
     }
     return layer;
-  }
-
-  function ensureComment(){
-    let box = qs("#tenotsu-surface-comment");
-    if (!box) {
-      box = document.createElement("div");
-      box.id = "tenotsu-surface-comment";
-      document.body.appendChild(box);
-    }
-    return box;
-  }
-
-  function renderUnifiedComment(name, text){
-    // v038_12: use the original dialogue-box as the shared lower comment area.
-    const dialogue = qs("#dialogue-box");
-    const nameEl = qs("#name");
-    const textEl = qs("#text");
-    if (dialogue && nameEl && textEl) {
-      dialogue.classList.remove("hidden");
-      dialogue.style.setProperty("display", "block", "important");
-      dialogue.style.setProperty("position", "fixed", "important");
-      dialogue.style.setProperty("left", "5%", "important");
-      dialogue.style.setProperty("right", "12%", "important");
-      dialogue.style.setProperty("top", "auto", "important");
-      dialogue.style.setProperty("bottom", "max(18px, env(safe-area-inset-bottom))", "important");
-      dialogue.style.setProperty("width", "auto", "important");
-      dialogue.style.setProperty("z-index", String(Z.comment), "important");
-      dialogue.style.setProperty("pointer-events", "none", "important");
-      nameEl.textContent = name || "";
-      textEl.innerHTML = text || "";
-    }
-
-    const oldSurface = qs("#tenotsu-surface-comment");
-    if (oldSurface) oldSurface.style.display = "none";
   }
 
   function ensureOperationSurface(){
@@ -159,57 +124,103 @@
     return surface;
   }
 
-  function ensureShopCharacterLayer(){
-    let layer = qs("#tenotsu-shop-character-layer");
-    if (!layer) {
-      layer = document.createElement("div");
-      layer.id = "tenotsu-shop-character-layer";
-      const img = document.createElement("img");
-      img.className = "tenotsu-shop-sakuya";
-      img.alt = "宵闇 朔夜";
-      img.src = "images/assets/char/sakuya_02_hood.webp";
-      img.onerror = () => {
-        img.onerror = null;
-        img.src = "images/assets/char/sakuya_01_hooddeep.webp";
-      };
-      layer.appendChild(img);
-      document.body.appendChild(layer);
+  function ensureMainMenu(){
+    let menu = qs("#tenotsu-main-menu");
+    if (!menu) {
+      menu = document.createElement("div");
+      menu.id = "tenotsu-main-menu";
+      document.body.appendChild(menu);
     }
-    return layer;
+    return menu;
   }
 
-  function hideShopCharacterLayer(){
-    const layer = qs("#tenotsu-shop-character-layer");
-    if (layer) layer.style.display = "none";
-  }
-
-  function renderShopCharacter(){
-    const layer = ensureShopCharacterLayer();
-    layer.style.display = "block";
-  }
-
-  function ensureFrontCharacterLayer(){
-    let layer = qs("#tenotsu-front-character-layer");
-    if (!layer) {
-      layer = document.createElement("div");
-      layer.id = "tenotsu-front-character-layer";
-      document.body.appendChild(layer);
+  function ensureFade(){
+    let f = qs("#tenotsu-safe-fade");
+    if (!f) {
+      f = document.createElement("div");
+      f.id = "tenotsu-safe-fade";
+      document.body.appendChild(f);
     }
-    return layer;
+    return f;
   }
 
-  function hideFrontCharacterLayer(){
+  function hideFrontLayer(){
     const layer = qs("#tenotsu-front-character-layer");
     if (layer) layer.style.display = "none";
   }
 
-  function renderFrontCharactersForOffice(forceNew = false){
-    // v038_12: test layer placed directly under operation surface.
-    const layer = ensureFrontCharacterLayer();
-    const current = layer.dataset.pickKey || "";
-    if (forceNew || !current || !layer.children.length) {
+  function clearOperationSurface(){
+    const s = qs("#tenotsu-operation-surface");
+    if (s) {
+      s.innerHTML = "";
+      s.style.display = "none";
+      s.style.pointerEvents = "none";
+    }
+  }
+
+  function hideMainMenu(){
+    const menu = qs("#tenotsu-main-menu");
+    if (menu) menu.style.display = "none";
+  }
+
+  function showMainMenu(){
+    const menu = ensureMainMenu();
+    const existing = menu.dataset.built === "1";
+    if (!existing) {
+      menu.innerHTML = "";
+      const title = document.createElement("div");
+      title.className = "tenotsu-main-menu-title";
+      title.textContent = "メインメニュー";
+      menu.appendChild(title);
+
+      const grid = document.createElement("div");
+      grid.className = "tenotsu-main-menu-grid";
+      MENU_ITEMS.forEach(label => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "tenotsu-main-menu-button";
+        btn.dataset.surfaceAction = "main-menu";
+        btn.dataset.menuLabel = label;
+        btn.textContent = label;
+        grid.appendChild(btn);
+      });
+      menu.appendChild(grid);
+      menu.dataset.built = "1";
+    }
+    menu.style.display = "block";
+  }
+
+  function renderDialogueComment(name, text){
+    const box = qs("#dialogue-box");
+    const nameEl = qs("#name");
+    const textEl = qs("#text");
+    if (!box || !nameEl || !textEl) return;
+
+    box.classList.remove("hidden");
+    box.style.setProperty("display", "block", "important");
+    box.style.setProperty("position", "fixed", "important");
+    box.style.setProperty("left", "5%", "important");
+    box.style.setProperty("right", "12%", "important");
+    box.style.setProperty("top", "auto", "important");
+    box.style.setProperty("bottom", "max(18px, env(safe-area-inset-bottom))", "important");
+    box.style.setProperty("width", "auto", "important");
+    box.style.setProperty("z-index", String(Z.dialogue), "important");
+    box.style.setProperty("pointer-events", "none", "important");
+    nameEl.textContent = name || "";
+    textEl.innerHTML = text || "";
+  }
+
+  function hideDialogueIfNonStory(){
+    if (currentMode === "story") return;
+    const box = qs("#dialogue-box");
+    if (box) box.classList.add("hidden");
+  }
+
+  function renderOfficeCharacters(forceNew){
+    const layer = ensureFrontLayer();
+    if (forceNew || layer.dataset.mode !== "office" || !layer.children.length) {
       const picks = shuffle(OFFICE_CHARS).slice(0, 3);
-      layer.dataset.pickKey = picks.map(p => p[1]).join("|");
+      layer.dataset.mode = "office";
       layer.innerHTML = "";
       picks.forEach((c, idx) => {
         const img = document.createElement("img");
@@ -222,15 +233,15 @@
         };
         layer.appendChild(img);
       });
-      renderComment(picks[0][0], picks[0][2]);
+      renderDialogueComment(picks[0][0], picks[0][2]);
     }
     layer.style.display = "block";
   }
 
-  function renderFrontSakuyaForShop(){
-    const layer = ensureFrontCharacterLayer();
-    layer.dataset.pickKey = "sakuya-shop";
-    if (!layer.querySelector(".tenotsu-front-sakuya")) {
+  function renderShopCharacter(){
+    const layer = ensureFrontLayer();
+    if (layer.dataset.mode !== "shop" || !layer.querySelector(".tenotsu-front-sakuya")) {
+      layer.dataset.mode = "shop";
       layer.innerHTML = "";
       const img = document.createElement("img");
       img.className = "tenotsu-front-stand tenotsu-front-sakuya";
@@ -245,156 +256,12 @@
     layer.style.display = "block";
   }
 
-  function cleanupLegacyShopPanels(){
-    // Hide old left/shop submenus that predate the surface manager.
-    qsa("#menu-panel,.menu-panel,.left-menu,#left-menu,#leftPanel,.exchange-menu,.exchange-panel,.shop-submenu,.sub-menu").forEach(el => {
-      if (el.id === "list-panel" || el.closest("#list-panel")) return;
-      el.classList.add("hidden");
-      el.style.setProperty("display", "none", "important");
-      el.style.setProperty("pointer-events", "none", "important");
-    });
-
-    // Top dialogue-box is ADV-only. Shop/office use surface comment instead.
-    const dialogue = qs("#dialogue-box");
-    if (dialogue) {
-      dialogue.classList.add("hidden");
-      dialogue.style.setProperty("display", "none", "important");
-      dialogue.style.setProperty("pointer-events", "none", "important");
-    }
-  }
-
-  function clearOperationSurface(){
-    const surface = qs("#tenotsu-operation-surface");
-    if (surface) {
-      surface.innerHTML = "";
-      surface.style.display = "none";
-      surface.style.pointerEvents = "none";
-    }
-  }
-
-  function updateInputSurfaces(mode){
-    const click = qs("#click-layer");
-    const op = qs("#tenotsu-operation-surface");
-
-    if (mode === "story") {
-      if (click) {
-        click.style.removeProperty("display");
-        click.style.pointerEvents = "auto";
-      }
-      if (op) op.style.pointerEvents = "none";
-      return;
-    }
-
-    if (click) {
-      click.style.pointerEvents = "none";
-      if (mode === "battle") click.style.display = "none";
-      else click.style.removeProperty("display");
-    }
-
-    if (op) {
-      const activeUiMode = (mode === "office" || mode === "shop" || mode === "settings" || mode === "town");
-      op.style.pointerEvents = activeUiMode ? "auto" : "none";
-      op.style.display = activeUiMode ? (op.children.length ? "block" : "none") : "none";
-    }
-  }
-
-  function renderComment(name, text){
-    renderUnifiedComment(name, text);
-  }
-
-  function hideOfficeLayer(){
-    const layer = qs("#tenotsu-surface-office-layer");
-    if (layer) layer.style.display = "none";
-  }
-
-  function hideComment(){
-    const box = qs("#tenotsu-surface-comment");
-    if (box) box.style.display = "none";
-    const mode = document.body.dataset.gameMode || window.tenotsuGameMode || "";
-    if (mode !== "story") {
-      const dialogue = qs("#dialogue-box");
-      if (dialogue) dialogue.classList.add("hidden");
-    }
-  }
-
-  function removeOldDiagnosticLayers(){
-    ["#tenotsu-office-force-layer","#tenotsu-office-force-comment","#tenotsu-office-character-overlay","#office-character-layer"].forEach(sel => {
-      qsa(sel).forEach(el => el.remove());
-    });
-  }
-
-  function renderOfficeCharacters(forceNew = false){
-    const layer = ensureOfficeLayer();
-    const current = layer.dataset.pickKey || "";
-    if (forceNew || !current || !layer.children.length) {
-      const picks = shuffle(OFFICE_CHARS).slice(0, 3);
-      const key = picks.map(p => p[1]).join("|");
-      layer.dataset.pickKey = key;
-      layer.innerHTML = "";
-      picks.forEach((c, idx) => {
-        const img = document.createElement("img");
-        img.className = "tenotsu-surface-office-stand tenotsu-surface-office-stand-" + idx;
-        img.alt = c[0];
-        img.src = "images/assets/char/" + c[1];
-        img.onerror = () => {
-          img.onerror = null;
-          img.src = "images/assets/char/a10501.webp";
-        };
-        layer.appendChild(img);
-      });
-      renderComment(picks[0][0], picks[0][2]);
-    }
-    layer.style.display = "block";
-  }
-
-  function menuAlreadyBuilt(panel){
-    if (!panel) return false;
-    const buttons = Array.from(panel.querySelectorAll(".tenotsu-six-main-button")).map(b => (b.textContent || "").trim());
-    return MENU_ITEMS.every(label => buttons.includes(label));
-  }
-
-  function buildSixMenu(){
-    const panel = qs("#list-panel");
-    if (!panel) return;
-
-    panel.classList.remove("hidden");
-    panel.classList.add("show","open","visible","active","tenotsu-six-main-menu");
-
-    if (menuAlreadyBuilt(panel)) {
-      setI(panel, "display", "block");
-      setI(panel, "visibility", "visible");
-      setI(panel, "opacity", "1");
-      return;
-    }
-
-    panel.innerHTML = "";
-
-    const title = document.createElement("div");
-    title.className = "tenotsu-six-main-title";
-    title.textContent = "メインメニュー";
-    panel.appendChild(title);
-
-    const grid = document.createElement("div");
-    grid.className = "tenotsu-six-main-grid";
-
-    MENU_ITEMS.forEach(label => {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "tenotsu-six-main-button";
-      btn.textContent = label;
-      btn.dataset.menuLabel = label;
-      btn.dataset.surfaceAction = "main-menu";
-      grid.appendChild(btn);
-    });
-
-    panel.appendChild(grid);
-  }
-
-  function renderShopOperationSurface(){
-    const surface = ensureOperationSurface();
-    surface.style.display = "block";
-    surface.innerHTML = `
-      <div class="tenotsu-shop-panel" role="dialog" aria-label="交換所メニュー">
+  function renderShopPanel(){
+    const s = ensureOperationSurface();
+    s.style.display = "block";
+    s.style.pointerEvents = "auto";
+    s.innerHTML = `
+      <div id="tenotsu-shop-panel" role="dialog" aria-label="交換所メニュー">
         <div class="tenotsu-shop-title">アイテム交換所</div>
         <button type="button" class="tenotsu-shop-button" data-surface-action="exchange-items">交換品を見る</button>
         <button type="button" class="tenotsu-shop-button" data-surface-action="secret-word">秘密の言葉</button>
@@ -404,167 +271,30 @@
     `;
   }
 
-  function showShopNotice(text){
-    renderComment("朔夜", text);
-  }
-
-  function handleSurfaceAction(action, label){
-    switch(action){
-      case "main-menu":
-        handleMainMenu(label);
-        break;
-      case "exchange-items":
-        showShopNotice("現在交換できる品を確認しています。実交換リストは次の実装で接続します。");
-        break;
-      case "secret-word":
-        showShopNotice("秘密の言葉ですね。入力欄の実装までは、ここで合言葉イベントを受け付ける予定です。");
-        break;
-      case "shop-help":
-        showShopNotice("交換には、イベントの証や素材が必要です。時期によって品揃えが変わります。");
-        break;
-      case "back-office":
-        enterOffice(true);
-        break;
-    }
-  }
-
-  function handleMainMenu(label){
-    switch(label){
-      case "店舗":
-        enterOffice(true);
-        break;
-      case "ショップ":
-        openShop();
-        break;
-      case "店舗営業":
-        enterBattle();
-        break;
-      case "外回り":
-        setMode("town");
-        hideOfficeLayer();
-        hideShopCharacterLayer();
-        hideFrontCharacterLayer();
-        hideComment();
-        clearOperationSurface();
-        if (typeof window.loadScenario === "function") window.loadScenario("town_walk.json");
-        break;
-      case "設定":
-        setMode("settings");
-        hideOfficeLayer();
-        hideShopCharacterLayer();
-        hideFrontCharacterLayer();
-        hideComment();
-        clearOperationSurface();
-        if (typeof window.tenotsuShowSettingsMenu === "function") window.tenotsuShowSettingsMenu();
-        break;
-      case "メンバー":
-        enterOffice(false);
-        if (typeof window.tenotsuShowMemberMenu === "function") window.tenotsuShowMemberMenu();
-        break;
-      default:
-        enterOffice(false);
-    }
-  }
-
-  function enterOffice(forceNewCharacters = false){
-    if (isRendering) return;
-    isRendering = true;
-    try {
-      setMode("office");
-      document.body.classList.remove("battle-screen");
-      const battleRoot = qs("#battle-root");
-      if (battleRoot) battleRoot.classList.add("hidden");
-      removeOldDiagnosticLayers();
-      hideShopCharacterLayer();
-      clearOperationSurface();
-      cleanupLegacyShopPanels();
-      setBackground(BG_OFFICE);
-      if (typeof window.tenotsuSetStoryPlayingFlag === "function") {
-        try { window.tenotsuSetStoryPlayingFlag(false); } catch (_) {}
-      }
-      const dialogue = qs("#dialogue-box");
-      if (dialogue) dialogue.classList.add("hidden");
-      renderOfficeCharacters(forceNewCharacters);
-      renderFrontCharactersForOffice(forceNewCharacters);
-      buildSixMenu();
-      normalizeLayers();
-    } finally {
-      isRendering = false;
-    }
-  }
-
-  function showShopGreeting(){
-    const g = SHOP_GREETINGS[Math.floor(Math.random() * SHOP_GREETINGS.length)];
-    renderComment(g[0], g[1]);
-  }
-
-  function enterShop(){
-    if (isRendering) return;
-    const now = performance.now ? performance.now() : Date.now();
-    if (window.__TENOTSU_LAST_ENTER_SHOP__ && now - window.__TENOTSU_LAST_ENTER_SHOP__ < 250) return;
-    window.__TENOTSU_LAST_ENTER_SHOP__ = now;
-
-    isRendering = true;
-    try {
-      setMode("shop");
-      setBackground(BG_SHOP);
-      hideOfficeLayer();
-      renderShopCharacter();
-      renderFrontSakuyaForShop();
-      showShopGreeting();
-      cleanupLegacyShopPanels();
-      renderShopOperationSurface();
-      updateInputSurfaces("shop");
-
-      // 右6大メニューは残す。ショップ中でも「店舗」で戻れる。
-      buildSixMenu();
-      normalizeLayers();
-    } finally {
-      isRendering = false;
-    }
-  }
-
-  function openShop(){
-    const now = performance.now ? performance.now() : Date.now();
-    if (window.__TENOTSU_OPEN_SHOP_LOCK__ && now - window.__TENOTSU_OPEN_SHOP_LOCK__ < 350) return;
-    window.__TENOTSU_OPEN_SHOP_LOCK__ = now;
-
-    try {
-      const seen = localStorage.getItem(SAKUYA_INTRO_KEY) === "1";
-      if (!seen && typeof window.loadScenario === "function") {
-        localStorage.setItem(SAKUYA_INTRO_KEY, "1");
-        window.__TENOTSU_RETURN_TO_SHOP_AFTER_STORY__ = true;
-        setMode("story");
-        hideOfficeLayer();
-        hideShopCharacterLayer();
-        hideFrontCharacterLayer();
-        hideComment();
-        clearOperationSurface();
-        window.loadScenario(SAKUYA_INTRO_SCENARIO);
-        return;
-      }
-    } catch (_) {}
-    enterShop();
-  }
-
-  function enterBattle(){
-    setMode("battle");
-    document.body.classList.add("battle-screen");
-    hideOfficeLayer();
-    hideShopCharacterLayer();
-    hideFrontCharacterLayer();
-    hideComment();
-    clearOperationSurface();
+  function updateInputSurfaces(){
     const click = qs("#click-layer");
-    if (click) {
-      click.style.display = "none";
-      click.style.pointerEvents = "none";
+    const op = qs("#tenotsu-operation-surface");
+    if (currentMode === "story") {
+      if (click) {
+        click.style.removeProperty("display");
+        click.style.pointerEvents = "auto";
+      }
+      if (op) op.style.pointerEvents = "none";
+    } else {
+      if (click) {
+        click.style.pointerEvents = "none";
+        if (currentMode === "battle") click.style.display = "none";
+        else click.style.removeProperty("display");
+      }
+      if (op) {
+        const active = currentMode === "shop";
+        op.style.pointerEvents = active ? "auto" : "none";
+        op.style.display = active && op.children.length ? "block" : "none";
+      }
     }
-    if (typeof window.startBattle === "function") window.startBattle();
-    normalizeLayers();
   }
 
-  function normalizeStoryCharacters(){
+  function normalizeStoryLayer(){
     qsa("#char-layer img,#char-layer .char-image").forEach(img => {
       setI(img, "position", "relative");
       setI(img, "left", "auto");
@@ -579,29 +309,6 @@
     });
   }
 
-  function normalizeDialogue(){
-    const box = qs("#dialogue-box");
-    if (!box) return;
-    setI(box, "position", "fixed");
-    setI(box, "left", "5%");
-    setI(box, "right", "12%");
-    setI(box, "top", "auto");
-    setI(box, "bottom", "max(18px, env(safe-area-inset-bottom))");
-    setI(box, "width", "auto");
-    setI(box, "z-index", Z.dialogue);
-
-    const mode = document.body.dataset.gameMode || window.tenotsuGameMode || "";
-    if (mode === "shop" || mode === "office") {
-      box.classList.remove("hidden");
-      box.style.setProperty("display", "block", "important");
-      box.style.setProperty("pointer-events", "none", "important");
-      box.style.setProperty("z-index", String(Z.comment), "important");
-    } else {
-      box.style.removeProperty("display");
-      box.style.removeProperty("pointer-events");
-    }
-  }
-
   function normalizeLayers(){
     [
       ["#background", Z.bg],
@@ -609,54 +316,188 @@
       ["#char-layer,#char-layer .char-slot,#char-layer .char-image", Z.storyChar],
       ["#ev-layer,#ev-layer .ev-image,#ev-layer .cg-image,.ev-image,.cg-image", Z.cg],
       ["#click-layer", Z.click],
-      ["#dialogue-box", Z.dialogue],
-      ["#choices,.choices-area", Z.choice],
-      ["#tenotsu-surface-office-layer", Z.officeChar],
-      ["#tenotsu-shop-character-layer,#tenotsu-shop-character-layer img", Z.officeChar],
       ["#tenotsu-front-character-layer,#tenotsu-front-character-layer img", Z.frontChar],
       ["#tenotsu-operation-surface", Z.operation],
-      ["#list-panel,#menu-panel,.right-menu,.right-panel,.menu-panel,.list-panel,.tenotsu-six-main-menu", Z.menu],
-      ["#tenotsu-surface-comment,#office-comment-box,.office-comment-box,.title-comment-box", Z.comment],
+      ["#tenotsu-main-menu", Z.menu],
+      ["#dialogue-box", Z.dialogue],
+      ["#choices,.choices-area", Z.choice],
       ["#battle-root", Z.battle],
-      [".fade-overlay,#fade-overlay,.black-fade,#black-fade,.screen-fade", Z.fade],
+      [".fade-overlay,#fade-overlay,.black-fade,#black-fade,.screen-fade,#tenotsu-safe-fade", Z.fade],
       ["#ios-pwa-notice,#rotate-warning", Z.system],
       [".boot-flow", Z.boot]
     ].forEach(([sel,z]) => qsa(sel).forEach(el => setI(el, "z-index", z)));
 
-    normalizeStoryCharacters();
-    normalizeDialogue();
-    updateInputSurfaces(document.body.dataset.gameMode || window.tenotsuGameMode || "");
+    normalizeStoryLayer();
+    updateInputSurfaces();
   }
 
-  function installButtonDelegates(){
+  function safeFade(callback){
+    const f = ensureFade();
+    f.style.display = "block";
+    f.style.pointerEvents = "none";
+    f.style.transition = "opacity 1000ms linear";
+    f.style.opacity = "0";
+    requestAnimationFrame(() => { f.style.opacity = "1"; });
+    setTimeout(() => {
+      try { if (typeof callback === "function") callback(); }
+      finally {
+        f.style.transition = "opacity 650ms linear";
+        f.style.opacity = "0";
+        setTimeout(() => { f.style.display = "none"; }, 720);
+      }
+    }, 1080);
+  }
+
+  function enterOffice(forceNew){
+    if (busy) return;
+    busy = true;
+    try {
+      setMode("office");
+      document.body.classList.remove("battle-screen");
+      const battle = qs("#battle-root");
+      if (battle) battle.classList.add("hidden");
+      clearOperationSurface();
+      setBackground(BG_OFFICE);
+      renderOfficeCharacters(!!forceNew);
+      showMainMenu();
+      normalizeLayers();
+    } finally {
+      setTimeout(() => { busy = false; }, 80);
+    }
+  }
+
+  function enterShop(){
+    if (busy) return;
+    busy = true;
+    try {
+      setMode("shop");
+      setBackground(BG_SHOP);
+      renderShopCharacter();
+      const g = SHOP_GREETINGS[Math.floor(Math.random() * SHOP_GREETINGS.length)];
+      renderDialogueComment(g[0], g[1]);
+      renderShopPanel();
+      showMainMenu();
+      normalizeLayers();
+    } finally {
+      setTimeout(() => { busy = false; }, 80);
+    }
+  }
+
+  function openShop(){
+    try {
+      const seen = localStorage.getItem(SAKUYA_INTRO_KEY) === "1";
+      if (!seen && typeof window.loadScenario === "function") {
+        localStorage.setItem(SAKUYA_INTRO_KEY, "1");
+        window.__TENOTSU_RETURN_TO_SHOP_AFTER_STORY__ = true;
+        setMode("story");
+        hideFrontLayer();
+        hideMainMenu();
+        clearOperationSurface();
+        window.loadScenario(SAKUYA_INTRO_SCENARIO);
+        return;
+      }
+    } catch (_) {}
+    enterShop();
+  }
+
+  function enterBattle(){
+    setMode("battle");
+    document.body.classList.add("battle-screen");
+    hideFrontLayer();
+    hideMainMenu();
+    clearOperationSurface();
+    hideDialogueIfNonStory();
+    const click = qs("#click-layer");
+    if (click) {
+      click.style.display = "none";
+      click.style.pointerEvents = "none";
+    }
+    if (typeof window.startBattle === "function") window.startBattle();
+    normalizeLayers();
+  }
+
+  function handleMenu(label){
+    switch(label){
+      case "店舗":
+        enterOffice(true);
+        break;
+      case "ショップ":
+        openShop();
+        break;
+      case "店舗営業":
+        enterBattle();
+        break;
+      case "外回り":
+        setMode("town");
+        hideFrontLayer();
+        clearOperationSurface();
+        hideDialogueIfNonStory();
+        if (typeof window.loadScenario === "function") window.loadScenario("town_walk.json");
+        break;
+      case "設定":
+        setMode("settings");
+        hideFrontLayer();
+        clearOperationSurface();
+        hideDialogueIfNonStory();
+        if (typeof window.tenotsuShowSettingsMenu === "function") window.tenotsuShowSettingsMenu();
+        break;
+      case "メンバー":
+        enterOffice(false);
+        if (typeof window.tenotsuShowMemberMenu === "function") window.tenotsuShowMemberMenu();
+        break;
+    }
+  }
+
+  function handleSurfaceAction(action, label){
+    switch(action){
+      case "main-menu":
+        handleMenu(label);
+        break;
+      case "exchange-items":
+        renderDialogueComment("朔夜", "現在交換できる品を確認しています。実交換リストは次の実装で接続します。");
+        break;
+      case "secret-word":
+        renderDialogueComment("朔夜", "秘密の言葉ですね。入力欄の実装までは、ここで合言葉イベントを受け付ける予定です。");
+        break;
+      case "shop-help":
+        renderDialogueComment("朔夜", "交換には、イベントの証や素材が必要です。時期によって品揃えが変わります。");
+        break;
+      case "back-office":
+        enterOffice(true);
+        break;
+    }
+  }
+
+  function installEvents(){
     if (installed) return;
     installed = true;
 
     document.addEventListener("click", ev => {
-      // Never touch battle-root buttons here; battle.js owns them.
-      if (ev.target && ev.target.closest && ev.target.closest("#battle-root")) return;
+      const battleBtn = ev.target && ev.target.closest ? ev.target.closest("#battle-root button[data-action='close']") : null;
+      if (battleBtn) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        if (typeof ev.stopImmediatePropagation === "function") ev.stopImmediatePropagation();
+        const root = qs("#battle-root");
+        if (root) root.classList.add("hidden");
+        safeFade(() => enterOffice(true));
+        return;
+      }
 
-      const actionEl = ev.target && ev.target.closest ? ev.target.closest("[data-surface-action], .tenotsu-six-main-button, #list-panel button, #list-panel .menu-item, #list-panel li, #list-panel a") : null;
+      const actionEl = ev.target && ev.target.closest ? ev.target.closest("[data-surface-action]") : null;
       if (!actionEl) return;
 
-      const label = (actionEl.dataset.menuLabel || actionEl.textContent || "").trim();
-      const action = actionEl.dataset.surfaceAction || ((actionEl.classList.contains("tenotsu-six-main-button") || MENU_ITEMS.includes(label)) ? "main-menu" : "");
-      if (!action) return;
       ev.preventDefault();
       ev.stopPropagation();
       if (typeof ev.stopImmediatePropagation === "function") ev.stopImmediatePropagation();
 
-      if (window.__TENOTSU_SURFACE_EVENT_LOCK__) return;
-      window.__TENOTSU_SURFACE_EVENT_LOCK__ = true;
-      try {
-        handleSurfaceAction(action, label);
-      } finally {
-        setTimeout(() => { window.__TENOTSU_SURFACE_EVENT_LOCK__ = false; }, 120);
-      }
+      const action = actionEl.dataset.surfaceAction || "";
+      const label = (actionEl.dataset.menuLabel || actionEl.textContent || "").trim();
+      handleSurfaceAction(action, label);
     }, true);
   }
 
-  function patchExistingAPIs(){
+  function patchApis(){
     window.tenotsuSetGameMode = function(mode){
       if (mode === "office") return enterOffice(false);
       if (mode === "shop") return enterShop();
@@ -665,159 +506,82 @@
       normalizeLayers();
     };
     window.tenotsuEnterOfficeMode = function(reason){
-      return enterOffice(reason === "story-end" || reason === "force" || reason === true);
+      return enterOffice(reason === true || reason === "force" || reason === "story-end" || reason === "battle-end");
     };
-    window.tenotsuShowOfficeSixMenu = function(){ buildSixMenu(); normalizeLayers(); };
+    window.tenotsuShowOfficeSixMenu = function(){ showMainMenu(); normalizeLayers(); };
     window.tenotsuSetOfficeBackground = function(){ setBackground(BG_OFFICE); };
     window.tenotsuRestoreOfficeBackground = function(){ setBackground(BG_OFFICE); };
-    window.tenotsuShowExchangeShopBackground = function(){ return enterShop(); };
-    window.tenotsuSetExchangeBackground = function(){ return enterShop(); };
-    window.tenotsuOpenShopWithSakuya = function(){ return openShop(); };
+    window.tenotsuShowExchangeShopBackground = function(){ enterShop(); };
+    window.tenotsuSetExchangeBackground = function(){ enterShop(); };
+    window.tenotsuOpenShopWithSakuya = function(){ openShop(); };
     window.tenotsuNormalizeLayerIndex = function(){ normalizeLayers(); };
-    window.tenotsuHideOfficeBackgroundDirect = function(){};
-    window.tenotsuDisableOfficeBackground = function(){};
-    window.tenotsuForceOfficeForeground = function(){};
     window.tenotsuBlackFadeOut = function(ms){
-      const f = ensureSafeFadeOverlay();
+      const f = ensureFade();
       f.style.display = "block";
       f.style.pointerEvents = "none";
       f.style.transition = "opacity " + (ms || 1000) + "ms linear";
       f.style.opacity = "1";
     };
     window.tenotsuBlackFadeIn = function(ms){
-      const f = ensureSafeFadeOverlay();
+      const f = ensureFade();
       f.style.pointerEvents = "none";
       f.style.transition = "opacity " + (ms || 650) + "ms linear";
       f.style.opacity = "0";
       setTimeout(() => { f.style.display = "none"; }, (ms || 650) + 80);
     };
+
+    // old diagnostics neutralized
+    window.tenotsuHideOfficeBackgroundDirect = function(){};
+    window.tenotsuDisableOfficeBackground = function(){};
+    window.tenotsuForceOfficeForeground = function(){};
     window.TENOTSU_OFFICE_DISABLE_BACKGROUND = false;
   }
 
-
-  function ensureSafeFadeOverlay(){
-    let f = qs("#tenotsu-safe-fade");
-    if (!f) {
-      f = document.createElement("div");
-      f.id = "tenotsu-safe-fade";
-      document.body.appendChild(f);
-    }
-    return f;
-  }
-
-  function safeBlackOutThen(callback){
-    const f = ensureSafeFadeOverlay();
-    f.style.display = "block";
-    f.style.opacity = "0";
-    f.style.pointerEvents = "none";
-    f.style.transition = "opacity 1000ms linear";
-    requestAnimationFrame(() => { f.style.opacity = "1"; });
-    setTimeout(() => {
-      try { if (typeof callback === "function") callback(); } finally {
-        f.style.transition = "opacity 650ms linear";
-        f.style.opacity = "0";
-        setTimeout(() => { f.style.display = "none"; }, 720);
-      }
-    }, 1120);
-  }
-
-  function patchStoryEndShopReturn(){
-    const previous = window.tenotsuHandleStoryEndReturn;
-    if (typeof previous !== "function" || previous.__surfaceV03809) return;
+  function patchStoryEnd(){
+    const prev = window.tenotsuHandleStoryEndReturn;
+    if (typeof prev !== "function" || prev.__surfaceTakeoverV03813) return;
 
     const wrapped = function(){
       const scenarioName = String(window.currentScenario || "");
-      const shouldReturnShop = window.__TENOTSU_RETURN_TO_SHOP_AFTER_STORY__ || scenarioName.includes(SAKUYA_INTRO_SCENARIO);
-      if (!shouldReturnShop) return previous.apply(this, arguments);
-
+      const toShop = window.__TENOTSU_RETURN_TO_SHOP_AFTER_STORY__ || scenarioName.includes(SAKUYA_INTRO_SCENARIO);
       window.__TENOTSU_RETURN_TO_SHOP_AFTER_STORY__ = false;
-      window.__TENOTSU_STORY_ENDING__ = true;
+      window.__TENOTSU_STORY_ENDING__ = false;
 
-      const nameBox = qs("#name");
-      const textBox = qs("#text");
-      const dialogueBox = qs("#dialogue-box");
-      const clickLayer = qs("#click-layer");
-
-      if (nameBox) nameBox.textContent = "";
-      if (textBox) textBox.innerHTML = "（交換所が利用可能になりました）";
-      if (dialogueBox) dialogueBox.classList.remove("hidden");
-      if (clickLayer) clickLayer.style.pointerEvents = "none";
-
-      setTimeout(() => {
-        safeBlackOutThen(() => {
-          window.__TENOTSU_STORY_ENDING__ = false;
-          enterShop();
-          if (clickLayer) clickLayer.style.pointerEvents = "auto";
-        });
-      }, 650);
+      safeFade(() => {
+        if (toShop) enterShop();
+        else enterOffice(true);
+      });
     };
-    wrapped.__surfaceV03809 = true;
+    wrapped.__surfaceTakeoverV03813 = true;
     window.tenotsuHandleStoryEndReturn = wrapped;
   }
 
-  function detectOfficeCandidate(){
+  function shouldEnterOfficeAfterBoot(){
     const mode = document.body.dataset.gameMode || window.tenotsuGameMode || "";
-    if (mode === "office") return true;
-    if (["title","story","shop","battle"].includes(mode)) return false;
-    const panel = qs("#list-panel");
-    const text = panel ? panel.textContent || "" : "";
-    return text.includes("店舗") && text.includes("メンバー") && text.includes("ショップ");
+    if (["story","shop","battle","office"].includes(mode)) return false;
+    const bg = qs("#background");
+    const src = bg ? String(bg.getAttribute("src") || "") : "";
+    if (!mode || mode === "title") return true;
+    return src.includes("title");
   }
-
-
-  function patchBattleCloseReturn(){
-    // Battle.js uses button[data-action="close"]. Make it deterministic and prevent old handlers from double-firing.
-    document.addEventListener("click", ev => {
-      if (!ev.target || !ev.target.closest) return;
-      const btn = ev.target.closest("#battle-root button[data-action='close']");
-      if (!btn) return;
-      ev.preventDefault();
-      ev.stopPropagation();
-      if (typeof ev.stopImmediatePropagation === "function") ev.stopImmediatePropagation();
-
-      const root = qs("#battle-root");
-      if (root) root.classList.add("hidden");
-      document.body.classList.remove("battle-screen");
-      setTimeout(() => enterOffice(true), 0);
-    }, true);
-  }
-
-  window.tenotsuSafeStoryEndToOffice = function(){
-    safeBlackOutThen(() => {
-      window.__TENOTSU_STORY_ENDING__ = false;
-      enterOffice(true);
-    });
-  };
 
   function boot(){
-    patchExistingAPIs();
-    patchStoryEndShopReturn();
-    installButtonDelegates();
-    patchBattleCloseReturn();
+    patchApis();
+    patchStoryEnd();
+    installEvents();
     normalizeLayers();
 
-    if (detectOfficeCandidate()) enterOffice(false);
-
     setTimeout(() => {
-      patchExistingAPIs();
-      normalizeLayers();
-      if (detectOfficeCandidate()) enterOffice(false);
+      patchApis();
+      patchStoryEnd();
+      if (shouldEnterOfficeAfterBoot()) enterOffice(true);
+      else normalizeLayers();
     }, 250);
 
     setTimeout(() => {
-      normalizeLayers();
-      if (detectOfficeCandidate()) enterOffice(false);
-    }, 1000);
-
-    // v038_12: if old title.jpg remains after boot and no story/battle is active, enter office.
-    setTimeout(() => {
-      const mode = document.body.dataset.gameMode || window.tenotsuGameMode || "";
-      const bg = qs("#background");
-      const src = bg ? String(bg.getAttribute("src") || "") : "";
-      if ((!mode || mode === "title") && src.includes("title")) {
-        enterOffice(true);
-      }
-    }, 1600);
+      if (shouldEnterOfficeAfterBoot()) enterOffice(true);
+      else normalizeLayers();
+    }, 1200);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
