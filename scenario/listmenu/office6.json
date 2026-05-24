@@ -3,35 +3,35 @@
   "layout": "office6",
   "items": [
     {
-      "text": "⓪ 店舗",
+      "text": "店舗",
       "action": "list",
       "list": "home.json",
       "group": "ステータス管理"
     },
     {
-      "text": "② メンバー",
+      "text": "メンバー",
       "action": "list",
       "list": "members.json",
       "group": "ステータス管理"
     },
     {
-      "text": "① 店舗営業",
+      "text": "店舗営業",
       "action": "battle",
       "group": "ゲームパート"
     },
     {
-      "text": "③ 外回り",
+      "text": "外回り",
       "action": "outer",
       "group": "ゲームパート"
     },
     {
-      "text": "④ ショップ",
+      "text": "ショップ",
       "action": "list",
       "list": "shop.json",
       "group": "その他"
     },
     {
-      "text": "⑤ 設定",
+      "text": "設定",
       "action": "menu",
       "menu": "menu01.json",
       "group": "その他"

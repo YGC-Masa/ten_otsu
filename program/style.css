@@ -6260,7 +6260,7 @@ body.story-playing .message-text {
 }
 /* /v037_93 */
 
-/* v037_93: タイトル画面はメニュー表示を許可 */
+/* v037_94: タイトル画面はメニュー表示を許可 */
 body.title-screen #list-panel {
   pointer-events: auto !important;
 }
@@ -6366,3 +6366,7 @@ body.story-playing .text-body {
   color: #ffffff !important;
 }
 /* /v037_93 */
+
+/* v037_94: office right menu label cleanup */
+.office6 .menu-item, .office-menu-main { letter-spacing: 0.03em; }
+/* /v037_94 */

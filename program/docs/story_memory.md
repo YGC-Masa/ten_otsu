@@ -23,3 +23,10 @@
 ## v037_93 office mode
 
 タイトル→事務所モード→各種パート→事務所モードのフローに変更。事務所モードでは右6大メニューを完全表示し、通常ストーリー中は右メニューを非表示にする。
+
+## v037_94 メニュー・タイトル表示運用
+
+- 右6大メニューの表示名は番号なしで統一する。
+- `index.html` の `<title>` と起動カード内 `.boot-version` は毎版更新する。
+- `TENOTSU_ENGINE_VERSION` / `TENOTSU_BOOT_FLOW_VERSION` / `BATTLE_VERSION` / Service Worker cache name も毎版更新対象。
+- タイトル画面のランダム立ち絵と下部コメントは連動させる。表示された2〜3名のうち、前面代表キャラのコメントを優先表示する。

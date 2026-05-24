@@ -4,11 +4,30 @@ let randomTextElements = [];
 let randomTextLayer = null;
 
 let randomImagesDataCache = null;
+let randomTextsDataCache = null;
 let imagePathsCache = null;
 let preloadedImages = {}; // src => <img>（非表示で保持）
+let randomImagesLoadPromise = null;
+
+const TENOTSU_TITLE_DEFAULT_CHARACTERS = [
+  { id: "aa", name: "緋奈", src: "a10501.webp" },
+  { id: "ab", name: "藍", src: "b10501.webp" },
+  { id: "ac", name: "翠", src: "c10201.webp" },
+  { id: "ad", name: "こがね", src: "d10501.webp" },
+  { id: "ae", name: "琥珀", src: "e10501.webp" },
+  { id: "af", name: "真花", src: "f10201.webp" },
+  { id: "ag", name: "雪乃", src: "g10201.webp" },
+  { id: "ah", name: "美空", src: "h10501.webp" },
+  { id: "ai", name: "夜空", src: "i10201.webp" },
+  { id: "aj", name: "桃", src: "j10501.webp" },
+  { id: "ak", name: "彩愛", src: "k10201.webp" },
+  { id: "al", name: "里美", src: "l10501.webp" },
+  { id: "am", name: "萌", src: "m10501.webp" }
+];
 
 // ▼ レイヤー作成
 function createRandomImagesLayer() {
+  randomImagesLayer = document.getElementById("random-images-layer") || randomImagesLayer;
   if (randomImagesLayer) return;
   randomImagesLayer = document.createElement("div");
   randomImagesLayer.id = "random-images-layer";
@@ -22,10 +41,12 @@ function createRandomImagesLayer() {
     pointerEvents: "none",
     overflow: "hidden"
   });
-  document.body.appendChild(randomImagesLayer);
+  const gameContainer = document.getElementById("game-container");
+  (gameContainer || document.body).appendChild(randomImagesLayer);
 }
 
 function createRandomTextLayer() {
+  randomTextLayer = document.getElementById("random-text-layer") || randomTextLayer;
   if (randomTextLayer) return;
   randomTextLayer = document.createElement("div");
   randomTextLayer.id = "random-text-layer";
@@ -37,7 +58,8 @@ function createRandomTextLayer() {
     zIndex: "6",
     pointerEvents: "none"
   });
-  document.body.appendChild(randomTextLayer);
+  const gameContainer = document.getElementById("game-container");
+  (gameContainer || document.body).appendChild(randomTextLayer);
 }
 
 // ▼ クリア
@@ -57,6 +79,8 @@ function clearRandomImages() {
     });
   }
   randomImageElements = [];
+  window.__TENOTSU_TITLE_RANDOM_SELECTED = [];
+  window.__TENOTSU_TITLE_RANDOM_PRIMARY = null;
 }
 
 function clearRandomTexts() {
@@ -79,43 +103,41 @@ function resolveRandomImagePath(base, name) {
   return (base || "") + name;
 }
 
+function getRandomCharactersFromData(data) {
+  return Array.isArray(data?.characters) && data.characters.length ? [...data.characters] : [...TENOTSU_TITLE_DEFAULT_CHARACTERS];
+}
+
+function loadRandomImagesData() {
+  if (!window.config || !config.randomPath) return Promise.resolve({ characters: TENOTSU_TITLE_DEFAULT_CHARACTERS });
+  if (randomImagesDataCache) return Promise.resolve(randomImagesDataCache);
+  if (randomImagesLoadPromise) return randomImagesLoadPromise;
+  randomImagesLoadPromise = fetch(`${config.randomPath}imageset01.json`)
+    .then(res => res.json())
+    .then(data => {
+      randomImagesDataCache = data;
+      return data;
+    })
+    .catch(err => {
+      console.error("画像JSON読み込み失敗", err);
+      randomImagesDataCache = { characters: TENOTSU_TITLE_DEFAULT_CHARACTERS };
+      return randomImagesDataCache;
+    });
+  return randomImagesLoadPromise;
+}
+
 // ▼ タイトル立ち絵ランダム表示
 function randomImagesOn() {
-  if (!window.config || !config.randomPath) return;
-
-  if (randomImagesDataCache) {
-    buildRandomImages(randomImagesDataCache);
-  } else {
-    fetch(`${config.randomPath}imageset01.json`)
-      .then(res => res.json())
-      .then(data => {
-        randomImagesDataCache = data;
-        buildRandomImages(data);
-      })
-      .catch(err => console.error("画像JSON読み込み失敗", err));
-  }
+  if (!window.config || !config.randomPath) return Promise.resolve([]);
+  const promise = loadRandomImagesData().then(data => buildRandomImages(data));
+  window.__TENOTSU_TITLE_RANDOM_READY = promise;
+  return promise;
 }
 
 function buildRandomImages(data) {
   createRandomImagesLayer();
   clearRandomImages();
 
-  const defaults = [
-    { name: "緋奈", src: "a10501.webp" },
-    { name: "藍", src: "b10501.webp" },
-    { name: "翠", src: "c10201.webp" },
-    { name: "こがね", src: "d10501.webp" },
-    { name: "琥珀", src: "e10501.webp" },
-    { name: "真花", src: "f10201.webp" },
-    { name: "雪乃", src: "g10201.webp" },
-    { name: "美空", src: "h10501.webp" },
-    { name: "夜空", src: "i10201.webp" },
-    { name: "桃", src: "j10501.webp" },
-    { name: "彩愛", src: "k10201.webp" },
-    { name: "里美", src: "l10501.webp" },
-    { name: "萌", src: "m10201.webp" }
-  ];
-  const chars = Array.isArray(data?.characters) ? [...data.characters] : defaults;
+  const chars = getRandomCharactersFromData(data);
   shuffleArray(chars);
   const count = Math.random() < 0.55 ? 2 : 3;
   const selected = chars.slice(0, count);
@@ -124,11 +146,23 @@ function buildRandomImages(data) {
   const isPortrait = w <= 768 && h > w;
 
   const layouts = count === 2
-    ? [{ left: isPortrait ? 8 : 18, z: 2, scale: isPortrait ? 0.82 : 0.92 }, { left: isPortrait ? 44 : 58, z: 1, scale: isPortrait ? 0.80 : 0.90 }]
-    : [{ left: isPortrait ? -2 : 11, z: 1, scale: isPortrait ? 0.76 : 0.84 }, { left: isPortrait ? 27 : 38, z: 3, scale: isPortrait ? 0.86 : 0.96 }, { left: isPortrait ? 56 : 65, z: 2, scale: isPortrait ? 0.76 : 0.84 }];
+    ? [
+        { left: isPortrait ? 8 : 18, z: 2, scale: isPortrait ? 0.82 : 0.92 },
+        { left: isPortrait ? 44 : 58, z: 1, scale: isPortrait ? 0.80 : 0.90 }
+      ]
+    : [
+        { left: isPortrait ? -2 : 11, z: 1, scale: isPortrait ? 0.76 : 0.84 },
+        { left: isPortrait ? 27 : 38, z: 3, scale: isPortrait ? 0.86 : 0.96 },
+        { left: isPortrait ? 56 : 65, z: 2, scale: isPortrait ? 0.76 : 0.84 }
+      ];
 
-  imagePathsCache = selected.map(c => resolveRandomImagePath(config.charPath || "images/assets/char/", c.src));
-  selected.forEach((char, i) => {
+  const selectedWithLayout = selected.map((char, i) => ({ ...char, __layout: layouts[i], __order: i }));
+  const primary = [...selectedWithLayout].sort((a, b) => (b.__layout?.z || 0) - (a.__layout?.z || 0))[0] || selectedWithLayout[0];
+  window.__TENOTSU_TITLE_RANDOM_SELECTED = selectedWithLayout.map(({ __layout, ...rest }) => rest);
+  window.__TENOTSU_TITLE_RANDOM_PRIMARY = primary ? { id: primary.id, name: primary.name, src: primary.src } : null;
+
+  imagePathsCache = selectedWithLayout.map(c => resolveRandomImagePath(config.charPath || "images/assets/char/", c.src));
+  selectedWithLayout.forEach((char, i) => {
     const src = imagePathsCache[i];
     if (!preloadedImages[src]) {
       const img = new Image();
@@ -145,7 +179,7 @@ function buildRandomImages(data) {
       if (img.parentElement) img.parentElement.removeChild(img);
       randomImagesLayer.appendChild(img);
     }
-    const layout = layouts[i];
+    const layout = char.__layout;
     Object.assign(img.style, {
       position: "absolute",
       left: `${layout.left}%`,
@@ -163,12 +197,14 @@ function buildRandomImages(data) {
     });
     randomImageElements.push(img);
   });
+  return window.__TENOTSU_TITLE_RANDOM_SELECTED;
 }
 
 // ▼ 位置だけ再計算・再設定（リサイズ時用）
 function updateRandomImagesPosition() {
   if (!randomImagesLayer || !randomImagesDataCache) return;
   buildRandomImages(randomImagesDataCache);
+  if (randomTextLayer && randomTextElements.length) randomTextsOn();
 }
 
 function normalizeRandomTextData(data) {
@@ -181,19 +217,44 @@ function normalizeRandomTextData(data) {
   return [];
 }
 
-// ▼ タイトル下部コメント：テキストウィンドウ風
-function randomTextsOn() {
-  if (!window.config || !config.randomPath) return;
-
-  fetch(`${config.randomPath}textset01.json`)
+function loadRandomTextsData() {
+  if (!window.config || !config.randomPath) return Promise.resolve({ items: [] });
+  if (randomTextsDataCache) return Promise.resolve(randomTextsDataCache);
+  return fetch(`${config.randomPath}textset01.json`)
     .then(res => res.json())
+    .then(data => {
+      randomTextsDataCache = data;
+      return data;
+    })
+    .catch(err => {
+      console.error("テキストJSON読み込み失敗", err);
+      return { items: [] };
+    });
+}
+
+function chooseLinkedTitleComment(list) {
+  const selected = Array.isArray(window.__TENOTSU_TITLE_RANDOM_SELECTED) ? window.__TENOTSU_TITLE_RANDOM_SELECTED : [];
+  const primary = window.__TENOTSU_TITLE_RANDOM_PRIMARY || selected[0] || null;
+  const selectedNames = selected.map(c => c.name).filter(Boolean);
+  const primaryCandidates = primary ? list.filter(item => item.name === primary.name) : [];
+  if (primaryCandidates.length) return primaryCandidates[Math.floor(Math.random() * primaryCandidates.length)];
+  const selectedCandidates = selectedNames.length ? list.filter(item => selectedNames.includes(item.name)) : [];
+  if (selectedCandidates.length) return selectedCandidates[Math.floor(Math.random() * selectedCandidates.length)];
+  return list[Math.floor(Math.random() * list.length)];
+}
+
+// ▼ タイトル下部コメント：タイトル立ち絵キャラ連動・テキストウィンドウ風
+function randomTextsOn() {
+  const ready = window.__TENOTSU_TITLE_RANDOM_READY || Promise.resolve(window.__TENOTSU_TITLE_RANDOM_SELECTED || []);
+  return Promise.resolve(ready)
+    .then(() => loadRandomTextsData())
     .then(data => {
       createRandomTextLayer();
       clearRandomTexts();
 
       const list = normalizeRandomTextData(data).filter(item => item && item.name && item.text);
       if (!list.length) return;
-      const item = list[Math.floor(Math.random() * list.length)];
+      const item = chooseLinkedTitleComment(list);
       const style = (window.TENOTSU_CHARACTER_STYLE_MAP && window.TENOTSU_CHARACTER_STYLE_MAP[item.name]) || (window.characterStyles && window.characterStyles[item.name]) || window.characterStyles?.[""] || {};
       const color = style.color || "#ffffff";
       const w = window.innerWidth;
@@ -240,14 +301,14 @@ function randomTextsOn() {
       box.appendChild(text);
       randomTextLayer.appendChild(box);
       randomTextElements.push(box);
-    })
-    .catch(err => console.error("テキストJSON読み込み失敗", err));
+    });
 }
 
 // ▼ OFF系
 function randomImagesOff() {
   clearRandomImages();
   randomImagesDataCache = null;
+  randomImagesLoadPromise = null;
   imagePathsCache = null;
   Object.values(preloadedImages).forEach(img => {
     if (img.parentElement !== document.body) {
@@ -268,4 +329,9 @@ window.addEventListener("resize", () => {
   updateRandomImagesPosition();
 });
 
-try { window.randomImagesOn = randomImagesOn; window.randomImagesOff = randomImagesOff; window.randomTextsOn = randomTextsOn; window.randomTextsOff = randomTextsOff; } catch (_) {}
+try {
+  window.randomImagesOn = randomImagesOn;
+  window.randomImagesOff = randomImagesOff;
+  window.randomTextsOn = randomTextsOn;
+  window.randomTextsOff = randomTextsOff;
+} catch (_) {}

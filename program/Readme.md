@@ -766,3 +766,10 @@ GitHub Pages / PWAで画面が変わらない場合は、メニューの「キ�
 - `旧assetsフォルダ/` 参照を `../images/assets/` に統一。
 - ゲーム本体は `program/index.html` から起動。
 - 既存シナリオは `scenario/scenario/` に整理し、`scenario/listmenu/scenario_index.json` を追加。
+
+
+## v037_94 更新メモ
+
+- 右6大メニューの番号表示削除。
+- 起動/表示バージョンの毎版更新方針を反映。
+- タイトルランダム立ち絵と下部コメントをキャラ連動化。

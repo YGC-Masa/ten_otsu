@@ -1,6 +1,7 @@
+window.TENOTSU_LATEST_VERSION = "v037_94";
 
 /* v037_85 engine guard: 起動停止対策 */
-window.TENOTSU_ENGINE_VERSION = "v037_93";
+window.TENOTSU_ENGINE_VERSION = "v037_94";
 window.__TENOTSU_ENGINE_ERRORS__ = window.__TENOTSU_ENGINE_ERRORS__ || [];
 
 window.addEventListener("error", (event) => {
@@ -903,7 +904,7 @@ function tenotsuEnterBattleMode() {
 /* /v037_93 */
 
 /* v037_85 boot flow: 起動フラッシュ → 初期化 → タイトル表示 → 事務所6大メニュー */
-window.TENOTSU_BOOT_FLOW_VERSION = "v037_85";
+window.TENOTSU_BOOT_FLOW_VERSION = "v037_94";
 window.__TENOTSU_BOOT_DONE__ = false;
 
 function tenotsuSetOfficeText(title, text) {
@@ -936,12 +937,12 @@ function tenotsuShowOfficeSixMenu() {
     if (menuPanel) {
       menuPanel.classList.remove("hidden");
       menuPanel.innerHTML = `
-        <button class="menu-item office-menu-main office-status" data-engine-action="store">⓪ 店舗</button>
-        <button class="menu-item office-menu-main office-status" data-engine-action="members">② メンバー</button>
-        <button class="menu-item office-menu-main office-game" data-engine-action="battle">① 店舗営業</button>
-        <button class="menu-item office-menu-main office-game" data-engine-action="town">③ 外回り</button>
-        <button class="menu-item office-menu-main office-other" data-engine-action="shop">④ ショップ</button>
-        <button class="menu-item office-menu-main office-other" data-engine-action="settings">⑤ 設定</button>
+        <button class="menu-item office-menu-main office-status" data-engine-action="store">店舗</button>
+        <button class="menu-item office-menu-main office-status" data-engine-action="members">メンバー</button>
+        <button class="menu-item office-menu-main office-game" data-engine-action="battle">店舗営業</button>
+        <button class="menu-item office-menu-main office-game" data-engine-action="town">外回り</button>
+        <button class="menu-item office-menu-main office-other" data-engine-action="shop">ショップ</button>
+        <button class="menu-item office-menu-main office-other" data-engine-action="settings">設定</button>
       `;
     }
     tenotsuSetOfficeText("ひだまりストア事務所", "上段：ステータス管理 / 中段：ゲームパート / 下段：その他");
@@ -957,6 +958,7 @@ function tenotsuRunBootFlow() {
 
   const boot = document.getElementById("boot-flow");
   const bootLogo = boot ? boot.querySelector(".boot-logo") : null;
+  const bootVersion = boot ? boot.querySelector(".boot-version") : null;
   const bootSub = boot ? boot.querySelector(".boot-sub") : null;
 
   function finishBoot() {
@@ -981,6 +983,7 @@ function tenotsuRunBootFlow() {
       boot.setAttribute("aria-hidden", "false");
     }
     if (bootLogo) bootLogo.textContent = "店長お疲れ様です";
+    if (bootVersion) bootVersion.textContent = window.TENOTSU_BOOT_FLOW_VERSION || "v037_94";
     if (bootSub) bootSub.textContent = "初期化中…";
 
     window.setTimeout(() => { if (bootSub) bootSub.textContent = "ひだまりストアへ接続中…"; }, 520);
