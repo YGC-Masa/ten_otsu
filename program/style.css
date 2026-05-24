@@ -6241,7 +6241,7 @@ button.active {
 }
 
 
-/* v037_91: ストーリー中の右メニュー抑止と本文白固定 */
+/* v037_92: ストーリー中の右メニュー抑止と本文白固定 */
 body.story-playing #list-panel,
 body.story-playing .right-main-panel,
 body.story-playing .right-menu,
@@ -6258,9 +6258,77 @@ body.story-playing .scenario-text,
 body.story-playing .message-text {
   color: #ffffff !important;
 }
-/* /v037_91 */
+/* /v037_92 */
 
-/* v037_91: タイトル画面はメニュー表示を許可 */
+/* v037_92: タイトル画面はメニュー表示を許可 */
 body.title-screen #list-panel {
   pointer-events: auto !important;
 }
+
+
+/* v037_92: 事務所モード */
+body.office-screen #list-panel {
+  display: flex !important;
+  pointer-events: auto !important;
+}
+
+body.office-screen #dialogue-box {
+  display: none !important;
+}
+
+body.office-screen #list-panel.right-main-panel,
+body.office-screen #list-panel {
+  top: 50% !important;
+  right: max(18px, env(safe-area-inset-right)) !important;
+  width: min(360px, 32vw) !important;
+  min-height: min(540px, 78vh) !important;
+  max-height: 82vh !important;
+  padding: 14px !important;
+  gap: 10px !important;
+  justify-content: center !important;
+  background: rgba(255, 248, 224, 0.92) !important;
+  border: 2px solid rgba(255, 194, 95, 0.86) !important;
+  border-radius: 22px !important;
+  box-shadow: 0 18px 52px rgba(86, 50, 10, 0.26) !important;
+  backdrop-filter: blur(6px);
+}
+
+body.office-screen #list-panel button {
+  flex: 0 0 auto !important;
+  min-height: 58px !important;
+  font-size: clamp(15px, 1.7vw, 19px) !important;
+  font-weight: 900 !important;
+  color: #5b3518 !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(255,232,172,0.92)) !important;
+  border: 1px solid rgba(219, 148, 48, 0.72) !important;
+  border-radius: 16px !important;
+  text-shadow: none !important;
+}
+
+body.office-screen #list-panel button:nth-of-type(1),
+body.office-screen #list-panel button:nth-of-type(2) {
+  background: linear-gradient(180deg, rgba(239,248,255,0.96), rgba(206,232,255,0.92)) !important;
+}
+
+body.office-screen #list-panel button:nth-of-type(3),
+body.office-screen #list-panel button:nth-of-type(4) {
+  background: linear-gradient(180deg, rgba(255,246,220,0.98), rgba(255,213,137,0.94)) !important;
+}
+
+body.office-screen #list-panel button:nth-of-type(5),
+body.office-screen #list-panel button:nth-of-type(6) {
+  background: linear-gradient(180deg, rgba(246,255,235,0.98), rgba(215,240,185,0.94)) !important;
+}
+
+@media screen and (max-width: 760px) {
+  body.office-screen #list-panel.right-main-panel,
+  body.office-screen #list-panel {
+    width: min(320px, 46vw) !important;
+    right: 8px !important;
+  }
+  body.office-screen #list-panel button {
+    min-height: 48px !important;
+    font-size: 14px !important;
+  }
+}
+/* /v037_92 */
