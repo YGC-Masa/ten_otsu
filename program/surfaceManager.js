@@ -1,4 +1,4 @@
-/* v038_20 Surface Manager - Single Authority
+/* v038_21 Surface Manager - Single Authority
    Purpose:
    - office/shop visual surfaces are owned by this file only.
    - old randomShows/title/office comment layers are removed or hidden.
@@ -8,7 +8,7 @@
 (function(){
   "use strict";
 
-  const VERSION = "v038_20";
+  const VERSION = "v038_21";
   const BG_OFFICE = "images/assets/bgev/bg_office_hidamari.png";
   const BG_SHOP = "images/assets/bgev/bg_exchange_item_counter.png";
   const SAKUYA_INTRO_SCENARIO = "shop_exchange_intro_sakuya.json";
@@ -294,6 +294,54 @@
     if (menu) setI(menu, "display", "none");
   }
 
+  function ensureShopMenu(){
+    let menu = qs("#tenotsu-shop-menu");
+    if (!menu) {
+      menu = document.createElement("div");
+      menu.id = "tenotsu-shop-menu";
+      document.body.appendChild(menu);
+    }
+    return menu;
+  }
+
+  function showShopMenu(){
+    const menu = ensureShopMenu();
+    if (menu.dataset.built !== "1") {
+      menu.innerHTML = "";
+      const title = document.createElement("div");
+      title.className = "tenotsu-main-menu-title";
+      title.textContent = "ショップメニュー";
+      menu.appendChild(title);
+
+      const grid = document.createElement("div");
+      grid.className = "tenotsu-main-menu-grid";
+
+      [
+        ["交換品を見る", "exchange-items"],
+        ["秘密の言葉", "secret-word"],
+        ["交換所の説明", "shop-help"],
+        ["事務所に戻る", "back-office"]
+      ].forEach(([label, action]) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "tenotsu-main-menu-button tenotsu-shop-menu-button";
+        btn.dataset.surfaceAction = action;
+        btn.textContent = label;
+        grid.appendChild(btn);
+      });
+
+      menu.appendChild(grid);
+      menu.dataset.built = "1";
+    }
+    setI(menu, "display", "block");
+    setI(menu, "pointer-events", "auto");
+  }
+
+  function hideShopMenu(){
+    const menu = qs("#tenotsu-shop-menu");
+    if (menu) setI(menu, "display", "none");
+  }
+
   function ensureFade(){
     let f = qs("#tenotsu-safe-fade");
     if (!f) {
@@ -396,18 +444,12 @@
   }
 
   function renderShopPanel(){
+    // v038_21: shop action buttons live in #tenotsu-shop-menu.
+    // Operation surface remains available but does not create a second submenu.
     const s = ensureOperationSurface();
-    s.innerHTML = `
-      <div id="tenotsu-shop-panel" role="dialog" aria-label="交換所メニュー">
-        <div class="tenotsu-shop-title">アイテム交換所</div>
-        <button type="button" class="tenotsu-shop-button" data-surface-action="exchange-items">交換品を見る</button>
-        <button type="button" class="tenotsu-shop-button" data-surface-action="secret-word">秘密の言葉</button>
-        <button type="button" class="tenotsu-shop-button" data-surface-action="shop-help">交換所の説明</button>
-        <button type="button" class="tenotsu-shop-button" data-surface-action="back-office">事務所に戻る</button>
-      </div>
-    `;
-    setI(s, "display", "block");
-    setI(s, "pointer-events", "auto");
+    s.innerHTML = "";
+    setI(s, "display", "none");
+    setI(s, "pointer-events", "none");
   }
 
   function renderSidePanel(title, body){
@@ -439,7 +481,7 @@
         else click.style.removeProperty("display");
       }
       if (op) {
-        const active = currentMode === "shop" || currentMode === "members" || currentMode === "settings";
+        const active = currentMode === "members" || currentMode === "settings";
         op.style.pointerEvents = active ? "auto" : "none";
         op.style.display = active && op.children.length ? "block" : "none";
       }
@@ -469,7 +511,7 @@
       ["#click-layer", Z.click],
       ["#tenotsu-front-character-layer,#tenotsu-front-character-layer img", Z.frontChar],
       ["#tenotsu-operation-surface", Z.operation],
-      ["#tenotsu-main-menu", Z.menu],
+      ["#tenotsu-main-menu,#tenotsu-shop-menu", Z.menu],
       ["#tenotsu-hold-surface", Z.hold],
       ["#dialogue-box", Z.dialogue],
       ["#choices,.choices-area", Z.choice],
@@ -529,6 +571,7 @@
       const battle = qs("#battle-root");
       if (battle) battle.classList.add("hidden");
       clearOperationSurface();
+      hideShopMenu();
       setBackground(BG_OFFICE);
       renderOfficeCharacters(!!forceNew);
       showMainMenu();
@@ -550,7 +593,8 @@
       setBackground(BG_SHOP);
       renderDialogueComment("朔夜", "店長様、お待ちしておりました。本日の交換品はこちらです。");
       renderShopPanel();
-      showMainMenu();
+      hideMainMenu();
+      showShopMenu();
       normalizeLayers();
     } finally {
       setTimeout(() => { busy = false; }, 50);
@@ -582,6 +626,7 @@
     document.body.classList.add("battle-screen");
     hideFrontLayer();
     hideMainMenu();
+    hideShopMenu();
     clearOperationSurface();
     hideDialogueIfNonStory();
     const click = qs("#click-layer");
@@ -596,17 +641,19 @@
 
   function enterMembers(){
     setMode("members");
+    hideShopMenu();
+    showMainMenu();
     renderSidePanel("メンバー", "メンバー一覧は現在調整中です。ここでは後続実装でメンバー詳細画面へ接続します。");
     renderDialogueComment("店長", "メンバー画面を確認します。");
-    showMainMenu();
     normalizeLayers();
   }
 
   function enterSettings(){
     setMode("settings");
+    hideShopMenu();
+    showMainMenu();
     renderSidePanel("設定", "設定画面は現在調整中です。音量・表示・データ設定をここへ接続予定です。");
     renderDialogueComment("店長", "設定を確認します。");
-    showMainMenu();
     normalizeLayers();
   }
 

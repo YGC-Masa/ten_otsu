@@ -1,4 +1,31 @@
-/* v038_20 randomShows hard visual noop
+/* v038_21 randomShows takeover hard stop
+   During surfaceManager takeover, randomShows must not create or preserve visual DOM.
+*/
+(function(){
+  function active(){
+    try {
+      if (typeof window.tenotsuIsSurfaceTakeoverActive === "function") return !!window.tenotsuIsSurfaceTakeoverActive();
+    } catch (_) {}
+    return !!window.__TENOTSU_SURFACE_TAKEOVER__;
+  }
+  function kill(){
+    if (!active()) return;
+    window.__TENOTSU_TITLE_RANDOM_SELECTED = [];
+    window.__TENOTSU_TITLE_RANDOM_READY = Promise.resolve([]);
+    document.querySelectorAll(
+      "#random-images-layer,#random-text-layer,.random-images-layer,.random-text-layer,.random-show,.random-character,.title-character-layer,.title-comment-window,.title-comment,.boot-character-layer"
+    ).forEach(el => el.remove());
+  }
+  window.tenotsuRandomShowsHardKill = kill;
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", kill);
+  else kill();
+  window.addEventListener("load", kill);
+  setTimeout(kill, 100);
+  setTimeout(kill, 500);
+  setTimeout(kill, 1500);
+})();
+
+/* v038_21 randomShows hard visual noop
    Visual random title/office characters are disabled during surface takeover.
 */
 (function(){
@@ -17,7 +44,7 @@
     return;
   }
 })();
-/* v038_20 surface takeover no visual output
+/* v038_21 surface takeover no visual output
    randomShows.js remains for compatibility/data only.
    Visual title/office random characters are rendered by surfaceManager.js.
 */
@@ -42,7 +69,7 @@ let imagePathsCache = null;
 let preloadedImages = {}; // src => <img>（非表示で保持）
 let randomImagesLoadPromise = null;
 
-// v038_20: surfaceManager takeover compatibility.
+// v038_21: surfaceManager takeover compatibility.
 // During office/shop operation, randomShows must not create separate character/comment surfaces.
 // It only provides data; actual display is owned by surfaceManager (#tenotsu-front-character-layer + #dialogue-box).
 function tenotsuIsSurfaceTakeoverActive() {
@@ -192,8 +219,11 @@ function loadRandomImagesData() {
 // ▼ タイトル立ち絵ランダム表示
 function randomImagesOn() {
   if (tenotsuIsSurfaceTakeoverActive()) {
-    tenotsuHideRandomShowLayers();
-    return Promise.resolve(window.__TENOTSU_TITLE_RANDOM_SELECTED || []);
+    if (typeof window.tenotsuRandomShowsHardKill === "function") window.tenotsuRandomShowsHardKill();
+    else tenotsuHideRandomShowLayers();
+    window.__TENOTSU_TITLE_RANDOM_SELECTED = [];
+    window.__TENOTSU_TITLE_RANDOM_READY = Promise.resolve([]);
+    return Promise.resolve([]);
   }
   if (!window.config || !config.randomPath) return Promise.resolve([]);
   const promise = loadRandomImagesData().then(data => buildRandomImages(data));
@@ -202,6 +232,11 @@ function randomImagesOn() {
 }
 
 function buildRandomImages(data) {
+  // v038_21 buildRandomImages takeover guard
+  if (tenotsuIsSurfaceTakeoverActive()) {
+    if (typeof window.tenotsuRandomShowsHardKill === 'function') window.tenotsuRandomShowsHardKill();
+    return [];
+  }
   createRandomImagesLayer();
   clearRandomImages();
 
@@ -381,7 +416,7 @@ function randomTextsOn() {
 }
 
 function tenotsuRefreshTitleRandomShow() {
-  // v038_20: surfaceManager takeover. Do not create separate title/office surfaces.
+  // v038_21: surfaceManager takeover. Do not create separate title/office surfaces.
   if (tenotsuIsSurfaceTakeoverActive()) {
     tenotsuHideRandomShowLayers();
     if (typeof window.tenotsuSurfaceRefreshOffice === "function") {

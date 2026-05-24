@@ -1,4 +1,4 @@
-/* v038_20 Surface Takeover CSS
+/* v038_21 Surface Takeover CSS
    Best-practice implementation:
    - old menu surfaces are hidden
    - new surfaceManager owns office/shop menu and operation surfaces
@@ -378,7 +378,7 @@ body.mode-shop #tenotsu-operation-surface {
 }
 
 
-/* v038_20 boot rescue */
+/* v038_21 boot rescue */
 body[data-game-mode="office"] #boot-flow,
 body.mode-office #boot-flow,
 body[data-game-mode="shop"] #boot-flow,
@@ -397,7 +397,7 @@ body.mode-battle #boot-flow,
 }
 
 
-/* v038_20 unified comment / shop no-character */
+/* v038_21 unified comment / shop no-character */
 #office-comment-box,
 #title-comment-box,
 #office-message,
@@ -441,7 +441,7 @@ body.mode-shop #dialogue-box {
 }
 
 
-/* v038_20 randomShows unification and background fallback */
+/* v038_21 randomShows unification and background fallback */
 body[data-game-mode="office"] #game-container,
 body.mode-office #game-container {
   background-image: url("../images/assets/bgev/bg_office_hidamari.png") !important;
@@ -467,7 +467,7 @@ body.mode-shop #game-container {
 }
 
 
-/* v038_20 fade order fix */
+/* v038_21 fade order fix */
 #tenotsu-safe-fade {
   position: fixed !important;
   inset: 0 !important;
@@ -484,7 +484,7 @@ body:not(.mode-story):not(.mode-battle):not(.mode-office):not(.mode-shop) #tenot
 }
 
 
-/* v038_20 boot singleton / background / hold / text surface fix */
+/* v038_21 boot singleton / background / hold / text surface fix */
 
 /* suppress legacy/random title surfaces */
 #random-images-layer,
@@ -609,7 +609,7 @@ body.mode-shop #tenotsu-front-character-layer {
 }
 
 
-/* v038_20 single authority hard fix */
+/* v038_21 single authority hard fix */
 #random-images-layer,
 #random-text-layer,
 .random-images-layer,
@@ -804,4 +804,72 @@ body.mode-settings #dialogue-box {
 @keyframes tenotsuHoldPulse {
   from { transform: scale(.82); opacity: .72; }
   to { transform: scale(1.08); opacity: 1; }
+}
+
+
+/* v038_21 shop menu takeover */
+#tenotsu-shop-menu {
+  position: fixed !important;
+  right: max(20px, env(safe-area-inset-right)) !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: min(300px, 24vw) !important;
+  min-width: 260px !important;
+  padding: 18px !important;
+  border-radius: 18px !important;
+  background: rgba(24, 18, 42, .94) !important;
+  border: 2px solid rgba(165, 120, 255, .95) !important;
+  box-shadow: 0 12px 32px rgba(0,0,0,.42) !important;
+  z-index: 820 !important;
+  pointer-events: auto !important;
+  display: none;
+}
+
+#tenotsu-shop-menu .tenotsu-main-menu-title {
+  color: #efe7ff !important;
+}
+
+#tenotsu-shop-menu .tenotsu-main-menu-button {
+  background: linear-gradient(180deg, rgba(78, 58, 132, .98), rgba(43, 31, 82, .98)) !important;
+  color: #fff !important;
+  border: 1px solid rgba(215,190,255,.64) !important;
+}
+
+body[data-game-mode="shop"] #tenotsu-main-menu,
+body.mode-shop #tenotsu-main-menu {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+body[data-game-mode="shop"] #tenotsu-shop-menu,
+body.mode-shop #tenotsu-shop-menu {
+  display: block !important;
+  pointer-events: auto !important;
+}
+
+body:not([data-game-mode="shop"]) #tenotsu-shop-menu {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+body[data-game-mode="office"] #tenotsu-main-menu,
+body.mode-office #tenotsu-main-menu {
+  display: block !important;
+  pointer-events: auto !important;
+}
+
+/* randomShows DOM must never visually reappear during takeover */
+#random-images-layer,
+#random-text-layer,
+.random-images-layer,
+.random-text-layer,
+.random-show,
+.random-character,
+.title-character-layer,
+.title-comment-window,
+.title-comment,
+.boot-character-layer {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
