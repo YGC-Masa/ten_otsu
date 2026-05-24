@@ -1,4 +1,4 @@
-/* v038_11 Surface Manager CSS
+/* v038_12 Surface Manager CSS
    Authoritative late-loaded layer rules.
    Purpose: replace accumulated surface test overrides without deleting historical comments.
 */
@@ -297,7 +297,7 @@ body.mode-battle #click-layer {
 }
 
 
-/* v038_11 operation surface */
+/* v038_12 operation surface */
 #tenotsu-operation-surface {
   position: fixed !important;
   inset: 0 !important;
@@ -376,7 +376,7 @@ body.mode-story #click-layer {
 }
 
 
-/* v038_11 input hang hardening */
+/* v038_12 input hang hardening */
 body[data-game-mode="battle"] #tenotsu-operation-surface,
 body.mode-battle #tenotsu-operation-surface,
 body[data-game-mode="story"] #tenotsu-operation-surface,
@@ -397,7 +397,7 @@ body.mode-shop #tenotsu-operation-surface {
 }
 
 
-/* v038_11 shop cleanup / Sakuya display / legacy menu suppression */
+/* v038_12 shop cleanup / Sakuya display / legacy menu suppression */
 #tenotsu-shop-character-layer {
   position: fixed !important;
   inset: 0 300px 0 0 !important;
@@ -495,4 +495,109 @@ body.mode-shop .sub-menu {
 body[data-game-mode="shop"] #tenotsu-surface-comment,
 body.mode-shop #tenotsu-surface-comment {
   display: block !important;
+}
+
+
+/* v038_12 boot/fade/front-character experiment */
+#tenotsu-front-character-layer {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 720 !important; /* directly under operation surface */
+  pointer-events: none !important;
+  display: none;
+  visibility: visible !important;
+  opacity: 1 !important;
+  overflow: visible !important;
+}
+
+#tenotsu-front-character-layer img,
+.tenotsu-front-stand {
+  position: fixed !important;
+  bottom: 2.5% !important;
+  top: auto !important;
+  width: auto !important;
+  max-width: 470px !important;
+  max-height: 91vh !important;
+  height: auto !important;
+  object-fit: contain !important;
+  pointer-events: none !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: .99 !important;
+  filter: drop-shadow(0 16px 26px rgba(0,0,0,.55)) !important;
+}
+
+.tenotsu-front-stand-0 {
+  left: 32% !important;
+  transform: translateX(-50%) scale(1.03) !important;
+  z-index: 723 !important;
+}
+.tenotsu-front-stand-1 {
+  left: 15% !important;
+  transform: translateX(-50%) scale(.92) !important;
+  z-index: 722 !important;
+}
+.tenotsu-front-stand-2 {
+  left: 49% !important;
+  transform: translateX(-50%) scale(.92) !important;
+  z-index: 721 !important;
+}
+.tenotsu-front-sakuya {
+  left: 30% !important;
+  transform: translateX(-50%) scale(.96) !important;
+  z-index: 723 !important;
+}
+
+body[data-game-mode="office"] #tenotsu-front-character-layer,
+body.mode-office #tenotsu-front-character-layer,
+body[data-game-mode="shop"] #tenotsu-front-character-layer,
+body.mode-shop #tenotsu-front-character-layer {
+  display: block !important;
+}
+
+body[data-game-mode="story"] #tenotsu-front-character-layer,
+body.mode-story #tenotsu-front-character-layer,
+body[data-game-mode="battle"] #tenotsu-front-character-layer,
+body.mode-battle #tenotsu-front-character-layer,
+body[data-game-mode="title"] #tenotsu-front-character-layer,
+body.mode-title #tenotsu-front-character-layer {
+  display: none !important;
+}
+
+/* office/shop comments share the original dialogue box. */
+body[data-game-mode="office"] #dialogue-box,
+body.mode-office #dialogue-box,
+body[data-game-mode="shop"] #dialogue-box,
+body.mode-shop #dialogue-box {
+  display: block !important;
+  position: fixed !important;
+  left: 5% !important;
+  right: 12% !important;
+  top: auto !important;
+  bottom: max(18px, env(safe-area-inset-bottom)) !important;
+  width: auto !important;
+  z-index: 900 !important;
+  pointer-events: none !important;
+}
+
+body[data-game-mode="office"] #tenotsu-surface-comment,
+body.mode-office #tenotsu-surface-comment,
+body[data-game-mode="shop"] #tenotsu-surface-comment,
+body.mode-shop #tenotsu-surface-comment {
+  display: none !important;
+}
+
+#tenotsu-safe-fade {
+  position: fixed !important;
+  inset: 0 !important;
+  background: #000 !important;
+  z-index: 50000 !important;
+  pointer-events: none !important;
+  opacity: 0;
+  display: none;
+}
+
+/* The operation surface must stay above the front character test layer. */
+#tenotsu-operation-surface {
+  z-index: 760 !important;
 }
