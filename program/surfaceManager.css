@@ -1,4 +1,4 @@
-/* v038_16 Surface Takeover CSS
+/* v038_17 Surface Takeover CSS
    Best-practice implementation:
    - old menu surfaces are hidden
    - new surfaceManager owns office/shop menu and operation surfaces
@@ -378,7 +378,7 @@ body.mode-shop #tenotsu-operation-surface {
 }
 
 
-/* v038_16 boot rescue */
+/* v038_17 boot rescue */
 body[data-game-mode="office"] #boot-flow,
 body.mode-office #boot-flow,
 body[data-game-mode="shop"] #boot-flow,
@@ -397,7 +397,7 @@ body.mode-battle #boot-flow,
 }
 
 
-/* v038_16 unified comment / shop no-character */
+/* v038_17 unified comment / shop no-character */
 #office-comment-box,
 #title-comment-box,
 #office-message,
@@ -437,5 +437,31 @@ body.mode-shop #dialogue-box {
   bottom: max(18px, env(safe-area-inset-bottom)) !important;
   width: auto !important;
   z-index: 900 !important;
+  pointer-events: none !important;
+}
+
+
+/* v038_17 randomShows unification and background fallback */
+body[data-game-mode="office"] #game-container,
+body.mode-office #game-container {
+  background-image: url("../images/assets/bgev/bg_office_hidamari.png") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+body[data-game-mode="shop"] #game-container,
+body.mode-shop #game-container {
+  background-image: url("../images/assets/bgev/bg_exchange_item_counter.png") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+#random-images-layer,
+#random-text-layer,
+.title-comment-window {
+  display: none !important;
+  visibility: hidden !important;
   pointer-events: none !important;
 }

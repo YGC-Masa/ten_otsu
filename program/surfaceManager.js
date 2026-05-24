@@ -1,10 +1,10 @@
-/* v038_16 Surface Manager Takeover - verified boot candidate
+/* v038_17 Surface Manager Takeover - verified boot candidate
    Single authority for non-ADV surfaces. Designed to survive broken/old boot flow.
 */
 (function(){
   "use strict";
 
-  const VERSION = "v038_16";
+  const VERSION = "v038_17";
   const BG_OFFICE = "images/assets/bgev/bg_office_hidamari.png";
   const BG_SHOP = "images/assets/bgev/bg_exchange_item_counter.png";
   const SAKUYA_INTRO_SCENARIO = "shop_exchange_intro_sakuya.json";
@@ -103,13 +103,30 @@
       setI(bg, "visibility", "visible");
       setI(bg, "opacity", "1");
       setI(bg, "z-index", Z.bg);
+      bg.onerror = () => console.warn("[TENOTSU BACKGROUND LOAD ERROR]", src);
     }
     const game = qs("#game-container");
     if (game) {
-      setI(game, "background", "#000");
-      setI(game, "background-image", "none");
+      setI(game, "background-color", "#000");
+      // v038_17: CSS fallback. If the #background image is hidden or fails, this still displays the mode background.
+      setI(game, "background-image", `url("${src}")`);
+      setI(game, "background-size", "cover");
+      setI(game, "background-position", "center center");
+      setI(game, "background-repeat", "no-repeat");
     }
     document.body.style.removeProperty("background-image");
+  }
+
+  function hideRandomShowLayers(){
+    try {
+      if (typeof window.tenotsuHideRandomShowLayers === "function") window.tenotsuHideRandomShowLayers();
+    } catch (_) {}
+    qsa("#random-images-layer,#random-text-layer,.title-comment-window").forEach(el => {
+      el.innerHTML = "";
+      el.style.setProperty("display", "none", "important");
+      el.style.setProperty("visibility", "hidden", "important");
+      el.style.setProperty("pointer-events", "none", "important");
+    });
   }
 
   function ensureFrontLayer(){
@@ -182,7 +199,7 @@
   }
 
   function hideLegacyComments(){
-    // v038_16: the only visible comment box outside ADV should be #dialogue-box at the bottom.
+    // v038_17: the only visible comment box outside ADV should be #dialogue-box at the bottom.
     qsa("#office-comment-box,#title-comment-box,#office-message,#office-comment,.office-comment-box,.title-comment-box,.office-message,.office-comment,.top-comment,.header-comment,.tenotsu-office-comment,#tenotsu-office-comment,#tenotsu-office-force-comment,#tenotsu-surface-comment").forEach(el => {
       el.classList.add("hidden");
       el.style.setProperty("display", "none", "important");
@@ -287,7 +304,7 @@
   }
 
   function renderShopCharacter(){
-    // v038_16: shop mode intentionally hides character display.
+    // v038_17: shop mode intentionally hides character display.
     // The exchange counter background and shop panel are the focus.
     const layer = ensureFrontLayer();
     layer.dataset.mode = "shop-hidden";
@@ -393,6 +410,7 @@
     busy = true;
     try {
       setMode("office");
+      hideRandomShowLayers();
       hideLegacyComments();
       hideBootOverlay();
       satisfyLegacyGuard();
@@ -414,6 +432,7 @@
     busy = true;
     try {
       setMode("shop");
+      hideRandomShowLayers();
       hideLegacyComments();
       hideBootOverlay();
       satisfyLegacyGuard();
@@ -583,6 +602,7 @@
     window.tenotsuHideOfficeBackgroundDirect = function(){};
     window.tenotsuDisableOfficeBackground = function(){};
     window.tenotsuForceOfficeForeground = function(){};
+    window.tenotsuSurfaceRefreshOffice = function(){ enterOffice(true); };
     window.TENOTSU_OFFICE_DISABLE_BACKGROUND = false;
   }
 
@@ -616,6 +636,7 @@
 
   function boot(){
     try { if (typeof window.tenotsuBootRescuePrepare === "function") window.tenotsuBootRescuePrepare(); } catch (_) {}
+    hideRandomShowLayers();
     hideLegacyComments();
     patchApis();
     patchStoryEnd();

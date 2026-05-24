@@ -1,9 +1,9 @@
-/* v038_16 Boot Rescue
+/* v038_17 Boot Rescue
    Runs before legacy script.js. Prevents legacy MutationObserver/menu fallback loops from freezing boot.
 */
 (function(){
   "use strict";
-  window.TENOTSU_BOOT_RESCUE_VERSION = "v038_16";
+  window.TENOTSU_BOOT_RESCUE_VERSION = "v038_17";
   window.__TENOTSU_DISABLE_LEGACY_OBSERVERS__ = true;
   window.__TENOTSU_SURFACE_TAKEOVER__ = true;
 
@@ -41,7 +41,17 @@
     list.style.setProperty("pointer-events", "none", "important");
   }
 
+  function hideRandomShowLayers(){
+    document.querySelectorAll("#random-images-layer,#random-text-layer,.title-comment-window").forEach(el => {
+      el.innerHTML = "";
+      el.style.setProperty("display", "none", "important");
+      el.style.setProperty("visibility", "hidden", "important");
+      el.style.setProperty("pointer-events", "none", "important");
+    });
+  }
+
   function hideLegacyCommentBoxes(){
+    hideRandomShowLayers();
     document.querySelectorAll("#office-comment-box,#title-comment-box,#office-message,#office-comment,.office-comment-box,.title-comment-box,.office-message,.office-comment,.top-comment,.header-comment,.tenotsu-office-comment,#tenotsu-office-comment,#tenotsu-office-force-comment,#tenotsu-surface-comment").forEach(el => {
       el.classList.add("hidden");
       el.style.setProperty("display", "none", "important");

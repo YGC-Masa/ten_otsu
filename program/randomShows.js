@@ -9,6 +9,29 @@ let imagePathsCache = null;
 let preloadedImages = {}; // src => <img>（非表示で保持）
 let randomImagesLoadPromise = null;
 
+// v038_17: surfaceManager takeover compatibility.
+// During office/shop operation, randomShows must not create separate character/comment surfaces.
+// It only provides data; actual display is owned by surfaceManager (#tenotsu-front-character-layer + #dialogue-box).
+function tenotsuIsSurfaceTakeoverActive() {
+  return !!window.__TENOTSU_SURFACE_TAKEOVER__ || !!window.TENOTSU_SURFACE_VERSION;
+}
+
+function tenotsuHideRandomShowLayers() {
+  const imgLayer = document.getElementById("random-images-layer");
+  const txtLayer = document.getElementById("random-text-layer");
+  [imgLayer, txtLayer].forEach(layer => {
+    if (!layer) return;
+    layer.innerHTML = "";
+    layer.style.setProperty("display", "none", "important");
+    layer.style.setProperty("visibility", "hidden", "important");
+    layer.style.setProperty("pointer-events", "none", "important");
+  });
+  randomImageElements = [];
+  randomTextElements = [];
+}
+
+
+
 const TENOTSU_TITLE_DEFAULT_CHARACTERS = [
   { id: "aa", name: "緋奈", src: "a10501.webp" },
   { id: "ab", name: "藍", src: "b10501.webp" },
@@ -27,6 +50,10 @@ const TENOTSU_TITLE_DEFAULT_CHARACTERS = [
 
 // ▼ レイヤー作成
 function createRandomImagesLayer() {
+  if (tenotsuIsSurfaceTakeoverActive()) {
+    tenotsuHideRandomShowLayers();
+    return;
+  }
   randomImagesLayer = document.getElementById("random-images-layer") || randomImagesLayer;
   if (randomImagesLayer) return;
   randomImagesLayer = document.createElement("div");
@@ -46,6 +73,10 @@ function createRandomImagesLayer() {
 }
 
 function createRandomTextLayer() {
+  if (tenotsuIsSurfaceTakeoverActive()) {
+    tenotsuHideRandomShowLayers();
+    return;
+  }
   randomTextLayer = document.getElementById("random-text-layer") || randomTextLayer;
   if (randomTextLayer) return;
   randomTextLayer = document.createElement("div");
@@ -127,6 +158,10 @@ function loadRandomImagesData() {
 
 // ▼ タイトル立ち絵ランダム表示
 function randomImagesOn() {
+  if (tenotsuIsSurfaceTakeoverActive()) {
+    tenotsuHideRandomShowLayers();
+    return Promise.resolve(window.__TENOTSU_TITLE_RANDOM_SELECTED || []);
+  }
   if (!window.config || !config.randomPath) return Promise.resolve([]);
   const promise = loadRandomImagesData().then(data => buildRandomImages(data));
   window.__TENOTSU_TITLE_RANDOM_READY = promise;
@@ -202,6 +237,10 @@ function buildRandomImages(data) {
 
 // ▼ 位置だけ再計算・再設定（リサイズ時用）
 function updateRandomImagesPosition() {
+  if (tenotsuIsSurfaceTakeoverActive()) {
+    tenotsuHideRandomShowLayers();
+    return;
+  }
   if (!randomImagesLayer || !randomImagesDataCache) return;
   buildRandomImages(randomImagesDataCache);
   if (randomTextLayer && randomTextElements.length) randomTextsOn();
@@ -245,6 +284,10 @@ function chooseLinkedTitleComment(list) {
 
 // ▼ タイトル下部コメント：タイトル立ち絵キャラ連動・テキストウィンドウ風
 function randomTextsOn() {
+  if (tenotsuIsSurfaceTakeoverActive()) {
+    tenotsuHideRandomShowLayers();
+    return Promise.resolve();
+  }
   const ready = window.__TENOTSU_TITLE_RANDOM_READY || Promise.resolve(window.__TENOTSU_TITLE_RANDOM_SELECTED || []);
   return Promise.resolve(ready)
     .then(() => loadRandomTextsData())
@@ -305,7 +348,14 @@ function randomTextsOn() {
 }
 
 function tenotsuRefreshTitleRandomShow() {
-  // v038_16: タイトル/事務所表示のたびにキャラとコメントを再抽選する。
+  // v038_17: surfaceManager takeover. Do not create separate title/office surfaces.
+  if (tenotsuIsSurfaceTakeoverActive()) {
+    tenotsuHideRandomShowLayers();
+    if (typeof window.tenotsuSurfaceRefreshOffice === "function") {
+      window.tenotsuSurfaceRefreshOffice();
+    }
+    return Promise.resolve([]);
+  }
   try {
     clearRandomTexts();
     return randomImagesOn().then(() => randomTextsOn());
@@ -346,4 +396,5 @@ try {
   window.randomTextsOn = randomTextsOn;
   window.randomTextsOff = randomTextsOff;
   window.tenotsuRefreshTitleRandomShow = tenotsuRefreshTitleRandomShow;
+  window.tenotsuHideRandomShowLayers = tenotsuHideRandomShowLayers;
 } catch (_) {}
