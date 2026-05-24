@@ -1,4 +1,4 @@
-/* v038_18 Surface Takeover CSS
+/* v038_19 Surface Takeover CSS
    Best-practice implementation:
    - old menu surfaces are hidden
    - new surfaceManager owns office/shop menu and operation surfaces
@@ -378,7 +378,7 @@ body.mode-shop #tenotsu-operation-surface {
 }
 
 
-/* v038_18 boot rescue */
+/* v038_19 boot rescue */
 body[data-game-mode="office"] #boot-flow,
 body.mode-office #boot-flow,
 body[data-game-mode="shop"] #boot-flow,
@@ -397,7 +397,7 @@ body.mode-battle #boot-flow,
 }
 
 
-/* v038_18 unified comment / shop no-character */
+/* v038_19 unified comment / shop no-character */
 #office-comment-box,
 #title-comment-box,
 #office-message,
@@ -441,7 +441,7 @@ body.mode-shop #dialogue-box {
 }
 
 
-/* v038_18 randomShows unification and background fallback */
+/* v038_19 randomShows unification and background fallback */
 body[data-game-mode="office"] #game-container,
 body.mode-office #game-container {
   background-image: url("../images/assets/bgev/bg_office_hidamari.png") !important;
@@ -467,7 +467,7 @@ body.mode-shop #game-container {
 }
 
 
-/* v038_18 fade order fix */
+/* v038_19 fade order fix */
 #tenotsu-safe-fade {
   position: fixed !important;
   inset: 0 !important;
@@ -480,5 +480,130 @@ body.mode-shop #game-container {
 }
 
 body:not(.mode-story):not(.mode-battle):not(.mode-office):not(.mode-shop) #tenotsu-safe-fade {
+  pointer-events: none !important;
+}
+
+
+/* v038_19 boot singleton / background / hold / text surface fix */
+
+/* suppress legacy/random title surfaces */
+#random-images-layer,
+#random-text-layer,
+.random-images-layer,
+.random-text-layer,
+.random-show,
+.random-character,
+.title-character-layer,
+.title-comment-window,
+.title-comment,
+.boot-character-layer {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* background fallback: if #background src is fought by legacy boot, game-container still paints */
+#game-container {
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+#background {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  object-fit: cover !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* canonical front character layer: bottom must be true screen bottom */
+#tenotsu-front-character-layer {
+  bottom: 0 !important;
+}
+
+#tenotsu-front-character-layer img,
+.tenotsu-front-stand {
+  bottom: 0 !important;
+  transform-origin: bottom center !important;
+}
+
+/* reset specific transforms while preserving bottom alignment */
+.tenotsu-front-stand-0 {
+  left: 32% !important;
+  transform: translateX(-50%) scale(1.03) !important;
+}
+.tenotsu-front-stand-1 {
+  left: 15% !important;
+  transform: translateX(-50%) scale(.92) !important;
+}
+.tenotsu-front-stand-2 {
+  left: 49% !important;
+  transform: translateX(-50%) scale(.92) !important;
+}
+
+/* shop should not show characters */
+body[data-game-mode="shop"] #tenotsu-front-character-layer,
+body.mode-shop #tenotsu-front-character-layer {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* hold surface */
+#tenotsu-hold-surface {
+  position: fixed !important;
+  width: 64px !important;
+  height: 64px !important;
+  margin-left: -32px !important;
+  margin-top: -32px !important;
+  z-index: 850 !important;
+  pointer-events: none !important;
+  display: none;
+}
+
+#tenotsu-hold-surface .tenotsu-hold-ring {
+  width: 64px !important;
+  height: 64px !important;
+  border-radius: 50% !important;
+  border: 3px solid rgba(255, 220, 120, .92) !important;
+  box-shadow: 0 0 20px rgba(255, 195, 80, .75), inset 0 0 12px rgba(255,255,255,.35) !important;
+  animation: tenotsuHoldPulse .8s ease-in-out infinite alternate;
+}
+
+#tenotsu-hold-surface.is-holding {
+  display: block !important;
+}
+
+@keyframes tenotsuHoldPulse {
+  from { transform: scale(.82); opacity: .72; }
+  to { transform: scale(1.08); opacity: 1; }
+}
+
+/* hide empty/legacy text surfaces behind the real dialogue box */
+#dialogue-box.hidden,
+#dialogue-box:empty {
+  display: none !important;
+}
+
+#office-comment-box,
+#title-comment-box,
+#office-message,
+#office-comment,
+.tenotsu-bottom-comment,
+#tenotsu-bottom-comment,
+#tenotsu-surface-comment,
+#tenotsu-office-force-comment,
+.office-comment-box,
+.title-comment-box,
+.office-message,
+.office-comment,
+.top-comment,
+.header-comment,
+.tenotsu-office-comment,
+#tenotsu-office-comment {
+  display: none !important;
+  visibility: hidden !important;
   pointer-events: none !important;
 }

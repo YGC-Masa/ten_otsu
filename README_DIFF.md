@@ -1,10 +1,12 @@
-# v038_17 → v038_18 fade order fix 差分
+# v038_18 → v038_19 boot singleton / hold fix 差分
 
 ## 修正内容
-- バトル終了時のフェード順を修正。
-- 誤: バトル画面 → 事務所表示 → ブラックフェードアウト → フェードイン
-- 正: バトル画面 → ブラックフェードアウト → 事務所表示 → フェードイン
-- battle.jsの即時office復帰を抑止。
-- surfaceManagerのsafeFade内で画面切替を行う。
+- 起動時キャラの二重表示を抑止。
+- randomShows.jsの視覚表示をsurface takeover中は停止。
+- 背景を #background と #game-container fallback の両方に設定。
+- shop遷移時はキャラ非表示。
+- キャラbottomを画面下に固定。
+- hold表示サーフェス #tenotsu-hold-surface を追加。
+- 空のテキストサーフェス/旧コメント欄を非表示化。
 
 リポジトリ直下へ展開して上書きしてください。

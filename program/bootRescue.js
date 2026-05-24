@@ -1,9 +1,9 @@
-/* v038_18 Boot Rescue
+/* v038_19 Boot Rescue
    Runs before legacy script.js. Prevents legacy MutationObserver/menu fallback loops from freezing boot.
 */
 (function(){
   "use strict";
-  window.TENOTSU_BOOT_RESCUE_VERSION = "v038_18";
+  window.TENOTSU_BOOT_RESCUE_VERSION = "v038_19";
   window.__TENOTSU_DISABLE_LEGACY_OBSERVERS__ = true;
   window.__TENOTSU_SURFACE_TAKEOVER__ = true;
 
@@ -50,6 +50,15 @@
     });
   }
 
+  function suppressOldRandomSurfaces(){
+    document.querySelectorAll("#random-images-layer,#random-text-layer,.random-images-layer,.random-text-layer,.random-show,.random-character,.title-character-layer,.title-comment-window,.title-comment,.boot-character-layer").forEach(el => {
+      el.classList.add("hidden");
+      el.style.setProperty("display", "none", "important");
+      el.style.setProperty("visibility", "hidden", "important");
+      el.style.setProperty("pointer-events", "none", "important");
+    });
+  }
+
   function hideLegacyCommentBoxes(){
     hideRandomShowLayers();
     document.querySelectorAll("#office-comment-box,#title-comment-box,#office-message,#office-comment,.office-comment-box,.title-comment-box,.office-message,.office-comment,.top-comment,.header-comment,.tenotsu-office-comment,#tenotsu-office-comment,#tenotsu-office-force-comment,#tenotsu-surface-comment").forEach(el => {
@@ -61,6 +70,7 @@
   }
 
   function rescueBootOverlay(){
+    suppressOldRandomSurfaces();
     hideLegacyCommentBoxes();
     const boot = document.getElementById("boot-flow");
     if (boot && (document.body.dataset.gameMode === "office" || window.tenotsuGameMode === "office")) {

@@ -768,13 +768,13 @@ GitHub Pages / PWAで画面が変わらない場合は、メニューの「キ�
 - 既存シナリオは `scenario/scenario/` に整理し、`scenario/listmenu/scenario_index.json` を追加。
 
 
-## v038_18 更新メモ
+## v038_19 更新メモ
 
 - 右6大メニューの番号表示削除。
 - 起動/表示バージョンの毎版更新方針を反映。
 - タイトルランダム立ち絵と下部コメントをキャラ連動化。
 
 
-## v038_18 Surface Manager
+## v038_19 Surface Manager
 
 画面モード・z-index・事務所キャラ・ショップ背景/挨拶は `surfaceManager.js` / `surfaceManager.css` を最終権限として管理します。

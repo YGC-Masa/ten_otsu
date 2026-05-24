@@ -1,10 +1,10 @@
-/* v038_18 Surface Manager Takeover - verified boot candidate
+/* v038_19 Surface Manager Takeover - verified boot candidate
    Single authority for non-ADV surfaces. Designed to survive broken/old boot flow.
 */
 (function(){
   "use strict";
 
-  const VERSION = "v038_18";
+  const VERSION = "v038_19";
   const BG_OFFICE = "images/assets/bgev/bg_office_hidamari.png";
   const BG_SHOP = "images/assets/bgev/bg_exchange_item_counter.png";
   const SAKUYA_INTRO_SCENARIO = "shop_exchange_intro_sakuya.json";
@@ -60,6 +60,8 @@
   let busy = false;
   let installed = false;
   let lastActionAt = 0;
+  let officeRenderKey = "";
+  let bootOfficeEntered = false;
 
   function qs(sel){ return document.querySelector(sel); }
   function qsa(sel){ return Array.from(document.querySelectorAll(sel)); }
@@ -108,7 +110,7 @@
     const game = qs("#game-container");
     if (game) {
       setI(game, "background-color", "#000");
-      // v038_18: CSS fallback. If the #background image is hidden or fails, this still displays the mode background.
+      // v038_19: CSS fallback. If the #background image is hidden or fails, this still displays the mode background.
       setI(game, "background-image", `url("${src}")`);
       setI(game, "background-size", "cover");
       setI(game, "background-position", "center center");
@@ -199,7 +201,7 @@
   }
 
   function hideLegacyComments(){
-    // v038_18: the only visible comment box outside ADV should be #dialogue-box at the bottom.
+    // v038_19: the only visible comment box outside ADV should be #dialogue-box at the bottom.
     qsa("#office-comment-box,#title-comment-box,#office-message,#office-comment,.office-comment-box,.title-comment-box,.office-message,.office-comment,.top-comment,.header-comment,.tenotsu-office-comment,#tenotsu-office-comment,#tenotsu-office-force-comment,#tenotsu-surface-comment").forEach(el => {
       el.classList.add("hidden");
       el.style.setProperty("display", "none", "important");
@@ -283,28 +285,39 @@
 
   function renderOfficeCharacters(forceNew){
     const layer = ensureFrontLayer();
-    if (forceNew || layer.dataset.mode !== "office" || !layer.children.length) {
-      const picks = shuffle(OFFICE_CHARS).slice(0, 3);
-      layer.dataset.mode = "office";
-      layer.innerHTML = "";
-      picks.forEach((c, idx) => {
-        const img = document.createElement("img");
-        img.className = "tenotsu-front-stand tenotsu-front-stand-" + idx;
-        img.alt = c[0];
-        img.src = "images/assets/char/" + c[1];
-        img.onerror = () => {
-          img.onerror = null;
-          img.src = "images/assets/char/a10501.webp";
-        };
-        layer.appendChild(img);
-      });
-      renderDialogueComment(picks[0][0], picks[0][2]);
+
+    // v038_19: one canonical office character render only.
+    // Repeated boot rescue / office enter calls must not create duplicate character layers.
+    const existingOffice = layer.dataset.mode === "office" && layer.children.length === 3;
+    if (!forceNew && existingOffice && officeRenderKey) {
+      layer.style.display = "block";
+      return;
     }
+
+    const picks = shuffle(OFFICE_CHARS).slice(0, 3);
+    officeRenderKey = picks.map(p => p[1]).join("|");
+    layer.dataset.mode = "office";
+    layer.dataset.renderKey = officeRenderKey;
+    layer.innerHTML = "";
+
+    picks.forEach((c, idx) => {
+      const img = document.createElement("img");
+      img.className = "tenotsu-front-stand tenotsu-front-stand-" + idx;
+      img.alt = c[0];
+      img.src = "images/assets/char/" + c[1];
+      img.onerror = () => {
+        img.onerror = null;
+        img.src = "images/assets/char/a10501.webp";
+      };
+      layer.appendChild(img);
+    });
+
+    renderDialogueComment(picks[0][0], picks[0][2]);
     layer.style.display = "block";
   }
 
   function renderShopCharacter(){
-    // v038_18: shop mode intentionally hides character display.
+    // v038_19: shop mode intentionally hides character display.
     // The exchange counter background and shop panel are the focus.
     const layer = ensureFrontLayer();
     layer.dataset.mode = "shop-hidden";
@@ -384,12 +397,16 @@
     ].forEach(([sel,z]) => qsa(sel).forEach(el => setI(el, "z-index", z)));
 
     normalizeStoryLayer();
-    if (currentMode === "office" || currentMode === "shop") hideLegacyComments();
+    if (currentMode === "office" || currentMode === "shop") {
+      suppressOldRandomSurfaces();
+      hideLegacyComments();
+      cleanupEmptyDialogueSurface();
+    }
     updateInputSurfaces();
   }
 
   function safeFade(callback){
-    // v038_18:
+    // v038_19:
     // Correct order is:
     // current screen -> fade to black -> switch screen while fully black -> fade in.
     // The fade surface must never remain visible after the transition.
@@ -560,6 +577,16 @@
     if (installed) return;
     installed = true;
 
+    document.addEventListener("pointerdown", ev => {
+      if (currentMode === "story") return;
+      const target = ev.target && ev.target.closest ? ev.target.closest("[data-surface-action], #battle-root, #tenotsu-main-menu, #tenotsu-shop-panel") : null;
+      if (target) showHoldSurface(ev.clientX, ev.clientY);
+    }, true);
+
+    document.addEventListener("pointerup", hideHoldSurface, true);
+    document.addEventListener("pointercancel", hideHoldSurface, true);
+    document.addEventListener("pointerleave", hideHoldSurface, true);
+
     document.addEventListener("click", ev => {
       const battleBtn = ev.target && ev.target.closest ? ev.target.closest("#battle-root button[data-action='close']") : null;
       if (battleBtn) {
@@ -567,7 +594,7 @@
         ev.stopPropagation();
         if (typeof ev.stopImmediatePropagation === "function") ev.stopImmediatePropagation();
 
-        // v038_18: Do not hide battle or draw office before black reaches full opacity.
+        // v038_19: Do not hide battle or draw office before black reaches full opacity.
         // Hide/switch inside safeFade callback only.
         safeFade(() => {
           const root = qs("#battle-root");
@@ -674,20 +701,27 @@
       patchApis();
       patchStoryEnd();
       try { if (typeof window.tenotsuBootRescuePrepare === "function") window.tenotsuBootRescuePrepare(); } catch (_) {}
-      if (shouldEnterOfficeAfterBoot()) enterOffice(true);
-      else normalizeLayers();
+      if (shouldEnterOfficeAfterBoot()) {
+        enterOffice(!bootOfficeEntered);
+        bootOfficeEntered = true;
+      } else normalizeLayers();
     }, 150);
 
     setTimeout(() => {
       try { if (typeof window.tenotsuBootRescuePrepare === "function") window.tenotsuBootRescuePrepare(); } catch (_) {}
-      if (shouldEnterOfficeAfterBoot()) enterOffice(true);
-      else normalizeLayers();
+      if (shouldEnterOfficeAfterBoot()) {
+        enterOffice(!bootOfficeEntered);
+        bootOfficeEntered = true;
+      } else normalizeLayers();
     }, 800);
 
     // Last safety. No observers, no recursive rebuild.
     setTimeout(() => {
       const mode = document.body.dataset.gameMode || window.tenotsuGameMode || "";
-      if (!mode || mode === "title") enterOffice(true);
+      if (!mode || mode === "title") {
+        enterOffice(!bootOfficeEntered);
+        bootOfficeEntered = true;
+      }
     }, 1800);
   }
 
