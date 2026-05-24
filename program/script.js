@@ -1,7 +1,7 @@
-window.TENOTSU_LATEST_VERSION = "v038_01";
+window.TENOTSU_LATEST_VERSION = "v038_02";
 
 /* v037_85 engine guard: 起動停止対策 */
-window.TENOTSU_ENGINE_VERSION = "v038_01";
+window.TENOTSU_ENGINE_VERSION = "v038_02";
 window.__TENOTSU_ENGINE_ERRORS__ = window.__TENOTSU_ENGINE_ERRORS__ || [];
 
 window.addEventListener("error", (event) => {
@@ -871,7 +871,7 @@ function tenotsuEnterOfficeMode(reason = "office") {
   try {
     tenotsuSetStoryPartActive(false, "office");
     window.__TENOTSU_STORY_ENDING__ = false;
-    // v038_01: 事務所へ戻るたびにランダム立ち絵/コメントを再抽選するため、ここではOFFにしない。
+    // v038_02: 事務所へ戻るたびにランダム立ち絵/コメントを再抽選するため、ここではOFFにしない。
     clearCharacters();
     if (evLayer) evLayer.innerHTML = "";
     if (choicesEl) choicesEl.innerHTML = "";
@@ -908,7 +908,7 @@ function tenotsuEnterBattleMode() {
 /* /v037_93 */
 
 
-/* v038_01: タイトル/事務所共通ランダム立ち絵＋コメント */
+/* v038_02: タイトル/事務所共通ランダム立ち絵＋コメント */
 function tenotsuStartOfficeRandomShow(reason = 'office') {
   try {
     if (typeof window.tenotsuRefreshTitleRandomShow === 'function') {
@@ -925,10 +925,10 @@ function tenotsuStartOfficeRandomShow(reason = 'office') {
     console.warn('[TENOTSU OFFICE RANDOM SHOW FAILED]', reason, err);
   }
 }
-/* /v038_01 */
+/* /v038_02 */
 
 /* v037_85 boot flow: 起動フラッシュ → 初期化 → タイトル表示 → 事務所6大メニュー */
-window.TENOTSU_BOOT_FLOW_VERSION = "v038_01";
+window.TENOTSU_BOOT_FLOW_VERSION = "v038_02";
 window.__TENOTSU_BOOT_DONE__ = false;
 
 function tenotsuSetOfficeText(title, text) {
@@ -1009,7 +1009,7 @@ function tenotsuRunBootFlow() {
       boot.setAttribute("aria-hidden", "false");
     }
     if (bootLogo) bootLogo.textContent = "店長お疲れ様です";
-    if (bootVersion) bootVersion.textContent = window.TENOTSU_BOOT_FLOW_VERSION || "v038_01";
+    if (bootVersion) bootVersion.textContent = window.TENOTSU_BOOT_FLOW_VERSION || "v038_02";
     if (bootSub) bootSub.textContent = "初期化中…";
 
     window.setTimeout(() => { if (bootSub) bootSub.textContent = "ひだまりストアへ接続中…"; }, 520);
@@ -2605,7 +2605,7 @@ function tenotsuHandleStoryEndReturn() {
   if (clickLayer) clickLayer.style.pointerEvents = "none";
 
   window.setTimeout(() => {
-    // v038_01: 「物語は つづく・・・」後、1秒かけてゆっくりブラックフェード。
+    // v038_02: 「物語は つづく・・・」後、1秒かけてゆっくりブラックフェード。
     tenotsuBlackFadeOut(1000);
     if (dialogueBox) dialogueBox.classList.add("story-end-fadeout");
   }, 650);
@@ -2993,7 +2993,7 @@ window.addEventListener("load", () => {
 /* /v037_93 */
 
 
-/* v038_01 office/menu/character stability patch */
+/* v038_02 office/menu/character stability patch */
 (function(){
   const OFFICE_MENU_LABELS = ["店舗","メンバー","店舗営業","外回り","ショップ","設定"];
   const OLD_MENU_PATTERNS = /(と遊ぶ|旧メニュー|プロトタイプ|⓪|①|②|③|④|⑤|ランダムSHOW|オートプレイ|スキップ|バックログ)/;
@@ -3169,12 +3169,12 @@ window.addEventListener("load", () => {
   });
   document.addEventListener("tenotsu:office", function(){ window.tenotsuEnterOfficeMode(); });
 })();
-/* /v038_01 office/menu/character stability patch */
+/* /v038_02 office/menu/character stability patch */
 
 
-/* v038_01 office character actual-path patch */
+/* v038_02 office character actual-path patch */
 (function(){
-  const VERSION = "v038_01";
+  const VERSION = "v038_02";
   const OFFICE_CHARS = [
     ["星野 緋奈","a10501.webp","店長、今日も一緒にがんばりましょう！"],
     ["速水川 藍","b10201.webp","てんちょー、少し休憩も大事ですよ。"],
@@ -3245,10 +3245,10 @@ window.addEventListener("load", () => {
   });
   window.tenotsuOfficeCharacterActualPathPatchVersion = VERSION;
 })();
-/* /v038_01 office character actual-path patch */
+/* /v038_02 office character actual-path patch */
 
 
-/* v038_01 exchange shop background + office character z-index fix */
+/* v038_02 exchange shop background + office character z-index fix */
 (function(){
   const EXCHANGE_BG = "images/assets/bgev/bg_exchange_item_counter.png";
 
@@ -3389,10 +3389,10 @@ window.addEventListener("load", () => {
     observer.observe(document.body, {childList:true, subtree:true, attributes:true, attributeFilter:["class","style","src"]});
   });
 })();
-/* /v038_01 exchange shop background + office character z-index fix */
+/* /v038_02 exchange shop background + office character z-index fix */
 
 
-/* v038_01 office return background + 3-character positioning fix */
+/* v038_02 office return background + 3-character positioning fix */
 (function(){
   const OFFICE_BG = "images/assets/bgev/bg_office_hidamari.png";
   const EXCHANGE_BG = "images/assets/bgev/bg_exchange_item_counter.png";
@@ -3602,10 +3602,10 @@ window.addEventListener("load", () => {
     observer.observe(document.body, { childList:true, subtree:true, attributes:true, attributeFilter:["class","style","src","data-game-mode"] });
   });
 })();
-/* /v038_01 office return background + 3-character positioning fix */
+/* /v038_02 office return background + 3-character positioning fix */
 
 
-/* v038_01 office foreground overlay + shop greeting + shop left-menu guard */
+/* v038_02 office foreground overlay + shop greeting + shop left-menu guard */
 (function(){
   const OFFICE_BG = "images/assets/bgev/bg_office_hidamari.png";
   const SHOP_BG = "images/assets/bgev/bg_exchange_item_counter.png";
@@ -3816,10 +3816,10 @@ window.addEventListener("load", () => {
     mo.observe(document.body, {childList:true, subtree:true, attributes:true, attributeFilter:["class","style","data-game-mode"]});
   });
 })();
-/* /v038_01 office foreground overlay + shop greeting + shop left-menu guard */
+/* /v038_02 office foreground overlay + shop greeting + shop left-menu guard */
 
 
-/* v038_01 layer normalization */
+/* v038_02 layer normalization */
 (function(){
   const Z = {
     bg: 0,
@@ -3877,4 +3877,102 @@ window.addEventListener("load", () => {
     observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["class", "style", "data-layer"] });
   });
 })();
-/* /v038_01 layer normalization */
+/* /v038_02 layer normalization */
+
+
+/* v038_02 Sakuya exchange intro implementation */
+(function(){
+  const SAKUYA_INTRO_SCENARIO = "shop_exchange_intro_sakuya.json";
+  const SAKUYA_INTRO_KEY = "tenotsu_sakuya_exchange_intro_seen_v1";
+  const SHOP_GREETINGS_V03802 = [
+    ["朔夜","いらっしゃいませ。価値あるものとの交換をご希望ですか？"],
+    ["朔夜","ようこそ、交換カウンターへ。必要な品をお選びください。"],
+    ["朔夜","ふふ……本日は、どの品と縁を結びましょうか。"],
+    ["朔夜","交換品は一期一会。どうぞ、ゆっくりご覧ください。"],
+    ["朔夜","店長様、お待ちしておりました。本日の交換品はこちらです。"]
+  ];
+
+  function qs(sel){ return document.querySelector(sel); }
+  function qsa(sel){ return Array.from(document.querySelectorAll(sel)); }
+
+  function renderShopGreeting(){
+    const g = SHOP_GREETINGS_V03802[Math.floor(Math.random() * SHOP_GREETINGS_V03802.length)];
+    const nameBox = qs("#name");
+    const textBox = qs("#text");
+    const dialogueBox = qs("#dialogue-box");
+    if (nameBox) nameBox.textContent = g[0];
+    if (textBox) textBox.innerHTML = g[1];
+    if (dialogueBox) dialogueBox.classList.remove("hidden");
+    if (typeof window.tenotsuShowExchangeShopBackground === "function") window.tenotsuShowExchangeShopBackground();
+  }
+
+  window.tenotsuOpenShopWithSakuya = function(){
+    try {
+      const seen = localStorage.getItem(SAKUYA_INTRO_KEY) === "1";
+      if (!seen && typeof window.loadScenario === "function") {
+        localStorage.setItem(SAKUYA_INTRO_KEY, "1");
+        window.__TENOTSU_RETURN_TO_SHOP_AFTER_STORY__ = true;
+        window.loadScenario(SAKUYA_INTRO_SCENARIO);
+        return;
+      }
+    } catch (_) {}
+    renderShopGreeting();
+  };
+
+  const oldStoryEnd = window.tenotsuHandleStoryEndReturn;
+  if (typeof oldStoryEnd === "function") {
+    window.tenotsuHandleStoryEndReturn = function(){
+      const shouldReturnShop = window.__TENOTSU_RETURN_TO_SHOP_AFTER_STORY__ || String(window.currentScenario || "").includes(SAKUYA_INTRO_SCENARIO);
+      if (!shouldReturnShop) return oldStoryEnd.apply(this, arguments);
+
+      window.__TENOTSU_RETURN_TO_SHOP_AFTER_STORY__ = false;
+      window.__TENOTSU_STORY_ENDING__ = true;
+
+      const dialogueBox = qs("#dialogue-box");
+      const textBox = qs("#text");
+      const nameBox = qs("#name");
+      const clickLayer = qs("#click-layer");
+      if (nameBox) nameBox.textContent = "";
+      if (textBox) textBox.innerHTML = "（交換所が利用可能になりました）";
+      if (dialogueBox) dialogueBox.classList.remove("hidden");
+      if (clickLayer) clickLayer.style.pointerEvents = "none";
+
+      setTimeout(() => {
+        if (typeof window.tenotsuBlackFadeOut === "function") window.tenotsuBlackFadeOut(1000);
+      }, 650);
+
+      setTimeout(() => {
+        window.__TENOTSU_STORY_ENDING__ = false;
+        if (dialogueBox) dialogueBox.classList.remove("hidden");
+        renderShopGreeting();
+      }, 1780);
+
+      setTimeout(() => {
+        if (typeof window.tenotsuBlackFadeIn === "function") window.tenotsuBlackFadeIn(850);
+        if (clickLayer) clickLayer.style.pointerEvents = "auto";
+      }, 1980);
+    };
+  }
+
+  function bindShopButtonIntro(){
+    qsa("button,.tenotsu-six-main-button,.menu-item,a,li").forEach(el => {
+      const text = (el.textContent || "").trim();
+      if (!(text === "ショップ" || text.includes("ショップ"))) return;
+      if (el.dataset.v03802ShopIntroBound === "1") return;
+      el.dataset.v03802ShopIntroBound = "1";
+      el.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        ev.stopPropagation();
+        setTimeout(window.tenotsuOpenShopWithSakuya, 0);
+      }, true);
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    bindShopButtonIntro();
+    setTimeout(bindShopButtonIntro, 300);
+    setTimeout(bindShopButtonIntro, 900);
+  });
+  document.addEventListener("click", () => setTimeout(bindShopButtonIntro, 0), true);
+})();
+/* /v038_02 Sakuya exchange intro implementation */
