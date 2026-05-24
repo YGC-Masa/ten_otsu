@@ -6260,7 +6260,7 @@ body.story-playing .message-text {
 }
 /* /v037_93 */
 
-/* v037_97: タイトル画面はメニュー表示を許可 */
+/* v037_98: タイトル画面はメニュー表示を許可 */
 body.title-screen #list-panel {
   pointer-events: auto !important;
 }
@@ -6367,11 +6367,11 @@ body.story-playing .text-body {
 }
 /* /v037_93 */
 
-/* v037_97: office right menu label cleanup */
+/* v037_98: office right menu label cleanup */
 .office6 .menu-item, .office-menu-main { letter-spacing: 0.03em; }
-/* /v037_97 */
+/* /v037_98 */
 
-/* v037_97: 事務所/タイトルのランダム立ち絵とコメント */
+/* v037_98: 事務所/タイトルのランダム立ち絵とコメント */
 body.office-screen #random-images-layer,
 body.office-screen #random-text-layer,
 body.title-screen #random-images-layer,
@@ -6391,7 +6391,7 @@ body.title-screen #random-text-layer {
 }
 
 
-/* v037_97 office mode hardening */
+/* v037_98 office mode hardening */
 body[data-game-mode="title"] #list-panel,
 body.mode-title #list-panel,
 body[data-game-mode="title"] .right-menu,
@@ -6453,10 +6453,10 @@ body.mode-story .office-comment-box,
 body[data-game-mode="battle"] .office-comment-box {
   display: none !important;
 }
-/* /v037_97 office mode hardening */
+/* /v037_98 office mode hardening */
 
 
-/* v037_97 office character layer visible fix */
+/* v037_98 office character layer visible fix */
 .office-character-layer {
   position: absolute !important;
   left: 0 !important;
@@ -6487,4 +6487,71 @@ body.mode-story .office-character-layer,
 body[data-game-mode="battle"] .office-character-layer,
 body[data-game-mode="title"] .office-character-layer,
 body.mode-title .office-character-layer { display: none !important; }
-/* /v037_97 office character layer visible fix */
+/* /v037_98 office character layer visible fix */
+
+
+/* v037_98 office character visible layer fix */
+#office-character-layer,
+.office-character-layer {
+  position: fixed !important;
+  left: 0 !important;
+  right: 260px !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  z-index: 25 !important;
+  pointer-events: none !important;
+  display: block;
+}
+
+#office-character-layer img,
+.office-character-stand {
+  position: fixed !important;
+  top: auto !important;
+  bottom: 4% !important;
+  width: auto !important;
+  max-width: 430px !important;
+  max-height: 86vh !important;
+  height: auto !important;
+  object-fit: contain !important;
+  pointer-events: none !important;
+  display: block !important;
+  filter: drop-shadow(0 14px 20px rgba(0,0,0,.35)) !important;
+  opacity: .98 !important;
+}
+
+.office-character-stand-0 {
+  left: 20% !important;
+  transform: translateX(-50%) scale(1) !important;
+  z-index: 30 !important;
+}
+.office-character-stand-1 {
+  left: 37% !important;
+  transform: translateX(-50%) scale(.92) !important;
+  z-index: 29 !important;
+}
+.office-character-stand-2 {
+  left: 52% !important;
+  transform: translateX(-50%) scale(.88) !important;
+  z-index: 28 !important;
+}
+
+#list-panel,
+.right-menu,
+.right-panel,
+.tenotsu-six-main-menu {
+  z-index: 80 !important;
+}
+
+#office-comment-box,
+.office-comment-box,
+.title-comment-box {
+  z-index: 90 !important;
+}
+
+body[data-game-mode="shop"] #office-character-layer,
+body.mode-shop #office-character-layer,
+body[data-game-mode="shop"] .office-character-layer,
+body.mode-shop .office-character-layer {
+  display: none !important;
+}
+/* /v037_98 office character visible layer fix */
