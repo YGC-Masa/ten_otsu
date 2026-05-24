@@ -295,6 +295,16 @@ async function showScene(scene) {
   evLayer.innerHTML = "";
   choicesEl.innerHTML = "";
 
+  // v037_88: full-size event CG / memory background should not appear behind standing sprites.
+  // Use `hideCharacters: true` for scenario-controlled full CG scenes.
+  // Also auto-detect bg_memory_* backgrounds as full CG surfaces.
+  const isFullCgBackground = scene.hideCharacters === true ||
+    (typeof scene.bg === "string" && /^bg_memory_/i.test(scene.bg));
+  if (isFullCgBackground) {
+    clearCharacters();
+    window.__TENOTSU_CHAR_SLOT_STATE__ = {};
+  }
+
   if (scene.textareashow !== undefined) {
     updateTextAreaVisibility(scene.textareashow);
   }

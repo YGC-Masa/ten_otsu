@@ -73,7 +73,8 @@
     "bg": "bg_memory_ai_spring_book_bread_share.png",
     "bgEffect": "fadein",
     "name": "",
-    "text": "藍ちゃんは紙袋から、桜の形をした淡いピンクのパンを取り出し、こちらへそっと差し出した。"
+    "text": "藍ちゃんは紙袋から、桜の形をした淡いピンクのパンを取り出し、こちらへそっと差し出した。",
+    "hideCharacters": true
   },
   {
     "name": "店長",
@@ -177,7 +178,8 @@
     "bg": "bg_memory_ai_spring_book_bread_close.png",
     "bgEffect": "fadein",
     "name": "藍",
-    "text": "……こうやって。"
+    "text": "……こうやって。",
+    "hideCharacters": true
   },
   {
     "name": "店長",
