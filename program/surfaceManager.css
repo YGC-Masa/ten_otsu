@@ -1,4 +1,4 @@
-/* v038_10 Surface Manager CSS
+/* v038_11 Surface Manager CSS
    Authoritative late-loaded layer rules.
    Purpose: replace accumulated surface test overrides without deleting historical comments.
 */
@@ -297,7 +297,7 @@ body.mode-battle #click-layer {
 }
 
 
-/* v038_10 operation surface */
+/* v038_11 operation surface */
 #tenotsu-operation-surface {
   position: fixed !important;
   inset: 0 !important;
@@ -376,7 +376,7 @@ body.mode-story #click-layer {
 }
 
 
-/* v038_10 input hang hardening */
+/* v038_11 input hang hardening */
 body[data-game-mode="battle"] #tenotsu-operation-surface,
 body.mode-battle #tenotsu-operation-surface,
 body[data-game-mode="story"] #tenotsu-operation-surface,
@@ -394,4 +394,105 @@ body.mode-shop #tenotsu-operation-surface {
 #battle-root,
 #battle-root * {
   pointer-events: auto !important;
+}
+
+
+/* v038_11 shop cleanup / Sakuya display / legacy menu suppression */
+#tenotsu-shop-character-layer {
+  position: fixed !important;
+  inset: 0 300px 0 0 !important;
+  z-index: var(--to-z-office-char, 520) !important;
+  pointer-events: none !important;
+  display: none;
+  visibility: visible !important;
+  opacity: 1 !important;
+  overflow: visible !important;
+}
+
+#tenotsu-shop-character-layer img,
+.tenotsu-shop-sakuya {
+  position: fixed !important;
+  left: 30% !important;
+  bottom: 2.5% !important;
+  top: auto !important;
+  transform: translateX(-50%) scale(.96) !important;
+  width: auto !important;
+  max-width: 460px !important;
+  max-height: 90vh !important;
+  height: auto !important;
+  object-fit: contain !important;
+  pointer-events: none !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: .98 !important;
+  filter: drop-shadow(0 16px 26px rgba(0,0,0,.55)) !important;
+}
+
+body[data-game-mode="shop"] #tenotsu-shop-character-layer,
+body.mode-shop #tenotsu-shop-character-layer {
+  display: block !important;
+}
+
+body[data-game-mode="office"] #tenotsu-shop-character-layer,
+body.mode-office #tenotsu-shop-character-layer,
+body[data-game-mode="story"] #tenotsu-shop-character-layer,
+body.mode-story #tenotsu-shop-character-layer,
+body[data-game-mode="battle"] #tenotsu-shop-character-layer,
+body.mode-battle #tenotsu-shop-character-layer {
+  display: none !important;
+}
+
+body[data-game-mode="shop"] #dialogue-box,
+body.mode-shop #dialogue-box,
+body[data-game-mode="office"] #dialogue-box,
+body.mode-office #dialogue-box {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+body[data-game-mode="shop"] #menu-panel,
+body.mode-shop #menu-panel,
+body[data-game-mode="shop"] .menu-panel,
+body.mode-shop .menu-panel,
+body[data-game-mode="shop"] .left-menu,
+body.mode-shop .left-menu,
+body[data-game-mode="shop"] #left-menu,
+body.mode-shop #left-menu,
+body[data-game-mode="shop"] #leftPanel,
+body.mode-shop #leftPanel,
+body[data-game-mode="shop"] .exchange-menu,
+body.mode-shop .exchange-menu,
+body[data-game-mode="shop"] .exchange-panel,
+body.mode-shop .exchange-panel,
+body[data-game-mode="shop"] .shop-submenu,
+body.mode-shop .shop-submenu,
+body[data-game-mode="shop"] .sub-menu,
+body.mode-shop .sub-menu {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+.tenotsu-six-main-button {
+  background: linear-gradient(180deg, #eaf7ff, #d8efff) !important;
+  color: #3a2510 !important;
+  border: 1px solid rgba(180, 130, 30, .55) !important;
+  border-radius: 10px !important;
+  min-height: 42px !important;
+  font-weight: 700 !important;
+}
+
+.tenotsu-six-main-button[data-menu-label="店舗営業"],
+.tenotsu-six-main-button[data-menu-label="外回り"] {
+  background: linear-gradient(180deg, #fff4d6, #ffe3a3) !important;
+}
+
+.tenotsu-six-main-button[data-menu-label="ショップ"],
+.tenotsu-six-main-button[data-menu-label="設定"] {
+  background: linear-gradient(180deg, #eefbdc, #dff2bf) !important;
+}
+
+/* keep current surface comment only */
+body[data-game-mode="shop"] #tenotsu-surface-comment,
+body.mode-shop #tenotsu-surface-comment {
+  display: block !important;
 }

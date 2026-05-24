@@ -1,4 +1,4 @@
-# v038_10 Surface Manager 関係整理
+# v038_11 Surface Manager 関係整理
 
 ## 目的
 差分適用を重ねた結果、`script.js` / `style.css` 内に複数世代の事務所モード、ショップモード、z-index補正が残っていたため、最終権限を後読みの小さな管理ファイルへ分離する。
@@ -61,14 +61,18 @@
 - `#tenotsu-office-character-overlay`
 - `#office-character-layer`
 
-## v038_10 追記
+## v038_11 追記
 
-v038_10の `MutationObserver` は、メニュー表示後にDOM再構築を繰り返してハングアップする可能性があったため廃止。以後は起動時・メニュークリック時・API呼び出し時だけ必要な補正を行う。
+v038_11の `MutationObserver` は、メニュー表示後にDOM再構築を繰り返してハングアップする可能性があったため廃止。以後は起動時・メニュークリック時・API呼び出し時だけ必要な補正を行う。
 
-## v038_10 追記
+## v038_11 追記
 
 操作判定系サーフェスを `#tenotsu-operation-surface` として追加。`#click-layer` はストーリー送り専用に戻し、ショップや事務所では operation surface と右メニューが入力を受け取る。
 
-## v038_10 追記
+## v038_11 追記
 
 ショップ操作・右メニュー操作は surfaceManager が捕捉した時点で `stopImmediatePropagation()` し、旧ハンドラとの二重実行を防止。バトルUI内のボタンは除外して battle.js に任せる。
+
+## v038_11 追記
+
+ショップ画面では旧左メニュー/旧サブメニューを非表示にし、朔夜立ち絵専用の `#tenotsu-shop-character-layer` を追加。ADV用 `#dialogue-box` はoffice/shopでは非表示にして、surface commentだけを使う。

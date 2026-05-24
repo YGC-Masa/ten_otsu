@@ -1,4 +1,4 @@
-/* v038_10 Surface Manager
+/* v038_11 Surface Manager
    Adds an explicit operation surface and fixes shop interactions.
    Important:
    - #click-layer is for ADV/story only.
@@ -8,7 +8,7 @@
 (function(){
   "use strict";
 
-  const VERSION = "v038_10";
+  const VERSION = "v038_11";
   const BG_OFFICE = "images/assets/bgev/bg_office_hidamari.png";
   const BG_SHOP = "images/assets/bgev/bg_exchange_item_counter.png";
   const SAKUYA_INTRO_SCENARIO = "shop_exchange_intro_sakuya.json";
@@ -132,6 +132,53 @@
       document.body.appendChild(surface);
     }
     return surface;
+  }
+
+  function ensureShopCharacterLayer(){
+    let layer = qs("#tenotsu-shop-character-layer");
+    if (!layer) {
+      layer = document.createElement("div");
+      layer.id = "tenotsu-shop-character-layer";
+      const img = document.createElement("img");
+      img.className = "tenotsu-shop-sakuya";
+      img.alt = "宵闇 朔夜";
+      img.src = "images/assets/char/sakuya_02_hood.webp";
+      img.onerror = () => {
+        img.onerror = null;
+        img.src = "images/assets/char/sakuya_01_hooddeep.webp";
+      };
+      layer.appendChild(img);
+      document.body.appendChild(layer);
+    }
+    return layer;
+  }
+
+  function hideShopCharacterLayer(){
+    const layer = qs("#tenotsu-shop-character-layer");
+    if (layer) layer.style.display = "none";
+  }
+
+  function renderShopCharacter(){
+    const layer = ensureShopCharacterLayer();
+    layer.style.display = "block";
+  }
+
+  function cleanupLegacyShopPanels(){
+    // Hide old left/shop submenus that predate the surface manager.
+    qsa("#menu-panel,.menu-panel,.left-menu,#left-menu,#leftPanel,.exchange-menu,.exchange-panel,.shop-submenu,.sub-menu").forEach(el => {
+      if (el.id === "list-panel" || el.closest("#list-panel")) return;
+      el.classList.add("hidden");
+      el.style.setProperty("display", "none", "important");
+      el.style.setProperty("pointer-events", "none", "important");
+    });
+
+    // Top dialogue-box is ADV-only. Shop/office use surface comment instead.
+    const dialogue = qs("#dialogue-box");
+    if (dialogue) {
+      dialogue.classList.add("hidden");
+      dialogue.style.setProperty("display", "none", "important");
+      dialogue.style.setProperty("pointer-events", "none", "important");
+    }
   }
 
   function clearOperationSurface(){
@@ -311,6 +358,7 @@
       case "外回り":
         setMode("town");
         hideOfficeLayer();
+        hideShopCharacterLayer();
         hideComment();
         clearOperationSurface();
         if (typeof window.loadScenario === "function") window.loadScenario("town_walk.json");
@@ -318,6 +366,7 @@
       case "設定":
         setMode("settings");
         hideOfficeLayer();
+        hideShopCharacterLayer();
         hideComment();
         clearOperationSurface();
         if (typeof window.tenotsuShowSettingsMenu === "function") window.tenotsuShowSettingsMenu();
@@ -340,7 +389,9 @@
       const battleRoot = qs("#battle-root");
       if (battleRoot) battleRoot.classList.add("hidden");
       removeOldDiagnosticLayers();
+      hideShopCharacterLayer();
       clearOperationSurface();
+      cleanupLegacyShopPanels();
       setBackground(BG_OFFICE);
       if (typeof window.tenotsuSetStoryPlayingFlag === "function") {
         try { window.tenotsuSetStoryPlayingFlag(false); } catch (_) {}
@@ -362,12 +413,18 @@
 
   function enterShop(){
     if (isRendering) return;
+    const now = performance.now ? performance.now() : Date.now();
+    if (window.__TENOTSU_LAST_ENTER_SHOP__ && now - window.__TENOTSU_LAST_ENTER_SHOP__ < 250) return;
+    window.__TENOTSU_LAST_ENTER_SHOP__ = now;
+
     isRendering = true;
     try {
       setMode("shop");
       setBackground(BG_SHOP);
       hideOfficeLayer();
+      renderShopCharacter();
       showShopGreeting();
+      cleanupLegacyShopPanels();
       renderShopOperationSurface();
       updateInputSurfaces("shop");
 
@@ -380,6 +437,10 @@
   }
 
   function openShop(){
+    const now = performance.now ? performance.now() : Date.now();
+    if (window.__TENOTSU_OPEN_SHOP_LOCK__ && now - window.__TENOTSU_OPEN_SHOP_LOCK__ < 350) return;
+    window.__TENOTSU_OPEN_SHOP_LOCK__ = now;
+
     try {
       const seen = localStorage.getItem(SAKUYA_INTRO_KEY) === "1";
       if (!seen && typeof window.loadScenario === "function") {
@@ -387,6 +448,7 @@
         window.__TENOTSU_RETURN_TO_SHOP_AFTER_STORY__ = true;
         setMode("story");
         hideOfficeLayer();
+        hideShopCharacterLayer();
         hideComment();
         clearOperationSurface();
         window.loadScenario(SAKUYA_INTRO_SCENARIO);
@@ -400,6 +462,7 @@
     setMode("battle");
     document.body.classList.add("battle-screen");
     hideOfficeLayer();
+    hideShopCharacterLayer();
     hideComment();
     clearOperationSurface();
     const click = qs("#click-layer");
@@ -436,6 +499,16 @@
     setI(box, "bottom", "max(18px, env(safe-area-inset-bottom))");
     setI(box, "width", "auto");
     setI(box, "z-index", Z.dialogue);
+
+    const mode = document.body.dataset.gameMode || window.tenotsuGameMode || "";
+    if (mode === "shop" || mode === "office") {
+      box.classList.add("hidden");
+      box.style.setProperty("display", "none", "important");
+      box.style.setProperty("pointer-events", "none", "important");
+    } else {
+      box.style.removeProperty("display");
+      box.style.removeProperty("pointer-events");
+    }
   }
 
   function normalizeLayers(){
@@ -448,6 +521,7 @@
       ["#dialogue-box", Z.dialogue],
       ["#choices,.choices-area", Z.choice],
       ["#tenotsu-surface-office-layer", Z.officeChar],
+      ["#tenotsu-shop-character-layer,#tenotsu-shop-character-layer img", Z.officeChar],
       ["#tenotsu-operation-surface", Z.operation],
       ["#list-panel,#menu-panel,.right-menu,.right-panel,.menu-panel,.list-panel,.tenotsu-six-main-menu", Z.menu],
       ["#tenotsu-surface-comment,#office-comment-box,.office-comment-box,.title-comment-box", Z.comment],
@@ -470,12 +544,11 @@
       // Never touch battle-root buttons here; battle.js owns them.
       if (ev.target && ev.target.closest && ev.target.closest("#battle-root")) return;
 
-      const actionEl = ev.target && ev.target.closest ? ev.target.closest("[data-surface-action], .tenotsu-six-main-button") : null;
+      const actionEl = ev.target && ev.target.closest ? ev.target.closest("[data-surface-action], .tenotsu-six-main-button, #list-panel button, #list-panel .menu-item, #list-panel li, #list-panel a") : null;
       if (!actionEl) return;
 
-      const action = actionEl.dataset.surfaceAction || (actionEl.classList.contains("tenotsu-six-main-button") ? "main-menu" : "");
       const label = (actionEl.dataset.menuLabel || actionEl.textContent || "").trim();
-
+      const action = actionEl.dataset.surfaceAction || ((actionEl.classList.contains("tenotsu-six-main-button") || MENU_ITEMS.includes(label)) ? "main-menu" : "");
       if (!action) return;
       ev.preventDefault();
       ev.stopPropagation();
