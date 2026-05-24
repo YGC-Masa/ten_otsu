@@ -6241,7 +6241,7 @@ button.active {
 }
 
 
-/* v037_92: ストーリー中の右メニュー抑止と本文白固定 */
+/* v037_93: ストーリー中の右メニュー抑止と本文白固定 */
 body.story-playing #list-panel,
 body.story-playing .right-main-panel,
 body.story-playing .right-menu,
@@ -6258,15 +6258,15 @@ body.story-playing .scenario-text,
 body.story-playing .message-text {
   color: #ffffff !important;
 }
-/* /v037_92 */
+/* /v037_93 */
 
-/* v037_92: タイトル画面はメニュー表示を許可 */
+/* v037_93: タイトル画面はメニュー表示を許可 */
 body.title-screen #list-panel {
   pointer-events: auto !important;
 }
 
 
-/* v037_92: 事務所モード */
+/* v037_93: 事務所モード */
 body.office-screen #list-panel {
   display: flex !important;
   pointer-events: auto !important;
@@ -6331,4 +6331,38 @@ body.office-screen #list-panel button:nth-of-type(6) {
     font-size: 14px !important;
   }
 }
-/* /v037_92 */
+/* /v037_93 */
+
+/* v037_93: ブラックフェードとストーリー管理表文字色 */
+#tenotsu-black-fade-layer {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 30000;
+}
+
+.story-management-surface,
+.story-management-surface * {
+  color: #ffffff !important;
+}
+.story-management-surface table,
+.story-management-surface th,
+.story-management-surface td {
+  color: #ffffff !important;
+}
+body.story-playing #name,
+body.story-playing #speaker-name,
+body.story-playing .speaker-name {
+  color: inherit;
+}
+body.story-playing #text,
+body.story-playing #message,
+body.story-playing #scenario-text,
+body.story-playing .scenario-text,
+body.story-playing .message-text,
+body.story-playing .text-body {
+  color: #ffffff !important;
+}
+/* /v037_93 */

@@ -1,6 +1,6 @@
 
 /* v037_85 engine guard: 起動停止対策 */
-window.TENOTSU_ENGINE_VERSION = "v037_92";
+window.TENOTSU_ENGINE_VERSION = "v037_93";
 window.__TENOTSU_ENGINE_ERRORS__ = window.__TENOTSU_ENGINE_ERRORS__ || [];
 
 window.addEventListener("error", (event) => {
@@ -181,7 +181,7 @@ const charSlots = {
 };
 
 
-/* v037_92: ストーリー中の右メニュー抑止 */
+/* v037_93: ストーリー中の右メニュー抑止 */
 function tenotsuIsStoryPartActive() {
   return !!tenotsuStoryPartActive && tenotsuGetScreenMode() === "story";
 }
@@ -192,16 +192,13 @@ function tenotsuSetStoryPartActive(active, mode) {
   if (tenotsuStoryPartActive && listPanel) listPanel.classList.add("hidden");
 }
 function tenotsuApplyStoryTextWhite() {
-  if (nameEl) {
-    nameEl.style.color = "#ffffff";
-    nameEl.style.textShadow = "0 1px 3px rgba(0,0,0,.75)";
-  }
+  // v037_93: 本文は白固定。キャラ名は setCharacterStyle() のキャラカラーを維持する。
   if (textEl) {
     textEl.style.color = "#ffffff";
     textEl.style.textShadow = "0 1px 3px rgba(0,0,0,.75)";
   }
 }
-/* /v037_92 */
+/* /v037_93 */
 
 function isMobilePortrait() {
   return window.innerWidth <= 768 && window.innerHeight > window.innerWidth;
@@ -212,7 +209,7 @@ function setTextWithSpeed(text, speed, callback) {
   tenotsuStopAutoPlayTimer && tenotsuStopAutoPlayTimer();
   isPlaying = true;
   textEl.innerHTML = "";
-  tenotsuApplyStoryTextWhite(); // v037_92 setText start
+  tenotsuApplyStoryTextWhite(); // v037_93 setText start
   const sourceText = String(text ?? "");
   let i = 0;
 
@@ -225,7 +222,7 @@ function setTextWithSpeed(text, speed, callback) {
 
   typingInterval = setInterval(() => {
     textEl.innerHTML += sourceText[i++];
-    tenotsuApplyStoryTextWhite(); // v037_92 typing
+    tenotsuApplyStoryTextWhite(); // v037_93 typing
     if (i >= sourceText.length) {
       clearInterval(typingInterval);
       typingInterval = null;
@@ -237,18 +234,18 @@ function setTextWithSpeed(text, speed, callback) {
 }
 
 function setCharacterStyle(name, scene = {}) {
-  const style = (window.TENOTSU_CHARACTER_STYLE_MAP && window.TENOTSU_CHARACTER_STYLE_MAP[name]) || null;
-  // v037_92: ストーリーパートの文字はキャラカラーを使わず白固定。
+  const style = (window.TENOTSU_CHARACTER_STYLE_MAP && window.TENOTSU_CHARACTER_STYLE_MAP[name]) || (window.characterStyles && window.characterStyles[name]) || null;
+  // v037_93: キャラ名はキャラカラー、本文は白固定。
   if (nameEl) {
-    nameEl.style.color = "#ffffff";
+    nameEl.style.color = style ? (style.color || "#ffffff") : "#ffffff";
     nameEl.style.fontWeight = style ? (style.fontWeight || "700") : "700";
-    nameEl.style.textShadow = "0 1px 3px rgba(0,0,0,.75)";
+    nameEl.style.textShadow = (style && style.textShadow) || "0 1px 3px rgba(0,0,0,.75)";
   }
   if (textEl) {
     textEl.style.color = "#ffffff";
     textEl.style.fontWeight = style ? (style.fontWeight || "600") : "600";
     textEl.style.textShadow = "0 1px 3px rgba(0,0,0,.75)";
-    textEl.style.fontSize = scene.fontSize || defaultFontSize || "1em";
+    textEl.style.fontSize = scene.fontSize || (style && style.fontSize) || defaultFontSize || "1em";
   }
   if (style && typeof style.speed === "number") currentSpeed = style.speed;
   else currentSpeed = scene.speed || defaultSpeed || 40;
@@ -348,7 +345,7 @@ async function showScene(scene) {
   if (isOfficeScene) {
     tenotsuSetStoryPartActive(false, "office");
   } else {
-    tenotsuSetStoryPartActive(!isTitleScene, isTitleScene ? "title" : "story"); // v037_92 showScene mode flag
+    tenotsuSetStoryPartActive(!isTitleScene, isTitleScene ? "title" : "story"); // v037_93 showScene mode flag
   }
   if (!isTitleScene && !isOfficeScene && listPanel) listPanel.classList.add("hidden");
   if (typingInterval) clearInterval(typingInterval);
@@ -362,7 +359,7 @@ async function showScene(scene) {
   evLayer.innerHTML = "";
   choicesEl.innerHTML = "";
 
-  // v037_92: full-size event CG / memory background should not appear behind standing sprites.
+  // v037_93: full-size event CG / memory background should not appear behind standing sprites.
   // Use `hideCharacters: true` for scenario-controlled full CG scenes.
   // Also auto-detect bg_memory_* backgrounds as full CG surfaces.
   const isFullCgBackground = scene.hideCharacters === true ||
@@ -459,7 +456,7 @@ async function showScene(scene) {
   if (scene.name !== undefined && scene.text !== undefined) {
     nameEl.textContent = scene.name;
     setCharacterStyle(scene.name, scene);
-    tenotsuApplyStoryTextWhite(); // v037_92 after style
+    tenotsuApplyStoryTextWhite(); // v037_93 after style
     setTextWithSpeed(scene.text, currentSpeed, () => {
       if (isAutoMode && choicesEl.children.length === 0) {
         setTimeout(() => {
@@ -504,7 +501,7 @@ async function showScene(scene) {
     const isInitialScenario = currentScenario === "000start.json" || currentScenario === "start000.json";
     const isTitleSceneForList = tenotsuIsTitleOnlyScene(scene);
     const isOfficeList = scene.showlist === "office6.json";
-    // v037_92: タイトルからは事務所へ遷移。事務所モードでは右6大メニューを常時表示。
+    // v037_93: タイトルからは事務所へ遷移。事務所モードでは右6大メニューを常時表示。
     if (isOfficeList) {
       tenotsuSetStoryPartActive(false, "office");
       await loadList(scene.showlist);
@@ -545,7 +542,7 @@ function next() {
 
 function loadScenario(filename) {
   const isInitialTitle = ["000start.json", "start000.json"].includes(String(filename || ""));
-  tenotsuSetStoryPartActive(!isInitialTitle, isInitialTitle ? "title" : "story"); // v037_92 loadScenario mode
+  tenotsuSetStoryPartActive(!isInitialTitle, isInitialTitle ? "title" : "story"); // v037_93 loadScenario mode
   // ランダム表示類はリセット
   if (typeof randomImagesOff === "function") randomImagesOff();
   if (typeof randomTextsOff === "function") randomTextsOff();
@@ -784,7 +781,7 @@ function showMenu(menuData) {
 
 // === リスト関連 ===
 async function loadList(filename = "list01.json") {
-  if (tenotsuIsStoryPartActive && tenotsuIsStoryPartActive() && !tenotsuShouldRightMenuBeVisible()) { // v037_92 loadList story guard
+  if (tenotsuIsStoryPartActive && tenotsuIsStoryPartActive() && !tenotsuShouldRightMenuBeVisible()) { // v037_93 loadList story guard
     if (listPanel) listPanel.classList.add("hidden");
     return;
   }
@@ -797,7 +794,7 @@ async function loadList(filename = "list01.json") {
 }
 
 function showList(listData) {
-  // v037_92: タイトルは右メニュー表示可、通常ストーリー中のみ右メニューを出さない
+  // v037_93: タイトルは右メニュー表示可、通常ストーリー中のみ右メニューを出さない
   if (tenotsuIsStoryPartActive && tenotsuIsStoryPartActive() && !tenotsuShouldRightMenuBeVisible()) {
     if (listPanel) listPanel.classList.add("hidden");
     return;
@@ -830,6 +827,11 @@ clickLayer.addEventListener("touchend", () => {
 });
 
 clickLayer.addEventListener("click", () => {
+  // v037_93: ストーリーモード中のタップは必ずシナリオ送りを優先する。
+  if (tenotsuIsStoryPartActive && tenotsuIsStoryPartActive()) {
+    if (!isPlaying && choicesEl.children.length === 0) next();
+    return;
+  }
   /* v037_85: 右メニュー非表示時タップ再表示 */
   if (!menuPanel.classList.contains("hidden")) {
     menuPanel.classList.add("hidden");
@@ -854,7 +856,7 @@ try { if (typeof clearAppCacheAndReload === "function") window.clearAppCacheAndR
 
 
 
-/* v037_92: タイトル→事務所→各パート→事務所 の画面モード管理 */
+/* v037_93: タイトル→事務所→各パート→事務所 の画面モード管理 */
 function tenotsuSetOfficeBackground() {
   try {
     if (bgEl) bgEl.src = config.bgPath + "bg_office_hidamari.png";
@@ -898,7 +900,7 @@ function tenotsuEnterBattleMode() {
   tenotsuSetStoryPartActive(false, "battle");
   if (listPanel) listPanel.classList.add("hidden");
 }
-/* /v037_92 */
+/* /v037_93 */
 
 /* v037_85 boot flow: 起動フラッシュ → 初期化 → タイトル表示 → 事務所6大メニュー */
 window.TENOTSU_BOOT_FLOW_VERSION = "v037_85";
@@ -1075,7 +1077,7 @@ function tenotsuUnlockMemory(id, title, text) {
 }
 
 function tenotsuShowDynamicPanel(title, html) {
-  tenotsuSetStoryPartActive(false); // v037_92 dynamic panel
+  tenotsuSetStoryPartActive(false); // v037_93 dynamic panel
   const menuPanel = document.getElementById("menu-panel");
   const listPanel = document.getElementById("list-panel");
   const nameBox = document.getElementById("name");
@@ -2496,6 +2498,31 @@ function tenotsuReturnToPreviousMenu() {
   }
 }
 
+
+/* v037_93: ストーリー終了時のブラックフェード */
+function tenotsuGetBlackFadeLayer() {
+  let layer = document.getElementById("tenotsu-black-fade-layer");
+  if (!layer) {
+    layer = document.createElement("div");
+    layer.id = "tenotsu-black-fade-layer";
+    document.body.appendChild(layer);
+  }
+  return layer;
+}
+function tenotsuBlackFadeOut(duration = 520) {
+  const layer = tenotsuGetBlackFadeLayer();
+  layer.style.transition = `opacity ${duration}ms ease`;
+  layer.style.opacity = "1";
+  layer.style.pointerEvents = "auto";
+}
+function tenotsuBlackFadeIn(duration = 520) {
+  const layer = tenotsuGetBlackFadeLayer();
+  layer.style.transition = `opacity ${duration}ms ease`;
+  layer.style.opacity = "0";
+  layer.style.pointerEvents = "none";
+}
+/* /v037_93 */
+
 function tenotsuHandleStoryEndReturn() {
   if (window.__TENOTSU_STORY_ENDING__) return;
   window.__TENOTSU_STORY_ENDING__ = true;
@@ -2519,19 +2546,24 @@ function tenotsuHandleStoryEndReturn() {
   if (clickLayer) clickLayer.style.pointerEvents = "none";
 
   window.setTimeout(() => {
+    tenotsuBlackFadeOut(520);
     if (dialogueBox) dialogueBox.classList.add("story-end-fadeout");
-  }, 700);
+  }, 650);
 
   window.setTimeout(() => {
     if (dialogueBox) {
       dialogueBox.classList.remove("story-end-fadeout");
       dialogueBox.classList.add("hidden");
     }
-    if (clickLayer) clickLayer.style.pointerEvents = "auto";
     window.__TENOTSU_STORY_ENDING__ = false;
-    tenotsuSetStoryPartActive(false, "office"); // v037_92 story end to office
+    tenotsuSetStoryPartActive(false, "office"); // v037_93 story end to office
     tenotsuEnterOfficeMode("story-end");
-  }, 1350);
+  }, 1250);
+
+  window.setTimeout(() => {
+    tenotsuBlackFadeIn(520);
+    if (clickLayer) clickLayer.style.pointerEvents = "auto";
+  }, 1480);
 }
 /* /v037_85 */
 
@@ -2868,7 +2900,7 @@ function tenotsuShowCenterSurface(title, html) {
 /* /v037_85 */
 
 
-/* v037_92: ストーリー中の右メニュー系クリック抑止 */
+/* v037_93: ストーリー中の右メニュー系クリック抑止 */
 document.addEventListener("click", (event) => {
   if (!tenotsuIsStoryPartActive || !tenotsuIsStoryPartActive()) return;
   const target = event.target;
@@ -2878,10 +2910,10 @@ document.addEventListener("click", (event) => {
     if (listPanel) listPanel.classList.add("hidden");
   }
 }, true);
-/* /v037_92 */
+/* /v037_93 */
 
 
-/* v037_92: バトル終了/閉じる後は事務所モードへ戻す補助 */
+/* v037_93: バトル終了/閉じる後は事務所モードへ戻す補助 */
 window.addEventListener("load", () => {
   window.setTimeout(() => {
     try {
@@ -2898,4 +2930,4 @@ window.addEventListener("load", () => {
     }
   }, 0);
 });
-/* /v037_92 */
+/* /v037_93 */
