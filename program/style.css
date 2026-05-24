@@ -6241,7 +6241,7 @@ button.active {
 }
 
 
-/* v037_89: ストーリー中の右メニュー抑止と本文白固定 */
+/* v037_91: ストーリー中の右メニュー抑止と本文白固定 */
 body.story-playing #list-panel,
 body.story-playing .right-main-panel,
 body.story-playing .right-menu,
@@ -6258,4 +6258,9 @@ body.story-playing .scenario-text,
 body.story-playing .message-text {
   color: #ffffff !important;
 }
-/* /v037_89 */
+/* /v037_91 */
+
+/* v037_91: タイトル画面はメニュー表示を許可 */
+body.title-screen #list-panel {
+  pointer-events: auto !important;
+}

@@ -13,7 +13,7 @@
 | カラーサムネ | `aa_memory_spring_bento_thumb_color.png` |
 | モノクロサムネ | `aa_memory_spring_bento_thumb_mono.png` |
 
-## v037_90
+## v037_91
 
 - 緋奈「春の公園でのお弁当タイム」のシナリオを立ち絵演出込みで再構成。
 - `a10501.webp` を遭遇時の笑顔、`a10701.webp` を照れ、`a11201.webp` を動揺/強い照れとして使用。
