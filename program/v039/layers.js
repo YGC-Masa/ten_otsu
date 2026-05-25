@@ -1,4 +1,4 @@
-/* v039_07 layers */
+/* v039_08 layers */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -45,11 +45,12 @@
     layers.shopInfo = el("aside", { className: "tenotsu-shop-info-panel", "aria-label": "ショップ情報", hidden: "hidden" }, app);
     layers.settings = el("aside", { className: "tenotsu-settings-panel", "aria-label": "設定", hidden: "hidden" }, app);
     layers.members = el("section", { className: "tenotsu-members-panel", "aria-label": "メンバー", hidden: "hidden" }, app);
+    layers.town = el("section", { className: "tenotsu-town-panel", "aria-label": "外回り", hidden: "hidden" }, app);
     layers.text = el("section", { className: "tenotsu-text-layer", "aria-live": "polite" }, app);
     layers.speaker = el("div", { className: "tenotsu-speaker" }, layers.text);
     layers.message = el("div", { className: "tenotsu-message" }, layers.text);
     layers.fade = el("div", { className: "tenotsu-fade-layer", "data-layer": "fade" }, app);
-    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_07" }, app);
+    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_08" }, app);
 
     ns.layers = layers;
     return layers;
@@ -127,5 +128,18 @@
     if (!layers.members) return;
     layers.members.hidden = true;
     layers.members.innerHTML = "";
+  };
+
+  ns.showTownPanel = function showTownPanel(html) {
+    const layers = ns.ensureLayers();
+    layers.town.hidden = false;
+    layers.town.innerHTML = html || "";
+  };
+
+  ns.hideTownPanel = function hideTownPanel() {
+    const layers = ns.ensureLayers();
+    if (!layers.town) return;
+    layers.town.hidden = true;
+    layers.town.innerHTML = "";
   };
 })();

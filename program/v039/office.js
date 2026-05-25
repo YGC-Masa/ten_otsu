@@ -1,4 +1,4 @@
-/* v039_07 office */
+/* v039_08 office */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -45,7 +45,7 @@
     version.className = "tenotsu-menu-version";
     const versionMain = document.createElement("span");
     versionMain.className = "tenotsu-menu-version-main";
-    versionMain.textContent = ns.VERSION || "v039_07";
+    versionMain.textContent = ns.VERSION || "v039_08";
     const versionSub = document.createElement("span");
     versionSub.className = "tenotsu-menu-version-sub";
     versionSub.textContent = "new core / office";
@@ -80,6 +80,7 @@
     if (typeof ns.hideSettingsPanel === "function") ns.hideSettingsPanel();
     if (typeof ns.hideShopPanel === "function") ns.hideShopPanel();
     if (typeof ns.hideMembersPanel === "function") ns.hideMembersPanel();
+    if (typeof ns.hideTownPanel === "function") ns.hideTownPanel();
     ns.renderOfficeMenu();
     ns.renderOfficeCharacters();
     if (options.message) ns.setText(options.speaker || "店長", options.message);
@@ -125,7 +126,7 @@
     const html = `
       <div class="tenotsu-settings-title">設定</div>
       <div class="tenotsu-settings-body">
-        <div>現在のバージョン: <strong>${ns.VERSION || "v039_07"}</strong></div>
+        <div>現在のバージョン: <strong>${ns.VERSION || "v039_08"}</strong></div>
         <div>表示やキャッシュの調整を行います。</div>
       </div>
       <div class="tenotsu-settings-actions">
@@ -168,6 +169,7 @@
   ns.handleOfficeMenu = function handleOfficeMenu(action) {
     if (action !== "settings" && typeof ns.hideSettingsPanel === "function") ns.hideSettingsPanel();
     if (action !== "members" && typeof ns.hideMembersPanel === "function") ns.hideMembersPanel();
+    if (action !== "town" && typeof ns.hideTownPanel === "function") ns.hideTownPanel();
 
     switch(action) {
       case "office":
@@ -181,7 +183,8 @@
         ns.setText("店長", "店舗営業は v039_08 以降でバトル接続予定です。");
         break;
       case "town":
-        ns.setText("店長", "外回りは v039_08 以降でシナリオプレイヤーへ接続予定です。");
+        if (typeof ns.enterTown === "function") ns.enterTown();
+        else ns.setText("店長", "外回り機能を読み込めませんでした。");
         break;
       case "shop":
         if (typeof ns.enterShop === "function") {

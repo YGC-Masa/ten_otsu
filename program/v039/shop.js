@@ -1,4 +1,4 @@
-/* v039_07 shop */
+/* v039_08 shop */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -6,7 +6,7 @@
   ns.renderShopMenu = function renderShopMenu() {
     const menuHtml = `
       <div class="tenotsu-menu-version">
-        <span class="tenotsu-menu-version-main">${ns.VERSION || "v039_07"}</span>
+        <span class="tenotsu-menu-version-main">${ns.VERSION || "v039_08"}</span>
         <span class="tenotsu-menu-version-sub">shop / exchange</span>
       </div>
       <div class="tenotsu-shop-menu-title">ショップメニュー</div>
@@ -22,7 +22,7 @@
       <div class="tenotsu-shop-info-title">アイテム交換所</div>
       <div class="tenotsu-shop-info-body">
         <p>イベント交換・スタンプ交換・特別な合言葉交換をここへ接続予定です。</p>
-        <p>v039_07では、まず事務所とショップ間の安定した画面遷移を確認します。</p>
+        <p>v039_08では、まず事務所とショップ間の安定した画面遷移を確認します。</p>
       </div>
     `;
 
@@ -39,6 +39,7 @@
     ns.ensureLayers();
     if (typeof ns.hideSettingsPanel === "function") ns.hideSettingsPanel();
     if (typeof ns.hideMembersPanel === "function") ns.hideMembersPanel();
+    if (typeof ns.hideTownPanel === "function") ns.hideTownPanel();
     if (typeof ns.clearCharacters === "function") ns.clearCharacters();
     ns.setBackground(ns.paths.shopBg);
     ns.renderShopMenu();
@@ -58,6 +59,7 @@
         break;
       case "back-office":
         if (typeof ns.hideShopPanel === "function") ns.hideShopPanel();
+    if (typeof ns.hideTownPanel === "function") ns.hideTownPanel();
         ns.enterOffice({ speaker: "店長", message: "事務所に戻りました。" });
         break;
       default:

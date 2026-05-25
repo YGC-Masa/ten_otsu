@@ -1,4 +1,4 @@
-/* v039_07 assets */
+/* v039_08 assets */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -6,6 +6,7 @@
   ns.paths = {
     officeBg: "images/assets/bgev/bg_office_hidamari.png",
     shopBg: "images/assets/bgev/bg_item_exchange_counter.png",
+    townBg: "images/assets/bgev/bg_park_autumn.png",
     fallbackBg: "images/assets/bgev/bg_office_hidamari.png",
     transparentPixel: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",
     charBase: "images/assets/char/"
@@ -42,6 +43,37 @@
     { name: "紫藤 彩愛", id: "ak", color: "#694D9F", role: "お嬢様ぽい庶民", specialty: "洗濯機・掃除機", image: "k10501.webp", comment: "貴方、こちらで確認くださいませ。" },
     { name: "餅月 里美", id: "al", color: "#8d5025", role: "ゆるふわ事務員", specialty: "事務・経理", image: "l10501.webp", comment: "てんちょ～、お茶でも飲んでいきます～？" },
     { name: "草壁 萌", id: "am", color: "#33CC99", role: "おとなしい甘えん坊妹系", specialty: "マッサージ・リラックス用品", image: "m10501.webp", comment: "おにいちゃん、ここにいるよ。" }
+  ];
+
+
+  ns.townSpots = [
+    {
+      id: "wakaba_central_park",
+      name: "若葉中央公園",
+      type: "ランドマーク",
+      description: "日和坂市の中心にある、桜並木と川沿いの遊歩道がきれいな公園。",
+      status: "藍・春イベント導線",
+      speaker: "店長",
+      message: "外回りの休憩がてら、若葉中央公園へ立ち寄ります。"
+    },
+    {
+      id: "hidamari_shopping_street",
+      name: "ひだまり商店街",
+      type: "街エリア",
+      description: "ひだまりストア周辺の商店街。買い物や地域イベントの中心地。",
+      status: "後続接続予定",
+      speaker: "店長",
+      message: "商店街を見回ります。"
+    },
+    {
+      id: "techlab_tsukumo",
+      name: "テックラボつくも",
+      type: "協力店",
+      description: "PC修理・技術協力を担当する外部協力店。裏口には交換カウンターへの導線がある。",
+      status: "交換所/VIP連携予定",
+      speaker: "店長",
+      message: "テックラボつくもへ向かいます。"
+    }
   ];
 
   ns.shuffle = function shuffle(source) {
