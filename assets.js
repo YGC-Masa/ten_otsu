@@ -1,0 +1,11 @@
+{
+  "version": "v039_14",
+  "transitions_loaded_by_index": true,
+  "transitionTo_exists": true,
+  "bootReveal_exists": true,
+  "app_uses_bootReveal": false,
+  "office_menu_uses_transitionTo": true,
+  "shop_accepts_noTransition": true,
+  "town_accepts_noTransition": true,
+  "members_accepts_noTransition": true
+}
