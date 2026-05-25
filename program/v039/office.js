@@ -1,4 +1,4 @@
-/* v039_17 office */
+/* v039_18 office */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -45,7 +45,7 @@
     version.className = "tenotsu-menu-version";
     const versionMain = document.createElement("span");
     versionMain.className = "tenotsu-menu-version-main";
-    versionMain.textContent = ns.VERSION || "v039_17";
+    versionMain.textContent = ns.VERSION || "v039_18";
     const versionSub = document.createElement("span");
     versionSub.className = "tenotsu-menu-version-sub";
     versionSub.textContent = "new core / office";
@@ -133,7 +133,7 @@
     const html = `
       <div class="tenotsu-settings-title">設定</div>
       <div class="tenotsu-settings-body">
-        <div>現在のバージョン: <strong>${ns.VERSION || "v039_17"}</strong></div>
+        <div>現在のバージョン: <strong>${ns.VERSION || "v039_18"}</strong></div>
         <div>表示やキャッシュの調整を行います。</div>
       </div>
       <div class="tenotsu-settings-actions">
@@ -190,7 +190,7 @@
         }
         break;
       case "sales":
-        ns.setText("店長", "店舗営業は v039_17 以降でバトル接続予定です。");
+        ns.setText("店長", "店舗営業は v039_18 以降でバトル接続予定です。");
         break;
       case "town":
         if (typeof ns.enterTown === "function") {

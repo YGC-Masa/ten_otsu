@@ -1,4 +1,4 @@
-/* v039_17 town season event tree */
+/* v039_18 town season event tree */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -14,11 +14,13 @@
   }
 
   function eventButton(event) {
+    const readLabel = typeof ns.getEventReadLabel === "function" ? ns.getEventReadLabel(event.id) : "未読";
     return `
-      <button type="button" class="tenotsu-event-card" data-event-id="${event.id}">
+      <button type="button" class="tenotsu-event-card ${readLabel === "既読" ? "read" : "unread"}" data-event-id="${event.id}">
         <span class="tenotsu-event-title">${event.title}</span>
         <span class="tenotsu-event-character">${event.character}</span>
         <span class="tenotsu-event-status">${event.status}</span>
+        <span class="tenotsu-event-read">${readLabel}</span>
       </button>
     `;
   }
@@ -50,7 +52,7 @@
     }
   };
 
-  ns.renderSeasonEvents = async function renderSeasonEvents(seasonId) {
+  ns.renderSeasonEvents = async function renderSeasonEvents(seasonId, options = {}) {
     const season = ns.getSeason(seasonId);
     if (!season) {
       ns.setText("店長", "季節データを確認できませんでした。");
@@ -85,31 +87,39 @@
     const panel = ns.layers.town;
     const detail = panel.querySelector("[data-event-detail]");
 
+    const selectEvent = (eventId) => {
+      const event = (season.events || []).find((item) => item.id === eventId);
+      const btn = panel.querySelector(`[data-event-id="${eventId}"]`);
+      if (!event || !btn) return;
+
+      panel.querySelectorAll(".tenotsu-event-card").forEach((card) => card.classList.remove("selected"));
+      btn.classList.add("selected");
+
+      const readLabel = typeof ns.getEventReadLabel === "function" ? ns.getEventReadLabel(event.id) : "未読";
+
+      detail.innerHTML = `
+        <div class="tenotsu-event-detail-title">${event.title}</div>
+        <div class="tenotsu-event-detail-meta">登場：${event.character}</div>
+        <div class="tenotsu-event-detail-meta">場所：${event.place}</div>
+        <div class="tenotsu-event-detail-meta">状態：${event.status} / ${readLabel}</div>
+        <div class="tenotsu-event-detail-summary">${event.summary}</div>
+        ${event.cg ? `<div class="tenotsu-event-detail-cg">CG候補：${event.cg}</div>` : ""}
+        <button type="button" class="tenotsu-event-start" data-event-start="${event.id}">イベント開始</button>
+      `;
+
+      ns.setText(event.character, event.summary);
+
+      const start = detail.querySelector("[data-event-start]");
+      if (start) start.addEventListener("click", () => ns.startSeasonEvent(season, event));
+    };
+
     panel.querySelectorAll("[data-event-id]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const eventId = btn.dataset.eventId;
-        const event = (season.events || []).find((item) => item.id === eventId);
-        if (!event) return;
-
-        panel.querySelectorAll(".tenotsu-event-card").forEach((card) => card.classList.remove("selected"));
-        btn.classList.add("selected");
-
-        detail.innerHTML = `
-          <div class="tenotsu-event-detail-title">${event.title}</div>
-          <div class="tenotsu-event-detail-meta">登場：${event.character}</div>
-          <div class="tenotsu-event-detail-meta">場所：${event.place}</div>
-          <div class="tenotsu-event-detail-meta">状態：${event.status}</div>
-          <div class="tenotsu-event-detail-summary">${event.summary}</div>
-          ${event.cg ? `<div class="tenotsu-event-detail-cg">CG候補：${event.cg}</div>` : ""}
-          <button type="button" class="tenotsu-event-start" data-event-start="${event.id}">イベント開始</button>
-        `;
-
-        ns.setText(event.character, event.summary);
-
-        const start = detail.querySelector("[data-event-start]");
-        if (start) start.addEventListener("click", () => ns.startSeasonEvent(season, event));
-      });
+      btn.addEventListener("click", () => selectEvent(btn.dataset.eventId));
     });
+
+    if (options.selectedEventId) {
+      selectEvent(options.selectedEventId);
+    }
 
     panel.querySelectorAll("[data-town-action]").forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -130,7 +140,7 @@
     if (!season || !event) return;
 
     if (event.scenario && typeof ns.startStory === "function") {
-      ns.startStory(event.scenario, { mode: "town", season: season.id });
+      ns.startStory(event.scenario, { mode: "town", season: season.id, eventId: event.id });
       return;
     }
 
