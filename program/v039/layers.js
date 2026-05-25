@@ -1,1 +1,26 @@
-(function(){"use strict";const ns=window.TENOTSU_V039;function el(tag,attrs={},parent=null){const node=document.createElement(tag);Object.entries(attrs).forEach(([k,v])=>{if(k==="className")node.className=v;else if(k==="text")node.textContent=v;else node.setAttribute(k,v);});if(parent)parent.appendChild(node);return node;}ns.ensureRoot=function(){let game=document.getElementById("game-container");if(!game)game=el("main",{id:"game-container"},document.body);let app=document.getElementById("tenotsu-app");if(!app)app=el("div",{id:"tenotsu-app"},game);return app;};ns.ensureLayers=function(){const app=ns.ensureRoot();app.innerHTML="";const layers={};layers.bg=el("div",{className:"tenotsu-bg-layer","data-layer":"background"},app);layers.bgImg=el("img",{alt:"",draggable:"false"},layers.bg);layers.officeChars=el("div",{className:"tenotsu-office-character-layer","data-layer":"office-characters"},app);layers.ui=el("div",{className:"tenotsu-ui-layer","data-layer":"ui"},app);layers.menu=el("nav",{className:"tenotsu-office-menu","aria-label":"事務所メニュー"},app);layers.text=el("section",{className:"tenotsu-text-layer","aria-live":"polite"},app);layers.speaker=el("div",{className:"tenotsu-speaker"},layers.text);layers.message=el("div",{className:"tenotsu-message"},layers.text);layers.fade=el("div",{className:"tenotsu-fade-layer","data-layer":"fade"},app);layers.version=el("div",{className:"tenotsu-version-badge",text:ns.VERSION},app);ns.layers=layers;return layers;};ns.setBackground=function(src){const layers=ns.layers||ns.ensureLayers();layers.bg.style.backgroundImage="url('"+src+"')";layers.bgImg.src=src;layers.bgImg.onerror=()=>{layers.bg.style.backgroundImage="url('"+ns.paths.fallbackBg+"')";layers.bgImg.src=ns.paths.fallbackBg;};};ns.setText=function(speaker,message){const layers=ns.layers||ns.ensureLayers();layers.speaker.textContent=speaker||"";layers.message.textContent=message||"";};})();
+(function(){"use strict";const ns=window.TENOTSU_V039;function el(tag,attrs={},parent=null){const node=document.createElement(tag);Object.entries(attrs).forEach(([k,v])=>{if(k==="className")node.className=v;else if(k==="text")node.textContent=v;else node.setAttribute(k,v);});if(parent)parent.appendChild(node);return node;}ns.ensureRoot=function(){let game=document.getElementById("game-container");if(!game)game=el("main",{id:"game-container"},document.body);let app=document.getElementById("tenotsu-app");if(!app)app=el("div",{id:"tenotsu-app"},game);return app;};ns.ensureLayers=function(){const app=ns.ensureRoot();app.innerHTML="";const layers={};layers.bg=el("div",{className:"tenotsu-bg-layer","data-layer":"background"},app);layers.bgImg=el("img",{alt:"",draggable:"false"},layers.bg);layers.officeChars=el("div",{className:"tenotsu-office-character-layer","data-layer":"office-characters"},app);layers.ui=el("div",{className:"tenotsu-ui-layer","data-layer":"ui"},app);layers.menu=el("nav",{className:"tenotsu-office-menu","aria-label":"事務所メニュー"},app);layers.text=el("section",{className:"tenotsu-text-layer","aria-live":"polite"},app);layers.speaker=el("div",{className:"tenotsu-speaker"},layers.text);layers.message=el("div",{className:"tenotsu-message"},layers.text);layers.fade=el("div",{className:"tenotsu-fade-layer","data-layer":"fade"},app);layers.version=el("div",{className:"tenotsu-version-badge",text:ns.VERSION},app);ns.layers=layers;return layers;};ns.setBackground=function(src){const layers=ns.layers||ns.ensureLayers();layers.bg.style.backgroundImage="url('"+src+"')";layers.bgImg.src=src;layers.bgImg.onerror=()=>{layers.bg.style.backgroundImage="url('"+ns.paths.fallbackBg+"')";layers.bgImg.src=ns.paths.fallbackBg;};};ns.setText=function(speaker,message){const layers=ns.layers||ns.ensureLayers();layers.speaker.textContent=speaker||"";layers.message.textContent=message||"";};
+  ns.showShopPanel = function showShopPanel(menuHtml, infoHtml) {
+    const layers = ns.layers || ns.ensureLayers();
+    layers.shopMenu.hidden = false;
+    layers.shopInfo.hidden = false;
+    layers.shopMenu.innerHTML = menuHtml || "";
+    layers.shopInfo.innerHTML = infoHtml || "";
+  };
+
+  ns.hideShopPanel = function hideShopPanel() {
+    const layers = ns.layers || ns.ensureLayers();
+    if (layers.shopMenu) {
+      layers.shopMenu.hidden = true;
+      layers.shopMenu.innerHTML = "";
+    }
+    if (layers.shopInfo) {
+      layers.shopInfo.hidden = true;
+      layers.shopInfo.innerHTML = "";
+    }
+  };
+
+  ns.clearCharacters = function clearCharacters() {
+    const layers = ns.layers || ns.ensureLayers();
+    layers.officeChars.innerHTML = "";
+  };
+})();

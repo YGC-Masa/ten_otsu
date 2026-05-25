@@ -1,8 +1,8 @@
-/* v039_02 new core boot office */
+/* v039_03 new core boot office */
 :root{--tenotsu-z-bg:0;--tenotsu-z-office-char:200;--tenotsu-z-ui:500;--tenotsu-z-menu:700;--tenotsu-z-text:1200;--tenotsu-z-fade:50000;--tenotsu-vh:1vh}*{box-sizing:border-box}html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#000;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",system-ui,sans-serif}#game-container,#tenotsu-app{position:fixed;inset:0;width:100vw;height:calc(var(--tenotsu-vh,1vh)*100);overflow:hidden;background:#000;isolation:isolate}.tenotsu-bg-layer,.tenotsu-bg-layer img{position:absolute;inset:0;width:100%;height:100%}.tenotsu-bg-layer{z-index:var(--tenotsu-z-bg);background:#000;background-size:cover;background-position:center;background-repeat:no-repeat;pointer-events:none}.tenotsu-bg-layer img{object-fit:cover;display:block;opacity:1;pointer-events:none}.tenotsu-office-character-layer{position:fixed;inset:0;z-index:var(--tenotsu-z-office-char);pointer-events:none;overflow:visible}.tenotsu-office-character-layer img{position:fixed;bottom:0;top:auto;width:auto;max-width:470px;max-height:96vh;height:auto;object-fit:contain;display:block;visibility:visible;opacity:.99;transform-origin:bottom center;pointer-events:none;filter:drop-shadow(0 16px 26px rgba(0,0,0,.55))}.tenotsu-office-stand-0{left:32%;transform:translateX(-50%) scale(1.03);z-index:203}.tenotsu-office-stand-1{left:15%;transform:translateX(-50%) scale(.92);z-index:202}.tenotsu-office-stand-2{left:49%;transform:translateX(-50%) scale(.92);z-index:201}.tenotsu-ui-layer{position:fixed;inset:0;z-index:var(--tenotsu-z-ui);pointer-events:none}.tenotsu-office-menu{position:fixed;right:max(20px,env(safe-area-inset-right));top:50%;transform:translateY(-50%);width:min(300px,24vw);min-width:260px;padding:18px;border-radius:18px;background:rgba(255,248,218,.94);border:2px solid rgba(228,178,68,.95);box-shadow:0 12px 32px rgba(0,0,0,.32);z-index:var(--tenotsu-z-menu);pointer-events:auto}.tenotsu-office-menu-title{text-align:center;font-weight:800;color:#51310d;margin-bottom:14px;letter-spacing:.06em}.tenotsu-office-menu-grid{display:grid;gap:10px}.tenotsu-office-menu-button{display:block;width:100%;min-height:42px;border:1px solid rgba(180,130,30,.55);border-radius:10px;color:#3a2510;font-weight:800;cursor:pointer;pointer-events:auto;background:linear-gradient(180deg,#eaf7ff,#d8efff)}.tenotsu-office-menu-button[data-action="sales"],.tenotsu-office-menu-button[data-action="town"]{background:linear-gradient(180deg,#fff4d6,#ffe3a3)}.tenotsu-office-menu-button[data-action="shop"],.tenotsu-office-menu-button[data-action="settings"]{background:linear-gradient(180deg,#eefbdc,#dff2bf)}.tenotsu-office-menu-button:hover,.tenotsu-office-menu-button:focus{filter:brightness(1.04)}.tenotsu-text-layer{position:fixed;left:5%;right:12%;bottom:max(18px,env(safe-area-inset-bottom));min-height:82px;padding:14px 18px;border-radius:16px;border:1px solid rgba(255,255,255,.38);background:rgba(20,18,22,.78);color:#fff;z-index:var(--tenotsu-z-text);pointer-events:none;box-shadow:0 12px 32px rgba(0,0,0,.38);backdrop-filter:blur(4px)}.tenotsu-speaker{display:inline-block;min-width:7em;font-weight:800;color:#ffe2a3;margin-bottom:6px}.tenotsu-message{font-size:18px;line-height:1.7;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.65)}.tenotsu-fade-layer{position:fixed;inset:0;background:#000;opacity:0;display:none;pointer-events:none;z-index:var(--tenotsu-z-fade)}.tenotsu-version-badge{position:fixed;left:10px;bottom:8px;z-index:calc(var(--tenotsu-z-text) + 1);color:rgba(255,255,255,.42);font-size:11px;pointer-events:none}#background,#random-images-layer,#random-text-layer,#list-panel,#menu-panel,#char-layer,#ev-layer,#click-layer,#dialogue-box,#choices,#tenotsu-main-menu,#tenotsu-shop-menu,#tenotsu-front-character-layer,#tenotsu-operation-surface,#tenotsu-safe-fade,#boot-flow,#rotate-warning,.boot-flow,.list-panel,.menu-panel,.random-show,.title-comment-window,.orientation-warning{display:none!important;visibility:hidden!important;pointer-events:none!important}
 
 
-/* v039_02 version/cache settings */
+/* v039_03 version/cache settings */
 .tenotsu-menu-version {
   margin-bottom: 12px;
   padding: 8px 10px;
@@ -95,7 +95,7 @@
 }
 
 
-/* v039_02: version is shown above right menu only */
+/* v039_03: version is shown above right menu only */
 .tenotsu-version-badge {
   display: none !important;
   visibility: hidden !important;
@@ -176,6 +176,148 @@
   font-size: 14px;
   line-height: 1.7;
   color: rgba(255,255,255,.92);
+}
+
+body[data-v039-mode="shop"] .tenotsu-office-character-layer {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+body[data-v039-mode="shop"] .tenotsu-office-menu,
+body[data-v039-mode="shop"] .tenotsu-settings-panel {
+  display: none !important;
+}
+
+
+/* v039_03: keep lower-left version badge visible because it is useful for verification */
+.tenotsu-version-badge {
+  display: block !important;
+  visibility: visible !important;
+  position: fixed !important;
+  left: 10px !important;
+  bottom: 8px !important;
+  z-index: calc(var(--tenotsu-z-text) + 1) !important;
+  color: rgba(255,255,255,.52) !important;
+  font-size: 11px !important;
+  pointer-events: none !important;
+}
+
+/* v039_03 ensure shop/settings panels exist even if v039_02 CSS was not applied */
+.tenotsu-shop-menu {
+  position: fixed;
+  right: max(20px, env(safe-area-inset-right));
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(300px, 24vw);
+  min-width: 260px;
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(24, 18, 42, .94);
+  border: 2px solid rgba(165, 120, 255, .95);
+  box-shadow: 0 12px 32px rgba(0,0,0,.42);
+  z-index: var(--tenotsu-z-menu);
+  pointer-events: auto;
+}
+
+.tenotsu-shop-menu[hidden],
+.tenotsu-shop-info-panel[hidden],
+.tenotsu-settings-panel[hidden] {
+  display: none !important;
+}
+
+.tenotsu-shop-menu-title {
+  text-align: center;
+  font-weight: 800;
+  color: #efe7ff;
+  margin-bottom: 14px;
+  letter-spacing: .06em;
+}
+
+.tenotsu-shop-menu-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.tenotsu-shop-menu-button {
+  display: block;
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid rgba(215,190,255,.64);
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+  pointer-events: auto;
+  background: linear-gradient(180deg, rgba(78,58,132,.98), rgba(43,31,82,.98));
+}
+
+.tenotsu-shop-menu-button.back {
+  background: linear-gradient(180deg, rgba(104,90,70,.98), rgba(55,45,38,.98));
+}
+
+.tenotsu-shop-info-panel,
+.tenotsu-settings-panel {
+  position: fixed;
+  right: calc(min(300px, 24vw) + max(44px, env(safe-area-inset-right)));
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(390px, 36vw);
+  min-width: 300px;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(18,16,28,.9);
+  border: 1px solid rgba(210,180,255,.55);
+  box-shadow: 0 14px 42px rgba(0,0,0,.42);
+  color: #fff;
+  z-index: calc(var(--tenotsu-z-menu) + 10);
+  pointer-events: auto;
+}
+
+.tenotsu-shop-info-title,
+.tenotsu-settings-title {
+  font-weight: 800;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #e9dcff;
+  text-align: center;
+}
+
+.tenotsu-shop-info-body,
+.tenotsu-settings-body {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,.92);
+  margin-bottom: 14px;
+}
+
+.tenotsu-settings-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.tenotsu-settings-button {
+  display: block;
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid rgba(215,190,255,.64);
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+  pointer-events: auto;
+  background: linear-gradient(180deg, rgba(78,58,132,.98), rgba(43,31,82,.98));
+}
+
+.tenotsu-settings-button.danger {
+  border-color: rgba(255,170,170,.72);
+  background: linear-gradient(180deg, rgba(150,66,72,.98), rgba(92,34,42,.98));
+}
+
+.tenotsu-settings-result {
+  min-height: 1.7em;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #ffe2a3;
 }
 
 body[data-v039-mode="shop"] .tenotsu-office-character-layer {

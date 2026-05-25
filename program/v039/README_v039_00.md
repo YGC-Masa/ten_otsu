@@ -1,8 +1,8 @@
-# v039_02_new_core_shop
+# v039_03_menu_connect_cache_fix
 
 `index.html` は v039 新コア専用です。旧フレームワークはファイルとして残しますが、indexからは読み込みません。
 
-## v039_02で使う新規ファイル
+## v039_03で使う新規ファイル
 
 - program/v039/core.css
 - program/v039/state.js
@@ -12,14 +12,14 @@
 - program/v039/app.js
 
 
-## v039_02
+## v039_03
 
 - 右6大メニュー上にバージョン表示を追加。
 - 設定メニューにキャッシュクリアして再読み込みを追加。
 - Service Worker登録解除、Cache Storage削除、cachebust付きリロードを実行。
 
 
-## v039_02
+## v039_03
 
 - 左下バージョンバッジを非表示化。
 - ショップ画面を新コアで実装。
