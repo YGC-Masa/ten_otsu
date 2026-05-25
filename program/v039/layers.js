@@ -1,4 +1,4 @@
-/* v039_16 layers */
+/* v039_17 layers */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -51,7 +51,7 @@
     layers.speaker = el("div", { className: "tenotsu-speaker" }, layers.text);
     layers.message = el("div", { className: "tenotsu-message" }, layers.text);
     layers.fade = el("div", { className: "tenotsu-fade-layer", "data-layer": "fade" }, app);
-    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_16" }, app);
+    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_17" }, app);
 
     ns.layers = layers;
     return layers;
@@ -117,6 +117,16 @@
     }
     ns.setBackground(requested);
     return requested;
+  };
+
+  ns.setStoryBackgroundReady = async function setStoryBackgroundReady(src) {
+    // Story CG must not disappear into office fallback when preload fails.
+    // Try to preload; if it fails or times out, still set the requested source directly
+    // and keep the previous visual until the browser resolves it.
+    const requested = src || ns.paths.officeBg;
+    const loaded = await ns.preloadImage(requested, 1800);
+    ns.setBackground(requested);
+    return loaded || requested;
   };
 
   ns.setText = function setText(speaker, message) {

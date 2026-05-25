@@ -1,4 +1,4 @@
-/* v039_16 story player UI + CG load gate */
+/* v039_17 story player UI + CG load gate */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -46,7 +46,9 @@
   ns.prepareStoryFirstBackground = async function prepareStoryFirstBackground(data) {
     const first = data && data.steps && data.steps[0] ? data.steps[0] : null;
     if (first && first.bg) {
-      if (typeof ns.setBackgroundReady === "function") {
+      if (typeof ns.setStoryBackgroundReady === "function") {
+        await ns.setStoryBackgroundReady(first.bg);
+      } else if (typeof ns.setBackgroundReady === "function") {
         await ns.setBackgroundReady(first.bg);
       } else {
         ns.setBackground(first.bg);
@@ -181,7 +183,9 @@
     if (step.bg) {
       ns.setStoryLoading(true);
       try {
-        if (typeof ns.setBackgroundReady === "function") {
+        if (typeof ns.setStoryBackgroundReady === "function") {
+          await ns.setStoryBackgroundReady(step.bg);
+        } else if (typeof ns.setBackgroundReady === "function") {
           await ns.setBackgroundReady(step.bg);
         } else {
           ns.setBackground(step.bg);

@@ -1,0 +1,16 @@
+{
+  "version": "v039_17",
+  "setStoryBackgroundReady_exists": true,
+  "storyPlayer_uses_story_background_ready": true,
+  "story_css_visibility_fix": true,
+  "scenario_bg_paths": [
+    "images/assets/bgev/bg_memory_ai_spring_book_bread_close.png",
+    "images/assets/bgev/bg_memory_ai_spring_book_bread_share.png",
+    "images/assets/bgev/bg_memory_hina_spring_bento.png"
+  ],
+  "scenario_bg_exists": {
+    "images/assets/bgev/bg_memory_ai_spring_book_bread_close.png": true,
+    "images/assets/bgev/bg_memory_ai_spring_book_bread_share.png": true,
+    "images/assets/bgev/bg_memory_hina_spring_bento.png": true
+  }
+}
