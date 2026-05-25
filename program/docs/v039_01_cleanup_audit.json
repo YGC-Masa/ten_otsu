@@ -1,0 +1,79 @@
+{
+  "version": "v039_01",
+  "uploaded_zip": "ten_otsu-main (1).zip",
+  "repo_root": "ten_otsu-main",
+  "new_core_files": [
+    "program/v039/README_v039_00.md",
+    "program/v039/app.js",
+    "program/v039/assets.js",
+    "program/v039/core.css",
+    "program/v039/layers.js",
+    "program/v039/office.js",
+    "program/v039/state.js"
+  ],
+  "legacy_present_not_loaded_by_index": [
+    {
+      "path": "program/script.js",
+      "exists": true,
+      "loaded_by_index": false
+    },
+    {
+      "path": "program/randomShows.js",
+      "exists": true,
+      "loaded_by_index": false
+    },
+    {
+      "path": "program/menuList.js",
+      "exists": true,
+      "loaded_by_index": false
+    },
+    {
+      "path": "program/surfaceManager.js",
+      "exists": true,
+      "loaded_by_index": false
+    },
+    {
+      "path": "program/bootRescue.js",
+      "exists": true,
+      "loaded_by_index": false
+    },
+    {
+      "path": "program/style.css",
+      "exists": true,
+      "loaded_by_index": false
+    },
+    {
+      "path": "scenario/scenario/000start.json",
+      "exists": true,
+      "loaded_by_index": false
+    },
+    {
+      "path": "scenario/scenario/start000.json",
+      "exists": true,
+      "loaded_by_index": false
+    },
+    {
+      "path": "scenario/scenario/uploaded_000start.json",
+      "exists": true,
+      "loaded_by_index": false
+    }
+  ],
+  "delete_candidates_later": [
+    "program/script.js",
+    "program/randomShows.js",
+    "program/menuList.js",
+    "program/surfaceManager.js",
+    "program/bootRescue.js",
+    "program/style.css",
+    "scenario/scenario/000start.json",
+    "scenario/scenario/start000.json",
+    "scenario/scenario/uploaded_000start.json"
+  ],
+  "keep_for_now": [
+    "program/battle.js - v039_03以降のbattleAdapter接続まで保持",
+    "program/script.js - storyPlayer移植の参照用として一時保持",
+    "scenario/ - v039 storyPlayer移行まで保持",
+    "images/ - 使用状況確認まで保持",
+    "config/list/random旧データ - v039へ必要データ抽出まで保持"
+  ]
+}

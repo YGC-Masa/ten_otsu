@@ -1,24 +1,10 @@
-# v038_27 → v039_00_new_core_boot_office 差分
+# v039_00 → v039_01 version/cache 差分
 
-旧フレームワークをindexから切り離し、v039新コアで起動〜事務所表示だけを新築します。
+## 修正内容
+- 右6大メニュー上にバージョン表示を追加。
+- 設定メニューを実装。
+- 設定内に「キャッシュクリアして再読み込み」を追加。
+- Service Worker登録解除、Cache Storage削除、cachebust付きリロードを実行。
+- 残/削除精査用 `program/docs/v039_01_cleanup_audit.json` を追加。
 
-## 読み込む新コア
-
-- program/v039/core.css
-- program/v039/state.js
-- program/v039/assets.js
-- program/v039/layers.js
-- program/v039/office.js
-- program/v039/app.js
-
-## 読み込まない旧表示系
-
-- program/script.js
-- program/randomShows.js
-- program/menuList.js
-- program/surfaceManager.js
-- program/bootRescue.js
-- 000start系scenario
-- showlist/list-panel/menu-panel系
-
-旧ファイルの削除精査は、GitHubへ上書き後のフルZIPを受け取ってから行います。
+リポジトリ直下へ展開して上書きしてください。
