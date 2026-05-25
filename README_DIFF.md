@@ -1,11 +1,24 @@
-# v038_26 → v038_27 script cleanup 差分
+# v038_27 → v039_00_new_core_boot_office 差分
 
-## 修正内容
-- script.jsの旧フレームワーク処理をsurface takeover前提で直接クリーンアップ。
-- 000start/start000/uploaded_000start の旧起動シナリオをloadScenarioでスキップ。
-- randomimageson/randomtexts/showlist office6 をshowSceneで旧DOM描画させずsurfaceManagerへ委譲。
-- loadList/showListをtakeover中はno-op化。
-- 旧MutationObserverをtakeover中は開始しないようガード。
-- tenotsuForceShowMenuFallbackを旧メニュー表示ではなくoffice委譲に変更。
+旧フレームワークをindexから切り離し、v039新コアで起動〜事務所表示だけを新築します。
 
-リポジトリ直下へ展開して上書きしてください。
+## 読み込む新コア
+
+- program/v039/core.css
+- program/v039/state.js
+- program/v039/assets.js
+- program/v039/layers.js
+- program/v039/office.js
+- program/v039/app.js
+
+## 読み込まない旧表示系
+
+- program/script.js
+- program/randomShows.js
+- program/menuList.js
+- program/surfaceManager.js
+- program/bootRescue.js
+- 000start系scenario
+- showlist/list-panel/menu-panel系
+
+旧ファイルの削除精査は、GitHubへ上書き後のフルZIPを受け取ってから行います。
