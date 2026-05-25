@@ -1,4 +1,4 @@
-/* v039_14 story player UI */
+/* v039_15 story player UI */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -41,9 +41,15 @@
     return await res.json();
   };
 
-  ns.prepareStoryFirstBackground = function prepareStoryFirstBackground(data) {
+  ns.prepareStoryFirstBackground = async function prepareStoryFirstBackground(data) {
     const first = data && data.steps && data.steps[0] ? data.steps[0] : null;
-    if (first && first.bg) ns.setBackground(first.bg);
+    if (first && first.bg) {
+      if (typeof ns.setBackgroundReady === "function") {
+        await ns.setBackgroundReady(first.bg);
+      } else {
+        ns.setBackground(first.bg);
+      }
+    }
   };
 
   ns.fadeOutForStoryStart = function fadeOutForStoryStart() {
@@ -103,7 +109,7 @@
       if (typeof ns.clearCharacters === "function") ns.clearCharacters();
 
       const data = await ns.loadStoryScenario(scenarioPath);
-      ns.prepareStoryFirstBackground(data);
+      await ns.prepareStoryFirstBackground(data);
 
       ns.story.active = true;
       ns.story.data = data;
@@ -168,7 +174,10 @@
     }
 
     const step = steps[ns.story.index];
-    if (step.bg) ns.setBackground(step.bg);
+    if (step.bg) {
+      if (typeof ns.setBackgroundReady === "function") ns.setBackgroundReady(step.bg);
+      else ns.setBackground(step.bg);
+    }
     ns.setText(step.speaker || "", step.text || "");
     ns.updateStoryUi();
 

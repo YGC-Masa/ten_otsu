@@ -1,4 +1,4 @@
-/* v039_14 town season event tree */
+/* v039_15 town season event tree */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -50,14 +50,18 @@
     }
   };
 
-  ns.renderSeasonEvents = function renderSeasonEvents(seasonId) {
+  ns.renderSeasonEvents = async function renderSeasonEvents(seasonId) {
     const season = ns.getSeason(seasonId);
     if (!season) {
       ns.setText("店長", "季節データを確認できませんでした。");
       return;
     }
 
-    ns.setBackground(season.bg || ns.paths.townBg || ns.paths.officeBg);
+    if (typeof ns.setBackgroundReady === "function") {
+      await ns.setBackgroundReady(season.bg || ns.paths.townBg || ns.paths.officeBg);
+    } else {
+      ns.setBackground(season.bg || ns.paths.townBg || ns.paths.officeBg);
+    }
     ns.setText("店長", `${season.label}のイベントを確認します。`);
 
     const html = `
@@ -144,7 +148,7 @@
     }
   };
 
-  ns.enterTown = function enterTown(options = {}) {
+  ns.enterTown = async function enterTown(options = {}) {
     if (!options.noTransition && typeof ns.transitionTo === "function") {
       return ns.transitionTo(() => ns.enterTown({ noTransition: true }));
     }
@@ -154,7 +158,11 @@
     if (typeof ns.hideShopPanel === "function") ns.hideShopPanel();
     if (typeof ns.hideMembersPanel === "function") ns.hideMembersPanel();
     if (typeof ns.clearCharacters === "function") ns.clearCharacters();
-    ns.setBackground(ns.paths.townBg || ns.paths.officeBg);
+    if (typeof ns.setBackgroundReady === "function") {
+      await ns.setBackgroundReady(ns.paths.townBg || ns.paths.officeBg);
+    } else {
+      ns.setBackground(ns.paths.townBg || ns.paths.officeBg);
+    }
     ns.renderOfficeMenu();
     ns.renderTownSeasonTop();
     ns.setText("店長", "外回りへ出ます。季節を選びましょう。");

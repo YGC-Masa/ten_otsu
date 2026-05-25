@@ -1,4 +1,4 @@
-/* v039_14 members */
+/* v039_15 members */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -59,12 +59,17 @@
     }
   };
 
-  ns.enterMembers = function enterMembers(options = {}) {
+  ns.enterMembers = async function enterMembers(options = {}) {
     if (!options.noTransition && typeof ns.transitionTo === "function") {
       return ns.transitionTo(() => ns.enterMembers({ noTransition: true }));
     }
     ns.setMode("members");
     ns.ensureLayers();
+    if (typeof ns.setBackgroundReady === "function") {
+      await ns.setBackgroundReady(ns.paths.officeBg);
+    } else {
+      ns.setBackground(ns.paths.officeBg);
+    }
     if (typeof ns.hideSettingsPanel === "function") ns.hideSettingsPanel();
     if (typeof ns.hideShopPanel === "function") ns.hideShopPanel();
     if (typeof ns.hideTownPanel === "function") ns.hideTownPanel();

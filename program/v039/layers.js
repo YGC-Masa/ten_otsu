@@ -1,4 +1,4 @@
-/* v039_14 layers */
+/* v039_15 layers */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -51,10 +51,33 @@
     layers.speaker = el("div", { className: "tenotsu-speaker" }, layers.text);
     layers.message = el("div", { className: "tenotsu-message" }, layers.text);
     layers.fade = el("div", { className: "tenotsu-fade-layer", "data-layer": "fade" }, app);
-    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_14" }, app);
+    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_15" }, app);
 
     ns.layers = layers;
     return layers;
+  };
+
+  ns.preloadImage = function preloadImage(src, timeout = 2500) {
+    if (!src || src.startsWith("data:")) return Promise.resolve(src);
+    return new Promise((resolve) => {
+      const img = new Image();
+      let done = false;
+      const finish = (result) => {
+        if (done) return;
+        done = true;
+        resolve(result || src);
+      };
+      const timer = setTimeout(() => finish(src), timeout);
+      img.onload = () => {
+        clearTimeout(timer);
+        finish(src);
+      };
+      img.onerror = () => {
+        clearTimeout(timer);
+        finish(null);
+      };
+      img.src = src;
+    });
   };
 
   ns.setBackground = function setBackground(src) {
@@ -77,6 +100,23 @@
     };
     layers.bgImg.dataset.fallbackTried = "0";
     layers.bgImg.src = requested;
+  };
+
+  ns.setBackgroundReady = async function setBackgroundReady(src) {
+    const requested = src || ns.paths.officeBg;
+    const fallback = ns.paths.fallbackBg || ns.paths.officeBg;
+    const loaded = await ns.preloadImage(requested);
+    if (loaded) {
+      ns.setBackground(requested);
+      return requested;
+    }
+    if (fallback && fallback !== requested) {
+      await ns.preloadImage(fallback);
+      ns.setBackground(fallback);
+      return fallback;
+    }
+    ns.setBackground(requested);
+    return requested;
   };
 
   ns.setText = function setText(speaker, message) {

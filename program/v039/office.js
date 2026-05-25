@@ -1,4 +1,4 @@
-/* v039_14 office */
+/* v039_15 office */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -45,7 +45,7 @@
     version.className = "tenotsu-menu-version";
     const versionMain = document.createElement("span");
     versionMain.className = "tenotsu-menu-version-main";
-    versionMain.textContent = ns.VERSION || "v039_14";
+    versionMain.textContent = ns.VERSION || "v039_15";
     const versionSub = document.createElement("span");
     versionSub.className = "tenotsu-menu-version-sub";
     versionSub.textContent = "new core / office";
@@ -73,13 +73,17 @@
     });
   };
 
-  ns.enterOffice = function enterOffice(options = {}) {
+  ns.enterOffice = async function enterOffice(options = {}) {
     if (!options.noTransition && typeof ns.transitionTo === "function" && ns.state.mode !== "boot") {
       return ns.transitionTo(() => ns.enterOffice({ ...options, noTransition: true }));
     }
     ns.setMode("office");
     ns.ensureLayers();
-    ns.setBackground(ns.paths.officeBg);
+    if (typeof ns.setBackgroundReady === "function") {
+      await ns.setBackgroundReady(ns.paths.officeBg);
+    } else {
+      ns.setBackground(ns.paths.officeBg);
+    }
     if (typeof ns.hideSettingsPanel === "function") ns.hideSettingsPanel();
     if (typeof ns.hideShopPanel === "function") ns.hideShopPanel();
     if (typeof ns.hideMembersPanel === "function") ns.hideMembersPanel();
@@ -129,7 +133,7 @@
     const html = `
       <div class="tenotsu-settings-title">設定</div>
       <div class="tenotsu-settings-body">
-        <div>現在のバージョン: <strong>${ns.VERSION || "v039_14"}</strong></div>
+        <div>現在のバージョン: <strong>${ns.VERSION || "v039_15"}</strong></div>
         <div>表示やキャッシュの調整を行います。</div>
       </div>
       <div class="tenotsu-settings-actions">

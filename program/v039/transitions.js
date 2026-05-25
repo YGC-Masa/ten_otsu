@@ -1,4 +1,4 @@
-/* v039_14 global scene transition */
+/* v039_15 global scene transition */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -64,6 +64,7 @@
 
     if (ns.transitionState.running) return false;
     ns.transitionState.running = true;
+    document.body.classList.add("v039-transitioning");
 
     try {
       const fade = getFadeLayer();
@@ -81,6 +82,7 @@
       await ns.releaseBlack(fadeIn);
       return true;
     } finally {
+      document.body.classList.remove("v039-transitioning");
       ns.transitionState.running = false;
     }
   };
