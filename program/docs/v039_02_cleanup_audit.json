@@ -9,6 +9,7 @@
     "program/v039/core.css",
     "program/v039/layers.js",
     "program/v039/office.js",
+    "program/v039/shop.js",
     "program/v039/state.js"
   ],
   "legacy_present_not_loaded_by_index": [
@@ -75,5 +76,11 @@
     "scenario/ - v039 storyPlayer移行まで保持",
     "images/ - 使用状況確認まで保持",
     "config/list/random旧データ - v039へ必要データ抽出まで保持"
+  ],
+  "implemented_in_v039_02": [
+    "shop screen",
+    "shop dedicated menu",
+    "office -> shop -> office transition",
+    "left-bottom version badge hidden"
   ]
 }
