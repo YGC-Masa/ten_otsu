@@ -1,54 +1,44 @@
-/* v039_08 town */
+/* v039_09 town season event tree */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
 
-  ns.renderTownPanel = function renderTownPanel() {
-    const spots = ns.townSpots || [];
-    const cards = spots.map((spot, index) => `
-      <button type="button" class="tenotsu-town-card" data-town-index="${index}">
-        <span class="tenotsu-town-name">${spot.name}</span>
-        <span class="tenotsu-town-type">${spot.type}</span>
-        <span class="tenotsu-town-status">${spot.status}</span>
+  function seasonButton(season) {
+    return `
+      <button type="button" class="tenotsu-season-card" data-season-id="${season.id}" style="--season-color:${season.color}">
+        <span class="tenotsu-season-label">${season.label}</span>
+        <span class="tenotsu-season-copy">${season.catchcopy}</span>
+        <span class="tenotsu-season-count">${(season.events || []).length}件</span>
       </button>
-    `).join("");
+    `;
+  }
 
+  function eventButton(event) {
+    return `
+      <button type="button" class="tenotsu-event-card" data-event-id="${event.id}">
+        <span class="tenotsu-event-title">${event.title}</span>
+        <span class="tenotsu-event-character">${event.character}</span>
+        <span class="tenotsu-event-status">${event.status}</span>
+      </button>
+    `;
+  }
+
+  ns.renderTownSeasonTop = function renderTownSeasonTop() {
+    const seasons = (ns.seasonOrder || []).map((id) => ns.getSeason(id)).filter(Boolean);
     const html = `
       <div class="tenotsu-town-title">外回り</div>
-      <div class="tenotsu-town-body">
-        <div class="tenotsu-town-list">${cards}</div>
-        <div class="tenotsu-town-detail" data-town-detail>
-          <div class="tenotsu-town-detail-empty">行き先を選択してください。</div>
-        </div>
+      <div class="tenotsu-town-subtitle">季節を選んで、対象イベントを確認します。</div>
+      <div class="tenotsu-season-grid">
+        ${seasons.map(seasonButton).join("")}
       </div>
       <button type="button" class="tenotsu-town-back" data-town-action="back-office">事務所に戻る</button>
     `;
 
     ns.showTownPanel(html);
-
     const panel = ns.layers.town;
-    const detail = panel.querySelector("[data-town-detail]");
 
-    panel.querySelectorAll("[data-town-index]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const spot = spots[Number(btn.dataset.townIndex)];
-        if (!spot) return;
-        panel.querySelectorAll(".tenotsu-town-card").forEach((card) => card.classList.remove("selected"));
-        btn.classList.add("selected");
-        detail.innerHTML = `
-          <div class="tenotsu-town-detail-name">${spot.name}</div>
-          <div class="tenotsu-town-detail-type">${spot.type}</div>
-          <div class="tenotsu-town-detail-description">${spot.description}</div>
-          <div class="tenotsu-town-detail-status">状態：${spot.status}</div>
-          <button type="button" class="tenotsu-town-start" data-town-start="${spot.id}">この場所へ行く</button>
-        `;
-        ns.setText(spot.speaker || "店長", spot.message || spot.description);
-
-        const start = detail.querySelector("[data-town-start]");
-        if (start) {
-          start.addEventListener("click", () => ns.startTownSpot(spot));
-        }
-      });
+    panel.querySelectorAll("[data-season-id]").forEach((btn) => {
+      btn.addEventListener("click", () => ns.renderSeasonEvents(btn.dataset.seasonId));
     });
 
     const back = panel.querySelector('[data-town-action="back-office"]');
@@ -60,24 +50,92 @@
     }
   };
 
-  ns.startTownSpot = function startTownSpot(spot) {
-    if (!spot) return;
-
-    if (spot.id === "wakaba_central_park") {
-      ns.setText("店長", "若葉中央公園へ向かいます。桜の木陰で読書する藍ちゃんのイベントは、v039_09以降のstoryPlayerで接続します。");
-      const detail = ns.layers.town.querySelector("[data-town-detail]");
-      if (detail) {
-        detail.innerHTML += `
-          <div class="tenotsu-town-event-note">
-            <strong>接続予定イベント：</strong><br>
-            外回りの休憩がてら公園に立ち寄り、桜の木陰で読書する藍ちゃんに声をかける春イベント。
-          </div>
-        `;
-      }
+  ns.renderSeasonEvents = function renderSeasonEvents(seasonId) {
+    const season = ns.getSeason(seasonId);
+    if (!season) {
+      ns.setText("店長", "季節データを確認できませんでした。");
       return;
     }
 
-    ns.setText(spot.name, "この行き先は後続バージョンでイベント接続します。");
+    ns.setBackground(season.bg || ns.paths.townBg || ns.paths.officeBg);
+    ns.setText("店長", `${season.label}のイベントを確認します。`);
+
+    const html = `
+      <div class="tenotsu-town-title">${season.label}の外回り</div>
+      <div class="tenotsu-town-subtitle">${season.catchcopy}</div>
+      <div class="tenotsu-event-tree">
+        <div class="tenotsu-event-list">
+          ${(season.events || []).map(eventButton).join("")}
+        </div>
+        <div class="tenotsu-event-detail" data-event-detail>
+          <div class="tenotsu-event-detail-empty">イベントを選択してください。</div>
+        </div>
+      </div>
+      <div class="tenotsu-town-button-row">
+        <button type="button" class="tenotsu-town-back" data-town-action="season-top">季節選択へ戻る</button>
+        <button type="button" class="tenotsu-town-back" data-town-action="back-office">事務所に戻る</button>
+      </div>
+    `;
+
+    ns.showTownPanel(html);
+    const panel = ns.layers.town;
+    const detail = panel.querySelector("[data-event-detail]");
+
+    panel.querySelectorAll("[data-event-id]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const eventId = btn.dataset.eventId;
+        const event = (season.events || []).find((item) => item.id === eventId);
+        if (!event) return;
+
+        panel.querySelectorAll(".tenotsu-event-card").forEach((card) => card.classList.remove("selected"));
+        btn.classList.add("selected");
+
+        detail.innerHTML = `
+          <div class="tenotsu-event-detail-title">${event.title}</div>
+          <div class="tenotsu-event-detail-meta">登場：${event.character}</div>
+          <div class="tenotsu-event-detail-meta">場所：${event.place}</div>
+          <div class="tenotsu-event-detail-meta">状態：${event.status}</div>
+          <div class="tenotsu-event-detail-summary">${event.summary}</div>
+          ${event.cg ? `<div class="tenotsu-event-detail-cg">CG候補：${event.cg}</div>` : ""}
+          <button type="button" class="tenotsu-event-start" data-event-start="${event.id}">イベント開始</button>
+        `;
+
+        ns.setText(event.character, event.summary);
+
+        const start = detail.querySelector("[data-event-start]");
+        if (start) start.addEventListener("click", () => ns.startSeasonEvent(season, event));
+      });
+    });
+
+    panel.querySelectorAll("[data-town-action]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const action = btn.dataset.townAction;
+        if (action === "season-top") {
+          ns.setBackground(ns.paths.townBg || ns.paths.officeBg);
+          ns.renderTownSeasonTop();
+          ns.setText("店長", "季節を選び直します。");
+        } else if (action === "back-office") {
+          ns.hideTownPanel();
+          ns.enterOffice({ speaker: "店長", message: "事務所に戻りました。" });
+        }
+      });
+    });
+  };
+
+  ns.startSeasonEvent = function startSeasonEvent(season, event) {
+    if (!season || !event) return;
+    ns.setBackground(event.bg || season.bg || ns.paths.townBg || ns.paths.officeBg);
+    ns.setText(event.character || "店長", event.startMessage || "このイベントは後続バージョンでstoryPlayerへ接続します。");
+
+    const detail = ns.layers.town.querySelector("[data-event-detail]");
+    if (detail && !detail.querySelector(".tenotsu-event-start-note")) {
+      detail.innerHTML += `
+        <div class="tenotsu-event-start-note">
+          <strong>storyPlayer接続予定：</strong><br>
+          v039_10以降で、ここから対象シナリオJSONとイベントCGを読み込む導線にします。
+        </div>
+      `;
+    }
   };
 
   ns.enterTown = function enterTown() {
@@ -89,7 +147,7 @@
     if (typeof ns.clearCharacters === "function") ns.clearCharacters();
     ns.setBackground(ns.paths.townBg || ns.paths.officeBg);
     ns.renderOfficeMenu();
-    ns.renderTownPanel();
-    ns.setText("店長", "外回りへ出ます。行き先を選びましょう。");
+    ns.renderTownSeasonTop();
+    ns.setText("店長", "外回りへ出ます。季節を選びましょう。");
   };
 })();

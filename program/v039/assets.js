@@ -1,4 +1,4 @@
-/* v039_08 assets */
+/* v039_09 assets */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -6,7 +6,7 @@
   ns.paths = {
     officeBg: "images/assets/bgev/bg_office_hidamari.png",
     shopBg: "images/assets/bgev/bg_item_exchange_counter.png",
-    townBg: "images/assets/bgev/bg_park_autumn.png",
+    townBg: "images/assets/bgev/bg_park_spring.png",
     fallbackBg: "images/assets/bgev/bg_office_hidamari.png",
     transparentPixel: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",
     charBase: "images/assets/char/"
