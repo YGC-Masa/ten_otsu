@@ -1,9 +1,9 @@
-/* v038_25 Boot Rescue
+/* v038_26 Boot Rescue
    Runs before legacy script.js. Prevents legacy MutationObserver/menu fallback loops from freezing boot.
 */
 (function(){
   "use strict";
-  window.TENOTSU_BOOT_RESCUE_VERSION = "v038_25";
+  window.TENOTSU_BOOT_RESCUE_VERSION = "v038_26";
   window.__TENOTSU_DISABLE_LEGACY_OBSERVERS__ = true;
   window.__TENOTSU_SURFACE_TAKEOVER__ = true;
   window.__TENOTSU_DISABLE_RANDOMSHOW_VISUALS__ = true;
@@ -29,6 +29,23 @@
   }
 
   // Legacy guard checks #list-panel/#menu-panel only. Keep a non-visual placeholder so it won't run fallback.
+  function hideLegacyMenusEarly(){
+    document.querySelectorAll("#list-panel,#menu-panel,.menu-panel,.list-panel,.left-menu,#left-menu,#leftPanel,.right-menu,#right-menu,.legacy-menu,.showlist-menu").forEach(el => {
+      el.classList.add("hidden");
+      el.setAttribute("aria-hidden","true");
+      el.style.setProperty("display","none","important");
+      el.style.setProperty("visibility","hidden","important");
+      el.style.setProperty("opacity","0","important");
+      el.style.setProperty("pointer-events","none","important");
+      el.style.setProperty("z-index","-1","important");
+      el.style.setProperty("width","0","important");
+      el.style.setProperty("height","0","important");
+      el.style.setProperty("overflow","hidden","important");
+      if (el.id === "list-panel") el.textContent = "";
+    });
+  }
+  // v038_26 bootRescue hide legacy menus
+
   function ensureLegacyGuardSatisfied(){
     let list = document.getElementById("list-panel");
     if (!list) {
@@ -84,6 +101,7 @@
 
   window.tenotsuBootRescuePrepare = function(){
     try { ensureLegacyGuardSatisfied(); } catch (_) {}
+    try { hideLegacyMenusEarly(); } catch (_) {}
     try { rescueBootOverlay(); } catch (_) {}
   };
 

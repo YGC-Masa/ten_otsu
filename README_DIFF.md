@@ -1,11 +1,10 @@
-# v038_24 → v038_25 office slot guard 差分
+# v038_25 → v038_26 menu flicker / z-index fix 差分
 
 ## 修正内容
-- 事務所メンバースロット表示後に、旧後方スロットが2〜3回表示される問題を抑止。
-- office/shop/members/settings中は #char-layer を非表示。
-- #tenotsu-front-character-layer 以外の旧ランダム/旧office表示DOMを削除。
-- officeSlotGuard を短時間走らせ、遅延して復活する旧DOMを掃除。
-- randomImagesOn/randomTextsOn/buildRandomImagesをsurface takeover中はno-opへ上書き。
-- storyモード時のみ #char-layer を復帰。
+- 事務所スロット点滅時に一瞬出る旧ピンク右メニューを抑止。
+- #list-panel / #menu-panel / 旧menu系DOMを強制非表示。
+- 旧メニューDOMが後からstyle/class変更で復活しても即時隠す限定Observerを追加。
+- テキストサーフェス #dialogue-box を z-index 2200 へ上げ、キャラクターより前面化。
+- showList/showlist/showMenuList系をsurface takeover中はno-op化。
 
 リポジトリ直下へ展開して上書きしてください。

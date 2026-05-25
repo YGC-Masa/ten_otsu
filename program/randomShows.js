@@ -1,11 +1,11 @@
 
-/* v038_25 no visual random API while surface takeover */
+/* v038_26 no visual random API while surface takeover */
 if (window.__TENOTSU_DISABLE_RANDOMSHOW_VISUALS__ || window.__TENOTSU_SURFACE_TAKEOVER__) {
   window.__TENOTSU_TITLE_RANDOM_SELECTED = [];
   window.__TENOTSU_TITLE_RANDOM_READY = Promise.resolve([]);
 }
 
-/* v038_25 randomShows takeover hard stop
+/* v038_26 randomShows takeover hard stop
    During surfaceManager takeover, randomShows must not create or preserve visual DOM.
 */
 (function(){
@@ -32,7 +32,7 @@ if (window.__TENOTSU_DISABLE_RANDOMSHOW_VISUALS__ || window.__TENOTSU_SURFACE_TA
   setTimeout(kill, 1500);
 })();
 
-/* v038_25 randomShows hard visual noop
+/* v038_26 randomShows hard visual noop
    Visual random title/office characters are disabled during surface takeover.
 */
 (function(){
@@ -51,7 +51,7 @@ if (window.__TENOTSU_DISABLE_RANDOMSHOW_VISUALS__ || window.__TENOTSU_SURFACE_TA
     return;
   }
 })();
-/* v038_25 surface takeover no visual output
+/* v038_26 surface takeover no visual output
    randomShows.js remains for compatibility/data only.
    Visual title/office random characters are rendered by surfaceManager.js.
 */
@@ -76,7 +76,7 @@ let imagePathsCache = null;
 let preloadedImages = {}; // src => <img>（非表示で保持）
 let randomImagesLoadPromise = null;
 
-// v038_25: surfaceManager takeover compatibility.
+// v038_26: surfaceManager takeover compatibility.
 // During office/shop operation, randomShows must not create separate character/comment surfaces.
 // It only provides data; actual display is owned by surfaceManager (#tenotsu-front-character-layer + #dialogue-box).
 function tenotsuIsSurfaceTakeoverActive() {
@@ -238,7 +238,7 @@ function randomImagesOn() {
 }
 
 function buildRandomImages(data) {
-  // v038_25 buildRandomImages takeover guard
+  // v038_26 buildRandomImages takeover guard
   if (tenotsuIsSurfaceTakeoverActive()) {
     tenotsuHideRandomShowLayers();
     return [];
@@ -426,7 +426,7 @@ function randomTextsOn() {
 }
 
 function tenotsuRefreshTitleRandomShow() {
-  // v038_25: surfaceManager takeover. Do not create separate title/office surfaces.
+  // v038_26: surfaceManager takeover. Do not create separate title/office surfaces.
   if (tenotsuIsSurfaceTakeoverActive()) {
     tenotsuHideRandomShowLayers();
     if (typeof window.tenotsuSurfaceRefreshOffice === "function") {
@@ -477,7 +477,7 @@ try {
   window.tenotsuHideRandomShowLayers = tenotsuHideRandomShowLayers;
 } catch (_) {}
 
-/* v038_25 preflight randomShows finalizer */
+/* v038_26 preflight randomShows finalizer */
 (function(){
   const kill = () => {
     if (typeof tenotsuIsSurfaceTakeoverActive === "function" && tenotsuIsSurfaceTakeoverActive()) {

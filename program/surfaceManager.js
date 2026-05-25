@@ -1,4 +1,4 @@
-/* v038_25 Surface Manager - Single Authority
+/* v038_26 Surface Manager - Single Authority
    Purpose:
    - office/shop visual surfaces are owned by this file only.
    - old randomShows/title/office comment layers are removed or hidden.
@@ -8,7 +8,7 @@
 (function(){
   "use strict";
 
-  const VERSION = "v038_25";
+  const VERSION = "v038_26";
   const BG_OFFICE = "images/assets/bgev/bg_office_hidamari.png";
   const BG_SHOP = "images/assets/bgev/bg_exchange_item_counter.png";
   const SAKUYA_INTRO_SCENARIO = "shop_exchange_intro_sakuya.json";
@@ -41,7 +41,7 @@
     operation: 760,
     menu: 820,
     hold: 860,
-    dialogue: 1200,
+    dialogue: 2200,
     choice: 1300,
     battle: 30000,
     fade: 50000,
@@ -83,6 +83,7 @@
   }
 
   function setMode(mode){
+    document.body.classList.add("tenotsu-surface-authority");
     currentMode = mode;
     window.tenotsuGameMode = mode;
     document.body.dataset.gameMode = mode;
@@ -178,8 +179,50 @@
     setI(list, "pointer-events", "none");
   }
 
+  function hardHideLegacyMenus(){
+    qsa("#list-panel,#menu-panel,.menu-panel,.list-panel,.left-menu,#left-menu,#leftPanel,.right-menu,#right-menu,.legacy-menu,.showlist-menu,[data-legacy-menu='true'],[data-tenotsu-legacy-menu='true']").forEach(el => {
+      if (el.id === "tenotsu-main-menu" || el.id === "tenotsu-shop-menu") return;
+      el.classList.add("hidden");
+      el.setAttribute("aria-hidden", "true");
+      el.dataset.tenotsuLegacyMenu = "true";
+      el.textContent = el.id === "list-panel" ? "" : el.textContent;
+      setI(el, "display", "none");
+      setI(el, "visibility", "hidden");
+      setI(el, "opacity", "0");
+      setI(el, "pointer-events", "none");
+      setI(el, "z-index", "-1");
+      setI(el, "width", "0");
+      setI(el, "height", "0");
+      setI(el, "overflow", "hidden");
+    });
+  }
+
+  function startLegacyMenuObserver(){
+    if (window.__TENOTSU_LEGACY_MENU_OBSERVER__) return;
+    if (!window.MutationObserver || !document.body) return;
+    const obs = new MutationObserver((mutations) => {
+      let touched = false;
+      for (const m of mutations) {
+        if (m.type === "childList" && (m.addedNodes && m.addedNodes.length)) touched = true;
+        if (m.type === "attributes") {
+          const el = m.target;
+          if (el && el.matches && el.matches("#list-panel,#menu-panel,.menu-panel,.list-panel,.left-menu,#left-menu,#leftPanel,.right-menu,#right-menu,.legacy-menu,.showlist-menu")) touched = true;
+        }
+        if (touched) break;
+      }
+      if (touched) hardHideLegacyMenus();
+    });
+    obs.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ["style", "class"]
+    });
+    window.__TENOTSU_LEGACY_MENU_OBSERVER__ = obs;
+  }
+
   function purgeBackOfficeSlots(){
-    // v038_25:
+    // v038_26:
     // The only office-mode character display allowed is #tenotsu-front-character-layer.
     // Legacy #char-layer / random / office slots may be scheduled by old wait/random/showlist flow.
     if (currentMode !== "office" && currentMode !== "shop" && currentMode !== "members" && currentMode !== "settings") return;
@@ -501,7 +544,7 @@
   }
 
   function renderShopPanel(){
-    // v038_25: shop action buttons live in #tenotsu-shop-menu.
+    // v038_26: shop action buttons live in #tenotsu-shop-menu.
     // Operation surface remains available but does not create a second submenu.
     const s = ensureOperationSurface();
     s.innerHTML = "";
@@ -562,7 +605,7 @@
 
 
   function updateOrientationWarning(){
-    // v038_25:
+    // v038_26:
     // Desktop / normal wide browser must be treated as landscape-ok.
     const w = Math.max(window.innerWidth || 0, document.documentElement.clientWidth || 0);
     const h = Math.max(window.innerHeight || 0, document.documentElement.clientHeight || 0);
@@ -602,7 +645,7 @@
       ["#tenotsu-operation-surface", Z.operation],
       ["#tenotsu-main-menu,#tenotsu-shop-menu", Z.menu],
       ["#tenotsu-hold-surface", Z.hold],
-      ["#dialogue-box", Z.dialogue],
+      ["#dialogue-box,#name,#text", Z.dialogue],
       ["#choices,.choices-area", Z.choice],
       ["#battle-root", Z.battle],
       [".fade-overlay,#fade-overlay,.black-fade,#black-fade,.screen-fade,#tenotsu-safe-fade", Z.fade],
@@ -659,6 +702,7 @@
       setMode("office");
       hideBootOverlay();
       ensureLegacyGuard();
+      hardHideLegacyMenus();
       removeLegacyVisualSurfaces();
       document.body.classList.remove("battle-screen");
       const battle = qs("#battle-root");
@@ -683,6 +727,7 @@
       setMode("shop");
       hideBootOverlay();
       ensureLegacyGuard();
+      hardHideLegacyMenus();
       removeLegacyVisualSurfaces();
       hideFrontLayer();
       setBackground(BG_SHOP);
@@ -852,12 +897,12 @@
   }
 
   function patchApis(){
-    // v038_25 random API hard override: delayed legacy calls must not draw back slots.
+    // v038_26 random API hard override: delayed legacy calls must not draw back slots.
     window.randomImagesOn = function(){ purgeBackOfficeSlots(); return Promise.resolve([]); };
     window.randomTextsOn = function(){ purgeBackOfficeSlots(); return []; };
     window.buildRandomImages = function(){ purgeBackOfficeSlots(); return []; };
     window.tenotsuHideRandomShowLayers = function(){ purgeBackOfficeSlots(); return true; };
-    // v038_25 random API hard override
+    // v038_26 random API hard override
     window.tenotsuSetGameMode = function(mode){
       if (mode === "office") return enterOffice(false);
       if (mode === "shop") return enterShop();
@@ -877,13 +922,17 @@
     window.tenotsuOpenShopWithSakuya = function(){ openShop(); };
     window.tenotsuNormalizeLayerIndex = function(){ normalizeLayers(); };
     window.tenotsuRunBootFlow = function(){
-      // v038_25: script.js may call this after surfaceManager already entered office.
+      // v038_26: script.js may call this after surfaceManager already entered office.
       // Do not force a second random character render.
       const mode = document.body.dataset.gameMode || window.tenotsuGameMode || "";
       if (mode !== "office") enterOffice(true);
       else enterOffice(false);
     };
-    window.tenotsuForceShowMenuFallback = function(){ enterOffice(true); };
+    window.tenotsuForceShowMenuFallback = function(){ hardHideLegacyMenus(); enterOffice(true); };
+    // v038_26 showlist hard override
+    window.showList = function(){ hardHideLegacyMenus(); return false; };
+    window.showlist = function(){ hardHideLegacyMenus(); return false; };
+    window.showMenuList = function(){ hardHideLegacyMenus(); return false; };
     window.tenotsuBlackFadeOut = function(ms){
       const f = ensureFade();
       setI(f, "display", "block");
@@ -934,6 +983,7 @@
   }
 
   function boot(){
+    document.body.classList.add("tenotsu-surface-authority");
     try { if (typeof window.tenotsuBootRescuePrepare === "function") window.tenotsuBootRescuePrepare(); } catch (_) {}
     patchApis();
     patchStoryEnd();
@@ -948,6 +998,7 @@
       try { if (typeof window.tenotsuBootRescuePrepare === "function") window.tenotsuBootRescuePrepare(); } catch (_) {}
       patchApis();
       patchStoryEnd();
+      hardHideLegacyMenus();
       removeLegacyVisualSurfaces();
       if (shouldEnterOfficeAfterBoot()) {
         enterOffice(!bootOfficeEntered);

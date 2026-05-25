@@ -1,4 +1,4 @@
-/* v038_25 Surface Takeover CSS
+/* v038_26 Surface Takeover CSS
    Best-practice implementation:
    - old menu surfaces are hidden
    - new surfaceManager owns office/shop menu and operation surfaces
@@ -378,7 +378,7 @@ body.mode-shop #tenotsu-operation-surface {
 }
 
 
-/* v038_25 boot rescue */
+/* v038_26 boot rescue */
 body[data-game-mode="office"] #boot-flow,
 body.mode-office #boot-flow,
 body[data-game-mode="shop"] #boot-flow,
@@ -397,7 +397,7 @@ body.mode-battle #boot-flow,
 }
 
 
-/* v038_25 unified comment / shop no-character */
+/* v038_26 unified comment / shop no-character */
 #office-comment-box,
 #title-comment-box,
 #office-message,
@@ -441,7 +441,7 @@ body.mode-shop #dialogue-box {
 }
 
 
-/* v038_25 randomShows unification and background fallback */
+/* v038_26 randomShows unification and background fallback */
 body[data-game-mode="office"] #game-container,
 body.mode-office #game-container {
   background-image: url("../images/assets/bgev/bg_office_hidamari.png") !important;
@@ -467,7 +467,7 @@ body.mode-shop #game-container {
 }
 
 
-/* v038_25 fade order fix */
+/* v038_26 fade order fix */
 #tenotsu-safe-fade {
   position: fixed !important;
   inset: 0 !important;
@@ -484,7 +484,7 @@ body:not(.mode-story):not(.mode-battle):not(.mode-office):not(.mode-shop) #tenot
 }
 
 
-/* v038_25 boot singleton / background / hold / text surface fix */
+/* v038_26 boot singleton / background / hold / text surface fix */
 
 /* suppress legacy/random title surfaces */
 #random-images-layer,
@@ -609,7 +609,7 @@ body.mode-shop #tenotsu-front-character-layer {
 }
 
 
-/* v038_25 single authority hard fix */
+/* v038_26 single authority hard fix */
 #random-images-layer,
 #random-text-layer,
 .random-images-layer,
@@ -807,7 +807,7 @@ body.mode-settings #dialogue-box {
 }
 
 
-/* v038_25 shop menu takeover */
+/* v038_26 shop menu takeover */
 #tenotsu-shop-menu {
   position: fixed !important;
   right: max(20px, env(safe-area-inset-right)) !important;
@@ -875,7 +875,7 @@ body.mode-office #tenotsu-main-menu {
 }
 
 
-/* v038_25 orientation warning fix
+/* v038_26 orientation warning fix
    PC / sufficiently wide browser should not show rotate warning.
    Only narrow portrait-like mobile viewport may show it.
 */
@@ -918,7 +918,7 @@ body.tenotsu-portrait-warning #orientation-warning {
 }
 
 
-/* v038_25 office back slot guard */
+/* v038_26 office back slot guard */
 body[data-game-mode="office"] #char-layer,
 body.mode-office #char-layer,
 body[data-game-mode="shop"] #char-layer,
@@ -958,4 +958,79 @@ body[data-game-mode="story"] #char-layer,
 body.mode-story #char-layer {
   display: block !important;
   visibility: visible !important;
+}
+
+
+/* v038_26 old menu flicker guard + dialogue z-index fix */
+/* Legacy pink/right/left menu surfaces must never render during surface takeover. */
+html body #list-panel,
+html body #menu-panel,
+html body .menu-panel,
+html body .list-panel,
+html body .left-menu,
+html body #left-menu,
+html body #leftPanel,
+html body .right-menu,
+html body #right-menu,
+html body .legacy-menu,
+html body .showlist-menu,
+html body [data-legacy-menu="true"],
+html body [data-tenotsu-legacy-menu="true"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* If legacy script injects a visible panel inline, this class gate still prevents paint. */
+body.tenotsu-surface-authority #list-panel,
+body.tenotsu-surface-authority #menu-panel,
+body.tenotsu-surface-authority .menu-panel,
+body.tenotsu-surface-authority .list-panel {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+}
+
+/* Text area must be in front of character slots and menus, but below fade/system warnings. */
+#dialogue-box {
+  z-index: 2200 !important;
+}
+
+#name,
+#text {
+  position: relative !important;
+  z-index: 2201 !important;
+}
+
+body[data-game-mode="office"] #dialogue-box,
+body.mode-office #dialogue-box,
+body[data-game-mode="shop"] #dialogue-box,
+body.mode-shop #dialogue-box,
+body[data-game-mode="members"] #dialogue-box,
+body.mode-members #dialogue-box,
+body[data-game-mode="settings"] #dialogue-box,
+body.mode-settings #dialogue-box {
+  z-index: 2200 !important;
+}
+
+/* Keep front characters behind text surface. */
+#tenotsu-front-character-layer,
+#tenotsu-front-character-layer img,
+.tenotsu-front-stand {
+  z-index: 720 !important;
+}
+.tenotsu-front-stand-0 { z-index: 723 !important; }
+.tenotsu-front-stand-1 { z-index: 722 !important; }
+.tenotsu-front-stand-2 { z-index: 721 !important; }
+
+#tenotsu-main-menu,
+#tenotsu-shop-menu {
+  z-index: 820 !important;
 }
