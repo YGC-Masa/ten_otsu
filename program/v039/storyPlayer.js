@@ -1,4 +1,4 @@
-/* v039_15 story player UI */
+/* v039_16 story player UI + CG load gate */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -8,7 +8,8 @@
     data: null,
     index: -1,
     returnInfo: null,
-    isEnding: false
+    isEnding: false,
+    isLoadingStep: false
   };
 
   ns.resetStoryRuntime = function resetStoryRuntime() {
@@ -17,11 +18,12 @@
     ns.story.index = -1;
     ns.story.returnInfo = null;
     ns.story.isEnding = false;
-    document.body.classList.remove("tenotsu-story-active", "tenotsu-story-final-line");
+    ns.story.isLoadingStep = false;
+    document.body.classList.remove("tenotsu-story-active", "tenotsu-story-final-line", "tenotsu-story-loading");
 
     const layers = ns.layers || ns.ensureLayers();
     if (layers.story) {
-      layers.story.classList.remove("ending");
+      layers.story.classList.remove("ending", "loading");
       layers.story.style.removeProperty("pointer-events");
       layers.story.hidden = true;
       layers.story.innerHTML = "";
@@ -85,17 +87,21 @@
     });
   };
 
-  ns.storyProgressText = function storyProgressText() {
-    const steps = (ns.story.data && ns.story.data.steps) ? ns.story.data.steps : [];
-    const current = Math.min(Math.max(ns.story.index + 1, 1), Math.max(steps.length, 1));
-    return current + " / " + steps.length;
+  ns.setStoryLoading = function setStoryLoading(isLoading) {
+    ns.story.isLoadingStep = !!isLoading;
+    document.body.classList.toggle("tenotsu-story-loading", !!isLoading);
+    const layer = ns.layers && ns.layers.story;
+    if (layer) layer.classList.toggle("loading", !!isLoading);
+    const hint = layer ? layer.querySelector(".tenotsu-story-hint") : null;
+    if (hint) hint.textContent = isLoading ? "CG読み込み中…" : "クリック / タップで進む";
+    const click = layer ? layer.querySelector("[data-story-action='next']") : null;
+    if (click) click.disabled = !!isLoading;
   };
 
   ns.startStory = async function startStory(scenarioPath, returnInfo = {}) {
     try {
       ns.ensureLayers();
 
-      // Start transition: black fade out before hiding town/menu panels.
       await ns.fadeOutForStoryStart();
 
       ns.setMode("story");
@@ -116,6 +122,7 @@
       ns.story.index = -1;
       ns.story.returnInfo = data.return || returnInfo || {};
       ns.story.isEnding = false;
+      ns.story.isLoadingStep = false;
 
       ns.showStoryLayer(`
         <button type="button" class="tenotsu-story-click" data-story-action="next" aria-label="次へ"></button>
@@ -128,7 +135,7 @@
       `);
 
       const layer = ns.layers.story;
-      layer.classList.remove("ending");
+      layer.classList.remove("ending", "loading");
       layer.style.removeProperty("pointer-events");
       const nextButton = layer.querySelector('[data-story-action="next"]');
       const endButton = layer.querySelector('[data-story-action="end"]');
@@ -136,7 +143,7 @@
       if (endButton) endButton.onclick = () => ns.beginStoryEnd();
 
       document.body.classList.add("tenotsu-story-active");
-      ns.nextStoryStep();
+      await ns.nextStoryStep({ initial: true });
 
       await ns.fadeInForStoryStart();
     } catch (err) {
@@ -153,6 +160,12 @@
     }
   };
 
+  ns.storyProgressText = function storyProgressText() {
+    const steps = (ns.story.data && ns.story.data.steps) ? ns.story.data.steps : [];
+    const current = Math.min(Math.max(ns.story.index + 1, 1), Math.max(steps.length, 1));
+    return current + " / " + steps.length;
+  };
+
   ns.updateStoryUi = function updateStoryUi() {
     const layer = ns.layers && ns.layers.story;
     if (!layer) return;
@@ -163,22 +176,37 @@
     layer.dataset.storyTotal = String(steps.length);
   };
 
-  ns.nextStoryStep = function nextStoryStep() {
-    if (!ns.story.active || !ns.story.data || ns.story.isEnding) return;
-    const steps = ns.story.data.steps || [];
-    ns.story.index += 1;
+  ns.applyStoryStep = async function applyStoryStep(step) {
+    if (!step) return;
+    if (step.bg) {
+      ns.setStoryLoading(true);
+      try {
+        if (typeof ns.setBackgroundReady === "function") {
+          await ns.setBackgroundReady(step.bg);
+        } else {
+          ns.setBackground(step.bg);
+        }
+      } finally {
+        ns.setStoryLoading(false);
+      }
+    }
+    ns.setText(step.speaker || "", step.text || "");
+  };
 
-    if (ns.story.index >= steps.length) {
+  ns.nextStoryStep = async function nextStoryStep(options = {}) {
+    if (!ns.story.active || !ns.story.data || ns.story.isEnding || ns.story.isLoadingStep) return;
+    const steps = ns.story.data.steps || [];
+    const nextIndex = ns.story.index + 1;
+
+    if (nextIndex >= steps.length) {
       ns.beginStoryEnd();
       return;
     }
 
+    ns.story.index = nextIndex;
     const step = steps[ns.story.index];
-    if (step.bg) {
-      if (typeof ns.setBackgroundReady === "function") ns.setBackgroundReady(step.bg);
-      else ns.setBackground(step.bg);
-    }
-    ns.setText(step.speaker || "", step.text || "");
+
+    await ns.applyStoryStep(step);
     ns.updateStoryUi();
 
     const isFinalContinue = (step.speaker === "システム" && String(step.text || "").includes("物語は続く"));
@@ -186,7 +214,7 @@
   };
 
   ns.beginStoryEnd = function beginStoryEnd() {
-    if (!ns.story.active || ns.story.isEnding) return;
+    if (!ns.story.active || ns.story.isEnding || ns.story.isLoadingStep) return;
     ns.story.isEnding = true;
 
     const layer = ns.layers && ns.layers.story;
@@ -230,7 +258,8 @@
     ns.story.index = -1;
     ns.story.returnInfo = null;
     ns.story.isEnding = false;
-    document.body.classList.remove("tenotsu-story-active", "tenotsu-story-final-line");
+    ns.story.isLoadingStep = false;
+    document.body.classList.remove("tenotsu-story-active", "tenotsu-story-final-line", "tenotsu-story-loading");
     if (typeof ns.hideStoryLayer === "function") ns.hideStoryLayer();
 
     if (ret.mode === "town" && typeof ns.enterTown === "function") {
