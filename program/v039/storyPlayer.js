@@ -1,4 +1,4 @@
-/* v039_11 story player UI */
+/* v039_12 story player UI */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -9,6 +9,30 @@
     index: -1,
     returnInfo: null,
     isEnding: false
+  };
+
+  ns.resetStoryRuntime = function resetStoryRuntime() {
+    ns.story.active = false;
+    ns.story.data = null;
+    ns.story.index = -1;
+    ns.story.returnInfo = null;
+    ns.story.isEnding = false;
+    document.body.classList.remove("tenotsu-story-active", "tenotsu-story-final-line");
+
+    const layers = ns.layers || ns.ensureLayers();
+    if (layers.story) {
+      layers.story.classList.remove("ending");
+      layers.story.style.removeProperty("pointer-events");
+      layers.story.hidden = true;
+      layers.story.innerHTML = "";
+    }
+
+    if (layers.fade) {
+      layers.fade.style.transition = "";
+      layers.fade.style.opacity = "0";
+      layers.fade.style.display = "none";
+      layers.fade.style.pointerEvents = "none";
+    }
   };
 
   ns.loadStoryScenario = async function loadStoryScenario(path) {
@@ -27,6 +51,8 @@
     try {
       ns.setMode("story");
       ns.ensureLayers();
+      ns.resetStoryRuntime();
+      ns.setMode("story");
       if (typeof ns.hideSettingsPanel === "function") ns.hideSettingsPanel();
       if (typeof ns.hideShopPanel === "function") ns.hideShopPanel();
       if (typeof ns.hideMembersPanel === "function") ns.hideMembersPanel();
@@ -51,8 +77,12 @@
       `);
 
       const layer = ns.layers.story;
-      layer.querySelector('[data-story-action="next"]').addEventListener("click", () => ns.nextStoryStep());
-      layer.querySelector('[data-story-action="end"]').addEventListener("click", () => ns.beginStoryEnd());
+      layer.classList.remove("ending");
+      layer.style.removeProperty("pointer-events");
+      const nextButton = layer.querySelector('[data-story-action="next"]');
+      const endButton = layer.querySelector('[data-story-action="end"]');
+      if (nextButton) nextButton.onclick = () => ns.nextStoryStep();
+      if (endButton) endButton.onclick = () => ns.beginStoryEnd();
 
       document.body.classList.add("tenotsu-story-active");
       ns.nextStoryStep();
@@ -93,7 +123,7 @@
   };
 
   ns.beginStoryEnd = function beginStoryEnd() {
-    if (ns.story.isEnding) return;
+    if (!ns.story.active || ns.story.isEnding) return;
     ns.story.isEnding = true;
 
     const layer = ns.layers && ns.layers.story;
@@ -121,6 +151,11 @@
         layers.fade.style.display = "none";
         layers.fade.style.pointerEvents = "none";
         layers.fade.style.transition = "";
+        layers.fade.style.opacity = "0";
+        if (ns.layers && ns.layers.story) {
+          ns.layers.story.classList.remove("ending");
+          ns.layers.story.style.removeProperty("pointer-events");
+        }
       }, 700);
     }, 950);
   };
