@@ -1,4 +1,4 @@
-/* v039_13 town season event tree */
+/* v039_14 town season event tree */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -144,7 +144,10 @@
     }
   };
 
-  ns.enterTown = function enterTown() {
+  ns.enterTown = function enterTown(options = {}) {
+    if (!options.noTransition && typeof ns.transitionTo === "function") {
+      return ns.transitionTo(() => ns.enterTown({ noTransition: true }));
+    }
     ns.setMode("town");
     ns.ensureLayers();
     if (typeof ns.hideSettingsPanel === "function") ns.hideSettingsPanel();

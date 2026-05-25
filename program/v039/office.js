@@ -1,4 +1,4 @@
-/* v039_13 office */
+/* v039_14 office */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -45,7 +45,7 @@
     version.className = "tenotsu-menu-version";
     const versionMain = document.createElement("span");
     versionMain.className = "tenotsu-menu-version-main";
-    versionMain.textContent = ns.VERSION || "v039_13";
+    versionMain.textContent = ns.VERSION || "v039_14";
     const versionSub = document.createElement("span");
     versionSub.className = "tenotsu-menu-version-sub";
     versionSub.textContent = "new core / office";
@@ -74,6 +74,9 @@
   };
 
   ns.enterOffice = function enterOffice(options = {}) {
+    if (!options.noTransition && typeof ns.transitionTo === "function" && ns.state.mode !== "boot") {
+      return ns.transitionTo(() => ns.enterOffice({ ...options, noTransition: true }));
+    }
     ns.setMode("office");
     ns.ensureLayers();
     ns.setBackground(ns.paths.officeBg);
@@ -126,7 +129,7 @@
     const html = `
       <div class="tenotsu-settings-title">設定</div>
       <div class="tenotsu-settings-body">
-        <div>現在のバージョン: <strong>${ns.VERSION || "v039_13"}</strong></div>
+        <div>現在のバージョン: <strong>${ns.VERSION || "v039_14"}</strong></div>
         <div>表示やキャッシュの調整を行います。</div>
       </div>
       <div class="tenotsu-settings-actions">
@@ -167,33 +170,40 @@
   };
 
   ns.handleOfficeMenu = function handleOfficeMenu(action) {
+    if (ns.transitionState && ns.transitionState.running) return;
     if (action !== "settings" && typeof ns.hideSettingsPanel === "function") ns.hideSettingsPanel();
     if (action !== "members" && typeof ns.hideMembersPanel === "function") ns.hideMembersPanel();
-    if (action !== "town" && typeof ns.hideTownPanel === "function") ns.hideTownPanel();
 
     switch(action) {
       case "office":
         ns.enterOffice({ speaker: "店長", message: "事務所を確認します。" });
         break;
       case "members":
-        if (typeof ns.enterMembers === "function") ns.enterMembers();
-        else ns.setText("店長", "メンバー機能を読み込めませんでした。members.js の読み込みを確認してください。");
+        if (typeof ns.enterMembers === "function") {
+          ns.transitionTo ? ns.transitionTo(() => ns.enterMembers({ noTransition: true })) : ns.enterMembers();
+        } else {
+          ns.setText("店長", "メンバー機能を読み込めませんでした。members.js の読み込みを確認してください。");
+        }
         break;
       case "sales":
-        ns.setText("店長", "店舗営業は v039_13 以降でバトル接続予定です。");
+        ns.setText("店長", "店舗営業は v039_15 以降でバトル接続予定です。");
         break;
       case "town":
-        if (typeof ns.enterTown === "function") ns.enterTown();
-        else ns.setText("店長", "外回り機能を読み込めませんでした。");
+        if (typeof ns.enterTown === "function") {
+          ns.transitionTo ? ns.transitionTo(() => ns.enterTown({ noTransition: true })) : ns.enterTown();
+        } else {
+          ns.setText("店長", "外回り機能を読み込めませんでした。");
+        }
         break;
       case "shop":
         if (typeof ns.enterShop === "function") {
-          ns.enterShop();
+          ns.transitionTo ? ns.transitionTo(() => ns.enterShop({ noTransition: true })) : ns.enterShop();
         } else {
           ns.setText("店長", "ショップ機能を読み込めませんでした。shop.js の読み込みを確認してください。");
         }
         break;
       case "settings":
+        // settings is a panel overlay, not a scene; no black transition.
         ns.renderSettings();
         break;
       default:

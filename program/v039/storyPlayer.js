@@ -1,4 +1,4 @@
-/* v039_13 story player UI */
+/* v039_14 story player UI */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -225,7 +225,7 @@
     if (typeof ns.hideStoryLayer === "function") ns.hideStoryLayer();
 
     if (ret.mode === "town" && typeof ns.enterTown === "function") {
-      ns.enterTown();
+      ns.enterTown({ noTransition: true });
       if (ret.season && typeof ns.renderSeasonEvents === "function") {
         ns.renderSeasonEvents(ret.season);
         ns.setText("店長", "外回りに戻りました。");

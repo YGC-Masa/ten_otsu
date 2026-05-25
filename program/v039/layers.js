@@ -1,4 +1,4 @@
-/* v039_13 layers */
+/* v039_14 layers */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -51,7 +51,7 @@
     layers.speaker = el("div", { className: "tenotsu-speaker" }, layers.text);
     layers.message = el("div", { className: "tenotsu-message" }, layers.text);
     layers.fade = el("div", { className: "tenotsu-fade-layer", "data-layer": "fade" }, app);
-    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_13" }, app);
+    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_14" }, app);
 
     ns.layers = layers;
     return layers;

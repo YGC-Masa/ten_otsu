@@ -1,4 +1,4 @@
-/* v039_13 shop */
+/* v039_14 shop */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -6,7 +6,7 @@
   ns.renderShopMenu = function renderShopMenu() {
     const menuHtml = `
       <div class="tenotsu-menu-version">
-        <span class="tenotsu-menu-version-main">${ns.VERSION || "v039_13"}</span>
+        <span class="tenotsu-menu-version-main">${ns.VERSION || "v039_14"}</span>
         <span class="tenotsu-menu-version-sub">shop / exchange</span>
       </div>
       <div class="tenotsu-shop-menu-title">ショップメニュー</div>
@@ -22,7 +22,7 @@
       <div class="tenotsu-shop-info-title">アイテム交換所</div>
       <div class="tenotsu-shop-info-body">
         <p>イベント交換・スタンプ交換・特別な合言葉交換をここへ接続予定です。</p>
-        <p>v039_13では、まず事務所とショップ間の安定した画面遷移を確認します。</p>
+        <p>v039_14では、まず事務所とショップ間の安定した画面遷移を確認します。</p>
       </div>
     `;
 
@@ -34,7 +34,10 @@
     });
   };
 
-  ns.enterShop = function enterShop() {
+  ns.enterShop = function enterShop(options = {}) {
+    if (!options.noTransition && typeof ns.transitionTo === "function") {
+      return ns.transitionTo(() => ns.enterShop({ noTransition: true }));
+    }
     ns.setMode("shop");
     ns.ensureLayers();
     if (typeof ns.hideSettingsPanel === "function") ns.hideSettingsPanel();

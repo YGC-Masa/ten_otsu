@@ -1,4 +1,4 @@
-/* v039_13 members */
+/* v039_14 members */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -59,7 +59,10 @@
     }
   };
 
-  ns.enterMembers = function enterMembers() {
+  ns.enterMembers = function enterMembers(options = {}) {
+    if (!options.noTransition && typeof ns.transitionTo === "function") {
+      return ns.transitionTo(() => ns.enterMembers({ noTransition: true }));
+    }
     ns.setMode("members");
     ns.ensureLayers();
     if (typeof ns.hideSettingsPanel === "function") ns.hideSettingsPanel();
