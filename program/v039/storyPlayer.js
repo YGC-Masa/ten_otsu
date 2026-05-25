@@ -1,4 +1,4 @@
-/* v039_12 story player UI */
+/* v039_13 story player UI */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -41,6 +41,44 @@
     return await res.json();
   };
 
+  ns.prepareStoryFirstBackground = function prepareStoryFirstBackground(data) {
+    const first = data && data.steps && data.steps[0] ? data.steps[0] : null;
+    if (first && first.bg) ns.setBackground(first.bg);
+  };
+
+  ns.fadeOutForStoryStart = function fadeOutForStoryStart() {
+    const layers = ns.layers || ns.ensureLayers();
+    layers.fade.style.display = "block";
+    layers.fade.style.pointerEvents = "auto";
+    layers.fade.style.transition = "opacity 520ms ease";
+    layers.fade.style.opacity = "0";
+    return new Promise((resolve) => {
+      requestAnimationFrame(() => {
+        layers.fade.style.opacity = "1";
+        setTimeout(resolve, 560);
+      });
+    });
+  };
+
+  ns.fadeInForStoryStart = function fadeInForStoryStart() {
+    const layers = ns.layers || ns.ensureLayers();
+    layers.fade.style.display = "block";
+    layers.fade.style.pointerEvents = "auto";
+    layers.fade.style.transition = "opacity 520ms ease";
+    layers.fade.style.opacity = "1";
+    return new Promise((resolve) => {
+      requestAnimationFrame(() => {
+        layers.fade.style.opacity = "0";
+        setTimeout(() => {
+          layers.fade.style.display = "none";
+          layers.fade.style.pointerEvents = "none";
+          layers.fade.style.transition = "";
+          resolve();
+        }, 560);
+      });
+    });
+  };
+
   ns.storyProgressText = function storyProgressText() {
     const steps = (ns.story.data && ns.story.data.steps) ? ns.story.data.steps : [];
     const current = Math.min(Math.max(ns.story.index + 1, 1), Math.max(steps.length, 1));
@@ -49,10 +87,15 @@
 
   ns.startStory = async function startStory(scenarioPath, returnInfo = {}) {
     try {
-      ns.setMode("story");
       ns.ensureLayers();
+
+      // Start transition: black fade out before hiding town/menu panels.
+      await ns.fadeOutForStoryStart();
+
+      ns.setMode("story");
       ns.resetStoryRuntime();
       ns.setMode("story");
+
       if (typeof ns.hideSettingsPanel === "function") ns.hideSettingsPanel();
       if (typeof ns.hideShopPanel === "function") ns.hideShopPanel();
       if (typeof ns.hideMembersPanel === "function") ns.hideMembersPanel();
@@ -60,6 +103,8 @@
       if (typeof ns.clearCharacters === "function") ns.clearCharacters();
 
       const data = await ns.loadStoryScenario(scenarioPath);
+      ns.prepareStoryFirstBackground(data);
+
       ns.story.active = true;
       ns.story.data = data;
       ns.story.index = -1;
@@ -86,9 +131,18 @@
 
       document.body.classList.add("tenotsu-story-active");
       ns.nextStoryStep();
+
+      await ns.fadeInForStoryStart();
     } catch (err) {
       console.error(err);
       ns.setText("システム", "シナリオを読み込めませんでした: " + err.message);
+      const layers = ns.layers || ns.ensureLayers();
+      if (layers.fade) {
+        layers.fade.style.opacity = "0";
+        layers.fade.style.display = "none";
+        layers.fade.style.pointerEvents = "none";
+        layers.fade.style.transition = "";
+      }
       if (typeof ns.enterTown === "function") ns.enterTown();
     }
   };
