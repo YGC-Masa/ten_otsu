@@ -1,4 +1,4 @@
-/* v039_05 office */
+/* v039_06 office */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -45,7 +45,7 @@
     version.className = "tenotsu-menu-version";
     const versionMain = document.createElement("span");
     versionMain.className = "tenotsu-menu-version-main";
-    versionMain.textContent = ns.VERSION || "v039_05";
+    versionMain.textContent = ns.VERSION || "v039_06";
     const versionSub = document.createElement("span");
     versionSub.className = "tenotsu-menu-version-sub";
     versionSub.textContent = "new core / office";
@@ -79,6 +79,7 @@
     ns.setBackground(ns.paths.officeBg);
     if (typeof ns.hideSettingsPanel === "function") ns.hideSettingsPanel();
     if (typeof ns.hideShopPanel === "function") ns.hideShopPanel();
+    if (typeof ns.hideMembersPanel === "function") ns.hideMembersPanel();
     ns.renderOfficeMenu();
     ns.renderOfficeCharacters();
     if (options.message) ns.setText(options.speaker || "店長", options.message);
@@ -124,7 +125,7 @@
     const html = `
       <div class="tenotsu-settings-title">設定</div>
       <div class="tenotsu-settings-body">
-        <div>現在のバージョン: <strong>${ns.VERSION || "v039_05"}</strong></div>
+        <div>現在のバージョン: <strong>${ns.VERSION || "v039_06"}</strong></div>
         <div>表示やキャッシュの調整を行います。</div>
       </div>
       <div class="tenotsu-settings-actions">
@@ -166,19 +167,20 @@
 
   ns.handleOfficeMenu = function handleOfficeMenu(action) {
     if (action !== "settings" && typeof ns.hideSettingsPanel === "function") ns.hideSettingsPanel();
+    if (action !== "members" && typeof ns.hideMembersPanel === "function") ns.hideMembersPanel();
 
     switch(action) {
       case "office":
         ns.enterOffice({ speaker: "店長", message: "事務所を確認します。" });
         break;
       case "members":
-        ns.setText("店長", "メンバー画面は v039_05 以降で接続します。まずは事務所・ショップ・設定の安定化を優先します。");
+        ns.setText("店長", "メンバー画面は v039_06 以降で接続します。まずは事務所・ショップ・設定の安定化を優先します。");
         break;
       case "sales":
-        ns.setText("店長", "店舗営業は v039_05 以降でバトル接続予定です。");
+        ns.setText("店長", "店舗営業は v039_06 以降でバトル接続予定です。");
         break;
       case "town":
-        ns.setText("店長", "外回りは v039_05 以降でシナリオプレイヤーへ接続予定です。");
+        ns.setText("店長", "外回りは v039_06 以降でシナリオプレイヤーへ接続予定です。");
         break;
       case "shop":
         if (typeof ns.enterShop === "function") {
