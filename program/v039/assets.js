@@ -1,4 +1,4 @@
-/* v039_10 assets */
+/* v039_11 assets */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -75,6 +75,33 @@
       message: "テックラボつくもへ向かいます。"
     }
   ];
+
+
+  ns.nameColorMap = {
+    "星野 緋奈": "#ff6b4a",
+    "速水川 藍": "#4aa8ff",
+    "草壁 翠": "#55e163",
+    "小麦沢 こがね": "#ffe95c",
+    "春日原 琥珀": "#ffad47",
+    "大道寺 真花": "#e2e2e2",
+    "氷神 雪乃": "#9cc8ff",
+    "双沢 美空": "#fffef6",
+    "双沢 夜空": "#6ca8ff",
+    "芝桜 桃": "#ff9cc5",
+    "紫藤 彩愛": "#b99cff",
+    "餅月 里美": "#d49a63",
+    "草壁 萌": "#63e6bd",
+    "朔夜": "#b48cff",
+    "宵闇 朔夜": "#b48cff",
+    "店長": "#ffe2a3",
+    "システム": "#ffffff"
+  };
+
+  ns.getReadableNameColor = function getReadableNameColor(name) {
+    const raw = ns.nameColorMap && ns.nameColorMap[name] ? ns.nameColorMap[name] : "#ffe2a3";
+    // Very dark colors, especially 夜空's original black, are mapped above to a readable display color.
+    return raw;
+  };
 
   ns.shuffle = function shuffle(source) {
     const arr = source.slice();

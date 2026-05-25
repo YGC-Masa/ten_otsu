@@ -1,4 +1,4 @@
-/* v039_10 layers */
+/* v039_11 layers */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -51,7 +51,7 @@
     layers.speaker = el("div", { className: "tenotsu-speaker" }, layers.text);
     layers.message = el("div", { className: "tenotsu-message" }, layers.text);
     layers.fade = el("div", { className: "tenotsu-fade-layer", "data-layer": "fade" }, app);
-    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_10" }, app);
+    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_11" }, app);
 
     ns.layers = layers;
     return layers;
@@ -81,8 +81,13 @@
 
   ns.setText = function setText(speaker, message) {
     const layers = ns.layers || ns.ensureLayers();
-    layers.speaker.textContent = speaker || "";
+    const safeSpeaker = speaker || "";
+    layers.speaker.textContent = safeSpeaker;
     layers.message.textContent = message || "";
+    const color = typeof ns.getReadableNameColor === "function" ? ns.getReadableNameColor(safeSpeaker) : "#ffe2a3";
+    layers.text.style.setProperty("--speaker-color", color);
+    layers.speaker.style.setProperty("--speaker-color", color);
+    layers.speaker.dataset.speaker = safeSpeaker;
   };
 
   ns.showSettingsPanel = function showSettingsPanel(html) {

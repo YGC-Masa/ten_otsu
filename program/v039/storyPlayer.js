@@ -1,4 +1,4 @@
-/* v039_10 story player minimum */
+/* v039_11 story player UI */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -7,13 +7,20 @@
     active: false,
     data: null,
     index: -1,
-    returnInfo: null
+    returnInfo: null,
+    isEnding: false
   };
 
   ns.loadStoryScenario = async function loadStoryScenario(path) {
     const res = await fetch(path, { cache: "no-store" });
     if (!res.ok) throw new Error("scenario fetch failed: " + path + " / " + res.status);
     return await res.json();
+  };
+
+  ns.storyProgressText = function storyProgressText() {
+    const steps = (ns.story.data && ns.story.data.steps) ? ns.story.data.steps : [];
+    const current = Math.min(Math.max(ns.story.index + 1, 1), Math.max(steps.length, 1));
+    return current + " / " + steps.length;
   };
 
   ns.startStory = async function startStory(scenarioPath, returnInfo = {}) {
@@ -31,16 +38,23 @@
       ns.story.data = data;
       ns.story.index = -1;
       ns.story.returnInfo = data.return || returnInfo || {};
+      ns.story.isEnding = false;
 
       ns.showStoryLayer(`
         <button type="button" class="tenotsu-story-click" data-story-action="next" aria-label="次へ"></button>
-        <button type="button" class="tenotsu-story-skip" data-story-action="end">終了</button>
+        <div class="tenotsu-story-ui">
+          <div class="tenotsu-story-title">${data.title || "Story"}</div>
+          <div class="tenotsu-story-progress" data-story-progress>0 / ${(data.steps || []).length}</div>
+          <button type="button" class="tenotsu-story-skip" data-story-action="end">終了</button>
+        </div>
+        <div class="tenotsu-story-hint">クリック / タップで進む</div>
       `);
 
       const layer = ns.layers.story;
       layer.querySelector('[data-story-action="next"]').addEventListener("click", () => ns.nextStoryStep());
-      layer.querySelector('[data-story-action="end"]').addEventListener("click", () => ns.endStory());
+      layer.querySelector('[data-story-action="end"]').addEventListener("click", () => ns.beginStoryEnd());
 
+      document.body.classList.add("tenotsu-story-active");
       ns.nextStoryStep();
     } catch (err) {
       console.error(err);
@@ -49,25 +63,66 @@
     }
   };
 
+  ns.updateStoryUi = function updateStoryUi() {
+    const layer = ns.layers && ns.layers.story;
+    if (!layer) return;
+    const progress = layer.querySelector("[data-story-progress]");
+    if (progress) progress.textContent = ns.storyProgressText();
+    const steps = (ns.story.data && ns.story.data.steps) ? ns.story.data.steps : [];
+    layer.dataset.storyIndex = String(ns.story.index);
+    layer.dataset.storyTotal = String(steps.length);
+  };
+
   ns.nextStoryStep = function nextStoryStep() {
-    if (!ns.story.active || !ns.story.data) return;
+    if (!ns.story.active || !ns.story.data || ns.story.isEnding) return;
     const steps = ns.story.data.steps || [];
     ns.story.index += 1;
 
     if (ns.story.index >= steps.length) {
-      ns.endStory();
+      ns.beginStoryEnd();
       return;
     }
 
     const step = steps[ns.story.index];
     if (step.bg) ns.setBackground(step.bg);
     ns.setText(step.speaker || "", step.text || "");
+    ns.updateStoryUi();
 
-    const layer = ns.layers.story;
-    if (layer) {
-      layer.dataset.storyIndex = String(ns.story.index);
-      layer.dataset.storyTotal = String(steps.length);
-    }
+    const isFinalContinue = (step.speaker === "システム" && String(step.text || "").includes("物語は続く"));
+    document.body.classList.toggle("tenotsu-story-final-line", isFinalContinue);
+  };
+
+  ns.beginStoryEnd = function beginStoryEnd() {
+    if (ns.story.isEnding) return;
+    ns.story.isEnding = true;
+
+    const layer = ns.layers && ns.layers.story;
+    if (layer) layer.classList.add("ending");
+
+    ns.fadeToBlackThenReturn();
+  };
+
+  ns.fadeToBlackThenReturn = function fadeToBlackThenReturn() {
+    const layers = ns.layers || ns.ensureLayers();
+    layers.fade.style.display = "block";
+    layers.fade.style.pointerEvents = "auto";
+    layers.fade.style.transition = "opacity 900ms ease";
+    requestAnimationFrame(() => {
+      layers.fade.style.opacity = "1";
+    });
+
+    setTimeout(() => {
+      ns.endStory();
+      layers.fade.style.transition = "opacity 650ms ease";
+      requestAnimationFrame(() => {
+        layers.fade.style.opacity = "0";
+      });
+      setTimeout(() => {
+        layers.fade.style.display = "none";
+        layers.fade.style.pointerEvents = "none";
+        layers.fade.style.transition = "";
+      }, 700);
+    }, 950);
   };
 
   ns.endStory = function endStory() {
@@ -76,6 +131,8 @@
     ns.story.data = null;
     ns.story.index = -1;
     ns.story.returnInfo = null;
+    ns.story.isEnding = false;
+    document.body.classList.remove("tenotsu-story-active", "tenotsu-story-final-line");
     if (typeof ns.hideStoryLayer === "function") ns.hideStoryLayer();
 
     if (ret.mode === "town" && typeof ns.enterTown === "function") {

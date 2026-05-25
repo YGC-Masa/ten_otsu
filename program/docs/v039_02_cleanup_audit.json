@@ -1,5 +1,5 @@
 {
-  "version": "v039_10",
+  "version": "v039_11",
   "uploaded_zip": "ten_otsu-main (1).zip",
   "repo_root": "ten_otsu-main",
   "new_core_files": [
@@ -71,13 +71,13 @@
     "scenario/scenario/uploaded_000start.json"
   ],
   "keep_for_now": [
-    "program/battle.js - v039_10以降のbattleAdapter接続まで保持",
+    "program/battle.js - v039_11以降のbattleAdapter接続まで保持",
     "program/script.js - storyPlayer移植の参照用として一時保持",
     "scenario/ - v039 storyPlayer移行まで保持",
     "images/ - 使用状況確認まで保持",
     "config/list/random旧データ - v039へ必要データ抽出まで保持"
   ],
-  "implemented_in_v039_10": [
+  "implemented_in_v039_11": [
     "shop screen",
     "shop dedicated menu",
     "office -> shop -> office transition",
