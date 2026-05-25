@@ -1,10 +1,7 @@
-# v039_02 → v039_03 menu connect / cache fix 差分
+# v039_04 → v039_05 shop background path fix 差分
 
 ## 修正内容
-- 左下バージョン表示を復活。
-- 事務所メニュー「ショップ」が旧メッセージではなくショップ画面へ遷移するよう修正。
-- shop.js を app.js より前に読み込むよう確認。
-- 設定メニューとキャッシュクリアを明示実装。
-- キャッシュクリアは Service Worker登録解除、Cache Storage削除、cachebust付きリロードを実行。
+- ショップボタン時の背景パスを `images/assets/bgev/bg_item_exchange_counter.png` に修正。
+- v039_04の `showShopPanel()` undefined修正と `title.jpg` 404ループ対策は維持。
 
 リポジトリ直下へ展開して上書きしてください。

@@ -1,4 +1,4 @@
-/* v039_03 office */
+/* v039_05 office */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -45,7 +45,7 @@
     version.className = "tenotsu-menu-version";
     const versionMain = document.createElement("span");
     versionMain.className = "tenotsu-menu-version-main";
-    versionMain.textContent = ns.VERSION || "v039_03";
+    versionMain.textContent = ns.VERSION || "v039_05";
     const versionSub = document.createElement("span");
     versionSub.className = "tenotsu-menu-version-sub";
     versionSub.textContent = "new core / office";
@@ -124,7 +124,7 @@
     const html = `
       <div class="tenotsu-settings-title">設定</div>
       <div class="tenotsu-settings-body">
-        <div>現在のバージョン: <strong>${ns.VERSION || "v039_03"}</strong></div>
+        <div>現在のバージョン: <strong>${ns.VERSION || "v039_05"}</strong></div>
         <div>表示やキャッシュの調整を行います。</div>
       </div>
       <div class="tenotsu-settings-actions">
@@ -172,13 +172,13 @@
         ns.enterOffice({ speaker: "店長", message: "事務所を確認します。" });
         break;
       case "members":
-        ns.setText("店長", "メンバー画面は v039_04 以降で接続します。まずは事務所・ショップ・設定の安定化を優先します。");
+        ns.setText("店長", "メンバー画面は v039_05 以降で接続します。まずは事務所・ショップ・設定の安定化を優先します。");
         break;
       case "sales":
         ns.setText("店長", "店舗営業は v039_05 以降でバトル接続予定です。");
         break;
       case "town":
-        ns.setText("店長", "外回りは v039_04 以降でシナリオプレイヤーへ接続予定です。");
+        ns.setText("店長", "外回りは v039_05 以降でシナリオプレイヤーへ接続予定です。");
         break;
       case "shop":
         if (typeof ns.enterShop === "function") {
