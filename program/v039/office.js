@@ -1,4 +1,4 @@
-/* v039_06 office */
+/* v039_07 office */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -45,7 +45,7 @@
     version.className = "tenotsu-menu-version";
     const versionMain = document.createElement("span");
     versionMain.className = "tenotsu-menu-version-main";
-    versionMain.textContent = ns.VERSION || "v039_06";
+    versionMain.textContent = ns.VERSION || "v039_07";
     const versionSub = document.createElement("span");
     versionSub.className = "tenotsu-menu-version-sub";
     versionSub.textContent = "new core / office";
@@ -87,7 +87,6 @@
 
   ns.clearCacheAndReload = async function clearCacheAndReload() {
     const results = [];
-
     try {
       if ("serviceWorker" in navigator) {
         const regs = await navigator.serviceWorker.getRegistrations();
@@ -122,10 +121,11 @@
 
   ns.renderSettings = function renderSettings() {
     ns.setMode("settings");
+    if (typeof ns.hideMembersPanel === "function") ns.hideMembersPanel();
     const html = `
       <div class="tenotsu-settings-title">設定</div>
       <div class="tenotsu-settings-body">
-        <div>現在のバージョン: <strong>${ns.VERSION || "v039_06"}</strong></div>
+        <div>現在のバージョン: <strong>${ns.VERSION || "v039_07"}</strong></div>
         <div>表示やキャッシュの調整を行います。</div>
       </div>
       <div class="tenotsu-settings-actions">
@@ -174,13 +174,14 @@
         ns.enterOffice({ speaker: "店長", message: "事務所を確認します。" });
         break;
       case "members":
-        ns.setText("店長", "メンバー画面は v039_06 以降で接続します。まずは事務所・ショップ・設定の安定化を優先します。");
+        if (typeof ns.enterMembers === "function") ns.enterMembers();
+        else ns.setText("店長", "メンバー機能を読み込めませんでした。members.js の読み込みを確認してください。");
         break;
       case "sales":
-        ns.setText("店長", "店舗営業は v039_06 以降でバトル接続予定です。");
+        ns.setText("店長", "店舗営業は v039_08 以降でバトル接続予定です。");
         break;
       case "town":
-        ns.setText("店長", "外回りは v039_06 以降でシナリオプレイヤーへ接続予定です。");
+        ns.setText("店長", "外回りは v039_08 以降でシナリオプレイヤーへ接続予定です。");
         break;
       case "shop":
         if (typeof ns.enterShop === "function") {
