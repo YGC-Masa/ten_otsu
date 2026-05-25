@@ -1,4 +1,4 @@
-/* v039_20 layers */
+/* v039_21 layers */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -47,12 +47,14 @@
     layers.members = el("section", { className: "tenotsu-members-panel", "aria-label": "メンバー", hidden: "hidden" }, app);
     layers.town = el("section", { className: "tenotsu-town-panel", "aria-label": "外回り", hidden: "hidden" }, app);
     layers.sales = el("section", { className: "tenotsu-sales-panel", "aria-label": "店舗営業", hidden: "hidden" }, app);
+    layers.battle = el("section", { className: "tenotsu-battle-panel", "aria-label": "接客バトル", hidden: "hidden" }, app);
+    layers.result = el("section", { className: "tenotsu-result-panel", "aria-label": "営業リザルト", hidden: "hidden" }, app);
     layers.story = el("section", { className: "tenotsu-story-layer", "aria-label": "ストーリー", hidden: "hidden" }, app);
     layers.text = el("section", { className: "tenotsu-text-layer", "aria-live": "polite" }, app);
     layers.speaker = el("div", { className: "tenotsu-speaker" }, layers.text);
     layers.message = el("div", { className: "tenotsu-message" }, layers.text);
     layers.fade = el("div", { className: "tenotsu-fade-layer", "data-layer": "fade" }, app);
-    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_20" }, app);
+    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_21" }, app);
 
     ns.layers = layers;
     return layers;
@@ -198,6 +200,32 @@
     if (!layers.town) return;
     layers.town.hidden = true;
     layers.town.innerHTML = "";
+  };
+
+  ns.showBattlePanel = function showBattlePanel(html) {
+    const layers = ns.ensureLayers();
+    layers.battle.hidden = false;
+    layers.battle.innerHTML = html || "";
+  };
+
+  ns.hideBattlePanel = function hideBattlePanel() {
+    const layers = ns.ensureLayers();
+    if (!layers.battle) return;
+    layers.battle.hidden = true;
+    layers.battle.innerHTML = "";
+  };
+
+  ns.showResultPanel = function showResultPanel(html) {
+    const layers = ns.ensureLayers();
+    layers.result.hidden = false;
+    layers.result.innerHTML = html || "";
+  };
+
+  ns.hideResultPanel = function hideResultPanel() {
+    const layers = ns.ensureLayers();
+    if (!layers.result) return;
+    layers.result.hidden = true;
+    layers.result.innerHTML = "";
   };
 
   ns.showSalesPanel = function showSalesPanel(html) {
