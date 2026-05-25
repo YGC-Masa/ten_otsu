@@ -1,9 +1,9 @@
-/* v038_26 Boot Rescue
+/* v038_27 Boot Rescue
    Runs before legacy script.js. Prevents legacy MutationObserver/menu fallback loops from freezing boot.
 */
 (function(){
   "use strict";
-  window.TENOTSU_BOOT_RESCUE_VERSION = "v038_26";
+  window.TENOTSU_BOOT_RESCUE_VERSION = "v038_27";
   window.__TENOTSU_DISABLE_LEGACY_OBSERVERS__ = true;
   window.__TENOTSU_SURFACE_TAKEOVER__ = true;
   window.__TENOTSU_DISABLE_RANDOMSHOW_VISUALS__ = true;
@@ -44,7 +44,7 @@
       if (el.id === "list-panel") el.textContent = "";
     });
   }
-  // v038_26 bootRescue hide legacy menus
+  // v038_27 bootRescue hide legacy menus
 
   function ensureLegacyGuardSatisfied(){
     let list = document.getElementById("list-panel");
