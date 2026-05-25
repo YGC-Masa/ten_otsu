@@ -1,4 +1,4 @@
-/* v039_19 members */
+/* v039_20 members */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -73,6 +73,7 @@
     if (typeof ns.hideSettingsPanel === "function") ns.hideSettingsPanel();
     if (typeof ns.hideShopPanel === "function") ns.hideShopPanel();
     if (typeof ns.hideTownPanel === "function") ns.hideTownPanel();
+    if (typeof ns.hideSalesPanel === "function") ns.hideSalesPanel();
     ns.renderOfficeMenu();
     ns.renderMembersPanel();
     ns.setText("店長", "メンバーを確認します。");

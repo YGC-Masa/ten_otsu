@@ -1,4 +1,4 @@
-/* v039_19 office */
+/* v039_20 office */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -45,7 +45,7 @@
     version.className = "tenotsu-menu-version";
     const versionMain = document.createElement("span");
     versionMain.className = "tenotsu-menu-version-main";
-    versionMain.textContent = ns.VERSION || "v039_19";
+    versionMain.textContent = ns.VERSION || "v039_20";
     const versionSub = document.createElement("span");
     versionSub.className = "tenotsu-menu-version-sub";
     versionSub.textContent = "new core / office";
@@ -88,6 +88,7 @@
     if (typeof ns.hideShopPanel === "function") ns.hideShopPanel();
     if (typeof ns.hideMembersPanel === "function") ns.hideMembersPanel();
     if (typeof ns.hideTownPanel === "function") ns.hideTownPanel();
+    if (typeof ns.hideSalesPanel === "function") ns.hideSalesPanel();
     ns.renderOfficeMenu();
     ns.renderOfficeCharacters();
     if (options.message) ns.setText(options.speaker || "店長", options.message);
@@ -133,7 +134,7 @@
     const html = `
       <div class="tenotsu-settings-title">設定</div>
       <div class="tenotsu-settings-body">
-        <div>現在のバージョン: <strong>${ns.VERSION || "v039_19"}</strong></div>
+        <div>現在のバージョン: <strong>${ns.VERSION || "v039_20"}</strong></div>
         <div>表示やキャッシュの調整を行います。</div>
       </div>
       <div class="tenotsu-settings-actions">
@@ -177,6 +178,7 @@
     if (ns.transitionState && ns.transitionState.running) return;
     if (action !== "settings" && typeof ns.hideSettingsPanel === "function") ns.hideSettingsPanel();
     if (action !== "members" && typeof ns.hideMembersPanel === "function") ns.hideMembersPanel();
+    if (action !== "sales" && typeof ns.hideSalesPanel === "function") ns.hideSalesPanel();
 
     switch(action) {
       case "office":
@@ -190,7 +192,11 @@
         }
         break;
       case "sales":
-        ns.setText("店長", "店舗営業は v039_19 以降でバトル接続予定です。");
+        if (typeof ns.enterSales === "function") {
+          ns.transitionTo ? ns.transitionTo(() => ns.enterSales({ noTransition: true })) : ns.enterSales();
+        } else {
+          ns.setText("店長", "店舗営業機能を読み込めませんでした。sales.js の読み込みを確認してください。");
+        }
         break;
       case "town":
         if (typeof ns.enterTown === "function") {

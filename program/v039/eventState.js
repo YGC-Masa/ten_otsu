@@ -1,4 +1,4 @@
-/* v039_19 event state */
+/* v039_20 event state */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;

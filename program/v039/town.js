@@ -1,4 +1,4 @@
-/* v039_19 town season event tree */
+/* v039_20 town season event tree */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -167,6 +167,7 @@
     if (typeof ns.hideSettingsPanel === "function") ns.hideSettingsPanel();
     if (typeof ns.hideShopPanel === "function") ns.hideShopPanel();
     if (typeof ns.hideMembersPanel === "function") ns.hideMembersPanel();
+    if (typeof ns.hideSalesPanel === "function") ns.hideSalesPanel();
     if (typeof ns.clearCharacters === "function") ns.clearCharacters();
     if (typeof ns.setBackgroundReady === "function") {
       await ns.setBackgroundReady(ns.paths.townBg || ns.paths.officeBg);
