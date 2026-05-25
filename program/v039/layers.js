@@ -1,4 +1,4 @@
-/* v039_09 layers */
+/* v039_10 layers */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -46,11 +46,12 @@
     layers.settings = el("aside", { className: "tenotsu-settings-panel", "aria-label": "設定", hidden: "hidden" }, app);
     layers.members = el("section", { className: "tenotsu-members-panel", "aria-label": "メンバー", hidden: "hidden" }, app);
     layers.town = el("section", { className: "tenotsu-town-panel", "aria-label": "外回り", hidden: "hidden" }, app);
+    layers.story = el("section", { className: "tenotsu-story-layer", "aria-label": "ストーリー", hidden: "hidden" }, app);
     layers.text = el("section", { className: "tenotsu-text-layer", "aria-live": "polite" }, app);
     layers.speaker = el("div", { className: "tenotsu-speaker" }, layers.text);
     layers.message = el("div", { className: "tenotsu-message" }, layers.text);
     layers.fade = el("div", { className: "tenotsu-fade-layer", "data-layer": "fade" }, app);
-    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_09" }, app);
+    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_10" }, app);
 
     ns.layers = layers;
     return layers;
@@ -141,5 +142,18 @@
     if (!layers.town) return;
     layers.town.hidden = true;
     layers.town.innerHTML = "";
+  };
+
+  ns.showStoryLayer = function showStoryLayer(html) {
+    const layers = ns.ensureLayers();
+    layers.story.hidden = false;
+    layers.story.innerHTML = html || "";
+  };
+
+  ns.hideStoryLayer = function hideStoryLayer() {
+    const layers = ns.ensureLayers();
+    if (!layers.story) return;
+    layers.story.hidden = true;
+    layers.story.innerHTML = "";
   };
 })();

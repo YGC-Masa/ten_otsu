@@ -1,4 +1,4 @@
-/* v039_09 event data */
+/* v039_10 event data */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -15,6 +15,7 @@
       events: [
         {
           id: "ai_spring_book_bread",
+          scenario: "scenario/v039/events/ai_spring_book_bread.json",
           title: "桜と読書とパン",
           character: "速水川 藍",
           place: "若葉中央公園",
@@ -26,6 +27,7 @@
         },
         {
           id: "hina_spring_bento",
+          scenario: "scenario/v039/events/hina_spring_bento.json",
           title: "春のお弁当日和",
           character: "星野 緋奈",
           place: "若葉中央公園",

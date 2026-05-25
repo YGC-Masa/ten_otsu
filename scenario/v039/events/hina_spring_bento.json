@@ -1,0 +1,35 @@
+{
+  "id": "hina_spring_bento",
+  "title": "春のお弁当日和",
+  "return": {
+    "mode": "town",
+    "season": "spring"
+  },
+  "steps": [
+    {
+      "bg": "images/assets/bgev/bg_memory_hina_spring_bento.png",
+      "speaker": "店長",
+      "text": "春の外回りの途中、緋奈がお弁当を広げて手を振っていた。"
+    },
+    {
+      "speaker": "星野 緋奈",
+      "text": "店長ー！ こっちこっち！ せっかくだし、一緒に食べよ！"
+    },
+    {
+      "speaker": "店長",
+      "text": "ずいぶん豪華なお弁当だね。"
+    },
+    {
+      "speaker": "星野 緋奈",
+      "text": "へへー、春ってだけでお腹空くじゃん？ だからいっぱい持ってきちゃった！"
+    },
+    {
+      "speaker": "星野 緋奈",
+      "text": "店長もちゃんと食べて、午後も一緒にがんばろ！"
+    },
+    {
+      "speaker": "システム",
+      "text": "物語は続く"
+    }
+  ]
+}

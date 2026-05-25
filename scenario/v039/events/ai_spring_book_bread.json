@@ -1,0 +1,44 @@
+{
+  "id": "ai_spring_book_bread",
+  "title": "桜と読書とパン",
+  "return": {
+    "mode": "town",
+    "season": "spring"
+  },
+  "steps": [
+    {
+      "bg": "images/assets/bgev/bg_memory_ai_spring_book_bread_close.png",
+      "speaker": "店長",
+      "text": "外回りの休憩がてら、若葉中央公園へ立ち寄った。桜の木陰のベンチに、藍ちゃんの姿が見える。"
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "……あ、てんちょー。お疲れ様です。少しだけ、ここで本を読んでいました。"
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "……でも、素敵なパンが多くて、つい買いすぎてしまって。"
+    },
+    {
+      "bg": "images/assets/bgev/bg_memory_ai_spring_book_bread_share.png",
+      "speaker": "速水川 藍",
+      "text": "よかったらどうぞ。"
+    },
+    {
+      "speaker": "店長",
+      "text": "いやいや、藍ちゃんが食べたくて買ったパンをもらえないよ。"
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "……じゃあ、半分こしましょう、私ももう少し食べられますし。"
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "こういう、静かで穏やかな春の時間が……私は、とても好きなんです。"
+    },
+    {
+      "speaker": "システム",
+      "text": "物語は続く"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-/* v039_09 town season event tree */
+/* v039_10 town season event tree */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -124,6 +124,12 @@
 
   ns.startSeasonEvent = function startSeasonEvent(season, event) {
     if (!season || !event) return;
+
+    if (event.scenario && typeof ns.startStory === "function") {
+      ns.startStory(event.scenario, { mode: "town", season: season.id });
+      return;
+    }
+
     ns.setBackground(event.bg || season.bg || ns.paths.townBg || ns.paths.officeBg);
     ns.setText(event.character || "店長", event.startMessage || "このイベントは後続バージョンでstoryPlayerへ接続します。");
 
@@ -132,7 +138,7 @@
       detail.innerHTML += `
         <div class="tenotsu-event-start-note">
           <strong>storyPlayer接続予定：</strong><br>
-          v039_10以降で、ここから対象シナリオJSONとイベントCGを読み込む導線にします。
+          このイベントにはまだシナリオJSONが設定されていません。
         </div>
       `;
     }
