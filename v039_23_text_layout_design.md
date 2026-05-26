@@ -1,8 +1,0 @@
-{
-  "version": "v039_25",
-  "responsive_css_exists": true,
-  "battle_design_doc_exists": true,
-  "battle_text_hidden": true,
-  "result_text_hidden": true,
-  "safe_area_vars": true
-}
