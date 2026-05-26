@@ -1,4 +1,4 @@
-/* v039_22 sales */
+/* v039_23 sales */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
