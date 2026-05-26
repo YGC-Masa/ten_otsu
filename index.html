@@ -9,6 +9,10 @@
   <title>店長お疲れ様です v039_35</title>
   <link rel="icon" href="favicon.ico?v=v039_35" sizes="any" />
   <link rel="stylesheet" href="program/v039/core.css?v=v039_35" />
+
+  <!-- v039_35_force_update_marker -->
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+  <meta http-equiv="Pragma" content="no-cache" />
 </head>
 <body>
   <main id="game-container" aria-label="店長お疲れ様です">
@@ -33,5 +37,22 @@
   <script src="program/v039/town.js?v=v039_35"></script>
   <script src="program/v039/storyPlayer.js?v=v039_35"></script>
   <script src="program/v039/app.js?v=v039_35"></script>
+
+<script id="v039_35_force_update_marker">
+(function(){
+  const BUILD = "v039_35";
+  window.__TENOTSU_FORCE_BUILD__ = BUILD;
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.getRegistrations().then(function(regs){
+      return Promise.all(regs.map(function(reg){ return reg.update ? reg.update().then(function(){return reg;}) : reg; }));
+    }).catch(function(){});
+  }
+  if (window.caches) {
+    caches.keys().then(function(keys){
+      return Promise.all(keys.filter(function(k){ return !String(k).includes("v039-35") && !String(k).includes("v039_35"); }).map(function(k){ return caches.delete(k); }));
+    }).catch(function(){});
+  }
+})();
+</script>
 </body>
 </html>
