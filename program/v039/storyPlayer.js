@@ -1,16 +1,57 @@
-/* v039_30 story player quality */
+/* v039_31 story player quality */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
 
   ns.suppressStoryFadeLayer = function suppressStoryFadeLayer() {
-    if (!ns.layers || !ns.layers.fade) return;
-    if (ns.mode === "story" || document.body.dataset.v039Mode === "story") {
-      ns.layers.fade.style.transition = "none";
-      ns.layers.fade.style.opacity = "0";
-      ns.layers.fade.style.display = "none";
-      ns.layers.fade.style.pointerEvents = "none";
+    const mode = ns.mode || (document.body && document.body.dataset && document.body.dataset.v039Mode);
+    if (!(mode === "story" || (document.body && document.body.classList && document.body.classList.contains("tenotsu-story-active")))) return;
+    const layers = ns.layers || {};
+    const fade = layers.fade || document.querySelector(".tenotsu-fade-layer");
+    if (!fade) return;
+    fade.style.setProperty("transition", "none", "important");
+    fade.style.setProperty("animation", "none", "important");
+    fade.style.setProperty("opacity", "0", "important");
+    fade.style.setProperty("display", "none", "important");
+    fade.style.setProperty("visibility", "hidden", "important");
+    fade.style.setProperty("pointer-events", "none", "important");
+  };
+
+  ns.storySpriteMap = {
+    hina: "images/assets/char/a10501.webp",
+    ai: "images/assets/char/b10501.webp"
+  };
+
+  ns.getStoryForcedCharacters = function getStoryForcedCharacters(step) {
+    const speaker = String((step && step.speaker) || "");
+    const title = String((ns.story && ns.story.data && ns.story.data.title) || "");
+    const list = [];
+    if ((speaker.includes("緋奈") || title.includes("弁当")) && ns.storySpriteMap.hina) {
+      list.push({ side: "left", src: ns.storySpriteMap.hina, zIndex: 1000, left: "7%", opacity: 1 });
     }
+    if ((speaker.includes("藍") || title.includes("読書") || title.includes("しおり") || title.includes("パン")) && ns.storySpriteMap.ai) {
+      list.push({ side: "center", src: ns.storySpriteMap.ai, zIndex: 2000, left: "27%", opacity: 1 });
+    }
+    return list;
+  };
+
+  ns.setStoryBackgroundNoFlash = async function setStoryBackgroundNoFlash(bgPath) {
+    if (!bgPath) return;
+    ns.suppressStoryFadeLayer && ns.suppressStoryFadeLayer();
+    // preload first, then change without clearing current image; prevents black flash on tap.
+    await new Promise((resolve) => {
+      const img = new Image();
+      img.onload = resolve;
+      img.onerror = resolve;
+      img.src = bgPath;
+    });
+    ns.suppressStoryFadeLayer && ns.suppressStoryFadeLayer();
+    if (typeof ns.setBackground === "function") {
+      ns.setBackground(bgPath);
+    } else if (typeof ns.setBackgroundReady === "function") {
+      await ns.setBackgroundReady(bgPath);
+    }
+    ns.suppressStoryFadeLayer && ns.suppressStoryFadeLayer();
   };
 
   ns.story = { active:false, data:null, index:-1, returnInfo:null, isEnding:false, isLoadingStep:false, lastBg:null };
@@ -33,9 +74,9 @@
   ns.prepareStoryFirstBackground = async function prepareStoryFirstBackground(data) {
     const first = data && data.steps && data.steps[0] ? data.steps[0] : null;
     if (first && first.bg) {
-      if (typeof ns.setStoryBackgroundReady === "function") await ns.setStoryBackgroundReady(first.bg);
-      else if (typeof ns.setBackgroundReady === "function") await ns.setBackgroundReady(first.bg);
-      else ns.setBackground(first.bg);
+      if (typeof ns.setStoryBackgroundReady === "function") await ns.setStoryBackgroundNoFlash(first.bg);
+      else if (typeof ns.setBackgroundReady === "function") await ns.setStoryBackgroundNoFlash(first.bg);
+      else await ns.setStoryBackgroundNoFlash(first.bg);
       ns.story.lastBg = first.bg;
     }
   };
@@ -99,7 +140,7 @@
       layer.classList.remove("ending","loading"); layer.style.removeProperty("pointer-events");
       const nextButton = layer.querySelector('[data-story-action="next"]');
       const endButton = layer.querySelector('[data-story-action="end"]');
-      if (nextButton) nextButton.onclick = () => ns.nextStoryStep();
+      if (nextButton) nextButton.onclick = () => { ns.suppressStoryFadeLayer(); ns.nextStoryStep(); };
       if (endButton) endButton.onclick = () => ns.beginStoryEnd();
       document.body.classList.add("tenotsu-story-active");
       await ns.nextStoryStep({ initial:true });
@@ -129,12 +170,12 @@
 
   ns.applyStoryCharacter = function applyStoryCharacter(step) {
     if (!step) return;
-    if (Array.isArray(step.characters) && typeof ns.showStoryCharacters === "function") {
-      ns.showStoryCharacters(step.characters);
+    const forced = typeof ns.getStoryForcedCharacters === "function" ? ns.getStoryForcedCharacters(step) : [];
+    const scenarioChars = Array.isArray(step.characters) ? step.characters : [];
+    const combined = forced.length ? forced : scenarioChars;
+    if (combined.length && typeof ns.showStoryCharacters === "function") {
+      ns.showStoryCharacters(combined);
       return;
-    }
-    if (step.char && typeof ns.showStoryCharacter === "function") {
-      ns.showStoryCharacter(step.char);
     }
   };
 

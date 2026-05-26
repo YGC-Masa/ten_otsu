@@ -1,10 +1,10 @@
-# v039_29 → v039_30 story click no-blackout and sprite force 差分
+# v039_30 → v039_31 story no flash / absolute sprites 差分
 
 ## 修正内容
-- シナリオ進行クリック直後の一瞬ブラックアウト対策として、story mode中のfade layerを強制非表示化。
-- nextStoryStep / applyStoryStep の前後でfade layerを抑止。
-- v038シナリオの characters が NULL の場合、speaker名から藍/緋奈の立ち絵を推定。
-- ストーリー立ち絵レイヤーのz-indexとCSSを強化。
-- 右メニュー位置は中央寄せを維持。
+- ストーリー進行クリック時の黒フラッシュ対策を強化。
+- story mode中はfade layerを強制非表示化。
+- 背景/CG切替をプリロード後のノークリア差し替え方式へ変更。
+- 話者名/タイトルから緋奈・藍の立ち絵を強制推定表示。
+- 緋奈はz-index 1000、藍はz-index 2000で左からずらして表示。
 
 リポジトリ直下へ展開して上書きしてください。

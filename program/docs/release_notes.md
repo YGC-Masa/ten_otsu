@@ -1,12 +1,12 @@
 # Release Notes
 
-## v039_30
+## v039_31
 
 - 事務所モード右6大メニューから `⓪〜⑤` の番号表示を削除。
-- `index.html` のタイトル表示・起動フロー表示のバージョンを v039_30 へ更新。
-- 起動時バージョン変数 `TENOTSU_BOOT_FLOW_VERSION` を v039_30 へ更新。
+- `index.html` のタイトル表示・起動フロー表示のバージョンを v039_31 へ更新。
+- 起動時バージョン変数 `TENOTSU_BOOT_FLOW_VERSION` を v039_31 へ更新。
 - タイトルのランダム立ち絵と下部コメントをキャラ連動化。表示された代表キャラのコメントを優先表示。
-- Service Worker cache name / manifest / battle version を v039_30 へ更新。
+- Service Worker cache name / manifest / battle version を v039_31 へ更新。
 
 
 ## v037_93

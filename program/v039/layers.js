@@ -1,4 +1,4 @@
-/* v039_30 layers */
+/* v039_31 layers */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -54,7 +54,7 @@
     layers.speaker = el("div", { className: "tenotsu-speaker" }, layers.text);
     layers.message = el("div", { className: "tenotsu-message" }, layers.text);
     layers.fade = el("div", { className: "tenotsu-fade-layer", "data-layer": "fade" }, app);
-    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_30" }, app);
+    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_31" }, app);
 
     ns.layers = layers;
     if (!layers.orientation) { layers.orientation = el("div", { className: "tenotsu-orientation-notice" }, app); layers.orientation.innerHTML = "<div>このゲームは横画面でお楽しみください。<br>端末を横向きにしてください。</div>"; }
@@ -206,18 +206,22 @@
   ns.showStoryCharacters = function showStoryCharacters(characters) {
     const layers = ns.ensureLayers();
     if (!layers.storyCharacters) return;
-    const list = Array.isArray(characters) ? characters : [];
+    const list = Array.isArray(characters) ? characters.filter((ch) => ch && ch.src && !String(ch.src).endsWith("/NULL")) : [];
+    layers.storyCharacters.hidden = false;
+    layers.storyCharacters.style.display = "block";
+    layers.storyCharacters.style.visibility = "visible";
+    layers.storyCharacters.style.opacity = "1";
     if (!list.length) {
-      layers.storyCharacters.hidden = true;
       layers.storyCharacters.innerHTML = "";
       return;
     }
-    layers.storyCharacters.hidden = false;
-    layers.storyCharacters.innerHTML = list.map((ch) => {
-      const side = ch.side || "center";
+    layers.storyCharacters.innerHTML = list.map((ch, index) => {
+      const side = ch.side || (index === 0 ? "left" : index === 1 ? "center" : "right");
       const src = ch.src || "";
       const opacity = ch.opacity === undefined ? 1 : ch.opacity;
-      return `<img class="tenotsu-story-standing side-${side}" src="${src}" style="opacity:${opacity}" alt="">`;
+      const z = ch.zIndex || ch.z || (side === "left" ? 1000 : side === "center" ? 1500 : 2000);
+      const left = ch.left || (side === "left" ? "8%" : side === "center" ? "31%" : "52%");
+      return `<img class="tenotsu-story-standing side-${side}" src="${src}" style="left:${left}; z-index:${z}; opacity:${opacity};" alt="">`;
     }).join("");
   };
 

@@ -1,10 +1,10 @@
-# v039_30 cleanup audit plan
+# v039_31 cleanup audit plan
 
 ## 方針
 
 旧フレームワークを削除せず、index.htmlから読み込まないことで隔離します。GitHub上書き後のフルZIPを受け取ってから、残す/削除候補を精査します。
 
-## v039_30で必須
+## v039_31で必須
 
 - index.html
 - program/v039/core.css
