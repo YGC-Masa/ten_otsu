@@ -1,12 +1,25 @@
-// v039_24: legacy cache disabled for new core verification
-self.addEventListener("install", (event) => {
-  self.skipWaiting();
-});
-self.addEventListener("activate", (event) => {
-  event.waitUntil(
-    caches.keys().then((keys) => Promise.all(keys.map((key) => caches.delete(key)))).then(() => self.clients.claim())
-  );
-});
-self.addEventListener("fetch", (event) => {
-  event.respondWith(fetch(event.request));
-});
+{
+  "name": "Ten-Otsu Novel Game v039_25",
+  "short_name": "Ten-Otsu",
+  "start_url": "./index.html?source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#222222",
+  "description": "ノベルゲーム「てんおつ」PWA版 v039_25",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "landscape",
+  "id": "./index.html",
+  "version": "v039_25"
+}
