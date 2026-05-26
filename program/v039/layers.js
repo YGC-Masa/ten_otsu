@@ -1,4 +1,4 @@
-/* v039_29 layers */
+/* v039_30 layers */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -54,7 +54,7 @@
     layers.speaker = el("div", { className: "tenotsu-speaker" }, layers.text);
     layers.message = el("div", { className: "tenotsu-message" }, layers.text);
     layers.fade = el("div", { className: "tenotsu-fade-layer", "data-layer": "fade" }, app);
-    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_29" }, app);
+    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_30" }, app);
 
     ns.layers = layers;
     if (!layers.orientation) { layers.orientation = el("div", { className: "tenotsu-orientation-notice" }, app); layers.orientation.innerHTML = "<div>このゲームは横画面でお楽しみください。<br>端末を横向きにしてください。</div>"; }

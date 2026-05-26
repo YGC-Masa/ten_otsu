@@ -1,7 +1,17 @@
-/* v039_29 story player quality */
+/* v039_30 story player quality */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
+
+  ns.suppressStoryFadeLayer = function suppressStoryFadeLayer() {
+    if (!ns.layers || !ns.layers.fade) return;
+    if (ns.mode === "story" || document.body.dataset.v039Mode === "story") {
+      ns.layers.fade.style.transition = "none";
+      ns.layers.fade.style.opacity = "0";
+      ns.layers.fade.style.display = "none";
+      ns.layers.fade.style.pointerEvents = "none";
+    }
+  };
 
   ns.story = { active:false, data:null, index:-1, returnInfo:null, isEnding:false, isLoadingStep:false, lastBg:null };
 
@@ -46,8 +56,9 @@
   };
 
   ns.fadeForStoryBgChange = async function fadeForStoryBgChange(apply) {
-    // v039_29: no visible fade/black overlay during story background or CG switching.
+    ns.suppressStoryFadeLayer();
     if (typeof apply === "function") await apply();
+    ns.suppressStoryFadeLayer();
   };
 
   ns.setStoryLoading = function setStoryLoading(isLoading) {
@@ -93,6 +104,7 @@
       document.body.classList.add("tenotsu-story-active");
       await ns.nextStoryStep({ initial:true });
       await ns.fadeInForStoryStart();
+      ns.suppressStoryFadeLayer();
     } catch (err) {
       console.error(err);
       ns.setText("システム", "シナリオを読み込めませんでした: " + err.message);
@@ -144,9 +156,11 @@
     }
     ns.applyStoryCharacter(step);
     ns.setText(step.speaker || "", step.text || "");
+    ns.suppressStoryFadeLayer();
   };
 
   ns.nextStoryStep = async function nextStoryStep(options = {}) {
+    ns.suppressStoryFadeLayer();
     if (!ns.story.active || !ns.story.data || ns.story.isEnding || ns.story.isLoadingStep) return;
     const steps = ns.story.data.steps || [];
     const nextIndex = ns.story.index + 1;
@@ -155,6 +169,7 @@
     await ns.applyStoryStep(steps[ns.story.index], options);
     ns.updateStoryUi();
     document.body.classList.remove("tenotsu-story-final-line");
+    ns.suppressStoryFadeLayer();
   };
 
   ns.beginStoryEnd = function beginStoryEnd() {

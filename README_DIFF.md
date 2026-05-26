@@ -1,10 +1,10 @@
-# v039_28 → v039_29 menu/story sprite fix 差分
+# v039_29 → v039_30 story click no-blackout and sprite force 差分
 
 ## 修正内容
-- 右6大メニュー位置を横画面中央寄せへ復旧。
-- 外回りイベントパネルは右メニュー幅を避けるが、右メニュー自体は安定配置へ変更。
-- ストーリー中のクリック待ちアイコン/ヒント表示を完全非表示化し、タップ待ち由来のちらつきを抑制。
-- v038旧ADVシナリオの characters 情報をv039イベント形式へ変換して保持。
-- tenotsu-story-character-layer を追加し、ストーリー中の立ち絵表示を復帰。
+- シナリオ進行クリック直後の一瞬ブラックアウト対策として、story mode中のfade layerを強制非表示化。
+- nextStoryStep / applyStoryStep の前後でfade layerを抑止。
+- v038シナリオの characters が NULL の場合、speaker名から藍/緋奈の立ち絵を推定。
+- ストーリー立ち絵レイヤーのz-indexとCSSを強化。
+- 右メニュー位置は中央寄せを維持。
 
 リポジトリ直下へ展開して上書きしてください。

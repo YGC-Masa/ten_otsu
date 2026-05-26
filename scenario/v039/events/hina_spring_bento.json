@@ -32,27 +32,48 @@
       "text": "ベンチの並ぶ広場へ向かうと、見慣れた赤い髪が目に入った。"
     },
     {
+      "speaker": "緋奈",
+      "text": "あっ、店長！　お疲れさまです！",
       "characters": [
         {
           "side": "center",
           "src": "images/assets/char/a10501.webp",
           "opacity": 1
         }
-      ],
-      "speaker": "緋奈",
-      "text": "あっ、店長！　お疲れさまです！"
+      ]
     },
     {
       "speaker": "店長",
-      "text": "緋奈？　こんなところで会うとは思わなかったな。昼休みか？"
+      "text": "緋奈？　こんなところで会うとは思わなかったな。昼休みか？",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/a10501.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "緋奈",
-      "text": "はいっ。今日は天気がよかったので、外でお弁当にしようかなって。"
+      "text": "はいっ。今日は天気がよかったので、外でお弁当にしようかなって。",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/a10501.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "店長",
-      "text": "なるほど。公園で弁当か、いいな。"
+      "text": "なるほど。公園で弁当か、いいな。",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/a10501.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "",
@@ -60,34 +81,69 @@
     },
     {
       "speaker": "店長",
-      "text": "それ、手作りか？"
+      "text": "それ、手作りか？",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/a10501.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "緋奈",
-      "text": "もちろんです！　あたし、こう見えて料理はけっこうできるんですよ？"
+      "text": "もちろんです！　あたし、こう見えて料理はけっこうできるんですよ？",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/a10501.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "店長",
-      "text": "へえ……うまそうだな。"
+      "text": "へえ……うまそうだな。",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/a10501.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
+      "speaker": "緋奈",
+      "text": "えへへ。じゃあ……一口、食べます？",
       "characters": [
         {
           "side": "center",
           "src": "images/assets/char/a10701.webp",
           "opacity": 1
         }
-      ],
-      "speaker": "緋奈",
-      "text": "えへへ。じゃあ……一口、食べます？"
+      ]
     },
     {
       "speaker": "店長",
-      "text": "いいのか？"
+      "text": "いいのか？",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/a10701.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "緋奈",
-      "text": "はい。小さいハンバーグですけど、味には自信あります！"
+      "text": "はい。小さいハンバーグですけど、味には自信あります！",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/a10501.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "bg": "images/assets/bgev/bg_memory_hina_spring_bento.png",
@@ -96,11 +152,25 @@
     },
     {
       "speaker": "緋奈",
-      "text": "ほら、店長。あーん……です。"
+      "text": "ほら、店長。あーん……です。",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/a10501.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "店長",
-      "text": "……いただきます。"
+      "text": "……いただきます。",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/a10501.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "",
@@ -108,42 +178,70 @@
     },
     {
       "speaker": "店長",
-      "text": "……うまい。これ、本当に緋奈が作ったのか？"
+      "text": "……うまい。これ、本当に緋奈が作ったのか？",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/a10501.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "緋奈",
-      "text": "本当ですよ！？　もう、そこ疑うところじゃないですって！"
+      "text": "本当ですよ！？　もう、そこ疑うところじゃないですって！",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/a10501.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "店長",
-      "text": "いや、素直に驚いた。これはかなりうまい。"
+      "text": "いや、素直に驚いた。これはかなりうまい。",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/a10501.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "緋奈",
-      "text": "えへへ……そこまで言われると、ちょっと照れますね。"
+      "text": "えへへ……そこまで言われると、ちょっと照れますね。",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/a10501.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "bg": "images/assets/bgev/bg_park_spring.png",
+      "speaker": "店長",
+      "text": "この腕前なら、いいお嫁さんになれるよ。",
       "characters": [
         {
           "side": "center",
           "src": "images/assets/char/a10701.webp",
           "opacity": 1
         }
-      ],
-      "speaker": "店長",
-      "text": "この腕前なら、いいお嫁さんになれるよ。"
+      ]
     },
     {
+      "speaker": "緋奈",
+      "text": "へっ……？",
       "characters": [
         {
           "side": "center",
           "src": "images/assets/char/a11201.webp",
           "opacity": 1
         }
-      ],
-      "speaker": "緋奈",
-      "text": "へっ……？"
+      ]
     },
     {
       "speaker": "",
@@ -151,15 +249,36 @@
     },
     {
       "speaker": "緋奈",
-      "text": "あ、あたし。もう戻りますね！"
+      "text": "あ、あたし。もう戻りますね！",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/a10501.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "店長",
-      "text": "え？　もう行くのか？"
+      "text": "え？　もう行くのか？",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/a10501.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "緋奈",
-      "text": "はいっ！　お、お店でまた！"
+      "text": "はいっ！　お、お店でまた！",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/a10501.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "",
@@ -167,7 +286,14 @@
     },
     {
       "speaker": "店長",
-      "text": "……急にどうしたんだろう？"
+      "text": "……急にどうしたんだろう？",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/a10501.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "",
