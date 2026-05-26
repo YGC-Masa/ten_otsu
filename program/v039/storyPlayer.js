@@ -1,4 +1,4 @@
-/* v039_27 story player quality */
+/* v039_28 story player quality */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -46,18 +46,16 @@
   };
 
   ns.fadeForStoryBgChange = async function fadeForStoryBgChange(apply) {
-    // v039_27: disable black flicker during story CG/background changes.
-    // Preload/gate is kept, but the black overlay is not flashed.
+    // v039_28: no visible fade/black overlay during story background or CG switching.
     if (typeof apply === "function") await apply();
   };
 
   ns.setStoryLoading = function setStoryLoading(isLoading) {
+    // v039_28: keep input guard, but do not visually blink the story UI.
     ns.story.isLoadingStep = !!isLoading;
     document.body.classList.toggle("tenotsu-story-loading", !!isLoading);
     const layer = ns.layers && ns.layers.story;
     if (layer) layer.classList.toggle("loading", !!isLoading);
-    const hint = layer ? layer.querySelector(".tenotsu-story-hint") : null;
-    if (hint) hint.textContent = isLoading ? "CG読み込み中…" : "クリック / タップで進む";
     const click = layer ? layer.querySelector("[data-story-action='next']") : null;
     if (click) click.disabled = !!isLoading;
   };
@@ -119,7 +117,7 @@
   };
 
   ns.applyStoryCharacter = function applyStoryCharacter(step) {
-    // v039_27: scenario may contain `char` for future normal-bg + standing-picture flow.
+    // v039_28: scenario may contain `char` for future normal-bg + standing-picture flow.
     // Current core keeps this as a safe no-op unless a character renderer is available.
     if (!step || !step.char) return;
     if (typeof ns.showStoryCharacter === "function") ns.showStoryCharacter(step.char);
