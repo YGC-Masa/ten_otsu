@@ -1,4 +1,4 @@
-/* v039_24 story player quality */
+/* v039_25 story player quality */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -123,6 +123,13 @@
     layer.dataset.storyIndex = String(ns.story.index); layer.dataset.storyTotal = String(steps.length);
   };
 
+  ns.applyStoryCharacter = function applyStoryCharacter(step) {
+    // v039_25: scenario may contain `char` for future normal-bg + standing-picture flow.
+    // Current core keeps this as a safe no-op unless a character renderer is available.
+    if (!step || !step.char) return;
+    if (typeof ns.showStoryCharacter === "function") ns.showStoryCharacter(step.char);
+  };
+
   ns.applyStoryStep = async function applyStoryStep(step, options = {}) {
     if (!step) return;
     const bgChanged = !!(step.bg && step.bg !== ns.story.lastBg);
@@ -139,6 +146,7 @@
         else await applyBg();
       } finally { ns.setStoryLoading(false); }
     }
+    ns.applyStoryCharacter(step);
     ns.setText(step.speaker || "", step.text || "");
   };
 

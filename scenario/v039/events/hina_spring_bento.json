@@ -7,7 +7,8 @@
   },
   "steps": [
     {
-      "bg": "images/assets/bgev/bg_memory_hina_spring_bento.png",
+      "bg": "images/assets/bgev/bg_park_spring.png",
+      "char": "hina",
       "speaker": "店長",
       "text": "春の外回りの途中、若葉中央公園から明るい声が聞こえた。"
     },
@@ -64,10 +65,7 @@
       "text": "うーん……かなり？"
     },
     {
-      "speaker": "店長",
-      "text": "正直でよろしい。"
-    },
-    {
+      "bg": "images/assets/bgev/bg_memory_hina_spring_bento.png",
       "speaker": "星野 緋奈",
       "text": "じゃあごほうびに、からあげ一個あげる！ はい、あーん！"
     },
@@ -102,6 +100,11 @@
     {
       "speaker": "星野 緋奈",
       "text": "ほんと！？ やった！ 店長においしいって言われると、なんかすっごい嬉しい！"
+    },
+    {
+      "bg": "images/assets/bgev/bg_park_spring.png",
+      "speaker": "店長",
+      "text": "食べ終わる頃には、春の風がレジャーシートの端をふわりと揺らしていた。"
     },
     {
       "speaker": "店長",

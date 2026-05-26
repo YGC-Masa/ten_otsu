@@ -1,0 +1,11 @@
+{
+  "version": "v039_25",
+  "town_text_hidden": true,
+  "story_text_visible": true,
+  "ai_uses_generic_bg_first": true,
+  "hina_uses_generic_bg_first": true,
+  "ai_has_highlight_cg": true,
+  "hina_has_highlight_cg": true,
+  "story_char_noop_exists": true,
+  "spring_bg_used": "images/assets/bgev/bg_park_spring.png"
+}
