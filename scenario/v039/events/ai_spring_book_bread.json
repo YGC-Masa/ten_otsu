@@ -32,6 +32,13 @@
       "text": "木陰のベンチに目を向けると、そこに藍ちゃんが座っていた。"
     },
     {
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/b10201.webp",
+          "opacity": 1
+        }
+      ],
       "speaker": "藍",
       "text": "あ……てんちょー。お疲れさまです。"
     },
@@ -114,6 +121,13 @@
     },
     {
       "bg": "images/assets/bgev/bg_park_spring.png",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/b10201.webp",
+          "opacity": 1
+        }
+      ],
       "speaker": "藍",
       "text": "ミステリーです。前作がとても面白かったので、続きが気になってしまって。"
     },
@@ -142,6 +156,13 @@
       "text": "分かる。ああいうのは、気づいた瞬間が気持ちいい。"
     },
     {
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/NULL",
+          "opacity": 1
+        }
+      ],
       "speaker": "",
       "text": "それからしばらく、二人で本の話をした。"
     },

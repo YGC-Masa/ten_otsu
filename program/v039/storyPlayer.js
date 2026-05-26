@@ -1,4 +1,4 @@
-/* v039_28 story player quality */
+/* v039_29 story player quality */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -46,12 +46,11 @@
   };
 
   ns.fadeForStoryBgChange = async function fadeForStoryBgChange(apply) {
-    // v039_28: no visible fade/black overlay during story background or CG switching.
+    // v039_29: no visible fade/black overlay during story background or CG switching.
     if (typeof apply === "function") await apply();
   };
 
   ns.setStoryLoading = function setStoryLoading(isLoading) {
-    // v039_28: keep input guard, but do not visually blink the story UI.
     ns.story.isLoadingStep = !!isLoading;
     document.body.classList.toggle("tenotsu-story-loading", !!isLoading);
     const layer = ns.layers && ns.layers.story;
@@ -117,10 +116,14 @@
   };
 
   ns.applyStoryCharacter = function applyStoryCharacter(step) {
-    // v039_28: scenario may contain `char` for future normal-bg + standing-picture flow.
-    // Current core keeps this as a safe no-op unless a character renderer is available.
-    if (!step || !step.char) return;
-    if (typeof ns.showStoryCharacter === "function") ns.showStoryCharacter(step.char);
+    if (!step) return;
+    if (Array.isArray(step.characters) && typeof ns.showStoryCharacters === "function") {
+      ns.showStoryCharacters(step.characters);
+      return;
+    }
+    if (step.char && typeof ns.showStoryCharacter === "function") {
+      ns.showStoryCharacter(step.char);
+    }
   };
 
   ns.applyStoryStep = async function applyStoryStep(step, options = {}) {
@@ -183,6 +186,7 @@
     ns.story.isEnding = false; ns.story.isLoadingStep = false; ns.story.lastBg = null;
     document.body.classList.remove("tenotsu-story-active","tenotsu-story-final-line","tenotsu-story-loading");
     if (typeof ns.hideStoryLayer === "function") ns.hideStoryLayer();
+    if (typeof ns.hideStoryCharacters === "function") ns.hideStoryCharacters();
     if (ret.mode === "town" && typeof ns.enterTown === "function") {
       ns.enterTown({ noTransition:true });
       if (ret.season && typeof ns.renderSeasonEvents === "function") {

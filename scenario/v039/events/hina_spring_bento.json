@@ -32,6 +32,13 @@
       "text": "ベンチの並ぶ広場へ向かうと、見慣れた赤い髪が目に入った。"
     },
     {
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/a10501.webp",
+          "opacity": 1
+        }
+      ],
       "speaker": "緋奈",
       "text": "あっ、店長！　お疲れさまです！"
     },
@@ -64,6 +71,13 @@
       "text": "へえ……うまそうだな。"
     },
     {
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/a10701.webp",
+          "opacity": 1
+        }
+      ],
       "speaker": "緋奈",
       "text": "えへへ。じゃあ……一口、食べます？"
     },
@@ -110,10 +124,24 @@
     },
     {
       "bg": "images/assets/bgev/bg_park_spring.png",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/a10701.webp",
+          "opacity": 1
+        }
+      ],
       "speaker": "店長",
       "text": "この腕前なら、いいお嫁さんになれるよ。"
     },
     {
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/a11201.webp",
+          "opacity": 1
+        }
+      ],
       "speaker": "緋奈",
       "text": "へっ……？"
     },
