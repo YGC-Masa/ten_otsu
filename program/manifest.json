@@ -1,12 +1,12 @@
 {
-  "name": "Ten-Otsu Novel Game v039_26",
+  "name": "Ten-Otsu Novel Game v039_27",
   "short_name": "Ten-Otsu",
   "start_url": "./index.html?source=pwa",
   "scope": "./",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#222222",
-  "description": "ノベルゲーム「てんおつ」PWA版 v039_26",
+  "description": "ノベルゲーム「てんおつ」PWA版 v039_27",
   "icons": [
     {
       "src": "./icon-192.png",
@@ -21,5 +21,5 @@
   ],
   "orientation": "landscape",
   "id": "./index.html",
-  "version": "v039_26"
+  "version": "v039_27"
 }

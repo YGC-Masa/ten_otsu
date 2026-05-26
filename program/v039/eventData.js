@@ -1,4 +1,4 @@
-/* v039_26 event data */
+/* v039_27 event data */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -16,19 +16,19 @@
         {
           id: "ai_spring_book_bread",
           scenario: "scenario/v039/events/ai_spring_book_bread.json",
-          title: "桜と読書とパン",
+          title: "桜木陰のしおり",
           character: "速水川 藍",
           place: "若葉中央公園",
           status: "接続予定",
           bg: "images/assets/bgev/bg_park_spring.png",
           cg: "images/assets/bgev/bg_memory_ai_spring_book_bread_share.png",
-          summary: "桜の木陰で読書する藍ちゃんと、パンを半分こする春イベント。",
+          summary: "桜の木陰で本を読む藍ちゃんと、パンをきっかけに穏やかに過ごす春の思い出。",
           startMessage: "若葉中央公園へ向かいます。桜の木陰で読書する藍ちゃんに声をかけるイベントを、storyPlayerへ接続予定です。"
         },
         {
           id: "hina_spring_bento",
           scenario: "scenario/v039/events/hina_spring_bento.json",
-          title: "春のお弁当日和",
+          title: "春の公園でのお弁当タイム",
           character: "星野 緋奈",
           place: "若葉中央公園",
           status: "接続予定",

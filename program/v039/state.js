@@ -1,3 +1,3 @@
-(function(){"use strict";window.TENOTSU_V039=window.TENOTSU_V039||{};const ns=window.TENOTSU_V039;ns.VERSION = "v039_26_no_story_flicker_restore_scenario";ns.state={mode:"boot",officeSelection:[],frontCharacter:null,bootedAt:Date.now()};ns.setMode=function(mode){ns.state.mode=mode;document.body.dataset.v039Mode=mode;["boot","office","story","shop","battle","members","settings","town"].forEach(m=>document.body.classList.toggle("v039-mode-"+m,mode===m));};})();
+(function(){"use strict";window.TENOTSU_V039=window.TENOTSU_V039||{};const ns=window.TENOTSU_V039;ns.VERSION = "v039_27_restore_v038_memory_scenarios";ns.state={mode:"boot",officeSelection:[],frontCharacter:null,bootedAt:Date.now()};ns.setMode=function(mode){ns.state.mode=mode;document.body.dataset.v039Mode=mode;["boot","office","story","shop","battle","members","settings","town"].forEach(m=>document.body.classList.toggle("v039-mode-"+m,mode===m));};})();
 
-(function(){ window.TENOTSU_V039.BUILD_LABEL = "v039_26"; })();
+(function(){ window.TENOTSU_V039.BUILD_LABEL = "v039_27"; })();

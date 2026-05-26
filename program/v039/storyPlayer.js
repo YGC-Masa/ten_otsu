@@ -1,4 +1,4 @@
-/* v039_26 story player quality */
+/* v039_27 story player quality */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -46,7 +46,7 @@
   };
 
   ns.fadeForStoryBgChange = async function fadeForStoryBgChange(apply) {
-    // v039_26: disable black flicker during story CG/background changes.
+    // v039_27: disable black flicker during story CG/background changes.
     // Preload/gate is kept, but the black overlay is not flashed.
     if (typeof apply === "function") await apply();
   };
@@ -119,7 +119,7 @@
   };
 
   ns.applyStoryCharacter = function applyStoryCharacter(step) {
-    // v039_26: scenario may contain `char` for future normal-bg + standing-picture flow.
+    // v039_27: scenario may contain `char` for future normal-bg + standing-picture flow.
     // Current core keeps this as a safe no-op unless a character renderer is available.
     if (!step || !step.char) return;
     if (typeof ns.showStoryCharacter === "function") ns.showStoryCharacter(step.char);

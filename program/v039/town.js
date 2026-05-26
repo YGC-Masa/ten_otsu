@@ -1,4 +1,4 @@
-/* v039_26 town season event tree */
+/* v039_27 town season event tree */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
