@@ -1,4 +1,4 @@
-/* v039_34 story player quality */
+/* v039_35 story player quality */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -83,6 +83,26 @@
 
     ns.storyCurrentBackground = bgPath;
     if (ns.suppressStoryFadeLayer) ns.suppressStoryFadeLayer();
+    if (ns.forceMobileStoryVisibility) ns.forceMobileStoryVisibility();
+  };
+
+  ns.forceMobileStoryVisibility = function forceMobileStoryVisibility() {
+    if (!(ns.mode === "story" || document.body.dataset.v039Mode === "story")) return;
+    if (ns.suppressStoryFadeLayer) ns.suppressStoryFadeLayer();
+    const layer = ns.layers && ns.layers.storyCharacters;
+    if (layer) {
+      layer.hidden = false;
+      layer.removeAttribute("hidden");
+      layer.style.setProperty("display", "block", "important");
+      layer.style.setProperty("visibility", "visible", "important");
+      layer.style.setProperty("opacity", "1", "important");
+      layer.style.setProperty("z-index", "4500", "important");
+    }
+    document.querySelectorAll(".tenotsu-story-standing").forEach((img) => {
+      img.style.setProperty("display", "block", "important");
+      img.style.setProperty("visibility", "visible", "important");
+      img.style.setProperty("opacity", "1", "important");
+    });
   };
 
   ns.storyCurrentBackground = "";
@@ -208,6 +228,7 @@
     if (ns.storyCurrentSpriteKey === key) return true;
     ns.storyCurrentSpriteKey = key;
     ns.showStoryCharacters(sprites);
+    if (ns.forceMobileStoryVisibility) ns.forceMobileStoryVisibility();
     return true;
   };
 
@@ -242,6 +263,7 @@
     }
     ns.applyStoryCharacter(step);
     ns.setText(step.speaker || "", step.text || "");
+    if (ns.forceMobileStoryVisibility) ns.forceMobileStoryVisibility();
     ns.suppressStoryFadeLayer();
   };
 

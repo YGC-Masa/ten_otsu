@@ -1,10 +1,11 @@
-# v039_33 → v039_34 story format rewrite / skip same bg 差分
+# v039_34 → v039_35 mobile story css and sprite layer fix 差分
 
 ## 修正内容
-- 緋奈/藍シナリオをv039専用のstory v2フォーマットへリライト。
-- characters ではなく storySprites を使用。
-- 同じ背景画像の場合は背景差し替え処理をスキップ。
-- 同じ立ち絵画像の場合は立ち絵差し替え処理をスキップ。
-- v039_33のBG SWAPデバッグラベル/1.2秒待機/after applyStoryStep付近のフラッシュ処理を削除。
+- モバイル向けstory CSSを重点修正。
+- story modeのfade/blackout/transition/animationをモバイルで強制無効化。
+- 100dvhを優先し、モバイル横画面のviewport揺れを軽減。
+- story character layerをモバイルでも強制表示。
+- hidden属性をJS/CSS両方で解除。
+- forceMobileStoryVisibility() を追加し、背景/立ち絵/テキスト更新後に表示状態を再固定。
 
 リポジトリ直下へ展開して上書きしてください。

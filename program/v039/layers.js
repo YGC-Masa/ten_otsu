@@ -1,4 +1,4 @@
-/* v039_34 layers */
+/* v039_35 layers */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -54,7 +54,7 @@
     layers.speaker = el("div", { className: "tenotsu-speaker" }, layers.text);
     layers.message = el("div", { className: "tenotsu-message" }, layers.text);
     layers.fade = el("div", { className: "tenotsu-fade-layer", "data-layer": "fade" }, app);
-    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_34" }, app);
+    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_35" }, app);
 
     ns.layers = layers;
     if (!layers.orientation) { layers.orientation = el("div", { className: "tenotsu-orientation-notice" }, app); layers.orientation.innerHTML = "<div>このゲームは横画面でお楽しみください。<br>端末を横向きにしてください。</div>"; }
@@ -220,7 +220,7 @@
     const a = ns.storyProbeAssets || {};
     layers.storyDebug.style.display = "block";
     layers.storyDebug.innerHTML = `
-      <div class="probe-label probe-label-main">SURFACE PROBE v039_34: ${reason || "active"}</div>
+      <div class="probe-label probe-label-main">SURFACE PROBE v039_35: ${reason || "active"}</div>
       <img class="probe-char probe-z0500" src="${a.yukino}" alt="">
       <img class="probe-char probe-z1000" src="${a.hina}" alt="">
       <img class="probe-char probe-z2000" src="${a.ai}" alt="">
@@ -265,21 +265,26 @@
     const layers = ns.ensureLayers();
     if (!layers.storyCharacters) return;
     const list = Array.isArray(characters) ? characters.filter((ch) => ch && ch.src && !String(ch.src).endsWith("/NULL")) : [];
+
     layers.storyCharacters.hidden = false;
-    layers.storyCharacters.style.display = "block";
-    layers.storyCharacters.style.visibility = "visible";
-    layers.storyCharacters.style.opacity = "1";
+    layers.storyCharacters.removeAttribute("hidden");
+    layers.storyCharacters.style.setProperty("display", "block", "important");
+    layers.storyCharacters.style.setProperty("visibility", "visible", "important");
+    layers.storyCharacters.style.setProperty("opacity", "1", "important");
+    layers.storyCharacters.style.setProperty("z-index", "4500", "important");
+
     if (!list.length) {
       layers.storyCharacters.innerHTML = "";
       return;
     }
+
     layers.storyCharacters.innerHTML = list.map((ch, index) => {
       const side = ch.side || (index === 0 ? "left" : index === 1 ? "center" : "right");
       const src = ch.src || "";
       const opacity = ch.opacity === undefined ? 1 : ch.opacity;
-      const z = ch.zIndex || ch.z || (side === "left" ? 1000 : side === "center" ? 2000 : 3000);
-      const left = ch.left || (side === "left" ? "7%" : side === "center" ? "27%" : "47%");
-      return `<img class="tenotsu-story-standing side-${side}" src="${src}" style="left:${left}; z-index:${z}; opacity:${opacity};" alt="">`;
+      const z = ch.zIndex || ch.z || (side === "left" ? 4600 : side === "center" ? 4700 : 4800);
+      const left = ch.left || (side === "left" ? "4%" : side === "center" ? "24%" : "44%");
+      return `<img class="tenotsu-story-standing side-${side}" src="${src}" style="left:${left}; z-index:${z}; opacity:${opacity}; display:block; visibility:visible;" alt="">`;
     }).join("");
   };
 
