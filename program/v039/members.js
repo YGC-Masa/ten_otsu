@@ -1,4 +1,4 @@
-/* v039_23 members */
+/* v039_24 members */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;

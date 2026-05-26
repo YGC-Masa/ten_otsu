@@ -1,4 +1,4 @@
-/* v039_23 sales */
+/* v039_24 sales */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -99,6 +99,33 @@
     if (selectedId) selectMode(selectedId);
   };
 
+
+  ns.deckBattleCustomers = [
+    { id: "tv_popcorn", name: "テレビポップコーン星人", need: "映像", weak: "tv" },
+    { id: "dryer_choco", name: "チョコドライヤ星人", need: "美容・ドライヤー", weak: "dryer" },
+    { id: "pc_pizza", name: "パソコンピザ星人", need: "PC相談", weak: "pc" },
+    { id: "phone_candy", name: "スマホキャンディ星人", need: "スマホ相談", weak: "phone" },
+    { id: "audio_gummy", name: "イヤホングミ星人", need: "オーディオ", weak: "audio" }
+  ];
+
+  ns.deckBattleStaff = [
+    { id: "hina", name: "緋奈", attr: "tv", power: 120, skill: "明るい映像案内" },
+    { id: "ai", name: "藍", attr: "dryer", power: 115, skill: "丁寧なドライヤー案内" },
+    { id: "midori", name: "翠", attr: "pc", power: 130, skill: "的確なPC提案" },
+    { id: "kogane", name: "こがね", attr: "phone", power: 125, skill: "スマホ接客トーク" },
+    { id: "kohaku", name: "琥珀", attr: "audio", power: 118, skill: "イヤホン聞き比べ" }
+  ];
+
+  ns.pickDeckBattleCustomers = function pickDeckBattleCustomers(count = 3) {
+    const list = (ns.deckBattleCustomers || []).slice();
+    const out = [];
+    while (list.length && out.length < count) {
+      const index = Math.floor(Math.random() * list.length);
+      out.push(Object.assign({}, list.splice(index, 1)[0]));
+    }
+    return out;
+  };
+
   ns.startSalesMode = function startSalesMode(mode) {
     if (!mode) return;
     ns.openSalesStartDialog(mode);
@@ -135,6 +162,7 @@
   ns.enterBattleMockDirect = async function enterBattleMockDirect(mode) {
     ns.setMode("battle");
     ns.ensureLayers();
+
     if (typeof ns.setBackgroundReady === "function") await ns.setBackgroundReady(ns.paths.officeBg);
     else ns.setBackground(ns.paths.officeBg);
 
@@ -145,32 +173,109 @@
     if (typeof ns.hideTownPanel === "function") ns.hideTownPanel();
     if (typeof ns.clearCharacters === "function") ns.clearCharacters();
 
-    const seconds = mode.duration || 30;
+    ns.state.currentBattle = {
+      modeId: mode.id, label: mode.label, score: 0, served: 0, combo: 0, maxCombo: 0,
+      selectedCustomer: null, startedAt: Date.now(),
+      customers: ns.pickDeckBattleCustomers(3),
+      staff: (ns.deckBattleStaff || []).slice(0, 5)
+    };
+
+    ns.renderDeckBattle(mode);
+    ns.setText("店長", "デッキ接客バトル試作です。家電星人を選び、相性の良い店員カードで接客しましょう。");
+  };
+
+  ns.renderDeckBattle = function renderDeckBattle(mode) {
+    const battle = ns.state.currentBattle;
+    const customers = battle.customers || [];
+    const staff = battle.staff || [];
+
+    const customerCards = customers.map((enemy, index) => `
+      <button type="button" class="tenotsu-deck-enemy ${battle.selectedCustomer === index ? "selected" : ""}" data-enemy-index="${index}">
+        <span class="enemy-name">${enemy.name}</span>
+        <span class="enemy-need">要望：${enemy.need}</span>
+      </button>`).join("");
+
+    const staffCards = staff.map((card) => `
+      <button type="button" class="tenotsu-deck-staff" data-staff-id="${card.id}">
+        <span class="staff-name">${card.name}</span>
+        <span class="staff-skill">${card.skill}</span>
+        <span class="staff-power">営業力 ${card.power}</span>
+      </button>`).join("");
+
     ns.showBattlePanel(`
       <div class="tenotsu-battle-title">${mode.label}</div>
-      <div class="tenotsu-battle-subtitle">仮バトル画面</div>
-      <div class="tenotsu-battle-stage">
-        <div class="tenotsu-battle-customer">家電星人</div>
-        <div class="tenotsu-battle-request">「おすすめの商品を教えてほしいです」</div>
-        <div class="tenotsu-battle-timer" data-battle-timer>${seconds}</div>
+      <div class="tenotsu-battle-subtitle">デッキ接客バトル試作</div>
+      <div class="tenotsu-deck-status">
+        <div>スコア <strong>${battle.score}</strong></div>
+        <div>接客数 <strong>${battle.served}</strong></div>
+        <div>コンボ <strong>${battle.combo}</strong></div>
+      </div>
+      <div class="tenotsu-deck-battle-field">
+        <div class="tenotsu-deck-enemy-row">${customerCards}</div>
+        <div class="tenotsu-deck-help">①家電星人を選択 → ②店員カードで接客</div>
+        <div class="tenotsu-deck-staff-row">${staffCards}</div>
       </div>
       <div class="tenotsu-battle-actions">
-        <button type="button" class="tenotsu-battle-button" data-battle-action="good">接客成功</button>
-        <button type="button" class="tenotsu-battle-button" data-battle-action="normal">ふつうに接客</button>
+        <button type="button" class="tenotsu-battle-button" data-battle-action="change">選択星人をチェンジ</button>
         <button type="button" class="tenotsu-battle-button danger" data-battle-action="end">営業終了</button>
       </div>`);
-    ns.state.currentBattle = { modeId: mode.id, label: mode.label, score: 0, served: 0, startedAt: Date.now() };
-    ns.setText("店長", "営業を開始しました。仮バトル画面です。");
+
     const panel = ns.layers.battle;
-    panel.querySelector('[data-battle-action="good"]').addEventListener("click", () => {
-      ns.state.currentBattle.score += 120; ns.state.currentBattle.served += 1;
-      ns.setText("店長", `接客成功！ スコア ${ns.state.currentBattle.score}`);
+    panel.querySelectorAll("[data-enemy-index]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        battle.selectedCustomer = Number(btn.dataset.enemyIndex);
+        ns.renderDeckBattle(mode);
+        const enemy = battle.customers[battle.selectedCustomer];
+        ns.setText("店長", `${enemy.name}を接客対象にしました。相性の良い店員を選びましょう。`);
+      });
     });
-    panel.querySelector('[data-battle-action="normal"]').addEventListener("click", () => {
-      ns.state.currentBattle.score += 60; ns.state.currentBattle.served += 1;
-      ns.setText("店長", `接客しました。スコア ${ns.state.currentBattle.score}`);
+    panel.querySelectorAll("[data-staff-id]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const card = battle.staff.find((item) => item.id === btn.dataset.staffId);
+        ns.resolveDeckService(mode, card);
+      });
     });
+    panel.querySelector('[data-battle-action="change"]').addEventListener("click", () => ns.changeDeckCustomer(mode));
     panel.querySelector('[data-battle-action="end"]').addEventListener("click", () => ns.showSalesResult(mode));
+  };
+
+  ns.resolveDeckService = function resolveDeckService(mode, card) {
+    const battle = ns.state.currentBattle;
+    if (!battle || !card) return;
+    if (battle.selectedCustomer === null || battle.selectedCustomer === undefined) {
+      ns.setText("店長", "先に接客する家電星人を選んでください。");
+      return;
+    }
+    const enemy = battle.customers[battle.selectedCustomer];
+    const matched = card.attr === enemy.weak;
+    const comboBonus = Math.min(battle.combo * 10, 80);
+    const gain = matched ? card.power + 80 + comboBonus : Math.floor(card.power * 0.45);
+    battle.score += gain;
+    battle.served += 1;
+    battle.combo = matched ? battle.combo + 1 : 0;
+    battle.maxCombo = Math.max(battle.maxCombo || 0, battle.combo);
+
+    const pool = ns.deckBattleCustomers || [];
+    battle.customers.splice(battle.selectedCustomer, 1, Object.assign({}, pool[Math.floor(Math.random() * pool.length)]));
+    battle.selectedCustomer = null;
+    ns.renderDeckBattle(mode);
+    ns.setText("店長", matched ? `${card.name}の${card.skill}が刺さりました！ +${gain}点` : `${card.name}で接客しましたが相性はいまひとつ。 +${gain}点`);
+  };
+
+  ns.changeDeckCustomer = function changeDeckCustomer(mode) {
+    const battle = ns.state.currentBattle;
+    if (!battle) return;
+    if (battle.selectedCustomer === null || battle.selectedCustomer === undefined) {
+      ns.setText("店長", "チェンジする家電星人を先に選んでください。");
+      return;
+    }
+    const pool = ns.deckBattleCustomers || [];
+    battle.customers.splice(battle.selectedCustomer, 1, Object.assign({}, pool[Math.floor(Math.random() * pool.length)]));
+    battle.score = Math.max(0, battle.score - 30);
+    battle.combo = 0;
+    battle.selectedCustomer = null;
+    ns.renderDeckBattle(mode);
+    ns.setText("店長", "家電星人をチェンジしました。ペナルティ -30点、コンボリセットです。");
   };
 
   ns.showSalesResult = async function showSalesResult(mode) {
@@ -190,6 +295,7 @@
       <div class="tenotsu-result-grid">
         <div><span>スコア</span><strong>${battle.score}</strong></div>
         <div><span>接客数</span><strong>${battle.served}</strong></div>
+        <div><span>最大コンボ</span><strong>${battle.maxCombo || 0}</strong></div>
         <div><span>経過</span><strong>${elapsed}秒</strong></div>
         <div><span>評価</span><strong>${rank}</strong></div>
       </div>

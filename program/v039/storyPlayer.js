@@ -1,4 +1,4 @@
-/* v039_23 story player quality */
+/* v039_24 story player quality */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
