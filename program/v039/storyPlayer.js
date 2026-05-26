@@ -1,4 +1,4 @@
-/* v039_31 story player quality */
+/* v039_32 story player quality */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -100,6 +100,7 @@
     ns.suppressStoryFadeLayer();
     if (typeof apply === "function") await apply();
     ns.suppressStoryFadeLayer();
+    if (typeof ns.warnIfStoryFadeVisible === "function") ns.warnIfStoryFadeVisible("applyStoryStep end");
   };
 
   ns.setStoryLoading = function setStoryLoading(isLoading) {
@@ -116,6 +117,7 @@
       ns.ensureLayers();
       await ns.fadeOutForStoryStart();
       ns.setMode("story"); ns.resetStoryRuntime(); ns.setMode("story");
+      if (typeof ns.showStorySurfaceProbe === "function") ns.showStorySurfaceProbe("startStory after setMode");
       if (typeof ns.hideSettingsPanel === "function") ns.hideSettingsPanel();
       if (typeof ns.hideShopPanel === "function") ns.hideShopPanel();
       if (typeof ns.hideMembersPanel === "function") ns.hideMembersPanel();
@@ -140,7 +142,7 @@
       layer.classList.remove("ending","loading"); layer.style.removeProperty("pointer-events");
       const nextButton = layer.querySelector('[data-story-action="next"]');
       const endButton = layer.querySelector('[data-story-action="end"]');
-      if (nextButton) nextButton.onclick = () => { ns.suppressStoryFadeLayer(); ns.nextStoryStep(); };
+      if (nextButton) nextButton.onclick = () => { if (typeof ns.flashStoryDebugLabel === "function") ns.flashStoryDebugLabel("CLICK nextButton before nextStoryStep", "click"); ns.suppressStoryFadeLayer(); ns.nextStoryStep(); };
       if (endButton) endButton.onclick = () => ns.beginStoryEnd();
       document.body.classList.add("tenotsu-story-active");
       await ns.nextStoryStep({ initial:true });
@@ -173,6 +175,7 @@
     const forced = typeof ns.getStoryForcedCharacters === "function" ? ns.getStoryForcedCharacters(step) : [];
     const scenarioChars = Array.isArray(step.characters) ? step.characters : [];
     const combined = forced.length ? forced : scenarioChars;
+    if (typeof ns.showStorySurfaceProbe === "function") ns.showStorySurfaceProbe("applyStoryCharacter speaker=" + (step.speaker || ""));
     if (combined.length && typeof ns.showStoryCharacters === "function") {
       ns.showStoryCharacters(combined);
       return;
@@ -182,35 +185,48 @@
   ns.applyStoryStep = async function applyStoryStep(step, options = {}) {
     if (!step) return;
     const bgChanged = !!(step.bg && step.bg !== ns.story.lastBg);
+    if (typeof ns.flashStoryDebugLabel === "function") ns.flashStoryDebugLabel("applyStoryStep ENTER speaker=" + (step.speaker || ""), "step");
     if (step.bg) {
       ns.setStoryLoading(true);
       try {
         const applyBg = async () => {
+          if (typeof ns.flashStoryDebugLabel === "function") ns.flashStoryDebugLabel("applyBg BEFORE " + step.bg, "bg-before");
           if (typeof ns.setStoryBackgroundReady === "function") await ns.setStoryBackgroundReady(step.bg);
           else if (typeof ns.setBackgroundReady === "function") await ns.setBackgroundReady(step.bg);
           else ns.setBackground(step.bg);
           ns.story.lastBg = step.bg;
+          if (typeof ns.flashStoryDebugLabel === "function") ns.flashStoryDebugLabel("applyBg AFTER " + step.bg, "bg-after");
+          if (typeof ns.warnIfStoryFadeVisible === "function") ns.warnIfStoryFadeVisible("applyBg after set");
         };
         if (bgChanged && !options.initial) await ns.fadeForStoryBgChange(applyBg);
         else await applyBg();
       } finally { ns.setStoryLoading(false); }
     }
+    if (typeof ns.flashStoryDebugLabel === "function") ns.flashStoryDebugLabel("before applyStoryCharacter", "char-before");
     ns.applyStoryCharacter(step);
+    if (typeof ns.flashStoryDebugLabel === "function") ns.flashStoryDebugLabel("before setText", "text-before");
     ns.setText(step.speaker || "", step.text || "");
     ns.suppressStoryFadeLayer();
+    if (typeof ns.warnIfStoryFadeVisible === "function") ns.warnIfStoryFadeVisible("applyStoryStep end");
   };
 
   ns.nextStoryStep = async function nextStoryStep(options = {}) {
+    if (typeof ns.flashStoryDebugLabel === "function") ns.flashStoryDebugLabel("nextStoryStep ENTER", "click");
     ns.suppressStoryFadeLayer();
+    if (typeof ns.warnIfStoryFadeVisible === "function") ns.warnIfStoryFadeVisible("nextStoryStep after suppress");
     if (!ns.story.active || !ns.story.data || ns.story.isEnding || ns.story.isLoadingStep) return;
     const steps = ns.story.data.steps || [];
     const nextIndex = ns.story.index + 1;
     if (nextIndex >= steps.length) { ns.beginStoryEnd(); return; }
     ns.story.index = nextIndex;
+    if (typeof ns.flashStoryDebugLabel === "function") ns.flashStoryDebugLabel("before applyStoryStep index " + ns.story.index, "before");
     await ns.applyStoryStep(steps[ns.story.index], options);
+    if (typeof ns.flashStoryDebugLabel === "function") ns.flashStoryDebugLabel("after applyStoryStep index " + ns.story.index, "after");
+    if (typeof ns.warnIfStoryFadeVisible === "function") ns.warnIfStoryFadeVisible("after applyStoryStep");
     ns.updateStoryUi();
     document.body.classList.remove("tenotsu-story-final-line");
     ns.suppressStoryFadeLayer();
+    if (typeof ns.warnIfStoryFadeVisible === "function") ns.warnIfStoryFadeVisible("applyStoryStep end");
   };
 
   ns.beginStoryEnd = function beginStoryEnd() {

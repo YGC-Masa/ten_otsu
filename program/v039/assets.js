@@ -1,4 +1,4 @@
-/* v039_31 assets */
+/* v039_32 assets */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;

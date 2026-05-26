@@ -1,4 +1,4 @@
-/* v039_31 layers */
+/* v039_32 layers */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -54,10 +54,11 @@
     layers.speaker = el("div", { className: "tenotsu-speaker" }, layers.text);
     layers.message = el("div", { className: "tenotsu-message" }, layers.text);
     layers.fade = el("div", { className: "tenotsu-fade-layer", "data-layer": "fade" }, app);
-    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_31" }, app);
+    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_32" }, app);
 
     ns.layers = layers;
     if (!layers.orientation) { layers.orientation = el("div", { className: "tenotsu-orientation-notice" }, app); layers.orientation.innerHTML = "<div>このゲームは横画面でお楽しみください。<br>端末を横向きにしてください。</div>"; }
+    if (!layers.storyDebug) layers.storyDebug = el("div", { className: "tenotsu-story-debug-layer" }, app);
     return layers;
   };
 
@@ -201,6 +202,63 @@
     if (!layers.town) return;
     layers.town.hidden = true;
     layers.town.innerHTML = "";
+  };
+
+  ns.storyProbeAssets = {
+    hina: "images/assets/char/a10501.webp",
+    ai: "images/assets/char/b10501.webp",
+    midori: "images/assets/char/c10501.webp",
+    kogane: "images/assets/char/d10501.webp",
+    kohaku: "images/assets/char/e10501.webp",
+    yukino: "images/assets/char/g10501.webp"
+  };
+
+  ns.showStorySurfaceProbe = function showStorySurfaceProbe(reason) {
+    const layers = ns.ensureLayers();
+    if (!layers.storyDebug) return;
+    if (!(ns.mode === "story" || document.body.dataset.v039Mode === "story")) return;
+    const a = ns.storyProbeAssets || {};
+    layers.storyDebug.style.display = "block";
+    layers.storyDebug.innerHTML = `
+      <div class="probe-label probe-label-main">SURFACE PROBE v039_32: ${reason || "active"}</div>
+      <img class="probe-char probe-z0500" src="${a.yukino}" alt="">
+      <img class="probe-char probe-z1000" src="${a.hina}" alt="">
+      <img class="probe-char probe-z2000" src="${a.ai}" alt="">
+      <img class="probe-char probe-z3000" src="${a.midori}" alt="">
+      <img class="probe-char probe-z4000" src="${a.kogane}" alt="">
+      <img class="probe-char probe-z6000" src="${a.kohaku}" alt="">
+      <div class="probe-chip probe-chip-0500">z500 雪乃/低層</div>
+      <div class="probe-chip probe-chip-1000">z1000 緋奈</div>
+      <div class="probe-chip probe-chip-2000">z2000 藍</div>
+      <div class="probe-chip probe-chip-3000">z3000 翠</div>
+      <div class="probe-chip probe-chip-4000">z4000 こがね</div>
+      <div class="probe-chip probe-chip-6000">z6000 琥珀</div>
+    `;
+  };
+
+  ns.flashStoryDebugLabel = function flashStoryDebugLabel(label, kind) {
+    const layers = ns.ensureLayers();
+    if (!layers.storyDebug) return;
+    if (!(ns.mode === "story" || document.body.dataset.v039Mode === "story")) return;
+    ns.showStorySurfaceProbe(label);
+    const el = document.createElement("div");
+    el.className = "probe-flash " + (kind || "");
+    el.textContent = label;
+    layers.storyDebug.appendChild(el);
+    setTimeout(() => {
+      try { el.remove(); } catch (_) {}
+    }, 900);
+  };
+
+  ns.warnIfStoryFadeVisible = function warnIfStoryFadeVisible(label) {
+    if (!(ns.mode === "story" || document.body.dataset.v039Mode === "story")) return;
+    const fade = (ns.layers && ns.layers.fade) || document.querySelector(".tenotsu-fade-layer");
+    if (!fade) return;
+    const cs = getComputedStyle(fade);
+    const visible = cs.display !== "none" && cs.visibility !== "hidden" && Number(cs.opacity || 0) > 0.01;
+    if (visible) {
+      ns.flashStoryDebugLabel("FADE VISIBLE: " + (label || ""), "danger");
+    }
   };
 
   ns.showStoryCharacters = function showStoryCharacters(characters) {

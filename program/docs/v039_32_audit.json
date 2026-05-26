@@ -1,0 +1,17 @@
+{
+  "version": "v039_32",
+  "probe_assets": {
+    "hina": "images/assets/char/a10501.webp",
+    "ai": "images/assets/char/b10501.webp",
+    "midori": "images/assets/char/c10501.webp",
+    "kogane": "images/assets/char/d10501.webp",
+    "kohaku": "images/assets/char/e10501.webp",
+    "yukino": "images/assets/char/g10501.webp"
+  },
+  "debug_layer_css": true,
+  "debug_layer_js": true,
+  "flash_labels": true,
+  "fade_visible_warning": true,
+  "next_step_label": true,
+  "apply_bg_labels": true
+}
