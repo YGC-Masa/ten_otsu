@@ -1,8 +1,0 @@
-{
-  "version": "v039_25",
-  "sales_js_loaded_by_index": true,
-  "enterSales_exists": true,
-  "office_sales_branch_uses_enterSales": true,
-  "sales_layer_exists": true,
-  "sales_css_exists": true
-}
