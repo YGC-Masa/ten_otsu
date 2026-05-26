@@ -1,4 +1,4 @@
-/* v039_25 story player quality */
+/* v039_26 story player quality */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -46,14 +46,9 @@
   };
 
   ns.fadeForStoryBgChange = async function fadeForStoryBgChange(apply) {
-    const layers = ns.layers || ns.ensureLayers();
-    layers.fade.style.display = "block"; layers.fade.style.pointerEvents = "auto"; layers.fade.style.transition = "opacity 180ms ease"; layers.fade.style.opacity = "0";
-    await new Promise((resolve) => requestAnimationFrame(() => { layers.fade.style.opacity = "0.42"; setTimeout(resolve, 200); }));
+    // v039_26: disable black flicker during story CG/background changes.
+    // Preload/gate is kept, but the black overlay is not flashed.
     if (typeof apply === "function") await apply();
-    layers.fade.style.transition = "opacity 220ms ease";
-    requestAnimationFrame(() => { layers.fade.style.opacity = "0"; });
-    await new Promise((resolve) => setTimeout(resolve, 250));
-    layers.fade.style.display = "none"; layers.fade.style.pointerEvents = "none"; layers.fade.style.transition = "";
   };
 
   ns.setStoryLoading = function setStoryLoading(isLoading) {
@@ -124,7 +119,7 @@
   };
 
   ns.applyStoryCharacter = function applyStoryCharacter(step) {
-    // v039_25: scenario may contain `char` for future normal-bg + standing-picture flow.
+    // v039_26: scenario may contain `char` for future normal-bg + standing-picture flow.
     // Current core keeps this as a safe no-op unless a character renderer is available.
     if (!step || !step.char) return;
     if (typeof ns.showStoryCharacter === "function") ns.showStoryCharacter(step.char);

@@ -1,4 +1,4 @@
-/* v039_25 office */
+/* v039_26 office */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -45,7 +45,7 @@
     version.className = "tenotsu-menu-version";
     const versionMain = document.createElement("span");
     versionMain.className = "tenotsu-menu-version-main";
-    versionMain.textContent = ns.VERSION || "v039_25";
+    versionMain.textContent = ns.VERSION || "v039_26";
     const versionSub = document.createElement("span");
     versionSub.className = "tenotsu-menu-version-sub";
     versionSub.textContent = "new core / office";
@@ -134,7 +134,7 @@
     const html = `
       <div class="tenotsu-settings-title">設定</div>
       <div class="tenotsu-settings-body">
-        <div>現在のバージョン: <strong>${ns.VERSION || "v039_25"}</strong></div>
+        <div>現在のバージョン: <strong>${ns.VERSION || "v039_26"}</strong></div>
         <div>表示やキャッシュの調整を行います。</div>
       </div>
       <div class="tenotsu-settings-actions">
