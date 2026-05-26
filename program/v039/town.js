@@ -1,4 +1,4 @@
-/* v039_32 town season event tree */
+/* v039_33 town season event tree */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -107,7 +107,7 @@
         <button type="button" class="tenotsu-event-start" data-event-start="${event.id}">イベント開始</button>
       `;
 
-      // v039_32: event summary is shown in detail panel; bottom text is hidden in town mode.
+      // v039_33: event summary is shown in detail panel; bottom text is hidden in town mode.
 
       const start = detail.querySelector("[data-event-start]");
       if (start) start.addEventListener("click", () => ns.startSeasonEvent(season, event));

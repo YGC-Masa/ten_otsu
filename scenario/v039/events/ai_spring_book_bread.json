@@ -9,27 +9,81 @@
     {
       "bg": "images/assets/bgev/bg_park_spring.png",
       "speaker": "",
-      "text": "【思い出ストーリー】桜木陰のしおり"
+      "text": "【思い出ストーリー】桜木陰のしおり",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/b10501.webp",
+          "zIndex": 2000,
+          "left": "27%",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "店長",
-      "text": "外回りの途中、少しだけ時間が空いた。"
+      "text": "外回りの途中、少しだけ時間が空いた。",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/b10501.webp",
+          "zIndex": 2000,
+          "left": "27%",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "店長",
-      "text": "若葉中央公園も近いし、休憩がてら寄っていくか。"
+      "text": "若葉中央公園も近いし、休憩がてら寄っていくか。",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/b10501.webp",
+          "zIndex": 2000,
+          "left": "27%",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "",
-      "text": "春の昼下がり。公園には、やわらかな風が吹いていた。"
+      "text": "春の昼下がり。公園には、やわらかな風が吹いていた。",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/b10501.webp",
+          "zIndex": 2000,
+          "left": "27%",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "",
-      "text": "桜の花びらが、舗道の上をゆっくり滑っていく。"
+      "text": "桜の花びらが、舗道の上をゆっくり滑っていく。",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/b10501.webp",
+          "zIndex": 2000,
+          "left": "27%",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "",
-      "text": "木陰のベンチに目を向けると、そこに藍ちゃんが座っていた。"
+      "text": "木陰のベンチに目を向けると、そこに藍ちゃんが座っていた。",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/b10501.webp",
+          "zIndex": 2000,
+          "left": "27%",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "藍",
@@ -66,7 +120,16 @@
     },
     {
       "speaker": "",
-      "text": "藍ちゃんの手元には一冊の文庫本。隣には、パン屋の紙袋が置かれていた。"
+      "text": "藍ちゃんの手元には一冊の文庫本。隣には、パン屋の紙袋が置かれていた。",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/b10501.webp",
+          "zIndex": 2000,
+          "left": "27%",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "店長",
@@ -126,7 +189,16 @@
     {
       "bg": "images/assets/bgev/bg_memory_ai_spring_book_bread_share.png",
       "speaker": "",
-      "text": "藍ちゃんは紙袋から、桜の形をした淡いピンクのパンを取り出し、こちらへそっと差し出した。"
+      "text": "藍ちゃんは紙袋から、桜の形をした淡いピンクのパンを取り出し、こちらへそっと差し出した。",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/b10501.webp",
+          "zIndex": 2000,
+          "left": "27%",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "店長",
@@ -163,11 +235,29 @@
     },
     {
       "speaker": "",
-      "text": "藍ちゃんは小さくうなずくと、パンを丁寧に分けて半分を店長へ差し出した。"
+      "text": "藍ちゃんは小さくうなずくと、パンを丁寧に分けて半分を店長へ差し出した。",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/b10501.webp",
+          "zIndex": 2000,
+          "left": "27%",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "",
-      "text": "桜の香りを思わせるやさしい甘さが、春風と一緒にふわりと広がる。"
+      "text": "桜の香りを思わせるやさしい甘さが、春風と一緒にふわりと広がる。",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/b10501.webp",
+          "zIndex": 2000,
+          "left": "27%",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "店長",
@@ -304,19 +394,55 @@
     },
     {
       "speaker": "",
-      "text": "それからしばらく、二人で本の話をした。"
+      "text": "それからしばらく、二人で本の話をした。",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/b10501.webp",
+          "zIndex": 2000,
+          "left": "27%",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "",
-      "text": "会話が途切れても、気まずさはなかった。"
+      "text": "会話が途切れても、気まずさはなかった。",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/b10501.webp",
+          "zIndex": 2000,
+          "left": "27%",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "",
-      "text": "ページをめくる音。遠くで遊ぶ子どもたちの声。桜を揺らす春風。"
+      "text": "ページをめくる音。遠くで遊ぶ子どもたちの声。桜を揺らす春風。",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/b10501.webp",
+          "zIndex": 2000,
+          "left": "27%",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "",
-      "text": "ただそれだけで、不思議と満たされた時間だった。"
+      "text": "ただそれだけで、不思議と満たされた時間だった。",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/b10501.webp",
+          "zIndex": 2000,
+          "left": "27%",
+          "opacity": 1
+        }
+      ]
     },
     {
       "bg": "images/assets/bgev/bg_memory_ai_spring_book_bread_close.png",
@@ -365,7 +491,16 @@
     },
     {
       "speaker": "",
-      "text": "藍ちゃんは少しだけ目を細めて、桜の枝を見上げた。"
+      "text": "藍ちゃんは少しだけ目を細めて、桜の枝を見上げた。",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/b10501.webp",
+          "zIndex": 2000,
+          "left": "27%",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "藍",
@@ -392,11 +527,29 @@
     },
     {
       "speaker": "",
-      "text": "半分こした桜パンの甘さと、藍ちゃんの柔らかな声が、春の記憶として店長の中に残った。"
+      "text": "半分こした桜パンの甘さと、藍ちゃんの柔らかな声が、春の記憶として店長の中に残った。",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/b10501.webp",
+          "zIndex": 2000,
+          "left": "27%",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "",
-      "text": "【思い出アルバムに追加】藍「桜木陰のしおり」"
+      "text": "【思い出アルバムに追加】藍「桜木陰のしおり」",
+      "characters": [
+        {
+          "side": "center",
+          "src": "images/assets/char/b10501.webp",
+          "zIndex": 2000,
+          "left": "27%",
+          "opacity": 1
+        }
+      ]
     }
   ]
 }

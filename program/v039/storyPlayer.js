@@ -1,4 +1,4 @@
-/* v039_32 story player quality */
+/* v039_33 story player quality */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -15,6 +15,29 @@
     fade.style.setProperty("display", "none", "important");
     fade.style.setProperty("visibility", "hidden", "important");
     fade.style.setProperty("pointer-events", "none", "important");
+  };
+
+  ns.storyDebugDelay = function storyDebugDelay(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  };
+
+  ns.findStoryBackgroundImage = function findStoryBackgroundImage() {
+    return document.querySelector(".tenotsu-bg-layer img")
+      || document.querySelector(".tenotsu-background-layer img")
+      || document.querySelector("[data-bg-layer] img")
+      || document.querySelector(".background img");
+  };
+
+  ns.directSetStoryBackgroundImage = function directSetStoryBackgroundImage(bgPath) {
+    const img = ns.findStoryBackgroundImage();
+    if (img) {
+      img.src = bgPath;
+      img.style.visibility = "visible";
+      img.style.opacity = "1";
+      img.style.transition = "none";
+      return true;
+    }
+    return false;
   };
 
   ns.storySpriteMap = {
@@ -38,19 +61,37 @@
   ns.setStoryBackgroundNoFlash = async function setStoryBackgroundNoFlash(bgPath) {
     if (!bgPath) return;
     ns.suppressStoryFadeLayer && ns.suppressStoryFadeLayer();
-    // preload first, then change without clearing current image; prevents black flash on tap.
+    if (typeof ns.flashStoryDebugLabel === "function") ns.flashStoryDebugLabel("BG SWAP BEFORE " + bgPath, "bg-before");
+    if (typeof ns.showStorySurfaceProbe === "function") ns.showStorySurfaceProbe("BG SWAP BEFORE");
+    await ns.storyDebugDelay(1200);
+
+    // preload first while old background remains visible.
     await new Promise((resolve) => {
       const img = new Image();
       img.onload = resolve;
       img.onerror = resolve;
       img.src = bgPath;
     });
+
     ns.suppressStoryFadeLayer && ns.suppressStoryFadeLayer();
-    if (typeof ns.setBackground === "function") {
-      ns.setBackground(bgPath);
-    } else if (typeof ns.setBackgroundReady === "function") {
-      await ns.setBackgroundReady(bgPath);
+    if (typeof ns.flashStoryDebugLabel === "function") ns.flashStoryDebugLabel("BG SWAP APPLY " + bgPath, "bg-apply");
+    if (typeof ns.showStorySurfaceProbe === "function") ns.showStorySurfaceProbe("BG SWAP APPLY");
+    await ns.storyDebugDelay(1200);
+
+    // Prefer direct replacement, because old setBackground may clear the layer first.
+    const directOk = typeof ns.directSetStoryBackgroundImage === "function" && ns.directSetStoryBackgroundImage(bgPath);
+    if (!directOk) {
+      if (typeof ns.setBackground === "function") {
+        ns.setBackground(bgPath);
+      } else if (typeof ns.setBackgroundReady === "function") {
+        await ns.setBackgroundReady(bgPath);
+      }
     }
+
+    ns.suppressStoryFadeLayer && ns.suppressStoryFadeLayer();
+    if (typeof ns.flashStoryDebugLabel === "function") ns.flashStoryDebugLabel("BG SWAP AFTER " + bgPath, "bg-after");
+    if (typeof ns.showStorySurfaceProbe === "function") ns.showStorySurfaceProbe("BG SWAP AFTER");
+    await ns.storyDebugDelay(1200);
     ns.suppressStoryFadeLayer && ns.suppressStoryFadeLayer();
   };
 
