@@ -1,4 +1,4 @@
-/* v039_33 story player quality */
+/* v039_34 story player quality */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -18,7 +18,7 @@
   };
 
   ns.storyDebugDelay = function storyDebugDelay(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
+    return Promise.resolve();
   };
 
   ns.findStoryBackgroundImage = function findStoryBackgroundImage() {
@@ -60,12 +60,9 @@
 
   ns.setStoryBackgroundNoFlash = async function setStoryBackgroundNoFlash(bgPath) {
     if (!bgPath) return;
-    ns.suppressStoryFadeLayer && ns.suppressStoryFadeLayer();
-    if (typeof ns.flashStoryDebugLabel === "function") ns.flashStoryDebugLabel("BG SWAP BEFORE " + bgPath, "bg-before");
-    if (typeof ns.showStorySurfaceProbe === "function") ns.showStorySurfaceProbe("BG SWAP BEFORE");
-    await ns.storyDebugDelay(1200);
+    if (ns.storyCurrentBackground === bgPath) return;
+    if (ns.suppressStoryFadeLayer) ns.suppressStoryFadeLayer();
 
-    // preload first while old background remains visible.
     await new Promise((resolve) => {
       const img = new Image();
       img.onload = resolve;
@@ -73,12 +70,8 @@
       img.src = bgPath;
     });
 
-    ns.suppressStoryFadeLayer && ns.suppressStoryFadeLayer();
-    if (typeof ns.flashStoryDebugLabel === "function") ns.flashStoryDebugLabel("BG SWAP APPLY " + bgPath, "bg-apply");
-    if (typeof ns.showStorySurfaceProbe === "function") ns.showStorySurfaceProbe("BG SWAP APPLY");
-    await ns.storyDebugDelay(1200);
+    if (ns.suppressStoryFadeLayer) ns.suppressStoryFadeLayer();
 
-    // Prefer direct replacement, because old setBackground may clear the layer first.
     const directOk = typeof ns.directSetStoryBackgroundImage === "function" && ns.directSetStoryBackgroundImage(bgPath);
     if (!directOk) {
       if (typeof ns.setBackground === "function") {
@@ -88,12 +81,12 @@
       }
     }
 
-    ns.suppressStoryFadeLayer && ns.suppressStoryFadeLayer();
-    if (typeof ns.flashStoryDebugLabel === "function") ns.flashStoryDebugLabel("BG SWAP AFTER " + bgPath, "bg-after");
-    if (typeof ns.showStorySurfaceProbe === "function") ns.showStorySurfaceProbe("BG SWAP AFTER");
-    await ns.storyDebugDelay(1200);
-    ns.suppressStoryFadeLayer && ns.suppressStoryFadeLayer();
+    ns.storyCurrentBackground = bgPath;
+    if (ns.suppressStoryFadeLayer) ns.suppressStoryFadeLayer();
   };
+
+  ns.storyCurrentBackground = "";
+  ns.storyCurrentSpriteKey = "";
 
   ns.story = { active:false, data:null, index:-1, returnInfo:null, isEnding:false, isLoadingStep:false, lastBg:null };
 
@@ -115,9 +108,7 @@
   ns.prepareStoryFirstBackground = async function prepareStoryFirstBackground(data) {
     const first = data && data.steps && data.steps[0] ? data.steps[0] : null;
     if (first && first.bg) {
-      if (typeof ns.setStoryBackgroundReady === "function") await ns.setStoryBackgroundNoFlash(first.bg);
-      else if (typeof ns.setBackgroundReady === "function") await ns.setStoryBackgroundNoFlash(first.bg);
-      else await ns.setStoryBackgroundNoFlash(first.bg);
+      await ns.setStoryBackgroundNoFlash(first.bg);
       ns.story.lastBg = first.bg;
     }
   };
@@ -141,7 +132,6 @@
     ns.suppressStoryFadeLayer();
     if (typeof apply === "function") await apply();
     ns.suppressStoryFadeLayer();
-    if (typeof ns.warnIfStoryFadeVisible === "function") ns.warnIfStoryFadeVisible("applyStoryStep end");
   };
 
   ns.setStoryLoading = function setStoryLoading(isLoading) {
@@ -158,7 +148,6 @@
       ns.ensureLayers();
       await ns.fadeOutForStoryStart();
       ns.setMode("story"); ns.resetStoryRuntime(); ns.setMode("story");
-      if (typeof ns.showStorySurfaceProbe === "function") ns.showStorySurfaceProbe("startStory after setMode");
       if (typeof ns.hideSettingsPanel === "function") ns.hideSettingsPanel();
       if (typeof ns.hideShopPanel === "function") ns.hideShopPanel();
       if (typeof ns.hideMembersPanel === "function") ns.hideMembersPanel();
@@ -183,7 +172,7 @@
       layer.classList.remove("ending","loading"); layer.style.removeProperty("pointer-events");
       const nextButton = layer.querySelector('[data-story-action="next"]');
       const endButton = layer.querySelector('[data-story-action="end"]');
-      if (nextButton) nextButton.onclick = () => { if (typeof ns.flashStoryDebugLabel === "function") ns.flashStoryDebugLabel("CLICK nextButton before nextStoryStep", "click"); ns.suppressStoryFadeLayer(); ns.nextStoryStep(); };
+      if (nextButton) nextButton.onclick = () => { ns.suppressStoryFadeLayer(); ns.nextStoryStep(); };
       if (endButton) endButton.onclick = () => ns.beginStoryEnd();
       document.body.classList.add("tenotsu-story-active");
       await ns.nextStoryStep({ initial:true });
@@ -211,63 +200,62 @@
     layer.dataset.storyIndex = String(ns.story.index); layer.dataset.storyTotal = String(steps.length);
   };
 
+  ns.applyStorySpritesV2 = function applyStorySpritesV2(step) {
+    if (!step) return false;
+    const sprites = Array.isArray(step.storySprites) ? step.storySprites : [];
+    if (!sprites.length || typeof ns.showStoryCharacters !== "function") return false;
+    const key = JSON.stringify(sprites.map((s) => [s.id, s.src, s.side, s.left, s.zIndex, s.opacity]));
+    if (ns.storyCurrentSpriteKey === key) return true;
+    ns.storyCurrentSpriteKey = key;
+    ns.showStoryCharacters(sprites);
+    return true;
+  };
+
   ns.applyStoryCharacter = function applyStoryCharacter(step) {
     if (!step) return;
-    const forced = typeof ns.getStoryForcedCharacters === "function" ? ns.getStoryForcedCharacters(step) : [];
+    if (ns.applyStorySpritesV2(step)) return;
     const scenarioChars = Array.isArray(step.characters) ? step.characters : [];
-    const combined = forced.length ? forced : scenarioChars;
-    if (typeof ns.showStorySurfaceProbe === "function") ns.showStorySurfaceProbe("applyStoryCharacter speaker=" + (step.speaker || ""));
-    if (combined.length && typeof ns.showStoryCharacters === "function") {
-      ns.showStoryCharacters(combined);
-      return;
+    if (scenarioChars.length && typeof ns.showStoryCharacters === "function") {
+      const key = JSON.stringify(scenarioChars.map((s) => [s.id, s.src, s.side, s.left, s.zIndex, s.opacity]));
+      if (ns.storyCurrentSpriteKey !== key) {
+        ns.storyCurrentSpriteKey = key;
+        ns.showStoryCharacters(scenarioChars);
+      }
     }
   };
 
   ns.applyStoryStep = async function applyStoryStep(step, options = {}) {
     if (!step) return;
     const bgChanged = !!(step.bg && step.bg !== ns.story.lastBg);
-    if (typeof ns.flashStoryDebugLabel === "function") ns.flashStoryDebugLabel("applyStoryStep ENTER speaker=" + (step.speaker || ""), "step");
-    if (step.bg) {
+    if (step.bg && step.bg !== ns.storyCurrentBackground) {
       ns.setStoryLoading(true);
       try {
         const applyBg = async () => {
-          if (typeof ns.flashStoryDebugLabel === "function") ns.flashStoryDebugLabel("applyBg BEFORE " + step.bg, "bg-before");
           if (typeof ns.setStoryBackgroundReady === "function") await ns.setStoryBackgroundReady(step.bg);
           else if (typeof ns.setBackgroundReady === "function") await ns.setBackgroundReady(step.bg);
           else ns.setBackground(step.bg);
           ns.story.lastBg = step.bg;
-          if (typeof ns.flashStoryDebugLabel === "function") ns.flashStoryDebugLabel("applyBg AFTER " + step.bg, "bg-after");
-          if (typeof ns.warnIfStoryFadeVisible === "function") ns.warnIfStoryFadeVisible("applyBg after set");
         };
         if (bgChanged && !options.initial) await ns.fadeForStoryBgChange(applyBg);
         else await applyBg();
       } finally { ns.setStoryLoading(false); }
     }
-    if (typeof ns.flashStoryDebugLabel === "function") ns.flashStoryDebugLabel("before applyStoryCharacter", "char-before");
     ns.applyStoryCharacter(step);
-    if (typeof ns.flashStoryDebugLabel === "function") ns.flashStoryDebugLabel("before setText", "text-before");
     ns.setText(step.speaker || "", step.text || "");
     ns.suppressStoryFadeLayer();
-    if (typeof ns.warnIfStoryFadeVisible === "function") ns.warnIfStoryFadeVisible("applyStoryStep end");
   };
 
   ns.nextStoryStep = async function nextStoryStep(options = {}) {
-    if (typeof ns.flashStoryDebugLabel === "function") ns.flashStoryDebugLabel("nextStoryStep ENTER", "click");
     ns.suppressStoryFadeLayer();
-    if (typeof ns.warnIfStoryFadeVisible === "function") ns.warnIfStoryFadeVisible("nextStoryStep after suppress");
     if (!ns.story.active || !ns.story.data || ns.story.isEnding || ns.story.isLoadingStep) return;
     const steps = ns.story.data.steps || [];
     const nextIndex = ns.story.index + 1;
     if (nextIndex >= steps.length) { ns.beginStoryEnd(); return; }
     ns.story.index = nextIndex;
-    if (typeof ns.flashStoryDebugLabel === "function") ns.flashStoryDebugLabel("before applyStoryStep index " + ns.story.index, "before");
     await ns.applyStoryStep(steps[ns.story.index], options);
-    if (typeof ns.flashStoryDebugLabel === "function") ns.flashStoryDebugLabel("after applyStoryStep index " + ns.story.index, "after");
-    if (typeof ns.warnIfStoryFadeVisible === "function") ns.warnIfStoryFadeVisible("after applyStoryStep");
     ns.updateStoryUi();
     document.body.classList.remove("tenotsu-story-final-line");
     ns.suppressStoryFadeLayer();
-    if (typeof ns.warnIfStoryFadeVisible === "function") ns.warnIfStoryFadeVisible("applyStoryStep end");
   };
 
   ns.beginStoryEnd = function beginStoryEnd() {

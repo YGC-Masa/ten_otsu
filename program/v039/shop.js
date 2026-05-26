@@ -1,4 +1,4 @@
-/* v039_33 shop */
+/* v039_34 shop */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -6,7 +6,7 @@
   ns.renderShopMenu = function renderShopMenu() {
     const menuHtml = `
       <div class="tenotsu-menu-version">
-        <span class="tenotsu-menu-version-main">${ns.VERSION || "v039_33"}</span>
+        <span class="tenotsu-menu-version-main">${ns.VERSION || "v039_34"}</span>
         <span class="tenotsu-menu-version-sub">shop / exchange</span>
       </div>
       <div class="tenotsu-shop-menu-title">ショップメニュー</div>
@@ -22,7 +22,7 @@
       <div class="tenotsu-shop-info-title">アイテム交換所</div>
       <div class="tenotsu-shop-info-body">
         <p>イベント交換・スタンプ交換・特別な合言葉交換をここへ接続予定です。</p>
-        <p>v039_33では、まず事務所とショップ間の安定した画面遷移を確認します。</p>
+        <p>v039_34では、まず事務所とショップ間の安定した画面遷移を確認します。</p>
       </div>
     `;
 

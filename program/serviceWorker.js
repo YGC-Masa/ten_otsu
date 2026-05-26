@@ -1,4 +1,4 @@
-// v039_33: legacy cache disabled for new core verification
+// v039_34: legacy cache disabled for new core verification
 self.addEventListener("install", (event) => {
   self.skipWaiting();
 });

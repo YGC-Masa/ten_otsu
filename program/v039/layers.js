@@ -1,4 +1,4 @@
-/* v039_33 layers */
+/* v039_34 layers */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -54,7 +54,7 @@
     layers.speaker = el("div", { className: "tenotsu-speaker" }, layers.text);
     layers.message = el("div", { className: "tenotsu-message" }, layers.text);
     layers.fade = el("div", { className: "tenotsu-fade-layer", "data-layer": "fade" }, app);
-    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_33" }, app);
+    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_34" }, app);
 
     ns.layers = layers;
     if (!layers.orientation) { layers.orientation = el("div", { className: "tenotsu-orientation-notice" }, app); layers.orientation.innerHTML = "<div>このゲームは横画面でお楽しみください。<br>端末を横向きにしてください。</div>"; }
@@ -220,7 +220,7 @@
     const a = ns.storyProbeAssets || {};
     layers.storyDebug.style.display = "block";
     layers.storyDebug.innerHTML = `
-      <div class="probe-label probe-label-main">SURFACE PROBE v039_33: ${reason || "active"}</div>
+      <div class="probe-label probe-label-main">SURFACE PROBE v039_34: ${reason || "active"}</div>
       <img class="probe-char probe-z0500" src="${a.yukino}" alt="">
       <img class="probe-char probe-z1000" src="${a.hina}" alt="">
       <img class="probe-char probe-z2000" src="${a.ai}" alt="">
@@ -277,8 +277,8 @@
       const side = ch.side || (index === 0 ? "left" : index === 1 ? "center" : "right");
       const src = ch.src || "";
       const opacity = ch.opacity === undefined ? 1 : ch.opacity;
-      const z = ch.zIndex || ch.z || (side === "left" ? 1000 : side === "center" ? 1500 : 2000);
-      const left = ch.left || (side === "left" ? "8%" : side === "center" ? "31%" : "52%");
+      const z = ch.zIndex || ch.z || (side === "left" ? 1000 : side === "center" ? 2000 : 3000);
+      const left = ch.left || (side === "left" ? "7%" : side === "center" ? "27%" : "47%");
       return `<img class="tenotsu-story-standing side-${side}" src="${src}" style="left:${left}; z-index:${z}; opacity:${opacity};" alt="">`;
     }).join("");
   };

@@ -1,8 +1,8 @@
-/* v039_33 new core boot office */
+/* v039_34 new core boot office */
 :root{--tenotsu-z-bg:0;--tenotsu-z-office-char:200;--tenotsu-z-ui:500;--tenotsu-z-menu:700;--tenotsu-z-text:1200;--tenotsu-z-fade:50000;--tenotsu-vh:1vh}*{box-sizing:border-box}html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#000;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",system-ui,sans-serif}#game-container,#tenotsu-app{position:fixed;inset:0;width:100vw;height:calc(var(--tenotsu-vh,1vh)*100);overflow:hidden;background:#000;isolation:isolate}.tenotsu-bg-layer,.tenotsu-bg-layer img{position:absolute;inset:0;width:100%;height:100%}.tenotsu-bg-layer{z-index:var(--tenotsu-z-bg);background:#000;background-size:cover;background-position:center;background-repeat:no-repeat;pointer-events:none}.tenotsu-bg-layer img{object-fit:cover;display:block;opacity:1;pointer-events:none}.tenotsu-office-character-layer{position:fixed;inset:0;z-index:var(--tenotsu-z-office-char);pointer-events:none;overflow:visible}.tenotsu-office-character-layer img{position:fixed;bottom:0;top:auto;width:auto;max-width:470px;max-height:96vh;height:auto;object-fit:contain;display:block;visibility:visible;opacity:.99;transform-origin:bottom center;pointer-events:none;filter:drop-shadow(0 16px 26px rgba(0,0,0,.55))}.tenotsu-office-stand-0{left:32%;transform:translateX(-50%) scale(1.03);z-index:203}.tenotsu-office-stand-1{left:15%;transform:translateX(-50%) scale(.92);z-index:202}.tenotsu-office-stand-2{left:49%;transform:translateX(-50%) scale(.92);z-index:201}.tenotsu-ui-layer{position:fixed;inset:0;z-index:var(--tenotsu-z-ui);pointer-events:none}.tenotsu-office-menu{position:fixed;right:max(20px,env(safe-area-inset-right));top:50%;transform:translateY(-50%);width:min(300px,24vw);min-width:260px;padding:18px;border-radius:18px;background:rgba(255,248,218,.94);border:2px solid rgba(228,178,68,.95);box-shadow:0 12px 32px rgba(0,0,0,.32);z-index:var(--tenotsu-z-menu);pointer-events:auto}.tenotsu-office-menu-title{text-align:center;font-weight:800;color:#51310d;margin-bottom:14px;letter-spacing:.06em}.tenotsu-office-menu-grid{display:grid;gap:10px}.tenotsu-office-menu-button{display:block;width:100%;min-height:42px;border:1px solid rgba(180,130,30,.55);border-radius:10px;color:#3a2510;font-weight:800;cursor:pointer;pointer-events:auto;background:linear-gradient(180deg,#eaf7ff,#d8efff)}.tenotsu-office-menu-button[data-action="sales"],.tenotsu-office-menu-button[data-action="town"]{background:linear-gradient(180deg,#fff4d6,#ffe3a3)}.tenotsu-office-menu-button[data-action="shop"],.tenotsu-office-menu-button[data-action="settings"]{background:linear-gradient(180deg,#eefbdc,#dff2bf)}.tenotsu-office-menu-button:hover,.tenotsu-office-menu-button:focus{filter:brightness(1.04)}.tenotsu-text-layer{position:fixed;left:5%;right:12%;bottom:max(18px,env(safe-area-inset-bottom));min-height:82px;padding:14px 18px;border-radius:16px;border:1px solid rgba(255,255,255,.38);background:rgba(20,18,22,.78);color:#fff;z-index:var(--tenotsu-z-text);pointer-events:none;box-shadow:0 12px 32px rgba(0,0,0,.38);backdrop-filter:blur(4px)}.tenotsu-speaker{display:inline-block;min-width:7em;font-weight:800;color:#ffe2a3;margin-bottom:6px}.tenotsu-message{font-size:18px;line-height:1.7;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.65)}.tenotsu-fade-layer{position:fixed;inset:0;background:#000;opacity:0;display:none;pointer-events:none;z-index:var(--tenotsu-z-fade)}.tenotsu-version-badge{position:fixed;left:10px;bottom:8px;z-index:calc(var(--tenotsu-z-text) + 1);color:rgba(255,255,255,.42);font-size:11px;pointer-events:none}#background,#random-images-layer,#random-text-layer,#list-panel,#menu-panel,#char-layer,#ev-layer,#click-layer,#dialogue-box,#choices,#tenotsu-main-menu,#tenotsu-shop-menu,#tenotsu-front-character-layer,#tenotsu-operation-surface,#tenotsu-safe-fade,#boot-flow,#rotate-warning,.boot-flow,.list-panel,.menu-panel,.random-show,.title-comment-window,.orientation-warning{display:none!important;visibility:hidden!important;pointer-events:none!important}
 
 
-/* v039_33 version/cache settings */
+/* v039_34 version/cache settings */
 .tenotsu-menu-version {
   margin-bottom: 12px;
   padding: 8px 10px;
@@ -95,7 +95,7 @@
 }
 
 
-/* v039_33: version is shown above right menu only */
+/* v039_34: version is shown above right menu only */
 .tenotsu-version-badge {
   display: none !important;
   visibility: hidden !important;
@@ -189,7 +189,7 @@ body[data-v039-mode="shop"] .tenotsu-settings-panel {
 }
 
 
-/* v039_33: keep lower-left version badge visible because it is useful for verification */
+/* v039_34: keep lower-left version badge visible because it is useful for verification */
 .tenotsu-version-badge {
   display: block !important;
   visibility: visible !important;
@@ -202,7 +202,7 @@ body[data-v039-mode="shop"] .tenotsu-settings-panel {
   pointer-events: none !important;
 }
 
-/* v039_33 ensure shop/settings panels exist even if v039_02 CSS was not applied */
+/* v039_34 ensure shop/settings panels exist even if v039_02 CSS was not applied */
 .tenotsu-shop-menu {
   position: fixed;
   right: max(20px, env(safe-area-inset-right));
@@ -331,7 +331,7 @@ body[data-v039-mode="shop"] .tenotsu-settings-panel {
 }
 
 
-/* v039_33 members screen */
+/* v039_34 members screen */
 .tenotsu-members-panel {
   position: fixed;
   left: max(22px, env(safe-area-inset-left));
@@ -482,7 +482,7 @@ body[data-v039-mode="members"] .tenotsu-settings-panel {
 }
 
 
-/* v039_33 town screen */
+/* v039_34 town screen */
 .tenotsu-town-panel {
   position: fixed;
   left: max(22px, env(safe-area-inset-left));
@@ -613,7 +613,7 @@ body[data-v039-mode="town"] .tenotsu-members-panel {
 }
 
 
-/* v039_33 season event tree */
+/* v039_34 season event tree */
 .tenotsu-town-subtitle {
   margin: -4px 0 14px;
   text-align: center;
@@ -784,7 +784,7 @@ body[data-v039-mode="town"] .tenotsu-members-panel {
 }
 
 
-/* v039_33 story player minimum */
+/* v039_34 story player minimum */
 .tenotsu-story-layer {
   position: fixed;
   inset: 0;
@@ -833,7 +833,7 @@ body[data-v039-mode="story"] .tenotsu-office-character-layer {
 }
 
 
-/* v039_33 story player UI */
+/* v039_34 story player UI */
 .tenotsu-text-layer {
   --speaker-color: #ffe2a3;
 }
@@ -952,7 +952,7 @@ body.tenotsu-story-final-line .tenotsu-story-hint {
 }
 
 
-/* v039_33 story re-entry guard */
+/* v039_34 story re-entry guard */
 .tenotsu-story-layer:not([hidden]):not(.ending) .tenotsu-story-click {
   pointer-events: auto !important;
 }
@@ -967,7 +967,7 @@ body:not([data-v039-mode="story"]) .tenotsu-story-layer {
 }
 
 
-/* v039_33 story start transition */
+/* v039_34 story start transition */
 body[data-v039-mode="story"] .tenotsu-fade-layer {
   background: #000;
 }
@@ -977,7 +977,7 @@ body[data-v039-mode="story"] .tenotsu-fade-layer {
 }
 
 
-/* v039_33 global scene transition */
+/* v039_34 global scene transition */
 #tenotsu-app {
   background: #000;
 }
@@ -991,13 +991,13 @@ body.v039-transitioning {
   cursor: wait;
 }
 
-/* v039_33 preload before fade-in */
+/* v039_34 preload before fade-in */
 body.v039-transitioning .tenotsu-fade-layer {
   background: #000 !important;
 }
 
 
-/* v039_33 story CG load gate */
+/* v039_34 story CG load gate */
 .tenotsu-story-layer.loading .tenotsu-story-click,
 body.tenotsu-story-loading .tenotsu-story-click {
   pointer-events: none !important;
@@ -1014,7 +1014,7 @@ body.tenotsu-story-loading .tenotsu-story-hint {
 }
 
 
-/* v039_33 story CG visibility fix */
+/* v039_34 story CG visibility fix */
 body[data-v039-mode="story"] .tenotsu-bg-layer,
 body[data-v039-mode="story"] .tenotsu-bg-layer img {
   opacity: 1 !important;
@@ -1026,7 +1026,7 @@ body[data-v039-mode="story"] .tenotsu-story-layer {
 }
 
 
-/* v039_33 story quality */
+/* v039_34 story quality */
 body[data-v039-mode="story"] .tenotsu-speaker {
   min-width: 0 !important;
   padding: 0 0 6px !important;
@@ -1083,7 +1083,7 @@ body.tenotsu-story-loading .tenotsu-click-wait,
 .tenotsu-event-card.read .tenotsu-event-read { color: rgba(255,255,255,.68); }
 
 
-/* v039_33 story name plain: remove underline from event scene speaker name */
+/* v039_34 story name plain: remove underline from event scene speaker name */
 body[data-v039-mode="story"] .tenotsu-speaker {
   border-bottom: 0 !important;
   text-decoration: none !important;
@@ -1091,7 +1091,7 @@ body[data-v039-mode="story"] .tenotsu-speaker {
 }
 
 
-/* v039_33 sales screen */
+/* v039_34 sales screen */
 .tenotsu-sales-panel {
   position: fixed;
   left: max(22px, env(safe-area-inset-left));
@@ -1254,7 +1254,7 @@ body[data-v039-mode="sales"] .tenotsu-story-layer {
 }
 
 
-/* v039_33 sales start dialog / mock battle / result */
+/* v039_34 sales start dialog / mock battle / result */
 .tenotsu-sales-dialog-spec { margin-top: 14px; display: grid; gap: 8px; padding: 12px; border-radius: 12px; background: rgba(0,0,0,.22); border: 1px solid rgba(255,226,163,.22); line-height: 1.65; }
 .tenotsu-sales-dialog-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .tenotsu-sales-cancel { display: block; width: 100%; min-height: 40px; margin-top: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.32); background: rgba(0,0,0,.28); color: #fff; font-weight: 900; cursor: pointer; }
@@ -1276,7 +1276,7 @@ body[data-v039-mode="sales"] .tenotsu-story-layer {
 body[data-v039-mode="battle"] .tenotsu-office-menu, body[data-v039-mode="battle"] .tenotsu-sales-panel, body[data-v039-mode="battle"] .tenotsu-result-panel, body[data-v039-mode="result"] .tenotsu-office-menu, body[data-v039-mode="result"] .tenotsu-sales-panel, body[data-v039-mode="result"] .tenotsu-battle-panel { display: none !important; }
 
 
-/* v039_33 responsive variable layout area */
+/* v039_34 responsive variable layout area */
 :root {
   --tenotsu-safe-top: max(16px, env(safe-area-inset-top));
   --tenotsu-safe-right: max(16px, env(safe-area-inset-right));
@@ -1427,7 +1427,7 @@ body[data-v039-mode="sales"] .tenotsu-office-menu {
 }
 
 
-/* v039_33 unified text area layout */
+/* v039_34 unified text area layout */
 :root {
   --tenotsu-text-height-office: clamp(104px, 16vh, 156px);
   --tenotsu-text-height-story: clamp(118px, 18vh, 172px);
@@ -1553,7 +1553,7 @@ body[data-v039-mode="result"] .tenotsu-text-layer {
 }
 
 
-/* v039_33 deck sales battle prototype */
+/* v039_34 deck sales battle prototype */
 .tenotsu-deck-status { margin: 14px 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .tenotsu-deck-status > div { border-radius: 12px; padding: 10px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); text-align: center; }
 .tenotsu-deck-status strong { color: #ffe2a3; font-size: 20px; }
@@ -1569,7 +1569,7 @@ body[data-v039-mode="result"] .tenotsu-text-layer {
 @media (max-width: 900px) { .tenotsu-deck-enemy-row, .tenotsu-deck-staff-row { grid-template-columns: 1fr !important; } .tenotsu-deck-status { grid-template-columns: 1fr !important; } }
 
 
-/* v039_33 story menu text overlap fix */
+/* v039_34 story menu text overlap fix */
 body[data-v039-mode="town"] .tenotsu-text-layer {
   display: none !important;
 }
@@ -1585,7 +1585,7 @@ body[data-v039-mode="story"] .tenotsu-text-layer {
 }
 
 
-/* v039_33 landscape-first policy */
+/* v039_34 landscape-first policy */
 .tenotsu-orientation-notice {
   display: none;
 }
@@ -1607,7 +1607,7 @@ body[data-v039-mode="story"] .tenotsu-text-layer {
 }
 
 
-/* v039_33 landscape layout and story no-blink hard fix */
+/* v039_34 landscape layout and story no-blink hard fix */
 :root {
   --tenotsu-vh: 100dvh;
   --tenotsu-vw: 100dvw;
@@ -1708,7 +1708,7 @@ body.tenotsu-story-loading .tenotsu-click-wait {
 }
 
 
-/* v039_33 right menu restore / story sprite / wait blink stop */
+/* v039_34 right menu restore / story sprite / wait blink stop */
 @media (orientation: landscape) {
   /* Restore right menu to stable vertical center. v039_28 top/bottom override was too aggressive. */
   .tenotsu-office-menu {
@@ -1787,7 +1787,7 @@ body[data-v039-mode="story"] .tenotsu-bg-layer img {
 }
 
 
-/* v039_33 story click no-blackout and sprite force */
+/* v039_34 story click no-blackout and sprite force */
 @media (orientation: landscape) {
   .tenotsu-office-menu {
     top: 50% !important;
@@ -1853,7 +1853,7 @@ body[data-v039-mode="story"] .tenotsu-story-hint {
 }
 
 
-/* v039_33 absolute story sprites and anti-black flash */
+/* v039_34 absolute story sprites and anti-black flash */
 body[data-v039-mode="story"] .tenotsu-fade-layer,
 body.tenotsu-story-active .tenotsu-fade-layer {
   display: none !important;
@@ -1910,7 +1910,7 @@ body[data-v039-mode="story"] .tenotsu-text-layer {
 }
 
 
-/* v039_33 story surface probe debug */
+/* v039_34 story surface probe debug */
 .tenotsu-story-debug-layer {
   position: fixed !important;
   inset: 0 !important;
@@ -2000,7 +2000,7 @@ body[data-v039-mode="story"] .tenotsu-story-debug-layer {
 }
 
 
-/* v039_33 background swap slow probe and explicit scenario sprites */
+/* v039_34 background swap slow probe and explicit scenario sprites */
 .probe-flash.bg-apply {
   background: rgba(255, 255, 255, .96) !important;
   color: #000 !important;
@@ -2025,4 +2025,38 @@ body[data-v039-mode="story"] .tenotsu-story-character-layer {
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
+}
+
+
+/* v039_34 story v2 format: no debug flash, skip same bg/sprite */
+.tenotsu-story-debug-layer,
+.probe-flash,
+.probe-label-main,
+.probe-chip,
+.probe-char {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+body[data-v039-mode="story"] .tenotsu-fade-layer,
+body.tenotsu-story-active .tenotsu-fade-layer {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: none !important;
+  animation: none !important;
+}
+
+body[data-v039-mode="story"] .tenotsu-story-standing {
+  visibility: visible !important;
+  opacity: 1;
+}
+
+body[data-v039-mode="story"] .tenotsu-story-character-layer {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 999 !important;
 }
