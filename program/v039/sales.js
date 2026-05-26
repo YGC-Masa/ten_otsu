@@ -1,4 +1,4 @@
-/* v039_21 sales */
+/* v039_22 sales */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -122,7 +122,7 @@
           <button type="button" class="tenotsu-sales-cancel" data-sales-dialog="cancel">戻る</button>
         </div>
       </div>`;
-    ns.setText("店長", `${mode.label}を開始しますか？`);
+    ns.setText("店長", `${mode.label}を開始しますか？ 画面中央の確認ダイアログから営業開始できます。`);
     detail.querySelector('[data-sales-dialog="start"]').addEventListener("click", () => ns.enterBattleMock(mode));
     detail.querySelector('[data-sales-dialog="cancel"]').addEventListener("click", () => ns.renderSalesPanel(mode.id));
   };

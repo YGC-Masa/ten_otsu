@@ -1,4 +1,4 @@
-/* v039_21 global scene transition */
+/* v039_22 global scene transition */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
