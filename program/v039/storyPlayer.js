@@ -1,4 +1,4 @@
-/* v039_38 story player quality */
+/* v039_39 story player quality */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -273,6 +273,7 @@
 
   ns.applyStoryCharacter = function applyStoryCharacter(step) {
     if (!step) return;
+    if (step.clearStorySprites && typeof ns.clearStorySpritesV2 === "function") { ns.clearStorySpritesV2(); return; }
     if (ns.applyStorySpritesV2(step)) { if (ns.forceMobileStoryVisibility) ns.forceMobileStoryVisibility(); return; }
     const scenarioChars = Array.isArray(step.characters) ? step.characters : [];
     if (scenarioChars.length && typeof ns.showStoryCharacters === "function") {
