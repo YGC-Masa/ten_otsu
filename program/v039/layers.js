@@ -1,4 +1,4 @@
-/* v039_36 layers */
+/* v039_37 layers */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -54,7 +54,7 @@
     layers.speaker = el("div", { className: "tenotsu-speaker" }, layers.text);
     layers.message = el("div", { className: "tenotsu-message" }, layers.text);
     layers.fade = el("div", { className: "tenotsu-fade-layer", "data-layer": "fade" }, app);
-    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_36" }, app);
+    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_37" }, app);
 
     ns.layers = layers;
     if (!layers.orientation) { layers.orientation = el("div", { className: "tenotsu-orientation-notice" }, app); layers.orientation.innerHTML = "<div>このゲームは横画面でお楽しみください。<br>端末を横向きにしてください。</div>"; }
@@ -220,7 +220,7 @@
     const a = ns.storyProbeAssets || {};
     layers.storyDebug.style.display = "block";
     layers.storyDebug.innerHTML = `
-      <div class="probe-label probe-label-main">SURFACE PROBE v039_36: ${reason || "active"}</div>
+      <div class="probe-label probe-label-main">SURFACE PROBE v039_37: ${reason || "active"}</div>
       <img class="probe-char probe-z0500" src="${a.yukino}" alt="">
       <img class="probe-char probe-z1000" src="${a.hina}" alt="">
       <img class="probe-char probe-z2000" src="${a.ai}" alt="">
@@ -261,38 +261,53 @@
     }
   };
 
+  ns.ensureStoryBodySpriteLayer = function ensureStoryBodySpriteLayer() {
+    let layer = document.getElementById("tenotsu-story-body-sprite-layer");
+    if (!layer) {
+      layer = document.createElement("div");
+      layer.id = "tenotsu-story-body-sprite-layer";
+      layer.className = "tenotsu-story-body-sprite-layer";
+      document.body.appendChild(layer);
+    }
+    layer.hidden = false;
+    layer.removeAttribute("hidden");
+    layer.style.setProperty("display", "block", "important");
+    layer.style.setProperty("visibility", "visible", "important");
+    layer.style.setProperty("opacity", "1", "important");
+    layer.style.setProperty("z-index", "7000", "important");
+    return layer;
+  };
+
   ns.showStoryCharacters = function showStoryCharacters(characters) {
-    const layers = ns.ensureLayers();
-    if (!layers.storyCharacters) return;
     const list = Array.isArray(characters) ? characters.filter((ch) => ch && ch.src && !String(ch.src).endsWith("/NULL")) : [];
-
-    layers.storyCharacters.hidden = false;
-    layers.storyCharacters.removeAttribute("hidden");
-    layers.storyCharacters.style.setProperty("display", "block", "important");
-    layers.storyCharacters.style.setProperty("visibility", "visible", "important");
-    layers.storyCharacters.style.setProperty("opacity", "1", "important");
-    layers.storyCharacters.style.setProperty("z-index", "4500", "important");
-
+    const layer = ns.ensureStoryBodySpriteLayer();
     if (!list.length) {
-      layers.storyCharacters.innerHTML = "";
+      layer.innerHTML = "";
       return;
     }
 
-    layers.storyCharacters.innerHTML = list.map((ch, index) => {
+    layer.innerHTML = list.map((ch, index) => {
       const side = ch.side || (index === 0 ? "left" : index === 1 ? "center" : "right");
       const src = ch.src || "";
       const opacity = ch.opacity === undefined ? 1 : ch.opacity;
-      const z = ch.zIndex || ch.z || (side === "left" ? 4600 : side === "center" ? 4700 : 4800);
-      const left = ch.left || (side === "left" ? "4%" : side === "center" ? "24%" : "44%");
-      return `<img class="tenotsu-story-standing side-${side}" src="${src}" style="left:${left}; z-index:${z}; opacity:${opacity}; display:block; visibility:visible;" alt="">`;
+      const z = ch.zIndex || ch.z || (side === "left" ? 7100 : side === "center" ? 7200 : 7300);
+      const left = ch.left || (side === "left" ? "7%" : side === "center" ? "27%" : "47%");
+      return `<img class="tenotsu-story-body-standing side-${side}" src="${src}" style="left:${left}; z-index:${z}; opacity:${opacity};" alt="">`;
     }).join("");
   };
 
   ns.hideStoryCharacters = function hideStoryCharacters() {
-    const layers = ns.ensureLayers();
-    if (!layers.storyCharacters) return;
-    layers.storyCharacters.hidden = true;
-    layers.storyCharacters.innerHTML = "";
+    const legacy = ns.layers && ns.layers.storyCharacters;
+    if (legacy) {
+      legacy.hidden = true;
+      legacy.innerHTML = "";
+    }
+    const layer = document.getElementById("tenotsu-story-body-sprite-layer");
+    if (layer) {
+      layer.innerHTML = "";
+      layer.hidden = true;
+      layer.style.display = "none";
+    }
   };
 
   ns.showBattlePanel = function showBattlePanel(html) {

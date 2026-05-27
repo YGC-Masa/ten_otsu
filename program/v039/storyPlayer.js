@@ -1,4 +1,4 @@
-/* v039_36 story player quality */
+/* v039_37 story player quality */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -98,7 +98,16 @@
       layer.style.setProperty("opacity", "1", "important");
       layer.style.setProperty("z-index", "4500", "important");
     }
-    document.querySelectorAll(".tenotsu-story-standing").forEach((img) => {
+    const bodyLayer = document.getElementById("tenotsu-story-body-sprite-layer");
+    if (bodyLayer) {
+      bodyLayer.hidden = false;
+      bodyLayer.removeAttribute("hidden");
+      bodyLayer.style.setProperty("display", "block", "important");
+      bodyLayer.style.setProperty("visibility", "visible", "important");
+      bodyLayer.style.setProperty("opacity", "1", "important");
+      bodyLayer.style.setProperty("z-index", "7000", "important");
+    }
+    document.querySelectorAll(".tenotsu-story-standing, .tenotsu-story-body-standing").forEach((img) => {
       img.style.setProperty("display", "block", "important");
       img.style.setProperty("visibility", "visible", "important");
       img.style.setProperty("opacity", "1", "important");
@@ -239,9 +248,15 @@
     if (!step) return false;
     const sprites = Array.isArray(step.storySprites) ? step.storySprites : [];
     if (!sprites.length || typeof ns.showStoryCharacters !== "function") return false;
+
     const key = JSON.stringify(sprites.map((s) => [s.id, s.src, s.side, s.left, s.zIndex, s.opacity]));
-    if (ns.storyCurrentSpriteKey === key) return true;
+    if (ns.storyCurrentSpriteKey === key) {
+      if (ns.forceMobileStoryVisibility) ns.forceMobileStoryVisibility();
+      return true;
+    }
+
     ns.storyCurrentSpriteKey = key;
+    console.log("[tenotsu storySprites]", sprites);
     ns.showStoryCharacters(sprites);
     if (ns.forceMobileStoryVisibility) ns.forceMobileStoryVisibility();
     return true;
@@ -249,7 +264,7 @@
 
   ns.applyStoryCharacter = function applyStoryCharacter(step) {
     if (!step) return;
-    if (ns.applyStorySpritesV2(step)) return;
+    if (ns.applyStorySpritesV2(step)) { if (ns.forceMobileStoryVisibility) ns.forceMobileStoryVisibility(); return; }
     const scenarioChars = Array.isArray(step.characters) ? step.characters : [];
     if (scenarioChars.length && typeof ns.showStoryCharacters === "function") {
       const key = JSON.stringify(scenarioChars.map((s) => [s.id, s.src, s.side, s.left, s.zIndex, s.opacity]));
