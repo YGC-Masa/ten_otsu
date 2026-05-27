@@ -1,11 +1,10 @@
-# v039_34 → v039_35 mobile story css and sprite layer fix 差分
+# v039_35 → v039_36 mobile tap highlight fix 差分
 
 ## 修正内容
-- モバイル向けstory CSSを重点修正。
-- story modeのfade/blackout/transition/animationをモバイルで強制無効化。
-- 100dvhを優先し、モバイル横画面のviewport揺れを軽減。
-- story character layerをモバイルでも強制表示。
-- hidden属性をJS/CSS両方で解除。
-- forceMobileStoryVisibility() を追加し、背景/立ち絵/テキスト更新後に表示状態を再固定。
+- スマホでストーリー進行時に黒フラッシュして見える原因がタップハイライト/active暗転だったため、CSSで抑制。
+- -webkit-tap-highlight-color: transparent をストーリーUI全体へ適用。
+- story mode中の :active / :focus / press表現による opacity/filter/背景色変化を無効化。
+- 透明クリック面のタップ時暗転を抑制。
+- installStoryTapHighlightGuard() を追加し、タップ後にactive/focus状態を解除。
 
 リポジトリ直下へ展開して上書きしてください。

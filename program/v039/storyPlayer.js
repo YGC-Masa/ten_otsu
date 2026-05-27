@@ -1,4 +1,4 @@
-/* v039_35 story player quality */
+/* v039_36 story player quality */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -163,6 +163,20 @@
     if (click) click.disabled = !!isLoading;
   };
 
+  ns.installStoryTapHighlightGuard = function installStoryTapHighlightGuard() {
+    const layer = ns.layers && ns.layers.story;
+    if (!layer || layer.__tapHighlightGuardInstalled) return;
+    layer.__tapHighlightGuardInstalled = true;
+    const clearActive = () => {
+      try { if (document.activeElement && typeof document.activeElement.blur === "function") document.activeElement.blur(); } catch (_) {}
+      if (ns.suppressStoryFadeLayer) ns.suppressStoryFadeLayer();
+      if (ns.forceMobileStoryVisibility) ns.forceMobileStoryVisibility();
+    };
+    ["pointerdown", "touchstart", "mousedown", "pointerup", "touchend", "mouseup", "click"].forEach((type) => {
+      layer.addEventListener(type, clearActive, { passive: true });
+    });
+  };
+
   ns.startStory = async function startStory(scenarioPath, returnInfo = {}) {
     try {
       ns.ensureLayers();
@@ -189,10 +203,11 @@
         <div class="tenotsu-click-wait" aria-hidden="true"></div>
       `);
       const layer = ns.layers.story;
+      if (typeof ns.installStoryTapHighlightGuard === "function") ns.installStoryTapHighlightGuard();
       layer.classList.remove("ending","loading"); layer.style.removeProperty("pointer-events");
       const nextButton = layer.querySelector('[data-story-action="next"]');
       const endButton = layer.querySelector('[data-story-action="end"]');
-      if (nextButton) nextButton.onclick = () => { ns.suppressStoryFadeLayer(); ns.nextStoryStep(); };
+      if (nextButton) nextButton.onclick = () => { if (document.activeElement && document.activeElement.blur) document.activeElement.blur(); ns.suppressStoryFadeLayer(); ns.nextStoryStep(); };
       if (endButton) endButton.onclick = () => ns.beginStoryEnd();
       document.body.classList.add("tenotsu-story-active");
       await ns.nextStoryStep({ initial:true });
