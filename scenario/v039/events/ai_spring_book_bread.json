@@ -38,7 +38,7 @@
           "src": "images/assets/char/b10501.webp",
           "side": "center",
           "left": "27%",
-          "zIndex": 2500,
+          "zIndex": 120,
           "opacity": 1
         }
       ]
@@ -256,10 +256,12 @@
           "src": "images/assets/char/b10501.webp",
           "side": "center",
           "left": "27%",
-          "zIndex": 2500,
+          "zIndex": 120,
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bgev/bg_park_spring.png",
+      "bgMode": "replace"
     },
     {
       "speaker": "藍",
@@ -420,16 +422,8 @@
     {
       "speaker": "",
       "text": "それからしばらく、二人で本の話をした。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/b10501.webp",
-          "side": "center",
-          "left": "27%",
-          "zIndex": 2500,
-          "opacity": 1
-        }
-      ]
+      "clearStorySprites": true,
+      "spriteMode": "narration-clear"
     },
     {
       "speaker": "",
@@ -474,12 +468,10 @@
       ]
     },
     {
-      "bg": "images/assets/bgev/bg_memory_ai_spring_book_bread_close.png",
       "speaker": "藍",
       "text": "……こうやって。",
-      "bgMode": "replace",
       "clearStorySprites": true,
-      "spriteMode": "cg-clear"
+      "spriteMode": "narration-clear"
     },
     {
       "speaker": "店長",
@@ -498,16 +490,10 @@
     {
       "speaker": "藍",
       "text": "こういう、静かで穏やかな春の時間が……私は、とても好きなんです。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/b10501.webp",
-          "side": "center",
-          "left": "27%",
-          "zIndex": 2500,
-          "opacity": 1
-        }
-      ]
+      "bg": "images/assets/bgev/bg_memory_ai_spring_book_bread_close.png",
+      "bgMode": "replace",
+      "clearStorySprites": true,
+      "spriteMode": "cg-clear"
     },
     {
       "speaker": "店長",
@@ -606,6 +592,7 @@
     "bottomAlignSprites": true,
     "clearSpritesOnEventCg": true,
     "spritesBehindText": true,
-    "multipleSpriteVariants": true
+    "multipleSpriteVariants": true,
+    "aiSpecificCgTimingV40": true
   }
 }
