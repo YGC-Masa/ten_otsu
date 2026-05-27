@@ -1,4 +1,4 @@
-/* v039_37 story player quality */
+/* v039_38 story player quality */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -244,8 +244,17 @@
     layer.dataset.storyIndex = String(ns.story.index); layer.dataset.storyTotal = String(steps.length);
   };
 
+  ns.clearStorySpritesV2 = function clearStorySpritesV2() {
+    ns.storyCurrentSpriteKey = "";
+    if (typeof ns.hideStoryCharacters === "function") ns.hideStoryCharacters();
+  };
+
   ns.applyStorySpritesV2 = function applyStorySpritesV2(step) {
     if (!step) return false;
+    if (step.clearStorySprites) {
+      ns.clearStorySpritesV2();
+      return true;
+    }
     const sprites = Array.isArray(step.storySprites) ? step.storySprites : [];
     if (!sprites.length || typeof ns.showStoryCharacters !== "function") return false;
 

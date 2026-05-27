@@ -11,72 +11,23 @@
       "speaker": "",
       "text": "【思い出ストーリー】桜木陰のしおり",
       "bgMode": "replace",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/b10501.webp",
-          "side": "center",
-          "left": "27%",
-          "zIndex": 2000,
-          "opacity": 1
-        }
-      ]
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",
-      "text": "外回りの途中、少しだけ時間が空いた。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/b10501.webp",
-          "side": "center",
-          "left": "27%",
-          "zIndex": 2000,
-          "opacity": 1
-        }
-      ]
+      "text": "外回りの途中、少しだけ時間が空いた。"
     },
     {
       "speaker": "店長",
-      "text": "若葉中央公園も近いし、休憩がてら寄っていくか。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/b10501.webp",
-          "side": "center",
-          "left": "27%",
-          "zIndex": 2000,
-          "opacity": 1
-        }
-      ]
+      "text": "若葉中央公園も近いし、休憩がてら寄っていくか。"
     },
     {
       "speaker": "",
-      "text": "春の昼下がり。公園には、やわらかな風が吹いていた。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/b10501.webp",
-          "side": "center",
-          "left": "27%",
-          "zIndex": 2000,
-          "opacity": 1
-        }
-      ]
+      "text": "春の昼下がり。公園には、やわらかな風が吹いていた。"
     },
     {
       "speaker": "",
-      "text": "桜の花びらが、舗道の上をゆっくり滑っていく。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/b10501.webp",
-          "side": "center",
-          "left": "27%",
-          "zIndex": 2000,
-          "opacity": 1
-        }
-      ]
+      "text": "桜の花びらが、舗道の上をゆっくり滑っていく。"
     },
     {
       "speaker": "",
@@ -666,6 +617,8 @@
     "skipSameBackground": true,
     "skipSameSprites": true,
     "noDebugFlash": true,
-    "noFadeDuringStep": true
+    "noFadeDuringStep": true,
+    "showSpritesAfterEncounter": true,
+    "bottomAlignSprites": true
   }
 }

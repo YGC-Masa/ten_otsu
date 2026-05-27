@@ -11,86 +11,27 @@
       "speaker": "",
       "text": "【思い出ストーリー】春の公園でのお弁当タイム",
       "bgMode": "replace",
-      "storySprites": [
-        {
-          "id": "hina",
-          "src": "images/assets/char/a10501.webp",
-          "side": "left",
-          "left": "7%",
-          "zIndex": 1000,
-          "opacity": 1
-        }
-      ]
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",
-      "text": "春の昼下がり。外回りの途中で少し時間が空いた。",
-      "storySprites": [
-        {
-          "id": "hina",
-          "src": "images/assets/char/a10501.webp",
-          "side": "left",
-          "left": "7%",
-          "zIndex": 1000,
-          "opacity": 1
-        }
-      ]
+      "text": "春の昼下がり。外回りの途中で少し時間が空いた。"
     },
     {
       "speaker": "店長",
-      "text": "若葉中央公園も近いし、休憩がてら寄っていくか。",
-      "storySprites": [
-        {
-          "id": "hina",
-          "src": "images/assets/char/a10501.webp",
-          "side": "left",
-          "left": "7%",
-          "zIndex": 1000,
-          "opacity": 1
-        }
-      ]
+      "text": "若葉中央公園も近いし、休憩がてら寄っていくか。"
     },
     {
       "speaker": "",
-      "text": "公園には、春の陽射しがやわらかく差し込んでいた。",
-      "storySprites": [
-        {
-          "id": "hina",
-          "src": "images/assets/char/a10501.webp",
-          "side": "left",
-          "left": "7%",
-          "zIndex": 1000,
-          "opacity": 1
-        }
-      ]
+      "text": "公園には、春の陽射しがやわらかく差し込んでいた。"
     },
     {
       "speaker": "",
-      "text": "桜の花びらが、風に乗ってゆっくりと舞っている。",
-      "storySprites": [
-        {
-          "id": "hina",
-          "src": "images/assets/char/a10501.webp",
-          "side": "left",
-          "left": "7%",
-          "zIndex": 1000,
-          "opacity": 1
-        }
-      ]
+      "text": "桜の花びらが、風に乗ってゆっくりと舞っている。"
     },
     {
       "speaker": "",
-      "text": "ベンチの並ぶ広場へ向かうと、見慣れた赤い髪が目に入った。",
-      "storySprites": [
-        {
-          "id": "hina",
-          "src": "images/assets/char/a10501.webp",
-          "side": "left",
-          "left": "7%",
-          "zIndex": 1000,
-          "opacity": 1
-        }
-      ]
+      "text": "ベンチの並ぶ広場へ向かうと、見慣れた赤い髪が目に入った。"
     },
     {
       "speaker": "緋奈",
@@ -508,6 +449,8 @@
     "skipSameBackground": true,
     "skipSameSprites": true,
     "noDebugFlash": true,
-    "noFadeDuringStep": true
+    "noFadeDuringStep": true,
+    "showSpritesAfterEncounter": true,
+    "bottomAlignSprites": true
   }
 }
