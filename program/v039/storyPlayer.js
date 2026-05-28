@@ -1,4 +1,4 @@
-/* v039_42 story player quality */
+/* v039_43 story player quality */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -58,8 +58,51 @@
     return list;
   };
 
+  ns.hideEventCgSurface = function hideEventCgSurface() {
+    document.body.classList.remove("tenotsu-event-cg-active");
+    document.querySelectorAll(".tenotsu-event-cg-layer, .tenotsu-cg-layer, .event-cg-layer, .memory-cg-layer, [data-event-cg], [data-cg-layer]").forEach((el) => {
+      el.hidden = true;
+      el.style.setProperty("display", "none", "important");
+      el.style.setProperty("visibility", "hidden", "important");
+      el.style.setProperty("opacity", "0", "important");
+      el.style.setProperty("pointer-events", "none", "important");
+    });
+    document.querySelectorAll("img").forEach((img) => {
+      const src = img.getAttribute("src") || "";
+      if (src.includes("memory_") || src.includes("bg_memory_")) {
+        const parent = img.closest(".tenotsu-bg-layer, .tenotsu-background-layer, [data-bg-layer], .background");
+        if (!parent) {
+          img.style.setProperty("display", "none", "important");
+          img.style.setProperty("visibility", "hidden", "important");
+          img.style.setProperty("opacity", "0", "important");
+        }
+      }
+    });
+  };
+
+  ns.showEventCgSurface = function showEventCgSurface(src) {
+    if (!src) return;
+    document.body.classList.add("tenotsu-event-cg-active");
+    let layer = document.getElementById("tenotsu-event-cg-surface");
+    if (!layer) {
+      layer = document.createElement("div");
+      layer.id = "tenotsu-event-cg-surface";
+      layer.className = "tenotsu-event-cg-layer";
+      layer.dataset.eventCg = "true";
+      layer.innerHTML = '<img class="tenotsu-event-cg-image" alt="">';
+      document.body.appendChild(layer);
+    }
+    const img = layer.querySelector("img");
+    img.src = src;
+    layer.hidden = false;
+    layer.style.setProperty("display", "block", "important");
+    layer.style.setProperty("visibility", "visible", "important");
+    layer.style.setProperty("opacity", "1", "important");
+  };
+
   ns.forceReplaceStoryBackground = async function forceReplaceStoryBackground(bgPath) {
     if (!bgPath) return;
+    if (ns.hideEventCgSurface) ns.hideEventCgSurface();
     if (ns.suppressStoryFadeLayer) ns.suppressStoryFadeLayer();
     await new Promise((resolve) => {
       const img = new Image();
@@ -94,6 +137,7 @@
     ns.storyCurrentBackground = bgPath;
     if (ns.suppressStoryFadeLayer) ns.suppressStoryFadeLayer();
     if (ns.forceMobileStoryVisibility) ns.forceMobileStoryVisibility();
+    if (ns.hideEventCgSurface) ns.hideEventCgSurface();
   };
 
   ns.setStoryBackgroundNoFlash = async function setStoryBackgroundNoFlash(bgPath) {
@@ -325,6 +369,8 @@
 
   ns.applyStoryStep = async function applyStoryStep(step, options = {}) {
     if (!step) return;
+    if (step.hideEventCg && ns.hideEventCgSurface) ns.hideEventCgSurface();
+    if (step.showEventCg && step.eventCg && ns.showEventCgSurface) ns.showEventCgSurface(step.eventCg);
     const bgChanged = !!(step.bg && step.bg !== ns.story.lastBg);
     if (step.bg && step.bg !== ns.storyCurrentBackground) {
       ns.setStoryLoading(true);

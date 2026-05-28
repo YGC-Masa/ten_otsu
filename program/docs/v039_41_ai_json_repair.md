@@ -1,4 +1,4 @@
-# v039_42 藍シナリオJSON修復
+# v039_43 藍シナリオJSON修復
 
 ## 修正点
 - ユーザー案の意図を反映しつつ、JSONとして完全にvalidな `ai_spring_book_bread.json` に修復。

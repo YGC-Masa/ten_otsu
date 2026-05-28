@@ -12,7 +12,8 @@
       "text": "【思い出ストーリー】桜木陰のしおり",
       "bgMode": "forceReplace",
       "clearStorySprites": true,
-      "forceBackgroundReplace": true
+      "forceBackgroundReplace": true,
+      "hideEventCg": true
     },
     {
       "speaker": "店長",
@@ -166,7 +167,9 @@
       "text": "藍ちゃんは紙袋から、桜の形をした淡いピンクのパンを取り出し、こちらへそっと差し出した。",
       "bgMode": "replace",
       "clearStorySprites": true,
-      "spriteMode": "cg-clear"
+      "spriteMode": "cg-clear",
+      "showEventCg": true,
+      "eventCg": "images/assets/bgev/bg_memory_ai_spring_book_bread_share.png"
     },
     {
       "speaker": "店長",
@@ -205,7 +208,8 @@
       "bgMode": "forceReplace",
       "clearStorySprites": true,
       "spriteMode": "focus-manager",
-      "forceBackgroundReplace": true
+      "forceBackgroundReplace": true,
+      "hideEventCg": true
     },
     {
       "speaker": "藍",
@@ -395,7 +399,9 @@
       "text": "こういう、静かで穏やかな春の時間が……私は、とても好きなんです。",
       "bgMode": "replace",
       "clearStorySprites": true,
-      "spriteMode": "cg-clear"
+      "spriteMode": "cg-clear",
+      "showEventCg": true,
+      "eventCg": "images/assets/bgev/bg_memory_ai_spring_book_bread_close.png"
     },
     {
       "speaker": "店長",
@@ -424,7 +430,8 @@
           "opacity": 1
         }
       ],
-      "forceBackgroundReplace": true
+      "forceBackgroundReplace": true,
+      "hideEventCg": true
     },
     {
       "speaker": "店長",
@@ -465,6 +472,7 @@
     "aiSpecificCgTimingV41": true,
     "managerFocusNoSpriteOnUmai": true,
     "forceReplaceNormalBackground": true,
-    "clipSpritesAboveText": true
+    "clipSpritesAboveText": true,
+    "hideEventCgOnNormalBackground": true
   }
 }

@@ -1,4 +1,4 @@
-# v039_42 立ち絵クリップ・背景強制戻し
+# v039_43 立ち絵クリップ・背景強制戻し
 
 - body直下立ち絵レイヤーをテキスト欄の上端までにクリップ。
 - 通常背景戻しに `bgMode: forceReplace` / `forceBackgroundReplace: true` を付与。
