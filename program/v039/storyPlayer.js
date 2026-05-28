@@ -1,4 +1,4 @@
-/* v039_45 story player quality */
+/* v039_46 story player quality */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -125,44 +125,27 @@
   };
 
   ns.showEventCgSurface = function showEventCgSurface(src) {
-    if (ns.setUnifiedStoryBackground) ns.setUnifiedStoryBackground(src);
+    if (src && typeof ns.setUnifiedStoryBackground === "function") ns.setUnifiedStoryBackground(src);
   };
 
   ns.forceReplaceStoryBackground = async function forceReplaceStoryBackground(bgPath) {
     if (!bgPath) return;
-    if (ns.setUnifiedStoryBackground) {
+    if (typeof ns.setUnifiedStoryBackground === "function") {
       await ns.setUnifiedStoryBackground(bgPath);
       return;
     }
-    if (ns.setStoryBackgroundNoFlash) await ns.setStoryBackgroundNoFlash(bgPath);
+    await ns.setStoryBackgroundNoFlash(bgPath);
   };
 
   ns.setStoryBackgroundNoFlash = async function setStoryBackgroundNoFlash(bgPath) {
     if (!bgPath) return;
     if (ns.storyCurrentBackground === bgPath) return;
-    if (ns.suppressStoryFadeLayer) ns.suppressStoryFadeLayer();
-
-    await new Promise((resolve) => {
-      const img = new Image();
-      img.onload = resolve;
-      img.onerror = resolve;
-      img.src = bgPath;
-    });
-
-    if (ns.suppressStoryFadeLayer) ns.suppressStoryFadeLayer();
-
-    const directOk = typeof ns.directSetStoryBackgroundImage === "function" && ns.directSetStoryBackgroundImage(bgPath);
-    if (!directOk) {
-      if (typeof ns.setBackground === "function") {
-        ns.setBackground(bgPath);
-      } else if (typeof ns.setBackgroundReady === "function") {
-        await ns.setBackgroundReady(bgPath);
-      }
+    if (typeof ns.setUnifiedStoryBackground === "function") {
+      await ns.setUnifiedStoryBackground(bgPath);
+      return;
     }
-
+    if (typeof ns.setBackground === "function") ns.setBackground(bgPath);
     ns.storyCurrentBackground = bgPath;
-    if (ns.suppressStoryFadeLayer) ns.suppressStoryFadeLayer();
-    if (ns.forceMobileStoryVisibility) ns.forceMobileStoryVisibility();
   };
 
   ns.forceMobileStoryVisibility = function forceMobileStoryVisibility() {
@@ -331,7 +314,7 @@
   ns.normalizeStorySpriteLayerOrder = function normalizeStorySpriteLayerOrder(sprites) {
     return (Array.isArray(sprites) ? sprites : []).map((s) => {
       const copy = Object.assign({}, s);
-      copy.zIndex = 31;
+      copy.zIndex = 200;
       return copy;
     });
   };

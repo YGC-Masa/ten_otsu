@@ -472,7 +472,9 @@
     "singleStoryBackgroundSlot": true,
     "disableEventCgSurface": true,
     "spriteBottomAlignNoClip": true,
-    "officeLikeLayerStack": true,
-    "opaqueTextSurfaceOverSprites": true
+    "officeLikeLayerStack": false,
+    "opaqueTextSurfaceOverSprites": true,
+    "v046LayerOrder": "background-eventcg -> characters -> text",
+    "storyLayerStackReset": true
   }
 }
