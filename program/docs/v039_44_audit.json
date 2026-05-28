@@ -1,0 +1,18 @@
+{
+  "version": "v039_44",
+  "singleSlotPolicy": true,
+  "disableEventCgSurface": true,
+  "showEventCg_flags": [],
+  "eventCg_fields": [],
+  "memory_bg_indices": [
+    15,
+    39
+  ],
+  "normal_bg_indices": [
+    0,
+    21,
+    42
+  ],
+  "unifiedBgFunction": true,
+  "unifiedBgCss": true
+}
