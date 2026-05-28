@@ -475,6 +475,8 @@
     "officeLikeLayerStack": false,
     "opaqueTextSurfaceOverSprites": true,
     "v046LayerOrder": "background-eventcg -> characters -> text",
-    "storyLayerStackReset": true
+    "storyLayerStackReset": true,
+    "v047ExistingLayerRestore": true,
+    "disableUnifiedBackgroundLayer": true
   }
 }

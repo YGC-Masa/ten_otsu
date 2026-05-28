@@ -1,4 +1,4 @@
-/* v039_46 layers */
+/* v039_47 layers */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -54,7 +54,7 @@
     layers.speaker = el("div", { className: "tenotsu-speaker" }, layers.text);
     layers.message = el("div", { className: "tenotsu-message" }, layers.text);
     layers.fade = el("div", { className: "tenotsu-fade-layer", "data-layer": "fade" }, app);
-    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_46" }, app);
+    layers.version = el("div", { className: "tenotsu-version-badge", text: ns.VERSION || "v039_47" }, app);
 
     ns.layers = layers;
     if (!layers.orientation) { layers.orientation = el("div", { className: "tenotsu-orientation-notice" }, app); layers.orientation.innerHTML = "<div>このゲームは横画面でお楽しみください。<br>端末を横向きにしてください。</div>"; }
@@ -220,7 +220,7 @@
     const a = ns.storyProbeAssets || {};
     layers.storyDebug.style.display = "block";
     layers.storyDebug.innerHTML = `
-      <div class="probe-label probe-label-main">SURFACE PROBE v039_46: ${reason || "active"}</div>
+      <div class="probe-label probe-label-main">SURFACE PROBE v039_47: ${reason || "active"}</div>
       <img class="probe-char probe-z0500" src="${a.yukino}" alt="">
       <img class="probe-char probe-z1000" src="${a.hina}" alt="">
       <img class="probe-char probe-z2000" src="${a.ai}" alt="">
@@ -266,7 +266,7 @@
     if (!layer) {
       layer = document.createElement("div");
       layer.id = "tenotsu-story-body-sprite-layer";
-      layer.className = "tenotsu-story-body-sprite-layer story-character-slot-v46";
+      layer.className = "tenotsu-story-body-sprite-layer story-character-slot-v47";
       document.body.appendChild(layer);
     }
     layer.hidden = false;
@@ -291,7 +291,7 @@
       const side = ch.side || (index === 0 ? "left" : index === 1 ? "center" : "right");
       const src = ch.src || "";
       const opacity = ch.opacity === undefined ? 1 : ch.opacity;
-      const z = ch.zIndex || ch.z || 201;
+      const z = ch.zIndex || ch.z || 200;
       const left = ch.left || (side === "left" ? "7%" : side === "center" ? "27%" : "47%");
       return `<img class="tenotsu-story-body-standing side-${side} bottom-align" src="${src}" style="left:${left}; z-index:${z}; opacity:${opacity};" alt="">`;
     }).join("");
