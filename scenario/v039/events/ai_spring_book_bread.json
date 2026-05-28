@@ -471,6 +471,8 @@
     "hideEventCgOnNormalBackground": true,
     "singleStoryBackgroundSlot": true,
     "disableEventCgSurface": true,
-    "spriteBottomAlignNoClip": true
+    "spriteBottomAlignNoClip": true,
+    "officeLikeLayerStack": true,
+    "opaqueTextSurfaceOverSprites": true
   }
 }

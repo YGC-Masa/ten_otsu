@@ -1,4 +1,4 @@
-# v039_44 イベントCGサーフェス明示非表示
+# v039_45 イベントCGサーフェス明示非表示
 
 - 通常背景へ戻すステップへ `hideEventCg: true` を付与。
 - イベントCGステップへ `showEventCg: true` と `eventCg` を付与。
