@@ -10,8 +10,9 @@
       "bg": "images/assets/bgev/bg_park_spring.png",
       "speaker": "",
       "text": "【思い出ストーリー】桜木陰のしおり",
-      "bgMode": "replace",
-      "clearStorySprites": true
+      "bgMode": "forceReplace",
+      "clearStorySprites": true,
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "店長",
@@ -201,9 +202,10 @@
       "bg": "images/assets/bgev/bg_park_spring.png",
       "speaker": "店長",
       "text": "うまいな、これ。",
-      "bgMode": "replace",
+      "bgMode": "forceReplace",
       "clearStorySprites": true,
-      "spriteMode": "focus-manager"
+      "spriteMode": "focus-manager",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "藍",
@@ -411,7 +413,7 @@
       "bg": "images/assets/bgev/bg_park_spring.png",
       "speaker": "藍",
       "text": "ふふ。それじゃ、そろそろ戻りましょうか。",
-      "bgMode": "replace",
+      "bgMode": "forceReplace",
       "storySprites": [
         {
           "id": "ai",
@@ -421,7 +423,8 @@
           "zIndex": 2500,
           "opacity": 1
         }
-      ]
+      ],
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "店長",
@@ -460,6 +463,8 @@
     "spritesBehindText": true,
     "multipleSpriteVariants": true,
     "aiSpecificCgTimingV41": true,
-    "managerFocusNoSpriteOnUmai": true
+    "managerFocusNoSpriteOnUmai": true,
+    "forceReplaceNormalBackground": true,
+    "clipSpritesAboveText": true
   }
 }

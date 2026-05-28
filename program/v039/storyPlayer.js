@@ -1,4 +1,4 @@
-/* v039_41 story player quality */
+/* v039_42 story player quality */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -56,6 +56,44 @@
       list.push({ side: "center", src: ns.storySpriteMap.ai, zIndex: 2000, left: "27%", opacity: 1 });
     }
     return list;
+  };
+
+  ns.forceReplaceStoryBackground = async function forceReplaceStoryBackground(bgPath) {
+    if (!bgPath) return;
+    if (ns.suppressStoryFadeLayer) ns.suppressStoryFadeLayer();
+    await new Promise((resolve) => {
+      const img = new Image();
+      img.onload = resolve;
+      img.onerror = resolve;
+      img.src = bgPath;
+    });
+    const seen = new Set();
+    [".tenotsu-bg-layer img",".tenotsu-background-layer img","[data-bg-layer] img",".background img",".tenotsu-story-layer img","img"].forEach((sel) => {
+      document.querySelectorAll(sel).forEach((img) => {
+        if (seen.has(img)) return;
+        seen.add(img);
+        const src = img.getAttribute("src") || "";
+        const isBgLike = src.includes("/bgev/") || src.includes("bg_") || src.includes("memory_");
+        if (!isBgLike) return;
+        img.src = bgPath;
+        img.style.setProperty("display","block","important");
+        img.style.setProperty("visibility","visible","important");
+        img.style.setProperty("opacity","1","important");
+        img.style.setProperty("transition","none","important");
+        img.style.setProperty("animation","none","important");
+      });
+    });
+    document.querySelectorAll("[style*='memory_'],[style*='bg_memory_']").forEach((el) => {
+      const bg = getComputedStyle(el).backgroundImage || "";
+      if (bg.includes("memory_") || bg.includes("bg_memory_")) {
+        el.style.setProperty("background-image", `url("${bgPath}")`, "important");
+      }
+    });
+    if (typeof ns.directSetStoryBackgroundImage === "function") ns.directSetStoryBackgroundImage(bgPath);
+    if (typeof ns.setBackground === "function") ns.setBackground(bgPath);
+    ns.storyCurrentBackground = bgPath;
+    if (ns.suppressStoryFadeLayer) ns.suppressStoryFadeLayer();
+    if (ns.forceMobileStoryVisibility) ns.forceMobileStoryVisibility();
   };
 
   ns.setStoryBackgroundNoFlash = async function setStoryBackgroundNoFlash(bgPath) {
