@@ -1,4 +1,4 @@
-/* v039_66 appliance alien dual-personality data + rival CPU skill definitions */
+/* v039_67 appliance alien dual-personality data + rival random skill table */
 (function () {
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
@@ -86,23 +86,61 @@
   };
 
   const RIVAL_SKILLS = {
-    koharu: {
-      id: "koharu", name: "天神 小春", label: "ビリビリ販促ラッシュ", type: "rivalScoreBuff",
-      desc: "一定時間、ビリビリ側のスコア倍率を上げる。", scoreRate: 1.3, durationSec: 8, cooldownSec: 18
-    },
-    mafuyu: {
-      id: "mafuyu", name: "霧島 真冬", label: "冷静な価格比較", type: "playerMultiplierDebuff",
-      desc: "一定時間、こちらのスコア倍率を下げる。", playerScoreRate: 0.85, durationSec: 7, cooldownSec: 20
-    },
-    natsu: {
-      id: "natsu", name: "日向 なつ", label: "ほんわかヘルプスティール", type: "helpGaugeSteal",
-      desc: "店長HELPゲージを少し奪う。", stealHelp: 15, durationSec: 0, cooldownSec: 22
-    }
+    koharu: [
+      {
+        id: "koharu_promo_rush", owner: "koharu", name: "天神 小春", label: "ビリビリ販促ラッシュ", type: "rivalScoreBuff", unlockPlayerLevel: 1,
+        desc: "一定時間、ビリビリ側のスコア倍率を上げる。", scoreRate: 1.3, durationSec: 8, cooldownSec: 18, weight: 10
+      },
+      {
+        id: "koharu_best_biribiri", owner: "koharu", name: "天神 小春", label: "うちらが最高やけん！", type: "rivalGaugeFull", unlockPlayerLevel: 20,
+        desc: "ビリビリ3人全員の必殺技ゲージを即時満タンにする。", fillAllRivalSkillGauge: true, cooldownSec: 32, weight: 6
+      },
+      {
+        id: "koharu_flash_sale", owner: "koharu", name: "天神 小春", label: "今だけビリビリ特価！", type: "rivalScoreBurst", unlockPlayerLevel: 40,
+        desc: "短時間だけビリビリ側のスコア獲得量を大きく上げる。", scoreRate: 1.6, durationSec: 5, cooldownSec: 34, weight: 4
+      }
+    ],
+    mafuyu: [
+      {
+        id: "mafuyu_price_compare", owner: "mafuyu", name: "霧島 真冬", label: "冷静な価格比較", type: "playerMultiplierDebuff", unlockPlayerLevel: 1,
+        desc: "一定時間、こちらのスコア倍率を下げる。", playerScoreRate: 0.85, durationSec: 7, cooldownSec: 20, weight: 10
+      },
+      {
+        id: "mafuyu_take_a_rest", owner: "mafuyu", name: "霧島 真冬", label: "少し休んだら如何ですか？", type: "playerMemberRecastCancel", unlockPlayerLevel: 20,
+        desc: "こちらの特定メンバー1人のリキャストをキャンセルし、再行動まで待たせる。", targetCount: 1, recastResetRate: 1, cooldownSec: 28, weight: 6
+      },
+      {
+        id: "mafuyu_probability_lock", owner: "mafuyu", name: "霧島 真冬", label: "勝率は計算済みです", type: "playerComboLock", unlockPlayerLevel: 40,
+        desc: "一定時間、こちらのコンボ倍率上昇を抑える。", comboGainRate: 0.55, durationSec: 8, cooldownSec: 34, weight: 4
+      }
+    ],
+    natsu: [
+      {
+        id: "natsu_help_steal", owner: "natsu", name: "日向 なつ", label: "ほんわかヘルプスティール", type: "helpGaugeSteal", unlockPlayerLevel: 1,
+        desc: "店長HELPゲージを少し奪う。", stealHelp: 15, durationSec: 0, cooldownSec: 22, weight: 10
+      },
+      {
+        id: "natsu_come_here", owner: "natsu", name: "日向 なつ", label: "みんな～、こっちがいいよ～", type: "alienCharmCountdown", unlockPlayerLevel: 20,
+        desc: "場の家電星人を何人か魅了する。カウント以内に対応できないとビリビリ側のスコアになる。", charmCount: 2, countdownSec: 6, rivalScoreRate: 1.0, cooldownSec: 30, weight: 6
+      },
+      {
+        id: "natsu_snack_time", owner: "natsu", name: "日向 なつ", label: "ちょっと休憩しよ～？", type: "alienSlowButRivalPull", unlockPlayerLevel: 40,
+        desc: "場の流れをゆるめつつ、迷っている家電星人をビリビリ側へ引き寄せやすくする。", leaveSpeedRate: 0.85, rivalPullRate: 1.45, durationSec: 9, cooldownSec: 36, weight: 4
+      }
+    ]
+  };
+
+  const RIVAL_SKILL_UNLOCKS = {
+    1: "初期スキル。ビリビリバトルの基本行動。",
+    20: "プレイヤーレベル20以上で追加。妨害・取り合い要素が強くなる。",
+    40: "プレイヤーレベル40以上で追加。短時間の大きな揺さぶりを入れる。"
   };
 
   const RIVAL_BATTLE_DESIGN = {
     layout: "通常営業の家電星人枠を小さくし、上段に小春・真冬・なつのカードを置く取り合いバトル。",
     difficulty: "サポートモード程度。手動操作なら勝ちやすく、オートでは負けることがある強さ。",
+    skillPolicy: "ビリビリ側はプレイヤーレベル帯で解禁された必殺技からランダムに使用する。",
+    unlockLevels: [1, 20, 40],
     targetWinRate: { manualBeginner: "70-80%", manualSkilled: "90%+", auto: "50-60%", trainedAuto: "75-85%" }
   };
 
@@ -146,15 +184,45 @@
     return out;
   }
 
+  function flattenRivalSkills() {
+    return Object.keys(RIVAL_SKILLS).reduce((list, owner) => list.concat(RIVAL_SKILLS[owner]), []);
+  }
+
+  function getRivalSkillsForLevel(playerLevel = 1, owner = null) {
+    const lv = Math.max(1, Math.floor(Number(playerLevel) || 1));
+    const source = owner && RIVAL_SKILLS[owner] ? RIVAL_SKILLS[owner] : flattenRivalSkills();
+    return source.filter((skill) => lv >= (skill.unlockPlayerLevel || 1));
+  }
+
+  function pickWeighted(list) {
+    const pool = Array.isArray(list) ? list.filter(Boolean) : [];
+    if (!pool.length) return null;
+    const total = pool.reduce((sum, item) => sum + Math.max(1, Number(item.weight) || 1), 0);
+    let roll = Math.random() * total;
+    for (const item of pool) {
+      roll -= Math.max(1, Number(item.weight) || 1);
+      if (roll <= 0) return item;
+    }
+    return pool[pool.length - 1];
+  }
+
+  function pickRandomRivalSkill(playerLevel = 1, owner = null) {
+    return pickWeighted(getRivalSkillsForLevel(playerLevel, owner));
+  }
+
   window.TenotsuApplianceAliens = {
-    VERSION: "v039_66",
+    VERSION: "v039_67",
     BASE_ALIENS,
     TRAITS,
     RIVAL_SKILLS,
+    RIVAL_SKILL_UNLOCKS,
     RIVAL_BATTLE_DESIGN,
     buildAlienInstance,
     pickAlienInstance,
-    pickAlienInstances
+    pickAlienInstances,
+    flattenRivalSkills,
+    getRivalSkillsForLevel,
+    pickRandomRivalSkill
   };
   ns.applianceAliens = window.TenotsuApplianceAliens;
 })();
