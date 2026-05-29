@@ -8,9 +8,9 @@
   "steps": [
     {
       "bg": "images/assets/bgev/bg_park_spring.png",
+      "bgMode": "replace",
       "speaker": "",
       "text": "【思い出ストーリー】春の公園でのお弁当タイム",
-      "bgMode": "replace",
       "clearStorySprites": true
     },
     {
@@ -115,9 +115,9 @@
     },
     {
       "bg": "images/assets/bgev/bg_memory_hina_spring_bento.png",
+      "bgMode": "replace",
       "speaker": "",
       "text": "緋奈は赤い箸で、お弁当のハンバーグをひと口分だけ切り分けると、少し照れた顔でこちらへ差し出してきた。",
-      "bgMode": "replace",
       "clearStorySprites": true,
       "spriteMode": "cg-clear"
     },
@@ -139,16 +139,7 @@
     },
     {
       "speaker": "緋奈",
-      "text": "本当ですよ！？　もう、そこ疑うところじゃないですって！",
-      "storySprites": [
-        {
-          "id": "hina",
-          "src": "images/assets/char/a11001.webp",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        }
-      ]
+      "text": "本当ですよ！？　もう、そこ疑うところじゃないですって！"
     },
     {
       "speaker": "店長",
@@ -156,22 +147,13 @@
     },
     {
       "speaker": "緋奈",
-      "text": "えへへ……そこまで言われると、ちょっと照れますね。",
-      "storySprites": [
-        {
-          "id": "hina",
-          "src": "images/assets/char/a10501.webp",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        }
-      ]
+      "text": "えへへ……そこまで言われると、ちょっと照れますね。"
     },
     {
       "bg": "images/assets/bgev/bg_park_spring.png",
+      "bgMode": "replace",
       "speaker": "店長",
       "text": "この腕前なら、いいお嫁さんになれるよ。",
-      "bgMode": "replace",
       "storySprites": [
         {
           "id": "hina",
