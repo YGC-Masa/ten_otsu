@@ -1,4 +1,4 @@
-/* v039_57 battle result comments */
+/* v039_58 battle result comments */
 (function () {
   "use strict";
   const COMMON = [
@@ -87,5 +87,5 @@
     const id = pickFrom(party);
     return { id, name: NAMES[id] || id, text: pickFrom(COMMENTS[id]) };
   }
-  window.TenotsuResultComments = { VERSION: "v039_57", COMMON: COMMON.slice(), COMMENTS, pick };
+  window.TenotsuResultComments = { VERSION: "v039_58", COMMON: COMMON.slice(), COMMENTS, pick };
 })();
