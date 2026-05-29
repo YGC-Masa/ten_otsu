@@ -262,20 +262,32 @@
   };
 
   ns.ensureStoryBodySpriteLayer = function ensureStoryBodySpriteLayer() {
+    const layers = ns.ensureLayers();
     let layer = document.getElementById("tenotsu-story-body-sprite-layer");
     if (!layer) {
       layer = document.createElement("div");
       layer.id = "tenotsu-story-body-sprite-layer";
-      layer.className = "tenotsu-story-body-sprite-layer story-character-slot-v47";
-      document.body.appendChild(layer);
+      layer.className = "tenotsu-story-body-sprite-layer story-character-slot-v51";
     }
+
+    // v039_51: keep story sprites in the same #tenotsu-app stacking context as
+    // the background and the text UI.  The old body-level overlay could paint
+    // above the text box even with a smaller z-index because #tenotsu-app uses
+    // its own isolated stacking context.
+    if (layer.parentNode !== layers.app) {
+      try { layer.parentNode && layer.parentNode.removeChild(layer); } catch (_) {}
+      layers.app.insertBefore(layer, layers.text || null);
+    } else if (layers.text && layer.nextSibling !== layers.text) {
+      layers.app.insertBefore(layer, layers.text);
+    }
+
     layer.hidden = false;
     layer.removeAttribute("hidden");
     layer.style.setProperty("display", "block", "important");
     layer.style.setProperty("visibility", "visible", "important");
     layer.style.setProperty("opacity", "1", "important");
     layer.style.setProperty("z-index", "200", "important");
-    
+
     return layer;
   };
 
