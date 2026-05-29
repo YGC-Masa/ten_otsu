@@ -1,4 +1,4 @@
-/* v039_64 layers */
+/* v039_65 layers */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -41,7 +41,7 @@
     layers.officeChars = el("div", { className: "tenotsu-office-character-layer", "data-layer": "office-characters" }, app);
     layers.ui = el("div", { className: "tenotsu-ui-layer", "data-layer": "ui" }, app);
     layers.menu = el("nav", { className: "tenotsu-office-menu", "aria-label": "事務所メニュー" }, app);
-    layers.staminaHud = el("aside", { className: "tenotsu-stamina-hud", "aria-label": "スタミナ" }, app);
+    layers.staminaHud = el("aside", { className: "tenotsu-stamina-hud", "aria-label": "営業リソース" }, app);
     layers.shopMenu = el("nav", { className: "tenotsu-shop-menu", "aria-label": "ショップメニュー", hidden: "hidden" }, app);
     layers.shopInfo = el("aside", { className: "tenotsu-shop-info-panel", "aria-label": "ショップ情報", hidden: "hidden" }, app);
     layers.settings = el("aside", { className: "tenotsu-settings-panel", "aria-label": "設定", hidden: "hidden" }, app);

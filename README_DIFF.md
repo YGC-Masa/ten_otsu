@@ -1,13 +1,8 @@
-# ten_otsu diff v039_63 to v039_64
+# ten_otsu_diff_v039_64_to_v039_65_resource_ui_sales_roles
 
-v039_64: スタミナUI整理、営業種別の分岐準備、メンバー持ち物欄の見える化。
+v039_64からv039_65への差分です。
 
-## Modified
-- index.html
-- program/v039/state.js
-- program/v039/layers.js
-- program/v039/stamina.js
-- program/v039/sales.js
-- program/v039/members.js
-- program/v039/core.css
-- program/docs/v039_64_stamina_sales_member_followup.md
+- スタミナHUDを右上へ移動
+- VSビリビリ用のBP基盤を追加
+- 通常営業/バトル営業/イベント営業の消費リソースと報酬役割を整理
+- 右メニュー幅とテキストエリア右余白を再調整

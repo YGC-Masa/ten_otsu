@@ -1,4 +1,4 @@
-/* v039_64 stamina base + always-visible HUD */
+/* v039_65 stamina HUD + BP companion */
 (function () {
   "use strict";
   const STORAGE_KEY = "tenotsu_stamina_v1";
@@ -17,12 +17,12 @@
     let data = null;
     try { data = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null"); } catch (_) { data = null; }
     if (!data || typeof data !== "object") {
-      return { version: "v039_64", current: MAX_STAMINA, max: MAX_STAMINA, updatedAt: nowIso(), history: [] };
+      return { version: "v039_65", current: MAX_STAMINA, max: MAX_STAMINA, updatedAt: nowIso(), history: [] };
     }
     data.max = MAX_STAMINA;
     data.current = clamp(data.current == null ? MAX_STAMINA : data.current);
     data.history = Array.isArray(data.history) ? data.history.slice(-20) : [];
-    data.version = "v039_64";
+    data.version = "v039_65";
     data.updatedAt = data.updatedAt || nowIso();
     return data;
   }
@@ -65,21 +65,27 @@
   function renderBadge(modeId) {
     const st = load();
     const cost = getCost(modeId);
+    if (cost <= 0) return "";
     return `<div class="tenotsu-stamina-badge"><span>スタミナ</span><b>${st.current}/${st.max}</b><small>消費 ${cost}</small></div>`;
   }
   function renderSalesSummary() {
     const st = load();
-    return `<div class="tenotsu-sales-stamina-summary"><span>現在スタミナ</span><b>${st.current}/${st.max}</b><small>営業開始時に消費します</small></div>`;
+    const bpHtml = window.TenotsuBattlePoint && typeof window.TenotsuBattlePoint.renderSalesSummary === "function" ? window.TenotsuBattlePoint.renderSalesSummary() : "";
+    return `<div class="tenotsu-sales-resource-summary"><div class="tenotsu-sales-stamina-summary"><span>スタミナ</span><b>${st.current}/${st.max}</b><small>通常・イベント営業で消費</small></div>${bpHtml}</div>`;
   }
   function renderHud() {
     const ns = window.TENOTSU_V039;
     if (!ns || !ns.layers || !ns.layers.staminaHud) return;
     const st = load();
     const ratio = st.max ? Math.max(0, Math.min(100, Math.round(st.current / st.max * 100))) : 0;
+    const bp = window.TenotsuBattlePoint && typeof window.TenotsuBattlePoint.getState === "function" ? window.TenotsuBattlePoint.getState() : null;
     ns.layers.staminaHud.innerHTML = `
-      <div class="tenotsu-stamina-hud-label">ST</div>
-      <div class="tenotsu-stamina-hud-main"><b>${st.current}</b><span>/ ${st.max}</span></div>
+      <div class="tenotsu-resource-hud-row">
+        <div class="tenotsu-stamina-hud-label">ST</div>
+        <div class="tenotsu-stamina-hud-main"><b>${st.current}</b><span>/ ${st.max}</span></div>
+      </div>
       <div class="tenotsu-stamina-hud-bar"><i style="width:${ratio}%"></i></div>
+      ${bp ? `<div class="tenotsu-resource-hud-row tenotsu-resource-hud-bp"><div class="tenotsu-stamina-hud-label">BP</div><div class="tenotsu-stamina-hud-main"><b>${bp.current}</b><span>/ ${bp.max}</span></div></div>` : ""}
     `;
   }
   function refreshAll() {
@@ -87,7 +93,7 @@
   }
 
   window.TenotsuStamina = {
-    VERSION: "v039_64",
+    VERSION: "v039_65",
     MAX_STAMINA,
     DEFAULT_COSTS: Object.assign({}, DEFAULT_COSTS),
     getCost,

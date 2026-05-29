@@ -1,4 +1,4 @@
-/* v039_64 sales mode labels + stamina summary + branch prep */
+/* v039_65 sales resources + role split */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -8,10 +8,12 @@
       id: "normal_sales",
       label: "通常営業",
       tag: "周回向け",
-      description: "ひだまりストアで通常営業を行います。周回向けの基本接客バトルです。",
-      message: "通常営業を開始します。スタミナを消費して、営業結果と経験値を獲得します。",
+      description: "ひだまりストアの通常営業です。経験値・売上・基礎報酬を安定して集める周回向けの営業です。",
+      message: "通常営業を開始します。スタミナを消費して、経験値と基礎報酬を獲得します。",
       duration: 30,
       staminaCost: 10,
+      battlePointCost: 0,
+      rewardRole: "経験値 / 売上 / 基礎報酬",
       target: "来店した家電星人をできるだけ多く接客する",
       battleType: "normal"
     },
@@ -19,10 +21,12 @@
       id: "rival_battle",
       label: "バトル営業",
       tag: "VSビリビリ",
-      description: "ライバル店・ビリビリ電機との販売勝負に挑みます。VSビリビリ用の営業です。",
-      message: "バトル営業を開始します。ビリビリ電機との販売勝負に挑みます。",
+      description: "ライバル店・ビリビリ電機との販売勝負です。通常営業とは別のバトルPを消費します。",
+      message: "バトル営業を開始します。バトルPを消費して、ビリビリ電機との販売勝負に挑みます。",
       duration: 45,
-      staminaCost: 15,
+      staminaCost: 0,
+      battlePointCost: 1,
+      rewardRole: "ライバル報酬 / 交換素材 / 称号系",
       target: "ビリビリ電機との販売勝負で接客成果を競う",
       battleType: "rival"
     },
@@ -30,22 +34,35 @@
       id: "event_sales",
       label: "イベント営業",
       tag: "ボス戦予定",
-      description: "イベントボスとの特別営業に挑みます。将来的にはドラムリズムゲーム形式のボス戦として実装予定です。",
+      description: "イベントボスとの特別営業です。将来的にはドラムリズムゲーム形式のボス戦として実装予定です。",
       message: "イベント営業は、ドラムリズムゲーム形式のボス戦として接続予定です。現時点では接客バトルへ仮接続します。",
       duration: 45,
       staminaCost: 20,
+      battlePointCost: 0,
+      rewardRole: "イベント報酬 / 限定素材 / 思い出解禁",
       target: "イベントボス戦でリズムに合わせて接客する",
       battleType: "eventBoss",
       futureSystem: "drumRhythmBoss"
     }
   ];
+
+  function modeResourceLabel(mode) {
+    if (mode.battlePointCost && mode.battlePointCost > 0) return `BP ${mode.battlePointCost}`;
+    if (mode.staminaCost && mode.staminaCost > 0) return `ST ${mode.staminaCost}`;
+    return "消費なし";
+  }
+  function modeResourceBadge(mode) {
+    const st = window.TenotsuStamina && typeof window.TenotsuStamina.renderBadge === "function" ? window.TenotsuStamina.renderBadge(mode.id) : "";
+    const bp = window.TenotsuBattlePoint && typeof window.TenotsuBattlePoint.renderBadge === "function" ? window.TenotsuBattlePoint.renderBadge(mode.id) : "";
+    return st || bp || `<div class="tenotsu-stamina-badge"><span>消費</span><b>なし</b><small>テスト用</small></div>`;
+  }
   function salesCard(mode) {
     return `
       <button type="button" class="tenotsu-sales-card tenotsu-sales-card-${mode.id}" data-sales-mode="${mode.id}" data-battle-type="${mode.battleType || 'normal'}">
         <span class="tenotsu-sales-card-title">${mode.label}</span>
         <span class="tenotsu-sales-card-meta">
           <span class="tenotsu-sales-card-tag">${mode.tag}</span>
-          <span class="tenotsu-sales-card-stamina">ST ${mode.staminaCost == null ? (window.TenotsuStamina ? window.TenotsuStamina.getCost(mode.id) : 10) : mode.staminaCost}</span>
+          <span class="tenotsu-sales-card-stamina">${modeResourceLabel(mode)}</span>
         </span>
         <span class="tenotsu-sales-card-desc">${mode.description}</span>
       </button>
@@ -88,7 +105,7 @@
         <div class="tenotsu-sales-detail-title">${mode.label}</div>
         <div class="tenotsu-sales-detail-tag">${mode.tag}</div>
         <div class="tenotsu-sales-detail-desc">${mode.description}</div>
-        ${window.TenotsuStamina && typeof window.TenotsuStamina.renderBadge === "function" ? window.TenotsuStamina.renderBadge(mode.id) : ""}
+        ${modeResourceBadge(mode)}
         <button type="button" class="tenotsu-sales-start" data-sales-start="${mode.id}">この営業を開始</button>
       `;
 
@@ -151,7 +168,8 @@
         <div class="tenotsu-sales-dialog-spec">
           <div><strong>目標：</strong>${mode.target || "営業を成功させる"}</div>
           <div><strong>制限時間：</strong>${mode.duration || 30}秒</div>
-          <div><strong>スタミナ：</strong>${window.TenotsuStamina ? `${window.TenotsuStamina.getState().current}/${window.TenotsuStamina.getState().max} / 消費 ${window.TenotsuStamina.getCost(mode.id)}` : "未接続"}</div>
+          <div><strong>消費：</strong>${modeResourceLabel(mode)}</div>
+          <div><strong>報酬役割：</strong>${mode.rewardRole || "営業報酬"}</div>
           <div><strong>種別：</strong>${mode.battleType === "rival" ? "VSビリビリ" : mode.battleType === "eventBoss" ? "イベント営業 / ボス戦予定" : "通常営業"}</div>
           <div><strong>現在：</strong>${mode.battleType === "eventBoss" ? "接客バトルへ仮接続 / ドラムリズムボス戦予定" : "抽出バトル実装"}</div>
         </div>
@@ -162,7 +180,16 @@
       </div>`;
     ns.setText("店長", `${mode.label}を開始しますか？ 画面中央の確認ダイアログから営業開始できます。`);
     detail.querySelector('[data-sales-dialog="start"]').addEventListener("click", () => {
-      if (window.TenotsuStamina && typeof window.TenotsuStamina.consume === "function") {
+      if (mode.battlePointCost && mode.battlePointCost > 0) {
+        if (window.TenotsuBattlePoint && typeof window.TenotsuBattlePoint.consume === "function") {
+          const consumed = window.TenotsuBattlePoint.consume(mode.id, mode.label);
+          if (!consumed.ok) {
+            ns.setText("店長", `バトルPが足りません。現在 ${consumed.state.current}/${consumed.state.max}、必要 ${consumed.cost} です。`);
+            ns.renderSalesPanel(mode.id);
+            return;
+          }
+        }
+      } else if (window.TenotsuStamina && typeof window.TenotsuStamina.consume === "function") {
         const consumed = window.TenotsuStamina.consume(mode.id, mode.label);
         if (!consumed.ok) {
           ns.setText("店長", `スタミナが足りません。現在 ${consumed.state.current}/${consumed.state.max}、必要 ${consumed.cost} です。`);
