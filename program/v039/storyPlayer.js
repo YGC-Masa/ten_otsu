@@ -40,6 +40,61 @@
     return false;
   };
 
+
+  ns.setStoryBackgroundDirect = async function setStoryBackgroundDirect(bgPath, options = {}) {
+    if (!bgPath) return;
+    const layers = ns.layers || ns.ensureLayers();
+    const requested = bgPath;
+    if (ns.disableUnifiedStoryBackgroundLayer) ns.disableUnifiedStoryBackgroundLayer();
+    if (ns.hideEventCgSurface) ns.hideEventCgSurface();
+    if (ns.suppressStoryFadeLayer) ns.suppressStoryFadeLayer();
+
+    // Preload, but never fall back to office/town while story explicitly asks a bg.
+    await new Promise((resolve) => {
+      const img = new Image();
+      img.onload = resolve;
+      img.onerror = resolve;
+      img.src = requested;
+      setTimeout(resolve, 1200);
+    });
+
+    if (layers.bg) {
+      layers.bg.hidden = false;
+      layers.bg.style.setProperty("display", "block", "important");
+      layers.bg.style.setProperty("visibility", "visible", "important");
+      layers.bg.style.setProperty("opacity", "1", "important");
+      layers.bg.style.setProperty("z-index", "100", "important");
+      layers.bg.style.setProperty("background-image", `url("${requested}")`, "important");
+      layers.bg.style.setProperty("background-size", "cover", "important");
+      layers.bg.style.setProperty("background-position", "center", "important");
+      layers.bg.style.setProperty("background-repeat", "no-repeat", "important");
+    }
+    if (layers.bgImg) {
+      layers.bgImg.onerror = null;
+      layers.bgImg.removeAttribute("hidden");
+      layers.bgImg.style.setProperty("display", "block", "important");
+      layers.bgImg.style.setProperty("visibility", "visible", "important");
+      layers.bgImg.style.setProperty("opacity", "1", "important");
+      layers.bgImg.style.setProperty("width", "100%", "important");
+      layers.bgImg.style.setProperty("height", "100%", "important");
+      layers.bgImg.style.setProperty("object-fit", "cover", "important");
+      layers.bgImg.src = requested;
+    }
+
+    document.querySelectorAll("#tenotsu-unified-story-bg-layer,#tenotsu-event-cg-surface,.tenotsu-event-cg-layer,.tenotsu-cg-layer,.event-cg-layer,.memory-cg-layer,[data-event-cg],[data-cg-layer]").forEach((el) => {
+      el.hidden = true;
+      el.style.setProperty("display", "none", "important");
+      el.style.setProperty("visibility", "hidden", "important");
+      el.style.setProperty("opacity", "0", "important");
+      el.style.setProperty("pointer-events", "none", "important");
+    });
+
+    ns.storyCurrentBackground = requested;
+    if (ns.story) ns.story.lastBg = requested;
+    if (ns.suppressStoryFadeLayer) ns.suppressStoryFadeLayer();
+    return requested;
+  };
+
   ns.storySpriteMap = {
     hina: "images/assets/char/a10501.webp",
     ai: "images/assets/char/b10501.webp"
@@ -138,7 +193,7 @@
       layer.style.setProperty("display", "block", "important");
       layer.style.setProperty("visibility", "visible", "important");
       layer.style.setProperty("opacity", "1", "important");
-      layer.style.setProperty("z-index", "4500", "important");
+      layer.style.setProperty("z-index", "200", "important");
     }
     const bodyLayer = document.getElementById("tenotsu-story-body-sprite-layer");
     if (bodyLayer) {
@@ -147,7 +202,7 @@
       bodyLayer.style.setProperty("display", "block", "important");
       bodyLayer.style.setProperty("visibility", "visible", "important");
       bodyLayer.style.setProperty("opacity", "1", "important");
-      bodyLayer.style.setProperty("z-index", "7000", "important");
+      bodyLayer.style.setProperty("z-index", "200", "important");
     }
     document.querySelectorAll(".tenotsu-story-standing, .tenotsu-story-body-standing").forEach((img) => {
       img.style.setProperty("display", "block", "important");
@@ -179,7 +234,8 @@
   ns.prepareStoryFirstBackground = async function prepareStoryFirstBackground(data) {
     const first = data && data.steps && data.steps[0] ? data.steps[0] : null;
     if (first && first.bg) {
-      await ns.setStoryBackgroundNoFlash(first.bg);
+      if (typeof ns.setStoryBackgroundDirect === "function") await ns.setStoryBackgroundDirect(first.bg, { initial:true, force:true });
+      else await ns.setStoryBackgroundNoFlash(first.bg);
       ns.story.lastBg = first.bg;
     }
   };
@@ -336,15 +392,18 @@
     if (!step) return;
     if (step.hideEventCg && ns.hideEventCgSurface) ns.hideEventCgSurface();
     if (step.showEventCg && step.eventCg && ns.showEventCgSurface) ns.showEventCgSurface(step.eventCg);
-    const bgChanged = !!(step.bg && step.bg !== ns.story.lastBg);
-    if (step.bg && step.bg !== ns.storyCurrentBackground) {
+    const forceBg = !!(step.forceBackgroundReplace || step.bgMode === "forceReplace");
+    const bgChanged = !!(step.bg && (forceBg || step.bg !== ns.story.lastBg || step.bg !== ns.storyCurrentBackground));
+    if (step.bg && bgChanged) {
       ns.setStoryLoading(true);
       try {
         const applyBg = async () => {
-          if (typeof ns.setStoryBackgroundReady === "function") await ns.setStoryBackgroundReady(step.bg);
+          if (typeof ns.setStoryBackgroundDirect === "function") await ns.setStoryBackgroundDirect(step.bg, { force: forceBg });
+          else if (typeof ns.setStoryBackgroundReady === "function") await ns.setStoryBackgroundReady(step.bg);
           else if (typeof ns.setBackgroundReady === "function") await ns.setBackgroundReady(step.bg);
           else ns.setBackground(step.bg);
           ns.story.lastBg = step.bg;
+          ns.storyCurrentBackground = step.bg;
         };
         if (bgChanged && !options.initial) await ns.fadeForStoryBgChange(applyBg);
         else await applyBg();

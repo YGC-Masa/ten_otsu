@@ -2875,3 +2875,104 @@ body.tenotsu-story-active .tenotsu-story-click {
   filter: none !important;
   mix-blend-mode: normal !important;
 }
+
+
+/* v039_52 story background force + definitive layer order
+   Fixed order inside #tenotsu-app:
+   100 background / event CG as BG
+   200 character plane
+   300 existing text UI
+   400 transparent click UI only */
+body[data-v039-mode="story"] #tenotsu-app,
+body.tenotsu-story-active #tenotsu-app {
+  isolation: isolate !important;
+}
+
+body[data-v039-mode="story"] .tenotsu-bg-layer,
+body.tenotsu-story-active .tenotsu-bg-layer,
+body[data-v039-mode="story"] .tenotsu-bg-layer img,
+body.tenotsu-story-active .tenotsu-bg-layer img {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 100 !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}
+
+body[data-v039-mode="story"] #tenotsu-story-body-sprite-layer,
+body.tenotsu-story-active #tenotsu-story-body-sprite-layer,
+body[data-v039-mode="story"] .tenotsu-story-body-sprite-layer,
+body.tenotsu-story-active .tenotsu-story-body-sprite-layer {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100dvw !important;
+  height: 100dvh !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 200 !important;
+  pointer-events: none !important;
+  overflow: visible !important;
+  background: transparent !important;
+  isolation: auto !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}
+
+body[data-v039-mode="story"] .tenotsu-story-body-standing,
+body.tenotsu-story-active .tenotsu-story-body-standing,
+body[data-v039-mode="story"] #tenotsu-story-body-sprite-layer .tenotsu-story-body-standing,
+body.tenotsu-story-active #tenotsu-story-body-sprite-layer .tenotsu-story-body-standing {
+  position: absolute !important;
+  bottom: 0 !important;
+  max-height: 100dvh !important;
+  width: auto !important;
+  z-index: 201 !important;
+  object-fit: contain !important;
+  pointer-events: none !important;
+  filter: drop-shadow(0 14px 20px rgba(0,0,0,.35)) !important;
+  mix-blend-mode: normal !important;
+}
+
+body[data-v039-mode="story"] .tenotsu-text-layer,
+body.tenotsu-story-active .tenotsu-text-layer {
+  position: fixed !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 300 !important;
+  pointer-events: none !important;
+  background: rgba(20, 18, 22, .86) !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}
+
+body[data-v039-mode="story"] .tenotsu-message,
+body.tenotsu-story-active .tenotsu-message {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,.75) !important;
+}
+
+body[data-v039-mode="story"] .tenotsu-speaker,
+body.tenotsu-story-active .tenotsu-speaker {
+  color: var(--speaker-color, #ffe2a3) !important;
+  -webkit-text-fill-color: var(--speaker-color, #ffe2a3) !important;
+}
+
+body[data-v039-mode="story"] .tenotsu-story-layer,
+body.tenotsu-story-active .tenotsu-story-layer {
+  z-index: 400 !important;
+  background: transparent !important;
+  pointer-events: auto !important;
+}
+body[data-v039-mode="story"] .tenotsu-story-layer .tenotsu-story-click,
+body.tenotsu-story-active .tenotsu-story-layer .tenotsu-story-click {
+  background: transparent !important;
+  opacity: 1 !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}

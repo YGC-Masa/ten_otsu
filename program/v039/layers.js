@@ -1,4 +1,4 @@
-/* v039_47 layers */
+/* v039_52 layers */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -267,7 +267,7 @@
     if (!layer) {
       layer = document.createElement("div");
       layer.id = "tenotsu-story-body-sprite-layer";
-      layer.className = "tenotsu-story-body-sprite-layer story-character-slot-v51";
+      layer.className = "tenotsu-story-body-sprite-layer story-character-slot-v52";
     }
 
     // v039_51: keep story sprites in the same #tenotsu-app stacking context as
@@ -303,9 +303,9 @@
       const side = ch.side || (index === 0 ? "left" : index === 1 ? "center" : "right");
       const src = ch.src || "";
       const opacity = ch.opacity === undefined ? 1 : ch.opacity;
-      const z = ch.zIndex || ch.z || 200;
+      const z = 201 + index;
       const left = ch.left || (side === "left" ? "7%" : side === "center" ? "27%" : "47%");
-      return `<img class="tenotsu-story-body-standing side-${side} bottom-align" src="${src}" style="left:${left}; z-index:${z}; opacity:${opacity};" alt="">`;
+      return `<img class="tenotsu-story-body-standing side-${side} bottom-align" src="${src}" data-story-z="${z}" style="left:${left}; opacity:${opacity};" alt="">`;
     }).join("");
   };
 
