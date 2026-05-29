@@ -1,4 +1,4 @@
-/* v039_67 appliance alien dual-personality data + rival random skill table */
+/* v039_68 appliance alien dual-personality data + rival random skill table + natsu skill update */
 (function () {
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
@@ -116,16 +116,16 @@
     ],
     natsu: [
       {
-        id: "natsu_help_steal", owner: "natsu", name: "日向 なつ", label: "ほんわかヘルプスティール", type: "helpGaugeSteal", unlockPlayerLevel: 1,
-        desc: "店長HELPゲージを少し奪う。", stealHelp: 15, durationSec: 0, cooldownSec: 22, weight: 10
+        id: "natsu_scary_seal", owner: "natsu", name: "日向 なつ", label: "みなさん怖いです～", type: "playerMemberSkillSeal", unlockPlayerLevel: 1,
+        desc: "こちらの特定メンバー1人の必殺技をしばらく封印する。", targetCount: 1, sealSec: 7, cooldownSec: 24, weight: 10
       },
       {
         id: "natsu_come_here", owner: "natsu", name: "日向 なつ", label: "みんな～、こっちがいいよ～", type: "alienCharmCountdown", unlockPlayerLevel: 20,
         desc: "場の家電星人を何人か魅了する。カウント以内に対応できないとビリビリ側のスコアになる。", charmCount: 2, countdownSec: 6, rivalScoreRate: 1.0, cooldownSec: 30, weight: 6
       },
       {
-        id: "natsu_snack_time", owner: "natsu", name: "日向 なつ", label: "ちょっと休憩しよ～？", type: "alienSlowButRivalPull", unlockPlayerLevel: 40,
-        desc: "場の流れをゆるめつつ、迷っている家電星人をビリビリ側へ引き寄せやすくする。", leaveSpeedRate: 0.85, rivalPullRate: 1.45, durationSec: 9, cooldownSec: 36, weight: 4
+        id: "natsu_manager_on_our_side", owner: "natsu", name: "日向 なつ", label: "店長さんはこっちの味方？", type: "playerHelpReset", unlockPlayerLevel: 40,
+        desc: "店長HELPがある場合、こちらの店長HELPゲージをすべてリセットする。", resetHelpGauge: true, requirePlayerHelpGauge: true, cooldownSec: 36, weight: 4
       }
     ]
   };
@@ -211,7 +211,7 @@
   }
 
   window.TenotsuApplianceAliens = {
-    VERSION: "v039_67",
+    VERSION: "v039_68",
     BASE_ALIENS,
     TRAITS,
     RIVAL_SKILLS,
