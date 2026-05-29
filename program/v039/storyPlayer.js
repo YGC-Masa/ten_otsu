@@ -1,4 +1,4 @@
-/* v039_47 story player quality */
+/* v039_53 story player center sprites + clear support */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -105,7 +105,7 @@
     const title = String((ns.story && ns.story.data && ns.story.data.title) || "");
     const list = [];
     if ((speaker.includes("緋奈") || title.includes("弁当")) && ns.storySpriteMap.hina) {
-      list.push({ side: "left", src: ns.storySpriteMap.hina, zIndex: 1000, left: "7%", opacity: 1 });
+      list.push({ side: "center", src: ns.storySpriteMap.hina, left: "50%", opacity: 1 });
     }
     if ((speaker.includes("藍") || title.includes("読書") || title.includes("しおり") || title.includes("パン")) && ns.storySpriteMap.ai) {
       list.push({ side: "center", src: ns.storySpriteMap.ai, zIndex: 2000, left: "27%", opacity: 1 });
@@ -348,14 +348,25 @@
   };
 
   ns.normalizeStorySpriteLayerOrder = function normalizeStorySpriteLayerOrder(sprites) {
-    return (Array.isArray(sprites)?sprites:[]).map((s)=>{const copy=Object.assign({},s); copy.zIndex=200; return copy;});
+    const forceCenter = !!(ns.story && ns.story.data && ns.story.data.renderPolicy && ns.story.data.renderPolicy.forceCenterSprites);
+    return (Array.isArray(sprites) ? sprites : []).map((s) => {
+      const copy = Object.assign({}, s);
+      // Story character plane order is owned by CSS.  Do not let scenario zIndex
+      // push sprites in front of the text UI.
+      delete copy.zIndex;
+      if (forceCenter || copy.side === "center") {
+        copy.side = "center";
+        copy.left = copy.left || "50%";
+      }
+      return copy;
+    });
   };
 
   ns.applyStorySpritesV2 = function applyStorySpritesV2(step) {
     if (!step) return false;
-    if (step.clearStorySprites) {
+    if (step.clearStorySprites || step.hideStorySprites || step.spriteMode === "hide" || step.spriteMode === "clear" || step.spriteMode === "cg-clear") {
       ns.clearStorySpritesV2();
-      return true;
+      if (!Array.isArray(step.storySprites) || !step.storySprites.length) return true;
     }
     let sprites = Array.isArray(step.storySprites) ? step.storySprites : [];
     if (ns.normalizeStorySpriteLayerOrder) sprites = ns.normalizeStorySpriteLayerOrder(sprites);
@@ -376,7 +387,7 @@
 
   ns.applyStoryCharacter = function applyStoryCharacter(step) {
     if (!step) return;
-    if (step.clearStorySprites && typeof ns.clearStorySpritesV2 === "function") { ns.clearStorySpritesV2(); return; }
+    if ((step.clearStorySprites || step.hideStorySprites || step.spriteMode === "hide" || step.spriteMode === "clear" || step.spriteMode === "cg-clear") && typeof ns.clearStorySpritesV2 === "function" && (!Array.isArray(step.storySprites) || !step.storySprites.length)) { ns.clearStorySpritesV2(); return; }
     if (ns.applyStorySpritesV2(step)) { if (ns.forceMobileStoryVisibility) ns.forceMobileStoryVisibility(); return; }
     const scenarioChars = Array.isArray(step.characters) ? step.characters : [];
     if (scenarioChars.length && typeof ns.showStoryCharacters === "function") {

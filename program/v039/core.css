@@ -2976,3 +2976,59 @@ body.tenotsu-story-active .tenotsu-story-layer .tenotsu-story-click {
   filter: none !important;
   mix-blend-mode: normal !important;
 }
+
+
+/* v039_53 story sprite center + definitive behind-text order
+   Use this as the last override because older mobile rules use very high z-indexes. */
+body[data-v039-mode="story"] #tenotsu-story-body-sprite-layer,
+body.tenotsu-story-active #tenotsu-story-body-sprite-layer,
+body[data-v039-mode="story"] .tenotsu-story-body-sprite-layer,
+body.tenotsu-story-active .tenotsu-story-body-sprite-layer {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100dvw !important;
+  height: 100dvh !important;
+  z-index: 200 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  background: transparent !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}
+body[data-v039-mode="story"] #tenotsu-story-body-sprite-layer[hidden],
+body.tenotsu-story-active #tenotsu-story-body-sprite-layer[hidden] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+body[data-v039-mode="story"] #tenotsu-story-body-sprite-layer .tenotsu-story-body-standing,
+body.tenotsu-story-active #tenotsu-story-body-sprite-layer .tenotsu-story-body-standing,
+body[data-v039-mode="story"] .tenotsu-story-body-standing,
+body.tenotsu-story-active .tenotsu-story-body-standing {
+  position: absolute !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: 0 !important;
+  transform: translateX(-50%) !important;
+  max-height: 100dvh !important;
+  width: auto !important;
+  z-index: 200 !important;
+  object-fit: contain !important;
+  pointer-events: none !important;
+  filter: drop-shadow(0 14px 20px rgba(0,0,0,.35)) !important;
+  mix-blend-mode: normal !important;
+}
+body[data-v039-mode="story"] .tenotsu-text-layer,
+body.tenotsu-story-active .tenotsu-text-layer {
+  z-index: 300 !important;
+  position: fixed !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  pointer-events: none !important;
+}
+body[data-v039-mode="story"] .tenotsu-story-layer,
+body.tenotsu-story-active .tenotsu-story-layer {
+  z-index: 400 !important;
+  background: transparent !important;
+  pointer-events: auto !important;
+}

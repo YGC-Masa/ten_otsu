@@ -1,4 +1,4 @@
-/* v039_52 layers */
+/* v039_53 layers */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -300,12 +300,11 @@
     }
 
     layer.innerHTML = list.map((ch, index) => {
-      const side = ch.side || (index === 0 ? "left" : index === 1 ? "center" : "right");
+      const side = ch.side || (index === 0 ? "center" : index === 1 ? "left" : "right");
       const src = ch.src || "";
       const opacity = ch.opacity === undefined ? 1 : ch.opacity;
-      const z = 201 + index;
-      const left = ch.left || (side === "left" ? "7%" : side === "center" ? "27%" : "47%");
-      return `<img class="tenotsu-story-body-standing side-${side} bottom-align" src="${src}" data-story-z="${z}" style="left:${left}; opacity:${opacity};" alt="">`;
+      const left = ch.left || (side === "center" ? "50%" : side === "left" ? "25%" : "75%");
+      return `<img class="tenotsu-story-body-standing side-${side} bottom-align" src="${src}" style="left:${left}; opacity:${opacity};" alt="">`;
     }).join("");
   };
 
@@ -319,7 +318,9 @@
     if (layer) {
       layer.innerHTML = "";
       layer.hidden = true;
-      layer.style.display = "none";
+      layer.style.setProperty("display", "none", "important");
+      layer.style.setProperty("visibility", "hidden", "important");
+      layer.style.setProperty("opacity", "0", "important");
     }
   };
 
