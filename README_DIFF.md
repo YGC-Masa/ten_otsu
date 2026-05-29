@@ -1,8 +1,5 @@
-# ten_otsu diff v039_57 to v039_58
+# v039_60 to v039_61 diff
 
-UI adjustment patch.
-
-- Compact battle result layout to fit one screen more easily.
-- Prevent members submenu/panel from overflowing below the viewport.
-- Hide text window during members mode.
-- Keep battle/growth/comment behavior unchanged.
+- バトルリザルトのメンバー経験値表示をコンパクト化。
+- 思い出回想のカテゴリ案として「チュートリアル」「解禁ストーリー」をデータ定義に追加。
+- build label を v039_61 に更新。

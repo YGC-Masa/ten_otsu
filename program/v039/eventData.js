@@ -108,6 +108,50 @@
     }
   };
 
+
+  // v039_61: 思い出回想カテゴリ案。UI接続は後続、まずは回想データの置き場を用意。
+  ns.memoryReplayCategories = [
+    {
+      id: "character",
+      label: "キャラ思い出",
+      desc: "各メンバーとの季節イベント・個別ストーリーを振り返る項目です。"
+    },
+    {
+      id: "tutorial",
+      label: "チュートリアル",
+      desc: "ゲーム内システムや世界観導入をもう一度確認する項目です。",
+      entries: [
+        {
+          id: "tutorial_appliance_alien_raid",
+          title: "家電星人襲来",
+          status: "構想中",
+          summary: "家電星人が来店し、ひだまりストアの接客バトルが始まる導入ストーリー。"
+        },
+        {
+          id: "tutorial_sakuya_shop_unlock",
+          title: "朔夜のショップ解禁",
+          status: "構想中",
+          summary: "テックラボつくもの裏口/VIP導線と、交換・ショップ機能の解禁ストーリー。"
+        },
+        {
+          id: "tutorial_battle_first",
+          title: "はじめての店舗営業",
+          status: "接続候補",
+          summary: "通常営業・バトル営業・イベント営業の違いを説明する回想用チュートリアル。"
+        }
+      ]
+    },
+    {
+      id: "system_unlock",
+      label: "解禁ストーリー",
+      desc: "ショップ、イベント交換、ボス戦など機能解放時の短い導入をまとめる項目です。"
+    }
+  ];
+
+  ns.getMemoryReplayCategories = function getMemoryReplayCategories() {
+    return ns.memoryReplayCategories || [];
+  };
+
   ns.getSeason = function getSeason(seasonId) {
     return ns.seasonEvents && ns.seasonEvents[seasonId] ? ns.seasonEvents[seasonId] : null;
   };

@@ -5134,3 +5134,61 @@ button.active {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+
+/* v039_61 result member EXP compact layout */
+#battle-root .battle-result-box .battle-result-members {
+  margin-top: 6px;
+}
+#battle-root .battle-result-box .battle-result-member-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 5px 8px;
+  align-items: stretch;
+}
+#battle-root .battle-result-box .battle-result-member-row {
+  display: grid !important;
+  grid-template-columns: auto auto auto;
+  justify-content: start;
+  align-items: center;
+  gap: 5px 7px;
+  width: 100%;
+  min-width: 0;
+  padding: 5px 7px;
+  margin: 0 !important;
+  border-radius: 9px;
+  line-height: 1.15;
+}
+#battle-root .battle-result-box .battle-result-member-row .battle-result-member-name {
+  min-width: 2.6em;
+  max-width: 5.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#battle-root .battle-result-box .battle-result-member-row .battle-result-member-level,
+#battle-root .battle-result-box .battle-result-member-row .battle-result-member-exp {
+  white-space: nowrap;
+}
+#battle-root .battle-result-box .battle-result-member-row em {
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin-top: -1px;
+}
+@media screen and (max-width: 640px) {
+  #battle-root .battle-result-box .battle-result-member-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  #battle-root .battle-result-box .battle-result-member-row {
+    grid-template-columns: auto 1fr;
+    gap: 3px 6px;
+  }
+  #battle-root .battle-result-box .battle-result-member-row .battle-result-member-exp {
+    grid-column: 2;
+  }
+}
+@media screen and (max-width: 460px) {
+  #battle-root .battle-result-box .battle-result-member-list {
+    grid-template-columns: 1fr;
+  }
+}

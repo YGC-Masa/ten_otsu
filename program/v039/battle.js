@@ -3,7 +3,7 @@
 // 操作はメンバーのシングルタップで通常接客、ダブルタップで必殺接客。通常敵HP2、レアHP3。ターゲットは選択メンバーに最適な家電星人へ自動Fix。彩愛の必殺は盤面整理＋敵チェンジ短縮。店長HELP・必殺カットイン・タイムセール演出あり。
 
 (function () {
-  const BATTLE_VERSION = "v039_57";
+  const BATTLE_VERSION = "v039_61";
   const BATTLE_SECONDS = 30;
   const TIME_SALE_SECONDS = 15;
   const MAX_ENEMIES = 3;
@@ -1240,13 +1240,14 @@ const battleBackgrounds = {
   function renderResultGrowthRows(result) {
     const rows = result && Array.isArray(result.growthResults) ? result.growthResults : [];
     if (!rows.length) return `<div class="battle-result-member-empty">メンバー経験値は次回以降に反映されます。</div>`;
-    return rows.map((item) => {
+    const html = rows.map((item) => {
       const levelText = item.before && item.after && item.before.level !== item.after.level
         ? `Lv.${item.before.level} → Lv.${item.after.level}`
         : `Lv.${item.after ? item.after.level : "-"}`;
       const upText = item.levelUps && item.levelUps.length ? `<em>LEVEL UP!</em>` : "";
-      return `<div class="battle-result-member-row"><span>${escapeHtml(item.shortName || item.name || item.id)}</span><b>${levelText}</b><small>+${item.gainedExp || 0} EXP</small>${upText}</div>`;
+      return `<div class="battle-result-member-row"><span class="battle-result-member-name">${escapeHtml(item.shortName || item.name || item.id)}</span><b class="battle-result-member-level">${levelText}</b><small class="battle-result-member-exp">+${item.gainedExp || 0} EXP</small>${upText}</div>`;
     }).join("");
+    return `<div class="battle-result-member-list">${html}</div>`;
   }
 
   function renderControlOverlay() {
