@@ -1,15 +1,46 @@
-/* v039_37 members */
+/* v039_59 members detail stat header */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
+
+  function esc(value) {
+    return String(value == null ? "" : value).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
+  }
+
+  function getGrowthInfo(member) {
+    if (!window.TenotsuGrowth || !member) return null;
+    const state = typeof window.TenotsuGrowth.getCharacterState === "function" ? window.TenotsuGrowth.getCharacterState(member.id) : null;
+    const progress = typeof window.TenotsuGrowth.getLevelProgress === "function" ? window.TenotsuGrowth.getLevelProgress(member.id) : null;
+    const stats = typeof window.TenotsuGrowth.getComputedStats === "function" ? window.TenotsuGrowth.getComputedStats(member.id) : null;
+    const defs = typeof window.TenotsuGrowth.getStatDefs === "function" ? window.TenotsuGrowth.getStatDefs() : {};
+    return { state, progress, stats, defs };
+  }
+
+  function renderStatsMini(member) {
+    const info = getGrowthInfo(member);
+    if (!info || !info.stats) return `<div class="tenotsu-member-stat-mini muted">Lv/ステータス準備中</div>`;
+    const keys = ["proposal", "speed", "stamina", "care", "honesty", "luck"];
+    const statItems = keys.map((key) => {
+      const label = info.defs && info.defs[key] ? info.defs[key].label : key;
+      return `<span><i>${esc(label)}</i><b>${esc(info.stats[key])}</b></span>`;
+    }).join("");
+    const level = info.state && info.state.level ? info.state.level : 1;
+    const exp = info.progress && Number.isFinite(info.progress.required) ? `${info.progress.exp}/${info.progress.required}` : "MAX";
+    return `
+      <div class="tenotsu-member-stat-mini">
+        <div class="tenotsu-member-level">Lv.${esc(level)} <small>EXP ${esc(exp)}</small></div>
+        <div class="tenotsu-member-stat-grid">${statItems}</div>
+      </div>
+    `;
+  }
 
   ns.renderMembersPanel = function renderMembersPanel() {
     const members = ns.memberProfiles || [];
     const cards = members.map((m, index) => `
       <button type="button" class="tenotsu-member-card" data-member-index="${index}">
-        <span class="tenotsu-member-color" style="background:${m.color}"></span>
-        <span class="tenotsu-member-name">${m.name}</span>
-        <span class="tenotsu-member-role">${m.role}</span>
+        <span class="tenotsu-member-color" style="background:${esc(m.color)}"></span>
+        <span class="tenotsu-member-name">${esc(m.name)}</span>
+        <span class="tenotsu-member-role">${esc(m.role)}</span>
       </button>
     `).join("");
 
@@ -37,14 +68,16 @@
         btn.classList.add("selected");
         detail.innerHTML = `
           <div class="tenotsu-member-detail-head">
-            <img src="${ns.paths.charBase + m.image}" alt="${m.name}" class="tenotsu-member-detail-img">
-            <div>
-              <div class="tenotsu-member-detail-name">${m.name}</div>
-              <div class="tenotsu-member-detail-role">${m.role}</div>
-              <div class="tenotsu-member-detail-specialty">得意：${m.specialty}</div>
+            <img src="${esc(ns.paths.charBase + m.image)}" alt="${esc(m.name)}" class="tenotsu-member-detail-img">
+            <div class="tenotsu-member-detail-main">
+              <div class="tenotsu-member-detail-name">${esc(m.name)}</div>
+              <div class="tenotsu-member-detail-role">${esc(m.role)}</div>
+              <div class="tenotsu-member-detail-specialty">得意：${esc(m.specialty)}</div>
             </div>
+            ${renderStatsMini(m)}
           </div>
-          <div class="tenotsu-member-detail-comment">${m.comment}</div>
+          <div class="tenotsu-member-detail-comment">${esc(m.comment)}</div>
+          <div class="tenotsu-member-detail-note">詳細画面は、プロフィール・好感度・持ち物を追加する段階で拡張予定です。</div>
         `;
         ns.setText(m.name, m.comment);
       });

@@ -521,9 +521,6 @@ const battleBackgrounds = {
       const growthResults = (window.TenotsuGrowth && typeof window.TenotsuGrowth.addExpToParty === "function")
         ? window.TenotsuGrowth.addExpToParty(partyIds, expGained, source)
         : [];
-      const comment = (window.TenotsuResultComments && typeof window.TenotsuResultComments.pick === "function")
-        ? window.TenotsuResultComments.pick(partyIds)
-        : { name: "ひだまりストア", text: "今日もお疲れ様でした。" };
       state.resultData = {
         salesAmount: state.score,
         servedCount: state.served,
@@ -532,8 +529,7 @@ const battleBackgrounds = {
         expGained,
         partyIds,
         growthResults,
-        drops: [],
-        comment
+        drops: []
       };
       addSalesToEconomy(state.score, source);
       addManagerExp(80, "店舗営業");
@@ -1253,12 +1249,6 @@ const battleBackgrounds = {
     }).join("");
   }
 
-  function renderResultComment(result) {
-    const comment = result && result.comment ? result.comment : null;
-    if (!comment) return "";
-    return `<div class="battle-result-comment"><span>今日のひとこと：${escapeHtml(comment.name || "ひだまりストア")}</span><p>${escapeHtml(comment.text || "今日もお疲れ様でした。")}</p></div>`;
-  }
-
   function renderControlOverlay() {
     if (state.deckEdit) return renderDeckEditorOverlay();
 
@@ -1269,14 +1259,13 @@ const battleBackgrounds = {
         <div class="battle-control-box ${isResult ? "battle-result-box" : ""}">
           ${isResult ? `
             <div class="battle-result-title">営業結果</div>
-            ${renderResultComment(result)}
             <div class="battle-result-grid">
-              <span>成約</span><b>${state.served}</b>
-              <span>離脱</span><b>${state.missed}</b>
-              <span>最大コンボ</span><b>${state.maxCombo}</b>
-              <span>売上</span><b>${Number(state.score || 0).toLocaleString()}円</b>
-              <span>経験値</span><b>+${result ? result.expGained : 0}</b>
-              <span>アイテム</span><b>${result && result.drops && result.drops.length ? result.drops.length + "個" : "なし"}</b>
+              <div class="battle-result-metric"><span>成約</span><b>${state.served}</b></div>
+              <div class="battle-result-metric"><span>離脱</span><b>${state.missed}</b></div>
+              <div class="battle-result-metric"><span>最大コンボ</span><b>${state.maxCombo}</b></div>
+              <div class="battle-result-metric"><span>売上</span><b>${Number(state.score || 0).toLocaleString()}円</b></div>
+              <div class="battle-result-metric"><span>経験値</span><b>+${result ? result.expGained : 0}</b></div>
+              <div class="battle-result-metric"><span>アイテム</span><b>${result && result.drops && result.drops.length ? result.drops.length + "個" : "なし"}</b></div>
             </div>
             <div class="battle-result-members">
               <div class="battle-result-subtitle">メンバー成長</div>
