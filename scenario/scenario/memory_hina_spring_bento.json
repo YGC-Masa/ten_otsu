@@ -2,8 +2,7 @@
   {
     "bg": "bg_park_spring.png",
     "bgEffect": "fadein",
-    "bgm": "main.mp3",
-    "textareashow": true,
+    "characters": [],
     "name": "",
     "text": "【思い出ストーリー】春の公園でのお弁当タイム"
   },
@@ -31,7 +30,7 @@
     "characters": [
       {
         "side": "center",
-        "src": "a10501.webp"
+        "src": "a10101.webp"
       }
     ],
     "name": "緋奈",
@@ -42,6 +41,12 @@
     "text": "緋奈？　こんなところで会うとは思わなかったな。昼休みか？"
   },
   {
+    "characters": [
+      {
+        "side": "center",
+        "src": "a10701.webp"
+      }
+    ],
     "name": "緋奈",
     "text": "はいっ。今日は天気がよかったので、外でお弁当にしようかなって。"
   },
@@ -58,6 +63,12 @@
     "text": "それ、手作りか？"
   },
   {
+    "characters": [
+      {
+        "side": "center",
+        "src": "a10901.webp"
+      }
+    ],
     "name": "緋奈",
     "text": "もちろんです！　あたし、こう見えて料理はけっこうできるんですよ？"
   },
@@ -69,11 +80,11 @@
     "characters": [
       {
         "side": "center",
-        "src": "a10701.webp"
+        "src": "a10202.webp"
       }
     ],
     "name": "緋奈",
-    "text": "えへへ。じゃあ……一口、食べます？"
+    "text": "えへへ。じゃあ……一口、食べてみます？"
   },
   {
     "name": "店長",
@@ -86,7 +97,7 @@
   {
     "bg": "bg_memory_hina_spring_bento.png",
     "bgEffect": "fadein",
-    "hideCharacters": true,
+    "characters": [],
     "name": "",
     "text": "緋奈は赤い箸で、お弁当のハンバーグをひと口分だけ切り分けると、少し照れた顔でこちらへ差し出してきた。"
   },
@@ -107,6 +118,12 @@
     "text": "……うまい。これ、本当に緋奈が作ったのか？"
   },
   {
+    "characters": [
+      {
+        "side": "center",
+        "src": "a11001.webp"
+      }
+    ],
     "name": "緋奈",
     "text": "本当ですよ！？　もう、そこ疑うところじゃないですって！"
   },
@@ -115,6 +132,12 @@
     "text": "いや、素直に驚いた。これはかなりうまい。"
   },
   {
+    "characters": [
+      {
+        "side": "center",
+        "src": "a10501.webp"
+      }
+    ],
     "name": "緋奈",
     "text": "えへへ……そこまで言われると、ちょっと照れますね。"
   },
@@ -124,7 +147,7 @@
     "characters": [
       {
         "side": "center",
-        "src": "a10701.webp"
+        "src": "a10501.webp"
       }
     ],
     "name": "店長",
@@ -134,7 +157,7 @@
     "characters": [
       {
         "side": "center",
-        "src": "a11201.webp"
+        "src": "a11101.webp"
       }
     ],
     "name": "緋奈",
@@ -145,25 +168,59 @@
     "text": "緋奈の顔が、みるみる赤く染まっていった。"
   },
   {
+    "characters": [
+      {
+        "side": "center",
+        "src": "a11201.webp"
+      }
+    ],
+    "name": "緋奈",
+    "text": "あ、あ、あたしが・・お嫁さん？！"
+  },
+  {
+    "name": "店長",
+    "text": "・・・・？"
+  },
+  {
+    "name": "緋奈",
+    "text": "・・・・・！"
+  },
+  {
+    "characters": [
+      {
+        "side": "center",
+        "src": "a11201.webp"
+      }
+    ],
     "name": "緋奈",
     "text": "あ、あたし。もう戻りますね！"
   },
   {
-    "characters": [],
     "name": "店長",
     "text": "え？　もう行くのか？"
   },
   {
+    "characters": [
+      {
+        "side": "center",
+        "src": "a11201.webp"
+      }
+    ],
     "name": "緋奈",
     "text": "はいっ！　お、お店でまた！"
   },
   {
+    "characters": [],
     "name": "",
     "text": "緋奈はお弁当を慌てて片づけると、小走りで公園を出ていった。"
   },
   {
     "name": "店長",
-    "text": "……急にどうしたんだろう？"
+    "text": "……急にあわててどうしたんだろう・・・？"
+  },
+  {
+    "name": "",
+    "text": "春の風が花びらと遊ぶように、さっきまでの慌ただしさをそっとさらう。"
   },
   {
     "name": "",
@@ -172,9 +229,5 @@
   {
     "name": "",
     "text": "【思い出アルバムに追加】緋奈「春の公園でのお弁当タイム」"
-  },
-  {
-    "auto": true,
-    "wait": 650
   }
 ]
