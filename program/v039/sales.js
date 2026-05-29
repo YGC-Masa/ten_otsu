@@ -8,7 +8,7 @@
       id: "normal_sales",
       label: "通常営業",
       tag: "周回向け",
-      description: "ひだまりストアで通常営業を行います。将来的にはオートバトルや簡易接客に接続します。",
+      description: "ひだまりストアで通常営業を行います。デッキ接客バトルを開始します。通常操作とサポートプレイを選べます。",
       message: "通常営業は、周回・育成向けの店舗営業として接続予定です。",
       duration: 30,
       target: "来店した家電星人をできるだけ多く接客する"
@@ -47,7 +47,7 @@
     const modes = ns.salesModes || [];
     const html = `
       <div class="tenotsu-sales-title">店舗営業</div>
-      <div class="tenotsu-sales-subtitle">営業モードを選択します。バトル本体は後続バージョンで接続します。</div>
+      <div class="tenotsu-sales-subtitle">営業モードを選択します。バトル本体を抽出実装済みです。営業モードを選択してください。</div>
       <div class="tenotsu-sales-body">
         <div class="tenotsu-sales-list">
           ${modes.map(salesCard).join("")}
@@ -142,7 +142,7 @@
         <div class="tenotsu-sales-dialog-spec">
           <div><strong>目標：</strong>${mode.target || "営業を成功させる"}</div>
           <div><strong>制限時間：</strong>${mode.duration || 30}秒</div>
-          <div><strong>現在：</strong>仮バトル接続テスト</div>
+          <div><strong>現在：</strong>抽出バトル実装</div>
         </div>
         <div class="tenotsu-sales-dialog-actions">
           <button type="button" class="tenotsu-sales-start" data-sales-dialog="start">営業開始</button>
@@ -171,8 +171,34 @@
     if (typeof ns.hideShopPanel === "function") ns.hideShopPanel();
     if (typeof ns.hideMembersPanel === "function") ns.hideMembersPanel();
     if (typeof ns.hideTownPanel === "function") ns.hideTownPanel();
+    if (typeof ns.hideStoryLayer === "function") ns.hideStoryLayer();
+    if (typeof ns.hideBattlePanel === "function") ns.hideBattlePanel();
+    if (typeof ns.hideResultPanel === "function") ns.hideResultPanel();
     if (typeof ns.clearCharacters === "function") ns.clearCharacters();
 
+    const restoreSales = () => {
+      document.removeEventListener("tenotsu:battle:closed", restoreSales);
+      try {
+        if (typeof ns.enterSales === "function") {
+          ns.enterSales({ selectedMode: mode && mode.id, noTransition: true });
+        }
+      } catch (_) {}
+    };
+    document.removeEventListener("tenotsu:battle:closed", restoreSales);
+    document.addEventListener("tenotsu:battle:closed", restoreSales, { once: true });
+
+    if (window.BattleProto && typeof window.BattleProto.openBattle === "function") {
+      window.BattleProto.openBattle();
+      ns.setText("店長", "デッキ接客バトルを開始します。営業開始、サポートプレイ、デッキ編成を選べます。");
+      return;
+    }
+    if (typeof window.startDeckBattlePrototype === "function") {
+      window.startDeckBattlePrototype();
+      ns.setText("店長", "デッキ接客バトルを開始します。営業開始、サポートプレイ、デッキ編成を選べます。");
+      return;
+    }
+
+    // Fallback: keep the old simple mock if extracted battle.js failed to load.
     ns.state.currentBattle = {
       modeId: mode.id, label: mode.label, score: 0, served: 0, combo: 0, maxCombo: 0,
       selectedCustomer: null, startedAt: Date.now(),
@@ -181,7 +207,7 @@
     };
 
     ns.renderDeckBattle(mode);
-    ns.setText("店長", "デッキ接客バトル試作です。家電星人を選び、相性の良い店員カードで接客しましょう。");
+    ns.setText("店長", "バトル本体が読み込めなかったため、簡易デッキ接客で開始します。");
   };
 
   ns.renderDeckBattle = function renderDeckBattle(mode) {
