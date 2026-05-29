@@ -1,9 +1,13 @@
-# ten_otsu diff v039_61 to v039_62
+# ten_otsu diff v039_63 to v039_64
 
-メンバー右詳細レイアウト再整理。
+v039_64: スタミナUI整理、営業種別の分岐準備、メンバー持ち物欄の見える化。
 
-- 名前/キャッチ/得意エリアと、ひとことコメントエリアを分離
-- 名前の横書き・1行省略を強制して縦割れを防止
-- コメント欄を独立ボックス化
-- Lv/EXP/6ステータスは下段ブロックで維持
-- ビルド表記を v039_62 に更新
+## Modified
+- index.html
+- program/v039/state.js
+- program/v039/layers.js
+- program/v039/stamina.js
+- program/v039/sales.js
+- program/v039/members.js
+- program/v039/core.css
+- program/docs/v039_64_stamina_sales_member_followup.md

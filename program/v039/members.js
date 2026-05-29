@@ -1,4 +1,4 @@
-/* v039_62 members right-detail layout rebuild */
+/* v039_64 members right-detail layout rebuild + equipment placeholder */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -30,6 +30,19 @@
       <div class="tenotsu-member-stat-mini">
         <div class="tenotsu-member-level">Lv.${esc(level)} <small>EXP ${esc(exp)}</small></div>
         <div class="tenotsu-member-stat-grid">${statItems}</div>
+      </div>
+    `;
+  }
+
+  function renderEquipmentMini(member) {
+    const info = getGrowthInfo(member);
+    const item = info && info.state && info.state.equipment ? info.state.equipment.personal : null;
+    const label = item && item.name ? item.name : "なし";
+    return `
+      <div class="tenotsu-member-equipment-mini" aria-label="持ち物">
+        <span>持ち物</span>
+        <b>${esc(label)}</b>
+        <small>将来、接客道具や差し入れを持たせる枠です</small>
       </div>
     `;
   }
@@ -82,7 +95,8 @@
             </div>
           </div>
           ${renderStatsMini(m)}
-          <div class="tenotsu-member-detail-note">詳細画面は、プロフィール・好感度・持ち物を追加する段階で拡張予定です。</div>
+          ${renderEquipmentMini(m)}
+          <div class="tenotsu-member-detail-note">詳細画面は、プロフィール・好感度・持ち物の拡張に合わせて追加予定です。</div>
         `;
         ns.setText(m.name, m.comment);
       });

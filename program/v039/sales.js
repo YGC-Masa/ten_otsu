@@ -1,4 +1,4 @@
-/* v039_50 sales menu trim */
+/* v039_64 sales mode labels + stamina summary + branch prep */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -8,41 +8,46 @@
       id: "normal_sales",
       label: "通常営業",
       tag: "周回向け",
-      description: "ひだまりストアで通常営業を行います。デッキ接客バトルを開始します。通常操作とサポートプレイを選べます。",
+      description: "ひだまりストアで通常営業を行います。周回向けの基本接客バトルです。",
       message: "通常営業を開始します。スタミナを消費して、営業結果と経験値を獲得します。",
       duration: 30,
       staminaCost: 10,
-      target: "来店した家電星人をできるだけ多く接客する"
+      target: "来店した家電星人をできるだけ多く接客する",
+      battleType: "normal"
     },
     {
-      id: "sales_battle",
-      label: "イベントバトル",
-      tag: "ボス戦",
-      description: "イベントボスとの販売勝負に挑みます。将来的にはドラムリズムゲーム形式のボス戦として実装予定です。",
-      message: "イベントバトルは、ドラムリズムゲーム形式のボス戦として接続予定です。現時点では接客バトルへ仮接続します。",
+      id: "rival_battle",
+      label: "バトル営業",
+      tag: "VSビリビリ",
+      description: "ライバル店・ビリビリ電機との販売勝負に挑みます。VSビリビリ用の営業です。",
+      message: "バトル営業を開始します。ビリビリ電機との販売勝負に挑みます。",
+      duration: 45,
+      staminaCost: 15,
+      target: "ビリビリ電機との販売勝負で接客成果を競う",
+      battleType: "rival"
+    },
+    {
+      id: "event_sales",
+      label: "イベント営業",
+      tag: "ボス戦予定",
+      description: "イベントボスとの特別営業に挑みます。将来的にはドラムリズムゲーム形式のボス戦として実装予定です。",
+      message: "イベント営業は、ドラムリズムゲーム形式のボス戦として接続予定です。現時点では接客バトルへ仮接続します。",
       duration: 45,
       staminaCost: 20,
-      target: "イベントボス戦でリズムに合わせて接客する"
-    },
-    {
-      id: "practice_service",
-      label: "模擬接客",
-      tag: "練習",
-      description: "家電星人の要望に合わせて、店員カードや接客アクションを試す練習モードです。スタミナを消費しません。",
-      message: "模擬接客は、接客バトルの操作練習です。報酬や経験値は後続で調整予定です。",
-      duration: 20,
-      staminaCost: 0,
-      target: "操作確認と接客練習を行う"
+      target: "イベントボス戦でリズムに合わせて接客する",
+      battleType: "eventBoss",
+      futureSystem: "drumRhythmBoss"
     }
   ];
-
   function salesCard(mode) {
     return `
-      <button type="button" class="tenotsu-sales-card" data-sales-mode="${mode.id}">
+      <button type="button" class="tenotsu-sales-card tenotsu-sales-card-${mode.id}" data-sales-mode="${mode.id}" data-battle-type="${mode.battleType || 'normal'}">
         <span class="tenotsu-sales-card-title">${mode.label}</span>
-        <span class="tenotsu-sales-card-tag">${mode.tag}</span>
+        <span class="tenotsu-sales-card-meta">
+          <span class="tenotsu-sales-card-tag">${mode.tag}</span>
+          <span class="tenotsu-sales-card-stamina">ST ${mode.staminaCost == null ? (window.TenotsuStamina ? window.TenotsuStamina.getCost(mode.id) : 10) : mode.staminaCost}</span>
+        </span>
         <span class="tenotsu-sales-card-desc">${mode.description}</span>
-        <span class="tenotsu-sales-card-stamina">ST ${mode.staminaCost == null ? (window.TenotsuStamina ? window.TenotsuStamina.getCost(mode.id) : 10) : mode.staminaCost}</span>
       </button>
     `;
   }
@@ -50,8 +55,13 @@
   ns.renderSalesPanel = function renderSalesPanel(selectedId = null) {
     const modes = ns.salesModes || [];
     const html = `
-      <div class="tenotsu-sales-title">店舗営業</div>
-      <div class="tenotsu-sales-subtitle">営業モードを選択します。営業モードを選択して、そのままバトルを開始できます。</div>
+      <div class="tenotsu-sales-head-row">
+        <div>
+          <div class="tenotsu-sales-title">店舗営業</div>
+          <div class="tenotsu-sales-subtitle">営業モードを選択します。営業モードを選択して、そのままバトルを開始できます。</div>
+        </div>
+        ${window.TenotsuStamina && typeof window.TenotsuStamina.renderSalesSummary === "function" ? window.TenotsuStamina.renderSalesSummary() : ""}
+      </div>
       <div class="tenotsu-sales-body">
         <div class="tenotsu-sales-list">
           ${modes.map(salesCard).join("")}
@@ -142,7 +152,8 @@
           <div><strong>目標：</strong>${mode.target || "営業を成功させる"}</div>
           <div><strong>制限時間：</strong>${mode.duration || 30}秒</div>
           <div><strong>スタミナ：</strong>${window.TenotsuStamina ? `${window.TenotsuStamina.getState().current}/${window.TenotsuStamina.getState().max} / 消費 ${window.TenotsuStamina.getCost(mode.id)}` : "未接続"}</div>
-          <div><strong>現在：</strong>抽出バトル実装</div>
+          <div><strong>種別：</strong>${mode.battleType === "rival" ? "VSビリビリ" : mode.battleType === "eventBoss" ? "イベント営業 / ボス戦予定" : "通常営業"}</div>
+          <div><strong>現在：</strong>${mode.battleType === "eventBoss" ? "接客バトルへ仮接続 / ドラムリズムボス戦予定" : "抽出バトル実装"}</div>
         </div>
         <div class="tenotsu-sales-dialog-actions">
           <button type="button" class="tenotsu-sales-start" data-sales-dialog="start">営業開始</button>
@@ -159,6 +170,8 @@
           return;
         }
       }
+      ns.state.currentSalesMode = mode;
+      ns.state.currentBattleType = mode.battleType || "normal";
       ns.enterBattleMock(mode);
     });
     detail.querySelector('[data-sales-dialog="cancel"]').addEventListener("click", () => ns.renderSalesPanel(mode.id));
@@ -199,12 +212,12 @@
 
     if (window.BattleProto && typeof window.BattleProto.openBattle === "function") {
       window.BattleProto.openBattle();
-      ns.setText("店長", "デッキ接客バトルを開始します。営業開始、サポートプレイ、デッキ編成を選べます。");
+      ns.setText("店長", mode && mode.battleType === "eventBoss" ? "イベント営業を開始します。今回は接客バトルへ仮接続中です。" : mode && mode.battleType === "rival" ? "バトル営業を開始します。VSビリビリ用の営業です。" : "デッキ接客バトルを開始します。営業開始、サポートプレイ、デッキ編成を選べます。");
       return;
     }
     if (typeof window.startDeckBattlePrototype === "function") {
       window.startDeckBattlePrototype();
-      ns.setText("店長", "デッキ接客バトルを開始します。営業開始、サポートプレイ、デッキ編成を選べます。");
+      ns.setText("店長", mode && mode.battleType === "eventBoss" ? "イベント営業を開始します。今回は接客バトルへ仮接続中です。" : mode && mode.battleType === "rival" ? "バトル営業を開始します。VSビリビリ用の営業です。" : "デッキ接客バトルを開始します。営業開始、サポートプレイ、デッキ編成を選べます。");
       return;
     }
 

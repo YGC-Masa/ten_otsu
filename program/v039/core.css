@@ -3422,3 +3422,138 @@ body[data-v039-mode="members"] .tenotsu-member-stat-mini,
     white-space: normal !important;
   }
 }
+
+/* v039_64 stamina/sales/member follow-up
+   スタミナを常時見える情報にし、店舗営業は通常/VSビリビリ/イベントの分岐準備を明確化。 */
+.tenotsu-stamina-hud {
+  position: fixed;
+  left: max(14px, env(safe-area-inset-left));
+  top: max(12px, env(safe-area-inset-top));
+  z-index: 760;
+  min-width: 132px;
+  padding: 8px 10px;
+  border-radius: 14px;
+  background: rgba(34, 24, 18, 0.78);
+  border: 1px solid rgba(255, 226, 163, 0.28);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+  color: #fff;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+}
+body[data-v039-mode="story"] .tenotsu-stamina-hud,
+body[data-v039-mode="boot"] .tenotsu-stamina-hud {
+  display: none !important;
+}
+.tenotsu-stamina-hud-label {
+  display: inline-flex;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: rgba(255, 226, 163, 0.16);
+  color: #ffe2a3;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+.tenotsu-stamina-hud-main {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-top: 3px;
+  font-weight: 900;
+}
+.tenotsu-stamina-hud-main b { font-size: 18px; color: #ffe2a3; }
+.tenotsu-stamina-hud-main span { font-size: 11px; opacity: .78; }
+.tenotsu-stamina-hud-bar {
+  overflow: hidden;
+  height: 5px;
+  margin-top: 5px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.16);
+}
+.tenotsu-stamina-hud-bar i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, rgba(255,226,163,.75), rgba(255,247,202,.96));
+}
+.tenotsu-sales-head-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: start;
+  margin-bottom: 12px;
+}
+.tenotsu-sales-stamina-summary {
+  min-width: 174px;
+  padding: 9px 11px;
+  border-radius: 14px;
+  background: rgba(0,0,0,.22);
+  border: 1px solid rgba(255,226,163,.24);
+  text-align: right;
+}
+.tenotsu-sales-stamina-summary span,
+.tenotsu-sales-stamina-summary small {
+  display: block;
+  font-size: 11px;
+  opacity: .76;
+  line-height: 1.35;
+}
+.tenotsu-sales-stamina-summary b {
+  display: block;
+  color: #ffe2a3;
+  font-size: 22px;
+  line-height: 1.15;
+  margin: 2px 0;
+}
+.tenotsu-sales-card-rival_battle .tenotsu-sales-card-tag {
+  background: rgba(255, 82, 74, .18);
+  border-color: rgba(255, 120, 110, .38);
+  color: #ffd0cb;
+}
+.tenotsu-sales-card-event_sales .tenotsu-sales-card-tag {
+  background: rgba(142, 94, 255, .20);
+  border-color: rgba(170, 135, 255, .40);
+  color: #e5d9ff;
+}
+.tenotsu-member-equipment-mini {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 4px 10px;
+  align-items: center;
+  margin-top: 8px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,226,163,.18);
+}
+.tenotsu-member-equipment-mini span {
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(255,226,163,.13);
+  color: #ffe2a3;
+  font-size: 11px;
+  font-weight: 900;
+}
+.tenotsu-member-equipment-mini b {
+  color: rgba(255,255,255,.92);
+  font-size: 13px;
+}
+.tenotsu-member-equipment-mini small {
+  grid-column: 1 / -1;
+  color: rgba(255,255,255,.62);
+  font-size: 11px;
+  line-height: 1.35;
+}
+@media screen and (max-width: 760px) {
+  .tenotsu-stamina-hud {
+    min-width: 112px;
+    padding: 7px 9px;
+  }
+  .tenotsu-sales-head-row {
+    grid-template-columns: 1fr;
+  }
+  .tenotsu-sales-stamina-summary {
+    text-align: left;
+    width: 100%;
+  }
+}

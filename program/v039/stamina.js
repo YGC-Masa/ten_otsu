@@ -1,12 +1,12 @@
-/* v039_59 stamina base */
+/* v039_64 stamina base + always-visible HUD */
 (function () {
   "use strict";
   const STORAGE_KEY = "tenotsu_stamina_v1";
   const MAX_STAMINA = 100;
   const DEFAULT_COSTS = {
     normal_sales: 10,
-    sales_battle: 20,
-    practice_service: 0
+    rival_battle: 15,
+    event_sales: 20
   };
 
   function nowIso() { return new Date().toISOString(); }
@@ -17,18 +17,19 @@
     let data = null;
     try { data = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null"); } catch (_) { data = null; }
     if (!data || typeof data !== "object") {
-      return { version: "v039_59", current: MAX_STAMINA, max: MAX_STAMINA, updatedAt: nowIso(), history: [] };
+      return { version: "v039_64", current: MAX_STAMINA, max: MAX_STAMINA, updatedAt: nowIso(), history: [] };
     }
     data.max = MAX_STAMINA;
     data.current = clamp(data.current == null ? MAX_STAMINA : data.current);
     data.history = Array.isArray(data.history) ? data.history.slice(-20) : [];
-    data.version = data.version || "v039_59";
+    data.version = "v039_64";
     data.updatedAt = data.updatedAt || nowIso();
     return data;
   }
   function save(data) {
     data.updatedAt = nowIso();
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (_) {}
+    renderHud();
     return data;
   }
   function getCost(modeId) {
@@ -66,9 +67,27 @@
     const cost = getCost(modeId);
     return `<div class="tenotsu-stamina-badge"><span>スタミナ</span><b>${st.current}/${st.max}</b><small>消費 ${cost}</small></div>`;
   }
+  function renderSalesSummary() {
+    const st = load();
+    return `<div class="tenotsu-sales-stamina-summary"><span>現在スタミナ</span><b>${st.current}/${st.max}</b><small>営業開始時に消費します</small></div>`;
+  }
+  function renderHud() {
+    const ns = window.TENOTSU_V039;
+    if (!ns || !ns.layers || !ns.layers.staminaHud) return;
+    const st = load();
+    const ratio = st.max ? Math.max(0, Math.min(100, Math.round(st.current / st.max * 100))) : 0;
+    ns.layers.staminaHud.innerHTML = `
+      <div class="tenotsu-stamina-hud-label">ST</div>
+      <div class="tenotsu-stamina-hud-main"><b>${st.current}</b><span>/ ${st.max}</span></div>
+      <div class="tenotsu-stamina-hud-bar"><i style="width:${ratio}%"></i></div>
+    `;
+  }
+  function refreshAll() {
+    renderHud();
+  }
 
   window.TenotsuStamina = {
-    VERSION: "v039_59",
+    VERSION: "v039_64",
     MAX_STAMINA,
     DEFAULT_COSTS: Object.assign({}, DEFAULT_COSTS),
     getCost,
@@ -77,6 +96,11 @@
     consume,
     recover,
     recoverAll,
-    renderBadge
+    renderBadge,
+    renderSalesSummary,
+    renderHud,
+    refreshAll
   };
+
+  window.addEventListener("load", () => setTimeout(renderHud, 0));
 })();
