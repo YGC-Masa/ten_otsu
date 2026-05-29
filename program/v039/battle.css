@@ -4911,3 +4911,70 @@ button.active {
     transform: translate(-50%, -50%);
   }
 }
+
+
+/* v039_57 battle result + growth comment */
+.battle-result-box {
+  width: min(720px, 94vw);
+  max-height: 86vh;
+  overflow-y: auto;
+}
+.battle-result-comment {
+  margin: 10px 0 14px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.1);
+  text-align: left;
+}
+.battle-result-comment span {
+  display: block;
+  opacity: 0.82;
+  font-size: 0.88rem;
+  margin-bottom: 6px;
+}
+.battle-result-comment p {
+  margin: 0;
+  line-height: 1.7;
+}
+.battle-result-subtitle {
+  margin: 14px 0 8px;
+  font-weight: 800;
+  opacity: 0.92;
+}
+.battle-result-members {
+  text-align: left;
+}
+.battle-result-member-row {
+  display: grid;
+  grid-template-columns: minmax(84px, 1fr) auto auto auto;
+  gap: 8px;
+  align-items: center;
+  padding: 7px 9px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.16);
+  margin: 5px 0;
+}
+.battle-result-member-row small { opacity: 0.78; }
+.battle-result-member-row em {
+  font-style: normal;
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: #ffe08a;
+}
+.battle-result-member-empty {
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.12);
+  opacity: 0.8;
+}
+@media screen and (max-width: 640px) {
+  .battle-result-member-row {
+    grid-template-columns: 1fr auto;
+  }
+  .battle-result-member-row small,
+  .battle-result-member-row em {
+    grid-column: span 2;
+  }
+}

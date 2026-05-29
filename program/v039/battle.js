@@ -3,7 +3,7 @@
 // 操作はメンバーのシングルタップで通常接客、ダブルタップで必殺接客。通常敵HP2、レアHP3。ターゲットは選択メンバーに最適な家電星人へ自動Fix。彩愛の必殺は盤面整理＋敵チェンジ短縮。店長HELP・必殺カットイン・タイムセール演出あり。
 
 (function () {
-  const BATTLE_VERSION = "v039_49";
+  const BATTLE_VERSION = "v039_57";
   const BATTLE_SECONDS = 30;
   const TIME_SALE_SECONDS = 15;
   const MAX_ENEMIES = 3;
@@ -493,13 +493,49 @@ const battleBackgrounds = {
   }
 
 
+  function calcBattleExp() {
+    if (!state) return 0;
+    const base = 60;
+    const servedBonus = Math.max(0, Math.floor(state.served || 0)) * 8;
+    const comboBonus = Math.max(0, Math.floor(state.maxCombo || 0)) * 2;
+    const salesBonus = Math.floor(Math.max(0, Number(state.score) || 0) / 250);
+    const timeSaleBonus = state.timeSaleActive ? 20 : 0;
+    return Math.max(40, Math.min(260, base + servedBonus + comboBonus + salesBonus + timeSaleBonus));
+  }
+
+  function getBattlePartyIds() {
+    if (!state || !Array.isArray(state.staff)) return [...activeStaffIds];
+    const ids = state.staff.map((member) => member && member.id).filter(Boolean);
+    return ids.length ? ids : [...activeStaffIds];
+  }
+
   function finishBattle() {
     if (!state) return;
     state.running = false;
     state.finished = true;
     if (!state.salesRecorded) {
       state.salesRecorded = true;
-      addSalesToEconomy(state.score, state.timeSaleActive ? "店舗営業＋タイムセール" : "店舗営業");
+      const source = state.timeSaleActive ? "店舗営業＋タイムセール" : "店舗営業";
+      const partyIds = getBattlePartyIds();
+      const expGained = calcBattleExp();
+      const growthResults = (window.TenotsuGrowth && typeof window.TenotsuGrowth.addExpToParty === "function")
+        ? window.TenotsuGrowth.addExpToParty(partyIds, expGained, source)
+        : [];
+      const comment = (window.TenotsuResultComments && typeof window.TenotsuResultComments.pick === "function")
+        ? window.TenotsuResultComments.pick(partyIds)
+        : { name: "ひだまりストア", text: "今日もお疲れ様でした。" };
+      state.resultData = {
+        salesAmount: state.score,
+        servedCount: state.served,
+        missedCount: state.missed,
+        maxCombo: state.maxCombo,
+        expGained,
+        partyIds,
+        growthResults,
+        drops: [],
+        comment
+      };
+      addSalesToEconomy(state.score, source);
       addManagerExp(80, "店舗営業");
     }
     state.timeSaleActive = false;
@@ -508,9 +544,10 @@ const battleBackgrounds = {
     state.rush = false;
     state.waveLabel = "営業終了";
     state.timeLeft = Math.max(0, state.timeLeft);
-    state.lastActionText = `営業終了：成約${state.served}件 / 売上 ${state.score.toLocaleString()}円 / 店長EXP +80`;
+    const exp = state.resultData ? state.resultData.expGained : 0;
+    state.lastActionText = `営業終了：成約${state.served}件 / 売上 ${state.score.toLocaleString()}円 / メンバーEXP +${exp}`;
     stopLoop();
-    showSurface("営業終了！", `成約${state.served}件 / 売上 ${state.score.toLocaleString()}円 / 店長EXP +80`, "close", 1350);
+    showSurface("営業終了！", `成約${state.served}件 / 売上 ${state.score.toLocaleString()}円 / メンバーEXP +${exp}`, "close", 1350);
   }
 
   function tick() {
@@ -1204,20 +1241,46 @@ const battleBackgrounds = {
     `;
   }
 
+  function renderResultGrowthRows(result) {
+    const rows = result && Array.isArray(result.growthResults) ? result.growthResults : [];
+    if (!rows.length) return `<div class="battle-result-member-empty">メンバー経験値は次回以降に反映されます。</div>`;
+    return rows.map((item) => {
+      const levelText = item.before && item.after && item.before.level !== item.after.level
+        ? `Lv.${item.before.level} → Lv.${item.after.level}`
+        : `Lv.${item.after ? item.after.level : "-"}`;
+      const upText = item.levelUps && item.levelUps.length ? `<em>LEVEL UP!</em>` : "";
+      return `<div class="battle-result-member-row"><span>${escapeHtml(item.shortName || item.name || item.id)}</span><b>${levelText}</b><small>+${item.gainedExp || 0} EXP</small>${upText}</div>`;
+    }).join("");
+  }
+
+  function renderResultComment(result) {
+    const comment = result && result.comment ? result.comment : null;
+    if (!comment) return "";
+    return `<div class="battle-result-comment"><span>今日のひとこと：${escapeHtml(comment.name || "ひだまりストア")}</span><p>${escapeHtml(comment.text || "今日もお疲れ様でした。")}</p></div>`;
+  }
+
   function renderControlOverlay() {
     if (state.deckEdit) return renderDeckEditorOverlay();
 
     const isResult = state.finished;
+    const result = state.resultData || null;
     return `
       <div class="battle-control-overlay">
-        <div class="battle-control-box">
+        <div class="battle-control-box ${isResult ? "battle-result-box" : ""}">
           ${isResult ? `
             <div class="battle-result-title">営業結果</div>
+            ${renderResultComment(result)}
             <div class="battle-result-grid">
               <span>成約</span><b>${state.served}</b>
               <span>離脱</span><b>${state.missed}</b>
               <span>最大コンボ</span><b>${state.maxCombo}</b>
-              <span>売上</span><b>${state.score}</b>
+              <span>売上</span><b>${Number(state.score || 0).toLocaleString()}円</b>
+              <span>経験値</span><b>+${result ? result.expGained : 0}</b>
+              <span>アイテム</span><b>${result && result.drops && result.drops.length ? result.drops.length + "個" : "なし"}</b>
+            </div>
+            <div class="battle-result-members">
+              <div class="battle-result-subtitle">メンバー成長</div>
+              ${renderResultGrowthRows(result)}
             </div>
           ` : `
             <div class="battle-result-title">店舗営業プロトタイプ</div>
