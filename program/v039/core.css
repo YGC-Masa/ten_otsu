@@ -3678,3 +3678,28 @@ body[data-v039-mode="shop"] .tenotsu-stamina-hud {
     min-width: 0;
   }
 }
+
+
+/* v039_66 resource badge compact + appliance alien trait labels */
+.tenotsu-sales-resource-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: stretch;
+}
+.tenotsu-sales-resource-badges .tenotsu-stamina-badge,
+.tenotsu-sales-resource-badges .tenotsu-battlepoint-badge {
+  min-width: 118px;
+}
+.enemy-trait,
+.enemy-value {
+  display: block;
+  margin-top: 3px;
+  font-size: 11px;
+  line-height: 1.25;
+  color: #ffe7a8;
+  opacity: .96;
+}
+.enemy-value {
+  color: #c9f5ff;
+}

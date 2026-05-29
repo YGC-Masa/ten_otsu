@@ -1,4 +1,4 @@
-/* v039_65 sales resources + role split */
+/* v039_66 sales resources + alien traits + resource split */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -34,11 +34,11 @@
       id: "event_sales",
       label: "イベント営業",
       tag: "ボス戦予定",
-      description: "イベントボスとの特別営業です。将来的にはドラムリズムゲーム形式のボス戦として実装予定です。",
-      message: "イベント営業は、ドラムリズムゲーム形式のボス戦として接続予定です。現時点では接客バトルへ仮接続します。",
+      description: "イベントボスとの特別営業です。ST20とBP1を消費し、将来的にはドラムリズムゲーム形式のボス戦として実装予定です。",
+      message: "イベント営業は、ST20とBP1を使う特別営業です。現時点では接客バトルへ仮接続します。",
       duration: 45,
       staminaCost: 20,
-      battlePointCost: 0,
+      battlePointCost: 1,
       rewardRole: "イベント報酬 / 限定素材 / 思い出解禁",
       target: "イベントボス戦でリズムに合わせて接客する",
       battleType: "eventBoss",
@@ -47,15 +47,43 @@
   ];
 
   function modeResourceLabel(mode) {
-    if (mode.battlePointCost && mode.battlePointCost > 0) return `BP ${mode.battlePointCost}`;
-    if (mode.staminaCost && mode.staminaCost > 0) return `ST ${mode.staminaCost}`;
-    return "消費なし";
+    const parts = [];
+    if (mode.staminaCost && mode.staminaCost > 0) parts.push(`ST ${mode.staminaCost}`);
+    if (mode.battlePointCost && mode.battlePointCost > 0) parts.push(`BP ${mode.battlePointCost}`);
+    return parts.length ? parts.join(" + ") : "消費なし";
   }
   function modeResourceBadge(mode) {
+    const badges = [];
     const st = window.TenotsuStamina && typeof window.TenotsuStamina.renderBadge === "function" ? window.TenotsuStamina.renderBadge(mode.id) : "";
     const bp = window.TenotsuBattlePoint && typeof window.TenotsuBattlePoint.renderBadge === "function" ? window.TenotsuBattlePoint.renderBadge(mode.id) : "";
-    return st || bp || `<div class="tenotsu-stamina-badge"><span>消費</span><b>なし</b><small>テスト用</small></div>`;
+    if (st) badges.push(st);
+    if (bp) badges.push(bp);
+    if (!badges.length) badges.push(`<div class="tenotsu-stamina-badge"><span>消費</span><b>なし</b><small>テスト用</small></div>`);
+    return `<div class="tenotsu-sales-resource-badges">${badges.join("")}</div>`;
   }
+  function canPayResources(mode) {
+    const stCost = mode.staminaCost || 0;
+    const bpCost = mode.battlePointCost || 0;
+    const st = window.TenotsuStamina && typeof window.TenotsuStamina.getState === "function" ? window.TenotsuStamina.getState() : { current: 999, max: 999 };
+    const bp = window.TenotsuBattlePoint && typeof window.TenotsuBattlePoint.getState === "function" ? window.TenotsuBattlePoint.getState() : { current: 999, max: 999 };
+    if (st.current < stCost) return { ok: false, type: "ST", current: st.current, max: st.max, cost: stCost };
+    if (bp.current < bpCost) return { ok: false, type: "BP", current: bp.current, max: bp.max, cost: bpCost };
+    return { ok: true, stCost, bpCost };
+  }
+  function consumeResources(mode) {
+    const check = canPayResources(mode);
+    if (!check.ok) return check;
+    if (mode.staminaCost && mode.staminaCost > 0 && window.TenotsuStamina && typeof window.TenotsuStamina.consume === "function") {
+      const consumed = window.TenotsuStamina.consume(mode.id, mode.label);
+      if (!consumed.ok) return { ok: false, type: "ST", current: consumed.state.current, max: consumed.state.max, cost: consumed.cost };
+    }
+    if (mode.battlePointCost && mode.battlePointCost > 0 && window.TenotsuBattlePoint && typeof window.TenotsuBattlePoint.consume === "function") {
+      const consumed = window.TenotsuBattlePoint.consume(mode.id, mode.label);
+      if (!consumed.ok) return { ok: false, type: "BP", current: consumed.state.current, max: consumed.state.max, cost: consumed.cost };
+    }
+    return { ok: true };
+  }
+
   function salesCard(mode) {
     return `
       <button type="button" class="tenotsu-sales-card tenotsu-sales-card-${mode.id}" data-sales-mode="${mode.id}" data-battle-type="${mode.battleType || 'normal'}">
@@ -128,7 +156,7 @@
 
   ns.deckBattleCustomers = [
     { id: "tv_popcorn", name: "テレビポップコーン星人", need: "映像", weak: "tv" },
-    { id: "dryer_choco", name: "チョコドライヤ星人", need: "美容・ドライヤー", weak: "dryer" },
+    { id: "choco_dryer", name: "チョコドライヤ星人", need: "美容・ドライヤー", weak: "dryer" },
     { id: "pc_pizza", name: "パソコンピザ星人", need: "PC相談", weak: "pc" },
     { id: "phone_candy", name: "スマホキャンディ星人", need: "スマホ相談", weak: "phone" },
     { id: "audio_gummy", name: "イヤホングミ星人", need: "オーディオ", weak: "audio" }
@@ -142,7 +170,25 @@
     { id: "kohaku", name: "琥珀", attr: "audio", power: 118, skill: "イヤホン聞き比べ" }
   ];
 
-  ns.pickDeckBattleCustomers = function pickDeckBattleCustomers(count = 3) {
+  ns.pickDeckBattleCustomers = function pickDeckBattleCustomers(count = 3, options = {}) {
+    if (window.TenotsuApplianceAliens && typeof window.TenotsuApplianceAliens.pickAlienInstances === "function") {
+      return window.TenotsuApplianceAliens.pickAlienInstances(count, options).map((item) => ({
+        id: item.alienId || item.id,
+        name: item.displayName || item.name,
+        baseName: item.name,
+        trait: item.traitLabel || "ふつう",
+        traitDesc: item.traitDesc || "",
+        need: item.need,
+        weak: item.weak,
+        hp: item.hp,
+        value: item.value,
+        preferredStat: item.preferredStat,
+        dropRate: item.dropRate || 1,
+        helpRate: item.helpRate || 1,
+        comboRate: item.comboRate || 1,
+        rivalPullRate: item.rivalPullRate || 1
+      }));
+    }
     const list = (ns.deckBattleCustomers || []).slice();
     const out = [];
     while (list.length && out.length < count) {
@@ -180,22 +226,12 @@
       </div>`;
     ns.setText("店長", `${mode.label}を開始しますか？ 画面中央の確認ダイアログから営業開始できます。`);
     detail.querySelector('[data-sales-dialog="start"]').addEventListener("click", () => {
-      if (mode.battlePointCost && mode.battlePointCost > 0) {
-        if (window.TenotsuBattlePoint && typeof window.TenotsuBattlePoint.consume === "function") {
-          const consumed = window.TenotsuBattlePoint.consume(mode.id, mode.label);
-          if (!consumed.ok) {
-            ns.setText("店長", `バトルPが足りません。現在 ${consumed.state.current}/${consumed.state.max}、必要 ${consumed.cost} です。`);
-            ns.renderSalesPanel(mode.id);
-            return;
-          }
-        }
-      } else if (window.TenotsuStamina && typeof window.TenotsuStamina.consume === "function") {
-        const consumed = window.TenotsuStamina.consume(mode.id, mode.label);
-        if (!consumed.ok) {
-          ns.setText("店長", `スタミナが足りません。現在 ${consumed.state.current}/${consumed.state.max}、必要 ${consumed.cost} です。`);
-          ns.renderSalesPanel(mode.id);
-          return;
-        }
+      const payment = consumeResources(mode);
+      if (!payment.ok) {
+        const label = payment.type === "BP" ? "バトルP" : "スタミナ";
+        ns.setText("店長", `${label}が足りません。現在 ${payment.current}/${payment.max}、必要 ${payment.cost} です。`);
+        ns.renderSalesPanel(mode.id);
+        return;
       }
       ns.state.currentSalesMode = mode;
       ns.state.currentBattleType = mode.battleType || "normal";
@@ -252,7 +288,7 @@
     ns.state.currentBattle = {
       modeId: mode.id, label: mode.label, score: 0, served: 0, combo: 0, maxCombo: 0,
       selectedCustomer: null, startedAt: Date.now(),
-      customers: ns.pickDeckBattleCustomers(3),
+      customers: ns.pickDeckBattleCustomers(3, mode && mode.battleType === "rival" ? { traits: ["normal", "generous", "wavering", "big_order", "impatient", "help_lover"] } : {}),
       staff: (ns.deckBattleStaff || []).slice(0, 5)
     };
 
@@ -269,6 +305,8 @@
       <button type="button" class="tenotsu-deck-enemy ${battle.selectedCustomer === index ? "selected" : ""}" data-enemy-index="${index}">
         <span class="enemy-name">${enemy.name}</span>
         <span class="enemy-need">要望：${enemy.need}</span>
+        ${enemy.trait ? `<span class="enemy-trait">特性：${enemy.trait}</span>` : ""}
+        ${enemy.value ? `<span class="enemy-value">売上目安：${enemy.value}</span>` : ""}
       </button>`).join("");
 
     const staffCards = staff.map((card) => `
@@ -325,14 +363,16 @@
     const enemy = battle.customers[battle.selectedCustomer];
     const matched = card.attr === enemy.weak;
     const comboBonus = Math.min(battle.combo * 10, 80);
-    const gain = matched ? card.power + 80 + comboBonus : Math.floor(card.power * 0.45);
+    const baseValue = enemy.value || 100;
+    const traitComboRate = enemy.comboRate || 1;
+    const gain = matched ? Math.round((card.power + baseValue + comboBonus) * traitComboRate) : Math.floor(card.power * 0.45);
     battle.score += gain;
     battle.served += 1;
     battle.combo = matched ? battle.combo + 1 : 0;
     battle.maxCombo = Math.max(battle.maxCombo || 0, battle.combo);
 
-    const pool = ns.deckBattleCustomers || [];
-    battle.customers.splice(battle.selectedCustomer, 1, Object.assign({}, pool[Math.floor(Math.random() * pool.length)]));
+    const nextEnemy = ns.pickDeckBattleCustomers(1, mode && mode.battleType === "rival" ? { traits: ["normal", "generous", "wavering", "big_order", "impatient", "help_lover"] } : {})[0];
+    battle.customers.splice(battle.selectedCustomer, 1, nextEnemy);
     battle.selectedCustomer = null;
     ns.renderDeckBattle(mode);
     ns.setText("店長", matched ? `${card.name}の${card.skill}が刺さりました！ +${gain}点` : `${card.name}で接客しましたが相性はいまひとつ。 +${gain}点`);
@@ -345,8 +385,8 @@
       ns.setText("店長", "チェンジする家電星人を先に選んでください。");
       return;
     }
-    const pool = ns.deckBattleCustomers || [];
-    battle.customers.splice(battle.selectedCustomer, 1, Object.assign({}, pool[Math.floor(Math.random() * pool.length)]));
+    const nextEnemy = ns.pickDeckBattleCustomers(1, mode && mode.battleType === "rival" ? { traits: ["normal", "generous", "wavering", "big_order", "impatient", "help_lover"] } : {})[0];
+    battle.customers.splice(battle.selectedCustomer, 1, nextEnemy);
     battle.score = Math.max(0, battle.score - 30);
     battle.combo = 0;
     battle.selectedCustomer = null;

@@ -1,10 +1,11 @@
-/* v039_65 battle point base for VSビリビリ */
+/* v039_66 battle point base for VSビリビリ / event */
 (function () {
   "use strict";
   const STORAGE_KEY = "tenotsu_battle_point_v1";
-  const MAX_BP = 5;
+  const MAX_BP = 3;
   const DEFAULT_COSTS = {
-    rival_battle: 1
+    rival_battle: 1,
+    event_sales: 1
   };
 
   function nowIso() { return new Date().toISOString(); }
@@ -15,12 +16,12 @@
     let data = null;
     try { data = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null"); } catch (_) { data = null; }
     if (!data || typeof data !== "object") {
-      return { version: "v039_65", current: MAX_BP, max: MAX_BP, updatedAt: nowIso(), history: [] };
+      return { version: "v039_66", current: MAX_BP, max: MAX_BP, updatedAt: nowIso(), history: [] };
     }
     data.max = MAX_BP;
     data.current = clamp(data.current == null ? MAX_BP : data.current);
     data.history = Array.isArray(data.history) ? data.history.slice(-20) : [];
-    data.version = "v039_65";
+    data.version = "v039_66";
     data.updatedAt = data.updatedAt || nowIso();
     return data;
   }
@@ -65,14 +66,14 @@
   }
   function renderSalesSummary() {
     const bp = load();
-    return `<div class="tenotsu-battlepoint-summary"><span>バトルP</span><b>${bp.current}/${bp.max}</b><small>VSビリビリで消費</small></div>`;
+    return `<div class="tenotsu-battlepoint-summary"><span>バトルP</span><b>${bp.current}/${bp.max}</b><small>VSビリビリ・イベントで消費</small></div>`;
   }
   function refreshAll() {
     try { if (window.TenotsuStamina && typeof window.TenotsuStamina.renderHud === "function") window.TenotsuStamina.renderHud(); } catch (_) {}
   }
 
   window.TenotsuBattlePoint = {
-    VERSION: "v039_65",
+    VERSION: "v039_66",
     MAX_BP,
     DEFAULT_COSTS: Object.assign({}, DEFAULT_COSTS),
     getCost,

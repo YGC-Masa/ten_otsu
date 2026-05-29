@@ -1,11 +1,11 @@
-/* v039_65 stamina HUD + BP companion */
+/* v039_66 stamina HUD + BP companion */
 (function () {
   "use strict";
   const STORAGE_KEY = "tenotsu_stamina_v1";
   const MAX_STAMINA = 100;
   const DEFAULT_COSTS = {
     normal_sales: 10,
-    rival_battle: 15,
+    rival_battle: 0,
     event_sales: 20
   };
 
@@ -17,12 +17,12 @@
     let data = null;
     try { data = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null"); } catch (_) { data = null; }
     if (!data || typeof data !== "object") {
-      return { version: "v039_65", current: MAX_STAMINA, max: MAX_STAMINA, updatedAt: nowIso(), history: [] };
+      return { version: "v039_66", current: MAX_STAMINA, max: MAX_STAMINA, updatedAt: nowIso(), history: [] };
     }
     data.max = MAX_STAMINA;
     data.current = clamp(data.current == null ? MAX_STAMINA : data.current);
     data.history = Array.isArray(data.history) ? data.history.slice(-20) : [];
-    data.version = "v039_65";
+    data.version = "v039_66";
     data.updatedAt = data.updatedAt || nowIso();
     return data;
   }
@@ -93,7 +93,7 @@
   }
 
   window.TenotsuStamina = {
-    VERSION: "v039_65",
+    VERSION: "v039_66",
     MAX_STAMINA,
     DEFAULT_COSTS: Object.assign({}, DEFAULT_COSTS),
     getCost,
