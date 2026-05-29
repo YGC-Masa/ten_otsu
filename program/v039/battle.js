@@ -3,7 +3,7 @@
 // 操作はメンバーのシングルタップで通常接客、ダブルタップで必殺接客。通常敵HP2、レアHP3。ターゲットは選択メンバーに最適な家電星人へ自動Fix。彩愛の必殺は盤面整理＋敵チェンジ短縮。店長HELP・必殺カットイン・タイムセール演出あり。
 
 (function () {
-  const BATTLE_VERSION = "v039_62";
+  const BATTLE_VERSION = "v039_63";
   const BATTLE_SECONDS = 30;
   const TIME_SALE_SECONDS = 15;
   const MAX_ENEMIES = 3;
@@ -284,6 +284,8 @@ const battleBackgrounds = {
       surface: null,
       whiteFlashUntil: 0,
       countingDown: false,
+      resultRevealAt: 0,
+      resultRevealTimer: null,
 
       lastActionText: "営業開始を押してください。",
       buffPowerUntil: 0,
@@ -543,7 +545,16 @@ const battleBackgrounds = {
     const exp = state.resultData ? state.resultData.expGained : 0;
     state.lastActionText = `営業終了：成約${state.served}件 / 売上 ${state.score.toLocaleString()}円 / メンバーEXP +${exp}`;
     stopLoop();
-    showSurface("営業終了！", `成約${state.served}件 / 売上 ${state.score.toLocaleString()}円 / メンバーEXP +${exp}`, "close", 1350);
+    state.resultRevealAt = Date.now() + 3000;
+    if (state.resultRevealTimer) window.clearTimeout(state.resultRevealTimer);
+    state.resultRevealTimer = window.setTimeout(() => {
+      if (!state || !state.finished) return;
+      state.surface = null;
+      state.resultRevealAt = 0;
+      state.resultRevealTimer = null;
+      render();
+    }, 3000);
+    showSurface("営業終了", `成約${state.served}件 / 売上 ${state.score.toLocaleString()}円 / メンバーEXP +${exp}`, "close ending", 3000);
   }
 
   function tick() {
@@ -1250,10 +1261,29 @@ const battleBackgrounds = {
     return `<div class="battle-result-member-list">${html}</div>`;
   }
 
+  function shouldShowEndingDeclaration() {
+    return !!(state && state.finished && state.resultRevealAt && Date.now() < state.resultRevealAt);
+  }
+
+  function renderEndingDeclaration() {
+    const result = state && state.resultData ? state.resultData : null;
+    const exp = result ? result.expGained : 0;
+    return `
+      <div class="battle-control-overlay battle-ending-overlay" aria-live="polite">
+        <div class="battle-ending-card">
+          <small>本日の営業</small>
+          <b>営業終了</b>
+          <span>成約${state.served}件 / 売上 ${Number(state.score || 0).toLocaleString()}円 / EXP +${exp}</span>
+        </div>
+      </div>
+    `;
+  }
+
   function renderControlOverlay() {
     if (state.deckEdit) return renderDeckEditorOverlay();
 
     const isResult = state.finished;
+    if (shouldShowEndingDeclaration()) return renderEndingDeclaration();
     const result = state.resultData || null;
     return `
       <div class="battle-control-overlay">
@@ -1514,6 +1544,8 @@ const battleBackgrounds = {
     const button = event.target.closest("button");
     if (!button || !root.contains(button)) return;
 
+    event.preventDefault();
+    event.stopPropagation();
     const action = button.dataset.action;
     const staffId = button.dataset.staffId;
 
