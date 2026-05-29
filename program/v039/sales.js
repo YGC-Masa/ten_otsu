@@ -1,4 +1,4 @@
-/* v039_37 sales */
+/* v039_50 sales menu trim */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -47,7 +47,7 @@
     const modes = ns.salesModes || [];
     const html = `
       <div class="tenotsu-sales-title">店舗営業</div>
-      <div class="tenotsu-sales-subtitle">営業モードを選択します。バトル本体を抽出実装済みです。営業モードを選択してください。</div>
+      <div class="tenotsu-sales-subtitle">営業モードを選択します。営業モードを選択して、そのままバトルを開始できます。</div>
       <div class="tenotsu-sales-body">
         <div class="tenotsu-sales-list">
           ${modes.map(salesCard).join("")}
@@ -56,7 +56,6 @@
           <div class="tenotsu-sales-detail-empty">営業モードを選択してください。</div>
         </div>
       </div>
-      <button type="button" class="tenotsu-sales-back" data-sales-action="back-office">事務所に戻る</button>
     `;
 
     ns.showSalesPanel(html);
@@ -88,13 +87,8 @@
       btn.addEventListener("click", () => selectMode(btn.dataset.salesMode));
     });
 
-    const back = panel.querySelector('[data-sales-action="back-office"]');
-    if (back) {
-      back.addEventListener("click", () => {
-        ns.hideSalesPanel();
-        ns.enterOffice({ speaker: "店長", message: "事務所に戻りました。" });
-      });
-    }
+    // v039_50: バトル前メニューの導線整理。
+    // 事務所へ戻る専用ボタンは表示せず、店舗営業内でモード選択→営業開始に集中させる。
 
     if (selectedId) selectMode(selectedId);
   };
