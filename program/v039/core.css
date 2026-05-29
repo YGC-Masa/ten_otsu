@@ -3193,3 +3193,232 @@ body[data-v039-mode="members"] .tenotsu-members-back {
     width: auto;
   }
 }
+
+
+/* v039_60 result/member/sales UI follow-up */
+body[data-v039-mode="members"] .tenotsu-member-detail-head,
+.tenotsu-member-detail-head {
+  grid-template-columns: 112px minmax(0, 1fr) !important;
+  align-items: end !important;
+  gap: 12px !important;
+}
+body[data-v039-mode="members"] .tenotsu-member-detail-main,
+.tenotsu-member-detail-main {
+  min-width: 0 !important;
+  overflow: hidden;
+}
+body[data-v039-mode="members"] .tenotsu-member-detail-name,
+.tenotsu-member-detail-name {
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body[data-v039-mode="members"] .tenotsu-member-detail-role,
+body[data-v039-mode="members"] .tenotsu-member-detail-specialty,
+.tenotsu-member-detail-role,
+.tenotsu-member-detail-specialty {
+  white-space: normal;
+  line-height: 1.45;
+}
+body[data-v039-mode="members"] .tenotsu-member-stat-mini,
+.tenotsu-member-stat-mini {
+  width: 100% !important;
+  justify-self: stretch !important;
+  margin-top: 10px;
+}
+body[data-v039-mode="members"] .tenotsu-member-stat-grid,
+.tenotsu-member-stat-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+body[data-v039-mode="members"] .tenotsu-member-stat-grid span,
+.tenotsu-member-stat-grid span {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 1px;
+  padding: 4px 3px;
+}
+body[data-v039-mode="members"] .tenotsu-member-stat-grid i,
+.tenotsu-member-stat-grid i {
+  font-size: 10px;
+}
+body[data-v039-mode="members"] .tenotsu-member-stat-grid b,
+.tenotsu-member-stat-grid b {
+  font-size: 13px;
+}
+.tenotsu-sales-card {
+  grid-template-areas:
+    "title meta"
+    "desc desc" !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: start;
+}
+.tenotsu-sales-card-meta {
+  grid-area: meta;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  white-space: nowrap;
+}
+.tenotsu-sales-card-tag,
+.tenotsu-sales-card-stamina {
+  margin-top: 0 !important;
+  align-self: center !important;
+}
+.tenotsu-sales-card-stamina {
+  min-height: 22px;
+  padding: 3px 8px;
+}
+@media screen and (max-width: 760px) {
+  body[data-v039-mode="members"] .tenotsu-member-detail-head,
+  .tenotsu-member-detail-head {
+    grid-template-columns: 92px minmax(0, 1fr) !important;
+  }
+  body[data-v039-mode="members"] .tenotsu-member-stat-grid,
+  .tenotsu-member-stat-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .tenotsu-sales-card {
+    grid-template-areas:
+      "title"
+      "meta"
+      "desc" !important;
+    grid-template-columns: 1fr !important;
+  }
+  .tenotsu-sales-card-meta {
+    justify-content: flex-start;
+  }
+}
+
+
+/* v039_62 member right detail layout rebuild
+   名前/キャッチ/得意と、ひとことコメントを別ブロック化して破綻を防ぐ。 */
+body[data-v039-mode="members"] .tenotsu-member-detail,
+.tenotsu-member-detail {
+  overflow-x: hidden !important;
+}
+body[data-v039-mode="members"] .tenotsu-member-detail-head-v62,
+body[data-v039-mode="members"] .tenotsu-member-detail-head,
+.tenotsu-member-detail-head-v62,
+.tenotsu-member-detail-head {
+  display: grid !important;
+  grid-template-columns: 118px minmax(0, 1fr) !important;
+  gap: 12px !important;
+  align-items: start !important;
+}
+body[data-v039-mode="members"] .tenotsu-member-detail-img,
+.tenotsu-member-detail-img {
+  width: 118px !important;
+  max-width: 118px !important;
+  max-height: 222px !important;
+  object-fit: contain !important;
+  align-self: start !important;
+}
+body[data-v039-mode="members"] .tenotsu-member-detail-info-stack,
+.tenotsu-member-detail-info-stack {
+  min-width: 0 !important;
+  display: grid !important;
+  grid-template-rows: auto minmax(72px, auto) !important;
+  gap: 9px !important;
+}
+body[data-v039-mode="members"] .tenotsu-member-identity-box,
+.tenotsu-member-identity-box {
+  min-width: 0 !important;
+  padding: 9px 11px !important;
+  border-radius: 13px !important;
+  background: rgba(255,255,255,0.07) !important;
+  border: 1px solid rgba(255,226,163,0.22) !important;
+}
+body[data-v039-mode="members"] .tenotsu-member-detail-name,
+.tenotsu-member-detail-name {
+  display: block !important;
+  writing-mode: horizontal-tb !important;
+  text-orientation: mixed !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  line-height: 1.18 !important;
+  font-size: clamp(18px, 2.2vw, 24px) !important;
+  letter-spacing: 0.02em !important;
+  margin: 0 !important;
+}
+body[data-v039-mode="members"] .tenotsu-member-detail-role,
+body[data-v039-mode="members"] .tenotsu-member-detail-specialty,
+.tenotsu-member-detail-role,
+.tenotsu-member-detail-specialty {
+  display: block !important;
+  writing-mode: horizontal-tb !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  line-height: 1.35 !important;
+  margin-top: 5px !important;
+  font-size: 12px !important;
+  opacity: 0.88 !important;
+}
+body[data-v039-mode="members"] .tenotsu-member-detail-comment,
+.tenotsu-member-detail-comment {
+  margin-top: 0 !important;
+  min-width: 0 !important;
+  min-height: 72px !important;
+  display: grid !important;
+  align-content: start !important;
+  gap: 5px !important;
+  padding: 10px 11px !important;
+  border-radius: 13px !important;
+  background: rgba(0,0,0,0.26) !important;
+  border: 1px solid rgba(255,255,255,0.13) !important;
+  line-height: 1.55 !important;
+}
+body[data-v039-mode="members"] .tenotsu-member-comment-label,
+.tenotsu-member-comment-label {
+  display: inline-flex !important;
+  width: fit-content !important;
+  padding: 2px 7px !important;
+  border-radius: 999px !important;
+  background: rgba(255,226,163,0.14) !important;
+  color: #ffe2a3 !important;
+  font-size: 10px !important;
+  font-weight: 900 !important;
+  line-height: 1.2 !important;
+}
+body[data-v039-mode="members"] .tenotsu-member-comment-text,
+.tenotsu-member-comment-text {
+  display: block !important;
+  color: rgba(255,255,255,0.92) !important;
+  font-size: 13px !important;
+  line-height: 1.55 !important;
+  overflow-wrap: anywhere !important;
+}
+body[data-v039-mode="members"] .tenotsu-member-stat-mini,
+.tenotsu-member-stat-mini {
+  margin-top: 10px !important;
+  clear: both !important;
+}
+@media screen and (max-width: 760px) {
+  body[data-v039-mode="members"] .tenotsu-member-detail-head-v62,
+  body[data-v039-mode="members"] .tenotsu-member-detail-head,
+  .tenotsu-member-detail-head-v62,
+  .tenotsu-member-detail-head {
+    grid-template-columns: 92px minmax(0, 1fr) !important;
+    gap: 10px !important;
+  }
+  body[data-v039-mode="members"] .tenotsu-member-detail-img,
+  .tenotsu-member-detail-img {
+    width: 92px !important;
+    max-width: 92px !important;
+    max-height: 172px !important;
+  }
+  body[data-v039-mode="members"] .tenotsu-member-detail-info-stack,
+  .tenotsu-member-detail-info-stack {
+    grid-template-rows: auto minmax(64px, auto) !important;
+    gap: 7px !important;
+  }
+  body[data-v039-mode="members"] .tenotsu-member-detail-role,
+  body[data-v039-mode="members"] .tenotsu-member-detail-specialty,
+  .tenotsu-member-detail-role,
+  .tenotsu-member-detail-specialty {
+    white-space: normal !important;
+  }
+}

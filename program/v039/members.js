@@ -1,4 +1,4 @@
-/* v039_59 members detail stat header */
+/* v039_62 members right-detail layout rebuild */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -67,16 +67,21 @@
         panel.querySelectorAll(".tenotsu-member-card").forEach((card) => card.classList.remove("selected"));
         btn.classList.add("selected");
         detail.innerHTML = `
-          <div class="tenotsu-member-detail-head">
+          <div class="tenotsu-member-detail-head tenotsu-member-detail-head-v62">
             <img src="${esc(ns.paths.charBase + m.image)}" alt="${esc(m.name)}" class="tenotsu-member-detail-img">
-            <div class="tenotsu-member-detail-main">
-              <div class="tenotsu-member-detail-name">${esc(m.name)}</div>
-              <div class="tenotsu-member-detail-role">${esc(m.role)}</div>
-              <div class="tenotsu-member-detail-specialty">得意：${esc(m.specialty)}</div>
+            <div class="tenotsu-member-detail-info-stack">
+              <div class="tenotsu-member-identity-box" aria-label="メンバー基本情報">
+                <div class="tenotsu-member-detail-name">${esc(m.name)}</div>
+                <div class="tenotsu-member-detail-role">${esc(m.role)}</div>
+                <div class="tenotsu-member-detail-specialty">得意：${esc(m.specialty)}</div>
+              </div>
+              <div class="tenotsu-member-detail-comment" aria-label="メンバーコメント">
+                <span class="tenotsu-member-comment-label">ひとこと</span>
+                <span class="tenotsu-member-comment-text">${esc(m.comment)}</span>
+              </div>
             </div>
-            ${renderStatsMini(m)}
           </div>
-          <div class="tenotsu-member-detail-comment">${esc(m.comment)}</div>
+          ${renderStatsMini(m)}
           <div class="tenotsu-member-detail-note">詳細画面は、プロフィール・好感度・持ち物を追加する段階で拡張予定です。</div>
         `;
         ns.setText(m.name, m.comment);
