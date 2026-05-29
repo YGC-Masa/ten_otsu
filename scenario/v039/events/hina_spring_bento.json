@@ -140,15 +140,7 @@
     {
       "speaker": "緋奈",
       "text": "本当ですよ！？　もう、そこ疑うところじゃないですって！",
-      "storySprites": [
-        {
-          "id": "hina",
-          "src": "images/assets/char/a11001.webp",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        }
-      ]
+
     },
     {
       "speaker": "店長",
@@ -156,16 +148,7 @@
     },
     {
       "speaker": "緋奈",
-      "text": "えへへ……そこまで言われると、ちょっと照れますね。",
-      "storySprites": [
-        {
-          "id": "hina",
-          "src": "images/assets/char/a10501.webp",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        }
-      ]
+
     },
     {
       "bg": "images/assets/bgev/bg_park_spring.png",
