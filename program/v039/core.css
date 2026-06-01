@@ -4120,3 +4120,23 @@ body[data-v039-mode="storeStatus"] .tenotsu-tuning-panel {
   .tenotsu-tuning-menu { grid-template-columns: repeat(2, minmax(0,1fr)); grid-template-rows: none; }
   .tenotsu-tuning-grid { grid-template-columns: 1fr; }
 }
+
+/* v039_80: ST/BP auto-recovery countdown hints */
+.tenotsu-resource-hud-next {
+  margin-top: 2px;
+  text-align: right;
+  font-size: 10px;
+  line-height: 1.2;
+  color: rgba(255, 245, 210, .74);
+  white-space: nowrap;
+}
+.tenotsu-resource-hud-next-bp {
+  color: rgba(255, 213, 205, .76);
+}
+.tenotsu-sales-stamina-summary small + small,
+.tenotsu-battlepoint-summary small + small,
+.tenotsu-stamina-badge small + small,
+.tenotsu-battlepoint-badge small + small {
+  margin-top: 2px;
+  color: rgba(255, 245, 210, .72);
+}

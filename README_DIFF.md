@@ -1,24 +1,29 @@
-# ten_otsu v039_78 → v039_79 差分
+# ten_otsu v039_79 → v039_80 差分
 
 ## 概要
 
-v039_78で整理した店舗閲覧管理は残しつつ、右メニューの「チューニング」を復活し、テックラボつくも店内背景を使った装備・設備強化入口を追加しました。
+ST/BPの自動回復仕様を追加しました。
 
-## チューニング画面
+## 変更点
+
+- スタミナを6分に1回復。
+- バトルPを60分に1回復。
+- オフライン経過分も次回読み込み時に反映。
+- ST/BP HUDに次回回復目安を表示。
+- 店舗営業のリソース表示にも回復間隔と次回回復目安を表示。
+
+## 変更ファイル
 
 ```text
-チューニング
-├ メンバー装備強化
-├ 店長装備強化
-├ 店舗設備強化
-└ 事務所に戻る
+index.html
+program/v039/state.js
+program/v039/stamina.js
+program/v039/battlePoint.js
+program/v039/core.css
+program/v039/rivalBattle.js
+program/docs/v039_80_resource_auto_recovery.md
+README_DIFF.md
+release_notes.md
+VALIDATION.json
+CHECKSUMS.json
 ```
-
-## 主な変更
-
-- 右メニューに「チューニング」を再追加
-- チューニング遷移時の背景に「テックラボつくも店内」を採用
-- `program/v039/tuning.js` を追加
-- `images/assets/bgev/bg_tsukumo_tuning.png` を追加
-- メンバー装備強化 / 店長装備強化 / 店舗設備強化 / 事務所に戻る の順でボタンを配置
-- 強化実行は未接続。今回はカテゴリ導線とUI構成の固定
