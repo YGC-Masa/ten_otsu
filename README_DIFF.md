@@ -1,38 +1,45 @@
-# ten_otsu v039_75 差分
+# ten_otsu v039_76 差分
 
 ## 概要
 
-v039_74 から v039_75 では、ビリビリバトルのプレイ感を調整しました。
+v039_75 から v039_76 では、VSビリビリの強さを少し戻し、ビリビリ側のカード画像とカットイン画像を差し替えました。
 
-- ビリビリメンバーを少し強化
-- ひだまりメンバーの必殺可能時に枠が光る演出を追加
-- VSビリビリ用のデッキ編成を追加
+- v039_75で強めたビリビリ側を約10%だけ弱める
+- 小春・真冬・なつのキャラカード画像を採用版へ差し替え
+- 小春・真冬・なつの必殺技カットイン画像を採用版へ差し替え
+- 既存の必殺可能演出とデッキ編成は維持
 
 ## 主な変更
 
-### ビリビリメンバー強化
+### ビリビリ側の強さを微調整
 
-小春・真冬・なつの行動間隔、横取り確率、必殺ゲージ増加速度を調整しました。
-ラッシュ中はビリビリ側の圧力も少し上がります。
+v039_75の強化状態を基準に、ビリビリ側の横取り・スコア・必殺ゲージ増加を約10%抑えました。
+手動操作なら勝ちやすく、放置気味だと押されるバランスを狙っています。
 
-### 必殺可能演出
+### 採用画像へ差し替え
 
-通常バトルと同じく、必殺技が打てるひだまりメンバーのカード枠が光ります。
+以下を `images/assets/rival/` に反映しました。
 
-### デッキ編成
-
-VSビリビリの開始画面とリザルト画面に「デッキ編成」を追加しました。
-通常バトルと同じデッキ保存キーを使うため、出撃メンバー設定を共有できます。
+- koharu_stand.png
+- koharu_cutin.png
+- mafuyu_stand.png
+- mafuyu_cutin.png
+- natsu_stand.png
+- natsu_cutin.png
 
 ## 変更ファイル
 
 - index.html
 - program/v039/rivalBattle.js
-- program/v039/rivalBattle.css
 - program/v039/state.js
-- program/docs/v039_75_rival_strength_skill_ready_deck.md
+- images/assets/rival/koharu_stand.png
+- images/assets/rival/koharu_cutin.png
+- images/assets/rival/mafuyu_stand.png
+- images/assets/rival/mafuyu_cutin.png
+- images/assets/rival/natsu_stand.png
+- images/assets/rival/natsu_cutin.png
+- program/docs/v039_76_rival_balance_assets.md
 - release_notes.md
 - README_DIFF.md
 - VALIDATION.json
 - CHECKSUMS.json
-

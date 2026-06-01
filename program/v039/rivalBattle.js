@@ -1,4 +1,4 @@
-/* v039_75 biribiri rival battle strength/skill-ready/deck formation
+/* v039_76 biribiri rival balance/assets update
  * 通常バトル BattleProto.openBattle() をラップし、currentBattleType === "rival" の時だけ
  * 小春・真冬・なつのVS CPUバトルへ差し替える。
  */
@@ -6,7 +6,7 @@
   "use strict";
 
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  const VERSION = "v039_75_rival_strength_skill_ready_deck";
+  const VERSION = "v039_76_rival_balance_assets";
   const ROOT_ID = "rival-battle-root";
   const STORAGE_KEY = "tenotsu_biribiri_rival_rewards_v1";
   const BATTLE_SECONDS = 45;
@@ -108,6 +108,7 @@
   let lastHandledInput = { key: "", time: 0 };
   let pendingStaffTap = null;
   const STAFF_DOUBLE_TAP_MS = 280;
+  const RIVAL_POWER_MULTIPLIER = 0.90; // v039_76: v039_75強化版から約10%だけビリビリ側を弱める
 
 
   let activeDeckIds = loadDeckIds();
@@ -680,7 +681,7 @@
     if (!state || !enemy) return;
     removeEnemy(enemy);
     const r = rival || state.rivals[0];
-    const point = Math.max(1, Math.round(enemy.score * 1.12 * (state.rivalScoreRate || 1) * (enemy.rivalPullRate || 1)));
+    const point = Math.max(1, Math.round(enemy.score * 1.12 * RIVAL_POWER_MULTIPLIER * (state.rivalScoreRate || 1) * (enemy.rivalPullRate || 1)));
     state.rivalScore += point;
     state.stolen += 1;
     state.combo = 0;
@@ -701,13 +702,13 @@
     state.rivals.forEach((rival) => {
       rival.actionTimer -= dt;
       rival.skillCooldown = Math.max(0, rival.skillCooldown - dt);
-      rival.skillGauge = Math.min(100, rival.skillGauge + dt * (7.2 + (rival.id === "koharu" ? 0.9 : rival.id === "natsu" ? 0.35 : 0.15)));
+      rival.skillGauge = Math.min(100, rival.skillGauge + dt * RIVAL_POWER_MULTIPLIER * (7.2 + (rival.id === "koharu" ? 0.9 : rival.id === "natsu" ? 0.35 : 0.15)));
       if (rival.skillGauge >= 100 && rival.skillCooldown <= 0) {
         useRivalSkill(rival, level);
       }
       if (rival.actionTimer <= 0) {
         rival.actionTimer = rival.actionBase + rand(0.05, 0.58);
-        if (Math.random() < (state.autoMode ? 0.66 : 0.74)) rivalServeOne(rival);
+        if (Math.random() < ((state.autoMode ? 0.66 : 0.74) * RIVAL_POWER_MULTIPLIER)) rivalServeOne(rival);
       }
     });
   }
@@ -730,7 +731,7 @@
   function rivalServeOne(rival) {
     const enemy = chooseRivalTarget();
     if (!enemy) return false;
-    const chance = clamp(0.40 + (enemy.rivalPullRate || 1) * 0.105 + (state.rivalScoreRate > 1 ? 0.17 : 0) + (state.rushActive ? 0.055 : 0), 0.32, 0.80);
+    const chance = clamp((0.40 + (enemy.rivalPullRate || 1) * 0.105 + (state.rivalScoreRate > 1 ? 0.17 : 0) + (state.rushActive ? 0.055 : 0)) * RIVAL_POWER_MULTIPLIER, 0.28, 0.72);
     if (Math.random() < chance) {
       rivalTakeEnemy(enemy, rival, "接客横取り");
       return true;
