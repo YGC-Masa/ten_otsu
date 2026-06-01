@@ -7,6 +7,7 @@
     officeBg: "images/assets/bgev/bg_office_hidamari.png",
     shopBg: "images/assets/bgev/bg_item_exchange_counter.png",
     townBg: "images/assets/bgev/bg_park_spring.png",
+    tsukumoTuningBg: "images/assets/bgev/bg_tsukumo_tuning.png",
     fallbackBg: "images/assets/bgev/bg_office_hidamari.png",
     transparentPixel: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",
     charBase: "images/assets/char/"

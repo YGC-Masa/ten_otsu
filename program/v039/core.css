@@ -3933,3 +3933,190 @@ body[data-v039-mode="result"] .tenotsu-store-status-panel {
   .tenotsu-store-status-menu-title { grid-column: 1 / -1; }
   .tenotsu-store-status-grid { grid-template-columns: 1fr; }
 }
+
+/* v039_79 tuning / TechLab Tsukumo */
+.tenotsu-office-menu-button[data-action="tuning"] {
+  background: linear-gradient(180deg, #e6fff4, #bdf0db);
+  border-color: rgba(66, 142, 100, .60);
+}
+.tenotsu-tuning-panel {
+  position: absolute;
+  left: clamp(20px, 5vw, 70px);
+  right: clamp(138px, 18vw, 232px);
+  top: clamp(24px, 7vh, 72px);
+  bottom: clamp(104px, 17vh, 150px);
+  z-index: 742;
+  color: #fff;
+  pointer-events: auto;
+}
+.tenotsu-tuning-panel[hidden] { display: none !important; }
+.tenotsu-tuning-card {
+  height: 100%;
+  padding: clamp(16px, 2.2vw, 24px);
+  border-radius: 24px;
+  border: 1px solid rgba(220, 182, 120, .48);
+  background:
+    linear-gradient(135deg, rgba(21, 26, 19, .88), rgba(37, 25, 14, .74)),
+    radial-gradient(circle at 74% 18%, rgba(255, 205, 126, .14), transparent 34%);
+  box-shadow: 0 22px 48px rgba(0,0,0,.46), inset 0 0 0 1px rgba(255,255,255,.06);
+  backdrop-filter: blur(3px);
+  overflow: auto;
+}
+.tenotsu-tuning-kicker {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(139, 190, 126, .16);
+  color: #dff8c9;
+  border: 1px solid rgba(178, 232, 160, .22);
+  font-size: clamp(10px, 1.2vw, 13px);
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+.tenotsu-tuning-title {
+  margin-top: 8px;
+  font-size: clamp(26px, 4.2vw, 46px);
+  line-height: 1.02;
+  font-weight: 950;
+  color: #ffe8b8;
+  text-shadow: 0 3px 12px rgba(0,0,0,.46);
+}
+.tenotsu-tuning-lead {
+  max-width: 780px;
+  margin: 8px 0 16px;
+  color: rgba(255,255,255,.84);
+  font-size: clamp(12px, 1.5vw, 16px);
+  line-height: 1.55;
+}
+.tenotsu-tuning-layout {
+  display: grid;
+  grid-template-columns: minmax(210px, .86fr) minmax(310px, 1.32fr);
+  gap: clamp(12px, 2vw, 22px);
+  align-items: stretch;
+}
+.tenotsu-tuning-menu {
+  display: grid;
+  grid-template-rows: repeat(4, minmax(46px, auto));
+  gap: 10px;
+  align-content: start;
+}
+.tenotsu-tuning-menu button {
+  min-height: 48px;
+  padding: 10px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 235, 190, .20);
+  background: linear-gradient(135deg, rgba(36, 56, 42, .86), rgba(34, 26, 18, .78));
+  color: #fffaf0;
+  font-weight: 900;
+  letter-spacing: .02em;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.035), 0 10px 20px rgba(0,0,0,.18);
+}
+.tenotsu-tuning-menu button.selected {
+  border-color: rgba(255, 222, 146, .76);
+  background: linear-gradient(135deg, rgba(150, 96, 37, .92), rgba(52, 77, 48, .88));
+  box-shadow: 0 0 18px rgba(255, 205, 120, .24), inset 0 0 0 1px rgba(255,255,255,.08);
+}
+.tenotsu-tuning-menu button.return {
+  margin-top: 4px;
+  text-align: center;
+  color: #ffe7c7;
+  background: linear-gradient(135deg, rgba(64, 42, 31, .85), rgba(30, 24, 21, .82));
+}
+.tenotsu-tuning-detail {
+  min-height: 0;
+  padding: clamp(14px, 2vw, 20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.24);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.03);
+}
+.tenotsu-tuning-detail small {
+  color: rgba(255,226,163,.86);
+  font-weight: 900;
+}
+.tenotsu-tuning-detail h3 {
+  margin: 5px 0 7px;
+  color: #fff7df;
+  font-size: clamp(20px, 2.7vw, 31px);
+}
+.tenotsu-tuning-detail p {
+  margin: 0 0 12px;
+  color: rgba(255,255,255,.82);
+  line-height: 1.5;
+}
+.tenotsu-tuning-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 8px 0 12px;
+}
+.tenotsu-tuning-tags span {
+  padding: 4px 9px;
+  border-radius: 999px;
+  color: #eafbdc;
+  background: rgba(131, 181, 98, .16);
+  border: 1px solid rgba(184, 238, 157, .20);
+  font-size: clamp(10px, 1.18vw, 12px);
+  font-weight: 800;
+}
+.tenotsu-tuning-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.tenotsu-tuning-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 9px 10px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.10);
+  font-size: clamp(11px, 1.35vw, 14px);
+}
+.tenotsu-tuning-row span { color: rgba(255,255,255,.68); }
+.tenotsu-tuning-row strong { color: #ffe8b8; }
+.tenotsu-tuning-note {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  color: rgba(255,255,255,.82);
+  background: rgba(255, 226, 163, .10);
+  line-height: 1.45;
+  font-size: clamp(11px, 1.35vw, 14px);
+}
+body[data-v039-mode="tuning"] .tenotsu-office-character-layer,
+body[data-v039-mode="tuning"] .tenotsu-shop-menu,
+body[data-v039-mode="tuning"] .tenotsu-shop-info-panel,
+body[data-v039-mode="tuning"] .tenotsu-settings-panel,
+body[data-v039-mode="tuning"] .tenotsu-members-panel,
+body[data-v039-mode="tuning"] .tenotsu-town-panel,
+body[data-v039-mode="tuning"] .tenotsu-sales-panel,
+body[data-v039-mode="tuning"] .tenotsu-store-status-panel {
+  display: none !important;
+}
+body[data-v039-mode="story"] .tenotsu-tuning-panel,
+body[data-v039-mode="shop"] .tenotsu-tuning-panel,
+body[data-v039-mode="members"] .tenotsu-tuning-panel,
+body[data-v039-mode="town"] .tenotsu-tuning-panel,
+body[data-v039-mode="sales"] .tenotsu-tuning-panel,
+body[data-v039-mode="battle"] .tenotsu-tuning-panel,
+body[data-v039-mode="rivalBattle"] .tenotsu-tuning-panel,
+body[data-v039-mode="result"] .tenotsu-tuning-panel,
+body[data-v039-mode="storeStatus"] .tenotsu-tuning-panel {
+  display: none !important;
+}
+@media (max-width: 900px) {
+  .tenotsu-tuning-panel {
+    left: 12px;
+    right: 116px;
+    top: 12px;
+    bottom: 92px;
+  }
+  .tenotsu-tuning-layout { grid-template-columns: 1fr; }
+  .tenotsu-tuning-menu { grid-template-columns: repeat(2, minmax(0,1fr)); grid-template-rows: none; }
+  .tenotsu-tuning-grid { grid-template-columns: 1fr; }
+}
