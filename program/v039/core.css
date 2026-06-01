@@ -3778,3 +3778,159 @@ body[data-v039-mode="shop"] .tenotsu-stamina-hud {
     min-height: 94px;
   }
 }
+
+
+/* v039_77 tuning menu entry */
+.tenotsu-office-menu-button[data-action="tuning"] {
+  background: linear-gradient(180deg, #efe7ff, #d9c8ff);
+  border-color: rgba(155, 105, 235, .68);
+}
+.tenotsu-tuning-panel {
+  position: fixed;
+  left: max(48px, env(safe-area-inset-left));
+  right: calc(min(300px, 24vw) + max(52px, env(safe-area-inset-right)));
+  top: 50%;
+  transform: translateY(-50%);
+  min-height: min(430px, 72vh);
+  max-height: calc(100vh - 40px);
+  z-index: calc(var(--tenotsu-z-menu) + 8);
+  color: #fff;
+  pointer-events: auto;
+}
+.tenotsu-tuning-panel[hidden] { display: none !important; }
+.tenotsu-tuning-card {
+  height: 100%;
+  min-height: inherit;
+  padding: 18px;
+  border-radius: 22px;
+  border: 2px solid rgba(180, 145, 255, .62);
+  background: linear-gradient(135deg, rgba(20,16,32,.94), rgba(12, 20, 28, .86));
+  box-shadow: 0 18px 48px rgba(0,0,0,.48), inset 0 0 28px rgba(130,92,255,.12);
+  backdrop-filter: blur(5px);
+}
+.tenotsu-tuning-kicker {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: #dcd0ff;
+  background: rgba(130,92,255,.18);
+  border: 1px solid rgba(185,155,255,.38);
+  font-size: 12px;
+  font-weight: 900;
+}
+.tenotsu-tuning-title {
+  margin-top: 8px;
+  font-size: clamp(24px, 4vw, 42px);
+  font-weight: 1000;
+  letter-spacing: .08em;
+  color: #fff4a8;
+  text-shadow: 0 0 16px rgba(170,130,255,.44);
+}
+.tenotsu-tuning-lead {
+  max-width: 760px;
+  margin: 6px 0 14px;
+  font-size: clamp(13px, 1.7vw, 17px);
+  line-height: 1.65;
+  color: rgba(255,255,255,.88);
+}
+.tenotsu-tuning-layout {
+  display: grid;
+  grid-template-columns: minmax(160px, 24%) 1fr;
+  gap: 14px;
+  min-height: 238px;
+}
+.tenotsu-tuning-menu {
+  padding: 12px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.16);
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+.tenotsu-tuning-menu-title {
+  color: #e9dcff;
+  font-weight: 1000;
+  text-align: center;
+  margin-bottom: 2px;
+  letter-spacing: .08em;
+}
+.tenotsu-tuning-menu button {
+  min-height: 42px;
+  border: 1px solid rgba(210,190,255,.5);
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 900;
+  cursor: pointer;
+  background: linear-gradient(180deg, rgba(85,65,145,.96), rgba(42,34,86,.96));
+}
+.tenotsu-tuning-menu button.selected {
+  color: #2e1b02;
+  background: linear-gradient(180deg, #fff5a6, #ffcc38);
+  border-color: rgba(255,236,126,.9);
+}
+.tenotsu-tuning-menu button.back {
+  margin-top: 8px;
+  background: linear-gradient(180deg, rgba(104,90,70,.98), rgba(55,45,38,.98));
+}
+.tenotsu-tuning-detail {
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: rgba(0,0,0,.28);
+  border: 1px solid rgba(255,255,255,.14);
+  line-height: 1.7;
+}
+.tenotsu-tuning-detail small {
+  display: block;
+  color: #93e6ff;
+  font-weight: 900;
+  margin-bottom: 4px;
+}
+.tenotsu-tuning-detail h3 {
+  margin: 0 0 8px;
+  font-size: clamp(20px, 2.8vw, 30px);
+  color: #fff;
+}
+.tenotsu-tuning-detail p {
+  margin: 6px 0;
+  color: rgba(255,255,255,.9);
+}
+.tenotsu-tuning-placeholder {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: #ffe9a6;
+  background: rgba(255,220,110,.1);
+  border: 1px dashed rgba(255,220,110,.36);
+  font-weight: 800;
+}
+body[data-v039-mode="tuning"] .tenotsu-office-character-layer,
+body[data-v039-mode="tuning"] .tenotsu-office-menu,
+body[data-v039-mode="tuning"] .tenotsu-shop-menu,
+body[data-v039-mode="tuning"] .tenotsu-shop-info-panel,
+body[data-v039-mode="tuning"] .tenotsu-settings-panel,
+body[data-v039-mode="tuning"] .tenotsu-members-panel,
+body[data-v039-mode="tuning"] .tenotsu-town-panel,
+body[data-v039-mode="tuning"] .tenotsu-sales-panel {
+  display: none !important;
+}
+body[data-v039-mode="story"] .tenotsu-tuning-panel,
+body[data-v039-mode="shop"] .tenotsu-tuning-panel,
+body[data-v039-mode="members"] .tenotsu-tuning-panel,
+body[data-v039-mode="town"] .tenotsu-tuning-panel,
+body[data-v039-mode="sales"] .tenotsu-tuning-panel,
+body[data-v039-mode="battle"] .tenotsu-tuning-panel,
+body[data-v039-mode="result"] .tenotsu-tuning-panel {
+  display: none !important;
+}
+@media (max-width: 900px) {
+  .tenotsu-tuning-panel {
+    left: max(22px, env(safe-area-inset-left));
+    right: max(22px, env(safe-area-inset-right));
+    max-height: calc(100vh - 28px);
+  }
+  .tenotsu-tuning-layout { grid-template-columns: 1fr; }
+  .tenotsu-tuning-menu { grid-template-columns: repeat(4, minmax(0,1fr)); }
+  .tenotsu-tuning-menu-title { grid-column: 1 / -1; }
+  .tenotsu-tuning-menu button.back { margin-top: 0; }
+}
