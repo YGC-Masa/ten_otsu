@@ -1,4 +1,4 @@
-/* v039_76 biribiri rival balance/assets update
+/* v039_77 biribiri rival battle strength/skill-ready/deck formation
  * 通常バトル BattleProto.openBattle() をラップし、currentBattleType === "rival" の時だけ
  * 小春・真冬・なつのVS CPUバトルへ差し替える。
  */
@@ -6,7 +6,7 @@
   "use strict";
 
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  const VERSION = "v039_76_rival_balance_assets";
+  const VERSION = "v039_78_store_menu_status";
   const ROOT_ID = "rival-battle-root";
   const STORAGE_KEY = "tenotsu_biribiri_rival_rewards_v1";
   const BATTLE_SECONDS = 45;

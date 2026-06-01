@@ -299,6 +299,7 @@
     if (typeof ns.hideShopPanel === "function") ns.hideShopPanel();
     if (typeof ns.hideMembersPanel === "function") ns.hideMembersPanel();
     if (typeof ns.hideTownPanel === "function") ns.hideTownPanel();
+    if (typeof ns.hideStoreStatusPanel === "function") ns.hideStoreStatusPanel();
     if (typeof ns.hideStoryLayer === "function") ns.hideStoryLayer();
     if (typeof ns.hideBattlePanel === "function") ns.hideBattlePanel();
     if (typeof ns.hideResultPanel === "function") ns.hideResultPanel();

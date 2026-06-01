@@ -1,24 +1,14 @@
 {
-  "version": "v039_77",
-  "base": "v039_76",
-  "buildLabelUpdated": true,
-  "mainMenuTitleRemoved": true,
-  "rightMenuTuningInsertedBetweenTownAndShop": true,
-  "tuningEntryAdded": true,
-  "tuningPanelAdded": true,
-  "tuningModeAdded": true,
-  "tuningScriptLoaded": true,
-  "tuningStoreMenuCategories": [
-    "事務所",
-    "店舗",
-    "店長"
-  ],
-  "v039_76RivalBalanceAndAssetsCarriedOver": true,
+  "version": "v039_78",
+  "base": "v039_77",
+  "rightMenuTuningRemoved": true,
+  "rightMenuStoreOpensStoreStatus": true,
+  "storeMenuCategories": ["事務所", "店舗", "店長"],
+  "officeButtonReturnsOfficeMode": true,
+  "storeButtonShowsStoreStatus": true,
+  "managerButtonShowsManagerStatus": true,
+  "storeStatusScriptAdded": true,
+  "tuningScriptDeleteRequested": true,
   "jsSyntaxOk": true,
-  "zipIntegrityOk": true,
-  "indexLoadsTuningJs": true,
-  "officeMenuTitleRemoved": true,
-  "officeMenuOrderTownTuningShop": true,
-  "layersHasTuningPanel": true,
-  "stateHasTuningMode": true
+  "zipIntegrityOk": true
 }

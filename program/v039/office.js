@@ -31,11 +31,10 @@
   ns.renderOfficeMenu = function renderOfficeMenu() {
     const layers = ns.layers || ns.ensureLayers();
     const items = [
-      ["店舗", "office"],
+      ["店舗", "storeStatus"],
       ["メンバー", "members"],
       ["店舗営業", "sales"],
       ["外回り", "town"],
-      ["チューニング", "tuning"],
       ["ショップ", "shop"],
       ["設定", "settings"]
     ];
@@ -86,7 +85,7 @@
     if (typeof ns.hideMembersPanel === "function") ns.hideMembersPanel();
     if (typeof ns.hideTownPanel === "function") ns.hideTownPanel();
     if (typeof ns.hideSalesPanel === "function") ns.hideSalesPanel();
-    if (typeof ns.hideTuningPanel === "function") ns.hideTuningPanel();
+    if (typeof ns.hideStoreStatusPanel === "function") ns.hideStoreStatusPanel();
     ns.renderOfficeMenu();
     ns.renderOfficeCharacters();
     if (options.message) ns.setText(options.speaker || "店長", options.message);
@@ -129,7 +128,7 @@
   ns.renderSettings = function renderSettings() {
     ns.setMode("settings");
     if (typeof ns.hideMembersPanel === "function") ns.hideMembersPanel();
-    if (typeof ns.hideTuningPanel === "function") ns.hideTuningPanel();
+    if (typeof ns.hideStoreStatusPanel === "function") ns.hideStoreStatusPanel();
     const html = `
       <div class="tenotsu-settings-title">設定</div>
       <div class="tenotsu-settings-body">
@@ -214,9 +213,16 @@
     if (action !== "settings" && typeof ns.hideSettingsPanel === "function") ns.hideSettingsPanel();
     if (action !== "members" && typeof ns.hideMembersPanel === "function") ns.hideMembersPanel();
     if (action !== "sales" && typeof ns.hideSalesPanel === "function") ns.hideSalesPanel();
-    if (action !== "tuning" && typeof ns.hideTuningPanel === "function") ns.hideTuningPanel();
+    if (action !== "storeStatus" && typeof ns.hideStoreStatusPanel === "function") ns.hideStoreStatusPanel();
 
     switch(action) {
+      case "storeStatus":
+        if (typeof ns.enterStoreStatus === "function") {
+          ns.transitionTo ? ns.transitionTo(() => ns.enterStoreStatus({ noTransition: true })) : ns.enterStoreStatus();
+        } else {
+          ns.setText("店長", "店舗管理機能を読み込めませんでした。storeStatus.js の読み込みを確認してください。");
+        }
+        break;
       case "office":
         ns.enterOffice({ speaker: "店長", message: "事務所を確認します。" });
         break;
@@ -239,13 +245,6 @@
           ns.transitionTo ? ns.transitionTo(() => ns.enterTown({ noTransition: true })) : ns.enterTown();
         } else {
           ns.setText("店長", "外回り機能を読み込めませんでした。");
-        }
-        break;
-      case "tuning":
-        if (typeof ns.enterTuning === "function") {
-          ns.transitionTo ? ns.transitionTo(() => ns.enterTuning({ noTransition: true })) : ns.enterTuning();
-        } else {
-          ns.setText("店長", "チューニング機能を読み込めませんでした。tuning.js の読み込みを確認してください。");
         }
         break;
       case "shop":

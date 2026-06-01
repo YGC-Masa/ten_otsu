@@ -167,6 +167,7 @@
     if (typeof ns.hideSettingsPanel === "function") ns.hideSettingsPanel();
     if (typeof ns.hideShopPanel === "function") ns.hideShopPanel();
     if (typeof ns.hideMembersPanel === "function") ns.hideMembersPanel();
+    if (typeof ns.hideStoreStatusPanel === "function") ns.hideStoreStatusPanel();
     if (typeof ns.hideSalesPanel === "function") ns.hideSalesPanel();
     if (typeof ns.clearCharacters === "function") ns.clearCharacters();
     if (typeof ns.setBackgroundReady === "function") {

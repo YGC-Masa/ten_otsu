@@ -125,6 +125,7 @@
     if (typeof ns.hideSettingsPanel === "function") ns.hideSettingsPanel();
     if (typeof ns.hideShopPanel === "function") ns.hideShopPanel();
     if (typeof ns.hideTownPanel === "function") ns.hideTownPanel();
+    if (typeof ns.hideStoreStatusPanel === "function") ns.hideStoreStatusPanel();
     if (typeof ns.hideSalesPanel === "function") ns.hideSalesPanel();
     ns.renderOfficeMenu();
     ns.renderMembersPanel();
