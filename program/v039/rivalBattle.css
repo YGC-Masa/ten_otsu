@@ -1,4 +1,4 @@
-/* v039_71 biribiri rival battle input fix + pinch guard */
+/* v039_72 biribiri rival battle cutin/help/rush adjustment */
 #rival-battle-root.rival-battle-root {
   position: fixed !important;
   inset: 0 !important;
@@ -31,7 +31,7 @@
   position: absolute;
   inset: 0;
   display: grid;
-  grid-template-rows: minmax(74px, 14vh) minmax(86px, 18vh) 1fr minmax(108px, 24vh);
+  grid-template-rows: minmax(70px, 13vh) minmax(82px, 16vh) 1fr minmax(38px, 5.5vh) minmax(104px, 22vh);
   gap: 6px;
   padding: max(6px, env(safe-area-inset-top)) max(8px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom)) max(8px, env(safe-area-inset-left));
   background:
@@ -142,6 +142,15 @@
   min-height: 0;
   align-content: stretch;
 }
+#rival-battle-root .rival-battle-stage.is-rush .rival-enemy-row {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+#rival-battle-root .rival-battle-stage.is-rush .rival-hud {
+  box-shadow: 0 0 24px rgba(255, 220, 82, 0.45), inset 0 0 0 1px rgba(255,255,255,0.10);
+}
+#rival-battle-root .rival-battle-stage.is-rush .rival-rush-stat b {
+  color: #ffef7a;
+}
 #rival-battle-root .rival-enemy-card {
   position: relative;
   min-width: 0;
@@ -206,13 +215,15 @@
 }
 #rival-battle-root .rival-hit small { display: block; font-size: 10px; }
 #rival-battle-root .rival-help-row {
-  position: absolute;
+  position: relative;
+  z-index: 7;
   pointer-events: auto;
-  right: 14px;
-  bottom: calc(24vh + 18px);
   display: flex;
-  gap: 6px;
-  z-index: 4;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+  min-height: 0;
+  padding: 0 6px;
 }
 #rival-battle-root .rival-help-btn {
   min-width: 54px;
@@ -259,8 +270,7 @@
 #rival-battle-root .rival-staff-card small,
 #rival-battle-root .rival-staff-card em { display: block; font-size: clamp(9px, 1.25vw, 13px); opacity: 0.88; font-style: normal; }
 #rival-battle-root .rival-control-overlay,
-#rival-battle-root .rival-surface,
-#rival-battle-root .rival-cutin-layer {
+#rival-battle-root .rival-surface {
   position: absolute;
   inset: 0;
   z-index: 20;
@@ -356,44 +366,64 @@
 #rival-battle-root .rival-surface b { display: block; font-size: clamp(34px, 8vw, 86px); line-height: 1; }
 #rival-battle-root .rival-ending-card span { display: block; margin-top: 8px; font-size: 18px; }
 #rival-battle-root .rival-cutin-layer {
-  z-index: 18;
+  position: absolute;
+  left: max(8px, env(safe-area-inset-left));
+  right: max(8px, env(safe-area-inset-right));
+  top: calc(max(6px, env(safe-area-inset-top)) + 29vh + 14px);
+  bottom: calc(max(8px, env(safe-area-inset-bottom)) + 28vh + 12px);
+  z-index: 8;
+  display: grid;
   place-items: stretch;
-  grid-template-columns: 1fr minmax(260px, 44vw);
-  padding: 4vh 4vw;
+  grid-template-columns: 1fr minmax(180px, 34vw);
+  gap: 10px;
+  padding: 8px 14px;
   pointer-events: none;
-  background: linear-gradient(90deg, rgba(0,0,0,0.72), rgba(0,0,0,0.15));
+  overflow: hidden;
+  border: 2px solid color-mix(in srgb, var(--cutin-color, #ff423c) 78%, #ffffff 12%);
+  border-radius: 16px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.76), rgba(0,0,0,0.18));
+  box-shadow: 0 0 18px color-mix(in srgb, var(--cutin-color, #ff423c) 35%, transparent);
 }
 #rival-battle-root .rival-cutin-layer img {
   align-self: end;
   justify-self: center;
-  max-height: 96vh;
+  max-height: 100%;
   max-width: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 12px 22px rgba(0,0,0,0.65));
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.65));
 }
 #rival-battle-root .rival-cutin-text {
   align-self: center;
   justify-self: stretch;
   border-left: 8px solid var(--cutin-color, #ff423c);
-  padding: 18px 22px;
+  padding: 12px 16px;
   background: rgba(0,0,0,0.62);
   box-shadow: 0 0 22px color-mix(in srgb, var(--cutin-color, #ff423c) 40%, transparent);
 }
-#rival-battle-root .rival-cutin-text small { display: block; color: var(--cutin-color, #ff423c); font-weight: 900; font-size: clamp(16px, 2.5vw, 28px); }
-#rival-battle-root .rival-cutin-text b { display: block; font-size: clamp(28px, 5vw, 72px); line-height: 1.05; }
-#rival-battle-root .rival-cutin-text p { font-size: clamp(14px, 2vw, 22px); }
+#rival-battle-root .rival-cutin-text small { display: block; color: var(--cutin-color, #ff423c); font-weight: 900; font-size: clamp(12px, 1.9vw, 20px); }
+#rival-battle-root .rival-cutin-text b { display: block; font-size: clamp(20px, 3.6vw, 44px); line-height: 1.05; }
+#rival-battle-root .rival-cutin-text p { font-size: clamp(11px, 1.55vw, 16px); }
+#rival-battle-root .rival-surface.rush > div {
+  border-color: #ffef7a;
+  box-shadow: 0 0 34px rgba(255, 233, 92, 0.52);
+}
+#rival-battle-root .rival-battle-stage.is-rush .rival-enemy-art {
+  height: clamp(34px, 8vh, 72px);
+}
 @keyframes rivalCharmPulse {
   from { box-shadow: 0 0 0 rgba(255, 180, 80, 0), inset 0 0 0 1px rgba(255,255,255,0.05); }
   to { box-shadow: 0 0 22px rgba(255, 180, 80, 0.62), inset 0 0 0 1px rgba(255,255,255,0.14); }
 }
 @media (max-width: 720px) {
-  #rival-battle-root .rival-battle-stage { grid-template-rows: minmax(72px, 14vh) minmax(80px, 17vh) 1fr minmax(105px, 25vh); gap: 5px; }
+  #rival-battle-root .rival-battle-stage { grid-template-rows: minmax(70px, 13vh) minmax(76px, 15vh) 1fr minmax(36px, 5.5vh) minmax(102px, 23vh); gap: 5px; }
   #rival-battle-root .rival-enemy-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #rival-battle-root .rival-battle-stage.is-rush .rival-enemy-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  #rival-battle-root .rival-cutin-layer { top: calc(max(6px, env(safe-area-inset-top)) + 28vh + 14px); bottom: calc(max(8px, env(safe-area-inset-bottom)) + 31vh + 10px); grid-template-columns: 1fr minmax(120px, 34vw); padding: 7px 10px; }
   #rival-battle-root .rival-result-grid,
   #rival-battle-root .rival-rule-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-/* v039_71 rival battle input guard override */
+/* v039_72 rival battle input/cutin/rush override */
 #rival-battle-root,
 #rival-battle-root * {
   touch-action: none !important;

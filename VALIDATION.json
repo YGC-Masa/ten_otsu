@@ -1,16 +1,14 @@
 {
-  "version": "v039_71",
-  "base": "v039_70",
+  "version": "v039_72",
+  "base": "v039_71",
   "buildLabelUpdated": true,
-  "inputGuardAdded": true,
-  "indexLoadsInputGuard": true,
-  "viewportPinchGuardStrengthened": true,
-  "rivalPointerUpHandlerAdded": true,
-  "rivalTouchEndHandlerAdded": true,
-  "rivalStaffDelegatedInput": true,
-  "rivalDuplicateInputGuard": true,
-  "rivalStaffPointerEventsFixed": true,
-  "battleTouchActionNone": true,
-  "rivalTouchActionNone": true,
-  "jsSyntaxOk": true
+  "rivalCutinLimitedToEnemyArea": true,
+  "helpButtonsAboveMembers": true,
+  "rushTimeAdded": true,
+  "rushStartsAtRemainingSeconds": 18,
+  "normalEnemyMax": 4,
+  "rushEnemyMax": 6,
+  "mobileRushEnemyGrid": true,
+  "jsSyntaxOk": true,
+  "zipIntegrityOk": null
 }

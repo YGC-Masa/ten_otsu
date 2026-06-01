@@ -1,32 +1,24 @@
-# ten_otsu v039_70 → v039_71 差分
+# ten_otsu v039_71 → v039_72 差分
 
 ## 目的
 
-ビリビリバトル中に「ひだまりメンバーが1人しかクリックできない」ように見える入力不具合を修正し、バトル中の誤ピンチ・ダブルタップ拡大を抑止する。
+ビリビリバトルの画面操作感と演出位置を調整し、通常バトルのタイムセールに相当する「ラッシュタイム」を追加します。
 
 ## 変更内容
 
-- `program/v039/rivalBattle.js`
-  - `click` 依存の入力処理を `pointerup` / `touchend` / `click` の委譲処理へ変更。
-  - ひだまりメンバー、家電星人、操作ボタンを共通の入力経路で処理。
-  - 短時間の同一入力を無視して二重発火を防止。
-  - ビリビリバトル中の `setMode` を `rivalBattle` へ変更。
+- ビリビリバトル中の必殺技カットイン表示範囲を、メンバー枠に被らないよう敵枠エリア内へ制限。
+- 店長HELPボタンを通常バトルと同じく、ひだまりメンバー枠の直上に配置。
+- ラッシュタイムを追加。残り18秒で発動し、家電星人の最大出現数を4体から6体へ増加。
+- ラッシュタイム中はHUDに状態表示し、敵枠レイアウトを6枠対応へ変更。
+- スマホ幅ではラッシュ中の敵枠を3列表示へ調整。
 
-- `program/v039/rivalBattle.css`
-  - ひだまりメンバー列の `z-index` / `pointer-events` を明示。
-  - `touch-action: none` を追加。
+## 更新ファイル
 
-- `program/v039/inputGuard.js`
-  - バトル中の複数指タッチ、iOS gestureイベント、ダブルタップ拡大、Ctrl+Wheelズームを抑止。
-
-- `program/v039/battle.css`
-  - 通常バトル側にも `touch-action: none` を適用。
-
-- `index.html`
-  - `inputGuard.js` を読み込み。
-  - viewportをゲーム向けに強化。
-  - 表記を v039_71 へ更新。
-
-## 注意
-
-OSやブラウザのアクセシビリティ拡大は完全には止められない場合があります。今回の修正は、Webアプリとして制御可能な範囲で、ゲーム操作面の誤ピンチ・誤ダブルタップを防ぐものです。
+- index.html
+- release_notes.md
+- CHECKSUMS.json
+- VALIDATION.json
+- program/v039/state.js
+- program/v039/rivalBattle.js
+- program/v039/rivalBattle.css
+- program/docs/v039_72_rival_cutin_help_rush.md

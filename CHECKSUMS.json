@@ -1,11 +1,6 @@
 {
-  "version": "v039_71",
+  "version": "v039_72",
   "files": [
-    {
-      "path": "CHECKSUMS.json",
-      "size": 94146,
-      "sha256": "87fd33b606efb69728fa6c085fe274948d053d7f5c0f05de455ea56442c4043d"
-    },
     {
       "path": "DELETE_FILES.txt",
       "size": 0,
@@ -13,8 +8,8 @@
     },
     {
       "path": "README_DIFF.md",
-      "size": 1455,
-      "sha256": "bbce4c48c7dd52749c08e9a40c56c476761927f559c4e4f74eb5869d349d310a"
+      "size": 993,
+      "sha256": "7ac708ee2531e63de893c7aa7c42975c135ba8925a31a574ce2270311ed083f9"
     },
     {
       "path": "README_GITHUB_LAYOUT.md",
@@ -33,8 +28,8 @@
     },
     {
       "path": "VALIDATION.json",
-      "size": 452,
-      "sha256": "e3068f4fcb60016bf86a9db133d06906646282c13a23c63286a2e676fa219b39"
+      "size": 337,
+      "sha256": "860b602985200983b280442eebadb5031d0cd1dd80aa246c6035ce03d5823e13"
     },
     {
       "path": "favicon.ico",
@@ -1624,7 +1619,7 @@
     {
       "path": "index.html",
       "size": 2455,
-      "sha256": "77498c773b19f438bb5fecddbc5f6ad14a445af16ae43482c0899021e263bcf1"
+      "sha256": "2a369edaaf0935738173378343988d9462209e3fddf47f1dd4bab28672320c2d"
     },
     {
       "path": "program/Readme.md",
@@ -2212,6 +2207,11 @@
       "sha256": "c9091e2e8c04af1f8c96f771a484345e86111da7b32f0b1dcb6232db97ef73ee"
     },
     {
+      "path": "program/docs/v039_72_rival_cutin_help_rush.md",
+      "size": 1088,
+      "sha256": "ae0a2efeff7de7f08cc25c14ece2f28bdfc01952e2cda19f46a36b77a2343fb8"
+    },
+    {
       "path": "program/effect.js",
       "size": 3821,
       "sha256": "6cd897140c5060ac3d2d1a0ce9d5fc16cbf293d61b9765181e53c7739e5e089d"
@@ -2368,13 +2368,13 @@
     },
     {
       "path": "program/v039/rivalBattle.css",
-      "size": 13309,
-      "sha256": "37a70b6305cda091aaf3fc26d90ff329c6fe5e26b3d7671806e993cd11b44e80"
+      "size": 14802,
+      "sha256": "3b22bd24e5a5ec414a0be593cdce399c83eabe3006be7f3cdf30ada6cf624e3c"
     },
     {
       "path": "program/v039/rivalBattle.js",
-      "size": 41952,
-      "sha256": "1344e7e0a81f6ffdd80cb4c323fc772c0768e23a7aaa70004156a36e179fac75"
+      "size": 43192,
+      "sha256": "c417ce8d5f18d5e61595b54f5c6fbd707f037e1ec582e653b5d8694e3aecd6d6"
     },
     {
       "path": "program/v039/sales.js",
@@ -2393,8 +2393,8 @@
     },
     {
       "path": "program/v039/state.js",
-      "size": 663,
-      "sha256": "df8e5f94d89275636e0c7cbff85caa11c5c961ab723f038ff3582ce64151dc4d"
+      "size": 661,
+      "sha256": "5359a43c83cabab102f5b183ab67bc8079547d295ce82fb30bd914751e481b2a"
     },
     {
       "path": "program/v039/storyPlayer.js",
@@ -2413,8 +2413,8 @@
     },
     {
       "path": "release_notes.md",
-      "size": 24469,
-      "sha256": "946372464f26f7d9b20ec5b37ffd21aed31f65320a578fb28d716e26cee7c54c"
+      "size": 591,
+      "sha256": "7011b1e05bab864ec6d72857578e42afc1830870b34f79cc37495476a6825021"
     },
     {
       "path": "scenario/data/character_expressions.json",

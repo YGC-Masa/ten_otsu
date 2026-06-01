@@ -1,4 +1,4 @@
-/* v039_71 biribiri rival battle input fix + pinch guard
+/* v039_72 biribiri rival battle cutin/help/rush adjustment
  * 通常バトル BattleProto.openBattle() をラップし、currentBattleType === "rival" の時だけ
  * 小春・真冬・なつのVS CPUバトルへ差し替える。
  */
@@ -6,11 +6,14 @@
   "use strict";
 
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  const VERSION = "v039_71_rival_member_input_pinch_guard";
+  const VERSION = "v039_72_rival_cutin_help_rush";
   const ROOT_ID = "rival-battle-root";
   const STORAGE_KEY = "tenotsu_biribiri_rival_rewards_v1";
   const BATTLE_SECONDS = 45;
   const MAX_ENEMIES = 4;
+  const RUSH_MAX_ENEMIES = 6;
+  const RUSH_START_LEFT = 18;
+  const RUSH_SURFACE_MS = 1300;
   const HELP_STOCK_MAX = 3;
   const HELP_STOCK_STEP = 8;
 
@@ -270,6 +273,9 @@
       targetEnemyId: null,
       lastActionText: "VSビリビリ開始準備中。営業開始を押してください。",
       hitEffects: [],
+      rushActive: false,
+      rushTriggered: false,
+      rushNoticeUntil: 0,
       cutin: null,
       cutinUntil: 0,
       surface: null,
@@ -352,7 +358,7 @@
     state.surface = null;
     state.lastTick = nowMs();
     state.lastActionText = "VSビリビリ開始！ 家電星人を先に接客してスコアを競いましょう。";
-    while (state.enemies.length < MAX_ENEMIES) spawnEnemy(true);
+    while (state.enemies.length < getEnemyLimit()) spawnEnemy(true);
     stopLoop();
     timerId = window.setInterval(tick, 100);
     render();
@@ -370,6 +376,7 @@
     state.lastTick = now;
     state.timeLeft = Math.max(0, state.timeLeft - dt);
     updateTimedEffects(now);
+    updateRushMode(now);
     updateStaff(dt, now);
     updateEnemies(dt, now);
     updateRivals(dt, now);
@@ -381,6 +388,10 @@
   }
 
   function updateTimedEffects(now) {
+    if (state.surface && state.surface.kind === "rush" && state.rushNoticeUntil && now > state.rushNoticeUntil) {
+      state.surface = null;
+      state.rushNoticeUntil = 0;
+    }
     if (state.playerScoreRateUntil && now > state.playerScoreRateUntil) {
       state.playerScoreRateUntil = 0;
       state.playerScoreRate = 1;
@@ -389,6 +400,22 @@
       state.rivalScoreRateUntil = 0;
       state.rivalScoreRate = 1;
     }
+  }
+
+
+  function getEnemyLimit() {
+    return state && state.rushActive ? RUSH_MAX_ENEMIES : MAX_ENEMIES;
+  }
+
+  function updateRushMode(now) {
+    if (!state || !state.running || state.rushTriggered) return;
+    if (state.timeLeft > RUSH_START_LEFT) return;
+    state.rushTriggered = true;
+    state.rushActive = true;
+    state.rushNoticeUntil = now + RUSH_SURFACE_MS;
+    state.surface = { title: "ラッシュタイム！", subText: "家電星人が増加中", kind: "rush" };
+    state.lastActionText = "ラッシュタイム！ 家電星人の来店数が増えました。ビリビリに取られる前に対応しましょう。";
+    while (state.enemies.length < getEnemyLimit()) spawnEnemy(true);
   }
 
   function updateStaff(dt, now) {
@@ -422,7 +449,7 @@
   }
 
   function maintainEnemies() {
-    while (state.running && state.enemies.length < MAX_ENEMIES) spawnEnemy(true);
+    while (state.running && state.enemies.length < getEnemyLimit()) spawnEnemy(true);
   }
 
   function createEnemy() {
@@ -785,7 +812,7 @@
     if (!root || !state) return;
     const status = state.running ? "販売勝負中" : state.finished ? "勝負終了" : state.countingDown ? "開戦準備中" : "待機中";
     root.innerHTML = `
-      <div class="rival-battle-stage ${state.running ? "is-running" : ""} ${state.finished ? "is-finished" : ""}">
+      <div class="rival-battle-stage ${state.running ? "is-running" : ""} ${state.finished ? "is-finished" : ""} ${state.rushActive ? "is-rush" : ""}">
         <section class="rival-hud">
           <div class="rival-hud-title">ビリビリバトル：VS CPU <span>${VERSION}</span></div>
           <div class="rival-hud-stats">
@@ -796,6 +823,7 @@
             <span>成約：<b>${state.served}</b></span>
             <span>横取り：<b>${state.stolen}</b></span>
             <span>コンボ：<b>${state.combo}</b></span>
+            <span class="rival-rush-stat">ラッシュ：<b>${state.rushActive ? "発動中" : "待機"}</b></span>
           </div>
           <div class="rival-message">${escapeHtml(state.lastActionText)}</div>
         </section>
