@@ -135,9 +135,13 @@
       <div class="tenotsu-settings-title">設定</div>
       <div class="tenotsu-settings-body">
         <div>現在のバージョン: <strong>${ns.VERSION || "v039_37"}</strong></div>
-        <div>表示やキャッシュの調整を行います。</div>
+        <div>表示やキャッシュ、営業リソースの調整を行います。</div>
+        <div class="tenotsu-settings-resource-note">ST/BPリセットは検証用です。スタミナとバトルPを最大値に戻します。</div>
       </div>
       <div class="tenotsu-settings-actions">
+        <button type="button" class="tenotsu-settings-button" data-settings-action="reset-stamina-bp">ST/BPを最大値へリセット</button>
+        <button type="button" class="tenotsu-settings-button" data-settings-action="reset-stamina">スタミナだけリセット</button>
+        <button type="button" class="tenotsu-settings-button" data-settings-action="reset-bp">バトルPだけリセット</button>
         <button type="button" class="tenotsu-settings-button danger" data-settings-action="clear-cache">キャッシュクリアして再読み込み</button>
         <button type="button" class="tenotsu-settings-button" data-settings-action="close-settings">事務所に戻る</button>
       </div>
@@ -149,7 +153,39 @@
     const panel = ns.layers.settings;
     const result = panel.querySelector("[data-settings-result]");
     const clearButton = panel.querySelector('[data-settings-action="clear-cache"]');
+    const resetAllButton = panel.querySelector('[data-settings-action="reset-stamina-bp"]');
+    const resetStaminaButton = panel.querySelector('[data-settings-action="reset-stamina"]');
+    const resetBpButton = panel.querySelector('[data-settings-action="reset-bp"]');
     const closeButton = panel.querySelector('[data-settings-action="close-settings"]');
+
+    function updateResourceResetResult(message) {
+      try { if (window.TenotsuStamina && typeof window.TenotsuStamina.renderHud === "function") window.TenotsuStamina.renderHud(); } catch (_) {}
+      try { if (window.TenotsuBattlePoint && typeof window.TenotsuBattlePoint.refreshAll === "function") window.TenotsuBattlePoint.refreshAll(); } catch (_) {}
+      if (result) result.textContent = message;
+      ns.setText("設定", message);
+    }
+
+    if (resetAllButton) {
+      resetAllButton.addEventListener("click", () => {
+        try { if (window.TenotsuStamina && typeof window.TenotsuStamina.recoverAll === "function") window.TenotsuStamina.recoverAll(); } catch (_) {}
+        try { if (window.TenotsuBattlePoint && typeof window.TenotsuBattlePoint.recoverAll === "function") window.TenotsuBattlePoint.recoverAll(); } catch (_) {}
+        updateResourceResetResult("スタミナとバトルPを最大値へリセットしました。");
+      });
+    }
+
+    if (resetStaminaButton) {
+      resetStaminaButton.addEventListener("click", () => {
+        try { if (window.TenotsuStamina && typeof window.TenotsuStamina.recoverAll === "function") window.TenotsuStamina.recoverAll(); } catch (_) {}
+        updateResourceResetResult("スタミナを最大値へリセットしました。");
+      });
+    }
+
+    if (resetBpButton) {
+      resetBpButton.addEventListener("click", () => {
+        try { if (window.TenotsuBattlePoint && typeof window.TenotsuBattlePoint.recoverAll === "function") window.TenotsuBattlePoint.recoverAll(); } catch (_) {}
+        updateResourceResetResult("バトルPを最大値へリセットしました。");
+      });
+    }
 
     if (clearButton) {
       clearButton.addEventListener("click", async () => {

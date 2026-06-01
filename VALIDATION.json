@@ -1,107 +1,11 @@
 {
+  "version": "v039_70",
+  "base": "v039_69",
   "buildLabelUpdated": true,
-  "indexLoadsRivalCss": true,
-  "indexLoadsRivalJs": true,
-  "salesPassesBattleType": true,
-  "rivalBattleJsExists": true,
-  "rivalBattleCssExists": true,
-  "rivalAssetsExist": true,
-  "jsSyntaxOk": true,
-  "syntaxDetails": [
-    [
-      "rivalBattle.js",
-      0,
-      ""
-    ],
-    [
-      "sales.js",
-      0,
-      ""
-    ],
-    [
-      "applianceAliens.js",
-      0,
-      ""
-    ],
-    [
-      "state.js",
-      0,
-      ""
-    ],
-    [
-      "battle.js",
-      0,
-      ""
-    ]
-  ],
-  "rivalImageSizes": {
-    "koharu_stand.png": [
-      "RGBA",
-      [
-        1200,
-        1800
-      ],
-      [
-        0,
-        255
-      ]
-    ],
-    "koharu_cutin.png": [
-      "RGBA",
-      [
-        1200,
-        1800
-      ],
-      [
-        0,
-        255
-      ]
-    ],
-    "mafuyu_stand.png": [
-      "RGBA",
-      [
-        1200,
-        1800
-      ],
-      [
-        0,
-        255
-      ]
-    ],
-    "mafuyu_cutin.png": [
-      "RGBA",
-      [
-        1200,
-        1800
-      ],
-      [
-        0,
-        255
-      ]
-    ],
-    "natsu_stand.png": [
-      "RGBA",
-      [
-        1200,
-        1800
-      ],
-      [
-        0,
-        255
-      ]
-    ],
-    "natsu_cutin.png": [
-      "RGBA",
-      [
-        1200,
-        1800
-      ],
-      [
-        0,
-        255
-      ]
-    ]
-  },
-  "rivalImagesTransparent1200x1800": true,
-  "docAdded": true
+  "settingsResetButtonsAdded": true,
+  "settingsCallsStaminaRecoverAll": true,
+  "settingsCallsBattlePointRecoverAll": true,
+  "coinLabelInRivalStart": true,
+  "coinLabelInRivalResult": true,
+  "coinStorageCompatibility": true
 }

@@ -655,4 +655,4 @@
 - `rivalBattle.js` と `rivalBattle.css` を追加。
 - `BattleProto.openBattle()` をラップし、`battleType: "rival"` の時のみビリビリバトルへ差し替え。
 - 家電星人の二重個性とビリビリ必殺技テーブルを利用。
-- 家電星人ポイント、ビリビリ親愛度、メンバーEXPをリザルトで付与。
+- 家電星人金貨、ビリビリ親愛度、メンバーEXPをリザルトで付与。

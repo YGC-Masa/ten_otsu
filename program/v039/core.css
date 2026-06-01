@@ -3703,3 +3703,14 @@ body[data-v039-mode="shop"] .tenotsu-stamina-hud {
 .enemy-value {
   color: #c9f5ff;
 }
+
+/* v039_70 settings resource reset */
+.tenotsu-settings-resource-note{
+  margin-top:8px;
+  padding:8px 10px;
+  border-radius:10px;
+  background:rgba(255,255,255,.55);
+  color:#5d3b10;
+  font-size:12px;
+  line-height:1.45;
+}

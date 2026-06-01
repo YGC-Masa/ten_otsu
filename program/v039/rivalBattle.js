@@ -1,4 +1,4 @@
-/* v039_69 biribiri rival battle VS CPU
+/* v039_70 biribiri rival battle VS CPU + coin label
  * 通常バトル BattleProto.openBattle() をラップし、currentBattleType === "rival" の時だけ
  * 小春・真冬・なつのVS CPUバトルへ差し替える。
  */
@@ -6,7 +6,7 @@
   "use strict";
 
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  const VERSION = "v039_69_biribiri_vs_cpu";
+  const VERSION = "v039_70_resource_reset_coin_label";
   const ROOT_ID = "rival-battle-root";
   const STORAGE_KEY = "tenotsu_biribiri_rival_rewards_v1";
   const BATTLE_SECONDS = 45;
@@ -151,7 +151,7 @@
   }
 
   function defaultRewardState() {
-    return { version: VERSION, applianceGold: 0, affinity: { koharu: 0, mafuyu: 0, natsu: 0 }, updatedAt: null };
+    return { version: VERSION, applianceCoins: 0, affinity: { koharu: 0, mafuyu: 0, natsu: 0 }, updatedAt: null };
   }
 
   function loadRewardState() {
@@ -159,7 +159,10 @@
       const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
       if (!data || typeof data !== "object") return defaultRewardState();
       data.affinity = Object.assign({ koharu: 0, mafuyu: 0, natsu: 0 }, data.affinity || {});
-      data.applianceGold = Math.max(0, Math.floor(Number(data.applianceGold) || 0));
+      // v039_70: 旧 applianceGold は「家電星人金貨」へ名称変更。保存済みデータは互換移行する。
+      const legacyGold = Math.max(0, Math.floor(Number(data.applianceGold) || 0));
+      data.applianceCoins = Math.max(0, Math.floor(Number(data.applianceCoins == null ? legacyGold : data.applianceCoins) || 0));
+      delete data.applianceGold;
       data.version = data.version || VERSION;
       return data;
     } catch (_) { return defaultRewardState(); }
@@ -171,9 +174,9 @@
     return data;
   }
 
-  function addRewards(gold, affinity) {
+  function addRewards(coins, affinity) {
     const data = loadRewardState();
-    data.applianceGold += Math.max(0, Math.floor(Number(gold) || 0));
+    data.applianceCoins += Math.max(0, Math.floor(Number(coins) || 0));
     Object.keys(data.affinity).forEach((key) => {
       data.affinity[key] += Math.max(0, Math.floor(Number(affinity) || 0));
     });
@@ -658,15 +661,15 @@
     stopLoop();
     const win = state.playerScore >= state.rivalScore;
     const draw = state.playerScore === state.rivalScore;
-    const gold = Math.max(5, Math.floor(state.served * 5 + state.maxCombo * 2 + (win ? 24 : 8) + (draw ? 8 : 0)));
+    const coins = Math.max(5, Math.floor(state.served * 5 + state.maxCombo * 2 + (win ? 24 : 8) + (draw ? 8 : 0)));
     const affinity = Math.max(1, Math.floor(state.served * 0.8 + (win ? 8 : 3)));
-    const rewardState = addRewards(gold, affinity);
+    const rewardState = addRewards(coins, affinity);
     const exp = win ? 120 : 80;
     const partyIds = state.staff.map((s) => s.id);
     const growthResults = (window.TenotsuGrowth && typeof window.TenotsuGrowth.addExpToParty === "function")
       ? window.TenotsuGrowth.addExpToParty(partyIds, exp, "VSビリビリ")
       : [];
-    state.rewardData = { win, draw, gold, affinity, rewardState, exp };
+    state.rewardData = { win, draw, coins, affinity, rewardState, exp };
     state.growthResults = growthResults || [];
     state.resultRevealAt = Date.now() + 3000;
     state.surface = { title: "販売勝負終了", subText: win ? "ひだまりストア勝利！" : draw ? "引き分け" : "ビリビリ電機に惜敗", kind: "ending" };
@@ -827,7 +830,7 @@
           <div class="rival-eyecatch"><img src="${escapeHtml(ASSETS.eyecatch)}" alt=""></div>
           <div class="rival-control-title">VSビリビリ 販売勝負</div>
           <p>家電星人をひだまり側へ先に案内し、ビリビリ電機より高いスコアを狙います。</p>
-          <div class="rival-rule-grid"><span>消費</span><b>BP 1</b><span>報酬</span><b>家電星人ポイント / 親愛度</b><span>難度</span><b>手動なら勝ちやすいCPU戦</b></div>
+          <div class="rival-rule-grid"><span>消費</span><b>BP 1</b><span>報酬</span><b>家電星人金貨 / 親愛度</b><span>難度</span><b>手動なら勝ちやすいCPU戦</b></div>
           <div class="rival-control-buttons">
             <button data-rival-action="start">販売勝負開始</button>
             <button data-rival-action="auto">サポートプレイ</button>
@@ -851,7 +854,7 @@
   }
 
   function renderResult() {
-    const reward = state.rewardData || { win: false, draw: false, gold: 0, affinity: 0, exp: 0 };
+    const reward = state.rewardData || { win: false, draw: false, coins: 0, affinity: 0, exp: 0 };
     const title = reward.win ? "ひだまりストア勝利！" : reward.draw ? "引き分け" : "ビリビリ電機に惜敗";
     return `
       <section class="rival-control-overlay">
@@ -862,11 +865,11 @@
             <div><span>ビリビリ</span><b>${state.rivalScore}</b></div>
             <div><span>成約</span><b>${state.served}</b></div>
             <div><span>横取り</span><b>${state.stolen}</b></div>
-            <div><span>家電星人P</span><b>+${reward.gold}</b></div>
+            <div><span>家電星人金貨</span><b>+${reward.coins}</b></div>
             <div><span>親愛度</span><b>+${reward.affinity}</b></div>
             <div><span>EXP</span><b>+${reward.exp}</b></div>
           </div>
-          <div class="rival-result-note">家電星人ポイントは都市鉱山由来のゴールド排出物として扱い、今後の交換・親愛度導線へ接続予定です。</div>
+          <div class="rival-result-note">家電星人金貨は都市鉱山由来の排出物として扱い、今後の交換・親愛度導線へ接続予定です。</div>
           <div class="rival-control-buttons">
             <button data-rival-action="restart">もう一度</button>
             <button data-rival-action="auto">サポートで再戦</button>
