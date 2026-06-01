@@ -1,13 +1,13 @@
 {
-  "version": "v039_73",
-  "base": "v039_72",
+  "version": "v039_74",
+  "base": "v039_73",
   "buildLabelUpdated": true,
-  "singleTapSpecialBurstFixed": true,
-  "specialRequiresDoubleTapAtFullGauge": true,
-  "singleTapFullGaugeDoesNormalAfterDelay": true,
-  "helpButtonsFullWidth": true,
-  "cutinImageRightOfSkillName": true,
-  "cutinStillLimitedToEnemyArea": true,
+  "salesStartCtaMovedToDetailAction": true,
+  "rivalStartLabelPointOne": true,
+  "salesStartDirectWithoutSecondDialog": true,
+  "resourceSummaryKeptAtTop": true,
+  "duplicateDetailResourceBadgesRemoved": true,
+  "salesDetailCompactFirstView": true,
   "jsSyntaxOk": true,
-  "zipIntegrityOk": null
+  "zipIntegrityOk": true
 }

@@ -3714,3 +3714,67 @@ body[data-v039-mode="shop"] .tenotsu-stamina-hud {
   font-size:12px;
   line-height:1.45;
 }
+
+/* v039_74 sales start CTA compaction: start from first view */
+.tenotsu-sales-detail {
+  min-height: 188px !important;
+  padding: 14px !important;
+}
+.tenotsu-sales-detail-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(190px, 0.8fr);
+  gap: 14px;
+  align-items: stretch;
+  min-height: 166px;
+}
+.tenotsu-sales-detail-copy {
+  min-width: 0;
+}
+.tenotsu-sales-detail-action {
+  display: grid;
+  align-content: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(0,0,0,.22);
+  border: 2px solid rgba(121, 139, 255, .72);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.08), 0 10px 22px rgba(0,0,0,.18);
+}
+.tenotsu-sales-start-primary {
+  margin-top: 0 !important;
+  min-height: 54px !important;
+  font-size: clamp(15px, 2.1vw, 20px);
+  letter-spacing: .02em;
+  border-color: rgba(255,226,163,.78) !important;
+  background: linear-gradient(180deg, rgba(172, 103, 52, .98), rgba(102, 54, 33, .98)) !important;
+}
+.tenotsu-sales-start-cost,
+.tenotsu-sales-start-role {
+  font-size: 12px;
+  line-height: 1.45;
+  color: rgba(255,255,255,.82);
+  text-align: center;
+}
+.tenotsu-sales-start-role {
+  color: rgba(255,226,163,.86);
+}
+.tenotsu-sales-detail-rival_battle .tenotsu-sales-detail-action {
+  border-color: rgba(255, 129, 118, .72);
+  background: linear-gradient(180deg, rgba(80, 24, 24, .28), rgba(0,0,0,.22));
+}
+.tenotsu-sales-detail-event_sales .tenotsu-sales-detail-action {
+  border-color: rgba(170, 135, 255, .76);
+}
+.tenotsu-sales-detail-main .tenotsu-sales-detail-desc {
+  margin-top: 10px !important;
+  line-height: 1.55 !important;
+}
+@media screen and (max-width: 760px) {
+  .tenotsu-sales-detail-main {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .tenotsu-sales-detail-action {
+    min-height: 94px;
+  }
+}

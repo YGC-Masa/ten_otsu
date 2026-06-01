@@ -1,6 +1,11 @@
 {
-  "version": "v039_73",
+  "version": "v039_74",
   "files": [
+    {
+      "path": "CHECKSUMS.json",
+      "size": 94684,
+      "sha256": "91ee2eeb1f6918acb48c0eb20d2facb7f2666592fa3b20c261ed8455802b00cc"
+    },
     {
       "path": "DELETE_FILES.txt",
       "size": 0,
@@ -8,8 +13,8 @@
     },
     {
       "path": "README_DIFF.md",
-      "size": 791,
-      "sha256": "69ef6677cde81f0c5175d015b988e9d1c59c2aac5ba69cbf2a55544c4766ef8b"
+      "size": 1051,
+      "sha256": "adc3afccb1a010f3a56a0f73e929ea31e5a0b81c1675f6f59116574c270c7b80"
     },
     {
       "path": "README_GITHUB_LAYOUT.md",
@@ -28,8 +33,8 @@
     },
     {
       "path": "VALIDATION.json",
-      "size": 369,
-      "sha256": "fac8c3c9408fd3592732d137345d10351d3495f63bc9d10a5aa564d3cd47ef01"
+      "size": 373,
+      "sha256": "5f06aeda9e4eaa063bf099a1d441232bff58fec9c49fb5d2cff106fc5d6dbdfe"
     },
     {
       "path": "favicon.ico",
@@ -1619,7 +1624,7 @@
     {
       "path": "index.html",
       "size": 2455,
-      "sha256": "e7afda57d0568f84b9c0cb2d66d82f5bade3122d024696db2f067ea06d08c06c"
+      "sha256": "a009643e1c2cf5ee5e1d542f0d1fa49dd3f81acde35e4e476475e5cfeaa57ca7"
     },
     {
       "path": "program/Readme.md",
@@ -2217,6 +2222,11 @@
       "sha256": "108473c133acb885fd258bdddcda977c7776c255d75520495e38516fee762d9f"
     },
     {
+      "path": "program/docs/v039_74_sales_start_cta_compact.md",
+      "size": 835,
+      "sha256": "8bbed128d6b8b682f8d7d768dced6836c9f4bc7cff1fd705237e91a116e8a974"
+    },
+    {
       "path": "program/effect.js",
       "size": 3821,
       "sha256": "6cd897140c5060ac3d2d1a0ce9d5fc16cbf293d61b9765181e53c7739e5e089d"
@@ -2338,8 +2348,8 @@
     },
     {
       "path": "program/v039/core.css",
-      "size": 110503,
-      "sha256": "922152f9d456ceb1e245e114818b213d1d09ab87d98edae4f107bdeaf153cdd5"
+      "size": 112278,
+      "sha256": "749d7a65e55fe3ddcf1b33e01132c2224f8fed080d819ee2120d5889695f64fa"
     },
     {
       "path": "program/v039/eventData.js",
@@ -2383,8 +2393,8 @@
     },
     {
       "path": "program/v039/sales.js",
-      "size": 24346,
-      "sha256": "e9b65d7799b65641af6bfcbec2b5e97bc2135fb2adb71241bf9a60c9e418e588"
+      "size": 26343,
+      "sha256": "0634673f58e5f10367f1ad1d05469eb2fd8ef8b21b35346f2a52fd14503c4e3a"
     },
     {
       "path": "program/v039/shop.js",
@@ -2398,8 +2408,8 @@
     },
     {
       "path": "program/v039/state.js",
-      "size": 661,
-      "sha256": "3397cdf246724d65eb9e220b9e28785889b4e672ceaaf39e0b3fdcd81b8c4ebd"
+      "size": 663,
+      "sha256": "30d754aa2c733ef5123c42da950f28f2c14ac73bd3dabda9c6e21e350ccf1212"
     },
     {
       "path": "program/v039/storyPlayer.js",
@@ -2418,8 +2428,8 @@
     },
     {
       "path": "release_notes.md",
-      "size": 1188,
-      "sha256": "1e2a94d66b0cc66297792b7c67f6109d5928be2e71ca8ce407c76e753ddda07b"
+      "size": 1596,
+      "sha256": "46f0e110b7272013da3875fbc1f948398b648e67450dd05208130c0b3b448a89"
     },
     {
       "path": "scenario/data/character_expressions.json",

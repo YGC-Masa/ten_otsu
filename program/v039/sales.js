@@ -1,4 +1,4 @@
-/* v039_69 sales resources + biribiri rival battle routing */
+/* v039_74 sales start CTA compact layout */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -84,6 +84,42 @@
     return { ok: true };
   }
 
+  function modeStartLabel(mode) {
+    if (!mode) return "営業開始";
+    if (mode.battleType === "rival") return `ポイント${mode.battlePointCost || 1}を消費して開始`;
+    if (mode.staminaCost && mode.battlePointCost) return `ST${mode.staminaCost} + BP${mode.battlePointCost}を消費して開始`;
+    if (mode.staminaCost) return `ST${mode.staminaCost}を消費して開始`;
+    if (mode.battlePointCost) return `BP${mode.battlePointCost}を消費して開始`;
+    return "消費なしで開始";
+  }
+
+  function modeCurrentLabel(mode) {
+    const items = [];
+    if (mode.staminaCost && window.TenotsuStamina && typeof window.TenotsuStamina.getState === "function") {
+      const st = window.TenotsuStamina.getState();
+      items.push(`ST ${st.current}/${st.max}`);
+    }
+    if (mode.battlePointCost && window.TenotsuBattlePoint && typeof window.TenotsuBattlePoint.getState === "function") {
+      const bp = window.TenotsuBattlePoint.getState();
+      items.push(`BP ${bp.current}/${bp.max}`);
+    }
+    return items.length ? items.join(" / ") : "消費なし";
+  }
+
+  function startSelectedMode(mode) {
+    if (!mode) return;
+    const payment = consumeResources(mode);
+    if (!payment.ok) {
+      const label = payment.type === "BP" ? "バトルP" : "スタミナ";
+      ns.setText("店長", `${label}が足りません。現在 ${payment.current}/${payment.max}、必要 ${payment.cost} です。`);
+      ns.renderSalesPanel(mode.id);
+      return;
+    }
+    ns.state.currentSalesMode = mode;
+    ns.state.currentBattleType = mode.battleType || "normal";
+    ns.enterBattleMock(mode);
+  }
+
   function salesCard(mode) {
     return `
       <button type="button" class="tenotsu-sales-card tenotsu-sales-card-${mode.id}" data-sales-mode="${mode.id}" data-battle-type="${mode.battleType || 'normal'}">
@@ -130,17 +166,24 @@
       btn.classList.add("selected");
 
       detail.innerHTML = `
-        <div class="tenotsu-sales-detail-title">${mode.label}</div>
-        <div class="tenotsu-sales-detail-tag">${mode.tag}</div>
-        <div class="tenotsu-sales-detail-desc">${mode.description}</div>
-        ${modeResourceBadge(mode)}
-        <button type="button" class="tenotsu-sales-start" data-sales-start="${mode.id}">この営業を開始</button>
+        <div class="tenotsu-sales-detail-main tenotsu-sales-detail-${mode.id}">
+          <div class="tenotsu-sales-detail-copy">
+            <div class="tenotsu-sales-detail-title">${mode.label}</div>
+            <div class="tenotsu-sales-detail-tag">${mode.tag}</div>
+            <div class="tenotsu-sales-detail-desc">${mode.description}</div>
+          </div>
+          <div class="tenotsu-sales-detail-action">
+            <button type="button" class="tenotsu-sales-start tenotsu-sales-start-primary" data-sales-start="${mode.id}">${modeStartLabel(mode)}</button>
+            <div class="tenotsu-sales-start-cost">現在：${modeCurrentLabel(mode)}</div>
+            <div class="tenotsu-sales-start-role">${mode.rewardRole || "営業報酬"}</div>
+          </div>
+        </div>
       `;
 
       ns.setText("店長", mode.message);
 
       const start = detail.querySelector("[data-sales-start]");
-      if (start) start.addEventListener("click", () => ns.startSalesMode(mode));
+      if (start) start.addEventListener("click", () => startSelectedMode(mode));
     };
 
     panel.querySelectorAll("[data-sales-mode]").forEach((btn) => {
@@ -199,8 +242,7 @@
   };
 
   ns.startSalesMode = function startSalesMode(mode) {
-    if (!mode) return;
-    ns.openSalesStartDialog(mode);
+    startSelectedMode(mode);
   };
 
   ns.openSalesStartDialog = function openSalesStartDialog(mode) {
