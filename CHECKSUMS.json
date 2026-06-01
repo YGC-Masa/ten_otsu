@@ -1,5 +1,5 @@
 {
-  "version": "v039_72",
+  "version": "v039_73",
   "files": [
     {
       "path": "DELETE_FILES.txt",
@@ -8,8 +8,8 @@
     },
     {
       "path": "README_DIFF.md",
-      "size": 993,
-      "sha256": "7ac708ee2531e63de893c7aa7c42975c135ba8925a31a574ce2270311ed083f9"
+      "size": 791,
+      "sha256": "69ef6677cde81f0c5175d015b988e9d1c59c2aac5ba69cbf2a55544c4766ef8b"
     },
     {
       "path": "README_GITHUB_LAYOUT.md",
@@ -28,8 +28,8 @@
     },
     {
       "path": "VALIDATION.json",
-      "size": 337,
-      "sha256": "860b602985200983b280442eebadb5031d0cd1dd80aa246c6035ce03d5823e13"
+      "size": 369,
+      "sha256": "fac8c3c9408fd3592732d137345d10351d3495f63bc9d10a5aa564d3cd47ef01"
     },
     {
       "path": "favicon.ico",
@@ -1619,7 +1619,7 @@
     {
       "path": "index.html",
       "size": 2455,
-      "sha256": "2a369edaaf0935738173378343988d9462209e3fddf47f1dd4bab28672320c2d"
+      "sha256": "e7afda57d0568f84b9c0cb2d66d82f5bade3122d024696db2f067ea06d08c06c"
     },
     {
       "path": "program/Readme.md",
@@ -2212,6 +2212,11 @@
       "sha256": "ae0a2efeff7de7f08cc25c14ece2f28bdfc01952e2cda19f46a36b77a2343fb8"
     },
     {
+      "path": "program/docs/v039_73_rival_special_help_cutin.md",
+      "size": 511,
+      "sha256": "108473c133acb885fd258bdddcda977c7776c255d75520495e38516fee762d9f"
+    },
+    {
       "path": "program/effect.js",
       "size": 3821,
       "sha256": "6cd897140c5060ac3d2d1a0ce9d5fc16cbf293d61b9765181e53c7739e5e089d"
@@ -2368,13 +2373,13 @@
     },
     {
       "path": "program/v039/rivalBattle.css",
-      "size": 14802,
-      "sha256": "3b22bd24e5a5ec414a0be593cdce399c83eabe3006be7f3cdf30ada6cf624e3c"
+      "size": 16235,
+      "sha256": "76724df68c14fe15b980612419f32379d40e4489c69f47fabd3e0e807bb45adb"
     },
     {
       "path": "program/v039/rivalBattle.js",
-      "size": 43192,
-      "sha256": "c417ce8d5f18d5e61595b54f5c6fbd707f037e1ec582e653b5d8694e3aecd6d6"
+      "size": 44797,
+      "sha256": "488118237107653b066bd102f001600ab99fe3aadacd7847ba64642e704ede3d"
     },
     {
       "path": "program/v039/sales.js",
@@ -2394,7 +2399,7 @@
     {
       "path": "program/v039/state.js",
       "size": 661,
-      "sha256": "5359a43c83cabab102f5b183ab67bc8079547d295ce82fb30bd914751e481b2a"
+      "sha256": "3397cdf246724d65eb9e220b9e28785889b4e672ceaaf39e0b3fdcd81b8c4ebd"
     },
     {
       "path": "program/v039/storyPlayer.js",
@@ -2413,8 +2418,8 @@
     },
     {
       "path": "release_notes.md",
-      "size": 591,
-      "sha256": "7011b1e05bab864ec6d72857578e42afc1830870b34f79cc37495476a6825021"
+      "size": 1188,
+      "sha256": "1e2a94d66b0cc66297792b7c67f6109d5928be2e71ca8ce407c76e753ddda07b"
     },
     {
       "path": "scenario/data/character_expressions.json",

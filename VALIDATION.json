@@ -1,14 +1,13 @@
 {
-  "version": "v039_72",
-  "base": "v039_71",
+  "version": "v039_73",
+  "base": "v039_72",
   "buildLabelUpdated": true,
-  "rivalCutinLimitedToEnemyArea": true,
-  "helpButtonsAboveMembers": true,
-  "rushTimeAdded": true,
-  "rushStartsAtRemainingSeconds": 18,
-  "normalEnemyMax": 4,
-  "rushEnemyMax": 6,
-  "mobileRushEnemyGrid": true,
+  "singleTapSpecialBurstFixed": true,
+  "specialRequiresDoubleTapAtFullGauge": true,
+  "singleTapFullGaugeDoesNormalAfterDelay": true,
+  "helpButtonsFullWidth": true,
+  "cutinImageRightOfSkillName": true,
+  "cutinStillLimitedToEnemyArea": true,
   "jsSyntaxOk": true,
   "zipIntegrityOk": null
 }

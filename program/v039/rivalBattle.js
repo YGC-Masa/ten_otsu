@@ -1,4 +1,4 @@
-/* v039_72 biribiri rival battle cutin/help/rush adjustment
+/* v039_73 biribiri rival battle special input/help/cutin adjustment
  * 通常バトル BattleProto.openBattle() をラップし、currentBattleType === "rival" の時だけ
  * 小春・真冬・なつのVS CPUバトルへ差し替える。
  */
@@ -6,7 +6,7 @@
   "use strict";
 
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  const VERSION = "v039_72_rival_cutin_help_rush";
+  const VERSION = "v039_73_rival_special_help_cutin";
   const ROOT_ID = "rival-battle-root";
   const STORAGE_KEY = "tenotsu_biribiri_rival_rewards_v1";
   const BATTLE_SECONDS = 45;
@@ -96,6 +96,8 @@
   let originalCloseBattle = null;
   let originalBattleProto = null;
   let lastHandledInput = { key: "", time: 0 };
+  let pendingStaffTap = null;
+  const STAFF_DOUBLE_TAP_MS = 280;
 
   function escapeHtml(value) {
     return String(value == null ? "" : value).replace(/[&<>"]/g, function (ch) {
@@ -139,6 +141,46 @@
     if (typeof event.stopPropagation === "function") event.stopPropagation();
   }
 
+  function clearPendingStaffTap(flush) {
+    if (!pendingStaffTap) return;
+    const pending = pendingStaffTap;
+    pendingStaffTap = null;
+    if (pending.timer) window.clearTimeout(pending.timer);
+    if (flush && pending.staffId) handleStaff(pending.staffId, false);
+  }
+
+  function handleStaffTap(staffId) {
+    if (!state || !state.running) return;
+    const s = state.staff.find((item) => item.id === staffId);
+    if (!s) return;
+    const now = Date.now();
+
+    if (pendingStaffTap && pendingStaffTap.staffId === staffId && now - pendingStaffTap.time <= STAFF_DOUBLE_TAP_MS) {
+      clearPendingStaffTap(false);
+      handleStaff(staffId, true);
+      return;
+    }
+
+    if (pendingStaffTap) clearPendingStaffTap(true);
+
+    if ((s.skill || 0) >= 100) {
+      pendingStaffTap = {
+        staffId,
+        time: now,
+        timer: window.setTimeout(() => {
+          const pending = pendingStaffTap;
+          pendingStaffTap = null;
+          if (pending && pending.staffId) handleStaff(pending.staffId, false);
+        }, STAFF_DOUBLE_TAP_MS)
+      };
+      state.lastActionText = `${s.name}：通常接客を準備中。もう一度タップで必殺技。`;
+      render();
+      return;
+    }
+
+    handleStaff(staffId, false);
+  }
+
   function dispatchInteractiveHit(hit) {
     if (!hit) return;
     if (hit.type === "action") {
@@ -150,7 +192,7 @@
       return;
     }
     if (hit.type === "staff") {
-      handleStaff(hit.value);
+      handleStaffTap(hit.value);
       return;
     }
     if (hit.type === "enemy" && state && state.running) {
@@ -315,6 +357,7 @@
   }
 
   function closeRivalBattle() {
+    clearPendingStaffTap(false);
     stopLoop();
     if (state && state.resultRevealTimer) window.clearTimeout(state.resultRevealTimer);
     state = null;
@@ -326,6 +369,7 @@
   }
 
   function startBattle(autoMode = false) {
+    clearPendingStaffTap(false);
     if (!state) state = makeState();
     state = makeState({ mode: state.mode });
     state.countingDown = true;
@@ -351,6 +395,7 @@
   }
 
   function beginBattle() {
+    clearPendingStaffTap(false);
     if (!state) return;
     state.countingDown = false;
     state.running = true;
@@ -524,7 +569,7 @@
     return best;
   }
 
-  function handleStaff(staffId) {
+  function handleStaff(staffId, forceSpecial) {
     if (!state || !state.running) return;
     const s = state.staff.find((item) => item.id === staffId);
     if (!s) return;
@@ -545,7 +590,7 @@
       render();
       return;
     }
-    const special = s.skill >= 100;
+    const special = !!forceSpecial && s.skill >= 100;
     const match = s.attr === enemy.attr;
     const damage = special ? (match ? 3 : 2) : (match ? 2 : 1);
     enemy.gauge -= damage;
@@ -708,7 +753,7 @@
     if (state.autoTimer > 0) return;
     const ready = state.staff.filter((s) => s.ct <= 0 && !(s.sealedUntil && nowMs() < s.sealedUntil));
     const staff = ready.sort((a, b) => b.skill - a.skill)[0];
-    if (staff) handleStaff(staff.id);
+    if (staff) handleStaff(staff.id, false);
     state.autoTimer = staff ? 1.05 : 0.28;
   }
 
@@ -739,6 +784,7 @@
   }
 
   function finishBattle() {
+    clearPendingStaffTap(false);
     if (!state || state.finished) return;
     state.running = false;
     state.finished = true;
@@ -785,7 +831,7 @@
     const hit = findInteractiveHit(event.target);
     if (!hit) return;
     cancelBattleInputEvent(event);
-    if (wasInputHandledRecently(hit, 260)) return;
+    if (wasInputHandledRecently(hit, hit.type === "staff" ? 70 : 260)) return;
     markInputHandled(hit);
     dispatchInteractiveHit(hit);
   }
@@ -794,7 +840,7 @@
     const hit = findInteractiveHit(event.target);
     if (!hit) return;
     cancelBattleInputEvent(event);
-    if (wasInputHandledRecently(hit, 360)) return;
+    if (wasInputHandledRecently(hit, hit.type === "staff" ? 90 : 360)) return;
     markInputHandled(hit);
     dispatchInteractiveHit(hit);
   }
@@ -899,7 +945,7 @@
         <button class="rival-staff-card ${s.ct > 0 ? "cooling" : "ready"} ${sealed ? "sealed" : ""}" data-rival-staff="${escapeHtml(s.id)}" style="--staff-color:${s.color}">
           <b>${escapeHtml(s.name)}</b><span>${escapeHtml(s.attr)}</span><small>${sealed ? "封印中" : s.ct > 0 ? `CT ${s.ct.toFixed(1)}秒` : "対応OK"}</small>
           <div class="rival-bar"><i style="width:${ctRate}%"></i></div>
-          <em>必殺 ${Math.floor(skillRate)}%</em><div class="rival-bar skill"><i style="width:${skillRate}%"></i></div>
+          <em>必殺 ${Math.floor(skillRate)}% / 2回タップ</em><div class="rival-bar skill"><i style="width:${skillRate}%"></i></div>
         </button>
       `;
     }).join("")}</section>`;
@@ -978,7 +1024,7 @@
     return `
       <div class="rival-cutin-layer" style="--cutin-color:${state.cutin.color}; opacity:${opacity}">
         <div class="rival-cutin-text"><small>${escapeHtml(state.cutin.subText || "")}</small><b>${escapeHtml(state.cutin.title || "")}</b><p>${escapeHtml(state.cutin.descText || "")}</p></div>
-        ${state.cutin.image ? `<img src="${escapeHtml(state.cutin.image)}" alt="">` : ""}
+        ${state.cutin.image ? `<div class="rival-cutin-image"><img src="${escapeHtml(state.cutin.image)}" alt=""></div>` : ""}
       </div>
     `;
   }
