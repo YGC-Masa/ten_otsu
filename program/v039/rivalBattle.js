@@ -1,4 +1,4 @@
-/* v039_73 biribiri rival battle special input/help/cutin adjustment
+/* v039_75 biribiri rival battle strength/skill-ready/deck formation
  * 通常バトル BattleProto.openBattle() をラップし、currentBattleType === "rival" の時だけ
  * 小春・真冬・なつのVS CPUバトルへ差し替える。
  */
@@ -6,7 +6,7 @@
   "use strict";
 
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  const VERSION = "v039_73_rival_special_help_cutin";
+  const VERSION = "v039_75_rival_strength_skill_ready_deck";
   const ROOT_ID = "rival-battle-root";
   const STORAGE_KEY = "tenotsu_biribiri_rival_rewards_v1";
   const BATTLE_SECONDS = 45;
@@ -16,6 +16,8 @@
   const RUSH_SURFACE_MS = 1300;
   const HELP_STOCK_MAX = 3;
   const HELP_STOCK_STEP = 8;
+  const DECK_STORAGE_KEY = "tenotsu_battle_deck_v1";
+  const DEFAULT_STAFF_IDS = ["aa", "ab", "ac", "ad", "ae"];
 
   const ASSETS = {
     eyecatch: "images/assets/rival/biribiri_battle_eyecatch.jpeg",
@@ -80,13 +82,21 @@
     { id: "ab", name: "藍", attr: "ドライヤー", color: "#0067c0", ctMax: 2.75, skillName: "やさしい案内", cutin: "images/assets/cutin/cutin_ai_test.png" },
     { id: "ac", name: "翠", attr: "PC", color: "#02b308", ctMax: 3.0, skillName: "最適解プレゼン", cutin: "images/assets/cutin/cutin_midori_test.png" },
     { id: "ad", name: "こがね", attr: "スマホ", color: "#fff450", ctMax: 1.85, skillName: "即決トーク", cutin: "images/assets/cutin/cutin_kogane_test.png" },
-    { id: "ae", name: "琥珀", attr: "オーディオ", color: "#f68b1f", ctMax: 2.5, skillName: "フロアダッシュ", cutin: "images/assets/cutin/cutin_kohaku_test.png" }
+    { id: "ae", name: "琥珀", attr: "オーディオ", color: "#f68b1f", ctMax: 2.5, skillName: "フロアダッシュ", cutin: "images/assets/cutin/cutin_kohaku_test.png" },
+    { id: "af", name: "真花", attr: "美容", color: "#c0c0c0", ctMax: 2.7, skillName: "お嬢様スマイル", cutin: "images/assets/cutin/cutin_manaka_test.png" },
+    { id: "ag", name: "雪乃", attr: "オーブン", color: "#6495ed", ctMax: 3.0, skillName: "静かな提案", cutin: "images/assets/cutin/cutin_yukino_test.png" },
+    { id: "ah", name: "美空", attr: "除湿", color: "#fffef6", ctMax: 2.45, skillName: "夏空接客", cutin: "images/assets/cutin/cutin_misora_test.png" },
+    { id: "ai", name: "夜空", attr: "加湿", color: "#214a9d", ctMax: 2.75, skillName: "冬空フォーカス", cutin: "images/assets/cutin/cutin_yozora_test.png" },
+    { id: "aj", name: "桃", attr: "配信", color: "#f7adc3", ctMax: 2.05, skillName: "店内配信", cutin: "images/assets/cutin/cutin_momo_test.png" },
+    { id: "ak", name: "彩愛", attr: "生活", color: "#694d9f", ctMax: 2.9, skillName: "優雅な家事導線", cutin: "images/assets/cutin/cutin_ayame_test.png" },
+    { id: "al", name: "里美", attr: "レジ", color: "#8d5025", ctMax: 2.95, skillName: "受付整理", cutin: "images/assets/cutin/cutin_satomi_test.png" },
+    { id: "am", name: "萌", attr: "リラックス", color: "#33cc99", ctMax: 2.8, skillName: "おにいちゃん助けて", cutin: "images/assets/cutin/cutin_moe_test.png" }
   ];
 
   const RIVALS = [
-    { id: "koharu", name: "天神 小春", short: "小春", role: "攻め", color: "#ff3b2f", stand: ASSETS.koharuStand, cutin: ASSETS.koharuCutin, actionBase: 2.7 },
-    { id: "mafuyu", name: "霧島 真冬", short: "真冬", role: "妨害", color: "#6ac5ff", stand: ASSETS.mafuyuStand, cutin: ASSETS.mafuyuCutin, actionBase: 3.1 },
-    { id: "natsu", name: "日向 なつ", short: "なつ", role: "誘導", color: "#ffb65c", stand: ASSETS.natsuStand, cutin: ASSETS.natsuCutin, actionBase: 3.35 }
+    { id: "koharu", name: "天神 小春", short: "小春", role: "攻め", color: "#ff3b2f", stand: ASSETS.koharuStand, cutin: ASSETS.koharuCutin, actionBase: 2.25 },
+    { id: "mafuyu", name: "霧島 真冬", short: "真冬", role: "妨害", color: "#6ac5ff", stand: ASSETS.mafuyuStand, cutin: ASSETS.mafuyuCutin, actionBase: 2.65 },
+    { id: "natsu", name: "日向 なつ", short: "なつ", role: "誘導", color: "#ffb65c", stand: ASSETS.natsuStand, cutin: ASSETS.natsuCutin, actionBase: 2.95 }
   ];
 
   let root = null;
@@ -98,6 +108,28 @@
   let lastHandledInput = { key: "", time: 0 };
   let pendingStaffTap = null;
   const STAFF_DOUBLE_TAP_MS = 280;
+
+
+  let activeDeckIds = loadDeckIds();
+
+  function loadDeckIds() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(DECK_STORAGE_KEY) || "null");
+      if (Array.isArray(saved) && saved.length === 5 && saved.every((id) => PLAYER_STAFF_BASE.some((s) => s.id === id))) return saved;
+    } catch (_) {}
+    return DEFAULT_STAFF_IDS.slice();
+  }
+
+  function saveDeckIds(ids) {
+    activeDeckIds = (Array.isArray(ids) && ids.length === 5) ? ids.slice() : DEFAULT_STAFF_IDS.slice();
+    try { localStorage.setItem(DECK_STORAGE_KEY, JSON.stringify(activeDeckIds)); } catch (_) {}
+  }
+
+  function getDeckStaffBase() {
+    const ids = (activeDeckIds && activeDeckIds.length === 5) ? activeDeckIds : loadDeckIds();
+    const list = ids.map((id) => PLAYER_STAFF_BASE.find((s) => s.id === id)).filter(Boolean);
+    return list.length === 5 ? list : DEFAULT_STAFF_IDS.map((id) => PLAYER_STAFF_BASE.find((s) => s.id === id)).filter(Boolean);
+  }
 
   function escapeHtml(value) {
     return String(value == null ? "" : value).replace(/[&<>"]/g, function (ch) {
@@ -127,7 +159,11 @@
   function findInteractiveHit(target) {
     if (!root || !target || !root.contains(target)) return null;
     const actionEl = target.closest && target.closest("[data-rival-action]");
-    if (actionEl) return { type: "action", value: actionEl.dataset.rivalAction || "" };
+    if (actionEl) {
+      const action = actionEl.dataset.rivalAction || "";
+      if (action === "deckToggle") return { type: "deck", value: actionEl.dataset.rivalDeckId || "" };
+      return { type: "action", value: action };
+    }
     const staffEl = target.closest && target.closest("[data-rival-staff]");
     if (staffEl) return { type: "staff", value: staffEl.dataset.rivalStaff || "" };
     const enemyEl = target.closest && target.closest("[data-rival-enemy]");
@@ -189,6 +225,14 @@
       else if (hit.value === "close") closeRivalBattle();
       else if (hit.value === "restart") startBattle(false);
       else if (hit.value === "help") useHelp();
+      else if (hit.value === "deckEdit") openDeckEditor();
+      else if (hit.value === "deckDecide") decideDeckSelection();
+      else if (hit.value === "deckReset") resetDeckSelection();
+      else if (hit.value === "deckCancel") cancelDeckEditor();
+      return;
+    }
+    if (hit.type === "deck") {
+      toggleDeckStaff(hit.value);
       return;
     }
     if (hit.type === "staff") {
@@ -218,13 +262,14 @@
   function getPlayerLevel() {
     try {
       if (!window.TenotsuGrowth || typeof window.TenotsuGrowth.getCharacterState !== "function") return 1;
-      const levels = PLAYER_STAFF_BASE.map((s) => window.TenotsuGrowth.getCharacterState(s.id).level || 1);
+      const levels = getDeckStaffBase().map((s) => window.TenotsuGrowth.getCharacterState(s.id).level || 1);
       return Math.max(1, Math.floor(levels.reduce((a, b) => a + b, 0) / Math.max(1, levels.length)));
     } catch (_) { return 1; }
   }
 
   function getStaff() {
-    return PLAYER_STAFF_BASE.map((item) => {
+    activeDeckIds = loadDeckIds();
+    return getDeckStaffBase().map((item) => {
       let stats = null;
       try { stats = window.TenotsuGrowth && window.TenotsuGrowth.getComputedStats ? window.TenotsuGrowth.getComputedStats(item.id) : null; } catch (_) { stats = null; }
       const speed = stats ? Number(stats.speed || 0) : 12;
@@ -312,6 +357,8 @@
       enemies: [],
       staff: getStaff(),
       rivals: makeRivals(),
+      deckEdit: false,
+      deckSelection: activeDeckIds.slice(),
       targetEnemyId: null,
       lastActionText: "VSビリビリ開始準備中。営業開始を押してください。",
       hitEffects: [],
@@ -633,7 +680,7 @@
     if (!state || !enemy) return;
     removeEnemy(enemy);
     const r = rival || state.rivals[0];
-    const point = Math.max(1, Math.round(enemy.score * (state.rivalScoreRate || 1) * (enemy.rivalPullRate || 1)));
+    const point = Math.max(1, Math.round(enemy.score * 1.12 * (state.rivalScoreRate || 1) * (enemy.rivalPullRate || 1)));
     state.rivalScore += point;
     state.stolen += 1;
     state.combo = 0;
@@ -654,13 +701,13 @@
     state.rivals.forEach((rival) => {
       rival.actionTimer -= dt;
       rival.skillCooldown = Math.max(0, rival.skillCooldown - dt);
-      rival.skillGauge = Math.min(100, rival.skillGauge + dt * (5.2 + (rival.id === "koharu" ? 0.6 : 0)));
+      rival.skillGauge = Math.min(100, rival.skillGauge + dt * (7.2 + (rival.id === "koharu" ? 0.9 : rival.id === "natsu" ? 0.35 : 0.15)));
       if (rival.skillGauge >= 100 && rival.skillCooldown <= 0) {
         useRivalSkill(rival, level);
       }
       if (rival.actionTimer <= 0) {
-        rival.actionTimer = rival.actionBase + rand(0.2, 1.0);
-        if (Math.random() < (state.autoMode ? 0.58 : 0.64)) rivalServeOne(rival);
+        rival.actionTimer = rival.actionBase + rand(0.05, 0.58);
+        if (Math.random() < (state.autoMode ? 0.66 : 0.74)) rivalServeOne(rival);
       }
     });
   }
@@ -683,7 +730,7 @@
   function rivalServeOne(rival) {
     const enemy = chooseRivalTarget();
     if (!enemy) return false;
-    const chance = clamp(0.32 + (enemy.rivalPullRate || 1) * 0.08 + (state.rivalScoreRate > 1 ? 0.12 : 0), 0.24, 0.68);
+    const chance = clamp(0.40 + (enemy.rivalPullRate || 1) * 0.105 + (state.rivalScoreRate > 1 ? 0.17 : 0) + (state.rushActive ? 0.055 : 0), 0.32, 0.80);
     if (Math.random() < chance) {
       rivalTakeEnemy(enemy, rival, "接客横取り");
       return true;
@@ -699,7 +746,7 @@
     if (api && typeof api.pickRandomRivalSkill === "function") skill = api.pickRandomRivalSkill(level, rival.id);
     if (!skill) return;
     rival.skillGauge = 0;
-    rival.skillCooldown = Math.max(8, Number(skill.cooldownSec) || 22);
+    rival.skillCooldown = Math.max(6.5, (Number(skill.cooldownSec) || 22) * 0.82);
     const now = nowMs();
     showCutin(skill.label, rival.color, rival.name, skill.desc || "", rival.cutin);
 
@@ -941,8 +988,9 @@
       const ctRate = Math.max(0, Math.min(100, (1 - s.ct / Math.max(0.1, s.ctMax)) * 100));
       const skillRate = Math.max(0, Math.min(100, s.skill || 0));
       const sealed = s.sealedUntil && nowMs() < s.sealedUntil;
+      const specialReady = skillRate >= 100 && s.ct <= 0 && !sealed;
       return `
-        <button class="rival-staff-card ${s.ct > 0 ? "cooling" : "ready"} ${sealed ? "sealed" : ""}" data-rival-staff="${escapeHtml(s.id)}" style="--staff-color:${s.color}">
+        <button class="rival-staff-card ${s.ct > 0 ? "cooling" : "ready"} ${sealed ? "sealed" : ""} ${specialReady ? "special-ready skill-ready" : ""}" data-rival-staff="${escapeHtml(s.id)}" style="--staff-color:${s.color}">
           <b>${escapeHtml(s.name)}</b><span>${escapeHtml(s.attr)}</span><small>${sealed ? "封印中" : s.ct > 0 ? `CT ${s.ct.toFixed(1)}秒` : "対応OK"}</small>
           <div class="rival-bar"><i style="width:${ctRate}%"></i></div>
           <em>必殺 ${Math.floor(skillRate)}% / 2回タップ</em><div class="rival-bar skill"><i style="width:${skillRate}%"></i></div>
@@ -951,7 +999,101 @@
     }).join("")}</section>`;
   }
 
+
+  function renderDeckEditorOverlay() {
+    const selected = state.deckSelection || [];
+    const canDecide = selected.length === 5;
+    const row1 = ["aa", "ab", "ac", "ad", "ae"];
+    const row2 = ["af", "ag", "ah", "ai", "aj"];
+    const row3 = ["ak", "al", "am"];
+    return `
+      <section class="rival-control-overlay rival-deck-overlay">
+        <div class="rival-deck-box">
+          <div class="rival-control-title">デッキ編成</div>
+          <p class="rival-control-help">VSビリビリへ出撃するひだまりメンバーを5人選択してください。選択数：${selected.length}/5</p>
+          <div class="rival-deck-select-grid">
+            <div class="rival-deck-select-row">${row1.map(renderDeckSelectCard).join("")}</div>
+            <div class="rival-deck-select-row">${row2.map(renderDeckSelectCard).join("")}</div>
+            <div class="rival-deck-select-row rival-deck-select-bottom">
+              ${row3.map(renderDeckSelectCard).join("")}
+              <div class="rival-deck-decision-area">
+                <button class="rival-deck-decision-main" data-rival-action="deckDecide" ${canDecide ? "" : "disabled"}>決定</button>
+                <div class="rival-deck-small-buttons">
+                  <button data-rival-action="deckReset">初期編成</button>
+                  <button data-rival-action="deckCancel">キャンセル</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>`;
+  }
+
+  function renderDeckSelectCard(staffId) {
+    const s = PLAYER_STAFF_BASE.find((item) => item.id === staffId);
+    if (!s) return "";
+    const selected = state.deckSelection && state.deckSelection.includes(staffId);
+    const order = selected ? state.deckSelection.indexOf(staffId) + 1 : "";
+    return `
+      <button class="rival-deck-select-card ${selected ? "selected" : ""}" style="--staff-color:${s.color};" data-rival-action="deckToggle" data-rival-deck-id="${escapeHtml(s.id)}">
+        <span class="rival-deck-order">${order}</span>
+        <b>${escapeHtml(s.name)}</b>
+        <small>${escapeHtml(s.attr)}</small>
+        <em>${escapeHtml(s.skillName)}</em>
+      </button>`;
+  }
+
+  function openDeckEditor() {
+    if (!state || state.running) return;
+    activeDeckIds = loadDeckIds();
+    state.deckEdit = true;
+    state.deckSelection = activeDeckIds.slice();
+    state.lastActionText = "VSビリビリ用デッキを編成します。";
+    render();
+  }
+
+  function toggleDeckStaff(staffId) {
+    if (!state || !state.deckEdit || !staffId) return;
+    const selected = state.deckSelection || [];
+    if (selected.includes(staffId)) {
+      state.deckSelection = selected.filter((id) => id !== staffId);
+    } else if (selected.length < 5) {
+      state.deckSelection = selected.concat(staffId);
+    } else {
+      state.lastActionText = "デッキは5人までです。入れ替える場合は先に誰かを外してください。";
+    }
+    render();
+  }
+
+  function decideDeckSelection() {
+    if (!state || !state.deckEdit) return;
+    if (!state.deckSelection || state.deckSelection.length !== 5) {
+      state.lastActionText = "メンバーを5人選ぶと決定できます。";
+      render();
+      return;
+    }
+    saveDeckIds(state.deckSelection);
+    state.staff = getStaff();
+    state.deckEdit = false;
+    state.lastActionText = `デッキを更新しました：${state.staff.map((s) => s.name).join(" / ")}`;
+    render();
+  }
+
+  function resetDeckSelection() {
+    if (!state || !state.deckEdit) return;
+    state.deckSelection = DEFAULT_STAFF_IDS.slice();
+    render();
+  }
+
+  function cancelDeckEditor() {
+    if (!state || !state.deckEdit) return;
+    state.deckEdit = false;
+    state.deckSelection = activeDeckIds.slice();
+    render();
+  }
+
   function renderControl() {
+    if (state.deckEdit) return renderDeckEditorOverlay();
     if (state.finished && state.resultRevealAt && Date.now() < state.resultRevealAt) return renderEndingDeclaration();
     if (state.finished) return renderResult();
     return `
@@ -964,6 +1106,7 @@
           <div class="rival-control-buttons">
             <button data-rival-action="start">販売勝負開始</button>
             <button data-rival-action="auto">サポートプレイ</button>
+            <button data-rival-action="deckEdit">デッキ編成</button>
             <button data-rival-action="close">戻る</button>
           </div>
         </div>
@@ -1003,6 +1146,7 @@
           <div class="rival-control-buttons">
             <button data-rival-action="restart">もう一度</button>
             <button data-rival-action="auto">サポートで再戦</button>
+            <button data-rival-action="deckEdit">デッキ編成</button>
             <button data-rival-action="close">戻る</button>
           </div>
         </div>

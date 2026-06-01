@@ -473,3 +473,148 @@
     grid-template-columns: minmax(0, 1fr) minmax(90px, 28vw);
   }
 }
+
+/* v039_75: VSビリビリ強化・必殺可能枠発光・デッキ編成 */
+#rival-battle-root .rival-staff-card.special-ready,
+#rival-battle-root .rival-staff-card.skill-ready {
+  border-color: #fff27a;
+  background: linear-gradient(180deg, rgba(35, 32, 8, 0.98), rgba(12, 16, 18, 0.96));
+  box-shadow:
+    0 0 0 2px color-mix(in srgb, var(--staff-color, #fff27a) 56%, transparent),
+    0 0 22px color-mix(in srgb, var(--staff-color, #fff27a) 78%, transparent),
+    inset 0 0 18px rgba(255, 240, 110, 0.14);
+  animation: rivalSpecialReadyPulse 0.82s ease-in-out infinite alternate;
+}
+#rival-battle-root .rival-staff-card.special-ready b,
+#rival-battle-root .rival-staff-card.skill-ready b {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 8px;
+  color: #190b05;
+  background: var(--staff-color, #fff27a);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--staff-color, #fff27a) 72%, transparent);
+}
+#rival-battle-root .rival-staff-card.special-ready em,
+#rival-battle-root .rival-staff-card.skill-ready em {
+  color: #fff8a8;
+  text-shadow: 0 0 10px rgba(255, 240, 120, 0.74);
+}
+#rival-battle-root .rival-staff-card.special-ready .rival-bar.skill i,
+#rival-battle-root .rival-staff-card.skill-ready .rival-bar.skill i {
+  background: linear-gradient(90deg, #fff9a5, #ffcc33, #ff4c4c);
+  box-shadow: 0 0 12px rgba(255, 230, 90, 0.86);
+}
+@keyframes rivalSpecialReadyPulse {
+  from { transform: translateY(0); filter: brightness(1.04); }
+  to { transform: translateY(-1px); filter: brightness(1.18); }
+}
+
+#rival-battle-root .rival-deck-overlay {
+  z-index: 24;
+}
+#rival-battle-root .rival-deck-box {
+  width: min(900px, 92vw);
+  max-height: min(88vh, 720px);
+  overflow: auto;
+  padding: clamp(12px, 2.2vw, 20px);
+  border: 3px solid #ffe66e;
+  border-radius: 20px;
+  color: #fff;
+  background: linear-gradient(180deg, rgba(18, 12, 16, 0.96), rgba(35, 16, 12, 0.95));
+  box-shadow: 0 0 28px rgba(255, 214, 68, 0.38), inset 0 0 0 1px rgba(255,255,255,0.12);
+}
+#rival-battle-root .rival-control-help {
+  margin: 6px 0 12px;
+  color: rgba(255,255,255,0.88);
+  font-size: clamp(12px, 1.7vw, 15px);
+  font-weight: 700;
+}
+#rival-battle-root .rival-deck-select-grid {
+  display: grid;
+  gap: 8px;
+}
+#rival-battle-root .rival-deck-select-row {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+#rival-battle-root .rival-deck-select-bottom {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(148px, 1.1fr);
+}
+#rival-battle-root .rival-deck-select-card {
+  position: relative;
+  min-height: 92px;
+  padding: 8px 8px 7px;
+  border: 2px solid color-mix(in srgb, var(--staff-color, #fff) 45%, rgba(255,255,255,0.28));
+  border-radius: 14px;
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+  text-align: left;
+  overflow: hidden;
+}
+#rival-battle-root .rival-deck-select-card.selected {
+  color: #1c1006;
+  border-color: #fff8bc;
+  background: linear-gradient(180deg, var(--staff-color, #ffe66e), #fff4a2);
+  box-shadow: 0 0 16px color-mix(in srgb, var(--staff-color, #ffe66e) 72%, transparent);
+}
+#rival-battle-root .rival-deck-select-card b,
+#rival-battle-root .rival-deck-select-card small,
+#rival-battle-root .rival-deck-select-card em {
+  display: block;
+  line-height: 1.25;
+  font-style: normal;
+}
+#rival-battle-root .rival-deck-select-card b { font-size: clamp(13px, 1.9vw, 18px); font-weight: 1000; }
+#rival-battle-root .rival-deck-select-card small { opacity: 0.84; font-weight: 800; }
+#rival-battle-root .rival-deck-select-card em { margin-top: 4px; font-size: clamp(10px, 1.35vw, 13px); opacity: 0.86; }
+#rival-battle-root .rival-deck-order {
+  position: absolute;
+  top: 6px;
+  right: 7px;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-weight: 1000;
+  color: #261600;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+#rival-battle-root .rival-deck-order:empty { display: none; }
+#rival-battle-root .rival-deck-decision-area {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 8px;
+  min-height: 92px;
+}
+#rival-battle-root .rival-deck-decision-main,
+#rival-battle-root .rival-deck-small-buttons button {
+  border: 0;
+  border-radius: 12px;
+  font-weight: 1000;
+}
+#rival-battle-root .rival-deck-decision-main {
+  font-size: clamp(18px, 2.6vw, 28px);
+  color: #250b05;
+  background: linear-gradient(180deg, #fff6a4, #ffcc38);
+}
+#rival-battle-root .rival-deck-decision-main:disabled { opacity: 0.42; filter: grayscale(0.65); }
+#rival-battle-root .rival-deck-small-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+#rival-battle-root .rival-deck-small-buttons button {
+  min-height: 36px;
+  color: #fff;
+  background: rgba(255,255,255,0.16);
+  border: 1px solid rgba(255,255,255,0.22);
+}
+@media (max-width: 720px) {
+  #rival-battle-root .rival-deck-select-row,
+  #rival-battle-root .rival-deck-select-bottom { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #rival-battle-root .rival-deck-decision-area { grid-column: 1 / -1; }
+  #rival-battle-root .rival-deck-select-card { min-height: 76px; }
+}
