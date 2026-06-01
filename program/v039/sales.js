@@ -1,4 +1,4 @@
-/* v039_66 sales resources + alien traits + resource split */
+/* v039_69 sales resources + biribiri rival battle routing */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -217,7 +217,7 @@
           <div><strong>消費：</strong>${modeResourceLabel(mode)}</div>
           <div><strong>報酬役割：</strong>${mode.rewardRole || "営業報酬"}</div>
           <div><strong>種別：</strong>${mode.battleType === "rival" ? "VSビリビリ" : mode.battleType === "eventBoss" ? "イベント営業 / ボス戦予定" : "通常営業"}</div>
-          <div><strong>現在：</strong>${mode.battleType === "eventBoss" ? "接客バトルへ仮接続 / ドラムリズムボス戦予定" : "抽出バトル実装"}</div>
+          <div><strong>現在：</strong>${mode.battleType === "rival" ? "VS CPUビリビリバトル実装" : mode.battleType === "eventBoss" ? "接客バトルへ仮接続 / ドラムリズムボス戦予定" : "抽出バトル実装"}</div>
         </div>
         <div class="tenotsu-sales-dialog-actions">
           <button type="button" class="tenotsu-sales-start" data-sales-dialog="start">営業開始</button>
@@ -274,13 +274,13 @@
     document.addEventListener("tenotsu:battle:closed", restoreSales, { once: true });
 
     if (window.BattleProto && typeof window.BattleProto.openBattle === "function") {
-      window.BattleProto.openBattle();
-      ns.setText("店長", mode && mode.battleType === "eventBoss" ? "イベント営業を開始します。今回は接客バトルへ仮接続中です。" : mode && mode.battleType === "rival" ? "バトル営業を開始します。VSビリビリ用の営業です。" : "デッキ接客バトルを開始します。営業開始、サポートプレイ、デッキ編成を選べます。");
+      window.BattleProto.openBattle({ battleType: mode && mode.battleType, mode });
+      ns.setText("店長", mode && mode.battleType === "eventBoss" ? "イベント営業を開始します。今回は接客バトルへ仮接続中です。" : mode && mode.battleType === "rival" ? "バトル営業を開始します。VSビリビリの販売勝負です。" : "デッキ接客バトルを開始します。営業開始、サポートプレイ、デッキ編成を選べます。");
       return;
     }
     if (typeof window.startDeckBattlePrototype === "function") {
       window.startDeckBattlePrototype();
-      ns.setText("店長", mode && mode.battleType === "eventBoss" ? "イベント営業を開始します。今回は接客バトルへ仮接続中です。" : mode && mode.battleType === "rival" ? "バトル営業を開始します。VSビリビリ用の営業です。" : "デッキ接客バトルを開始します。営業開始、サポートプレイ、デッキ編成を選べます。");
+      ns.setText("店長", mode && mode.battleType === "eventBoss" ? "イベント営業を開始します。今回は接客バトルへ仮接続中です。" : mode && mode.battleType === "rival" ? "バトル営業を開始します。VSビリビリの販売勝負です。" : "デッキ接客バトルを開始します。営業開始、サポートプレイ、デッキ編成を選べます。");
       return;
     }
 

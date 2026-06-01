@@ -647,3 +647,12 @@
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
   else boot();
 })();
+
+## v039_69 biribiri VS CPU battle
+
+- バトル営業 / VSビリビリを通常営業から分離し、専用のVS CPUバトルとして実装。
+- 小春・真冬・なつの立ち絵・カットインを `images/assets/rival/` に追加。
+- `rivalBattle.js` と `rivalBattle.css` を追加。
+- `BattleProto.openBattle()` をラップし、`battleType: "rival"` の時のみビリビリバトルへ差し替え。
+- 家電星人の二重個性とビリビリ必殺技テーブルを利用。
+- 家電星人ポイント、ビリビリ親愛度、メンバーEXPをリザルトで付与。

@@ -1,4 +1,4 @@
-/* v039_68 appliance alien dual-personality data + rival random skill table + natsu skill update */
+/* v039_69 appliance alien dual-personality data + rival VS CPU skill table */
 (function () {
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
@@ -211,7 +211,7 @@
   }
 
   window.TenotsuApplianceAliens = {
-    VERSION: "v039_68",
+    VERSION: "v039_69",
     BASE_ALIENS,
     TRAITS,
     RIVAL_SKILLS,
