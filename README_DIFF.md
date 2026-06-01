@@ -1,22 +1,32 @@
-# ten_otsu v039_69 → v039_70 差分
+# ten_otsu v039_70 → v039_71 差分
 
-## 概要
+## 目的
 
-設定画面にスタミナ / バトルPの検証用リセット機能を追加し、ビリビリバトル報酬の「金」表記を「金貨」に変更しました。
+ビリビリバトル中に「ひだまりメンバーが1人しかクリックできない」ように見える入力不具合を修正し、バトル中の誤ピンチ・ダブルタップ拡大を抑止する。
 
-## 主な変更
+## 変更内容
 
-- `program/v039/office.js`
-  - 設定画面にST/BPリセットボタンを追加。
-- `program/v039/core.css`
-  - 設定画面のリセット説明欄を追加。
 - `program/v039/rivalBattle.js`
-  - 報酬表記を「家電星人金貨」に変更。
-  - 旧 `applianceGold` から `applianceCoins` へ互換移行。
-- `program/v039/state.js` / `index.html`
-  - v039_70 表記へ更新。
+  - `click` 依存の入力処理を `pointerup` / `touchend` / `click` の委譲処理へ変更。
+  - ひだまりメンバー、家電星人、操作ボタンを共通の入力経路で処理。
+  - 短時間の同一入力を無視して二重発火を防止。
+  - ビリビリバトル中の `setMode` を `rivalBattle` へ変更。
 
-## 確認
+- `program/v039/rivalBattle.css`
+  - ひだまりメンバー列の `z-index` / `pointer-events` を明示。
+  - `touch-action: none` を追加。
 
-- JS構文チェック済み。
-- ZIP整合性確認済み。
+- `program/v039/inputGuard.js`
+  - バトル中の複数指タッチ、iOS gestureイベント、ダブルタップ拡大、Ctrl+Wheelズームを抑止。
+
+- `program/v039/battle.css`
+  - 通常バトル側にも `touch-action: none` を適用。
+
+- `index.html`
+  - `inputGuard.js` を読み込み。
+  - viewportをゲーム向けに強化。
+  - 表記を v039_71 へ更新。
+
+## 注意
+
+OSやブラウザのアクセシビリティ拡大は完全には止められない場合があります。今回の修正は、Webアプリとして制御可能な範囲で、ゲーム操作面の誤ピンチ・誤ダブルタップを防ぐものです。

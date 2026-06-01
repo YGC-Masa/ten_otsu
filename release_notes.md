@@ -1,3 +1,13 @@
+# v039_71
+
+- ビリビリバトル中のひだまりメンバー入力を修正。
+- バトル中のピンチズーム・ダブルタップ拡大抑止を追加。
+
+# v039_71
+
+- ビリビリバトル中のひだまりメンバー入力を修正。
+- バトル中のピンチズーム・ダブルタップ拡大抑止を追加。
+
 /* v038_16 Surface Manager Takeover - verified boot candidate
    Single authority for non-ADV surfaces. Designed to survive broken/old boot flow.
 */

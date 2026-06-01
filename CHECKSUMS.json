@@ -1,6 +1,11 @@
 {
-  "version": "v039_70",
+  "version": "v039_71",
   "files": [
+    {
+      "path": "CHECKSUMS.json",
+      "size": 94146,
+      "sha256": "87fd33b606efb69728fa6c085fe274948d053d7f5c0f05de455ea56442c4043d"
+    },
     {
       "path": "DELETE_FILES.txt",
       "size": 0,
@@ -8,8 +13,8 @@
     },
     {
       "path": "README_DIFF.md",
-      "size": 703,
-      "sha256": "1c906af9d1d22b9c32bc9e9870347c2d18583804e4efcd99cc9cd13ae22a3198"
+      "size": 1455,
+      "sha256": "bbce4c48c7dd52749c08e9a40c56c476761927f559c4e4f74eb5869d349d310a"
     },
     {
       "path": "README_GITHUB_LAYOUT.md",
@@ -28,8 +33,8 @@
     },
     {
       "path": "VALIDATION.json",
-      "size": 304,
-      "sha256": "11de42142811d1fd1d420cea083e337eb7909f623f8dbf890c6cb0dee596cc6f"
+      "size": 452,
+      "sha256": "e3068f4fcb60016bf86a9db133d06906646282c13a23c63286a2e676fa219b39"
     },
     {
       "path": "favicon.ico",
@@ -1618,8 +1623,8 @@
     },
     {
       "path": "index.html",
-      "size": 2336,
-      "sha256": "0fa68e1b878501de36f748ec3441eec70e607a08c854823224bd5012d02de1c4"
+      "size": 2455,
+      "sha256": "77498c773b19f438bb5fecddbc5f6ad14a445af16ae43482c0899021e263bcf1"
     },
     {
       "path": "program/Readme.md",
@@ -2202,6 +2207,11 @@
       "sha256": "bab3208811670b04175af93a5a47dc975eeb3f5afc5e9f958c1b953a90fa4d0e"
     },
     {
+      "path": "program/docs/v039_71_rival_input_and_pinch_guard.md",
+      "size": 1219,
+      "sha256": "c9091e2e8c04af1f8c96f771a484345e86111da7b32f0b1dcb6232db97ef73ee"
+    },
+    {
       "path": "program/effect.js",
       "size": 3821,
       "sha256": "6cd897140c5060ac3d2d1a0ce9d5fc16cbf293d61b9765181e53c7739e5e089d"
@@ -2293,8 +2303,8 @@
     },
     {
       "path": "program/v039/battle.css",
-      "size": 141401,
-      "sha256": "c21c805472a529c9d78cfec1b9bce7c0e91326612d8e4b33864e5522935a70e7"
+      "size": 141731,
+      "sha256": "5921f8c34fe92ddc9d25906cd0c8a381e1eda9365932f45ab4604adf4e82f0a4"
     },
     {
       "path": "program/v039/battle.js",
@@ -2337,6 +2347,11 @@
       "sha256": "375423925215244d57d0c882760cfffa79b3ff6cbe60133db86abefc8ad3ce41"
     },
     {
+      "path": "program/v039/inputGuard.js",
+      "size": 2777,
+      "sha256": "b74380e349182e996c03e5bd527a54d5b639fea022263ad18aae725ecbd02415"
+    },
+    {
       "path": "program/v039/layers.js",
       "size": 15502,
       "sha256": "b8f567faf0af10b80acede8296f82fc32fb8320064d7c735c0932dae1c9e80f8"
@@ -2353,13 +2368,13 @@
     },
     {
       "path": "program/v039/rivalBattle.css",
-      "size": 12649,
-      "sha256": "fd1e6bcec1b1a4d3ef252d20fee2db8b9d75507ac1952e3cce30c50d51a700af"
+      "size": 13309,
+      "sha256": "37a70b6305cda091aaf3fc26d90ff329c6fe5e26b3d7671806e993cd11b44e80"
     },
     {
       "path": "program/v039/rivalBattle.js",
-      "size": 40115,
-      "sha256": "25ec65d58f648151259c3b92aeaa5b3e0c507e9f629a58082fff8e67050538ad"
+      "size": 41952,
+      "sha256": "1344e7e0a81f6ffdd80cb4c323fc772c0768e23a7aaa70004156a36e179fac75"
     },
     {
       "path": "program/v039/sales.js",
@@ -2378,8 +2393,8 @@
     },
     {
       "path": "program/v039/state.js",
-      "size": 651,
-      "sha256": "aa33d833ec0f881745d88a47cd64f968a037c814ccc840dd4ee32569df095da3"
+      "size": 663,
+      "sha256": "df8e5f94d89275636e0c7cbff85caa11c5c961ab723f038ff3582ce64151dc4d"
     },
     {
       "path": "program/v039/storyPlayer.js",
@@ -2398,8 +2413,8 @@
     },
     {
       "path": "release_notes.md",
-      "size": 24139,
-      "sha256": "aa755bce7253ad4c5e9380f8295814a9ee76d3b8b921f1691afd32270c09fb4b"
+      "size": 24469,
+      "sha256": "946372464f26f7d9b20ec5b37ffd21aed31f65320a578fb28d716e26cee7c54c"
     },
     {
       "path": "scenario/data/character_expressions.json",

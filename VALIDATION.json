@@ -1,11 +1,16 @@
 {
-  "version": "v039_70",
-  "base": "v039_69",
+  "version": "v039_71",
+  "base": "v039_70",
   "buildLabelUpdated": true,
-  "settingsResetButtonsAdded": true,
-  "settingsCallsStaminaRecoverAll": true,
-  "settingsCallsBattlePointRecoverAll": true,
-  "coinLabelInRivalStart": true,
-  "coinLabelInRivalResult": true,
-  "coinStorageCompatibility": true
+  "inputGuardAdded": true,
+  "indexLoadsInputGuard": true,
+  "viewportPinchGuardStrengthened": true,
+  "rivalPointerUpHandlerAdded": true,
+  "rivalTouchEndHandlerAdded": true,
+  "rivalStaffDelegatedInput": true,
+  "rivalDuplicateInputGuard": true,
+  "rivalStaffPointerEventsFixed": true,
+  "battleTouchActionNone": true,
+  "rivalTouchActionNone": true,
+  "jsSyntaxOk": true
 }

@@ -1,4 +1,4 @@
-/* v039_70 biribiri rival battle VS CPU + coin label
+/* v039_71 biribiri rival battle input fix + pinch guard
  * 通常バトル BattleProto.openBattle() をラップし、currentBattleType === "rival" の時だけ
  * 小春・真冬・なつのVS CPUバトルへ差し替える。
  */
@@ -6,7 +6,7 @@
   "use strict";
 
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  const VERSION = "v039_70_resource_reset_coin_label";
+  const VERSION = "v039_71_rival_member_input_pinch_guard";
   const ROOT_ID = "rival-battle-root";
   const STORAGE_KEY = "tenotsu_biribiri_rival_rewards_v1";
   const BATTLE_SECONDS = 45;
@@ -92,6 +92,7 @@
   let originalOpenBattle = null;
   let originalCloseBattle = null;
   let originalBattleProto = null;
+  let lastHandledInput = { key: "", time: 0 };
 
   function escapeHtml(value) {
     return String(value == null ? "" : value).replace(/[&<>"]/g, function (ch) {
@@ -102,6 +103,60 @@
   function nowMs() { return performance.now(); }
   function rand(min, max) { return min + Math.random() * (max - min); }
   function clamp(num, min, max) { return Math.max(min, Math.min(max, num)); }
+
+
+  function inputKey(hit) {
+    if (!hit) return "";
+    return hit.type + ":" + String(hit.value == null ? "" : hit.value);
+  }
+
+  function markInputHandled(hit) {
+    lastHandledInput = { key: inputKey(hit), time: Date.now() };
+  }
+
+  function wasInputHandledRecently(hit, ms = 420) {
+    const key = inputKey(hit);
+    return !!key && lastHandledInput.key === key && Date.now() - lastHandledInput.time < ms;
+  }
+
+  function findInteractiveHit(target) {
+    if (!root || !target || !root.contains(target)) return null;
+    const actionEl = target.closest && target.closest("[data-rival-action]");
+    if (actionEl) return { type: "action", value: actionEl.dataset.rivalAction || "" };
+    const staffEl = target.closest && target.closest("[data-rival-staff]");
+    if (staffEl) return { type: "staff", value: staffEl.dataset.rivalStaff || "" };
+    const enemyEl = target.closest && target.closest("[data-rival-enemy]");
+    if (enemyEl) return { type: "enemy", value: Number(enemyEl.dataset.rivalEnemy) || 0 };
+    return null;
+  }
+
+  function cancelBattleInputEvent(event) {
+    if (!event) return;
+    if (event.cancelable !== false && typeof event.preventDefault === "function") event.preventDefault();
+    if (typeof event.stopPropagation === "function") event.stopPropagation();
+  }
+
+  function dispatchInteractiveHit(hit) {
+    if (!hit) return;
+    if (hit.type === "action") {
+      if (hit.value === "start") startBattle(false);
+      else if (hit.value === "auto") startBattle(true);
+      else if (hit.value === "close") closeRivalBattle();
+      else if (hit.value === "restart") startBattle(false);
+      else if (hit.value === "help") useHelp();
+      return;
+    }
+    if (hit.type === "staff") {
+      handleStaff(hit.value);
+      return;
+    }
+    if (hit.type === "enemy" && state && state.running) {
+      const id = Number(hit.value) || 0;
+      state.targetEnemyId = state.targetEnemyId === id ? null : id;
+      state.lastActionText = state.targetEnemyId ? "優先対応する家電星人を指定しました。" : "優先指定を解除しました。";
+      render();
+    }
+  }
 
   function getBattleType(options) {
     return (options && options.battleType) ||
@@ -237,6 +292,8 @@
       root.className = "rival-battle-root hidden";
       document.body.appendChild(root);
       root.addEventListener("pointerdown", handlePointer, { passive: false });
+      root.addEventListener("pointerup", handlePointerRelease, { passive: false });
+      root.addEventListener("touchend", handleTouchRelease, { passive: false });
       root.addEventListener("click", handleClick, { passive: false });
     }
   }
@@ -247,7 +304,7 @@
     state = makeState(options || {});
     root.classList.remove("hidden");
     document.body.classList.add("battle-screen", "rival-battle-screen");
-    try { ns.setMode && ns.setMode("battle"); } catch (_) {}
+    try { ns.setMode && ns.setMode("rivalBattle"); } catch (_) {}
     render();
   }
 
@@ -692,37 +749,36 @@
   }
 
   function handlePointer(event) {
-    if (!root || !root.contains(event.target)) return;
-    const staff = event.target.closest("[data-rival-staff]");
-    const enemy = event.target.closest("[data-rival-enemy]");
-    const action = event.target.closest("[data-rival-action]");
-    if (staff || enemy || action) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+    const hit = findInteractiveHit(event.target);
+    if (!hit) return;
+    cancelBattleInputEvent(event);
+  }
+
+  function handlePointerRelease(event) {
+    const hit = findInteractiveHit(event.target);
+    if (!hit) return;
+    cancelBattleInputEvent(event);
+    if (wasInputHandledRecently(hit, 260)) return;
+    markInputHandled(hit);
+    dispatchInteractiveHit(hit);
+  }
+
+  function handleTouchRelease(event) {
+    const hit = findInteractiveHit(event.target);
+    if (!hit) return;
+    cancelBattleInputEvent(event);
+    if (wasInputHandledRecently(hit, 360)) return;
+    markInputHandled(hit);
+    dispatchInteractiveHit(hit);
   }
 
   function handleClick(event) {
-    if (!root || !root.contains(event.target)) return;
-    const actionEl = event.target.closest("[data-rival-action]");
-    if (actionEl) {
-      const action = actionEl.dataset.rivalAction;
-      if (action === "start") startBattle(false);
-      else if (action === "auto") startBattle(true);
-      else if (action === "close") closeRivalBattle();
-      else if (action === "restart") startBattle(false);
-      else if (action === "help") useHelp();
-      return;
-    }
-    const staffEl = event.target.closest("[data-rival-staff]");
-    if (staffEl) return handleStaff(staffEl.dataset.rivalStaff);
-    const enemyEl = event.target.closest("[data-rival-enemy]");
-    if (enemyEl && state && state.running) {
-      const id = Number(enemyEl.dataset.rivalEnemy);
-      state.targetEnemyId = state.targetEnemyId === id ? null : id;
-      state.lastActionText = state.targetEnemyId ? "優先対応する家電星人を指定しました。" : "優先指定を解除しました。";
-      render();
-    }
+    const hit = findInteractiveHit(event.target);
+    if (!hit) return;
+    cancelBattleInputEvent(event);
+    if (wasInputHandledRecently(hit, 520)) return;
+    markInputHandled(hit);
+    dispatchInteractiveHit(hit);
   }
 
   function render() {
