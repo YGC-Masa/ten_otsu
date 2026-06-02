@@ -1,4 +1,4 @@
-/* v039_85 event battle fullscreen action area + SAFEZONE */
+/* v039_86 event battle input/front layer + 4-lane fill */
 #event-battle-root.event-battle-root {
   position: fixed;
   inset: 0;
@@ -278,7 +278,7 @@ body.event-battle-screen { overscroll-behavior: none; }
 #event-battle-root .event-rush-lanes {
   min-height: 0;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 7px;
 }
 #event-battle-root .event-rush-lane {
@@ -324,8 +324,7 @@ body.event-battle-screen { overscroll-behavior: none; }
 }
 #event-battle-root .event-note-kick { background: linear-gradient(180deg, #31aaff, #2353d6); }
 #event-battle-root .event-note-snare { background: linear-gradient(180deg, #ff6f9e, #bb2c72); }
-#event-battle-root .event-note-high_tom { background: linear-gradient(180deg, #62f876, #1d8e4f); }
-#event-battle-root .event-note-low_tom { background: linear-gradient(180deg, #ffa856, #b65721); }
+#event-battle-root .event-note-tom { background: linear-gradient(180deg, #62f876, #d47a28); }
 #event-battle-root .event-note-crash { background: linear-gradient(180deg, #ffe970, #d49c13); color: #201500; }
 #event-battle-root .event-note-hat_ghost,
 #event-battle-root .event-note.ghost {
@@ -355,8 +354,7 @@ body.event-battle-screen { overscroll-behavior: none; }
 }
 #event-battle-root .event-rush-lane-kick button { background: linear-gradient(180deg, #31aaff, #2353d6); }
 #event-battle-root .event-rush-lane-snare button { background: linear-gradient(180deg, #ff6f9e, #bb2c72); }
-#event-battle-root .event-rush-lane-high_tom button { background: linear-gradient(180deg, #62f876, #1d8e4f); }
-#event-battle-root .event-rush-lane-low_tom button { background: linear-gradient(180deg, #ffa856, #b65721); }
+#event-battle-root .event-rush-lane-tom button { background: linear-gradient(180deg, #62f876, #d47a28); }
 #event-battle-root .event-rush-lane-crash button { background: linear-gradient(180deg, #ffe970, #d49c13); color: #2d1d00; }
 #event-battle-root .event-rush-hihat {
   text-align: center;
@@ -416,7 +414,7 @@ body.event-battle-screen { overscroll-behavior: none; }
   background: transparent;
   border: 0;
   box-shadow: none;
-  z-index: 5;
+  z-index: 45;
 }
 #event-battle-root .event-tap-target i,
 #event-battle-root .event-tap-target b {
@@ -453,7 +451,7 @@ body.event-battle-screen { overscroll-behavior: none; }
 }
 #event-battle-root .event-flick-arrow {
   position: absolute;
-  z-index: 4;
+  z-index: 46;
   transform: translate(-50%, -50%);
   display: grid;
   place-items: center;
@@ -461,15 +459,15 @@ body.event-battle-screen { overscroll-behavior: none; }
   min-width: clamp(76px, 12vw, 128px);
   min-height: clamp(54px, 8vw, 88px);
   border-radius: 18px;
-  border: 2px solid rgba(111, 255, 126, 0.75);
-  background: linear-gradient(180deg, rgba(78, 240, 114, 0.30), rgba(18, 78, 44, 0.62));
-  box-shadow: 0 0 24px rgba(78,240,114,0.35), inset 0 0 14px rgba(255,255,255,0.10);
+  border: 2px solid rgba(255, 232, 90, 0.82);
+  background: linear-gradient(180deg, rgba(255, 220, 56, 0.34), rgba(126, 82, 12, 0.68));
+  box-shadow: 0 0 24px rgba(255,218,68,0.46), inset 0 0 14px rgba(255,255,255,0.10);
   pointer-events: none;
 }
 #event-battle-root .event-flick-arrow b {
   font-size: clamp(25px, 4.5vw, 48px);
   line-height: 1;
-  color: #a9ffaf;
+  color: #fff36a;
 }
 #event-battle-root .event-flick-arrow span {
   font-size: clamp(10px, 1.35vw, 13px);
@@ -590,7 +588,7 @@ body.event-battle-screen { overscroll-behavior: none; }
 }
 
 
-/* v039_85: normal/rush play area expands to fullscreen with explicit SAFEZONE */
+/* v039_85 base: normal/rush play area expands to fullscreen with explicit SAFEZONE */
 #event-battle-root.event-battle-root {
   --event-safe-x: clamp(28px, 4.8vw, 72px);
   --event-safe-y: clamp(18px, 3.8vh, 54px);
@@ -614,7 +612,7 @@ body.event-battle-screen { overscroll-behavior: none; }
   left: var(--event-safe-left);
   right: var(--event-safe-right);
   top: calc(env(safe-area-inset-top) + 8px);
-  z-index: 30;
+  z-index: 50;
   pointer-events: none;
   margin: 0;
   padding: 7px 12px;
@@ -626,7 +624,7 @@ body.event-battle-screen { overscroll-behavior: none; }
   left: var(--event-safe-left);
   right: var(--event-safe-right);
   top: calc(env(safe-area-inset-top) + clamp(58px, 11vh, 94px));
-  z-index: 28;
+  z-index: 18;
   pointer-events: none;
   padding: 7px 10px;
   max-height: clamp(78px, 20vh, 158px);
@@ -681,7 +679,7 @@ body.event-battle-screen { overscroll-behavior: none; }
 #event-battle-root .event-phase-normal .event-normal-panel {
   position: absolute;
   inset: 0;
-  z-index: 5;
+  z-index: 40;
   border: 0;
   border-radius: 0;
   padding: 0;
@@ -802,3 +800,71 @@ body.event-battle-screen { overscroll-behavior: none; }
     bottom: var(--event-safe-bottom);
   }
 }
+
+
+/* v039_86: input effects must stay in front of the black alien UI */
+#event-battle-root .event-phase-normal .event-normal-action-field,
+#event-battle-root .event-phase-normal .event-tap-target,
+#event-battle-root .event-phase-normal .event-flick-arrow,
+#event-battle-root .event-phase-normal .event-double-target {
+  z-index: 60;
+}
+#event-battle-root .event-phase-normal .event-battle-boss-area {
+  opacity: 0.72;
+}
+#event-battle-root .event-double-target {
+  position: absolute;
+  width: clamp(58px, 8.5vw, 96px);
+  height: clamp(58px, 8.5vw, 96px);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 3px solid rgba(255, 125, 212, 0.92);
+  background: radial-gradient(circle at 45% 35%, rgba(255, 210, 242, 0.92), rgba(255, 69, 184, 0.74) 46%, rgba(121, 24, 108, 0.84) 100%);
+  box-shadow: 0 0 26px rgba(255, 89, 199, 0.52), inset 0 0 14px rgba(255,255,255,0.18);
+  display: grid;
+  place-items: center;
+  padding: 0;
+}
+#event-battle-root .event-double-target b {
+  display: block;
+  font-size: clamp(18px, 3.2vw, 34px);
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.55);
+}
+#event-battle-root .event-double-target span {
+  display: block;
+  margin-top: -12px;
+  font-size: clamp(9px, 1.2vw, 12px);
+  color: rgba(255,255,255,0.92);
+  font-weight: 1000;
+}
+#event-battle-root .event-double-target.is-armed {
+  animation: eventDoubleArmed 0.22s infinite alternate;
+  border-color: #fff36a;
+}
+@keyframes eventDoubleArmed {
+  from { transform: translate(-50%, -50%) scale(1); filter: brightness(1); }
+  to { transform: translate(-50%, -50%) scale(1.08); filter: brightness(1.45); }
+}
+#event-battle-root .event-phase-rush .event-battle-boss-area {
+  opacity: 0.44;
+  z-index: 10;
+}
+#event-battle-root .event-phase-rush .event-rush-panel {
+  top: var(--event-safe-top);
+  bottom: var(--event-safe-bottom);
+  z-index: 44;
+  background: linear-gradient(180deg, rgba(8, 10, 18, 0.80), rgba(5, 4, 10, 0.92));
+}
+#event-battle-root .event-rush-top b {
+  color: #fff36a;
+}
+#event-battle-root .event-rush-lane-track em {
+  top: 82%;
+}
+#event-battle-root .event-note {
+  transition: none;
+}
+
+#event-battle-root .event-hold-pair, #event-battle-root .event-hold-zone, #event-battle-root .event-hold-bolt { display:none !important; }

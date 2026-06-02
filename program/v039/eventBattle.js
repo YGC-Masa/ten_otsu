@@ -1,12 +1,12 @@
-/* v039_85 eventBattle.js
- * イベントバトル：ブラック家電星人通常モード + ラッシュフィルイン。
- * v039_85では通常モードとラッシュの表示領域を画面全域ベースへ広げ、画面端SAFEZONEを追加する。
+/* v039_86 eventBattle.js
+ * イベントバトル：入力表示優先・通常モードHOLD廃止・4レーンフィルイン調整。
+ * v039_86ではサークル/スコア表示をブラック星人より前面へ出し、HOLDをダブルタップに変更する。
  */
 (function () {
   "use strict";
 
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  const VERSION = "v039_85_event_battle_fullscreen_safezone";
+  const VERSION = "v039_86_event_battle_input_lane_rework";
   const ROOT_ID = "event-battle-root";
   const BATTLE_SECONDS = 45;
   const SHIELD_MAX = 120;
@@ -14,13 +14,12 @@
   const BOSS_CHARGE_MAX = 100;
   const RESULT_STORAGE_KEY = "tenotsu_event_battle_rewards_v1";
 
-  const RUSH_BPM = 92;
+  const RUSH_BPM = 104;
   const RUSH_BEAT_MS = Math.round(60000 / RUSH_BPM);
-  const RUSH_LEAD_MS = 1700;
-  const RUSH_FALL_MS = 2600;
+  const RUSH_LEAD_MS = 950;
+  const RUSH_FALL_MS = 1850;
   const RUSH_END_MARGIN_MS = 1250;
-  const RUSH_COUNTDOWN_MS = 3200;
-  const TAP_TARGET_MIN = 2;
+    const TAP_TARGET_MIN = 2;
   const TAP_TARGET_MAX = 3;
   const TAP_TARGET_LIFETIME_MS = 2350;
   const TAP_TARGET_HIT_DELAY_MIN_MS = 860;
@@ -28,17 +27,16 @@
   const TAP_JUST_MS = 130;
   const TAP_GOOD_MS = 310;
   const FLICK_LIFETIME_MS = 2600;
-  const HOLD_READY_MS = 780;
-  const HOLD_MAX_MS = 2200;
+  const DOUBLE_TAP_LIFETIME_MS = 2450;
+  const DOUBLE_TAP_WINDOW_MS = 520;
   const RUSH_JUST_MS = 105;
   const RUSH_GOOD_MS = 230;
-  const RUSH_LANE_ORDER = ["KICK", "SNARE", "HIGH_TOM", "LOW_TOM", "CRASH"];
+  const RUSH_LANE_ORDER = ["KICK", "SNARE", "TOM", "CRASH"];
 
   const RUSH_LANES = {
     KICK: { label: "ドン", role: "KICK" },
     SNARE: { label: "タン", role: "SNARE" },
-    HIGH_TOM: { label: "タ", role: "HIGH TOM" },
-    LOW_TOM: { label: "トン", role: "LOW TOM" },
+    TOM: { label: "タム", role: "TOM" },
     CRASH: { label: "ジャーン", role: "CRASH" },
     HAT_GHOST: { label: "ツ", role: "HI-HAT/GHOST", ghost: true }
   };
@@ -66,7 +64,7 @@
       notes: [
         { lane: "KICK", label: "ドン", beat: 0.0 },
         { lane: "SNARE", label: "タン", beat: 1.0 },
-        { lane: "LOW_TOM", label: "ド", beat: 2.0 },
+        { lane: "TOM", label: "ド", beat: 2.0 },
         { lane: "KICK", label: "ド", beat: 2.5 },
         { lane: "SNARE", label: "タン", beat: 3.0 }
       ]
@@ -79,8 +77,8 @@
       difficulty: 1.15,
       notes: [
         { lane: "KICK", label: "ドン", beat: 0.0 },
-        { lane: "HIGH_TOM", label: "タ", beat: 1.0 },
-        { lane: "LOW_TOM", label: "ド", beat: 2.0 },
+        { lane: "TOM", label: "タ", beat: 1.0 },
+        { lane: "TOM", label: "ド", beat: 2.0 },
         { lane: "KICK", label: "ドン", beat: 2.5 },
         { lane: "SNARE", label: "タン", beat: 3.0 }
       ]
@@ -93,11 +91,11 @@
       difficulty: 1.2,
       notes: [
         { lane: "KICK", label: "ドン", beat: 0.0 },
-        { lane: "HIGH_TOM", label: "タ", beat: 1.0 },
-        { lane: "LOW_TOM", label: "ド", beat: 2.0 },
+        { lane: "TOM", label: "タ", beat: 1.0 },
+        { lane: "TOM", label: "ド", beat: 2.0 },
         { lane: "KICK", label: "ドン", beat: 2.5 },
-        { lane: "HIGH_TOM", label: "タ", beat: 3.0 },
-        { lane: "LOW_TOM", label: "ド", beat: 3.5 }
+        { lane: "TOM", label: "タ", beat: 3.0 },
+        { lane: "TOM", label: "ド", beat: 3.5 }
       ]
     },
     {
@@ -108,11 +106,11 @@
       difficulty: 1.25,
       notes: [
         { lane: "KICK", label: "ドン", beat: 0.0 },
-        { lane: "HIGH_TOM", label: "タ", beat: 1.0 },
-        { lane: "LOW_TOM", label: "ド", beat: 2.0 },
+        { lane: "TOM", label: "タ", beat: 1.0 },
+        { lane: "TOM", label: "ド", beat: 2.0 },
         { lane: "HAT_GHOST", label: "ツ", beat: 2.5, ghost: true },
         { lane: "HAT_GHOST", label: "ツ", beat: 2.75, ghost: true },
-        { lane: "HIGH_TOM", label: "タ", beat: 3.0 },
+        { lane: "TOM", label: "タ", beat: 3.0 },
         { lane: "HAT_GHOST", label: "ツ", beat: 3.5, ghost: true }
       ]
     },
@@ -126,7 +124,7 @@
         { lane: "KICK", label: "ドン", beat: 0.0 },
         { lane: "SNARE", label: "タン", beat: 1.0 },
         { lane: "HAT_GHOST", label: "ツ", beat: 1.5, ghost: true },
-        { lane: "LOW_TOM", label: "ド", beat: 2.0 },
+        { lane: "TOM", label: "ド", beat: 2.0 },
         { lane: "SNARE", label: "タン", beat: 3.0 }
       ]
     },
@@ -138,9 +136,9 @@
       difficulty: 1.2,
       notes: [
         { lane: "KICK", label: "ドン", beat: 0.0 },
-        { lane: "HIGH_TOM", label: "タ", beat: 1.0 },
+        { lane: "TOM", label: "タ", beat: 1.0 },
         { lane: "KICK", label: "ドン", beat: 2.0 },
-        { lane: "LOW_TOM", label: "ド", beat: 2.5 },
+        { lane: "TOM", label: "ド", beat: 2.5 },
         { lane: "SNARE", label: "タン", beat: 3.0 }
       ]
     }
@@ -158,9 +156,9 @@
         { lane: "SNARE", label: "タン", beat: 1.0 },
         { lane: "KICK", label: "ドン", beat: 2.0 },
         { lane: "SNARE", label: "タン", beat: 3.0 },
-        { lane: "HIGH_TOM", label: "タ", beat: 4.0 },
-        { lane: "LOW_TOM", label: "カ", beat: 4.5 },
-        { lane: "LOW_TOM", label: "トン", beat: 5.5 },
+        { lane: "TOM", label: "タ", beat: 4.0 },
+        { lane: "TOM", label: "カ", beat: 4.5 },
+        { lane: "TOM", label: "トン", beat: 5.5 },
         { lane: "CRASH", label: "ジャーン", beat: 7.0 }
       ]
     },
@@ -174,9 +172,9 @@
         { lane: "KICK", label: "ドン", beat: 0.0 },
         { lane: "KICK", label: "ドン", beat: 1.0 },
         { lane: "SNARE", label: "タン", beat: 2.0 },
-        { lane: "HIGH_TOM", label: "タ", beat: 3.0 },
-        { lane: "LOW_TOM", label: "カ", beat: 3.5 },
-        { lane: "LOW_TOM", label: "トン", beat: 4.5 },
+        { lane: "TOM", label: "タ", beat: 3.0 },
+        { lane: "TOM", label: "カ", beat: 3.5 },
+        { lane: "TOM", label: "トン", beat: 4.5 },
         { lane: "CRASH", label: "ジャーン", beat: 6.0 }
       ]
     },
@@ -189,11 +187,11 @@
       notes: [
         { lane: "KICK", label: "ドン", beat: 0.0 },
         { lane: "SNARE", label: "タン", beat: 1.0 },
-        { lane: "HIGH_TOM", label: "タ", beat: 2.0 },
-        { lane: "LOW_TOM", label: "カ", beat: 2.5 },
+        { lane: "TOM", label: "タ", beat: 2.0 },
+        { lane: "TOM", label: "カ", beat: 2.5 },
         { lane: "KICK", label: "ドン", beat: 3.5 },
         { lane: "SNARE", label: "タン", beat: 4.5 },
-        { lane: "LOW_TOM", label: "トン", beat: 5.5 },
+        { lane: "TOM", label: "トン", beat: 5.5 },
         { lane: "CRASH", label: "ジャーン", beat: 7.0 }
       ]
     },
@@ -206,9 +204,9 @@
       notes: [
         { lane: "SNARE", label: "タン", beat: 0.0 },
         { lane: "KICK", label: "ドン", beat: 1.0 },
-        { lane: "HIGH_TOM", label: "タ", beat: 2.0 },
-        { lane: "LOW_TOM", label: "カ", beat: 2.5 },
-        { lane: "LOW_TOM", label: "トン", beat: 3.5 },
+        { lane: "TOM", label: "タ", beat: 2.0 },
+        { lane: "TOM", label: "カ", beat: 2.5 },
+        { lane: "TOM", label: "トン", beat: 3.5 },
         { lane: "KICK", label: "ドン", beat: 4.5 },
         { lane: "CRASH", label: "ジャーン", beat: 6.0 }
       ]
@@ -318,19 +316,15 @@
       rushCombo: 0,
       rushMaxCombo: 0,
       score: 0,
-      inputText: "開始すると、サークルTAP・矢印FLICK・両手HOLDでノイズシールドを削ります。",
-      notice: "シールド0でラッシュ演出後、5レーンのフィルインに入ります。",
+      inputText: "開始すると、サークルTAP・黄色矢印FLICK・ピンクDOUBLE TAPでノイズシールドを削ります。",
+      notice: "シールド0で4レーンのフィルインへ直接入ります。",
       judgeText: "",
       flickDir: randomDir(),
-      holdStartedAt: 0,
       normalSeq: 0,
       tapTargets: [],
       flickChallenge: null,
-      holdChallenge: null,
-      holdPointers: {},
-      holdRelease: {},
+      doubleChallenge: null,
       selectedRushPattern: null,
-      rushIntro: null,
       rush: null,
       resultSaved: false
     };
@@ -398,28 +392,26 @@
     };
   }
 
-  function ensureHoldChallenge(force) {
+  function ensureDoubleTapChallenge(force) {
     if (!state || state.phase !== "normal") return;
     const t = nowMs();
-    if (state.holdChallenge && !state.holdChallenge.done && t < state.holdChallenge.expiresAt) return;
-    if (!force && Math.random() > 0.18) return;
-    state.holdChallenge = {
-      id: nextNormalId("hold"),
+    if (state.doubleChallenge && !state.doubleChallenge.done && t < state.doubleChallenge.expiresAt) return;
+    if (!force && Math.random() > 0.20) return;
+    state.doubleChallenge = {
+      id: nextNormalId("double"),
+      x: Math.round(rand(12, 88)),
+      y: Math.round(rand(18, 82)),
       bornAt: t,
-      expiresAt: t + HOLD_MAX_MS + 1200,
-      readyAt: 0,
-      charged: false,
-      done: false,
-      resultAt: 0
+      expiresAt: t + DOUBLE_TAP_LIFETIME_MS,
+      firstTapAt: 0,
+      done: false
     };
-    state.holdPointers = {};
-    state.holdRelease = {};
   }
 
   function ensureNormalChallenges() {
     ensureTapTargets();
     ensureFlickChallenge(false);
-    ensureHoldChallenge(false);
+    ensureDoubleTapChallenge(false);
   }
 
   function expireNormalChallenges() {
@@ -447,12 +439,10 @@
       addScore(8, "MISS");
       state.flickChallenge = null;
     }
-    if (state.holdChallenge && !state.holdChallenge.done && t > state.holdChallenge.expiresAt) {
-      state.holdChallenge.done = true;
-      state.holdPointers = {};
-      state.holdRelease = {};
-      damageShield(4, "MISS", "HOLD失敗。左右ホールドから外側フリックへつなげてください。", { noRender: true });
-      state.holdChallenge = null;
+    if (state.doubleChallenge && !state.doubleChallenge.done && t > state.doubleChallenge.expiresAt) {
+      state.doubleChallenge.done = true;
+      damageShield(5, "MISS", "DOUBLE TAPを逃しました。ピンクの印を素早く2回叩いてください。", { noRender: true });
+      state.doubleChallenge = null;
     }
     if (before !== state.tapTargets.length) ensureTapTargets();
   }
@@ -471,10 +461,6 @@
     return "MISS";
   }
 
-  function holdIsCharged() {
-    if (!state || !state.holdChallenge) return false;
-    return !!state.holdChallenge.charged;
-  }
 
   function laneInfo(lane) {
     return RUSH_LANES[lane] || { label: lane, role: lane };
@@ -507,14 +493,14 @@
     state.phase = "normal";
     state.startedAt = nowMs();
     state.endsAt = state.startedAt + BATTLE_SECONDS * 1000;
-    state.inputText = "通常モード開始。青サークルTAP、緑矢印FLICK、ピンク両手HOLDでシールドを削ります。";
+    state.inputText = "通常モード開始。青サークルTAP、黄色矢印FLICK、ピンクDOUBLE TAPでシールドを削ります。";
     state.notice = "青サークルは大きな水色リングが重なった瞬間に押すとJUST。";
     state.tapTargets = [];
     state.flickChallenge = null;
-    state.holdChallenge = null;
+    state.doubleChallenge = null;
     ensureTapTargets();
     ensureFlickChallenge(true);
-    ensureHoldChallenge(false);
+    ensureDoubleTapChallenge(false);
     stopLoop();
     timerId = window.setInterval(tick, 60);
     render();
@@ -528,7 +514,6 @@
   function tick() {
     if (!state) return;
     if (state.phase === "normal") return tickNormal();
-    if (state.phase === "rushIntro") return tickRushIntro();
     if (state.phase === "rush") return tickRush();
   }
 
@@ -537,8 +522,7 @@
     state.left = left;
     expireNormalChallenges();
     ensureNormalChallenges();
-    updateHoldCharge();
-    state.bossCharge = Math.min(BOSS_CHARGE_MAX, state.bossCharge + 0.9);
+        state.bossCharge = Math.min(BOSS_CHARGE_MAX, state.bossCharge + 0.9);
     if (state.bossCharge >= BOSS_CHARGE_MAX) {
       state.bossCharge = 0;
       state.shield = Math.min(state.shieldMax, state.shield + 5);
@@ -549,16 +533,6 @@
     else render();
   }
 
-  function tickRushIntro() {
-    if (!state || !state.rushIntro) return;
-    const t = nowMs();
-    const leftMs = Math.max(0, state.rushIntro.endsAt - t);
-    const count = Math.ceil(leftMs / 1000);
-    state.judgeText = count > 0 ? String(count) : "GO";
-    state.notice = "これよりラッシュモード。ハイハットの裏リズムに乗って、5レーンのフィルインを叩きます。";
-    if (t >= state.rushIntro.endsAt) return beginRushMode();
-    render();
-  }
 
   function tickRush() {
     if (!state.rush) return;
@@ -642,7 +616,7 @@
     if (!state || state.phase !== "normal") return;
     const challenge = state.flickChallenge;
     if (!challenge || challenge.done) {
-      damageShield(4, "MISS", "FLICK対象がありません。緑の矢印が出たら方向へ流してください。", { noRender: true });
+      damageShield(4, "MISS", "FLICK対象がありません。黄色の矢印が出たら方向へ流してください。", { noRender: true });
       render();
       return;
     }
@@ -659,94 +633,55 @@
     render();
   }
 
-  function handleHoldResult(rating, message) {
+  function handleDoubleTap(targetId) {
     if (!state || state.phase !== "normal") return;
-    if (state.holdChallenge) state.holdChallenge.done = true;
-    state.holdPointers = {};
-    state.holdRelease = {};
-    state.holdChallenge = null;
-    if (rating === "JUST") damageShield(34, "JUST", message || "JUST HOLD！ 左右同時放電が成功しました。", { noRender: true });
-    else if (rating === "GOOD") damageShield(20, "GOOD", message || "HOLD成功。ビリビリ放電でシールドを削りました。", { noRender: true });
-    else damageShield(5, "MISS", message || "HOLD失敗。左右を押してから外側へフリックしてください。", { noRender: true });
-    ensureHoldChallenge(false);
-    render();
-  }
-
-  function updateHoldCharge() {
-    const hc = state && state.holdChallenge;
-    if (!hc || hc.done) return;
-    const left = state.holdPointers.left;
-    const right = state.holdPointers.right;
-    if (left && right) {
-      if (!hc.readyAt) hc.readyAt = nowMs() + HOLD_READY_MS;
-      if (!hc.charged && nowMs() >= hc.readyAt) {
-        hc.charged = true;
-        state.notice = "HOLD充電完了！ 左右を同時に外側へフリック。";
-        state.judgeText = "READY";
-      }
+    const challenge = state.doubleChallenge;
+    if (!challenge || challenge.done || challenge.id !== targetId) {
+      damageShield(4, "MISS", "DOUBLE TAP対象がありません。ピンクの印が出たら2回叩いてください。", { noRender: true });
+      render();
+      return;
+    }
+    const t = nowMs();
+    if (!challenge.firstTapAt) {
+      challenge.firstTapAt = t;
+      state.notice = "DOUBLE TAP！ もう一度すばやく叩いてください。";
+      state.judgeText = "TAP×2";
+      render();
+      return;
+    }
+    const delta = t - challenge.firstTapAt;
+    challenge.done = true;
+    state.doubleChallenge = null;
+    if (delta <= DOUBLE_TAP_WINDOW_MS) {
+      damageShield(28, "JUST", "JUST DOUBLE TAP！ ピンク同期でノイズを大きく削りました。", { noRender: true });
     } else {
-      hc.readyAt = 0;
-      hc.charged = false;
+      damageShield(12, "GOOD", "GOOD DOUBLE TAP。少し遅れましたが同期できました。", { noRender: true });
     }
-  }
-
-  function registerHoldPointer(side, event) {
-    if (!state || state.phase !== "normal") return;
-    ensureHoldChallenge(true);
-    if (!state.holdChallenge || state.holdChallenge.done) return;
-    state.holdPointers[side] = {
-      pointerId: event.pointerId,
-      x: event.clientX,
-      y: event.clientY,
-      startedAt: nowMs()
-    };
-    state.notice = "左右HOLD中……両方押すとビリビリエフェクトがつながります。";
+    ensureDoubleTapChallenge(false);
     render();
   }
 
-  function releaseHoldPointer(event) {
-    if (!state || state.phase !== "normal" || !state.holdChallenge) return;
-    const side = Object.keys(state.holdPointers).find((key) => state.holdPointers[key].pointerId === event.pointerId);
-    if (!side) return;
-    const info = state.holdPointers[side];
-    const dx = event.clientX - info.x;
-    const duration = nowMs() - info.startedAt;
-    delete state.holdPointers[side];
-    const outward = side === "left" ? dx < -28 : dx > 28;
-    state.holdRelease[side] = { outward, duration, at: nowMs() };
-    const l = state.holdRelease.left;
-    const r = state.holdRelease.right;
-    if (l && r && Math.abs(l.at - r.at) <= 620) {
-      if (state.holdChallenge.charged && l.outward && r.outward) return handleHoldResult("JUST", "JUST HOLD！ 左右同時外側フリックでノイズを放電しました。");
-      if (l.outward || r.outward) return handleHoldResult("GOOD", "HOLD放電。片側が少し遅れましたが成功です。");
-      return handleHoldResult("MISS", "HOLD失敗。完了後は左右外側へフリックしてください。");
-    }
-    if (duration < HOLD_READY_MS) handleHoldResult("MISS", "HOLDが短すぎました。左右を少し維持してください。");
-  }
+
+
+
 
   function startRushMode() {
     if (!state || state.phase !== "normal") return;
-    state.phase = "rushIntro";
     state.shield = 0;
     state.bossCharge = 0;
     state.combo = 0;
     state.rushCombo = 0;
     state.selectedRushPattern = pickRushPattern();
-    const t = nowMs();
-    state.rushIntro = {
-      startedAt: t,
-      endsAt: t + RUSH_COUNTDOWN_MS
-    };
-    state.inputText = "これよりラッシュモード！ 3カウント後、5レーンのドラムフィルインへ入ります。";
+    state.inputText = "シールド破壊。4レーンのフィルインへ入ります。";
     state.notice = `予定：${state.selectedRushPattern.introLabel} → ${state.selectedRushPattern.fillLabel}`;
-    state.judgeText = "3";
+    state.judgeText = "GO";
     stopLoop();
     timerId = window.setInterval(tick, 33);
-    render();
+    beginRushMode();
   }
 
   function beginRushMode() {
-    if (!state || state.phase !== "rushIntro") return;
+    if (!state || (state.phase !== "normal" && state.phase !== "rush")) return;
     state.phase = "rush";
     const startAt = nowMs();
     const notes = state.selectedRushPattern.notes.map((note, index) => {
@@ -762,7 +697,7 @@
       endsAt: lastTarget + RUSH_GOOD_MS + RUSH_END_MARGIN_MS,
       forceEndsAt: lastTarget + RUSH_FALL_MS + RUSH_END_MARGIN_MS + 1500
     };
-    state.inputText = "RUSH MODE！ 5レーンのドラムフィルインで撃破スコアを伸ばしてください。";
+    state.inputText = "4レーンのフィルインで撃破スコアを伸ばしてください。";
     state.notice = `選択パターン：${state.selectedRushPattern.introLabel} → ${state.selectedRushPattern.fillLabel}`;
     state.judgeText = "GO";
     render();
@@ -817,7 +752,7 @@
     if (fullCombo) state.score += 650;
     if (allJust) state.score += 900;
     state.bossHp = 0;
-    state.inputText = fullCombo ? "フルコンボ撃破！ ブラック家電星人のノイズをきれいに調律しました。" : "ラッシュ撃破！ ブラック家電星人を追い払いました。";
+    state.inputText = fullCombo ? "フルコンボ撃破！ ブラック家電星人のノイズをきれいに調律しました。" : "フィルイン撃破！ ブラック家電星人を追い払いました。";
     state.notice = allJust ? "ALL JUST！ 限定素材の抽選が有利になります。" : fullCombo ? "FULL COMBO！ イベントメダルにボーナス。" : "撃破は成功。コンボとJUSTで報酬が伸びます。";
     finishBattle(true, state.inputText);
   }
@@ -877,10 +812,10 @@
       event.preventDefault();
       return handleTap(tapTarget.dataset.tapTarget);
     }
-    const holdSide = event.target && event.target.closest ? event.target.closest("[data-hold-side]") : null;
-    if (holdSide) {
+    const doubleTarget = event.target && event.target.closest ? event.target.closest("[data-double-target]") : null;
+    if (doubleTarget) {
       event.preventDefault();
-      return registerHoldPointer(holdSide.dataset.holdSide, event);
+      return handleDoubleTap(doubleTarget.dataset.doubleTarget);
     }
     const field = event.target && event.target.closest ? event.target.closest(".event-normal-action-field") : null;
     if (!field) return;
@@ -896,10 +831,7 @@
 
   function onPointerUp(event) {
     if (!state || state.phase !== "normal") return;
-    if (state.holdPointers && Object.keys(state.holdPointers).some((key) => state.holdPointers[key].pointerId === event.pointerId)) {
-      event.preventDefault();
-      return releaseHoldPointer(event);
-    }
+
     if (!pointer || pointer.id !== event.pointerId) return;
     event.preventDefault();
     const dx = event.clientX - pointer.x;
@@ -944,7 +876,7 @@
           <div class="event-battle-message">${escapeHtml(state.inputText)}</div>
           <div class="event-battle-notice">${escapeHtml(state.notice)}</div>
         </div>
-        ${state.phase === "ready" ? renderReady() : state.phase === "result" ? renderResult() : state.phase === "rushIntro" ? renderRushIntro() : state.phase === "rush" ? renderRushControls() : renderNormalControls()}
+        ${state.phase === "ready" ? renderReady() : state.phase === "result" ? renderResult() : state.phase === "rush" ? renderRushControls() : renderNormalControls()}
       </section>
     `;
     bindButtons();
@@ -955,7 +887,7 @@
       <div class="event-battle-ready">
         <div class="event-ready-card">
           <b>通常モード</b>
-          <p>タップ・フリック・ホールドでノイズシールドを削ります。シールド0で5レーンのラッシュモードへ進みます。</p>
+          <p>タップ・フリック・ダブルタップでノイズシールドを削ります。シールド0で4レーンのフィルインへ進みます。</p>
           <button type="button" data-event-action="start">イベントバトル開始</button>
           <button type="button" data-event-action="close">戻る</button>
         </div>
@@ -965,8 +897,7 @@
 
   function renderNormalControls() {
     const flick = state.flickChallenge || { dir: state.flickDir, x: 50, y: 50 };
-    const hold = state.holdChallenge;
-    const holdCharged = holdIsCharged();
+    const doubleTap = state.doubleChallenge;
     const targetHtml = (state.tapTargets || []).map((target) => {
       const scale = tapTargetRingScale(target);
       const timing = tapTargetTiming(target).toLowerCase();
@@ -981,58 +912,41 @@
         <b>${escapeHtml(dirSymbol(flick.dir))}</b><span>${escapeHtml(dirLabel(flick.dir))}へフリック</span>
       </div>
     ` : "";
-    const holdHtml = hold && !hold.done ? `
-      <div class="event-hold-pair ${holdCharged ? "is-charged" : ""}">
-        <button type="button" class="event-hold-zone event-hold-left" data-hold-side="left"><b>←</b><span>HOLD</span></button>
-        <div class="event-hold-bolt"><i></i><span>${holdCharged ? "外側へフリック！" : "左右を同時HOLD"}</span></div>
-        <button type="button" class="event-hold-zone event-hold-right" data-hold-side="right"><b>→</b><span>HOLD</span></button>
-      </div>
+    const doubleHtml = doubleTap && !doubleTap.done ? `
+      <button type="button" class="event-double-target ${doubleTap.firstTapAt ? "is-armed" : ""}" data-double-target="${escapeHtml(doubleTap.id)}" style="left:${doubleTap.x}%; top:${doubleTap.y}%;">
+        <b>×2</b><span>${doubleTap.firstTapAt ? "もう一度" : "DOUBLE"}</span>
+      </button>
     ` : "";
     return `
       <div class="event-normal-panel">
         <div class="event-normal-guide">
           <span>青：SAFEZONE内：リングが重なったらTAP</span>
-          <span>緑：矢印方向へFLICK</span>
-          <span>桃：左右HOLD後に外側FLICK</span>
+          <span>黄：矢印方向へFLICK</span>
+          <span>桃：素早くDOUBLE TAP</span>
         </div>
         <div class="event-normal-action-field">
           ${targetHtml}
           ${flickHtml}
-          ${holdHtml}
-          <div class="event-field-caption">SAFEZONE内の画面全域でTAP / FLICK / HOLD</div>
+          ${doubleHtml}
+          <div class="event-field-caption">SAFEZONE内の画面全域でTAP / FLICK / DOUBLE TAP</div>
         </div>
-        <div class="event-future-note">シールド0で「これよりラッシュモード」演出と3カウント後に5レーンへ移行します。</div>
+        <div class="event-future-note">シールド0で4レーンフィルインへ移行します。</div>
       </div>
     `;
   }
 
-  function renderRushIntro() {
-    const rush = state.selectedRushPattern || pickRushPattern();
-    const count = state.rushIntro ? Math.max(0, Math.ceil((state.rushIntro.endsAt - nowMs()) / 1000)) : 3;
-    const label = count > 0 ? String(count) : "GO";
-    return `
-      <div class="event-rush-intro-panel">
-        <div class="event-rush-intro-card">
-          <b>これよりラッシュモード</b>
-          <strong>${escapeHtml(label)}</strong>
-          <span>${escapeHtml(rush.introLabel)} → ${escapeHtml(rush.fillLabel)}</span>
-          <p>ハイハットの裏リズムに合わせて、KICK / SNARE / HIGH TOM / LOW TOM / CRASH を叩いてください。</p>
-        </div>
-      </div>
-    `;
-  }
 
   function noteTopPercent(note) {
     if (!state || !state.rush) return -12;
     const t = nowMs();
     const start = note.targetAt - RUSH_FALL_MS;
     const progress = (t - start) / RUSH_FALL_MS;
-    return Math.round((-14 + progress * 92) * 10) / 10;
+    return Math.round((-18 + progress * 100) * 10) / 10;
   }
 
   function renderRushLane(lane) {
     const info = laneInfo(lane);
-    const notes = state.rush ? state.rush.notes.filter((note) => note.lane === lane || (lane === "HIGH_TOM" && note.lane === "HAT_GHOST")) : [];
+    const notes = state.rush ? state.rush.notes.filter((note) => note.lane === lane || (lane === "TOM" && note.lane === "HAT_GHOST")) : [];
     const noteHtml = notes.map((note) => {
       if (note.hit || note.missed) return "";
       const top = noteTopPercent(note);
@@ -1056,7 +970,7 @@
       <div class="event-rush-panel">
         <div class="event-rush-top">
           <div>
-            <b>RUSH MODE</b>
+            <b>フィルイン</b>
             <span>${escapeHtml(rush.introLabel)} → ${escapeHtml(rush.fillLabel)}</span>
           </div>
           <div class="event-rush-judge event-judge-${escapeHtml(String(state.judgeText || '').toLowerCase())}">${escapeHtml(state.judgeText || "")}</div>
@@ -1087,13 +1001,13 @@
             <div><span>GOOD</span><b>${state.good}</b></div>
           </div>
           <div class="event-result-grid event-result-rush-grid">
-            <div><span>RUSH JUST</span><b>${state.rushJust}</b></div>
-            <div><span>RUSH GOOD</span><b>${state.rushGood}</b></div>
-            <div><span>RUSH MISS</span><b>${state.rushMiss}</b></div>
+            <div><span>FILL JUST</span><b>${state.rushJust}</b></div>
+            <div><span>FILL GOOD</span><b>${state.rushGood}</b></div>
+            <div><span>FILL MISS</span><b>${state.rushMiss}</b></div>
             <div><span>BONUS</span><b>${allJust ? "ALL JUST" : fullCombo ? "FULL COMBO" : "CLEAR"}</b></div>
           </div>
           <div class="event-result-fill event-rush-pattern-card">
-            <small>ラッシュパターン</small>
+            <small>フィルパターン</small>
             <b>${escapeHtml(rush.text)}</b>
             <div class="event-rush-pattern-pair">
               <span>前半 ${escapeHtml(rush.introLabel)}</span>
@@ -1104,11 +1018,11 @@
               <span>ゴースト ${rush.ghostCount}</span>
               <span>倍率 x${rush.scoreMultiplier}</span>
             </div>
-            <p>5レーン：KICK / SNARE / HIGH TOM / LOW TOM / CRASH。ツはハイハット/ゴーストとして裏リズムを示します。</p>
+            <p>4レーン：KICK / SNARE / TOM / CRASH。ツはハイハット/ゴーストとして裏リズムを示します。</p>
           </div>
           <div class="event-result-reward-note">
             <b>報酬メモ</b>
-            <p>撃破はシールド破壊後のラッシュで確定。JUST・COMBO・FULL COMBOでイベントメダルとチューニング素材の補正が伸びます。</p>
+            <p>撃破はシールド破壊後のフィルインで確定。JUST・COMBO・FULL COMBOでイベントメダルとチューニング素材の補正が伸びます。</p>
           </div>
           <div class="event-result-actions">
             <button type="button" data-event-action="restart">もう一度</button>
@@ -1133,11 +1047,7 @@
       field.addEventListener("pointerdown", onPointerDown, { passive: false });
       field.addEventListener("pointerup", onPointerUp, { passive: false });
       field.addEventListener("pointercancel", (event) => {
-        if (state && state.holdPointers) {
-          Object.keys(state.holdPointers).forEach((key) => {
-            if (state.holdPointers[key].pointerId === event.pointerId) delete state.holdPointers[key];
-          });
-        }
+
         if (pointer && pointer.id === event.pointerId) pointer = null;
       });
     }
@@ -1150,7 +1060,7 @@
   }
 
   function installPatch() {
-    if (!window.BattleProto || window.BattleProto.__eventBattlePatchedV85) return false;
+    if (!window.BattleProto || window.BattleProto.__eventBattlePatchedV86) return false;
     originalOpenBattle = window.BattleProto.openBattle;
     originalCloseBattle = window.BattleProto.closeBattle;
     window.BattleProto.openBattle = function (options) {
@@ -1161,7 +1071,7 @@
       if (state) return closeEventBattle();
       return originalCloseBattle.apply(this, arguments);
     };
-    window.BattleProto.__eventBattlePatchedV85 = true;
+    window.BattleProto.__eventBattlePatchedV86 = true;
     window.TenotsuEventBattle = api;
     return true;
   }

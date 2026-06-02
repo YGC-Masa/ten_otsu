@@ -1,26 +1,13 @@
-# ten_otsu v039_84 → v039_85 差分
+# ten_otsu diff v039_85 to v039_86
 
-## 概要
+イベントバトル通常モード/フィルイン表示の調整差分です。
 
-イベントバトル通常モードの操作表示エリアを、パネル内から画面全域ベースへ拡張しました。
+- ブラック家電星人より、サークル・フリック・ダブルタップなどの入力表示を前面に表示
+- HOLD操作を廃止し、ピンクDOUBLE TAPへ変更
+- FLICK矢印を緑から黄色へ変更
+- ラッシュフィルインを5ノーツから4ノーツへ変更
+  - KICK / SNARE / TOM / CRASH
+  - HIGH TOM / LOW TOM は TOM に統合
+- 「これよりラッシュモード」表示と3カウント演出を廃止
+- フィルインの飛来速度を上げ、4レーンを画面上から下まで広く使用
 
-画面端にはSAFEZONEを設け、スマホ横画面のOSジェスチャー・誤タップ領域を避けるように調整しています。
-
-## 主な変更
-
-- イベントバトル通常モードのTAP / FLICK / HOLD表示範囲を拡大
-- 画面端SAFEZONEを追加
-- 青サークル、緑矢印、ピンクHOLDの出現位置を画面全域寄りへ調整
-- RUSH MODEの5レーン表示もSAFEZONE内で広く表示
-- HUDとボス情報をコンパクトなオーバーレイに変更
-
-## 変更ファイル
-
-- index.html
-- program/v039/state.js
-- program/v039/eventBattle.js
-- program/v039/eventBattle.css
-- program/docs/v039_85_event_battle_fullscreen_safezone.md
-- release_notes.md
-- VALIDATION.json
-- CHECKSUMS.json
