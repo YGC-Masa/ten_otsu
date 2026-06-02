@@ -1,12 +1,12 @@
-/* v039_81 eventBattle.js
+/* v039_82 eventBattle.js
  * イベント営業用のブラック家電星人ボス通常モード。
- * v039_81ではフィルインノーツの本実装は行わず、通常モードでシールドを削る入口を実装する。
+ * v039_82ではラッシュモード用の前半7パターン＋後半4フィルインを定義し、ランダム合成の土台を実装する。
  */
 (function () {
   "use strict";
 
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  const VERSION = "v039_81_event_battle_normal_mode";
+  const VERSION = "v039_82_event_battle_rush_pattern_table";
   const ROOT_ID = "event-battle-root";
   const BATTLE_SECONDS = 45;
   const SHIELD_MAX = 120;
@@ -14,26 +14,184 @@
   const BOSS_CHARGE_MAX = 100;
   const RESULT_STORAGE_KEY = "tenotsu_event_battle_rewards_v1";
 
-  const FUTURE_FILL_PATTERNS = [
+  const RUSH_LANES = {
+    KICK: { label: "ドン", role: "KICK" },
+    SNARE: { label: "タン", role: "SNARE" },
+    HIGH_TOM: { label: "タ", role: "HIGH TOM" },
+    LOW_TOM: { label: "トン", role: "LOW TOM" },
+    CRASH: { label: "ジャーン", role: "CRASH" },
+    HAT_GHOST: { label: "ツ", role: "HI-HAT/GHOST", ghost: true }
+  };
+
+  const RUSH_INTRO_PATTERNS = [
     {
-      id: "basic_fill_01",
-      label: "ドン、タン、ドン、タン、タカ、トン、ジャーン",
-      lanes: ["KICK", "SNARE", "KICK", "SNARE", "HIGH_TOM", "LOW_TOM", "LOW_TOM", "CRASH"]
+      id: "intro_01_don_tan_don_tan",
+      no: 1,
+      label: "①ドンタンドンタン",
+      text: "ドン、タン、ドン、タン",
+      difficulty: 1.0,
+      notes: [
+        { lane: "KICK", label: "ドン", beat: 0.0 },
+        { lane: "SNARE", label: "タン", beat: 1.0 },
+        { lane: "KICK", label: "ドン", beat: 2.0 },
+        { lane: "SNARE", label: "タン", beat: 3.0 }
+      ]
     },
     {
-      id: "basic_fill_02",
-      label: "ドン、ドン、タン、タカ、トン、ジャーン",
-      lanes: ["KICK", "KICK", "SNARE", "HIGH_TOM", "LOW_TOM", "LOW_TOM", "CRASH"]
+      id: "intro_02_don_tan_dodo_tan",
+      no: 2,
+      label: "②ドンタンドドタン",
+      text: "ドン、タン、ド、ド、タン",
+      difficulty: 1.1,
+      notes: [
+        { lane: "KICK", label: "ドン", beat: 0.0 },
+        { lane: "SNARE", label: "タン", beat: 1.0 },
+        { lane: "LOW_TOM", label: "ド", beat: 2.0 },
+        { lane: "KICK", label: "ド", beat: 2.5 },
+        { lane: "SNARE", label: "タン", beat: 3.0 }
+      ]
     },
     {
-      id: "rush_fill_01",
-      label: "ドン、タン、タカ、ドン、タン、トン、ジャーン",
-      lanes: ["KICK", "SNARE", "HIGH_TOM", "LOW_TOM", "KICK", "SNARE", "LOW_TOM", "CRASH"]
+      id: "intro_03_don_ta_dodon_tan",
+      no: 3,
+      label: "③ドンタドドンタン",
+      text: "ドン、タ、ドドン、タン",
+      difficulty: 1.15,
+      notes: [
+        { lane: "KICK", label: "ドン", beat: 0.0 },
+        { lane: "HIGH_TOM", label: "タ", beat: 1.0 },
+        { lane: "LOW_TOM", label: "ド", beat: 2.0 },
+        { lane: "KICK", label: "ドン", beat: 2.5 },
+        { lane: "SNARE", label: "タン", beat: 3.0 }
+      ]
     },
     {
-      id: "shield_break_fill_01",
-      label: "タン、ドン、タカ、トン、ドン、ジャーン",
-      lanes: ["SNARE", "KICK", "HIGH_TOM", "LOW_TOM", "KICK", "CRASH"]
+      id: "intro_04_don_ta_dodon_tado",
+      no: 4,
+      label: "④ドンタドドンタド",
+      text: "ドン、タ、ドドン、タド",
+      difficulty: 1.2,
+      notes: [
+        { lane: "KICK", label: "ドン", beat: 0.0 },
+        { lane: "HIGH_TOM", label: "タ", beat: 1.0 },
+        { lane: "LOW_TOM", label: "ド", beat: 2.0 },
+        { lane: "KICK", label: "ドン", beat: 2.5 },
+        { lane: "HIGH_TOM", label: "タ", beat: 3.0 },
+        { lane: "LOW_TOM", label: "ド", beat: 3.5 }
+      ]
+    },
+    {
+      id: "intro_05_don_ta_do_tsutsu_tatsu",
+      no: 5,
+      label: "⑤ドンタドツツタツ",
+      text: "ドン、タ、ド、ツツ、タツ",
+      difficulty: 1.25,
+      notes: [
+        { lane: "KICK", label: "ドン", beat: 0.0 },
+        { lane: "HIGH_TOM", label: "タ", beat: 1.0 },
+        { lane: "LOW_TOM", label: "ド", beat: 2.0 },
+        { lane: "HAT_GHOST", label: "ツ", beat: 2.5, ghost: true },
+        { lane: "HAT_GHOST", label: "ツ", beat: 2.75, ghost: true },
+        { lane: "HIGH_TOM", label: "タ", beat: 3.0 },
+        { lane: "HAT_GHOST", label: "ツ", beat: 3.5, ghost: true }
+      ]
+    },
+    {
+      id: "intro_06_don_tan_tsu_do_tan",
+      no: 6,
+      label: "⑥ドンタンツドタン",
+      text: "ドン、タン、ツ、ド、タン",
+      difficulty: 1.15,
+      notes: [
+        { lane: "KICK", label: "ドン", beat: 0.0 },
+        { lane: "SNARE", label: "タン", beat: 1.0 },
+        { lane: "HAT_GHOST", label: "ツ", beat: 1.5, ghost: true },
+        { lane: "LOW_TOM", label: "ド", beat: 2.0 },
+        { lane: "SNARE", label: "タン", beat: 3.0 }
+      ]
+    },
+    {
+      id: "intro_07_don_ta_don_do_tan",
+      no: 7,
+      label: "⑦ドンタドンドタン",
+      text: "ドン、タ、ドン、ド、タン",
+      difficulty: 1.2,
+      notes: [
+        { lane: "KICK", label: "ドン", beat: 0.0 },
+        { lane: "HIGH_TOM", label: "タ", beat: 1.0 },
+        { lane: "KICK", label: "ドン", beat: 2.0 },
+        { lane: "LOW_TOM", label: "ド", beat: 2.5 },
+        { lane: "SNARE", label: "タン", beat: 3.0 }
+      ]
+    }
+  ];
+
+  const RUSH_FILL_PATTERNS = [
+    {
+      id: "fill_01_don_tan_don_tan_taka_ton_crash",
+      no: 1,
+      label: "①ドン、タン、ドン、タン、タカ、トン、ジャーン",
+      text: "ドン、タン、ドン、タン、タカ、トン、ジャーン",
+      difficulty: 1.0,
+      notes: [
+        { lane: "KICK", label: "ドン", beat: 0.0 },
+        { lane: "SNARE", label: "タン", beat: 1.0 },
+        { lane: "KICK", label: "ドン", beat: 2.0 },
+        { lane: "SNARE", label: "タン", beat: 3.0 },
+        { lane: "HIGH_TOM", label: "タ", beat: 4.0 },
+        { lane: "LOW_TOM", label: "カ", beat: 4.5 },
+        { lane: "LOW_TOM", label: "トン", beat: 5.5 },
+        { lane: "CRASH", label: "ジャーン", beat: 7.0 }
+      ]
+    },
+    {
+      id: "fill_02_don_don_tan_taka_ton_crash",
+      no: 2,
+      label: "②ドン、ドン、タン、タカ、トン、ジャーン",
+      text: "ドン、ドン、タン、タカ、トン、ジャーン",
+      difficulty: 1.1,
+      notes: [
+        { lane: "KICK", label: "ドン", beat: 0.0 },
+        { lane: "KICK", label: "ドン", beat: 1.0 },
+        { lane: "SNARE", label: "タン", beat: 2.0 },
+        { lane: "HIGH_TOM", label: "タ", beat: 3.0 },
+        { lane: "LOW_TOM", label: "カ", beat: 3.5 },
+        { lane: "LOW_TOM", label: "トン", beat: 4.5 },
+        { lane: "CRASH", label: "ジャーン", beat: 6.0 }
+      ]
+    },
+    {
+      id: "fill_03_don_tan_taka_don_tan_ton_crash",
+      no: 3,
+      label: "③ドン、タン、タカ、ドン、タン、トン、ジャーン",
+      text: "ドン、タン、タカ、ドン、タン、トン、ジャーン",
+      difficulty: 1.2,
+      notes: [
+        { lane: "KICK", label: "ドン", beat: 0.0 },
+        { lane: "SNARE", label: "タン", beat: 1.0 },
+        { lane: "HIGH_TOM", label: "タ", beat: 2.0 },
+        { lane: "LOW_TOM", label: "カ", beat: 2.5 },
+        { lane: "KICK", label: "ドン", beat: 3.5 },
+        { lane: "SNARE", label: "タン", beat: 4.5 },
+        { lane: "LOW_TOM", label: "トン", beat: 5.5 },
+        { lane: "CRASH", label: "ジャーン", beat: 7.0 }
+      ]
+    },
+    {
+      id: "fill_04_tan_don_taka_ton_don_crash",
+      no: 4,
+      label: "④タン、ドン、タカ、トン、ドン、ジャーン",
+      text: "タン、ドン、タカ、トン、ドン、ジャーン",
+      difficulty: 1.15,
+      notes: [
+        { lane: "SNARE", label: "タン", beat: 0.0 },
+        { lane: "KICK", label: "ドン", beat: 1.0 },
+        { lane: "HIGH_TOM", label: "タ", beat: 2.0 },
+        { lane: "LOW_TOM", label: "カ", beat: 2.5 },
+        { lane: "LOW_TOM", label: "トン", beat: 3.5 },
+        { lane: "KICK", label: "ドン", beat: 4.5 },
+        { lane: "CRASH", label: "ジャーン", beat: 6.0 }
+      ]
     }
   ];
 
@@ -68,8 +226,52 @@
     return options.battleType === "eventBoss" || mode.battleType === "eventBoss" || mode.id === "event_sales" || ns.state.currentBattleType === "eventBoss";
   }
 
+  function pickRandom(list) {
+    return list[Math.floor(Math.random() * list.length)];
+  }
+
+  function cloneNoteWithOffset(note, offset) {
+    return {
+      lane: note.lane,
+      label: note.label,
+      beat: Math.round((note.beat + offset) * 100) / 100,
+      ghost: !!(note.ghost || note.lane === "HAT_GHOST")
+    };
+  }
+
+  function patternEndBeat(pattern) {
+    const notes = pattern && pattern.notes ? pattern.notes : [];
+    if (!notes.length) return 0;
+    return Math.max.apply(null, notes.map((note) => Number(note.beat) || 0));
+  }
+
+  function composeRushPattern(intro, fill) {
+    intro = intro || pickRandom(RUSH_INTRO_PATTERNS);
+    fill = fill || pickRandom(RUSH_FILL_PATTERNS);
+    const gap = 1.0;
+    const fillOffset = patternEndBeat(intro) + gap;
+    const notes = intro.notes.map((note) => cloneNoteWithOffset(note, 0)).concat(fill.notes.map((note) => cloneNoteWithOffset(note, fillOffset)));
+    const playableNotes = notes.filter((note) => !note.ghost);
+    const ghostNotes = notes.filter((note) => note.ghost);
+    return {
+      id: `${intro.id}__${fill.id}`,
+      introId: intro.id,
+      fillId: fill.id,
+      introLabel: intro.label,
+      fillLabel: fill.label,
+      introText: intro.text,
+      fillText: fill.text,
+      label: `${intro.label} → ${fill.label}`,
+      text: `${intro.text} / ${fill.text}`,
+      notes,
+      playableCount: playableNotes.length,
+      ghostCount: ghostNotes.length,
+      scoreMultiplier: Math.round(((intro.difficulty || 1) * (fill.difficulty || 1)) * 100) / 100
+    };
+  }
+
   function pickFutureFillPattern() {
-    return FUTURE_FILL_PATTERNS[Math.floor(Math.random() * FUTURE_FILL_PATTERNS.length)];
+    return composeRushPattern();
   }
 
   function makeState(options) {
@@ -91,10 +293,10 @@
       miss: 0,
       score: 0,
       inputText: "開始すると、タップ・フリック・ホールドでノイズシールドを削ります。",
-      notice: "フィルインノーツは将来、複数パターンからランダム選択します。",
+      notice: "ラッシュ予定：前半7種×後半4種の28通りからランダム合成します。",
       flickDir: randomDir(),
       holdStartedAt: 0,
-      selectedFutureFill: null,
+      selectedRushPattern: null,
       resultSaved: false
     };
   }
@@ -217,7 +419,7 @@
     if (!state || state.phase === "result") return;
     stopLoop();
     state.phase = "result";
-    state.selectedFutureFill = pickFutureFillPattern();
+    state.selectedRushPattern = pickFutureFillPattern();
     state.inputText = message;
     state.bossHp = win ? 0 : Math.max(35, state.bossHp);
     if (win) state.score += 1000;
@@ -233,6 +435,12 @@
       medal: win ? 3 + Math.floor(state.just / 2) : 1,
       tuningMaterial: win ? 2 + Math.floor(state.maxCombo / 5) : 0,
       score: state.score,
+      rushPattern: state.selectedRushPattern ? {
+        id: state.selectedRushPattern.id,
+        intro: state.selectedRushPattern.introLabel,
+        fill: state.selectedRushPattern.fillLabel,
+        multiplier: state.selectedRushPattern.scoreMultiplier
+      } : null,
       updatedAt: Date.now()
     };
     try {
@@ -350,13 +558,13 @@
           <button type="button" data-event-input="flick"><b>FLICK</b><small>${dirLabel(state.flickDir)}へ流す</small></button>
           <button type="button" data-event-input="hold"><b>HOLD</b><small>調律</small></button>
         </div>
-        <div class="event-future-note">フィルインノーツ：将来的に複数パターンを増やし、その中からランダム選択します。</div>
+        <div class="event-future-note">ラッシュ候補：前半リズム7種＋後半フィル4種を合成し、28通りからランダム選択します。</div>
       </div>
     `;
   }
 
   function renderResult() {
-    const fill = state.selectedFutureFill || pickFutureFillPattern();
+    const rush = state.selectedRushPattern || pickFutureFillPattern();
     const clear = state.shield <= 0;
     return `
       <div class="event-result-panel">
@@ -368,10 +576,19 @@
             <div><span>JUST</span><b>${state.just}</b></div>
             <div><span>GOOD</span><b>${state.good}</b></div>
           </div>
-          <div class="event-result-fill">
-            <small>ラッシュモード予定フィル</small>
-            <b>${escapeHtml(fill.label)}</b>
-            <p>将来的には登録パターンを増やし、この候補からランダムにノーツ列を選びます。</p>
+          <div class="event-result-fill event-rush-pattern-card">
+            <small>ラッシュモード予定パターン</small>
+            <b>${escapeHtml(rush.text)}</b>
+            <div class="event-rush-pattern-pair">
+              <span>前半 ${escapeHtml(rush.introLabel)}</span>
+              <span>後半 ${escapeHtml(rush.fillLabel)}</span>
+            </div>
+            <div class="event-rush-pattern-meta">
+              <span>入力ノーツ ${rush.playableCount}</span>
+              <span>ゴースト ${rush.ghostCount}</span>
+              <span>倍率 x${rush.scoreMultiplier}</span>
+            </div>
+            <p>前半7種×後半4種の28通りからランダム合成します。ツはハイハット/ゴーストとして、将来の演出・リズムガイド扱いです。</p>
           </div>
           <div class="event-result-actions">
             <button type="button" data-event-action="restart">もう一度</button>
@@ -399,7 +616,7 @@
   }
 
   function installPatch() {
-    if (!window.BattleProto || window.BattleProto.__eventBattlePatchedV81) return false;
+    if (!window.BattleProto || window.BattleProto.__eventBattlePatchedV82) return false;
     originalOpenBattle = window.BattleProto.openBattle;
     originalCloseBattle = window.BattleProto.closeBattle;
     window.BattleProto.openBattle = function (options) {
@@ -410,7 +627,7 @@
       if (state) return closeEventBattle();
       return originalCloseBattle.apply(this, arguments);
     };
-    window.BattleProto.__eventBattlePatchedV81 = true;
+    window.BattleProto.__eventBattlePatchedV82 = true;
     window.TenotsuEventBattle = api;
     return true;
   }
@@ -421,7 +638,12 @@
     close: closeEventBattle,
     start: startBattle,
     getState: () => state,
-    futureFillPatterns: FUTURE_FILL_PATTERNS.slice()
+    rushLanes: Object.assign({}, RUSH_LANES),
+    introPatterns: RUSH_INTRO_PATTERNS.slice(),
+    fillPatterns: RUSH_FILL_PATTERNS.slice(),
+    composeRushPattern,
+    pickRushPattern: pickFutureFillPattern,
+    futureFillPatterns: RUSH_FILL_PATTERNS.slice()
   };
 
   window.TenotsuEventBattle = api;

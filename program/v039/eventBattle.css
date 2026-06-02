@@ -1,4 +1,4 @@
-/* v039_81 event battle normal mode */
+/* v039_82 event battle normal mode + rush pattern table */
 #event-battle-root.event-battle-root {
   position: fixed;
   inset: 0;
@@ -119,4 +119,33 @@ body.event-battle-screen { overscroll-behavior: none; }
   #event-battle-root .event-normal-inputs { gap: 7px; }
   #event-battle-root .event-normal-inputs button { min-height: 64px; padding: 8px 6px; }
   #event-battle-root .event-result-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* v039_82 rush pattern table display */
+#event-battle-root .event-rush-pattern-card {
+  border: 1px solid rgba(255, 226, 137, 0.22);
+  background: linear-gradient(135deg, rgba(120,55,180,0.26), rgba(20,20,32,0.72));
+}
+#event-battle-root .event-rush-pattern-pair,
+#event-battle-root .event-rush-pattern-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+#event-battle-root .event-rush-pattern-pair span,
+#event-battle-root .event-rush-pattern-meta span {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 3px 8px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.86);
+  font-size: clamp(10px, 1.35vw, 13px);
+  white-space: nowrap;
+}
+#event-battle-root .event-rush-pattern-meta span {
+  background: rgba(255, 216, 93, 0.12);
+  border-color: rgba(255, 216, 93, 0.18);
 }
