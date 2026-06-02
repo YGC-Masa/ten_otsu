@@ -1,24 +1,29 @@
 {
-  "version": "v039_82",
-  "base": "v039_81",
+  "version": "v039_83",
+  "base": "v039_82",
   "buildLabelUpdated": true,
-  "eventBattleRushPatternTableExpanded": true,
-  "introPatternsAdded": 7,
-  "fillPatternsAdded": 4,
-  "rushPatternCombinations": 28,
-  "fiveRushLanesPrepared": [
+  "eventBattleResultScrollAdded": true,
+  "eventBattleRushModeAdded": true,
+  "fiveLaneRushNotesImplemented": true,
+  "rushLaneOrder": [
     "KICK",
     "SNARE",
     "HIGH_TOM",
     "LOW_TOM",
     "CRASH"
   ],
-  "hatGhostNotesPrepared": true,
-  "randomRushPatternComposerAdded": true,
-  "resultShowsIntroAndFillPattern": true,
-  "resultShowsPlayableAndGhostCounts": true,
-  "resultShowsScoreMultiplier": true,
-  "fillNotesGameplayDeferred": true,
+  "rushPatternRandomComposerKept": true,
+  "introPatterns": 7,
+  "fillPatterns": 4,
+  "rushPatternCombinations": 28,
+  "hatGhostNotesDisplayedNotPlayable": true,
+  "rushJudgementAdded": {
+    "JUST_MS": 105,
+    "GOOD_MS": 230
+  },
+  "rushComboAndBonusesAdded": true,
+  "shieldZeroRoutesToRushMode": true,
+  "rushDefeatGuaranteed": true,
   "jsSyntaxOk": true,
   "zipIntegrityOk": true
 }

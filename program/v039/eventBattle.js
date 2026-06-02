@@ -1,18 +1,27 @@
-/* v039_82 eventBattle.js
- * イベント営業用のブラック家電星人ボス通常モード。
- * v039_82ではラッシュモード用の前半7パターン＋後半4フィルインを定義し、ランダム合成の土台を実装する。
+/* v039_83 eventBattle.js
+ * イベント営業用のブラック家電星人ボス。
+ * v039_83では通常モードのシールド削り後、5レーンのラッシュノーツ落下・判定を実装する。
  */
 (function () {
   "use strict";
 
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  const VERSION = "v039_82_event_battle_rush_pattern_table";
+  const VERSION = "v039_83_event_battle_rush_notes";
   const ROOT_ID = "event-battle-root";
   const BATTLE_SECONDS = 45;
   const SHIELD_MAX = 120;
   const BOSS_HP_MAX = 100;
   const BOSS_CHARGE_MAX = 100;
   const RESULT_STORAGE_KEY = "tenotsu_event_battle_rewards_v1";
+
+  const RUSH_BPM = 96;
+  const RUSH_BEAT_MS = Math.round(60000 / RUSH_BPM);
+  const RUSH_LEAD_MS = 1350;
+  const RUSH_FALL_MS = 1650;
+  const RUSH_END_MARGIN_MS = 900;
+  const RUSH_JUST_MS = 105;
+  const RUSH_GOOD_MS = 230;
+  const RUSH_LANE_ORDER = ["KICK", "SNARE", "HIGH_TOM", "LOW_TOM", "CRASH"];
 
   const RUSH_LANES = {
     KICK: { label: "ドン", role: "KICK" },
@@ -195,6 +204,7 @@
     }
   ];
 
+
   let root = null;
   let state = null;
   let timerId = null;
@@ -205,7 +215,7 @@
   function nowMs() { return Date.now(); }
 
   function escapeHtml(value) {
-    return String(value == null ? "" : value).replace(/[&<>\"]/g, function (ch) {
+    return String(value == null ? "" : value).replace(/[&<>"]/g, function (ch) {
       return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch] || ch;
     });
   }
@@ -270,7 +280,7 @@
     };
   }
 
-  function pickFutureFillPattern() {
+  function pickRushPattern() {
     return composeRushPattern();
   }
 
@@ -291,12 +301,19 @@
       just: 0,
       good: 0,
       miss: 0,
+      rushJust: 0,
+      rushGood: 0,
+      rushMiss: 0,
+      rushCombo: 0,
+      rushMaxCombo: 0,
       score: 0,
       inputText: "開始すると、タップ・フリック・ホールドでノイズシールドを削ります。",
       notice: "ラッシュ予定：前半7種×後半4種の28通りからランダム合成します。",
+      judgeText: "",
       flickDir: randomDir(),
       holdStartedAt: 0,
       selectedRushPattern: null,
+      rush: null,
       resultSaved: false
     };
   }
@@ -308,6 +325,10 @@
 
   function dirLabel(dir) {
     return ({ left: "左", right: "右", up: "上", down: "下" })[dir] || "任意";
+  }
+
+  function laneInfo(lane) {
+    return RUSH_LANES[lane] || { label: lane, role: lane };
   }
 
   function openEventBattle(options) {
@@ -340,7 +361,7 @@
     state.inputText = "通常モード開始。タップ・フリック・ホールドでシールドを削ってください。";
     state.notice = `フリック指示：${dirLabel(state.flickDir)}へ流す`;
     stopLoop();
-    timerId = window.setInterval(tick, 100);
+    timerId = window.setInterval(tick, 60);
     render();
   }
 
@@ -350,7 +371,12 @@
   }
 
   function tick() {
-    if (!state || state.phase !== "normal") return;
+    if (!state) return;
+    if (state.phase === "normal") return tickNormal();
+    if (state.phase === "rush") return tickRush();
+  }
+
+  function tickNormal() {
     const left = Math.max(0, Math.ceil((state.endsAt - nowMs()) / 1000));
     state.left = left;
     state.bossCharge = Math.min(BOSS_CHARGE_MAX, state.bossCharge + 1.2);
@@ -364,10 +390,38 @@
     else render();
   }
 
+  function tickRush() {
+    if (!state.rush) return;
+    const t = nowMs();
+    let changed = false;
+    state.rush.notes.forEach((note) => {
+      if (note.ghost || note.hit || note.missed) return;
+      if (t > note.targetAt + RUSH_GOOD_MS) {
+        note.missed = true;
+        state.rushMiss += 1;
+        state.rushCombo = 0;
+        state.miss += 1;
+        state.judgeText = "MISS";
+        changed = true;
+      }
+    });
+    const playable = state.rush.notes.filter((note) => !note.ghost);
+    const resolved = playable.every((note) => note.hit || note.missed);
+    if (resolved || t >= state.rush.endsAt) return finishRush();
+    render();
+  }
+
   function addScore(base, rating) {
     const comboBonus = Math.min(1.6, 1 + state.combo * 0.03);
     const ratingBonus = rating === "JUST" ? 1.35 : rating === "GOOD" ? 1.0 : 0.25;
     state.score += Math.round(base * comboBonus * ratingBonus);
+  }
+
+  function addRushScore(base, rating) {
+    const comboBonus = Math.min(1.9, 1 + state.rushCombo * 0.045);
+    const ratingBonus = rating === "JUST" ? 1.5 : rating === "GOOD" ? 1.0 : 0;
+    const patternBonus = state.selectedRushPattern ? state.selectedRushPattern.scoreMultiplier || 1 : 1;
+    state.score += Math.round(base * comboBonus * ratingBonus * patternBonus);
   }
 
   function damageShield(amount, rating, text) {
@@ -376,6 +430,7 @@
       state.combo = 0;
       state.miss += 1;
       state.notice = text || "MISS。ノイズが乱れました。";
+      state.judgeText = "MISS";
       addScore(10, rating);
       render();
       return;
@@ -385,10 +440,11 @@
     state.maxCombo = Math.max(state.maxCombo, state.combo);
     if (rating === "JUST") state.just += 1;
     else state.good += 1;
+    state.judgeText = rating;
     state.notice = text || `${rating}！ シールド -${amount}`;
     addScore(amount * 12, rating);
     state.bossCharge = Math.max(0, state.bossCharge - (rating === "JUST" ? 12 : 7));
-    if (state.shield <= 0) finishBattle(true, "ノイズシールド破壊！ ラッシュモード突入予定です。");
+    if (state.shield <= 0) startRushMode();
     else render();
   }
 
@@ -415,14 +471,96 @@
     }
   }
 
+  function startRushMode() {
+    if (!state || state.phase !== "normal") return;
+    state.phase = "rush";
+    state.shield = 0;
+    state.bossCharge = 0;
+    state.combo = 0;
+    state.rushCombo = 0;
+    state.selectedRushPattern = pickRushPattern();
+    const startAt = nowMs();
+    const notes = state.selectedRushPattern.notes.map((note, index) => {
+      const targetAt = startAt + RUSH_LEAD_MS + Math.round((note.beat || 0) * RUSH_BEAT_MS);
+      return Object.assign({ index, targetAt, hit: false, missed: false, rating: "" }, note);
+    });
+    const lastTarget = notes.reduce((max, note) => Math.max(max, note.targetAt), startAt + RUSH_LEAD_MS);
+    state.rush = {
+      startAt,
+      bpm: RUSH_BPM,
+      beatMs: RUSH_BEAT_MS,
+      notes,
+      endsAt: lastTarget + RUSH_GOOD_MS + RUSH_END_MARGIN_MS
+    };
+    state.inputText = "RUSH MODE！ 5レーンのドラムフィルインで撃破スコアを伸ばしてください。";
+    state.notice = `選択パターン：${state.selectedRushPattern.introLabel} → ${state.selectedRushPattern.fillLabel}`;
+    state.judgeText = "RUSH";
+    stopLoop();
+    timerId = window.setInterval(tick, 33);
+    render();
+  }
+
+  function handleRushLane(lane) {
+    if (!state || state.phase !== "rush" || !state.rush) return;
+    const t = nowMs();
+    const candidates = state.rush.notes
+      .filter((note) => !note.ghost && !note.hit && !note.missed && note.lane === lane)
+      .map((note) => Object.assign({ delta: Math.abs(t - note.targetAt) }, note))
+      .sort((a, b) => a.delta - b.delta);
+    const target = candidates[0];
+    if (!target || target.delta > RUSH_GOOD_MS) {
+      state.rushMiss += 1;
+      state.miss += 1;
+      state.rushCombo = 0;
+      state.judgeText = "MISS";
+      state.notice = `${laneInfo(lane).label} 空振り。判定ライン付近で叩いてください。`;
+      render();
+      return;
+    }
+    const original = state.rush.notes[target.index];
+    const rating = target.delta <= RUSH_JUST_MS ? "JUST" : "GOOD";
+    original.hit = true;
+    original.rating = rating;
+    state.judgeText = rating;
+    if (rating === "JUST") {
+      state.rushJust += 1;
+      state.just += 1;
+      state.rushCombo += 1;
+      addRushScore(130, rating);
+    } else {
+      state.rushGood += 1;
+      state.good += 1;
+      state.rushCombo += 1;
+      addRushScore(85, rating);
+    }
+    state.rushMaxCombo = Math.max(state.rushMaxCombo, state.rushCombo);
+    state.maxCombo = Math.max(state.maxCombo, state.rushCombo);
+    state.notice = `${rating}！ ${original.label} / ${laneInfo(lane).role}`;
+    render();
+  }
+
+  function finishRush() {
+    if (!state || state.phase !== "rush") return;
+    const totalPlayable = state.rush ? state.rush.notes.filter((note) => !note.ghost).length : 0;
+    const hitCount = state.rushJust + state.rushGood;
+    const fullCombo = totalPlayable > 0 && hitCount === totalPlayable && state.rushMiss === 0;
+    const allJust = totalPlayable > 0 && state.rushJust === totalPlayable;
+    state.score += 1000;
+    if (fullCombo) state.score += 650;
+    if (allJust) state.score += 900;
+    state.bossHp = 0;
+    state.inputText = fullCombo ? "フルコンボ撃破！ ブラック家電星人のノイズをきれいに調律しました。" : "ラッシュ撃破！ ブラック家電星人を追い払いました。";
+    state.notice = allJust ? "ALL JUST！ 限定素材の抽選が有利になります。" : fullCombo ? "FULL COMBO！ イベントメダルにボーナス。" : "撃破は成功。コンボとJUSTで報酬が伸びます。";
+    finishBattle(true, state.inputText);
+  }
+
   function finishBattle(win, message) {
     if (!state || state.phase === "result") return;
     stopLoop();
+    if (!state.selectedRushPattern) state.selectedRushPattern = pickRushPattern();
     state.phase = "result";
-    state.selectedRushPattern = pickFutureFillPattern();
     state.inputText = message;
     state.bossHp = win ? 0 : Math.max(35, state.bossHp);
-    if (win) state.score += 1000;
     saveResult(win);
     render();
   }
@@ -430,11 +568,15 @@
   function saveResult(win) {
     if (!state || state.resultSaved) return;
     state.resultSaved = true;
+    const rushTotal = state.rush ? state.rush.notes.filter((note) => !note.ghost).length : 0;
+    const fullCombo = rushTotal > 0 && (state.rushJust + state.rushGood) === rushTotal && state.rushMiss === 0;
+    const allJust = rushTotal > 0 && state.rushJust === rushTotal;
     const reward = {
       clear: !!win,
-      medal: win ? 3 + Math.floor(state.just / 2) : 1,
-      tuningMaterial: win ? 2 + Math.floor(state.maxCombo / 5) : 0,
+      medal: win ? 3 + Math.floor(state.just / 2) + (fullCombo ? 1 : 0) : 1,
+      tuningMaterial: win ? 2 + Math.floor(state.maxCombo / 5) + (allJust ? 1 : 0) : 0,
       score: state.score,
+      rush: { total: rushTotal, just: state.rushJust, good: state.rushGood, miss: state.rushMiss, fullCombo, allJust },
       rushPattern: state.selectedRushPattern ? {
         id: state.selectedRushPattern.id,
         intro: state.selectedRushPattern.introLabel,
@@ -499,6 +641,7 @@
 
   function render() {
     if (!root || !state) return;
+    root.dataset.phase = state.phase;
     root.innerHTML = `
       <section class="event-battle-stage event-phase-${escapeHtml(state.phase)}">
         <header class="event-battle-hud">
@@ -506,7 +649,7 @@
           <div class="event-battle-stats">
             <span>TIME <b>${state.left || BATTLE_SECONDS}</b></span>
             <span>SCORE <b>${state.score}</b></span>
-            <span>COMBO <b>${state.combo}</b></span>
+            <span>COMBO <b>${state.phase === "rush" ? state.rushCombo : state.combo}</b></span>
             <span>JUST <b>${state.just}</b></span>
           </div>
         </header>
@@ -515,7 +658,7 @@
             <div class="event-battle-boss-orb">黒</div>
             <div class="event-battle-boss-info">
               <div class="event-battle-boss-name">ブラック家電星人</div>
-              <div class="event-battle-boss-desc">家電星人に意地悪する黒いノイズの集合体。まずはシールドを削ります。</div>
+              <div class="event-battle-boss-desc">家電星人に意地悪する黒いノイズの集合体。シールドを割るとラッシュで撃破します。</div>
             </div>
           </div>
           <div class="event-battle-gauges">
@@ -526,7 +669,7 @@
           <div class="event-battle-message">${escapeHtml(state.inputText)}</div>
           <div class="event-battle-notice">${escapeHtml(state.notice)}</div>
         </div>
-        ${state.phase === "ready" ? renderReady() : state.phase === "result" ? renderResult() : renderNormalControls()}
+        ${state.phase === "ready" ? renderReady() : state.phase === "result" ? renderResult() : state.phase === "rush" ? renderRushControls() : renderNormalControls()}
       </section>
     `;
     bindButtons();
@@ -537,7 +680,7 @@
       <div class="event-battle-ready">
         <div class="event-ready-card">
           <b>通常モード</b>
-          <p>タップ・フリック・ホールドでノイズシールドを削ります。シールド0でラッシュモード予定へ進みます。</p>
+          <p>タップ・フリック・ホールドでノイズシールドを削ります。シールド0で5レーンのラッシュモードへ進みます。</p>
           <button type="button" data-event-action="start">イベントバトル開始</button>
           <button type="button" data-event-action="close">戻る</button>
         </div>
@@ -558,26 +701,83 @@
           <button type="button" data-event-input="flick"><b>FLICK</b><small>${dirLabel(state.flickDir)}へ流す</small></button>
           <button type="button" data-event-input="hold"><b>HOLD</b><small>調律</small></button>
         </div>
-        <div class="event-future-note">ラッシュ候補：前半リズム7種＋後半フィル4種を合成し、28通りからランダム選択します。</div>
+        <div class="event-future-note">シールド0でラッシュ突入。撃破は確定し、JUST・COMBOで報酬スコアが伸びます。</div>
+      </div>
+    `;
+  }
+
+  function noteTopPercent(note) {
+    if (!state || !state.rush) return -12;
+    const t = nowMs();
+    const start = note.targetAt - RUSH_FALL_MS;
+    const progress = (t - start) / RUSH_FALL_MS;
+    return Math.round((-14 + progress * 92) * 10) / 10;
+  }
+
+  function renderRushLane(lane) {
+    const info = laneInfo(lane);
+    const notes = state.rush ? state.rush.notes.filter((note) => note.lane === lane || (lane === "HIGH_TOM" && note.lane === "HAT_GHOST")) : [];
+    const noteHtml = notes.map((note) => {
+      if (note.hit || note.missed) return "";
+      const top = noteTopPercent(note);
+      if (top < -24 || top > 106) return "";
+      const cls = note.ghost ? "ghost" : "playable";
+      return `<i class="event-note ${cls} event-note-${escapeHtml(note.lane.toLowerCase())}" style="top:${top}%">${escapeHtml(note.label)}</i>`;
+    }).join("");
+    return `
+      <div class="event-rush-lane event-rush-lane-${escapeHtml(lane.toLowerCase())}">
+        <div class="event-rush-lane-track">${noteHtml}<em></em></div>
+        <button type="button" data-rush-lane="${escapeHtml(lane)}"><b>${escapeHtml(info.label)}</b><small>${escapeHtml(info.role)}</small></button>
+      </div>
+    `;
+  }
+
+  function renderRushControls() {
+    const rush = state.selectedRushPattern || pickRushPattern();
+    const total = state.rush ? state.rush.notes.filter((note) => !note.ghost).length : rush.playableCount;
+    const done = state.rushJust + state.rushGood + state.rushMiss;
+    return `
+      <div class="event-rush-panel">
+        <div class="event-rush-top">
+          <div>
+            <b>RUSH MODE</b>
+            <span>${escapeHtml(rush.introLabel)} → ${escapeHtml(rush.fillLabel)}</span>
+          </div>
+          <div class="event-rush-judge event-judge-${escapeHtml(String(state.judgeText || '').toLowerCase())}">${escapeHtml(state.judgeText || "")}</div>
+          <div class="event-rush-count">${done} / ${total}</div>
+        </div>
+        <div class="event-rush-lanes">
+          ${RUSH_LANE_ORDER.map(renderRushLane).join("")}
+        </div>
+        <div class="event-rush-hihat">♪ チッ　チッ　チッ　チッ <span>ハイハットは裏リズム / ツはゴースト</span></div>
       </div>
     `;
   }
 
   function renderResult() {
-    const rush = state.selectedRushPattern || pickFutureFillPattern();
-    const clear = state.shield <= 0;
+    const rush = state.selectedRushPattern || pickRushPattern();
+    const clear = state.bossHp <= 0 || state.shield <= 0;
+    const rushTotal = state.rush ? state.rush.notes.filter((note) => !note.ghost).length : 0;
+    const fullCombo = rushTotal > 0 && (state.rushJust + state.rushGood) === rushTotal && state.rushMiss === 0;
+    const allJust = rushTotal > 0 && state.rushJust === rushTotal;
     return `
       <div class="event-result-panel">
         <div class="event-result-card">
-          <div class="event-result-title">${clear ? "シールド破壊成功！" : "イベント調律失敗"}</div>
+          <div class="event-result-title">${clear ? "イベントバトル撃破成功！" : "イベント調律失敗"}</div>
           <div class="event-result-grid">
             <div><span>SCORE</span><b>${state.score}</b></div>
-            <div><span>最大COMBO</span><b>${state.maxCombo}</b></div>
+            <div><span>最大COMBO</span><b>${Math.max(state.maxCombo, state.rushMaxCombo)}</b></div>
             <div><span>JUST</span><b>${state.just}</b></div>
             <div><span>GOOD</span><b>${state.good}</b></div>
           </div>
+          <div class="event-result-grid event-result-rush-grid">
+            <div><span>RUSH JUST</span><b>${state.rushJust}</b></div>
+            <div><span>RUSH GOOD</span><b>${state.rushGood}</b></div>
+            <div><span>RUSH MISS</span><b>${state.rushMiss}</b></div>
+            <div><span>BONUS</span><b>${allJust ? "ALL JUST" : fullCombo ? "FULL COMBO" : "CLEAR"}</b></div>
+          </div>
           <div class="event-result-fill event-rush-pattern-card">
-            <small>ラッシュモード予定パターン</small>
+            <small>ラッシュパターン</small>
             <b>${escapeHtml(rush.text)}</b>
             <div class="event-rush-pattern-pair">
               <span>前半 ${escapeHtml(rush.introLabel)}</span>
@@ -588,7 +788,11 @@
               <span>ゴースト ${rush.ghostCount}</span>
               <span>倍率 x${rush.scoreMultiplier}</span>
             </div>
-            <p>前半7種×後半4種の28通りからランダム合成します。ツはハイハット/ゴーストとして、将来の演出・リズムガイド扱いです。</p>
+            <p>5レーン：KICK / SNARE / HIGH TOM / LOW TOM / CRASH。ツはハイハット/ゴーストとして裏リズムを示します。</p>
+          </div>
+          <div class="event-result-reward-note">
+            <b>報酬メモ</b>
+            <p>撃破はシールド破壊後のラッシュで確定。JUST・COMBO・FULL COMBOでイベントメダルとチューニング素材の補正が伸びます。</p>
           </div>
           <div class="event-result-actions">
             <button type="button" data-event-action="restart">もう一度</button>
@@ -613,10 +817,16 @@
       btn.addEventListener("pointerup", onPointerUp, { passive: false });
       btn.addEventListener("pointercancel", () => { pointer = null; });
     });
+    root.querySelectorAll("[data-rush-lane]").forEach((btn) => {
+      btn.addEventListener("pointerdown", (event) => {
+        event.preventDefault();
+        handleRushLane(btn.dataset.rushLane);
+      }, { passive: false });
+    });
   }
 
   function installPatch() {
-    if (!window.BattleProto || window.BattleProto.__eventBattlePatchedV82) return false;
+    if (!window.BattleProto || window.BattleProto.__eventBattlePatchedV83) return false;
     originalOpenBattle = window.BattleProto.openBattle;
     originalCloseBattle = window.BattleProto.closeBattle;
     window.BattleProto.openBattle = function (options) {
@@ -627,7 +837,7 @@
       if (state) return closeEventBattle();
       return originalCloseBattle.apply(this, arguments);
     };
-    window.BattleProto.__eventBattlePatchedV82 = true;
+    window.BattleProto.__eventBattlePatchedV83 = true;
     window.TenotsuEventBattle = api;
     return true;
   }
@@ -642,8 +852,9 @@
     introPatterns: RUSH_INTRO_PATTERNS.slice(),
     fillPatterns: RUSH_FILL_PATTERNS.slice(),
     composeRushPattern,
-    pickRushPattern: pickFutureFillPattern,
-    futureFillPatterns: RUSH_FILL_PATTERNS.slice()
+    pickRushPattern,
+    laneOrder: RUSH_LANE_ORDER.slice(),
+    rushConfig: { bpm: RUSH_BPM, justMs: RUSH_JUST_MS, goodMs: RUSH_GOOD_MS }
   };
 
   window.TenotsuEventBattle = api;
