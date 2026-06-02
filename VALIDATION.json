@@ -1,29 +1,18 @@
 {
-  "version": "v039_83",
-  "base": "v039_82",
-  "buildLabelUpdated": true,
-  "eventBattleResultScrollAdded": true,
-  "eventBattleRushModeAdded": true,
-  "fiveLaneRushNotesImplemented": true,
-  "rushLaneOrder": [
-    "KICK",
-    "SNARE",
-    "HIGH_TOM",
-    "LOW_TOM",
-    "CRASH"
-  ],
-  "rushPatternRandomComposerKept": true,
-  "introPatterns": 7,
-  "fillPatterns": 4,
-  "rushPatternCombinations": 28,
-  "hatGhostNotesDisplayedNotPlayable": true,
-  "rushJudgementAdded": {
-    "JUST_MS": 105,
-    "GOOD_MS": 230
-  },
-  "rushComboAndBonusesAdded": true,
-  "shieldZeroRoutesToRushMode": true,
-  "rushDefeatGuaranteed": true,
+  "version": "v039_84",
+  "base": "v039_83",
+  "eventTapCircleJudgementAdded": true,
+  "tapTargetCount": "2-3",
+  "tapJustUsesShrinkingCyanRing": true,
+  "flickGreenArrowDirectionAdded": true,
+  "holdTwoSidePinkArrowsAdded": true,
+  "holdLightningEffectAdded": true,
+  "holdOutwardFlickFinishAdded": true,
+  "rushIntroCountdownAdded": true,
+  "rushCountdown": "3-2-1-GO",
+  "rushNoteSpeedSlowed": true,
+  "rushWaitsForLastNoteTail": true,
+  "rushRhythmBasis": "4/4 8-beat, not 8/8 meter",
   "jsSyntaxOk": true,
   "zipIntegrityOk": true
 }

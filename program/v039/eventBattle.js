@@ -1,12 +1,12 @@
-/* v039_83 eventBattle.js
+/* v039_84 eventBattle.js
  * イベント営業用のブラック家電星人ボス。
- * v039_83では通常モードのシールド削り後、5レーンのラッシュノーツ落下・判定を実装する。
+ * v039_84では通常モード入力をサークルTAP / 矢印FLICK / 両手HOLDへ変更し、ラッシュ突入演出と速度を調整する。
  */
 (function () {
   "use strict";
 
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  const VERSION = "v039_83_event_battle_rush_notes";
+  const VERSION = "v039_84_event_battle_input_rework";
   const ROOT_ID = "event-battle-root";
   const BATTLE_SECONDS = 45;
   const SHIELD_MAX = 120;
@@ -14,11 +14,22 @@
   const BOSS_CHARGE_MAX = 100;
   const RESULT_STORAGE_KEY = "tenotsu_event_battle_rewards_v1";
 
-  const RUSH_BPM = 96;
+  const RUSH_BPM = 92;
   const RUSH_BEAT_MS = Math.round(60000 / RUSH_BPM);
-  const RUSH_LEAD_MS = 1350;
-  const RUSH_FALL_MS = 1650;
-  const RUSH_END_MARGIN_MS = 900;
+  const RUSH_LEAD_MS = 1700;
+  const RUSH_FALL_MS = 2600;
+  const RUSH_END_MARGIN_MS = 1250;
+  const RUSH_COUNTDOWN_MS = 3200;
+  const TAP_TARGET_MIN = 2;
+  const TAP_TARGET_MAX = 3;
+  const TAP_TARGET_LIFETIME_MS = 2350;
+  const TAP_TARGET_HIT_DELAY_MIN_MS = 860;
+  const TAP_TARGET_HIT_DELAY_MAX_MS = 1260;
+  const TAP_JUST_MS = 130;
+  const TAP_GOOD_MS = 310;
+  const FLICK_LIFETIME_MS = 2600;
+  const HOLD_READY_MS = 780;
+  const HOLD_MAX_MS = 2200;
   const RUSH_JUST_MS = 105;
   const RUSH_GOOD_MS = 230;
   const RUSH_LANE_ORDER = ["KICK", "SNARE", "HIGH_TOM", "LOW_TOM", "CRASH"];
@@ -307,16 +318,23 @@
       rushCombo: 0,
       rushMaxCombo: 0,
       score: 0,
-      inputText: "開始すると、タップ・フリック・ホールドでノイズシールドを削ります。",
-      notice: "ラッシュ予定：前半7種×後半4種の28通りからランダム合成します。",
+      inputText: "開始すると、サークルTAP・矢印FLICK・両手HOLDでノイズシールドを削ります。",
+      notice: "シールド0でラッシュ演出後、5レーンのフィルインに入ります。",
       judgeText: "",
       flickDir: randomDir(),
       holdStartedAt: 0,
+      normalSeq: 0,
+      tapTargets: [],
+      flickChallenge: null,
+      holdChallenge: null,
+      holdPointers: {},
+      holdRelease: {},
       selectedRushPattern: null,
+      rushIntro: null,
       rush: null,
       resultSaved: false
     };
-  }
+}
 
   function randomDir() {
     const list = ["left", "right", "up", "down"];
@@ -325,6 +343,137 @@
 
   function dirLabel(dir) {
     return ({ left: "左", right: "右", up: "上", down: "下" })[dir] || "任意";
+  }
+
+  function dirSymbol(dir) {
+    return ({ left: "←", right: "→", up: "↑", down: "↓" })[dir] || "↔";
+  }
+
+  function rand(min, max) {
+    return min + Math.random() * (max - min);
+  }
+
+  function nextNormalId(prefix) {
+    state.normalSeq = (state.normalSeq || 0) + 1;
+    return `${prefix}_${state.normalSeq}`;
+  }
+
+  function makeTapTarget() {
+    const bornAt = nowMs();
+    const hitDelay = Math.round(rand(TAP_TARGET_HIT_DELAY_MIN_MS, TAP_TARGET_HIT_DELAY_MAX_MS));
+    return {
+      id: nextNormalId("tap"),
+      x: Math.round(rand(18, 82)),
+      y: Math.round(rand(18, 74)),
+      bornAt,
+      hitAt: bornAt + hitDelay,
+      expiresAt: bornAt + TAP_TARGET_LIFETIME_MS,
+      hit: false
+    };
+  }
+
+  function ensureTapTargets() {
+    if (!state || state.phase !== "normal") return;
+    const live = state.tapTargets.filter((target) => !target.hit && nowMs() < target.expiresAt);
+    const want = TAP_TARGET_MIN + (Math.random() < 0.36 ? 1 : 0);
+    while (live.length < Math.min(TAP_TARGET_MAX, want)) live.push(makeTapTarget());
+    state.tapTargets = live;
+  }
+
+  function ensureFlickChallenge(force) {
+    if (!state || state.phase !== "normal") return;
+    const t = nowMs();
+    if (state.flickChallenge && !state.flickChallenge.done && t < state.flickChallenge.expiresAt) return;
+    if (!force && Math.random() > 0.28) return;
+    const dir = randomDir();
+    state.flickDir = dir;
+    state.flickChallenge = {
+      id: nextNormalId("flick"),
+      dir,
+      x: Math.round(rand(18, 82)),
+      y: Math.round(rand(24, 70)),
+      bornAt: t,
+      expiresAt: t + FLICK_LIFETIME_MS,
+      done: false
+    };
+  }
+
+  function ensureHoldChallenge(force) {
+    if (!state || state.phase !== "normal") return;
+    const t = nowMs();
+    if (state.holdChallenge && !state.holdChallenge.done && t < state.holdChallenge.expiresAt) return;
+    if (!force && Math.random() > 0.18) return;
+    state.holdChallenge = {
+      id: nextNormalId("hold"),
+      bornAt: t,
+      expiresAt: t + HOLD_MAX_MS + 1200,
+      readyAt: 0,
+      charged: false,
+      done: false,
+      resultAt: 0
+    };
+    state.holdPointers = {};
+    state.holdRelease = {};
+  }
+
+  function ensureNormalChallenges() {
+    ensureTapTargets();
+    ensureFlickChallenge(false);
+    ensureHoldChallenge(false);
+  }
+
+  function expireNormalChallenges() {
+    if (!state || state.phase !== "normal") return;
+    const t = nowMs();
+    const before = state.tapTargets.length;
+    state.tapTargets = state.tapTargets.filter((target) => {
+      if (target.hit) return false;
+      if (t > target.expiresAt) {
+        state.combo = 0;
+        state.miss += 1;
+        state.judgeText = "MISS";
+        state.notice = "TAPサークルを逃しました。";
+        addScore(8, "MISS");
+        return false;
+      }
+      return true;
+    });
+    if (state.flickChallenge && !state.flickChallenge.done && t > state.flickChallenge.expiresAt) {
+      state.flickChallenge.done = true;
+      state.combo = 0;
+      state.miss += 1;
+      state.judgeText = "MISS";
+      state.notice = `FLICK矢印を逃しました。次は${dirLabel(randomDir())}へ。`;
+      addScore(8, "MISS");
+      state.flickChallenge = null;
+    }
+    if (state.holdChallenge && !state.holdChallenge.done && t > state.holdChallenge.expiresAt) {
+      state.holdChallenge.done = true;
+      state.holdPointers = {};
+      state.holdRelease = {};
+      damageShield(4, "MISS", "HOLD失敗。左右ホールドから外側フリックへつなげてください。", { noRender: true });
+      state.holdChallenge = null;
+    }
+    if (before !== state.tapTargets.length) ensureTapTargets();
+  }
+
+  function tapTargetRingScale(target) {
+    const t = nowMs();
+    const span = Math.max(1, target.hitAt - target.bornAt);
+    const p = Math.max(0, Math.min(1, (t - target.bornAt) / span));
+    return Math.round((2.75 - p * 1.75) * 1000) / 1000;
+  }
+
+  function tapTargetTiming(target) {
+    const delta = Math.abs(nowMs() - target.hitAt);
+    if (delta <= TAP_JUST_MS) return "JUST";
+    if (delta <= TAP_GOOD_MS) return "GOOD";
+    return "MISS";
+  }
+
+  function holdIsCharged() {
+    if (!state || !state.holdChallenge) return false;
+    return !!state.holdChallenge.charged;
   }
 
   function laneInfo(lane) {
@@ -358,8 +507,14 @@
     state.phase = "normal";
     state.startedAt = nowMs();
     state.endsAt = state.startedAt + BATTLE_SECONDS * 1000;
-    state.inputText = "通常モード開始。タップ・フリック・ホールドでシールドを削ってください。";
-    state.notice = `フリック指示：${dirLabel(state.flickDir)}へ流す`;
+    state.inputText = "通常モード開始。青サークルTAP、緑矢印FLICK、ピンク両手HOLDでシールドを削ります。";
+    state.notice = "青サークルは大きな水色リングが重なった瞬間に押すとJUST。";
+    state.tapTargets = [];
+    state.flickChallenge = null;
+    state.holdChallenge = null;
+    ensureTapTargets();
+    ensureFlickChallenge(true);
+    ensureHoldChallenge(false);
     stopLoop();
     timerId = window.setInterval(tick, 60);
     render();
@@ -373,13 +528,17 @@
   function tick() {
     if (!state) return;
     if (state.phase === "normal") return tickNormal();
+    if (state.phase === "rushIntro") return tickRushIntro();
     if (state.phase === "rush") return tickRush();
   }
 
   function tickNormal() {
     const left = Math.max(0, Math.ceil((state.endsAt - nowMs()) / 1000));
     state.left = left;
-    state.bossCharge = Math.min(BOSS_CHARGE_MAX, state.bossCharge + 1.2);
+    expireNormalChallenges();
+    ensureNormalChallenges();
+    updateHoldCharge();
+    state.bossCharge = Math.min(BOSS_CHARGE_MAX, state.bossCharge + 0.9);
     if (state.bossCharge >= BOSS_CHARGE_MAX) {
       state.bossCharge = 0;
       state.shield = Math.min(state.shieldMax, state.shield + 5);
@@ -388,6 +547,17 @@
     }
     if (left <= 0) finishBattle(false, "時間切れ。今回はノイズシールドを崩しきれませんでした。");
     else render();
+  }
+
+  function tickRushIntro() {
+    if (!state || !state.rushIntro) return;
+    const t = nowMs();
+    const leftMs = Math.max(0, state.rushIntro.endsAt - t);
+    const count = Math.ceil(leftMs / 1000);
+    state.judgeText = count > 0 ? String(count) : "GO";
+    state.notice = "これよりラッシュモード。ハイハットの裏リズムに乗って、5レーンのフィルインを叩きます。";
+    if (t >= state.rushIntro.endsAt) return beginRushMode();
+    render();
   }
 
   function tickRush() {
@@ -407,7 +577,9 @@
     });
     const playable = state.rush.notes.filter((note) => !note.ghost);
     const resolved = playable.every((note) => note.hit || note.missed);
-    if (resolved || t >= state.rush.endsAt) return finishRush();
+    const allNotesClearedScreen = state.rush.notes.every((note) => note.hit || note.missed || t > note.targetAt + RUSH_END_MARGIN_MS);
+    if (resolved && allNotesClearedScreen && t >= state.rush.endsAt) return finishRush();
+    if (t >= state.rush.forceEndsAt) return finishRush();
     render();
   }
 
@@ -424,15 +596,16 @@
     state.score += Math.round(base * comboBonus * ratingBonus * patternBonus);
   }
 
-  function damageShield(amount, rating, text) {
+  function damageShield(amount, rating, text, options) {
     if (!state || state.phase !== "normal") return;
+    options = options || {};
     if (rating === "MISS") {
       state.combo = 0;
       state.miss += 1;
       state.notice = text || "MISS。ノイズが乱れました。";
       state.judgeText = "MISS";
       addScore(10, rating);
-      render();
+      if (!options.noRender) render();
       return;
     }
     state.shield = Math.max(0, state.shield - amount);
@@ -445,40 +618,136 @@
     addScore(amount * 12, rating);
     state.bossCharge = Math.max(0, state.bossCharge - (rating === "JUST" ? 12 : 7));
     if (state.shield <= 0) startRushMode();
-    else render();
+    else if (!options.noRender) render();
   }
 
-  function handleTap() {
-    damageShield(8, "GOOD", "TAP。シールドを少し削りました。連続入力でコンボが伸びます。");
+  function handleTap(targetId) {
+    if (!state || state.phase !== "normal") return;
+    const target = state.tapTargets.find((item) => item.id === targetId && !item.hit);
+    if (!target) {
+      damageShield(3, "MISS", "TAP空振り。青い小サークルを狙ってください。");
+      return;
+    }
+    target.hit = true;
+    const rating = tapTargetTiming(target);
+    if (rating === "JUST") damageShield(15, "JUST", "JUST TAP！ 水色リングと青サークルが重なりました。", { noRender: true });
+    else if (rating === "GOOD") damageShield(9, "GOOD", "GOOD TAP。少しズレましたが同期できました。", { noRender: true });
+    else damageShield(3, "MISS", "TAPタイミング外。リングが重なる瞬間を狙ってください。", { noRender: true });
+    state.tapTargets = state.tapTargets.filter((item) => item.id !== targetId);
+    ensureTapTargets();
+    render();
   }
 
   function handleFlick(actualDir) {
-    if (actualDir === state.flickDir) {
-      state.flickDir = randomDir();
-      damageShield(20, "JUST", `JUST FLICK！ ${dirLabel(actualDir)}へノイズを流しました。`);
+    if (!state || state.phase !== "normal") return;
+    const challenge = state.flickChallenge;
+    if (!challenge || challenge.done) {
+      damageShield(4, "MISS", "FLICK対象がありません。緑の矢印が出たら方向へ流してください。", { noRender: true });
+      render();
+      return;
+    }
+    challenge.done = true;
+    const expected = challenge.dir;
+    state.flickChallenge = null;
+    if (actualDir === expected) {
+      damageShield(23, "JUST", `JUST FLICK！ ${dirLabel(actualDir)}へノイズを流しました。`, { noRender: true });
+      ensureFlickChallenge(true);
     } else {
-      damageShield(5, "MISS", `方向違い。次は${dirLabel(state.flickDir)}へ流してください。`);
+      damageShield(5, "MISS", `方向違い。${dirLabel(expected)}へ流す矢印でした。`, { noRender: true });
+      ensureFlickChallenge(true);
+    }
+    render();
+  }
+
+  function handleHoldResult(rating, message) {
+    if (!state || state.phase !== "normal") return;
+    if (state.holdChallenge) state.holdChallenge.done = true;
+    state.holdPointers = {};
+    state.holdRelease = {};
+    state.holdChallenge = null;
+    if (rating === "JUST") damageShield(34, "JUST", message || "JUST HOLD！ 左右同時放電が成功しました。", { noRender: true });
+    else if (rating === "GOOD") damageShield(20, "GOOD", message || "HOLD成功。ビリビリ放電でシールドを削りました。", { noRender: true });
+    else damageShield(5, "MISS", message || "HOLD失敗。左右を押してから外側へフリックしてください。", { noRender: true });
+    ensureHoldChallenge(false);
+    render();
+  }
+
+  function updateHoldCharge() {
+    const hc = state && state.holdChallenge;
+    if (!hc || hc.done) return;
+    const left = state.holdPointers.left;
+    const right = state.holdPointers.right;
+    if (left && right) {
+      if (!hc.readyAt) hc.readyAt = nowMs() + HOLD_READY_MS;
+      if (!hc.charged && nowMs() >= hc.readyAt) {
+        hc.charged = true;
+        state.notice = "HOLD充電完了！ 左右を同時に外側へフリック。";
+        state.judgeText = "READY";
+      }
+    } else {
+      hc.readyAt = 0;
+      hc.charged = false;
     }
   }
 
-  function handleHold(duration) {
-    if (duration >= 620 && duration <= 1080) {
-      damageShield(28, "JUST", "JUST HOLD！ 調律がきれいに入りました。大きく削ります。");
-    } else if (duration >= 360 && duration <= 1500) {
-      damageShield(16, "GOOD", "HOLD成功。ノイズを受け止めました。");
-    } else {
-      damageShield(4, "MISS", "HOLD失敗。押す長さが合いませんでした。");
+  function registerHoldPointer(side, event) {
+    if (!state || state.phase !== "normal") return;
+    ensureHoldChallenge(true);
+    if (!state.holdChallenge || state.holdChallenge.done) return;
+    state.holdPointers[side] = {
+      pointerId: event.pointerId,
+      x: event.clientX,
+      y: event.clientY,
+      startedAt: nowMs()
+    };
+    state.notice = "左右HOLD中……両方押すとビリビリエフェクトがつながります。";
+    render();
+  }
+
+  function releaseHoldPointer(event) {
+    if (!state || state.phase !== "normal" || !state.holdChallenge) return;
+    const side = Object.keys(state.holdPointers).find((key) => state.holdPointers[key].pointerId === event.pointerId);
+    if (!side) return;
+    const info = state.holdPointers[side];
+    const dx = event.clientX - info.x;
+    const duration = nowMs() - info.startedAt;
+    delete state.holdPointers[side];
+    const outward = side === "left" ? dx < -28 : dx > 28;
+    state.holdRelease[side] = { outward, duration, at: nowMs() };
+    const l = state.holdRelease.left;
+    const r = state.holdRelease.right;
+    if (l && r && Math.abs(l.at - r.at) <= 620) {
+      if (state.holdChallenge.charged && l.outward && r.outward) return handleHoldResult("JUST", "JUST HOLD！ 左右同時外側フリックでノイズを放電しました。");
+      if (l.outward || r.outward) return handleHoldResult("GOOD", "HOLD放電。片側が少し遅れましたが成功です。");
+      return handleHoldResult("MISS", "HOLD失敗。完了後は左右外側へフリックしてください。");
     }
+    if (duration < HOLD_READY_MS) handleHoldResult("MISS", "HOLDが短すぎました。左右を少し維持してください。");
   }
 
   function startRushMode() {
     if (!state || state.phase !== "normal") return;
-    state.phase = "rush";
+    state.phase = "rushIntro";
     state.shield = 0;
     state.bossCharge = 0;
     state.combo = 0;
     state.rushCombo = 0;
     state.selectedRushPattern = pickRushPattern();
+    const t = nowMs();
+    state.rushIntro = {
+      startedAt: t,
+      endsAt: t + RUSH_COUNTDOWN_MS
+    };
+    state.inputText = "これよりラッシュモード！ 3カウント後、5レーンのドラムフィルインへ入ります。";
+    state.notice = `予定：${state.selectedRushPattern.introLabel} → ${state.selectedRushPattern.fillLabel}`;
+    state.judgeText = "3";
+    stopLoop();
+    timerId = window.setInterval(tick, 33);
+    render();
+  }
+
+  function beginRushMode() {
+    if (!state || state.phase !== "rushIntro") return;
+    state.phase = "rush";
     const startAt = nowMs();
     const notes = state.selectedRushPattern.notes.map((note, index) => {
       const targetAt = startAt + RUSH_LEAD_MS + Math.round((note.beat || 0) * RUSH_BEAT_MS);
@@ -490,13 +759,12 @@
       bpm: RUSH_BPM,
       beatMs: RUSH_BEAT_MS,
       notes,
-      endsAt: lastTarget + RUSH_GOOD_MS + RUSH_END_MARGIN_MS
+      endsAt: lastTarget + RUSH_GOOD_MS + RUSH_END_MARGIN_MS,
+      forceEndsAt: lastTarget + RUSH_FALL_MS + RUSH_END_MARGIN_MS + 1500
     };
     state.inputText = "RUSH MODE！ 5レーンのドラムフィルインで撃破スコアを伸ばしてください。";
     state.notice = `選択パターン：${state.selectedRushPattern.introLabel} → ${state.selectedRushPattern.fillLabel}`;
-    state.judgeText = "RUSH";
-    stopLoop();
-    timerId = window.setInterval(tick, 33);
+    state.judgeText = "GO";
     render();
   }
 
@@ -604,34 +872,41 @@
 
   function onPointerDown(event) {
     if (!state || state.phase !== "normal") return;
-    const target = event.target && event.target.closest ? event.target.closest("[data-event-input]") : null;
-    if (!target) return;
+    const tapTarget = event.target && event.target.closest ? event.target.closest("[data-tap-target]") : null;
+    if (tapTarget) {
+      event.preventDefault();
+      return handleTap(tapTarget.dataset.tapTarget);
+    }
+    const holdSide = event.target && event.target.closest ? event.target.closest("[data-hold-side]") : null;
+    if (holdSide) {
+      event.preventDefault();
+      return registerHoldPointer(holdSide.dataset.holdSide, event);
+    }
+    const field = event.target && event.target.closest ? event.target.closest(".event-normal-action-field") : null;
+    if (!field) return;
     event.preventDefault();
     pointer = {
       id: event.pointerId,
       x: event.clientX,
       y: event.clientY,
-      target: target.dataset.eventInput,
+      target: "flick",
       startedAt: nowMs()
     };
-    if (target.dataset.eventInput === "hold") {
-      state.notice = "HOLD中……光るタイミングで離してください。";
-      render();
-    }
   }
 
   function onPointerUp(event) {
-    if (!state || state.phase !== "normal" || !pointer) return;
+    if (!state || state.phase !== "normal") return;
+    if (state.holdPointers && Object.keys(state.holdPointers).some((key) => state.holdPointers[key].pointerId === event.pointerId)) {
+      event.preventDefault();
+      return releaseHoldPointer(event);
+    }
+    if (!pointer || pointer.id !== event.pointerId) return;
     event.preventDefault();
     const dx = event.clientX - pointer.x;
     const dy = event.clientY - pointer.y;
     const dist = Math.sqrt(dx * dx + dy * dy);
-    const duration = nowMs() - pointer.startedAt;
-    const input = pointer.target;
     pointer = null;
-    if (input === "hold") return handleHold(duration);
-    if (dist >= 36) return handleFlick(pointerDirection(dx, dy));
-    return handleTap();
+    if (dist >= 34) return handleFlick(pointerDirection(dx, dy));
   }
 
   function pct(value, max) {
@@ -669,7 +944,7 @@
           <div class="event-battle-message">${escapeHtml(state.inputText)}</div>
           <div class="event-battle-notice">${escapeHtml(state.notice)}</div>
         </div>
-        ${state.phase === "ready" ? renderReady() : state.phase === "result" ? renderResult() : state.phase === "rush" ? renderRushControls() : renderNormalControls()}
+        ${state.phase === "ready" ? renderReady() : state.phase === "result" ? renderResult() : state.phase === "rushIntro" ? renderRushIntro() : state.phase === "rush" ? renderRushControls() : renderNormalControls()}
       </section>
     `;
     bindButtons();
@@ -689,19 +964,60 @@
   }
 
   function renderNormalControls() {
+    const flick = state.flickChallenge || { dir: state.flickDir, x: 50, y: 50 };
+    const hold = state.holdChallenge;
+    const holdCharged = holdIsCharged();
+    const targetHtml = (state.tapTargets || []).map((target) => {
+      const scale = tapTargetRingScale(target);
+      const timing = tapTargetTiming(target).toLowerCase();
+      return `
+        <button type="button" class="event-tap-target timing-${escapeHtml(timing)}" data-tap-target="${escapeHtml(target.id)}" style="left:${target.x}%; top:${target.y}%; --ring-scale:${scale};">
+          <i></i><b></b><span>TAP</span>
+        </button>
+      `;
+    }).join("");
+    const flickHtml = state.flickChallenge && !state.flickChallenge.done ? `
+      <div class="event-flick-arrow event-flick-${escapeHtml(flick.dir)}" style="left:${flick.x}%; top:${flick.y}%;">
+        <b>${escapeHtml(dirSymbol(flick.dir))}</b><span>${escapeHtml(dirLabel(flick.dir))}へフリック</span>
+      </div>
+    ` : "";
+    const holdHtml = hold && !hold.done ? `
+      <div class="event-hold-pair ${holdCharged ? "is-charged" : ""}">
+        <button type="button" class="event-hold-zone event-hold-left" data-hold-side="left"><b>←</b><span>HOLD</span></button>
+        <div class="event-hold-bolt"><i></i><span>${holdCharged ? "外側へフリック！" : "左右を同時HOLD"}</span></div>
+        <button type="button" class="event-hold-zone event-hold-right" data-hold-side="right"><b>→</b><span>HOLD</span></button>
+      </div>
+    ` : "";
     return `
       <div class="event-normal-panel">
         <div class="event-normal-guide">
-          <span>タップ：基本削り</span>
-          <span>フリック：${dirLabel(state.flickDir)}へ流す</span>
-          <span>ホールド：長押し調律</span>
+          <span>青：リングが重なったらTAP</span>
+          <span>緑：矢印方向へFLICK</span>
+          <span>桃：左右HOLD後に外側FLICK</span>
         </div>
-        <div class="event-normal-inputs">
-          <button type="button" data-event-input="tap"><b>TAP</b><small>基本同期</small></button>
-          <button type="button" data-event-input="flick"><b>FLICK</b><small>${dirLabel(state.flickDir)}へ流す</small></button>
-          <button type="button" data-event-input="hold"><b>HOLD</b><small>調律</small></button>
+        <div class="event-normal-action-field">
+          ${targetHtml}
+          ${flickHtml}
+          ${holdHtml}
+          <div class="event-field-caption">TAP / FLICK / HOLDでノイズシールドを削る通常モード</div>
         </div>
-        <div class="event-future-note">シールド0でラッシュ突入。撃破は確定し、JUST・COMBOで報酬スコアが伸びます。</div>
+        <div class="event-future-note">シールド0で「これよりラッシュモード」演出と3カウント後に5レーンへ移行します。</div>
+      </div>
+    `;
+  }
+
+  function renderRushIntro() {
+    const rush = state.selectedRushPattern || pickRushPattern();
+    const count = state.rushIntro ? Math.max(0, Math.ceil((state.rushIntro.endsAt - nowMs()) / 1000)) : 3;
+    const label = count > 0 ? String(count) : "GO";
+    return `
+      <div class="event-rush-intro-panel">
+        <div class="event-rush-intro-card">
+          <b>これよりラッシュモード</b>
+          <strong>${escapeHtml(label)}</strong>
+          <span>${escapeHtml(rush.introLabel)} → ${escapeHtml(rush.fillLabel)}</span>
+          <p>ハイハットの裏リズムに合わせて、KICK / SNARE / HIGH TOM / LOW TOM / CRASH を叩いてください。</p>
+        </div>
       </div>
     `;
   }
@@ -812,11 +1128,19 @@
         else if (action === "close") closeEventBattle();
       });
     });
-    root.querySelectorAll("[data-event-input]").forEach((btn) => {
-      btn.addEventListener("pointerdown", onPointerDown, { passive: false });
-      btn.addEventListener("pointerup", onPointerUp, { passive: false });
-      btn.addEventListener("pointercancel", () => { pointer = null; });
-    });
+    const field = root.querySelector(".event-normal-action-field");
+    if (field) {
+      field.addEventListener("pointerdown", onPointerDown, { passive: false });
+      field.addEventListener("pointerup", onPointerUp, { passive: false });
+      field.addEventListener("pointercancel", (event) => {
+        if (state && state.holdPointers) {
+          Object.keys(state.holdPointers).forEach((key) => {
+            if (state.holdPointers[key].pointerId === event.pointerId) delete state.holdPointers[key];
+          });
+        }
+        if (pointer && pointer.id === event.pointerId) pointer = null;
+      });
+    }
     root.querySelectorAll("[data-rush-lane]").forEach((btn) => {
       btn.addEventListener("pointerdown", (event) => {
         event.preventDefault();
@@ -826,7 +1150,7 @@
   }
 
   function installPatch() {
-    if (!window.BattleProto || window.BattleProto.__eventBattlePatchedV83) return false;
+    if (!window.BattleProto || window.BattleProto.__eventBattlePatchedV84) return false;
     originalOpenBattle = window.BattleProto.openBattle;
     originalCloseBattle = window.BattleProto.closeBattle;
     window.BattleProto.openBattle = function (options) {
@@ -837,7 +1161,7 @@
       if (state) return closeEventBattle();
       return originalCloseBattle.apply(this, arguments);
     };
-    window.BattleProto.__eventBattlePatchedV83 = true;
+    window.BattleProto.__eventBattlePatchedV84 = true;
     window.TenotsuEventBattle = api;
     return true;
   }
