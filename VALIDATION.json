@@ -1,20 +1,16 @@
 {
-  "version": "v039_88",
-  "base": "v039_87",
-  "eventCleaningBattleAdded": true,
-  "eventRhythmGameMainlineRemoved": true,
-  "dirtyApplianceAlienLoreAdded": true,
-  "topSixAliensBottomFiveMembers": true,
-  "escapeLimitHours": 12,
-  "memberRecastMinutes": 30,
-  "damageUsesStatsLevelAffinity": true,
-  "attributeSpecialAttackAdded": true,
-  "darkElementCrystalEventPointKept": true,
-  "tsukumoBuffItemsAdded": [
-    "ひかるの洗浄剤",
-    "陽里のクリーナークロス",
-    "玄一郎の接点復活剤"
-  ],
+  "version": "v039_89",
+  "base": "v039_88",
+  "topPanelConsolidated": true,
+  "bossInfoMovedIntoTopShell": true,
+  "supportItemsMovedIntoTopShell": true,
+  "enemyCountChangedToFour": true,
+  "enemyCardsUseAttachedImages": true,
+  "memberCardsShowCharacterImages": true,
+  "doubleClickEnemyChangeConsumesEventBp": true,
+  "premiumEventRecastClearItemAdded": true,
+  "premiumEventBpRecoveryItemAdded": true,
+  "paidItemsAreTemporaryMockPurchase": true,
   "jsSyntaxOk": true,
   "zipIntegrityOk": true
 }

@@ -1,4 +1,4 @@
-/* v039_88 eventBattle.js
+/* v039_89 eventBattle.js
  * イベントバトルを「汚れた家電星人の清掃バトル」へ再設計。
  * 家電星人はメンテナンス不足で悪の心が芽生える。ひだまりメンバーが清掃して正義の心を取り戻し、余剰ノイズはダークエレメントとして排出される。
  */
@@ -6,7 +6,7 @@
   "use strict";
 
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  const VERSION = "v039_88_event_cleaning_battle";
+  const VERSION = "v039_89_event_battle_card_layout";
   const ROOT_ID = "event-battle-root";
   const STORAGE_KEY = "tenotsu_event_run_battle_v1";
   const ENCOUNTER_ST_COST = 20;
@@ -14,44 +14,50 @@
   const MEMBER_RECAST_MS = 30 * 60 * 1000;
   const ENCOUNTER_ESCAPE_MS = 12 * 60 * 60 * 1000;
   const DECK_STORAGE_KEY = "tenotsu_battle_deck_v1";
+  const MAX_EVENT_ENEMIES = 4;
 
   const DEFAULT_STAFF_IDS = ["aa", "ab", "ac", "ad", "ae"];
   const STAFF_BASE = [
-    { id: "aa", name: "緋奈", attr: "映像", color: "#d3381c" },
-    { id: "ab", name: "藍", attr: "ドライヤー", color: "#0067c0" },
-    { id: "ac", name: "翠", attr: "PC", color: "#02b308" },
-    { id: "ad", name: "こがね", attr: "スマホ", color: "#fff450" },
-    { id: "ae", name: "琥珀", attr: "オーディオ", color: "#f68b1f" },
-    { id: "af", name: "真花", attr: "美容", color: "#c0c0c0" },
-    { id: "ag", name: "雪乃", attr: "オーブン", color: "#6495ed" },
-    { id: "ah", name: "美空", attr: "除湿", color: "#fffef6" },
-    { id: "ai", name: "夜空", attr: "加湿", color: "#214a9d" },
-    { id: "aj", name: "桃", attr: "配信", color: "#f7adc3" },
-    { id: "ak", name: "彩愛", attr: "生活", color: "#694d9f" },
-    { id: "al", name: "里美", attr: "レジ", color: "#8d5025" },
-    { id: "am", name: "萌", attr: "リラックス", color: "#33cc99" }
+    { id: "aa", name: "緋奈", attr: "映像", color: "#d3381c", image: "a10501.webp" },
+    { id: "ab", name: "藍", attr: "ドライヤー", color: "#0067c0", image: "b10501.webp" },
+    { id: "ac", name: "翠", attr: "PC", color: "#02b308", image: "c10501.webp" },
+    { id: "ad", name: "こがね", attr: "スマホ", color: "#fff450", image: "d10501.webp" },
+    { id: "ae", name: "琥珀", attr: "オーディオ", color: "#f68b1f", image: "e10501.webp" },
+    { id: "af", name: "真花", attr: "美容", color: "#c0c0c0", image: "f10501.webp" },
+    { id: "ag", name: "雪乃", attr: "オーブン", color: "#6495ed", image: "g10501.webp" },
+    { id: "ah", name: "美空", attr: "除湿", color: "#fffef6", image: "h10501.webp" },
+    { id: "ai", name: "夜空", attr: "加湿", color: "#214a9d", image: "i10501.webp" },
+    { id: "aj", name: "桃", attr: "配信", color: "#f7adc3", image: "j10501.webp" },
+    { id: "ak", name: "彩愛", attr: "生活", color: "#694d9f", image: "k10501.webp" },
+    { id: "al", name: "里美", attr: "レジ", color: "#8d5025", image: "l10501.webp" },
+    { id: "am", name: "萌", attr: "リラックス", color: "#33cc99", image: "m10501.webp" }
   ];
 
   const DIRTY_ALIEN_POOL = [
-    { id: "tv_popcorn", name: "テレビポップコーン星人", shortName: "テレビポップコーン", attr: "映像", color: "#ff6a4a", baseHp: 70 },
-    { id: "choco_dryer", name: "チョコドライヤ星人", shortName: "チョコドライヤ", attr: "ドライヤー", color: "#5cb8ff", baseHp: 64 },
-    { id: "pc_pizza", name: "パソコンピザ星人", shortName: "パソコンピザ", attr: "PC", color: "#56e07f", baseHp: 82 },
-    { id: "phone_candy", name: "スマホキャンディ星人", shortName: "スマホキャンディ", attr: "スマホ", color: "#ffe45a", baseHp: 58 },
-    { id: "audio_gummy", name: "イヤホングミ星人", shortName: "イヤホングミ", attr: "オーディオ", color: "#ffb24a", baseHp: 70 },
-    { id: "beauty_macaron", name: "ビューティマカロン星人", shortName: "ビューティマカロン", attr: "美容", color: "#ff9ed1", baseHp: 68 },
-    { id: "pudding_oven", name: "プリンオーブン星人", shortName: "プリンオーブン", attr: "オーブン", color: "#ff9b55", baseHp: 84 },
-    { id: "shavedice_aircon", name: "カキゴーリエアコン星人", shortName: "カキゴーリエアコン", attr: "除湿", color: "#8ad9ff", baseHp: 66 },
-    { id: "jelly_humidifier", name: "ゼリーカシツ星人", shortName: "ゼリーカシツ", attr: "加湿", color: "#9bbcff", baseHp: 66 },
-    { id: "game_potato", name: "ゲームポテト星人", shortName: "ゲームポテト", attr: "配信", color: "#ffb3d0", baseHp: 70 },
-    { id: "donut_washer", name: "ドーナツセンタク星人", shortName: "ドーナツセンタク", attr: "生活", color: "#b49cff", baseHp: 78 },
-    { id: "mochi_register", name: "モチモチレジスター星人", shortName: "モチモチレジスター", attr: "レジ", color: "#d9b38c", baseHp: 72 },
-    { id: "marshmallow_massage", name: "マシュマロマッサージ星人", shortName: "マシュマロマッサージ", attr: "リラックス", color: "#9ef0d0", baseHp: 64 }
+    { id: "tv_popcorn", name: "テレビポップコーン星人", shortName: "テレビポップコーン", attr: "映像", color: "#ff6a4a", image: "images/assets/event/dirty_alien_01.png", baseHp: 70 },
+    { id: "choco_dryer", name: "チョコドライヤ星人", shortName: "チョコドライヤ", attr: "ドライヤー", color: "#5cb8ff", image: "images/assets/event/dirty_alien_02.png", baseHp: 64 },
+    { id: "pc_pizza", name: "パソコンピザ星人", shortName: "パソコンピザ", attr: "PC", color: "#56e07f", image: "images/assets/event/dirty_alien_03.png", baseHp: 82 },
+    { id: "phone_candy", name: "スマホキャンディ星人", shortName: "スマホキャンディ", attr: "スマホ", color: "#ffe45a", image: "images/assets/event/dirty_alien_04.png", baseHp: 58 },
+    { id: "audio_gummy", name: "イヤホングミ星人", shortName: "イヤホングミ", attr: "オーディオ", color: "#ffb24a", image: "images/assets/event/dirty_alien_05.png", baseHp: 70 },
+    { id: "beauty_macaron", name: "ビューティマカロン星人", shortName: "ビューティマカロン", attr: "美容", color: "#ff9ed1", image: "images/assets/event/dirty_alien_06.png", baseHp: 68 },
+    { id: "pudding_oven", name: "プリンオーブン星人", shortName: "プリンオーブン", attr: "オーブン", color: "#ff9b55", image: "images/assets/event/dirty_alien_07.png", baseHp: 84 },
+    { id: "shavedice_aircon", name: "カキゴーリエアコン星人", shortName: "カキゴーリエアコン", attr: "除湿", color: "#8ad9ff", image: "images/assets/event/dirty_alien_08.png", baseHp: 66 },
+    { id: "jelly_humidifier", name: "ゼリーカシツ星人", shortName: "ゼリーカシツ", attr: "加湿", color: "#9bbcff", image: "images/assets/event/dirty_alien_09.png", baseHp: 66 },
+    { id: "game_potato", name: "ゲームポテト星人", shortName: "ゲームポテト", attr: "配信", color: "#ffb3d0", image: "images/assets/event/dirty_alien_10.png", baseHp: 70 },
+    { id: "donut_washer", name: "ドーナツセンタク星人", shortName: "ドーナツセンタク", attr: "生活", color: "#b49cff", image: "images/assets/event/dirty_alien_11.png", baseHp: 78 },
+    { id: "mochi_register", name: "モチモチレジスター星人", shortName: "モチモチレジスター", attr: "レジ", color: "#d9b38c", image: "images/assets/event/dirty_alien_12.png", baseHp: 72 },
+    { id: "marshmallow_massage", name: "マシュマロマッサージ星人", shortName: "マシュマロマッサージ", attr: "リラックス", color: "#9ef0d0", image: "images/assets/event/dirty_alien_13.png", baseHp: 64 }
   ];
 
   const BUFF_ITEMS = [
     { id: "hikaru_cleanser", name: "ひかるの洗浄剤", cost: 500, desc: "次のイベント清掃中、メンバーの清掃ダメージ +18%。", effect: "damageRate", value: 0.18 },
     { id: "haris_cloth", name: "陽里のクリーナークロス", cost: 350, desc: "次のイベント清掃中、行動後リキャストを10分短縮。", effect: "recastCut", value: 10 * 60 * 1000 },
     { id: "genichiro_contact", name: "玄一郎の接点復活剤", cost: 800, desc: "次のイベント清掃中、属性一致時の特攻倍率 +25%。", effect: "matchBoost", value: 0.25 }
+  ];
+
+  const PREMIUM_ITEMS = [
+    { id: "event_recast_clear", name: "イベントリキャストクリア", desc: "イベント清掃のメンバーリキャストを全解除します。", paid: true, action: "clearRecast" },
+    { id: "event_bp_recover", name: "イベントBP回復クリスタル", desc: "イベントBPを最大値まで回復します。", paid: true, action: "recoverEventBp" }
   ];
 
   const LADDER_REWARDS = [
@@ -114,7 +120,7 @@
 
   function defaultProgress() {
     return {
-      version: "v039_88",
+      version: "v039_89",
       darkElements: 0,
       totalDarkElements: 0,
       totalEncounters: 0,
@@ -129,13 +135,14 @@
       memberCooldowns: {},
       memberAffinity: {},
       buffInventory: {},
+      premiumInventory: {},
       activeBuffs: {}
     };
   }
   function normalizeProgress(data) {
     const base = defaultProgress();
     if (!data || typeof data !== "object") data = base;
-    data.version = "v039_88";
+    data.version = "v039_89";
     ["darkElements", "totalDarkElements", "totalEncounters", "totalCleaned", "totalEscaped", "totalBattles", "maxThreatLevel"].forEach((key) => {
       data[key] = Math.max(key === "maxThreatLevel" ? 1 : 0, Math.floor(Number(data[key] == null ? base[key] : data[key]) || 0));
     });
@@ -144,6 +151,7 @@
     data.memberCooldowns = data.memberCooldowns && typeof data.memberCooldowns === "object" ? data.memberCooldowns : {};
     data.memberAffinity = data.memberAffinity && typeof data.memberAffinity === "object" ? data.memberAffinity : {};
     data.buffInventory = data.buffInventory && typeof data.buffInventory === "object" ? data.buffInventory : {};
+    data.premiumInventory = data.premiumInventory && typeof data.premiumInventory === "object" ? data.premiumInventory : {};
     data.activeBuffs = data.activeBuffs && typeof data.activeBuffs === "object" ? data.activeBuffs : {};
     data.history = Array.isArray(data.history) ? data.history.slice(-40) : [];
     data.activeEncounter = data.activeEncounter && typeof data.activeEncounter === "object" ? data.activeEncounter : null;
@@ -155,7 +163,7 @@
     return expireActiveIfNeeded(normalizeProgress(data));
   }
   function saveProgress(data) {
-    data.version = "v039_88";
+    data.version = "v039_89";
     data.updatedAt = nowIso();
     data.history = Array.isArray(data.history) ? data.history.slice(-40) : [];
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (_) {}
@@ -250,7 +258,7 @@
   }
 
   function calcThreatLevel(progress) {
-    return Math.max(1, Math.floor((Number(progress.totalCleaned) || 0) / 6) + 1);
+    return Math.max(1, Math.floor((Number(progress.totalCleaned) || 0) / MAX_EVENT_ENEMIES) + 1);
   }
   function makeEnemy(template, threatLevel, index) {
     const dirt = 1 + Math.random() * 0.15;
@@ -262,6 +270,7 @@
       shortName: template.shortName,
       attr: template.attr,
       color: template.color,
+      image: template.image || "",
       maxHp,
       hp: maxHp,
       cleaned: false,
@@ -270,10 +279,10 @@
   }
   function createEncounter(progress) {
     const threatLevel = calcThreatLevel(progress);
-    const chosen = shuffle(DIRTY_ALIEN_POOL).slice(0, 6);
+    const chosen = shuffle(DIRTY_ALIEN_POOL).slice(0, MAX_EVENT_ENEMIES);
     return {
       id: `event_${Date.now()}_${Math.floor(Math.random() * 9999)}`,
-      version: "v039_88",
+      version: "v039_89",
       threatLevel,
       createdAt: nowIso(),
       expiresAt: new Date(nowMs() + ENCOUNTER_ESCAPE_MS).toISOString(),
@@ -395,7 +404,7 @@
         </div>
         <div class="event-battle-gauges event-cleaning-gauges">
           <div class="event-gauge"><span>THREAT</span><i><b style="width:${Math.min(100, level * 8)}%"></b></i><em>Lv.${level}</em></div>
-          <div class="event-gauge power"><span>CLEANED</span><i><b style="width:${cleaned / 6 * 100}%"></b></i><em>${cleaned}/6</em></div>
+          <div class="event-gauge power"><span>CLEANED</span><i><b style="width:${cleaned / MAX_EVENT_ENEMIES * 100}%"></b></i><em>${cleaned}/${MAX_EVENT_ENEMIES}</em></div>
           <div class="event-gauge chance"><span>ESCAPE</span><i><b style="width:${Math.max(2, Math.min(100, escapeLeft / ENCOUNTER_ESCAPE_MS * 100))}%"></b></i><em>${active ? formatClock(escapeLeft) : "12:00:00"}</em></div>
         </div>
         <div class="event-battle-message">${escapeHtml(state.notice || (active && active.lastAction) || "")}</div>
@@ -403,32 +412,50 @@
     `;
   }
 
-  function renderBuffShop() {
+  function renderSupportItems() {
     const progress = state.progress;
     const economy = getEconomy();
     const available = Math.max(0, Math.floor(Number(economy.availableSales) || 0));
+    const premium = progress.premiumInventory || {};
     return `
-      <div class="event-buff-panel">
-        <div class="event-buff-head"><b>つくも準備品</b><span>売上金 ${available.toLocaleString()}円</span></div>
-        <div class="event-buff-grid">
+      <div class="event-support-panel">
+        <div class="event-support-head"><b>つくも準備品 / 課金アイテム</b><span>売上金 ${available.toLocaleString()}円</span></div>
+        <div class="event-support-grid">
           ${BUFF_ITEMS.map((item) => {
             const inv = Math.max(0, Math.floor(Number((progress.buffInventory || {})[item.id]) || 0));
             const active = Math.max(0, Math.floor(Number((progress.activeBuffs || {})[item.id]) || 0));
             const canBuy = available >= item.cost;
             const canUse = inv > 0;
-            return `<div class="event-buff-card">
+            return `<div class="event-support-card">
               <b>${escapeHtml(item.name)}</b>
               <small>${escapeHtml(item.desc)}</small>
               <span>所持 ${inv} / 使用中 ${active}</span>
-              <div class="event-buff-actions">
-                <button type="button" data-event-buy="${escapeHtml(item.id)}" ${canBuy ? "" : "disabled"}>${item.cost}円で買う</button>
+              <div class="event-support-actions">
+                <button type="button" data-event-buy="${escapeHtml(item.id)}" ${canBuy ? "" : "disabled"}>${item.cost}円</button>
                 <button type="button" data-event-use="${escapeHtml(item.id)}" ${canUse ? "" : "disabled"}>使う</button>
+              </div>
+            </div>`;
+          }).join("")}
+          ${PREMIUM_ITEMS.map((item) => {
+            const inv = Math.max(0, Math.floor(Number(premium[item.id]) || 0));
+            const canUse = inv > 0;
+            return `<div class="event-support-card premium">
+              <b>${escapeHtml(item.name)}</b>
+              <small>${escapeHtml(item.desc)}</small>
+              <span>所持 ${inv} / 課金想定</span>
+              <div class="event-support-actions">
+                <button type="button" data-event-premium-grant="${escapeHtml(item.id)}">購入(仮)</button>
+                <button type="button" data-event-premium-use="${escapeHtml(item.id)}" ${canUse ? "" : "disabled"}>使う</button>
               </div>
             </div>`;
           }).join("")}
         </div>
       </div>
     `;
+  }
+
+  function renderTopPanel() {
+    return `<div class="event-top-shell">${renderHud()}${renderBossArea()}${renderSupportItems()}</div>`;
   }
 
   function renderReady() {
@@ -440,7 +467,6 @@
           <div class="event-route-line"><span></span><span></span><span></span><span></span></div>
           <button type="button" data-event-action="run">探索開始</button>
         </div>
-        ${renderBuffShop()}
       </div>
     `;
   }
@@ -463,7 +489,7 @@
       <div class="event-run-panel event-encounter-panel">
         <div class="event-run-card">
           <b>エンカウント！</b>
-          <p>汚れた家電星人が6体集まっています。逃げ出すまで12時間。イベントBPを1消費して清掃バトルを開始します。</p>
+          <p>汚れた家電星人が4体出現しています。逃げ出すまで12時間。イベントBPを1消費して清掃バトルを開始します。</p>
           <div class="event-encounter-info">
             <span>イベントBP ${ep.current}/${ep.max}</span>
             <span>THREAT Lv.${active ? active.threatLevel : calcThreatLevel(state.progress)}</span>
@@ -474,19 +500,23 @@
             <button type="button" data-event-action="retreat" class="event-sub-button">撤退</button>
           </div>
         </div>
-        ${renderBuffShop()}
       </div>
     `;
   }
   function enemyCard(enemy) {
     const ratio = enemy.maxHp > 0 ? clamp(enemy.hp / enemy.maxHp, 0, 1) : 0;
     const selected = state.selectedEnemyId === enemy.slotId;
+    const image = enemy.image || "";
     return `<button type="button" class="event-clean-enemy ${selected ? "selected" : ""} ${enemy.cleaned ? "cleaned" : ""}" data-event-enemy="${escapeHtml(enemy.slotId)}" style="--enemy-color:${escapeHtml(enemy.color)};">
       <span class="event-clean-enemy-crystal">◆</span>
-      <b>${escapeHtml(enemy.shortName)}</b>
-      <small>${escapeHtml(enemy.attr)} / ${enemy.cleaned ? "正義復帰" : "悪の心"}</small>
-      <i><em style="width:${ratio * 100}%"></em></i>
-      <strong>${enemy.cleaned ? "CLEAN" : `${Math.max(0, enemy.hp)} / ${enemy.maxHp}`}</strong>
+      <div class="event-clean-enemy-main">
+        <b>${escapeHtml(enemy.shortName)}</b>
+        <small>${escapeHtml(enemy.attr)} / ${enemy.cleaned ? "正義復帰" : "悪の心"}</small>
+        <i><em style="width:${ratio * 100}%"></em></i>
+        <strong>${enemy.cleaned ? "CLEAN" : `${Math.max(0, enemy.hp)} / ${enemy.maxHp}`}</strong>
+        <small class="event-change-hint">ダブルクリック：イベントBP1でチェンジ</small>
+      </div>
+      <img class="event-clean-enemy-art" src="${escapeHtml(image)}" alt="${escapeHtml(enemy.shortName)}" />
     </button>`;
   }
   function memberCard(member) {
@@ -495,11 +525,15 @@
     const ready = readyAt <= nowMs();
     const dmg = enemy ? calcDamage(member, enemy) : null;
     const affinity = Math.max(0, Math.floor(Number(state.progress.memberAffinity[member.id]) || 0));
+    const image = member.image ? `images/assets/char/${member.image}` : "";
     return `<button type="button" class="event-clean-member ${ready ? "ready" : "cooldown"} ${dmg && dmg.match ? "match" : ""}" data-event-member="${escapeHtml(member.id)}" style="--member-color:${escapeHtml(member.color)};" ${ready ? "" : "disabled"}>
-      <span>${escapeHtml(member.name)}</span>
-      <b>${escapeHtml(member.attr)}</b>
-      <small>${ready ? (dmg ? `清掃力 ${dmg.value}${dmg.match ? " / 特攻" : ""}` : "READY") : `リキャスト ${shortRemaining(readyAt)}`}</small>
-      <em>Lv.${getLevel(member.id)} / 親愛 ${affinity}</em>
+      <div class="event-clean-member-main">
+        <span>${escapeHtml(member.name)}</span>
+        <b>${escapeHtml(member.attr)}</b>
+        <small>${ready ? (dmg ? `清掃力 ${dmg.value}${dmg.match ? " / 特攻" : ""}` : "READY") : `リキャスト ${shortRemaining(readyAt)}`}</small>
+        <em>Lv.${getLevel(member.id)} / 親愛 ${affinity}</em>
+      </div>
+      <img class="event-clean-member-art" src="${escapeHtml(image)}" alt="${escapeHtml(member.name)}" />
     </button>`;
   }
   function renderCombat() {
@@ -515,7 +549,6 @@
           <span>逃走まで ${formatClock(Date.parse(active.expiresAt || "") - nowMs())}</span>
         </div>
         <div class="event-clean-member-row">${staff.map(memberCard).join("")}</div>
-        ${renderBuffShop()}
       </div>
     `;
   }
@@ -537,7 +570,7 @@
         <div class="event-result-card">
           <div class="event-result-title">${r.success ? "清掃完了！" : r.type === "escaped" ? "逃走されました" : "イベント結果"}</div>
           <div class="event-result-grid">
-            <div><span>CLEANED</span><b>${r.cleaned || 0}/6</b></div>
+            <div><span>CLEANED</span><b>${r.cleaned || 0}/${MAX_EVENT_ENEMIES}</b></div>
             <div><span>DARK ELEMENT</span><b>+${r.darkElements || 0}</b></div>
             <div><span>所持</span><b>${state.progress.darkElements}</b></div>
             <div><span>累計</span><b>${state.progress.totalDarkElements}</b></div>
@@ -574,7 +607,7 @@
     if (!state.progress.activeEncounter && state.phase === "combat") state.phase = "result";
     root.className = `event-battle-root ${stageClass()}`;
     root.dataset.phase = state.phase;
-    root.innerHTML = `<div class="event-battle-stage">${renderHud()}${renderBossArea()}${renderBody()}</div>`;
+    root.innerHTML = `<div class="event-battle-stage">${renderTopPanel()}${renderBody()}</div>`;
     bind();
   }
 
@@ -680,6 +713,73 @@
     state.notice = `${item.name}を使用しました。次の清掃に効果があります。`;
     render();
   }
+  function grantPremiumItem(id) {
+    const item = PREMIUM_ITEMS.find((x) => x.id === id);
+    if (!item || !state) return;
+    const progress = loadProgress();
+    progress.premiumInventory = progress.premiumInventory && typeof progress.premiumInventory === "object" ? progress.premiumInventory : {};
+    progress.premiumInventory[id] = Math.max(0, Math.floor(Number(progress.premiumInventory[id]) || 0)) + 1;
+    progress.history.push({ type: "grantPremium", item: item.name, at: nowIso() });
+    saveProgress(progress);
+    state.progress = progress;
+    state.notice = `${item.name}を購入しました（課金想定の仮処理）。`;
+    render();
+  }
+  function usePremiumItem(id) {
+    const item = PREMIUM_ITEMS.find((x) => x.id === id);
+    if (!item || !state) return;
+    const progress = loadProgress();
+    progress.premiumInventory = progress.premiumInventory && typeof progress.premiumInventory === "object" ? progress.premiumInventory : {};
+    const inv = Math.max(0, Math.floor(Number(progress.premiumInventory[id]) || 0));
+    if (inv <= 0) {
+      state.notice = `${item.name}を持っていません。`;
+      render();
+      return;
+    }
+    progress.premiumInventory[id] = inv - 1;
+    if (item.action === "clearRecast") {
+      progress.memberCooldowns = {};
+      progress.history.push({ type: "premiumClearRecast", item: item.name, at: nowIso() });
+      state.notice = `${item.name}を使用。メンバーリキャストを全解除しました。`;
+    } else if (item.action === "recoverEventBp") {
+      if (window.TenotsuEventBattlePoint && typeof window.TenotsuEventBattlePoint.recoverAll === "function") {
+        window.TenotsuEventBattlePoint.recoverAll();
+      }
+      progress.history.push({ type: "premiumRecoverEventBp", item: item.name, at: nowIso() });
+      state.notice = `${item.name}を使用。イベントBPを回復しました。`;
+    }
+    saveProgress(progress);
+    state.progress = progress;
+    render();
+  }
+  function pickReplacementTemplate(enc) {
+    const used = new Set((enc.enemies || []).filter((e) => e && !e.cleaned && e.hp > 0).map((e) => e.alienId));
+    return shuffle(DIRTY_ALIEN_POOL).find((tpl) => !used.has(tpl.id)) || shuffle(DIRTY_ALIEN_POOL)[0];
+  }
+  function changeEnemy(slotId) {
+    if (!state || state.phase !== "combat" || !state.progress.activeEncounter) return;
+    const enc = state.progress.activeEncounter;
+    const index = (enc.enemies || []).findIndex((e) => e.slotId === slotId);
+    if (index < 0) return;
+    const target = enc.enemies[index];
+    if (!target || target.cleaned || target.hp <= 0) return;
+    const consumed = consumeEventBp();
+    if (!consumed.ok) {
+      state.notice = `イベントBPが足りません。敵チェンジにはイベントBP1が必要です。現在 ${consumed.state.current}/${consumed.state.max}。`;
+      render();
+      return;
+    }
+    const tpl = pickReplacementTemplate(enc);
+    const replacement = makeEnemy(tpl, enc.threatLevel, index);
+    enc.enemies[index] = replacement;
+    enc.lastAction = `${target.shortName}を見送り、${replacement.shortName}へチェンジしました。イベントBP -1`;
+    state.selectedEnemyId = replacement.slotId;
+    state.notice = enc.lastAction;
+    state.progress.history.push({ type: "changeEventEnemy", from: target.shortName, to: replacement.shortName, cost: EVENT_BP_COST, at: nowIso() });
+    saveProgress(state.progress);
+    render();
+  }
+
   function selectEnemy(slotId) {
     if (!state || !state.progress.activeEncounter) return;
     const enemy = state.progress.activeEncounter.enemies.find((e) => e.slotId === slotId);
@@ -733,7 +833,7 @@
     const next = getSelectedEnemy();
     if (next) state.selectedEnemyId = next.slotId;
     const cleaned = countCleaned(enc);
-    if (cleaned >= 6) {
+    if (cleaned >= MAX_EVENT_ENEMIES) {
       finishEncounter(true);
       return;
     }
@@ -793,11 +893,16 @@
         else if (action === "close") closeEventBattle();
       });
     });
-    root.querySelectorAll("[data-event-enemy]").forEach((btn) => btn.addEventListener("click", () => selectEnemy(btn.dataset.eventEnemy)));
+    root.querySelectorAll("[data-event-enemy]").forEach((btn) => {
+      btn.addEventListener("click", () => selectEnemy(btn.dataset.eventEnemy));
+      btn.addEventListener("dblclick", (ev) => { ev.preventDefault(); ev.stopPropagation(); changeEnemy(btn.dataset.eventEnemy); });
+    });
     root.querySelectorAll("[data-event-member]").forEach((btn) => btn.addEventListener("click", () => memberAttack(btn.dataset.eventMember)));
     root.querySelectorAll("[data-event-claim]").forEach((btn) => btn.addEventListener("click", () => claimLadder(btn.dataset.eventClaim)));
     root.querySelectorAll("[data-event-buy]").forEach((btn) => btn.addEventListener("click", () => buyBuff(btn.dataset.eventBuy)));
     root.querySelectorAll("[data-event-use]").forEach((btn) => btn.addEventListener("click", () => useBuff(btn.dataset.eventUse)));
+    root.querySelectorAll("[data-event-premium-grant]").forEach((btn) => btn.addEventListener("click", () => grantPremiumItem(btn.dataset.eventPremiumGrant)));
+    root.querySelectorAll("[data-event-premium-use]").forEach((btn) => btn.addEventListener("click", () => usePremiumItem(btn.dataset.eventPremiumUse)));
   }
 
   function openEventBattle(options) {
@@ -827,7 +932,7 @@
   }
 
   function installPatch() {
-    if (!window.BattleProto || window.BattleProto.__eventBattlePatchedV88) return false;
+    if (!window.BattleProto || window.BattleProto.__eventBattlePatchedV89) return false;
     originalOpenBattle = window.BattleProto.openBattle;
     originalCloseBattle = window.BattleProto.closeBattle;
     window.BattleProto.openBattle = function (options) {
@@ -838,7 +943,7 @@
       if (state) return closeEventBattle();
       return originalCloseBattle.apply(this, arguments);
     };
-    window.BattleProto.__eventBattlePatchedV88 = true;
+    window.BattleProto.__eventBattlePatchedV89 = true;
     window.TenotsuEventBattle = api;
     return true;
   }
