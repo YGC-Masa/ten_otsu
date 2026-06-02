@@ -1,4 +1,4 @@
-/* v039_87 event battle point: monthly event run & battle resource */
+/* v039_88 event battle point: monthly event cleaning battle resource */
 (function () {
   "use strict";
   const STORAGE_KEY = "tenotsu_event_battle_point_v1";
@@ -23,9 +23,9 @@
   }
   function normalize(data) {
     if (!data || typeof data !== "object") {
-      return { version: "v039_87", current: MAX_EBP, max: MAX_EBP, updatedAt: nowIso(), recoveryAnchorAt: nowIso(), history: [] };
+      return { version: "v039_88", current: MAX_EBP, max: MAX_EBP, updatedAt: nowIso(), recoveryAnchorAt: nowIso(), history: [] };
     }
-    data.version = "v039_87";
+    data.version = "v039_88";
     data.max = MAX_EBP;
     data.current = clamp(data.current == null ? MAX_EBP : data.current);
     data.updatedAt = data.updatedAt || nowIso();
@@ -63,7 +63,7 @@
     return applyAutoRecovery(normalize(data));
   }
   function save(data) {
-    data.version = "v039_87";
+    data.version = "v039_88";
     data.updatedAt = nowIso();
     data.history = Array.isArray(data.history) ? data.history.slice(-20) : [];
     rawSave(data);
@@ -109,7 +109,7 @@
   }
 
   window.TenotsuEventBattlePoint = {
-    VERSION: "v039_87",
+    VERSION: "v039_88",
     MAX_EBP,
     AUTO_RECOVERY_MS,
     AUTO_RECOVERY_MINUTES: 30,
