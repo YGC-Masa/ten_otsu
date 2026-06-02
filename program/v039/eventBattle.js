@@ -1,12 +1,12 @@
-/* v039_84 eventBattle.js
- * イベント営業用のブラック家電星人ボス。
- * v039_84では通常モード入力をサークルTAP / 矢印FLICK / 両手HOLDへ変更し、ラッシュ突入演出と速度を調整する。
+/* v039_85 eventBattle.js
+ * イベントバトル：ブラック家電星人通常モード + ラッシュフィルイン。
+ * v039_85では通常モードとラッシュの表示領域を画面全域ベースへ広げ、画面端SAFEZONEを追加する。
  */
 (function () {
   "use strict";
 
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  const VERSION = "v039_84_event_battle_input_rework";
+  const VERSION = "v039_85_event_battle_fullscreen_safezone";
   const ROOT_ID = "event-battle-root";
   const BATTLE_SECONDS = 45;
   const SHIELD_MAX = 120;
@@ -363,8 +363,8 @@
     const hitDelay = Math.round(rand(TAP_TARGET_HIT_DELAY_MIN_MS, TAP_TARGET_HIT_DELAY_MAX_MS));
     return {
       id: nextNormalId("tap"),
-      x: Math.round(rand(18, 82)),
-      y: Math.round(rand(18, 74)),
+      x: Math.round(rand(9, 91)),
+      y: Math.round(rand(12, 84)),
       bornAt,
       hitAt: bornAt + hitDelay,
       expiresAt: bornAt + TAP_TARGET_LIFETIME_MS,
@@ -390,8 +390,8 @@
     state.flickChallenge = {
       id: nextNormalId("flick"),
       dir,
-      x: Math.round(rand(18, 82)),
-      y: Math.round(rand(24, 70)),
+      x: Math.round(rand(12, 88)),
+      y: Math.round(rand(16, 80)),
       bornAt: t,
       expiresAt: t + FLICK_LIFETIME_MS,
       done: false
@@ -991,7 +991,7 @@
     return `
       <div class="event-normal-panel">
         <div class="event-normal-guide">
-          <span>青：リングが重なったらTAP</span>
+          <span>青：SAFEZONE内：リングが重なったらTAP</span>
           <span>緑：矢印方向へFLICK</span>
           <span>桃：左右HOLD後に外側FLICK</span>
         </div>
@@ -999,7 +999,7 @@
           ${targetHtml}
           ${flickHtml}
           ${holdHtml}
-          <div class="event-field-caption">TAP / FLICK / HOLDでノイズシールドを削る通常モード</div>
+          <div class="event-field-caption">SAFEZONE内の画面全域でTAP / FLICK / HOLD</div>
         </div>
         <div class="event-future-note">シールド0で「これよりラッシュモード」演出と3カウント後に5レーンへ移行します。</div>
       </div>
@@ -1150,7 +1150,7 @@
   }
 
   function installPatch() {
-    if (!window.BattleProto || window.BattleProto.__eventBattlePatchedV84) return false;
+    if (!window.BattleProto || window.BattleProto.__eventBattlePatchedV85) return false;
     originalOpenBattle = window.BattleProto.openBattle;
     originalCloseBattle = window.BattleProto.closeBattle;
     window.BattleProto.openBattle = function (options) {
@@ -1161,7 +1161,7 @@
       if (state) return closeEventBattle();
       return originalCloseBattle.apply(this, arguments);
     };
-    window.BattleProto.__eventBattlePatchedV84 = true;
+    window.BattleProto.__eventBattlePatchedV85 = true;
     window.TenotsuEventBattle = api;
     return true;
   }

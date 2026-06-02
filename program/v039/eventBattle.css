@@ -1,4 +1,4 @@
-/* v039_84 event battle input rework + 5-lane rush notes */
+/* v039_85 event battle fullscreen action area + SAFEZONE */
 #event-battle-root.event-battle-root {
   position: fixed;
   inset: 0;
@@ -587,4 +587,218 @@ body.event-battle-screen { overscroll-behavior: none; }
   #event-battle-root .event-hold-pair { bottom: 20px; height: 56px; gap: 5px; }
   #event-battle-root .event-hold-bolt span { top: -19px; }
   #event-battle-root .event-flick-arrow { min-width: 70px; min-height: 50px; }
+}
+
+
+/* v039_85: normal/rush play area expands to fullscreen with explicit SAFEZONE */
+#event-battle-root.event-battle-root {
+  --event-safe-x: clamp(28px, 4.8vw, 72px);
+  --event-safe-y: clamp(18px, 3.8vh, 54px);
+  --event-safe-top: calc(env(safe-area-inset-top) + var(--event-safe-y));
+  --event-safe-right: calc(env(safe-area-inset-right) + var(--event-safe-x));
+  --event-safe-bottom: calc(env(safe-area-inset-bottom) + var(--event-safe-y));
+  --event-safe-left: calc(env(safe-area-inset-left) + var(--event-safe-x));
+}
+#event-battle-root .event-phase-normal,
+#event-battle-root .event-phase-rush,
+#event-battle-root .event-phase-rushIntro {
+  position: absolute;
+  inset: 0;
+  display: block;
+  padding: 0;
+}
+#event-battle-root .event-phase-normal .event-battle-hud,
+#event-battle-root .event-phase-rush .event-battle-hud,
+#event-battle-root .event-phase-rushIntro .event-battle-hud {
+  position: absolute;
+  left: var(--event-safe-left);
+  right: var(--event-safe-right);
+  top: calc(env(safe-area-inset-top) + 8px);
+  z-index: 30;
+  pointer-events: none;
+  margin: 0;
+  padding: 7px 12px;
+}
+#event-battle-root .event-phase-normal .event-battle-boss-area,
+#event-battle-root .event-phase-rush .event-battle-boss-area,
+#event-battle-root .event-phase-rushIntro .event-battle-boss-area {
+  position: absolute;
+  left: var(--event-safe-left);
+  right: var(--event-safe-right);
+  top: calc(env(safe-area-inset-top) + clamp(58px, 11vh, 94px));
+  z-index: 28;
+  pointer-events: none;
+  padding: 7px 10px;
+  max-height: clamp(78px, 20vh, 158px);
+}
+#event-battle-root .event-phase-normal .event-battle-boss-card,
+#event-battle-root .event-phase-rush .event-battle-boss-card,
+#event-battle-root .event-phase-rushIntro .event-battle-boss-card {
+  gap: 8px;
+}
+#event-battle-root .event-phase-normal .event-battle-boss-orb,
+#event-battle-root .event-phase-rush .event-battle-boss-orb,
+#event-battle-root .event-phase-rushIntro .event-battle-boss-orb {
+  width: clamp(44px, 7vw, 82px);
+  border-width: 3px;
+  font-size: clamp(15px, 2.7vw, 28px);
+}
+#event-battle-root .event-phase-normal .event-battle-boss-name,
+#event-battle-root .event-phase-rush .event-battle-boss-name,
+#event-battle-root .event-phase-rushIntro .event-battle-boss-name {
+  font-size: clamp(14px, 2.4vw, 24px);
+}
+#event-battle-root .event-phase-normal .event-battle-boss-desc,
+#event-battle-root .event-phase-rush .event-battle-boss-desc,
+#event-battle-root .event-phase-rushIntro .event-battle-boss-desc {
+  display: none;
+}
+#event-battle-root .event-phase-normal .event-battle-gauges,
+#event-battle-root .event-phase-rush .event-battle-gauges,
+#event-battle-root .event-phase-rushIntro .event-battle-gauges {
+  margin-top: 5px;
+  gap: 4px;
+}
+#event-battle-root .event-phase-normal .event-gauge,
+#event-battle-root .event-phase-rush .event-gauge,
+#event-battle-root .event-phase-rushIntro .event-gauge {
+  grid-template-columns: 64px 1fr 58px;
+  font-size: clamp(9px, 1.25vw, 12px);
+}
+#event-battle-root .event-phase-normal .event-gauge i,
+#event-battle-root .event-phase-rush .event-gauge i,
+#event-battle-root .event-phase-rushIntro .event-gauge i {
+  height: 9px;
+}
+#event-battle-root .event-phase-normal .event-battle-message,
+#event-battle-root .event-phase-normal .event-battle-notice,
+#event-battle-root .event-phase-rush .event-battle-message,
+#event-battle-root .event-phase-rush .event-battle-notice,
+#event-battle-root .event-phase-rushIntro .event-battle-message,
+#event-battle-root .event-phase-rushIntro .event-battle-notice {
+  display: none;
+}
+#event-battle-root .event-phase-normal .event-normal-panel {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  pointer-events: none;
+}
+#event-battle-root .event-phase-normal .event-normal-action-field {
+  position: absolute;
+  left: var(--event-safe-left);
+  right: var(--event-safe-right);
+  top: var(--event-safe-top);
+  bottom: var(--event-safe-bottom);
+  min-height: 0;
+  margin: 0;
+  border-radius: 22px;
+  pointer-events: auto;
+  border: 2px solid rgba(112, 231, 255, 0.22);
+  background:
+    linear-gradient(90deg, rgba(112,231,255,0.10) 0 1px, transparent 1px 100%),
+    linear-gradient(0deg, rgba(112,231,255,0.08) 0 1px, transparent 1px 100%),
+    radial-gradient(circle at 25% 32%, rgba(67, 203, 255, 0.18), transparent 30%),
+    radial-gradient(circle at 70% 54%, rgba(255, 99, 195, 0.13), transparent 34%),
+    linear-gradient(180deg, rgba(9, 18, 32, 0.82), rgba(9, 5, 18, 0.92));
+  background-size: 42px 42px, 42px 42px, auto, auto, auto;
+  box-shadow: inset 0 0 34px rgba(112, 231, 255, 0.10), 0 0 22px rgba(0,0,0,0.34);
+}
+#event-battle-root .event-phase-normal .event-normal-action-field::before {
+  content: "SAFEZONE";
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  color: rgba(255,255,255,0.32);
+  font-weight: 1000;
+  letter-spacing: 0.16em;
+  font-size: clamp(9px, 1.2vw, 12px);
+  pointer-events: none;
+}
+#event-battle-root .event-phase-normal .event-normal-guide {
+  position: absolute;
+  left: var(--event-safe-left);
+  right: var(--event-safe-right);
+  bottom: calc(var(--event-safe-bottom) + 4px);
+  z-index: 32;
+  pointer-events: none;
+  gap: 5px;
+}
+#event-battle-root .event-phase-normal .event-normal-guide span {
+  background: rgba(5, 8, 14, 0.68);
+  backdrop-filter: blur(3px);
+}
+#event-battle-root .event-phase-normal .event-future-note {
+  display: none;
+}
+#event-battle-root .event-phase-normal .event-field-caption {
+  bottom: 12px;
+  opacity: 0.72;
+}
+#event-battle-root .event-phase-normal .event-hold-pair {
+  left: clamp(24px, 5vw, 76px);
+  right: clamp(24px, 5vw, 76px);
+  bottom: clamp(40px, 9vh, 96px);
+}
+#event-battle-root .event-phase-rush .event-rush-panel,
+#event-battle-root .event-phase-rushIntro .event-rush-intro-panel {
+  position: absolute;
+  left: var(--event-safe-left);
+  right: var(--event-safe-right);
+  top: calc(env(safe-area-inset-top) + clamp(134px, 28vh, 230px));
+  bottom: var(--event-safe-bottom);
+  min-height: 0;
+  z-index: 6;
+}
+#event-battle-root .event-phase-rush .event-rush-lanes {
+  gap: clamp(5px, 1.2vw, 12px);
+}
+#event-battle-root .event-phase-rush .event-rush-lane-track {
+  min-height: 0;
+}
+#event-battle-root .event-phase-rush .event-rush-lane button {
+  min-height: clamp(54px, 10vh, 82px);
+}
+@media (max-width: 760px) {
+  #event-battle-root.event-battle-root {
+    --event-safe-x: clamp(18px, 4.2vw, 42px);
+    --event-safe-y: clamp(14px, 3.6vh, 34px);
+  }
+  #event-battle-root .event-phase-normal .event-battle-hud,
+  #event-battle-root .event-phase-rush .event-battle-hud,
+  #event-battle-root .event-phase-rushIntro .event-battle-hud {
+    left: var(--event-safe-left);
+    right: var(--event-safe-right);
+    top: calc(env(safe-area-inset-top) + 5px);
+    padding: 5px 8px;
+  }
+  #event-battle-root .event-phase-normal .event-battle-boss-area,
+  #event-battle-root .event-phase-rush .event-battle-boss-area,
+  #event-battle-root .event-phase-rushIntro .event-battle-boss-area {
+    top: calc(env(safe-area-inset-top) + 50px);
+    max-height: 92px;
+    padding: 5px 7px;
+  }
+  #event-battle-root .event-phase-normal .event-normal-guide {
+    bottom: calc(var(--event-safe-bottom) + 1px);
+  }
+  #event-battle-root .event-phase-normal .event-normal-guide span {
+    padding: 3px 6px;
+    font-size: 10px;
+  }
+  #event-battle-root .event-phase-normal .event-hold-pair {
+    left: clamp(18px, 5vw, 44px);
+    right: clamp(18px, 5vw, 44px);
+    bottom: clamp(34px, 8vh, 64px);
+  }
+  #event-battle-root .event-phase-rush .event-rush-panel,
+  #event-battle-root .event-phase-rushIntro .event-rush-intro-panel {
+    top: calc(env(safe-area-inset-top) + 132px);
+    bottom: var(--event-safe-bottom);
+  }
 }
