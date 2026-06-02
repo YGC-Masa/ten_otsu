@@ -33,16 +33,16 @@
     {
       id: "event_sales",
       label: "イベント営業",
-      tag: "ボス戦予定",
-      description: "イベントボスとの特別営業です。ST20とBP1を消費し、将来的にはドラムリズムゲーム形式のボス戦として実装予定です。",
-      message: "イベント営業は、ST20とBP1を使う特別営業です。現時点では接客バトルへ仮接続します。",
+      tag: "ボス戦",
+      description: "ブラック家電星人とのイベント営業です。ST20とBP1を消費し、通常モードでノイズシールドを削ります。",
+      message: "イベント営業は、ST20とBP1を使う特別営業です。ブラック家電星人のノイズシールドを削ります。",
       duration: 45,
       staminaCost: 20,
       battlePointCost: 1,
       rewardRole: "イベント報酬 / 限定素材 / 思い出解禁",
-      target: "イベントボス戦でリズムに合わせて接客する",
+      target: "タップ・フリック・ホールドでブラック家電星人のノイズシールドを削る",
       battleType: "eventBoss",
-      futureSystem: "drumRhythmBoss"
+      futureSystem: "drumFillRushBoss"
     }
   ];
 
@@ -258,8 +258,8 @@
           <div><strong>制限時間：</strong>${mode.duration || 30}秒</div>
           <div><strong>消費：</strong>${modeResourceLabel(mode)}</div>
           <div><strong>報酬役割：</strong>${mode.rewardRole || "営業報酬"}</div>
-          <div><strong>種別：</strong>${mode.battleType === "rival" ? "VSビリビリ" : mode.battleType === "eventBoss" ? "イベント営業 / ボス戦予定" : "通常営業"}</div>
-          <div><strong>現在：</strong>${mode.battleType === "rival" ? "VS CPUビリビリバトル実装" : mode.battleType === "eventBoss" ? "接客バトルへ仮接続 / ドラムリズムボス戦予定" : "抽出バトル実装"}</div>
+          <div><strong>種別：</strong>${mode.battleType === "rival" ? "VSビリビリ" : mode.battleType === "eventBoss" ? "イベント営業 / ブラック家電星人" : "通常営業"}</div>
+          <div><strong>現在：</strong>${mode.battleType === "rival" ? "VS CPUビリビリバトル実装" : mode.battleType === "eventBoss" ? "イベントバトル通常モード実装" : "抽出バトル実装"}</div>
         </div>
         <div class="tenotsu-sales-dialog-actions">
           <button type="button" class="tenotsu-sales-start" data-sales-dialog="start">営業開始</button>
@@ -318,12 +318,12 @@
 
     if (window.BattleProto && typeof window.BattleProto.openBattle === "function") {
       window.BattleProto.openBattle({ battleType: mode && mode.battleType, mode });
-      ns.setText("店長", mode && mode.battleType === "eventBoss" ? "イベント営業を開始します。今回は接客バトルへ仮接続中です。" : mode && mode.battleType === "rival" ? "バトル営業を開始します。VSビリビリの販売勝負です。" : "デッキ接客バトルを開始します。営業開始、サポートプレイ、デッキ編成を選べます。");
+      ns.setText("店長", mode && mode.battleType === "eventBoss" ? "イベント営業を開始します。ブラック家電星人のシールドを削ります。" : mode && mode.battleType === "rival" ? "バトル営業を開始します。VSビリビリの販売勝負です。" : "デッキ接客バトルを開始します。営業開始、サポートプレイ、デッキ編成を選べます。");
       return;
     }
     if (typeof window.startDeckBattlePrototype === "function") {
       window.startDeckBattlePrototype();
-      ns.setText("店長", mode && mode.battleType === "eventBoss" ? "イベント営業を開始します。今回は接客バトルへ仮接続中です。" : mode && mode.battleType === "rival" ? "バトル営業を開始します。VSビリビリの販売勝負です。" : "デッキ接客バトルを開始します。営業開始、サポートプレイ、デッキ編成を選べます。");
+      ns.setText("店長", mode && mode.battleType === "eventBoss" ? "イベント営業を開始します。ブラック家電星人のシールドを削ります。" : mode && mode.battleType === "rival" ? "バトル営業を開始します。VSビリビリの販売勝負です。" : "デッキ接客バトルを開始します。営業開始、サポートプレイ、デッキ編成を選べます。");
       return;
     }
 

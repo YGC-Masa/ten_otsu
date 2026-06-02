@@ -6,7 +6,7 @@
   "use strict";
 
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  const VERSION = "v039_71_battle_pinch_guard";
+  const VERSION = "v039_81_battle_pinch_guard_event";
   let lastTouchEndAt = 0;
 
   function isVisible(el) {
@@ -19,10 +19,13 @@
   function isBattleInputLocked() {
     const normalRoot = document.getElementById("battle-root");
     const rivalRoot = document.getElementById("rival-battle-root");
+    const eventRoot = document.getElementById("event-battle-root");
     return document.body.classList.contains("battle-screen") ||
       document.body.classList.contains("rival-battle-screen") ||
+      document.body.classList.contains("event-battle-screen") ||
       isVisible(normalRoot) ||
-      isVisible(rivalRoot);
+      isVisible(rivalRoot) ||
+      isVisible(eventRoot);
   }
 
   function cancelEvent(event) {
