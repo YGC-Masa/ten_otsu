@@ -1,4 +1,4 @@
-/* v039_74 sales start CTA compact layout */
+/* v039_87 sales: event run & battle entrance */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -34,15 +34,16 @@
       id: "event_sales",
       label: "イベント営業",
       tag: "ボス戦",
-      description: "ブラック家電星人とのイベント営業です。ST20とBP1を消費し、通常モードでノイズシールドを削ります。",
-      message: "イベント営業は、ST20とBP1を使う特別営業です。ブラック家電星人のノイズシールドを削ります。",
+      description: "ブラック家電星人を探索するイベント営業です。ST20でエンカウントし、専用イベントBPで戦って追い返します。",
+      message: "イベント営業は、ST20でブラック家電星人を探索します。戦闘には専用イベントBPを使用します。",
       duration: 45,
       staminaCost: 20,
-      battlePointCost: 1,
-      rewardRole: "イベント報酬 / 限定素材 / 思い出解禁",
-      target: "タップ・フリック・ホールドでブラック家電星人のノイズシールドを削る",
+      battlePointCost: 0,
+      eventBattlePointCost: 1,
+      rewardRole: "ダークエレメント / 戦利品交換 / 限定素材",
+      target: "探索で遭遇し、専用イベントBPでブラック家電星人を追い返す",
       battleType: "eventBoss",
-      futureSystem: "drumFillRushBoss"
+      futureSystem: "runAndRepelEventBoss"
     }
   ];
 
@@ -87,6 +88,7 @@
   function modeStartLabel(mode) {
     if (!mode) return "営業開始";
     if (mode.battleType === "rival") return `ポイント${mode.battlePointCost || 1}を消費して開始`;
+    if (mode.battleType === "eventBoss") return `ST${mode.staminaCost || 20}でエンカウント開始`;
     if (mode.staminaCost && mode.battlePointCost) return `ST${mode.staminaCost} + BP${mode.battlePointCost}を消費して開始`;
     if (mode.staminaCost) return `ST${mode.staminaCost}を消費して開始`;
     if (mode.battlePointCost) return `BP${mode.battlePointCost}を消費して開始`;
@@ -259,7 +261,7 @@
           <div><strong>消費：</strong>${modeResourceLabel(mode)}</div>
           <div><strong>報酬役割：</strong>${mode.rewardRole || "営業報酬"}</div>
           <div><strong>種別：</strong>${mode.battleType === "rival" ? "VSビリビリ" : mode.battleType === "eventBoss" ? "イベント営業 / ブラック家電星人" : "通常営業"}</div>
-          <div><strong>現在：</strong>${mode.battleType === "rival" ? "VS CPUビリビリバトル実装" : mode.battleType === "eventBoss" ? "イベントバトル通常モード実装" : "抽出バトル実装"}</div>
+          <div><strong>現在：</strong>${mode.battleType === "rival" ? "VS CPUビリビリバトル実装" : mode.battleType === "eventBoss" ? "ラン＆バトル方式 / ダークエレメント獲得" : "抽出バトル実装"}</div>
         </div>
         <div class="tenotsu-sales-dialog-actions">
           <button type="button" class="tenotsu-sales-start" data-sales-dialog="start">営業開始</button>
@@ -318,12 +320,12 @@
 
     if (window.BattleProto && typeof window.BattleProto.openBattle === "function") {
       window.BattleProto.openBattle({ battleType: mode && mode.battleType, mode });
-      ns.setText("店長", mode && mode.battleType === "eventBoss" ? "イベント営業を開始します。ブラック家電星人のシールドを削ります。" : mode && mode.battleType === "rival" ? "バトル営業を開始します。VSビリビリの販売勝負です。" : "デッキ接客バトルを開始します。営業開始、サポートプレイ、デッキ編成を選べます。");
+      ns.setText("店長", mode && mode.battleType === "eventBoss" ? "イベント営業を開始します。ブラック家電星人を探索し、専用イベントBPで追い返します。" : mode && mode.battleType === "rival" ? "バトル営業を開始します。VSビリビリの販売勝負です。" : "デッキ接客バトルを開始します。営業開始、サポートプレイ、デッキ編成を選べます。");
       return;
     }
     if (typeof window.startDeckBattlePrototype === "function") {
       window.startDeckBattlePrototype();
-      ns.setText("店長", mode && mode.battleType === "eventBoss" ? "イベント営業を開始します。ブラック家電星人のシールドを削ります。" : mode && mode.battleType === "rival" ? "バトル営業を開始します。VSビリビリの販売勝負です。" : "デッキ接客バトルを開始します。営業開始、サポートプレイ、デッキ編成を選べます。");
+      ns.setText("店長", mode && mode.battleType === "eventBoss" ? "イベント営業を開始します。ブラック家電星人を探索し、専用イベントBPで追い返します。" : mode && mode.battleType === "rival" ? "バトル営業を開始します。VSビリビリの販売勝負です。" : "デッキ接客バトルを開始します。営業開始、サポートプレイ、デッキ編成を選べます。");
       return;
     }
 

@@ -1,4 +1,4 @@
-/* v039_86 event battle input/front layer + 4-lane fill */
+/* v039_87 event battle: run & battle / dark element ladder */
 #event-battle-root.event-battle-root {
   position: fixed;
   inset: 0;
@@ -6,7 +6,10 @@
   width: 100vw;
   height: var(--app-height, 100vh);
   color: #fff;
-  background: radial-gradient(circle at center, rgba(37, 13, 46, 0.96), #07040a 72%);
+  background:
+    radial-gradient(circle at 22% 24%, rgba(108, 34, 154, 0.55), transparent 34%),
+    radial-gradient(circle at 74% 55%, rgba(27, 103, 155, 0.38), transparent 38%),
+    linear-gradient(135deg, #080511, #17051f 55%, #050407);
   overflow: hidden;
   touch-action: none;
   -webkit-user-select: none;
@@ -15,856 +18,117 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 #event-battle-root.hidden { display: none !important; }
-#event-battle-root[data-phase="result"] {
-  touch-action: pan-y;
-}
+#event-battle-root[data-phase="result"] { touch-action: pan-y; }
 
 #event-battle-root .event-battle-stage {
   position: absolute;
   inset: 0;
-  box-sizing: border-box;
   display: grid;
-  grid-template-rows: minmax(60px, 12vh) 1fr minmax(144px, 28vh);
+  grid-template-rows: auto minmax(112px, 26vh) 1fr;
   gap: 8px;
-  padding: calc(env(safe-area-inset-top) + 8px) calc(env(safe-area-inset-right) + 92px) calc(env(safe-area-inset-bottom) + 8px) calc(env(safe-area-inset-left) + 10px);
+  box-sizing: border-box;
+  padding: calc(env(safe-area-inset-top) + 8px) calc(env(safe-area-inset-right) + 94px) calc(env(safe-area-inset-bottom) + 8px) calc(env(safe-area-inset-left) + 10px);
 }
-#event-battle-root .event-battle-hud {
-  border: 2px solid rgba(216, 122, 255, 0.8);
-  border-radius: 14px;
-  background: linear-gradient(135deg, rgba(25, 10, 40, 0.96), rgba(8, 6, 16, 0.94));
-  box-shadow: 0 0 24px rgba(168, 84, 255, 0.24);
-  padding: 8px 12px;
-}
-#event-battle-root .event-battle-title { font-weight: 900; font-size: clamp(15px, 2.5vw, 24px); }
-#event-battle-root .event-battle-stats { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: clamp(11px, 1.6vw, 16px); margin-top: 3px; color: rgba(255,255,255,0.82); }
-#event-battle-root .event-battle-stats b { color: #fff86a; }
-#event-battle-root .event-battle-boss-area {
-  position: relative;
-  min-height: 0;
-  border: 2px solid rgba(126, 61, 190, 0.65);
+#event-battle-root .event-battle-hud,
+#event-battle-root .event-battle-boss-area,
+#event-battle-root .event-run-panel,
+#event-battle-root .event-result-panel {
+  border: 2px solid rgba(184, 120, 255, 0.38);
   border-radius: 18px;
-  padding: 10px;
-  background: radial-gradient(circle at 50% 38%, rgba(124, 33, 154, 0.46), rgba(12, 6, 20, 0.9) 60%);
-  overflow: hidden;
+  background: rgba(8, 5, 18, 0.80);
+  box-shadow: 0 0 24px rgba(150, 70, 240, 0.20);
+  backdrop-filter: blur(4px);
 }
+#event-battle-root .event-battle-hud { padding: 8px 12px; }
+#event-battle-root .event-battle-title { font-weight: 1000; font-size: clamp(15px, 2.5vw, 24px); }
+#event-battle-root .event-battle-stats { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 4px; font-size: clamp(10px, 1.5vw, 15px); color: rgba(255,255,255,0.78); }
+#event-battle-root .event-battle-stats b { color: #85f6ff; }
+
+#event-battle-root .event-battle-boss-area { padding: 10px; min-height: 0; overflow: hidden; }
 #event-battle-root .event-battle-boss-card { display: flex; align-items: center; gap: 12px; }
-#event-battle-root .event-battle-boss-orb {
-  width: clamp(64px, 11vw, 120px);
+#event-battle-root .event-battle-boss-crystal {
+  width: clamp(58px, 10vw, 104px);
   aspect-ratio: 1;
-  border-radius: 50%;
   display: grid;
   place-items: center;
-  font-weight: 1000;
-  font-size: clamp(20px, 4vw, 42px);
-  color: #fff;
-  border: 4px solid #db64ff;
-  background: radial-gradient(circle at 40% 30%, #8c38ff, #13001d 70%);
-  box-shadow: 0 0 32px rgba(204, 85, 255, 0.72), inset 0 0 22px rgba(255,255,255,0.15);
+  font-size: clamp(30px, 6vw, 62px);
+  color: #191020;
+  text-shadow: 0 0 10px #c694ff;
+  border: 3px solid #b455ff;
+  border-radius: 22px;
+  transform: rotate(45deg);
+  background: radial-gradient(circle at 38% 28%, #d8b6ff, #6b1aa0 58%, #160020 100%);
+  box-shadow: 0 0 28px rgba(196, 91, 255, 0.75), inset 0 0 14px rgba(255,255,255,0.25);
 }
-#event-battle-root .event-battle-boss-name { font-weight: 1000; font-size: clamp(18px, 3.3vw, 32px); }
-#event-battle-root .event-battle-boss-desc { color: rgba(255,255,255,0.75); font-size: clamp(11px, 1.55vw, 15px); max-width: 58em; }
-#event-battle-root .event-battle-gauges { display: grid; gap: 7px; margin-top: 10px; }
-#event-battle-root .event-gauge { display: grid; grid-template-columns: 78px 1fr 74px; align-items: center; gap: 8px; font-size: clamp(11px, 1.55vw, 15px); }
-#event-battle-root .event-gauge span { color: rgba(255,255,255,0.72); font-weight: 800; }
-#event-battle-root .event-gauge i { display: block; height: 14px; border-radius: 999px; background: rgba(255,255,255,0.12); overflow: hidden; border: 1px solid rgba(255,255,255,0.18); }
-#event-battle-root .event-gauge b { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #ff5d73, #ffd76a); transition: width 0.16s ease; }
-#event-battle-root .event-gauge.shield b { background: linear-gradient(90deg, #70e7ff, #b177ff); }
-#event-battle-root .event-gauge.charge b { background: linear-gradient(90deg, #5f2cff, #ff4bf0); }
-#event-battle-root .event-gauge em { font-style: normal; text-align: right; color: rgba(255,255,255,0.84); }
-#event-battle-root .event-battle-message { margin-top: 8px; font-weight: 900; color: #fff; font-size: clamp(13px, 2vw, 19px); }
-#event-battle-root .event-battle-notice { margin-top: 3px; color: rgba(235, 210, 255, 0.88); font-size: clamp(11px, 1.55vw, 15px); }
-#event-battle-root .event-battle-ready,
-#event-battle-root .event-result-panel,
-#event-battle-root .event-normal-panel {
-  min-height: 0;
-  border: 2px solid rgba(255,255,255,0.14);
-  border-radius: 18px;
-  background: rgba(5, 5, 10, 0.78);
-  padding: 10px;
-  box-shadow: 0 0 18px rgba(0,0,0,0.28);
-}
-#event-battle-root .event-ready-card,
-#event-battle-root .event-result-card { max-width: 760px; margin: 0 auto; text-align: center; }
-#event-battle-root .event-ready-card b,
-#event-battle-root .event-result-title { display: block; font-weight: 1000; font-size: clamp(18px, 3vw, 30px); }
-#event-battle-root .event-ready-card p { color: rgba(255,255,255,0.76); margin: 6px 0 10px; }
+#event-battle-root .event-battle-boss-crystal::first-letter { transform: rotate(-45deg); }
+#event-battle-root .event-battle-boss-copy { min-width: 0; }
+#event-battle-root .event-battle-boss-name { font-weight: 1000; font-size: clamp(17px, 3vw, 30px); }
+#event-battle-root .event-battle-boss-desc { margin-top: 2px; color: rgba(255,255,255,0.72); font-size: clamp(10px, 1.45vw, 14px); }
+#event-battle-root .event-battle-gauges { display: grid; gap: 6px; margin-top: 8px; }
+#event-battle-root .event-gauge { display: grid; grid-template-columns: 82px 1fr 66px; gap: 8px; align-items: center; font-size: clamp(10px, 1.5vw, 14px); }
+#event-battle-root .event-gauge span { color: rgba(255,255,255,0.68); font-weight: 900; }
+#event-battle-root .event-gauge i { display: block; height: 11px; border-radius: 999px; background: rgba(255,255,255,0.11); overflow: hidden; border: 1px solid rgba(255,255,255,0.15); }
+#event-battle-root .event-gauge b { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #8bf6ff, #d15bff); transition: width 0.16s ease; }
+#event-battle-root .event-gauge.power b { background: linear-gradient(90deg, #ff7a7a, #ffd86c); }
+#event-battle-root .event-gauge.chance b { background: linear-gradient(90deg, #77ffa5, #7bc6ff); }
+#event-battle-root .event-gauge em { font-style: normal; text-align: right; color: rgba(255,255,255,0.82); }
+#event-battle-root .event-battle-message { margin-top: 6px; font-weight: 900; color: #fff4b8; font-size: clamp(11px, 1.65vw, 15px); }
+
+#event-battle-root .event-run-panel,
+#event-battle-root .event-result-panel { min-height: 0; padding: 12px; overflow: hidden; }
+#event-battle-root .event-run-card,
+#event-battle-root .event-result-card { max-width: 980px; margin: 0 auto; text-align: center; }
+#event-battle-root .event-run-card b,
+#event-battle-root .event-result-title { display: block; font-weight: 1000; font-size: clamp(20px, 3.6vw, 34px); }
+#event-battle-root .event-run-card p,
+#event-battle-root .event-result-card p { color: rgba(255,255,255,0.75); margin: 6px 0 10px; }
 #event-battle-root button {
   border: 0;
   border-radius: 14px;
-  padding: 10px 14px;
+  padding: 10px 16px;
   color: #fff;
-  background: linear-gradient(135deg, #7d3cff, #e343ff);
-  font-weight: 900;
+  background: linear-gradient(135deg, #753cff, #da3dff);
+  font-weight: 1000;
   cursor: pointer;
   touch-action: none;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.28);
 }
-#event-battle-root button:active { transform: translateY(1px) scale(0.99); }
-#event-battle-root .event-normal-guide { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; font-size: clamp(11px, 1.6vw, 15px); color: rgba(255,255,255,0.84); }
-#event-battle-root .event-normal-guide span { border: 1px solid rgba(255,255,255,0.14); border-radius: 999px; padding: 4px 9px; background: rgba(255,255,255,0.08); }
-#event-battle-root .event-normal-inputs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 9px; }
-#event-battle-root .event-normal-inputs button { min-height: 78px; background: linear-gradient(180deg, rgba(36, 160, 255, 0.92), rgba(80, 53, 214, 0.95)); box-shadow: inset 0 -8px 18px rgba(0,0,0,0.22), 0 8px 18px rgba(0,0,0,0.28); }
-#event-battle-root .event-normal-inputs button:nth-child(2) { background: linear-gradient(180deg, rgba(99, 230, 105, 0.92), rgba(38, 128, 68, 0.95)); }
-#event-battle-root .event-normal-inputs button:nth-child(3) { background: linear-gradient(180deg, rgba(255, 116, 183, 0.94), rgba(150, 45, 120, 0.95)); }
-#event-battle-root .event-normal-inputs b { display: block; font-size: clamp(17px, 3vw, 30px); }
-#event-battle-root .event-normal-inputs small { display: block; opacity: 0.88; margin-top: 2px; }
-#event-battle-root .event-future-note { margin-top: 8px; text-align: center; color: rgba(255,255,255,0.62); font-size: clamp(10px, 1.4vw, 14px); }
+#event-battle-root button:disabled { opacity: 0.45; filter: grayscale(0.4); cursor: default; }
+#event-battle-root button:active:not(:disabled) { transform: translateY(1px) scale(0.99); }
+#event-battle-root .event-sub-button { background: linear-gradient(135deg, #354058, #252938); }
+
+#event-battle-root .event-route-line { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 14px auto; max-width: 620px; }
+#event-battle-root .event-route-line span { height: 10px; border-radius: 999px; background: linear-gradient(90deg, rgba(118,245,255,0.25), rgba(219,91,255,0.75)); box-shadow: 0 0 14px rgba(122,245,255,0.25); }
+#event-battle-root .event-run-progress { max-width: 720px; height: 18px; margin: 12px auto 4px; border: 1px solid rgba(255,255,255,0.20); border-radius: 999px; overflow: hidden; background: rgba(255,255,255,0.10); }
+#event-battle-root .event-run-progress i { display: block; height: 100%; background: linear-gradient(90deg, #7df9ff, #db5dff); border-radius: inherit; transition: width 0.18s ease; }
+#event-battle-root .event-fight-progress i { animation: eventFightPulse 0.62s linear infinite alternate; }
+@keyframes eventFightPulse { from { filter: brightness(1); } to { filter: brightness(1.8); } }
+
+#event-battle-root .event-encounter-info { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 10px 0 12px; }
+#event-battle-root .event-encounter-info span { border-radius: 999px; padding: 5px 10px; background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.14); color: rgba(255,255,255,0.88); font-weight: 800; }
+#event-battle-root .event-action-row,
+#event-battle-root .event-result-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 10px; }
+
+#event-battle-root .event-result-panel { overflow-y: auto; overscroll-behavior: contain; touch-action: pan-y; -webkit-overflow-scrolling: touch; }
 #event-battle-root .event-result-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 10px; }
 #event-battle-root .event-result-grid div { border: 1px solid rgba(255,255,255,0.14); border-radius: 12px; padding: 8px; background: rgba(255,255,255,0.08); }
-#event-battle-root .event-result-grid span { display: block; font-size: 11px; color: rgba(255,255,255,0.68); }
-#event-battle-root .event-result-grid b { display: block; font-size: clamp(16px, 2.5vw, 24px); }
-#event-battle-root .event-result-fill { margin-top: 9px; border-radius: 14px; padding: 8px; background: rgba(120, 55, 180, 0.22); }
-#event-battle-root .event-result-fill small { color: rgba(255,255,255,0.62); }
-#event-battle-root .event-result-fill b { display: block; font-size: clamp(13px, 2vw, 18px); }
-#event-battle-root .event-result-fill p { margin: 3px 0 0; color: rgba(255,255,255,0.7); font-size: 12px; }
-#event-battle-root .event-result-actions { margin-top: 10px; display: flex; justify-content: center; gap: 10px; }
+#event-battle-root .event-result-grid span { display: block; color: rgba(255,255,255,0.65); font-size: 11px; }
+#event-battle-root .event-result-grid b { display: block; font-size: clamp(17px, 2.6vw, 24px); }
+#event-battle-root .event-result-lore { margin-top: 10px; text-align: left; border: 1px solid rgba(154, 90, 255, 0.26); border-radius: 14px; padding: 10px; background: rgba(48, 18, 78, 0.34); }
+#event-battle-root .event-result-lore b { color: #dcb8ff; }
+#event-battle-root .event-result-lore p { margin: 4px 0 0; font-size: clamp(11px, 1.45vw, 14px); }
+#event-battle-root .event-ladder-panel { margin-top: 10px; text-align: left; }
+#event-battle-root .event-ladder-panel > b { display: block; margin-bottom: 6px; color: #fff4b8; }
+#event-battle-root .event-ladder-row { display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center; margin-top: 6px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 7px; background: rgba(255,255,255,0.06); }
+#event-battle-root .event-ladder-row.is-reached { border-color: rgba(126,245,255,0.32); background: rgba(78, 178, 210, 0.12); }
+#event-battle-root .event-ladder-row.is-claimed { opacity: 0.72; }
+#event-battle-root .event-ladder-row small { display: block; color: rgba(255,255,255,0.68); margin-top: 2px; }
+#event-battle-root .event-ladder-row button { padding: 8px 12px; min-width: 92px; }
 body.event-battle-screen { overscroll-behavior: none; }
+
 @media (max-width: 760px) {
-  #event-battle-root .event-battle-stage { padding-right: calc(env(safe-area-inset-right) + 8px); grid-template-rows: auto 1fr auto; }
-  #event-battle-root .event-normal-inputs { gap: 7px; }
-  #event-battle-root .event-normal-inputs button { min-height: 64px; padding: 8px 6px; }
+  #event-battle-root .event-battle-stage { padding-right: calc(env(safe-area-inset-right) + 8px); grid-template-rows: auto minmax(96px, 25vh) 1fr; }
   #event-battle-root .event-result-grid { grid-template-columns: repeat(2, 1fr); }
+  #event-battle-root .event-ladder-row { grid-template-columns: 1fr; }
+  #event-battle-root .event-ladder-row button { width: 100%; }
 }
-
-/* v039_82 rush pattern table display */
-#event-battle-root .event-rush-pattern-card {
-  border: 1px solid rgba(255, 226, 137, 0.22);
-  background: linear-gradient(135deg, rgba(120,55,180,0.26), rgba(20,20,32,0.72));
-}
-#event-battle-root .event-rush-pattern-pair,
-#event-battle-root .event-rush-pattern-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 6px;
-}
-#event-battle-root .event-rush-pattern-pair span,
-#event-battle-root .event-rush-pattern-meta span {
-  display: inline-flex;
-  align-items: center;
-  border-radius: 999px;
-  padding: 3px 8px;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.12);
-  color: rgba(255,255,255,0.86);
-  font-size: clamp(10px, 1.35vw, 13px);
-  white-space: nowrap;
-}
-#event-battle-root .event-rush-pattern-meta span {
-  background: rgba(255, 216, 93, 0.12);
-  border-color: rgba(255, 216, 93, 0.18);
-}
-
-/* v039_83: result scroll + 5-lane rush note gameplay */
-#event-battle-root .event-phase-rush {
-  grid-template-rows: minmax(54px, 11vh) minmax(120px, 28vh) minmax(0, 1fr);
-}
-#event-battle-root .event-phase-result {
-  grid-template-rows: minmax(48px, 10vh) minmax(86px, 20vh) minmax(0, 1fr);
-}
-#event-battle-root .event-phase-result .event-battle-boss-area {
-  padding: 7px 9px;
-}
-#event-battle-root .event-phase-result .event-battle-boss-card {
-  gap: 8px;
-}
-#event-battle-root .event-phase-result .event-battle-boss-orb {
-  width: clamp(42px, 7vw, 72px);
-  border-width: 3px;
-  font-size: clamp(15px, 2.5vw, 25px);
-}
-#event-battle-root .event-phase-result .event-battle-boss-desc,
-#event-battle-root .event-phase-result .event-battle-message,
-#event-battle-root .event-phase-result .event-battle-notice {
-  display: none;
-}
-#event-battle-root .event-phase-result .event-battle-gauges {
-  margin-top: 5px;
-  gap: 4px;
-}
-#event-battle-root .event-phase-result .event-gauge {
-  grid-template-columns: 68px 1fr 62px;
-  font-size: clamp(10px, 1.35vw, 13px);
-}
-#event-battle-root .event-phase-result .event-gauge i {
-  height: 10px;
-}
-#event-battle-root .event-result-panel {
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: contain;
-  max-height: 100%;
-  min-height: 0;
-  padding-right: 12px;
-  touch-action: pan-y;
-}
-#event-battle-root .event-result-card {
-  max-width: min(980px, 100%);
-  padding-bottom: 14px;
-}
-#event-battle-root .event-result-rush-grid {
-  margin-top: 8px;
-}
-#event-battle-root .event-result-reward-note {
-  margin-top: 9px;
-  border: 1px solid rgba(112, 231, 255, 0.18);
-  border-radius: 14px;
-  padding: 8px;
-  background: rgba(52, 128, 160, 0.16);
-  text-align: left;
-}
-#event-battle-root .event-result-reward-note b {
-  display: block;
-  color: #bff4ff;
-  font-size: clamp(12px, 1.7vw, 16px);
-}
-#event-battle-root .event-result-reward-note p {
-  margin: 3px 0 0;
-  color: rgba(255,255,255,0.74);
-  font-size: clamp(10px, 1.35vw, 13px);
-}
-#event-battle-root .event-rush-panel {
-  min-height: 0;
-  display: grid;
-  grid-template-rows: auto minmax(0, 1fr) auto;
-  gap: 6px;
-  border: 2px solid rgba(255, 223, 103, 0.2);
-  border-radius: 18px;
-  background: linear-gradient(180deg, rgba(10, 10, 18, 0.88), rgba(7, 5, 12, 0.94));
-  padding: 8px;
-  box-shadow: inset 0 0 28px rgba(255, 229, 108, 0.08), 0 0 22px rgba(0,0,0,0.25);
-}
-#event-battle-root .event-rush-top {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto;
-  align-items: center;
-  gap: 8px;
-  min-width: 0;
-}
-#event-battle-root .event-rush-top b {
-  display: block;
-  font-weight: 1000;
-  color: #ffe870;
-  font-size: clamp(13px, 2.2vw, 20px);
-  line-height: 1.1;
-}
-#event-battle-root .event-rush-top span {
-  display: block;
-  color: rgba(255,255,255,0.72);
-  font-size: clamp(10px, 1.4vw, 13px);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-#event-battle-root .event-rush-judge {
-  min-width: 84px;
-  text-align: center;
-  border-radius: 999px;
-  padding: 5px 10px;
-  font-weight: 1000;
-  color: #160900;
-  background: #ffe870;
-  box-shadow: 0 0 18px rgba(255, 232, 112, 0.45);
-}
-#event-battle-root .event-judge-just { background: #fff36a; color: #190e00; }
-#event-battle-root .event-judge-good { background: #78f7ff; color: #001317; }
-#event-battle-root .event-judge-miss { background: #ff6682; color: #fff; }
-#event-battle-root .event-judge-rush { background: #ffbf4d; color: #1f0d00; }
-#event-battle-root .event-rush-count {
-  color: rgba(255,255,255,0.86);
-  font-weight: 900;
-  font-size: clamp(12px, 1.8vw, 16px);
-}
-#event-battle-root .event-rush-lanes {
-  min-height: 0;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 7px;
-}
-#event-battle-root .event-rush-lane {
-  min-width: 0;
-  display: grid;
-  grid-template-rows: minmax(0, 1fr) auto;
-  gap: 5px;
-}
-#event-battle-root .event-rush-lane-track {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.13);
-  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(0,0,0,0.22));
-  min-height: 0;
-}
-#event-battle-root .event-rush-lane-track em {
-  position: absolute;
-  left: 5px;
-  right: 5px;
-  top: 78%;
-  height: 3px;
-  border-radius: 999px;
-  background: #fff;
-  box-shadow: 0 0 14px rgba(255,255,255,0.84), 0 0 24px rgba(120, 231, 255, 0.45);
-  opacity: 0.9;
-}
-#event-battle-root .event-note {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: min(64px, 92%);
-  max-width: 96%;
-  text-align: center;
-  border-radius: 999px;
-  padding: 7px 7px;
-  color: #fff;
-  font-weight: 1000;
-  font-size: clamp(11px, 1.8vw, 17px);
-  border: 2px solid rgba(255,255,255,0.38);
-  box-shadow: 0 0 18px rgba(255,255,255,0.16);
-  pointer-events: none;
-}
-#event-battle-root .event-note-kick { background: linear-gradient(180deg, #31aaff, #2353d6); }
-#event-battle-root .event-note-snare { background: linear-gradient(180deg, #ff6f9e, #bb2c72); }
-#event-battle-root .event-note-tom { background: linear-gradient(180deg, #62f876, #d47a28); }
-#event-battle-root .event-note-crash { background: linear-gradient(180deg, #ffe970, #d49c13); color: #201500; }
-#event-battle-root .event-note-hat_ghost,
-#event-battle-root .event-note.ghost {
-  opacity: 0.42;
-  border-style: dashed;
-  background: rgba(255,255,255,0.16);
-  color: rgba(255,255,255,0.72);
-}
-#event-battle-root .event-rush-lane button {
-  min-height: 58px;
-  padding: 7px 4px;
-  border-radius: 16px;
-  background: linear-gradient(180deg, rgba(70,70,90,0.92), rgba(18,18,26,0.96));
-  border: 1px solid rgba(255,255,255,0.16);
-  box-shadow: inset 0 -8px 12px rgba(0,0,0,0.25);
-}
-#event-battle-root .event-rush-lane button b {
-  display: block;
-  font-size: clamp(14px, 2.4vw, 22px);
-  line-height: 1.05;
-}
-#event-battle-root .event-rush-lane button small {
-  display: block;
-  margin-top: 2px;
-  color: rgba(255,255,255,0.64);
-  font-size: clamp(8px, 1.1vw, 11px);
-}
-#event-battle-root .event-rush-lane-kick button { background: linear-gradient(180deg, #31aaff, #2353d6); }
-#event-battle-root .event-rush-lane-snare button { background: linear-gradient(180deg, #ff6f9e, #bb2c72); }
-#event-battle-root .event-rush-lane-tom button { background: linear-gradient(180deg, #62f876, #d47a28); }
-#event-battle-root .event-rush-lane-crash button { background: linear-gradient(180deg, #ffe970, #d49c13); color: #2d1d00; }
-#event-battle-root .event-rush-hihat {
-  text-align: center;
-  color: rgba(255,255,255,0.72);
-  font-weight: 800;
-  font-size: clamp(10px, 1.5vw, 14px);
-}
-#event-battle-root .event-rush-hihat span {
-  color: rgba(255,255,255,0.5);
-  font-weight: 700;
-  margin-left: 8px;
-}
-@media (max-width: 760px) {
-  #event-battle-root .event-phase-rush { grid-template-rows: auto minmax(98px, 24vh) minmax(0, 1fr); }
-  #event-battle-root .event-rush-lanes { gap: 4px; }
-  #event-battle-root .event-rush-lane button { min-height: 50px; }
-  #event-battle-root .event-rush-judge { min-width: 68px; padding: 4px 6px; }
-  #event-battle-root .event-rush-hihat span { display: block; margin-left: 0; }
-}
-
-/* v039_84: normal mode input rework + rush intro countdown */
-#event-battle-root .event-phase-rushIntro {
-  grid-template-rows: minmax(54px, 11vh) minmax(120px, 28vh) minmax(0, 1fr);
-}
-#event-battle-root .event-normal-action-field {
-  position: relative;
-  min-height: clamp(132px, 31vh, 248px);
-  margin-top: 8px;
-  border-radius: 18px;
-  overflow: hidden;
-  border: 2px solid rgba(112, 231, 255, 0.20);
-  background:
-    radial-gradient(circle at 25% 30%, rgba(67, 203, 255, 0.18), transparent 30%),
-    radial-gradient(circle at 70% 48%, rgba(255, 99, 195, 0.13), transparent 34%),
-    linear-gradient(180deg, rgba(9, 18, 32, 0.86), rgba(9, 5, 18, 0.94));
-  box-shadow: inset 0 0 28px rgba(112, 231, 255, 0.08), 0 10px 24px rgba(0,0,0,0.24);
-  touch-action: none;
-}
-#event-battle-root .event-field-caption {
-  position: absolute;
-  left: 12px;
-  bottom: 9px;
-  right: 12px;
-  text-align: center;
-  color: rgba(255,255,255,0.55);
-  font-weight: 800;
-  font-size: clamp(10px, 1.35vw, 13px);
-  pointer-events: none;
-}
-#event-battle-root .event-tap-target {
-  position: absolute;
-  width: clamp(42px, 7vw, 70px);
-  height: clamp(42px, 7vw, 70px);
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  padding: 0;
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-  z-index: 45;
-}
-#event-battle-root .event-tap-target i,
-#event-battle-root .event-tap-target b {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  pointer-events: none;
-}
-#event-battle-root .event-tap-target i {
-  transform: scale(var(--ring-scale, 2.2));
-  border: 4px solid rgba(111, 235, 255, 0.82);
-  background: rgba(111, 235, 255, 0.12);
-  box-shadow: 0 0 24px rgba(111, 235, 255, 0.52);
-}
-#event-battle-root .event-tap-target b {
-  border: 3px solid #58b9ff;
-  background: rgba(34, 108, 255, 0.48);
-  box-shadow: inset 0 0 12px rgba(255,255,255,0.22), 0 0 16px rgba(50, 158, 255, 0.45);
-}
-#event-battle-root .event-tap-target span {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  font-weight: 1000;
-  font-size: clamp(10px, 1.4vw, 13px);
-  color: #fff;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
-  pointer-events: none;
-}
-#event-battle-root .event-tap-target.timing-just i {
-  border-color: #fff86a;
-  box-shadow: 0 0 28px rgba(255,248,106,0.85);
-}
-#event-battle-root .event-flick-arrow {
-  position: absolute;
-  z-index: 46;
-  transform: translate(-50%, -50%);
-  display: grid;
-  place-items: center;
-  gap: 2px;
-  min-width: clamp(76px, 12vw, 128px);
-  min-height: clamp(54px, 8vw, 88px);
-  border-radius: 18px;
-  border: 2px solid rgba(255, 232, 90, 0.82);
-  background: linear-gradient(180deg, rgba(255, 220, 56, 0.34), rgba(126, 82, 12, 0.68));
-  box-shadow: 0 0 24px rgba(255,218,68,0.46), inset 0 0 14px rgba(255,255,255,0.10);
-  pointer-events: none;
-}
-#event-battle-root .event-flick-arrow b {
-  font-size: clamp(25px, 4.5vw, 48px);
-  line-height: 1;
-  color: #fff36a;
-}
-#event-battle-root .event-flick-arrow span {
-  font-size: clamp(10px, 1.35vw, 13px);
-  color: rgba(255,255,255,0.9);
-  font-weight: 900;
-}
-#event-battle-root .event-hold-pair {
-  position: absolute;
-  left: 1.5%;
-  right: 1.5%;
-  bottom: 28px;
-  height: clamp(58px, 10vh, 92px);
-  display: grid;
-  grid-template-columns: minmax(62px, 16%) 1fr minmax(62px, 16%);
-  align-items: center;
-  gap: 8px;
-  z-index: 6;
-}
-#event-battle-root .event-hold-zone {
-  height: 100%;
-  border-radius: 18px;
-  padding: 6px;
-  border: 2px solid rgba(255, 123, 211, 0.70);
-  background: linear-gradient(180deg, rgba(255, 91, 190, 0.88), rgba(132, 31, 112, 0.94));
-  box-shadow: 0 0 20px rgba(255, 91, 190, 0.34), inset 0 -8px 14px rgba(0,0,0,0.22);
-}
-#event-battle-root .event-hold-zone b {
-  display: block;
-  font-size: clamp(22px, 4vw, 42px);
-  line-height: 0.95;
-}
-#event-battle-root .event-hold-zone span {
-  display: block;
-  font-size: clamp(9px, 1.2vw, 12px);
-  opacity: 0.9;
-}
-#event-battle-root .event-hold-bolt {
-  position: relative;
-  height: 14px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.16);
-  overflow: visible;
-  text-align: center;
-}
-#event-battle-root .event-hold-bolt i {
-  position: absolute;
-  inset: 2px 12%;
-  border-radius: inherit;
-  background: linear-gradient(90deg, transparent, rgba(255, 85, 222, 0.95), rgba(138, 226, 255, 0.95), transparent);
-  opacity: 0.25;
-  filter: blur(0.5px);
-}
-#event-battle-root .event-hold-bolt span {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -22px;
-  color: rgba(255,255,255,0.78);
-  font-weight: 900;
-  font-size: clamp(10px, 1.35vw, 13px);
-}
-#event-battle-root .event-hold-pair.is-charged .event-hold-bolt i {
-  opacity: 1;
-  animation: eventHoldBolt 0.22s infinite alternate;
-}
-@keyframes eventHoldBolt {
-  from { transform: scaleX(0.92); filter: brightness(1); }
-  to { transform: scaleX(1.04); filter: brightness(1.7); }
-}
-#event-battle-root .event-rush-intro-panel {
-  min-height: 0;
-  display: grid;
-  place-items: center;
-  border: 2px solid rgba(255, 232, 112, 0.28);
-  border-radius: 18px;
-  background: radial-gradient(circle at center, rgba(255, 213, 83, 0.16), rgba(12, 6, 20, 0.90) 70%);
-  box-shadow: inset 0 0 34px rgba(255, 232, 112, 0.09), 0 0 22px rgba(0,0,0,0.26);
-}
-#event-battle-root .event-rush-intro-card {
-  text-align: center;
-  padding: 10px 18px;
-}
-#event-battle-root .event-rush-intro-card b {
-  display: block;
-  font-size: clamp(20px, 4vw, 42px);
-  color: #fff2a3;
-  text-shadow: 0 0 18px rgba(255, 232, 112, 0.55);
-}
-#event-battle-root .event-rush-intro-card strong {
-  display: block;
-  margin: 4px auto;
-  font-size: clamp(52px, 11vw, 110px);
-  line-height: 0.95;
-  color: #fff86a;
-  text-shadow: 0 0 28px rgba(255, 248, 106, 0.8);
-}
-#event-battle-root .event-rush-intro-card span {
-  display: block;
-  color: rgba(255,255,255,0.88);
-  font-weight: 900;
-  font-size: clamp(12px, 2vw, 18px);
-}
-#event-battle-root .event-rush-intro-card p {
-  margin: 5px 0 0;
-  color: rgba(255,255,255,0.65);
-  font-size: clamp(10px, 1.4vw, 14px);
-}
-#event-battle-root .event-phase-rushIntro .event-battle-notice,
-#event-battle-root .event-phase-rushIntro .event-battle-message {
-  color: rgba(255, 242, 163, 0.92);
-}
-@media (max-width: 760px) {
-  #event-battle-root .event-normal-action-field { min-height: 146px; }
-  #event-battle-root .event-hold-pair { bottom: 20px; height: 56px; gap: 5px; }
-  #event-battle-root .event-hold-bolt span { top: -19px; }
-  #event-battle-root .event-flick-arrow { min-width: 70px; min-height: 50px; }
-}
-
-
-/* v039_85 base: normal/rush play area expands to fullscreen with explicit SAFEZONE */
-#event-battle-root.event-battle-root {
-  --event-safe-x: clamp(28px, 4.8vw, 72px);
-  --event-safe-y: clamp(18px, 3.8vh, 54px);
-  --event-safe-top: calc(env(safe-area-inset-top) + var(--event-safe-y));
-  --event-safe-right: calc(env(safe-area-inset-right) + var(--event-safe-x));
-  --event-safe-bottom: calc(env(safe-area-inset-bottom) + var(--event-safe-y));
-  --event-safe-left: calc(env(safe-area-inset-left) + var(--event-safe-x));
-}
-#event-battle-root .event-phase-normal,
-#event-battle-root .event-phase-rush,
-#event-battle-root .event-phase-rushIntro {
-  position: absolute;
-  inset: 0;
-  display: block;
-  padding: 0;
-}
-#event-battle-root .event-phase-normal .event-battle-hud,
-#event-battle-root .event-phase-rush .event-battle-hud,
-#event-battle-root .event-phase-rushIntro .event-battle-hud {
-  position: absolute;
-  left: var(--event-safe-left);
-  right: var(--event-safe-right);
-  top: calc(env(safe-area-inset-top) + 8px);
-  z-index: 50;
-  pointer-events: none;
-  margin: 0;
-  padding: 7px 12px;
-}
-#event-battle-root .event-phase-normal .event-battle-boss-area,
-#event-battle-root .event-phase-rush .event-battle-boss-area,
-#event-battle-root .event-phase-rushIntro .event-battle-boss-area {
-  position: absolute;
-  left: var(--event-safe-left);
-  right: var(--event-safe-right);
-  top: calc(env(safe-area-inset-top) + clamp(58px, 11vh, 94px));
-  z-index: 18;
-  pointer-events: none;
-  padding: 7px 10px;
-  max-height: clamp(78px, 20vh, 158px);
-}
-#event-battle-root .event-phase-normal .event-battle-boss-card,
-#event-battle-root .event-phase-rush .event-battle-boss-card,
-#event-battle-root .event-phase-rushIntro .event-battle-boss-card {
-  gap: 8px;
-}
-#event-battle-root .event-phase-normal .event-battle-boss-orb,
-#event-battle-root .event-phase-rush .event-battle-boss-orb,
-#event-battle-root .event-phase-rushIntro .event-battle-boss-orb {
-  width: clamp(44px, 7vw, 82px);
-  border-width: 3px;
-  font-size: clamp(15px, 2.7vw, 28px);
-}
-#event-battle-root .event-phase-normal .event-battle-boss-name,
-#event-battle-root .event-phase-rush .event-battle-boss-name,
-#event-battle-root .event-phase-rushIntro .event-battle-boss-name {
-  font-size: clamp(14px, 2.4vw, 24px);
-}
-#event-battle-root .event-phase-normal .event-battle-boss-desc,
-#event-battle-root .event-phase-rush .event-battle-boss-desc,
-#event-battle-root .event-phase-rushIntro .event-battle-boss-desc {
-  display: none;
-}
-#event-battle-root .event-phase-normal .event-battle-gauges,
-#event-battle-root .event-phase-rush .event-battle-gauges,
-#event-battle-root .event-phase-rushIntro .event-battle-gauges {
-  margin-top: 5px;
-  gap: 4px;
-}
-#event-battle-root .event-phase-normal .event-gauge,
-#event-battle-root .event-phase-rush .event-gauge,
-#event-battle-root .event-phase-rushIntro .event-gauge {
-  grid-template-columns: 64px 1fr 58px;
-  font-size: clamp(9px, 1.25vw, 12px);
-}
-#event-battle-root .event-phase-normal .event-gauge i,
-#event-battle-root .event-phase-rush .event-gauge i,
-#event-battle-root .event-phase-rushIntro .event-gauge i {
-  height: 9px;
-}
-#event-battle-root .event-phase-normal .event-battle-message,
-#event-battle-root .event-phase-normal .event-battle-notice,
-#event-battle-root .event-phase-rush .event-battle-message,
-#event-battle-root .event-phase-rush .event-battle-notice,
-#event-battle-root .event-phase-rushIntro .event-battle-message,
-#event-battle-root .event-phase-rushIntro .event-battle-notice {
-  display: none;
-}
-#event-battle-root .event-phase-normal .event-normal-panel {
-  position: absolute;
-  inset: 0;
-  z-index: 40;
-  border: 0;
-  border-radius: 0;
-  padding: 0;
-  background: transparent;
-  box-shadow: none;
-  pointer-events: none;
-}
-#event-battle-root .event-phase-normal .event-normal-action-field {
-  position: absolute;
-  left: var(--event-safe-left);
-  right: var(--event-safe-right);
-  top: var(--event-safe-top);
-  bottom: var(--event-safe-bottom);
-  min-height: 0;
-  margin: 0;
-  border-radius: 22px;
-  pointer-events: auto;
-  border: 2px solid rgba(112, 231, 255, 0.22);
-  background:
-    linear-gradient(90deg, rgba(112,231,255,0.10) 0 1px, transparent 1px 100%),
-    linear-gradient(0deg, rgba(112,231,255,0.08) 0 1px, transparent 1px 100%),
-    radial-gradient(circle at 25% 32%, rgba(67, 203, 255, 0.18), transparent 30%),
-    radial-gradient(circle at 70% 54%, rgba(255, 99, 195, 0.13), transparent 34%),
-    linear-gradient(180deg, rgba(9, 18, 32, 0.82), rgba(9, 5, 18, 0.92));
-  background-size: 42px 42px, 42px 42px, auto, auto, auto;
-  box-shadow: inset 0 0 34px rgba(112, 231, 255, 0.10), 0 0 22px rgba(0,0,0,0.34);
-}
-#event-battle-root .event-phase-normal .event-normal-action-field::before {
-  content: "SAFEZONE";
-  position: absolute;
-  right: 12px;
-  top: 8px;
-  color: rgba(255,255,255,0.32);
-  font-weight: 1000;
-  letter-spacing: 0.16em;
-  font-size: clamp(9px, 1.2vw, 12px);
-  pointer-events: none;
-}
-#event-battle-root .event-phase-normal .event-normal-guide {
-  position: absolute;
-  left: var(--event-safe-left);
-  right: var(--event-safe-right);
-  bottom: calc(var(--event-safe-bottom) + 4px);
-  z-index: 32;
-  pointer-events: none;
-  gap: 5px;
-}
-#event-battle-root .event-phase-normal .event-normal-guide span {
-  background: rgba(5, 8, 14, 0.68);
-  backdrop-filter: blur(3px);
-}
-#event-battle-root .event-phase-normal .event-future-note {
-  display: none;
-}
-#event-battle-root .event-phase-normal .event-field-caption {
-  bottom: 12px;
-  opacity: 0.72;
-}
-#event-battle-root .event-phase-normal .event-hold-pair {
-  left: clamp(24px, 5vw, 76px);
-  right: clamp(24px, 5vw, 76px);
-  bottom: clamp(40px, 9vh, 96px);
-}
-#event-battle-root .event-phase-rush .event-rush-panel,
-#event-battle-root .event-phase-rushIntro .event-rush-intro-panel {
-  position: absolute;
-  left: var(--event-safe-left);
-  right: var(--event-safe-right);
-  top: calc(env(safe-area-inset-top) + clamp(134px, 28vh, 230px));
-  bottom: var(--event-safe-bottom);
-  min-height: 0;
-  z-index: 6;
-}
-#event-battle-root .event-phase-rush .event-rush-lanes {
-  gap: clamp(5px, 1.2vw, 12px);
-}
-#event-battle-root .event-phase-rush .event-rush-lane-track {
-  min-height: 0;
-}
-#event-battle-root .event-phase-rush .event-rush-lane button {
-  min-height: clamp(54px, 10vh, 82px);
-}
-@media (max-width: 760px) {
-  #event-battle-root.event-battle-root {
-    --event-safe-x: clamp(18px, 4.2vw, 42px);
-    --event-safe-y: clamp(14px, 3.6vh, 34px);
-  }
-  #event-battle-root .event-phase-normal .event-battle-hud,
-  #event-battle-root .event-phase-rush .event-battle-hud,
-  #event-battle-root .event-phase-rushIntro .event-battle-hud {
-    left: var(--event-safe-left);
-    right: var(--event-safe-right);
-    top: calc(env(safe-area-inset-top) + 5px);
-    padding: 5px 8px;
-  }
-  #event-battle-root .event-phase-normal .event-battle-boss-area,
-  #event-battle-root .event-phase-rush .event-battle-boss-area,
-  #event-battle-root .event-phase-rushIntro .event-battle-boss-area {
-    top: calc(env(safe-area-inset-top) + 50px);
-    max-height: 92px;
-    padding: 5px 7px;
-  }
-  #event-battle-root .event-phase-normal .event-normal-guide {
-    bottom: calc(var(--event-safe-bottom) + 1px);
-  }
-  #event-battle-root .event-phase-normal .event-normal-guide span {
-    padding: 3px 6px;
-    font-size: 10px;
-  }
-  #event-battle-root .event-phase-normal .event-hold-pair {
-    left: clamp(18px, 5vw, 44px);
-    right: clamp(18px, 5vw, 44px);
-    bottom: clamp(34px, 8vh, 64px);
-  }
-  #event-battle-root .event-phase-rush .event-rush-panel,
-  #event-battle-root .event-phase-rushIntro .event-rush-intro-panel {
-    top: calc(env(safe-area-inset-top) + 132px);
-    bottom: var(--event-safe-bottom);
-  }
-}
-
-
-/* v039_86: input effects must stay in front of the black alien UI */
-#event-battle-root .event-phase-normal .event-normal-action-field,
-#event-battle-root .event-phase-normal .event-tap-target,
-#event-battle-root .event-phase-normal .event-flick-arrow,
-#event-battle-root .event-phase-normal .event-double-target {
-  z-index: 60;
-}
-#event-battle-root .event-phase-normal .event-battle-boss-area {
-  opacity: 0.72;
-}
-#event-battle-root .event-double-target {
-  position: absolute;
-  width: clamp(58px, 8.5vw, 96px);
-  height: clamp(58px, 8.5vw, 96px);
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  border: 3px solid rgba(255, 125, 212, 0.92);
-  background: radial-gradient(circle at 45% 35%, rgba(255, 210, 242, 0.92), rgba(255, 69, 184, 0.74) 46%, rgba(121, 24, 108, 0.84) 100%);
-  box-shadow: 0 0 26px rgba(255, 89, 199, 0.52), inset 0 0 14px rgba(255,255,255,0.18);
-  display: grid;
-  place-items: center;
-  padding: 0;
-}
-#event-battle-root .event-double-target b {
-  display: block;
-  font-size: clamp(18px, 3.2vw, 34px);
-  line-height: 1;
-  color: #fff;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.55);
-}
-#event-battle-root .event-double-target span {
-  display: block;
-  margin-top: -12px;
-  font-size: clamp(9px, 1.2vw, 12px);
-  color: rgba(255,255,255,0.92);
-  font-weight: 1000;
-}
-#event-battle-root .event-double-target.is-armed {
-  animation: eventDoubleArmed 0.22s infinite alternate;
-  border-color: #fff36a;
-}
-@keyframes eventDoubleArmed {
-  from { transform: translate(-50%, -50%) scale(1); filter: brightness(1); }
-  to { transform: translate(-50%, -50%) scale(1.08); filter: brightness(1.45); }
-}
-#event-battle-root .event-phase-rush .event-battle-boss-area {
-  opacity: 0.44;
-  z-index: 10;
-}
-#event-battle-root .event-phase-rush .event-rush-panel {
-  top: var(--event-safe-top);
-  bottom: var(--event-safe-bottom);
-  z-index: 44;
-  background: linear-gradient(180deg, rgba(8, 10, 18, 0.80), rgba(5, 4, 10, 0.92));
-}
-#event-battle-root .event-rush-top b {
-  color: #fff36a;
-}
-#event-battle-root .event-rush-lane-track em {
-  top: 82%;
-}
-#event-battle-root .event-note {
-  transition: none;
-}
-
-#event-battle-root .event-hold-pair, #event-battle-root .event-hold-zone, #event-battle-root .event-hold-bolt { display:none !important; }
