@@ -6,7 +6,7 @@
   "use strict";
 
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  const VERSION = "v039_92_event_member_loop_swipe_fix";
+  const VERSION = "v039_98_event_battle_rival_members_story_fix";
   const ROOT_ID = "event-battle-root";
   const STORAGE_KEY = "tenotsu_event_run_battle_v1";
   const ENCOUNTER_ST_COST = 20;
@@ -30,7 +30,10 @@
     { id: "aj", name: "桃", attr: "配信", color: "#f7adc3", image: "j10501.webp" },
     { id: "ak", name: "彩愛", attr: "生活", color: "#694d9f", image: "k10501.webp" },
     { id: "al", name: "里美", attr: "レジ", color: "#8d5025", image: "l10501.webp" },
-    { id: "am", name: "萌", attr: "リラックス", color: "#33cc99", image: "m10501.webp" }
+    { id: "am", name: "萌", attr: "リラックス", color: "#33cc99", image: "m10501.webp" },
+    { id: "ba", name: "小春", attr: "テレビ・オーディオ・美容品・マッサージ", attrs: ["映像", "オーディオ", "美容", "リラックス"], color: "#e33a2f", image: "images/assets/rival/koharu_stand.png", rivalSupport: true },
+    { id: "bb", name: "真冬", attr: "パソコン・事務機器・配信機材・スマホ", attrs: ["PC", "レジ", "配信", "スマホ"], color: "#3f67d8", image: "images/assets/rival/mafuyu_stand.png", rivalSupport: true },
+    { id: "bc", name: "なつ", attr: "調理・夏物・冬物・洗濯機・ドライヤー", attrs: ["オーブン", "除湿", "加湿", "生活", "ドライヤー"], color: "#f68b1f", image: "images/assets/rival/natsu_stand.png", rivalSupport: true }
   ];
 
   const DIRTY_ALIEN_POOL = [
@@ -151,11 +154,11 @@
   }
 
   function getEventStaff() {
-    return STAFF_BASE.slice(0, 13);
+    return STAFF_BASE.slice();
   }
   function defaultProgress() {
     return {
-      version: "v039_92",
+      version: "v039_98",
       darkElements: 0,
       totalDarkElements: 0,
       totalEncounters: 0,
@@ -177,7 +180,7 @@
   function normalizeProgress(data) {
     const base = defaultProgress();
     if (!data || typeof data !== "object") data = base;
-    data.version = "v039_92";
+    data.version = "v039_98";
     ["darkElements", "totalDarkElements", "totalEncounters", "totalCleaned", "totalEscaped", "totalBattles", "maxThreatLevel"].forEach((key) => {
       data[key] = Math.max(key === "maxThreatLevel" ? 1 : 0, Math.floor(Number(data[key] == null ? base[key] : data[key]) || 0));
     });
@@ -198,7 +201,7 @@
     return expireActiveIfNeeded(normalizeProgress(data));
   }
   function saveProgress(data) {
-    data.version = "v039_92";
+    data.version = "v039_98";
     data.updatedAt = nowIso();
     data.history = Array.isArray(data.history) ? data.history.slice(-40) : [];
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (_) {}
@@ -278,13 +281,42 @@
     const list = ids.map((id) => STAFF_BASE.find((s) => s.id === id)).filter(Boolean);
     return (list.length === 5 ? list : DEFAULT_STAFF_IDS.map((id) => STAFF_BASE.find((s) => s.id === id))).filter(Boolean);
   }
+  function isRivalSupportStaff(charId) {
+    const member = STAFF_BASE.find((s) => s.id === charId);
+    return !!(member && member.rivalSupport);
+  }
+  function getHidamariAverageLevel() {
+    const ids = STAFF_BASE.filter((s) => !s.rivalSupport).map((s) => s.id);
+    const total = ids.reduce((sum, id) => {
+      try {
+        const st = window.TenotsuGrowth && window.TenotsuGrowth.getCharacterState ? window.TenotsuGrowth.getCharacterState(id) : null;
+        return sum + Math.max(1, Math.floor(Number(st && st.level) || 1));
+      } catch (_) { return sum + 1; }
+    }, 0);
+    return Math.max(1, Math.round((total / Math.max(1, ids.length)) * 0.7));
+  }
+  function getHidamariAverageStats() {
+    const keys = ["proposal", "speed", "stamina", "care", "honesty", "luck"];
+    const ids = STAFF_BASE.filter((s) => !s.rivalSupport).map((s) => s.id);
+    const sums = keys.reduce((acc, key) => (acc[key] = 0, acc), {});
+    ids.forEach((id) => {
+      let stats = null;
+      try { stats = window.TenotsuGrowth && window.TenotsuGrowth.getComputedStats ? window.TenotsuGrowth.getComputedStats(id) : null; } catch (_) { stats = null; }
+      keys.forEach((key) => { sums[key] += Math.max(1, Number(stats && stats[key]) || 12); });
+    });
+    const result = {};
+    keys.forEach((key) => { result[key] = Math.max(1, Math.round((sums[key] / Math.max(1, ids.length)) * 0.7)); });
+    return result;
+  }
   function getLevel(charId) {
+    if (isRivalSupportStaff(charId)) return getHidamariAverageLevel();
     try {
       const st = window.TenotsuGrowth && window.TenotsuGrowth.getCharacterState ? window.TenotsuGrowth.getCharacterState(charId) : null;
       return Math.max(1, Math.floor(Number(st && st.level) || 1));
     } catch (_) { return 1; }
   }
   function getStats(charId) {
+    if (isRivalSupportStaff(charId)) return getHidamariAverageStats();
     try {
       const stats = window.TenotsuGrowth && window.TenotsuGrowth.getComputedStats ? window.TenotsuGrowth.getComputedStats(charId) : null;
       if (stats) return stats;
@@ -317,7 +349,7 @@
     const chosen = shuffle(DIRTY_ALIEN_POOL).slice(0, MAX_EVENT_ENEMIES);
     return {
       id: `event_${Date.now()}_${Math.floor(Math.random() * 9999)}`,
-      version: "v039_92",
+      version: "v039_98",
       threatLevel,
       createdAt: nowIso(),
       expiresAt: new Date(nowMs() + ENCOUNTER_ESCAPE_MS).toISOString(),
@@ -355,7 +387,8 @@
     const affinity = Math.max(0, Math.floor(Number(state.progress.memberAffinity[member.id]) || 0));
     const buff = calcActiveBuffs(state.progress);
     const base = 28 + level * 3.2 + Number(stats.proposal || 0) * 1.45 + Number(stats.stamina || 0) * 0.68 + Number(stats.care || 0) * 0.58 + Number(stats.honesty || 0) * 0.42;
-    const match = member.attr === enemy.attr;
+    const memberAttrs = Array.isArray(member.attrs) ? member.attrs : [member.attr];
+    const match = memberAttrs.includes(enemy.attr);
     const matchRate = match ? (1.65 + buff.matchBoost) : 1;
     const affinityRate = 1 + Math.min(0.35, affinity / 280);
     const damageRate = 1 + buff.damageRate;
@@ -577,14 +610,14 @@
     const ready = readyAt <= nowMs();
     const dmg = enemy ? calcDamage(member, enemy) : null;
     const affinity = Math.max(0, Math.floor(Number(state.progress.memberAffinity[member.id]) || 0));
-    const image = member.image ? `images/assets/char/${member.image}` : "";
+    const image = member.image ? (String(member.image).includes("/") ? member.image : `images/assets/char/${member.image}`) : "";
     const powerLabel = dmg ? `総合清掃力 ${dmg.value}${dmg.match ? " / 特攻" : ""}` : "総合清掃力 -";
     return `<button type="button" class="event-clean-member ${ready ? "ready" : "cooldown"} ${dmg && dmg.match ? "match" : ""}" data-event-member="${escapeHtml(member.id)}" style="--member-color:${escapeHtml(member.color)};" ${ready ? "" : "disabled"}>
       <div class="event-clean-member-main">
         <span>${escapeHtml(member.name)}</span>
         <b>${escapeHtml(member.attr)}</b>
         <small>${ready ? powerLabel : `リキャスト ${shortRemaining(readyAt)}`}</small>
-        <em>Lv.${getLevel(member.id)} / 親愛 ${affinity}</em>
+        <em>${member.rivalSupport ? "協力" : `Lv.${getLevel(member.id)}`} / 親愛 ${affinity}</em>
       </div>
       <img class="event-clean-member-art" src="${escapeHtml(image)}" alt="${escapeHtml(member.name)}" loading="eager" decoding="async" />
     </button>`;

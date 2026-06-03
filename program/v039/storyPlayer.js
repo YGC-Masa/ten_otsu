@@ -399,8 +399,31 @@
     }
   };
 
+  ns.applyStoryBgFitV03998 = function applyStoryBgFitV03998(step) {
+    if (!step || (!("bgFit" in step) && !("cgFit" in step) && !step.bg)) return;
+    const contain = !!(step && (step.bgFit === "contain" || step.cgFit === "contain"));
+    document.body.classList.toggle("tenotsu-story-bg-contain", contain);
+    document.querySelectorAll(".tenotsu-bg-layer,.tenotsu-background-layer,[data-bg-layer],.background").forEach((el) => {
+      if (contain) {
+        el.style.setProperty("background-size", "contain", "important");
+        el.style.setProperty("background-repeat", "no-repeat", "important");
+        el.style.setProperty("background-position", "center center", "important");
+        el.style.setProperty("background-color", "#000", "important");
+      } else {
+        el.style.removeProperty("background-size");
+        el.style.removeProperty("background-repeat");
+        el.style.removeProperty("background-position");
+      }
+    });
+    document.querySelectorAll(".tenotsu-bg-layer img,.tenotsu-background-layer img,[data-bg-layer] img,.background img").forEach((img) => {
+      img.style.setProperty("object-fit", contain ? "contain" : "cover", "important");
+      img.style.setProperty("background", contain ? "#000" : "transparent", "important");
+    });
+  };
+
   ns.applyStoryStep = async function applyStoryStep(step, options = {}) {
     if (!step) return;
+    if (ns.applyStoryBgFitV03998) ns.applyStoryBgFitV03998(step);
     if (step.hideEventCg && ns.hideEventCgSurface) ns.hideEventCgSurface();
     if (step.showEventCg && step.eventCg && ns.showEventCgSurface) ns.showEventCgSurface(step.eventCg);
     const forceBg = !!(step.forceBackgroundReplace || step.bgMode === "forceReplace");
@@ -468,6 +491,10 @@
       if (ret && ret.eventId === "biribiri_intro_rival_battle_unlock_003_flow_fix") {
         flags.unlock_vs_biribiri = true;
         flags.rival_intro_seen = true;
+      }
+      if (ret && ret.eventId === "event_black_kadenseijin_battle_unlock_003_ayame_line_fix") {
+        flags.unlock_event_battle = true;
+        flags.unlock_black_kadenseijin_event = true;
       }
       Object.keys(flags).forEach((key) => {
         localStorage.setItem("tenotsu_" + key + "_v1", flags[key] ? "1" : "0");

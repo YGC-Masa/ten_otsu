@@ -1,6 +1,6 @@
 {
   "id": "biribiri_intro_rival_battle_unlock_003_flow_fix",
-  "title": "ビリビリ電機登場：鼻歌来店とちんまり販売勝負",
+  "title": "ビリビリ電機登場：初来店と販売勝負",
   "return": {
     "mode": "town",
     "season": "other"
@@ -18,7 +18,7 @@
       "bg": "images/assets/bgev/bg_office_hidamari.png",
       "bgMode": "replace",
       "speaker": "",
-      "text": "【解禁ストーリー】ビリビリ電機登場：鼻歌来店とちんまり販売勝負",
+      "text": "【解禁ストーリー】ビリビリ電機登場：初来店と販売勝負",
       "clearStorySprites": true
     },
     {
@@ -33,12 +33,12 @@
       "text": "今日は店頭の様子も見ておくか。家電星人たちが来てから、客層も少し変わってきたしな。"
     },
     {
-      "speaker": "？？？",
-      "text": "♪～～♪～～"
+      "speaker": "",
+      "text": "カランコロン♪"
     },
     {
       "speaker": "ナレーション",
-      "text": "軽い鼻歌とともに、赤黒い制服の三人組が店内へ入ってきた。"
+      "text": "来店チャイムとともに、赤黒い制服の三人組が店内へ入ってきた。"
     },
     {
       "speaker": "星野 緋奈",
@@ -673,47 +673,21 @@
       "speaker": "システム",
       "text": "ビリビリ電機との販売勝負が始まります。",
       "bg": "images/assets/rival/biribiri_battle_eyecatch.jpeg",
-      "bgMode": "replace",
-      "clearStorySprites": true
+      "bgMode": "forceReplace",
+      "clearStorySprites": true,
+      "bgFit": "contain"
     },
     {
       "speaker": "天神 小春",
-      "text": "覚悟しなさい、ひだまりストア！　うちが本物の販売力ってやつを見せてあげる！",
-      "storySprites": [
-        {
-          "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        }
-      ]
+      "text": "覚悟しなさい、ひだまりストア！　うちが本物の販売力ってやつを見せてあげる！"
     },
     {
       "speaker": "霧島 真冬",
-      "text": "データで証明しましょう。どちらの接客が市場に適しているのかを。",
-      "storySprites": [
-        {
-          "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        }
-      ]
+      "text": "データで証明しましょう。どちらの接客が市場に適しているのかを。"
     },
     {
       "speaker": "日向 なつ",
-      "text": "店長さんたちも、小春ちゃんたちも、がんばれ～。あ、あちしたちもか～。",
-      "storySprites": [
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        }
-      ]
+      "text": "店長さんたちも、小春ちゃんたちも、がんばれ～。あ、あちしたちもか～。"
     },
     {
       "speaker": "システム",

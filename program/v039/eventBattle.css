@@ -642,3 +642,33 @@ body.event-battle-screen { overscroll-behavior: none; }
     height: 72px !important;
   }
 }
+
+
+/* === v039_98 event battle: member art size closer to 桃 reference and rival support members === */
+#event-battle-root .event-clean-member-scroll .event-clean-member {
+  grid-template-columns: minmax(0, 1fr) clamp(76px, 9.8vw, 132px) !important;
+  min-height: clamp(104px, 16.5vh, 148px) !important;
+  overflow: hidden !important;
+}
+#event-battle-root .event-clean-member-art {
+  width: clamp(72px, 9.2vw, 124px) !important;
+  height: clamp(98px, 15.5vh, 142px) !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center bottom !important;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,.18));
+}
+#event-battle-root .event-clean-member span { font-size: clamp(10px, 1.25vw, 14px) !important; }
+#event-battle-root .event-clean-member b,
+#event-battle-root .event-clean-member small,
+#event-battle-root .event-clean-member em { font-size: clamp(8px, 1vw, 11px) !important; }
+@media (max-width: 760px) {
+  #event-battle-root .event-clean-member-scroll .event-clean-member {
+    grid-template-columns: minmax(0, 1fr) 66px !important;
+    min-height: 96px !important;
+  }
+  #event-battle-root .event-clean-member-art {
+    width: 64px !important;
+    height: 92px !important;
+  }
+}

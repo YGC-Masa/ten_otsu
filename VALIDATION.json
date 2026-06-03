@@ -1,12 +1,20 @@
 {
-  "version": "v039_97",
-  "base": "v039_96",
-  "eventBattleMemberArtEnlarged": true,
-  "otherStoryBiribiriIntroAdded": true,
-  "biribiriScenarioRuntimePath": "scenario/v039/events/biribiri_intro_rival_battle_unlock_003_flow_fix.json",
-  "biribiriScenarioSourcePath": "scenario/data/biribiri_intro_rival_battle_unlock_003_flow_fix.source.json",
-  "biribiriScenarioTextSteps": 67,
-  "rivalUnlockFlagsStoredOnStoryEnd": true,
+  "version": "v039_98",
+  "base": "v039_97",
+  "noImageGenerationPerformed": true,
+  "eventBattleMemberArtEnlargedAgain": true,
+  "rivalMembersAddedToEventBattle": [
+    "小春",
+    "真冬",
+    "なつ"
+  ],
+  "rivalStatsUseHidamariAverageTimes": 0.7,
+  "rivalMultiAttributeSpecialAttack": true,
+  "biribiriIntroTitleChanged": true,
+  "doorChimeNoNoseSong": true,
+  "versusCgContainFit": true,
+  "rivalSpritesHiddenAfterVersusCg": true,
+  "blackEventBattleUnlockScenarioAdded": true,
   "jsSyntaxOk": true,
   "jsonSyntaxOk": true,
   "zipIntegrityOk": true

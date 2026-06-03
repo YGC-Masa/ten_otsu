@@ -4175,3 +4175,22 @@ body.tenotsu-story-active .tenotsu-story-body-standing.tenotsu-story-enemy-card 
     max-height: min(38dvh, 310px) !important;
   }
 }
+
+
+/* === v039_98 story CG contain fit === */
+body.tenotsu-story-bg-contain .tenotsu-bg-layer,
+body.tenotsu-story-bg-contain .tenotsu-background-layer,
+body.tenotsu-story-bg-contain [data-bg-layer],
+body.tenotsu-story-bg-contain .background {
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-color: #000 !important;
+}
+body.tenotsu-story-bg-contain .tenotsu-bg-layer img,
+body.tenotsu-story-bg-contain .tenotsu-background-layer img,
+body.tenotsu-story-bg-contain [data-bg-layer] img,
+body.tenotsu-story-bg-contain .background img {
+  object-fit: contain !important;
+  background: #000 !important;
+}

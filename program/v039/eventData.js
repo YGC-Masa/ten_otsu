@@ -128,14 +128,25 @@
         {
           id: "biribiri_intro_rival_battle_unlock_003_flow_fix",
           scenario: "scenario/v039/events/biribiri_intro_rival_battle_unlock_003_flow_fix.json",
-          title: "ビリビリ電機登場：鼻歌来店とちんまり販売勝負",
+          title: "ビリビリ電機登場：初来店と販売勝負",
           character: "天神 小春 / 霧島 真冬 / 日向 なつ",
           place: "ひだまりストア店頭",
           status: "接続済み / VSビリビリ解放",
           bg: "images/assets/bgev/bg_office_hidamari.png",
           cg: "images/assets/rival/biribiri_battle_eyecatch.jpeg",
-          summary: "ビリビリ電機の小春・真冬・なつがひだまりストアを視察に訪れ、販売勝負を宣言する対戦モード解放ストーリー。",
+          summary: "ビリビリ電機の小春・真冬・なつが来店チャイムとともにひだまりストアへ来店し、販売勝負を宣言する対戦モード解放ストーリー。",
           startMessage: "ビリビリ電機との最初の接点を確認します。"
+        },
+        {
+          id: "event_black_kadenseijin_battle_unlock_003_ayame_line_fix",
+          scenario: "scenario/v039/events/event_black_kadenseijin_battle_unlock_003_ayame_line_fix.json",
+          title: "イベントバトル解放：ブラック家電星人を助けて",
+          character: "ひだまりストア / ビリビリ電機 / ブラック家電星人",
+          place: "ひだまりストア店内",
+          status: "接続済み / イベントバトル解放",
+          bg: "images/assets/bgev/bg_office_hidamari.png",
+          summary: "メンテナンス不足でブラック化した家電星人を助けるため、ひだまりストアとビリビリ電機が一時共闘するイベントバトル解放ストーリー。",
+          startMessage: "ブラック家電星人を助けるイベントバトル解放ストーリーを開始します。"
         }
       ]
     },
