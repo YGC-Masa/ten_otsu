@@ -1,26 +1,8 @@
-# ten_otsu diff v039_91 -> v039_92
+# v039_93 外回り「その他・イベント」メニュー追加
 
-イベントバトル画面のひだまりメンバー表示について、スワイプ操作が効かずループ確認ができない問題を修正しました。
-ファーストビューでは必ず5人が見えるようにし、全13人を5人ずつローリング表示します。
-
-## 変更内容
-
-- ひだまりメンバー表示をネイティブ横スクロール依存から、5人固定表示のローリング方式へ変更。
-- 左右スワイプで表示開始位置を変更。
-- 左右ボタンでも同じループ切り替えが可能。
-- ファーストビューで5人が必ず収まるようにCSSを再整理。
-- スワイプ操作時にメンバークリックが誤発火しないように入力ガードを追加。
-- 表示中の範囲を「何番目から5人 / 全13人」として表示。
-
-## 主な更新ファイル
-
-```text
-index.html
-program/v039/state.js
-program/v039/eventBattle.js
-program/v039/eventBattle.css
-program/docs/v039_92_event_member_loop_swipe_fix.md
-release_notes.md
-VALIDATION.json
-CHECKSUMS.json
-```
+## 内容
+- 外回りトップに「その他」「イベント」カテゴリを追加。
+- 「その他」に「共通オープニング：家電星人襲来・全員登場版」を追加。
+- アップロードされた `common_opening_kadenseijin_raid_002_all_cast.json` を storyPlayer 用 `steps` 形式へ変換して `scenario/v039/events/` に追加。
+- 元シナリオは `scenario/data/common_opening_kadenseijin_raid_002_all_cast.source.json` として保管。
+- 「イベント」カテゴリには月間イベント/清掃バトルの確認用導線を追加。

@@ -1,13 +1,14 @@
 {
-  "version": "v039_92",
-  "base": "v039_91",
-  "eventBattleMemberFirstViewFive": true,
-  "eventBattleMemberLoopSwipeFixed": true,
-  "eventBattleMemberNativeScrollDependencyRemoved": true,
-  "eventBattleMemberRollButtonsAdded": true,
-  "eventBattleMemberSwipeSuppressesAccidentalClick": true,
-  "all13HidamariMembersKept": true,
-  "memberRangeIndicatorAdded": true,
+  "version": "v039_93",
+  "base": "v039_92",
+  "townOtherMenuAdded": true,
+  "townEventMenuAdded": true,
+  "seasonOrderIncludesOtherAndEvent": true,
+  "commonOpeningScenarioAdded": true,
+  "commonOpeningRawSourceKept": true,
+  "commonOpeningScenarioSteps": 100,
+  "commonOpeningInOtherCategory": true,
+  "eventCategoryAdded": true,
   "jsSyntaxOk": true,
   "zipIntegrityOk": true
 }

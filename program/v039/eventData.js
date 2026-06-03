@@ -3,7 +3,7 @@
   "use strict";
   const ns = window.TENOTSU_V039;
 
-  ns.seasonOrder = ["spring", "summer", "autumn", "winter"];
+  ns.seasonOrder = ["spring", "summer", "autumn", "winter", "other", "event"];
 
   ns.seasonEvents = {
     spring: {
@@ -103,6 +103,46 @@
           bg: "images/assets/bgev/bg_park_winter.png",
           summary: "雪乃のお菓子作りと冬の差し入れをテーマにしたイベント。",
           startMessage: "雪乃の冬イベントは、調理器具とお菓子作りの導線で接続予定です。"
+        }
+      ]
+
+    },
+    other: {
+      id: "other",
+      label: "その他",
+      catchcopy: "共通導入、チュートリアル、世界観補足を確認します。",
+      bg: "images/assets/bgev/bg_office_hidamari.png",
+      color: "#9ad7ff",
+      events: [
+        {
+          id: "common_opening_kadenseijin_raid_002_all_cast",
+          scenario: "scenario/v039/events/common_opening_kadenseijin_raid_002_all_cast.json",
+          title: "共通オープニング：家電星人襲来・全員登場版",
+          character: "ひだまりストア全員 / 家電星人",
+          place: "事務所 / 倉庫",
+          status: "接続済み",
+          bg: "images/assets/bgev/bg_office_hidamari.png",
+          summary: "倉庫在庫消失事件をきっかけに、ひだまりストア全員が家電星人と出会う共通導入イベント。",
+          startMessage: "家電星人襲来の共通オープニングを開始します。"
+        }
+      ]
+    },
+    event: {
+      id: "event",
+      label: "イベント",
+      catchcopy: "月間イベント、清掃バトル、限定導線を確認します。",
+      bg: "images/assets/bgev/bg_exchange_counter.png",
+      color: "#a786ff",
+      events: [
+        {
+          id: "monthly_dirty_alien_cleaning",
+          title: "月間イベント：汚れた家電星人清掃",
+          character: "ひだまりメンバー / ブラック家電星人",
+          place: "イベントバトル",
+          status: "店舗営業から接続",
+          bg: "images/assets/bgev/bg_exchange_counter.png",
+          summary: "メンテナンス不足で汚れた家電星人を清掃し、ダークエレメントを回収する月間イベント導線。",
+          startMessage: "イベントバトルは店舗営業のイベント営業から開始できます。"
         }
       ]
     }

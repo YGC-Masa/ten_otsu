@@ -29,7 +29,7 @@
     const seasons = (ns.seasonOrder || []).map((id) => ns.getSeason(id)).filter(Boolean);
     const html = `
       <div class="tenotsu-town-title">外回り</div>
-      <div class="tenotsu-town-subtitle">季節を選んで、対象イベントを確認します。</div>
+      <div class="tenotsu-town-subtitle">季節・その他・イベントを選んで、対象イベントを確認します。</div>
       <div class="tenotsu-season-grid">
         ${seasons.map(seasonButton).join("")}
       </div>
@@ -78,7 +78,7 @@
         </div>
       </div>
       <div class="tenotsu-town-button-row">
-        <button type="button" class="tenotsu-town-back" data-town-action="season-top">季節選択へ戻る</button>
+        <button type="button" class="tenotsu-town-back" data-town-action="season-top">外回りメニューへ戻る</button>
         <button type="button" class="tenotsu-town-back" data-town-action="back-office">事務所に戻る</button>
       </div>
     `;
@@ -127,7 +127,7 @@
         if (action === "season-top") {
           ns.setBackground(ns.paths.townBg || ns.paths.officeBg);
           ns.renderTownSeasonTop();
-          ns.setText("店長", "季節を選び直します。");
+          ns.setText("店長", "外回りメニューへ戻ります。");
         } else if (action === "back-office") {
           ns.hideTownPanel();
           ns.enterOffice({ speaker: "店長", message: "事務所に戻りました。" });
