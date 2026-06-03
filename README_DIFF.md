@@ -1,18 +1,23 @@
-# v039_90 差分概要
+# ten_otsu diff v039_90 -> v039_91
 
-v039_89 のイベントバトル画面を修正。
+イベントバトル画面の表示効率と操作導線を調整しました。
 
-## 変更点
+## 変更内容
 
-- イベント敵の表示を必ず4体に制限
-- 旧保存データに6体敵が残っていても、読み込み時に4体へ正規化
-- 敵カード画像のパスを `images/assets/event/dirty_alien_01.png` 〜 `dirty_alien_13.png` に統一
-- 敵カード画像が欠けた旧データも、読み込み時に画像パスを再補完
-- 一番上の情報枠の余白を縮小
-- ひだまりメンバー表示を5人デッキから13人全員表示へ変更
-- メンバー表示を5列×3行の15枠グリッドに変更
-- 13人分の右側にキャラ画像を表示し、残り2枠は空き枠表示
+- 「事務所に帰る」ボタンをイベントバトル上部HUDに追加。
+- ひだまりメンバー表示を 5x3 固定表示から、1列5人表示＋横スワイプのローリングスクロールへ変更。
+- メンバー欄に総合清掃力、即応清掃力、特攻人数を表示。
+- 各メンバーカードにも選択中の敵に対する総合清掃力を表示。
+- 敵カード画像の使用パスは v039_90 の `images/assets/event/dirty_alien_01.png` 〜 `dirty_alien_13.png` を維持。
 
-## 作成版
+## 主な更新ファイル
 
-v039_90
+```text
+index.html
+program/v039/eventBattle.js
+program/v039/eventBattle.css
+program/docs/v039_91_event_battle_member_scroll_power.md
+release_notes.md
+VALIDATION.json
+CHECKSUMS.json
+```

@@ -1,4 +1,4 @@
-/* v039_90 eventBattle.js
+/* v039_91 eventBattle.js
  * イベントバトルを「汚れた家電星人の清掃バトル」へ再設計。
  * 家電星人はメンテナンス不足で悪の心が芽生える。ひだまりメンバーが清掃して正義の心を取り戻し、余剰ノイズはダークエレメントとして排出される。
  */
@@ -6,7 +6,7 @@
   "use strict";
 
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  const VERSION = "v039_90_event_battle_four_enemies_member_grid";
+  const VERSION = "v039_91_event_battle_member_scroll_power";
   const ROOT_ID = "event-battle-root";
   const STORAGE_KEY = "tenotsu_event_run_battle_v1";
   const ENCOUNTER_ST_COST = 20;
@@ -155,7 +155,7 @@
   }
   function defaultProgress() {
     return {
-      version: "v039_90",
+      version: "v039_91",
       darkElements: 0,
       totalDarkElements: 0,
       totalEncounters: 0,
@@ -177,7 +177,7 @@
   function normalizeProgress(data) {
     const base = defaultProgress();
     if (!data || typeof data !== "object") data = base;
-    data.version = "v039_90";
+    data.version = "v039_91";
     ["darkElements", "totalDarkElements", "totalEncounters", "totalCleaned", "totalEscaped", "totalBattles", "maxThreatLevel"].forEach((key) => {
       data[key] = Math.max(key === "maxThreatLevel" ? 1 : 0, Math.floor(Number(data[key] == null ? base[key] : data[key]) || 0));
     });
@@ -198,7 +198,7 @@
     return expireActiveIfNeeded(normalizeProgress(data));
   }
   function saveProgress(data) {
-    data.version = "v039_90";
+    data.version = "v039_91";
     data.updatedAt = nowIso();
     data.history = Array.isArray(data.history) ? data.history.slice(-40) : [];
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (_) {}
@@ -317,7 +317,7 @@
     const chosen = shuffle(DIRTY_ALIEN_POOL).slice(0, MAX_EVENT_ENEMIES);
     return {
       id: `event_${Date.now()}_${Math.floor(Math.random() * 9999)}`,
-      version: "v039_90",
+      version: "v039_91",
       threatLevel,
       createdAt: nowIso(),
       expiresAt: new Date(nowMs() + ENCOUNTER_ESCAPE_MS).toISOString(),
@@ -411,7 +411,10 @@
     const st = getStaminaState();
     return `
       <div class="event-battle-hud">
-        <div class="event-battle-title">イベント営業 / 清掃バトル</div>
+        <div class="event-battle-title-line">
+          <div class="event-battle-title">イベント営業 / 清掃バトル</div>
+          <button type="button" class="event-office-return-button" data-event-action="office">事務所に帰る</button>
+        </div>
         <div class="event-battle-stats">
           <span>ST <b>${st.current}/${st.max}</b></span>
           <span>イベントBP <b>${ep.current}/${ep.max}</b></span>
@@ -554,6 +557,18 @@
       <img class="event-clean-enemy-art" src="${escapeHtml(image)}" alt="${escapeHtml(enemy.shortName)}" loading="eager" decoding="async" />
     </button>`;
   }
+  function calcTeamCleaningPower(staff, enemy) {
+    staff = Array.isArray(staff) ? staff : [];
+    const rows = staff.map((member) => {
+      const dmg = enemy ? calcDamage(member, enemy) : null;
+      return { member, damage: dmg ? dmg.value : 0, match: !!(dmg && dmg.match), ready: isMemberReady(member.id) };
+    });
+    const total = rows.reduce((sum, row) => sum + row.damage, 0);
+    const readyTotal = rows.filter((row) => row.ready).reduce((sum, row) => sum + row.damage, 0);
+    const matchCount = rows.filter((row) => row.match).length;
+    return { total, readyTotal, matchCount, count: rows.length };
+  }
+
   function memberCard(member) {
     const enemy = getSelectedEnemy();
     const readyAt = getMemberReadyAt(member.id);
@@ -561,11 +576,12 @@
     const dmg = enemy ? calcDamage(member, enemy) : null;
     const affinity = Math.max(0, Math.floor(Number(state.progress.memberAffinity[member.id]) || 0));
     const image = member.image ? `images/assets/char/${member.image}` : "";
+    const powerLabel = dmg ? `総合清掃力 ${dmg.value}${dmg.match ? " / 特攻" : ""}` : "総合清掃力 -";
     return `<button type="button" class="event-clean-member ${ready ? "ready" : "cooldown"} ${dmg && dmg.match ? "match" : ""}" data-event-member="${escapeHtml(member.id)}" style="--member-color:${escapeHtml(member.color)};" ${ready ? "" : "disabled"}>
       <div class="event-clean-member-main">
         <span>${escapeHtml(member.name)}</span>
         <b>${escapeHtml(member.attr)}</b>
-        <small>${ready ? (dmg ? `清掃力 ${dmg.value}${dmg.match ? " / 特攻" : ""}` : "READY") : `リキャスト ${shortRemaining(readyAt)}`}</small>
+        <small>${ready ? powerLabel : `リキャスト ${shortRemaining(readyAt)}`}</small>
         <em>Lv.${getLevel(member.id)} / 親愛 ${affinity}</em>
       </div>
       <img class="event-clean-member-art" src="${escapeHtml(image)}" alt="${escapeHtml(member.name)}" loading="eager" decoding="async" />
@@ -575,9 +591,7 @@
     const active = state.progress.activeEncounter;
     const enemies = (active && Array.isArray(active.enemies) ? active.enemies : []).slice(0, MAX_EVENT_ENEMIES);
     const staff = getEventStaff();
-    const emptySlots = Array.from({ length: Math.max(0, 15 - staff.length) }, function () {
-      return '<div class="event-clean-member event-clean-member-empty" aria-hidden="true"></div>';
-    }).join("");
+    const teamPower = calcTeamCleaningPower(staff, getSelectedEnemy());
     return `
       <div class="event-cleaning-battle">
         <div class="event-clean-enemy-grid">${enemies.map(enemyCard).join("")}</div>
@@ -587,7 +601,16 @@
           <span>属性一致で特攻</span>
           <span>逃走まで ${formatClock(Date.parse(active.expiresAt || "") - nowMs())}</span>
         </div>
-        <div class="event-clean-member-row">${staff.map(memberCard).join("")}${emptySlots}</div>
+        <div class="event-member-strip-head">
+          <b>ひだまりメンバー</b>
+          <span>総合清掃力 ${teamPower.total}</span>
+          <span>即応 ${teamPower.readyTotal}</span>
+          <span>特攻 ${teamPower.matchCount}人</span>
+          <small>横スワイプで全13人をローリング表示</small>
+        </div>
+        <div class="event-clean-member-scroll" aria-label="ひだまりメンバー横スクロール">
+          <div class="event-clean-member-row">${staff.map(memberCard).join("")}</div>
+        </div>
       </div>
     `;
   }
@@ -929,6 +952,7 @@
           state = makeState({ mode: state.mode, battleType: "eventBoss" });
           startRun(false);
         }
+        else if (action === "office") returnToOffice();
         else if (action === "close") closeEventBattle();
       });
     });
@@ -956,6 +980,22 @@
     render();
     return true;
   }
+  function returnToOffice() {
+    clearInterval(runTimer);
+    stopClock();
+    if (root) {
+      root.classList.add("hidden");
+      root.innerHTML = "";
+    }
+    state = null;
+    document.body.classList.remove("event-battle-screen");
+    if (ns.setMode) ns.setMode("office");
+    if (typeof ns.enterOffice === "function") {
+      ns.enterOffice({ speaker: "店長", message: "事務所に戻りました。" });
+    }
+    return true;
+  }
+
   function closeEventBattle() {
     clearInterval(runTimer);
     stopClock();
@@ -971,7 +1011,7 @@
   }
 
   function installPatch() {
-    if (!window.BattleProto || window.BattleProto.__eventBattlePatchedV90) return false;
+    if (!window.BattleProto || window.BattleProto.__eventBattlePatchedV91) return false;
     originalOpenBattle = window.BattleProto.openBattle;
     originalCloseBattle = window.BattleProto.closeBattle;
     window.BattleProto.openBattle = function (options) {
@@ -982,7 +1022,7 @@
       if (state) return closeEventBattle();
       return originalCloseBattle.apply(this, arguments);
     };
-    window.BattleProto.__eventBattlePatchedV90 = true;
+    window.BattleProto.__eventBattlePatchedV91 = true;
     window.TenotsuEventBattle = api;
     return true;
   }
