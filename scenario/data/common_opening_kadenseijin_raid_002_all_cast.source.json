@@ -541,10 +541,6 @@
           "name": "pop"
         },
         {
-          "cmd": "change_background",
-          "name": "metal_closeup"
-        },
-        {
           "cmd": "play_sfx",
           "name": "shine"
         },
@@ -555,6 +551,11 @@
           "text": "(ぷりっ。)……これ、どうぞ。",
           "display": "center_framed_enemy_card",
           "position": "center"
+        },
+        {
+          "cmd": "change_background",
+          "name": "metal_closeup",
+          "note": "v039_96: (ぷりっ。)表示後に背景を切り替える"
         },
         {
           "speaker": "芝桜 桃",

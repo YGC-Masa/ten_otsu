@@ -822,8 +822,6 @@
     {
       "speaker": "家電星人",
       "text": "(ぷりっ。)……これ、どうぞ。",
-      "bg": "images/assets/bgev/bg_exchange_counter.png",
-      "bgMode": "replace",
       "storySprites": [
         {
           "id": "enemy_common_001",
@@ -834,7 +832,8 @@
           "frame": "enemy",
           "variant": "storyEnemyCard"
         }
-      ]
+      ],
+      "noBgChangeNote": "v039_96: この台詞表示時は直前背景を維持"
     },
     {
       "speaker": "芝桜 桃",
