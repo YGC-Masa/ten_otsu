@@ -1,15 +1,13 @@
 {
-  "version": "v039_91",
-  "base": "v039_90",
-  "eventBattleOfficeReturnButtonAdded": true,
-  "eventBattleMemberDisplayOneRowFiveVisible": true,
-  "eventBattleMemberRollingHorizontalScroll": true,
+  "version": "v039_92",
+  "base": "v039_91",
+  "eventBattleMemberFirstViewFive": true,
+  "eventBattleMemberLoopSwipeFixed": true,
+  "eventBattleMemberNativeScrollDependencyRemoved": true,
+  "eventBattleMemberRollButtonsAdded": true,
+  "eventBattleMemberSwipeSuppressesAccidentalClick": true,
   "all13HidamariMembersKept": true,
-  "memberTotalCleaningPowerShown": true,
-  "readyCleaningPowerShown": true,
-  "attributeSpecialAttackCountShown": true,
-  "memberCardIndividualCleaningPowerShown": true,
-  "enemyCardPathsKept": "images/assets/event/dirty_alien_01.png ... dirty_alien_13.png",
-  "enemyCardFilesExist": true,
-  "memberImageFilesExist": true
+  "memberRangeIndicatorAdded": true,
+  "jsSyntaxOk": true,
+  "zipIntegrityOk": true
 }

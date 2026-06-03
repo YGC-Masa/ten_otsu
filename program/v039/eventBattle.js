@@ -1,4 +1,4 @@
-/* v039_91 eventBattle.js
+/* v039_92 eventBattle.js
  * イベントバトルを「汚れた家電星人の清掃バトル」へ再設計。
  * 家電星人はメンテナンス不足で悪の心が芽生える。ひだまりメンバーが清掃して正義の心を取り戻し、余剰ノイズはダークエレメントとして排出される。
  */
@@ -6,7 +6,7 @@
   "use strict";
 
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  const VERSION = "v039_91_event_battle_member_scroll_power";
+  const VERSION = "v039_92_event_member_loop_swipe_fix";
   const ROOT_ID = "event-battle-root";
   const STORAGE_KEY = "tenotsu_event_run_battle_v1";
   const ENCOUNTER_ST_COST = 20;
@@ -155,7 +155,7 @@
   }
   function defaultProgress() {
     return {
-      version: "v039_91",
+      version: "v039_92",
       darkElements: 0,
       totalDarkElements: 0,
       totalEncounters: 0,
@@ -177,7 +177,7 @@
   function normalizeProgress(data) {
     const base = defaultProgress();
     if (!data || typeof data !== "object") data = base;
-    data.version = "v039_91";
+    data.version = "v039_92";
     ["darkElements", "totalDarkElements", "totalEncounters", "totalCleaned", "totalEscaped", "totalBattles", "maxThreatLevel"].forEach((key) => {
       data[key] = Math.max(key === "maxThreatLevel" ? 1 : 0, Math.floor(Number(data[key] == null ? base[key] : data[key]) || 0));
     });
@@ -198,7 +198,7 @@
     return expireActiveIfNeeded(normalizeProgress(data));
   }
   function saveProgress(data) {
-    data.version = "v039_91";
+    data.version = "v039_92";
     data.updatedAt = nowIso();
     data.history = Array.isArray(data.history) ? data.history.slice(-40) : [];
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (_) {}
@@ -317,7 +317,7 @@
     const chosen = shuffle(DIRTY_ALIEN_POOL).slice(0, MAX_EVENT_ENEMIES);
     return {
       id: `event_${Date.now()}_${Math.floor(Math.random() * 9999)}`,
-      version: "v039_91",
+      version: "v039_92",
       threatLevel,
       createdAt: nowIso(),
       expiresAt: new Date(nowMs() + ENCOUNTER_ESCAPE_MS).toISOString(),
@@ -391,7 +391,9 @@
       progress,
       selectedEnemyId: active && active.enemies && active.enemies[0] ? active.enemies.find((e) => !e.cleaned && e.hp > 0)?.slotId : null,
       notice: "STでエンカウントし、専用イベントBPで清掃バトルを行います。",
-      result: progress.lastResult || null
+      result: progress.lastResult || null,
+      memberRollOffset: 0,
+      suppressMemberClickUntil: 0
     };
   }
 
@@ -587,11 +589,37 @@
       <img class="event-clean-member-art" src="${escapeHtml(image)}" alt="${escapeHtml(member.name)}" loading="eager" decoding="async" />
     </button>`;
   }
+
+  function normalizeRollOffset(offset, length) {
+    length = Math.max(1, Math.floor(Number(length) || 1));
+    offset = Math.floor(Number(offset) || 0) % length;
+    return offset < 0 ? offset + length : offset;
+  }
+  function getRollingStaff(staff, offset, visibleCount) {
+    staff = Array.isArray(staff) ? staff : [];
+    visibleCount = Math.max(1, Math.floor(Number(visibleCount) || 5));
+    if (!staff.length) return [];
+    offset = normalizeRollOffset(offset, staff.length);
+    const list = [];
+    for (let i = 0; i < visibleCount; i++) list.push(staff[(offset + i) % staff.length]);
+    return list;
+  }
+  function rollMembers(delta) {
+    if (!state) return;
+    const staff = getEventStaff();
+    if (!staff.length) return;
+    state.memberRollOffset = normalizeRollOffset((state.memberRollOffset || 0) + (Number(delta) || 0), staff.length);
+    state.notice = `ひだまりメンバー表示 ${state.memberRollOffset + 1}番目から / 全${staff.length}人`;
+    render();
+  }
   function renderCombat() {
     const active = state.progress.activeEncounter;
     const enemies = (active && Array.isArray(active.enemies) ? active.enemies : []).slice(0, MAX_EVENT_ENEMIES);
     const staff = getEventStaff();
+    state.memberRollOffset = normalizeRollOffset(state.memberRollOffset || 0, staff.length || 1);
+    const visibleStaff = getRollingStaff(staff, state.memberRollOffset, 5);
     const teamPower = calcTeamCleaningPower(staff, getSelectedEnemy());
+    const visibleText = staff.length ? `${state.memberRollOffset + 1}番目から5人 / 全${staff.length}人` : "全0人";
     return `
       <div class="event-cleaning-battle">
         <div class="event-clean-enemy-grid">${enemies.map(enemyCard).join("")}</div>
@@ -606,10 +634,12 @@
           <span>総合清掃力 ${teamPower.total}</span>
           <span>即応 ${teamPower.readyTotal}</span>
           <span>特攻 ${teamPower.matchCount}人</span>
-          <small>横スワイプで全13人をローリング表示</small>
+          <small>${escapeHtml(visibleText)} / 横スワイプ・左右ボタンでループ</small>
         </div>
-        <div class="event-clean-member-scroll" aria-label="ひだまりメンバー横スクロール">
-          <div class="event-clean-member-row">${staff.map(memberCard).join("")}</div>
+        <div class="event-clean-member-scroll" data-event-member-scroll aria-label="ひだまりメンバーローリング表示">
+          <button type="button" class="event-member-roll-button prev" data-event-member-roll="-1" aria-label="前のメンバー">‹</button>
+          <div class="event-clean-member-row">${visibleStaff.map(memberCard).join("")}</div>
+          <button type="button" class="event-member-roll-button next" data-event-member-roll="1" aria-label="次のメンバー">›</button>
         </div>
       </div>
     `;
@@ -932,6 +962,48 @@
     render();
   }
 
+  function bindMemberRollingSwipe() {
+    const zone = root ? root.querySelector("[data-event-member-scroll]") : null;
+    if (!zone) return;
+    let startX = 0;
+    let startY = 0;
+    let tracking = false;
+    function begin(x, y) {
+      startX = Number(x) || 0;
+      startY = Number(y) || 0;
+      tracking = true;
+    }
+    function finish(x, y, ev) {
+      if (!tracking || !state) return;
+      tracking = false;
+      const dx = (Number(x) || 0) - startX;
+      const dy = (Number(y) || 0) - startY;
+      if (Math.abs(dx) >= 34 && Math.abs(dx) > Math.abs(dy) * 1.15) {
+        if (ev && ev.cancelable !== false && typeof ev.preventDefault === "function") ev.preventDefault();
+        if (ev && typeof ev.stopPropagation === "function") ev.stopPropagation();
+        state.suppressMemberClickUntil = nowMs() + 420;
+        rollMembers(dx < 0 ? 1 : -1);
+      }
+    }
+    zone.addEventListener("pointerdown", function (ev) {
+      if (ev.pointerType === "mouse" && ev.button !== 0) return;
+      begin(ev.clientX, ev.clientY);
+    }, { passive: true });
+    zone.addEventListener("pointerup", function (ev) {
+      finish(ev.clientX, ev.clientY, ev);
+    }, { passive: false });
+    zone.addEventListener("pointercancel", function () { tracking = false; }, { passive: true });
+    zone.addEventListener("touchstart", function (ev) {
+      if (!ev.touches || !ev.touches[0]) return;
+      begin(ev.touches[0].clientX, ev.touches[0].clientY);
+    }, { passive: true });
+    zone.addEventListener("touchend", function (ev) {
+      const t = ev.changedTouches && ev.changedTouches[0];
+      if (!t) return;
+      finish(t.clientX, t.clientY, ev);
+    }, { passive: false });
+  }
+
   function bind() {
     if (!root) return;
     root.querySelectorAll("[data-event-action]").forEach((btn) => {
@@ -960,7 +1032,18 @@
       btn.addEventListener("click", () => selectEnemy(btn.dataset.eventEnemy));
       btn.addEventListener("dblclick", (ev) => { ev.preventDefault(); ev.stopPropagation(); changeEnemy(btn.dataset.eventEnemy); });
     });
-    root.querySelectorAll("[data-event-member]").forEach((btn) => btn.addEventListener("click", () => memberAttack(btn.dataset.eventMember)));
+    root.querySelectorAll("[data-event-member-roll]").forEach((btn) => {
+      btn.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        ev.stopPropagation();
+        rollMembers(Number(btn.dataset.eventMemberRoll) || 0);
+      });
+    });
+    root.querySelectorAll("[data-event-member]").forEach((btn) => btn.addEventListener("click", () => {
+      if (state && nowMs() < (state.suppressMemberClickUntil || 0)) return;
+      memberAttack(btn.dataset.eventMember);
+    }));
+    bindMemberRollingSwipe();
     root.querySelectorAll("[data-event-claim]").forEach((btn) => btn.addEventListener("click", () => claimLadder(btn.dataset.eventClaim)));
     root.querySelectorAll("[data-event-buy]").forEach((btn) => btn.addEventListener("click", () => buyBuff(btn.dataset.eventBuy)));
     root.querySelectorAll("[data-event-use]").forEach((btn) => btn.addEventListener("click", () => useBuff(btn.dataset.eventUse)));
