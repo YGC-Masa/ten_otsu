@@ -672,3 +672,65 @@ body.event-battle-screen { overscroll-behavior: none; }
     height: 92px !important;
   }
 }
+
+
+/* === v039_99 event battle: member art behind text overlay / avoid ellipsis === */
+#event-battle-root .event-clean-member-scroll .event-clean-member {
+  position: relative !important;
+  display: block !important;
+  min-height: clamp(102px, 16vh, 142px) !important;
+  padding: clamp(6px, .75vw, 9px) clamp(62px, 11.5vw, 140px) clamp(6px, .75vw, 9px) clamp(6px, .75vw, 9px) !important;
+  overflow: hidden !important;
+}
+#event-battle-root .event-clean-member-main {
+  position: relative !important;
+  z-index: 3 !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  display: grid !important;
+  gap: 1px !important;
+  align-content: center !important;
+  padding: 2px 4px !important;
+  border-radius: 9px !important;
+  background: linear-gradient(90deg, rgba(8,8,15,.72), rgba(8,8,15,.48) 72%, rgba(8,8,15,0));
+  text-shadow: 0 2px 5px rgba(0,0,0,.86), 0 0 6px rgba(0,0,0,.72) !important;
+}
+#event-battle-root .event-clean-member-art {
+  position: absolute !important;
+  right: clamp(-4px, .4vw, 8px) !important;
+  bottom: -2px !important;
+  z-index: 1 !important;
+  width: clamp(86px, 12vw, 150px) !important;
+  height: clamp(108px, 17vh, 156px) !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: right bottom !important;
+  opacity: .95 !important;
+  pointer-events: none !important;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,.20)) drop-shadow(0 8px 12px rgba(0,0,0,.5)) !important;
+}
+#event-battle-root .event-clean-member span,
+#event-battle-root .event-clean-member b,
+#event-battle-root .event-clean-member small,
+#event-battle-root .event-clean-member em {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  line-height: 1.08 !important;
+  min-width: 0 !important;
+}
+#event-battle-root .event-clean-member span { font-size: clamp(10px, 1.15vw, 13px) !important; }
+#event-battle-root .event-clean-member b,
+#event-battle-root .event-clean-member small,
+#event-battle-root .event-clean-member em { font-size: clamp(8px, .95vw, 11px) !important; }
+@media (max-width: 760px) {
+  #event-battle-root .event-clean-member-scroll .event-clean-member {
+    min-height: 96px !important;
+    padding-right: 74px !important;
+  }
+  #event-battle-root .event-clean-member-art {
+    width: 86px !important;
+    height: 112px !important;
+    right: -8px !important;
+  }
+}

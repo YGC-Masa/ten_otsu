@@ -4194,3 +4194,18 @@ body.tenotsu-story-bg-contain .background img {
   object-fit: contain !important;
   background: #000 !important;
 }
+
+
+/* === v039_99 story CG contain top alignment for wide phones === */
+body.tenotsu-story-bg-contain-top .tenotsu-bg-layer,
+body.tenotsu-story-bg-contain-top .tenotsu-background-layer,
+body.tenotsu-story-bg-contain-top [data-bg-layer],
+body.tenotsu-story-bg-contain-top .background {
+  background-position: center top !important;
+}
+body.tenotsu-story-bg-contain-top .tenotsu-bg-layer img,
+body.tenotsu-story-bg-contain-top .tenotsu-background-layer img,
+body.tenotsu-story-bg-contain-top [data-bg-layer] img,
+body.tenotsu-story-bg-contain-top .background img {
+  object-position: center top !important;
+}

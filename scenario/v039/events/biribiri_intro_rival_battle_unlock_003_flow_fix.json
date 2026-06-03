@@ -7,7 +7,7 @@
   },
   "sourceVersion": "v3",
   "type": "rival_intro_event",
-  "summary": "ひだまりストア店頭に、鼻歌まじりでビリビリ電機の小春・真冬・なつが来店。緋奈・こがね・翠が競合他社の敵情視察だと反応し、売上の秘密を探ろうとする小春たちとコミカルに衝突。挑発合戦の末、小春が販売勝負を宣言し、対戦モードが解放される。",
+  "summary": "ひだまりストア店頭に、来店チャイムとともにビリビリ電機の小春・真冬・なつが来店。緋奈・こがね・翠が競合他社の敵情視察だと反応し、売上の秘密を探ろうとする小春たちとコミカルに衝突。挑発合戦の末、小春が販売勝負を宣言し、対戦モードが解放される。",
   "unlockFlags": {
     "unlock_vs_biribiri": true,
     "rival_intro_seen": true
@@ -42,7 +42,7 @@
     },
     {
       "speaker": "星野 緋奈",
-      "text": "ね、店長。あの三人……明らかに競合他社の娘っぽくない？",
+      "text": "ね、店長。あの三人……明らかに競合他社の子っぽくない？",
       "storySprites": [
         {
           "id": "aa",
@@ -675,7 +675,8 @@
       "bg": "images/assets/rival/biribiri_battle_eyecatch.jpeg",
       "bgMode": "forceReplace",
       "clearStorySprites": true,
-      "bgFit": "contain"
+      "bgFit": "contain",
+      "bgAlign": "top"
     },
     {
       "speaker": "天神 小春",

@@ -400,14 +400,18 @@
   };
 
   ns.applyStoryBgFitV03998 = function applyStoryBgFitV03998(step) {
-    if (!step || (!("bgFit" in step) && !("cgFit" in step) && !step.bg)) return;
+    if (!step || (!("bgFit" in step) && !("cgFit" in step) && !("bgAlign" in step) && !("cgAlign" in step) && !step.bg)) return;
     const contain = !!(step && (step.bgFit === "contain" || step.cgFit === "contain"));
+    const align = (step && (step.bgAlign || step.cgAlign || step.bgPosition || step.cgPosition)) || "center";
+    const isTop = align === "top" || align === "upper" || align === "center-top";
     document.body.classList.toggle("tenotsu-story-bg-contain", contain);
+    document.body.classList.toggle("tenotsu-story-bg-contain-top", contain && isTop);
+    const position = isTop ? "center top" : "center center";
     document.querySelectorAll(".tenotsu-bg-layer,.tenotsu-background-layer,[data-bg-layer],.background").forEach((el) => {
       if (contain) {
         el.style.setProperty("background-size", "contain", "important");
         el.style.setProperty("background-repeat", "no-repeat", "important");
-        el.style.setProperty("background-position", "center center", "important");
+        el.style.setProperty("background-position", position, "important");
         el.style.setProperty("background-color", "#000", "important");
       } else {
         el.style.removeProperty("background-size");
@@ -417,6 +421,7 @@
     });
     document.querySelectorAll(".tenotsu-bg-layer img,.tenotsu-background-layer img,[data-bg-layer] img,.background img").forEach((img) => {
       img.style.setProperty("object-fit", contain ? "contain" : "cover", "important");
+      img.style.setProperty("object-position", position, "important");
       img.style.setProperty("background", contain ? "#000" : "transparent", "important");
     });
   };

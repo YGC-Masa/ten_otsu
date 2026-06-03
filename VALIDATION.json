@@ -1,21 +1,12 @@
 {
-  "version": "v039_98",
-  "base": "v039_97",
-  "noImageGenerationPerformed": true,
-  "eventBattleMemberArtEnlargedAgain": true,
-  "rivalMembersAddedToEventBattle": [
-    "小春",
-    "真冬",
-    "なつ"
-  ],
-  "rivalStatsUseHidamariAverageTimes": 0.7,
-  "rivalMultiAttributeSpecialAttack": true,
-  "biribiriIntroTitleChanged": true,
-  "doorChimeNoNoseSong": true,
-  "versusCgContainFit": true,
+  "version": "v039_99",
+  "base": "v039_98",
+  "eventMemberCardImageBehindText": true,
+  "eventMemberCardTextNoEllipsis": true,
+  "biribiriIntroSerifChangedToKougoOtherCompanyKids": true,
+  "versusCgContainTopAligned": true,
   "rivalSpritesHiddenAfterVersusCg": true,
-  "blackEventBattleUnlockScenarioAdded": true,
-  "jsSyntaxOk": true,
-  "jsonSyntaxOk": true,
-  "zipIntegrityOk": true
+  "blackEventScenarioReconverted": true,
+  "commandTagsNotEmittedAsDialogue": true,
+  "noImageGenerationPerformed": true
 }
