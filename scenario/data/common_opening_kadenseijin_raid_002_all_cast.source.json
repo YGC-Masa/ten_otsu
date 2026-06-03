@@ -83,8 +83,8 @@
   "assets": {
     "backgrounds": {
       "office": "bg_office_day",
-      "warehouse": "bg_warehouse_empty",
-      "warehouse_closeup": "bg_warehouse_box_corner",
+      "warehouse": "bg_large_product_warehouse",
+      "warehouse_closeup": "bg_large_product_warehouse",
       "metal_closeup": "cg_gold_metal_lump"
     },
     "bgm": {
@@ -152,7 +152,7 @@
           "speaker": "速水川 藍",
           "character_id": "ab",
           "face": "soft_smile",
-          "text": "てんちょー、念のため今日は倉庫まわりに気をつけた方がいいかもしれません。"
+          "text": "てんちょー、今日は全体的に気をつけた方がいいかもしれません。"
         },
         {
           "speaker": "草壁 萌",
@@ -249,7 +249,7 @@
           "speaker": "氷神 雪乃",
           "character_id": "ag",
           "face": "worried",
-          "text": "商品が無いと……困りますね～。お客様にも、お店にも……。"
+          "text": "商品が無いと……困りますね。お客様にも、お店にも……。"
         },
         {
           "speaker": "紫藤 彩愛",
@@ -271,13 +271,13 @@
           "speaker": "小麦沢 こがね",
           "character_id": "ad",
           "face": "surprised",
-          "text": "え、今なんか動かなかった？　箱のすみっこ！"
+          "text": "ん？え、今なんか動かなかった？　すみっこの箱のとこ！"
         },
         {
           "speaker": "芝桜 桃",
           "character_id": "aj",
           "face": "excited",
-          "text": "ウチ見た！　なんか、ぴょこってした！"
+          "text": "ウチも見た！　なんか、ぴょこってした！"
         },
         {
           "speaker": "店長",
@@ -399,7 +399,7 @@
           "speaker": "双沢 夜空",
           "character_id": "ai",
           "face": "annoyed",
-          "text": "ばっかじゃないの。"
+          "text": "ふん。ばっかじゃないの。"
         },
         {
           "speaker": "星野 緋奈",
@@ -411,7 +411,7 @@
           "speaker": "双沢 夜空",
           "character_id": "ai",
           "face": "serious",
-          "text": "可愛くても、こいつら商品をなくしちゃった。泥棒と一緒よ。"
+          "text": "いくら可愛くても、こいつら商品をなくしちゃったのよ。泥棒と一緒よ。"
         },
         {
           "speaker": "大道寺 真花",
@@ -483,13 +483,13 @@
           "speaker": "餅月 里美",
           "character_id": "al",
           "face": "pale",
-          "text": "は～い……それは自分、だいぶ困ります～。"
+          "text": "そ、そ、それは自分、だいぶ困ります～。"
         },
         {
           "speaker": "紫藤 彩愛",
           "character_id": "ak",
           "face": "serious",
-          "text": "経営としては、情だけで済ませられる状況ではございませんわ。"
+          "text": "経営としては、情だけで済ませられる状況ではございませんわね。"
         },
         {
           "speaker": "双沢 夜空",
@@ -581,7 +581,7 @@
           "speaker": "紫藤 彩愛",
           "character_id": "ak",
           "face": "serious",
-          "text": "これは……金では？"
+          "text": "これは……金塊では？"
         },
         {
           "speaker": "紫藤 彩愛",
@@ -651,13 +651,13 @@
           "speaker": "餅月 里美",
           "character_id": "al",
           "face": "happy",
-          "text": "帳簿が、息を吹き返しました～。"
+          "text": "収益が～、給料が～、息を吹き返しました～。"
         },
         {
           "speaker": "紫藤 彩愛",
           "character_id": "ak",
           "face": "relief",
-          "text": "損害どころか、臨時収入ですわね。"
+          "text": "損害どころか、お得意様による臨時売上ですわね。"
         },
         {
           "speaker": "双沢 夜空",
@@ -702,7 +702,7 @@
           "speaker": "星野 緋奈",
           "character_id": "aa",
           "face": "happy",
-          "text": "やったー！　店長、さすが！"
+          "text": "やったー！　店長、さっすがぁ！"
         },
         {
           "speaker": "小麦沢 こがね",
