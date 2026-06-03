@@ -4140,3 +4140,38 @@ body[data-v039-mode="storeStatus"] .tenotsu-tuning-panel {
   margin-top: 2px;
   color: rgba(255, 245, 210, .72);
 }
+
+/* v039_95 common opening: normal appliance alien framed center display */
+body[data-v039-mode="story"] #tenotsu-story-body-sprite-layer .tenotsu-story-body-standing.tenotsu-story-enemy-card,
+body.tenotsu-story-active #tenotsu-story-body-sprite-layer .tenotsu-story-body-standing.tenotsu-story-enemy-card,
+body[data-v039-mode="story"] .tenotsu-story-body-standing.tenotsu-story-enemy-card,
+body.tenotsu-story-active .tenotsu-story-body-standing.tenotsu-story-enemy-card {
+  position: absolute !important;
+  left: 50% !important;
+  top: 46% !important;
+  bottom: auto !important;
+  width: auto !important;
+  max-width: min(42vw, 420px) !important;
+  max-height: min(42dvh, 390px) !important;
+  transform: translate(-50%, -50%) !important;
+  box-sizing: border-box !important;
+  padding: clamp(10px, 1.5vw, 18px) !important;
+  border: 3px solid rgba(255, 230, 150, 0.92) !important;
+  border-radius: clamp(18px, 2vw, 30px) !important;
+  background: radial-gradient(circle at center, rgba(255,248,218,0.22), rgba(32,22,12,0.66)) !important;
+  box-shadow: 0 18px 42px rgba(0,0,0,0.42), 0 0 28px rgba(255,199,87,0.34), inset 0 0 18px rgba(255,255,255,0.22) !important;
+  object-fit: contain !important;
+  z-index: 230 !important;
+  pointer-events: none !important;
+}
+
+@media (max-width: 820px) {
+  body[data-v039-mode="story"] #tenotsu-story-body-sprite-layer .tenotsu-story-body-standing.tenotsu-story-enemy-card,
+  body.tenotsu-story-active #tenotsu-story-body-sprite-layer .tenotsu-story-body-standing.tenotsu-story-enemy-card,
+  body[data-v039-mode="story"] .tenotsu-story-body-standing.tenotsu-story-enemy-card,
+  body.tenotsu-story-active .tenotsu-story-body-standing.tenotsu-story-enemy-card {
+    top: 44% !important;
+    max-width: min(48vw, 340px) !important;
+    max-height: min(38dvh, 310px) !important;
+  }
+}

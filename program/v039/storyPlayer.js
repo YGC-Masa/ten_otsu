@@ -372,7 +372,7 @@
     if (ns.normalizeStorySpriteLayerOrder) sprites = ns.normalizeStorySpriteLayerOrder(sprites);
     if (!sprites.length || typeof ns.showStoryCharacters !== "function") return false;
 
-    const key = JSON.stringify(sprites.map((s) => [s.id, s.src, s.side, s.left, s.zIndex, s.opacity]));
+    const key = JSON.stringify(sprites.map((s) => [s.id, s.src, s.side, s.left, s.zIndex, s.opacity, s.frame, s.variant]));
     if (ns.storyCurrentSpriteKey === key) {
       if (ns.forceMobileStoryVisibility) ns.forceMobileStoryVisibility();
       return true;
@@ -391,7 +391,7 @@
     if (ns.applyStorySpritesV2(step)) { if (ns.forceMobileStoryVisibility) ns.forceMobileStoryVisibility(); return; }
     const scenarioChars = Array.isArray(step.characters) ? step.characters : [];
     if (scenarioChars.length && typeof ns.showStoryCharacters === "function") {
-      const key = JSON.stringify(scenarioChars.map((s) => [s.id, s.src, s.side, s.left, s.zIndex, s.opacity]));
+      const key = JSON.stringify(scenarioChars.map((s) => [s.id, s.src, s.side, s.left, s.zIndex, s.opacity, s.frame, s.variant]));
       if (ns.storyCurrentSpriteKey !== key) {
         ns.storyCurrentSpriteKey = key;
         ns.showStoryCharacters(scenarioChars);

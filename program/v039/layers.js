@@ -334,7 +334,15 @@
       const src = ch.src || "";
       const opacity = ch.opacity === undefined ? 1 : ch.opacity;
       const left = ch.left || (side === "center" ? "50%" : side === "left" ? "25%" : "75%");
-      return `<img class="tenotsu-story-body-standing side-${side} bottom-align" src="${src}" style="left:${left}; opacity:${opacity};" alt="">`;
+      const id = String(ch.id || "");
+      const isEnemyCard = !!(ch.frame === "enemy" || ch.variant === "storyEnemyCard" || id.indexOf("enemy") === 0 || String(src).indexOf("/enemy/") >= 0);
+      const className = [
+        "tenotsu-story-body-standing",
+        `side-${side}`,
+        "bottom-align",
+        isEnemyCard ? "tenotsu-story-enemy-card" : ""
+      ].filter(Boolean).join(" ");
+      return `<img class="${className}" src="${src}" style="left:${left}; opacity:${opacity};" alt="">`;
     }).join("");
   };
 

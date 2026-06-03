@@ -1,7 +1,7 @@
 {
   "scenario_id": "common_opening_kadenseijin_raid_002_all_cast",
   "title": "共通オープニング：家電星人襲来・全員登場版",
-  "version": "v2_all_cast",
+  "version": "v2_all_cast_v039_95",
   "type": "common_opening_event",
   "recommended_position": "初回チュートリアル前／通常営業解放前",
   "summary": "倉庫在庫消失事件をきっかけに、ひだまりストア全員が家電星人と出会う共通導入イベント。家電星人の謝罪、金属生成、売上黒字化を経て、店長が家電星人を接客対象として迎える流れ。",
@@ -78,7 +78,8 @@
     "桃の危ない発言は伏せ字で止め、美空が困惑しながら制止する。",
     "彩愛と里美が金属の正体を確認し、翠が相場計算で黒字化を示す。",
     "最後は琥珀が面倒を見ると言い、全員で家電星人を受け入れる流れにする。",
-    "金相場は実装時に固定値・ダミー値・ゲーム内相場のいずれかに置き換え可能。"
+    "金相場は実装時に固定値・ダミー値・ゲーム内相場のいずれかに置き換え可能。",
+    "v039_95: 倉庫背景を添付版へ変更し、家電星人表示は中央フレーム表示にする。"
   ],
   "assets": {
     "backgrounds": {
@@ -308,7 +309,8 @@
           "character_id": "enemy_common_001",
           "face": "apologetic",
           "position": "center",
-          "text": "……ゴメンナサイ。"
+          "text": "……ゴメンナサイ。",
+          "display": "center_framed_enemy_card"
         },
         {
           "speaker": "星野 緋奈",
@@ -333,19 +335,25 @@
           "speaker": "家電星人",
           "character_id": "enemy_common_001",
           "face": "apologetic",
-          "text": "ワタシタチ、家電星人。遠いところから来ました。"
+          "text": "ワタシタチ、家電星人。遠いところから来ました。",
+          "display": "center_framed_enemy_card",
+          "position": "center"
         },
         {
           "speaker": "家電星人",
           "character_id": "enemy_common_001",
           "face": "down",
-          "text": "でも……お腹が空いて、我慢できなくて……。"
+          "text": "でも……お腹が空いて、我慢できなくて……。",
+          "display": "center_framed_enemy_card",
+          "position": "center"
         },
         {
           "speaker": "家電星人",
           "character_id": "enemy_common_001",
           "face": "cry",
-          "text": "この店の家電を、食べてしまいました。"
+          "text": "この店の家電を、食べてしまいました。",
+          "display": "center_framed_enemy_card",
+          "position": "center"
         },
         {
           "speaker": "草壁 翠",
@@ -357,19 +365,25 @@
           "speaker": "家電星人",
           "character_id": "enemy_common_001",
           "face": "explain",
-          "text": "ワタシタチにとって、家電はエネルギー。構造を理解して、からだを強くする大切なもの。"
+          "text": "ワタシタチにとって、家電はエネルギー。構造を理解して、からだを強くする大切なもの。",
+          "display": "center_framed_enemy_card",
+          "position": "center"
         },
         {
           "speaker": "家電星人",
           "character_id": "enemy_common_001",
           "face": "normal",
-          "text": "一緒に入っていた説明書と、パソコンのデータも読みました。"
+          "text": "一緒に入っていた説明書と、パソコンのデータも読みました。",
+          "display": "center_framed_enemy_card",
+          "position": "center"
         },
         {
           "speaker": "家電星人",
           "character_id": "enemy_common_001",
           "face": "smile",
-          "text": "だから、この星の言葉と文化を、少しだけ覚えました。"
+          "text": "だから、この星の言葉と文化を、少しだけ覚えました。",
+          "display": "center_framed_enemy_card",
+          "position": "center"
         },
         {
           "speaker": "速水川 藍",
@@ -429,7 +443,8 @@
           "character_id": "enemy_beauty_macaron",
           "face": "happy",
           "position": "center",
-          "text": "ぴょんっ。"
+          "text": "ぴょんっ。",
+          "display": "center_framed_enemy_card"
         },
         {
           "speaker": "大道寺 真花",
@@ -501,19 +516,25 @@
           "speaker": "家電星人",
           "character_id": "enemy_common_001",
           "face": "cry",
-          "text": "ゴメンナサイ……。"
+          "text": "ゴメンナサイ……。",
+          "display": "center_framed_enemy_card",
+          "position": "center"
         },
         {
           "speaker": "家電星人",
           "character_id": "enemy_common_001",
           "face": "think",
-          "text": "この星で、価値がありそうなもの……。"
+          "text": "この星で、価値がありそうなもの……。",
+          "display": "center_framed_enemy_card",
+          "position": "center"
         },
         {
           "speaker": "家電星人",
           "character_id": "enemy_common_001",
           "face": "explain",
-          "text": "吸収した物質から、生成できます。"
+          "text": "吸収した物質から、生成できます。",
+          "display": "center_framed_enemy_card",
+          "position": "center"
         },
         {
           "cmd": "play_sfx",
@@ -531,7 +552,9 @@
           "speaker": "家電星人",
           "character_id": "enemy_common_001",
           "face": "smile",
-          "text": "……これ、どうぞ。"
+          "text": "(ぷりっ。)……これ、どうぞ。",
+          "display": "center_framed_enemy_card",
+          "position": "center"
         },
         {
           "speaker": "芝桜 桃",
@@ -750,13 +773,13 @@
           "speaker": "草壁 翠",
           "character_id": "ac",
           "face": "smile",
-          "text": "まずは分類とルール作りですね。摂取可能な在庫、不可の在庫、練習用ジャンク……。"
+          "text": "金塊もこの形だと・・そうね。コインの形とかに出来ないかしら？"
         },
         {
           "speaker": "速水川 藍",
           "character_id": "ab",
           "face": "smile",
-          "text": "ドライヤーなら、私も少しお手伝いできそうです。"
+          "text": "金貨だったら見た目もいいですね！"
         },
         {
           "speaker": "草壁 萌",
@@ -787,18 +810,22 @@
           "speaker": "家電星人",
           "character_id": "enemy_common_001",
           "face": "happy",
-          "text": "アリガトウ……店長。ミナサン。"
+          "text": "アリガトウ……店長。ミナサン。",
+          "display": "center_framed_enemy_card",
+          "position": "center"
         },
         {
           "speaker": "家電星人",
           "character_id": "enemy_common_001",
           "face": "happy",
-          "text": "これからは、ちゃんと買って、ちゃんと食べます。"
+          "text": "これからは、ちゃんと買って、ちゃんと食べます。",
+          "display": "center_framed_enemy_card",
+          "position": "center"
         },
         {
           "speaker": "店長",
           "character_id": "player",
-          "text": "……まずは、食べる前に会計な。"
+          "text": "・・・もういいって。これからよろしくな。"
         },
         {
           "cmd": "play_sfx",

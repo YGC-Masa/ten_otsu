@@ -1,17 +1,14 @@
 {
-  "version": "v039_94",
-  "base": "v039_93",
-  "commonOpeningEnemyArtSwitchedToNormal": true,
-  "normalEnemyImagePaths": {
-    "enemy_common_001": "images/assets/enemy/enemy_tv_popcorn_test.png",
-    "enemy_beauty_macaron": "images/assets/enemy/enemy_beauty_macaron_test.png"
-  },
-  "largeWarehouseBackgroundAdded": true,
-  "largeWarehouseBackgroundPath": "images/assets/bgev/bg_large_product_warehouse.png",
-  "warehouseSceneUsesLargeWarehouseBackground": true,
-  "requestedDialogueReplacementsApplied": true,
-  "momoDangerLineUsesJ11201": true,
-  "scenarioSteps": 100,
-  "zipIntegrityOk": true,
-  "dialogueReplacementCount": 12
+  "version": "v039_95",
+  "base": "v039_94",
+  "warehouseBackgroundReplacedWithUploadedImage": true,
+  "commonOpeningDialogueReplacementsApplied": true,
+  "dialogueReplacementCount": 4,
+  "enemyStorySpritesMarkedForFrame": true,
+  "enemyStorySpriteRendererClassAdded": true,
+  "enemyStoryFrameCssAdded": true,
+  "sourceScenarioUpdated": true,
+  "jsSyntaxOk": true,
+  "jsonSyntaxOk": true,
+  "zipIntegrityOk": true
 }
