@@ -1,4 +1,4 @@
-/* v039_89 eventBattle.js
+/* v039_90 eventBattle.js
  * イベントバトルを「汚れた家電星人の清掃バトル」へ再設計。
  * 家電星人はメンテナンス不足で悪の心が芽生える。ひだまりメンバーが清掃して正義の心を取り戻し、余剰ノイズはダークエレメントとして排出される。
  */
@@ -6,7 +6,7 @@
   "use strict";
 
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  const VERSION = "v039_89_event_battle_card_layout";
+  const VERSION = "v039_90_event_battle_four_enemies_member_grid";
   const ROOT_ID = "event-battle-root";
   const STORAGE_KEY = "tenotsu_event_run_battle_v1";
   const ENCOUNTER_ST_COST = 20;
@@ -118,9 +118,44 @@
     }
   }
 
+
+  function hydrateDirtyEnemy(enemy, index) {
+    if (!enemy || typeof enemy !== "object") return null;
+    const tpl = DIRTY_ALIEN_POOL.find((item) => item.id === enemy.alienId || item.id === enemy.id || item.shortName === enemy.shortName || item.name === enemy.name) || DIRTY_ALIEN_POOL[index % DIRTY_ALIEN_POOL.length];
+    const maxHp = Math.max(1, Math.floor(Number(enemy.maxHp || (tpl && tpl.baseHp) || 60) || 60));
+    const hp = Math.max(0, Math.min(maxHp, Math.floor(Number(enemy.hp == null ? maxHp : enemy.hp) || 0)));
+    return Object.assign({}, enemy, {
+      slotId: enemy.slotId || `${tpl.id}_${Date.now()}_${index}_${Math.floor(Math.random() * 9999)}`,
+      alienId: tpl.id,
+      name: enemy.name || tpl.name,
+      shortName: enemy.shortName || tpl.shortName,
+      attr: enemy.attr || tpl.attr,
+      color: enemy.color || tpl.color,
+      image: tpl.image,
+      maxHp,
+      hp,
+      cleaned: !!enemy.cleaned || hp <= 0,
+      darkElements: Math.max(0, Math.floor(Number(enemy.darkElements) || 0))
+    });
+  }
+
+  function trimAndHydrateEncounter(encounter) {
+    if (!encounter || typeof encounter !== "object") return encounter;
+    const source = Array.isArray(encounter.enemies) ? encounter.enemies : [];
+    encounter.enemies = source.slice(0, MAX_EVENT_ENEMIES).map(hydrateDirtyEnemy).filter(Boolean);
+    while (encounter.enemies.length < MAX_EVENT_ENEMIES) {
+      const tpl = pickReplacementTemplate(encounter) || DIRTY_ALIEN_POOL[encounter.enemies.length % DIRTY_ALIEN_POOL.length];
+      encounter.enemies.push(makeEnemy(tpl, Math.max(1, Math.floor(Number(encounter.threatLevel) || 1)), encounter.enemies.length));
+    }
+    return encounter;
+  }
+
+  function getEventStaff() {
+    return STAFF_BASE.slice(0, 13);
+  }
   function defaultProgress() {
     return {
-      version: "v039_89",
+      version: "v039_90",
       darkElements: 0,
       totalDarkElements: 0,
       totalEncounters: 0,
@@ -142,7 +177,7 @@
   function normalizeProgress(data) {
     const base = defaultProgress();
     if (!data || typeof data !== "object") data = base;
-    data.version = "v039_89";
+    data.version = "v039_90";
     ["darkElements", "totalDarkElements", "totalEncounters", "totalCleaned", "totalEscaped", "totalBattles", "maxThreatLevel"].forEach((key) => {
       data[key] = Math.max(key === "maxThreatLevel" ? 1 : 0, Math.floor(Number(data[key] == null ? base[key] : data[key]) || 0));
     });
@@ -154,7 +189,7 @@
     data.premiumInventory = data.premiumInventory && typeof data.premiumInventory === "object" ? data.premiumInventory : {};
     data.activeBuffs = data.activeBuffs && typeof data.activeBuffs === "object" ? data.activeBuffs : {};
     data.history = Array.isArray(data.history) ? data.history.slice(-40) : [];
-    data.activeEncounter = data.activeEncounter && typeof data.activeEncounter === "object" ? data.activeEncounter : null;
+    data.activeEncounter = data.activeEncounter && typeof data.activeEncounter === "object" ? trimAndHydrateEncounter(data.activeEncounter) : null;
     return data;
   }
   function loadProgress() {
@@ -163,7 +198,7 @@
     return expireActiveIfNeeded(normalizeProgress(data));
   }
   function saveProgress(data) {
-    data.version = "v039_89";
+    data.version = "v039_90";
     data.updatedAt = nowIso();
     data.history = Array.isArray(data.history) ? data.history.slice(-40) : [];
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (_) {}
@@ -282,7 +317,7 @@
     const chosen = shuffle(DIRTY_ALIEN_POOL).slice(0, MAX_EVENT_ENEMIES);
     return {
       id: `event_${Date.now()}_${Math.floor(Math.random() * 9999)}`,
-      version: "v039_89",
+      version: "v039_90",
       threatLevel,
       createdAt: nowIso(),
       expiresAt: new Date(nowMs() + ENCOUNTER_ESCAPE_MS).toISOString(),
@@ -516,7 +551,7 @@
         <strong>${enemy.cleaned ? "CLEAN" : `${Math.max(0, enemy.hp)} / ${enemy.maxHp}`}</strong>
         <small class="event-change-hint">ダブルクリック：イベントBP1でチェンジ</small>
       </div>
-      <img class="event-clean-enemy-art" src="${escapeHtml(image)}" alt="${escapeHtml(enemy.shortName)}" />
+      <img class="event-clean-enemy-art" src="${escapeHtml(image)}" alt="${escapeHtml(enemy.shortName)}" loading="eager" decoding="async" />
     </button>`;
   }
   function memberCard(member) {
@@ -533,22 +568,26 @@
         <small>${ready ? (dmg ? `清掃力 ${dmg.value}${dmg.match ? " / 特攻" : ""}` : "READY") : `リキャスト ${shortRemaining(readyAt)}`}</small>
         <em>Lv.${getLevel(member.id)} / 親愛 ${affinity}</em>
       </div>
-      <img class="event-clean-member-art" src="${escapeHtml(image)}" alt="${escapeHtml(member.name)}" />
+      <img class="event-clean-member-art" src="${escapeHtml(image)}" alt="${escapeHtml(member.name)}" loading="eager" decoding="async" />
     </button>`;
   }
   function renderCombat() {
     const active = state.progress.activeEncounter;
-    const enemies = active && Array.isArray(active.enemies) ? active.enemies : [];
-    const staff = getDeckStaff();
+    const enemies = (active && Array.isArray(active.enemies) ? active.enemies : []).slice(0, MAX_EVENT_ENEMIES);
+    const staff = getEventStaff();
+    const emptySlots = Array.from({ length: Math.max(0, 15 - staff.length) }, function () {
+      return '<div class="event-clean-member event-clean-member-empty" aria-hidden="true"></div>';
+    }).join("");
     return `
       <div class="event-cleaning-battle">
         <div class="event-clean-enemy-grid">${enemies.map(enemyCard).join("")}</div>
         <div class="event-clean-status-row">
+          <span>敵表示：4体</span>
           <span>メンバーリキャスト：30分</span>
           <span>属性一致で特攻</span>
           <span>逃走まで ${formatClock(Date.parse(active.expiresAt || "") - nowMs())}</span>
         </div>
-        <div class="event-clean-member-row">${staff.map(memberCard).join("")}</div>
+        <div class="event-clean-member-row">${staff.map(memberCard).join("")}${emptySlots}</div>
       </div>
     `;
   }
@@ -932,7 +971,7 @@
   }
 
   function installPatch() {
-    if (!window.BattleProto || window.BattleProto.__eventBattlePatchedV89) return false;
+    if (!window.BattleProto || window.BattleProto.__eventBattlePatchedV90) return false;
     originalOpenBattle = window.BattleProto.openBattle;
     originalCloseBattle = window.BattleProto.closeBattle;
     window.BattleProto.openBattle = function (options) {
@@ -943,7 +982,7 @@
       if (state) return closeEventBattle();
       return originalCloseBattle.apply(this, arguments);
     };
-    window.BattleProto.__eventBattlePatchedV89 = true;
+    window.BattleProto.__eventBattlePatchedV90 = true;
     window.TenotsuEventBattle = api;
     return true;
   }
