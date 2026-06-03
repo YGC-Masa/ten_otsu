@@ -734,3 +734,92 @@ body.event-battle-screen { overscroll-behavior: none; }
     right: -8px !important;
   }
 }
+
+
+/* === v039_100 event battle: wide member text overlay, art behind text === */
+#event-battle-root .event-clean-member-scroll .event-clean-member {
+  position: relative !important;
+  display: block !important;
+  min-height: clamp(98px, 15vh, 136px) !important;
+  padding: clamp(5px, .65vw, 8px) !important;
+  overflow: hidden !important;
+}
+#event-battle-root .event-clean-member-scroll .event-clean-member::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(5,6,14,.86) 0%, rgba(5,6,14,.76) 58%, rgba(5,6,14,.22) 82%, rgba(5,6,14,0) 100%);
+}
+#event-battle-root .event-clean-member-main {
+  position: relative !important;
+  z-index: 4 !important;
+  width: 76% !important;
+  max-width: 76% !important;
+  min-width: 0 !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  grid-template-areas:
+    "name attr"
+    "power power"
+    "meta meta" !important;
+  align-content: center !important;
+  gap: 1px 6px !important;
+  padding: clamp(3px, .45vw, 6px) !important;
+  border-radius: 10px !important;
+  background: transparent !important;
+  text-shadow: 0 2px 5px rgba(0,0,0,.95), 0 0 8px rgba(0,0,0,.86) !important;
+}
+#event-battle-root .event-clean-member-art {
+  position: absolute !important;
+  right: clamp(-6px, .3vw, 8px) !important;
+  bottom: -4px !important;
+  z-index: 1 !important;
+  width: clamp(86px, 12.5vw, 158px) !important;
+  height: clamp(108px, 17vh, 164px) !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: right bottom !important;
+  opacity: .96 !important;
+  pointer-events: none !important;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,.22)) drop-shadow(0 8px 12px rgba(0,0,0,.58)) !important;
+}
+#event-battle-root .event-clean-member span {
+  grid-area: name !important;
+  font-size: clamp(11px, 1.32vw, 15px) !important;
+  line-height: 1.05 !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+}
+#event-battle-root .event-clean-member b {
+  grid-area: attr !important;
+  align-self: center !important;
+  font-size: clamp(8px, .92vw, 11px) !important;
+  line-height: 1.05 !important;
+  white-space: nowrap !important;
+}
+#event-battle-root .event-clean-member small {
+  grid-area: power !important;
+  font-size: clamp(8px, .92vw, 11px) !important;
+  line-height: 1.08 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+}
+#event-battle-root .event-clean-member em {
+  grid-area: meta !important;
+  font-size: clamp(7px, .82vw, 10px) !important;
+  line-height: 1.05 !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+}
+@media (max-width: 760px) {
+  #event-battle-root .event-clean-member-main { width: 80% !important; max-width: 80% !important; gap: 0 4px !important; }
+  #event-battle-root .event-clean-member-art { width: 82px !important; height: 108px !important; right: -10px !important; }
+  #event-battle-root .event-clean-member span { font-size: 10px !important; }
+  #event-battle-root .event-clean-member b,
+  #event-battle-root .event-clean-member small,
+  #event-battle-root .event-clean-member em { font-size: 7.5px !important; }
+}

@@ -321,8 +321,31 @@
     return layer;
   };
 
+  ns.normalizeStoryCharacterListV039100 = function normalizeStoryCharacterListV039100(characters) {
+    const raw = Array.isArray(characters) ? characters.filter((ch) => ch && ch.src && !String(ch.src).endsWith("/NULL")) : [];
+    const byId = new Map();
+    raw.forEach((ch, index) => {
+      const key = String(ch.id || ch.src || index);
+      byId.set(key, Object.assign({}, ch));
+    });
+    let list = Array.from(byId.values());
+    if (list.length > 5) list = list.slice(list.length - 5);
+    const slotSets = {
+      1: [{ side: "center", left: "50%" }],
+      2: [{ side: "left", left: "34%" }, { side: "right", left: "66%" }],
+      3: [{ side: "left", left: "25%" }, { side: "center", left: "50%" }, { side: "right", left: "75%" }],
+      4: [{ side: "maxleft", left: "16%" }, { side: "left", left: "38%" }, { side: "right", left: "62%" }, { side: "maxright", left: "84%" }],
+      5: [{ side: "maxleft", left: "12%" }, { side: "left", left: "31%" }, { side: "center", left: "50%" }, { side: "right", left: "69%" }, { side: "maxright", left: "88%" }]
+    };
+    const slots = slotSets[Math.min(5, Math.max(1, list.length))] || slotSets[1];
+    return list.map((ch, index) => Object.assign({}, ch, {
+      side: ch.side || slots[index].side,
+      left: ch.left || slots[index].left
+    }));
+  };
+
   ns.showStoryCharacters = function showStoryCharacters(characters) {
-    const list = Array.isArray(characters) ? characters.filter((ch) => ch && ch.src && !String(ch.src).endsWith("/NULL")) : [];
+    const list = ns.normalizeStoryCharacterListV039100 ? ns.normalizeStoryCharacterListV039100(characters) : (Array.isArray(characters) ? characters.filter((ch) => ch && ch.src && !String(ch.src).endsWith("/NULL")) : []);
     const layer = ns.ensureStoryBodySpriteLayer();
     if (!list.length) {
       layer.innerHTML = "";
@@ -333,9 +356,9 @@
       const side = ch.side || (index === 0 ? "center" : index === 1 ? "left" : "right");
       const src = ch.src || "";
       const opacity = ch.opacity === undefined ? 1 : ch.opacity;
-      const left = ch.left || (side === "center" ? "50%" : side === "left" ? "25%" : "75%");
+      const left = ch.left || (side === "center" ? "50%" : side === "left" ? "25%" : side === "right" ? "75%" : "50%");
       const id = String(ch.id || "");
-      const isEnemyCard = !!(ch.frame === "enemy" || ch.variant === "storyEnemyCard" || id.indexOf("enemy") === 0 || String(src).indexOf("/enemy/") >= 0);
+      const isEnemyCard = !!(ch.frame === "enemy" || ch.variant === "storyEnemyCard" || id.indexOf("enemy") === 0 || id === "kd" || id === "bk" || String(src).indexOf("/enemy/") >= 0 || String(src).indexOf("/event/dirty_alien") >= 0);
       const className = [
         "tenotsu-story-body-standing",
         `side-${side}`,

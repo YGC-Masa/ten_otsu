@@ -401,5 +401,8 @@
     "ビリビリ電機はライバルだが、このイベントでは一時共闘する導線にする。",
     "真冬は合理性で参加を肯定し、小春は勢いで乗り、なつは優しさで受け入れる。"
   ],
-  "conversion_note": "v039_99 runtime reconverted: command tags are not emitted as dialogue text; set_flag/next_tutorial are stored as unlock flags."
+  "conversion_note": "v039_99 runtime reconverted: command tags are not emitted as dialogue text; set_flag/next_tutorial are stored as unlock flags.",
+  "conversion_notes": [
+    "v039_100: runtime steps reconverted to speaker-only sprite replacement to avoid center overlay buildup; player/system/narration steps clear sprites."
+  ]
 }

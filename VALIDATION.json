@@ -1,12 +1,11 @@
 {
-  "version": "v039_99",
-  "base": "v039_98",
-  "eventMemberCardImageBehindText": true,
-  "eventMemberCardTextNoEllipsis": true,
-  "biribiriIntroSerifChangedToKougoOtherCompanyKids": true,
-  "versusCgContainTopAligned": true,
-  "rivalSpritesHiddenAfterVersusCg": true,
-  "blackEventScenarioReconverted": true,
-  "commandTagsNotEmittedAsDialogue": true,
+  "version": "v039_100",
+  "base": "v039_99",
+  "eventMemberTextBoxWideAdjusted": true,
+  "eventMemberArtBehindTextKept": true,
+  "eventMemberTextVerticalStretchReduced": true,
+  "blackEventScenarioSpeakerOnlySprites": true,
+  "playerSystemNarrationClearsSprites": true,
+  "storySpriteMaxFiveAndSlotNormalize": true,
   "noImageGenerationPerformed": true
 }

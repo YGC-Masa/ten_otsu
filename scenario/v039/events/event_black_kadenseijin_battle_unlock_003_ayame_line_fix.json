@@ -38,17 +38,7 @@
     {
       "speaker": "店長",
       "text": "どうした、そんなに慌てて。",
-      "storySprites": [
-        {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        }
-      ]
+      "clearStorySprites": true
     },
     {
       "speaker": "家電星人",
@@ -70,13 +60,11 @@
       "text": "ブラック家電星人！？ なんか名前からして悪そう！",
       "storySprites": [
         {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
+          "id": "aa",
+          "src": "images/assets/char/a10501.webp",
           "side": "center",
           "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
+          "opacity": 1
         }
       ]
     },
@@ -113,17 +101,7 @@
     {
       "speaker": "店長",
       "text": "メンテナンスが足りてない家電星人が、ブラック化する……ということか。",
-      "storySprites": [
-        {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        }
-      ]
+      "clearStorySprites": true
     },
     {
       "speaker": "家電星人",
@@ -145,49 +123,28 @@
       "text": "そんなの聞いたら、ほっとけないよ店長！",
       "storySprites": [
         {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
+          "id": "aa",
+          "src": "images/assets/char/a10501.webp",
           "side": "center",
           "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
+          "opacity": 1
         }
       ]
     },
     {
       "speaker": "店長",
       "text": "でも、具体的にどう助ければいいんだ？",
-      "storySprites": [
-        {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        }
-      ]
+      "clearStorySprites": true
     },
     {
       "speaker": "氷神 雪乃",
       "text": "……汚れているならキレイに、故障は修理……などでしょうか……？",
       "storySprites": [
         {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
           "id": "ag",
           "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
+          "side": "center",
+          "left": "50%",
           "opacity": 1
         }
       ]
@@ -204,79 +161,25 @@
           "opacity": 1,
           "frame": "enemy",
           "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
         }
       ]
     },
     {
       "speaker": "",
       "text": "その時、店の入口の自動ドアが開いた。",
-      "storySprites": [
-        {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        }
-      ],
       "bg": "images/assets/bgev/bg_office_hidamari.png",
-      "bgMode": "replace"
+      "bgMode": "replace",
+      "clearStorySprites": true
     },
     {
       "speaker": "天神 小春",
       "text": "遊びに……じゃなくて、視察に来たわよー、ちんまリストア！",
       "storySprites": [
         {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
           "id": "ba",
           "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
           "side": "center",
           "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
           "opacity": 1
         }
       ]
@@ -286,40 +189,10 @@
       "text": "小春ちゃん、今日は遊びじゃなかったんだ～。",
       "storySprites": [
         {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
           "id": "bc",
           "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
+          "side": "center",
+          "left": "50%",
           "opacity": 1
         }
       ]
@@ -329,40 +202,10 @@
       "text": "視察です。少なくとも、建前上は。",
       "storySprites": [
         {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
           "id": "bb",
           "src": "images/assets/rival/mafuyu_stand.png",
           "side": "center",
           "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
           "opacity": 1
         }
       ]
@@ -370,85 +213,17 @@
     {
       "speaker": "店長",
       "text": "ちょうどいいところに来た。手伝え。",
-      "storySprites": [
-        {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        }
-      ]
+      "clearStorySprites": true
     },
     {
       "speaker": "天神 小春",
       "text": "はぁ！？ なんでうちらがあんたらの手伝いをしなきゃいけないのよ！",
       "storySprites": [
         {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
           "id": "ba",
           "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
           "side": "center",
           "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
           "opacity": 1
         }
       ]
@@ -456,85 +231,17 @@
     {
       "speaker": "店長",
       "text": "いいじゃないか。同じ末端の組織の人間同士、困ったときは助け合おう。",
-      "storySprites": [
-        {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        }
-      ]
+      "clearStorySprites": true
     },
     {
       "speaker": "天神 小春",
       "text": "いま、さらっと変な言い方したわね。",
       "storySprites": [
         {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
           "id": "ba",
           "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
           "side": "center",
           "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
           "opacity": 1
         }
       ]
@@ -542,85 +249,17 @@
     {
       "speaker": "店長",
       "text": "もちろん、手伝った分はお前らの売り上げにしてやるよ。",
-      "storySprites": [
-        {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        }
-      ]
+      "clearStorySprites": true
     },
     {
       "speaker": "霧島 真冬",
       "text": "わかりました。やりましょう。",
       "storySprites": [
         {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
           "id": "bb",
           "src": "images/assets/rival/mafuyu_stand.png",
           "side": "center",
           "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
           "opacity": 1
         }
       ]
@@ -630,40 +269,10 @@
       "text": "ちょっと！ 真冬！？",
       "storySprites": [
         {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
           "id": "ba",
           "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
           "side": "center",
           "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
           "opacity": 1
         }
       ]
@@ -673,40 +282,10 @@
       "text": "……ここは渡りに船です。",
       "storySprites": [
         {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
           "id": "bb",
           "src": "images/assets/rival/mafuyu_stand.png",
           "side": "center",
           "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
           "opacity": 1
         }
       ]
@@ -714,85 +293,17 @@
     {
       "speaker": "",
       "text": "真冬は小春に近づき、そっと耳打ちする。",
-      "storySprites": [
-        {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        }
-      ]
+      "clearStorySprites": true
     },
     {
       "speaker": "霧島 真冬",
       "text": "ブラック家電星人の発生原因と購買行動を観察できるうえ、売上も計上できる。断る理由がありません。",
       "storySprites": [
         {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
           "id": "bb",
           "src": "images/assets/rival/mafuyu_stand.png",
           "side": "center",
           "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
           "opacity": 1
         }
       ]
@@ -802,40 +313,10 @@
       "text": "あちしはいいよ～。困ってる子は助けた方がいいし～。",
       "storySprites": [
         {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
           "id": "bc",
           "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
+          "side": "center",
+          "left": "50%",
           "opacity": 1
         }
       ]
@@ -845,40 +326,10 @@
       "text": "な、なによ！ あたしだって、そのくらいわかって手伝おうか？ っていうつもりだったわよ！",
       "storySprites": [
         {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
           "id": "ba",
           "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
           "side": "center",
           "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
           "opacity": 1
         }
       ]
@@ -888,47 +339,10 @@
       "text": "てんちょーが黒そうな話をしているぞ。",
       "storySprites": [
         {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
           "id": "ae",
           "src": "images/assets/char/e10501.webp",
-          "side": "left",
-          "left": "27%",
+          "side": "center",
+          "left": "50%",
           "opacity": 1
         }
       ],
@@ -939,50 +353,6 @@
       "speaker": "芝桜 桃",
       "text": "子供には理解できないね。これは大人の取引ってやつだよ、こっはー。",
       "storySprites": [
-        {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ae",
-          "src": "images/assets/char/e10501.webp",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
         {
           "id": "aj",
           "src": "images/assets/char/j10501.webp",
@@ -997,52 +367,8 @@
       "text": "オレ、桃より年上なんだけどな。",
       "storySprites": [
         {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
           "id": "ae",
           "src": "images/assets/char/e10501.webp",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "aj",
-          "src": "images/assets/char/j10501.webp",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -1054,61 +380,10 @@
       "text": "ふふ、敵陣まで巻き込むなんていけない人。けれど、味方として共闘するなら悪くありませんわ。",
       "storySprites": [
         {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ae",
-          "src": "images/assets/char/e10501.webp",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "aj",
-          "src": "images/assets/char/j10501.webp",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
           "id": "ak",
           "src": "images/assets/char/k10501.webp",
-          "side": "right",
-          "left": "73%",
+          "side": "center",
+          "left": "50%",
           "opacity": 1
         }
       ]
@@ -1116,127 +391,17 @@
     {
       "speaker": "店長",
       "text": "誤解するな。これは町の平和と売上のためだ。",
-      "storySprites": [
-        {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ae",
-          "src": "images/assets/char/e10501.webp",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "aj",
-          "src": "images/assets/char/j10501.webp",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        }
-      ]
+      "clearStorySprites": true
     },
     {
       "speaker": "芝桜 桃",
       "text": "ほら、やっぱり売上って言った。",
       "storySprites": [
         {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ae",
-          "src": "images/assets/char/e10501.webp",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
           "id": "aj",
           "src": "images/assets/char/j10501.webp",
           "side": "center",
           "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10501.webp",
-          "side": "right",
-          "left": "73%",
           "opacity": 1
         }
       ]
@@ -1253,55 +418,6 @@
           "opacity": 1,
           "frame": "enemy",
           "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ae",
-          "src": "images/assets/char/e10501.webp",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "aj",
-          "src": "images/assets/char/j10501.webp",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
         }
       ]
     },
@@ -1310,61 +426,10 @@
       "text": "やるからには本気よ！ ブラックだか何だか知らないけど、うちの販売力を見せつけてあげる！",
       "storySprites": [
         {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
           "id": "ba",
           "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
           "side": "center",
           "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ae",
-          "src": "images/assets/char/e10501.webp",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "aj",
-          "src": "images/assets/char/j10501.webp",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10501.webp",
-          "side": "right",
-          "left": "73%",
           "opacity": 1
         }
       ]
@@ -1374,61 +439,10 @@
       "text": "販売勝負ではなく、今回は共同作戦です。そこは間違えないでください。",
       "storySprites": [
         {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
           "id": "bb",
           "src": "images/assets/rival/mafuyu_stand.png",
           "side": "center",
           "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ae",
-          "src": "images/assets/char/e10501.webp",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "aj",
-          "src": "images/assets/char/j10501.webp",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10501.webp",
-          "side": "right",
-          "left": "73%",
           "opacity": 1
         }
       ]
@@ -1438,61 +452,10 @@
       "text": "みんなでやれば、なんとかなるよ～。",
       "storySprites": [
         {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
           "id": "bc",
           "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ae",
-          "src": "images/assets/char/e10501.webp",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "aj",
-          "src": "images/assets/char/j10501.webp",
           "side": "center",
           "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10501.webp",
-          "side": "right",
-          "left": "73%",
           "opacity": 1
         }
       ]
@@ -1502,61 +465,10 @@
       "text": "よーし！ ブラック家電星人さんも、ちゃんと助けてあげよう！",
       "storySprites": [
         {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
+          "id": "aa",
+          "src": "images/assets/char/a10501.webp",
           "side": "center",
           "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ae",
-          "src": "images/assets/char/e10501.webp",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "aj",
-          "src": "images/assets/char/j10501.webp",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10501.webp",
-          "side": "right",
-          "left": "73%",
           "opacity": 1
         }
       ]
@@ -1573,187 +485,23 @@
           "opacity": 1,
           "frame": "enemy",
           "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ae",
-          "src": "images/assets/char/e10501.webp",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "aj",
-          "src": "images/assets/char/j10501.webp",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
         }
       ]
     },
     {
       "speaker": "店長",
       "text": "よし、イベント営業開始だ。ブラック家電星人を助けるぞ！",
-      "storySprites": [
-        {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ae",
-          "src": "images/assets/char/e10501.webp",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "aj",
-          "src": "images/assets/char/j10501.webp",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        }
-      ],
       "bg": "images/assets/bgev/bg_office_hidamari.png",
-      "bgMode": "replace"
+      "bgMode": "replace",
+      "clearStorySprites": true
     },
     {
       "speaker": "システム",
       "text": "イベントバトルが解放されました。",
-      "storySprites": [
-        {
-          "id": "kd",
-          "src": "images/assets/enemy/enemy_tv_popcorn_test.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1,
-          "frame": "enemy",
-          "variant": "storyEnemyCard"
-        },
-        {
-          "id": "ag",
-          "src": "images/assets/char/g10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        },
-        {
-          "id": "ae",
-          "src": "images/assets/char/e10501.webp",
-          "side": "left",
-          "left": "27%",
-          "opacity": 1
-        },
-        {
-          "id": "aj",
-          "src": "images/assets/char/j10501.webp",
-          "side": "center",
-          "left": "50%",
-          "opacity": 1
-        },
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10501.webp",
-          "side": "right",
-          "left": "73%",
-          "opacity": 1
-        }
-      ]
+      "clearStorySprites": true
     }
-  ]
+  ],
+  "renderPolicy": {
+    "maxStorySprites": 1
+  }
 }
