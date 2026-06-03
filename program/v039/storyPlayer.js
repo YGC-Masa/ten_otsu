@@ -461,9 +461,25 @@
     }, 950);
   };
 
+
+  ns.applyStoryUnlockFlagsV03997 = function applyStoryUnlockFlagsV03997(storyData, ret) {
+    try {
+      const flags = Object.assign({}, (storyData && storyData.unlockFlags) || {});
+      if (ret && ret.eventId === "biribiri_intro_rival_battle_unlock_003_flow_fix") {
+        flags.unlock_vs_biribiri = true;
+        flags.rival_intro_seen = true;
+      }
+      Object.keys(flags).forEach((key) => {
+        localStorage.setItem("tenotsu_" + key + "_v1", flags[key] ? "1" : "0");
+      });
+    } catch (_) {}
+  };
+
   ns.endStory = function endStory() {
     const ret = ns.story.returnInfo || {};
+    const finishedStoryData = ns.story && ns.story.data ? ns.story.data : null;
     if (ret.eventId && typeof ns.markEventRead === "function") ns.markEventRead(ret.eventId);
+    if (typeof ns.applyStoryUnlockFlagsV03997 === "function") ns.applyStoryUnlockFlagsV03997(finishedStoryData, ret);
     ns.story.active = false; ns.story.data = null; ns.story.index = -1; ns.story.returnInfo = null;
     ns.story.isEnding = false; ns.story.isLoadingStep = false; ns.story.lastBg = null;
     document.body.classList.remove("tenotsu-story-active","tenotsu-story-final-line","tenotsu-story-loading");

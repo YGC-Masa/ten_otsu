@@ -124,6 +124,18 @@
           bg: "images/assets/bgev/bg_office_hidamari.png",
           summary: "倉庫在庫消失事件をきっかけに、ひだまりストア全員が家電星人と出会う共通導入イベント。",
           startMessage: "家電星人襲来の共通オープニングを開始します。"
+        },
+        {
+          id: "biribiri_intro_rival_battle_unlock_003_flow_fix",
+          scenario: "scenario/v039/events/biribiri_intro_rival_battle_unlock_003_flow_fix.json",
+          title: "ビリビリ電機登場：鼻歌来店とちんまり販売勝負",
+          character: "天神 小春 / 霧島 真冬 / 日向 なつ",
+          place: "ひだまりストア店頭",
+          status: "接続済み / VSビリビリ解放",
+          bg: "images/assets/bgev/bg_office_hidamari.png",
+          cg: "images/assets/rival/biribiri_battle_eyecatch.jpeg",
+          summary: "ビリビリ電機の小春・真冬・なつがひだまりストアを視察に訪れ、販売勝負を宣言する対戦モード解放ストーリー。",
+          startMessage: "ビリビリ電機との最初の接点を確認します。"
         }
       ]
     },

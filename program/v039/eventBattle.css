@@ -611,3 +611,34 @@ body.event-battle-screen { overscroll-behavior: none; }
   }
   #event-battle-root .event-member-roll-button { border-radius: 9px !important; }
 }
+
+
+/* === v039_97 event battle: larger hidamari member illustrations === */
+#event-battle-root .event-clean-member-scroll .event-clean-member {
+  grid-template-columns: minmax(0, 1fr) clamp(54px, 6.5vw, 86px) !important;
+  min-height: clamp(88px, 13.5vh, 118px) !important;
+  padding: clamp(5px, .85vw, 8px) !important;
+  gap: clamp(4px, .65vw, 8px) !important;
+  align-items: stretch !important;
+}
+#event-battle-root .event-clean-member-art {
+  width: clamp(48px, 6vw, 78px) !important;
+  height: clamp(68px, 12.5vh, 108px) !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center bottom !important;
+  align-self: end !important;
+}
+#event-battle-root .event-clean-member-main {
+  align-content: center !important;
+}
+@media (max-width: 760px) {
+  #event-battle-root .event-clean-member-scroll .event-clean-member {
+    grid-template-columns: minmax(0, 1fr) 46px !important;
+    min-height: 82px !important;
+  }
+  #event-battle-root .event-clean-member-art {
+    width: 44px !important;
+    height: 72px !important;
+  }
+}
