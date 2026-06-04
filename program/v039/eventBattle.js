@@ -614,10 +614,10 @@
     const powerLabel = dmg ? `総合清掃力 ${dmg.value}${dmg.match ? " / 特攻" : ""}` : "総合清掃力 -";
     return `<button type="button" class="event-clean-member ${ready ? "ready" : "cooldown"} ${dmg && dmg.match ? "match" : ""}" data-event-member="${escapeHtml(member.id)}" style="--member-color:${escapeHtml(member.color)};" ${ready ? "" : "disabled"}>
       <div class="event-clean-member-main">
-        <span>${escapeHtml(member.name)}</span>
-        <b>${escapeHtml(member.attr)}</b>
-        <small>${ready ? powerLabel : `リキャスト ${shortRemaining(readyAt)}`}</small>
-        <em>${member.rivalSupport ? "協力" : `Lv.${getLevel(member.id)}`} / 親愛 ${affinity}</em>
+        <span class="event-clean-member-name">${escapeHtml(member.name)}</span>
+        <b class="event-clean-member-attr">${escapeHtml(member.attr)}</b>
+        <small class="event-clean-member-power">${ready ? powerLabel : `リキャスト ${shortRemaining(readyAt)}`}</small>
+        <em class="event-clean-member-meta">${member.rivalSupport ? "協力" : `Lv.${getLevel(member.id)}`} / 親愛 ${affinity}</em>
       </div>
       <img class="event-clean-member-art" src="${escapeHtml(image)}" alt="${escapeHtml(member.name)}" loading="eager" decoding="async" />
     </button>`;

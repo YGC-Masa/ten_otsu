@@ -12,7 +12,7 @@
   },
   "steps": [
     {
-      "bg": "images/assets/bgev/bg_office_hidamari.png",
+      "bg": "images/assets/bg/battle_store_lv1.png",
       "bgMode": "replace",
       "speaker": "",
       "text": "【解禁ストーリー】イベントバトル解放：ブラック家電星人を助けて",
@@ -32,7 +32,7 @@
           "variant": "storyEnemyCard"
         }
       ],
-      "bg": "images/assets/bgev/bg_office_hidamari.png",
+      "bg": "images/assets/bg/battle_store_lv1.png",
       "bgMode": "replace"
     },
     {
@@ -167,7 +167,7 @@
     {
       "speaker": "",
       "text": "その時、店の入口の自動ドアが開いた。",
-      "bg": "images/assets/bgev/bg_office_hidamari.png",
+      "bg": "images/assets/bg/battle_store_lv1.png",
       "bgMode": "replace",
       "clearStorySprites": true
     },
@@ -177,7 +177,7 @@
       "storySprites": [
         {
           "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
+          "src": "images/assets/rival/story_koharu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -190,7 +190,7 @@
       "storySprites": [
         {
           "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
+          "src": "images/assets/rival/story_natsu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -203,7 +203,7 @@
       "storySprites": [
         {
           "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
+          "src": "images/assets/rival/story_mafuyu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -221,7 +221,7 @@
       "storySprites": [
         {
           "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
+          "src": "images/assets/rival/story_koharu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -239,7 +239,7 @@
       "storySprites": [
         {
           "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
+          "src": "images/assets/rival/story_koharu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -257,7 +257,7 @@
       "storySprites": [
         {
           "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
+          "src": "images/assets/rival/story_mafuyu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -270,7 +270,7 @@
       "storySprites": [
         {
           "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
+          "src": "images/assets/rival/story_koharu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -283,7 +283,7 @@
       "storySprites": [
         {
           "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
+          "src": "images/assets/rival/story_mafuyu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -301,7 +301,7 @@
       "storySprites": [
         {
           "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
+          "src": "images/assets/rival/story_mafuyu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -314,7 +314,7 @@
       "storySprites": [
         {
           "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
+          "src": "images/assets/rival/story_natsu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -327,7 +327,7 @@
       "storySprites": [
         {
           "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
+          "src": "images/assets/rival/story_koharu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -346,7 +346,7 @@
           "opacity": 1
         }
       ],
-      "bg": "images/assets/bgev/bg_office_hidamari.png",
+      "bg": "images/assets/bg/battle_store_lv1.png",
       "bgMode": "replace"
     },
     {
@@ -427,7 +427,7 @@
       "storySprites": [
         {
           "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
+          "src": "images/assets/rival/story_koharu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -440,7 +440,7 @@
       "storySprites": [
         {
           "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
+          "src": "images/assets/rival/story_mafuyu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -453,7 +453,7 @@
       "storySprites": [
         {
           "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
+          "src": "images/assets/rival/story_natsu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -491,7 +491,7 @@
     {
       "speaker": "店長",
       "text": "よし、イベント営業開始だ。ブラック家電星人を助けるぞ！",
-      "bg": "images/assets/bgev/bg_office_hidamari.png",
+      "bg": "images/assets/bg/battle_store_lv1.png",
       "bgMode": "replace",
       "clearStorySprites": true
     },

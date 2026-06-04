@@ -1,15 +1,8 @@
-# ten_otsu diff v039_99 to v039_100
+# v039_101 差分
 
-## 内容
-- イベントバトルのメンバーカード表示を再調整。
-- メンバー画像を右寄せ背面にし、テキストを前面にオーバーレイするが、テキスト表示幅を広げて縦細長化を抑制。
-- ブラック家電星人イベント解放シナリオで、家電星人・人物がセンターに重なり続ける問題を修正。
-- 店長・システム・ナレーションでは立ち絵を非表示、登場人物は発話者ごとに交代表示。
-- story sprite renderer側にも最大5体までのスロット正規化を追加。
-
-## 変更ファイル
-- program/v039/eventBattle.css
-- program/v039/layers.js
-- scenario/v039/events/event_black_kadenseijin_battle_unlock_003_ayame_line_fix.json
-- scenario/data/event_black_kadenseijin_battle_unlock_003_ayame_line_fix.source.json
-- program/docs/v039_100_event_ui_story_sprite_fix.md
+- イベントバトルのメンバー枠テキストを名前・属性・総合清掃力・Lv/親愛に分離し、横詰まりで小さく見える問題を軽減。
+- キャラ画像は右寄せ背面のまま維持しつつ、テキスト領域を確保。
+- ストーリーモードの小春・真冬・なつはバトルカードではなくストーリー用高解像度立ち絵を参照。
+- ビリビリバトル解放・イベントバトル解放ストーリーの通常背景を images/assets/bg/battle_store_lv1.png に変更。
+- 販売勝負CGは images/assets/rival/biribiri_battle_eyecatch.jpeg を維持し、contain/top表示を継続。
+- 画像生成は実施していません。

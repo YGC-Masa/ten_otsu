@@ -15,7 +15,7 @@
   "recommendedPosition": "家電星人襲来後／通常営業チュートリアル後／対戦モード解放前",
   "steps": [
     {
-      "bg": "images/assets/bgev/bg_office_hidamari.png",
+      "bg": "images/assets/bg/battle_store_lv1.png",
       "bgMode": "replace",
       "speaker": "",
       "text": "【解禁ストーリー】ビリビリ電機登場：初来店と販売勝負",
@@ -24,7 +24,7 @@
     {
       "speaker": "ナレーション",
       "text": "その日、ひだまりストアの店頭には、珍しく店長が立っていた。",
-      "bg": "images/assets/bgev/bg_office_hidamari.png",
+      "bg": "images/assets/bg/battle_store_lv1.png",
       "bgMode": "replace",
       "clearStorySprites": true
     },
@@ -89,7 +89,7 @@
       "storySprites": [
         {
           "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
+          "src": "images/assets/rival/story_koharu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -102,7 +102,7 @@
       "storySprites": [
         {
           "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
+          "src": "images/assets/rival/story_mafuyu_stand.png",
           "side": "right",
           "left": "73%",
           "opacity": 1
@@ -115,7 +115,7 @@
       "storySprites": [
         {
           "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
+          "src": "images/assets/rival/story_natsu_stand.png",
           "side": "left",
           "left": "27%",
           "opacity": 1
@@ -128,7 +128,7 @@
       "storySprites": [
         {
           "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
+          "src": "images/assets/rival/story_koharu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -141,7 +141,7 @@
       "storySprites": [
         {
           "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
+          "src": "images/assets/rival/story_natsu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -154,7 +154,7 @@
       "storySprites": [
         {
           "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
+          "src": "images/assets/rival/story_koharu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -167,7 +167,7 @@
       "storySprites": [
         {
           "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
+          "src": "images/assets/rival/story_mafuyu_stand.png",
           "side": "right",
           "left": "73%",
           "opacity": 1
@@ -180,7 +180,7 @@
       "storySprites": [
         {
           "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
+          "src": "images/assets/rival/story_koharu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -193,7 +193,7 @@
       "storySprites": [
         {
           "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
+          "src": "images/assets/rival/story_natsu_stand.png",
           "side": "left",
           "left": "27%",
           "opacity": 1
@@ -206,7 +206,7 @@
       "storySprites": [
         {
           "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
+          "src": "images/assets/rival/story_koharu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -219,7 +219,7 @@
       "storySprites": [
         {
           "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
+          "src": "images/assets/rival/story_natsu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -232,7 +232,7 @@
       "storySprites": [
         {
           "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
+          "src": "images/assets/rival/story_mafuyu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -245,7 +245,7 @@
       "storySprites": [
         {
           "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
+          "src": "images/assets/rival/story_koharu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -262,7 +262,7 @@
       "storySprites": [
         {
           "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
+          "src": "images/assets/rival/story_koharu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -279,7 +279,7 @@
       "storySprites": [
         {
           "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
+          "src": "images/assets/rival/story_mafuyu_stand.png",
           "side": "right",
           "left": "73%",
           "opacity": 1
@@ -296,7 +296,7 @@
       "storySprites": [
         {
           "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
+          "src": "images/assets/rival/story_natsu_stand.png",
           "side": "left",
           "left": "27%",
           "opacity": 1
@@ -309,7 +309,7 @@
       "storySprites": [
         {
           "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
+          "src": "images/assets/rival/story_koharu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -322,7 +322,7 @@
       "storySprites": [
         {
           "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
+          "src": "images/assets/rival/story_koharu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -339,7 +339,7 @@
       "storySprites": [
         {
           "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
+          "src": "images/assets/rival/story_koharu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -352,7 +352,7 @@
       "storySprites": [
         {
           "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
+          "src": "images/assets/rival/story_natsu_stand.png",
           "side": "left",
           "left": "27%",
           "opacity": 1
@@ -365,7 +365,7 @@
       "storySprites": [
         {
           "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
+          "src": "images/assets/rival/story_mafuyu_stand.png",
           "side": "right",
           "left": "73%",
           "opacity": 1
@@ -386,7 +386,7 @@
       "storySprites": [
         {
           "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
+          "src": "images/assets/rival/story_koharu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -442,7 +442,7 @@
       "storySprites": [
         {
           "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
+          "src": "images/assets/rival/story_koharu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -455,7 +455,7 @@
       "storySprites": [
         {
           "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
+          "src": "images/assets/rival/story_mafuyu_stand.png",
           "side": "right",
           "left": "73%",
           "opacity": 1
@@ -468,7 +468,7 @@
       "storySprites": [
         {
           "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
+          "src": "images/assets/rival/story_natsu_stand.png",
           "side": "left",
           "left": "27%",
           "opacity": 1
@@ -481,7 +481,7 @@
       "storySprites": [
         {
           "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
+          "src": "images/assets/rival/story_koharu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -494,7 +494,7 @@
       "storySprites": [
         {
           "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
+          "src": "images/assets/rival/story_mafuyu_stand.png",
           "side": "right",
           "left": "73%",
           "opacity": 1
@@ -511,7 +511,7 @@
       "storySprites": [
         {
           "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
+          "src": "images/assets/rival/story_koharu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -550,7 +550,7 @@
       "storySprites": [
         {
           "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
+          "src": "images/assets/rival/story_mafuyu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -563,7 +563,7 @@
       "storySprites": [
         {
           "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
+          "src": "images/assets/rival/story_natsu_stand.png",
           "side": "left",
           "left": "27%",
           "opacity": 1
@@ -576,7 +576,7 @@
       "storySprites": [
         {
           "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
+          "src": "images/assets/rival/story_koharu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -589,7 +589,7 @@
       "storySprites": [
         {
           "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
+          "src": "images/assets/rival/story_koharu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -606,7 +606,7 @@
       "storySprites": [
         {
           "id": "bb",
-          "src": "images/assets/rival/mafuyu_stand.png",
+          "src": "images/assets/rival/story_mafuyu_stand.png",
           "side": "right",
           "left": "73%",
           "opacity": 1
@@ -619,7 +619,7 @@
       "storySprites": [
         {
           "id": "bc",
-          "src": "images/assets/rival/natsu_stand.png",
+          "src": "images/assets/rival/story_natsu_stand.png",
           "side": "left",
           "left": "27%",
           "opacity": 1
@@ -632,7 +632,7 @@
       "storySprites": [
         {
           "id": "ba",
-          "src": "images/assets/rival/koharu_stand.png",
+          "src": "images/assets/rival/story_koharu_stand.png",
           "side": "center",
           "left": "50%",
           "opacity": 1

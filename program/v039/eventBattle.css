@@ -823,3 +823,81 @@ body.event-battle-screen { overscroll-behavior: none; }
   #event-battle-root .event-clean-member small,
   #event-battle-root .event-clean-member em { font-size: 7.5px !important; }
 }
+
+
+/* === v039_101 event battle: readable member text + large art background === */
+#event-battle-root .event-clean-member-scroll .event-clean-member {
+  position: relative !important;
+  display: block !important;
+  min-height: clamp(104px, 16vh, 142px) !important;
+  padding: clamp(7px, .75vw, 10px) !important;
+  overflow: hidden !important;
+}
+#event-battle-root .event-clean-member-scroll .event-clean-member::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(5,6,14,.91) 0%, rgba(5,6,14,.84) 52%, rgba(5,6,14,.42) 76%, rgba(5,6,14,.08) 100%) !important;
+}
+#event-battle-root .event-clean-member-main {
+  position: relative !important;
+  z-index: 4 !important;
+  width: min(72%, calc(100% - 72px)) !important;
+  max-width: min(72%, calc(100% - 72px)) !important;
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  gap: 2px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  text-shadow: 0 2px 5px rgba(0,0,0,.96), 0 0 8px rgba(0,0,0,.86) !important;
+}
+#event-battle-root .event-clean-member-name {
+  display: block !important;
+  width: 100% !important;
+  font-size: clamp(12px, 1.35vw, 16px) !important;
+  line-height: 1.12 !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  overflow-wrap: anywhere !important;
+}
+#event-battle-root .event-clean-member-attr,
+#event-battle-root .event-clean-member-power,
+#event-battle-root .event-clean-member-meta {
+  display: block !important;
+  width: 100% !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  overflow-wrap: anywhere !important;
+  line-height: 1.12 !important;
+}
+#event-battle-root .event-clean-member-attr { font-size: clamp(9px, 1.0vw, 12px) !important; color: #fff4b8 !important; }
+#event-battle-root .event-clean-member-power { font-size: clamp(9px, 1.0vw, 12px) !important; color: #fff4b8 !important; font-weight: 1000 !important; }
+#event-battle-root .event-clean-member-meta { font-size: clamp(8px, .9vw, 11px) !important; color: rgba(255,255,255,.76) !important; }
+#event-battle-root .event-clean-member-art {
+  position: absolute !important;
+  right: clamp(-8px, .3vw, 8px) !important;
+  bottom: -4px !important;
+  z-index: 1 !important;
+  width: clamp(94px, 13vw, 166px) !important;
+  height: clamp(114px, 18vh, 170px) !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: right bottom !important;
+  opacity: .96 !important;
+  pointer-events: none !important;
+}
+@media (max-width: 760px) {
+  #event-battle-root .event-clean-member-main { width: calc(100% - 64px) !important; max-width: calc(100% - 64px) !important; }
+  #event-battle-root .event-clean-member-art { width: 88px !important; height: 114px !important; right: -10px !important; }
+  #event-battle-root .event-clean-member-name { font-size: 10.5px !important; }
+  #event-battle-root .event-clean-member-attr,
+  #event-battle-root .event-clean-member-power,
+  #event-battle-root .event-clean-member-meta { font-size: 8px !important; }
+}

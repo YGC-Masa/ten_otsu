@@ -27,12 +27,12 @@
   "scenes": [
     {
       "scene_id": "s01_hidamari_store_alert",
-      "background": "bg_hidamari_store_floor_day",
+      "background": "images/assets/bg/battle_store_lv1.png",
       "bgm": "bgm_daily_hidamari",
       "events": [
         {
           "cmd": "show_bg",
-          "name": "bg_hidamari_store_floor_day",
+          "name": "images/assets/bg/battle_store_lv1.png",
           "transition": "fade"
         },
         {
@@ -131,7 +131,7 @@
     },
     {
       "scene_id": "s02_biribiri_arrival_again",
-      "background": "bg_hidamari_store_floor_day",
+      "background": "images/assets/bg/battle_store_lv1.png",
       "bgm": "bgm_comical_rival",
       "events": [
         {
@@ -263,7 +263,7 @@
     },
     {
       "scene_id": "s03_hidamari_reactions",
-      "background": "bg_hidamari_store_floor_day",
+      "background": "images/assets/bg/battle_store_lv1.png",
       "bgm": "bgm_comical_rival",
       "events": [
         {
@@ -360,7 +360,7 @@
     },
     {
       "scene_id": "s04_event_battle_unlock",
-      "background": "bg_hidamari_store_floor_day",
+      "background": "images/assets/bg/battle_store_lv1.png",
       "bgm": "bgm_event_start",
       "events": [
         {

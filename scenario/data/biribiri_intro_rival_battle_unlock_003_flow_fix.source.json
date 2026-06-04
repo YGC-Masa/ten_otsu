@@ -52,10 +52,10 @@
   ],
   "assets": {
     "backgrounds": {
-      "store_front": "bg_hidamari_store_front_day",
-      "store_floor": "bg_hidamari_store_floor_day",
-      "store_floor_rival": "bg_hidamari_store_floor_rival_visit",
-      "versus_cutin": "cg_biribiri_vs_hidamari_cutin"
+      "store_front": "images/assets/bg/battle_store_lv1.png",
+      "store_floor": "images/assets/bg/battle_store_lv1.png",
+      "store_floor_rival": "images/assets/bg/battle_store_lv1.png",
+      "versus_cutin": "images/assets/rival/biribiri_battle_eyecatch.jpeg"
     },
     "bgm": {
       "daily_store": "bgm_daily_store_light",
