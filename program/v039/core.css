@@ -4209,3 +4209,49 @@ body.tenotsu-story-bg-contain-top [data-bg-layer] img,
 body.tenotsu-story-bg-contain-top .background img {
   object-position: center top !important;
 }
+
+
+/* v039_102: story rival members use knee-shot framing from full-body assets */
+body[data-v039-mode="story"] #tenotsu-story-body-sprite-layer .tenotsu-story-body-standing.tenotsu-story-rival-knee-shot,
+body.tenotsu-story-active #tenotsu-story-body-sprite-layer .tenotsu-story-body-standing.tenotsu-story-rival-knee-shot {
+  max-height: none !important;
+  height: min(126dvh, 980px) !important;
+  width: auto !important;
+  bottom: -22dvh !important;
+  object-fit: contain !important;
+  object-position: center bottom !important;
+}
+
+body[data-v039-mode="story"] #tenotsu-story-body-sprite-layer .tenotsu-story-body-standing.tenotsu-story-rival-knee-shot.side-center,
+body.tenotsu-story-active #tenotsu-story-body-sprite-layer .tenotsu-story-body-standing.tenotsu-story-rival-knee-shot.side-center {
+  left: 50% !important;
+  transform: translateX(-50%) translateZ(0) !important;
+}
+body[data-v039-mode="story"] #tenotsu-story-body-sprite-layer .tenotsu-story-body-standing.tenotsu-story-rival-knee-shot.side-left,
+body.tenotsu-story-active #tenotsu-story-body-sprite-layer .tenotsu-story-body-standing.tenotsu-story-rival-knee-shot.side-left {
+  left: 28% !important;
+  transform: translateX(-50%) translateZ(0) !important;
+}
+body[data-v039-mode="story"] #tenotsu-story-body-sprite-layer .tenotsu-story-body-standing.tenotsu-story-rival-knee-shot.side-right,
+body.tenotsu-story-active #tenotsu-story-body-sprite-layer .tenotsu-story-body-standing.tenotsu-story-rival-knee-shot.side-right {
+  left: 72% !important;
+  transform: translateX(-50%) translateZ(0) !important;
+}
+body[data-v039-mode="story"] #tenotsu-story-body-sprite-layer .tenotsu-story-body-standing.tenotsu-story-rival-knee-shot.side-maxleft,
+body.tenotsu-story-active #tenotsu-story-body-sprite-layer .tenotsu-story-body-standing.tenotsu-story-rival-knee-shot.side-maxleft {
+  left: 14% !important;
+  transform: translateX(-50%) translateZ(0) !important;
+}
+body[data-v039-mode="story"] #tenotsu-story-body-sprite-layer .tenotsu-story-body-standing.tenotsu-story-rival-knee-shot.side-maxright,
+body.tenotsu-story-active #tenotsu-story-body-sprite-layer .tenotsu-story-body-standing.tenotsu-story-rival-knee-shot.side-maxright {
+  left: 86% !important;
+  transform: translateX(-50%) translateZ(0) !important;
+}
+
+@media (orientation: landscape) and (max-height: 560px) {
+  body[data-v039-mode="story"] #tenotsu-story-body-sprite-layer .tenotsu-story-body-standing.tenotsu-story-rival-knee-shot,
+  body.tenotsu-story-active #tenotsu-story-body-sprite-layer .tenotsu-story-body-standing.tenotsu-story-rival-knee-shot {
+    height: 132dvh !important;
+    bottom: -28dvh !important;
+  }
+}

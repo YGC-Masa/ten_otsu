@@ -1,20 +1,9 @@
 {
-  "version": "v039_101",
-  "base": "v039_100",
-  "eventMemberTextSeparatedLines": true,
-  "eventMemberTextAreaWideAdjusted": true,
-  "eventMemberArtBehindTextKept": true,
-  "storyRivalArtUsesHighResolutionStoryAssets": true,
-  "storyRivalAssets": [
-    "images/assets/rival/story_koharu_stand.png",
-    "images/assets/rival/story_mafuyu_stand.png",
-    "images/assets/rival/story_natsu_stand.png"
-  ],
-  "unlockStoryBackgroundChangedToBattleStoreLv1": true,
-  "unlockStoryBackgroundPath": "images/assets/bg/battle_store_lv1.png",
-  "versusCgStillUsesEyecatchContainTop": true,
-  "noImageGenerationPerformed": true,
-  "jsSyntaxOk": true,
-  "jsonSyntaxOk": true,
-  "zipIntegrityOk": true
+  "version": "v039_102",
+  "base": "v039_101",
+  "momoLineKeepsBackground": true,
+  "targetRuntimeStepHasNoBg": true,
+  "rivalStoryKneeShotCssAdded": true,
+  "rivalStoryKneeShotClassAdded": true,
+  "noImageGenerationPerformed": true
 }

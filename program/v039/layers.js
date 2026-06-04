@@ -359,11 +359,13 @@
       const left = ch.left || (side === "center" ? "50%" : side === "left" ? "25%" : side === "right" ? "75%" : "50%");
       const id = String(ch.id || "");
       const isEnemyCard = !!(ch.frame === "enemy" || ch.variant === "storyEnemyCard" || id.indexOf("enemy") === 0 || id === "kd" || id === "bk" || String(src).indexOf("/enemy/") >= 0 || String(src).indexOf("/event/dirty_alien") >= 0);
+      const isRivalStoryStand = !!(id === "ba" || id === "bb" || id === "bc" || String(src).indexOf("/rival/story_") >= 0);
       const className = [
         "tenotsu-story-body-standing",
         `side-${side}`,
         "bottom-align",
-        isEnemyCard ? "tenotsu-story-enemy-card" : ""
+        isEnemyCard ? "tenotsu-story-enemy-card" : "",
+        isRivalStoryStand ? "tenotsu-story-rival-knee-shot" : ""
       ].filter(Boolean).join(" ");
       return `<img class="${className}" src="${src}" style="left:${left}; opacity:${opacity};" alt="">`;
     }).join("");
