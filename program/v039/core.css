@@ -4255,3 +4255,47 @@ body.tenotsu-story-active #tenotsu-story-body-sprite-layer .tenotsu-story-body-s
     bottom: -28dvh !important;
   }
 }
+
+/* v039_103: allow intentional story background black fade during bg changes */
+body.tenotsu-story-bg-blackfade .tenotsu-fade-layer,
+body[data-v039-mode="story"].tenotsu-story-bg-blackfade .tenotsu-fade-layer,
+body.tenotsu-story-active.tenotsu-story-bg-blackfade .tenotsu-fade-layer {
+  display: block !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  animation: none !important;
+  z-index: var(--tenotsu-z-fade, 50000) !important;
+  background: #000 !important;
+}
+
+@media (max-width: 1180px), (hover: none), (pointer: coarse) {
+  body.tenotsu-story-bg-blackfade .tenotsu-fade-layer,
+  body[data-v039-mode="story"].tenotsu-story-bg-blackfade .tenotsu-fade-layer,
+  body.tenotsu-story-active.tenotsu-story-bg-blackfade .tenotsu-fade-layer {
+    display: block !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    animation: none !important;
+    z-index: var(--tenotsu-z-fade, 50000) !important;
+    background: #000 !important;
+  }
+}
+
+/* v039_103: stronger knee-shot framing for rival story sprites */
+body[data-v039-mode="story"] #tenotsu-story-body-sprite-layer .tenotsu-story-body-standing.tenotsu-story-rival-knee-shot,
+body.tenotsu-story-active #tenotsu-story-body-sprite-layer .tenotsu-story-body-standing.tenotsu-story-rival-knee-shot {
+  height: min(152dvh, 1180px) !important;
+  max-height: none !important;
+  width: auto !important;
+  bottom: -46dvh !important;
+  object-fit: contain !important;
+  object-position: center bottom !important;
+}
+
+@media (orientation: landscape) and (max-height: 560px) {
+  body[data-v039-mode="story"] #tenotsu-story-body-sprite-layer .tenotsu-story-body-standing.tenotsu-story-rival-knee-shot,
+  body.tenotsu-story-active #tenotsu-story-body-sprite-layer .tenotsu-story-body-standing.tenotsu-story-rival-knee-shot {
+    height: 166dvh !important;
+    bottom: -55dvh !important;
+  }
+}

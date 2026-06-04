@@ -6,6 +6,9 @@
   ns.suppressStoryFadeLayer = function suppressStoryFadeLayer() {
     const mode = ns.mode || (document.body && document.body.dataset && document.body.dataset.v039Mode);
     if (!(mode === "story" || (document.body && document.body.classList && document.body.classList.contains("tenotsu-story-active")))) return;
+    // v039_103: background changes may intentionally use the black fade layer.
+    // Do not kill it while that transition is active.
+    if (document.body && document.body.classList && document.body.classList.contains("tenotsu-story-bg-blackfade")) return;
     const layers = ns.layers || {};
     const fade = layers.fade || document.querySelector(".tenotsu-fade-layer");
     if (!fade) return;
@@ -256,8 +259,36 @@
   };
 
   ns.fadeForStoryBgChange = async function fadeForStoryBgChange(apply) {
-    ns.suppressStoryFadeLayer();
+    // v039_103: black-out / black-in when the story background actually changes.
+    const layers = ns.layers || ns.ensureLayers();
+    const fade = layers && layers.fade ? layers.fade : document.querySelector(".tenotsu-fade-layer");
+    if (!fade) { if (typeof apply === "function") await apply(); return; }
+    document.body.classList.add("tenotsu-story-bg-blackfade");
+    fade.style.removeProperty("display");
+    fade.style.removeProperty("visibility");
+    fade.style.removeProperty("opacity");
+    fade.style.removeProperty("transition");
+    fade.style.removeProperty("animation");
+    fade.style.display = "block";
+    fade.style.visibility = "visible";
+    fade.style.pointerEvents = "auto";
+    fade.style.transition = "opacity 220ms ease";
+    fade.style.opacity = "0";
+    await new Promise((resolve) => requestAnimationFrame(() => {
+      fade.style.opacity = "1";
+      setTimeout(resolve, 240);
+    }));
     if (typeof apply === "function") await apply();
+    fade.style.transition = "opacity 260ms ease";
+    await new Promise((resolve) => requestAnimationFrame(() => {
+      fade.style.opacity = "0";
+      setTimeout(resolve, 280);
+    }));
+    fade.style.display = "none";
+    fade.style.visibility = "hidden";
+    fade.style.pointerEvents = "none";
+    fade.style.transition = "";
+    document.body.classList.remove("tenotsu-story-bg-blackfade");
     ns.suppressStoryFadeLayer();
   };
 
