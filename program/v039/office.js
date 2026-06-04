@@ -33,8 +33,8 @@
     const items = [
       ["店舗", "storeStatus"],
       ["メンバー", "members"],
-      ["店舗営業", "sales"],
-      ["外回り", "town"],
+      ["店舗営業（バトル）", "sales"],
+      ["外営業（ストーリー）", "town"],
       ["チューニング", "tuning"],
       ["ショップ", "shop"],
       ["設定", "settings"]

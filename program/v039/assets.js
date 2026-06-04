@@ -47,6 +47,29 @@
   ];
 
 
+
+  // v039_104: メンバー詳細の自己紹介ボタン用シナリオ
+  ns.memberIntroScenarioMap = {
+    aa: "scenario/v039/events/intro_hina.json",
+    ab: "scenario/v039/events/intro_ai.json",
+    ac: "scenario/v039/events/intro_midori.json",
+    ad: "scenario/v039/events/intro_kogane.json",
+    ae: "scenario/v039/events/intro_kohaku.json",
+    af: "scenario/v039/events/intro_manaka.json",
+    ag: "scenario/v039/events/intro_yukino.json",
+    ah: "scenario/v039/events/intro_misora.json",
+    ai: "scenario/v039/events/intro_yozora.json",
+    aj: "scenario/v039/events/intro_momo.json",
+    ak: "scenario/v039/events/intro_ayame.json",
+    al: "scenario/v039/events/intro_satomi.json",
+    am: "scenario/v039/events/intro_moe.json"
+  };
+  ns.memberProfiles.forEach(function(member) {
+    if (member && member.id && ns.memberIntroScenarioMap[member.id]) {
+      member.introScenario = ns.memberIntroScenarioMap[member.id];
+    }
+  });
+
   ns.townSpots = [
     {
       id: "wakaba_central_park",

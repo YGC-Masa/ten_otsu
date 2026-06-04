@@ -78,7 +78,7 @@
         </div>
       </div>
       <div class="tenotsu-town-button-row">
-        <button type="button" class="tenotsu-town-back" data-town-action="season-top">外回りメニューへ戻る</button>
+        <button type="button" class="tenotsu-town-back" data-town-action="season-top">外営業（ストーリー）へ戻る</button>
         <button type="button" class="tenotsu-town-back" data-town-action="back-office">事務所に戻る</button>
       </div>
     `;
@@ -127,7 +127,7 @@
         if (action === "season-top") {
           ns.setBackground(ns.paths.townBg || ns.paths.officeBg);
           ns.renderTownSeasonTop();
-          ns.setText("店長", "外回りメニューへ戻ります。");
+          ns.setText("店長", "外営業（ストーリー）メニューへ戻ります。");
         } else if (action === "back-office") {
           ns.hideTownPanel();
           ns.enterOffice({ speaker: "店長", message: "事務所に戻りました。" });

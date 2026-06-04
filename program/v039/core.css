@@ -4299,3 +4299,29 @@ body.tenotsu-story-active #tenotsu-story-body-sprite-layer .tenotsu-story-body-s
     bottom: -55dvh !important;
   }
 }
+
+
+/* v039_104 member intro button */
+.tenotsu-member-intro-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  margin-top: 7px;
+  padding: 6px 14px;
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08));
+  color: #fff;
+  font-weight: 800;
+  font-size: clamp(11px, 1.5vw, 14px);
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+}
+.tenotsu-member-intro-button:hover,
+.tenotsu-member-intro-button:focus-visible {
+  background: linear-gradient(135deg, rgba(255,232,128,0.34), rgba(255,255,255,0.12));
+  border-color: rgba(255,232,128,0.7);
+  outline: none;
+}

@@ -91,6 +91,7 @@
               <div class="tenotsu-member-detail-comment" aria-label="メンバーコメント">
                 <span class="tenotsu-member-comment-label">ひとこと</span>
                 <span class="tenotsu-member-comment-text">${esc(m.comment)}</span>
+                ${m.introScenario ? `<button type="button" class="tenotsu-member-intro-button" data-member-intro="${esc(m.introScenario)}">自己紹介</button>` : ""}
               </div>
             </div>
           </div>
@@ -98,6 +99,17 @@
           ${renderEquipmentMini(m)}
           <div class="tenotsu-member-detail-note">詳細画面は、プロフィール・好感度・持ち物の拡張に合わせて追加予定です。</div>
         `;
+        const introBtn = detail.querySelector("[data-member-intro]");
+        if (introBtn) {
+          introBtn.addEventListener("click", (ev) => {
+            ev.preventDefault();
+            ev.stopPropagation();
+            const scenario = introBtn.getAttribute("data-member-intro");
+            if (scenario && typeof ns.startStory === "function") {
+              ns.startStory(scenario, { mode: "members", memberId: m.id });
+            }
+          });
+        }
         ns.setText(m.name, m.comment);
       });
     });

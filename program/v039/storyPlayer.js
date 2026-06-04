@@ -552,8 +552,13 @@
       ns.enterTown({ noTransition:true });
       if (ret.season && typeof ns.renderSeasonEvents === "function") {
         ns.renderSeasonEvents(ret.season, { selectedEventId:ret.eventId });
-        ns.setText("店長", "外回りに戻りました。");
+        ns.setText("店長", "外営業（ストーリー）に戻りました。");
       }
+      return;
+    }
+    if (ret.mode === "members" && typeof ns.enterMembers === "function") {
+      ns.enterMembers({ noTransition:true });
+      ns.setText("店長", "メンバー確認に戻りました。");
       return;
     }
     if (typeof ns.enterOffice === "function") ns.enterOffice({ speaker:"店長", message:"事務所に戻りました。" });

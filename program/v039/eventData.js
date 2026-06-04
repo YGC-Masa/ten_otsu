@@ -147,6 +147,29 @@
           bg: "images/assets/bgev/bg_office_hidamari.png",
           summary: "メンテナンス不足でブラック化した家電星人を助けるため、ひだまりストアとビリビリ電機が一時共闘するイベントバトル解放ストーリー。",
           startMessage: "ブラック家電星人を助けるイベントバトル解放ストーリーを開始します。"
+        },
+        {
+          id: "shop_exchange_intro_sakuya",
+          scenario: "scenario/v039/events/shop_exchange_intro_sakuya.json",
+          title: "アイテム交換所解放：朔夜の交換カウンター",
+          character: "宵闇 朔夜",
+          place: "テックラボつくも / 交換カウンター",
+          status: "接続済み / 交換所解放",
+          bg: "images/assets/bgev/bg_exchange_item_counter.png",
+          summary: "朔夜と出会い、イベント交換所の使い方を確認する解放ストーリー。",
+          startMessage: "朔夜の交換カウンターへ向かいます。"
+        },
+        {
+          id: "c10002",
+          scenario: "scenario/v039/events/c10002.json",
+          title: "一度くらいなら……事務所にて（翠）",
+          character: "草壁 翠 / 星野 緋奈",
+          place: "ひだまりストア事務所",
+          status: "接続済み / 旧シナリオ変換",
+          bg: "images/assets/bgev/bg011.jpg",
+          summary: "事務所で翠と店長が、衣装資料をめぐって少しだけ距離を縮める旧シナリオ。",
+          startMessage: "事務所での翠の旧シナリオを開始します。"
+
         }
       ]
     },
