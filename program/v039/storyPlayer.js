@@ -542,6 +542,7 @@
     const ret = ns.story.returnInfo || {};
     const finishedStoryData = ns.story && ns.story.data ? ns.story.data : null;
     if (ret.eventId && typeof ns.markEventRead === "function") ns.markEventRead(ret.eventId);
+    if (ret.storyId && typeof ns.markStoryCleared === "function") ns.markStoryCleared(ret.storyId);
     if (typeof ns.applyStoryUnlockFlagsV03997 === "function") ns.applyStoryUnlockFlagsV03997(finishedStoryData, ret);
     ns.story.active = false; ns.story.data = null; ns.story.index = -1; ns.story.returnInfo = null;
     ns.story.isEnding = false; ns.story.isLoadingStep = false; ns.story.lastBg = null;
@@ -559,6 +560,11 @@
     if (ret.mode === "members" && typeof ns.enterMembers === "function") {
       ns.enterMembers({ noTransition:true });
       ns.setText("店長", "メンバー確認に戻りました。");
+      return;
+    }
+    if (ret.mode === "storyMenu" && typeof ns.enterStoryMenu === "function") {
+      ns.enterStoryMenu({ noTransition:true, tab: ret.storyMenuTab || "recollection" });
+      ns.setText("ストーリー", "ストーリー一覧に戻りました。");
       return;
     }
     if (typeof ns.enterOffice === "function") ns.enterOffice({ speaker:"店長", message:"事務所に戻りました。" });

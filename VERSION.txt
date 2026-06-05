@@ -1,12 +1,8 @@
-v039_106
+v039_107
+ストーリー管理基盤＋回想モード試作
 
 基準:
 - v039_104: ten_otsu-main (10).zip
-- v039_105: こがねとなつ：マリンピアの海中トンネル 試作接続
-- v039_106: 緋奈＆こがね：新作ジュースは何の味？ 事務所イベント接続
-
-更新:
-- index.html title/cache query updated to v039_106
-- program/v039/version.js added
-- program/v039/eventData.js updated
-- scenario/v039/events/*.json added
+- v039_105: こがねとなつ：マリンピアの海中トンネル
+- v039_106: 緋奈＆こがね：新作ジュースは何の味？
+- v039_107: storyIndex/keyStoryConfig/storyProgress/storyMenu 追加

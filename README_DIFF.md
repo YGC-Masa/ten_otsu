@@ -1,25 +1,40 @@
-# v039_106 シナリオ増産・事務所イベント追加
+# v039_107 差分
 
-## バージョン運用
-- `index.html` の `<title>` を `店長お疲れ様です v039_106` に更新。
-- `index.html` 内の CSS/JS キャッシュ用クエリ `?v=` を `v039_106` に更新。
-- `program/v039/version.js` を追加し、`window.TENOTSU_BUILD_VERSION = "v039_106"` を設定。
-- 今後の差分では、シナリオだけでなく `index.html` とバージョン情報も合わせて更新する。
+## 目的
+通常ストーリー、キャラごとのキーストーリー、キーストーリーコンプ後のメインストーリー、回想モードを同じ基盤で管理するための試作実装です。
 
-## v039_105 から引き継ぐ内容
-- `scenario/v039/events/kogane_natsu_marinpia.json` を追加。
-- 夏イベント「マリンピアの海中トンネル」を `program/v039/eventData.js` に接続。
+## 追加
+- `scenario/v039/storyIndex.js`
+- `scenario/v039/keyStoryConfig.js`
+- `program/v039/storyProgress.js`
+- `program/v039/storyMenu.js`
+- `program/v039/storyMenu.css`
 
-## v039_106 追加内容
-- `scenario/v039/events/sample_hina_kogane_new_juice_002.json` を追加。
-- 「事務所にて緋奈＆こがね：新作ジュースは何の味？」を `program/v039/eventData.js` の「その他」カテゴリに接続。
-- ユーザー提供の `sample_hina_kogane_new_juice_002_title_text_fix.json` を、現行 `storyPlayer` 用の `v039_steps` 形式へ変換。
+## 変更
+- `index.html`
+  - タイトルと `?v=` を `v039_107` に更新
+  - storyIndex / keyStoryConfig / storyProgress / storyMenu を読み込み
+- `program/v039/version.js`
+  - v039_107 表記へ更新
+- `program/v039/state.js`
+  - `ns.VERSION` を `v039_107_story_menu_trial` に更新
+  - `storyMenu` モード追加
+- `program/v039/office.js`
+  - 右メニューに「ストーリー」を追加
+  - ストーリーメニュー起動処理を追加
+- `program/v039/storyPlayer.js`
+  - `returnInfo.storyId` を読了保存
+  - `returnInfo.mode === "storyMenu"` でストーリー一覧へ戻る
 
-## 追加シナリオ
-- こがねとなつ：マリンピアの海中トンネル
-- 事務所にて緋奈＆こがね：新作ジュースは何の味？
+## 同梱継続
+- `scenario/v039/events/kogane_natsu_marinpia.json`
+- `scenario/v039/events/sample_hina_kogane_new_juice_002.json`
+- `program/v039/eventData.js`
+
+## 試作仕様
+- `window.TENOTSU_DEBUG_ALL_STORIES = true` により、回想モードでも全ストーリーを表示します。
+- 本番運用時は `false` にすると、読了済みのみ回想表示になります。
+- キーストーリーとメインストーリーの枠は実装済みですが、v039_107時点では実ストーリー登録はまだありません。
 
 ## 注意
-- `program/v039/eventData.js` は上書き対象。別ブランチで同ファイルを編集している場合はマージ確認が必要。
-- 新作ジュースイベントは、元JSONの `cmd` 形式を現行 `steps` 形式へ変換しているため、BGM/SFX/小物コマンドは一部ナレーションへ折りたたんでいる。
-- 回想モードは未実装。次版以降で `recollectionIndex` 方式を検討する。
+このZIPは上書き差分です。`program/v039/office.js`, `program/v039/storyPlayer.js`, `program/v039/state.js`, `program/v039/eventData.js`, `index.html` を別作業で編集済みの場合はマージ確認してください。
