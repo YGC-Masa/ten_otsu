@@ -1,4 +1,4 @@
-/* v039_107 key story config scaffold */
+/* v039_108 key story config scaffold */
 (function(){
   "use strict";
   window.TENOTSU_KEY_STORY_CONFIG = {
@@ -10,7 +10,7 @@
     af: { characterName: "大道寺 真花", requiredStories: [], completeReward: { title: "真花との絆" } },
     ag: { characterName: "氷神 雪乃", requiredStories: [], completeReward: { title: "雪乃との絆" } },
     ah: { characterName: "双沢 美空", requiredStories: [], completeReward: { title: "美空との絆" } },
-    ai: { characterName: "双沢 夜空", requiredStories: [], completeReward: { title: "夜空との絆" } },
+    ai: { characterName: "双沢 夜空", requiredStories: ["yozora_affection_00_01_key"], completeReward: { title: "夜空との絆" } },
     aj: { characterName: "芝桜 桃", requiredStories: [], completeReward: { title: "桃との絆" } },
     ak: { characterName: "紫藤 彩愛", requiredStories: [], completeReward: { title: "彩愛との絆" } },
     al: { characterName: "餅月 里美", requiredStories: [], completeReward: { title: "里美との絆" } },

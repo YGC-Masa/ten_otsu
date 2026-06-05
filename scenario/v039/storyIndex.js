@@ -1,4 +1,4 @@
-/* v039_107 story index: normal / key / main / recollection base */
+/* v039_108 story index: normal / key / main / recollection base */
 (function(){
   "use strict";
   window.TENOTSU_STORY_INDEX = [
@@ -28,6 +28,21 @@
       unlock: { type: "always" },
       order: 106,
       summary: "事務所の新作ジュースをきっかけに、緋奈が照れて、こがねが無邪気にかき回し、翠が締める日常会話。"
+    }
+    ,{
+      id: "yozora_affection_00_01_key",
+      title: "美空なら休憩室",
+      type: "key",
+      category: "character_key",
+      character: "ai",
+      route: "yozora",
+      characters: ["ai", "ah"],
+      characterNames: ["双沢 夜空", "双沢 美空"],
+      scenario: "scenario/v039/events/yozora_affection_00_01_key.json",
+      version: "v039_108",
+      unlock: { type: "always" },
+      order: 3001,
+      summary: "夜空がまだ店長に距離を置き、自分ではなく美空を見てほしいと示す序盤キーストーリー。"
     }
   ];
 })();

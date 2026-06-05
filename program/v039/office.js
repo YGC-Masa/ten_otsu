@@ -34,8 +34,8 @@
       ["店舗", "storeStatus"],
       ["メンバー", "members"],
       ["店舗営業（バトル）", "sales"],
-      ["外営業（ストーリー）", "town"],
-      ["ストーリー", "storyMenu"],
+      ["外回り", "town"],
+      ["ストーリー管理", "storyMenu"],
       ["チューニング", "tuning"],
       ["ショップ", "shop"],
       ["設定", "settings"]

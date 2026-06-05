@@ -1,4 +1,4 @@
-/* v039_53 story player center sprites + clear support */
+/* v039_108 story player: story menu + event CG layer order */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -461,7 +461,6 @@
     if (!step) return;
     if (ns.applyStoryBgFitV03998) ns.applyStoryBgFitV03998(step);
     if (step.hideEventCg && ns.hideEventCgSurface) ns.hideEventCgSurface();
-    if (step.showEventCg && step.eventCg && ns.showEventCgSurface) ns.showEventCgSurface(step.eventCg);
     const forceBg = !!(step.forceBackgroundReplace || step.bgMode === "forceReplace");
     const bgChanged = !!(step.bg && (forceBg || step.bg !== ns.story.lastBg || step.bg !== ns.storyCurrentBackground));
     if (step.bg && bgChanged) {
@@ -479,6 +478,7 @@
         else await applyBg();
       } finally { ns.setStoryLoading(false); }
     }
+    if (step.showEventCg && (step.eventCg || step.cg) && ns.showEventCgSurface) ns.showEventCgSurface(step.eventCg || step.cg, { fit: step.cgFit || step.bgFit, align: step.cgAlign || step.bgAlign || step.cgPosition || step.bgPosition });
     ns.applyStoryCharacter(step);
     ns.setText(step.speaker || "", step.text || "");
     if (ns.forceMobileStoryVisibility) ns.forceMobileStoryVisibility();

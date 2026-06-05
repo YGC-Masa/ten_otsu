@@ -1,4 +1,4 @@
-/* v039_107 story menu / recollection trial */
+/* v039_108 story menu / recollection trial */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
@@ -46,8 +46,8 @@
     }).join("") : `<div class="tenotsu-story-menu-empty">このカテゴリのストーリーはまだ登録されていません。</div>`;
 
     const html = `
-      <div class="tenotsu-story-menu-title">ストーリー</div>
-      <div class="tenotsu-story-menu-subtitle">通常ストーリー、キャラ別キーストーリー、メインストーリー、回想をここで管理します。</div>
+      <div class="tenotsu-story-menu-title">ストーリー管理</div>
+      <div class="tenotsu-story-menu-subtitle">メイン・キーストーリー・通常ストーリー・回想を管理します。外回りは移動先イベント入口として分離します。</div>
       <div class="tenotsu-story-menu-tabs">${tabs}</div>
       <div class="tenotsu-story-menu-debug">${esc(debugNote)}</div>
       <div class="tenotsu-story-menu-list">${body}</div>
