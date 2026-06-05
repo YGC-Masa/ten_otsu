@@ -1,4 +1,4 @@
-/* v039_37 event data */
+/* v039_106 event data */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -115,6 +115,17 @@
       bg: "images/assets/bgev/bg_office_hidamari.png",
       color: "#9ad7ff",
       events: [
+        {
+          id: "sample_hina_kogane_new_juice_002",
+          scenario: "scenario/v039/events/sample_hina_kogane_new_juice_002.json",
+          title: "事務所にて緋奈＆こがね：新作ジュースは何の味？",
+          character: "星野 緋奈 / 小麦沢 こがね / 草壁 翠",
+          place: "ひだまりストア事務所",
+          status: "接続済み / v039_106",
+          bg: "images/assets/bgev/bg_office_hidamari.png",
+          summary: "入手困難な新作ジュースをきっかけに、緋奈が照れて、こがねが無邪気にかき回し、翠が紙コップと分別の一言で締める日常会話イベント。",
+          startMessage: "事務所で新作ジュースをめぐる、緋奈とこがねの会話イベントを開始します。"
+        },
         {
           id: "common_opening_kadenseijin_raid_002_all_cast",
           scenario: "scenario/v039/events/common_opening_kadenseijin_raid_002_all_cast.json",
