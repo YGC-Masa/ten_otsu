@@ -1,4 +1,4 @@
-/* v039_109 story index: normal encounter / member key-main slots / recollection */
+/* v039_114 story index: normal encounter / member key-main slots / recollection */
 (function(){
   "use strict";
   window.TENOTSU_STORY_INDEX = [
@@ -48,10 +48,28 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_00_01_key.json",
-      version: "v039_112",
+      version: "v039_114",
       unlock: { type: "affection_level", character: "ai", level: 1 },
       order: 3001,
       summary: "夜空がまだ店長に距離を置き、自分ではなく美空を見てほしいと示す序盤キーストーリー。"
+    },
+    {
+      id: "yozora_affection_00_02_key",
+      title: "見てるだけ",
+      type: "key",
+      category: "character_key",
+      character: "ai",
+      route: "yozora",
+      affectionBlock: 1,
+      affectionSlot: "key2",
+      unlockLevel: 4,
+      characters: ["ai", "ah"],
+      characterNames: ["双沢 夜空", "双沢 美空"],
+      scenario: "scenario/v039/events/yozora_affection_00_02_key.json",
+      version: "v039_114",
+      unlock: { type: "affection_level", character: "ai", level: 4 },
+      order: 3002,
+      summary: "美空の接客を夜空が横から自然にフォローし、自分は見ているだけだと距離を取る夜空キーシナリオ第2話。"
     }
   ];
 })();

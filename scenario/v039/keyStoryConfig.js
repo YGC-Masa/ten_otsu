@@ -1,4 +1,4 @@
-/* v039_109 key/main story config scaffold */
+/* v039_114 key/main story config scaffold */
 (function(){
   "use strict";
   const empty = function(name, title){ return { characterName: name, requiredStories: [], slotStories: {}, completeReward: { title } }; };
@@ -13,9 +13,10 @@
     ah: empty("双沢 美空", "美空との絆"),
     ai: {
       characterName: "双沢 夜空",
-      requiredStories: ["yozora_affection_00_01_key"],
+      requiredStories: ["yozora_affection_00_01_key", "yozora_affection_00_02_key"],
       slotStories: {
-        b1_key1: "yozora_affection_00_01_key"
+        b1_key1: "yozora_affection_00_01_key",
+        b1_key2: "yozora_affection_00_02_key"
       },
       completeReward: { title: "夜空との絆" }
     },

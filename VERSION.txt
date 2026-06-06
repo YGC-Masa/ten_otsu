@@ -1,10 +1,13 @@
-v039_113
-双沢家・美空部屋・夜空部屋背景追加パッチ
+v039_114
+夜空キーシナリオ更新・1-2追加パッチ
 
-基準: v039_112
+基準: v039_113
 追加:
-- 双沢家 昼/夜
-- 美空の部屋 昼/夜
-- 夜空の部屋 昼/夜
-- backgroundCatalog.js 登録
-- townEncounterConfig.js に双沢家前を追加
+- scenario/v039/events/yozora_affection_00_02_key.json
+- storyIndex.js に夜空キー2「見てるだけ」を追加
+- keyStoryConfig.js に b1_key2 を追加
+
+更新:
+- scenario/v039/events/yozora_affection_00_01_key.json
+- 「美空なら休憩室」をユーザー更新版に差し替え
+- index.html / version.js を v039_114 へ更新

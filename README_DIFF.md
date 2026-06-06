@@ -1,32 +1,33 @@
-# v039_113 双沢家・美空部屋・夜空部屋背景追加パッチ
+# v039_114 夜空キーシナリオ更新・1-2追加パッチ
 
 ## 基準
-- v039_112 までを含む上書き差分です。
+v039_113 双沢家・美空部屋・夜空部屋背景追加パッチ
 
-## 追加背景
-- `images/assets/bg/bg_sugosawa_house_day.png`
-- `images/assets/bg/bg_sugosawa_house_night.png`
-- `images/assets/bg/bg_misora_room_day.png`
-- `images/assets/bg/bg_misora_room_night.png`
-- `images/assets/bg/bg_yozora_room_day.png`
-- `images/assets/bg/bg_yozora_room_night.png`
+## 追加
+- `scenario/v039/events/yozora_affection_00_02_key.json`
+  - 夜空キーシナリオ1-2「見てるだけ」
+  - 親愛Lv.4 / 第1段キー2スロット想定
 
 ## 更新
-- `index.html` を v039_113 に更新
-- `program/v039/version.js` を v039_113 に更新
-- `scenario/v039/backgroundCatalog.js` に背景IDを追加
-- `scenario/v039/townEncounterConfig.js` に「双沢家前」を追加
-
-## 背景ID
-- `sugosawa_house_day`
-- `sugosawa_house_night`
-- `misora_room_day`
-- `misora_room_night`
-- `yozora_room_day`
-- `yozora_room_night`
+- `scenario/v039/events/yozora_affection_00_01_key.json`
+  - 「美空なら休憩室」をユーザー更新版へ差し替え
+  - v039_steps形式へ変換
+  - 背景は `images/assets/bg/bg_hidamari_warehouse.png`
+- `scenario/v039/storyIndex.js`
+  - 夜空キー1を v039_114 へ更新
+  - 夜空キー2を追加
+- `scenario/v039/keyStoryConfig.js`
+  - 夜空 `requiredStories` にキー2を追加
+  - `b1_key2` に `yozora_affection_00_02_key` を登録
+- `scenario/v039/affectionStoryPlan.js`
+  - バージョン表記を v039_114 へ更新
+- `program/v039/version.js`
+- `index.html`
+- `VERSION.txt`
 
 ## 確認ポイント
-1. 起動画面のバージョンが v039_113 になっていること。
-2. 追加画像が 404 にならないこと。
-3. `TENOTSU_BACKGROUND_CATALOG` に6背景が登録されていること。
-4. 外回りの場所候補に「双沢家前」が追加されていること。
+1. 起動画面の表示が `v039_114` になっている。
+2. メンバー > 双沢 夜空 の親愛ストーリー欄で、キー1「美空なら休憩室」とキー2「見てるだけ」が確認できる。
+3. 親愛Lv.1でキー1、親愛Lv.4でキー2が再生可能になる。
+4. キー1の背景がひだまりストア倉庫になっている。
+5. キー2が店内売り場背景で再生できる。
