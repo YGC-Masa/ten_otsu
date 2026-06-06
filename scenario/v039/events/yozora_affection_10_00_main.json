@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_10_00_main",
   "title": "余計なところまで見ないで",
-  "version": "v039_115",
+  "version": "v039_116",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_10_00_main",
@@ -1294,7 +1294,7 @@
     {
       "speaker": "",
       "text": "――星見ヶ丘プラネタリウム・投影ホール――",
-      "bg": "images/assets/bg/bg_planetarium_hall_showing.png",
+      "bg": "images/assets/bg/bg_planetarium_hall_before_show.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
       "storySprites": [
@@ -1628,7 +1628,10 @@
           "src": "images/assets/char/h10202.webp",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_planetarium_hall_showing.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -1868,7 +1871,11 @@
           "src": "images/assets/char/h10202.webp",
           "opacity": 1
         }
-      ]
+      ],
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_planetarium_star_show.png",
+      "cgFit": "cover",
+      "cgAlign": "center center"
     },
     {
       "speaker": "ナレーション",
@@ -2492,7 +2499,11 @@
           "src": "images/assets/char/h10801.webp",
           "opacity": 1
         }
-      ]
+      ],
+      "hideEventCg": true,
+      "bg": "images/assets/bg/bg_planetarium_hall_showing.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",

@@ -1,4 +1,4 @@
-/* v039_115 story player: story menu + event CG layer order + safe story start fade */
+/* v039_116 story player: member return keep + event CG section + safe story start fade */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -582,7 +582,7 @@
       return;
     }
     if (ret.mode === "members" && typeof ns.enterMembers === "function") {
-      ns.enterMembers({ noTransition:true });
+      ns.enterMembers({ noTransition:true, selectedMemberId: ret.memberId || (ns.state && ns.state.lastSelectedMemberId) || null });
       ns.setText("店長", "メンバー確認に戻りました。");
       return;
     }

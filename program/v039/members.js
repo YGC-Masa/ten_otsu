@@ -99,7 +99,7 @@
     }
   }
 
-  ns.renderMembersPanel = function renderMembersPanel() {
+  ns.renderMembersPanel = function renderMembersPanel(options = {}) {
     const members = ns.memberProfiles || [];
     const cards = members.map((m, index) => `
       <button type="button" class="tenotsu-member-card" data-member-index="${index}">
@@ -133,6 +133,7 @@
       btn.addEventListener("click", () => {
         const m = members[Number(btn.dataset.memberIndex)];
         if (!m) return;
+        ns.state.lastSelectedMemberId = m.id;
         panel.querySelectorAll(".tenotsu-member-card").forEach((card) => card.classList.remove("selected"));
         btn.classList.add("selected");
         const rerenderAll = (nextMember) => {
@@ -143,6 +144,15 @@
         ns.setText(m.name, m.comment);
       });
     });
+
+    const selectedId = options.selectedMemberId || ns.state.lastSelectedMemberId || null;
+    if (selectedId) {
+      const selectedIndex = members.findIndex((m) => m && m.id === selectedId);
+      const selectedBtn = selectedIndex >= 0 ? panel.querySelector(`[data-member-index="${selectedIndex}"]`) : null;
+      if (selectedBtn) {
+        selectedBtn.click();
+      }
+    }
 
     const back = panel.querySelector('[data-members-action="back-office"]');
     if (back) {
@@ -171,7 +181,11 @@
     if (typeof ns.hideStoreStatusPanel === "function") ns.hideStoreStatusPanel();
     if (typeof ns.hideSalesPanel === "function") ns.hideSalesPanel();
     ns.renderOfficeMenu();
-    ns.renderMembersPanel();
-    ns.setText("店長", "メンバーを確認します。個別プロフィール右側の専用枠から親愛ストーリーを確認できます。");
+    ns.renderMembersPanel({ selectedMemberId: options.selectedMemberId || ns.state.lastSelectedMemberId || null });
+    if (options.selectedMemberId || ns.state.lastSelectedMemberId) {
+      ns.setText("店長", "メンバー確認に戻りました。");
+    } else {
+      ns.setText("店長", "メンバーを確認します。個別プロフィール右側の専用枠から親愛ストーリーを確認できます。");
+    }
   };
 })();

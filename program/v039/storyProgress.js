@@ -1,4 +1,4 @@
-/* v039_115 story progress / affection unlock judgement */
+/* v039_116 story progress / affection unlock judgement */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
@@ -11,7 +11,7 @@
     let data = null;
     try { data = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null"); } catch (_) { data = null; }
     if (!data || typeof data !== "object") data = {};
-    data.version = "v039_115";
+    data.version = "v039_116";
     data.clearedStories = Array.isArray(data.clearedStories) ? data.clearedStories : [];
     data.readStories = Array.isArray(data.readStories) ? data.readStories : [];
     data.affectionLevels = data.affectionLevels && typeof data.affectionLevels === "object" ? data.affectionLevels : {};
@@ -19,7 +19,7 @@
     return data;
   }
   function save(data){
-    data.version = "v039_115";
+    data.version = "v039_116";
     data.updatedAt = now();
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (_) {}
     return data;

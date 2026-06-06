@@ -1,19 +1,10 @@
-v039_115
-夜空キー3・メイン1追加＋ストーリー突入暗転調整パッチ
+v039_116
 
-基準: v039_114
-追加:
-- scenario/v039/events/yozora_affection_00_03_key.json
-- scenario/v039/events/yozora_affection_10_00_main.json
-- storyIndex.js に夜空キー3・メイン1を追加
-- keyStoryConfig.js に b1_key3 / b1_main を追加
+夜空メイン1演出修正＋メンバー復帰保持
 
-更新:
-- storyPlayer.js
-  - ストーリーモード突入時に暗転を維持
-  - テキストボックスをクリア
-  - 背景を差し替えてからフェードイン
-  - 背景変更時もテキストを一度クリア
-- storyProgress.js
-  - all_story_cleared 解放条件を追加
-- index.html / version.js を v039_115 へ更新
+- 右メニューと画面右下のバージョン表示を v039_116 に統一
+- state.js が古い v039_110 表示で version.js を上書きしていた問題を修正
+- メンバー個別画面からストーリー再生後、選択中メンバーを保持して戻るよう修正
+- 夜空メイン1「余計なところまで見ないで」の投影ホール背景切替を修正
+- 投影中イベントCG cg_yozora_planetarium_star_show.png を追加
+- 指定区間のみイベントCGを表示し、美空「二人とも、静かに。」でイベントCGを解除
