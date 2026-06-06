@@ -1,15 +1,14 @@
-/* v039_108 build version */
 (function(){
   "use strict";
-  window.TENOTSU_BUILD_VERSION = "v039_108";
-  window.TENOTSU_BUILD_LABEL = "v039_108 夜空キーストーリー＋ストーリー表示改善";
+  window.TENOTSU_BUILD_VERSION = "v039_109";
+  window.TENOTSU_BUILD_LABEL = "v039_109 外回りエンカウント＋メンバー親愛ストーリースロット";
   window.TENOTSU_BUILD_NOTES = [
-    "v039_105: こがねとなつ：マリンピアの海中トンネル 試作接続",
-    "v039_106: 緋奈＆こがね：新作ジュースは何の味？ 事務所イベント接続",
-    "v039_107: storyIndex/keyStoryConfig/storyProgress/storyMenu を追加",
-    "v039_108: 夜空キーストーリー『美空なら休憩室』を追加",
-    "右メニューの外回りとストーリー管理の役割を分離",
-    "ストーリー立ち絵を人数+1分割で自動配置",
-    "イベントCGサーフェスをキャラより前面、テキストUIより背面に表示"
+    "外回りを未読通常ストーリーのスタミナ消費エンカウントへ変更",
+    "右メニューのストーリー管理を回想専用へ縮小",
+    "メンバー個別プロフィールに親愛Lv別キー/メインストーリースロットを追加",
+    "Lv.1-9でキー3本、Lv.10でメイン1本、以後Lv.100まで同構造"
   ];
+  window.TENOTSU_V039 = window.TENOTSU_V039 || {};
+  window.TENOTSU_V039.VERSION = "v039_109";
+  window.TENOTSU_V039.BUILD_LABEL = window.TENOTSU_BUILD_LABEL;
 })();

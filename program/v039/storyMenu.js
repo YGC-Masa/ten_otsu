@@ -1,11 +1,10 @@
-/* v039_108 story menu / recollection trial */
+/* v039_109 recollection menu only. Main/key progression lives in member profiles. */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
 
   function esc(value){ return String(value == null ? "" : value).replace(/[&<>\"]/g, (ch) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch])); }
   function allStories(){ return (Array.isArray(window.TENOTSU_STORY_INDEX) ? window.TENOTSU_STORY_INDEX : []).slice().sort((a,b)=>(a.order||0)-(b.order||0)); }
-  function getTabLabel(tab){ return ({ main:"メイン", key:"キーストーリー", normal:"通常", recollection:"回想" })[tab] || "ストーリー"; }
   function storyTypeLabel(type){ return ({ normal:"通常", key:"キー", main:"メイン" })[type] || type || "story"; }
   function characterLine(story){ return (story.characterNames || story.characters || []).join(" / ") || "-"; }
 
@@ -15,17 +14,12 @@
 
   ns.getStoriesForTab = function getStoriesForTab(tab){
     const list = allStories();
-    if (tab === "recollection") return list.filter((s) => typeof ns.canShowInRecollection === "function" ? ns.canShowInRecollection(s) : true);
-    if (tab === "normal") return list.filter((s) => s.type === "normal");
-    if (tab === "key") return list.filter((s) => s.type === "key");
-    if (tab === "main") return list.filter((s) => s.type === "main");
-    return list;
+    return list.filter((s) => typeof ns.canShowInRecollection === "function" ? ns.canShowInRecollection(s) : true);
   };
 
-  ns.renderStoryMenu = function renderStoryMenu(tab = "normal"){
-    const stories = ns.getStoriesForTab(tab);
-    const debugNote = window.TENOTSU_DEBUG_ALL_STORIES ? "開発用：全ストーリー表示中" : "読了済みのみ表示";
-    const tabs = ["main","key","normal","recollection"].map((id)=>`<button type="button" class="tenotsu-story-menu-tab ${id===tab?"active":""}" data-story-tab="${id}">${getTabLabel(id)}</button>`).join("");
+  ns.renderStoryMenu = function renderStoryMenu(tab = "recollection"){
+    const stories = ns.getStoriesForTab("recollection");
+    const debugNote = window.TENOTSU_DEBUG_ALL_STORIES ? "開発用：未読・未解放も表示中" : "読了済みのみ表示";
     const body = stories.length ? stories.map((story) => {
       const unlocked = typeof ns.isStoryUnlocked === "function" ? ns.isStoryUnlocked(story) : true;
       const cleared = typeof ns.isStoryCleared === "function" ? ns.isStoryCleared(story.id) : false;
@@ -43,12 +37,11 @@
           <span class="tenotsu-story-menu-card-state">${unlocked ? state : "未解放"}</span>
         </button>
       `;
-    }).join("") : `<div class="tenotsu-story-menu-empty">このカテゴリのストーリーはまだ登録されていません。</div>`;
+    }).join("") : `<div class="tenotsu-story-menu-empty">回想に表示できるストーリーはまだありません。</div>`;
 
     const html = `
-      <div class="tenotsu-story-menu-title">ストーリー管理</div>
-      <div class="tenotsu-story-menu-subtitle">メイン・キーストーリー・通常ストーリー・回想を管理します。外回りは移動先イベント入口として分離します。</div>
-      <div class="tenotsu-story-menu-tabs">${tabs}</div>
+      <div class="tenotsu-story-menu-title">回想</div>
+      <div class="tenotsu-story-menu-subtitle">読了済みストーリーを再生します。通常ストーリーは外回り、キー/メインはメンバー個別プロフィールから進行します。</div>
       <div class="tenotsu-story-menu-debug">${esc(debugNote)}</div>
       <div class="tenotsu-story-menu-list">${body}</div>
       <div class="tenotsu-story-menu-actions">
@@ -58,12 +51,11 @@
     ns.showTownPanel(html);
     const panel = ns.layers && ns.layers.town;
     if (!panel) return;
-    panel.querySelectorAll("[data-story-tab]").forEach((btn)=>btn.addEventListener("click",()=>ns.renderStoryMenu(btn.dataset.storyTab)));
     panel.querySelectorAll("[data-story-id]").forEach((btn)=>btn.addEventListener("click",()=>{
       const story = allStories().find((s)=>s.id === btn.dataset.storyId);
       if (!story || !story.scenario || (typeof ns.isStoryUnlocked === "function" && !ns.isStoryUnlocked(story))) return;
       if (typeof ns.markStoryRead === "function") ns.markStoryRead(story.id);
-      if (typeof ns.startStory === "function") ns.startStory(story.scenario, { mode:"storyMenu", storyId:story.id, storyMenuTab:tab });
+      if (typeof ns.startStory === "function") ns.startStory(story.scenario, { mode:"storyMenu", storyId:story.id, storyMenuTab:"recollection" });
     }));
     const back = panel.querySelector('[data-story-menu-action="office"]');
     if (back) back.addEventListener("click",()=>{ ns.hideStoryMenuPanel(); ns.enterOffice({ speaker:"店長", message:"事務所に戻りました。" }); });
@@ -82,7 +74,7 @@
     if (typeof ns.clearCharacters === "function") ns.clearCharacters();
     if (typeof ns.setBackgroundReady === "function") await ns.setBackgroundReady(ns.paths.officeBg); else ns.setBackground(ns.paths.officeBg);
     ns.renderOfficeMenu();
-    ns.renderStoryMenu(options.tab || "normal");
-    ns.setText("ストーリー", "ストーリー一覧を開きました。");
+    ns.renderStoryMenu("recollection");
+    ns.setText("回想", "回想一覧を開きました。");
   };
 })();

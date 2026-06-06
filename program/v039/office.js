@@ -35,7 +35,7 @@
       ["メンバー", "members"],
       ["店舗営業（バトル）", "sales"],
       ["外回り", "town"],
-      ["ストーリー管理", "storyMenu"],
+      ["回想", "storyMenu"],
       ["チューニング", "tuning"],
       ["ショップ", "shop"],
       ["設定", "settings"]
@@ -50,7 +50,7 @@
     versionMain.textContent = ns.VERSION || "v039_37";
     const versionSub = document.createElement("span");
     versionSub.className = "tenotsu-menu-version-sub";
-    versionSub.textContent = "new core / office";
+    versionSub.textContent = "v039_109 story flow";
     version.appendChild(versionMain);
     version.appendChild(versionSub);
     layers.menu.appendChild(version);
@@ -256,9 +256,9 @@
         break;
       case "storyMenu":
         if (typeof ns.enterStoryMenu === "function") {
-          ns.transitionTo ? ns.transitionTo(() => ns.enterStoryMenu({ noTransition: true })) : ns.enterStoryMenu();
+          ns.transitionTo ? ns.transitionTo(() => ns.enterStoryMenu({ noTransition: true, tab: "recollection" })) : ns.enterStoryMenu({ tab: "recollection" });
         } else {
-          ns.setText("店長", "ストーリー管理機能を読み込めませんでした。storyMenu.js の読み込みを確認してください。");
+          ns.setText("店長", "回想機能を読み込めませんでした。storyMenu.js の読み込みを確認してください。");
         }
         break;
       case "tuning":

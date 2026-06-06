@@ -1,22 +1,30 @@
-/* v039_108 key story config scaffold */
+/* v039_109 key/main story config scaffold */
 (function(){
   "use strict";
+  const empty = function(name, title){ return { characterName: name, requiredStories: [], slotStories: {}, completeReward: { title } }; };
   window.TENOTSU_KEY_STORY_CONFIG = {
-    aa: { characterName: "星野 緋奈", requiredStories: [], completeReward: { title: "緋奈との絆" } },
-    ab: { characterName: "速水川 藍", requiredStories: [], completeReward: { title: "藍との絆" } },
-    ac: { characterName: "草壁 翠", requiredStories: [], completeReward: { title: "翠との絆" } },
-    ad: { characterName: "小麦沢 こがね", requiredStories: [], completeReward: { title: "こがねとの絆" } },
-    ae: { characterName: "春日原 琥珀", requiredStories: [], completeReward: { title: "琥珀との絆" } },
-    af: { characterName: "大道寺 真花", requiredStories: [], completeReward: { title: "真花との絆" } },
-    ag: { characterName: "氷神 雪乃", requiredStories: [], completeReward: { title: "雪乃との絆" } },
-    ah: { characterName: "双沢 美空", requiredStories: [], completeReward: { title: "美空との絆" } },
-    ai: { characterName: "双沢 夜空", requiredStories: ["yozora_affection_00_01_key"], completeReward: { title: "夜空との絆" } },
-    aj: { characterName: "芝桜 桃", requiredStories: [], completeReward: { title: "桃との絆" } },
-    ak: { characterName: "紫藤 彩愛", requiredStories: [], completeReward: { title: "彩愛との絆" } },
-    al: { characterName: "餅月 里美", requiredStories: [], completeReward: { title: "里美との絆" } },
-    am: { characterName: "草壁 萌", requiredStories: [], completeReward: { title: "萌との絆" } },
-    ba: { characterName: "天神 小春", requiredStories: [], completeReward: { title: "小春との因縁" } },
-    bb: { characterName: "霧島 真冬", requiredStories: [], completeReward: { title: "真冬との信頼" } },
-    bc: { characterName: "日向 なつ", requiredStories: [], completeReward: { title: "なつとの縁" } }
+    aa: empty("星野 緋奈", "緋奈との絆"),
+    ab: empty("速水川 藍", "藍との絆"),
+    ac: empty("草壁 翠", "翠との絆"),
+    ad: empty("小麦沢 こがね", "こがねとの絆"),
+    ae: empty("春日原 琥珀", "琥珀との絆"),
+    af: empty("大道寺 真花", "真花との絆"),
+    ag: empty("氷神 雪乃", "雪乃との絆"),
+    ah: empty("双沢 美空", "美空との絆"),
+    ai: {
+      characterName: "双沢 夜空",
+      requiredStories: ["yozora_affection_00_01_key"],
+      slotStories: {
+        b1_key1: "yozora_affection_00_01_key"
+      },
+      completeReward: { title: "夜空との絆" }
+    },
+    aj: empty("芝桜 桃", "桃との絆"),
+    ak: empty("紫藤 彩愛", "彩愛との絆"),
+    al: empty("餅月 里美", "里美との絆"),
+    am: empty("草壁 萌", "萌との絆"),
+    ba: empty("天神 小春", "小春との因縁"),
+    bb: empty("霧島 真冬", "真冬との信頼"),
+    bc: empty("日向 なつ", "なつとの縁")
   };
 })();

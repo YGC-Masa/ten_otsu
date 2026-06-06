@@ -1,4 +1,4 @@
-/* v039_64 members right-detail layout rebuild + equipment placeholder */
+/* v039_109 members: profile + affection key/main story slots */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -47,6 +47,45 @@
     `;
   }
 
+  function renderMemberDetail(detail, member) {
+    if (!detail || !member) return;
+    detail.innerHTML = `
+      <div class="tenotsu-member-detail-head tenotsu-member-detail-head-v109">
+        <img src="${esc(ns.paths.charBase + member.image)}" alt="${esc(member.name)}" class="tenotsu-member-detail-img">
+        <div class="tenotsu-member-detail-info-stack">
+          <div class="tenotsu-member-identity-box" aria-label="メンバー基本情報">
+            <div class="tenotsu-member-detail-name">${esc(member.name)}</div>
+            <div class="tenotsu-member-detail-role">${esc(member.role)}</div>
+            <div class="tenotsu-member-detail-specialty">得意：${esc(member.specialty)}</div>
+          </div>
+          <div class="tenotsu-member-detail-comment" aria-label="メンバーコメント">
+            <span class="tenotsu-member-comment-label">ひとこと</span>
+            <span class="tenotsu-member-comment-text">${esc(member.comment)}</span>
+            ${member.introScenario ? `<button type="button" class="tenotsu-member-intro-button" data-member-intro="${esc(member.introScenario)}">自己紹介</button>` : ""}
+          </div>
+        </div>
+        ${typeof ns.renderMemberStorySlots === "function" ? ns.renderMemberStorySlots(member) : ""}
+      </div>
+      ${renderStatsMini(member)}
+      ${renderEquipmentMini(member)}
+      <div class="tenotsu-member-detail-note">メイン/キーストーリーは、メンバー個別プロフィール右側の親愛ストーリースロットから解放・再生します。</div>
+    `;
+    const introBtn = detail.querySelector("[data-member-intro]");
+    if (introBtn) {
+      introBtn.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        ev.stopPropagation();
+        const scenario = introBtn.getAttribute("data-member-intro");
+        if (scenario && typeof ns.startStory === "function") {
+          ns.startStory(scenario, { mode: "members", memberId: member.id });
+        }
+      });
+    }
+    if (typeof ns.bindMemberStorySlots === "function") {
+      ns.bindMemberStorySlots(detail, member, (nextMember) => renderMemberDetail(detail, nextMember));
+    }
+  }
+
   ns.renderMembersPanel = function renderMembersPanel() {
     const members = ns.memberProfiles || [];
     const cards = members.map((m, index) => `
@@ -79,37 +118,7 @@
         if (!m) return;
         panel.querySelectorAll(".tenotsu-member-card").forEach((card) => card.classList.remove("selected"));
         btn.classList.add("selected");
-        detail.innerHTML = `
-          <div class="tenotsu-member-detail-head tenotsu-member-detail-head-v62">
-            <img src="${esc(ns.paths.charBase + m.image)}" alt="${esc(m.name)}" class="tenotsu-member-detail-img">
-            <div class="tenotsu-member-detail-info-stack">
-              <div class="tenotsu-member-identity-box" aria-label="メンバー基本情報">
-                <div class="tenotsu-member-detail-name">${esc(m.name)}</div>
-                <div class="tenotsu-member-detail-role">${esc(m.role)}</div>
-                <div class="tenotsu-member-detail-specialty">得意：${esc(m.specialty)}</div>
-              </div>
-              <div class="tenotsu-member-detail-comment" aria-label="メンバーコメント">
-                <span class="tenotsu-member-comment-label">ひとこと</span>
-                <span class="tenotsu-member-comment-text">${esc(m.comment)}</span>
-                ${m.introScenario ? `<button type="button" class="tenotsu-member-intro-button" data-member-intro="${esc(m.introScenario)}">自己紹介</button>` : ""}
-              </div>
-            </div>
-          </div>
-          ${renderStatsMini(m)}
-          ${renderEquipmentMini(m)}
-          <div class="tenotsu-member-detail-note">詳細画面は、プロフィール・好感度・持ち物の拡張に合わせて追加予定です。</div>
-        `;
-        const introBtn = detail.querySelector("[data-member-intro]");
-        if (introBtn) {
-          introBtn.addEventListener("click", (ev) => {
-            ev.preventDefault();
-            ev.stopPropagation();
-            const scenario = introBtn.getAttribute("data-member-intro");
-            if (scenario && typeof ns.startStory === "function") {
-              ns.startStory(scenario, { mode: "members", memberId: m.id });
-            }
-          });
-        }
+        renderMemberDetail(detail, m);
         ns.setText(m.name, m.comment);
       });
     });
@@ -137,10 +146,11 @@
     if (typeof ns.hideSettingsPanel === "function") ns.hideSettingsPanel();
     if (typeof ns.hideShopPanel === "function") ns.hideShopPanel();
     if (typeof ns.hideTownPanel === "function") ns.hideTownPanel();
+    if (typeof ns.hideStoryMenuPanel === "function") ns.hideStoryMenuPanel();
     if (typeof ns.hideStoreStatusPanel === "function") ns.hideStoreStatusPanel();
     if (typeof ns.hideSalesPanel === "function") ns.hideSalesPanel();
     ns.renderOfficeMenu();
     ns.renderMembersPanel();
-    ns.setText("店長", "メンバーを確認します。");
+    ns.setText("店長", "メンバーを確認します。個別プロフィールから親愛ストーリーを確認できます。");
   };
 })();

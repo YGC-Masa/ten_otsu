@@ -1,29 +1,33 @@
-/* v039_107 story progress / unlock judgement */
+/* v039_109 story progress / affection unlock judgement */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
   const STORAGE_KEY = "tenotsu_story_progress_v1";
-  window.TENOTSU_DEBUG_ALL_STORIES = true; // v039_107 trial: show all story records for verification.
+  window.TENOTSU_DEBUG_ALL_STORIES = true; // trial: 回想確認用。正式運用ではfalseへ。
 
   function clone(obj){ return JSON.parse(JSON.stringify(obj || {})); }
+  function now(){ return new Date().toISOString(); }
   function load(){
     let data = null;
     try { data = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null"); } catch (_) { data = null; }
     if (!data || typeof data !== "object") data = {};
-    data.version = data.version || "v039_107";
+    data.version = "v039_109";
     data.clearedStories = Array.isArray(data.clearedStories) ? data.clearedStories : [];
     data.readStories = Array.isArray(data.readStories) ? data.readStories : [];
-    data.updatedAt = data.updatedAt || new Date().toISOString();
+    data.affectionLevels = data.affectionLevels && typeof data.affectionLevels === "object" ? data.affectionLevels : {};
+    data.updatedAt = data.updatedAt || now();
     return data;
   }
   function save(data){
-    data.updatedAt = new Date().toISOString();
+    data.version = "v039_109";
+    data.updatedAt = now();
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (_) {}
     return data;
   }
   function uniquePush(arr, value){ if (value && !arr.includes(value)) arr.push(value); }
   function getStoryIndex(){ return Array.isArray(window.TENOTSU_STORY_INDEX) ? window.TENOTSU_STORY_INDEX : []; }
   function getStoryById(storyId){ return getStoryIndex().find((s) => s && s.id === storyId) || null; }
+  function clampAffection(level){ return Math.max(1, Math.min(100, Math.floor(Number(level) || 1))); }
 
   ns.getStoryProgress = function getStoryProgress(){ return clone(load()); };
   ns.isStoryCleared = function isStoryCleared(storyId){ return load().clearedStories.includes(storyId); };
@@ -31,6 +35,20 @@
   ns.markStoryRead = function markStoryRead(storyId){ const d = load(); uniquePush(d.readStories, storyId); return save(d); };
   ns.markStoryCleared = function markStoryCleared(storyId){ const d = load(); uniquePush(d.readStories, storyId); uniquePush(d.clearedStories, storyId); return save(d); };
   ns.getStoryById = getStoryById;
+
+  ns.getAffectionLevel = function getAffectionLevel(characterId){
+    const d = load();
+    const value = d.affectionLevels && d.affectionLevels[characterId];
+    return clampAffection(value == null ? 1 : value);
+  };
+  ns.setAffectionLevel = function setAffectionLevel(characterId, level){
+    const d = load();
+    d.affectionLevels[characterId] = clampAffection(level);
+    return save(d);
+  };
+  ns.addAffectionLevel = function addAffectionLevel(characterId, delta){
+    return ns.setAffectionLevel(characterId, ns.getAffectionLevel(characterId) + Number(delta || 0));
+  };
 
   ns.getCharacterLevelForUnlock = function getCharacterLevelForUnlock(characterId){
     try {
@@ -56,11 +74,12 @@
   ns.isStoryUnlocked = function isStoryUnlocked(story){
     if (!story) return false;
     const unlock = story.unlock || { type: "always" };
-    if (window.TENOTSU_DEBUG_ALL_STORIES) return true;
+    if (window.TENOTSU_DEBUG_ALL_STORIES && unlock.type !== "affection_level") return true;
     switch (unlock.type) {
       case "always": return true;
       case "story_cleared": return ns.isStoryCleared(unlock.storyId);
       case "character_level": return ns.getCharacterLevelForUnlock(unlock.character) >= Number(unlock.level || 1);
+      case "affection_level": return ns.getAffectionLevel(unlock.character) >= Number(unlock.level || 1);
       case "key_complete": return ns.isKeyStoryComplete(unlock.character);
       case "key_complete_count": return ns.countCompletedKeyStories() >= Number(unlock.count || 0);
       case "all_key_complete": return (unlock.characters || []).every((characterId) => ns.isKeyStoryComplete(characterId));
