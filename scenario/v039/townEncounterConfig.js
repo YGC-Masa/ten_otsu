@@ -2,7 +2,7 @@
 (function(){
   "use strict";
   window.TENOTSU_TOWN_ENCOUNTER_CONFIG = {
-    version: "v039_109",
+    version: "v039_112",
     staminaCost: 10,
     defaultSeason: "summer",
     seasons: [
@@ -19,7 +19,8 @@
       { id: "marinpia_aqua_tunnel", name: "マリンピア・海中トンネル", type: "水族館", seasons: ["summer"], description: "夏の外回りで、涼しげな水槽を眺めながらキャラと出会える場所。" },
       { id: "hidamari_shopping_street", name: "ひだまり商店街", type: "街エリア", seasons: ["spring", "summer", "autumn", "winter"], description: "買い物や地域イベントの中心。通常ストーリーの増産先。" },
       { id: "wakaba_central_park", name: "若葉中央公園", type: "公園", seasons: ["spring", "summer", "autumn"], description: "季節イベントや休憩会話向きの公園。" },
-      { id: "techlab_tsukumo", name: "テックラボつくも周辺", type: "協力店", seasons: ["spring", "summer", "autumn", "winter"], description: "つくも関連・交換所・VIP導線向き。" }
+      { id: "techlab_tsukumo", name: "テックラボつくも周辺", type: "協力店", seasons: ["spring", "summer", "autumn", "winter"], description: "つくも関連・交換所・VIP導線向き。" },
+      { id: "hoshimigaoka_planetarium", name: "星見ヶ丘プラネタリウム", type: "プラネタリウム", seasons: ["spring", "summer", "autumn", "winter"], description: "外観・ロビー・投影ホール・開演中ホールの背景を追加済み。星空や夜のイベント向き。", bg: "images/assets/bg/bg_planetarium_exterior_twilight.png" },
     ]
   };
 })();

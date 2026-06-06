@@ -1,48 +1,23 @@
-# v039_111 汎用ストーリー立ち位置自動分割修正
+# v039_112 ニーショット下揃え＋背景追加＋夜空キーストーリー表情調整
 
-## 目的
+## 基準
+- v039_111までを含む上書き差分です。
 
-「美空なら休憩室」だけでなく、今後追加するすべてのストーリーで、複数キャラ登場時の立ち位置を汎用的に自動分割する。
+## 変更内容
+1. ストーリーモードのキャラ立ち絵をニーショット前提にし、画面下端へボトム揃え。
+2. `scenario/v039/events/yozora_affection_00_01_key.json` を表情てこ入れ版へ差し替え。
+3. ひだまりストア倉庫背景を追加。
+4. プラネタリウム背景4種を追加。
+5. `scenario/v039/backgroundCatalog.js` を追加し、背景パスを参照しやすく整理。
+6. `townEncounterConfig.js` に星見ヶ丘プラネタリウムの場所データを追加。
 
-## 修正内容
+## 追加背景
+- `images/assets/bg/bg_hidamari_warehouse.png`
+- `images/assets/bg/bg_planetarium_exterior_twilight.png`
+- `images/assets/bg/bg_planetarium_lobby.png`
+- `images/assets/bg/bg_planetarium_hall_before_show.png`
+- `images/assets/bg/bg_planetarium_hall_showing.png`
 
-### 1. 汎用ロジカル配置
-
-`program/v039/storyLayout.js` を更新。
-
-`storySprites` と `characters` のどちらから表示された場合でも、表示中キャラ数を数えて以下の位置へ自動配置する。
-
-- 1人: 50%
-- 2人: 33.333% / 66.667%
-- 3人: 25% / 50% / 75%
-- 4人: 20% / 40% / 60% / 80%
-- 5人: 16.667% / 33.333% / 50% / 66.667% / 83.333%
-
-式は `left = (index + 1) * 100 / (人数 + 1)`。
-
-### 2. CSS上書き問題の修正
-
-既存CSSに `.side-left` / `.side-center` / `.side-right` の `left: ... !important` が複数残っており、JSON側や自動計算の `left` が負ける可能性があった。
-
-今回、`showStoryCharacters()` を `storyLayout.js` 側で汎用オーバーライドし、各画像に対してJSから `left` と `transform` を `important` 指定する。
-
-これにより、夜空キーストーリーに限らず、全ストーリーで自動配置が効く。
-
-### 3. 明示指定は維持
-
-シナリオ側で `left` を明示している場合は、その指定を優先する。
-
-## 主な変更ファイル
-
-- index.html
-- VERSION.txt
-- README_DIFF.md
-- program/v039/version.js
-- program/v039/storyLayout.js
-
-## 確認ポイント
-
-1. 「美空なら休憩室」で夜空1人の時は中央に出る
-2. 美空合流後、夜空と美空が 33.333% / 66.667% に分かれる
-3. 他の2人以上の `storySprites` でも同じ方式で分割される
-4. イベントCGは引き続きキャラより前、テキストUIより後ろに表示される
+## 注意
+- `storyLayout.js` と `storyMenu.css` を更新しています。キャラ立ち絵はテキストボックスの裏に回り込む場合がありますが、ニーショット素材の足元を画面下に合わせる方針を優先しています。
+- 夜空キーストーリーの開始背景は、追加した倉庫背景へ差し替えています。

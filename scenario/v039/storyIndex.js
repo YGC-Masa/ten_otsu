@@ -48,7 +48,7 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_00_01_key.json",
-      version: "v039_108",
+      version: "v039_112",
       unlock: { type: "affection_level", character: "ai", level: 1 },
       order: 3001,
       summary: "夜空がまだ店長に距離を置き、自分ではなく美空を見てほしいと示す序盤キーストーリー。"

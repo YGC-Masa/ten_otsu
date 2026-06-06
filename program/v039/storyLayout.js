@@ -1,4 +1,4 @@
-/* v039_111 story layout: generic logical split for every story sprite set + event CG above characters */
+/* v039_112 story layout: generic logical split + knee-shot bottom aligned sprites + event CG above characters */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
@@ -108,14 +108,14 @@
       img.style.setProperty("left", left, "important");
       img.style.setProperty("right", "auto", "important");
       img.style.setProperty("top", ch.top || "auto", "important");
-      img.style.setProperty("bottom", ch.bottom || "calc(var(--tenotsu-text-bottom, 16px) + var(--tenotsu-text-height-story, 150px) - 12px)", "important");
+      img.style.setProperty("bottom", ch.bottom || "0px", "important");
       img.style.setProperty("transform", ch.transform || "translateX(-50%) translateZ(0)", "important");
       img.style.setProperty("opacity", String(opacity), "important");
       img.style.setProperty("display", "block", "important");
       img.style.setProperty("visibility", "visible", "important");
       img.style.setProperty("width", ch.width || "auto", "important");
       img.style.setProperty("height", ch.height || "auto", "important");
-      img.style.setProperty("max-height", ch.maxHeight || "min(76dvh, 780px)", "important");
+      img.style.setProperty("max-height", ch.maxHeight || "min(88dvh, 900px)", "important");
       img.style.setProperty("object-fit", ch.objectFit || "contain", "important");
       img.style.setProperty("object-position", ch.objectPosition || "center bottom", "important");
       if (ch.zIndex !== undefined) img.style.setProperty("z-index", String(ch.zIndex), "important");

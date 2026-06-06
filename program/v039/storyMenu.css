@@ -100,3 +100,12 @@ body[data-v039-mode="members"] .tenotsu-members-panel{
   .tenotsu-members-body-v110{grid-template-columns:1fr;}
   .tenotsu-member-story-side{grid-column:auto;}
 }
+
+
+/* v039_112: story sprites are knee-shot assets. Always ground them to the screen bottom. */
+#tenotsu-story-body-sprite-layer .tenotsu-story-body-standing.bottom-align,
+#tenotsu-story-body-sprite-layer .tenotsu-story-logical-sprite {
+  bottom: 0 !important;
+  object-position: center bottom !important;
+  transform-origin: center bottom !important;
+}

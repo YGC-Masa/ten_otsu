@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_00_01_key",
   "title": "美空なら休憩室",
-  "version": "v039_108",
+  "version": "v039_112",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_00_01_key",
@@ -41,8 +41,8 @@
   "steps": [
     {
       "speaker": "",
-      "text": "――ひだまりストア・売り場奥――",
-      "bg": "images/assets/bgev/bg_office_hidamari.png",
+      "text": "――ひだまりストア・売り場奥〜倉庫前――",
+      "bg": "images/assets/bg/bg_hidamari_warehouse.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
       "clearStorySprites": true
@@ -57,7 +57,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10301.webp",
           "opacity": 1
         }
       ]
@@ -68,7 +68,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10301.webp",
           "opacity": 1
         }
       ]
@@ -101,7 +101,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -112,7 +112,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -123,7 +123,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10401.webp",
+          "src": "images/assets/char/i10301.webp",
           "opacity": 1
         }
       ]
@@ -134,7 +134,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10401.webp",
+          "src": "images/assets/char/i10301.webp",
           "opacity": 1
         }
       ]
@@ -145,7 +145,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10601.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -156,7 +156,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10601.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -189,7 +189,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -200,7 +200,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -233,7 +233,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -244,7 +244,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -255,7 +255,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -266,7 +266,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -277,7 +277,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10901.webp",
+          "src": "images/assets/char/i10301.webp",
           "opacity": 1
         }
       ]
@@ -288,7 +288,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10901.webp",
+          "src": "images/assets/char/i10301.webp",
           "opacity": 1
         }
       ]
@@ -299,7 +299,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10602.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -310,7 +310,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10602.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -321,7 +321,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10602.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -332,7 +332,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -343,7 +343,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -376,7 +376,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -387,7 +387,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -398,7 +398,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10602.webp",
+          "src": "images/assets/char/i10301.webp",
           "opacity": 1
         }
       ]
@@ -409,7 +409,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10602.webp",
+          "src": "images/assets/char/i10301.webp",
           "opacity": 1
         }
       ]
@@ -420,7 +420,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10201.webp",
+          "src": "images/assets/char/i10301.webp",
           "opacity": 1
         }
       ]
@@ -431,7 +431,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10201.webp",
+          "src": "images/assets/char/i10301.webp",
           "opacity": 1
         }
       ]
@@ -442,7 +442,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10301.webp",
           "opacity": 1
         }
       ]
@@ -453,7 +453,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10301.webp",
           "opacity": 1
         }
       ]
@@ -486,7 +486,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10601.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -497,7 +497,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10601.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -508,7 +508,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10901.webp",
+          "src": "images/assets/char/i10301.webp",
           "opacity": 1
         }
       ]
@@ -519,7 +519,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10901.webp",
+          "src": "images/assets/char/i10301.webp",
           "opacity": 1
         }
       ]
@@ -530,7 +530,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10301.webp",
           "opacity": 1
         }
       ]
@@ -541,7 +541,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10301.webp",
           "opacity": 1
         }
       ]
@@ -574,7 +574,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -585,7 +585,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -618,7 +618,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -629,7 +629,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -640,7 +640,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i11101.webp",
+          "src": "images/assets/char/i10301.webp",
           "opacity": 1
         }
       ]
@@ -651,7 +651,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i11101.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -662,7 +662,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10901.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -673,7 +673,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10901.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -684,7 +684,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/i11001.webp",
           "opacity": 1
         }
       ]
@@ -695,7 +695,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/i11001.webp",
           "opacity": 1
         }
       ]
@@ -706,7 +706,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -717,7 +717,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -728,7 +728,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i11101.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -739,7 +739,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i11101.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -750,7 +750,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i11101.webp",
+          "src": "images/assets/char/i11001.webp",
           "opacity": 1
         }
       ]
@@ -761,7 +761,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i11101.webp",
+          "src": "images/assets/char/i11001.webp",
           "opacity": 1
         }
       ]
@@ -772,7 +772,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -794,7 +794,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         },
         {
@@ -810,7 +810,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10601.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         },
         {
@@ -847,7 +847,7 @@
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10201.webp",
+          "src": "images/assets/char/h10202.webp",
           "opacity": 1
         }
       ]
@@ -890,7 +890,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10602.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         },
         {
@@ -906,7 +906,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10602.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         },
         {
@@ -943,7 +943,7 @@
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10201.webp",
+          "src": "images/assets/char/h10801.webp",
           "opacity": 1
         }
       ]
@@ -954,12 +954,12 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10601.webp",
+          "src": "images/assets/char/i11101.webp",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10201.webp",
+          "src": "images/assets/char/h10801.webp",
           "opacity": 1
         }
       ]
@@ -970,12 +970,12 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10601.webp",
+          "src": "images/assets/char/i11101.webp",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10201.webp",
+          "src": "images/assets/char/h11401.webp",
           "opacity": 1
         }
       ]
@@ -986,7 +986,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10901.webp",
+          "src": "images/assets/char/i10301.webp",
           "opacity": 1
         },
         {
@@ -1002,12 +1002,12 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10901.webp",
+          "src": "images/assets/char/i10801.webp",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10201.webp",
+          "src": "images/assets/char/h11401.webp",
           "opacity": 1
         }
       ]
@@ -1034,7 +1034,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10901.webp",
           "opacity": 1
         },
         {
@@ -1050,7 +1050,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10901.webp",
           "opacity": 1
         },
         {
@@ -1066,7 +1066,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10602.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         },
         {
@@ -1082,12 +1082,12 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10602.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10201.webp",
+          "src": "images/assets/char/h11401.webp",
           "opacity": 1
         }
       ]
@@ -1103,7 +1103,7 @@
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10201.webp",
+          "src": "images/assets/char/h11401.webp",
           "opacity": 1
         }
       ]
@@ -1119,7 +1119,7 @@
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10201.webp",
+          "src": "images/assets/char/h11401.webp",
           "opacity": 1
         }
       ]
@@ -1135,7 +1135,7 @@
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10201.webp",
+          "src": "images/assets/char/h11401.webp",
           "opacity": 1
         }
       ]
@@ -1151,7 +1151,7 @@
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10201.webp",
+          "src": "images/assets/char/h11401.webp",
           "opacity": 1
         }
       ]
@@ -1167,7 +1167,7 @@
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10201.webp",
+          "src": "images/assets/char/h11401.webp",
           "opacity": 1
         }
       ]
@@ -1183,7 +1183,7 @@
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10201.webp",
+          "src": "images/assets/char/h11401.webp",
           "opacity": 1
         }
       ]
@@ -1199,7 +1199,7 @@
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10201.webp",
+          "src": "images/assets/char/h11401.webp",
           "opacity": 1
         }
       ]
@@ -1210,12 +1210,12 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10201.webp",
+          "src": "images/assets/char/h11401.webp",
           "opacity": 1
         }
       ]
@@ -1226,12 +1226,12 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10201.webp",
+          "src": "images/assets/char/h11401.webp",
           "opacity": 1
         }
       ]
@@ -1242,12 +1242,12 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10602.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10201.webp",
+          "src": "images/assets/char/h11401.webp",
           "opacity": 1
         }
       ]
@@ -1258,12 +1258,12 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10602.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10201.webp",
+          "src": "images/assets/char/h11401.webp",
           "opacity": 1
         }
       ]
@@ -1274,12 +1274,12 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10801.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10201.webp",
+          "src": "images/assets/char/h11401.webp",
           "opacity": 1
         }
       ]
@@ -1290,15 +1290,16 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10801.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10201.webp",
+          "src": "images/assets/char/h11401.webp",
           "opacity": 1
         }
       ]
     }
-  ]
+  ],
+  "revisionNote": "bg_office_hidamari.pngを使用しないようbattle_store_lv1.pngへ変更。id=aiの美空系画像h11401.webp誤指定をi10301.webpへ修正。 / v039_112: 表情差し替え版を採用。ストーリー立ち絵はニーショット用に画面下揃え。"
 }
