@@ -1,22 +1,125 @@
-/* v039_108 story layout: logical split + event CG above characters */
+/* v039_111 story layout: generic logical split for every story sprite set + event CG above characters */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
 
+  const MAX_AUTO_SPRITES = 5;
+
+  function isValidSprite(ch) {
+    return !!(ch && ch.src && !String(ch.src).endsWith("/NULL"));
+  }
+
+  function hasExplicitPosition(ch) {
+    return !!(ch && (ch.left || ch.right || ch.top || ch.bottom || ch.lockPosition || ch.positionLocked));
+  }
+
+  function logicalLeft(index, count) {
+    const n = Math.max(1, count || 1);
+    return (((index + 1) * 100) / (n + 1)).toFixed(3).replace(/\.000$/, "") + "%";
+  }
+
+  function logicalSide(index, count) {
+    if (count <= 1) return "center";
+    if (count === 2) return index === 0 ? "left" : "right";
+    if (index === 0) return "left";
+    if (index === count - 1) return "right";
+    return "center";
+  }
+
+  ns.getLogicalStorySpriteLeft = logicalLeft;
+
   ns.normalizeStoryCharacterListV039100 = function normalizeStoryCharacterListV039100(characters) {
-    const raw = Array.isArray(characters) ? characters.filter((ch) => ch && ch.src && !String(ch.src).endsWith("/NULL")) : [];
+    const raw = Array.isArray(characters) ? characters.filter(isValidSprite) : [];
     const byId = new Map();
     raw.forEach((ch, index) => {
       const key = String(ch.id || ch.src || index);
       byId.set(key, Object.assign({}, ch));
     });
     let list = Array.from(byId.values());
-    if (list.length > 5) list = list.slice(list.length - 5);
+    if (list.length > MAX_AUTO_SPRITES) list = list.slice(list.length - MAX_AUTO_SPRITES);
     const n = Math.max(1, list.length);
     return list.map((ch, index) => {
-      const left = ch.left || (((index + 1) * 100) / (n + 1)).toFixed(3).replace(/\.000$/, "") + "%";
-      const side = ch.side || (n === 1 ? "center" : index === 0 ? "left" : index === n - 1 ? "right" : "center");
-      return Object.assign({}, ch, { side, left });
+      const copy = Object.assign({}, ch);
+      const explicit = hasExplicitPosition(copy);
+      if (!copy.left && !copy.right) copy.left = logicalLeft(index, n);
+      if (!copy.side || (!explicit && /^max(left|right)$/.test(String(copy.side)))) copy.side = logicalSide(index, n);
+      copy.autoSlotIndex = index;
+      copy.autoSlotCount = n;
+      copy.autoLogicalLeft = logicalLeft(index, n);
+      return copy;
+    });
+  };
+
+  ns.ensureStoryBodySpriteLayer = ns.ensureStoryBodySpriteLayer || function ensureStoryBodySpriteLayer() {
+    const layers = typeof ns.ensureLayers === "function" ? ns.ensureLayers() : (ns.layers || {});
+    const app = layers.app || document.getElementById("tenotsu-app") || document.body;
+    let layer = document.getElementById("tenotsu-story-body-sprite-layer");
+    if (!layer) {
+      layer = document.createElement("div");
+      layer.id = "tenotsu-story-body-sprite-layer";
+      layer.className = "tenotsu-story-body-sprite-layer story-character-slot-v111";
+    }
+    if (layer.parentNode !== app) app.insertBefore(layer, (layers.text || null));
+    layer.hidden = false;
+    layer.removeAttribute("hidden");
+    layer.style.setProperty("display", "block", "important");
+    layer.style.setProperty("visibility", "visible", "important");
+    layer.style.setProperty("opacity", "1", "important");
+    layer.style.setProperty("position", "fixed", "important");
+    layer.style.setProperty("inset", "0", "important");
+    layer.style.setProperty("z-index", "200", "important");
+    layer.style.setProperty("pointer-events", "none", "important");
+    layer.style.setProperty("overflow", "hidden", "important");
+    return layer;
+  };
+
+  ns.showStoryCharacters = function showStoryCharacters(characters) {
+    const list = ns.normalizeStoryCharacterListV039100 ? ns.normalizeStoryCharacterListV039100(characters) : (Array.isArray(characters) ? characters.filter(isValidSprite) : []);
+    const layer = ns.ensureStoryBodySpriteLayer();
+    layer.innerHTML = "";
+    layer.classList.add("story-character-slot-v111");
+    layer.dataset.spriteCount = String(list.length);
+    if (!list.length) return;
+
+    list.forEach((ch, index) => {
+      const id = String(ch.id || "");
+      const src = ch.src || "";
+      const side = ch.side || logicalSide(index, list.length);
+      const left = ch.left || logicalLeft(index, list.length);
+      const opacity = ch.opacity === undefined ? 1 : ch.opacity;
+      const isEnemyCard = !!(ch.frame === "enemy" || ch.variant === "storyEnemyCard" || id.indexOf("enemy") === 0 || id === "kd" || id === "bk" || String(src).indexOf("/enemy/") >= 0 || String(src).indexOf("/event/dirty_alien") >= 0);
+      const isRivalStoryStand = !!(id === "ba" || id === "bb" || id === "bc" || String(src).indexOf("/rival/story_") >= 0);
+      const img = document.createElement("img");
+      img.className = [
+        "tenotsu-story-body-standing",
+        `side-${side}`,
+        "bottom-align",
+        "tenotsu-story-logical-sprite",
+        isEnemyCard ? "tenotsu-story-enemy-card" : "",
+        isRivalStoryStand ? "tenotsu-story-rival-knee-shot" : ""
+      ].filter(Boolean).join(" ");
+      img.src = src;
+      img.alt = "";
+      img.dataset.characterId = id;
+      img.dataset.slotIndex = String(index);
+      img.dataset.slotCount = String(list.length);
+      img.dataset.logicalLeft = left;
+      img.style.setProperty("position", "absolute", "important");
+      img.style.setProperty("left", left, "important");
+      img.style.setProperty("right", "auto", "important");
+      img.style.setProperty("top", ch.top || "auto", "important");
+      img.style.setProperty("bottom", ch.bottom || "calc(var(--tenotsu-text-bottom, 16px) + var(--tenotsu-text-height-story, 150px) - 12px)", "important");
+      img.style.setProperty("transform", ch.transform || "translateX(-50%) translateZ(0)", "important");
+      img.style.setProperty("opacity", String(opacity), "important");
+      img.style.setProperty("display", "block", "important");
+      img.style.setProperty("visibility", "visible", "important");
+      img.style.setProperty("width", ch.width || "auto", "important");
+      img.style.setProperty("height", ch.height || "auto", "important");
+      img.style.setProperty("max-height", ch.maxHeight || "min(76dvh, 780px)", "important");
+      img.style.setProperty("object-fit", ch.objectFit || "contain", "important");
+      img.style.setProperty("object-position", ch.objectPosition || "center bottom", "important");
+      if (ch.zIndex !== undefined) img.style.setProperty("z-index", String(ch.zIndex), "important");
+      layer.appendChild(img);
     });
   };
 
