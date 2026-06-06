@@ -20,3 +20,83 @@ body[data-v039-mode="story"] .tenotsu-text-layer,body.tenotsu-story-active .teno
 .tenotsu-town-detail{margin-top:10px;padding:12px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(0,0,0,.22)}.tenotsu-town-detail-title{font-size:18px;font-weight:700}.tenotsu-town-detail-meta,.tenotsu-town-detail-summary{font-size:13px;opacity:.84;margin-top:4px;line-height:1.5}.tenotsu-town-tool-row{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.tenotsu-town-tool{border:1px solid rgba(255,230,160,.4);border-radius:999px;background:rgba(255,215,120,.16);color:#fff;padding:8px 12px}.tenotsu-town-candidate-list{display:grid;gap:8px}.tenotsu-town-candidate{border:1px solid rgba(255,255,255,.13);border-radius:12px;background:rgba(255,255,255,.06);padding:9px}.tenotsu-town-candidate b,.tenotsu-town-candidate span,.tenotsu-town-candidate small{display:block}.tenotsu-town-candidate span{font-size:12px;color:#ffe39c}.tenotsu-town-candidate small{font-size:12px;opacity:.8;line-height:1.45}.tenotsu-town-candidate.empty{opacity:.75}.tenotsu-town-start-note{font-size:12px;opacity:.72;margin-top:8px}
 .tenotsu-member-detail-head-v109{display:grid;grid-template-columns:auto minmax(220px,1fr) minmax(260px,360px);gap:14px;align-items:start}.tenotsu-member-story-box{border:1px solid rgba(255,255,255,.16);border-radius:14px;background:rgba(0,0,0,.24);padding:10px}.tenotsu-member-story-head{display:flex;justify-content:space-between;gap:8px;align-items:start;margin-bottom:8px}.tenotsu-member-story-label{display:block;font-size:12px;opacity:.75}.tenotsu-member-story-head b{display:block;font-size:17px}.tenotsu-member-story-head small{display:block;font-size:11px;opacity:.75}.tenotsu-member-story-debug{display:flex;gap:4px}.tenotsu-member-story-debug button{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff;border-radius:8px;padding:4px 8px}.tenotsu-member-story-slot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.tenotsu-member-story-slot{text-align:left;border:1px solid rgba(255,255,255,.16);border-radius:11px;background:rgba(255,255,255,.07);color:#fff;padding:8px;min-height:76px}.tenotsu-member-story-slot.main{border-color:rgba(180,150,255,.38);background:rgba(120,80,220,.14)}.tenotsu-member-story-slot.cleared{border-color:rgba(120,240,180,.45)}.tenotsu-member-story-slot.locked{opacity:.55}.tenotsu-member-story-slot .slot-label{display:block;font-size:11px;color:#ffe39c}.tenotsu-member-story-slot b{display:block;font-size:12px;line-height:1.35;margin-top:2px}.tenotsu-member-story-slot small{display:block;font-size:11px;opacity:.75;margin-top:3px}.tenotsu-member-story-note{font-size:11px;opacity:.72;line-height:1.45;margin-top:8px}
 @media (max-width: 900px){.tenotsu-town-place-grid{grid-template-columns:1fr}.tenotsu-member-detail-head-v109{grid-template-columns:1fr}.tenotsu-member-story-slot-grid{grid-template-columns:1fr}}
+
+/* v039_110: recollection album label, town season direct buttons, member layout split */
+.tenotsu-story-menu-card::after{
+  content:"再生";
+  position:absolute;
+  right:10px;
+  top:38px;
+  font-size:11px;
+  padding:3px 8px;
+  border-radius:999px;
+  background:rgba(255,226,163,.18);
+  border:1px solid rgba(255,226,163,.35);
+  color:#fff2c8;
+}
+.tenotsu-story-menu-card.locked::after{content:"未解放";opacity:.7}
+.tenotsu-town-season-pill{
+  border:1px solid rgba(255,255,255,.14);
+  color:#fff;
+  cursor:pointer;
+  pointer-events:auto;
+}
+.tenotsu-town-season-pill:hover{filter:brightness(1.12)}
+.tenotsu-event-start:not(:disabled),.tenotsu-town-tool:not(:disabled){cursor:pointer;pointer-events:auto;}
+.tenotsu-event-start:disabled{opacity:.45;cursor:not-allowed;}
+
+body[data-v039-mode="members"] .tenotsu-members-panel{
+  width:min(1120px,72vw);
+  max-height:min(720px,88vh);
+}
+.tenotsu-members-body-v110{
+  display:grid;
+  grid-template-columns:minmax(220px,270px) minmax(300px,1fr) minmax(280px,340px);
+  gap:14px;
+  align-items:stretch;
+}
+.tenotsu-member-detail-head-v110{
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:14px;
+  align-items:end;
+}
+.tenotsu-member-story-side{
+  min-height:260px;
+  padding:12px;
+  border-radius:16px;
+  background:rgba(35,18,26,.32);
+  border:2px solid rgba(255,95,95,.42);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);
+  overflow:auto;
+}
+.tenotsu-member-story-side .tenotsu-member-story-box{
+  height:100%;
+  box-sizing:border-box;
+  background:rgba(0,0,0,.20);
+}
+.tenotsu-member-story-empty{
+  opacity:.78;
+  text-align:center;
+  line-height:1.7;
+  padding:54px 12px;
+  border-radius:14px;
+  border:1px dashed rgba(255,255,255,.2);
+  background:rgba(0,0,0,.16);
+}
+.tenotsu-member-story-side .tenotsu-member-story-slot-grid{
+  grid-template-columns:1fr;
+}
+.tenotsu-member-story-side .tenotsu-member-story-slot{
+  min-height:64px;
+}
+@media (max-width: 1100px){
+  body[data-v039-mode="members"] .tenotsu-members-panel{width:min(980px,78vw)}
+  .tenotsu-members-body-v110{grid-template-columns:minmax(210px,250px) minmax(280px,1fr);}
+  .tenotsu-member-story-side{grid-column:2;}
+}
+@media (max-width: 900px){
+  body[data-v039-mode="members"] .tenotsu-members-panel{width:min(760px,92vw)}
+  .tenotsu-members-body-v110{grid-template-columns:1fr;}
+  .tenotsu-member-story-side{grid-column:auto;}
+}

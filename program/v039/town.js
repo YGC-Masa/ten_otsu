@@ -1,4 +1,4 @@
-/* v039_109 town: stamina encounter for unread normal stories */
+/* v039_110 town: stamina encounter UI fix + direct season buttons */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -11,7 +11,7 @@
     let data = null;
     try { data = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null"); } catch (_) { data = null; }
     if (!data || typeof data !== "object") data = {};
-    data.version = "v039_109";
+    data.version = "v039_110";
     data.currentSeason = data.currentSeason || (cfg().defaultSeason || "summer");
     data.revealedPlaces = data.revealedPlaces && typeof data.revealedPlaces === "object" ? data.revealedPlaces : {};
     return data;
@@ -34,7 +34,9 @@
     return allStories().filter((story) => story && story.type === "normal" && story.scenario && story.placeId === placeId && (!story.season || story.season === seasonId));
   }
   function seasonOptionsHtml(currentSeason){
-    return (cfg().seasons || []).map((s) => `<span class="tenotsu-town-season-pill ${s.id===currentSeason?"active":""}">${esc(s.label)}</span>`).join("");
+    return (cfg().seasons || []).map((s) => `
+      <button type="button" class="tenotsu-town-season-pill ${s.id===currentSeason?"active":""}" data-town-season="${esc(s.id)}">${esc(s.label)}</button>
+    `).join("");
   }
   function placeCard(place, data){
     const currentSeason = data.currentSeason;
@@ -78,8 +80,22 @@
     panel.querySelectorAll("[data-town-place]").forEach((btn)=>btn.addEventListener("click",()=>ns.renderTownPlaceDetail(btn.dataset.townPlace)));
     const seasonBtn = panel.querySelector('[data-town-tool="season"]');
     if (seasonBtn) seasonBtn.addEventListener("click",()=>ns.useSeasonChangeItem());
+    panel.querySelectorAll("[data-town-season]").forEach((btn)=>{
+      btn.addEventListener("click",()=>ns.setTownSeason(btn.dataset.townSeason));
+    });
     const back = panel.querySelector('[data-town-action="back-office"]');
     if (back) back.addEventListener("click",()=>{ ns.hideTownPanel(); ns.enterOffice({ speaker:"店長", message:"事務所に戻りました。" }); });
+  };
+
+  ns.setTownSeason = async function setTownSeason(seasonId){
+    const data = load();
+    const target = getSeason(seasonId);
+    if (!target || !target.id) return;
+    data.currentSeason = target.id;
+    save(data);
+    if (target.bg && typeof ns.setBackgroundReady === "function") await ns.setBackgroundReady(target.bg);
+    ns.renderTownSeasonTop();
+    ns.setText("外回り", `外回りの季節を${target.label}にしました。`);
   };
 
   ns.useSeasonChangeItem = async function useSeasonChangeItem(){
@@ -104,14 +120,16 @@
     const unread = getUnreadEncounterStories(place.id, data.currentSeason);
     const all = getAllEncounterStories(place.id, data.currentSeason);
     const cost = cfg().staminaCost || 10;
-    const candidates = revealed ? (unread.length ? unread : all) : [];
+    const debugReplay = !!window.TENOTSU_DEBUG_ALL_STORIES;
+    const canStart = unread.length > 0 || (debugReplay && all.length > 0);
+    const candidates = revealed ? (unread.length ? unread : all) : (canStart ? (unread.length ? unread : all).slice(0, 1) : []);
     const list = candidates.length ? candidates.map((story)=>`
       <div class="tenotsu-town-candidate ${typeof ns.isStoryCleared === "function" && ns.isStoryCleared(story.id) ? "cleared" : ""}">
         <b>${esc(story.title)}</b>
         <span>${esc((story.characterNames || story.characters || []).join(" / "))}</span>
         <small>${esc(story.summary || "")}</small>
       </div>
-    `).join("") : `<div class="tenotsu-town-candidate empty">${revealed ? "この場所で今見つかる未読ストーリーはありません。" : "まだキャラの気配を確認していません。"}</div>`;
+    `).join("") : `<div class="tenotsu-town-candidate empty">${revealed ? "この場所で今見つかる未読ストーリーはありません。" : "キャラの気配確認前です。候補がある場合はエンカウント開始も押せます。"}</div>`;
 
     detail.innerHTML = `
       <div class="tenotsu-town-detail-title">${esc(place.name)}</div>
@@ -119,10 +137,10 @@
       <div class="tenotsu-town-detail-summary">${esc(place.description || "")}</div>
       <div class="tenotsu-town-tool-row">
         <button type="button" class="tenotsu-town-tool" data-town-tool="reveal" data-place-id="${esc(place.id)}">${esc((cfg().items && cfg().items.reveal && cfg().items.reveal.label) || "気配確認")}</button>
-        <button type="button" class="tenotsu-event-start" data-town-encounter-start="${esc(place.id)}" ${unread.length ? "" : "disabled"}>エンカウント開始 ST${esc(cost)}</button>
+        <button type="button" class="tenotsu-event-start" data-town-encounter-start="${esc(place.id)}" ${canStart ? "" : "disabled"}>${unread.length ? "エンカウント開始" : (canStart ? "再会テスト" : "エンカウントなし")} ST${esc(cost)}</button>
       </div>
       <div class="tenotsu-town-candidate-list">${list}</div>
-      <div class="tenotsu-town-start-note">通常ストーリーは外回りで未読に出会い、読了後は右メニューの回想から確認します。</div>
+      <div class="tenotsu-town-start-note">通常ストーリーは外回りで未読に出会い、読了後は右メニューの回想アルバムから確認します。開発表示中は読了済みも再会テストできます。</div>
     `;
     const reveal = detail.querySelector('[data-town-tool="reveal"]');
     if (reveal) reveal.addEventListener("click",()=>ns.useRevealItem(place.id));
@@ -144,7 +162,12 @@
   ns.startTownEncounter = function startTownEncounter(placeId){
     const data = load();
     const unread = getUnreadEncounterStories(placeId, data.currentSeason);
-    const story = unread[0];
+    const all = getAllEncounterStories(placeId, data.currentSeason);
+    const story = unread[0] || (window.TENOTSU_DEBUG_ALL_STORIES ? all[0] : null);
+    if (story) {
+      data.revealedPlaces[`${data.currentSeason}:${placeId}`] = true;
+      save(data);
+    }
     const cost = cfg().staminaCost || 10;
     if (!story) { ns.setText("外回り", "この場所で開始できる未読ストーリーはありません。"); return; }
     if (window.TenotsuStamina && typeof window.TenotsuStamina.consume === "function") {

@@ -1,4 +1,4 @@
-/* v039_109 members: profile + affection key/main story slots */
+/* v039_110 members: profile area + independent affection story slot area */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -50,7 +50,7 @@
   function renderMemberDetail(detail, member) {
     if (!detail || !member) return;
     detail.innerHTML = `
-      <div class="tenotsu-member-detail-head tenotsu-member-detail-head-v109">
+      <div class="tenotsu-member-detail-head tenotsu-member-detail-head-v110">
         <img src="${esc(ns.paths.charBase + member.image)}" alt="${esc(member.name)}" class="tenotsu-member-detail-img">
         <div class="tenotsu-member-detail-info-stack">
           <div class="tenotsu-member-identity-box" aria-label="メンバー基本情報">
@@ -64,11 +64,10 @@
             ${member.introScenario ? `<button type="button" class="tenotsu-member-intro-button" data-member-intro="${esc(member.introScenario)}">自己紹介</button>` : ""}
           </div>
         </div>
-        ${typeof ns.renderMemberStorySlots === "function" ? ns.renderMemberStorySlots(member) : ""}
       </div>
       ${renderStatsMini(member)}
       ${renderEquipmentMini(member)}
-      <div class="tenotsu-member-detail-note">メイン/キーストーリーは、メンバー個別プロフィール右側の親愛ストーリースロットから解放・再生します。</div>
+      <div class="tenotsu-member-detail-note">右側の親愛ストーリースロットから、メイン/キーストーリーを解放・再生します。</div>
     `;
     const introBtn = detail.querySelector("[data-member-intro]");
     if (introBtn) {
@@ -81,8 +80,22 @@
         }
       });
     }
+  }
+
+  function renderMemberStoryArea(storyArea, member, rerenderAll) {
+    if (!storyArea) return;
+    if (!member) {
+      storyArea.innerHTML = `<div class="tenotsu-member-story-empty">メンバーを選択すると、ここに親愛ストーリー枠が表示されます。</div>`;
+      return;
+    }
+    storyArea.innerHTML = typeof ns.renderMemberStorySlots === "function"
+      ? ns.renderMemberStorySlots(member)
+      : `<div class="tenotsu-member-story-empty">親愛ストーリー機能を読み込めませんでした。</div>`;
     if (typeof ns.bindMemberStorySlots === "function") {
-      ns.bindMemberStorySlots(detail, member, (nextMember) => renderMemberDetail(detail, nextMember));
+      ns.bindMemberStorySlots(storyArea, member, () => {
+        if (typeof rerenderAll === "function") rerenderAll(member);
+        else renderMemberStoryArea(storyArea, member, rerenderAll);
+      });
     }
   }
 
@@ -98,10 +111,13 @@
 
     const html = `
       <div class="tenotsu-members-title">メンバー</div>
-      <div class="tenotsu-members-body">
+      <div class="tenotsu-members-body tenotsu-members-body-v110">
         <div class="tenotsu-members-list">${cards}</div>
         <div class="tenotsu-member-detail" data-member-detail>
           <div class="tenotsu-member-detail-empty">メンバーを選択してください。</div>
+        </div>
+        <div class="tenotsu-member-story-side" data-member-story-area>
+          <div class="tenotsu-member-story-empty">メンバーを選択すると、ここに親愛ストーリー枠が表示されます。</div>
         </div>
       </div>
       <button type="button" class="tenotsu-members-back" data-members-action="back-office">事務所に戻る</button>
@@ -111,6 +127,7 @@
 
     const panel = ns.layers.members;
     const detail = panel.querySelector("[data-member-detail]");
+    const storyArea = panel.querySelector("[data-member-story-area]");
 
     panel.querySelectorAll("[data-member-index]").forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -118,7 +135,11 @@
         if (!m) return;
         panel.querySelectorAll(".tenotsu-member-card").forEach((card) => card.classList.remove("selected"));
         btn.classList.add("selected");
-        renderMemberDetail(detail, m);
+        const rerenderAll = (nextMember) => {
+          renderMemberDetail(detail, nextMember);
+          renderMemberStoryArea(storyArea, nextMember, rerenderAll);
+        };
+        rerenderAll(m);
         ns.setText(m.name, m.comment);
       });
     });
@@ -151,6 +172,6 @@
     if (typeof ns.hideSalesPanel === "function") ns.hideSalesPanel();
     ns.renderOfficeMenu();
     ns.renderMembersPanel();
-    ns.setText("店長", "メンバーを確認します。個別プロフィールから親愛ストーリーを確認できます。");
+    ns.setText("店長", "メンバーを確認します。個別プロフィール右側の専用枠から親愛ストーリーを確認できます。");
   };
 })();

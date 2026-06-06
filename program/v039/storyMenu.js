@@ -1,4 +1,4 @@
-/* v039_109 recollection menu only. Main/key progression lives in member profiles. */
+/* v039_110 recollection album only. Main/key progression lives in member profiles. */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
@@ -37,11 +37,11 @@
           <span class="tenotsu-story-menu-card-state">${unlocked ? state : "未解放"}</span>
         </button>
       `;
-    }).join("") : `<div class="tenotsu-story-menu-empty">回想に表示できるストーリーはまだありません。</div>`;
+    }).join("") : `<div class="tenotsu-story-menu-empty">回想アルバムに表示できるストーリーはまだありません。</div>`;
 
     const html = `
-      <div class="tenotsu-story-menu-title">回想</div>
-      <div class="tenotsu-story-menu-subtitle">読了済みストーリーを再生します。通常ストーリーは外回り、キー/メインはメンバー個別プロフィールから進行します。</div>
+      <div class="tenotsu-story-menu-title">回想アルバム</div>
+      <div class="tenotsu-story-menu-subtitle">読了済みストーリーを再生するアルバムです。通常ストーリーは外回り、キー/メインはメンバー個別プロフィールから進行します。</div>
       <div class="tenotsu-story-menu-debug">${esc(debugNote)}</div>
       <div class="tenotsu-story-menu-list">${body}</div>
       <div class="tenotsu-story-menu-actions">
@@ -75,6 +75,6 @@
     if (typeof ns.setBackgroundReady === "function") await ns.setBackgroundReady(ns.paths.officeBg); else ns.setBackground(ns.paths.officeBg);
     ns.renderOfficeMenu();
     ns.renderStoryMenu("recollection");
-    ns.setText("回想", "回想一覧を開きました。");
+    ns.setText("回想アルバム", "回想アルバムを開きました。");
   };
 })();

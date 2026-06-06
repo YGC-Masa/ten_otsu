@@ -35,7 +35,7 @@
       ["メンバー", "members"],
       ["店舗営業（バトル）", "sales"],
       ["外回り", "town"],
-      ["回想", "storyMenu"],
+      ["回想アルバム", "storyMenu"],
       ["チューニング", "tuning"],
       ["ショップ", "shop"],
       ["設定", "settings"]
@@ -50,7 +50,7 @@
     versionMain.textContent = ns.VERSION || "v039_37";
     const versionSub = document.createElement("span");
     versionSub.className = "tenotsu-menu-version-sub";
-    versionSub.textContent = "v039_109 story flow";
+    versionSub.textContent = "v039_110 story flow UI";
     version.appendChild(versionMain);
     version.appendChild(versionSub);
     layers.menu.appendChild(version);
