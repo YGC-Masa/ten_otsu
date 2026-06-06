@@ -1,23 +1,32 @@
-# v039_112 ニーショット下揃え＋背景追加＋夜空キーストーリー表情調整
+# v039_113 双沢家・美空部屋・夜空部屋背景追加パッチ
 
 ## 基準
-- v039_111までを含む上書き差分です。
-
-## 変更内容
-1. ストーリーモードのキャラ立ち絵をニーショット前提にし、画面下端へボトム揃え。
-2. `scenario/v039/events/yozora_affection_00_01_key.json` を表情てこ入れ版へ差し替え。
-3. ひだまりストア倉庫背景を追加。
-4. プラネタリウム背景4種を追加。
-5. `scenario/v039/backgroundCatalog.js` を追加し、背景パスを参照しやすく整理。
-6. `townEncounterConfig.js` に星見ヶ丘プラネタリウムの場所データを追加。
+- v039_112 までを含む上書き差分です。
 
 ## 追加背景
-- `images/assets/bg/bg_hidamari_warehouse.png`
-- `images/assets/bg/bg_planetarium_exterior_twilight.png`
-- `images/assets/bg/bg_planetarium_lobby.png`
-- `images/assets/bg/bg_planetarium_hall_before_show.png`
-- `images/assets/bg/bg_planetarium_hall_showing.png`
+- `images/assets/bg/bg_sugosawa_house_day.png`
+- `images/assets/bg/bg_sugosawa_house_night.png`
+- `images/assets/bg/bg_misora_room_day.png`
+- `images/assets/bg/bg_misora_room_night.png`
+- `images/assets/bg/bg_yozora_room_day.png`
+- `images/assets/bg/bg_yozora_room_night.png`
 
-## 注意
-- `storyLayout.js` と `storyMenu.css` を更新しています。キャラ立ち絵はテキストボックスの裏に回り込む場合がありますが、ニーショット素材の足元を画面下に合わせる方針を優先しています。
-- 夜空キーストーリーの開始背景は、追加した倉庫背景へ差し替えています。
+## 更新
+- `index.html` を v039_113 に更新
+- `program/v039/version.js` を v039_113 に更新
+- `scenario/v039/backgroundCatalog.js` に背景IDを追加
+- `scenario/v039/townEncounterConfig.js` に「双沢家前」を追加
+
+## 背景ID
+- `sugosawa_house_day`
+- `sugosawa_house_night`
+- `misora_room_day`
+- `misora_room_night`
+- `yozora_room_day`
+- `yozora_room_night`
+
+## 確認ポイント
+1. 起動画面のバージョンが v039_113 になっていること。
+2. 追加画像が 404 にならないこと。
+3. `TENOTSU_BACKGROUND_CATALOG` に6背景が登録されていること。
+4. 外回りの場所候補に「双沢家前」が追加されていること。
