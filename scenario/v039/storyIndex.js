@@ -1,4 +1,4 @@
-/* v039_114 story index: normal encounter / member key-main slots / recollection */
+/* v039_115 story index: normal encounter / member key-main slots / recollection */
 (function(){
   "use strict";
   window.TENOTSU_STORY_INDEX = [
@@ -70,6 +70,46 @@
       unlock: { type: "affection_level", character: "ai", level: 4 },
       order: 3002,
       summary: "美空の接客を夜空が横から自然にフォローし、自分は見ているだけだと距離を取る夜空キーシナリオ第2話。"
+    },
+    {
+      id: "yozora_affection_00_03_key",
+      title: "特別公演のチケット",
+      type: "key",
+      category: "character_key",
+      character: "ai",
+      route: "yozora",
+      affectionBlock: 1,
+      affectionSlot: "key3",
+      unlockLevel: 7,
+      characters: ["ai", "ah"],
+      characterNames: ["双沢 夜空", "双沢 美空"],
+      scenario: "scenario/v039/events/yozora_affection_00_03_key.json",
+      version: "v039_115",
+      unlock: { type: "affection_level", character: "ai", level: 7 },
+      order: 3003,
+      summary: "星見ヶ丘プラネタリウムの特別公演を前に、夜空が美空の付き添いとして同行を決めるキーシナリオ第3話。"
+    },
+    {
+      id: "yozora_affection_10_00_main",
+      title: "余計なところまで見ないで",
+      type: "main",
+      category: "character_main",
+      character: "ai",
+      route: "yozora",
+      affectionBlock: 1,
+      affectionSlot: "main",
+      unlockLevel: 10,
+      characters: ["ai", "ah"],
+      characterNames: ["双沢 夜空", "双沢 美空"],
+      scenario: "scenario/v039/events/yozora_affection_10_00_main.json",
+      version: "v039_115",
+      unlock: {
+        type: "all_story_cleared",
+        storyIds: ["yozora_affection_00_01_key", "yozora_affection_00_02_key", "yozora_affection_00_03_key"],
+        fallback: { type: "affection_level", character: "ai", level: 10 }
+      },
+      order: 3010,
+      summary: "キー1-1〜1-3の伏線を受け、プラネタリウムで夜空が自分を見られることを意識し始めるメイン1。"
     }
   ];
 })();

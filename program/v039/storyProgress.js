@@ -1,4 +1,4 @@
-/* v039_109 story progress / affection unlock judgement */
+/* v039_115 story progress / affection unlock judgement */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
@@ -11,7 +11,7 @@
     let data = null;
     try { data = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null"); } catch (_) { data = null; }
     if (!data || typeof data !== "object") data = {};
-    data.version = "v039_109";
+    data.version = "v039_115";
     data.clearedStories = Array.isArray(data.clearedStories) ? data.clearedStories : [];
     data.readStories = Array.isArray(data.readStories) ? data.readStories : [];
     data.affectionLevels = data.affectionLevels && typeof data.affectionLevels === "object" ? data.affectionLevels : {};
@@ -19,7 +19,7 @@
     return data;
   }
   function save(data){
-    data.version = "v039_109";
+    data.version = "v039_115";
     data.updatedAt = now();
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (_) {}
     return data;
@@ -78,6 +78,7 @@
     switch (unlock.type) {
       case "always": return true;
       case "story_cleared": return ns.isStoryCleared(unlock.storyId);
+      case "all_story_cleared": return (unlock.storyIds || []).every((storyId) => ns.isStoryCleared(storyId)) || (unlock.fallback ? ns.isStoryUnlocked({ unlock: unlock.fallback }) : false);
       case "character_level": return ns.getCharacterLevelForUnlock(unlock.character) >= Number(unlock.level || 1);
       case "affection_level": return ns.getAffectionLevel(unlock.character) >= Number(unlock.level || 1);
       case "key_complete": return ns.isKeyStoryComplete(unlock.character);

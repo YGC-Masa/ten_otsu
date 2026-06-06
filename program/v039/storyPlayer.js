@@ -1,4 +1,4 @@
-/* v039_108 story player: story menu + event CG layer order */
+/* v039_115 story player: story menu + event CG layer order + safe story start fade */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -6,6 +6,7 @@
   ns.suppressStoryFadeLayer = function suppressStoryFadeLayer() {
     const mode = ns.mode || (document.body && document.body.dataset && document.body.dataset.v039Mode);
     if (!(mode === "story" || (document.body && document.body.classList && document.body.classList.contains("tenotsu-story-active")))) return;
+    if (document.body && document.body.classList && document.body.classList.contains("tenotsu-story-start-blackfade")) return;
     // v039_103: background changes may intentionally use the black fade layer.
     // Do not kill it while that transition is active.
     if (document.body && document.body.classList && document.body.classList.contains("tenotsu-story-bg-blackfade")) return;
@@ -219,13 +220,13 @@
 
   ns.story = { active:false, data:null, index:-1, returnInfo:null, isEnding:false, isLoadingStep:false, lastBg:null };
 
-  ns.resetStoryRuntime = function resetStoryRuntime() {
+  ns.resetStoryRuntime = function resetStoryRuntime(options = {}) {
     ns.story.active = false; ns.story.data = null; ns.story.index = -1; ns.story.returnInfo = null;
     ns.story.isEnding = false; ns.story.isLoadingStep = false; ns.story.lastBg = null;
     document.body.classList.remove("tenotsu-story-active","tenotsu-story-final-line","tenotsu-story-loading");
     const layers = ns.layers || ns.ensureLayers();
     if (layers.story) { layers.story.classList.remove("ending","loading"); layers.story.style.removeProperty("pointer-events"); layers.story.hidden = true; layers.story.innerHTML = ""; }
-    if (layers.fade) { layers.fade.style.transition = ""; layers.fade.style.opacity = "0"; layers.fade.style.display = "none"; layers.fade.style.pointerEvents = "none"; }
+    if (layers.fade && !options.keepFade) { layers.fade.style.transition = ""; layers.fade.style.opacity = "0"; layers.fade.style.display = "none"; layers.fade.style.pointerEvents = "none"; }
   };
 
   ns.loadStoryScenario = async function loadStoryScenario(path) {
@@ -254,15 +255,24 @@
     layers.fade.style.display = "block"; layers.fade.style.pointerEvents = "auto"; layers.fade.style.transition = "opacity 520ms ease"; layers.fade.style.opacity = "1";
     return new Promise((resolve) => requestAnimationFrame(() => {
       layers.fade.style.opacity = "0";
-      setTimeout(() => { layers.fade.style.display = "none"; layers.fade.style.pointerEvents = "none"; layers.fade.style.transition = ""; resolve(); }, 560);
+      setTimeout(() => { document.body.classList.remove("tenotsu-story-start-blackfade"); layers.fade.style.display = "none"; layers.fade.style.pointerEvents = "none"; layers.fade.style.transition = ""; resolve(); }, 560);
     }));
+  };
+
+  ns.clearStoryTextBoxForTransition = function clearStoryTextBoxForTransition() {
+    try { if (typeof ns.setText === "function") ns.setText("", ""); } catch (_) {}
+    const layer = ns.layers && ns.layers.story;
+    if (layer) {
+      layer.querySelectorAll(".speaker,.text,.tenotsu-text-speaker,.tenotsu-text-body,[data-speaker],[data-text]").forEach((el) => { el.textContent = ""; });
+    }
   };
 
   ns.fadeForStoryBgChange = async function fadeForStoryBgChange(apply) {
     // v039_103: black-out / black-in when the story background actually changes.
     const layers = ns.layers || ns.ensureLayers();
     const fade = layers && layers.fade ? layers.fade : document.querySelector(".tenotsu-fade-layer");
-    if (!fade) { if (typeof apply === "function") await apply(); return; }
+    if (!fade) { if (typeof ns.clearStoryTextBoxForTransition === "function") ns.clearStoryTextBoxForTransition(); if (typeof apply === "function") await apply(); return; }
+    if (typeof ns.clearStoryTextBoxForTransition === "function") ns.clearStoryTextBoxForTransition();
     document.body.classList.add("tenotsu-story-bg-blackfade");
     fade.style.removeProperty("display");
     fade.style.removeProperty("visibility");
@@ -319,13 +329,26 @@
     try {
       ns.ensureLayers();
       await ns.fadeOutForStoryStart();
-      ns.setMode("story"); ns.resetStoryRuntime(); ns.setMode("story");
+      document.body.classList.add("tenotsu-story-start-blackfade");
+      if (typeof ns.clearStoryTextBoxForTransition === "function") ns.clearStoryTextBoxForTransition();
+      ns.setMode("story"); ns.resetStoryRuntime({ keepFade: true }); ns.setMode("story");
+      {
+        const layers = ns.layers || ns.ensureLayers();
+        if (layers.fade) {
+          layers.fade.style.display = "block";
+          layers.fade.style.visibility = "visible";
+          layers.fade.style.pointerEvents = "auto";
+          layers.fade.style.transition = "";
+          layers.fade.style.opacity = "1";
+        }
+      }
       if (typeof ns.hideSettingsPanel === "function") ns.hideSettingsPanel();
       if (typeof ns.hideShopPanel === "function") ns.hideShopPanel();
       if (typeof ns.hideMembersPanel === "function") ns.hideMembersPanel();
       if (typeof ns.hideTownPanel === "function") ns.hideTownPanel();
       if (typeof ns.clearCharacters === "function") ns.clearCharacters();
       const data = await ns.loadStoryScenario(scenarioPath);
+      if (typeof ns.clearStoryTextBoxForTransition === "function") ns.clearStoryTextBoxForTransition();
       await ns.prepareStoryFirstBackground(data);
       ns.story.active = true; ns.story.data = data; ns.story.index = -1;
       ns.story.returnInfo = Object.assign({}, data.return || {}, returnInfo || {});
@@ -353,6 +376,7 @@
       ns.suppressStoryFadeLayer();
     } catch (err) {
       console.error(err);
+      document.body.classList.remove("tenotsu-story-start-blackfade");
       ns.setText("システム", "シナリオを読み込めませんでした: " + err.message);
       const layers = ns.layers || ns.ensureLayers();
       if (layers.fade) { layers.fade.style.opacity = "0"; layers.fade.style.display = "none"; layers.fade.style.pointerEvents = "none"; layers.fade.style.transition = ""; }
