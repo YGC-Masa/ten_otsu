@@ -1,27 +1,38 @@
-# v039_121 双沢姉妹部屋＋みなと公園正式背景差し替え
+# v039_122 夜空キー3段目＋メイン3追加パッチ
 
 ## 目的
+夜空ルートの親愛Lv.21〜30帯に、キーシナリオ3本とメイン3を追加する。
 
-アップロード済み画像を使い、双沢姉妹の共有部屋背景と、みなと公園関連の正式背景を追加します。
+## 追加シナリオ
+- scenario/v039/events/yozora_affection_20_01_key.json
+  - Lv.21 キー7「黒いリボン」
+- scenario/v039/events/yozora_affection_20_02_key.json
+  - Lv.24 キー8「夜空らしいって何」
+- scenario/v039/events/yozora_affection_20_03_key.json
+  - Lv.27 キー9「白と黒の飲み物」
+- scenario/v039/events/yozora_affection_30_00_main.json
+  - Lv.30 メイン3「白黒ツインルーム」
 
-## 追加アセット
+## 更新ファイル
+- index.html
+- VERSION.txt
+- program/v039/version.js
+- program/v039/state.js
+- program/v039/office.js
+- scenario/v039/storyIndex.js
+- scenario/v039/keyStoryConfig.js
+- scenario/v039/affectionStoryPlan.js
 
-- images/assets/bg/bg_sugosawa_room_day.png
-- images/assets/bg/bg_sugosawa_room_night_indirect.png
-- images/assets/bg/bg_sugosawa_room_night_light_on.png
-- images/assets/bg/bg_minato_event_plaza.png
-- images/assets/bg/bg_minato_event_plaza_festival.png
-- images/assets/bg/bg_minato_seaside_fence_day.png
+## 背景パス調整
+今回、新規背景アセットは同梱しない。
+既存背景へ接続するため、以下のパス調整を行った。
 
-## 変更
+- yozora_affection_20_02_key
+  - bg_hidamari_warehouse_day.png → bg_hidamari_warehouse.png
+- yozora_affection_20_03_key
+  - bg_hidamari_store_break_space_day.png → battle_store_lv1.png
+- yozora_affection_30_00_main
+  - bg_sugosawa_twin_room_night_lights.png → bg_sugosawa_room_night_light_on.png
 
-- backgroundCatalog.js に上記6背景を登録
-- 美空の部屋/夜空の部屋の旧カタログは双沢姉妹共有部屋への互換参照に変更
-- townEncounterConfig.js に「みなと公園・イベント広場」「みなと公園・海の見える柵」を追加
-- 夜空キー2-2「美空だけでいいでしょ」の暫定背景を正式背景へ差し替え
-- version.js / state.js / office.js / index.html を v039_121 に更新
-
-## 注意
-
-このZIPは v039_120 以降への上書き差分です。
-今回は新規背景アセットのため画像を同梱しています。以後のパッチではこれらの重い画像は再同梱しない運用です。
+## 運用メモ
+重い背景アセットは再同梱しない方針のため、このパッチはJS/JSON/HTML/TXTのみ。

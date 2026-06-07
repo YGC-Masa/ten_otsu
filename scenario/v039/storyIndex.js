@@ -1,4 +1,4 @@
-/* v039_117 story index: normal encounter / member key-main slots / recollection */
+/* v039_122 story index: normal encounter / member key-main slots / recollection */
 (function(){
   "use strict";
   window.TENOTSU_STORY_INDEX = [
@@ -188,6 +188,84 @@
       order: 3020,
       summary: "潮見浜で、美空の一歩後ろにいる夜空の理由と、店長が夜空本人を見る違和感を掘り下げるメイン2。"
     }
+    ,
+    {
+      id: "yozora_affection_20_01_key",
+      title: "黒いリボン",
+      type: "key",
+      category: "character_key",
+      character: "ai",
+      route: "yozora",
+      affectionBlock: 3,
+      affectionSlot: "key1",
+      unlockLevel: 21,
+      characters: ["ai", "ah"],
+      characterNames: ["双沢 夜空", "双沢 美空"],
+      scenario: "scenario/v039/events/yozora_affection_20_01_key.json",
+      version: "v039_122",
+      unlock: { type: "affection_level", character: "ai", level: 21 },
+      order: 3021,
+      summary: "夜空が黒いリボンを通して、美空が白なら自分は黒でいいと語り、白黒対比の原点に触れるキーシナリオ。"
+    },
+    {
+      id: "yozora_affection_20_02_key",
+      title: "夜空らしいって何",
+      type: "key",
+      category: "character_key",
+      character: "ai",
+      route: "yozora",
+      affectionBlock: 3,
+      affectionSlot: "key2",
+      unlockLevel: 24,
+      characters: ["ai", "ah"],
+      characterNames: ["双沢 夜空", "双沢 美空"],
+      scenario: "scenario/v039/events/yozora_affection_20_02_key.json",
+      version: "v039_122",
+      unlock: { type: "affection_level", character: "ai", level: 24 },
+      order: 3022,
+      summary: "夜空が弓道を通して、反対を選んだだけなのか、それとも自分のものになっているのか揺れ始めるキーシナリオ。"
+    },
+    {
+      id: "yozora_affection_20_03_key",
+      title: "白と黒の飲み物",
+      type: "key",
+      category: "character_key",
+      character: "ai",
+      route: "yozora",
+      affectionBlock: 3,
+      affectionSlot: "key3",
+      unlockLevel: 27,
+      characters: ["ai", "ah"],
+      characterNames: ["双沢 夜空", "双沢 美空"],
+      scenario: "scenario/v039/events/yozora_affection_20_03_key.json",
+      version: "v039_122",
+      unlock: { type: "affection_level", character: "ai", level: 27 },
+      order: 3023,
+      summary: "ブラックコーヒーとホットミルクを通じて、夜空が美空の反対を選ぶ癖と、同じものを選ぶ揺らぎを見せるキーシナリオ。"
+    },
+    {
+      id: "yozora_affection_30_00_main",
+      title: "白黒ツインルーム",
+      type: "main",
+      category: "character_main",
+      character: "ai",
+      route: "yozora",
+      affectionBlock: 3,
+      affectionSlot: "main",
+      unlockLevel: 30,
+      characters: ["ai", "ah"],
+      characterNames: ["双沢 夜空", "双沢 美空"],
+      scenario: "scenario/v039/events/yozora_affection_30_00_main.json",
+      version: "v039_122",
+      unlock: {
+        type: "all_story_cleared",
+        storyIds: ["yozora_affection_20_00_main", "yozora_affection_20_01_key", "yozora_affection_20_02_key", "yozora_affection_20_03_key"],
+        fallback: { type: "affection_level", character: "ai", level: 30 }
+      },
+      order: 3030,
+      summary: "双沢姉妹の白黒ツインルームで、夜空が美空の反対を選んできた自分と、それでも自分のものになったものへ向き合うメイン3。"
+    }
+
 
   ];
 })();
