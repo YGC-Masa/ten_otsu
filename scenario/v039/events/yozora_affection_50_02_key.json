@@ -1,0 +1,832 @@
+{
+  "id": "yozora_affection_50_02_key",
+  "title": "夜空の行きそうな場所",
+  "version": "v039_125",
+  "return": {
+    "mode": "storyMenu",
+    "storyId": "yozora_affection_50_02_key",
+    "storyMenuTab": "key"
+  },
+  "format": "v039_steps",
+  "type": "character_key_story",
+  "characterId": "ai",
+  "route": "yozora",
+  "affectionRange": {
+    "min": 50,
+    "max": 60
+  },
+  "location": {
+    "id": "hiyorizaka_city_search_route",
+    "name": "日和坂市内各所"
+  },
+  "summary": "店長は夜空の行きそうな場所として、駅裏、星見ヶ丘プラネタリウム、潮見浜を巡る。過去イベントの場所をたどりながら、夜空との積み重ねを回収する。最後に夕凪展望台で夜空を見つける。",
+  "purpose": "店長が夜空の行きそうな場所を探す。過去のキーシナリオ・メインシナリオで訪れた場所を巡ることで、夜空との積み重ねを回収しつつ、最終的に夕凪展望台へ向かう流れを作る。",
+  "tags": [
+    "夜空ルート",
+    "親愛度50-60",
+    "探さないで",
+    "夕凪展望台",
+    "感情爆発前後"
+  ],
+  "clearFlags": [
+    "yozora_key_50_02_cleared"
+  ],
+  "nextHint": "次のキー6-3またはメイン60で、夜空の積年の思いを本格的に爆発させる。",
+  "renderPolicy": {
+    "spritePosition": "logical_split_n_plus_1",
+    "eventCgLayer": "frontOfCharacters"
+  },
+  "steps": [
+    {
+      "speaker": "",
+      "text": "――ひだまりストア・店外――",
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "店長",
+      "text": "美空、夜空からの返事は？"
+    },
+    {
+      "speaker": "美空",
+      "text": "……まだです。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "既読は？"
+    },
+    {
+      "speaker": "美空",
+      "text": "ついてません。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "そうか。"
+    },
+    {
+      "speaker": "美空",
+      "text": "店長。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "ん？"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空、たぶん……すぐ見つかる場所にはいません。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "わかってる。"
+    },
+    {
+      "speaker": "美空",
+      "text": "でも、完全に誰にも見つからない場所にも行かないと思います。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "どういうことだ？"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空は、本当に消えたいわけじゃないと思うんです。\nただ、見つけられるのが怖い。\nでも、見つけられないのも怖い。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……そうだな。"
+    },
+    {
+      "speaker": "美空",
+      "text": "だから、夜空が選ぶなら……\n誰かが思い出せばたどり着ける場所。\nでも、何も知らなければ見つからない場所だと思います。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "夜空らしいな。"
+    },
+    {
+      "speaker": "美空",
+      "text": "はい。\n難しい子なんです。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "大事なんだろ。"
+    },
+    {
+      "speaker": "美空",
+      "text": "もちろんです。\n――美空は小さくうなずく。\nそれから、夜空の行きそうな場所を思い出すように視線を落とした。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "まず、駅の裏道。\n人通りが少なくて、少し遠回りになる場所です。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "この前、夜空と歩いたところか。"
+    },
+    {
+      "speaker": "美空",
+      "text": "はい。\nそれから、星見ヶ丘プラネタリウムの近く。\n夜空、あの場所のこと、口では何でもないって言いますけど……たぶん少し気に入ってます。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "あの時、星を見てた。"
+    },
+    {
+      "speaker": "美空",
+      "text": "店長が見つけたんですよね。\n夜空が楽しそうにしてたところ。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "余計なところまで見ないで、って言われたな。"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空らしいです。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "他には？"
+    },
+    {
+      "speaker": "美空",
+      "text": "潮見浜。\n夜空は海を好きだって言わないけど、嫌いじゃないはずです。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "便利な言い方だな。"
+    },
+    {
+      "speaker": "美空",
+      "text": "ふふっ。\n夜空の「嫌いじゃない」は、たぶん大事です。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "それから？"
+    },
+    {
+      "speaker": "美空",
+      "text": "高台の方。\n夕凪展望台。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "夕凪展望台……。"
+    },
+    {
+      "speaker": "美空",
+      "text": "人が少なくて、街が見える場所です。\n夜空は、自分が見つけられるのは苦手だけど……誰かを見るのは得意だから。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "街を見下ろせる場所か。"
+    },
+    {
+      "speaker": "美空",
+      "text": "はい。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "わかった。\n順番に探す。"
+    },
+    {
+      "speaker": "美空",
+      "text": "店長、わたしも行きます。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "美空は店に残ってくれ。"
+    },
+    {
+      "speaker": "美空",
+      "text": "でも。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "夜空が戻ってくるかもしれない。\nその時、美空がいないと、きっとまた自分を責める。"
+    },
+    {
+      "speaker": "美空",
+      "text": "……。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "俺が探す。\n見つけたら必ず連絡する。"
+    },
+    {
+      "speaker": "美空",
+      "text": "……お願いします。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "ああ。"
+    },
+    {
+      "speaker": "美空",
+      "text": "店長。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "ん？"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空が怒っても、見つけてあげてください。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "もちろん。"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空は、怒ると思います。\n「探さないでって言った」って。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "言いそうだな。"
+    },
+    {
+      "speaker": "美空",
+      "text": "でも、お願いします。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "わかった。\n――店長は夜の街へ歩き出す。\nスマホには、夜空からの最後のメッセージが残っている。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "『探さないで』",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……悪いな。\nこれは、聞けない。"
+    },
+    {
+      "speaker": "",
+      "text": "――日和坂駅前・夕方から夜へ――",
+      "bg": "images/assets/bg/bg_hiyorizaka_station_evening.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true
+    },
+    {
+      "speaker": "店長",
+      "text": "夜空……。\n――駅前の人通りは、昼間より少し落ち着いていた。\n通勤帰りの人々が行き交う中、店長は駅裏へ続く道へ向かう。"
+    },
+    {
+      "speaker": "",
+      "text": "――日和坂駅裏・帰り道――",
+      "bg": "images/assets/bg/bg_hiyorizaka_station_evening.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true
+    },
+    {
+      "speaker": "店長",
+      "text": "この前、ここで夜空と話したな。\n――夜空は、ここで道を変えた。\n避けていないと言いながら、あからさまに距離を取っていた。\nそれでも、完全に逃げたわけではなかった。"
+    },
+    {
+      "speaker": "店長",
+      "text": "追ってこないの？\n……か。\n――店長は周囲を見回す。\n街灯の下、細い道の先、駅裏の小さなベンチ。\nだが、夜空の姿はない。"
+    },
+    {
+      "speaker": "店長",
+      "text": "ここじゃないか。\n――店長はスマホを取り出し、美空へメッセージを送る。"
+    },
+    {
+      "speaker": "店長",
+      "text": "『駅裏にはいない。次、プラネタリウムの方を見る』\n――すぐに美空から返信が来る。"
+    },
+    {
+      "speaker": "美空",
+      "text": "『わかりました。夜空からはまだ何もありません』",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……。"
+    },
+    {
+      "speaker": "",
+      "text": "――星見ヶ丘プラネタリウム・入口前――",
+      "bg": "images/assets/bg/bg_planetarium_exterior_twilight.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true
+    },
+    {
+      "speaker": "",
+      "text": "――特別公演の日とは違い、入口前は静かだった。"
+    },
+    {
+      "speaker": "",
+      "text": "閉館後のロビーには灯りが残っているが、人影はほとんどない。"
+    },
+    {
+      "speaker": "店長",
+      "text": "夜空。\n――返事はない。\n――入口横の掲示板には、星座特集のポスターが貼られている。\n秋の星座、カシオペヤ座、アンドロメダ座。\n夜空が当たり前のように答えていた名前たち。"
+    },
+    {
+      "speaker": "店長",
+      "text": "詳しくない、って言ってたな。\n――店長はロビーの外から中をのぞく。\n夜空の姿はない。"
+    },
+    {
+      "speaker": "係員",
+      "text": "すみません。\n本日の営業は終了しました。"
+    },
+    {
+      "speaker": "店長",
+      "text": "あ、すみません。\n人を探していて。"
+    },
+    {
+      "speaker": "係員",
+      "text": "黒い髪の小柄な女性ですか？"
+    },
+    {
+      "speaker": "店長",
+      "text": "見ましたか？"
+    },
+    {
+      "speaker": "係員",
+      "text": "夕方ごろ、少しだけ掲示板を見ていた方なら。\nでも、すぐに外へ行かれましたよ。"
+    },
+    {
+      "speaker": "店長",
+      "text": "どちらへ？"
+    },
+    {
+      "speaker": "係員",
+      "text": "はっきりとは。\nただ、高台方面のバス停の方へ歩いていったように見えました。"
+    },
+    {
+      "speaker": "店長",
+      "text": "ありがとうございます。\n――高台方面。\n店長は胸の奥が少し冷たくなるのを感じた。"
+    },
+    {
+      "speaker": "店長",
+      "text": "夕凪展望台か……？\n――スマホが震える。\n美空からのメッセージだった。"
+    },
+    {
+      "speaker": "美空",
+      "text": "『店長、夜空から既読がつきました。でも返事はありません』",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……夜空。\n――店長は夜空へメッセージを送る。"
+    },
+    {
+      "speaker": "店長",
+      "text": "『プラネタリウムに来た。いないなら、次は高台を見る』\n――送信。\nしばらくして既読がつく。"
+    },
+    {
+      "speaker": "店長",
+      "text": "既読……。\n――だが、返事はない。"
+    },
+    {
+      "speaker": "店長",
+      "text": "見てるんだな。\n――店長は足早にプラネタリウムを離れる。"
+    },
+    {
+      "speaker": "",
+      "text": "――潮見浜・夜――",
+      "bg": "images/assets/bg/bg_shiomi_beach_night.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true
+    },
+    {
+      "speaker": "",
+      "text": "――高台へ向かう前に、店長は潮見浜へ立ち寄った。"
+    },
+    {
+      "speaker": "",
+      "text": "夜の海は暗く、波の音だけが響いている。"
+    },
+    {
+      "speaker": "店長",
+      "text": "ここにも、いないか。\n――夕方、美空が貝殻を拾った場所。\n夜空が半歩後ろを歩いていた場所。\n「美空が見えるから」と言った場所。"
+    },
+    {
+      "speaker": "店長",
+      "text": "美空の半歩後ろ、か。\n――夜空は、いつも誰かを見ていた。\n美空を見て、支えて、守るように。\nけれど自分が見られることは嫌がっていた。"
+    },
+    {
+      "speaker": "店長",
+      "text": "それでも、今は見つけないとだめだ。\n――店長はスマホを見る。\n夜空からの返信はない。\n美空からは、短いメッセージが来ていた。"
+    },
+    {
+      "speaker": "美空",
+      "text": "『夜空、昔から海を見る時は静かになります。でも、今の夜空なら、もっと人の少ない場所かもしれません』",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "もっと人の少ない場所……。\n――やはり、高台。\n夕凪展望台。"
+    },
+    {
+      "speaker": "",
+      "text": "――日和坂市街・高台へ続く道――",
+      "bg": "images/assets/bg/bg_hiyorizaka_station_night.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true
+    },
+    {
+      "speaker": "",
+      "text": "――坂道を上るにつれて、街の灯りが下へ遠ざかっていく。"
+    },
+    {
+      "speaker": "",
+      "text": "人通りは少なくなり、風の音が強くなる。"
+    },
+    {
+      "speaker": "店長",
+      "text": "夜空、ここまで来たのか……？\n――道の途中、小さな案内板が見える。\n『夕凪展望台　この先』"
+    },
+    {
+      "speaker": "店長",
+      "text": "……。\n――店長はスマホを取り出し、夜空へもう一度メッセージを送る。"
+    },
+    {
+      "speaker": "店長",
+      "text": "『夕凪展望台へ向かってる』\n――送信。\nすぐに既読がつく。"
+    },
+    {
+      "speaker": "店長",
+      "text": "……いるな。\n――今度は、返信が来た。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "『来ないで』",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……。\n――短い言葉。\nけれど、そこには確かに夜空がいた。"
+    },
+    {
+      "speaker": "店長",
+      "text": "悪い。\nそれも聞けない。\n――さらに一通、夜空から届く。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "『探さないでって言った』",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "言ったな。\n――店長は返信する。"
+    },
+    {
+      "speaker": "店長",
+      "text": "『言われた。でも、心配だから行く』\n――すぐに既読。\n返事はない。\n――高台の風が冷たい。\n道の先に、展望台の灯りが小さく見え始める。"
+    },
+    {
+      "speaker": "",
+      "text": "――夕凪展望台・入口付近――",
+      "bg": "images/assets/bg/bg_shiomi_beach_night.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true
+    },
+    {
+      "speaker": "",
+      "text": "――展望台の入口には、古い街灯がひとつ灯っていた。"
+    },
+    {
+      "speaker": "",
+      "text": "その向こうに、日和坂市の夜景が広がっている。"
+    },
+    {
+      "speaker": "店長",
+      "text": "夜空……。\n――返事はない。\nだが、展望スペースの奥。\n柵の近くに、黒い影が見えた。\n――風に揺れる黒い髪。\n街明かりに照らされた横顔。\n夜空だった。"
+    },
+    {
+      "speaker": "店長",
+      "text": "……見つけた。\n――夜空は振り返らない。\nただ、低い声でつぶやく。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……来ないで。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "夜空。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "探さないでって言った。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "ああ。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "じゃあ、どうして。\n――店長は一歩だけ近づく。\n夜空の肩が、わずかに震えたように見えた。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "どうして来るの。\n――その声は、いつもの静かな夜空の声ではなかった。\n抑えようとして、抑えきれない感情が混じっていた。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "夜空が、いなくなったから。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "だから探した。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……そういうところが。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "うん。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "そういうところが、嫌なのに。\n――夜空はゆっくり振り返る。\nその目は、怒っているようにも、泣きそうにも見えた。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "……どうして！",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    }
+  ],
+  "keyScenarioIndex": 2
+}

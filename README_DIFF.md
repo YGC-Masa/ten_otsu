@@ -1,37 +1,20 @@
-# v039_124 夜空キー5段目＋メイン5追加パッチ
+# v039_125 夜空キー6段目＋メイン6追加パッチ
 
 ## 目的
+夜空ルートの親愛Lv.51〜60帯を追加します。
 
-夜空ルートの親愛Lv.41〜50帯を追加する。
-
-## 追加シナリオ
-
-- Lv.41 キー13：美空のところに行けば
-- Lv.44 キー14：あんたが追ってくるだけ
-- Lv.47 キー15：美空の大事なものなのに
-- Lv.50 メイン5：探さないで、の前兆
-
-## 更新ファイル
-
-- index.html
-- VERSION.txt
-- README_DIFF.md
-- program/v039/version.js
-- program/v039/state.js
-- program/v039/office.js
-- scenario/v039/storyIndex.js
-- scenario/v039/keyStoryConfig.js
-- scenario/v039/affectionStoryPlan.js
-- scenario/v039/events/yozora_affection_40_01_key.json
-- scenario/v039/events/yozora_affection_40_02_key.json
-- scenario/v039/events/yozora_affection_40_03_key.json
-- scenario/v039/events/yozora_affection_50_00_main.json
+## 追加ストーリー
+- Lv.51 キー16：少し一人にして
+- Lv.54 キー17：夜空の行きそうな場所
+- Lv.57 キー18：見つけないで
+- Lv.60 メイン6：探さないでって言ったのに
 
 ## 背景パス調整
-
-- `yozora_affection_40_03_key`: `bg_sugosawa_twin_room_night_lights.png` → `bg_sugosawa_room_night_light_on.png`
-- `yozora_affection_50_00_main`: `bg_hidamari_store_front_night.png` → `bg_hidamari_store_front_closed.png`
+画像アセットは同梱していません。既存背景へ接続します。
+- bg_hidamari_store_front_night.png → bg_hidamari_store_front_closed.png
+- bg_planetarium_entrance_night.png → bg_planetarium_exterior_twilight.png
+- bg_hiyorizaka_hill_road_night.png → bg_hiyorizaka_station_night.png（暫定）
+- bg_yunagi_observatory_night.png → bg_shiomi_beach_night.png（夕凪展望台正式背景までの暫定）
 
 ## 注意
-
-画像アセットは同梱していない軽量差分です。v039_121以降の双沢姉妹部屋背景、v039_120以降のひだまりストア前背景が入っている前提です。
+これは v039_124 以降へ上書きする軽量差分ZIPです。背景画像は再同梱していません。

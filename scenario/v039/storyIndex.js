@@ -1,4 +1,4 @@
-/* v039_124 story index: normal encounter / member key-main slots / recollection */
+/* v039_125 story index: normal encounter / member key-main slots / recollection */
 (function(){
   "use strict";
   window.TENOTSU_STORY_INDEX = [
@@ -417,9 +417,127 @@
       },
       order: 3050,
       summary: "夜空が店長に『ぼくがいなくなっても、探さないで』と告げ、見つけてほしい矛盾を抱えたまま次章へ進むメイン5。"
+    },
+    {
+          "id": "yozora_affection_50_01_key",
+          "title": "少し一人にして",
+          "type": "key",
+          "category": "character_key",
+          "character": "ai",
+          "route": "yozora",
+          "affectionBlock": 6,
+          "affectionSlot": "key1",
+          "unlockLevel": 51,
+          "characters": [
+                "ai",
+                "ah"
+          ],
+          "characterNames": [
+                "双沢 夜空",
+                "双沢 美空"
+          ],
+          "scenario": "scenario/v039/events/yozora_affection_50_01_key.json",
+          "version": "v039_125",
+          "unlock": {
+                "type": "affection_level",
+                "character": "ai",
+                "level": 51
+          },
+          "order": 3051,
+          "summary": "夜空が「少し一人にして」「探さないで」とメッセージを送り、店長と美空が探しに行く決意を固めるキーシナリオ。"
+    },
+    {
+          "id": "yozora_affection_50_02_key",
+          "title": "夜空の行きそうな場所",
+          "type": "key",
+          "category": "character_key",
+          "character": "ai",
+          "route": "yozora",
+          "affectionBlock": 6,
+          "affectionSlot": "key2",
+          "unlockLevel": 54,
+          "characters": [
+                "ai",
+                "ah"
+          ],
+          "characterNames": [
+                "双沢 夜空",
+                "双沢 美空"
+          ],
+          "scenario": "scenario/v039/events/yozora_affection_50_02_key.json",
+          "version": "v039_125",
+          "unlock": {
+                "type": "affection_level",
+                "character": "ai",
+                "level": 54
+          },
+          "order": 3052,
+          "summary": "店長が駅裏、プラネタリウム、潮見浜を巡り、夜空との積み重ねをたどって夕凪展望台へ向かうキーシナリオ。"
+    },
+    {
+          "id": "yozora_affection_50_03_key",
+          "title": "見つけないで",
+          "type": "key",
+          "category": "character_key",
+          "character": "ai",
+          "route": "yozora",
+          "affectionBlock": 6,
+          "affectionSlot": "key3",
+          "unlockLevel": 57,
+          "characters": [
+                "ai",
+                "ah"
+          ],
+          "characterNames": [
+                "双沢 夜空",
+                "双沢 美空"
+          ],
+          "scenario": "scenario/v039/events/yozora_affection_50_03_key.json",
+          "version": "v039_125",
+          "unlock": {
+                "type": "affection_level",
+                "character": "ai",
+                "level": 57
+          },
+          "order": 3053,
+          "summary": "夕凪展望台で夜空を見つけるが、夜空はまだ全てを吐き出せず、メイン6の感情爆発へつながるキーシナリオ。"
+    },
+    {
+          "id": "yozora_affection_60_00_main",
+          "title": "探さないでって言ったのに",
+          "type": "main",
+          "category": "character_main",
+          "character": "ai",
+          "route": "yozora",
+          "affectionBlock": 6,
+          "affectionSlot": "main",
+          "unlockLevel": 60,
+          "characters": [
+                "ai",
+                "ah"
+          ],
+          "characterNames": [
+                "双沢 夜空",
+                "双沢 美空"
+          ],
+          "scenario": "scenario/v039/events/yozora_affection_60_00_main.json",
+          "version": "v039_125",
+          "unlock": {
+                "type": "all_story_cleared",
+                "storyIds": [
+                      "yozora_affection_50_00_main",
+                      "yozora_affection_50_01_key",
+                      "yozora_affection_50_02_key",
+                      "yozora_affection_50_03_key"
+                ],
+                "fallback": {
+                      "type": "affection_level",
+                      "character": "ai",
+                      "level": 60
+                }
+          },
+          "order": 3060,
+          "summary": "夕凪展望台で夜空が美空との比較、羨望、自己嫌悪、店長に見つけてほしい矛盾を吐露するメイン6。"
     }
-
-
-
   ];
 })();
