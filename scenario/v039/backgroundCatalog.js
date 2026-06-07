@@ -1,9 +1,16 @@
-/* v039_119 background catalog */
+/* v039_120 background catalog */
 (function(){
   "use strict";
   window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
     hidamari_warehouse: { name: "ひだまりストア倉庫", path: "images/assets/bg/bg_hidamari_warehouse.png" },
     hidamari_store_front_night: { name: "ひだまりストア前・夜（暫定）", path: "images/assets/bg/bg_hidamari_store_front_night.png" },
+
+    hidamari_store_front_early_morning: { name: "ひだまりストア外観・早朝", path: "images/assets/bg/bg_hidamari_store_front_early_morning.png" },
+    hidamari_store_front_morning: { name: "ひだまりストア外観・朝", path: "images/assets/bg/bg_hidamari_store_front_morning.png" },
+    hidamari_store_front_day: { name: "ひだまりストア外観・昼", path: "images/assets/bg/bg_hidamari_store_front_day.png" },
+    hidamari_store_front_evening: { name: "ひだまりストア外観・夕方", path: "images/assets/bg/bg_hidamari_store_front_evening.png" },
+    hidamari_store_front_night_open: { name: "ひだまりストア外観・夜", path: "images/assets/bg/bg_hidamari_store_front_night_open.png" },
+    hidamari_store_front_closed: { name: "ひだまりストア外観・閉店後", path: "images/assets/bg/bg_hidamari_store_front_closed.png" },
 
     planetarium_exterior_twilight: { name: "星見ヶ丘プラネタリウム・外観", path: "images/assets/bg/bg_planetarium_exterior_twilight.png" },
     planetarium_lobby: { name: "星見ヶ丘プラネタリウム・ロビー", path: "images/assets/bg/bg_planetarium_lobby.png" },

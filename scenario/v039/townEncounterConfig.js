@@ -2,7 +2,7 @@
 (function(){
   "use strict";
   window.TENOTSU_TOWN_ENCOUNTER_CONFIG = {
-    version: "v039_119",
+    version: "v039_120",
     staminaCost: 10,
     defaultSeason: "summer",
     seasons: [
@@ -16,6 +16,7 @@
       season: { id: "season_ticket", name: "季節チケット", label: "季節を変える", note: "試作では春→夏→秋→冬を切り替えます。" }
     },
     places: [
+      { id: "hidamari_store_front", name: "ひだまりストア前", type: "自店", seasons: ["spring", "summer", "autumn", "winter"], description: "ひだまりストアの外観。開店前・営業中・夕方・夜・閉店後など時間帯別イベント向き。", bg: "images/assets/bg/bg_hidamari_store_front_day.png" },
       { id: "marinpia_aqua_tunnel", name: "マリンピア・海中トンネル", type: "水族館", seasons: ["summer"], description: "夏の外回りで、涼しげな水槽を眺めながらキャラと出会える場所。" },
       { id: "hidamari_shopping_street", name: "ひだまり商店街", type: "街エリア", seasons: ["spring", "summer", "autumn", "winter"], description: "買い物や地域イベントの中心。通常ストーリーの増産先。" },
       { id: "wakaba_central_park", name: "若葉中央公園", type: "公園", seasons: ["spring", "summer", "autumn"], description: "季節イベントや休憩会話向きの公園。" },

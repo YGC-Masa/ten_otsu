@@ -1,6 +1,23 @@
-v039_119
-日和坂駅時間帯背景アセット追加
+v039_120
 
-基準：v039_118
-内容：日和坂駅の深夜・早朝・昼・朝・夕方・夜背景を追加。
-注意：今回の新規背景画像はこのパッチに同梱。次回以降は再同梱しない。
+ひだまりストア外観時間帯背景アセット追加
+
+追加:
+- images/assets/bg/bg_hidamari_store_front_early_morning.png
+- images/assets/bg/bg_hidamari_store_front_morning.png
+- images/assets/bg/bg_hidamari_store_front_day.png
+- images/assets/bg/bg_hidamari_store_front_evening.png
+- images/assets/bg/bg_hidamari_store_front_night_open.png
+- images/assets/bg/bg_hidamari_store_front_closed.png
+
+変更:
+- scenario/v039/backgroundCatalog.js
+- scenario/v039/townEncounterConfig.js
+- program/v039/version.js
+- program/v039/state.js
+- program/v039/office.js
+- index.html
+
+注意:
+- v039_119以降への上書き差分です。
+- 今回は新規背景アセットのみ同梱しています。既存の重い背景アセットは再同梱していません。
