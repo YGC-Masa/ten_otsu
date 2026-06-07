@@ -1,4 +1,4 @@
-/* v039_116 story player: member return keep + event CG section + safe story start fade */
+/* v039_117 story player: member return keep + event CG section + safe story start fade */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -7,7 +7,7 @@
     const mode = ns.mode || (document.body && document.body.dataset && document.body.dataset.v039Mode);
     if (!(mode === "story" || (document.body && document.body.classList && document.body.classList.contains("tenotsu-story-active")))) return;
     if (document.body && document.body.classList && document.body.classList.contains("tenotsu-story-start-blackfade")) return;
-    // v039_103: background changes may intentionally use the black fade layer.
+    // v039_117: background changes may intentionally use the black fade layer.
     // Do not kill it while that transition is active.
     if (document.body && document.body.classList && document.body.classList.contains("tenotsu-story-bg-blackfade")) return;
     const layers = ns.layers || {};
@@ -268,7 +268,7 @@
   };
 
   ns.fadeForStoryBgChange = async function fadeForStoryBgChange(apply) {
-    // v039_103: black-out / black-in when the story background actually changes.
+    // v039_117: black-out / black-in when the story background actually changes.
     const layers = ns.layers || ns.ensureLayers();
     const fade = layers && layers.fade ? layers.fade : document.querySelector(".tenotsu-fade-layer");
     if (!fade) { if (typeof ns.clearStoryTextBoxForTransition === "function") ns.clearStoryTextBoxForTransition(); if (typeof apply === "function") await apply(); return; }

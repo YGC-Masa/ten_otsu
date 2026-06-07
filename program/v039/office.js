@@ -1,4 +1,4 @@
-/* v039_37 office */
+/* v039_117 office */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -47,10 +47,10 @@
     version.className = "tenotsu-menu-version";
     const versionMain = document.createElement("span");
     versionMain.className = "tenotsu-menu-version-main";
-    versionMain.textContent = ns.VERSION || window.TENOTSU_BUILD_VERSION || "v039_116";
+    versionMain.textContent = ns.VERSION || window.TENOTSU_BUILD_VERSION || "v039_117";
     const versionSub = document.createElement("span");
     versionSub.className = "tenotsu-menu-version-sub";
-    versionSub.textContent = ns.BUILD_LABEL || window.TENOTSU_BUILD_LABEL || "v039_116";
+    versionSub.textContent = ns.BUILD_LABEL || window.TENOTSU_BUILD_LABEL || "v039_117";
     version.appendChild(versionMain);
     version.appendChild(versionSub);
     layers.menu.appendChild(version);
@@ -137,7 +137,7 @@
     const html = `
       <div class="tenotsu-settings-title">設定</div>
       <div class="tenotsu-settings-body">
-        <div>現在のバージョン: <strong>${ns.VERSION || window.TENOTSU_BUILD_VERSION || "v039_116"}</strong></div>
+        <div>現在のバージョン: <strong>${ns.VERSION || window.TENOTSU_BUILD_VERSION || "v039_117"}</strong></div>
         <div>表示やキャッシュ、営業リソースの調整を行います。</div>
         <div class="tenotsu-settings-resource-note">ST/BPリセットは検証用です。スタミナとバトルPを最大値に戻します。</div>
       </div>

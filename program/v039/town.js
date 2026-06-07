@@ -1,4 +1,4 @@
-/* v039_110 town: stamina encounter UI fix + direct season buttons */
+/* v039_117 town: stamina encounter UI fix + direct season buttons */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -11,7 +11,7 @@
     let data = null;
     try { data = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null"); } catch (_) { data = null; }
     if (!data || typeof data !== "object") data = {};
-    data.version = "v039_116";
+    data.version = "v039_117";
     data.currentSeason = data.currentSeason || (cfg().defaultSeason || "summer");
     data.revealedPlaces = data.revealedPlaces && typeof data.revealedPlaces === "object" ? data.revealedPlaces : {};
     return data;

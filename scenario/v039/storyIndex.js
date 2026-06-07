@@ -1,4 +1,4 @@
-/* v039_116 story index: normal encounter / member key-main slots / recollection */
+/* v039_117 story index: normal encounter / member key-main slots / recollection */
 (function(){
   "use strict";
   window.TENOTSU_STORY_INDEX = [
@@ -111,5 +111,83 @@
       order: 3010,
       summary: "キー1-1〜1-3の伏線を受け、プラネタリウムで夜空が自分を見られることを意識し始めるメイン1。"
     }
+    ,
+    {
+      id: "yozora_affection_10_01_key",
+      title: "そういうの、気づかなくていい",
+      type: "key",
+      category: "character_key",
+      character: "ai",
+      route: "yozora",
+      affectionBlock: 2,
+      affectionSlot: "key1",
+      unlockLevel: 11,
+      characters: ["ai", "ah"],
+      characterNames: ["双沢 夜空", "双沢 美空"],
+      scenario: "scenario/v039/events/yozora_affection_10_01_key.json",
+      version: "v039_117",
+      unlock: { type: "affection_level", character: "ai", level: 11 },
+      order: 3011,
+      summary: "プラネタリウム後、店長が夜空の細かな気遣いに気づき始め、夜空が『気づかなくていい』と拒むキーシナリオ。"
+    },
+    {
+      id: "yozora_affection_10_02_key",
+      title: "美空だけでいいでしょ",
+      type: "key",
+      category: "character_key",
+      character: "ai",
+      route: "yozora",
+      affectionBlock: 2,
+      affectionSlot: "key2",
+      unlockLevel: 14,
+      characters: ["ai", "ah"],
+      characterNames: ["双沢 夜空", "双沢 美空"],
+      scenario: "scenario/v039/events/yozora_affection_10_02_key.json",
+      version: "v039_117",
+      unlock: { type: "affection_level", character: "ai", level: 14 },
+      order: 3012,
+      summary: "地域フェスの記念撮影で、夜空が見られる側になることや美空と比較されることを避けるキーシナリオ。"
+    },
+    {
+      id: "yozora_affection_10_03_key",
+      title: "気づかなくていい疲れ",
+      type: "key",
+      category: "character_key",
+      character: "ai",
+      route: "yozora",
+      affectionBlock: 2,
+      affectionSlot: "key3",
+      unlockLevel: 17,
+      characters: ["ai", "ah"],
+      characterNames: ["双沢 夜空", "双沢 美空"],
+      scenario: "scenario/v039/events/yozora_affection_10_03_key.json",
+      version: "v039_117",
+      unlock: { type: "affection_level", character: "ai", level: 17 },
+      order: 3013,
+      summary: "閉店後の帰り道、夜空が美空の疲れには気づく一方、自分の寒さや疲れを見られることを嫌がるキーシナリオ。"
+    },
+    {
+      id: "yozora_affection_20_00_main",
+      title: "一歩後ろの夜空",
+      type: "main",
+      category: "character_main",
+      character: "ai",
+      route: "yozora",
+      affectionBlock: 2,
+      affectionSlot: "main",
+      unlockLevel: 20,
+      characters: ["ai", "ah"],
+      characterNames: ["双沢 夜空", "双沢 美空"],
+      scenario: "scenario/v039/events/yozora_affection_20_00_main.json",
+      version: "v039_117",
+      unlock: {
+        type: "all_story_cleared",
+        storyIds: ["yozora_affection_10_00_main", "yozora_affection_10_01_key", "yozora_affection_10_02_key", "yozora_affection_10_03_key"],
+        fallback: { type: "affection_level", character: "ai", level: 20 }
+      },
+      order: 3020,
+      summary: "潮見浜で、美空の一歩後ろにいる夜空の理由と、店長が夜空本人を見る違和感を掘り下げるメイン2。"
+    }
+
   ];
 })();
