@@ -1,15 +1,15 @@
-/* v039_118 build info */
+/* v039_119 build info */
 (function(){
   "use strict";
-  window.TENOTSU_BUILD_VERSION = "v039_118";
-  window.TENOTSU_BUILD_LABEL = "v039_118 塩見浜時間帯背景アセット追加";
+  window.TENOTSU_BUILD_VERSION = "v039_119";
+  window.TENOTSU_BUILD_LABEL = "v039_119 日和坂駅時間帯背景アセット追加";
   window.TENOTSU_BUILD_NOTES = [
-    "塩見浜の早朝・朝・昼・夕方・夜・深夜背景を追加",
-    "backgroundCatalog.jsへ塩見浜6背景を登録",
-    "夜空メイン2『一歩後ろの夜空』の夕方背景を正式アセット化",
-    "右メニュー・右下表示のバージョンをv039_118へ更新"
+    "日和坂駅の深夜・早朝・昼・朝・夕方・夜背景を追加",
+    "backgroundCatalog.jsへ日和坂駅6背景を登録",
+    "外回り候補に日和坂駅前を追加",
+    "新規背景アセットは今回のみ同梱。次回以降は再同梱しない"
   ];
   window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  window.TENOTSU_V039.VERSION = "v039_118";
+  window.TENOTSU_V039.VERSION = "v039_119";
   window.TENOTSU_V039.BUILD_LABEL = window.TENOTSU_BUILD_LABEL;
 })();
