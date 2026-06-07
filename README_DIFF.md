@@ -1,38 +1,37 @@
-# v039_122 夜空キー3段目＋メイン3追加パッチ
+# v039_124 夜空キー5段目＋メイン5追加パッチ
 
 ## 目的
-夜空ルートの親愛Lv.21〜30帯に、キーシナリオ3本とメイン3を追加する。
+
+夜空ルートの親愛Lv.41〜50帯を追加する。
 
 ## 追加シナリオ
-- scenario/v039/events/yozora_affection_20_01_key.json
-  - Lv.21 キー7「黒いリボン」
-- scenario/v039/events/yozora_affection_20_02_key.json
-  - Lv.24 キー8「夜空らしいって何」
-- scenario/v039/events/yozora_affection_20_03_key.json
-  - Lv.27 キー9「白と黒の飲み物」
-- scenario/v039/events/yozora_affection_30_00_main.json
-  - Lv.30 メイン3「白黒ツインルーム」
+
+- Lv.41 キー13：美空のところに行けば
+- Lv.44 キー14：あんたが追ってくるだけ
+- Lv.47 キー15：美空の大事なものなのに
+- Lv.50 メイン5：探さないで、の前兆
 
 ## 更新ファイル
+
 - index.html
 - VERSION.txt
+- README_DIFF.md
 - program/v039/version.js
 - program/v039/state.js
 - program/v039/office.js
 - scenario/v039/storyIndex.js
 - scenario/v039/keyStoryConfig.js
 - scenario/v039/affectionStoryPlan.js
+- scenario/v039/events/yozora_affection_40_01_key.json
+- scenario/v039/events/yozora_affection_40_02_key.json
+- scenario/v039/events/yozora_affection_40_03_key.json
+- scenario/v039/events/yozora_affection_50_00_main.json
 
 ## 背景パス調整
-今回、新規背景アセットは同梱しない。
-既存背景へ接続するため、以下のパス調整を行った。
 
-- yozora_affection_20_02_key
-  - bg_hidamari_warehouse_day.png → bg_hidamari_warehouse.png
-- yozora_affection_20_03_key
-  - bg_hidamari_store_break_space_day.png → battle_store_lv1.png
-- yozora_affection_30_00_main
-  - bg_sugosawa_twin_room_night_lights.png → bg_sugosawa_room_night_light_on.png
+- `yozora_affection_40_03_key`: `bg_sugosawa_twin_room_night_lights.png` → `bg_sugosawa_room_night_light_on.png`
+- `yozora_affection_50_00_main`: `bg_hidamari_store_front_night.png` → `bg_hidamari_store_front_closed.png`
 
-## 運用メモ
-重い背景アセットは再同梱しない方針のため、このパッチはJS/JSON/HTML/TXTのみ。
+## 注意
+
+画像アセットは同梱していない軽量差分です。v039_121以降の双沢姉妹部屋背景、v039_120以降のひだまりストア前背景が入っている前提です。

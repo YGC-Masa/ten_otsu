@@ -1,4 +1,4 @@
-/* v039_122 story index: normal encounter / member key-main slots / recollection */
+/* v039_124 story index: normal encounter / member key-main slots / recollection */
 (function(){
   "use strict";
   window.TENOTSU_STORY_INDEX = [
@@ -265,6 +265,160 @@
       order: 3030,
       summary: "双沢姉妹の白黒ツインルームで、夜空が美空の反対を選んできた自分と、それでも自分のものになったものへ向き合うメイン3。"
     }
+    ,
+    {
+      id: "yozora_affection_30_01_key",
+      title: "美空が褒められるのは嬉しい",
+      type: "key",
+      category: "character_key",
+      character: "ai",
+      route: "yozora",
+      affectionBlock: 4,
+      affectionSlot: "key1",
+      unlockLevel: 31,
+      characters: ["ai", "ah"],
+      characterNames: ["双沢 夜空", "双沢 美空"],
+      scenario: "scenario/v039/events/yozora_affection_30_01_key.json",
+      version: "v039_124",
+      unlock: { type: "affection_level", character: "ai", level: 31 },
+      order: 3031,
+      summary: "美空が常連客に褒められ、夜空が嬉しさと小さな痛みの両方を抱くキーシナリオ。"
+    },
+    {
+      id: "yozora_affection_30_02_key",
+      title: "美空の剣道の方がわかりやすい",
+      type: "key",
+      category: "character_key",
+      character: "ai",
+      route: "yozora",
+      affectionBlock: 4,
+      affectionSlot: "key2",
+      unlockLevel: 34,
+      characters: ["ai", "ah"],
+      characterNames: ["双沢 夜空", "双沢 美空"],
+      scenario: "scenario/v039/events/yozora_affection_30_02_key.json",
+      version: "v039_124",
+      unlock: { type: "affection_level", character: "ai", level: 34 },
+      order: 3032,
+      summary: "夜空の弓道をめぐり、美空の剣道への尊敬と自分が見られることへの抵抗を描くキーシナリオ。"
+    },
+    {
+      id: "yozora_affection_30_03_key",
+      title: "別にいい",
+      type: "key",
+      category: "character_key",
+      character: "ai",
+      route: "yozora",
+      affectionBlock: 4,
+      affectionSlot: "key3",
+      unlockLevel: 37,
+      characters: ["ai", "ah"],
+      characterNames: ["双沢 夜空", "双沢 美空"],
+      scenario: "scenario/v039/events/yozora_affection_30_03_key.json",
+      version: "v039_124",
+      unlock: { type: "affection_level", character: "ai", level: 37 },
+      order: 3033,
+      summary: "夜空が接客で成果を出すが、話題が美空に流れることで嬉しさと痛みが混ざるキーシナリオ。"
+    },
+    {
+      id: "yozora_affection_40_00_main",
+      title: "嬉しいのに、苦しい",
+      type: "main",
+      category: "character_main",
+      character: "ai",
+      route: "yozora",
+      affectionBlock: 4,
+      affectionSlot: "main",
+      unlockLevel: 40,
+      characters: ["ai", "ah"],
+      characterNames: ["双沢 夜空", "双沢 美空"],
+      scenario: "scenario/v039/events/yozora_affection_40_00_main.json",
+      version: "v039_124",
+      unlock: {
+        type: "all_story_cleared",
+        storyIds: ["yozora_affection_30_00_main", "yozora_affection_30_01_key", "yozora_affection_30_02_key", "yozora_affection_30_03_key"],
+        fallback: { type: "affection_level", character: "ai", level: 40 }
+      },
+      order: 3040,
+      summary: "武道イベントで、美空の華やかな剣道と夜空の静かな弓道を対比し、夜空が嬉しいのに苦しい感情を漏らすメイン4。"
+    },
+    {
+      id: "yozora_affection_40_01_key",
+      title: "美空のところに行けば",
+      type: "key",
+      category: "character_key",
+      character: "ai",
+      route: "yozora",
+      affectionBlock: 5,
+      affectionSlot: "key1",
+      unlockLevel: 41,
+      characters: ["ai", "ah"],
+      characterNames: ["双沢 夜空", "双沢 美空"],
+      scenario: "scenario/v039/events/yozora_affection_40_01_key.json",
+      version: "v039_124",
+      unlock: { type: "affection_level", character: "ai", level: 41 },
+      order: 3041,
+      summary: "メイン4後の反動で、夜空が店長を避けながら『美空のところに行けば』と自分から目を逸らさせようとするキーシナリオ。"
+    },
+    {
+      id: "yozora_affection_40_02_key",
+      title: "あんたが追ってくるだけ",
+      type: "key",
+      category: "character_key",
+      character: "ai",
+      route: "yozora",
+      affectionBlock: 5,
+      affectionSlot: "key2",
+      unlockLevel: 44,
+      characters: ["ai"],
+      characterNames: ["双沢 夜空"],
+      scenario: "scenario/v039/events/yozora_affection_40_02_key.json",
+      version: "v039_124",
+      unlock: { type: "affection_level", character: "ai", level: 44 },
+      order: 3042,
+      summary: "駅前で夜空があからさまに店長を避け、『避けてない。あんたが追ってくるだけ』と距離を取るキーシナリオ。"
+    },
+    {
+      id: "yozora_affection_40_03_key",
+      title: "美空の大事なものなのに",
+      type: "key",
+      category: "character_key",
+      character: "ai",
+      route: "yozora",
+      affectionBlock: 5,
+      affectionSlot: "key3",
+      unlockLevel: 47,
+      characters: ["ai", "ah"],
+      characterNames: ["双沢 夜空", "双沢 美空"],
+      scenario: "scenario/v039/events/yozora_affection_40_03_key.json",
+      version: "v039_124",
+      unlock: { type: "affection_level", character: "ai", level: 47 },
+      order: 3043,
+      summary: "双沢姉妹の部屋で、夜空が店長に見つけてほしい気持ちと美空への罪悪感を美空に打ち明けるキーシナリオ。"
+    },
+    {
+      id: "yozora_affection_50_00_main",
+      title: "探さないで、の前兆",
+      type: "main",
+      category: "character_main",
+      character: "ai",
+      route: "yozora",
+      affectionBlock: 5,
+      affectionSlot: "main",
+      unlockLevel: 50,
+      characters: ["ai", "ah"],
+      characterNames: ["双沢 夜空", "双沢 美空"],
+      scenario: "scenario/v039/events/yozora_affection_50_00_main.json",
+      version: "v039_124",
+      unlock: {
+        type: "all_story_cleared",
+        storyIds: ["yozora_affection_40_00_main", "yozora_affection_40_01_key", "yozora_affection_40_02_key", "yozora_affection_40_03_key"],
+        fallback: { type: "affection_level", character: "ai", level: 50 }
+      },
+      order: 3050,
+      summary: "夜空が店長に『ぼくがいなくなっても、探さないで』と告げ、見つけてほしい矛盾を抱えたまま次章へ進むメイン5。"
+    }
+
 
 
   ];

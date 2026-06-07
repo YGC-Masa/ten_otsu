@@ -1,4 +1,4 @@
-/* v039_122 affection story plan: member profile story slots up to affection Lv.100 */
+/* v039_124 affection story plan: member profile story slots up to affection Lv.100 */
 (function(){
   "use strict";
   const BLOCK_SIZE = 10;
@@ -32,7 +32,7 @@
   }
 
   window.TENOTSU_AFFECTION_STORY_PLAN = {
-    version: "v039_122",
+    version: "v039_124",
     maxAffectionLevel: MAX_AFFECTION_LEVEL,
     blockSize: BLOCK_SIZE,
     keyUnlockLevelsInBlock: [1, 4, 7],
