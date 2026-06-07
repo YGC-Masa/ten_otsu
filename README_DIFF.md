@@ -1,38 +1,47 @@
-# v039_117 差分
+# v039_118 塩見浜時間帯背景アセット追加パッチ
 
-## 目的
-夜空ルートの親愛Lv.11〜20帯を試作実装します。
+## 基準
 
-## 追加シナリオ
-- `scenario/v039/events/yozora_affection_10_01_key.json`
-  - 「そういうの、気づかなくていい」
-- `scenario/v039/events/yozora_affection_10_02_key.json`
-  - 「美空だけでいいでしょ」
-- `scenario/v039/events/yozora_affection_10_03_key.json`
-  - 「気づかなくていい疲れ」
-- `scenario/v039/events/yozora_affection_20_00_main.json`
-  - 「一歩後ろの夜空」
+- v039_117 までを含む上書き差分です。
 
-## 登録
-- Lv.11: キー4
-- Lv.14: キー5
-- Lv.17: キー6
-- Lv.20: メイン2
+## 追加内容
 
-## 変更
-- `scenario/v039/storyIndex.js`
-- `scenario/v039/keyStoryConfig.js`
-- `scenario/v039/affectionStoryPlan.js`
-- `scenario/v039/backgroundCatalog.js`
-- `program/v039/version.js`
-- `program/v039/state.js`
-- `program/v039/office.js`
-- `program/v039/storyProgress.js`
-- `index.html`
+塩見浜の時間帯別背景を `images/assets/bg/` に追加しました。
 
-## 追加暫定背景
-- `images/assets/bg/bg_minato_park_event_plaza_day.png`
-- `images/assets/bg/bg_hidamari_store_front_night.png`
-- `images/assets/bg/bg_shiomi_beach_evening.png`
+```text
+images/assets/bg/bg_shiomi_beach_early_morning.png
+images/assets/bg/bg_shiomi_beach_morning.png
+images/assets/bg/bg_shiomi_beach_day.png
+images/assets/bg/bg_shiomi_beach_evening.png
+images/assets/bg/bg_shiomi_beach_night.png
+images/assets/bg/bg_shiomi_beach_midnight.png
+```
 
-これらはシナリオ再生時の404回避用の暫定背景です。正式背景ができたら差し替えてください。
+## 背景カタログ
+
+`scenario/v039/backgroundCatalog.js` に以下を追加しました。
+
+```text
+shiomi_beach_early_morning
+shiomi_beach_morning
+shiomi_beach_day
+shiomi_beach_evening
+shiomi_beach_night
+shiomi_beach_midnight
+```
+
+## シナリオ調整
+
+`yozora_affection_20_00_main.json` のバージョンを `v039_118` に更新し、
+潮見浜・夕方背景を正式アセットとして使用します。
+
+## バージョン表示
+
+`index.html` / `program/v039/version.js` / `program/v039/state.js` / `program/v039/office.js` を v039_118 に更新しました。
+
+## 確認ポイント
+
+1. 起動画面・右メニュー・画面右下が v039_118 になっている。
+2. `backgroundCatalog.js` に塩見浜6背景が登録されている。
+3. `images/assets/bg/` 配下の塩見浜6背景が404にならない。
+4. 夜空メイン2「一歩後ろの夜空」で潮見浜・夕方背景が表示される。

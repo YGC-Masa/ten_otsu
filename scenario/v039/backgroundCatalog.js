@@ -1,4 +1,4 @@
-/* v039_117 background catalog */
+/* v039_118 background catalog */
 (function(){
   "use strict";
   window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
@@ -17,7 +17,5 @@
     yozora_room_day: { name: "夜空の部屋・昼", path: "images/assets/bg/bg_yozora_room_day.png" },
     yozora_room_night: { name: "夜空の部屋・夜", path: "images/assets/bg/bg_yozora_room_night.png" },
 
-    minato_park_event_plaza_day: { name: "みなと公園・イベント広場（暫定）", path: "images/assets/bg/bg_minato_park_event_plaza_day.png" },
-    shiomi_beach_evening: { name: "潮見浜・夕方（暫定）", path: "images/assets/bg/bg_shiomi_beach_evening.png" }
-  });
+    minato_park_event_plaza_day: { name: "みなと公園・イベント広場（暫定）", path: "images/assets/bg/bg_minato_park_event_plaza_day.png" },});
 })();

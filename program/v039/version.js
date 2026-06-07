@@ -1,15 +1,15 @@
-/* v039_117 build info */
+/* v039_118 build info */
 (function(){
   "use strict";
-  window.TENOTSU_BUILD_VERSION = "v039_117";
-  window.TENOTSU_BUILD_LABEL = "v039_117 夜空キー2段目＋メイン2追加";
+  window.TENOTSU_BUILD_VERSION = "v039_118";
+  window.TENOTSU_BUILD_LABEL = "v039_118 塩見浜時間帯背景アセット追加";
   window.TENOTSU_BUILD_NOTES = [
-    "夜空キーシナリオ2段目 1/2/3 を追加",
-    "夜空メイン2『一歩後ろの夜空』を追加",
-    "親愛Lv.11/14/17/20スロットへ夜空ストーリーを登録",
-    "追加シナリオ用の暫定背景を登録"
+    "塩見浜の早朝・朝・昼・夕方・夜・深夜背景を追加",
+    "backgroundCatalog.jsへ塩見浜6背景を登録",
+    "夜空メイン2『一歩後ろの夜空』の夕方背景を正式アセット化",
+    "右メニュー・右下表示のバージョンをv039_118へ更新"
   ];
   window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  window.TENOTSU_V039.VERSION = "v039_117";
+  window.TENOTSU_V039.VERSION = "v039_118";
   window.TENOTSU_V039.BUILD_LABEL = window.TENOTSU_BUILD_LABEL;
 })();
