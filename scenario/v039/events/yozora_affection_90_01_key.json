@@ -1,0 +1,500 @@
+{
+  "id": "yozora_affection_90_01_key",
+  "title": "静かな夜のブックカフェ企画",
+  "version": "v039_127",
+  "return": {
+    "mode": "storyMenu",
+    "storyId": "yozora_affection_90_01_key",
+    "storyMenuTab": "key"
+  },
+  "format": "v039_steps",
+  "type": "character_key_story",
+  "characterId": "ai",
+  "route": "yozora",
+  "affectionRange": {
+    "min": 90,
+    "max": 100
+  },
+  "location": {
+    "id": "hidamari_store_closed",
+    "name": "ひだまりストア・閉店後の売り場"
+  },
+  "summary": "夜空は静かな夜のブックカフェ企画のチラシに興味を持つ。前回の羽白湖が寒かったため、今度は暖かく静かな場所として気になっている。美空が店長と二人で行ってきなよと背中を押すが、この時点の夜空はまだデートとして強く意識していない。",
+  "purpose": "羽白湖で自分が見たいものを受け入れた夜空が、次は自分が落ち着ける場所へ興味を持つ。美空が二人で行ってきなよと背中を押し、店長と夜空が二人で出かける流れを作る。",
+  "tags": [
+    "夜空ルート",
+    "親愛度90-100",
+    "静かな夜のブックカフェ",
+    "二人きり",
+    "親愛度100到達点"
+  ],
+  "clearFlags": [
+    "yozora_key_90_01_cleared"
+  ],
+  "nextHint": "次のキー100-2では、店長の「デートみたいだな」という一言で夜空が意味を理解し、照れパニックになる。",
+  "renderPolicy": {
+    "spritePosition": "logical_split_n_plus_1",
+    "eventCgLayer": "frontOfCharacters"
+  },
+  "steps": [
+    {
+      "speaker": "",
+      "text": "――ひだまりストア・閉店後の売り場――",
+      "bg": "images/assets/bg/battle_store_lv1.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "店長",
+      "text": "夜空、今日の閉店チェックも助かった。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……うん。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "今日は、受け取るのが早いな。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "練習の成果。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "いい成果だな。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "褒めすぎ。短めでも、褒められると恥ずかしい。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "夜空はレジ横のラックを整える。イベント案内のチラシが何枚か並んでいて、夜空の手がその一枚で止まった。"
+    },
+    {
+      "speaker": "店長",
+      "text": "また何か見つけたのか？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……またってなに。羽白湖の時のこと、覚えてなくていい。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "忘れないで、かもしれないだろ。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……ずるい。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "夜空はチラシを手に取る。そこには、小さな書店とカフェが共同で開く「静かな夜のブックカフェ企画」と書かれていた。"
+    },
+    {
+      "speaker": "店長",
+      "text": "夜のブックカフェ？　本を読みながら、温かい飲み物を飲むイベントか。夜限定なんだな。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "店内の照明を少し落として、静かな音楽を流すって書いてある。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "夜空、こういうの好きそうだな。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……そういう決めつけ。違わないけど。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "気になるのか？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "前回、寒かったから。羽白湖は綺麗だったけど、寒かった。ここなら、寒くない。本もある。静かそう。確認にはちょうどいい。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "確認か。飲み物もあるみたいだな。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "ココアもあるって書いてある。……たまたま見えただけ。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "そこへ、美空が閉店チェック用のファイルを抱えて戻ってくる。"
+    },
+    {
+      "speaker": "美空",
+      "text": "店長、夜空。閉店チェック、終わりました。あれ？ 夜空、それ何のチラシ？",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "……別に。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "別に、って言う時は気になってる時だよね。見せて？",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "夜空は少し迷ってから、チラシを美空へ渡す。"
+    },
+    {
+      "speaker": "美空",
+      "text": "静かな夜のブックカフェ企画……。わぁ、夜空好きそう。あったかいし、静かだし、本も読めるし。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "みんなしてそれ言う。前回、寒かったから。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "羽白湖、寒かったもんね。夜空も冷えてたよ？",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "ぼくはいい。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "よくない。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "ねえ、夜空。今回は、店長と二人で行ってきなよ。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "……は？",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "二人で？"
+    },
+    {
+      "speaker": "美空",
+      "text": "うん。前回は三人で星を見たでしょ。でも今回は夜空が静かに過ごしたい場所みたいだから。店長と二人で行ってきたらいいと思う。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "二人で行く意味がわからない。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空、店長と二人でも大丈夫になってきたでしょ？",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "大丈夫じゃない。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "即答だな。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "店長は黙ってて。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空が行きたい理由は、美空がいるからだけ？",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "……そういう聞き方。最近、美空までずるい。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "夜空、行きたくないなら無理に行かなくていい。でも、気になるなら一緒に行く。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "即答しないで。でも、今のは……少し助かった。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "行ってきなよ。夜空が行きたいなら。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "……美空がそう言うなら。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "ううん。夜空が、行きたいなら。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "少し沈黙が落ちる。夜空はチラシの端を指でなぞる。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……行きたくないわけじゃない。でも、二人で行くのは……まだ変。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "確認しに行くか？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……確認。静かな本と、ココアと、暖かさの確認。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "ふふっ。じゃあ、決まりですね。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "決まりじゃない。仮。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "夜空はチラシを丁寧に自分のバッグへしまう。まだ二人で行くことの意味を、深くは考えていなかった。ただ、静かな夜の本棚と、温かいココアのある場所へ行ってみたい。その気持ちは、確かに夜空自身のものだった。"
+    }
+  ],
+  "keyScenarioIndex": 1
+}

@@ -1,0 +1,560 @@
+{
+  "id": "yozora_affection_90_02_key",
+  "title": "デートみたいだな",
+  "version": "v039_127",
+  "return": {
+    "mode": "storyMenu",
+    "storyId": "yozora_affection_90_02_key",
+    "storyMenuTab": "key"
+  },
+  "format": "v039_steps",
+  "type": "character_key_story",
+  "characterId": "ai",
+  "route": "yozora",
+  "affectionRange": {
+    "min": 90,
+    "max": 100
+  },
+  "location": {
+    "id": "hidamari_store_closed",
+    "name": "ひだまりストア・閉店後の売り場"
+  },
+  "summary": "店長が二人で夜のブックカフェはデートみたいだなと言ったことで、夜空が初めて強くデートを意識して照れパニックを起こす。一拍遅れて意味を理解してから拒否するコミカルな流れ。",
+  "purpose": "夜空が、店長と二人で夜のブックカフェへ行くことをデートみたいと言われて初めて強く意識し、照れパニックを起こす。ただし最後には、本当は行きたいことを小さく認める。",
+  "tags": [
+    "夜空ルート",
+    "親愛度90-100",
+    "静かな夜のブックカフェ",
+    "二人きり",
+    "親愛度100到達点"
+  ],
+  "clearFlags": [
+    "yozora_key_90_02_cleared"
+  ],
+  "nextHint": "次のキー100-3では、夜、自宅で美空に相談し、行きたいのは誰なのと諭される。",
+  "renderPolicy": {
+    "spritePosition": "logical_split_n_plus_1",
+    "eventCgLayer": "frontOfCharacters"
+  },
+  "steps": [
+    {
+      "speaker": "",
+      "text": "――ひだまりストア・閉店後の売り場――",
+      "bg": "images/assets/bg/battle_store_lv1.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "店長",
+      "text": "夜空、この前のブックカフェのチラシだけど。開催日、今週の金曜だったよな。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "うん。十九時から二十一時。ラストオーダーは二十時半。入場は予約優先。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "しっかり確認してるな。予約は？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……まだ。仮確認だから。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "でも、行くなら予約した方がよさそうだな。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "店長は、行くつもりなの。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "夜空が行くなら。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "そういう返し。だめじゃない。でも、ずるい。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "夜空はチラシを手元で軽く折り直す。美空は少し離れた棚で、閉店後の片づけをしていた。"
+    },
+    {
+      "speaker": "店長",
+      "text": "美空は来ないんだったな。じゃあ、二人で行くことになるのか。夜のブックカフェに、二人で。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "繰り返さなくていい。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "なんだか、デートみたいだな。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……デート？",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "あ。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……デート。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "夜空？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……っ！？",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "悪い、そういうつもりじゃ――"
+    },
+    {
+      "speaker": "夜空",
+      "text": "行かない。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "え？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "絶対行かない。二度と誘わない。今の話はなかった。忘れて。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "悪い、からかったつもりはなかったんだ。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "からかってないなら、もっと悪い。かなり悪い。つい、が一番困る。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "すまん。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "謝らなくていい。でも、今のは忘れて。……本当に忘れられたら、それはそれで困る。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "どっちだ。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "知らない。難しくしてるのは店長。今回は完全に店長。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "夜空はチラシを店長の方へ突き返そうとして、途中で止まる。返したいのか、持っていたいのか、自分でもわからないようだった。"
+    },
+    {
+      "speaker": "店長",
+      "text": "夜空、落ち着いたか？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "落ち着いてない。何も言わないで。でも、黙られると余計に変。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "そこへ、美空が戻ってくる。夜空の耳が赤いことに気づき、少し首をかしげた。"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空？ 顔、赤いよ？ 何かありました？",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "俺が余計なことを言った。ブックカフェ、二人で行くならデートみたいだなって。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "言わなくていいって言った！",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "ああ……。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "ああ、じゃない。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空、それで照れてるの？",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "照れてない。怒ってる。かなり。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "でも、行きたくなくなった？",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "……行かない。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "本当に？ 店長がデートみたいって言ったから？",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "そういう言葉にすると、急に無理になる。どうしていいかわからなくなる。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "じゃあ、もう言わない。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "言わないで。でも、なかったことにされるのも嫌。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "夜のブックカフェで、静かな確認。静かな本の確認と、ココアの確認。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……それなら、まだいい。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "二人で？",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "美空。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空。行きたくないわけじゃないんでしょ？",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "……行きたくないわけじゃない。でも、そういう言い方をされると無理。急に、どこを見ればいいかわからなくなる。何を話せばいいかもわからなくなる。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "じゃあ、言わない。二人で行くことも、変に意識しなくていい。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "それは、それで難しい。でも……行きたい気持ちは、なくなってない。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "ちゃんと聞こえたよ。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "……なら、いい。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "予約、どうする？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……仮で。まだ正式じゃない。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空、よかったね。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "よくない。まだ何もよくない。でも、行きたい気持ちは残ってる。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "今夜、部屋で少し話そう？ 行きたいかどうか。怖いかどうか。夜空がどうしたいか。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "……ずるい。二人とも、ずるい。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "夜空はチラシをバッグにしまう。行かない、と言った。でも、捨てなかった。その小さな矛盾を、美空も店長も何も言わずに見守った。"
+    }
+  ],
+  "keyScenarioIndex": 2
+}

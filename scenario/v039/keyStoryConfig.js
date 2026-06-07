@@ -1,4 +1,4 @@
-/* v039_126 key/main story config scaffold */
+/* v039_127 key/main story config scaffold */
 (function(){
   "use strict";
   const empty = function(name, title){ return { characterName: name, requiredStories: [], slotStories: {}, completeReward: { title } }; };
@@ -40,7 +40,10 @@
         "yozora_affection_70_03_key",
         "yozora_affection_80_01_key",
         "yozora_affection_80_02_key",
-        "yozora_affection_80_03_key"
+        "yozora_affection_80_03_key",
+        "yozora_affection_90_01_key",
+        "yozora_affection_90_02_key",
+        "yozora_affection_90_03_key"
       ],
       slotStories: {
         b1_key1: "yozora_affection_00_01_key",
@@ -78,7 +81,11 @@
         b9_key1: "yozora_affection_80_01_key",
         b9_key2: "yozora_affection_80_02_key",
         b9_key3: "yozora_affection_80_03_key",
-        b9_main: "yozora_affection_90_00_main"
+        b9_main: "yozora_affection_90_00_main",
+        b10_key1: "yozora_affection_90_01_key",
+        b10_key2: "yozora_affection_90_02_key",
+        b10_key3: "yozora_affection_90_03_key",
+        b10_main: "yozora_affection_100_00_main"
       },
       completeReward: { title: "夜空との絆" }
     },

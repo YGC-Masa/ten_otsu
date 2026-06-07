@@ -1,0 +1,782 @@
+{
+  "id": "yozora_affection_100_00_main",
+  "title": "二人だから、少し素直になる",
+  "version": "v039_127",
+  "return": {
+    "mode": "storyMenu",
+    "storyId": "yozora_affection_100_00_main",
+    "storyMenuTab": "main"
+  },
+  "format": "v039_steps",
+  "type": "character_main_story",
+  "characterId": "ai",
+  "route": "yozora",
+  "affectionRange": {
+    "min": 90,
+    "max": 100
+  },
+  "location": {
+    "id": "night_book_cafe",
+    "name": "静かな夜のブックカフェ"
+  },
+  "summary": "夜空は静かな夜のブックカフェで、店長と二人きりの時間を過ごす。美空に背中を押され、自分の意思で来たことを認め、距離を少しずつ詰める。終盤ではいつも、ごめんね、いつも、ありがとう、最初からずっと嬉しかったよと深い信頼と感謝を伝える。",
+  "purpose": "夜空が店長と二人で静かな夜のブックカフェへ行く。美空に背中を押され、自分の意思で来たことを認め、距離を詰める練習をする。最後に、探してくれたこと、待ってくれたこと、見続けてくれたことへの感謝を伝え、その時までちゃんとぼくのこと見ててねと締める。",
+  "tags": [
+    "夜空ルート",
+    "親愛度90-100",
+    "静かな夜のブックカフェ",
+    "二人きり",
+    "親愛度100到達点"
+  ],
+  "clearFlags": [
+    "yozora_main_100_00_cleared"
+  ],
+  "nextHint": "夜空ルート親愛度100到達。美空メインストーリー側の姉妹和解や、後日談へ接続可能。",
+  "renderPolicy": {
+    "spritePosition": "logical_split_n_plus_1",
+    "eventCgLayer": "frontOfCharacters"
+  },
+  "steps": [
+    {
+      "speaker": "",
+      "text": "――ひだまりストア・閉店後――",
+      "bg": "images/assets/bg/battle_store_lv1.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "美空",
+      "text": "店長、夜空。今日もお疲れさまでした。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "お疲れ、美空。夜空も、今日は早めに上がって大丈夫だぞ。ブックカフェ、今日だったな。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……言われなくても、わかってる。……うん。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空、準備は？ 本、持った？ ココア飲めるお店だよね。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "してる。持った。今日は室内だから手袋はいらない。……確認済み。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "ふふっ。夜空がちゃんと楽しみにしてるの、嬉しいから。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "楽しみにしてるとは言ってない。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "確認しに行くんだったな。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "そう。静かな本と、ココアと、暖かさの確認。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "あと、店長と二人でも逃げない確認。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "美空。……大事かどうかは、帰ってから判断する。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "美空は夜空のマフラーを少し直す。夜空は一瞬だけ身を引きかけたが、そのままされるに任せた。"
+    },
+    {
+      "speaker": "美空",
+      "text": "よし。いってらっしゃい。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "……行ってきます。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "美空は店先で小さく手を振る。夜空はその手を見て、少しだけ視線を落とす。そして、店長の隣へ歩き出した。"
+    },
+    {
+      "speaker": "",
+      "text": "――ひだまりストア前・夜――",
+      "bg": "images/assets/bg/bg_hidamari_store_front_night_open.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true
+    },
+    {
+      "speaker": "店長",
+      "text": "寒くないか？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "今日は、平気。今日は信用していい。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "今日は来てくれてありがとう。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "お礼を言うところじゃない。でも……少しだけ、悪くない影響。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "二人は夜の通りを歩く。夜空は半歩ほど離れている。だが、以前のように距離を取るための半歩ではなく、自分の呼吸を整えるための半歩だった。"
+    },
+    {
+      "speaker": "",
+      "text": "――静かな夜のブックカフェ・入口――",
+      "bg": "images/assets/bg/battle_store_lv1.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true
+    },
+    {
+      "speaker": "店長",
+      "text": "ここか。落ち着いた雰囲気だな。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……うん。思ってたより、静か。第一印象は……悪くない。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "二人は店内へ入る。扉のベルが小さく鳴り、暖かい空気が流れてくる。外の寒さとは違う、木とコーヒーと紙の匂いがした。"
+    },
+    {
+      "speaker": "",
+      "text": "――静かな夜のブックカフェ・店内――",
+      "bg": "images/assets/bg/battle_store_lv1.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true
+    },
+    {
+      "speaker": "店長",
+      "text": "どこに座る？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……奥の席。人が少ない。あと、照明が強すぎない。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "夜空らしい選び方だな。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "今日は、その言い方も平気。少しだけ。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "夜空は奥の席へ向かう。二人掛けの小さな席。丸いテーブルを挟む席と、横並びのソファ席があった。"
+    },
+    {
+      "speaker": "店長",
+      "text": "向かい合わせにするか？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……横。今日は、横。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "距離、近くないか？ 離れるか？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "近い。……離れなくていい。大丈夫じゃない。でも、今日はそれでいい。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "夜空はソファの端に座る。店長は少し距離を空けて隣に座った。夜空はその距離を見て、小さく息を吐く。"
+    },
+    {
+      "speaker": "店長",
+      "text": "遠いか？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……少し。勝手に近づかないで。……少しだけなら。テーブルの本を取りやすい位置まで。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "店長が少しだけ距離を詰める。夜空は視線を落としたまま、何も言わない。耳はもう赤かった。"
+    },
+    {
+      "speaker": "店長",
+      "text": "大丈夫か？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "大丈夫じゃない。でも、逃げない。今日は、逃げない練習の続きだから。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "注文を終えると、夜空は持ってきた本をテーブルに置いた。星座図鑑ではなく、短編小説の本だった。"
+    },
+    {
+      "speaker": "店長",
+      "text": "今日は星の本じゃないんだな。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "うん。今日は、普通の本。星は、羽白湖で見たから。今日は、違うものを読んでもいいかなって。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "――静かな夜のブックカフェ・奥の席――",
+      "bg": "images/assets/bg/battle_store_lv1.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true
+    },
+    {
+      "speaker": "",
+      "text": "ココアが届く。夜空は両手でカップを包み、小さく息を吐いた。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "あったかい。前回みたいに寒くない。見に行ってよかった。今日も、たぶん……来てよかった。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "店長。今日は、美空がいない。少し、不安だった。でも、美空がいないから話せることもある気がする。美空のことを、置いてきたわけじゃない。美空が背中を押してくれた。ちゃんと行っておいでって。自分で選んでいいって。だから、今日は来た。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "夜空が行きたいと思ったから？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……うん。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "夜空はカップを置く。そして、少し迷った後、店長の方へわずかに体を向けた。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "店長。……今日は、もう少しだけ、練習する。逃げない練習。頼る練習。褒められる練習。……あと、近い距離に慣れる練習。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "無理しなくていいぞ。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "無理じゃない。……無理かもしれないけど、今日はやる。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "夜空は本を閉じる。両手を膝の上で握りしめる。そして、かなり小さな声で言った。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "み、美空が言ってた。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "美空が？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "こ、ここ、こうすると……。き……きっと、店長は喜んでくれるって。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "こうすると？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……聞き返さないで。今、言うだけで精一杯だから。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "夜空は、ほんの少しだけ店長の方へ体を傾けた。肩が触れるか触れないかの距離。それだけで、夜空の耳が一気に赤くなる。"
+    },
+    {
+      "speaker": "店長",
+      "text": "夜空、大丈夫か？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "大丈夫じゃない。近い。無理。でも、離れたくないのも困る。……練習。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "夜空はもう少しだけ体を寄せる。肩が軽く触れる。一瞬、夜空の呼吸が止まったように見えた。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……やっぱり無理。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "離れるか？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "待って。離れるとは言ってない。美空が言ってたのを真に受けた。自分には早かった。心臓がうるさい。店長、近い。いや、近づいたのはぼくだけど。でも、店長も近い。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "落ち着いたか？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……少し。無理。かなり無理。でも……悪くなかった。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "言わないで。今のは、言えたところで止めたい。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "夜空は少しだけ距離を戻す。けれど完全には離れなかった。肩が触れるか触れないか。その微妙な距離に落ち着く。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "店長。さっきの。嬉しかった？",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……うん。悪い。でも、嬉しかった。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……そう。恥ずかしかった。怖かった。でも……少しだけ、落ち着いた。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "夜空はココアをもう一口飲む。そして、カップを置いたまま、今度は店長の方を見た。今までよりも長く。逃げずに。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "店長。いつも、ごめんね。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "夜空……？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "茶化さないで。今なら、素直に言えそうだから。すぐ逃げるし。すぐ怒るし。美空の方へ押し返すし。面倒なことばかり言う。でも、店長はいつも待ってた。探してくれた。見つけても、逃げても、ちゃんとぼくを見ててくれた。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "探してくれて。待っててくれて。帰らないでいてくれて。何も言わずに、隣にいてくれて。いつも、ありがとう。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……夜空。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "言わないで。今なら、まだ言える。たぶん……ううん。最初から……ずっと……嬉しかったよ。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "その言葉を言い終えた瞬間、夜空は顔を伏せた。耳まで赤い。手元のカップをぎゅっと握っている。"
+    },
+    {
+      "speaker": "店長",
+      "text": "……ありがとう。言ってくれて。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "お礼を言うところじゃない。でも、今日は……ずるくてもいい。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "いつか。美空にも、ちゃんと話す。羨ましかったことも、苦しかったことも。それでも、美空がかけがえないってことも。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "その時、あの時のことも。泣いたことも、怒ったことも、逃げたことも。大事な思い出として、二人で……ううん、三人で笑って話せるといい。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "きっと話せる。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "簡単に言う。……でも、今日は信じる。その時まで。ちゃんと、ぼくのこと見ててね。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "もちろん。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "即答しないで。……でも、今のは嫌じゃなかった。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "夜空は少しだけ笑った。照れくさそうで、困ったようで、それでも穏やかな笑みだった。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "今日は、ここまで。これ以上は、店長が調子に乗る。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "乗らないぞ。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "信用できない。……少しだけなら、信用してる。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "夜空はそう言って、もう一度本を開いた。店長はその隣で、静かにページをめくる。二人の距離は、もう遠くない。近すぎて逃げたくなるほどでもなく、離れたくなるほどでもない。夜空が自分で選んだ距離だった。"
+    }
+  ],
+  "mainScenarioIndex": 10,
+  "unlockCondition": {
+    "requiredFlags": [
+      "yozora_key_90_01_cleared",
+      "yozora_key_90_02_cleared",
+      "yozora_key_90_03_cleared"
+    ]
+  }
+}

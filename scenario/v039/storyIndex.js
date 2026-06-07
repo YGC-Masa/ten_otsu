@@ -1,4 +1,4 @@
-/* v039_126 story index: normal encounter / member key-main slots / recollection */
+/* v039_127 story index: normal encounter / member key-main slots / recollection */
 (function(){
   "use strict";
   window.TENOTSU_STORY_INDEX = [
@@ -901,6 +901,128 @@
     },
     "order": 3090,
     "summary": "羽白湖で本物の星を見ながら、夜空は「美空のためだけではなく、自分が見たかった」と認める。黒い手袋や星、弓道、ココアなど、かつて“美空の反対”として選んできたものを、今の自分が選び直していいのだと気づく。"
+},
+{
+  "id": "yozora_affection_90_01_key",
+  "title": "静かな夜のブックカフェ企画",
+  "type": "key",
+  "category": "character_key",
+  "character": "ai",
+  "route": "yozora",
+  "affectionBlock": 10,
+  "affectionSlot": "key1",
+  "unlockLevel": 91,
+  "characters": [
+    "ai",
+    "ah"
+  ],
+  "characterNames": [
+    "双沢 夜空",
+    "双沢 美空"
+  ],
+  "scenario": "scenario/v039/events/yozora_affection_90_01_key.json",
+  "version": "v039_127",
+  "unlock": {
+    "type": "affection_level",
+    "character": "ai",
+    "level": 91
+  },
+  "order": 3101,
+  "summary": "夜空は静かな夜のブックカフェ企画のチラシに興味を持つ。前回の羽白湖が寒かったため、今度は暖かく静かな場所として気になっている。美空が店長と二人で行ってきなよと背中を押すが、この時点の夜空はまだデートとして強く意識していない。"
+},
+{
+  "id": "yozora_affection_90_02_key",
+  "title": "デートみたいだな",
+  "type": "key",
+  "category": "character_key",
+  "character": "ai",
+  "route": "yozora",
+  "affectionBlock": 10,
+  "affectionSlot": "key2",
+  "unlockLevel": 94,
+  "characters": [
+    "ai",
+    "ah"
+  ],
+  "characterNames": [
+    "双沢 夜空",
+    "双沢 美空"
+  ],
+  "scenario": "scenario/v039/events/yozora_affection_90_02_key.json",
+  "version": "v039_127",
+  "unlock": {
+    "type": "affection_level",
+    "character": "ai",
+    "level": 94
+  },
+  "order": 3102,
+  "summary": "店長が二人で夜のブックカフェはデートみたいだなと言ったことで、夜空が初めて強くデートを意識して照れパニックを起こす。一拍遅れて意味を理解してから拒否するコミカルな流れ。"
+},
+{
+  "id": "yozora_affection_90_03_key",
+  "title": "行きたいのは誰なの",
+  "type": "key",
+  "category": "character_key",
+  "character": "ai",
+  "route": "yozora",
+  "affectionBlock": 10,
+  "affectionSlot": "key3",
+  "unlockLevel": 97,
+  "characters": [
+    "ai",
+    "ah"
+  ],
+  "characterNames": [
+    "双沢 夜空",
+    "双沢 美空"
+  ],
+  "scenario": "scenario/v039/events/yozora_affection_90_03_key.json",
+  "version": "v039_127",
+  "unlock": {
+    "type": "affection_level",
+    "character": "ai",
+    "level": 97
+  },
+  "order": 3103,
+  "summary": "夜空は自宅で美空に相談する。美空は夜空を抱きしめ、自分の気持ちで選んでいいと受け止める。夜空はぼくが行きたい、店長と行きたいと認め、翌日、店長にお願いしますと自分から伝える。"
+},
+{
+  "id": "yozora_affection_100_00_main",
+  "title": "二人だから、少し素直になる",
+  "type": "main",
+  "category": "character_main",
+  "character": "ai",
+  "route": "yozora",
+  "affectionBlock": 10,
+  "affectionSlot": "main",
+  "unlockLevel": 100,
+  "characters": [
+    "ai",
+    "ah"
+  ],
+  "characterNames": [
+    "双沢 夜空",
+    "双沢 美空"
+  ],
+  "scenario": "scenario/v039/events/yozora_affection_100_00_main.json",
+  "version": "v039_127",
+  "unlock": {
+    "type": "all_story_cleared",
+    "storyIds": [
+      "yozora_affection_90_00_main",
+      "yozora_affection_90_01_key",
+      "yozora_affection_90_02_key",
+      "yozora_affection_90_03_key"
+    ],
+    "fallback": {
+      "type": "affection_level",
+      "character": "ai",
+      "level": 100
+    }
+  },
+  "order": 3100,
+  "summary": "夜空は静かな夜のブックカフェで、店長と二人きりの時間を過ごす。美空に背中を押され、自分の意思で来たことを認め、距離を少しずつ詰める。終盤ではいつも、ごめんね、いつも、ありがとう、最初からずっと嬉しかったよと深い信頼と感謝を伝える。"
 }
+
   ];
 })();
