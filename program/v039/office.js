@@ -1,4 +1,4 @@
-/* v039_125 office */
+/* v039_126 夜空Lv61〜90ストーリー一括追加
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -47,10 +47,10 @@
     version.className = "tenotsu-menu-version";
     const versionMain = document.createElement("span");
     versionMain.className = "tenotsu-menu-version-main";
-    versionMain.textContent = ns.VERSION || window.TENOTSU_BUILD_VERSION || "v039_125";
+    versionMain.textContent = ns.VERSION || window.TENOTSU_BUILD_VERSION || "v039_126 夜空Lv61〜90ストーリー一括追加";
     const versionSub = document.createElement("span");
     versionSub.className = "tenotsu-menu-version-sub";
-    versionSub.textContent = ns.BUILD_LABEL || window.TENOTSU_BUILD_LABEL || "v039_125";
+    versionSub.textContent = ns.BUILD_LABEL || window.TENOTSU_BUILD_LABEL || "v039_126 夜空Lv61〜90ストーリー一括追加";
     version.appendChild(versionMain);
     version.appendChild(versionSub);
     layers.menu.appendChild(version);
@@ -137,7 +137,7 @@
     const html = `
       <div class="tenotsu-settings-title">設定</div>
       <div class="tenotsu-settings-body">
-        <div>現在のバージョン: <strong>${ns.VERSION || window.TENOTSU_BUILD_VERSION || "v039_125"}</strong></div>
+        <div>現在のバージョン: <strong>${ns.VERSION || window.TENOTSU_BUILD_VERSION || "v039_126 夜空Lv61〜90ストーリー一括追加"}</strong></div>
         <div>表示やキャッシュ、営業リソースの調整を行います。</div>
         <div class="tenotsu-settings-resource-note">ST/BPリセットは検証用です。スタミナとバトルPを最大値に戻します。</div>
       </div>

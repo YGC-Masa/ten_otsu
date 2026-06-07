@@ -1,4 +1,4 @@
-/* v039_125 key/main story config scaffold */
+/* v039_126 key/main story config scaffold */
 (function(){
   "use strict";
   const empty = function(name, title){ return { characterName: name, requiredStories: [], slotStories: {}, completeReward: { title } }; };
@@ -31,7 +31,16 @@
         "yozora_affection_40_03_key",
         "yozora_affection_50_01_key",
         "yozora_affection_50_02_key",
-        "yozora_affection_50_03_key"
+        "yozora_affection_50_03_key",
+        "yozora_affection_60_01_key",
+        "yozora_affection_60_02_key",
+        "yozora_affection_60_03_key",
+        "yozora_affection_70_01_key",
+        "yozora_affection_70_02_key",
+        "yozora_affection_70_03_key",
+        "yozora_affection_80_01_key",
+        "yozora_affection_80_02_key",
+        "yozora_affection_80_03_key"
       ],
       slotStories: {
         b1_key1: "yozora_affection_00_01_key",
@@ -57,7 +66,19 @@
         b6_key1: "yozora_affection_50_01_key",
         b6_key2: "yozora_affection_50_02_key",
         b6_key3: "yozora_affection_50_03_key",
-        b6_main: "yozora_affection_60_00_main"
+        b6_main: "yozora_affection_60_00_main",
+        b7_key1: "yozora_affection_60_01_key",
+        b7_key2: "yozora_affection_60_02_key",
+        b7_key3: "yozora_affection_60_03_key",
+        b7_main: "yozora_affection_70_00_main",
+        b8_key1: "yozora_affection_70_01_key",
+        b8_key2: "yozora_affection_70_02_key",
+        b8_key3: "yozora_affection_70_03_key",
+        b8_main: "yozora_affection_80_00_main",
+        b9_key1: "yozora_affection_80_01_key",
+        b9_key2: "yozora_affection_80_02_key",
+        b9_key3: "yozora_affection_80_03_key",
+        b9_main: "yozora_affection_90_00_main"
       },
       completeReward: { title: "夜空との絆" }
     },

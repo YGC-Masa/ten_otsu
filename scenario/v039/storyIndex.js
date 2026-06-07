@@ -1,4 +1,4 @@
-/* v039_125 story index: normal encounter / member key-main slots / recollection */
+/* v039_126 story index: normal encounter / member key-main slots / recollection */
 (function(){
   "use strict";
   window.TENOTSU_STORY_INDEX = [
@@ -437,7 +437,7 @@
                 "双沢 美空"
           ],
           "scenario": "scenario/v039/events/yozora_affection_50_01_key.json",
-          "version": "v039_125",
+          "version": "v039_126",
           "unlock": {
                 "type": "affection_level",
                 "character": "ai",
@@ -465,7 +465,7 @@
                 "双沢 美空"
           ],
           "scenario": "scenario/v039/events/yozora_affection_50_02_key.json",
-          "version": "v039_125",
+          "version": "v039_126",
           "unlock": {
                 "type": "affection_level",
                 "character": "ai",
@@ -493,7 +493,7 @@
                 "双沢 美空"
           ],
           "scenario": "scenario/v039/events/yozora_affection_50_03_key.json",
-          "version": "v039_125",
+          "version": "v039_126",
           "unlock": {
                 "type": "affection_level",
                 "character": "ai",
@@ -521,7 +521,7 @@
                 "双沢 美空"
           ],
           "scenario": "scenario/v039/events/yozora_affection_60_00_main.json",
-          "version": "v039_125",
+          "version": "v039_126",
           "unlock": {
                 "type": "all_story_cleared",
                 "storyIds": [
@@ -538,6 +538,369 @@
           },
           "order": 3060,
           "summary": "夕凪展望台で夜空が美空との比較、羨望、自己嫌悪、店長に見つけてほしい矛盾を吐露するメイン6。"
-    }
+    },
+{
+    "id": "yozora_affection_60_01_key",
+    "title": "昨日のことは見ないで",
+    "type": "key",
+    "category": "character_key",
+    "character": "ai",
+    "route": "yozora",
+    "affectionBlock": 7,
+    "affectionSlot": "key1",
+    "unlockLevel": 61,
+    "characters": [
+        "ai",
+        "ah"
+    ],
+    "characterNames": [
+        "双沢 夜空",
+        "双沢 美空"
+    ],
+    "scenario": "scenario/v039/events/yozora_affection_60_01_key.json",
+    "version": "v039_126",
+    "unlock": {
+        "type": "affection_level",
+        "character": "ai",
+        "level": 61
+    },
+    "order": 3071,
+    "summary": "メイン60翌日。夜空は店長にすべて見られた恥ずかしさと気まずさで目を合わせられない。「忘れて。でも忘れないで」と矛盾した気持ちを見せる。"
+},
+{
+    "id": "yozora_affection_60_02_key",
+    "title": "謝りたいけど言えない",
+    "type": "key",
+    "category": "character_key",
+    "character": "ai",
+    "route": "yozora",
+    "affectionBlock": 7,
+    "affectionSlot": "key2",
+    "unlockLevel": 64,
+    "characters": [
+        "ai",
+        "ah"
+    ],
+    "characterNames": [
+        "双沢 夜空",
+        "双沢 美空"
+    ],
+    "scenario": "scenario/v039/events/yozora_affection_60_02_key.json",
+    "version": "v039_126",
+    "unlock": {
+        "type": "affection_level",
+        "character": "ai",
+        "level": 64
+    },
+    "order": 3072,
+    "summary": "夜空は店長に謝りたいが、何度も言葉が詰まる。美空に背中を押され、ようやく「昨日は言いすぎた」「ごめん」と言える。"
+},
+{
+    "id": "yozora_affection_60_03_key",
+    "title": "ありがとう、の手前",
+    "type": "key",
+    "category": "character_key",
+    "character": "ai",
+    "route": "yozora",
+    "affectionBlock": 7,
+    "affectionSlot": "key3",
+    "unlockLevel": 67,
+    "characters": [
+        "ai",
+        "ah"
+    ],
+    "characterNames": [
+        "双沢 夜空",
+        "双沢 美空"
+    ],
+    "scenario": "scenario/v039/events/yozora_affection_60_03_key.json",
+    "version": "v039_126",
+    "unlock": {
+        "type": "affection_level",
+        "character": "ai",
+        "level": 67
+    },
+    "order": 3073,
+    "summary": "夜空は「探してくれて」「見つけてくれて」「帰らないでいてくれて」への感謝を伝えようとするが、まだ「ありがとう」と言い切れない。店長は無理に引き出さず、「聞こえかけたことにしておく」と受け止める。"
+},
+{
+    "id": "yozora_affection_70_00_main",
+    "title": "忘れて、でも忘れないで",
+    "type": "main",
+    "category": "character_main",
+    "character": "ai",
+    "route": "yozora",
+    "affectionBlock": 7,
+    "affectionSlot": "main",
+    "unlockLevel": 70,
+    "characters": [
+        "ai",
+        "ah"
+    ],
+    "characterNames": [
+        "双沢 夜空",
+        "双沢 美空"
+    ],
+    "scenario": "scenario/v039/events/yozora_affection_70_00_main.json",
+    "version": "v039_126",
+    "unlock": {
+        "type": "all_story_cleared",
+        "storyIds": [
+            "yozora_affection_60_00_main",
+            "yozora_affection_60_01_key",
+            "yozora_affection_60_02_key",
+            "yozora_affection_60_03_key"
+        ],
+        "fallback": {
+            "type": "affection_level",
+            "character": "ai",
+            "level": 70
+        }
+    },
+    "order": 3070,
+    "summary": "夜空は店長に、メイン60で感情をぶつけたことを謝り、探してくれたこと・見つけてくれたこと・帰らないでいてくれたことへの感謝を伝える。「忘れて。でも忘れないで」という矛盾した気持ちを、店長は「しまっておく」と受け止める。"
+},
+{
+    "id": "yozora_affection_70_01_key",
+    "title": "呼んだだけ",
+    "type": "key",
+    "category": "character_key",
+    "character": "ai",
+    "route": "yozora",
+    "affectionBlock": 8,
+    "affectionSlot": "key1",
+    "unlockLevel": 71,
+    "characters": [
+        "ai",
+        "ah"
+    ],
+    "characterNames": [
+        "双沢 夜空",
+        "双沢 美空"
+    ],
+    "scenario": "scenario/v039/events/yozora_affection_70_01_key.json",
+    "version": "v039_126",
+    "unlock": {
+        "type": "affection_level",
+        "character": "ai",
+        "level": 71
+    },
+    "order": 3081,
+    "summary": "夜空は自分から店長を呼ぶが、最初は「呼んだだけ」とごまかす。メイン70で宣言した「少しだけ素直になる練習」の最初の実践。"
+},
+{
+    "id": "yozora_affection_70_02_key",
+    "title": "少し歩いて",
+    "type": "key",
+    "category": "character_key",
+    "character": "ai",
+    "route": "yozora",
+    "affectionBlock": 8,
+    "affectionSlot": "key2",
+    "unlockLevel": 74,
+    "characters": [
+        "ai",
+        "ah"
+    ],
+    "characterNames": [
+        "双沢 夜空",
+        "双沢 美空"
+    ],
+    "scenario": "scenario/v039/events/yozora_affection_70_02_key.json",
+    "version": "v039_126",
+    "unlock": {
+        "type": "affection_level",
+        "character": "ai",
+        "level": 74
+    },
+    "order": 3082,
+    "summary": "夜空は自分から「少し歩いて」と店長に頼む。一人だと余計なことを考えるから、という理由を口にできたことで、頼る練習が一歩進む。"
+},
+{
+    "id": "yozora_affection_70_03_key",
+    "title": "褒められる練習",
+    "type": "key",
+    "category": "character_key",
+    "character": "ai",
+    "route": "yozora",
+    "affectionBlock": 8,
+    "affectionSlot": "key3",
+    "unlockLevel": 77,
+    "characters": [
+        "ai",
+        "ah"
+    ],
+    "characterNames": [
+        "双沢 夜空",
+        "双沢 美空"
+    ],
+    "scenario": "scenario/v039/events/yozora_affection_70_03_key.json",
+    "version": "v039_126",
+    "unlock": {
+        "type": "affection_level",
+        "character": "ai",
+        "level": 77
+    },
+    "order": 3083,
+    "summary": "夜空は「褒められる練習」として、店長と美空の言葉を逃げずに受け取ろうとする。終盤では自分から「もう一回」と頼み、最後に小さく「ありがとう」と言える。"
+},
+{
+    "id": "yozora_affection_80_00_main",
+    "title": "今日は、逃げない練習",
+    "type": "main",
+    "category": "character_main",
+    "character": "ai",
+    "route": "yozora",
+    "affectionBlock": 8,
+    "affectionSlot": "main",
+    "unlockLevel": 80,
+    "characters": [
+        "ai",
+        "ah"
+    ],
+    "characterNames": [
+        "双沢 夜空",
+        "双沢 美空"
+    ],
+    "scenario": "scenario/v039/events/yozora_affection_80_00_main.json",
+    "version": "v039_126",
+    "unlock": {
+        "type": "all_story_cleared",
+        "storyIds": [
+            "yozora_affection_70_00_main",
+            "yozora_affection_70_01_key",
+            "yozora_affection_70_02_key",
+            "yozora_affection_70_03_key"
+        ],
+        "fallback": {
+            "type": "affection_level",
+            "character": "ai",
+            "level": 80
+        }
+    },
+    "order": 3080,
+    "summary": "夜空は自分から店長を誘い、若葉中央公園で「探してくれてありがとう」「見つけてくれてありがとう」「帰らないでいてくれてありがとう」と改めて感謝を伝える。"
+},
+{
+    "id": "yozora_affection_80_01_key",
+    "title": "本物の星の話",
+    "type": "key",
+    "category": "character_key",
+    "character": "ai",
+    "route": "yozora",
+    "affectionBlock": 9,
+    "affectionSlot": "key1",
+    "unlockLevel": 81,
+    "characters": [
+        "ai",
+        "ah"
+    ],
+    "characterNames": [
+        "双沢 夜空",
+        "双沢 美空"
+    ],
+    "scenario": "scenario/v039/events/yozora_affection_80_01_key.json",
+    "version": "v039_126",
+    "unlock": {
+        "type": "affection_level",
+        "character": "ai",
+        "level": 81
+    },
+    "order": 3091,
+    "summary": "夜空は羽白湖の星空観察会のチラシを見つける。最初は「美空が好きそうだから」とごまかすが、美空と店長に促されて「少しだけ、見たい」と自分自身の希望を口にする。"
+},
+{
+    "id": "yozora_affection_80_02_key",
+    "title": "自分のための準備",
+    "type": "key",
+    "category": "character_key",
+    "character": "ai",
+    "route": "yozora",
+    "affectionBlock": 9,
+    "affectionSlot": "key2",
+    "unlockLevel": 84,
+    "characters": [
+        "ai",
+        "ah"
+    ],
+    "characterNames": [
+        "双沢 夜空",
+        "双沢 美空"
+    ],
+    "scenario": "scenario/v039/events/yozora_affection_80_02_key.json",
+    "version": "v039_126",
+    "unlock": {
+        "type": "affection_level",
+        "character": "ai",
+        "level": 84
+    },
+    "order": 3092,
+    "summary": "夜空は羽白湖の星空観察会に向けて準備をする中で、黒い手袋や小さなライトを「ぼくが星を見るために」選ぶ。「黒でいい」ではなく「黒がいい」と言えたことも成長点。"
+},
+{
+    "id": "yozora_affection_80_03_key",
+    "title": "楽しみなのが、少し怖い",
+    "type": "key",
+    "category": "character_key",
+    "character": "ai",
+    "route": "yozora",
+    "affectionBlock": 9,
+    "affectionSlot": "key3",
+    "unlockLevel": 87,
+    "characters": [
+        "ai",
+        "ah"
+    ],
+    "characterNames": [
+        "双沢 夜空",
+        "双沢 美空"
+    ],
+    "scenario": "scenario/v039/events/yozora_affection_80_03_key.json",
+    "version": "v039_126",
+    "unlock": {
+        "type": "affection_level",
+        "character": "ai",
+        "level": 87
+    },
+    "order": 3093,
+    "summary": "羽白湖の星空観察会前夜〜当日の移動前。夜空は「自分が楽しみにしていることが怖い」と認める。美空はそれを否定せず、「見えなかったら一緒にがっかりする、見えたら一緒に嬉しい」と受け止める。"
+},
+{
+    "id": "yozora_affection_90_00_main",
+    "title": "羽白湖・本物の星を見る夜",
+    "type": "main",
+    "category": "character_main",
+    "character": "ai",
+    "route": "yozora",
+    "affectionBlock": 9,
+    "affectionSlot": "main",
+    "unlockLevel": 90,
+    "characters": [
+        "ai",
+        "ah"
+    ],
+    "characterNames": [
+        "双沢 夜空",
+        "双沢 美空"
+    ],
+    "scenario": "scenario/v039/events/yozora_affection_90_00_main.json",
+    "version": "v039_126",
+    "unlock": {
+        "type": "all_story_cleared",
+        "storyIds": [
+            "yozora_affection_80_00_main",
+            "yozora_affection_80_01_key",
+            "yozora_affection_80_02_key",
+            "yozora_affection_80_03_key"
+        ],
+        "fallback": {
+            "type": "affection_level",
+            "character": "ai",
+            "level": 90
+        }
+    },
+    "order": 3090,
+    "summary": "羽白湖で本物の星を見ながら、夜空は「美空のためだけではなく、自分が見たかった」と認める。黒い手袋や星、弓道、ココアなど、かつて“美空の反対”として選んできたものを、今の自分が選び直していいのだと気づく。"
+}
   ];
 })();
