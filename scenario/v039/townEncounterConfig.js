@@ -2,7 +2,7 @@
 (function(){
   "use strict";
   window.TENOTSU_TOWN_ENCOUNTER_CONFIG = {
-    version: "v039_120",
+    version: "v039_121",
     staminaCost: 10,
     defaultSeason: "summer",
     seasons: [
@@ -24,6 +24,8 @@
       { id: "sugosawa_house", name: "双沢家前", type: "住宅街", seasons: ["spring", "summer", "autumn", "winter"], description: "双沢美空・双沢夜空の家。家族・帰宅・個別ストーリー向き。", bg: "images/assets/bg/bg_sugosawa_house_day.png" },
       { id: "hoshimigaoka_planetarium", name: "星見ヶ丘プラネタリウム", type: "プラネタリウム", seasons: ["spring", "summer", "autumn", "winter"], description: "外観・ロビー・投影ホール・開演中ホールの背景を追加済み。星空や夜のイベント向き。", bg: "images/assets/bg/bg_planetarium_exterior_twilight.png" },
       { id: "hiyorizaka_station_front", name: "日和坂駅前", type: "駅前", seasons: ["spring", "summer", "autumn", "winter"], description: "日和坂駅の駅前。待ち合わせ・帰り道・街イベント向き。時間帯別背景を追加済み。", bg: "images/assets/bg/bg_hiyorizaka_station_day.png" },
+      { id: "minato_event_plaza", name: "みなと公園・イベント広場", type: "公園", seasons: ["spring", "summer", "autumn"], description: "みなと公園のイベント広場。通常イベント・地域フェス・ステージイベント向き。", bg: "images/assets/bg/bg_minato_event_plaza.png" },
+      { id: "minato_seaside_fence", name: "みなと公園・海の見える柵", type: "公園", seasons: ["spring", "summer", "autumn"], description: "海が見える柵沿いの散策ポイント。写真・会話・海辺イベント向き。", bg: "images/assets/bg/bg_minato_seaside_fence_day.png" },
     ]
   };
 })();

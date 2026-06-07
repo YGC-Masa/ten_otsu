@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_10_02_key",
   "title": "美空だけでいいでしょ",
-  "version": "v039_117",
+  "version": "v039_121",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_10_02_key",
@@ -42,7 +42,7 @@
     {
       "speaker": "",
       "text": "――みなと公園・イベント広場――",
-      "bg": "images/assets/bg/bg_minato_park_event_plaza_day.png",
+      "bg": "images/assets/bg/bg_minato_event_plaza_festival.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
       "clearStorySprites": true
@@ -1437,7 +1437,10 @@
           "src": "images/assets/char/h10201.webp",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_minato_seaside_fence_day.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",

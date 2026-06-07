@@ -1,23 +1,2 @@
-v039_120
-
-ひだまりストア外観時間帯背景アセット追加
-
-追加:
-- images/assets/bg/bg_hidamari_store_front_early_morning.png
-- images/assets/bg/bg_hidamari_store_front_morning.png
-- images/assets/bg/bg_hidamari_store_front_day.png
-- images/assets/bg/bg_hidamari_store_front_evening.png
-- images/assets/bg/bg_hidamari_store_front_night_open.png
-- images/assets/bg/bg_hidamari_store_front_closed.png
-
-変更:
-- scenario/v039/backgroundCatalog.js
-- scenario/v039/townEncounterConfig.js
-- program/v039/version.js
-- program/v039/state.js
-- program/v039/office.js
-- index.html
-
-注意:
-- v039_119以降への上書き差分です。
-- 今回は新規背景アセットのみ同梱しています。既存の重い背景アセットは再同梱していません。
+v039_121
+双沢姉妹部屋＋みなと公園正式背景差し替え

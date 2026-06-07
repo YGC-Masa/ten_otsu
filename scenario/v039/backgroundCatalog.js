@@ -1,9 +1,9 @@
-/* v039_120 background catalog */
+/* v039_121 background catalog */
 (function(){
   "use strict";
   window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
     hidamari_warehouse: { name: "ひだまりストア倉庫", path: "images/assets/bg/bg_hidamari_warehouse.png" },
-    hidamari_store_front_night: { name: "ひだまりストア前・夜（暫定）", path: "images/assets/bg/bg_hidamari_store_front_night.png" },
+    hidamari_store_front_night: { name: "ひだまりストア前・夜（旧暫定/互換）", path: "images/assets/bg/bg_hidamari_store_front_night_open.png" },
 
     hidamari_store_front_early_morning: { name: "ひだまりストア外観・早朝", path: "images/assets/bg/bg_hidamari_store_front_early_morning.png" },
     hidamari_store_front_morning: { name: "ひだまりストア外観・朝", path: "images/assets/bg/bg_hidamari_store_front_morning.png" },
@@ -19,12 +19,19 @@
 
     sugosawa_house_day: { name: "双沢家・昼", path: "images/assets/bg/bg_sugosawa_house_day.png" },
     sugosawa_house_night: { name: "双沢家・夜", path: "images/assets/bg/bg_sugosawa_house_night.png" },
-    misora_room_day: { name: "美空の部屋・昼", path: "images/assets/bg/bg_misora_room_day.png" },
-    misora_room_night: { name: "美空の部屋・夜", path: "images/assets/bg/bg_misora_room_night.png" },
-    yozora_room_day: { name: "夜空の部屋・昼", path: "images/assets/bg/bg_yozora_room_day.png" },
-    yozora_room_night: { name: "夜空の部屋・夜", path: "images/assets/bg/bg_yozora_room_night.png" },
 
-    minato_park_event_plaza_day: { name: "みなと公園・イベント広場（暫定）", path: "images/assets/bg/bg_minato_park_event_plaza_day.png" },
+    sugosawa_room_day: { name: "双沢姉妹の部屋・昼", path: "images/assets/bg/bg_sugosawa_room_day.png" },
+    sugosawa_room_night_indirect: { name: "双沢姉妹の部屋・夜（間接照明）", path: "images/assets/bg/bg_sugosawa_room_night_indirect.png" },
+    sugosawa_room_night_light_on: { name: "双沢姉妹の部屋・夜（照明ON）", path: "images/assets/bg/bg_sugosawa_room_night_light_on.png" },
+    misora_room_day: { name: "双沢姉妹の部屋・昼（旧:美空の部屋）", path: "images/assets/bg/bg_sugosawa_room_day.png" },
+    misora_room_night: { name: "双沢姉妹の部屋・夜（旧:美空の部屋）", path: "images/assets/bg/bg_sugosawa_room_night_light_on.png" },
+    yozora_room_day: { name: "双沢姉妹の部屋・昼（旧:夜空の部屋）", path: "images/assets/bg/bg_sugosawa_room_day.png" },
+    yozora_room_night: { name: "双沢姉妹の部屋・夜（旧:夜空の部屋）", path: "images/assets/bg/bg_sugosawa_room_night_indirect.png" },
+
+    minato_event_plaza: { name: "みなと公園・イベント広場", path: "images/assets/bg/bg_minato_event_plaza.png" },
+    minato_event_plaza_festival: { name: "みなと公園・イベント広場・フェス時", path: "images/assets/bg/bg_minato_event_plaza_festival.png" },
+    minato_seaside_fence_day: { name: "みなと公園・海の見える柵", path: "images/assets/bg/bg_minato_seaside_fence_day.png" },
+    minato_park_event_plaza_day: { name: "みなと公園・イベント広場（旧暫定/互換）", path: "images/assets/bg/bg_minato_event_plaza.png" },
 
     shiomi_beach_early_morning: { name: "塩見浜・早朝", path: "images/assets/bg/bg_shiomi_beach_early_morning.png" },
     shiomi_beach_morning: { name: "塩見浜・朝", path: "images/assets/bg/bg_shiomi_beach_morning.png" },
