@@ -1,8 +1,9 @@
-/* v039_117 story progress / affection unlock judgement */
+/* v039_128 story progress / affection default 100 + clear helpers */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
   const STORAGE_KEY = "tenotsu_story_progress_v1";
+  const DEFAULT_AFFECTION_LEVEL = 100;
   window.TENOTSU_DEBUG_ALL_STORIES = true; // trial: 回想確認用。正式運用ではfalseへ。
 
   function clone(obj){ return JSON.parse(JSON.stringify(obj || {})); }
@@ -11,7 +12,7 @@
     let data = null;
     try { data = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null"); } catch (_) { data = null; }
     if (!data || typeof data !== "object") data = {};
-    data.version = "v039_117";
+    data.version = "v039_128";
     data.clearedStories = Array.isArray(data.clearedStories) ? data.clearedStories : [];
     data.readStories = Array.isArray(data.readStories) ? data.readStories : [];
     data.affectionLevels = data.affectionLevels && typeof data.affectionLevels === "object" ? data.affectionLevels : {};
@@ -19,7 +20,7 @@
     return data;
   }
   function save(data){
-    data.version = "v039_117";
+    data.version = "v039_128";
     data.updatedAt = now();
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (_) {}
     return data;
@@ -39,7 +40,7 @@
   ns.getAffectionLevel = function getAffectionLevel(characterId){
     const d = load();
     const value = d.affectionLevels && d.affectionLevels[characterId];
-    return clampAffection(value == null ? 1 : value);
+    return clampAffection(value == null ? DEFAULT_AFFECTION_LEVEL : value);
   };
   ns.setAffectionLevel = function setAffectionLevel(characterId, level){
     const d = load();
@@ -48,6 +49,39 @@
   };
   ns.addAffectionLevel = function addAffectionLevel(characterId, delta){
     return ns.setAffectionLevel(characterId, ns.getAffectionLevel(characterId) + Number(delta || 0));
+  };
+
+
+  ns.getKnownAffectionCharacterIds = function getKnownAffectionCharacterIds(){
+    const ids = [];
+    function add(id){ if (id && !ids.includes(id)) ids.push(id); }
+    try { (ns.memberProfiles || []).forEach((m) => add(m && m.id)); } catch (_) {}
+    try { Object.keys(window.TENOTSU_KEY_STORY_CONFIG || {}).forEach(add); } catch (_) {}
+    try { getStoryIndex().forEach((s) => add(s && (s.character || s.characterId || (s.unlock && s.unlock.character)))); } catch (_) {}
+    return ids;
+  };
+
+  ns.setAllAffectionLevels = function setAllAffectionLevels(level){
+    const d = load();
+    const ids = ns.getKnownAffectionCharacterIds ? ns.getKnownAffectionCharacterIds() : [];
+    ids.forEach((id) => { d.affectionLevels[id] = clampAffection(level); });
+    save(d);
+    return ids.length;
+  };
+
+  ns.clearAllAffectionStories = function clearAllAffectionStories(){
+    const d = load();
+    let count = 0;
+    getStoryIndex().forEach((story) => {
+      if (!story || !story.id) return;
+      const isAffectionStory = story.type === "character_key_story" || story.type === "character_main_story" || story.affectionBlock || (story.unlock && story.unlock.type === "affection_level");
+      if (!isAffectionStory) return;
+      uniquePush(d.readStories, story.id);
+      uniquePush(d.clearedStories, story.id);
+      count += 1;
+    });
+    save(d);
+    return count;
   };
 
   ns.getCharacterLevelForUnlock = function getCharacterLevelForUnlock(characterId){

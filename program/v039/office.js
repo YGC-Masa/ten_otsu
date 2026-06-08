@@ -1,4 +1,4 @@
-/* v039_127 夜空Lv91〜100到達ストーリー追加 */
+/* v039_128 起動復旧＋親愛テスト設定 */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -47,10 +47,10 @@
     version.className = "tenotsu-menu-version";
     const versionMain = document.createElement("span");
     versionMain.className = "tenotsu-menu-version-main";
-    versionMain.textContent = ns.VERSION || window.TENOTSU_BUILD_VERSION || "v039_127 夜空Lv91〜100到達ストーリー追加";
+    versionMain.textContent = ns.VERSION || window.TENOTSU_BUILD_VERSION || "v039_128 起動復旧＋親愛テスト設定";
     const versionSub = document.createElement("span");
     versionSub.className = "tenotsu-menu-version-sub";
-    versionSub.textContent = ns.BUILD_LABEL || window.TENOTSU_BUILD_LABEL || "v039_127 夜空Lv91〜100到達ストーリー追加";
+    versionSub.textContent = ns.BUILD_LABEL || window.TENOTSU_BUILD_LABEL || "v039_128 起動復旧＋親愛テスト設定";
     version.appendChild(versionMain);
     version.appendChild(versionSub);
     layers.menu.appendChild(version);
@@ -137,14 +137,17 @@
     const html = `
       <div class="tenotsu-settings-title">設定</div>
       <div class="tenotsu-settings-body">
-        <div>現在のバージョン: <strong>${ns.VERSION || window.TENOTSU_BUILD_VERSION || "v039_127 夜空Lv91〜100到達ストーリー追加"}</strong></div>
+        <div>現在のバージョン: <strong>${ns.VERSION || window.TENOTSU_BUILD_VERSION || "v039_128 起動復旧＋親愛テスト設定"}</strong></div>
         <div>表示やキャッシュ、営業リソースの調整を行います。</div>
         <div class="tenotsu-settings-resource-note">ST/BPリセットは検証用です。スタミナとバトルPを最大値に戻します。</div>
+        <div class="tenotsu-settings-resource-note">親愛テスト用：初期親愛Lvは100扱いです。必要に応じて全員Lv100化・親愛ストーリー全クリアを実行できます。</div>
       </div>
       <div class="tenotsu-settings-actions">
         <button type="button" class="tenotsu-settings-button" data-settings-action="reset-stamina-bp">ST/BPを最大値へリセット</button>
         <button type="button" class="tenotsu-settings-button" data-settings-action="reset-stamina">スタミナだけリセット</button>
         <button type="button" class="tenotsu-settings-button" data-settings-action="reset-bp">バトルPだけリセット</button>
+        <button type="button" class="tenotsu-settings-button" data-settings-action="set-affection-100">親愛Lvを全員100へ</button>
+        <button type="button" class="tenotsu-settings-button" data-settings-action="clear-affection-stories">親愛ストーリーを全クリア</button>
         <button type="button" class="tenotsu-settings-button danger" data-settings-action="clear-cache">キャッシュクリアして再読み込み</button>
         <button type="button" class="tenotsu-settings-button" data-settings-action="close-settings">事務所に戻る</button>
       </div>
@@ -159,6 +162,8 @@
     const resetAllButton = panel.querySelector('[data-settings-action="reset-stamina-bp"]');
     const resetStaminaButton = panel.querySelector('[data-settings-action="reset-stamina"]');
     const resetBpButton = panel.querySelector('[data-settings-action="reset-bp"]');
+    const affection100Button = panel.querySelector('[data-settings-action="set-affection-100"]');
+    const affectionClearButton = panel.querySelector('[data-settings-action="clear-affection-stories"]');
     const closeButton = panel.querySelector('[data-settings-action="close-settings"]');
 
     function updateResourceResetResult(message) {
@@ -187,6 +192,26 @@
       resetBpButton.addEventListener("click", () => {
         try { if (window.TenotsuBattlePoint && typeof window.TenotsuBattlePoint.recoverAll === "function") window.TenotsuBattlePoint.recoverAll(); } catch (_) {}
         updateResourceResetResult("バトルPを最大値へリセットしました。");
+      });
+    }
+
+    if (affection100Button) {
+      affection100Button.addEventListener("click", () => {
+        let count = 0;
+        try {
+          if (typeof ns.setAllAffectionLevels === "function") count = ns.setAllAffectionLevels(100);
+        } catch (_) {}
+        updateResourceResetResult(`親愛Lvを全員100へ設定しました。対象: ${count}人`);
+      });
+    }
+
+    if (affectionClearButton) {
+      affectionClearButton.addEventListener("click", () => {
+        let count = 0;
+        try {
+          if (typeof ns.clearAllAffectionStories === "function") count = ns.clearAllAffectionStories();
+        } catch (_) {}
+        updateResourceResetResult(`親愛ストーリーを全クリア扱いにしました。対象: ${count}本`);
       });
     }
 
