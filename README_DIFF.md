@@ -1,7 +1,31 @@
-# v039_130 夜空親愛100リライト反映
+# v039_131 セリフ内地の文分離パッチ
 
 ## 概要
-夜空メイン10「二人だから、少し素直になる」を、ユーザー指定のリライト版へ差し替えます。
+夜空メイン100「二人だから、少し素直になる」内で、話者付きセリフの末尾に `\n――` で続いていた地の文を、`speaker: ""` の独立ステップへ分離しました。
+
+## 方針
+
+修正前のような形式は避けます。
+
+```json
+{
+  "speaker": "美空",
+  "text": "何回でも言うよ。\n――美空は夜空のマフラーを少し直す。"
+}
+```
+
+修正後は、セリフと地の文を分けます。
+
+```json
+{
+  "speaker": "美空",
+  "text": "何回でも言うよ。"
+},
+{
+  "speaker": "",
+  "text": "――美空は夜空のマフラーを少し直す。"
+}
+```
 
 ## 更新ファイル
 - `index.html`
@@ -12,14 +36,5 @@
 - `program/v039/office.js`
 - `scenario/v039/events/yozora_affection_100_00_main.json`
 
-## 背景パス調整
-リライト版に含まれる新規名の背景参照を、v039_129で追加済みの正式アセットへ接続しました。
-
-- `bg_hidamari_store_closed_night.png` → `battle_store_lv1.png`
-- `bg_hidamari_store_front_night.png` → `bg_hidamari_store_front_night_open.png`
-- `bg_antostella_entrance_night.png` → `bg_bookcafe_antostella_exterior_night.png`
-- `bg_antostella_2f_bookcafe_night.png` → `bg_bookcafe_antostella_2f_night.png`
-- `bg_antostella_2f_couple_seat_night.png` → `bg_bookcafe_antostella_2f_night.png`
-
 ## 注意
-新規画像アセットは同梱していません。v039_129で追加済みのアントステラ正式背景を前提にした軽量差分です。
+画像アセットは同梱していません。v039_130以降へ上書きする軽量差分です。

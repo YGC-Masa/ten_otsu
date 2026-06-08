@@ -1,15 +1,14 @@
-/* v039_130 夜空親愛100リライト反映 */
+/* v039_131 セリフ内地の文分離パッチ */
 (function(){
   "use strict";
-  window.TENOTSU_BUILD_VERSION = "v039_130";
-  window.TENOTSU_BUILD_LABEL = "v039_130 夜空親愛100リライト反映";
+  window.TENOTSU_BUILD_VERSION = "v039_131";
+  window.TENOTSU_BUILD_LABEL = "v039_131 セリフ内地の文分離パッチ";
   window.TENOTSU_BUILD_NOTES = [
-    "夜空メイン10『二人だから、少し素直になる』をリライト版へ差し替え",
-    "アントステラ外観・2階ブックカフェ・赤いカップルシート演出を正式背景へ接続",
-    "v039_129のアントステラ＋羽白湖正式背景追加を維持",
-    "v039_128の起動復旧・親愛テスト設定を維持"
+    "夜空メイン100のセリフ内に混在していた――地の文を、speaker空文字の独立ステップへ分離",
+    "セリフ表示と回想・憶測・情景描写を分け、話者名付きテキストに地の文が混ざらないよう調整",
+    "v039_130の夜空親愛100リライトとv039_129のアントステラ正式背景接続を維持"
   ];
   window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  window.TENOTSU_V039.VERSION = "v039_130";
+  window.TENOTSU_V039.VERSION = "v039_131";
   window.TENOTSU_V039.BUILD_LABEL = window.TENOTSU_BUILD_LABEL;
 })();
