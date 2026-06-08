@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_100_00_main",
   "title": "二人だから、少し素直になる",
-  "version": "v039_127",
+  "version": "v039_129",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_100_00_main",
@@ -226,7 +226,7 @@
     {
       "speaker": "",
       "text": "――静かな夜のブックカフェ・入口――",
-      "bg": "images/assets/bg/battle_store_lv1.png",
+      "bg": "images/assets/bg/bg_bookcafe_antostella_exterior_night.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true
     },
@@ -252,7 +252,7 @@
     {
       "speaker": "",
       "text": "――静かな夜のブックカフェ・店内――",
-      "bg": "images/assets/bg/battle_store_lv1.png",
+      "bg": "images/assets/bg/bg_bookcafe_antostella_1f_night.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true
     },
@@ -380,7 +380,7 @@
     {
       "speaker": "",
       "text": "――静かな夜のブックカフェ・奥の席――",
-      "bg": "images/assets/bg/battle_store_lv1.png",
+      "bg": "images/assets/bg/bg_bookcafe_antostella_2f_night.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true
     },

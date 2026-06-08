@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_90_00_main",
   "title": "羽白湖・本物の星を見る夜",
-  "version": "v039_126",
+  "version": "v039_129",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_90_00_main",
@@ -40,7 +40,7 @@
     {
       "speaker": "",
       "text": "――羽白湖・バス停前・夜――",
-      "bg": "images/assets/bg/bg_shiomi_beach_night.png",
+      "bg": "images/assets/bg/bg_hashiro_lake_night.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
       "clearStorySprites": true
@@ -300,7 +300,7 @@
     {
       "speaker": "",
       "text": "――羽白湖・湖畔遊歩道――",
-      "bg": "images/assets/bg/bg_shiomi_beach_night.png",
+      "bg": "images/assets/bg/bg_hashiro_lake_night.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true
     },
@@ -507,7 +507,7 @@
     {
       "speaker": "",
       "text": "――羽白湖・星空観察スポット――",
-      "bg": "images/assets/bg/bg_shiomi_beach_night.png",
+      "bg": "images/assets/bg/bg_hashiro_lake_night.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true
     },

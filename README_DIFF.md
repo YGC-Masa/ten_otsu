@@ -1,28 +1,28 @@
-# v039_128 起動復旧＋親愛テスト設定パッチ
+# v039_129 アントステラ＋羽白湖正式背景追加パッチ
 
 ## 概要
-v039_127以降へ上書きする軽量差分です。
+BOOKCAFE「アントステラ」と羽白湖の正式背景アセットを追加し、夜空Lv80〜100周辺シナリオの暫定背景参照を正式背景へ差し替えました。
 
-## 修正内容
-- `program/v039/office.js` 先頭コメント破損を修正し、`Uncaught SyntaxError: Invalid or unexpected token` を解消
-- `ns.enterOffice is not a function` の原因になっていた `office.js` 実行停止を復旧
-- `index.html` のキャッシュバスターを `?v=v039_128` の短い英数字版に整理
-- 親愛Lvの初期値を100扱いに変更
-- 設定画面に「親愛Lvを全員100へ」ボタンを追加
-- 設定画面に「親愛ストーリーを全クリア」ボタンを追加
+## 新規追加背景
 
-## 更新ファイル
-- index.html
-- VERSION.txt
-- README_DIFF.md
-- program/v039/version.js
-- program/v039/state.js
-- program/v039/office.js
-- program/v039/storyProgress.js
+### BOOKCAFE アントステラ
+- images/assets/bg/bg_bookcafe_antostella_exterior_night.png
+- images/assets/bg/bg_bookcafe_antostella_1f_night.png
+- images/assets/bg/bg_bookcafe_antostella_2f_night.png
 
-## 確認ポイント
-1. ブラックアウトせず事務所画面へ入れる
-2. Consoleに `Invalid or unexpected token` が出ない
-3. `ns.enterOffice is not a function` が出ない
-4. 設定画面に親愛Lv100化ボタンと親愛ストーリー全クリアボタンが表示される
-5. メンバー画面で親愛Lvが初期100扱いになり、Lv91〜100段まで確認できる
+### 羽白湖
+- images/assets/bg/bg_hashiro_lake_night.png
+- images/assets/bg/bg_hashiro_lake_day.png
+- images/assets/bg/bg_hashiro_lake_evening.png
+- images/assets/bg/bg_hashiro_lake_morning.png
+- images/assets/bg/bg_hashiro_lake_early_morning.png
+
+## 更新内容
+- scenario/v039/backgroundCatalog.js に正式背景を登録
+- yozora_affection_90_00_main.json の羽白湖背景を正式背景へ差し替え
+- yozora_affection_100_00_main.json のブックカフェ背景を正式背景へ差し替え
+- yozora_affection_90_03_key.json の双沢姉妹部屋背景を正式背景へ差し替え
+- バージョン表示を v039_129 に更新
+
+## 注意
+今回は新規背景アセット追加のため画像を同梱しています。次回以降、この背景画像は再同梱しない運用です。

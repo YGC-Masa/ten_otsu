@@ -1,4 +1,4 @@
-/* v039_121 background catalog */
+/* v039_129 background catalog */
 (function(){
   "use strict";
   window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
@@ -46,5 +46,23 @@
     hiyorizaka_station_morning: { name: "日和坂駅・朝", path: "images/assets/bg/bg_hiyorizaka_station_morning.png" },
     hiyorizaka_station_evening: { name: "日和坂駅・夕方", path: "images/assets/bg/bg_hiyorizaka_station_evening.png" },
     hiyorizaka_station_night: { name: "日和坂駅・夜", path: "images/assets/bg/bg_hiyorizaka_station_night.png" }
+,
+
+    bookcafe_antostella_exterior_night: { name: "BOOKCAFEアントステラ・外観・夜", path: "images/assets/bg/bg_bookcafe_antostella_exterior_night.png" },
+    bookcafe_antostella_1f_night: { name: "BOOKCAFEアントステラ・1階・夜", path: "images/assets/bg/bg_bookcafe_antostella_1f_night.png" },
+    bookcafe_antostella_2f_night: { name: "BOOKCAFEアントステラ・2階・夜", path: "images/assets/bg/bg_bookcafe_antostella_2f_night.png" },
+    night_book_cafe_entrance: { name: "静かな夜のブックカフェ・入口（アントステラ外観）", path: "images/assets/bg/bg_bookcafe_antostella_exterior_night.png" },
+    night_book_cafe_interior: { name: "静かな夜のブックカフェ・店内（アントステラ1階）", path: "images/assets/bg/bg_bookcafe_antostella_1f_night.png" },
+    night_book_cafe_2f: { name: "静かな夜のブックカフェ・2階席", path: "images/assets/bg/bg_bookcafe_antostella_2f_night.png" },
+
+    hashiro_lake_night: { name: "羽白湖・夜", path: "images/assets/bg/bg_hashiro_lake_night.png" },
+    hashiro_lake_day: { name: "羽白湖・昼", path: "images/assets/bg/bg_hashiro_lake_day.png" },
+    hashiro_lake_evening: { name: "羽白湖・夕方", path: "images/assets/bg/bg_hashiro_lake_evening.png" },
+    hashiro_lake_morning: { name: "羽白湖・朝", path: "images/assets/bg/bg_hashiro_lake_morning.png" },
+    hashiro_lake_early_morning: { name: "羽白湖・早朝", path: "images/assets/bg/bg_hashiro_lake_early_morning.png" },
+    hashiro_lake_bus_stop_night: { name: "羽白湖・バス停前・夜（互換）", path: "images/assets/bg/bg_hashiro_lake_night.png" },
+    hashiro_lake_path_night: { name: "羽白湖・湖畔遊歩道・夜（互換）", path: "images/assets/bg/bg_hashiro_lake_night.png" },
+    hashiro_lake_stargazing_night: { name: "羽白湖・星空観察スポット・夜（互換）", path: "images/assets/bg/bg_hashiro_lake_night.png" }
+
   });
 })();
