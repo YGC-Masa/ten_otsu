@@ -1,48 +1,33 @@
-# v039_138 = 夜空メイン30背景調整＋ココアCG追加パッチ
+# v039_135 店長マンション前・メゾン・ド・エトワール背景追加
 
-## 適用前提
+## 内容
 
-v039_137以降へ上書きする差分パッチです。
+店長マンション前の帰り道 / 店長のマンション「メゾン・ド・エトワール」前の正式背景を追加しました。
 
-## 修正内容
+## 追加背景
 
-### 夜空メイン30「白黒ツインルーム」
+- images/assets/bg/bg_manager_mansion_road_early_morning.png
+- images/assets/bg/bg_manager_mansion_road_morning.png
+- images/assets/bg/bg_manager_mansion_road_day.png
+- images/assets/bg/bg_manager_mansion_road_evening.png
+- images/assets/bg/bg_manager_mansion_road_night.png
 
-対象ファイル：
+## backgroundCatalog 登録
 
-```text
-scenario/v039/events/yozora_affection_30_00_main.json
-```
+- manager_mansion_road_early_morning
+- manager_mansion_road_morning
+- manager_mansion_road_day
+- manager_mansion_road_evening
+- manager_mansion_road_night
+- manager_mansion_road
 
-- ステップ1〜30の背景を、双沢家前・夜へ変更
-- ステップ233以降に「ココアと夜空」イベントCGを表示
+## シナリオ差し替え
 
-## 背景変更
+- scenario/v039/events/yozora_affection_70_00_main.json
+  - 「店長マンション前の帰り道」シーンを bg_manager_mansion_road_night.png へ差し替え
 
-```text
-images/assets/bg/bg_sugosawa_room_night_light_on.png
-→ images/assets/bg/bg_sugosawa_house_night.png
-```
+## 注意
 
-※ GitHub Pages 配下での404回避のため、実装パスは先頭スラッシュなしの相対パスにしています。
+今回は新規背景アセット追加のため画像を同梱しています。次回以降、この5枚は原則再同梱しません。
 
-## 追加イベントCG
-
-```text
-images/assets/cg/cg_yozora_main30_cocoa_room.png
-```
-
-ステップ233から表示開始し、シナリオ末尾まで表示します。
-
-## 更新ファイル
-
-```text
-index.html
-VERSION.txt
-README_DIFF.md
-program/v039/version.js
-program/v039/state.js
-program/v039/office.js
-scenario/v039/events/yozora_affection_30_00_main.json
-images/assets/cg/cg_yozora_main30_cocoa_room.png
-```
+適用先: v039_134以降

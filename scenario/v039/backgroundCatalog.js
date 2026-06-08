@@ -1,4 +1,4 @@
-/* v039_134 夕凪展望台正式背景追加 */
+/* v039_135 店長マンション前・メゾン・ド・エトワール背景追加 */
 (function(){
   "use strict";
   window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
@@ -88,6 +88,14 @@
     yunagi_observatory_day: { name: "夕凪展望台・昼", path: "images/assets/bg/bg_yunagi_observatory_day.png", status: "正式採用" },
     yunagi_observatory_evening: { name: "夕凪展望台・夕方", path: "images/assets/bg/bg_yunagi_observatory_evening.png", status: "正式採用" },
     yunagi_observatory: { name: "夕凪展望台・夜（互換）", path: "images/assets/bg/bg_yunagi_observatory_night.png", status: "正式採用・互換" }
+,
+
+    manager_mansion_road_early_morning: { name: "店長マンション前の帰り道・早朝", path: "images/assets/bg/bg_manager_mansion_road_early_morning.png", location: "店長マンション前 / メゾン・ド・エトワール前", time: "early_morning", status: "正式採用" },
+    manager_mansion_road_morning: { name: "店長マンション前の帰り道・朝", path: "images/assets/bg/bg_manager_mansion_road_morning.png", location: "店長マンション前 / メゾン・ド・エトワール前", time: "morning", status: "正式採用" },
+    manager_mansion_road_day: { name: "店長マンション前の帰り道・昼", path: "images/assets/bg/bg_manager_mansion_road_day.png", location: "店長マンション前 / メゾン・ド・エトワール前", time: "day", status: "正式採用" },
+    manager_mansion_road_evening: { name: "店長マンション前の帰り道・夕方", path: "images/assets/bg/bg_manager_mansion_road_evening.png", location: "店長マンション前 / メゾン・ド・エトワール前", time: "evening", status: "正式採用" },
+    manager_mansion_road_night: { name: "店長マンション前の帰り道・夜", path: "images/assets/bg/bg_manager_mansion_road_night.png", location: "店長マンション前 / メゾン・ド・エトワール前", time: "night", status: "正式採用" },
+    manager_mansion_road: { name: "店長マンション前の帰り道（メゾン・ド・エトワール前）", path: "images/assets/bg/bg_manager_mansion_road_night.png", location: "店長マンション前 / メゾン・ド・エトワール前", time: "default", status: "正式採用・互換" }
 
 
   });
