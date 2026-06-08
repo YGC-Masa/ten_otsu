@@ -1,24 +1,38 @@
-# v039_137 = 夜空メイン40専用道着立ち絵＋演武イベントCG実装パッチ
+# v039_138 = 夜空メイン30背景調整＋ココアCG追加パッチ
 
 ## 適用前提
 
-v039_136以降へ上書きしてください。
+v039_137以降へ上書きする差分パッチです。
 
-## 実装内容
+## 修正内容
 
-- 夜空メイン40「嬉しいのに、苦しい」に専用道着立ち絵2種を適用
-- ステップ28〜44に美空演武イベントCGを表示
-- ステップ71〜84に夜空弓道演武イベントCGを表示
-- イベントCG解除後は専用道着立ち絵へ復帰
+### 夜空メイン30「白黒ツインルーム」
 
-## 追加アセット
+対象ファイル：
 
 ```text
-images/assets/char/misora_budo_gi_main40.png
-images/assets/char/yozora_budo_gi_main40.png
-images/assets/cg/cg_yozora_main40_misora_enbu.png
-images/assets/cg/cg_yozora_main40_yozora_kyudo_enbu.png
+scenario/v039/events/yozora_affection_30_00_main.json
 ```
+
+- ステップ1〜30の背景を、双沢家前・夜へ変更
+- ステップ233以降に「ココアと夜空」イベントCGを表示
+
+## 背景変更
+
+```text
+images/assets/bg/bg_sugosawa_room_night_light_on.png
+→ images/assets/bg/bg_sugosawa_house_night.png
+```
+
+※ GitHub Pages 配下での404回避のため、実装パスは先頭スラッシュなしの相対パスにしています。
+
+## 追加イベントCG
+
+```text
+images/assets/cg/cg_yozora_main30_cocoa_room.png
+```
+
+ステップ233から表示開始し、シナリオ末尾まで表示します。
 
 ## 更新ファイル
 
@@ -29,5 +43,6 @@ README_DIFF.md
 program/v039/version.js
 program/v039/state.js
 program/v039/office.js
-scenario/v039/events/yozora_affection_40_00_main.json
+scenario/v039/events/yozora_affection_30_00_main.json
+images/assets/cg/cg_yozora_main30_cocoa_room.png
 ```

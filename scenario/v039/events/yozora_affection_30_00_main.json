@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_30_00_main",
   "title": "白黒ツインルーム",
-  "version": "v039_136",
+  "version": "v039_138",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_30_00_main",
@@ -40,7 +40,7 @@
     {
       "speaker": "",
       "text": "――双沢家・玄関――",
-      "bg": "images/assets/bg/bg_sugosawa_room_night_light_on.png",
+      "bg": "images/assets/bg/bg_sugosawa_house_night.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
       "clearStorySprites": true
@@ -2095,7 +2095,11 @@
     },
     {
       "speaker": "",
-      "text": "――夜空は黒いマグカップを見つめる。\nその中には、甘いココアが揺れていた。"
+      "text": "――夜空は黒いマグカップを見つめる。\nその中には、甘いココアが揺れていた。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main30_cocoa_room.png",
+      "cgFit": "cover",
+      "cgAlign": "center center"
     },
     {
       "speaker": "夜空",

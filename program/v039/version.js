@@ -1,15 +1,14 @@
-/* v039_137 夜空メイン40専用道着立ち絵＋演武イベントCG実装 */
+/* v039_138 夜空メイン30背景調整＋ココアCG追加 */
 (function(){
   "use strict";
-  window.TENOTSU_BUILD_VERSION = "v039_137";
-  window.TENOTSU_BUILD_LABEL = "v039_137 夜空メイン40専用道着立ち絵＋演武イベントCG実装";
+  window.TENOTSU_BUILD_VERSION = "v039_138";
+  window.TENOTSU_BUILD_LABEL = "v039_138 夜空メイン30背景調整＋ココアCG追加";
   window.TENOTSU_BUILD_NOTES = [
-    "夜空メイン40『嬉しいのに、苦しい』に美空・夜空の専用道着立ち絵を適用",
-    "ステップ28〜44に美空演武イベントCGを表示",
-    "ステップ71〜84に夜空弓道演武イベントCGを表示",
-    "イベントCG解除後は専用道着立ち絵表示へ復帰"
+    "夜空メイン30『白黒ツインルーム』のステップ1〜30背景を双沢家前・夜へ調整",
+    "ステップ233以降にココアと夜空イベントCGを表示",
+    "イベントCGアセット cg_yozora_main30_cocoa_room.png を追加"
   ];
   window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  window.TENOTSU_V039.VERSION = "v039_137";
+  window.TENOTSU_V039.VERSION = "v039_138";
   window.TENOTSU_V039.BUILD_LABEL = window.TENOTSU_BUILD_LABEL;
 })();
