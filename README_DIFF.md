@@ -1,26 +1,29 @@
-# v039_133 総合運動公園背景追加＋夜空メイン40改稿パッチ
+# v039_134 夕凪展望台正式背景追加パッチ
 
-## 追加背景
+## 内容
 
-- images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.png
-- images/assets/bg/bg_hiyorizaka_sports_park_kyudojo_day.png
-- images/assets/bg/bg_hiyorizaka_sports_park_midnight.png
-- images/assets/bg/bg_hiyorizaka_sports_park_early_morning.png
-- images/assets/bg/bg_hiyorizaka_sports_park_morning.png
-- images/assets/bg/bg_hiyorizaka_sports_park_day.png
-- images/assets/bg/bg_hiyorizaka_sports_park_evening.png
+夕凪展望台の正式背景5種を追加し、夜空Lv50〜60の夕凪展望台シーンを塩見浜暫定背景から正式背景へ差し替えます。
 
-※ 運動公園・夜は現時点では深夜背景を互換参照します。
+## 追加画像
 
-## 更新内容
+- images/assets/bg/bg_yunagi_observatory_night.png
+- images/assets/bg/bg_yunagi_observatory_morning.png
+- images/assets/bg/bg_yunagi_observatory_early_morning.png
+- images/assets/bg/bg_yunagi_observatory_day.png
+- images/assets/bg/bg_yunagi_observatory_evening.png
 
-- backgroundCatalog.js に日和坂総合運動公園と武術演武奉納祭背景を正式登録
-- 既存の hiyorizaka_sports_park_budokan / hiyorizaka_sports_park_budokan_evening の暫定接続を正式背景へ変更
-- 夜空メイン40「嬉しいのに、苦しい」を改稿版へ差し替え
-- セリフ内に混在していた「\n――」以降の地の文を speaker: "" の独立ステップへ分離
-- 起動表示・右メニュー・右下バージョンを v039_133 へ更新
+## 更新ファイル
 
-## 適用先
+- index.html
+- VERSION.txt
+- program/v039/version.js
+- program/v039/state.js
+- program/v039/office.js
+- scenario/v039/backgroundCatalog.js
+- scenario/v039/events/yozora_affection_50_02_key.json
+- scenario/v039/events/yozora_affection_50_03_key.json
+- scenario/v039/events/yozora_affection_60_00_main.json
 
-v039_133 は v039_132 以降へ上書きする差分パッチです。
-新規背景アセット追加のため、今回のみ画像を同梱しています。
+## 適用前提
+
+v039_133以降へ上書きしてください。今回は新規背景アセット追加なので画像を同梱しています。次回以降はこの5枚を再同梱しない運用です。

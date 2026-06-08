@@ -1,4 +1,4 @@
-/* v039_133 総合運動公園背景追加＋夜空メイン40改稿 */
+/* v039_134 夕凪展望台正式背景追加 */
 (function(){
   "use strict";
   window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
@@ -80,6 +80,14 @@
     hiyorizaka_sports_park_morning: { name: "日和坂総合運動公園・朝", path: "images/assets/bg/bg_hiyorizaka_sports_park_morning.png", status: "正式採用" },
     hiyorizaka_sports_park_day: { name: "日和坂総合運動公園・昼", path: "images/assets/bg/bg_hiyorizaka_sports_park_day.png", status: "正式採用" },
     hiyorizaka_sports_park_evening: { name: "日和坂総合運動公園・夕方", path: "images/assets/bg/bg_hiyorizaka_sports_park_evening.png", status: "正式採用" }
+,
+
+    yunagi_observatory_night: { name: "夕凪展望台・夜", path: "images/assets/bg/bg_yunagi_observatory_night.png", status: "正式採用" },
+    yunagi_observatory_morning: { name: "夕凪展望台・朝", path: "images/assets/bg/bg_yunagi_observatory_morning.png", status: "正式採用" },
+    yunagi_observatory_early_morning: { name: "夕凪展望台・早朝", path: "images/assets/bg/bg_yunagi_observatory_early_morning.png", status: "正式採用" },
+    yunagi_observatory_day: { name: "夕凪展望台・昼", path: "images/assets/bg/bg_yunagi_observatory_day.png", status: "正式採用" },
+    yunagi_observatory_evening: { name: "夕凪展望台・夕方", path: "images/assets/bg/bg_yunagi_observatory_evening.png", status: "正式採用" },
+    yunagi_observatory: { name: "夕凪展望台・夜（互換）", path: "images/assets/bg/bg_yunagi_observatory_night.png", status: "正式採用・互換" }
 
 
   });
