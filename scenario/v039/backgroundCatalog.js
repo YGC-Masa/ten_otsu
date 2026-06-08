@@ -1,4 +1,4 @@
-/* v039_132 正式背景整理＋総合運動公園不足メモ */
+/* v039_133 総合運動公園背景追加＋夜空メイン40改稿 */
 (function(){
   "use strict";
   window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
@@ -6,8 +6,8 @@
     battle_store_lv1: { name: "ひだまりストア店内売り場・正式（互換）", path: "images/assets/bg/battle_store_lv1.png", status: "正式採用" },
     hidamari_office: { name: "ひだまりストア事務所・正式", path: "images/assets/bgev/bg_office_hidamari.png", status: "正式採用" },
     office_hidamari: { name: "ひだまりストア事務所・正式（互換）", path: "images/assets/bgev/bg_office_hidamari.png", status: "正式採用" },
-    hiyorizaka_sports_park_budokan_evening: { name: "日和坂総合運動公園・武道イベント会場（未制作/暫定接続）", path: "images/assets/bg/bg_minato_event_plaza_festival.png", status: "未制作・暫定接続" },
-    hiyorizaka_sports_park_budokan: { name: "日和坂総合運動公園・武道イベント会場（未制作/暫定接続）", path: "images/assets/bg/bg_minato_event_plaza_festival.png", status: "未制作・暫定接続" },
+    hiyorizaka_sports_park_budokan_evening: { name: "日和坂総合運動公園・武術演武奉納祭・広場特設演舞場（互換）", path: "images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.png", status: "正式採用" },
+    hiyorizaka_sports_park_budokan: { name: "日和坂総合運動公園・武術演武奉納祭・広場特設演舞場（互換）", path: "images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.png", status: "正式採用" },
 
     hidamari_warehouse: { name: "ひだまりストア倉庫・正式", path: "images/assets/bg/bg_hidamari_warehouse.png", status: "正式採用" },
     hidamari_store_front_night: { name: "ひだまりストア前・夜（旧暫定/互換）", path: "images/assets/bg/bg_hidamari_store_front_night_open.png" },
@@ -70,6 +70,17 @@
     hashiro_lake_bus_stop_night: { name: "羽白湖・バス停前・夜（互換）", path: "images/assets/bg/bg_hashiro_lake_night.png" },
     hashiro_lake_path_night: { name: "羽白湖・湖畔遊歩道・夜（互換）", path: "images/assets/bg/bg_hashiro_lake_night.png" },
     hashiro_lake_stargazing_night: { name: "羽白湖・星空観察スポット・夜（互換）", path: "images/assets/bg/bg_hashiro_lake_night.png" }
+,
+
+    hiyorizaka_bujutsu_hounousai_stage_day: { name: "日和坂市 武術演武奉納祭・広場特設演舞場", path: "images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.png", status: "正式採用" },
+    hiyorizaka_sports_park_kyudojo_day: { name: "日和坂総合運動公園・弓道場・昼", path: "images/assets/bg/bg_hiyorizaka_sports_park_kyudojo_day.png", status: "正式採用" },
+    hiyorizaka_sports_park_midnight: { name: "日和坂総合運動公園・深夜", path: "images/assets/bg/bg_hiyorizaka_sports_park_midnight.png", status: "正式採用" },
+    hiyorizaka_sports_park_night: { name: "日和坂総合運動公園・夜（深夜背景互換）", path: "images/assets/bg/bg_hiyorizaka_sports_park_midnight.png", status: "正式採用・互換" },
+    hiyorizaka_sports_park_early_morning: { name: "日和坂総合運動公園・早朝", path: "images/assets/bg/bg_hiyorizaka_sports_park_early_morning.png", status: "正式採用" },
+    hiyorizaka_sports_park_morning: { name: "日和坂総合運動公園・朝", path: "images/assets/bg/bg_hiyorizaka_sports_park_morning.png", status: "正式採用" },
+    hiyorizaka_sports_park_day: { name: "日和坂総合運動公園・昼", path: "images/assets/bg/bg_hiyorizaka_sports_park_day.png", status: "正式採用" },
+    hiyorizaka_sports_park_evening: { name: "日和坂総合運動公園・夕方", path: "images/assets/bg/bg_hiyorizaka_sports_park_evening.png", status: "正式採用" }
+
 
   });
 })();

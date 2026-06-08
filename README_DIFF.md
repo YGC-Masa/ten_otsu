@@ -1,52 +1,26 @@
-# v039_132 正式背景整理＋総合運動公園不足メモ
+# v039_133 総合運動公園背景追加＋夜空メイン40改稿パッチ
 
-## 内容
+## 追加背景
 
-以下の背景を正式採用扱いとして整理しました。
+- images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.png
+- images/assets/bg/bg_hiyorizaka_sports_park_kyudojo_day.png
+- images/assets/bg/bg_hiyorizaka_sports_park_midnight.png
+- images/assets/bg/bg_hiyorizaka_sports_park_early_morning.png
+- images/assets/bg/bg_hiyorizaka_sports_park_morning.png
+- images/assets/bg/bg_hiyorizaka_sports_park_day.png
+- images/assets/bg/bg_hiyorizaka_sports_park_evening.png
 
-```text
-images/assets/bg/battle_store_lv1.png
-images/assets/bg/bg_hidamari_warehouse.png
-images/assets/bgev/bg_office_hidamari.png
-```
+※ 運動公園・夜は現時点では深夜背景を互換参照します。
 
-## 追加・整理した backgroundCatalog エントリ
+## 更新内容
 
-```text
-hidamari_store_sales_floor
-battle_store_lv1
-hidamari_warehouse
-hidamari_office
-office_hidamari
-```
+- backgroundCatalog.js に日和坂総合運動公園と武術演武奉納祭背景を正式登録
+- 既存の hiyorizaka_sports_park_budokan / hiyorizaka_sports_park_budokan_evening の暫定接続を正式背景へ変更
+- 夜空メイン40「嬉しいのに、苦しい」を改稿版へ差し替え
+- セリフ内に混在していた「\n――」以降の地の文を speaker: "" の独立ステップへ分離
+- 起動表示・右メニュー・右下バージョンを v039_133 へ更新
 
-## 未制作として残る背景
+## 適用先
 
-```text
-日和坂総合運動公園・武道イベント会場
-```
-
-現状は旧シナリオ互換用に以下のカタログ名を追加し、みなと公園フェス背景へ暫定接続しています。
-
-```text
-hiyorizaka_sports_park_budokan_evening
-hiyorizaka_sports_park_budokan
-→ images/assets/bg/bg_minato_event_plaza_festival.png
-```
-
-正式な総合運動公園・武道イベント会場背景が作成されたら、この2エントリの path を正式画像へ差し替えます。
-
-## 更新ファイル
-
-```text
-index.html
-VERSION.txt
-README_DIFF.md
-program/v039/version.js
-program/v039/state.js
-program/v039/office.js
-scenario/v039/backgroundCatalog.js
-```
-
-画像アセットは同梱していません。
-これは v039_131 以降へ上書きする軽量差分ZIPです。
+v039_133 は v039_132 以降へ上書きする差分パッチです。
+新規背景アセット追加のため、今回のみ画像を同梱しています。
