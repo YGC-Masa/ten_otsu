@@ -1,16 +1,15 @@
-/* v039_129 アントステラ＋羽白湖正式背景追加 */
+/* v039_130 夜空親愛100リライト反映 */
 (function(){
   "use strict";
-  window.TENOTSU_BUILD_VERSION = "v039_129";
-  window.TENOTSU_BUILD_LABEL = "v039_129 アントステラ＋羽白湖正式背景追加";
+  window.TENOTSU_BUILD_VERSION = "v039_130";
+  window.TENOTSU_BUILD_LABEL = "v039_130 夜空親愛100リライト反映";
   window.TENOTSU_BUILD_NOTES = [
-    "BOOKCAFEアントステラ外観・1階・2階背景を正式追加",
-    "羽白湖の夜・昼・夕方・朝・早朝背景を正式追加",
-    "夜空Lv90〜100周辺シナリオのブックカフェ背景参照を正式背景へ差し替え",
-    "夜空Lv80〜90周辺シナリオの羽白湖背景参照を正式背景へ差し替え",
+    "夜空メイン10『二人だから、少し素直になる』をリライト版へ差し替え",
+    "アントステラ外観・2階ブックカフェ・赤いカップルシート演出を正式背景へ接続",
+    "v039_129のアントステラ＋羽白湖正式背景追加を維持",
     "v039_128の起動復旧・親愛テスト設定を維持"
   ];
   window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  window.TENOTSU_V039.VERSION = "v039_129";
+  window.TENOTSU_V039.VERSION = "v039_130";
   window.TENOTSU_V039.BUILD_LABEL = window.TENOTSU_BUILD_LABEL;
 })();

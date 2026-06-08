@@ -1,28 +1,25 @@
-# v039_129 アントステラ＋羽白湖正式背景追加パッチ
+# v039_130 夜空親愛100リライト反映
 
 ## 概要
-BOOKCAFE「アントステラ」と羽白湖の正式背景アセットを追加し、夜空Lv80〜100周辺シナリオの暫定背景参照を正式背景へ差し替えました。
+夜空メイン10「二人だから、少し素直になる」を、ユーザー指定のリライト版へ差し替えます。
 
-## 新規追加背景
+## 更新ファイル
+- `index.html`
+- `VERSION.txt`
+- `README_DIFF.md`
+- `program/v039/version.js`
+- `program/v039/state.js`
+- `program/v039/office.js`
+- `scenario/v039/events/yozora_affection_100_00_main.json`
 
-### BOOKCAFE アントステラ
-- images/assets/bg/bg_bookcafe_antostella_exterior_night.png
-- images/assets/bg/bg_bookcafe_antostella_1f_night.png
-- images/assets/bg/bg_bookcafe_antostella_2f_night.png
+## 背景パス調整
+リライト版に含まれる新規名の背景参照を、v039_129で追加済みの正式アセットへ接続しました。
 
-### 羽白湖
-- images/assets/bg/bg_hashiro_lake_night.png
-- images/assets/bg/bg_hashiro_lake_day.png
-- images/assets/bg/bg_hashiro_lake_evening.png
-- images/assets/bg/bg_hashiro_lake_morning.png
-- images/assets/bg/bg_hashiro_lake_early_morning.png
-
-## 更新内容
-- scenario/v039/backgroundCatalog.js に正式背景を登録
-- yozora_affection_90_00_main.json の羽白湖背景を正式背景へ差し替え
-- yozora_affection_100_00_main.json のブックカフェ背景を正式背景へ差し替え
-- yozora_affection_90_03_key.json の双沢姉妹部屋背景を正式背景へ差し替え
-- バージョン表示を v039_129 に更新
+- `bg_hidamari_store_closed_night.png` → `battle_store_lv1.png`
+- `bg_hidamari_store_front_night.png` → `bg_hidamari_store_front_night_open.png`
+- `bg_antostella_entrance_night.png` → `bg_bookcafe_antostella_exterior_night.png`
+- `bg_antostella_2f_bookcafe_night.png` → `bg_bookcafe_antostella_2f_night.png`
+- `bg_antostella_2f_couple_seat_night.png` → `bg_bookcafe_antostella_2f_night.png`
 
 ## 注意
-今回は新規背景アセット追加のため画像を同梱しています。次回以降、この背景画像は再同梱しない運用です。
+新規画像アセットは同梱していません。v039_129で追加済みのアントステラ正式背景を前提にした軽量差分です。
