@@ -1,14 +1,14 @@
-/* v039_131 セリフ内地の文分離パッチ */
+/* v039_132 正式背景整理＋総合運動公園不足メモ */
 (function(){
   "use strict";
-  window.TENOTSU_BUILD_VERSION = "v039_131";
-  window.TENOTSU_BUILD_LABEL = "v039_131 セリフ内地の文分離パッチ";
+  window.TENOTSU_BUILD_VERSION = "v039_132";
+  window.TENOTSU_BUILD_LABEL = "v039_132 正式背景整理＋総合運動公園不足メモ";
   window.TENOTSU_BUILD_NOTES = [
-    "夜空メイン100のセリフ内に混在していた――地の文を、speaker空文字の独立ステップへ分離",
-    "セリフ表示と回想・憶測・情景描写を分け、話者名付きテキストに地の文が混ざらないよう調整",
-    "v039_130の夜空親愛100リライトとv039_129のアントステラ正式背景接続を維持"
+    "battle_store_lv1 / bg_hidamari_warehouse / bg_office_hidamari を正式採用背景として整理",
+    "backgroundCatalog に正式採用エントリと互換名を追加",
+    "日和坂総合運動公園・武道イベント会場は未制作背景として明記し、既存背景へ暫定接続"
   ];
   window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  window.TENOTSU_V039.VERSION = "v039_131";
+  window.TENOTSU_V039.VERSION = "v039_132";
   window.TENOTSU_V039.BUILD_LABEL = window.TENOTSU_BUILD_LABEL;
 })();

@@ -1,8 +1,15 @@
-/* v039_129 background catalog */
+/* v039_132 正式背景整理＋総合運動公園不足メモ */
 (function(){
   "use strict";
   window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
-    hidamari_warehouse: { name: "ひだまりストア倉庫", path: "images/assets/bg/bg_hidamari_warehouse.png" },
+    hidamari_store_sales_floor: { name: "ひだまりストア店内売り場・正式", path: "images/assets/bg/battle_store_lv1.png", status: "正式採用" },
+    battle_store_lv1: { name: "ひだまりストア店内売り場・正式（互換）", path: "images/assets/bg/battle_store_lv1.png", status: "正式採用" },
+    hidamari_office: { name: "ひだまりストア事務所・正式", path: "images/assets/bgev/bg_office_hidamari.png", status: "正式採用" },
+    office_hidamari: { name: "ひだまりストア事務所・正式（互換）", path: "images/assets/bgev/bg_office_hidamari.png", status: "正式採用" },
+    hiyorizaka_sports_park_budokan_evening: { name: "日和坂総合運動公園・武道イベント会場（未制作/暫定接続）", path: "images/assets/bg/bg_minato_event_plaza_festival.png", status: "未制作・暫定接続" },
+    hiyorizaka_sports_park_budokan: { name: "日和坂総合運動公園・武道イベント会場（未制作/暫定接続）", path: "images/assets/bg/bg_minato_event_plaza_festival.png", status: "未制作・暫定接続" },
+
+    hidamari_warehouse: { name: "ひだまりストア倉庫・正式", path: "images/assets/bg/bg_hidamari_warehouse.png", status: "正式採用" },
     hidamari_store_front_night: { name: "ひだまりストア前・夜（旧暫定/互換）", path: "images/assets/bg/bg_hidamari_store_front_night_open.png" },
 
     hidamari_store_front_early_morning: { name: "ひだまりストア外観・早朝", path: "images/assets/bg/bg_hidamari_store_front_early_morning.png" },
