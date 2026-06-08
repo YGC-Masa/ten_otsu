@@ -1,20 +1,23 @@
-# v039_136 夜空シナリオ全体整備＋メイン20イベントCG実装
+# v039_137 = 夜空メイン40専用道着立ち絵＋演武イベントCG実装パッチ
 
-## 内容
+## 適用前提
 
-- 夜空全親愛ストーリーのシナリオメンテナンス。
-  - 話者付きセリフ内に混在していた `\n――` 以降の地の文を、`speaker: ""` の独立ステップへ分離。
-  - `speaker: ""` の地の文ステップ内に複数の `――` 回想・状況説明が連結していた箇所も独立ステップ化。
-- ストーリーモードの複数キャラ表示で、表示人数に対して n+1 分割の論理スロットを優先するように `storyLayout.js` / `storyPlayer.js` を修正。
-- 夜空メイン20「一歩後ろの夜空」のステップ181以降を、専用上半身立ち絵へ差し替え。
-- 夜空メイン20のステップ220〜247に夕方海辺イベントCGを表示し、ステップ248で解除。
+v039_136以降へ上書きしてください。
+
+## 実装内容
+
+- 夜空メイン40「嬉しいのに、苦しい」に専用道着立ち絵2種を適用
+- ステップ28〜44に美空演武イベントCGを表示
+- ステップ71〜84に夜空弓道演武イベントCGを表示
+- イベントCG解除後は専用道着立ち絵へ復帰
 
 ## 追加アセット
 
 ```text
-images/assets/char/yozora_main20_upper.png
-images/assets/char/misora_main20_upper.png
-images/assets/cg/cg_yozora_main20_sunset_beach.png
+images/assets/char/misora_budo_gi_main40.png
+images/assets/char/yozora_budo_gi_main40.png
+images/assets/cg/cg_yozora_main40_misora_enbu.png
+images/assets/cg/cg_yozora_main40_yozora_kyudo_enbu.png
 ```
 
 ## 更新ファイル
@@ -26,11 +29,5 @@ README_DIFF.md
 program/v039/version.js
 program/v039/state.js
 program/v039/office.js
-program/v039/storyLayout.js
-program/v039/storyPlayer.js
-scenario/v039/events/yozora_affection_*.json
+scenario/v039/events/yozora_affection_40_00_main.json
 ```
-
-## 適用前提
-
-`v039_135` 以降へ上書きする差分パッチです。今回は新規キャラ上半身素材とイベントCGを同梱しています。
