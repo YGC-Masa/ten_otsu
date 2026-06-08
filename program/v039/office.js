@@ -1,4 +1,4 @@
-/* v039_127 夜空Lv91〜100到達ストーリー追加
+/* v039_127 夜空Lv91〜100到達ストーリー追加 */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
