@@ -1,4 +1,4 @@
-/* v039_117 story player: member return keep + event CG section + safe story start fade */
+/* v039_139 story player: event CG cleanup on hide/end + safe story start fade */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -141,7 +141,40 @@
     if(ns.forceMobileStoryVisibility) ns.forceMobileStoryVisibility();
   };
 
-  ns.hideEventCgSurface = function hideEventCgSurface() {
+  ns.restoreStoryBackgroundAfterEventCg = function restoreStoryBackgroundAfterEventCg(bgPath) {
+    if (!bgPath) return;
+    try {
+      const layers = ns.layers || ns.ensureLayers();
+      if (layers && layers.bg) {
+        layers.bg.hidden = false;
+        layers.bg.style.setProperty("display", "block", "important");
+        layers.bg.style.setProperty("visibility", "visible", "important");
+        layers.bg.style.setProperty("opacity", "1", "important");
+        layers.bg.style.setProperty("background-image", `url("${bgPath}")`, "important");
+        layers.bg.style.setProperty("background-size", "cover", "important");
+        layers.bg.style.setProperty("background-position", "center", "important");
+        layers.bg.style.setProperty("background-repeat", "no-repeat", "important");
+      }
+      if (layers && layers.bgImg) {
+        layers.bgImg.removeAttribute("hidden");
+        layers.bgImg.hidden = false;
+        layers.bgImg.style.setProperty("display", "block", "important");
+        layers.bgImg.style.setProperty("visibility", "visible", "important");
+        layers.bgImg.style.setProperty("opacity", "1", "important");
+        layers.bgImg.style.setProperty("object-fit", "cover", "important");
+        layers.bgImg.style.setProperty("object-position", "center center", "important");
+        layers.bgImg.src = bgPath;
+      }
+      if (typeof ns.directSetStoryBackgroundImage === "function") ns.directSetStoryBackgroundImage(bgPath);
+      ns.storyCurrentBackground = bgPath;
+      if (ns.story) ns.story.lastBg = bgPath;
+    } catch (_) {}
+  };
+
+  ns.hideEventCgSurface = function hideEventCgSurface(options = {}) {
+    const restorePath = (!options || !options.noRestore) && ns.storyEventCgActive ? (ns.storyEventCgRestoreBackground || "") : "";
+    ns.storyEventCgActive = false;
+    ns.storyEventCgRestoreBackground = "";
     document.body.classList.remove("tenotsu-event-cg-active");
     document.querySelectorAll(".tenotsu-event-cg-layer, .tenotsu-cg-layer, .event-cg-layer, .memory-cg-layer, [data-event-cg], [data-cg-layer]").forEach((el) => {
       el.hidden = true;
@@ -161,10 +194,26 @@
         }
       }
     });
+    if (restorePath && typeof ns.restoreStoryBackgroundAfterEventCg === "function") ns.restoreStoryBackgroundAfterEventCg(restorePath);
   };
 
   ns.showEventCgSurface = function showEventCgSurface(src) {
-    if (src && typeof ns.setUnifiedStoryBackground === "function") ns.setUnifiedStoryBackground(src);
+    if (!src) return;
+    const restorePath = ns.storyCurrentBackground || (ns.story && ns.story.lastBg) || "";
+    const markActive = () => {
+      ns.storyEventCgActive = true;
+      ns.storyEventCgRestoreBackground = restorePath;
+      document.body.classList.add("tenotsu-event-cg-active");
+    };
+    markActive();
+    if (typeof ns.setUnifiedStoryBackground === "function") {
+      Promise.resolve(ns.setUnifiedStoryBackground(src)).then(markActive).catch(markActive);
+    } else if (typeof ns.setStoryBackgroundDirect === "function") {
+      Promise.resolve(ns.setStoryBackgroundDirect(src, { force:true })).then(markActive).catch(markActive);
+    } else if (typeof ns.setBackground === "function") {
+      try { ns.setBackground(src); } catch (_) {}
+      markActive();
+    }
   };
 
   ns.forceReplaceStoryBackground = async function forceReplaceStoryBackground(bgPath) {
@@ -328,6 +377,7 @@
   ns.startStory = async function startStory(scenarioPath, returnInfo = {}) {
     try {
       ns.ensureLayers();
+      if (typeof ns.hideEventCgSurface === "function") ns.hideEventCgSurface({ noRestore:true });
       await ns.fadeOutForStoryStart();
       document.body.classList.add("tenotsu-story-start-blackfade");
       if (typeof ns.clearStoryTextBoxForTransition === "function") ns.clearStoryTextBoxForTransition();
@@ -564,6 +614,7 @@
   };
 
   ns.endStory = function endStory() {
+    if (typeof ns.hideEventCgSurface === "function") ns.hideEventCgSurface();
     const ret = ns.story.returnInfo || {};
     const finishedStoryData = ns.story && ns.story.data ? ns.story.data : null;
     if (ret.eventId && typeof ns.markEventRead === "function") ns.markEventRead(ret.eventId);

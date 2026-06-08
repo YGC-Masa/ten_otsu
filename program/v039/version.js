@@ -1,14 +1,15 @@
-/* v039_135 店長マンション前・メゾン・ド・エトワール背景追加 */
+/* v039_139 夜空メイン40CG範囲調整＋イベントCG終了時クリア */
 (function(){
   "use strict";
-  window.TENOTSU_BUILD_VERSION = "v039_135";
-  window.TENOTSU_BUILD_LABEL = "v039_135 店長マンション前・メゾン・ド・エトワール背景追加";
+  window.TENOTSU_BUILD_VERSION = "v039_139";
+  window.TENOTSU_BUILD_LABEL = "v039_139 夜空メイン40CG範囲調整＋イベントCG終了時クリア";
   window.TENOTSU_BUILD_NOTES = [
-    "店長マンション前の帰り道・メゾン・ド・エトワール背景5種を正式アセットとして追加",
-    "backgroundCatalog に manager_mansion_road 系の正式背景と互換名を追加",
-    "夜空メイン7の店長マンション前の帰り道シーンを正式背景へ差し替え"
+    "夜空メイン40『嬉しいのに、苦しい』の美空演舞CG区間をステップ35〜44へ調整",
+    "夜空メイン40の夜空弓道演武CG区間を演武開始〜退場までに調整",
+    "弓道演武パートの複数――地の文を独立ステップへ分割",
+    "シナリオ終了時にイベントCG状態をクリアし、CG残留を防止"
   ];
   window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  window.TENOTSU_V039.VERSION = "v039_135";
+  window.TENOTSU_V039.VERSION = "v039_139";
   window.TENOTSU_V039.BUILD_LABEL = window.TENOTSU_BUILD_LABEL;
 })();

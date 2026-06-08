@@ -1,33 +1,55 @@
-# v039_135 店長マンション前・メゾン・ド・エトワール背景追加
+# v039_139 = 夜空メイン40CG範囲調整＋イベントCG終了時クリアパッチ
 
-## 内容
+## 適用前提
 
-店長マンション前の帰り道 / 店長のマンション「メゾン・ド・エトワール」前の正式背景を追加しました。
+v039_138 以降へ上書きする軽量差分です。
+画像アセットは同梱していません。
 
-## 追加背景
+## 修正内容
 
-- images/assets/bg/bg_manager_mansion_road_early_morning.png
-- images/assets/bg/bg_manager_mansion_road_morning.png
-- images/assets/bg/bg_manager_mansion_road_day.png
-- images/assets/bg/bg_manager_mansion_road_evening.png
-- images/assets/bg/bg_manager_mansion_road_night.png
+### 夜空メイン40「嬉しいのに、苦しい」
 
-## backgroundCatalog 登録
+対象:
 
-- manager_mansion_road_early_morning
-- manager_mansion_road_morning
-- manager_mansion_road_day
-- manager_mansion_road_evening
-- manager_mansion_road_night
-- manager_mansion_road
+```text
+scenario/v039/events/yozora_affection_40_00_main.json
+```
 
-## シナリオ差し替え
+- ステップ28〜34は通常背景に戻し、美空演武CGを表示しないよう調整
+- ステップ35〜44で美空演武イベントCGを表示
+- ステップ69から夜空弓道演武イベントCGを表示
+- 夜空演武の退場描写後にイベントCGを解除
+- 旧ステップ69内の複数の「――」地の文を3ステップへ分割
+- 旧ステップ78内の複数の「――」地の文を2ステップへ分割
 
-- scenario/v039/events/yozora_affection_70_00_main.json
-  - 「店長マンション前の帰り道」シーンを bg_manager_mansion_road_night.png へ差し替え
+使用CG:
 
-## 注意
+```text
+images/assets/cg/cg_yozora_main40_misora_enbu.png
+images/assets/cg/cg_yozora_main40_yozora_kyudo_enbu.png
+```
 
-今回は新規背景アセット追加のため画像を同梱しています。次回以降、この5枚は原則再同梱しません。
+### イベントCG残留対策
 
-適用先: v039_134以降
+対象:
+
+```text
+program/v039/storyPlayer.js
+```
+
+- シナリオ開始時に古いイベントCG状態をクリア
+- `hideEventCg` 実行時にイベントCG直前の背景へ復帰
+- シナリオ終了時に `hideEventCgSurface()` を必ず呼び、回想メニューやメンバー画面へ戻った後にイベントCGが残らないよう修正
+
+## 更新ファイル
+
+```text
+index.html
+VERSION.txt
+README_DIFF.md
+program/v039/version.js
+program/v039/state.js
+program/v039/office.js
+program/v039/storyPlayer.js
+scenario/v039/events/yozora_affection_40_00_main.json
+```

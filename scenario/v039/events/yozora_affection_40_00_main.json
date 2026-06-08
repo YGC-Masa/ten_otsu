@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_40_00_main",
   "title": "嬉しいのに、苦しい",
-  "version": "v039_137",
+  "version": "v039_139",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_40_00_main",
@@ -272,11 +272,7 @@
           "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
-      ],
-      "showEventCg": true,
-      "eventCg": "images/assets/cg/cg_yozora_main40_misora_enbu.png",
-      "cgFit": "cover",
-      "cgAlign": "center center"
+      ]
     },
     {
       "speaker": "店長",
@@ -325,7 +321,11 @@
     },
     {
       "speaker": "",
-      "text": "――美空の演武が始まる。\n木刀が空を切る音。\n踏み込みの音。\n澄んだ気合いの声。\n会場の空気が、一瞬で引き締まった。"
+      "text": "――美空の演武が始まる。\n木刀が空を切る音。\n踏み込みの音。\n澄んだ気合いの声。\n会場の空気が、一瞬で引き締まった。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main40_misora_enbu.png",
+      "cgFit": "cover",
+      "cgAlign": "center center"
     },
     {
       "speaker": "観客",
@@ -553,7 +553,19 @@
     },
     {
       "speaker": "",
-      "text": "――夜空の表情から、余計な感情が消える。\n視線はただ的へ向かい、呼吸がゆっくり整っていく。\n\n――弦が引かれる。\n音が消える。\n時間が、細く張りつめる。\nそして。\n\n――矢が放たれた。"
+      "text": "――夜空の表情から、余計な感情が消える。\n視線はただ的へ向かい、呼吸がゆっくり整っていく。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main40_yozora_kyudo_enbu.png",
+      "cgFit": "cover",
+      "cgAlign": "center center"
+    },
+    {
+      "speaker": "",
+      "text": "――弦が引かれる。音が消える。\n時間が、細く張りつめる。\nそして。"
+    },
+    {
+      "speaker": "",
+      "text": "――矢が放たれた。"
     },
     {
       "speaker": "観客",
@@ -561,11 +573,7 @@
     },
     {
       "speaker": "",
-      "text": "――的を射抜く音が、静かに響く。\n派手な歓声はない。\nけれど、会場にいた何人かが、小さく息をのんだ。",
-      "showEventCg": true,
-      "eventCg": "images/assets/cg/cg_yozora_main40_yozora_kyudo_enbu.png",
-      "cgFit": "cover",
-      "cgAlign": "center center"
+      "text": "――的を射抜く音が、静かに響く。\n派手な歓声はない。\nけれど、会場にいた何人かが、小さく息をのんだ。"
     },
     {
       "speaker": "店長",
@@ -600,7 +608,11 @@
     },
     {
       "speaker": "",
-      "text": "――すべての行射を終えると、夜空は弓を下ろす。\n立ったまま姿勢を整え、的へ向けて静かに礼をする。\nそして、入場した時と同じように、足音を立てずに演武場を退場した。\n\n――最後まで、夜空の動きは大きくない。\nけれど、その静けさの中に、確かな強さがあった。"
+      "text": "――すべての行射を終えると、夜空は弓を下ろす。\n立ったまま姿勢を整え、的へ向けて静かに礼をする。\nそして、入場した時と同じように、足音を立てずに演武場を退場した。"
+    },
+    {
+      "speaker": "",
+      "text": "――最後まで、夜空の動きは大きくない。\nけれど、その静けさの中に、確かな強さがあった。"
     },
     {
       "speaker": "美空",
@@ -611,7 +623,8 @@
           "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         }
-      ]
+      ],
+      "hideEventCg": true
     },
     {
       "speaker": "夜空",
@@ -656,8 +669,7 @@
     },
     {
       "speaker": "店長",
-      "text": "比べたつもりはなかった。",
-      "hideEventCg": true
+      "text": "比べたつもりはなかった。"
     },
     {
       "speaker": "夜空",
