@@ -1,4 +1,4 @@
-/* v039_112 story layout: generic logical split + knee-shot bottom aligned sprites + event CG above characters */
+/* v039_136 story layout: generic logical split + fixed n+1 auto slots + knee-shot bottom aligned sprites + event CG above characters */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
@@ -9,8 +9,12 @@
     return !!(ch && ch.src && !String(ch.src).endsWith("/NULL"));
   }
 
-  function hasExplicitPosition(ch) {
-    return !!(ch && (ch.left || ch.right || ch.top || ch.bottom || ch.lockPosition || ch.positionLocked));
+  function hasLockedPosition(ch) {
+    return !!(ch && (ch.lockPosition || ch.positionLocked || ch.fixedPosition || ch.keepPosition));
+  }
+
+  function hasExplicitHorizontal(ch) {
+    return !!(ch && (ch.left || ch.right));
   }
 
   function logicalLeft(index, count) {
@@ -40,12 +44,25 @@
     const n = Math.max(1, list.length);
     return list.map((ch, index) => {
       const copy = Object.assign({}, ch);
-      const explicit = hasExplicitPosition(copy);
-      if (!copy.left && !copy.right) copy.left = logicalLeft(index, n);
-      if (!copy.side || (!explicit && /^max(left|right)$/.test(String(copy.side)))) copy.side = logicalSide(index, n);
+      const locked = hasLockedPosition(copy);
+      const explicitHorizontal = hasExplicitHorizontal(copy);
+      const autoLeft = logicalLeft(index, n);
+      const autoSide = logicalSide(index, n);
+
+      // When multiple sprites are shown, old scenario-side center/left/right hints
+      // should not collapse everyone into the same slot.  Only explicit horizontal
+      // coordinates or lockPosition keep manual placement.
+      if (!locked && !explicitHorizontal) {
+        copy.left = autoLeft;
+        copy.side = autoSide;
+      } else {
+        if (!copy.left && !copy.right) copy.left = autoLeft;
+        if (!copy.side) copy.side = autoSide;
+      }
+
       copy.autoSlotIndex = index;
       copy.autoSlotCount = n;
-      copy.autoLogicalLeft = logicalLeft(index, n);
+      copy.autoLogicalLeft = autoLeft;
       return copy;
     });
   };

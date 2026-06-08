@@ -1,29 +1,36 @@
-# v039_134 夕凪展望台正式背景追加パッチ
+# v039_136 夜空シナリオ全体整備＋メイン20イベントCG実装
 
 ## 内容
 
-夕凪展望台の正式背景5種を追加し、夜空Lv50〜60の夕凪展望台シーンを塩見浜暫定背景から正式背景へ差し替えます。
+- 夜空全親愛ストーリーのシナリオメンテナンス。
+  - 話者付きセリフ内に混在していた `\n――` 以降の地の文を、`speaker: ""` の独立ステップへ分離。
+  - `speaker: ""` の地の文ステップ内に複数の `――` 回想・状況説明が連結していた箇所も独立ステップ化。
+- ストーリーモードの複数キャラ表示で、表示人数に対して n+1 分割の論理スロットを優先するように `storyLayout.js` / `storyPlayer.js` を修正。
+- 夜空メイン20「一歩後ろの夜空」のステップ181以降を、専用上半身立ち絵へ差し替え。
+- 夜空メイン20のステップ220〜247に夕方海辺イベントCGを表示し、ステップ248で解除。
 
-## 追加画像
+## 追加アセット
 
-- images/assets/bg/bg_yunagi_observatory_night.png
-- images/assets/bg/bg_yunagi_observatory_morning.png
-- images/assets/bg/bg_yunagi_observatory_early_morning.png
-- images/assets/bg/bg_yunagi_observatory_day.png
-- images/assets/bg/bg_yunagi_observatory_evening.png
+```text
+images/assets/char/yozora_main20_upper.png
+images/assets/char/misora_main20_upper.png
+images/assets/cg/cg_yozora_main20_sunset_beach.png
+```
 
 ## 更新ファイル
 
-- index.html
-- VERSION.txt
-- program/v039/version.js
-- program/v039/state.js
-- program/v039/office.js
-- scenario/v039/backgroundCatalog.js
-- scenario/v039/events/yozora_affection_50_02_key.json
-- scenario/v039/events/yozora_affection_50_03_key.json
-- scenario/v039/events/yozora_affection_60_00_main.json
+```text
+index.html
+VERSION.txt
+README_DIFF.md
+program/v039/version.js
+program/v039/state.js
+program/v039/office.js
+program/v039/storyLayout.js
+program/v039/storyPlayer.js
+scenario/v039/events/yozora_affection_*.json
+```
 
 ## 適用前提
 
-v039_133以降へ上書きしてください。今回は新規背景アセット追加なので画像を同梱しています。次回以降はこの5枚を再同梱しない運用です。
+`v039_135` 以降へ上書きする差分パッチです。今回は新規キャラ上半身素材とイベントCGを同梱しています。

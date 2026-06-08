@@ -1,4 +1,4 @@
-/* v039_134 総合運動公園背景追加＋夜空メイン40改稿 */
+/* v039_136 夜空シナリオ全体整備＋メイン20イベントCG実装 */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
@@ -47,10 +47,10 @@
     version.className = "tenotsu-menu-version";
     const versionMain = document.createElement("span");
     versionMain.className = "tenotsu-menu-version-main";
-    versionMain.textContent = ns.VERSION || window.TENOTSU_BUILD_VERSION || "v039_134 正式背景整理＋総合運動公園不足メモ";
+    versionMain.textContent = ns.VERSION || window.TENOTSU_BUILD_VERSION || "v039_136 夜空シナリオ全体整備＋メイン20イベントCG実装";
     const versionSub = document.createElement("span");
     versionSub.className = "tenotsu-menu-version-sub";
-    versionSub.textContent = ns.BUILD_LABEL || window.TENOTSU_BUILD_LABEL || "v039_134 正式背景整理＋総合運動公園不足メモ";
+    versionSub.textContent = ns.BUILD_LABEL || window.TENOTSU_BUILD_LABEL || "v039_136 夜空シナリオ全体整備＋メイン20イベントCG実装";
     version.appendChild(versionMain);
     version.appendChild(versionSub);
     layers.menu.appendChild(version);
@@ -137,7 +137,7 @@
     const html = `
       <div class="tenotsu-settings-title">設定</div>
       <div class="tenotsu-settings-body">
-        <div>現在のバージョン: <strong>${ns.VERSION || window.TENOTSU_BUILD_VERSION || "v039_134 正式背景整理＋総合運動公園不足メモ"}</strong></div>
+        <div>現在のバージョン: <strong>${ns.VERSION || window.TENOTSU_BUILD_VERSION || "v039_136 夜空シナリオ全体整備＋メイン20イベントCG実装"}</strong></div>
         <div>表示やキャッシュ、営業リソースの調整を行います。</div>
         <div class="tenotsu-settings-resource-note">ST/BPリセットは検証用です。スタミナとバトルPを最大値に戻します。</div>
         <div class="tenotsu-settings-resource-note">親愛テスト用：初期親愛Lvは100扱いです。必要に応じて全員Lv100化・親愛ストーリー全クリアを実行できます。</div>

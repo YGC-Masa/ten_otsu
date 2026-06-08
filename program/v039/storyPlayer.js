@@ -409,9 +409,10 @@
       // Story character plane order is owned by CSS.  Do not let scenario zIndex
       // push sprites in front of the text UI.
       delete copy.zIndex;
-      if (forceCenter || copy.side === "center") {
+      if (forceCenter) {
         copy.side = "center";
         copy.left = copy.left || "50%";
+        copy.lockPosition = true;
       }
       return copy;
     });
@@ -427,7 +428,7 @@
     if (ns.normalizeStorySpriteLayerOrder) sprites = ns.normalizeStorySpriteLayerOrder(sprites);
     if (!sprites.length || typeof ns.showStoryCharacters !== "function") return false;
 
-    const key = JSON.stringify(sprites.map((s) => [s.id, s.src, s.side, s.left, s.zIndex, s.opacity, s.frame, s.variant]));
+    const key = JSON.stringify(sprites.map((s) => [s.id, s.src, s.side, s.left, s.right, s.top, s.bottom, s.width, s.height, s.maxHeight, s.transform, s.zIndex, s.opacity, s.frame, s.variant]));
     if (ns.storyCurrentSpriteKey === key) {
       if (ns.forceMobileStoryVisibility) ns.forceMobileStoryVisibility();
       return true;
@@ -446,7 +447,7 @@
     if (ns.applyStorySpritesV2(step)) { if (ns.forceMobileStoryVisibility) ns.forceMobileStoryVisibility(); return; }
     const scenarioChars = Array.isArray(step.characters) ? step.characters : [];
     if (scenarioChars.length && typeof ns.showStoryCharacters === "function") {
-      const key = JSON.stringify(scenarioChars.map((s) => [s.id, s.src, s.side, s.left, s.zIndex, s.opacity, s.frame, s.variant]));
+      const key = JSON.stringify(scenarioChars.map((s) => [s.id, s.src, s.side, s.left, s.right, s.top, s.bottom, s.width, s.height, s.maxHeight, s.transform, s.zIndex, s.opacity, s.frame, s.variant]));
       if (ns.storyCurrentSpriteKey !== key) {
         ns.storyCurrentSpriteKey = key;
         ns.showStoryCharacters(scenarioChars);
