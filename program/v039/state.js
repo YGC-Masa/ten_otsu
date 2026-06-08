@@ -2,8 +2,8 @@
   "use strict";
   window.TENOTSU_V039 = window.TENOTSU_V039 || {};
   const ns = window.TENOTSU_V039;
-  ns.VERSION = window.TENOTSU_BUILD_VERSION || ns.VERSION || "v039_139";
-  ns.BUILD_LABEL = window.TENOTSU_BUILD_LABEL || ns.BUILD_LABEL || "v039_139";
+  ns.VERSION = window.TENOTSU_BUILD_VERSION || ns.VERSION || "v039_140 夜空メイン50専用立ち絵＋帰り道CG追加";
+  ns.BUILD_LABEL = window.TENOTSU_BUILD_LABEL || ns.BUILD_LABEL || "v039_140 夜空メイン50専用立ち絵＋帰り道CG追加";
   ns.state = ns.state || { mode:"boot", officeSelection:[], frontCharacter:null, bootedAt:Date.now() };
   ns.state.mode = ns.state.mode || "boot";
   ns.setMode = function(mode){

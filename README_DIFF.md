@@ -1,45 +1,28 @@
-# v039_139 = 夜空メイン40CG範囲調整＋イベントCG終了時クリアパッチ
+# v039_140 夜空メイン50専用立ち絵＋帰り道CG追加
 
-## 適用前提
+## 内容
 
-v039_138 以降へ上書きする軽量差分です。
-画像アセットは同梱していません。
+夜空メイン50「探さないで、の前兆」を、専用冬衣装立ち絵・正式帰り道背景・イベントCGに合わせて調整しました。
 
-## 修正内容
+## 変更点
 
-### 夜空メイン40「嬉しいのに、苦しい」
+- ステップ20以降：美空を冬コート立ち絵、夜空を冬コート立ち絵へ切り替え
+- ステップ37以降：美空をマフラー付き冬コート立ち絵へ切り替え
+- ステップ125：店長マンション前の帰り道・夜背景へ変更
+- ステップ199：夜空帰り道イベントCGを表示開始
+- ステップ258：イベントCGを解除
+- ステップ293付近：双沢家の夜背景へ変更し、美空をパジャマ立ち絵へ切り替え
+- シナリオ内の「\n――」混在が出ないよう、地の文を独立ステップ化
 
-対象:
-
-```text
-scenario/v039/events/yozora_affection_40_00_main.json
-```
-
-- ステップ28〜34は通常背景に戻し、美空演武CGを表示しないよう調整
-- ステップ35〜44で美空演武イベントCGを表示
-- ステップ69から夜空弓道演武イベントCGを表示
-- 夜空演武の退場描写後にイベントCGを解除
-- 旧ステップ69内の複数の「――」地の文を3ステップへ分割
-- 旧ステップ78内の複数の「――」地の文を2ステップへ分割
-
-使用CG:
+## 追加アセット
 
 ```text
-images/assets/cg/cg_yozora_main40_misora_enbu.png
-images/assets/cg/cg_yozora_main40_yozora_kyudo_enbu.png
+images/assets/char/misora_coat_main50.png
+images/assets/char/yozora_coat_main50.png
+images/assets/char/misora_coat_muffler_main50.png
+images/assets/char/misora_pajama_main50.png
+images/assets/cg/cg_yozora_main50_return_road.png
 ```
-
-### イベントCG残留対策
-
-対象:
-
-```text
-program/v039/storyPlayer.js
-```
-
-- シナリオ開始時に古いイベントCG状態をクリア
-- `hideEventCg` 実行時にイベントCG直前の背景へ復帰
-- シナリオ終了時に `hideEventCgSurface()` を必ず呼び、回想メニューやメンバー画面へ戻った後にイベントCGが残らないよう修正
 
 ## 更新ファイル
 
@@ -50,6 +33,7 @@ README_DIFF.md
 program/v039/version.js
 program/v039/state.js
 program/v039/office.js
-program/v039/storyPlayer.js
-scenario/v039/events/yozora_affection_40_00_main.json
+scenario/v039/events/yozora_affection_50_00_main.json
 ```
+
+これは v039_139 以降へ上書きする差分パッチです。

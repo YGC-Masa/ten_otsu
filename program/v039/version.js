@@ -1,15 +1,17 @@
-/* v039_139 夜空メイン40CG範囲調整＋イベントCG終了時クリア */
+/* v039_140 夜空メイン50専用立ち絵＋帰り道CG追加 */
 (function(){
   "use strict";
-  window.TENOTSU_BUILD_VERSION = "v039_139";
-  window.TENOTSU_BUILD_LABEL = "v039_139 夜空メイン40CG範囲調整＋イベントCG終了時クリア";
+  window.TENOTSU_BUILD_VERSION = "v039_140";
+  window.TENOTSU_BUILD_LABEL = "v039_140 夜空メイン50専用立ち絵＋帰り道CG追加";
   window.TENOTSU_BUILD_NOTES = [
-    "夜空メイン40『嬉しいのに、苦しい』の美空演舞CG区間をステップ35〜44へ調整",
-    "夜空メイン40の夜空弓道演武CG区間を演武開始〜退場までに調整",
-    "弓道演武パートの複数――地の文を独立ステップへ分割",
-    "シナリオ終了時にイベントCG状態をクリアし、CG残留を防止"
-  ];
+    "夜空メイン50「探さないで、の前兆」に美空・夜空の冬コート専用立ち絵を適用",
+    "ステップ37以降の美空をマフラー付き立ち絵へ切り替え",
+    "店長マンション前の帰り道を正式背景 bg_manager_mansion_road_night.png へ差し替え",
+    "ステップ199〜258に夜空帰り道イベントCGを追加",
+    "双沢家シーンを bg_sugosawa_room_night_light_on.png へ差し替え、美空をパジャマ立ち絵へ切り替え"
+];
   window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  window.TENOTSU_V039.VERSION = "v039_139";
-  window.TENOTSU_V039.BUILD_LABEL = window.TENOTSU_BUILD_LABEL;
+  window.TENOTSU_V039.VERSION = "v039_140";
+  window.TENOTSU_V039.BUILD_LABEL = "v039_140 夜空メイン50専用立ち絵＋帰り道CG追加";
+  window.TENOTSU_V039.BUILD_NOTES = window.TENOTSU_BUILD_NOTES;
 })();
