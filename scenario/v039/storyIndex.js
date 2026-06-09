@@ -1,4 +1,4 @@
-/* v039_127 story index: normal encounter / member key-main slots / recollection */
+/* v039_145 story index: refresh rewritten Yozora 50+ story titles */
 (function(){
   "use strict";
   window.TENOTSU_STORY_INDEX = [
@@ -344,7 +344,7 @@
     },
     {
       id: "yozora_affection_40_01_key",
-      title: "美空のところに行けば",
+      title: "少し一人にして",
       type: "key",
       category: "character_key",
       character: "ai",
@@ -355,14 +355,14 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_40_01_key.json",
-      version: "v039_124",
+      version: "v039_145",
       unlock: { type: "affection_level", character: "ai", level: 41 },
       order: 3041,
-      summary: "メイン4後の反動で、夜空が店長を避けながら『美空のところに行けば』と自分から目を逸らさせようとするキーシナリオ。"
+      summary: "メイン40で自分の矛盾した感情を漏らした夜空が、店長と美空の視線を避け始める。店長を美空へ押し返し、「少し一人にして」と告げて運動公園方面へ向かう。"
     },
     {
       id: "yozora_affection_40_02_key",
-      title: "あんたが追ってくるだけ",
+      title: "夜空の行きそうな場所",
       type: "key",
       category: "character_key",
       character: "ai",
@@ -373,14 +373,14 @@
       characters: ["ai"],
       characterNames: ["双沢 夜空"],
       scenario: "scenario/v039/events/yozora_affection_40_02_key.json",
-      version: "v039_124",
+      version: "v039_145",
       unlock: { type: "affection_level", character: "ai", level: 44 },
       order: 3042,
-      summary: "駅前で夜空があからさまに店長を避け、『避けてない。あんたが追ってくるだけ』と距離を取るキーシナリオ。"
+      summary: "夜空が戻らず、店長が探しに行く。美空は通話・メッセージのみで登場し、店長は駅前ではなく運動公園、そして海沿いのみなと公園方面へ向かう。"
     },
     {
       id: "yozora_affection_40_03_key",
-      title: "美空の大事なものなのに",
+      title: "見つけないで",
       type: "key",
       category: "character_key",
       character: "ai",
@@ -391,14 +391,14 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_40_03_key.json",
-      version: "v039_124",
+      version: "v039_145",
       unlock: { type: "affection_level", character: "ai", level: 47 },
       order: 3043,
-      summary: "双沢姉妹の部屋で、夜空が店長に見つけてほしい気持ちと美空への罪悪感を美空に打ち明けるキーシナリオ。"
+      summary: "夜のみなと公園で店長が夜空を見つける。夜空は美空への羨望や黒い感情を漏らし、それを認めた自己嫌悪からパニックになって夕凪展望台へ逃げる。"
     },
     {
       id: "yozora_affection_50_00_main",
-      title: "探さないで、の前兆",
+      title: "夜空のままで",
       type: "main",
       category: "character_main",
       character: "ai",
@@ -409,18 +409,18 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_50_00_main.json",
-      version: "v039_124",
+      version: "v039_145",
       unlock: {
         type: "all_story_cleared",
         storyIds: ["yozora_affection_40_00_main", "yozora_affection_40_01_key", "yozora_affection_40_02_key", "yozora_affection_40_03_key"],
         fallback: { type: "affection_level", character: "ai", level: 50 }
       },
       order: 3050,
-      summary: "夜空が店長に『ぼくがいなくなっても、探さないで』と告げ、見つけてほしい矛盾を抱えたまま次章へ進むメイン5。"
+      summary: "キー5-3で逃走した夜空は夕凪展望台へ逃げ込む。店長に追いつかれて本爆発し、拒絶の勢いで店長を突き飛ばしてしまう。事故後に大声で泣き切り、本音を吐露し、店長から「いつもの夜空のままで」と受け止められて帰る。"
     },
     {
           "id": "yozora_affection_50_01_key",
-          "title": "少し一人にして",
+          "title": "店長、大丈夫？",
           "type": "key",
           "category": "character_key",
           "character": "ai",
@@ -437,18 +437,18 @@
                 "双沢 美空"
           ],
           "scenario": "scenario/v039/events/yozora_affection_50_01_key.json",
-          "version": "v039_126",
+          "version": "v039_145",
           "unlock": {
                 "type": "affection_level",
                 "character": "ai",
                 "level": 51
           },
           "order": 3051,
-          "summary": "夜空が「少し一人にして」「探さないで」とメッセージを送り、店長と美空が探しに行く決意を固めるキーシナリオ。"
+          "summary": "メイン50翌日、夜空は店長の怪我を何度も確認し、美空には心配させたことを謝る。"
     },
     {
           "id": "yozora_affection_50_02_key",
-          "title": "夜空の行きそうな場所",
+          "title": "一生面倒見るって、どういう意味",
           "type": "key",
           "category": "character_key",
           "character": "ai",
@@ -465,18 +465,18 @@
                 "双沢 美空"
           ],
           "scenario": "scenario/v039/events/yozora_affection_50_02_key.json",
-          "version": "v039_126",
+          "version": "v039_145",
           "unlock": {
                 "type": "affection_level",
                 "character": "ai",
                 "level": 54
           },
           "order": 3052,
-          "summary": "店長が駅裏、プラネタリウム、潮見浜を巡り、夜空との積み重ねをたどって夕凪展望台へ向かうキーシナリオ。"
+          "summary": "夜空は店長の怪我を心配しすぎて「一生面倒を見る」と口走り、遅れて意味を理解してパニックになる。"
     },
     {
           "id": "yozora_affection_50_03_key",
-          "title": "見つけないで",
+          "title": "店長のあったかさ",
           "type": "key",
           "category": "character_key",
           "character": "ai",
@@ -493,18 +493,18 @@
                 "双沢 美空"
           ],
           "scenario": "scenario/v039/events/yozora_affection_50_03_key.json",
-          "version": "v039_126",
+          "version": "v039_145",
           "unlock": {
                 "type": "affection_level",
                 "character": "ai",
                 "level": 57
           },
           "order": 3053,
-          "summary": "夕凪展望台で夜空を見つけるが、夜空はまだ全てを吐き出せず、メイン6の感情爆発へつながるキーシナリオ。"
+          "summary": "夜空は美空との会話の中で、店長のあたたかさが美空に少し似ていることに気づく。"
     },
     {
           "id": "yozora_affection_60_00_main",
-          "title": "探さないでって言ったのに",
+          "title": "忘れて、でも忘れないで",
           "type": "main",
           "category": "character_main",
           "character": "ai",
@@ -521,7 +521,7 @@
                 "双沢 美空"
           ],
           "scenario": "scenario/v039/events/yozora_affection_60_00_main.json",
-          "version": "v039_126",
+          "version": "v039_145",
           "unlock": {
                 "type": "all_story_cleared",
                 "storyIds": [
@@ -537,7 +537,7 @@
                 }
           },
           "order": 3060,
-          "summary": "夕凪展望台で夜空が美空との比較、羨望、自己嫌悪、店長に見つけてほしい矛盾を吐露するメイン6。"
+          "summary": "夜空は「いつもの夜空のままで」の意味を考え直し、後半で店長の袖をつまむCG見せ場を経て、店長を道しるべのようだと伝える。"
     },
 {
     "id": "yozora_affection_60_01_key",
@@ -662,7 +662,7 @@
 },
 {
     "id": "yozora_affection_70_01_key",
-    "title": "呼んだだけ",
+    "title": "ちゃんと謝りたい",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -679,18 +679,18 @@
         "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_70_01_key.json",
-    "version": "v039_126",
+    "version": "v039_145",
     "unlock": {
         "type": "affection_level",
         "character": "ai",
         "level": 71
     },
     "order": 3081,
-    "summary": "夜空は自分から店長を呼ぶが、最初は「呼んだだけ」とごまかす。メイン70で宣言した「少しだけ素直になる練習」の最初の実践。"
+    "summary": "夜空が美空へ改めて謝りたいと思い始め、まだ核心までは言えないが、心配させたことや抱え込んだことを謝る。"
 },
 {
     "id": "yozora_affection_70_02_key",
-    "title": "少し歩いて",
+    "title": "言えなかったこと",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -707,18 +707,18 @@
         "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_70_02_key.json",
-    "version": "v039_126",
+    "version": "v039_145",
     "unlock": {
         "type": "affection_level",
         "character": "ai",
         "level": 74
     },
     "order": 3082,
-    "summary": "夜空は自分から「少し歩いて」と店長に頼む。一人だと余計なことを考えるから、という理由を口にできたことで、頼る練習が一歩進む。"
+    "summary": "夜空は美空が悪いわけではないとわかっているのに苦しかったこと、大好きなのに羨ましかったことを打ち明ける。"
 },
 {
     "id": "yozora_affection_70_03_key",
-    "title": "褒められる練習",
+    "title": "帰ったら、好きなものの話をしよう",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -735,18 +735,18 @@
         "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_70_03_key.json",
-    "version": "v039_126",
+    "version": "v039_145",
     "unlock": {
         "type": "affection_level",
         "character": "ai",
         "level": 77
     },
     "order": 3083,
-    "summary": "夜空は「褒められる練習」として、店長と美空の言葉を逃げずに受け取ろうとする。終盤では自分から「もう一回」と頼み、最後に小さく「ありがとう」と言える。"
+    "summary": "核心を話した後の気まずさを残しつつ、美空は『帰ったら、好きなものの話をしよう』と誘う。"
 },
 {
     "id": "yozora_affection_80_00_main",
-    "title": "今日は、逃げない練習",
+    "title": "一緒だね",
     "type": "main",
     "category": "character_main",
     "character": "ai",
@@ -763,7 +763,7 @@
         "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_80_00_main.json",
-    "version": "v039_126",
+    "version": "v039_145",
     "unlock": {
         "type": "all_story_cleared",
         "storyIds": [
@@ -779,7 +779,7 @@
         }
     },
     "order": 3080,
-    "summary": "夜空は自分から店長を誘い、若葉中央公園で「探してくれてありがとう」「見つけてくれてありがとう」「帰らないでいてくれてありがとう」と改めて感謝を伝える。"
+    "summary": "美空と夜空が双沢家のツインルームで二人だけの時間を過ごし、互いの影響で好きになったものも自分の好きでいいと確認する。"
 },
 {
     "id": "yozora_affection_80_01_key",

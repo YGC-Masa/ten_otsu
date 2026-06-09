@@ -1,43 +1,35 @@
-# v039_144 = 若葉中央公園冬背景＋夜空70-80帯リライト反映パッチ
+# v039_145 = 夜空50代以降ストーリー索引タイトル更新パッチ
 
 ## 適用前提
 
-v039_143以降へ上書き。
+v039_144以降へ上書きする軽量差分です。
+画像アセットは同梱していません。
 
-## 追加背景
+## 修正内容
 
-```text
-images/assets/bg/bg_wakaba_central_park_winter_night.png
-images/assets/bg/bg_wakaba_central_park_winter_day.png
-images/assets/bg/bg_wakaba_central_park_winter_evening.png
-images/assets/bg/bg_wakaba_central_park_winter_morning.png
-```
+メンバー > 夜空 > ストーリー選択で、50代以降のストーリータイトルが旧タイトルのまま表示される問題を修正しました。
 
-## backgroundCatalog 追加
+## タイトル更新
 
-```text
-wakaba_central_park_winter_night
-wakaba_central_park_winter_day
-wakaba_central_park_winter_evening
-wakaba_central_park_winter_morning
-wakaba_central_park_winter
-```
+- 夜空キー5-1：少し一人にして
+- 夜空キー5-2：夜空の行きそうな場所
+- 夜空キー5-3：見つけないで
+- 夜空メイン5：夜空のままで
+- 夜空キー6-1：店長、大丈夫？
+- 夜空キー6-2：一生面倒見るって、どういう意味
+- 夜空キー6-3：店長のあったかさ
+- 夜空メイン6：忘れて、でも忘れないで
+- 夜空キー8-1：ちゃんと謝りたい
+- 夜空キー8-2：言えなかったこと
+- 夜空キー8-3：帰ったら、好きなものの話をしよう
+- 夜空メイン8：一緒だね
 
-## リライト反映シナリオ
+## 更新ファイル
 
-```text
-scenario/v039/events/yozora_affection_70_01_key.json
-scenario/v039/events/yozora_affection_70_02_key.json
-scenario/v039/events/yozora_affection_70_03_key.json
-scenario/v039/events/yozora_affection_80_00_main.json
-```
-
-## 整備内容
-
-- 夜空キー7-1「ちゃんと謝りたい」を反映
-- 夜空キー7-2「言えなかったこと」を反映
-- 夜空キー7-3「帰ったら、好きなものの話をしよう」を反映
-- 夜空メイン8「一緒だね」を反映
-- 若葉中央公園・夕方指定を冬・雪なし夕方背景へ差し替え
-- セリフ内の `\n――` 地の文を `speaker: ""` の独立ステップへ分離
-- office.js の先頭コメント破損が出ない形式を維持
+- index.html
+- VERSION.txt
+- README_DIFF.md
+- program/v039/version.js
+- program/v039/state.js
+- program/v039/office.js
+- scenario/v039/storyIndex.js
