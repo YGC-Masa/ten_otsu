@@ -1,43 +1,39 @@
-# v039_144 = 若葉中央公園冬背景＋夜空70-80帯リライト反映パッチ
+# v039_141 みなと公園背景追加＋夜空40-50帯リライト反映
 
-## 適用前提
+## 概要
 
-v039_143以降へ上書き。
+v039_140以降へ上書きする差分パッチです。
 
-## 追加背景
+## 追加背景アセット
 
-```text
-images/assets/bg/bg_wakaba_central_park_winter_night.png
-images/assets/bg/bg_wakaba_central_park_winter_day.png
-images/assets/bg/bg_wakaba_central_park_winter_evening.png
-images/assets/bg/bg_wakaba_central_park_winter_morning.png
-```
+- images/assets/bg/bg_minato_park_night.png
+- images/assets/bg/bg_minato_park_evening.png
+- images/assets/bg/bg_minato_park_morning.png
 
-## backgroundCatalog 追加
+## backgroundCatalog追加
 
-```text
-wakaba_central_park_winter_night
-wakaba_central_park_winter_day
-wakaba_central_park_winter_evening
-wakaba_central_park_winter_morning
-wakaba_central_park_winter
-```
+- minato_park_night
+- minato_park_evening
+- minato_park_morning
+- minato_park
+- hiyorizaka_seaside_road_night
 
-## リライト反映シナリオ
+## 差し替えシナリオ
 
-```text
-scenario/v039/events/yozora_affection_70_01_key.json
-scenario/v039/events/yozora_affection_70_02_key.json
-scenario/v039/events/yozora_affection_70_03_key.json
-scenario/v039/events/yozora_affection_80_00_main.json
-```
+- scenario/v039/events/yozora_affection_40_01_key.json
+- scenario/v039/events/yozora_affection_40_02_key.json
+- scenario/v039/events/yozora_affection_40_03_key.json
+- scenario/v039/events/yozora_affection_50_00_main.json
 
-## 整備内容
+## 反映内容
 
-- 夜空キー7-1「ちゃんと謝りたい」を反映
-- 夜空キー7-2「言えなかったこと」を反映
-- 夜空キー7-3「帰ったら、好きなものの話をしよう」を反映
-- 夜空メイン8「一緒だね」を反映
-- 若葉中央公園・夕方指定を冬・雪なし夕方背景へ差し替え
-- セリフ内の `\n――` 地の文を `speaker: ""` の独立ステップへ分離
-- office.js の先頭コメント破損が出ない形式を維持
+- 夜空キー40-01〜40-03をリライト版へ差し替え
+- 夜空メイン50をリライト版へ差し替え
+- みなと公園・夜/夕/朝を正式背景として追加
+- 海沿いへ向かう道・夜をみなと公園夜背景へ互換接続
+- v039_140で追加したメイン50の冬コート立ち絵、帰り道イベントCG、双沢家背景/美空パジャマ指定を維持
+- セリフ内に混在していた「\n――地の文」を speaker 空文字の独立ステップへ分離
+
+## 注意
+
+今回は新規背景アセット追加のため、みなと公園背景3枚を同梱しています。既存の重い画像は再同梱していません。

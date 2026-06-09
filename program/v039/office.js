@@ -1,6 +1,4 @@
-/* v039_144 若葉中央公園冬背景＋夜空70-80帯リライト反映 */
-(function(){
-  "use strict";
+/* v039_141"use strict";
   const ns = window.TENOTSU_V039;
 
   ns.renderOfficeCharacters = function renderOfficeCharacters() {
