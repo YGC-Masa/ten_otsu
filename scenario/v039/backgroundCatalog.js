@@ -1,4 +1,4 @@
-/* v039_143 夜空50-60帯リライト用背景互換 */
+/* v039_144 若葉中央公園冬背景＋夜空70-80帯リライト用背景互換 */
 (function(){
   "use strict";
   window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
@@ -108,5 +108,18 @@
 
 
 
+  });
+})();
+
+
+/* v039_144 若葉中央公園・冬（雪なし）正式背景 */
+(function(){
+  "use strict";
+  window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
+    wakaba_central_park_winter_night: { name: "若葉中央公園・冬・夜（雪なし）", path: "images/assets/bg/bg_wakaba_central_park_winter_night.png", location: "若葉中央公園", time: "night", season: "winter", snow: false, status: "正式採用" },
+    wakaba_central_park_winter_day: { name: "若葉中央公園・冬・昼（雪なし）", path: "images/assets/bg/bg_wakaba_central_park_winter_day.png", location: "若葉中央公園", time: "day", season: "winter", snow: false, status: "正式採用" },
+    wakaba_central_park_winter_evening: { name: "若葉中央公園・冬・夕方（雪なし）", path: "images/assets/bg/bg_wakaba_central_park_winter_evening.png", location: "若葉中央公園", time: "evening", season: "winter", snow: false, status: "正式採用" },
+    wakaba_central_park_winter_morning: { name: "若葉中央公園・冬・朝（雪なし）", path: "images/assets/bg/bg_wakaba_central_park_winter_morning.png", location: "若葉中央公園", time: "morning", season: "winter", snow: false, status: "正式採用" },
+    wakaba_central_park_winter: { name: "若葉中央公園・冬（雪なし）", path: "images/assets/bg/bg_wakaba_central_park_winter_day.png", location: "若葉中央公園", time: "default", season: "winter", snow: false, status: "正式採用・互換名" }
   });
 })();
