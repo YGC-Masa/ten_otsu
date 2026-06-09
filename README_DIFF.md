@@ -1,39 +1,39 @@
-# v039_140 夜空メイン50専用立ち絵＋帰り道CG追加
+# v039_141 みなと公園背景追加＋夜空40-50帯リライト反映
 
-## 内容
+## 概要
 
-夜空メイン50「探さないで、の前兆」を、専用冬衣装立ち絵・正式帰り道背景・イベントCGに合わせて調整しました。
+v039_140以降へ上書きする差分パッチです。
 
-## 変更点
+## 追加背景アセット
 
-- ステップ20以降：美空を冬コート立ち絵、夜空を冬コート立ち絵へ切り替え
-- ステップ37以降：美空をマフラー付き冬コート立ち絵へ切り替え
-- ステップ125：店長マンション前の帰り道・夜背景へ変更
-- ステップ199：夜空帰り道イベントCGを表示開始
-- ステップ258：イベントCGを解除
-- ステップ293付近：双沢家の夜背景へ変更し、美空をパジャマ立ち絵へ切り替え
-- シナリオ内の「\n――」混在が出ないよう、地の文を独立ステップ化
+- images/assets/bg/bg_minato_park_night.png
+- images/assets/bg/bg_minato_park_evening.png
+- images/assets/bg/bg_minato_park_morning.png
 
-## 追加アセット
+## backgroundCatalog追加
 
-```text
-images/assets/char/misora_coat_main50.png
-images/assets/char/yozora_coat_main50.png
-images/assets/char/misora_coat_muffler_main50.png
-images/assets/char/misora_pajama_main50.png
-images/assets/cg/cg_yozora_main50_return_road.png
-```
+- minato_park_night
+- minato_park_evening
+- minato_park_morning
+- minato_park
+- hiyorizaka_seaside_road_night
 
-## 更新ファイル
+## 差し替えシナリオ
 
-```text
-index.html
-VERSION.txt
-README_DIFF.md
-program/v039/version.js
-program/v039/state.js
-program/v039/office.js
-scenario/v039/events/yozora_affection_50_00_main.json
-```
+- scenario/v039/events/yozora_affection_40_01_key.json
+- scenario/v039/events/yozora_affection_40_02_key.json
+- scenario/v039/events/yozora_affection_40_03_key.json
+- scenario/v039/events/yozora_affection_50_00_main.json
 
-これは v039_139 以降へ上書きする差分パッチです。
+## 反映内容
+
+- 夜空キー40-01〜40-03をリライト版へ差し替え
+- 夜空メイン50をリライト版へ差し替え
+- みなと公園・夜/夕/朝を正式背景として追加
+- 海沿いへ向かう道・夜をみなと公園夜背景へ互換接続
+- v039_140で追加したメイン50の冬コート立ち絵、帰り道イベントCG、双沢家背景/美空パジャマ指定を維持
+- セリフ内に混在していた「\n――地の文」を speaker 空文字の独立ステップへ分離
+
+## 注意
+
+今回は新規背景アセット追加のため、みなと公園背景3枚を同梱しています。既存の重い画像は再同梱していません。

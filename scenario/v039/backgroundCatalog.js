@@ -1,4 +1,4 @@
-/* v039_135 店長マンション前・メゾン・ド・エトワール背景追加 */
+/* v039_141 みなと公園背景追加＋夜空40-50帯リライト反映 */
 (function(){
   "use strict";
   window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
@@ -96,6 +96,12 @@
     manager_mansion_road_evening: { name: "店長マンション前の帰り道・夕方", path: "images/assets/bg/bg_manager_mansion_road_evening.png", location: "店長マンション前 / メゾン・ド・エトワール前", time: "evening", status: "正式採用" },
     manager_mansion_road_night: { name: "店長マンション前の帰り道・夜", path: "images/assets/bg/bg_manager_mansion_road_night.png", location: "店長マンション前 / メゾン・ド・エトワール前", time: "night", status: "正式採用" },
     manager_mansion_road: { name: "店長マンション前の帰り道（メゾン・ド・エトワール前）", path: "images/assets/bg/bg_manager_mansion_road_night.png", location: "店長マンション前 / メゾン・ド・エトワール前", time: "default", status: "正式採用・互換" }
+    ,minato_park_night: { name: "みなと公園・夜", path: "images/assets/bg/bg_minato_park_night.png", location: "みなと公園", time: "night", status: "正式採用" }
+    ,minato_park_evening: { name: "みなと公園・夕方", path: "images/assets/bg/bg_minato_park_evening.png", location: "みなと公園", time: "evening", status: "正式採用" }
+    ,minato_park_morning: { name: "みなと公園・朝", path: "images/assets/bg/bg_minato_park_morning.png", location: "みなと公園", time: "morning", status: "正式採用" }
+    ,minato_park: { name: "みなと公園（標準・夜）", path: "images/assets/bg/bg_minato_park_night.png", location: "みなと公園", time: "default", status: "正式採用・互換" }
+    ,hiyorizaka_seaside_road_night: { name: "海沿いへ向かう道・夜（みなと公園互換）", path: "images/assets/bg/bg_minato_park_night.png", location: "みなと公園", time: "night", status: "正式採用・互換" }
+
 
 
   });

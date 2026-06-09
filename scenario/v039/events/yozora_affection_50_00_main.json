@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_50_00_main",
-  "title": "探さないで、の前兆",
-  "version": "v039_140",
+  "title": "夜空のままで",
+  "version": "v039_141",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_50_00_main",
@@ -16,11 +16,11 @@
     "max": 50
   },
   "location": {
-    "id": "manager_mansion_road",
-    "name": "店長マンション前の帰り道"
+    "id": "yunagi_observatory_night",
+    "name": "夕凪展望台・夜"
   },
-  "summary": "夜空は店長に直接「ぼくがいなくなっても、探さないで」と告げる。美空への罪悪感、店長に見つけられる怖さ、しかし見つけてほしい矛盾が強まる。",
-  "purpose": "夜空が店長を避け続けた末に、「ぼくがいなくなっても、探さないで」と示唆する。美空への罪悪感、店長に見つけられる怖さ、でも見つけてほしい矛盾を抱えたまま次章へつなげる。",
+  "summary": "キー5-3で逃走した夜空は夕凪展望台へ逃げ込む。店長に追いつかれて本爆発し、拒絶の勢いで店長を突き飛ばしてしまう。事故後に大声で泣き切り、本音を吐露し、店長から「いつもの夜空のままで」と受け止められて帰る。",
+  "purpose": "美空への羨望と自己嫌悪を初めて大きく吐き出す山場。事故、大泣き、本音吐露を経て、夜空が夜空のまま帰ることを受け入れる。",
   "tags": [
     "夜空ルート",
     "親愛度40-50",
@@ -30,7 +30,7 @@
   "clearFlags": [
     "yozora_main_50_00_cleared"
   ],
-  "nextHint": "次の親愛度50〜60帯では、夜空が実際に姿を消し、店長が探し、夕凪展望台で感情を爆発させる流れへ進む。",
+  "nextHint": "次の50〜60帯では、事故後の気まずさと謝罪、そして少しずつ言葉にしていく段階へ進む。",
   "renderPolicy": {
     "spritePosition": "logical_split_n_plus_1",
     "eventCgLayer": "frontOfCharacters"
@@ -39,7 +39,7 @@
     {
       "speaker": "",
       "text": "――ひだまりストア・閉店後――",
-      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bg": "images/assets/bg/battle_store_lv1.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
       "clearStorySprites": true
@@ -220,7 +220,10 @@
     },
     {
       "speaker": "",
-      "text": "――ひだまりストア前・夜――"
+      "text": "――ひだまりストア前・夜――",
+      "bg": "images/assets/bg/bg_hidamari_store_front_night_open.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -365,7 +368,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/misora_coat_muffler_main50.png",
+          "src": "images/assets/char/misora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1164,8 +1167,7 @@
       "text": "――店長マンション前の帰り道――",
       "bg": "images/assets/bg/bg_manager_mansion_road_night.png",
       "bgMode": "forceReplace",
-      "forceBackgroundReplace": true,
-      "clearStorySprites": true
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "店長",
@@ -1709,16 +1711,15 @@
           "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
-      ]
-    },
-    {
-      "speaker": "",
-      "text": "――夜空はマンション前の小さな植え込みを見つめる。\n店長の方は見ない。\nそれでも、声だけは逃げきれないように続いた。",
+      ],
       "showEventCg": true,
       "eventCg": "images/assets/cg/cg_yozora_main50_return_road.png",
       "cgFit": "cover",
-      "cgAlign": "center center",
-      "clearStorySprites": true
+      "cgAlign": "center center"
+    },
+    {
+      "speaker": "",
+      "text": "――夜空はマンション前の小さな植え込みを見つめる。\n店長の方は見ない。\nそれでも、声だけは逃げきれないように続いた。"
     },
     {
       "speaker": "夜空",
@@ -2164,8 +2165,7 @@
           "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
-      ],
-      "hideEventCg": true
+      ]
     },
     {
       "speaker": "店長",
@@ -2414,10 +2414,10 @@
     {
       "speaker": "",
       "text": "――その夜・双沢家――",
+      "hideEventCg": true,
       "bg": "images/assets/bg/bg_sugosawa_room_night_light_on.png",
       "bgMode": "forceReplace",
-      "forceBackgroundReplace": true,
-      "clearStorySprites": true
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -2428,10 +2428,7 @@
           "src": "images/assets/char/misora_pajama_main50.png",
           "opacity": 1
         }
-      ],
-      "bg": "images/assets/bg/bg_sugosawa_room_night_light_on.png",
-      "bgMode": "forceReplace",
-      "forceBackgroundReplace": true
+      ]
     },
     {
       "speaker": "夜空",
@@ -2439,7 +2436,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -2461,7 +2458,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -2483,7 +2480,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -2505,7 +2502,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -2527,7 +2524,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -2549,7 +2546,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -2571,7 +2568,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -2593,7 +2590,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -2615,7 +2612,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -2637,7 +2634,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -2659,7 +2656,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -2681,7 +2678,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -2703,7 +2700,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -2725,7 +2722,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -2747,7 +2744,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]

@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_40_03_key",
-  "title": "美空の大事なものなのに",
-  "version": "v039_136",
+  "title": "見つけないで",
+  "version": "v039_141",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_40_03_key",
@@ -16,11 +16,11 @@
     "max": 50
   },
   "location": {
-    "id": "sugosawa_white_black_twin_room",
-    "name": "双沢家・白黒ツインルーム"
+    "id": "minato_park_night",
+    "name": "みなと公園・夜"
   },
-  "summary": "夜空は美空との会話で、店長に見られることが嫌なのに、見られないことも嫌だと認める。さらに、店長が美空の大事な人であるにもかかわらず、自分も店長に見つけてほしいと思ってしまう罪悪感が出る。",
-  "purpose": "夜空が美空と店長の関係を意識し、自分も店長に見つけてほしいと思ってしまうことへの罪悪感を出す。メイン50へつなぐ。",
+  "summary": "夜のみなと公園で店長が夜空を見つける。夜空は美空への羨望や黒い感情を漏らし、それを認めた自己嫌悪からパニックになって夕凪展望台へ逃げる。",
+  "purpose": "夜のみなと公園で発見され、小爆発、美空への黒い感情の自覚、自己嫌悪、パニック逃走を描く。",
   "tags": [
     "夜空ルート",
     "親愛度40-50",
@@ -30,7 +30,7 @@
   "clearFlags": [
     "yozora_key_40_03_cleared"
   ],
-  "nextHint": "次はメイン50「探さないで、の前兆」で、夜空が店長へ直接「ぼくがいなくなっても、探さないで」と示唆する。",
+  "nextHint": "メイン50「夜空のままで」では、夜空が夕凪展望台へ逃げ込み、店長が追いつく。",
   "renderPolicy": {
     "spritePosition": "logical_split_n_plus_1",
     "eventCgLayer": "frontOfCharacters"
@@ -38,8 +38,8 @@
   "steps": [
     {
       "speaker": "",
-      "text": "――双沢家・白黒ツインルーム・夜――",
-      "bg": "images/assets/bg/bg_sugosawa_room_night_light_on.png",
+      "text": "――みなと公園・夜――",
+      "bg": "images/assets/bg/bg_minato_park_night.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
       "clearStorySprites": true

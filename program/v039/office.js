@@ -1,6 +1,4 @@
-/* v039_140 夜空メイン50専用立ち絵＋帰り道CG追加*/
-(function(){
-  "use strict";
+/* v039_141"use strict";
   const ns = window.TENOTSU_V039;
 
   ns.renderOfficeCharacters = function renderOfficeCharacters() {
@@ -47,10 +45,10 @@
     version.className = "tenotsu-menu-version";
     const versionMain = document.createElement("span");
     versionMain.className = "tenotsu-menu-version-main";
-    versionMain.textContent = ns.VERSION || window.TENOTSU_BUILD_VERSION || "v039_140 夜空メイン50専用立ち絵＋帰り道CG追加";
+    versionMain.textContent = ns.VERSION || window.TENOTSU_BUILD_VERSION || "v039_141";
     const versionSub = document.createElement("span");
     versionSub.className = "tenotsu-menu-version-sub";
-    versionSub.textContent = ns.BUILD_LABEL || window.TENOTSU_BUILD_LABEL || "v039_140 夜空メイン50専用立ち絵＋帰り道CG追加";
+    versionSub.textContent = ns.BUILD_LABEL || window.TENOTSU_BUILD_LABEL || "v039_141";
     version.appendChild(versionMain);
     version.appendChild(versionSub);
     layers.menu.appendChild(version);
@@ -137,7 +135,7 @@
     const html = `
       <div class="tenotsu-settings-title">設定</div>
       <div class="tenotsu-settings-body">
-        <div>現在のバージョン: <strong>${ns.VERSION || window.TENOTSU_BUILD_VERSION || "v039_140 夜空メイン50専用立ち絵＋帰り道CG追加"}</strong></div>
+        <div>現在のバージョン: <strong>${ns.VERSION || window.TENOTSU_BUILD_VERSION || "v039_141"}</strong></div>
         <div>表示やキャッシュ、営業リソースの調整を行います。</div>
         <div class="tenotsu-settings-resource-note">ST/BPリセットは検証用です。スタミナとバトルPを最大値に戻します。</div>
         <div class="tenotsu-settings-resource-note">親愛テスト用：初期親愛Lvは100扱いです。必要に応じて全員Lv100化・親愛ストーリー全クリアを実行できます。</div>
