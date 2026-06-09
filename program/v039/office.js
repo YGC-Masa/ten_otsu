@@ -1,4 +1,4 @@
-/* v039_146 若葉中央公園冬背景＋夜空70-80帯リライト反映 */
+/* v039_147 春待ち花畑背景＋夜空100イベントCG実装 */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;

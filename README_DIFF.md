@@ -1,35 +1,36 @@
-# v039_145 = 夜空50代以降ストーリー索引タイトル更新パッチ
+# v039_147 = 春待ち花畑背景＋夜空100イベントCG実装パッチ
 
 ## 適用前提
 
-v039_144以降へ上書きする軽量差分です。
-画像アセットは同梱していません。
+v039_146以降へ上書きする差分パッチです。
 
-## 修正内容
+## 追加アセット
 
-メンバー > 夜空 > ストーリー選択で、50代以降のストーリータイトルが旧タイトルのまま表示される問題を修正しました。
+```text
+images/assets/bg/bg_harumachi_flower_field_day.png
+images/assets/cg/cg_yozora_spring_flower_field_thanks.png
+```
 
-## タイトル更新
+## 実装内容
 
-- 夜空キー5-1：少し一人にして
-- 夜空キー5-2：夜空の行きそうな場所
-- 夜空キー5-3：見つけないで
-- 夜空メイン5：夜空のままで
-- 夜空キー6-1：店長、大丈夫？
-- 夜空キー6-2：一生面倒見るって、どういう意味
-- 夜空キー6-3：店長のあったかさ
-- 夜空メイン6：忘れて、でも忘れないで
-- 夜空キー8-1：ちゃんと謝りたい
-- 夜空キー8-2：言えなかったこと
-- 夜空キー8-3：帰ったら、好きなものの話をしよう
-- 夜空メイン8：一緒だね
+- 春待ち花畑・昼背景を正式背景として追加
+- 夜空メイン100を「春の中で、ありがとう」へ更新
+- 夜空メイン100で春待ち花畑背景を使用
+- 夜空メイン100でイベントCG `cg_yozora_spring_flower_field_thanks.png` を表示
+- storyIndex.js の90〜100帯タイトル/summaryを更新
 
 ## 更新ファイル
 
-- index.html
-- VERSION.txt
-- README_DIFF.md
-- program/v039/version.js
-- program/v039/state.js
-- program/v039/office.js
-- scenario/v039/storyIndex.js
+```text
+index.html
+VERSION.txt
+README_DIFF.md
+program/v039/version.js
+program/v039/state.js
+program/v039/office.js
+scenario/v039/backgroundCatalog.js
+scenario/v039/storyIndex.js
+scenario/v039/events/yozora_affection_100_00_main.json
+images/assets/bg/bg_harumachi_flower_field_day.png
+images/assets/cg/cg_yozora_spring_flower_field_thanks.png
+```

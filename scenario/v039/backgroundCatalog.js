@@ -123,3 +123,26 @@
     wakaba_central_park_winter: { name: "若葉中央公園・冬（雪なし）", path: "images/assets/bg/bg_wakaba_central_park_winter_day.png", location: "若葉中央公園", time: "default", season: "winter", snow: false, status: "正式採用・互換名" }
   });
 })();
+
+
+/* v039_146 夜空80-100帯用 背景互換 */
+(function(){
+  "use strict";
+  window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
+    hajiro_lake_night: { name: "羽白湖・夜（表記ゆれ互換）", path: "images/assets/bg/bg_hashiro_lake_night.png", status: "正式採用・互換" },
+    road_to_hajiro_lake_night: { name: "羽白湖へ向かう道・夜（羽白湖夜互換）", path: "images/assets/bg/bg_hashiro_lake_night.png", status: "正式採用・互換" },
+    antstella_bookcafe_night: { name: "アントステラ・夜のブックカフェ（2階互換）", path: "images/assets/bg/bg_bookcafe_antostella_2f_night.png", status: "正式採用・互換" },
+    harumachi_flower_field_day: { name: "春待ち花畑・昼", path: "images/assets/bg/bg_harumachi_flower_field_day.png", status: "未同梱・将来正式背景" }
+  });
+})();
+
+
+/* v039_147 春待ち花畑正式背景 */
+(function(){
+  "use strict";
+  window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
+    harumachi_flower_field_day: { name: "春待ち花畑・昼", path: "images/assets/bg/bg_harumachi_flower_field_day.png", location: "春待ち花畑", time: "day", season: "spring", status: "正式採用" },
+    haru_machi_flower_field_day: { name: "春待ち花畑・昼（表記ゆれ互換）", path: "images/assets/bg/bg_harumachi_flower_field_day.png", location: "春待ち花畑", time: "day", season: "spring", status: "正式採用・互換" },
+    spring_flower_field_day: { name: "春の花畑・昼（互換）", path: "images/assets/bg/bg_harumachi_flower_field_day.png", location: "春待ち花畑", time: "day", season: "spring", status: "正式採用・互換" }
+  });
+})();
