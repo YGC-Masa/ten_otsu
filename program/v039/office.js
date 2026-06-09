@@ -1,4 +1,4 @@
-/* v039_142 起動復旧：office.jsコメント破損修正 */
+/* v039_143 夜空キー6-1〜6-3＋メイン6リライト反映 */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;

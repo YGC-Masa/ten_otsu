@@ -1,4 +1,4 @@
-/* v039_141 みなと公園背景追加＋夜空40-50帯リライト反映 */
+/* v039_143 夜空50-60帯リライト用背景互換 */
 (function(){
   "use strict";
   window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
@@ -101,6 +101,10 @@
     ,minato_park_morning: { name: "みなと公園・朝", path: "images/assets/bg/bg_minato_park_morning.png", location: "みなと公園", time: "morning", status: "正式採用" }
     ,minato_park: { name: "みなと公園（標準・夜）", path: "images/assets/bg/bg_minato_park_night.png", location: "みなと公園", time: "default", status: "正式採用・互換" }
     ,hiyorizaka_seaside_road_night: { name: "海沿いへ向かう道・夜（みなと公園互換）", path: "images/assets/bg/bg_minato_park_night.png", location: "みなと公園", time: "night", status: "正式採用・互換" }
+    ,hidamari_store_closed_night: { name: "ひだまりストア閉店後（店内売り場互換）", path: "images/assets/bg/battle_store_lv1.png", status: "正式採用・互換" }
+    ,hidamari_store_backyard_morning: { name: "ひだまりストア・翌日朝／バックヤード（倉庫互換）", path: "images/assets/bg/bg_hidamari_warehouse.png", status: "正式採用・互換" }
+    ,hidamari_store_breakroom_day: { name: "ひだまりストア・休憩室（店内売り場互換）", path: "images/assets/bg/battle_store_lv1.png", status: "正式採用・互換" }
+    ,wakaba_central_park_night: { name: "若葉中央公園・夜（みなと公園夜互換）", path: "images/assets/bg/bg_minato_park_night.png", status: "正式採用・互換" }
 
 
 
