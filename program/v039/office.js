@@ -1,4 +1,6 @@
-/* v039_141"use strict";
+/* v039_142 起動復旧：office.jsコメント破損修正 */
+(function(){
+  "use strict";
   const ns = window.TENOTSU_V039;
 
   ns.renderOfficeCharacters = function renderOfficeCharacters() {
