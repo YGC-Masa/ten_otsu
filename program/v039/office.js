@@ -1,4 +1,4 @@
-/* v039_142 起動復旧：office.jsコメント破損修正 */
+/* v039_144 若葉中央公園冬背景＋夜空70-80帯リライト反映 */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
