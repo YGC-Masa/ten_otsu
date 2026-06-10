@@ -1,17 +1,16 @@
-/* v039_152 夜空50-100正式JSON再同期＋50帯背景修正 */
+/* v039_153 夜空40帯シナリオ復旧 */
 (function(){
   "use strict";
-  window.TENOTSU_BUILD_VERSION = "v039_152";
-  window.TENOTSU_BUILD_LABEL = "v039_152 夜空50-100正式JSON再同期＋50帯背景修正パッチ";
+  window.TENOTSU_BUILD_VERSION = "v039_153";
+  window.TENOTSU_BUILD_LABEL = "v039_153 夜空40帯シナリオ復旧パッチ";
   window.TENOTSU_BUILD_NOTES = [
-    "夜空50〜100帯を公式JSONセットに再同期",
-    "50-1/50-2を店内売り場背景へ調整",
-    "50-2の美空を通話ではなく店内にいる扱いへ修正",
-    "50-2の運動公園背景を深夜版へ差し替え",
-    "夜空100専用白ワンピース立ち絵と100イベントCG指定を維持"
+    "夜空メイン40『嬉しいのに、苦しい』を復旧",
+    "夜空キー40-1〜40-3を復旧",
+    "夜空40演武用の専用立ち絵とイベントCG素材を同梱",
+    "v039_152の50〜100正式再同期内容は維持"
   ];
   window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  window.TENOTSU_V039.VERSION = "v039_152";
+  window.TENOTSU_V039.VERSION = "v039_153";
   window.TENOTSU_V039.BUILD_LABEL = window.TENOTSU_BUILD_LABEL;
   window.TENOTSU_V039.BUILD_NOTES = window.TENOTSU_BUILD_NOTES;
 })();

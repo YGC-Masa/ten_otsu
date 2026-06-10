@@ -1,4 +1,4 @@
-/* v039_152 夜空90-3再修正＋100改稿反映 */
+/* v039_153 夜空40帯シナリオ復旧 */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
