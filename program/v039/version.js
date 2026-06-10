@@ -1,16 +1,11 @@
-/* v039_155 夜空40帯シナリオ復旧 */
+/* v039_156 version */
 (function(){
   "use strict";
-  window.TENOTSU_BUILD_VERSION = "v039_155";
-  window.TENOTSU_BUILD_LABEL = "v039_155 夜空40帯シナリオ復旧パッチ";
-  window.TENOTSU_BUILD_NOTES = [
-    "夜空メイン40『嬉しいのに、苦しい』を復旧",
-    "夜空キー40-1〜40-3を復旧",
-    "夜空40演武用の専用立ち絵とイベントCG素材を同梱",
-    "v039_155の50〜100正式再同期内容は維持"
+  window.TENOTSU_VERSION = "v039_156";
+  window.TENOTSU_VERSION_LABEL = "v039_156 親愛Lv.xxストーリー索引表記パッチ";
+  window.TENOTSU_VERSION_NOTES = [
+    "メンバー＞夜空のストーリー一覧表示をキー1/キー2形式ではなく親愛Lv.xx形式へ変更",
+    "内部のaffectionSlot/key1等は解放制御用として維持",
+    "v039_155の90-3/100修正内容を維持"
   ];
-  window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  window.TENOTSU_V039.VERSION = "v039_155";
-  window.TENOTSU_V039.BUILD_LABEL = window.TENOTSU_BUILD_LABEL;
-  window.TENOTSU_V039.BUILD_NOTES = window.TENOTSU_BUILD_NOTES;
 })();
