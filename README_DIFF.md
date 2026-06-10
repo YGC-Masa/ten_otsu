@@ -1,39 +1,32 @@
-# v039_156 = 親愛Lv.xxストーリー索引表記パッチ
-
-## 内容
-
-メンバー＞夜空＞ストーリー一覧の表示名を、従来の「キー1」「キー2」「キー3」ベースではなく、親愛度解放レベルが直接わかる形式へ変更しました。
-
-例：
-
-```text
-親愛Lv.91：静かな夜のブックカフェ企画
-親愛Lv.94：デートみたいだな
-親愛Lv.97：二人だから、少し素直になる
-親愛Lv.100：春の中で、ありがとう
-```
-
-## 実装方針
-
-- storyIndex.js の夜空ルート各項目に `affectionLabel` / `menuTitle` / `rawTitle` を追加
-- メニュー表示用の `title` は `親愛Lv.xx：タイトル` に変更
-- 内部制御用の `affectionSlot: key1/key2/key3/main` は維持
-- unlockLevel / unlock / order / scenario のリンク先は変更なし
+# v039_157 = 夜空50-100ストーリー索引最新マニフェスト同期パッチ
 
 ## 適用前提
 
-```text
-v039_155以降へ上書き
-```
+v039_156以降へ上書き。
+
+## 内容
+
+- `yozora_affection_50_100_latest_manifest_v039_108.json` を基準に、夜空50〜100帯の `storyIndex.js` を再同期。
+- 古いタイトル・途中生成タイトルが残っていた索引を修正。
+- メニュー表示は `親愛Lv.xx：タイトル` 形式を維持。
+- 内部リンク先 `scenario/v039/events/<story_id>.json` はマニフェストのIDに合わせて整理。
+
+## 代表修正
+
+- 親愛Lv.60：夜空のままで
+- 親愛Lv.70：忘れて、でも忘れないで
+- 親愛Lv.80：一緒だね
+- 親愛Lv.90：本物の星を見る夜
+- 親愛Lv.97：二人だから、少し素直になる
+- 親愛Lv.100：春の中で、ありがとう
 
 ## 更新ファイル
 
-```text
-index.html
-VERSION.txt
-README_DIFF.md
-program/v039/version.js
-program/v039/state.js
-program/v039/office.js
-scenario/v039/storyIndex.js
-```
+- `scenario/v039/storyIndex.js`
+- `index.html`
+- `VERSION.txt`
+- `program/v039/version.js`
+- `program/v039/state.js`
+- `program/v039/office.js`
+
+画像・シナリオJSON本体は同梱していません。

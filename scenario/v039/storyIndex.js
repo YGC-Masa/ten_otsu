@@ -1,4 +1,4 @@
-/* v039_156 story index: Yozora menu labels changed to affection Lv.xx */
+/* v039_157 story index: resynced Yozora 50-100 with latest manifest */
 (function(){
   "use strict";
   window.TENOTSU_STORY_INDEX = [
@@ -701,17 +701,18 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_50_01_key.json",
-    "version": "v039_154",
+    "version": "v039_157",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
       "level": 51
     },
     "order": 3051,
-    "summary": "夜空は店長と美空に「少し一人にして」「探さないで」とメッセージを送る。美空は夜空の言葉を尊重して少しだけ待つが、既読がつかなくなったことで店長が探しに行く決意をする。",
+    "summary": "50-1 少し一人にして。場所：ひだまりストア・閉店後／日和坂総合運動公園方面。",
     "rawTitle": "少し一人にして",
     "affectionLabel": "親愛Lv.51",
-    "menuTitle": "親愛Lv.51：少し一人にして"
+    "menuTitle": "親愛Lv.51：少し一人にして",
+    "locationName": "ひだまりストア・閉店後／日和坂総合運動公園方面"
   },
   {
     "id": "yozora_affection_50_02_key",
@@ -732,17 +733,18 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_50_02_key.json",
-    "version": "v039_154",
+    "version": "v039_157",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
       "level": 54
     },
     "order": 3054,
-    "summary": "店長は夜空の行きそうな場所として、駅裏、星見ヶ丘プラネタリウム、潮見浜を巡る。過去イベントの場所をたどりながら、夜空との積み重ねを回収する。最後に夕凪展望台で夜空を見つける。",
+    "summary": "50-2 夜空の行きそうな場所。場所：ひだまりストア・閉店後／日和坂総合運動公園／海沿いの道。",
     "rawTitle": "夜空の行きそうな場所",
     "affectionLabel": "親愛Lv.54",
-    "menuTitle": "親愛Lv.54：夜空の行きそうな場所"
+    "menuTitle": "親愛Lv.54：夜空の行きそうな場所",
+    "locationName": "ひだまりストア・閉店後／日和坂総合運動公園／海沿いの道"
   },
   {
     "id": "yozora_affection_50_03_key",
@@ -763,21 +765,22 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_50_03_key.json",
-    "version": "v039_154",
+    "version": "v039_157",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
       "level": 57
     },
     "order": 3057,
-    "summary": "夕凪展望台で店長に見つかった夜空は、まだ全てを吐き出せないが、限界が近い。店長は美空へ「夜空は無事」とだけ連絡し、夜空の言葉を尊重して場所や詳細は伏せる。",
+    "summary": "50-3 見つけないで。場所：みなと公園・夜。",
     "rawTitle": "見つけないで",
     "affectionLabel": "親愛Lv.57",
-    "menuTitle": "親愛Lv.57：見つけないで"
+    "menuTitle": "親愛Lv.57：見つけないで",
+    "locationName": "みなと公園・夜"
   },
   {
     "id": "yozora_affection_60_00_main",
-    "title": "親愛Lv.60：探さないでって言ったのに",
+    "title": "親愛Lv.60：夜空のままで",
     "type": "main",
     "category": "character_main",
     "character": "ai",
@@ -794,7 +797,7 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_60_00_main.json",
-    "version": "v039_154",
+    "version": "v039_157",
     "unlock": {
       "type": "all_story_cleared",
       "storyIds": [
@@ -809,14 +812,15 @@
       }
     },
     "order": 3060,
-    "summary": "夜空は夕凪展望台で、幼い頃から美空と比べられてきたこと、美空を大好きなのに羨ましく思ってしまうこと、その自分への自己嫌悪を激しく吐露する。店長はそれを否定せず、「夜空は夜空だろ」「美空の影でも代わりでもない」と受け止める。",
-    "rawTitle": "探さないでって言ったのに",
+    "summary": "60-0 夜空のままで。場所：夕凪展望台・夜。",
+    "rawTitle": "夜空のままで",
     "affectionLabel": "親愛Lv.60",
-    "menuTitle": "親愛Lv.60：探さないでって言ったのに"
+    "menuTitle": "親愛Lv.60：夜空のままで",
+    "locationName": "夕凪展望台・夜"
   },
   {
     "id": "yozora_affection_60_01_key",
-    "title": "親愛Lv.61：昨日のことは見ないで",
+    "title": "親愛Lv.61：店長、大丈夫？",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -833,21 +837,22 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_60_01_key.json",
-    "version": "v039_154",
+    "version": "v039_157",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
       "level": 61
     },
     "order": 3061,
-    "summary": "メイン60翌日。夜空は店長にすべて見られた恥ずかしさと気まずさで目を合わせられない。「忘れて。でも忘れないで」と矛盾した気持ちを見せる。",
-    "rawTitle": "昨日のことは見ないで",
+    "summary": "60-1 店長、大丈夫？。場所：ひだまりストア・翌日朝／バックヤード。",
+    "rawTitle": "店長、大丈夫？",
     "affectionLabel": "親愛Lv.61",
-    "menuTitle": "親愛Lv.61：昨日のことは見ないで"
+    "menuTitle": "親愛Lv.61：店長、大丈夫？",
+    "locationName": "ひだまりストア・翌日朝／バックヤード"
   },
   {
     "id": "yozora_affection_60_02_key",
-    "title": "親愛Lv.64：謝りたいけど言えない",
+    "title": "親愛Lv.64：一生面倒見るって、どういう意味",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -864,21 +869,22 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_60_02_key.json",
-    "version": "v039_154",
+    "version": "v039_157",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
       "level": 64
     },
     "order": 3064,
-    "summary": "夜空は店長に謝りたいが、何度も言葉が詰まる。美空に背中を押され、ようやく「昨日は言いすぎた」「ごめん」と言える。",
-    "rawTitle": "謝りたいけど言えない",
+    "summary": "60-2 一生面倒見るって、どういう意味。場所：ひだまりストア・休憩室。",
+    "rawTitle": "一生面倒見るって、どういう意味",
     "affectionLabel": "親愛Lv.64",
-    "menuTitle": "親愛Lv.64：謝りたいけど言えない"
+    "menuTitle": "親愛Lv.64：一生面倒見るって、どういう意味",
+    "locationName": "ひだまりストア・休憩室"
   },
   {
     "id": "yozora_affection_60_03_key",
-    "title": "親愛Lv.67：ありがとう、の手前",
+    "title": "親愛Lv.67：店長のあったかさ",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -895,17 +901,18 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_60_03_key.json",
-    "version": "v039_154",
+    "version": "v039_157",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
       "level": 67
     },
     "order": 3067,
-    "summary": "夜空は「探してくれて」「見つけてくれて」「帰らないでいてくれて」への感謝を伝えようとするが、まだ「ありがとう」と言い切れない。店長は無理に引き出さず、「聞こえかけたことにしておく」と受け止める。",
-    "rawTitle": "ありがとう、の手前",
+    "summary": "60-3 店長のあったかさ。場所：ひだまりストア・休憩室／閉店後の店先。",
+    "rawTitle": "店長のあったかさ",
     "affectionLabel": "親愛Lv.67",
-    "menuTitle": "親愛Lv.67：ありがとう、の手前"
+    "menuTitle": "親愛Lv.67：店長のあったかさ",
+    "locationName": "ひだまりストア・休憩室／閉店後の店先"
   },
   {
     "id": "yozora_affection_70_00_main",
@@ -926,7 +933,7 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_70_00_main.json",
-    "version": "v039_154",
+    "version": "v039_157",
     "unlock": {
       "type": "all_story_cleared",
       "storyIds": [
@@ -942,14 +949,15 @@
       }
     },
     "order": 3070,
-    "summary": "夜空は店長に、メイン60で感情をぶつけたことを謝り、探してくれたこと・見つけてくれたこと・帰らないでいてくれたことへの感謝を伝える。「忘れて。でも忘れないで」という矛盾した気持ちを、店長は「しまっておく」と受け止める。",
+    "summary": "70-0 忘れて、でも忘れないで。場所：若葉中央公園・夜。",
     "rawTitle": "忘れて、でも忘れないで",
     "affectionLabel": "親愛Lv.70",
-    "menuTitle": "親愛Lv.70：忘れて、でも忘れないで"
+    "menuTitle": "親愛Lv.70：忘れて、でも忘れないで",
+    "locationName": "若葉中央公園・夜"
   },
   {
     "id": "yozora_affection_70_01_key",
-    "title": "親愛Lv.71：呼んだだけ",
+    "title": "親愛Lv.71：ちゃんと謝りたい",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -966,21 +974,22 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_70_01_key.json",
-    "version": "v039_154",
+    "version": "v039_157",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
       "level": 71
     },
     "order": 3071,
-    "summary": "夜空は自分から店長を呼ぶが、最初は「呼んだだけ」とごまかす。メイン70で宣言した「少しだけ素直になる練習」の最初の実践。",
-    "rawTitle": "呼んだだけ",
+    "summary": "70-1 ちゃんと謝りたい。場所：ひだまりストア・閉店後／店先。",
+    "rawTitle": "ちゃんと謝りたい",
     "affectionLabel": "親愛Lv.71",
-    "menuTitle": "親愛Lv.71：呼んだだけ"
+    "menuTitle": "親愛Lv.71：ちゃんと謝りたい",
+    "locationName": "ひだまりストア・閉店後／店先"
   },
   {
     "id": "yozora_affection_70_02_key",
-    "title": "親愛Lv.74：少し歩いて",
+    "title": "親愛Lv.74：言えなかったこと",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -997,21 +1006,22 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_70_02_key.json",
-    "version": "v039_154",
+    "version": "v039_157",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
       "level": 74
     },
     "order": 3074,
-    "summary": "夜空は自分から「少し歩いて」と店長に頼む。一人だと余計なことを考えるから、という理由を口にできたことで、頼る練習が一歩進む。",
-    "rawTitle": "少し歩いて",
+    "summary": "70-2 言えなかったこと。場所：若葉中央公園・夕方。",
+    "rawTitle": "言えなかったこと",
     "affectionLabel": "親愛Lv.74",
-    "menuTitle": "親愛Lv.74：少し歩いて"
+    "menuTitle": "親愛Lv.74：言えなかったこと",
+    "locationName": "若葉中央公園・夕方"
   },
   {
     "id": "yozora_affection_70_03_key",
-    "title": "親愛Lv.77：褒められる練習",
+    "title": "親愛Lv.77：帰ったら、好きなものの話をしよう",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -1028,21 +1038,22 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_70_03_key.json",
-    "version": "v039_154",
+    "version": "v039_157",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
       "level": 77
     },
     "order": 3077,
-    "summary": "夜空は「褒められる練習」として、店長と美空の言葉を逃げずに受け取ろうとする。終盤では自分から「もう一回」と頼み、最後に小さく「ありがとう」と言える。",
-    "rawTitle": "褒められる練習",
+    "summary": "70-3 帰ったら、好きなものの話をしよう。場所：ひだまりストア・休憩室／帰り道。",
+    "rawTitle": "帰ったら、好きなものの話をしよう",
     "affectionLabel": "親愛Lv.77",
-    "menuTitle": "親愛Lv.77：褒められる練習"
+    "menuTitle": "親愛Lv.77：帰ったら、好きなものの話をしよう",
+    "locationName": "ひだまりストア・休憩室／帰り道"
   },
   {
     "id": "yozora_affection_80_00_main",
-    "title": "親愛Lv.80：今日は、逃げない練習",
+    "title": "親愛Lv.80：一緒だね",
     "type": "main",
     "category": "character_main",
     "character": "ai",
@@ -1059,7 +1070,7 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_80_00_main.json",
-    "version": "v039_154",
+    "version": "v039_157",
     "unlock": {
       "type": "all_story_cleared",
       "storyIds": [
@@ -1075,14 +1086,15 @@
       }
     },
     "order": 3080,
-    "summary": "夜空は自分から店長を誘い、若葉中央公園で「探してくれてありがとう」「見つけてくれてありがとう」「帰らないでいてくれてありがとう」と改めて感謝を伝える。",
-    "rawTitle": "今日は、逃げない練習",
+    "summary": "80-0 一緒だね。場所：双沢家・ツインルーム・夜。",
+    "rawTitle": "一緒だね",
     "affectionLabel": "親愛Lv.80",
-    "menuTitle": "親愛Lv.80：今日は、逃げない練習"
+    "menuTitle": "親愛Lv.80：一緒だね",
+    "locationName": "双沢家・ツインルーム・夜"
   },
   {
     "id": "yozora_affection_80_01_key",
-    "title": "親愛Lv.81：本物の星の話",
+    "title": "親愛Lv.81：星は、見えなくても",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -1099,21 +1111,22 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_80_01_key.json",
-    "version": "v039_154",
+    "version": "v039_157",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
       "level": 81
     },
     "order": 3081,
-    "summary": "夜空は羽白湖の星空観察会のチラシを見つける。最初は「美空が好きそうだから」とごまかすが、美空と店長に促されて「少しだけ、見たい」と自分自身の希望を口にする。",
-    "rawTitle": "本物の星の話",
+    "summary": "80-1 星は、見えなくても。場所：ひだまりストア・閉店後／店先。",
+    "rawTitle": "星は、見えなくても",
     "affectionLabel": "親愛Lv.81",
-    "menuTitle": "親愛Lv.81：本物の星の話"
+    "menuTitle": "親愛Lv.81：星は、見えなくても",
+    "locationName": "ひだまりストア・閉店後／店先"
   },
   {
     "id": "yozora_affection_80_02_key",
-    "title": "親愛Lv.84：自分のための準備",
+    "title": "親愛Lv.84：行きたいって言ったら",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -1130,21 +1143,22 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_80_02_key.json",
-    "version": "v039_154",
+    "version": "v039_157",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
       "level": 84
     },
     "order": 3084,
-    "summary": "夜空は羽白湖の星空観察会に向けて準備をする中で、黒い手袋や小さなライトを「ぼくが星を見るために」選ぶ。「黒でいい」ではなく「黒がいい」と言えたことも成長点。",
-    "rawTitle": "自分のための準備",
+    "summary": "80-2 行きたいって言ったら。場所：ひだまりストア・休憩室／店先。",
+    "rawTitle": "行きたいって言ったら",
     "affectionLabel": "親愛Lv.84",
-    "menuTitle": "親愛Lv.84：自分のための準備"
+    "menuTitle": "親愛Lv.84：行きたいって言ったら",
+    "locationName": "ひだまりストア・休憩室／店先"
   },
   {
     "id": "yozora_affection_80_03_key",
-    "title": "親愛Lv.87：楽しみなのが、少し怖い",
+    "title": "親愛Lv.87：怖いけど、見たい",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -1161,21 +1175,22 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_80_03_key.json",
-    "version": "v039_154",
+    "version": "v039_157",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
       "level": 87
     },
     "order": 3087,
-    "summary": "羽白湖の星空観察会前夜〜当日の移動前。夜空は「自分が楽しみにしていることが怖い」と認める。美空はそれを否定せず、「見えなかったら一緒にがっかりする、見えたら一緒に嬉しい」と受け止める。",
-    "rawTitle": "楽しみなのが、少し怖い",
+    "summary": "80-3 怖いけど、見たい。場所：双沢家・ツインルーム／ひだまりストア・店先。",
+    "rawTitle": "怖いけど、見たい",
     "affectionLabel": "親愛Lv.87",
-    "menuTitle": "親愛Lv.87：楽しみなのが、少し怖い"
+    "menuTitle": "親愛Lv.87：怖いけど、見たい",
+    "locationName": "双沢家・ツインルーム／ひだまりストア・店先"
   },
   {
     "id": "yozora_affection_90_00_main",
-    "title": "親愛Lv.90：羽白湖・本物の星を見る夜",
+    "title": "親愛Lv.90：本物の星を見る夜",
     "type": "main",
     "category": "character_main",
     "character": "ai",
@@ -1192,7 +1207,7 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_90_00_main.json",
-    "version": "v039_154",
+    "version": "v039_157",
     "unlock": {
       "type": "all_story_cleared",
       "storyIds": [
@@ -1208,14 +1223,15 @@
       }
     },
     "order": 3090,
-    "summary": "羽白湖で本物の星を見ながら、夜空は「美空のためだけではなく、自分が見たかった」と認める。黒い手袋や星、弓道、ココアなど、かつて“美空の反対”として選んできたものを、今の自分が選び直していいのだと気づく。",
-    "rawTitle": "羽白湖・本物の星を見る夜",
+    "summary": "90-0 本物の星を見る夜。場所：羽白湖・夜。",
+    "rawTitle": "本物の星を見る夜",
     "affectionLabel": "親愛Lv.90",
-    "menuTitle": "親愛Lv.90：羽白湖・本物の星を見る夜"
+    "menuTitle": "親愛Lv.90：本物の星を見る夜",
+    "locationName": "羽白湖・夜"
   },
   {
     "id": "yozora_affection_90_01_key",
-    "title": "親愛Lv.91：静かな夜のブックカフェ企画",
+    "title": "親愛Lv.91：夜のブックカフェ企画",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -1232,21 +1248,22 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_90_01_key.json",
-    "version": "v039_154",
+    "version": "v039_157",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
       "level": 91
     },
     "order": 3091,
-    "summary": "夜空は静かな夜のブックカフェ企画のチラシに興味を持つ。前回の羽白湖が寒かったため、今度は暖かく静かな場所として気になっている。美空が店長と二人で行ってきなよと背中を押すが、この時点の夜空はまだデートとして強く意識していない。",
-    "rawTitle": "静かな夜のブックカフェ企画",
+    "summary": "90-1 夜のブックカフェ企画。場所：hidamari_store_breakroom。",
+    "rawTitle": "夜のブックカフェ企画",
     "affectionLabel": "親愛Lv.91",
-    "menuTitle": "親愛Lv.91：静かな夜のブックカフェ企画"
+    "menuTitle": "親愛Lv.91：夜のブックカフェ企画",
+    "locationName": "hidamari_store_breakroom"
   },
   {
     "id": "yozora_affection_90_02_key",
-    "title": "親愛Lv.94：デートみたいだな",
+    "title": "親愛Lv.94：アントステラへ行こう",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -1263,17 +1280,18 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_90_02_key.json",
-    "version": "v039_154",
+    "version": "v039_157",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
       "level": 94
     },
     "order": 3094,
-    "summary": "店長が二人で夜のブックカフェはデートみたいだなと言ったことで、夜空が初めて強くデートを意識して照れパニックを起こす。一拍遅れて意味を理解してから拒否するコミカルな流れ。",
-    "rawTitle": "デートみたいだな",
+    "summary": "90-2 アントステラへ行こう。場所：hidamari_store_breakroom。",
+    "rawTitle": "アントステラへ行こう",
     "affectionLabel": "親愛Lv.94",
-    "menuTitle": "親愛Lv.94：デートみたいだな"
+    "menuTitle": "親愛Lv.94：アントステラへ行こう",
+    "locationName": "hidamari_store_breakroom"
   },
   {
     "id": "yozora_affection_90_03_key",
@@ -1294,17 +1312,18 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_90_03_key.json",
-    "version": "v039_155",
+    "version": "v039_157",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
       "level": 97
     },
     "order": 3097,
-    "summary": "夜空は店長とアントステラ2階の夜のブックカフェへ行き、赤いカップルシートで近距離に動揺しながらも、いつもありがとうまで伝える。",
+    "summary": "90-3 二人だから、少し素直になる。場所：アントステラ2階・夜のブックカフェ。",
     "rawTitle": "二人だから、少し素直になる",
     "affectionLabel": "親愛Lv.97",
-    "menuTitle": "親愛Lv.97：二人だから、少し素直になる"
+    "menuTitle": "親愛Lv.97：二人だから、少し素直になる",
+    "locationName": "アントステラ2階・夜のブックカフェ"
   },
   {
     "id": "yozora_affection_100_00_main",
@@ -1325,7 +1344,7 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_100_00_main.json",
-    "version": "v039_155",
+    "version": "v039_157",
     "unlock": {
       "type": "all_story_cleared",
       "storyIds": [
@@ -1341,10 +1360,11 @@
       }
     },
     "order": 3100,
-    "summary": "夜空が春待ち花畑で白いワンピースと花冠姿になり、店長に「ありがとう。私を見つけてくれて」と伝える。",
+    "summary": "100-0 春の中で、ありがとう。場所：春待ち花畑・昼。",
     "rawTitle": "春の中で、ありがとう",
     "affectionLabel": "親愛Lv.100",
-    "menuTitle": "親愛Lv.100：春の中で、ありがとう"
+    "menuTitle": "親愛Lv.100：春の中で、ありがとう",
+    "locationName": "春待ち花畑・昼"
   }
 ];
 })();
