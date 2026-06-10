@@ -1,4 +1,4 @@
-/* v039_150 夜空90代ストーリー索引タイトル再修正 */
+/* v039_151 夜空90-3再修正＋100改稿反映 */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;

@@ -1,4 +1,4 @@
-/* v039_145 story index: refresh rewritten Yozora 50+ story titles */
+/* v039_151 story index: refresh Yozora 90-3 and 100 revised scenarios */
 (function(){
   "use strict";
   window.TENOTSU_STORY_INDEX = [
@@ -977,14 +977,14 @@
     "双沢 美空"
   ],
   "scenario": "scenario/v039/events/yozora_affection_90_03_key.json",
-  "version": "v039_150",
+  "version": "v039_151",
   "unlock": {
     "type": "affection_level",
     "character": "ai",
     "level": 97
   },
   "order": 3103,
-  "summary": "夜空が店長と夜のブックカフェへ行き、カップルシートで近距離に動揺しつつ、いつもありがとうまで伝える。"
+  "summary": "夜空は店長とアントステラ2階の夜のブックカフェへ行き、赤いカップルシートで近距離に動揺しながらも、いつもありがとうまで伝える。"
 },
 {
   "id": "yozora_affection_100_00_main",
@@ -1005,7 +1005,7 @@
     "双沢 美空"
   ],
   "scenario": "scenario/v039/events/yozora_affection_100_00_main.json",
-  "version": "v039_150",
+  "version": "v039_151",
   "unlock": {
     "type": "all_story_cleared",
     "storyIds": [
@@ -1021,7 +1021,7 @@
     }
   },
   "order": 3100,
-  "summary": "春の花畑で、花冠姿の夜空が店長に感謝を伝える。"
+  "summary": "夜空が春待ち花畑で白いワンピースと花冠姿になり、店長に「ありがとう。私を見つけてくれて」と伝える。"
 }
 
   ];
