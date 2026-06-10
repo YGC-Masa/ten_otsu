@@ -1,4 +1,4 @@
-/* v039_157 story index: resynced Yozora 50-100 with latest manifest */
+/* v039_159 story index: Yozora 40s official stories + separated Lv/title menu display */
 (function(){
   "use strict";
   window.TENOTSU_STORY_INDEX = [
@@ -62,7 +62,7 @@
   },
   {
     "id": "yozora_affection_00_01_key",
-    "title": "親愛Lv.01：美空なら休憩室",
+    "title": "美空なら休憩室",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -93,7 +93,7 @@
   },
   {
     "id": "yozora_affection_00_02_key",
-    "title": "親愛Lv.04：見てるだけ",
+    "title": "見てるだけ",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -124,7 +124,7 @@
   },
   {
     "id": "yozora_affection_00_03_key",
-    "title": "親愛Lv.07：特別公演のチケット",
+    "title": "特別公演のチケット",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -155,7 +155,7 @@
   },
   {
     "id": "yozora_affection_10_00_main",
-    "title": "親愛Lv.10：余計なところまで見ないで",
+    "title": "余計なところまで見ないで",
     "type": "main",
     "category": "character_main",
     "character": "ai",
@@ -194,7 +194,7 @@
   },
   {
     "id": "yozora_affection_10_01_key",
-    "title": "親愛Lv.11：そういうの、気づかなくていい",
+    "title": "そういうの、気づかなくていい",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -225,7 +225,7 @@
   },
   {
     "id": "yozora_affection_10_02_key",
-    "title": "親愛Lv.14：美空だけでいいでしょ",
+    "title": "美空だけでいいでしょ",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -256,7 +256,7 @@
   },
   {
     "id": "yozora_affection_10_03_key",
-    "title": "親愛Lv.17：気づかなくていい疲れ",
+    "title": "気づかなくていい疲れ",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -287,7 +287,7 @@
   },
   {
     "id": "yozora_affection_20_00_main",
-    "title": "親愛Lv.20：一歩後ろの夜空",
+    "title": "一歩後ろの夜空",
     "type": "main",
     "category": "character_main",
     "character": "ai",
@@ -327,7 +327,7 @@
   },
   {
     "id": "yozora_affection_20_01_key",
-    "title": "親愛Lv.21：黒いリボン",
+    "title": "黒いリボン",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -358,7 +358,7 @@
   },
   {
     "id": "yozora_affection_20_02_key",
-    "title": "親愛Lv.24：夜空らしいって何",
+    "title": "夜空らしいって何",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -389,7 +389,7 @@
   },
   {
     "id": "yozora_affection_20_03_key",
-    "title": "親愛Lv.27：白と黒の飲み物",
+    "title": "白と黒の飲み物",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -420,7 +420,7 @@
   },
   {
     "id": "yozora_affection_30_00_main",
-    "title": "親愛Lv.30：白黒ツインルーム",
+    "title": "白黒ツインルーム",
     "type": "main",
     "category": "character_main",
     "character": "ai",
@@ -460,7 +460,7 @@
   },
   {
     "id": "yozora_affection_30_01_key",
-    "title": "親愛Lv.31：美空が褒められるのは嬉しい",
+    "title": "美空が褒められるのは嬉しい",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -491,7 +491,7 @@
   },
   {
     "id": "yozora_affection_30_02_key",
-    "title": "親愛Lv.34：美空の剣道の方がわかりやすい",
+    "title": "美空の剣道の方がわかりやすい",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -522,7 +522,7 @@
   },
   {
     "id": "yozora_affection_30_03_key",
-    "title": "親愛Lv.37：別にいい",
+    "title": "別にいい",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -553,7 +553,7 @@
   },
   {
     "id": "yozora_affection_40_00_main",
-    "title": "親愛Lv.40：嬉しいのに、苦しい",
+    "title": "嬉しいのに、苦しい",
     "type": "main",
     "category": "character_main",
     "character": "ai",
@@ -593,7 +593,7 @@
   },
   {
     "id": "yozora_affection_40_01_key",
-    "title": "親愛Lv.41：少し一人にして",
+    "title": "美空のところに行けば",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -602,29 +602,28 @@
     "affectionSlot": "key1",
     "unlockLevel": 41,
     "characters": [
-      "ai",
-      "ah"
+      "ai"
     ],
     "characterNames": [
-      "双沢 夜空",
-      "双沢 美空"
+      "双沢 夜空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_40_01_key.json",
-    "version": "v039_145",
+    "version": "v039_159",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
       "level": 41
     },
     "order": 3041,
-    "summary": "メイン40で自分の矛盾した感情を漏らした夜空が、店長と美空の視線を避け始める。店長を美空へ押し返し、「少し一人にして」と告げて運動公園方面へ向かう。",
-    "rawTitle": "少し一人にして",
+    "summary": "メイン40で「嬉しいのに苦しい」と漏らした反動で、夜空は店長を避け始める。店長が話しかけても「美空のところに行けば」と繰り返し、自分を見られることから逃げようとする。",
+    "rawTitle": "美空のところに行けば",
     "affectionLabel": "親愛Lv.41",
-    "menuTitle": "親愛Lv.41：少し一人にして"
+    "menuTitle": "親愛Lv.41：美空のところに行けば",
+    "locationName": "ひだまりストア・店内売り場"
   },
   {
     "id": "yozora_affection_40_02_key",
-    "title": "親愛Lv.44：夜空の行きそうな場所",
+    "title": "あんたが追ってくるだけ",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -639,21 +638,22 @@
       "双沢 夜空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_40_02_key.json",
-    "version": "v039_145",
+    "version": "v039_159",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
       "level": 44
     },
-    "order": 3042,
-    "summary": "夜空が戻らず、店長が探しに行く。美空は通話・メッセージのみで登場し、店長は駅前ではなく運動公園、そして海沿いのみなと公園方面へ向かう。",
-    "rawTitle": "夜空の行きそうな場所",
+    "order": 3044,
+    "summary": "夜空は駅前で店長を見つけると道を変え、あからさまに避ける。「避けてない。あんたが追ってくるだけ」と言いながらも、本当に放っておかれるとそれはそれで傷つくという矛盾を少し漏らす。",
+    "rawTitle": "あんたが追ってくるだけ",
     "affectionLabel": "親愛Lv.44",
-    "menuTitle": "親愛Lv.44：夜空の行きそうな場所"
+    "menuTitle": "親愛Lv.44：あんたが追ってくるだけ",
+    "locationName": "日和坂駅前・帰り道"
   },
   {
     "id": "yozora_affection_40_03_key",
-    "title": "親愛Lv.47：見つけないで",
+    "title": "美空の大事なものなのに",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -662,29 +662,66 @@
     "affectionSlot": "key3",
     "unlockLevel": 47,
     "characters": [
-      "ai",
-      "ah"
+      "ai"
     ],
     "characterNames": [
-      "双沢 夜空",
-      "双沢 美空"
+      "双沢 夜空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_40_03_key.json",
-    "version": "v039_145",
+    "version": "v039_159",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
       "level": 47
     },
-    "order": 3043,
-    "summary": "夜のみなと公園で店長が夜空を見つける。夜空は美空への羨望や黒い感情を漏らし、それを認めた自己嫌悪からパニックになって夕凪展望台へ逃げる。",
-    "rawTitle": "見つけないで",
+    "order": 3047,
+    "summary": "夜空は美空との会話で、店長に見られることが嫌なのに、見られないことも嫌だと認める。さらに、店長が美空の大事な人であるにもかかわらず、自分も店長に見つけてほしいと思ってしまう罪悪感が出る。",
+    "rawTitle": "美空の大事なものなのに",
     "affectionLabel": "親愛Lv.47",
-    "menuTitle": "親愛Lv.47：見つけないで"
+    "menuTitle": "親愛Lv.47：美空の大事なものなのに",
+    "locationName": "双沢家・白黒ツインルーム"
+  },
+  {
+    "id": "yozora_affection_50_00_main",
+    "title": "探さないで、の前兆",
+    "type": "main",
+    "category": "character_main",
+    "character": "ai",
+    "route": "yozora",
+    "affectionBlock": 5,
+    "affectionSlot": "main",
+    "unlockLevel": 50,
+    "characters": [
+      "ai"
+    ],
+    "characterNames": [
+      "双沢 夜空"
+    ],
+    "scenario": "scenario/v039/events/yozora_affection_50_00_main.json",
+    "version": "v039_159",
+    "unlock": {
+      "type": "all_story_cleared",
+      "storyIds": [
+        "yozora_affection_40_01_key",
+        "yozora_affection_40_02_key",
+        "yozora_affection_40_03_key"
+      ],
+      "fallback": {
+        "type": "affection_level",
+        "character": "ai",
+        "level": 50
+      }
+    },
+    "order": 3050,
+    "summary": "夜空は店長に直接「ぼくがいなくなっても、探さないで」と告げる。美空への罪悪感、店長に見つけられる怖さ、しかし見つけてほしい矛盾が強まる。",
+    "rawTitle": "探さないで、の前兆",
+    "affectionLabel": "親愛Lv.50",
+    "menuTitle": "親愛Lv.50：探さないで、の前兆",
+    "locationName": "店長マンション前の帰り道"
   },
   {
     "id": "yozora_affection_50_01_key",
-    "title": "親愛Lv.51：少し一人にして",
+    "title": "少し一人にして",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -701,14 +738,14 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_50_01_key.json",
-    "version": "v039_157",
+    "version": "v039_158",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
       "level": 51
     },
     "order": 3051,
-    "summary": "50-1 少し一人にして。場所：ひだまりストア・閉店後／日和坂総合運動公園方面。",
+    "summary": "メイン40「嬉しいのに、苦しい」で自分の矛盾した感情を漏らしてしまった夜空が、店長と美空の視線を避け始める。まだ美空への黒い感情は明言しないが、「美空のところに行けば」「ぼくじゃなくていいでしょ」と店長を美空へ押し返す。最後に「少し一人にして」と告げ、駅前ではなく夜の運動公園方面へ向かう。",
     "rawTitle": "少し一人にして",
     "affectionLabel": "親愛Lv.51",
     "menuTitle": "親愛Lv.51：少し一人にして",
@@ -716,7 +753,7 @@
   },
   {
     "id": "yozora_affection_50_02_key",
-    "title": "親愛Lv.54：夜空の行きそうな場所",
+    "title": "夜空の行きそうな場所",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -733,14 +770,14 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_50_02_key.json",
-    "version": "v039_157",
+    "version": "v039_158",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
       "level": 54
     },
     "order": 3054,
-    "summary": "50-2 夜空の行きそうな場所。場所：ひだまりストア・閉店後／日和坂総合運動公園／海沿いの道。",
+    "summary": "キー5-1で「少し一人にして」と出ていった夜空を、店長が探しに行く。美空は電話・メッセージで心配を伝えるが、その場には登場しない。店長は駅前ではなく、夜空の性格と前回の演武後の様子から運動公園方面を探す。最終的に夜空から「探さないで」「それが嫌」とメッセージが届き、店長は海沿いのみなと公園へ向かう。",
     "rawTitle": "夜空の行きそうな場所",
     "affectionLabel": "親愛Lv.54",
     "menuTitle": "親愛Lv.54：夜空の行きそうな場所",
@@ -748,7 +785,7 @@
   },
   {
     "id": "yozora_affection_50_03_key",
-    "title": "親愛Lv.57：見つけないで",
+    "title": "見つけないで",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -765,14 +802,14 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_50_03_key.json",
-    "version": "v039_157",
+    "version": "v039_158",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
       "level": 57
     },
     "order": 3057,
-    "summary": "50-3 見つけないで。場所：みなと公園・夜。",
+    "summary": "夜のみなと公園で、店長が夜空を見つける。夜空は「見つけないでって言ったのに」と拒むが、店長の「心配だから」に追い詰められ、美空への黒い感情を漏らしてしまう。それを自分で認めたことで自己嫌悪に陥り、「もう、ぼくのことは見ないでっ」とパニックになって逃走する。",
     "rawTitle": "見つけないで",
     "affectionLabel": "親愛Lv.57",
     "menuTitle": "親愛Lv.57：見つけないで",
@@ -780,7 +817,7 @@
   },
   {
     "id": "yozora_affection_60_00_main",
-    "title": "親愛Lv.60：夜空のままで",
+    "title": "夜空のままで",
     "type": "main",
     "category": "character_main",
     "character": "ai",
@@ -797,7 +834,7 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_60_00_main.json",
-    "version": "v039_157",
+    "version": "v039_158",
     "unlock": {
       "type": "all_story_cleared",
       "storyIds": [
@@ -812,7 +849,7 @@
       }
     },
     "order": 3060,
-    "summary": "60-0 夜空のままで。場所：夕凪展望台・夜。",
+    "summary": "キー5-3で美空への黒い感情を漏らしてしまった夜空が、自己嫌悪のまま夕凪展望台へ逃げる。店長が追いつくことでさらに爆発し、拒絶の勢いで店長を突き飛ばしてしまう。店長が階段から落ちたことで夜空は本気で取り乱し、大声で泣きながら謝罪と本音を吐露する。最後は、店長から「いつもの夜空のままで」と受け止められ、「うちに帰ろう。き",
     "rawTitle": "夜空のままで",
     "affectionLabel": "親愛Lv.60",
     "menuTitle": "親愛Lv.60：夜空のままで",
@@ -820,7 +857,7 @@
   },
   {
     "id": "yozora_affection_60_01_key",
-    "title": "親愛Lv.61：店長、大丈夫？",
+    "title": "店長、大丈夫？",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -852,7 +889,7 @@
   },
   {
     "id": "yozora_affection_60_02_key",
-    "title": "親愛Lv.64：一生面倒見るって、どういう意味",
+    "title": "一生面倒見るって、どういう意味",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -884,7 +921,7 @@
   },
   {
     "id": "yozora_affection_60_03_key",
-    "title": "親愛Lv.67：店長のあったかさ",
+    "title": "店長のあったかさ",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -916,7 +953,7 @@
   },
   {
     "id": "yozora_affection_70_00_main",
-    "title": "親愛Lv.70：忘れて、でも忘れないで",
+    "title": "忘れて、でも忘れないで",
     "type": "main",
     "category": "character_main",
     "character": "ai",
@@ -957,7 +994,7 @@
   },
   {
     "id": "yozora_affection_70_01_key",
-    "title": "親愛Lv.71：ちゃんと謝りたい",
+    "title": "ちゃんと謝りたい",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -989,7 +1026,7 @@
   },
   {
     "id": "yozora_affection_70_02_key",
-    "title": "親愛Lv.74：言えなかったこと",
+    "title": "言えなかったこと",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -1021,7 +1058,7 @@
   },
   {
     "id": "yozora_affection_70_03_key",
-    "title": "親愛Lv.77：帰ったら、好きなものの話をしよう",
+    "title": "帰ったら、好きなものの話をしよう",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -1053,7 +1090,7 @@
   },
   {
     "id": "yozora_affection_80_00_main",
-    "title": "親愛Lv.80：一緒だね",
+    "title": "一緒だね",
     "type": "main",
     "category": "character_main",
     "character": "ai",
@@ -1094,7 +1131,7 @@
   },
   {
     "id": "yozora_affection_80_01_key",
-    "title": "親愛Lv.81：星は、見えなくても",
+    "title": "星は、見えなくても",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -1126,7 +1163,7 @@
   },
   {
     "id": "yozora_affection_80_02_key",
-    "title": "親愛Lv.84：行きたいって言ったら",
+    "title": "行きたいって言ったら",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -1158,7 +1195,7 @@
   },
   {
     "id": "yozora_affection_80_03_key",
-    "title": "親愛Lv.87：怖いけど、見たい",
+    "title": "怖いけど、見たい",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -1190,7 +1227,7 @@
   },
   {
     "id": "yozora_affection_90_00_main",
-    "title": "親愛Lv.90：本物の星を見る夜",
+    "title": "本物の星を見る夜",
     "type": "main",
     "category": "character_main",
     "character": "ai",
@@ -1231,7 +1268,7 @@
   },
   {
     "id": "yozora_affection_90_01_key",
-    "title": "親愛Lv.91：夜のブックカフェ企画",
+    "title": "夜のブックカフェ企画",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -1263,7 +1300,7 @@
   },
   {
     "id": "yozora_affection_90_02_key",
-    "title": "親愛Lv.94：アントステラへ行こう",
+    "title": "アントステラへ行こう",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -1295,7 +1332,7 @@
   },
   {
     "id": "yozora_affection_90_03_key",
-    "title": "親愛Lv.97：二人だから、少し素直になる",
+    "title": "二人だから、少し素直になる",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -1327,7 +1364,7 @@
   },
   {
     "id": "yozora_affection_100_00_main",
-    "title": "親愛Lv.100：春の中で、ありがとう",
+    "title": "春の中で、ありがとう",
     "type": "main",
     "category": "character_main",
     "character": "ai",
