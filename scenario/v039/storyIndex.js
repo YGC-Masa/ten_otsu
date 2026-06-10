@@ -904,7 +904,7 @@
 },
 {
   "id": "yozora_affection_90_01_key",
-  "title": "夜のブックカフェ企画",
+  "title": "静かな夜のブックカフェ企画",
   "type": "key",
   "category": "character_key",
   "character": "ai",
@@ -921,18 +921,18 @@
     "双沢 美空"
   ],
   "scenario": "scenario/v039/events/yozora_affection_90_01_key.json",
-  "version": "v039_147",
+  "version": "v039_149",
   "unlock": {
     "type": "affection_level",
     "character": "ai",
     "level": 91
   },
   "order": 3101,
-  "summary": "美空がアントステラ2階の夜のブックカフェ企画を見つけ、夜空が静かな本とあたたかい場所に興味を持つ。"
+  "summary": "夜空は静かな夜のブックカフェ企画のチラシに興味を持つ。前回の羽白湖が寒かったため、今度は暖かく静かな場所として気になっている。美空が店長と二人で行ってきなよと背中を押すが、この時点の夜空はまだデートとして強く意識していない。"
 },
 {
   "id": "yozora_affection_90_02_key",
-  "title": "アントステラへ行こう",
+  "title": "デートみたいだな",
   "type": "key",
   "category": "character_key",
   "character": "ai",
@@ -949,18 +949,18 @@
     "双沢 美空"
   ],
   "scenario": "scenario/v039/events/yozora_affection_90_02_key.json",
-  "version": "v039_147",
+  "version": "v039_149",
   "unlock": {
     "type": "affection_level",
     "character": "ai",
     "level": 94
   },
   "order": 3102,
-  "summary": "夜空がアントステラへ店長と行く意思を固め、予約まで進む。"
+  "summary": "店長が二人で夜のブックカフェはデートみたいだなと言ったことで、夜空が初めて強くデートを意識して照れパニックを起こす。一拍遅れて意味を理解してから拒否するコミカルな流れ。"
 },
 {
   "id": "yozora_affection_90_03_key",
-  "title": "二人だから、少し素直になる",
+  "title": "行きたいのは誰なの",
   "type": "key",
   "category": "character_key",
   "character": "ai",
@@ -977,14 +977,14 @@
     "双沢 美空"
   ],
   "scenario": "scenario/v039/events/yozora_affection_90_03_key.json",
-  "version": "v039_147",
+  "version": "v039_149",
   "unlock": {
     "type": "affection_level",
     "character": "ai",
     "level": 97
   },
   "order": 3103,
-  "summary": "夜空が店長と夜のブックカフェへ行き、カップルシートで近距離に動揺しつつ、いつもありがとうまで伝える。"
+  "summary": "夜空は自宅で美空に相談する。美空は夜空を抱きしめ、自分の気持ちで選んでいいと受け止める。夜空はぼくが行きたい、店長と行きたいと認め、翌日、店長にお願いしますと自分から伝える。"
 },
 {
   "id": "yozora_affection_100_00_main",
@@ -1005,7 +1005,7 @@
     "双沢 美空"
   ],
   "scenario": "scenario/v039/events/yozora_affection_100_00_main.json",
-  "version": "v039_147",
+  "version": "v039_149",
   "unlock": {
     "type": "all_story_cleared",
     "storyIds": [

@@ -1,16 +1,16 @@
-/* v039_148 夜空100専用立ち絵追加 */
+/* v039_149 夜空90代ストーリー索引リンク修正 */
 (function(){
   "use strict";
-  window.TENOTSU_BUILD_VERSION = "v039_148";
-  window.TENOTSU_BUILD_LABEL = "v039_148 夜空100専用立ち絵追加";
+  window.TENOTSU_BUILD_VERSION = "v039_149";
+  window.TENOTSU_BUILD_LABEL = "v039_149 夜空90代ストーリー索引リンク修正";
   window.TENOTSU_BUILD_NOTES = [
-    "夜空メイン100専用の白ワンピース立ち絵を追加",
-    "夜空メイン100内の夜空表示を専用立ち絵へ差し替え",
-    "通常夜空立ち絵は変更なし",
-    "v039_147の春待ち花畑背景＋イベントCG実装を維持"
+    "内部シナリオリスト storyIndex.js の夜空90代タイトル不整合を修正",
+    "夜空キー9-3の表示タイトルを実シナリオに合わせて『行きたいのは誰なの』へ修正",
+    "90代ブックカフェ導入〜予約前のキーシナリオ表示を確認",
+    "v039_148の夜空100専用立ち絵とv039_147の春待ち花畑/イベントCG実装を維持"
   ];
   window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  window.TENOTSU_V039.VERSION = "v039_148";
+  window.TENOTSU_V039.VERSION = "v039_149";
   window.TENOTSU_V039.BUILD_LABEL = window.TENOTSU_BUILD_LABEL;
   window.TENOTSU_V039.BUILD_NOTES = window.TENOTSU_BUILD_NOTES;
 })();
