@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_70_02_key",
   "title": "言えなかったこと",
-  "version": "v039_144",
+  "version": "v039_152",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_70_02_key",
@@ -30,7 +30,7 @@
     "姉妹の絆"
   ],
   "clearFlags": [
-    "yozora_key_70_02_cleared"
+    "yozora_affection_70_02_key_cleared"
   ],
   "nextHint": "キー7-3では、痛い話の後に好きなものの話をしようと美空が誘う。",
   "renderPolicy": {
@@ -278,7 +278,7 @@
     {
       "speaker": "",
       "text": "――若葉中央公園・夕方――",
-      "bg": "images/assets/bg/bg_wakaba_central_park_winter_evening.png",
+      "bg": "images/assets/bg/bg_wakaba_central_park_evening.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true
     },

@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_90_03_key",
   "title": "二人だから、少し素直になる",
-  "version": "v039_151",
+  "version": "v039_152",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_90_03_key",
@@ -47,7 +47,7 @@
     {
       "speaker": "",
       "text": "――ひだまりストア・閉店後――",
-      "bg": "images/assets/bg/bg_hidamari_store_front_night_open.png",
+      "bg": "images/assets/bg/battle_store_lv1.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
       "clearStorySprites": true

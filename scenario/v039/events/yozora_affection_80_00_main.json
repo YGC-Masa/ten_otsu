@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_80_00_main",
   "title": "一緒だね",
-  "version": "v039_144",
+  "version": "v039_152",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_80_00_main",
@@ -30,7 +30,7 @@
     "姉妹の絆"
   ],
   "clearFlags": [
-    "yozora_main_80_00_cleared"
+    "yozora_affection_80_00_main_cleared"
   ],
   "nextHint": "次は羽白湖で本物の星を見る80代メインへ進む。",
   "renderPolicy": {
@@ -41,7 +41,7 @@
     {
       "speaker": "",
       "text": "――双沢家・ツインルーム・夜――",
-      "bg": "images/assets/bg/bg_sugosawa_twin_room_night.png",
+      "bg": "images/assets/bg/bg_sugosawa_room_night_light_on.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
       "clearStorySprites": true
@@ -2775,9 +2775,9 @@
   "mainScenarioIndex": 8,
   "unlockCondition": {
     "requiredFlags": [
-      "yozora_key_70_01_cleared",
-      "yozora_key_70_02_cleared",
-      "yozora_key_70_03_cleared"
+      "yozora_key_60_01_cleared",
+      "yozora_key_60_02_cleared",
+      "yozora_key_60_03_cleared"
     ]
   }
 }

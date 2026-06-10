@@ -146,3 +146,13 @@
     spring_flower_field_day: { name: "春の花畑・昼（互換）", path: "images/assets/bg/bg_harumachi_flower_field_day.png", location: "春待ち花畑", time: "day", season: "spring", status: "正式採用・互換" }
   });
 })();
+
+
+/* v039_152 ひだまりストア店内売り場・夜背景追加 */
+(function(){
+  "use strict";
+  window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
+    hidamari_store_salesfloor_night: { name: "ひだまりストア店内売り場・夜", path: "images/assets/bg/bg_hidamari_store_salesfloor_night.png", status: "正式採用" },
+    hidamari_store_closed_night: { name: "ひだまりストア閉店後・店内売り場", path: "images/assets/bg/bg_hidamari_store_salesfloor_night.png", status: "正式採用・互換" }
+  });
+})();

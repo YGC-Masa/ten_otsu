@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_70_01_key",
   "title": "ちゃんと謝りたい",
-  "version": "v039_144",
+  "version": "v039_152",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_70_01_key",
@@ -30,7 +30,7 @@
     "姉妹の絆"
   ],
   "clearFlags": [
-    "yozora_key_70_01_cleared"
+    "yozora_affection_70_01_key_cleared"
   ],
   "nextHint": "キー7-2では、夜空が美空と二人だけで核心の一部を話す。",
   "renderPolicy": {

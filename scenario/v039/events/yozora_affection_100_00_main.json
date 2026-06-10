@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_100_00_main",
   "title": "春の中で、ありがとう",
-  "version": "v039_151",
+  "version": "v039_152",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_100_00_main",
@@ -32,7 +32,7 @@
     "最終解放"
   ],
   "clearFlags": [
-    "yozora_main_100_00_cleared"
+    "yozora_affection_100_00_main_cleared"
   ],
   "nextHint": "夜空親愛度ルート完了。",
   "renderPolicy": {
@@ -101,7 +101,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_story100_special.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -1169,8 +1169,7 @@
       "showEventCg": true,
       "eventCg": "images/assets/cg/cg_yozora_spring_flower_field_thanks.png",
       "cgFit": "cover",
-      "cgAlign": "center center",
-      "clearStorySprites": true
+      "cgAlign": "center center"
     },
     {
       "speaker": "",

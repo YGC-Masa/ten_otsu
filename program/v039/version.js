@@ -1,16 +1,17 @@
-/* v039_151 夜空90代ストーリー索引タイトル再修正 */
+/* v039_152 夜空50-100正式JSON再同期＋50帯背景修正 */
 (function(){
   "use strict";
-  window.TENOTSU_BUILD_VERSION = "v039_151";
-  window.TENOTSU_BUILD_LABEL = "v039_151 夜空90代ストーリー索引タイトル再修正";
+  window.TENOTSU_BUILD_VERSION = "v039_152";
+  window.TENOTSU_BUILD_LABEL = "v039_152 夜空50-100正式JSON再同期＋50帯背景修正パッチ";
   window.TENOTSU_BUILD_NOTES = [
-    "内部シナリオリスト storyIndex.js の夜空90代キー1〜3タイトルを実シナリオJSONに再同期",
-    "夜空キー9-3を『二人だから、少し素直になる』へ修正",
-    "夜空キー9-1/9-2も実シナリオタイトルへ合わせて修正",
-    "v039_151の夜空100専用立ち絵とv039_151の春待ち花畑/イベントCG実装を維持"
+    "夜空50〜100帯を公式JSONセットに再同期",
+    "50-1/50-2を店内売り場背景へ調整",
+    "50-2の美空を通話ではなく店内にいる扱いへ修正",
+    "50-2の運動公園背景を深夜版へ差し替え",
+    "夜空100専用白ワンピース立ち絵と100イベントCG指定を維持"
   ];
   window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  window.TENOTSU_V039.VERSION = "v039_151";
+  window.TENOTSU_V039.VERSION = "v039_152";
   window.TENOTSU_V039.BUILD_LABEL = window.TENOTSU_BUILD_LABEL;
   window.TENOTSU_V039.BUILD_NOTES = window.TENOTSU_BUILD_NOTES;
 })();

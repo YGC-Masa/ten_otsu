@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_70_03_key",
   "title": "帰ったら、好きなものの話をしよう",
-  "version": "v039_144",
+  "version": "v039_152",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_70_03_key",
@@ -30,7 +30,7 @@
     "姉妹の絆"
   ],
   "clearFlags": [
-    "yozora_key_70_03_cleared"
+    "yozora_affection_70_03_key_cleared"
   ],
   "nextHint": "メイン80では、双沢家ツインルームで好きなものの話から姉妹の絆を確認する。",
   "renderPolicy": {
@@ -1957,7 +1957,7 @@
     {
       "speaker": "",
       "text": "――ひだまりストア・帰り道――",
-      "bg": "images/assets/bg/bg_hidamari_store_front_night.png",
+      "bg": "images/assets/bg/bg_hidamari_store_front_night_open.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true
     },
