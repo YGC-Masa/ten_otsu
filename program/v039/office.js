@@ -1,4 +1,4 @@
-/* v039_147 春待ち花畑背景＋夜空100イベントCG実装 */
+/* v039_148 夜空100専用立ち絵追加 */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
