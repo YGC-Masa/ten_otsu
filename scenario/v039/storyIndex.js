@@ -1,4 +1,4 @@
-/* v039_152 story index: Yozora 50-100 official resync */
+/* v039_154 story index: Yozora 50-100 raw text resync */
 (function(){
   "use strict";
   window.TENOTSU_STORY_INDEX = [
@@ -409,10 +409,10 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_50_01_key.json",
-      version: "v039_152",
+      version: "v039_154",
       unlock: { type: "affection_level", character: "ai", level: 51 },
       order: 3051,
-      summary: "メイン40で自分の矛盾した感情を漏らした夜空が、店長と美空の視線を避け始める。店長を美空へ押し返し、「少し一人にして」と告げて運動公園方面へ向かう。"
+      summary: "夜空は店長と美空に「少し一人にして」「探さないで」とメッセージを送る。美空は夜空の言葉を尊重して少しだけ待つが、既読がつかなくなったことで店長が探しに行く決意をする。"
     },
     {
       id: "yozora_affection_50_02_key",
@@ -427,10 +427,10 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_50_02_key.json",
-      version: "v039_152",
+      version: "v039_154",
       unlock: { type: "affection_level", character: "ai", level: 54 },
       order: 3054,
-      summary: "夜空が戻らず、店長が探しに行く。美空は通話・メッセージのみで登場し、店長は駅前ではなく運動公園、そして海沿いのみなと公園方面へ向かう。"
+      summary: "店長は夜空の行きそうな場所として、駅裏、星見ヶ丘プラネタリウム、潮見浜を巡る。過去イベントの場所をたどりながら、夜空との積み重ねを回収する。最後に夕凪展望台で夜空を見つける。"
     },
     {
       id: "yozora_affection_50_03_key",
@@ -445,14 +445,14 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_50_03_key.json",
-      version: "v039_152",
+      version: "v039_154",
       unlock: { type: "affection_level", character: "ai", level: 57 },
       order: 3057,
-      summary: "夜のみなと公園で店長が夜空を見つける。夜空は美空への羨望や黒い感情を漏らし、それを認めた自己嫌悪からパニックになって夕凪展望台へ逃げる。"
+      summary: "夕凪展望台で店長に見つかった夜空は、まだ全てを吐き出せないが、限界が近い。店長は美空へ「夜空は無事」とだけ連絡し、夜空の言葉を尊重して場所や詳細は伏せる。"
     },
     {
       id: "yozora_affection_60_00_main",
-      title: "夜空のままで",
+      title: "探さないでって言ったのに",
       type: "main",
       category: "character_main",
       character: "ai",
@@ -463,18 +463,18 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_60_00_main.json",
-      version: "v039_152",
+      version: "v039_154",
       unlock: {
         type: "all_story_cleared",
         storyIds: ["yozora_affection_50_01_key", "yozora_affection_50_02_key", "yozora_affection_50_03_key"],
         fallback: { type: "affection_level", character: "ai", level: 60 }
       },
       order: 3060,
-      summary: "キー5-3で逃走した夜空は夕凪展望台へ逃げ込む。店長に追いつかれて本爆発し、拒絶の勢いで店長を突き飛ばしてしまう。事故後に大声で泣き切り、本音を吐露し、店長から「いつもの夜空のままで」と受け止められて帰る。"
+      summary: "夜空は夕凪展望台で、幼い頃から美空と比べられてきたこと、美空を大好きなのに羨ましく思ってしまうこと、その自分への自己嫌悪を激しく吐露する。店長はそれを否定せず、「夜空は夜空だろ」「美空の影でも代わりでもない」と受け止める。"
     },
     {
       id: "yozora_affection_60_01_key",
-      title: "店長、大丈夫？",
+      title: "昨日のことは見ないで",
       type: "key",
       category: "character_key",
       character: "ai",
@@ -485,14 +485,14 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_60_01_key.json",
-      version: "v039_152",
+      version: "v039_154",
       unlock: { type: "affection_level", character: "ai", level: 61 },
       order: 3061,
-      summary: "メイン50翌日、夜空は店長の怪我を何度も確認し、美空には心配させたことを謝る。"
+      summary: "メイン60翌日。夜空は店長にすべて見られた恥ずかしさと気まずさで目を合わせられない。「忘れて。でも忘れないで」と矛盾した気持ちを見せる。"
     },
     {
       id: "yozora_affection_60_02_key",
-      title: "一生面倒見るって、どういう意味",
+      title: "謝りたいけど言えない",
       type: "key",
       category: "character_key",
       character: "ai",
@@ -503,14 +503,14 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_60_02_key.json",
-      version: "v039_152",
+      version: "v039_154",
       unlock: { type: "affection_level", character: "ai", level: 64 },
       order: 3064,
-      summary: "夜空は店長の怪我を心配しすぎて「一生面倒を見る」と口走り、遅れて意味を理解してパニックになる。"
+      summary: "夜空は店長に謝りたいが、何度も言葉が詰まる。美空に背中を押され、ようやく「昨日は言いすぎた」「ごめん」と言える。"
     },
     {
       id: "yozora_affection_60_03_key",
-      title: "店長のあったかさ",
+      title: "ありがとう、の手前",
       type: "key",
       category: "character_key",
       character: "ai",
@@ -521,10 +521,10 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_60_03_key.json",
-      version: "v039_152",
+      version: "v039_154",
       unlock: { type: "affection_level", character: "ai", level: 67 },
       order: 3067,
-      summary: "夜空は美空との会話の中で、店長のあたたかさが美空に少し似ていることに気づく。"
+      summary: "夜空は「探してくれて」「見つけてくれて」「帰らないでいてくれて」への感謝を伝えようとするが、まだ「ありがとう」と言い切れない。店長は無理に引き出さず、「聞こえかけたことにしておく」と受け止める。"
     },
     {
       id: "yozora_affection_70_00_main",
@@ -539,18 +539,18 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_70_00_main.json",
-      version: "v039_152",
+      version: "v039_154",
       unlock: {
         type: "all_story_cleared",
         storyIds: ["yozora_affection_60_00_main", "yozora_affection_60_01_key", "yozora_affection_60_02_key", "yozora_affection_60_03_key"],
         fallback: { type: "affection_level", character: "ai", level: 70 }
       },
       order: 3070,
-      summary: "夜空は「いつもの夜空のままで」の意味を考え直し、後半で店長の袖をつまむCG見せ場を経て、店長を道しるべのようだと伝える。"
+      summary: "夜空は店長に、メイン60で感情をぶつけたことを謝り、探してくれたこと・見つけてくれたこと・帰らないでいてくれたことへの感謝を伝える。「忘れて。でも忘れないで」という矛盾した気持ちを、店長は「しまっておく」と受け止める。"
     },
     {
       id: "yozora_affection_70_01_key",
-      title: "ちゃんと謝りたい",
+      title: "呼んだだけ",
       type: "key",
       category: "character_key",
       character: "ai",
@@ -561,14 +561,14 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_70_01_key.json",
-      version: "v039_152",
+      version: "v039_154",
       unlock: { type: "affection_level", character: "ai", level: 71 },
       order: 3071,
-      summary: "夜空が美空へ改めて謝りたいと思い始め、まだ核心までは言えないが、心配させたことや抱え込んだことを謝る。"
+      summary: "夜空は自分から店長を呼ぶが、最初は「呼んだだけ」とごまかす。メイン70で宣言した「少しだけ素直になる練習」の最初の実践。"
     },
     {
       id: "yozora_affection_70_02_key",
-      title: "言えなかったこと",
+      title: "少し歩いて",
       type: "key",
       category: "character_key",
       character: "ai",
@@ -579,14 +579,14 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_70_02_key.json",
-      version: "v039_152",
+      version: "v039_154",
       unlock: { type: "affection_level", character: "ai", level: 74 },
       order: 3074,
-      summary: "夜空は美空が悪いわけではないとわかっているのに苦しかったこと、大好きなのに羨ましかったことを打ち明ける。"
+      summary: "夜空は自分から「少し歩いて」と店長に頼む。一人だと余計なことを考えるから、という理由を口にできたことで、頼る練習が一歩進む。"
     },
     {
       id: "yozora_affection_70_03_key",
-      title: "帰ったら、好きなものの話をしよう",
+      title: "褒められる練習",
       type: "key",
       category: "character_key",
       character: "ai",
@@ -597,14 +597,14 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_70_03_key.json",
-      version: "v039_152",
+      version: "v039_154",
       unlock: { type: "affection_level", character: "ai", level: 77 },
       order: 3077,
-      summary: "核心を話した後の気まずさを残しつつ、美空は『帰ったら、好きなものの話をしよう』と誘う。"
+      summary: "夜空は「褒められる練習」として、店長と美空の言葉を逃げずに受け取ろうとする。終盤では自分から「もう一回」と頼み、最後に小さく「ありがとう」と言える。"
     },
     {
       id: "yozora_affection_80_00_main",
-      title: "一緒だね",
+      title: "今日は、逃げない練習",
       type: "main",
       category: "character_main",
       character: "ai",
@@ -615,18 +615,18 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_80_00_main.json",
-      version: "v039_152",
+      version: "v039_154",
       unlock: {
         type: "all_story_cleared",
         storyIds: ["yozora_affection_70_00_main", "yozora_affection_70_01_key", "yozora_affection_70_02_key", "yozora_affection_70_03_key"],
         fallback: { type: "affection_level", character: "ai", level: 80 }
       },
       order: 3080,
-      summary: "美空と夜空が双沢家のツインルームで二人だけの時間を過ごし、互いの影響で好きになったものも自分の好きでいいと確認する。"
+      summary: "夜空は自分から店長を誘い、若葉中央公園で「探してくれてありがとう」「見つけてくれてありがとう」「帰らないでいてくれてありがとう」と改めて感謝を伝える。"
     },
     {
       id: "yozora_affection_80_01_key",
-      title: "星は、見えなくても",
+      title: "本物の星の話",
       type: "key",
       category: "character_key",
       character: "ai",
@@ -637,14 +637,14 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_80_01_key.json",
-      version: "v039_152",
+      version: "v039_154",
       unlock: { type: "affection_level", character: "ai", level: 81 },
       order: 3081,
-      summary: "夜空が星の見えない空を見上げ、羽白湖の本物の星へ興味を持つ。"
+      summary: "夜空は羽白湖の星空観察会のチラシを見つける。最初は「美空が好きそうだから」とごまかすが、美空と店長に促されて「少しだけ、見たい」と自分自身の希望を口にする。"
     },
     {
       id: "yozora_affection_80_02_key",
-      title: "行きたいって言ったら",
+      title: "自分のための準備",
       type: "key",
       category: "character_key",
       character: "ai",
@@ -655,14 +655,14 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_80_02_key.json",
-      version: "v039_152",
+      version: "v039_154",
       unlock: { type: "affection_level", character: "ai", level: 84 },
       order: 3084,
-      summary: "夜空が羽白湖へ行きたいと自分から店長に伝える。"
+      summary: "夜空は羽白湖の星空観察会に向けて準備をする中で、黒い手袋や小さなライトを「ぼくが星を見るために」選ぶ。「黒でいい」ではなく「黒がいい」と言えたことも成長点。"
     },
     {
       id: "yozora_affection_80_03_key",
-      title: "怖いけど、見たい",
+      title: "楽しみなのが、少し怖い",
       type: "key",
       category: "character_key",
       character: "ai",
@@ -673,14 +673,14 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_80_03_key.json",
-      version: "v039_152",
+      version: "v039_154",
       unlock: { type: "affection_level", character: "ai", level: 87 },
       order: 3087,
-      summary: "夜空が怖さと楽しみの両方を認め、羽白湖へ向かう準備をする。"
+      summary: "羽白湖の星空観察会前夜〜当日の移動前。夜空は「自分が楽しみにしていることが怖い」と認める。美空はそれを否定せず、「見えなかったら一緒にがっかりする、見えたら一緒に嬉しい」と受け止める。"
     },
     {
       id: "yozora_affection_90_00_main",
-      title: "本物の星を見る夜",
+      title: "羽白湖・本物の星を見る夜",
       type: "main",
       category: "character_main",
       character: "ai",
@@ -691,18 +691,18 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_90_00_main.json",
-      version: "v039_152",
+      version: "v039_154",
       unlock: {
         type: "all_story_cleared",
         storyIds: ["yozora_affection_80_00_main", "yozora_affection_80_01_key", "yozora_affection_80_02_key", "yozora_affection_80_03_key"],
         fallback: { type: "affection_level", character: "ai", level: 90 }
       },
       order: 3090,
-      summary: "夜空が店長と羽白湖へ行き、本物の星を見る。冬の大三角やふたご座の神話に触れながら、自分の中にあったものを受け止める。"
+      summary: "羽白湖で本物の星を見ながら、夜空は「美空のためだけではなく、自分が見たかった」と認める。黒い手袋や星、弓道、ココアなど、かつて“美空の反対”として選んできたものを、今の自分が選び直していいのだと気づく。"
     },
     {
       id: "yozora_affection_90_01_key",
-      title: "夜のブックカフェ企画",
+      title: "静かな夜のブックカフェ企画",
       type: "key",
       category: "character_key",
       character: "ai",
@@ -713,14 +713,14 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_90_01_key.json",
-      version: "v039_152",
+      version: "v039_154",
       unlock: { type: "affection_level", character: "ai", level: 91 },
       order: 3091,
       summary: "夜空は静かな夜のブックカフェ企画のチラシに興味を持つ。前回の羽白湖が寒かったため、今度は暖かく静かな場所として気になっている。美空が店長と二人で行ってきなよと背中を押すが、この時点の夜空はまだデートとして強く意識していない。"
     },
     {
       id: "yozora_affection_90_02_key",
-      title: "アントステラへ行こう",
+      title: "デートみたいだな",
       type: "key",
       category: "character_key",
       character: "ai",
@@ -731,14 +731,14 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_90_02_key.json",
-      version: "v039_152",
+      version: "v039_154",
       unlock: { type: "affection_level", character: "ai", level: 94 },
       order: 3094,
       summary: "店長が二人で夜のブックカフェはデートみたいだなと言ったことで、夜空が初めて強くデートを意識して照れパニックを起こす。一拍遅れて意味を理解してから拒否するコミカルな流れ。"
     },
     {
       id: "yozora_affection_90_03_key",
-      title: "二人だから、少し素直になる",
+      title: "行きたいのは誰なの",
       type: "key",
       category: "character_key",
       character: "ai",
@@ -749,14 +749,14 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_90_03_key.json",
-      version: "v039_152",
+      version: "v039_154",
       unlock: { type: "affection_level", character: "ai", level: 97 },
       order: 3097,
-      summary: "夜空は店長とアントステラ2階の夜のブックカフェへ行き、赤いカップルシートで近距離に動揺しながらも、いつもありがとうまで伝える。"
+      summary: "夜空は自宅で美空に相談する。美空は夜空を抱きしめ、自分の気持ちで選んでいいと受け止める。夜空はぼくが行きたい、店長と行きたいと認め、翌日、店長にお願いしますと自分から伝える。"
     },
     {
       id: "yozora_affection_100_00_main",
-      title: "春の中で、ありがとう",
+      title: "二人だから、少し素直になる",
       type: "main",
       category: "character_main",
       character: "ai",
@@ -767,14 +767,14 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_100_00_main.json",
-      version: "v039_152",
+      version: "v039_154",
       unlock: {
         type: "all_story_cleared",
         storyIds: ["yozora_affection_90_00_main", "yozora_affection_90_01_key", "yozora_affection_90_02_key", "yozora_affection_90_03_key"],
         fallback: { type: "affection_level", character: "ai", level: 100 }
       },
       order: 3100,
-      summary: "夜空が春待ち花畑で白いワンピースと花冠姿になり、店長に「ありがとう。私を見つけてくれて」と伝える。"
+      summary: "夜空は静かな夜のブックカフェで、店長と二人きりの時間を過ごす。美空に背中を押され、自分の意思で来たことを認め、距離を少しずつ詰める。終盤ではいつも、ごめんね、いつも、ありがとう、最初からずっと嬉しかったよと深い信頼と感謝を伝える。"
     }
 
   ];

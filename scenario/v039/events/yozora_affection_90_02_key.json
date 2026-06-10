@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_90_02_key",
-  "title": "アントステラへ行こう",
-  "version": "v039_152",
+  "title": "デートみたいだな",
+  "version": "v039_154",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_90_02_key",
@@ -40,7 +40,7 @@
     {
       "speaker": "",
       "text": "――ひだまりストア・閉店後の売り場――",
-      "bg": "images/assets/bg/battle_store_lv1.png",
+      "bg": "images/assets/bg/bg_hidamari_store_closed_night.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
       "clearStorySprites": true

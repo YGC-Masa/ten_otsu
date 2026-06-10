@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_80_02_key",
-  "title": "行きたいって言ったら",
-  "version": "v039_152",
+  "title": "自分のための準備",
+  "version": "v039_154",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_80_02_key",
@@ -16,23 +16,22 @@
     "max": 90
   },
   "location": {
-    "id": "hidamari_store_breakroom_front_night",
-    "name": "ひだまりストア・休憩室／店先"
+    "id": "hidamari_store_closed",
+    "name": "ひだまりストア・閉店後の売り場"
   },
-  "summary": "夜空が羽白湖へ行きたいと自分から店長に伝える。",
-  "purpose": "見てみたいかもしれない、から、行きたいへ一歩進める。",
+  "summary": "夜空は羽白湖の星空観察会に向けて準備をする中で、黒い手袋や小さなライトを「ぼくが星を見るために」選ぶ。「黒でいい」ではなく「黒がいい」と言えたことも成長点。",
+  "purpose": "羽白湖の星空観察会に向けて準備をする中で、夜空が「美空のため」ではなく「自分が見たいから」という理由で防寒具やライトを選ぶ。自分自身の希望を受け入れる練習を進める。",
   "tags": [
     "夜空ルート",
     "親愛度80-90",
     "羽白湖",
     "本物の星",
-    "店長",
-    "美空"
+    "自分自身を受け入れる"
   ],
   "clearFlags": [
     "yozora_key_80_02_cleared"
   ],
-  "nextHint": "キー8-3では、羽白湖行きの準備を行う。",
+  "nextHint": "次のキー9-3では、当日前夜または移動前に、夜空が「楽しみ」と「怖さ」を同時に抱えていることを描く。",
   "renderPolicy": {
     "spritePosition": "logical_split_n_plus_1",
     "eventCgLayer": "frontOfCharacters"
@@ -40,39 +39,45 @@
   "steps": [
     {
       "speaker": "",
-      "text": "――ひだまりストア・休憩室――",
-      "bg": "images/assets/bg/battle_store_lv1.png",
+      "text": "――ひだまりストア・閉店後の売り場――",
+      "bg": "images/assets/bg/bg_hidamari_store_closed_night.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
       "clearStorySprites": true
     },
     {
-      "speaker": "",
-      "text": "――昼休憩のひだまりストア。"
+      "speaker": "美空",
+      "text": "店長、夜空。\n羽白湖の星空観察会、今週末でしたよね。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
-      "speaker": "",
-      "text": "休憩室には、いつものように白いマグカップと黒いマグカップが並んでいた。"
+      "speaker": "店長",
+      "text": "ああ。\n天気がよければ、予定通り行けそうだな。"
     },
     {
-      "speaker": "",
-      "text": "美空のカップからは、甘い香りがする。"
+      "speaker": "夜空",
+      "text": "……まだ天気は確定じゃない。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
-      "speaker": "",
-      "text": "夜空のカップからも、少しだけ甘い香りがする。"
-    },
-    {
-      "speaker": "",
-      "text": "――違う飲み物のはずなのに、どちらも温かい。"
-    },
-    {
-      "speaker": "",
-      "text": "それが少しだけ、夜空にはおかしかった。"
+      "speaker": "店長",
+      "text": "確かに。"
     },
     {
       "speaker": "美空",
-      "text": "夜空、今日のココアどう？",
+      "text": "夜空、天気予報見てくれてたの？",
       "storySprites": [
         {
           "id": "ah",
@@ -83,7 +88,7 @@
     },
     {
       "speaker": "夜空",
-      "text": "甘い。",
+      "text": "一応。",
       "storySprites": [
         {
           "id": "ai",
@@ -94,7 +99,7 @@
     },
     {
       "speaker": "美空",
-      "text": "いつも通り？",
+      "text": "一応？",
       "storySprites": [
         {
           "id": "ah",
@@ -105,7 +110,22 @@
     },
     {
       "speaker": "夜空",
-      "text": "うん。",
+      "text": "山側は天気が変わりやすいから。\n湖の近くだと風もあるし、雲が出たら星が見えない。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "かなり調べてるな。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "確認。",
       "storySprites": [
         {
           "id": "ai",
@@ -116,7 +136,7 @@
     },
     {
       "speaker": "美空",
-      "text": "そっか。\nよかった。",
+      "text": "夜空の確認は前向きな時です。",
       "storySprites": [
         {
           "id": "ah",
@@ -127,7 +147,7 @@
     },
     {
       "speaker": "夜空",
-      "text": "よかったの？",
+      "text": "美空。",
       "storySprites": [
         {
           "id": "ai",
@@ -138,7 +158,7 @@
     },
     {
       "speaker": "美空",
-      "text": "うん。\nいつも通りって、ちょっと安心するから。",
+      "text": "ごめんごめん。\nでも、嬉しくて。",
       "storySprites": [
         {
           "id": "ah",
@@ -149,7 +169,7 @@
     },
     {
       "speaker": "夜空",
-      "text": "そんなところで安心しなくていい。",
+      "text": "言わなくていい。",
       "storySprites": [
         {
           "id": "ai",
@@ -160,7 +180,7 @@
     },
     {
       "speaker": "美空",
-      "text": "安心したいからするの。",
+      "text": "言いたいから言うの。",
       "storySprites": [
         {
           "id": "ah",
@@ -193,7 +213,7 @@
     },
     {
       "speaker": "夜空",
-      "text": "……今日は、そうかもしれない。",
+      "text": "何回でも言うね。",
       "storySprites": [
         {
           "id": "ai",
@@ -204,95 +224,7 @@
     },
     {
       "speaker": "美空",
-      "text": "何か考えてる？",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "……別に。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "そっか。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "聞かないの。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "聞きたいけど、夜空が別にって言ったから。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "……ずるい。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "うん。\n今日は少しだけ、待つ美空です。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "変な言い方。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "ふふっ。",
+      "text": "何回でも言うよ。",
       "storySprites": [
         {
           "id": "ah",
@@ -303,34 +235,15 @@
     },
     {
       "speaker": "",
-      "text": "――夜空は黒いマグカップを両手で包む。\nカップの中のココアは、まだ少し熱い。\nけれど、手にはちょうどいい温度だった。"
+      "text": "――夜空は売り場の一角にあるアウトドア用品コーナーへ視線を向ける。\n懐中電灯、携帯ライト、ブランケット、折りたたみ椅子。\n小さな星空観察用の準備ができそうな品が並んでいた。"
     },
     {
-      "speaker": "",
-      "text": "――羽白湖。\nあの名前が、昨日からずっと頭の中に残っている。"
-    },
-    {
-      "speaker": "",
-      "text": "――星が見えなくても、そこにある。\nでも、見えないままだと、本当にあるのか不安になる。"
-    },
-    {
-      "speaker": "",
-      "text": "――その言葉を、夜空は自分で言った。\n言ったのに、今さら少し怖くなっている。"
-    },
-    {
-      "speaker": "美空",
-      "text": "夜空。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
+      "speaker": "店長",
+      "text": "当日、何を持っていけばいいかな。"
     },
     {
       "speaker": "夜空",
-      "text": "なに。",
+      "text": "防寒具。\n足元用のライト。\n温かい飲み物。\nあと、座るなら小さい敷物か折りたたみ椅子。",
       "storySprites": [
         {
           "id": "ai",
@@ -341,7 +254,7 @@
     },
     {
       "speaker": "美空",
-      "text": "羽白湖のこと？",
+      "text": "夜空、すごい。\nもう準備リストみたいになってる。",
       "storySprites": [
         {
           "id": "ah",
@@ -352,7 +265,7 @@
     },
     {
       "speaker": "夜空",
-      "text": "……。",
+      "text": "必要そうなものを並べただけ。",
       "storySprites": [
         {
           "id": "ai",
@@ -362,19 +275,12 @@
       ]
     },
     {
-      "speaker": "美空",
-      "text": "あ。\n当たった？",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
+      "speaker": "店長",
+      "text": "その必要そうなものが助かる。"
     },
     {
       "speaker": "夜空",
-      "text": "当てなくていい。",
+      "text": "……そういうの、言わなくていい。",
       "storySprites": [
         {
           "id": "ai",
@@ -384,15 +290,8 @@
       ]
     },
     {
-      "speaker": "美空",
-      "text": "ごめんね。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
+      "speaker": "店長",
+      "text": "悪い。"
     },
     {
       "speaker": "夜空",
@@ -407,7 +306,7 @@
     },
     {
       "speaker": "美空",
-      "text": "うん。",
+      "text": "じゃあ、今日は少し準備していきますか？",
       "storySprites": [
         {
           "id": "ah",
@@ -418,7 +317,7 @@
     },
     {
       "speaker": "夜空",
-      "text": "……なんでわかったの。",
+      "text": "美空は手袋を持っていった方がいい。",
       "storySprites": [
         {
           "id": "ai",
@@ -429,7 +328,7 @@
     },
     {
       "speaker": "美空",
-      "text": "昨日から、空を見る回数が増えたから。",
+      "text": "わたし？",
       "storySprites": [
         {
           "id": "ah",
@@ -440,7 +339,7 @@
     },
     {
       "speaker": "夜空",
-      "text": "見てない。",
+      "text": "夜は冷える。\n美空、手が冷えるとすぐ袖の中に隠すでしょ。",
       "storySprites": [
         {
           "id": "ai",
@@ -451,7 +350,7 @@
     },
     {
       "speaker": "美空",
-      "text": "視界に入ってるだけ？",
+      "text": "あ、見られてた。",
       "storySprites": [
         {
           "id": "ah",
@@ -462,7 +361,7 @@
     },
     {
       "speaker": "夜空",
-      "text": "……うん。",
+      "text": "見ればわかる。",
       "storySprites": [
         {
           "id": "ai",
@@ -472,19 +371,12 @@
       ]
     },
     {
-      "speaker": "美空",
-      "text": "ふふっ。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
+      "speaker": "店長",
+      "text": "夜空は？"
     },
     {
       "speaker": "夜空",
-      "text": "笑わないで。",
+      "text": "ぼくはいい。",
       "storySprites": [
         {
           "id": "ai",
@@ -495,7 +387,7 @@
     },
     {
       "speaker": "美空",
-      "text": "ごめん。\nでも、夜空が気になってるの、少し嬉しくて。",
+      "text": "よくない。",
       "storySprites": [
         {
           "id": "ah",
@@ -503,98 +395,6 @@
           "opacity": 1
         }
       ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "嬉しくならなくていい。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "嬉しいから、嬉しいの。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "……美空は、そういうところ。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "大事な妹扱いです。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "それ、何にでも使う。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "便利だから。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "便利に使わないで。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "でも、本当だから。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "",
-      "text": "――夜空は返事をせず、カップの中を見つめた。\nココアの表面に、休憩室の照明が小さく揺れている。\n星ではない。\nけれど、光だった。"
     },
     {
       "speaker": "夜空",
@@ -609,7 +409,7 @@
     },
     {
       "speaker": "美空",
-      "text": "うん。",
+      "text": "夜空も手袋持っていこう？",
       "storySprites": [
         {
           "id": "ah",
@@ -620,7 +420,7 @@
     },
     {
       "speaker": "夜空",
-      "text": "行きたいって言ったら、変かな。",
+      "text": "……必要なら。",
       "storySprites": [
         {
           "id": "ai",
@@ -628,495 +428,74 @@
           "opacity": 1
         }
       ]
-    },
-    {
-      "speaker": "美空",
-      "text": "羽白湖？",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "……うん。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "変じゃないよ。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "即答。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "変じゃないから。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "美空はすぐそう言う。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "うん。\nすぐ言うよ。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "……ずるい。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "夜空は、店長さんに言いたいの？",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "……。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "わたしが言おうか？",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "だめ。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "うん。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "……だめ。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "うん。\n夜空が言いたいんだね。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "言いたい、とは言ってない。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "じゃあ、夜空が言った方がいい気がするんだね。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "言い換えないで。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "ごめん。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "……でも、たぶんそう。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "",
-      "text": "――美空はそれ以上、すぐには言わなかった。\n代わりに、自分のマグカップを両手で包み直す。\n待つように。\n夜空が自分で言葉を選ぶのを、邪魔しないように。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "店長に言ったら、たぶん即答する。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "うん。\nすると思う。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "それが怖い。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "どうして？",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "簡単に、行こうって言われそうだから。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "うん。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "簡単じゃないのに。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "うん。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "ぼくの方は、ずっと考えてるのに。\n見たいのか、怖いのか。\n行きたいのか、逃げたいのか。\nまだわからない。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "うん。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "なのに、店長はたぶん、行こうって言う。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "うん。\nたぶん言うね。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "……ずるい。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "でも、店長さんは簡単に思ってるから即答するわけじゃないと思うよ。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "……。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "夜空が行きたいって言ったら、その気持ちを大事にしたいから、すぐ答えるんだと思う。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "美空も、店長のことわかってるみたいに言う。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "わかってないよ。\nでも、見てる。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "それも店長みたい。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "ふふっ。\n似てきた？",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "悪影響。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "じゃあ、今日は悪影響美空です。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "言い方。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "",
-      "text": "――休憩室の扉が開く。\n店長が、少しだけ顔をのぞかせた。"
     },
     {
       "speaker": "店長",
-      "text": "二人とも、そろそろ休憩終わりだぞ。"
+      "text": "必要だと思うぞ。\n羽白湖の夜なら冷えるだろ。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "夜空が星を見たいなら、寒さで集中できないともったいないしな。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……そういう言い方。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "余計だったか？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "余計。\nでも、少しだけ正しい。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "少しだけか。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "うん。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "――夜空は手袋売り場の前に立つ。\n白やベージュ、ピンク系のやわらかい手袋。\n黒や紺、グレーの落ち着いた手袋。\n夜空は無意識に、美空の方を見る。"
     },
     {
       "speaker": "美空",
-      "text": "はい。",
+      "text": "夜空？",
       "storySprites": [
         {
           "id": "ah",
@@ -1124,6 +503,538 @@
           "opacity": 1
         }
       ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "……。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "わたしはこっちかな。\n白っぽいの、かわいいし。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "うん。\n美空は白が似合う。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "ありがとう。\n夜空は？",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "……黒でいい。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "黒でいい、か。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "なに。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "いや。\n黒がいい、ではないのかと思って。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "……黒が、いい。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "――言ってから、夜空は少しだけ目をそらした。\nその言い方は小さかったが、確かに「でいい」ではなかった。"
+    },
+    {
+      "speaker": "店長",
+      "text": "そっか。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "言わなくていい。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "うん。"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空、今の言い方、すごくよかった。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "美空も言わなくていい。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "ごめん。\nでも、嬉しかったから。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "……。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "――夜空は黒い手袋を手に取る。\nシンプルで、指先が動かしやすそうなものだった。"
+    },
+    {
+      "speaker": "店長",
+      "text": "それ、弓道の時みたいに手元を大事にする夜空らしいな。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……また夜空らしいって言う。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "嫌だったか？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "前よりは、少しだけ平気。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "そっか。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "言わなくていい。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "うん。"
+    },
+    {
+      "speaker": "",
+      "text": "――美空は白い手袋を選び、夜空は黒い手袋を選ぶ。\n以前ならそれだけで「美空が白なら、ぼくは黒」と言っていた。\nけれど今日は、夜空は自分の手の中の黒い手袋を、少しだけ確かめるように見ていた。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……これは、動きやすそうだから。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "うん。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "星を見る時、メモを取るかもしれないし。\nスマホも触るかもしれないし。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空、星のメモ取るの？",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "……取るかもしれない。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空、本当に楽しみにしてるんだね。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "……少しだけ。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "少しだけ、か。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "それ以上言わなくていい。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "わかった。"
+    },
+    {
+      "speaker": "",
+      "text": "――次に、三人はライト売り場へ移動する。\n美空は小さな丸いライトを手に取り、目を輝かせる。"
+    },
+    {
+      "speaker": "美空",
+      "text": "これ、かわいいですね。\n丸くて月みたい。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "明るすぎるかも。\n星を見るなら、足元だけ照らせればいい。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "眩しいと目が慣れないのか？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "うん。\n暗さに目が慣れるまで時間がかかるから、強すぎる光は避けた方がいい。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空、詳しい。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "調べただけ。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "それも準備だな。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "悪い。\n言いすぎたか？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "違う。\n今のは、少しだけ受け取る。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "そっか。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "言わなくていい。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "うん。"
+    },
+    {
+      "speaker": "",
+      "text": "――夜空は、小さく明かりを調整できるライトを選ぶ。\n黒い本体に、控えめな青いラインが入っている。"
+    },
+    {
+      "speaker": "美空",
+      "text": "それ、夜空っぽい。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "……。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "あ、ごめん。\n言いすぎた？",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "……今日は、平気。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "でも、笑わないで。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "うん。\n笑わない。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "それにするのか？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "うん。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "美空のため？"
     },
     {
       "speaker": "夜空",
@@ -1142,174 +1053,7 @@
     },
     {
       "speaker": "夜空",
-      "text": "なに。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "何かあったか？"
-    },
-    {
-      "speaker": "夜空",
-      "text": "……ない。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "夜空。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "美空、言わないで。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "言わないよ。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "……。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "でも、待ってるね。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "そういうのも言わなくていい。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "うん。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "俺、邪魔したか？"
-    },
-    {
-      "speaker": "夜空",
-      "text": "……邪魔じゃない。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "そっか。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "でも、今じゃない。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "今じゃない？"
-    },
-    {
-      "speaker": "夜空",
-      "text": "後で。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "わかった。\n後で聞く。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "即答しないで。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "悪い。\nでも、後で聞く。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "……ずるい。",
+      "text": "違う。",
       "storySprites": [
         {
           "id": "ai",
@@ -1320,334 +1064,37 @@
     },
     {
       "speaker": "",
-      "text": "――店長はそれ以上聞かず、休憩室を出ていった。\n扉が閉まる。\n夜空はしばらくその扉を見ていた。"
-    },
-    {
-      "speaker": "美空",
-      "text": "言えそう？",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "――夜空は、ライトを手に持ったまま小さく言った。"
     },
     {
       "speaker": "夜空",
-      "text": "……わからない。",
+      "text": "これは、ぼくが使う。\nぼくが星を見るために。",
       "storySprites": [
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "うん。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "でも、後でって言った。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "うん。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "言ったからには、言わないといけない。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "言わないといけない、じゃなくて。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "なに。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "言いたいなら、言えばいいんだよ。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "……美空は、簡単に言う。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "簡単じゃないよ。\nでも、夜空が自分で言うって決めたの、わかるから。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "決めてない。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "まだ？",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "……まだ。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "そっか。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "でも、少しだけ決めた。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "うん。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "言わなくていい。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "うん。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
           "opacity": 1
         }
       ]
     },
     {
       "speaker": "",
-      "text": "――ひだまりストア・店先・夜――",
-      "bg": "images/assets/bg/bg_hidamari_store_front_night_open.png",
-      "bgMode": "forceReplace",
-      "forceBackgroundReplace": true
+      "text": "――言い切った後、夜空はすぐに顔をそらした。\nけれど、今度は取り消さなかった。"
     },
     {
-      "speaker": "",
-      "text": "――閉店後。"
-    },
-    {
-      "speaker": "",
-      "text": "店先には、夜の空気が流れていた。"
-    },
-    {
-      "speaker": "",
-      "text": "昼間の暑さは少し引き、風が看板の下を通り抜けていく。"
-    },
-    {
-      "speaker": "",
-      "text": "――店長は店先で戸締まりを確認している。"
-    },
-    {
-      "speaker": "",
-      "text": "夜空は少し離れた場所に立ち、美空はそのさらに後ろで待っていた。"
-    },
-    {
-      "speaker": "",
-      "text": "言わない。"
-    },
-    {
-      "speaker": "",
-      "text": "代わりにも言わない。"
-    },
-    {
-      "speaker": "",
-      "text": "ただ、そこにいる。"
-    },
-    {
-      "speaker": "店長",
-      "text": "夜空。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "なに。",
+      "speaker": "美空",
+      "text": "夜空……。",
       "storySprites": [
         {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
           "opacity": 1
         }
       ]
     },
     {
       "speaker": "店長",
-      "text": "さっきの、後でって話。\n今でいいか？"
-    },
-    {
-      "speaker": "夜空",
-      "text": "……急かさないで。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "悪い。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "でも、今でいい。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "うん。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "うん、も言わなくていい。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "難しいな。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "難しくしてるのは、ぼく。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "そっか。"
+      "text": "うん。\nいいと思う。"
     },
     {
       "speaker": "夜空",
@@ -1665,338 +1112,8 @@
       "text": "うん。"
     },
     {
-      "speaker": "",
-      "text": "――夜空は空を見る。\n街明かりのせいで、やっぱり星はほとんど見えない。\n昨日と同じような空。\nでも、昨日より少しだけ、自分の中にある言葉がはっきりしていた。"
-    },
-    {
       "speaker": "夜空",
-      "text": "羽白湖。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "うん。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "星が、見えるって言ってた。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "言ってたな。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "調べたら、本当に見えるらしい。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "そうなのか。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "街明かりが少なくて。\n湖に星が映ることもあるって。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "綺麗そうだな。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "うん。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "……。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "言わないの。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "夜空が続けそうだったから。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "そういうところ。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "悪い。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "謝らなくていい。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "",
-      "text": "――夜空は一度、息を吸った。\n美空が後ろにいる気配がする。\n振り返らなくてもわかる。\n代わりに言わない。\nでも、ちゃんと待っている。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "見てみたいって、昨日言った。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "うん。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "でも、見てみたいかもしれない、だった。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "うん。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "今日は……。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "",
-      "text": "――夜空は言葉を止める。\n胸の奥が少しだけ苦しくなる。\nけれど、逃げるほどではない。\n逃げたくない、と思えるくらいには、もう進んでいる。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "行きたい。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "……。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "羽白湖に。\n本物の星を、見に行きたい。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "うん。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "即答しないで。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "まだ返事してない。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "言いそうだった。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "ばれたか。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "ばれる。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "じゃあ、ちゃんと言う。\n行こう。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "……即答。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "悪い。\nでも、行こう。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "簡単に言う。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "簡単には思ってない。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "……。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "夜空が行きたいって言った場所だから、行きたい。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "そういうところ。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "ずるい？"
-    },
-    {
-      "speaker": "夜空",
-      "text": "うん。\nずるい。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "",
-      "text": "――夜空は顔をそらす。\nけれど、逃げなかった。"
-    },
-    {
-      "speaker": "美空",
-      "text": "夜空。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "美空、出てこなくていい。",
+      "text": "でも、今日は……言われても、逃げない。",
       "storySprites": [
         {
           "id": "ai",
@@ -2007,7 +1124,7 @@
     },
     {
       "speaker": "美空",
-      "text": "出てきちゃった。",
+      "text": "夜空、すごい。",
       "storySprites": [
         {
           "id": "ah",
@@ -2018,7 +1135,7 @@
     },
     {
       "speaker": "夜空",
-      "text": "見てたの。",
+      "text": "すごくない。\n練習だから。",
       "storySprites": [
         {
           "id": "ai",
@@ -2029,7 +1146,7 @@
     },
     {
       "speaker": "美空",
-      "text": "見てた。\nでも、代わりには言わなかったよ。",
+      "text": "うん。\nでも、ちゃんと練習できてる。",
       "storySprites": [
         {
           "id": "ah",
@@ -2040,268 +1157,7 @@
     },
     {
       "speaker": "夜空",
-      "text": "……うん。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "ちゃんと言えたね。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "言わなくていい。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "うん。\nでも、言いたかったから。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "……美空もずるい。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "今日は、ずるい美空です。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "最近ずっとそう。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "ふふっ。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "日程、考えておくか。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "急に現実的。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "行くなら、ちゃんと準備しないとな。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "……うん。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "防寒、必要だよね。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "美空は来るの。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "うーん。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "……。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "夜空は、店長さんと行きたい？",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "……。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "あ、今のは答えなくていいよ。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "逃げ道。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "うん。\n今のは、ちゃんと逃げ道。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "……。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "わたしは、夜空が行きたい形で行けばいいと思う。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "美空。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "美空",
-      "text": "一緒に行きたいなら行く。\n二人で行きたいなら、いってらっしゃいって言う。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "夜空",
-      "text": "まっすぐすぎる。",
+      "text": "……まっすぐすぎる。",
       "storySprites": [
         {
           "id": "ai",
@@ -2323,7 +1179,7 @@
     },
     {
       "speaker": "夜空",
-      "text": "……今日は、考えたい。",
+      "text": "何回でも言うね。",
       "storySprites": [
         {
           "id": "ai",
@@ -2334,7 +1190,7 @@
     },
     {
       "speaker": "美空",
-      "text": "うん。\n考えていいよ。",
+      "text": "何回でも言うよ。",
       "storySprites": [
         {
           "id": "ah",
@@ -2344,76 +1200,16 @@
       ]
     },
     {
-      "speaker": "店長",
-      "text": "急がなくていい。\nいつ、誰と、どう行くか。\n夜空が決めればいい。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "……ぼくが？",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "うん。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "任せると、逃げるかもしれない。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "その時は、また考えればいい。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "簡単に言う。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "簡単じゃないけど、そうする。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "……ずるい。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
       "speaker": "",
-      "text": "――夜空はもう一度、空を見上げる。\nここからでは、やっぱり星は見えない。\nけれど、見えないことが、前ほど怖くなかった。"
+      "text": "――夜空は手袋とライトをレジ横のカゴに置く。\n黒い手袋。\n小さなライト。\nどちらも、美空のためだけではない。\n店長に言われたからだけでもない。\n夜空自身が、星を見るために選んだものだった。"
     },
     {
-      "speaker": "",
-      "text": "――見に行きたい。\nその言葉を、自分で言えたから。"
+      "speaker": "店長",
+      "text": "夜空。"
     },
     {
       "speaker": "夜空",
-      "text": "店長。",
+      "text": "なに。",
       "storySprites": [
         {
           "id": "ai",
@@ -2424,11 +1220,11 @@
     },
     {
       "speaker": "店長",
-      "text": "ん？"
+      "text": "準備、楽しそうだな。"
     },
     {
       "speaker": "夜空",
-      "text": "まだ、少し怖い。",
+      "text": "……。",
       "storySprites": [
         {
           "id": "ai",
@@ -2439,11 +1235,11 @@
     },
     {
       "speaker": "店長",
-      "text": "うん。"
+      "text": "言いすぎたか？"
     },
     {
       "speaker": "夜空",
-      "text": "行きたいけど、怖い。\n楽しみかもしれないけど、怖い。",
+      "text": "少し。\nでも、間違ってはいない。",
       "storySprites": [
         {
           "id": "ai",
@@ -2454,22 +1250,7 @@
     },
     {
       "speaker": "店長",
-      "text": "うん。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "どっちもある。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "うん。"
+      "text": "そっか。"
     },
     {
       "speaker": "夜空",
@@ -2488,7 +1269,7 @@
     },
     {
       "speaker": "夜空",
-      "text": "でも、今日はいい。",
+      "text": "……たぶん、楽しみ。",
       "storySprites": [
         {
           "id": "ai",
@@ -2510,7 +1291,7 @@
     },
     {
       "speaker": "夜空",
-      "text": "なに。",
+      "text": "少しだけ。",
       "storySprites": [
         {
           "id": "ai",
@@ -2521,7 +1302,7 @@
     },
     {
       "speaker": "美空",
-      "text": "どっちも持って行けばいいよ。",
+      "text": "うん。\n少しだけ楽しみなんだね。",
       "storySprites": [
         {
           "id": "ah",
@@ -2532,7 +1313,7 @@
     },
     {
       "speaker": "夜空",
-      "text": "怖いのも？",
+      "text": "繰り返さなくていい。",
       "storySprites": [
         {
           "id": "ai",
@@ -2543,7 +1324,7 @@
     },
     {
       "speaker": "美空",
-      "text": "うん。\n怖いのも、楽しみなのも。\nどっちも夜空の気持ちだから。",
+      "text": "ごめん。\nでも、覚えておきたくて。",
       "storySprites": [
         {
           "id": "ah",
@@ -2554,7 +1335,22 @@
     },
     {
       "speaker": "夜空",
-      "text": "……美空は、すぐそういうこと言う。",
+      "text": "……。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "俺も覚えておく。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "二人とも、覚えなくていい。",
       "storySprites": [
         {
           "id": "ai",
@@ -2565,7 +1361,7 @@
     },
     {
       "speaker": "美空",
-      "text": "言いたいことだから。",
+      "text": "でも、忘れないよ。",
       "storySprites": [
         {
           "id": "ah",
@@ -2576,7 +1372,7 @@
     },
     {
       "speaker": "夜空",
-      "text": "ずるい。",
+      "text": "……美空は、そういうところがずるい。",
       "storySprites": [
         {
           "id": "ai",
@@ -2587,9 +1383,50 @@
     },
     {
       "speaker": "美空",
+      "text": "夜空が楽しみにしてることなら、忘れたくないから。",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "夜空",
+      "text": "……。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "――夜空は少しだけ困ったような顔をした。\nでも、その目はチラシを見つけた時よりも、少しだけ明るかった。"
+    },
+    {
+      "speaker": "店長",
+      "text": "当日、晴れるといいな。"
+    },
+    {
+      "speaker": "夜空",
       "text": "うん。",
       "storySprites": [
         {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "三人で、本物の星を見ましょうね。",
+      "storySprites": [
+        {
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
           "opacity": 1
@@ -2597,22 +1434,20 @@
       ]
     },
     {
-      "speaker": "",
-      "text": "――店先の明かりの下、夜空は小さく頷いた。\nまだ日程も、行き方も決まっていない。\n誰と行くのかも、これから考える。"
+      "speaker": "夜空",
+      "text": "……うん。",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "",
-      "text": "――けれど、ひとつだけ決まったことがある。"
-    },
-    {
-      "speaker": "",
-      "text": "――夜空は、本物の星を見に行きたい。\n見えなくてもそこにあるものを、今度は自分の目で確かめに行きたい。"
+      "text": "――夜空は小さくうなずく。\nその手には、自分で選んだ黒い手袋と小さなライトがあった。\nそれは、美空の反対として選んだ黒ではなく、夜空自身が星を見るために選んだ黒だった。"
     }
   ],
-  "keyScenarioIndex": 2,
-  "unlockCondition": {
-    "requiredFlags": [
-      "yozora_key_80_01_cleared"
-    ]
-  }
+  "keyScenarioIndex": 2
 }
