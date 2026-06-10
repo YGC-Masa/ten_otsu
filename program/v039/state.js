@@ -2,8 +2,8 @@
   "use strict";
   window.TENOTSU_V039 = window.TENOTSU_V039 || {};
   const ns = window.TENOTSU_V039;
-  ns.VERSION = window.TENOTSU_BUILD_VERSION || ns.VERSION || "v039_149";
-  ns.BUILD_LABEL = window.TENOTSU_BUILD_LABEL || ns.BUILD_LABEL || "v039_149";
+  ns.VERSION = window.TENOTSU_BUILD_VERSION || ns.VERSION || "v039_150";
+  ns.BUILD_LABEL = window.TENOTSU_BUILD_LABEL || ns.BUILD_LABEL || "v039_150";
   ns.state = ns.state || { mode:"boot", officeSelection:[], frontCharacter:null, bootedAt:Date.now() };
   ns.state.mode = ns.state.mode || "boot";
   ns.setMode = function(mode){
