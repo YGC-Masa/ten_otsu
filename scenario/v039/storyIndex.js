@@ -1,4 +1,4 @@
-/* v039_154 story index: Yozora 50-100 raw text resync */
+/* v039_155 story index: Yozora 90-3/100 title and content fix */
 (function(){
   "use strict";
   window.TENOTSU_STORY_INDEX = [
@@ -738,7 +738,7 @@
     },
     {
       id: "yozora_affection_90_03_key",
-      title: "行きたいのは誰なの",
+      title: "二人だから、少し素直になる",
       type: "key",
       category: "character_key",
       character: "ai",
@@ -749,14 +749,14 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_90_03_key.json",
-      version: "v039_154",
+      version: "v039_155",
       unlock: { type: "affection_level", character: "ai", level: 97 },
       order: 3097,
-      summary: "夜空は自宅で美空に相談する。美空は夜空を抱きしめ、自分の気持ちで選んでいいと受け止める。夜空はぼくが行きたい、店長と行きたいと認め、翌日、店長にお願いしますと自分から伝える。"
+      summary: "夜空は店長とアントステラ2階の夜のブックカフェへ行き、赤いカップルシートで近距離に動揺しながらも、いつもありがとうまで伝える。"
     },
     {
       id: "yozora_affection_100_00_main",
-      title: "二人だから、少し素直になる",
+      title: "春の中で、ありがとう",
       type: "main",
       category: "character_main",
       character: "ai",
@@ -767,14 +767,14 @@
       characters: ["ai", "ah"],
       characterNames: ["双沢 夜空", "双沢 美空"],
       scenario: "scenario/v039/events/yozora_affection_100_00_main.json",
-      version: "v039_154",
+      version: "v039_155",
       unlock: {
         type: "all_story_cleared",
         storyIds: ["yozora_affection_90_00_main", "yozora_affection_90_01_key", "yozora_affection_90_02_key", "yozora_affection_90_03_key"],
         fallback: { type: "affection_level", character: "ai", level: 100 }
       },
       order: 3100,
-      summary: "夜空は静かな夜のブックカフェで、店長と二人きりの時間を過ごす。美空に背中を押され、自分の意思で来たことを認め、距離を少しずつ詰める。終盤ではいつも、ごめんね、いつも、ありがとう、最初からずっと嬉しかったよと深い信頼と感謝を伝える。"
+      summary: "夜空が春待ち花畑で白いワンピースと花冠姿になり、店長に「ありがとう。私を見つけてくれて」と伝える。"
     }
 
   ];
