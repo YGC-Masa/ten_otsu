@@ -1,28 +1,24 @@
-# v039_161 = 夜空21〜40シナリオ段落・同時表示補正パッチ
+# v039_162 = メンバー個別ストーリー表示ラベル修正パッチ
+
+## 内容
+
+メンバー＞個別＞ストーリー表示で、左側ラベルが「キー1」「キー2」「メイン」等のまま表示されていた問題を修正。
+
+- 赤枠相当：`親愛Lv.xx` を表示
+- 黄色枠相当：ストーリータイトルのみを表示
+- storyIndex.js 側の `affectionLabel` / `rawTitle` を使用
+- v039_159 以降の親愛Lv.xx / タイトル分離方針を、後段補正ではなく memberStorySlots.js 本体側で反映
+
+## 更新ファイル
+
+- index.html
+- VERSION.txt
+- README_DIFF.md
+- program/v039/memberStorySlots.js
+- program/v039/version.js
+- program/v039/state.js
+- program/v039/office.js
 
 ## 適用前提
 
-v039_160以降へ上書き。
-
-## 修正内容
-
-- ストーリー21〜40帯のシナリオをチェック
-- セリフ内に混在していた「――」段落を `speaker:""` の独立ステップへ分離
-- 夜空＋美空など2人表示が必要な場面で、片方ずつ交互表示されないよう `storySprites` を同時表示指定へ補正
-- v039_159 の「親愛Lv.xx / タイトル分離」UI補正を維持
-
-## 対象シナリオ
-
-- scenario/v039/events/yozora_affection_20_01_key.json
-- scenario/v039/events/yozora_affection_20_02_key.json
-- scenario/v039/events/yozora_affection_20_03_key.json
-- scenario/v039/events/yozora_affection_30_00_main.json
-- scenario/v039/events/yozora_affection_30_01_key.json
-- scenario/v039/events/yozora_affection_30_02_key.json
-- scenario/v039/events/yozora_affection_30_03_key.json
-- scenario/v039/events/yozora_affection_40_00_main.json
-- scenario/v039/storyIndex.js
-
-## 確認
-
-対象シナリオ内のセリフ中 `\n――` 混在は 0 件に補正済み。
+v039_161以降へ上書き。

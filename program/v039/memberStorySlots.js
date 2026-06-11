@@ -1,4 +1,4 @@
-/* v039_123 member profile key/main story slots with 10Lv block switch */
+/* v039_162 member profile story slots: affection Lv label + title split */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
@@ -60,10 +60,12 @@
       const story = slot.story;
       const state = story ? (slot.cleared ? "読了" : (slot.unlocked ? "再生可" : `親愛Lv.${slot.unlockLevel}`)) : "未登録";
       const disabled = !story || !slot.unlocked;
+      const lvLabel = story && story.affectionLabel ? story.affectionLabel : `親愛Lv.${slot.unlockLevel}`;
+      const titleLabel = story ? (story.rawTitle || story.title || "シナリオ未登録") : "シナリオ未登録";
       return `
         <button type="button" class="tenotsu-member-story-slot ${slot.kind} ${slot.cleared ? "cleared" : ""} ${disabled ? "locked" : ""}" data-member-story-id="${story ? esc(story.id) : ""}" ${disabled ? "disabled" : ""}>
-          <span class="slot-label">${esc(slot.label)}</span>
-          <b>${esc(story ? story.title : "シナリオ未登録")}</b>
+          <span class="slot-label">${esc(lvLabel)}</span>
+          <b>${esc(titleLabel)}</b>
           <small>${esc(state)}</small>
         </button>
       `;
