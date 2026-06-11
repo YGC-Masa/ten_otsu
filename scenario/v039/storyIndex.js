@@ -1,4 +1,4 @@
-/* v039_159 story index: Yozora 40s official stories + separated Lv/title menu display */
+/* v039_160 story index: Yozora 40s official stories + separated Lv/title menu display */
 (function(){
   "use strict";
   window.TENOTSU_STORY_INDEX = [
@@ -608,7 +608,7 @@
       "双沢 夜空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_40_01_key.json",
-    "version": "v039_159",
+    "version": "v039_160",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
@@ -638,7 +638,7 @@
       "双沢 夜空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_40_02_key.json",
-    "version": "v039_159",
+    "version": "v039_160",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
@@ -668,7 +668,7 @@
       "双沢 夜空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_40_03_key.json",
-    "version": "v039_159",
+    "version": "v039_160",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
@@ -698,7 +698,7 @@
       "双沢 夜空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_50_00_main.json",
-    "version": "v039_159",
+    "version": "v039_160",
     "unlock": {
       "type": "all_story_cleared",
       "storyIds": [

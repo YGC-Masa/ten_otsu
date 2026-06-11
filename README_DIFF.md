@@ -1,31 +1,23 @@
-# v039_159 夜空40代正式シナリオ＋ストーリー表示分離パッチ
+# v039_160 = 夜空Lv41-50段落分離＋複数人物同時表示補正パッチ
 
-## 適用前提
-v039_158以降へ上書き。
+## 内容
+- 夜空Lv41 / Lv44 / Lv47 / Lv50 のシナリオを補正
+- セリフ内に混在していた「――」地の文段落を speaker:"" の独立ステップへ分離
+- 夜空・美空など2人表示が必要な場面で、片方ずつ交互表示にならないよう storySprites を同時表示指定へ補正
+- v039_159 のストーリー一覧UI「親愛Lv.xx / タイトル分離」補正を維持
 
-## 反映内容
-- 夜空40代を今回指定の正式JSONへ差し替え
-  - 親愛Lv.41：美空のところに行けば
-  - 親愛Lv.44：あんたが追ってくるだけ
-  - 親愛Lv.47：美空の大事なものなのに
-  - 親愛Lv.50：探さないで、の前兆
-- storyIndex.js を更新し、40代〜60への流れを整理
-- メンバー＞個別＞ストーリー一覧の表示を補正
-  - 左側ラベル：親愛Lv.xx
-  - 右側タイトル：ストーリータイトルのみ
-
-## 更新ファイル
-- scenario/v039/storyIndex.js
+## 更新対象
 - scenario/v039/events/yozora_affection_40_01_key.json
 - scenario/v039/events/yozora_affection_40_02_key.json
 - scenario/v039/events/yozora_affection_40_03_key.json
 - scenario/v039/events/yozora_affection_50_00_main.json
-- program/v039/storyMenuLvTitlePatch.js
+- index.html
+- VERSION.txt
 - program/v039/version.js
 - program/v039/state.js
 - program/v039/office.js
-- index.html
-- VERSION.txt
+- scenario/v039/storyIndex.js
+- program/v039/storyMenuLvTitlePatch.js
 
-## 備考
-既存の storyMenu.js 本体は上書きせず、後段パッチJSで表示を補正する方式です。
+## 適用前提
+- v039_159以降へ上書き
