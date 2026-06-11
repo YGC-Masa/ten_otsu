@@ -344,7 +344,7 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_20_01_key.json",
-    "version": "v039_122",
+    "version": "v039_161",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
@@ -375,7 +375,7 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_20_02_key.json",
-    "version": "v039_122",
+    "version": "v039_161",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
@@ -406,7 +406,7 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_20_03_key.json",
-    "version": "v039_122",
+    "version": "v039_161",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
@@ -437,7 +437,7 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_30_00_main.json",
-    "version": "v039_122",
+    "version": "v039_161",
     "unlock": {
       "type": "all_story_cleared",
       "storyIds": [
@@ -477,7 +477,7 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_30_01_key.json",
-    "version": "v039_124",
+    "version": "v039_161",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
@@ -508,7 +508,7 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_30_02_key.json",
-    "version": "v039_124",
+    "version": "v039_161",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
@@ -539,7 +539,7 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_30_03_key.json",
-    "version": "v039_124",
+    "version": "v039_161",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
@@ -570,7 +570,7 @@
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_40_00_main.json",
-    "version": "v039_124",
+    "version": "v039_161",
     "unlock": {
       "type": "all_story_cleared",
       "storyIds": [

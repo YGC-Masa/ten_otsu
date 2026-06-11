@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_30_03_key",
   "title": "別にいい",
-  "version": "v039_136",
+  "version": "v039_161",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_30_03_key",
@@ -81,6 +81,11 @@
       "text": "タンク容量も見た方がいい。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
           "opacity": 1
@@ -95,6 +100,11 @@
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
           "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
         }
       ]
     },
@@ -106,6 +116,11 @@
       "speaker": "夜空",
       "text": "それは加湿量が強め。\nワンルームだと、結露が出やすいかもしれない。",
       "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -122,6 +137,11 @@
       "text": "部屋の換気と置き場所にもよるけど。\n窓際に置くつもりなら、避けた方がいい。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
           "opacity": 1
@@ -136,6 +156,11 @@
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
           "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
         }
       ]
     },
@@ -147,6 +172,11 @@
       "speaker": "夜空",
       "text": "なら、こっち。\n加湿量は控えめだけど、湿度センサーがある。\n寝室用なら、その方が使いやすいと思う。",
       "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -163,6 +193,11 @@
       "text": "高い方が合うとは限らない。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
           "opacity": 1
@@ -176,6 +211,11 @@
         {
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -192,6 +232,11 @@
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
           "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
         }
       ]
     },
@@ -206,6 +251,11 @@
         {
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -222,6 +272,11 @@
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
           "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
         }
       ]
     },
@@ -229,6 +284,11 @@
       "speaker": "夜空",
       "text": "……。",
       "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -249,6 +309,11 @@
       "text": "美空がちゃんと説明してたから。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
           "opacity": 1
@@ -263,6 +328,11 @@
       "speaker": "夜空",
       "text": "横から言っただけ。",
       "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -279,6 +349,11 @@
       "text": "……買ってくれたなら、それでいい。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
           "opacity": 1
@@ -293,6 +368,11 @@
       "speaker": "夜空",
       "text": "沈んでない。\n沈む理由がない。\nお客様はちゃんと合う商品を選べた。\n美空も褒められた。\nいいことしかないでしょ。",
       "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -309,6 +389,11 @@
       "text": "なら、それでいい。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
           "opacity": 1
@@ -323,6 +408,11 @@
       "speaker": "夜空",
       "text": "違う。\n美空が褒められるのは嬉しい。\n美空はちゃんと笑える。\n話し方もやわらかい。\nお客様も安心する。\nだから、嬉しい。\n本当に嬉しい。",
       "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -339,6 +429,11 @@
       "text": "……。\n少しだけ、当たってるかもしれない。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
           "opacity": 1
@@ -354,6 +449,11 @@
       "text": "今のなし。\n聞こえなくていい。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
           "opacity": 1
@@ -368,6 +468,11 @@
       "speaker": "夜空",
       "text": "忘れて。\n……忘れなくてもいいけど、言わないで。",
       "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -391,6 +496,11 @@
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
           "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
         }
       ]
     },
@@ -398,6 +508,11 @@
       "speaker": "夜空",
       "text": "……美空に言ってた？",
       "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -413,6 +528,11 @@
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
           "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
         }
       ]
     },
@@ -420,6 +540,11 @@
       "speaker": "夜空",
       "text": "美空が説明したからでしょ。",
       "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -435,6 +560,11 @@
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
           "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
         }
       ]
     },
@@ -442,6 +572,11 @@
       "speaker": "夜空",
       "text": "美空が売った。",
       "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -457,6 +592,11 @@
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
           "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
         }
       ]
     },
@@ -464,6 +604,11 @@
       "speaker": "夜空",
       "text": "……。",
       "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -479,6 +624,11 @@
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
           "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
         }
       ]
     },
@@ -486,6 +636,11 @@
       "speaker": "夜空",
       "text": "美空は、そういうところがまっすぐすぎる。",
       "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -500,6 +655,11 @@
         {
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -516,6 +676,11 @@
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
           "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
         }
       ]
     },
@@ -523,6 +688,11 @@
       "speaker": "夜空",
       "text": "……慣れない。",
       "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -539,6 +709,11 @@
       "text": "嫌じゃない。\nでも、受け取り方がわからない。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
           "opacity": 1
@@ -553,6 +728,11 @@
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
           "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
         }
       ]
     },
@@ -560,6 +740,11 @@
       "speaker": "夜空",
       "text": "……。",
       "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -576,6 +761,11 @@
       "text": "……店長も簡単に言う。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
           "opacity": 1
@@ -591,6 +781,11 @@
       "text": "……ずるい。\n今日は特に。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
           "opacity": 1
@@ -605,6 +800,11 @@
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
           "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
         }
       ]
     },
@@ -612,6 +812,11 @@
       "speaker": "夜空",
       "text": "褒めてない。",
       "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -632,6 +837,11 @@
       "text": "……店長は、本当に変。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
           "opacity": 1
@@ -646,6 +856,11 @@
       "speaker": "夜空",
       "text": "よく言ってるの、ぼくだけでしょ。",
       "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -662,6 +877,11 @@
       "text": "……別にいい。\n美空が褒められること。\n話題が美空に行くこと。\nお客様が美空を覚えて帰ること。\nそれでいい。\n美空は、ちゃんと見つけてもらえるべきだから。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
           "opacity": 1
@@ -676,6 +896,11 @@
       "speaker": "夜空",
       "text": "……今は、いい。",
       "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -692,6 +917,11 @@
       "text": "勝手に拾わないで。\nでも……今日のことは、少しだけ覚えておく。\nお客様が喜んでくれたことも。\n……ぼくも少しは役に立ったってこと。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
           "opacity": 1
@@ -706,6 +936,11 @@
       "speaker": "夜空",
       "text": "言わなくていい。",
       "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",

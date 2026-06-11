@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_40_00_main",
   "title": "嬉しいのに、苦しい",
-  "version": "v039_139",
+  "version": "v039_161",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_40_00_main",
@@ -16,18 +16,18 @@
     "max": 40
   },
   "location": {
-    "id": "hiyorizaka_bujutsu_hounousai_stage",
-    "name": "日和坂市 武術演武奉納祭・広場特設演舞場"
+    "id": "hiyorizaka_sports_park_budokan",
+    "name": "日和坂総合運動公園・武道イベント会場"
   },
-  "summary": "美空の木刀演武は華やかで拍手が大きく、夜空の弓道演武は立射形式の入場・行射・退場までを含めた静かな演武として強い印象を残す。夜空は「美空が褒められるのは嬉しい。本当。でも、たまに苦しくなる」と初めて明確に漏らす。",
-  "purpose": "美空の木刀演武は華やかで拍手が多く、夜空の弓道演武は立射形式の静かな所作と行射で、分かる人には分かる凄さを見せる。店長が夜空の凄さに気づくことで、夜空の中にある「美空が褒められるのは嬉しい。でも苦しくなる」という感情が初めて明確に漏れる。",
+  "summary": "美空の剣道演武は華やかで拍手が大きく、夜空の弓道演武は静かで強い印象を残す。夜空は「美空が褒められるのは嬉しい。本当。でも、たまに苦しくなる」と初めて明確に漏らす。",
+  "purpose": "美空の剣道演武は華やかで拍手が多く、夜空の弓道演武は静かで分かる人には分かる凄さを見せる。店長が夜空の凄さに気づくことで、夜空の中にある「美空が褒められるのは嬉しい。でも苦しくなる」という感情が初めて明確に漏れる。",
   "tags": [
     "夜空ルート",
     "親愛度30-40",
     "メインシナリオ",
-    "日和坂市 武術演武奉納祭",
-    "木刀演武",
-    "弓道立射",
+    "総合運動公園",
+    "弓道",
+    "剣道",
     "嬉しいのに苦しい"
   ],
   "clearFlags": [
@@ -41,8 +41,8 @@
   "steps": [
     {
       "speaker": "",
-      "text": "――日和坂市 武術演武奉納祭・広場特設演舞場――\n\n――青い幟が風に揺れていた。\n広場の中央には、木張りの特設演舞場が設けられている。\n周囲には奉納祭らしい紺色の幕が張られ、演武用の的や控えの天幕、見学用のベンチが整えられていた。\n市民が足を止めて見守る開放的な空気の中に、どこか厳かな緊張感が混じっている。",
-      "bg": "images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.png",
+      "text": "――日和坂総合運動公園・武道イベント会場――",
+      "bg": "images/assets/bg/bg_hiyorizaka_sports_park_budokan_evening.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
       "clearStorySprites": true
@@ -53,33 +53,38 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
+          "src": "images/assets/char/h10202.webp",
           "opacity": 1
         }
       ]
     },
     {
       "speaker": "店長",
-      "text": "こちらこそ、誘ってくれてありがとう。\n思ったより本格的な会場だな。"
+      "text": "こちらこそ、誘ってくれてありがとう。\n地域の武道イベントって、思ったより人が多いんだな。"
     },
     {
       "speaker": "美空",
-      "text": "はい。\n今日は、日和坂市の武術演武奉納祭なんです。\n剣術、弓道、柔道、空手の演武があるみたいです。",
+      "text": "はい。\n今日は剣道、弓道、柔道、空手の演武があるみたいです。",
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
+          "src": "images/assets/char/h10202.webp",
           "opacity": 1
         }
       ]
     },
     {
       "speaker": "夜空",
-      "text": "美空の演武があるから、人が増えてるだけ。",
+      "text": "美空の剣道演武があるから、人が増えてるだけ。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -90,7 +95,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -100,8 +110,13 @@
       "text": "言いすぎじゃない。\n美空の名前、ポスターにも出てた。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -116,7 +131,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -126,8 +146,13 @@
       "text": "小さくても、ちゃんと見えるところにあった。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -141,8 +166,13 @@
       "text": "……一応。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -153,18 +183,28 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
     },
     {
       "speaker": "夜空",
-      "text": "美空の剣術演武の方がわかりやすい。",
+      "text": "美空の剣道の方がわかりやすい。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -178,8 +218,13 @@
       "text": "……見なくていい。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -193,8 +238,13 @@
       "text": "勝手に。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -205,18 +255,23 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
     },
     {
       "speaker": "",
-      "text": "――特設演舞場では、すでに観客が集まっていた。\n木張りの舞台の奥には青い幕が張られ、白い紋が風に揺れている。\n左右には奉納祭の幟が立ち、舞台の端には演武用の木刀や弓具が丁寧に並べられていた。"
+      "text": "――会場の中では、すでに観客が集まっていた。\n武道場の中央には剣道の演武スペースが作られ、その奥には弓道場へ続く通路が見える。"
     },
     {
       "speaker": "アナウンス",
-      "text": "続きまして、剣術演武を行います。"
+      "text": "続きまして、剣道演武を行います。"
     },
     {
       "speaker": "美空",
@@ -224,7 +279,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -238,8 +298,13 @@
       "text": "美空。\n深呼吸。\n足元、滑りやすいから。\n踏み込み、少しだけ抑えて。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -250,14 +315,19 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
     },
     {
       "speaker": "",
-      "text": "――美空は木刀を手に、特設演舞場へ向かう。\nその背筋は伸びていて、普段の柔らかさとは違う凛とした空気があった。\n竹刀ではなく木刀を持つ姿は、競技というよりも奉納演武にふさわしい、張り詰めた静けさをまとっていた。"
+      "text": "――美空は竹刀を手に、演武スペースへ向かう。\nその背筋は伸びていて、普段の柔らかさとは違う凛とした空気があった。"
     },
     {
       "speaker": "店長",
@@ -268,8 +338,13 @@
       "text": "うん。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -283,8 +358,13 @@
       "text": "ぼくは見てるだけ。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -298,8 +378,13 @@
       "text": "滑りやすいって言ったでしょ。\n心配なんだな。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -313,19 +398,20 @@
       "text": "強い。\nでも、強いからって心配しなくていいわけじゃない。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
     },
     {
       "speaker": "",
-      "text": "――美空の演武が始まる。\n木刀が空を切る音。\n踏み込みの音。\n澄んだ気合いの声。\n会場の空気が、一瞬で引き締まった。",
-      "showEventCg": true,
-      "eventCg": "images/assets/cg/cg_yozora_main40_misora_enbu.png",
-      "cgFit": "cover",
-      "cgAlign": "center center"
+      "text": "――美空の演武が始まる。\n竹刀が空を切る音。\n踏み込みの音。\n澄んだ気合いの声。\n会場の空気が、一瞬で引き締まった。"
     },
     {
       "speaker": "観客",
@@ -348,8 +434,13 @@
       "text": "うん。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -363,8 +454,13 @@
       "text": "でしょ。\n美空は、ちゃんと人に届く。\n声も、動きも、気持ちも。\n見てる人に、すぐ伝わる。\nそういうところが、美空のすごいところ。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -379,15 +475,19 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
     },
     {
       "speaker": "",
-      "text": "――美空は丁寧に礼をし、少し照れたように戻ってくる。",
-      "hideEventCg": true
+      "text": "――美空は丁寧に礼をし、少し照れたように戻ってくる。"
     },
     {
       "speaker": "店長",
@@ -398,8 +498,13 @@
       "text": "踏み込み、ちゃんと抑えてた。\nよかった。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -410,7 +515,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -420,8 +530,13 @@
       "text": "……うん。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -435,8 +550,13 @@
       "text": "楽しみにしなくていい。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -447,7 +567,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -457,8 +582,13 @@
       "text": "美空。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -476,8 +606,13 @@
       "text": "……見なくていいって言った。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -488,7 +623,7 @@
     },
     {
       "speaker": "",
-      "text": "――夜空は小さく息を吐き、弓道演武の控え位置へ向かう。\n美空は心配そうに、その背中を見送った。"
+      "text": "――夜空は小さく息を吐き、弓道場へ向かう。\n美空は心配そうに、その背中を見送った。"
     },
     {
       "speaker": "美空",
@@ -496,7 +631,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -507,7 +647,7 @@
     },
     {
       "speaker": "",
-      "text": "――夜空の弓道演武の空気は、剣術演武とはまるで違っていた。\n声はなく、観客も自然と息をひそめる。"
+      "text": "――弓道場の空気は、剣道場とはまるで違っていた。\n声はなく、観客も自然と息をひそめる。\n夜空は射位に立ち、静かに弓を構えた。"
     },
     {
       "speaker": "アナウンス",
@@ -515,57 +655,7 @@
     },
     {
       "speaker": "",
-      "text": "――夜空は弓を手に、静かに演武場へ入場する。\n座礼は行わない。\n立射形式のため、立ったまま所定の位置へ進み、姿勢を正す。\n足の運びは静かで、無駄がなく、舞台の上を歩いているだけで空気が少しずつ変わっていくようだった。"
-    },
-    {
-      "speaker": "店長",
-      "text": "……歩くだけで、雰囲気が変わるな。"
-    },
-    {
-      "speaker": "美空",
-      "text": "はい。\n夜空、弓を持つと本当に静かになるんです。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "",
-      "text": "――夜空は射位に立つ。\n背筋を伸ばし、視線を的へ向ける。\n派手な動きはない。\nけれど、弓を構える前から、すでに演武は始まっているようだった。\n\n――弓を持つ手。\n足の位置。\n呼吸。\nそのすべてが、ゆっくりと一つに整っていく。"
-    },
-    {
-      "speaker": "店長",
-      "text": "……。"
-    },
-    {
-      "speaker": "美空",
-      "text": "……。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "",
-      "text": "――夜空の表情から、余計な感情が消える。\n視線はただ的へ向かい、呼吸がゆっくり整っていく。",
-      "showEventCg": true,
-      "eventCg": "images/assets/cg/cg_yozora_main40_yozora_kyudo_enbu.png",
-      "cgFit": "cover",
-      "cgAlign": "center center"
-    },
-    {
-      "speaker": "",
-      "text": "――弦が引かれる。音が消える。\n時間が、細く張りつめる。\nそして。"
-    },
-    {
-      "speaker": "",
-      "text": "――矢が放たれた。"
+      "text": "――夜空の表情から、余計な感情が消える。\n視線はただ的へ向かい、呼吸がゆっくり整っていく。\n弦が引かれる。\n音が消える。\n時間が、細く張りつめる。\nそして、矢が放たれた。"
     },
     {
       "speaker": "観客",
@@ -585,7 +675,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -608,11 +703,7 @@
     },
     {
       "speaker": "",
-      "text": "――すべての行射を終えると、夜空は弓を下ろす。\n立ったまま姿勢を整え、的へ向けて静かに礼をする。\nそして、入場した時と同じように、足音を立てずに演武場を退場した。"
-    },
-    {
-      "speaker": "",
-      "text": "――最後まで、夜空の動きは大きくない。\nけれど、その静けさの中に、確かな強さがあった。"
+      "text": "――演武が終わる。\n夜空は深く礼をして、静かに戻ってきた。"
     },
     {
       "speaker": "美空",
@@ -620,19 +711,28 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
-      ],
-      "hideEventCg": true
+      ]
     },
     {
       "speaker": "夜空",
       "text": "……うん。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -646,23 +746,33 @@
       "text": "……言わなくていい。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
     },
     {
       "speaker": "店長",
-      "text": "美空の木刀演武とは違う。\nでも、同じくらい目が離せなかった。"
+      "text": "美空の剣道とは違う。\nでも、同じくらい目が離せなかった。"
     },
     {
       "speaker": "夜空",
       "text": "……同じくらいって、比べてる。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -676,8 +786,13 @@
       "text": "でも、並べた。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -691,8 +806,13 @@
       "text": "謝らなくていい。\nそうなるのは、わかってる。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -706,8 +826,13 @@
       "text": "……そういうの、本当に。\n余計。\nでも……少しだけ、嫌じゃなかった。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -718,7 +843,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -728,8 +858,13 @@
       "text": "美空は、すごい。\nやっぱり美空はすごい。\nさっきの演武、みんな見てた。\n拍手も大きかった。\nお客様も、観客も、美空をすぐ見つける。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -740,7 +875,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -750,8 +890,13 @@
       "text": "それは、弓道の時だけ。\n美空は、何をしてても見つけられる。\n笑ってるだけで、そこが明るくなる。\n声を出せば、みんな振り向く。\n美空が褒められるのは嬉しい。\n美空が見つけられるのも、嬉しい。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -765,8 +910,13 @@
       "text": "でも……。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -780,8 +930,13 @@
       "text": "……たまに、苦しくなる。\n美空が褒められるのは嬉しい。\nそれは、本当。\n美空がすごいのも、本当。\nでも、たまに。\nほんの少しだけ。\n自分が、どこに立ってればいいのかわからなくなる。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -795,8 +950,13 @@
       "text": "美空の隣に立てば比べられる。\n後ろにいれば安心できる。\nでも、後ろにいると、誰にも見えない。\nいいの。\nそれでいいって思ってた。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -810,8 +970,13 @@
       "text": "……わからない。\n美空が褒められると、嬉しい。\n本当に嬉しい。\nなのに、胸の奥が少し痛い時がある。\nそんな自分が嫌。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -825,8 +990,13 @@
       "text": "言わないで。\n今、何か言われたら、たぶん逃げる。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -841,7 +1011,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -851,8 +1026,13 @@
       "text": "美空も、今は言わないで。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -863,7 +1043,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -877,8 +1062,13 @@
       "text": "ごめん。\n今のは、美空に言うことじゃなかった。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -889,7 +1079,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -899,8 +1094,13 @@
       "text": "……美空は、本当にまっすぐすぎる。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -911,7 +1111,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -926,7 +1131,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -936,8 +1146,13 @@
       "text": "……今、それ言う？",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -948,7 +1163,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -958,8 +1178,13 @@
       "text": "……同じくらい。\n比べてる。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -970,7 +1195,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -980,8 +1210,13 @@
       "text": "……ずるい。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -995,8 +1230,13 @@
       "text": "……余計。\nでも……今日は、少しだけ覚えておく。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -1011,7 +1251,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -1021,8 +1266,13 @@
       "text": "……美空が飲むなら。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -1033,7 +1283,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/misora_budo_gi_main40.png",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -1043,8 +1298,13 @@
       "text": "……考えておく。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -1055,10 +1315,7 @@
     },
     {
       "speaker": "",
-      "text": "――日和坂総合運動公園・夕方――",
-      "bg": "images/assets/bg/bg_hiyorizaka_sports_park_evening.png",
-      "bgMode": "forceReplace",
-      "forceBackgroundReplace": true
+      "text": "――日和坂総合運動公園・夕方――"
     },
     {
       "speaker": "店長",
@@ -1066,11 +1323,16 @@
     },
     {
       "speaker": "夜空",
-      "text": "……美空の木刀演武が？",
+      "text": "……美空の剣道が？",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -1084,8 +1346,13 @@
       "text": "……そう。\n……なら、いい。",
       "storySprites": [
         {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
+        },
+        {
           "id": "ai",
-          "src": "images/assets/char/yozora_budo_gi_main40.png",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
