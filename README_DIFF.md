@@ -1,29 +1,23 @@
-# v039_164 = 夜空20-30背景・CG指定修正パッチ
+# ten_otsu v039_165 yozora30_40_bg_sprite_cg_patch
 
-## 内容
+## 概要
+夜空ストーリー30〜40帯の背景、専用道着立ち絵、演武イベントCG指定を修正する差分パッチです。
 
-- 「夜空らしいって何」の背景を `images/assets/bg/bg_hidamari_warehouse.png` に変更
-- 「白と黒の飲み物」の「ひだまりストア休憩スペース前」を「事務所内休憩スペース」へ変更
-  - 背景：`images/assets/bgev/bg_office_hidamari.png`
-- 「白黒ツインルーム」
-  - 最初の背景：`images/assets/bg/bg_sugosawa_house_night.png`
-  - ステップ31：`images/assets/bg/bg_sugosawa_room_night_light_on.png`
-  - ステップ187：イベントCG `images/assets/cg/cg_yozora_main30_cocoa_room.png` を表示
+## 更新内容
+- 「美空の剣道の方がわかりやすい」冒頭背景を `images/assets/bg/bg_hidamari_warehouse.png` に変更。
+- 「嬉しいのに、苦しい」冒頭背景を `images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.png` に変更。
+- 「嬉しいのに、苦しい」の美空/夜空立ち絵を専用道着立ち絵に変更。
+  - `images/assets/char/misora_budo_gi_main40.png`
+  - `images/assets/char/yozora_budo_gi_main40.png`
+- ステップ35〜45に美空演武CG `images/assets/cg/cg_yozora_main40_misora_enbu.png` を指定。
+- ステップ63〜73に夜空弓道演武CG `images/assets/cg/cg_yozora_main40_yozora_kyudo_enbu.png` を指定。
+- ステップ123に `images/assets/bg/bg_hiyorizaka_sports_park_evening.png` を指定。
 
 ## 更新ファイル
-
-- scenario/v039/events/yozora_affection_20_02_key.json
-- scenario/v039/events/yozora_affection_20_03_key.json
-- scenario/v039/events/yozora_affection_30_00_main.json
-- index.html
-- VERSION.txt
-- README_DIFF.md
-- program/v039/version.js
-- program/v039/state.js
-- program/v039/office.js
-
-## 適用前提
-
-v039_163以降へ上書き。
-
-※画像アセット本体は既存正式アセットを参照する前提で、今回のZIPには同梱していません。
+- `scenario/v039/events/yozora_affection_30_02_key.json`
+- `scenario/v039/events/yozora_affection_40_00_main.json`
+- `index.html`
+- `VERSION.txt`
+- `program/v039/version.js`
+- `program/v039/state.js`
+- `program/v039/office.js`

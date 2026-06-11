@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_30_02_key",
   "title": "美空の剣道の方がわかりやすい",
-  "version": "v039_161",
+  "version": "v039_165",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_30_02_key",
@@ -42,7 +42,7 @@
     {
       "speaker": "",
       "text": "――ひだまりストア・倉庫奥――",
-      "bg": "images/assets/bg/bg_hidamari_warehouse_day.png",
+      "bg": "images/assets/bg/bg_hidamari_warehouse.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
       "clearStorySprites": true

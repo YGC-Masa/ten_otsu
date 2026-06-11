@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_40_00_main",
   "title": "嬉しいのに、苦しい",
-  "version": "v039_161",
+  "version": "v039_165",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_40_00_main",
@@ -16,8 +16,8 @@
     "max": 40
   },
   "location": {
-    "id": "hiyorizaka_sports_park_budokan",
-    "name": "日和坂総合運動公園・武道イベント会場"
+    "id": "hiyorizaka_bujutsu_hounousai_stage_day",
+    "name": "日和坂市 武術演武奉納祭・特設演舞場"
   },
   "summary": "美空の剣道演武は華やかで拍手が大きく、夜空の弓道演武は静かで強い印象を残す。夜空は「美空が褒められるのは嬉しい。本当。でも、たまに苦しくなる」と初めて明確に漏らす。",
   "purpose": "美空の剣道演武は華やかで拍手が多く、夜空の弓道演武は静かで分かる人には分かる凄さを見せる。店長が夜空の凄さに気づくことで、夜空の中にある「美空が褒められるのは嬉しい。でも苦しくなる」という感情が初めて明確に漏れる。",
@@ -42,7 +42,7 @@
     {
       "speaker": "",
       "text": "――日和坂総合運動公園・武道イベント会場――",
-      "bg": "images/assets/bg/bg_hiyorizaka_sports_park_budokan_evening.png",
+      "bg": "images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
       "clearStorySprites": true
@@ -53,7 +53,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -68,7 +68,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -79,12 +79,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -95,12 +95,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -111,12 +111,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -131,12 +131,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -147,12 +147,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -167,12 +167,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -183,12 +183,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -199,12 +199,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -219,12 +219,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -239,12 +239,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -255,12 +255,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -279,12 +279,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -299,12 +299,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -315,12 +315,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -339,12 +339,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -359,12 +359,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -379,12 +379,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -399,35 +399,60 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
     },
     {
       "speaker": "",
-      "text": "――美空の演武が始まる。\n竹刀が空を切る音。\n踏み込みの音。\n澄んだ気合いの声。\n会場の空気が、一瞬で引き締まった。"
+      "text": "――美空の演武が始まる。\n竹刀が空を切る音。\n踏み込みの音。\n澄んだ気合いの声。\n会場の空気が、一瞬で引き締まった。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main40_misora_enbu.png",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "観客",
-      "text": "おお……。"
+      "text": "おお……。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main40_misora_enbu.png",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "観客",
-      "text": "すごいな、あの子。"
+      "text": "すごいな、あの子。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main40_misora_enbu.png",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "観客",
-      "text": "動きが綺麗。"
+      "text": "動きが綺麗。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main40_misora_enbu.png",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",
-      "text": "……すごいな。"
+      "text": "……すごいな。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main40_misora_enbu.png",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "夜空",
@@ -435,19 +460,29 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
-      ]
+      ],
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main40_misora_enbu.png",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",
-      "text": "見ていて分かりやすい強さだ。"
+      "text": "見ていて分かりやすい強さだ。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main40_misora_enbu.png",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "夜空",
@@ -455,19 +490,29 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
-      ]
+      ],
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main40_misora_enbu.png",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
-      "text": "――美空が最後の型を決める。\n一瞬の静寂のあと、会場に大きな拍手が起こった。"
+      "text": "――美空が最後の型を決める。\n一瞬の静寂のあと、会場に大きな拍手が起こった。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main40_misora_enbu.png",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "美空",
@@ -475,23 +520,37 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
-      ]
+      ],
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main40_misora_enbu.png",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
-      "text": "――美空は丁寧に礼をし、少し照れたように戻ってくる。"
+      "text": "――美空は丁寧に礼をし、少し照れたように戻ってくる。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main40_misora_enbu.png",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",
-      "text": "すごかった。\n本当に見入ったよ。"
+      "text": "すごかった。\n本当に見入ったよ。",
+      "hideEventCg": true,
+      "bg": "images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -499,12 +558,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -515,12 +574,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -531,12 +590,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -551,12 +610,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -567,12 +626,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -583,12 +642,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -607,12 +666,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -631,12 +690,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -655,19 +714,39 @@
     },
     {
       "speaker": "",
-      "text": "――夜空の表情から、余計な感情が消える。\n視線はただ的へ向かい、呼吸がゆっくり整っていく。\n弦が引かれる。\n音が消える。\n時間が、細く張りつめる。\nそして、矢が放たれた。"
+      "text": "――夜空の表情から、余計な感情が消える。\n視線はただ的へ向かい、呼吸がゆっくり整っていく。\n弦が引かれる。\n音が消える。\n時間が、細く張りつめる。\nそして、矢が放たれた。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main40_yozora_kyudo_enbu.png",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "観客",
-      "text": "……。"
+      "text": "……。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main40_yozora_kyudo_enbu.png",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
-      "text": "――的を射抜く音が、静かに響く。\n派手な歓声はない。\nけれど、会場にいた何人かが、小さく息をのんだ。"
+      "text": "――的を射抜く音が、静かに響く。\n派手な歓声はない。\nけれど、会場にいた何人かが、小さく息をのんだ。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main40_yozora_kyudo_enbu.png",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",
-      "text": "……すごい。\n今の、すごいな。\n一瞬だったのに、目が離せなかった。"
+      "text": "……すごい。\n今の、すごいな。\n一瞬だったのに、目が離せなかった。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main40_yozora_kyudo_enbu.png",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "美空",
@@ -675,35 +754,65 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
-      ]
+      ],
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main40_yozora_kyudo_enbu.png",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
-      "text": "――夜空は続けて矢をつがえる。\n二射目、三射目。\nどれも静かで、乱れがなく、的へ吸い込まれるように飛んでいった。"
+      "text": "――夜空は続けて矢をつがえる。\n二射目、三射目。\nどれも静かで、乱れがなく、的へ吸い込まれるように飛んでいった。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main40_yozora_kyudo_enbu.png",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "観客",
-      "text": "あの子、すごいな。"
+      "text": "あの子、すごいな。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main40_yozora_kyudo_enbu.png",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "観客",
-      "text": "静かだけど、綺麗だね。"
+      "text": "静かだけど、綺麗だね。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main40_yozora_kyudo_enbu.png",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "観客",
-      "text": "弓道って、こんなに迫力あるんだ。"
+      "text": "弓道って、こんなに迫力あるんだ。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main40_yozora_kyudo_enbu.png",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
-      "text": "――演武が終わる。\n夜空は深く礼をして、静かに戻ってきた。"
+      "text": "――演武が終わる。\n夜空は深く礼をして、静かに戻ってきた。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main40_yozora_kyudo_enbu.png",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "美空",
@@ -711,15 +820,20 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
-      ]
+      ],
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main40_yozora_kyudo_enbu.png",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "夜空",
@@ -727,15 +841,19 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
-      ]
+      ],
+      "hideEventCg": true,
+      "bg": "images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "店長",
@@ -747,12 +865,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -767,12 +885,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -787,12 +905,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -807,12 +925,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -827,12 +945,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -843,12 +961,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -859,12 +977,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -875,12 +993,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -891,12 +1009,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -911,12 +1029,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -931,12 +1049,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -951,12 +1069,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -971,12 +1089,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -991,12 +1109,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -1011,12 +1129,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -1027,12 +1145,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -1043,12 +1161,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -1063,12 +1181,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -1079,12 +1197,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -1095,12 +1213,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -1111,12 +1229,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -1131,12 +1249,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -1147,12 +1265,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -1163,12 +1281,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -1179,12 +1297,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -1195,12 +1313,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -1211,12 +1329,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -1231,12 +1349,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -1251,12 +1369,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -1267,12 +1385,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -1283,12 +1401,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -1299,12 +1417,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -1315,7 +1433,11 @@
     },
     {
       "speaker": "",
-      "text": "――日和坂総合運動公園・夕方――"
+      "text": "――日和坂総合運動公園・夕方――",
+      "bg": "images/assets/bg/bg_hiyorizaka_sports_park_evening.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",
@@ -1327,12 +1449,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
@@ -1347,12 +1469,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_budo_gi_main40.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_budo_gi_main40.png",
           "opacity": 1
         }
       ]
