@@ -1,21 +1,18 @@
-# ten_otsu v039_165 yozora30_40_bg_sprite_cg_patch
+# v039_166 夜空40-3背景・汎用パジャマ立ち絵修正パッチ
 
-## 概要
-夜空ストーリー30〜40帯の背景、専用道着立ち絵、演武イベントCG指定を修正する差分パッチです。
+## 適用前提
+- v039_165 以降へ上書き
 
-## 更新内容
-- 「美空の剣道の方がわかりやすい」冒頭背景を `images/assets/bg/bg_hidamari_warehouse.png` に変更。
-- 「嬉しいのに、苦しい」冒頭背景を `images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.png` に変更。
-- 「嬉しいのに、苦しい」の美空/夜空立ち絵を専用道着立ち絵に変更。
-  - `images/assets/char/misora_budo_gi_main40.png`
-  - `images/assets/char/yozora_budo_gi_main40.png`
-- ステップ35〜45に美空演武CG `images/assets/cg/cg_yozora_main40_misora_enbu.png` を指定。
-- ステップ63〜73に夜空弓道演武CG `images/assets/cg/cg_yozora_main40_yozora_kyudo_enbu.png` を指定。
-- ステップ123に `images/assets/bg/bg_hiyorizaka_sports_park_evening.png` を指定。
+## 修正内容
+- ストーリー「美空の大事なものなのに」冒頭背景を `images/assets/bg/bg_sugosawa_room_night_light_on.png` に変更
+- 同ストーリー内の美空・夜空立ち絵を汎用パジャマ立ち絵へ変更
+  - 美空: `images/assets/char/misora_pajama_generic.png`
+  - 夜空: `images/assets/char/yozora_pajama_generic.png`
 
 ## 更新ファイル
-- `scenario/v039/events/yozora_affection_30_02_key.json`
-- `scenario/v039/events/yozora_affection_40_00_main.json`
+- `scenario/v039/events/yozora_affection_40_03_key.json`
+- `images/assets/char/misora_pajama_generic.png`
+- `images/assets/char/yozora_pajama_generic.png`
 - `index.html`
 - `VERSION.txt`
 - `program/v039/version.js`
