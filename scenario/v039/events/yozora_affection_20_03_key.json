@@ -16,8 +16,8 @@
     "max": 30
   },
   "location": {
-    "id": "hidamari_store_break_space",
-    "name": "ひだまりストア・休憩スペース前"
+    "id": "office_hidamari",
+    "name": "ひだまりストア・事務所内休憩スペース"
   },
   "summary": "夜空はブラックコーヒー、美空はホットミルクを選ぶ。夜空は「美空が白や甘いものを選ぶから、自分は黒や苦いものを選んできた」と語る。ただし、美空のホットミルクを少し飲み「懐かしい」とこぼすことで、同じものを選ぶことへの抵抗が少し揺らぐ。",
   "purpose": "美空と夜空の日常的な好みの対比を描く。",
@@ -40,8 +40,8 @@
   "steps": [
     {
       "speaker": "",
-      "text": "――ひだまりストア・休憩スペース前――",
-      "bg": "images/assets/bg/bg_hidamari_store_break_space_day.png",
+      "text": "――ひだまりストア・事務所内休憩スペース――",
+      "bg": "images/assets/bgev/bg_office_hidamari.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
       "clearStorySprites": true

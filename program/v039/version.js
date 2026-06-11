@@ -1,11 +1,11 @@
-/* v039_163 version */
+/* v039_164 version */
 (function(){
   "use strict";
-  window.TENOTSU_VERSION = "v039_163";
-  window.TENOTSU_VERSION_LABEL = "v039_163 夜空40代正式シナリオ＋ストーリー表示分離パッチ";
+  window.TENOTSU_VERSION = "v039_164";
+  window.TENOTSU_VERSION_LABEL = "v039_164 夜空20-30背景・CG指定修正パッチ";
   window.TENOTSU_VERSION_NOTES = [
-    "夜空40代ストーリーを正式JSONへ差し替え",
-    "親愛Lv.41/44/47/50のストーリーインデックスを追加・修正",
-    "メンバー個別ストーリー表示を親愛Lv.xxとストーリータイトルに分離"
+    "夜空『夜空らしいって何』の背景をひだまりストア倉庫へ変更",
+    "夜空『白と黒の飲み物』の背景を事務所内休憩スペースへ変更",
+    "夜空『白黒ツインルーム』の背景切替とステップ187イベントCGを実装"
   ];
 })();

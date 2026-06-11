@@ -40,7 +40,7 @@
     {
       "speaker": "",
       "text": "――双沢家・玄関――",
-      "bg": "images/assets/bg/bg_sugosawa_twin_room_night_lights.png",
+      "bg": "images/assets/bg/bg_sugosawa_house_night.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
       "clearStorySprites": true
@@ -417,7 +417,11 @@
     },
     {
       "speaker": "",
-      "text": "――双沢家・白黒ツインルーム――"
+      "text": "――双沢家・白黒ツインルーム――",
+      "bg": "images/assets/bg/bg_sugosawa_room_night_light_on.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",
@@ -2301,7 +2305,12 @@
     },
     {
       "speaker": "",
-      "text": "――夜空は黒いマグカップを両手で包む。\nその仕草は、以前ブラックコーヒーを持っていた時よりも、少しだけ柔らかかった。"
+      "text": "――夜空は黒いマグカップを両手で包む。\nその仕草は、以前ブラックコーヒーを持っていた時よりも、少しだけ柔らかかった。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main30_cocoa_room.png",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "美空",
