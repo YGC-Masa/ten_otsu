@@ -1,11 +1,11 @@
-/* v039_176 version */
+/* v039_177 version */
 (function(){
   "use strict";
-  window.TENOTSU_VERSION = "v039_176";
-  window.TENOTSU_VERSION_LABEL = "v039_176 夜空40-3背景・汎用パジャマ立ち絵修正パッチ";
+  window.TENOTSU_VERSION = "v039_177";
+  window.TENOTSU_VERSION_LABEL = "v039_177 夜空60メインイベントCG差し替えパッチ";
   window.TENOTSU_VERSION_NOTES = [
-    "夜空『夜空らしいって何』の背景をひだまりストア倉庫へ変更",
-    "夜空『白と黒の飲み物』の背景を事務所内休憩スペースへ変更",
-    "夜空『白黒ツインルーム』の背景切替とステップ187イベントCGを実装"
+    "夜空『夜空のままで』のイベントCG進行を5枚構成へ差し替え",
+    "ステップ133・157・182・217・262で段階的にCGを切り替える",
+    "v039_176までの表示補正・UI修正を維持"
   ];
 })();

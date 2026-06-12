@@ -995,7 +995,7 @@
       "speaker": "",
       "text": "――その瞬間、店長は夜空の腕をそっと引き寄せた。\n強引ではない。\nけれど、逃げようとした夜空を逃がさないように、ぎゅうっと抱きしめる。",
       "showEventCg": true,
-      "eventCg": "images/assets/cg/cg_yozora_main60_cry_hug.png"
+      "eventCg": "images/assets/cg/cg_yozora_main60_hug_01.png"
     },
     {
       "speaker": "店長",
@@ -1175,7 +1175,9 @@
           "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main60_hug_02.png"
     },
     {
       "speaker": "店長",
@@ -1359,7 +1361,9 @@
           "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main60_hug_03.png"
     },
     {
       "speaker": "店長",
@@ -1618,7 +1622,9 @@
           "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main60_hug_04.png"
     },
     {
       "speaker": "店長",
@@ -1952,7 +1958,9 @@
     },
     {
       "speaker": "店長",
-      "text": "うん。"
+      "text": "うん。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main60_hug_05.png"
     },
     {
       "speaker": "夜空",
