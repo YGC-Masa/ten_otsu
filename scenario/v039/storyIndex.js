@@ -1,7 +1,4 @@
-/* v039_160 story index: Yozora 40s official stories + separated Lv/title menu display */
-(function(){
-  "use strict";
-  window.TENOTSU_STORY_INDEX = [
+window.TENOTSU_STORY_INDEX = [
   {
     "id": "kogane_natsu_marinpia",
     "title": "マリンピアの海中トンネル",
@@ -69,7 +66,7 @@
     "route": "yozora",
     "affectionBlock": 1,
     "affectionSlot": "key1",
-    "unlockLevel": 1,
+    "unlockLevel": 3,
     "characters": [
       "ai",
       "ah"
@@ -83,13 +80,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 1
+      "level": 3
     },
     "order": 3001,
     "summary": "夜空がまだ店長に距離を置き、自分ではなく美空を見てほしいと示す序盤キーストーリー。",
     "rawTitle": "美空なら休憩室",
-    "affectionLabel": "親愛Lv.01",
-    "menuTitle": "親愛Lv.01：美空なら休憩室"
+    "affectionLabel": "親愛Lv.3",
+    "menuTitle": "親愛Lv.3：美空なら休憩室"
   },
   {
     "id": "yozora_affection_00_02_key",
@@ -100,7 +97,7 @@
     "route": "yozora",
     "affectionBlock": 1,
     "affectionSlot": "key2",
-    "unlockLevel": 4,
+    "unlockLevel": 5,
     "characters": [
       "ai",
       "ah"
@@ -114,13 +111,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 4
+      "level": 5
     },
     "order": 3002,
     "summary": "美空の接客を夜空が横から自然にフォローし、自分は見ているだけだと距離を取る夜空キーシナリオ第2話。",
     "rawTitle": "見てるだけ",
-    "affectionLabel": "親愛Lv.04",
-    "menuTitle": "親愛Lv.04：見てるだけ"
+    "affectionLabel": "親愛Lv.5",
+    "menuTitle": "親愛Lv.5：見てるだけ"
   },
   {
     "id": "yozora_affection_00_03_key",
@@ -131,7 +128,7 @@
     "route": "yozora",
     "affectionBlock": 1,
     "affectionSlot": "key3",
-    "unlockLevel": 7,
+    "unlockLevel": 8,
     "characters": [
       "ai",
       "ah"
@@ -145,13 +142,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 7
+      "level": 8
     },
     "order": 3003,
     "summary": "星見ヶ丘プラネタリウムの特別公演を前に、夜空が美空の付き添いとして同行を決めるキーシナリオ第3話。",
     "rawTitle": "特別公演のチケット",
-    "affectionLabel": "親愛Lv.07",
-    "menuTitle": "親愛Lv.07：特別公演のチケット"
+    "affectionLabel": "親愛Lv.8",
+    "menuTitle": "親愛Lv.8：特別公演のチケット"
   },
   {
     "id": "yozora_affection_10_00_main",
@@ -201,7 +198,7 @@
     "route": "yozora",
     "affectionBlock": 2,
     "affectionSlot": "key1",
-    "unlockLevel": 11,
+    "unlockLevel": 13,
     "characters": [
       "ai",
       "ah"
@@ -215,13 +212,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 11
+      "level": 13
     },
     "order": 3011,
     "summary": "プラネタリウム後、店長が夜空の細かな気遣いに気づき始め、夜空が『気づかなくていい』と拒むキーシナリオ。",
     "rawTitle": "そういうの、気づかなくていい",
-    "affectionLabel": "親愛Lv.11",
-    "menuTitle": "親愛Lv.11：そういうの、気づかなくていい"
+    "affectionLabel": "親愛Lv.13",
+    "menuTitle": "親愛Lv.13：そういうの、気づかなくていい"
   },
   {
     "id": "yozora_affection_10_02_key",
@@ -232,7 +229,7 @@
     "route": "yozora",
     "affectionBlock": 2,
     "affectionSlot": "key2",
-    "unlockLevel": 14,
+    "unlockLevel": 15,
     "characters": [
       "ai",
       "ah"
@@ -246,13 +243,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 14
+      "level": 15
     },
     "order": 3012,
     "summary": "地域フェスの記念撮影で、夜空が見られる側になることや美空と比較されることを避けるキーシナリオ。",
     "rawTitle": "美空だけでいいでしょ",
-    "affectionLabel": "親愛Lv.14",
-    "menuTitle": "親愛Lv.14：美空だけでいいでしょ"
+    "affectionLabel": "親愛Lv.15",
+    "menuTitle": "親愛Lv.15：美空だけでいいでしょ"
   },
   {
     "id": "yozora_affection_10_03_key",
@@ -263,7 +260,7 @@
     "route": "yozora",
     "affectionBlock": 2,
     "affectionSlot": "key3",
-    "unlockLevel": 17,
+    "unlockLevel": 18,
     "characters": [
       "ai",
       "ah"
@@ -277,13 +274,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 17
+      "level": 18
     },
     "order": 3013,
     "summary": "閉店後の帰り道、夜空が美空の疲れには気づく一方、自分の寒さや疲れを見られることを嫌がるキーシナリオ。",
     "rawTitle": "気づかなくていい疲れ",
-    "affectionLabel": "親愛Lv.17",
-    "menuTitle": "親愛Lv.17：気づかなくていい疲れ"
+    "affectionLabel": "親愛Lv.18",
+    "menuTitle": "親愛Lv.18：気づかなくていい疲れ"
   },
   {
     "id": "yozora_affection_20_00_main",
@@ -334,7 +331,7 @@
     "route": "yozora",
     "affectionBlock": 3,
     "affectionSlot": "key1",
-    "unlockLevel": 21,
+    "unlockLevel": 23,
     "characters": [
       "ai",
       "ah"
@@ -348,13 +345,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 21
+      "level": 23
     },
     "order": 3021,
     "summary": "夜空が黒いリボンを通して、美空が白なら自分は黒でいいと語り、白黒対比の原点に触れるキーシナリオ。",
     "rawTitle": "黒いリボン",
-    "affectionLabel": "親愛Lv.21",
-    "menuTitle": "親愛Lv.21：黒いリボン"
+    "affectionLabel": "親愛Lv.23",
+    "menuTitle": "親愛Lv.23：黒いリボン"
   },
   {
     "id": "yozora_affection_20_02_key",
@@ -365,7 +362,7 @@
     "route": "yozora",
     "affectionBlock": 3,
     "affectionSlot": "key2",
-    "unlockLevel": 24,
+    "unlockLevel": 25,
     "characters": [
       "ai",
       "ah"
@@ -379,13 +376,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 24
+      "level": 25
     },
     "order": 3022,
     "summary": "夜空が弓道を通して、反対を選んだだけなのか、それとも自分のものになっているのか揺れ始めるキーシナリオ。",
     "rawTitle": "夜空らしいって何",
-    "affectionLabel": "親愛Lv.24",
-    "menuTitle": "親愛Lv.24：夜空らしいって何"
+    "affectionLabel": "親愛Lv.25",
+    "menuTitle": "親愛Lv.25：夜空らしいって何"
   },
   {
     "id": "yozora_affection_20_03_key",
@@ -396,7 +393,7 @@
     "route": "yozora",
     "affectionBlock": 3,
     "affectionSlot": "key3",
-    "unlockLevel": 27,
+    "unlockLevel": 28,
     "characters": [
       "ai",
       "ah"
@@ -410,13 +407,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 27
+      "level": 28
     },
     "order": 3023,
     "summary": "ブラックコーヒーとホットミルクを通じて、夜空が美空の反対を選ぶ癖と、同じものを選ぶ揺らぎを見せるキーシナリオ。",
     "rawTitle": "白と黒の飲み物",
-    "affectionLabel": "親愛Lv.27",
-    "menuTitle": "親愛Lv.27：白と黒の飲み物"
+    "affectionLabel": "親愛Lv.28",
+    "menuTitle": "親愛Lv.28：白と黒の飲み物"
   },
   {
     "id": "yozora_affection_30_00_main",
@@ -467,7 +464,7 @@
     "route": "yozora",
     "affectionBlock": 4,
     "affectionSlot": "key1",
-    "unlockLevel": 31,
+    "unlockLevel": 33,
     "characters": [
       "ai",
       "ah"
@@ -481,13 +478,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 31
+      "level": 33
     },
     "order": 3031,
     "summary": "美空が常連客に褒められ、夜空が嬉しさと小さな痛みの両方を抱くキーシナリオ。",
     "rawTitle": "美空が褒められるのは嬉しい",
-    "affectionLabel": "親愛Lv.31",
-    "menuTitle": "親愛Lv.31：美空が褒められるのは嬉しい"
+    "affectionLabel": "親愛Lv.33",
+    "menuTitle": "親愛Lv.33：美空が褒められるのは嬉しい"
   },
   {
     "id": "yozora_affection_30_02_key",
@@ -498,7 +495,7 @@
     "route": "yozora",
     "affectionBlock": 4,
     "affectionSlot": "key2",
-    "unlockLevel": 34,
+    "unlockLevel": 35,
     "characters": [
       "ai",
       "ah"
@@ -512,13 +509,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 34
+      "level": 35
     },
     "order": 3032,
     "summary": "夜空の弓道をめぐり、美空の剣道への尊敬と自分が見られることへの抵抗を描くキーシナリオ。",
     "rawTitle": "美空の剣道の方がわかりやすい",
-    "affectionLabel": "親愛Lv.34",
-    "menuTitle": "親愛Lv.34：美空の剣道の方がわかりやすい"
+    "affectionLabel": "親愛Lv.35",
+    "menuTitle": "親愛Lv.35：美空の剣道の方がわかりやすい"
   },
   {
     "id": "yozora_affection_30_03_key",
@@ -529,7 +526,7 @@
     "route": "yozora",
     "affectionBlock": 4,
     "affectionSlot": "key3",
-    "unlockLevel": 37,
+    "unlockLevel": 38,
     "characters": [
       "ai",
       "ah"
@@ -543,13 +540,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 37
+      "level": 38
     },
     "order": 3033,
     "summary": "夜空が接客で成果を出すが、話題が美空に流れることで嬉しさと痛みが混ざるキーシナリオ。",
     "rawTitle": "別にいい",
-    "affectionLabel": "親愛Lv.37",
-    "menuTitle": "親愛Lv.37：別にいい"
+    "affectionLabel": "親愛Lv.38",
+    "menuTitle": "親愛Lv.38：別にいい"
   },
   {
     "id": "yozora_affection_40_00_main",
@@ -600,7 +597,7 @@
     "route": "yozora",
     "affectionBlock": 5,
     "affectionSlot": "key1",
-    "unlockLevel": 41,
+    "unlockLevel": 43,
     "characters": [
       "ai"
     ],
@@ -612,13 +609,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 41
+      "level": 43
     },
     "order": 3041,
     "summary": "メイン40で「嬉しいのに苦しい」と漏らした反動で、夜空は店長を避け始める。店長が話しかけても「美空のところに行けば」と繰り返し、自分を見られることから逃げようとする。",
     "rawTitle": "美空のところに行けば",
-    "affectionLabel": "親愛Lv.41",
-    "menuTitle": "親愛Lv.41：美空のところに行けば",
+    "affectionLabel": "親愛Lv.43",
+    "menuTitle": "親愛Lv.43：美空のところに行けば",
     "locationName": "ひだまりストア・店内売り場"
   },
   {
@@ -630,7 +627,7 @@
     "route": "yozora",
     "affectionBlock": 5,
     "affectionSlot": "key2",
-    "unlockLevel": 44,
+    "unlockLevel": 45,
     "characters": [
       "ai"
     ],
@@ -642,13 +639,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 44
+      "level": 45
     },
     "order": 3044,
     "summary": "夜空は駅前で店長を見つけると道を変え、あからさまに避ける。「避けてない。あんたが追ってくるだけ」と言いながらも、本当に放っておかれるとそれはそれで傷つくという矛盾を少し漏らす。",
     "rawTitle": "あんたが追ってくるだけ",
-    "affectionLabel": "親愛Lv.44",
-    "menuTitle": "親愛Lv.44：あんたが追ってくるだけ",
+    "affectionLabel": "親愛Lv.45",
+    "menuTitle": "親愛Lv.45：あんたが追ってくるだけ",
     "locationName": "日和坂駅前・帰り道"
   },
   {
@@ -660,7 +657,7 @@
     "route": "yozora",
     "affectionBlock": 5,
     "affectionSlot": "key3",
-    "unlockLevel": 47,
+    "unlockLevel": 48,
     "characters": [
       "ai"
     ],
@@ -672,13 +669,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 47
+      "level": 48
     },
     "order": 3047,
     "summary": "夜空は美空との会話で、店長に見られることが嫌なのに、見られないことも嫌だと認める。さらに、店長が美空の大事な人であるにもかかわらず、自分も店長に見つけてほしいと思ってしまう罪悪感が出る。",
     "rawTitle": "美空の大事なものなのに",
-    "affectionLabel": "親愛Lv.47",
-    "menuTitle": "親愛Lv.47：美空の大事なものなのに",
+    "affectionLabel": "親愛Lv.48",
+    "menuTitle": "親愛Lv.48：美空の大事なものなのに",
     "locationName": "双沢家・白黒ツインルーム"
   },
   {
@@ -728,7 +725,7 @@
     "route": "yozora",
     "affectionBlock": 6,
     "affectionSlot": "key1",
-    "unlockLevel": 51,
+    "unlockLevel": 53,
     "characters": [
       "ai",
       "ah"
@@ -742,13 +739,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 51
+      "level": 53
     },
     "order": 3051,
     "summary": "メイン40「嬉しいのに、苦しい」で自分の矛盾した感情を漏らしてしまった夜空が、店長と美空の視線を避け始める。まだ美空への黒い感情は明言しないが、「美空のところに行けば」「ぼくじゃなくていいでしょ」と店長を美空へ押し返す。最後に「少し一人にして」と告げ、駅前ではなく夜の運動公園方面へ向かう。",
     "rawTitle": "少し一人にして",
-    "affectionLabel": "親愛Lv.51",
-    "menuTitle": "親愛Lv.51：少し一人にして",
+    "affectionLabel": "親愛Lv.53",
+    "menuTitle": "親愛Lv.53：少し一人にして",
     "locationName": "ひだまりストア・閉店後／日和坂総合運動公園方面"
   },
   {
@@ -760,7 +757,7 @@
     "route": "yozora",
     "affectionBlock": 6,
     "affectionSlot": "key2",
-    "unlockLevel": 54,
+    "unlockLevel": 55,
     "characters": [
       "ai",
       "ah"
@@ -774,13 +771,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 54
+      "level": 55
     },
     "order": 3054,
     "summary": "キー5-1で「少し一人にして」と出ていった夜空を、店長が探しに行く。美空は電話・メッセージで心配を伝えるが、その場には登場しない。店長は駅前ではなく、夜空の性格と前回の演武後の様子から運動公園方面を探す。最終的に夜空から「探さないで」「それが嫌」とメッセージが届き、店長は海沿いのみなと公園へ向かう。",
     "rawTitle": "夜空の行きそうな場所",
-    "affectionLabel": "親愛Lv.54",
-    "menuTitle": "親愛Lv.54：夜空の行きそうな場所",
+    "affectionLabel": "親愛Lv.55",
+    "menuTitle": "親愛Lv.55：夜空の行きそうな場所",
     "locationName": "ひだまりストア・閉店後／日和坂総合運動公園／海沿いの道"
   },
   {
@@ -792,7 +789,7 @@
     "route": "yozora",
     "affectionBlock": 6,
     "affectionSlot": "key3",
-    "unlockLevel": 57,
+    "unlockLevel": 58,
     "characters": [
       "ai",
       "ah"
@@ -806,13 +803,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 57
+      "level": 58
     },
     "order": 3057,
     "summary": "夜のみなと公園で、店長が夜空を見つける。夜空は「見つけないでって言ったのに」と拒むが、店長の「心配だから」に追い詰められ、美空への黒い感情を漏らしてしまう。それを自分で認めたことで自己嫌悪に陥り、「もう、ぼくのことは見ないでっ」とパニックになって逃走する。",
     "rawTitle": "見つけないで",
-    "affectionLabel": "親愛Lv.57",
-    "menuTitle": "親愛Lv.57：見つけないで",
+    "affectionLabel": "親愛Lv.58",
+    "menuTitle": "親愛Lv.58：見つけないで",
     "locationName": "みなと公園・夜"
   },
   {
@@ -864,7 +861,7 @@
     "route": "yozora",
     "affectionBlock": 7,
     "affectionSlot": "key1",
-    "unlockLevel": 61,
+    "unlockLevel": 63,
     "characters": [
       "ai",
       "ah"
@@ -878,13 +875,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 61
+      "level": 63
     },
     "order": 3061,
     "summary": "60-1 店長、大丈夫？。場所：ひだまりストア・翌日朝／バックヤード。",
     "rawTitle": "店長、大丈夫？",
-    "affectionLabel": "親愛Lv.61",
-    "menuTitle": "親愛Lv.61：店長、大丈夫？",
+    "affectionLabel": "親愛Lv.63",
+    "menuTitle": "親愛Lv.63：店長、大丈夫？",
     "locationName": "ひだまりストア・翌日朝／バックヤード"
   },
   {
@@ -896,7 +893,7 @@
     "route": "yozora",
     "affectionBlock": 7,
     "affectionSlot": "key2",
-    "unlockLevel": 64,
+    "unlockLevel": 65,
     "characters": [
       "ai",
       "ah"
@@ -910,13 +907,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 64
+      "level": 65
     },
     "order": 3064,
     "summary": "60-2 一生面倒見るって、どういう意味。場所：ひだまりストア・休憩室。",
     "rawTitle": "一生面倒見るって、どういう意味",
-    "affectionLabel": "親愛Lv.64",
-    "menuTitle": "親愛Lv.64：一生面倒見るって、どういう意味",
+    "affectionLabel": "親愛Lv.65",
+    "menuTitle": "親愛Lv.65：一生面倒見るって、どういう意味",
     "locationName": "ひだまりストア・休憩室"
   },
   {
@@ -928,7 +925,7 @@
     "route": "yozora",
     "affectionBlock": 7,
     "affectionSlot": "key3",
-    "unlockLevel": 67,
+    "unlockLevel": 68,
     "characters": [
       "ai",
       "ah"
@@ -942,13 +939,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 67
+      "level": 68
     },
     "order": 3067,
     "summary": "60-3 店長のあったかさ。場所：ひだまりストア・休憩室／閉店後の店先。",
     "rawTitle": "店長のあったかさ",
-    "affectionLabel": "親愛Lv.67",
-    "menuTitle": "親愛Lv.67：店長のあったかさ",
+    "affectionLabel": "親愛Lv.68",
+    "menuTitle": "親愛Lv.68：店長のあったかさ",
     "locationName": "ひだまりストア・休憩室／閉店後の店先"
   },
   {
@@ -1001,7 +998,7 @@
     "route": "yozora",
     "affectionBlock": 8,
     "affectionSlot": "key1",
-    "unlockLevel": 71,
+    "unlockLevel": 73,
     "characters": [
       "ai",
       "ah"
@@ -1015,13 +1012,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 71
+      "level": 73
     },
     "order": 3071,
     "summary": "70-1 ちゃんと謝りたい。場所：ひだまりストア・閉店後／店先。",
     "rawTitle": "ちゃんと謝りたい",
-    "affectionLabel": "親愛Lv.71",
-    "menuTitle": "親愛Lv.71：ちゃんと謝りたい",
+    "affectionLabel": "親愛Lv.73",
+    "menuTitle": "親愛Lv.73：ちゃんと謝りたい",
     "locationName": "ひだまりストア・閉店後／店先"
   },
   {
@@ -1033,7 +1030,7 @@
     "route": "yozora",
     "affectionBlock": 8,
     "affectionSlot": "key2",
-    "unlockLevel": 74,
+    "unlockLevel": 75,
     "characters": [
       "ai",
       "ah"
@@ -1047,13 +1044,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 74
+      "level": 75
     },
     "order": 3074,
     "summary": "70-2 言えなかったこと。場所：若葉中央公園・夕方。",
     "rawTitle": "言えなかったこと",
-    "affectionLabel": "親愛Lv.74",
-    "menuTitle": "親愛Lv.74：言えなかったこと",
+    "affectionLabel": "親愛Lv.75",
+    "menuTitle": "親愛Lv.75：言えなかったこと",
     "locationName": "若葉中央公園・夕方"
   },
   {
@@ -1065,7 +1062,7 @@
     "route": "yozora",
     "affectionBlock": 8,
     "affectionSlot": "key3",
-    "unlockLevel": 77,
+    "unlockLevel": 78,
     "characters": [
       "ai",
       "ah"
@@ -1079,13 +1076,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 77
+      "level": 78
     },
     "order": 3077,
     "summary": "70-3 帰ったら、好きなものの話をしよう。場所：ひだまりストア・休憩室／帰り道。",
     "rawTitle": "帰ったら、好きなものの話をしよう",
-    "affectionLabel": "親愛Lv.77",
-    "menuTitle": "親愛Lv.77：帰ったら、好きなものの話をしよう",
+    "affectionLabel": "親愛Lv.78",
+    "menuTitle": "親愛Lv.78：帰ったら、好きなものの話をしよう",
     "locationName": "ひだまりストア・休憩室／帰り道"
   },
   {
@@ -1138,7 +1135,7 @@
     "route": "yozora",
     "affectionBlock": 9,
     "affectionSlot": "key1",
-    "unlockLevel": 81,
+    "unlockLevel": 83,
     "characters": [
       "ai",
       "ah"
@@ -1152,13 +1149,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 81
+      "level": 83
     },
     "order": 3081,
     "summary": "80-1 星は、見えなくても。場所：ひだまりストア・閉店後／店先。",
     "rawTitle": "星は、見えなくても",
-    "affectionLabel": "親愛Lv.81",
-    "menuTitle": "親愛Lv.81：星は、見えなくても",
+    "affectionLabel": "親愛Lv.83",
+    "menuTitle": "親愛Lv.83：星は、見えなくても",
     "locationName": "ひだまりストア・閉店後／店先"
   },
   {
@@ -1170,7 +1167,7 @@
     "route": "yozora",
     "affectionBlock": 9,
     "affectionSlot": "key2",
-    "unlockLevel": 84,
+    "unlockLevel": 85,
     "characters": [
       "ai",
       "ah"
@@ -1184,13 +1181,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 84
+      "level": 85
     },
     "order": 3084,
     "summary": "80-2 行きたいって言ったら。場所：ひだまりストア・休憩室／店先。",
     "rawTitle": "行きたいって言ったら",
-    "affectionLabel": "親愛Lv.84",
-    "menuTitle": "親愛Lv.84：行きたいって言ったら",
+    "affectionLabel": "親愛Lv.85",
+    "menuTitle": "親愛Lv.85：行きたいって言ったら",
     "locationName": "ひだまりストア・休憩室／店先"
   },
   {
@@ -1202,7 +1199,7 @@
     "route": "yozora",
     "affectionBlock": 9,
     "affectionSlot": "key3",
-    "unlockLevel": 87,
+    "unlockLevel": 88,
     "characters": [
       "ai",
       "ah"
@@ -1216,13 +1213,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 87
+      "level": 88
     },
     "order": 3087,
     "summary": "80-3 怖いけど、見たい。場所：双沢家・ツインルーム／ひだまりストア・店先。",
     "rawTitle": "怖いけど、見たい",
-    "affectionLabel": "親愛Lv.87",
-    "menuTitle": "親愛Lv.87：怖いけど、見たい",
+    "affectionLabel": "親愛Lv.88",
+    "menuTitle": "親愛Lv.88：怖いけど、見たい",
     "locationName": "双沢家・ツインルーム／ひだまりストア・店先"
   },
   {
@@ -1275,7 +1272,7 @@
     "route": "yozora",
     "affectionBlock": 10,
     "affectionSlot": "key1",
-    "unlockLevel": 91,
+    "unlockLevel": 93,
     "characters": [
       "ai",
       "ah"
@@ -1289,13 +1286,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 91
+      "level": 93
     },
     "order": 3091,
     "summary": "90-1 夜のブックカフェ企画。場所：hidamari_store_breakroom。",
     "rawTitle": "夜のブックカフェ企画",
-    "affectionLabel": "親愛Lv.91",
-    "menuTitle": "親愛Lv.91：夜のブックカフェ企画",
+    "affectionLabel": "親愛Lv.93",
+    "menuTitle": "親愛Lv.93：夜のブックカフェ企画",
     "locationName": "hidamari_store_breakroom"
   },
   {
@@ -1307,7 +1304,7 @@
     "route": "yozora",
     "affectionBlock": 10,
     "affectionSlot": "key2",
-    "unlockLevel": 94,
+    "unlockLevel": 95,
     "characters": [
       "ai",
       "ah"
@@ -1321,13 +1318,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 94
+      "level": 95
     },
     "order": 3094,
     "summary": "90-2 アントステラへ行こう。場所：hidamari_store_breakroom。",
     "rawTitle": "アントステラへ行こう",
-    "affectionLabel": "親愛Lv.94",
-    "menuTitle": "親愛Lv.94：アントステラへ行こう",
+    "affectionLabel": "親愛Lv.95",
+    "menuTitle": "親愛Lv.95：アントステラへ行こう",
     "locationName": "hidamari_store_breakroom"
   },
   {
@@ -1339,7 +1336,7 @@
     "route": "yozora",
     "affectionBlock": 10,
     "affectionSlot": "key3",
-    "unlockLevel": 97,
+    "unlockLevel": 98,
     "characters": [
       "ai",
       "ah"
@@ -1353,13 +1350,13 @@
     "unlock": {
       "type": "affection_level",
       "character": "ai",
-      "level": 97
+      "level": 98
     },
     "order": 3097,
     "summary": "90-3 二人だから、少し素直になる。場所：アントステラ2階・夜のブックカフェ。",
     "rawTitle": "二人だから、少し素直になる",
-    "affectionLabel": "親愛Lv.97",
-    "menuTitle": "親愛Lv.97：二人だから、少し素直になる",
+    "affectionLabel": "親愛Lv.98",
+    "menuTitle": "親愛Lv.98：二人だから、少し素直になる",
     "locationName": "アントステラ2階・夜のブックカフェ"
   },
   {
@@ -1404,4 +1401,3 @@
     "locationName": "春待ち花畑・昼"
   }
 ];
-})();
