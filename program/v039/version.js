@@ -1,6 +1,6 @@
-/* v039_182 yozora affection lv3 step36-37 storyfile patch */
+/* v039_183 yozora affection lv18 bg and sprite adjustment */
 (function(){
   "use strict";
-  window.TEN_OTSU_PATCH_VERSION = "v039_182";
-  window.TEN_OTSU_PATCH_LABEL = "夜空 親愛Lv.3「美空なら休憩室」ステップ36・37立ち絵修正";
+  window.TEN_OTSU_PATCH_VERSION = "v039_183";
+  window.TEN_OTSU_PATCH_LABEL = "夜空 親愛Lv.18『気づかなくていい疲れ』背景・立ち絵調整";
 })();

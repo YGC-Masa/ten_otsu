@@ -42,7 +42,7 @@
     {
       "speaker": "",
       "text": "――ひだまりストア・閉店後――",
-      "bg": "images/assets/bg/battle_store_lv1.png",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
       "clearStorySprites": true
@@ -546,7 +546,7 @@
     {
       "speaker": "",
       "text": "――ひだまりストア前・帰り道――",
-      "bg": "images/assets/bg/bg_hidamari_store_front_night.png",
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
       "clearStorySprites": true
@@ -1341,12 +1341,12 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_main20_upper.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10201.webp",
+          "src": "images/assets/char/misora_main20_upper.png",
           "opacity": 1
         }
       ]
@@ -1877,7 +1877,10 @@
           "src": "images/assets/char/h10201.webp",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_akari_dori_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "店長",
@@ -2837,7 +2840,10 @@
           "src": "images/assets/char/h10201.webp",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hiyorizaka_station_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "店長",
