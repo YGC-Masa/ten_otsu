@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_00_01_key",
   "title": "美空なら休憩室",
-  "version": "v039_136",
+  "version": "v039_182",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_00_01_key",
@@ -420,7 +420,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -431,7 +431,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10501.webp",
+          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -1301,5 +1301,5 @@
       ]
     }
   ],
-  "revisionNote": "v039_114: ユーザー更新版をv039_stepsへ再変換。背景はひだまりストア倉庫を使用。"
+  "revisionNote": "v039_114: ユーザー更新版をv039_stepsへ再変換。背景はひだまりストア倉庫を使用。\nv039_182: ステップ36・37の夜空立ち絵をステップ38と同じ images/assets/char/i10101.webp に統一。"
 }
