@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_50_00_main",
   "title": "探さないで、の前兆",
-  "version": "v039_160",
+  "version": "v039_108",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_50_00_main",
@@ -39,7 +39,7 @@
     {
       "speaker": "",
       "text": "――ひだまりストア・閉店後――",
-      "bg": "images/assets/bg/bg_hidamari_store_front_night.png",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
       "clearStorySprites": true
@@ -50,7 +50,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -64,13 +64,8 @@
       "text": "……別に。\n仕事だから。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -84,13 +79,8 @@
       "text": "言わなくていい。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -101,12 +91,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -116,13 +101,8 @@
       "text": "何が。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -133,12 +113,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -148,13 +123,8 @@
       "text": "言わなくていいことを言う人が多いから。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -168,13 +138,8 @@
       "text": "だいたい。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -189,12 +154,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -204,13 +164,8 @@
       "text": "美空もたまに言う。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -221,12 +176,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -236,13 +186,8 @@
       "text": "謝らなくていい。\n美空は悪くないから。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -253,42 +198,28 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_main50.png",
           "opacity": 1
         }
       ]
     },
     {
       "speaker": "夜空",
-      "text": "事実だから。",
+      "text": "事実だから。\n――閉店作業が終わり、三人は店の外へ出る。\n夜の空気は少し冷たかった。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
     },
     {
-      "text": "――閉店作業が終わり、三人は店の外へ出る。",
-      "speaker": ""
-    },
-    {
-      "text": "夜の空気は少し冷たかった。"
-    },
-    {
       "speaker": "",
-      "text": "――ひだまりストア前・夜――"
+      "text": "――ひだまりストア前・夜――",
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -296,12 +227,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -311,13 +237,8 @@
       "text": "美空、上着。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -328,12 +249,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -343,13 +259,8 @@
       "text": "マフラーは。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -360,12 +271,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -375,13 +281,8 @@
       "text": "出して。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -392,12 +293,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -411,13 +307,8 @@
       "text": "持ってる。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -431,13 +322,8 @@
       "text": "着てる。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -451,13 +337,8 @@
       "text": "店長に確認される前に着ただけ。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -471,13 +352,8 @@
       "text": "違う。\n美空がうるさいから。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -488,12 +364,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -503,13 +374,8 @@
       "text": "うん。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -520,12 +386,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
       ]
@@ -535,13 +396,8 @@
       "text": "だからそういうの、言わなくていい。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -552,12 +408,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
       ]
@@ -567,13 +418,8 @@
       "text": "まっすぐすぎる。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -587,13 +433,8 @@
       "text": "……。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -607,13 +448,8 @@
       "text": "美空は駅。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -627,13 +463,8 @@
       "text": "ぼくは少し歩く。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -644,12 +475,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
       ]
@@ -659,13 +485,8 @@
       "text": "少しだけ。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -676,12 +497,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
       ]
@@ -691,13 +507,8 @@
       "text": "ならない。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -708,12 +519,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
       ]
@@ -723,13 +529,8 @@
       "text": "……たぶん。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -740,12 +541,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
       ]
@@ -755,13 +551,8 @@
       "text": "大丈夫。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -772,12 +563,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
       ]
@@ -787,13 +573,8 @@
       "text": "美空まで。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -807,13 +588,8 @@
       "text": "店長は聞かなくていい。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -827,13 +603,8 @@
       "text": "送らなくていい。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -844,12 +615,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
       ]
@@ -859,13 +625,8 @@
       "text": "一人で歩きたいだけ。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -876,12 +637,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
       ]
@@ -895,13 +651,8 @@
       "text": "しない。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -915,13 +666,8 @@
       "text": "連絡したら、店長は来るでしょ。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -935,13 +681,8 @@
       "text": "だからしない。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -952,12 +693,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
       ]
@@ -967,13 +703,8 @@
       "text": "美空も来るでしょ。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -984,12 +715,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
       ]
@@ -999,13 +725,8 @@
       "text": "だからしない。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1019,13 +740,8 @@
       "text": "なに。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1039,13 +755,8 @@
       "text": "嫌。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1059,13 +770,8 @@
       "text": "……。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1079,13 +785,8 @@
       "text": "遅い。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1099,13 +800,8 @@
       "text": "謝らなくていい。\n謝られると、こっちが悪いみたいになる。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1116,12 +812,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
       ]
@@ -1131,39 +822,22 @@
       "text": "美空もその顔しないで。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
     },
     {
       "speaker": "美空",
-      "text": "……うん。",
+      "text": "……うん。\n――少し沈黙が落ちる。\n美空は心配そうに夜空を見るが、夜空は視線を合わせなかった。",
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
       ]
-    },
-    {
-      "text": "――少し沈黙が落ちる。",
-      "speaker": ""
-    },
-    {
-      "text": "美空は心配そうに夜空を見るが、夜空は視線を合わせなかった。"
     },
     {
       "speaker": "店長",
@@ -1175,12 +849,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
       ]
@@ -1194,13 +863,8 @@
       "text": "話すことはない。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1214,13 +878,8 @@
       "text": "……。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1231,12 +890,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
       ]
@@ -1246,13 +900,8 @@
       "text": "無理。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1263,12 +912,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
       ]
@@ -1278,13 +922,8 @@
       "text": "でも、少しならいい。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1295,12 +934,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
       ]
@@ -1310,13 +944,8 @@
       "text": "美空。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1327,12 +956,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
       ]
@@ -1342,13 +966,8 @@
       "text": "ちゃんと前見て歩いて。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1359,12 +978,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
       ]
@@ -1374,13 +988,8 @@
       "text": "あと、マフラー。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1391,12 +1000,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
       ]
@@ -1406,13 +1010,8 @@
       "text": "ならいい。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1423,12 +1022,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
       ]
@@ -1438,13 +1032,8 @@
       "text": "うん。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1455,12 +1044,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
       ]
@@ -1470,13 +1054,8 @@
       "text": "美空。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1487,12 +1066,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
       ]
@@ -1506,39 +1080,22 @@
       "text": "任されなくていい。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
     },
     {
       "speaker": "美空",
-      "text": "ふふっ。\nじゃあ、また明日。",
+      "text": "ふふっ。\nじゃあ、また明日。\n――美空は駅の方へ歩いていく。\n夜空はその背中をしばらく見送っていた。",
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
       ]
-    },
-    {
-      "text": "――美空は駅の方へ歩いていく。",
-      "speaker": ""
-    },
-    {
-      "text": "夜空はその背中をしばらく見送っていた。"
     },
     {
       "speaker": "店長",
@@ -1549,13 +1106,8 @@
       "text": "……言わなくていい。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1569,13 +1121,8 @@
       "text": "でも、今日は怒るほどじゃない。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1589,27 +1136,16 @@
       "text": "言わなくていい。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",
-      "text": "わかった。"
-    },
-    {
-      "text": "――二人は、店長のマンション方面へ続く道を歩き出す。",
-      "speaker": ""
-    },
-    {
-      "text": "夜空はいつもより少しだけ距離を取り、街灯の影に入るように歩いた。"
+      "text": "わかった。\n――二人は、店長のマンション方面へ続く道を歩き出す。\n夜空はいつもより少しだけ距離を取り、街灯の影に入るように歩いた。"
     },
     {
       "speaker": "",
@@ -1624,13 +1160,8 @@
       "text": "店長の帰り道でしょ。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1644,13 +1175,8 @@
       "text": "少し歩くって言った。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1664,33 +1190,26 @@
       "text": "ない。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
     },
     {
       "speaker": "店長",
-      "text": "ないのか。"
+      "text": "ないのか。",
+      "bg": "images/assets/bg/bg_manager_mansion_road_night.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
       "text": "一人でいたい時に、目的地が必要？",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1704,13 +1223,8 @@
       "text": "ならいい。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1724,13 +1238,8 @@
       "text": "……。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1744,13 +1253,8 @@
       "text": "そうやって、言われた通りにされるのも困る。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1764,13 +1268,8 @@
       "text": "難しくしてるのは、ぼく。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1784,13 +1283,8 @@
       "text": "今日は、ぼく。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1804,13 +1298,8 @@
       "text": "言わなくていい。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1824,13 +1313,8 @@
       "text": "言いそうだった。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1841,26 +1325,14 @@
     },
     {
       "speaker": "夜空",
-      "text": "ばれる。",
+      "text": "ばれる。\n――夜空は街灯の下で足を止める。\nマンション前の植え込みが、夜風に小さく揺れていた。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
-    },
-    {
-      "text": "――夜空は街灯の下で足を止める。",
-      "speaker": ""
-    },
-    {
-      "text": "マンション前の植え込みが、夜風に小さく揺れていた。"
     },
     {
       "speaker": "店長",
@@ -1871,13 +1343,8 @@
       "text": "なに。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1891,13 +1358,8 @@
       "text": "……避けてた。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1911,13 +1373,8 @@
       "text": "認めないと、店長はまた探すから。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1931,13 +1388,8 @@
       "text": "理由とか、隠してることとか、言いたくないこととか。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1951,13 +1403,8 @@
       "text": "店長は、そういうのを探す。\n見つける。\nそれで、悪くないって言う。\n急がなくていいって言う。\n美空じゃなくても、夜空は夜空だって言う。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1971,13 +1418,8 @@
       "text": "言うでしょ。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1991,13 +1433,8 @@
       "text": "それが嫌。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2011,13 +1448,8 @@
       "text": "嫌。\n優しくされると、怒れない。\n責められない。\n逃げても、こっちが悪いみたいになる。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2031,13 +1463,8 @@
       "text": "ほら、言う。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2051,13 +1478,8 @@
       "text": "謝らなくていい。\nそういうところが、余計に困る。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2071,13 +1493,8 @@
       "text": "それも困る。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2088,39 +1505,22 @@
     },
     {
       "speaker": "夜空",
-      "text": "だから、言ってるでしょ。\n難しくしてるのは、ぼく。",
+      "text": "だから、言ってるでしょ。\n難しくしてるのは、ぼく。\n――夜空は小さく息を吐いた。\n黒い髪が夜風に揺れる。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
-    },
-    {
-      "text": "――夜空は小さく息を吐いた。",
-      "speaker": ""
-    },
-    {
-      "text": "黒い髪が夜風に揺れる。"
     },
     {
       "speaker": "夜空",
       "text": "美空が褒められるのは嬉しい。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2134,13 +1534,8 @@
       "text": "美空が店長と話してるのも、嫌じゃない。\n美空が店長を信頼してるのも、嬉しい。\n美空に大事な人がいるのは、嬉しい。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2154,13 +1549,8 @@
       "text": "でも、ぼくも店長に見てほしいって思う。\nそう思う時がある。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2174,13 +1564,8 @@
       "text": "言わないで。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2194,13 +1579,8 @@
       "text": "美空の大事な人なのに。\n美空が楽しそうに話す相手なのに。\nぼくまで、見つけてほしいって思うのは、変でしょ。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2214,13 +1594,8 @@
       "text": "言わないでって言った。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2234,13 +1609,8 @@
       "text": "……でも、言うと思った。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2254,13 +1624,8 @@
       "text": "本当に、変な店長。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2274,13 +1639,8 @@
       "text": "だから、言わないで。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2294,13 +1654,8 @@
       "text": "わかってない。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2314,13 +1669,8 @@
       "text": "認めないで。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2331,39 +1681,22 @@
     },
     {
       "speaker": "夜空",
-      "text": "謝らなくていい。",
+      "text": "謝らなくていい。\n――夜空はマンション前の小さな植え込みを見つめる。\n店長の方は見ない。\nそれでも、声だけは逃げきれないように続いた。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
-    },
-    {
-      "text": "――夜空はマンション前の小さな植え込みを見つめる。",
-      "speaker": ""
-    },
-    {
-      "text": "店長の方は見ない。\nそれでも、声だけは逃げきれないように続いた。"
     },
     {
       "speaker": "夜空",
       "text": "ぼくは、美空が大事。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2377,13 +1710,8 @@
       "text": "それは変わらない。\n誰よりも大事。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2397,13 +1725,8 @@
       "text": "だから、美空を羨ましいなんて思いたくなかった。\n美空が褒められて苦しいなんて、思いたくなかった。\n店長に見つけてほしいなんて、思いたくなかった。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2417,13 +1740,8 @@
       "text": "でも、思った。\n思ってしまった。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2437,13 +1755,8 @@
       "text": "言わないで。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2457,13 +1770,8 @@
       "text": "今、何か言われたら、たぶん嫌なことを言う。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2477,13 +1785,8 @@
       "text": "わかってない。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2494,39 +1797,22 @@
     },
     {
       "speaker": "夜空",
-      "text": "……。",
+      "text": "……。\n――沈黙。\n遠くを走る車の音だけが聞こえる。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
-    },
-    {
-      "text": "――沈黙。",
-      "speaker": ""
-    },
-    {
-      "text": "遠くを走る車の音だけが聞こえる。"
     },
     {
       "speaker": "夜空",
       "text": "店長。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2540,13 +1826,8 @@
       "text": "ぼくがいなくなっても、探さないで。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2560,13 +1841,8 @@
       "text": "そのままの意味。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2580,13 +1856,8 @@
       "text": "もし、ぼくが少し一人になりたいって言ったら。\nもし、連絡しなかったら。\nもし、どこかに行ったら。\n探さないで。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2600,13 +1871,8 @@
       "text": "……。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2620,13 +1886,8 @@
       "text": "だから困る。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2640,13 +1901,8 @@
       "text": "……どうして。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2660,13 +1916,8 @@
       "text": "心配しなくていい。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2680,13 +1931,8 @@
       "text": "美空のところに行けばいい。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2700,16 +1946,13 @@
       "text": "美空は明るいし、優しいし、店長にも似合う。\n美空の方を見てればいい。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main50_return_road.png"
     },
     {
       "speaker": "店長",
@@ -2720,13 +1963,8 @@
       "text": "ぼくのことは、ついででいいって言ったでしょ。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2740,13 +1978,8 @@
       "text": "ぼくは思ってる。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2760,13 +1993,8 @@
       "text": "……。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2780,13 +2008,8 @@
       "text": "本当じゃないかもしれない。\nでも、そう思ってないと、苦しい。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2800,13 +2023,8 @@
       "text": "ぼくまで見てほしいなんて思ったら、もっと苦しい。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2820,13 +2038,8 @@
       "text": "言わないで。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2840,13 +2053,8 @@
       "text": "店長は、すぐ見つける。\nぼくが隠したいところまで。\nぼくが自分でも見たくないところまで。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2860,13 +2068,8 @@
       "text": "だから、探さないで。\n見つけないで。\n優しくしないで。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2880,13 +2083,8 @@
       "text": "……そういうところが嫌。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2900,13 +2098,8 @@
       "text": "嫌なのに。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2917,39 +2110,22 @@
     },
     {
       "speaker": "夜空",
-      "text": "……少しだけ、嬉しいのがもっと嫌。",
+      "text": "……少しだけ、嬉しいのがもっと嫌。\n――夜空の声は、小さかった。\n店長が返事をする前に、夜空は一歩後ろへ下がる。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
-    },
-    {
-      "text": "――夜空の声は、小さかった。",
-      "speaker": ""
-    },
-    {
-      "text": "店長が返事をする前に、夜空は一歩後ろへ下がる。"
     },
     {
       "speaker": "夜空",
       "text": "今日は、帰る。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2963,13 +2139,8 @@
       "text": "送らなくていい。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2983,13 +2154,8 @@
       "text": "送らないで。\n今、ついてこられたら、たぶん本当に嫌なことを言う。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -3003,13 +2169,8 @@
       "text": "美空には、遅くならないって言って。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -3023,13 +2184,8 @@
       "text": "……。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -3043,13 +2199,8 @@
       "text": "わかってる。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -3063,13 +2214,8 @@
       "text": "……送る。\nメッセージだけ。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -3083,13 +2229,8 @@
       "text": "それでいいでしょ。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -3103,13 +2244,8 @@
       "text": "……変な店長。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -3120,59 +2256,38 @@
     },
     {
       "speaker": "夜空",
-      "text": "……うん。",
+      "text": "……うん。\n――夜空は背を向ける。\n数歩歩いて、立ち止まる。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
-    },
-    {
-      "text": "――夜空は背を向ける。",
-      "speaker": ""
-    },
-    {
-      "text": "数歩歩いて、立ち止まる。"
     },
     {
       "speaker": "夜空",
       "text": "店長。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
     },
     {
       "speaker": "店長",
-      "text": "ん？"
+      "text": "ん？",
+      "hideEventCg": true
     },
     {
       "speaker": "夜空",
       "text": "さっきの。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -3186,13 +2301,8 @@
       "text": "探さないでって言ったのは、本当。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -3206,13 +2316,8 @@
       "text": "でも、全部放っておかれたら、それはそれで腹が立つ。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -3226,13 +2331,8 @@
       "text": "人間ってそういうものでしょ。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -3246,13 +2346,8 @@
       "text": "……それも、前に聞いた。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -3263,26 +2358,14 @@
     },
     {
       "speaker": "夜空",
-      "text": "……本当に、変な店長。",
+      "text": "……本当に、変な店長。\n――夜空は今度こそ歩き出した。\nその背中は、暗い街灯の向こうへ少しずつ遠ざかっていく。\n店長は追いかけなかった。\nけれど、夜空の言葉だけが、夜の帰り道に残っていた。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
-    },
-    {
-      "text": "――夜空は今度こそ歩き出した。",
-      "speaker": ""
-    },
-    {
-      "text": "その背中は、暗い街灯の向こうへ少しずつ遠ざかっていく。\n店長は追いかけなかった。\nけれど、夜空の言葉だけが、夜の帰り道に残っていた。"
     },
     {
       "speaker": "",
@@ -3296,11 +2379,6 @@
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
           "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
         }
       ]
     },
@@ -3308,11 +2386,6 @@
       "speaker": "夜空",
       "text": "……ただいま。",
       "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -3328,11 +2401,6 @@
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
           "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
         }
       ]
     },
@@ -3340,11 +2408,6 @@
       "speaker": "夜空",
       "text": "言ったでしょ。",
       "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -3360,11 +2423,6 @@
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
           "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
         }
       ]
     },
@@ -3372,11 +2430,6 @@
       "speaker": "夜空",
       "text": "……そう。",
       "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -3392,11 +2445,6 @@
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
           "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
         }
       ]
     },
@@ -3404,11 +2452,6 @@
       "speaker": "夜空",
       "text": "なに。",
       "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -3424,11 +2467,6 @@
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
           "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
         }
       ]
     },
@@ -3436,11 +2474,6 @@
       "speaker": "夜空",
       "text": "大丈夫。",
       "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -3456,11 +2489,6 @@
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
           "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
         }
       ]
     },
@@ -3468,11 +2496,6 @@
       "speaker": "夜空",
       "text": "……今日は、しない方がいい。",
       "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -3488,11 +2511,6 @@
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
           "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
         }
       ]
     },
@@ -3500,11 +2518,6 @@
       "speaker": "夜空",
       "text": "美空。",
       "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -3519,11 +2532,6 @@
         {
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
       ]
@@ -3533,11 +2541,6 @@
       "text": "もし、ぼくが少し一人になりたいって言ったら。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
           "opacity": 1
@@ -3552,11 +2555,6 @@
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
           "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
         }
       ]
     },
@@ -3564,11 +2562,6 @@
       "speaker": "夜空",
       "text": "少しだけ、待って。",
       "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -3584,11 +2577,6 @@
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
           "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
         }
       ]
     },
@@ -3596,11 +2584,6 @@
       "speaker": "夜空",
       "text": "でも。",
       "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -3616,11 +2599,6 @@
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
           "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
         }
       ]
     },
@@ -3629,16 +2607,14 @@
       "text": "本当にいなくなったら……。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_sugosawa_room_night_light_on.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -3646,12 +2622,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -3660,11 +2631,6 @@
       "speaker": "夜空",
       "text": "……だよね。",
       "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -3678,12 +2644,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -3692,11 +2653,6 @@
       "speaker": "夜空",
       "text": "うん。",
       "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -3710,12 +2666,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -3724,11 +2675,6 @@
       "speaker": "夜空",
       "text": "……美空は、本当にまっすぐすぎる。",
       "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -3742,12 +2688,7 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -3757,11 +2698,6 @@
       "text": "何回でも言うね。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
           "opacity": 1
@@ -3770,26 +2706,14 @@
     },
     {
       "speaker": "美空",
-      "text": "何回でも言うよ。",
+      "text": "何回でも言うよ。\n――夜空は少しだけ笑いそうになって、でも笑えなかった。\n胸の奥のざらつきは、まだ消えない。\n店長に探さないでと言った。\nでも、探されなかったらきっと傷つく。\nそんな自分が、夜空にはどうしようもなく面倒で、嫌だった。",
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         }
       ]
-    },
-    {
-      "text": "――夜空は少しだけ笑いそうになって、でも笑えなかった。",
-      "speaker": ""
-    },
-    {
-      "text": "胸の奥のざらつきは、まだ消えない。\n店長に探さないでと言った。\nでも、探されなかったらきっと傷つく。\nそんな自分が、夜空にはどうしようもなく面倒で、嫌だった。"
     }
   ],
   "mainScenarioIndex": 5,
