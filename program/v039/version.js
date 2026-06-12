@@ -1,12 +1,11 @@
-/* v039_173 version */
+/* v039_176 version */
 (function(){
   "use strict";
-  window.TENOTSU_VERSION = "v039_173";
-  window.TENOTSU_VERSION_LABEL = "v039_173 夜空50-2背景・文言修正パッチ";
+  window.TENOTSU_VERSION = "v039_176";
+  window.TENOTSU_VERSION_LABEL = "v039_176 夜空40-3背景・汎用パジャマ立ち絵修正パッチ";
   window.TENOTSU_VERSION_NOTES = [
-    "夜空『夜空の行きそうな場所』ステップ34背景を閉店後店舗前へ変更",
-    "ステップ39の表記から『メイン40の』を除去",
-    "ステップ60背景を潮見浜夜へ変更",
-    "index.htmlのキャッシュバージョンをv039_173へ更新"
+    "夜空『夜空らしいって何』の背景をひだまりストア倉庫へ変更",
+    "夜空『白と黒の飲み物』の背景を事務所内休憩スペースへ変更",
+    "夜空『白黒ツインルーム』の背景切替とステップ187イベントCGを実装"
   ];
 })();
