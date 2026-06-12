@@ -1,4 +1,4 @@
-/* v039_170 office boot safe */
+/* v039_173 office boot safe */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;

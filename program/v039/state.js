@@ -2,7 +2,7 @@
   "use strict";
   window.TENOTSU_V039 = window.TENOTSU_V039 || {};
   const ns = window.TENOTSU_V039;
-  ns.VERSION = window.TENOTSU_BUILD_VERSION || ns.VERSION || "v039_170";
+  ns.VERSION = window.TENOTSU_BUILD_VERSION || ns.VERSION || "v039_173";
   ns.BUILD_LABEL = window.TENOTSU_BUILD_LABEL || ns.BUILD_LABEL || "v039_170";
   ns.state = ns.state || { mode:"boot", officeSelection:[], frontCharacter:null, bootedAt:Date.now() };
   ns.state.mode = ns.state.mode || "boot";
