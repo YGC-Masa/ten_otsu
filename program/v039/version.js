@@ -1,11 +1,13 @@
-/* v039_177 version */
+/* v039_179 version */
 (function(){
   "use strict";
-  window.TENOTSU_VERSION = "v039_177";
-  window.TENOTSU_VERSION_LABEL = "v039_177 夜空60メインイベントCG差し替えパッチ";
+  window.TENOTSU_VERSION = "v039_179";
+  window.TENOTSU_BUILD_VERSION = "v039_179";
+  window.TENOTSU_VERSION_LABEL = "v039_179 夜空60CG差し替え＋背景プリロード遷移マージパッチ";
+  window.TENOTSU_BUILD_LABEL = "v039_179 夜空60CG差し替え＋背景プリロード遷移マージパッチ";
   window.TENOTSU_VERSION_NOTES = [
-    "夜空『夜空のままで』のイベントCG進行を5枚構成へ差し替え",
-    "ステップ133・157・182・217・262で段階的にCGを切り替える",
-    "v039_176までの表示補正・UI修正を維持"
+    "夜空『夜空のままで』ステップ182の3枚目イベントCGを差し替え",
+    "v039_178の背景プリロード→切替→テキスト進行補正をマージ",
+    "v039_177までの夜空60イベントCG進行を維持"
   ];
 })();
