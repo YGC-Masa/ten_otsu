@@ -1,4 +1,4 @@
-/* v039_179 story bg preload transition */
+/* v039_181 story bg preload transition */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};

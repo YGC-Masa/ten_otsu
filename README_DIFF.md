@@ -1,23 +1,24 @@
-# ten_otsu v039_184 差分パッチ
+# v039_181 夜空63-70正式シナリオID修正パッチ
 
-## 適用前提
-- v039_183 適用済みの状態へ上書き。
+## 内容
+- アップロードされた誤ラベル/誤ファイル名の4シナリオを正式ID・正式ファイル名へ修正。
+- 既存の親愛Lv.53/55/58/60用ファイルは上書きしない。
+- storyIndex.jsも正式IDへ同期。
 
-## 修正内容
-- 対象ストーリー：双沢 夜空 親愛Lv.18「気づかなくていい疲れ」
-- 対象ファイル：`scenario/v039/events/yozora_affection_10_03_key.json`
+## 正式対応
+- 店長、大丈夫？ → 親愛Lv.63 / scenario/v039/events/yozora_affection_60_01_key.json
+- 一生面倒見るって、どういう意味 → 親愛Lv.65 / scenario/v039/events/yozora_affection_60_02_key.json
+- 店長のあったかさ → 親愛Lv.68 / scenario/v039/events/yozora_affection_60_03_key.json
+- 忘れて、でも忘れないで → 親愛Lv.70 / scenario/v039/events/yozora_affection_70_00_main.json
 
-### 立ち絵変更
-- ステップ83〜最後まで、`storySprites` が指定されている全ステップの立ち絵を以下へ統一。
-  - 美空：`images/assets/char/misora_main20_upper.png`
-  - 夜空：`images/assets/char/yozora_main20_upper.png`
-
-### バージョン表示更新
-- `index.html` を同梱し、タイトルおよび読み込みキャッシュバスターを `v039_184` に更新。
-- `program/v039/version.js` を更新し、画面左下バージョン表示・右メニュー上のバージョン情報に `v039_184` が出るように更新。
-- `VERSION.txt` を更新。
-
-## 備考
-- セリフ本文変更なし。
-- 新規画像なし。
-- シナリオファイル本体修正。
+## 更新ファイル
+- scenario/v039/events/yozora_affection_60_01_key.json
+- scenario/v039/events/yozora_affection_60_02_key.json
+- scenario/v039/events/yozora_affection_60_03_key.json
+- scenario/v039/events/yozora_affection_70_00_main.json
+- scenario/v039/storyIndex.js
+- index.html
+- VERSION.txt
+- program/v039/version.js
+- program/v039/state.js
+- program/v039/storyBgPreloadTransition.js
