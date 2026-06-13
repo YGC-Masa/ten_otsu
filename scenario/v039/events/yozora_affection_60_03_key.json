@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_60_03_key",
   "title": "店長のあったかさ",
-  "version": "v039_186",
+  "version": "v039_190",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_60_03_key",
@@ -2217,8 +2217,8 @@
     {
       "speaker": "",
       "text": "――ひだまりストア・閉店後――",
-      "bg": "images/assets/bg/battle_store_lv1.png",
-      "bgMode": "forceReplace",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
       "forceBackgroundReplace": true,
       "clearStorySprites": true
     },
@@ -2231,11 +2231,17 @@
     },
     {
       "speaker": "",
-      "text": "店内の照明が落とされ、店先には夜風が流れていた。"
+      "text": "店内の照明が落とされ、店先には夜風が流れていた。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "",
-      "text": "美空は帰り支度をしながら、夜空の方を見る。"
+      "text": "美空は帰り支度をしながら、夜空の方を見る。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -2251,7 +2257,10 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -2267,7 +2276,10 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -2283,11 +2295,17 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "店長",
-      "text": "俺はもう少し確認してから帰る。"
+      "text": "俺はもう少し確認してから帰る。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -2303,11 +2321,17 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "店長",
-      "text": "大丈夫だ。"
+      "text": "大丈夫だ。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -2323,11 +2347,17 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "店長",
-      "text": "言ったな。"
+      "text": "言ったな。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -2343,11 +2373,17 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "店長",
-      "text": "ありがとう。"
+      "text": "ありがとう。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -2363,7 +2399,10 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -2379,7 +2418,10 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -2395,7 +2437,10 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -2411,7 +2456,10 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -2427,7 +2475,10 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -2443,7 +2494,10 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -2459,7 +2513,10 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -2475,7 +2532,10 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -2491,7 +2551,10 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -2507,7 +2570,10 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -2523,11 +2589,17 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "",
-      "text": "――夜空は何か言い返そうとして、やめた。\nその代わりに、店長の方を見る。"
+      "text": "――夜空は何か言い返そうとして、やめた。\nその代わりに、店長の方を見る。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -2543,11 +2615,17 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "店長",
-      "text": "ん？"
+      "text": "ん？",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -2563,11 +2641,17 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "店長",
-      "text": "うん。"
+      "text": "うん。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -2583,11 +2667,17 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "店長",
-      "text": "うん。"
+      "text": "うん。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -2603,11 +2693,17 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "店長",
-      "text": "……。"
+      "text": "……。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -2623,7 +2719,10 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -2639,7 +2738,10 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -2655,11 +2757,17 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "店長",
-      "text": "そっか。"
+      "text": "そっか。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -2675,11 +2783,17 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "店長",
-      "text": "うん。"
+      "text": "うん。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -2695,7 +2809,10 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "",
@@ -2706,11 +2823,17 @@
           "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "",
-      "text": "――夜空はまだ、店長への気持ちを名前で呼べない。\nでも、そのあたたかさが美空に似ていることだけは、少しわかった。\nだから怖い。\nだから、離れられない。\nその矛盾を抱えたまま、夜空は今日は逃げずに帰った。"
+      "text": "――夜空はまだ、店長への気持ちを名前で呼べない。\nでも、そのあたたかさが美空に似ていることだけは、少しわかった。\nだから怖い。\nだから、離れられない。\nその矛盾を抱えたまま、夜空は今日は逃げずに帰った。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     }
   ],
   "keyScenarioIndex": 3
