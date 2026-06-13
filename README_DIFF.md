@@ -1,38 +1,36 @@
-# ten_otsu v039_185 差分パッチ
+# ten_otsu v039_186 差分パッチ
 
 ## 適用前提
-- v039_184 適用済みの状態へ上書き。
+- v039_185 適用済みの状態へ上書き。
 
 ## 修正内容
-- 夜空 親愛Lv.63〜70の正式シナリオを、旧 v039_181 official_id パッチから前方マージ。
-- v039_184までの修正を維持しつつ、以下4本のシナリオ本体を正式版に差し替え。
+### 対象シナリオ
+- Lv.63：`yozora_affection_60_01_key.json`「店長、大丈夫？」
+- Lv.65：`yozora_affection_60_02_key.json`「一生面倒見るって、どういう意味」
+- Lv.68：`yozora_affection_60_03_key.json`「店長のあったかさ」
+- Lv.70：`yozora_affection_70_00_main.json`「忘れて、でも忘れないで」
 
-## 対象シナリオ
-- 親愛Lv.63：`scenario/v039/events/yozora_affection_60_01_key.json`
-  - タイトル：店長、大丈夫？
-- 親愛Lv.65：`scenario/v039/events/yozora_affection_60_02_key.json`
-  - タイトル：一生面倒見るって、どういう意味
-- 親愛Lv.68：`scenario/v039/events/yozora_affection_60_03_key.json`
-  - タイトル：店長のあったかさ
-- 親愛Lv.70：`scenario/v039/events/yozora_affection_70_00_main.json`
-  - タイトル：忘れて、でも忘れないで
+### 個別修正
+- **一生面倒見るって、どういう意味**
+  - ステップ1背景を `images/assets/bgev/bg_office_hidamari.png` に変更。
 
-## 同梱ファイル
-- `scenario/v039/events/yozora_affection_60_01_key.json`
-- `scenario/v039/events/yozora_affection_60_02_key.json`
-- `scenario/v039/events/yozora_affection_60_03_key.json`
-- `scenario/v039/events/yozora_affection_70_00_main.json`
-- `scenario/v039/storyIndex.js`
+- **店長のあったかさ**
+  - ステップ1背景を `images/assets/bgev/bg_office_hidamari.png` に変更。
+  - ステップ158背景を `images/assets/bg/bg_hidamari_store_salesfloor_night.png` に変更。
+  - ステップ158以降の双子立ち絵を冬服に切替。
+    - 美空：`images/assets/char/misora_coat_muffler_main50.png`
+    - 夜空：`images/assets/char/yozora_coat_main50.png`
+  - ステップ198で夜空を非表示に調整。
+
+### 同時表示対応
+- 上記4本について、双沢美空・双沢夜空の同席場面を同時表示に調整。
+
+### バージョン表示更新
 - `index.html`
 - `VERSION.txt`
 - `program/v039/version.js`
-
-## バージョン表示
-- `index.html` のキャッシュバスターを `v039_185` に更新。
-- `VERSION.txt` / `program/v039/version.js` を `v039_185` に更新。
-- 画面左下・右メニュー上の表示更新用に `TENOTSU_BUILD_VERSION` / `TENOTSU_BUILD_LABEL` / `TENOTSU_V039.VERSION` を更新。
+- `scenario/v039/storyIndex.js` の対象4本 version を `v039_186` に更新。
 
 ## 備考
-- 旧 `ten_otsu_v039_181_yozora63_70_official_id_patch.zip` をそのまま適用せず、必要なシナリオ4本と `storyIndex.js` の該当versionのみを現在系へ前方マージ。
-- 旧パッチ同梱の `state.js` / `storyBgPreloadTransition.js` は古い可能性があるため同梱しない。
 - 新規画像なし。
+- シナリオファイル本体修正。

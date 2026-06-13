@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_70_00_main",
   "title": "忘れて、でも忘れないで",
-  "version": "v039_185",
+  "version": "v039_186",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_70_00_main",
@@ -67,6 +67,11 @@
       "text": "店長、夜空。\n今日もお疲れさまでした。",
       "storySprites": [
         {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        },
+        {
           "id": "ah",
           "src": "images/assets/char/h10202.webp",
           "opacity": 1
@@ -85,6 +90,11 @@
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
           "opacity": 1
+        },
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
         }
       ]
     },
@@ -99,6 +109,11 @@
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
           "opacity": 1
         }
       ]
@@ -115,6 +130,11 @@
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
           "opacity": 1
+        },
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
         }
       ]
     },
@@ -130,6 +150,11 @@
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
           "opacity": 1
+        },
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10202.webp",
+          "opacity": 1
         }
       ]
     },
@@ -138,7 +163,8 @@
       "text": "――若葉中央公園・夜――",
       "bg": "images/assets/bg/bg_minato_park_night.png",
       "bgMode": "forceReplace",
-      "forceBackgroundReplace": true
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
     },
     {
       "speaker": "",
