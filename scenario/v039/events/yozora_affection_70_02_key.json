@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_70_02_key",
   "title": "少し歩いて",
-  "version": "v039_154",
+  "version": "v039_191",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_70_02_key",
@@ -350,7 +350,11 @@
     },
     {
       "speaker": "店長",
-      "text": "自販機は、店の横でよかったか？"
+      "text": "自販機は、店の横でよかったか？",
+      "bg": "images/assets/bg/bg_hidamari_store_front_winter_day.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
     },
     {
       "speaker": "夜空",
@@ -818,8 +822,8 @@
     {
       "speaker": "",
       "text": "――若葉中央公園・夕方――",
-      "bg": "images/assets/bg/bg_wakaba_central_park_evening.png",
-      "bgMode": "forceReplace",
+      "bg": "images/assets/bg/bg_wakaba_central_park_winter_evening.png",
+      "bgMode": "cover",
       "forceBackgroundReplace": true
     },
     {
