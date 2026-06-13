@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_70_00_main",
   "title": "忘れて、でも忘れないで",
-  "version": "v039_187",
+  "version": "v039_188",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_70_00_main",
@@ -379,7 +379,11 @@
     },
     {
       "speaker": "",
-      "text": "――夜空は空を見上げる。\n公園の上には、街明かりに薄くにじんだ夜空が広がっていた。\n星はほとんど見えない。\nそれでも、夜は確かにそこにある。"
+      "text": "――夜空は空を見上げる。\n公園の上には、街明かりに薄くにじんだ夜空が広がっていた。\n星はほとんど見えない。\nそれでも、夜は確かにそこにある。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main70_winter_park_01.png",
+      "cgFit": "cover",
+      "cgAlign": "center center"
     },
     {
       "speaker": "夜空",
@@ -855,7 +859,11 @@
     },
     {
       "speaker": "",
-      "text": "――夜空はようやくベンチに座った。\n店長は少し距離を空けて、隣に座る。\n近すぎず、遠すぎず。\n夜空が逃げたくならないくらいの距離。"
+      "text": "――夜空はようやくベンチに座った。\n店長は少し距離を空けて、隣に座る。\n近すぎず、遠すぎず。\n夜空が逃げたくならないくらいの距離。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main70_winter_park_02.png",
+      "cgFit": "cover",
+      "cgAlign": "center center"
     },
     {
       "speaker": "夜空",
@@ -975,7 +983,11 @@
     },
     {
       "speaker": "",
-      "text": "――夜空は少し黙ったあと、ベンチの上でほんの少しだけ店長の方へ座り直した。\n肩が触れるほどではない。\nけれど、さっきよりも確かに近い。"
+      "text": "――夜空は少し黙ったあと、ベンチの上でほんの少しだけ店長の方へ座り直した。\n肩が触れるほどではない。\nけれど、さっきよりも確かに近い。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main70_winter_park_03.png",
+      "cgFit": "cover",
+      "cgAlign": "center center"
     },
     {
       "speaker": "店長",
@@ -1125,7 +1137,11 @@
           "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main70_winter_park_04.png",
+      "cgFit": "cover",
+      "cgAlign": "center center"
     },
     {
       "speaker": "店長",
@@ -1177,39 +1193,6 @@
       "text": "――夜空は、ほんの一瞬だけ店長の袖をつまんだ。\n掴むほどではない。\n引き止めるほどでもない。\nただ、逃げないための、小さな目印みたいに。"
     },
     {
-      "speaker": "",
-      "text": "【イベントCG】",
-      "eventCg": {
-        "id": "cg_yozora_wakaba_sleeve_guiding_star",
-        "layer": "frontOfCharacters",
-        "mode": "show"
-      }
-    },
-    {
-      "speaker": "",
-      "text": "夜の若葉中央公園。"
-    },
-    {
-      "speaker": "",
-      "text": "薄い街灯の下、ベンチに並ぶ店長と夜空。"
-    },
-    {
-      "speaker": "",
-      "text": "夜空は少しだけ店長の方へ距離を詰め、視線をそらしたまま店長の袖を小さくつまんでいる。"
-    },
-    {
-      "speaker": "",
-      "text": "空には星はほとんど見えないが、淡い夜のグラデーションが広がっている。"
-    },
-    {
-      "speaker": "",
-      "text": "夜空の表情は照れと不安が混ざっているが、逃げようとはしていない。"
-    },
-    {
-      "speaker": "",
-      "text": "構図は横長イベントCG向け。静かで温かい余韻を重視。"
-    },
-    {
       "speaker": "夜空",
       "text": "これ、見なかったことにして。",
       "storySprites": [
@@ -1218,7 +1201,11 @@
           "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main70_winter_park_03.png",
+      "cgFit": "cover",
+      "cgAlign": "center center"
     },
     {
       "speaker": "店長",
@@ -1278,7 +1265,11 @@
           "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main70_winter_park_06.png",
+      "cgFit": "cover",
+      "cgAlign": "center center"
     },
     {
       "speaker": "店長",
@@ -1368,7 +1359,11 @@
           "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main70_winter_park_04.png",
+      "cgFit": "cover",
+      "cgAlign": "center center"
     },
     {
       "speaker": "店長",
@@ -1432,7 +1427,11 @@
     },
     {
       "speaker": "",
-      "text": "――夜空はそう言って、ほんの少しだけ笑った。\n照れくさそうで、困ったようで、それでも、取り消すことはしなかった。"
+      "text": "――夜空はそう言って、ほんの少しだけ笑った。\n照れくさそうで、困ったようで、それでも、取り消すことはしなかった。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora_main70_winter_park_05.png",
+      "cgFit": "cover",
+      "cgAlign": "center center"
     },
     {
       "speaker": "夜空",
@@ -1503,7 +1502,8 @@
           "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "hideEventCg": true
     },
     {
       "speaker": "店長",

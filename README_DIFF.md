@@ -1,24 +1,36 @@
-# ten_otsu v039_187 差分パッチ
+# ten_otsu v039_188 差分パッチ
 
 ## 適用前提
-- v039_186 適用済みの状態へ上書き。
+- v039_187 適用済みの状態へ上書き。
 
 ## 修正内容
 - 対象ストーリー：Lv.70「忘れて、でも忘れないで」
 - 対象ファイル：`scenario/v039/events/yozora_affection_70_00_main.json`
 
-### 変更点
-- ステップ1 背景を `images/assets/bg/bg_hidamari_store_salesfloor_night.png` に変更。
-- ステップ2 テキストを `――閉店後のひだまりストアは、昼間とはちがう静けさに包まれていた。` に変更。
-- ステップ15 の背景を `images/assets/bg/bg_wakaba_central_park_winter_night.png` に変更。
-- ステップ15以降、夜空の立ち絵を `images/assets/char/yozora_coat_main50.png` に変更。
+### イベントCG追加
+- ステップ46：1枚目
+- ステップ109：2枚目
+- ステップ125：3枚目
+- ステップ145：4枚目
+- ステップ160相当：3枚目と同じ
+- ステップ168相当：6枚目
+- ステップ180相当：4枚目と同じ
+- ステップ189相当：5枚目と同じ
+- ステップ198相当：イベントCG終了
+
+### 追加画像
+- `images/assets/cg/cg_yozora_main70_winter_park_01.png`
+- `images/assets/cg/cg_yozora_main70_winter_park_02.png`
+- `images/assets/cg/cg_yozora_main70_winter_park_03.png`
+- `images/assets/cg/cg_yozora_main70_winter_park_04.png`
+- `images/assets/cg/cg_yozora_main70_winter_park_05.png`
+- `images/assets/cg/cg_yozora_main70_winter_park_06.png`
+
+### ステップ削除
+- 旧ステップ153〜159を削除。
 
 ### バージョン表示更新
 - `index.html`
 - `VERSION.txt`
 - `program/v039/version.js`
-- `scenario/v039/storyIndex.js` の Lv.70 対象 version を `v039_187` に更新。
-
-## 備考
-- 新規画像なし。
-- シナリオ本体修正。
+- `scenario/v039/storyIndex.js` の Lv.70 version を `v039_188` に更新。
