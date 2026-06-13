@@ -1,33 +1,39 @@
-# ten_otsu v039_192 差分パッチ
+# ten_otsu_v039_193_yozora70s_narration_split_winter_snow_bg_patch
 
-## 適用前提
-- v039_191 適用済みの状態へ上書き。
+適用前提：
+- **v039_192適用済み** に上書き
 
-## 修正内容
-- 親愛70代のメニューは現行の正しい並びを維持。
-- 添付シナリオ4本を対応する本体シナリオへ差し替え。
-- 添付シナリオを人物複数表示に対応。
+主な変更：
+1. 親愛70代シナリオ4本で、**セリフ内に混在していた「―― / ーー」地の文を次ステップへ分離**
+2. 新背景アセット **ひだまりストア外観・冬・昼・雪有** を追加
+3. バージョン表記を **v039_193** に更新
 
-## 差し替え対象
-- `scenario/v039/events/yozora_affection_70_01_key.json`
-  - タイトル：ちゃんと謝りたい
-- `scenario/v039/events/yozora_affection_70_02_key.json`
-  - タイトル：言えなかったこと
-- `scenario/v039/events/yozora_affection_70_03_key.json`
-  - タイトル：帰ったら、好きなものの話をしよう
-- `scenario/v039/events/yozora_affection_80_00_main.json`
-  - タイトル：一緒だね
+対象シナリオ：
+- `yozora_affection_70_01_key.json`（ちゃんと謝りたい）
+- `yozora_affection_70_02_key.json`（言えなかったこと）
+- `yozora_affection_70_03_key.json`（帰ったら、好きなものの話をしよう）
+- `yozora_affection_80_00_main.json`（一緒だね）
 
-## 表示調整
-- 美空・夜空の会話ステップは、原則として2人同時表示へ変換。
-- 添付シナリオ内の旧背景パスのうち、現行アセットに無いものは既存背景へ置換。
+分離実施数：
+- `yozora_affection_70_01_key.json` : 8箇所を会話＋地の文へ分離
+- `yozora_affection_70_02_key.json` : 10箇所を会話＋地の文へ分離
+- `yozora_affection_70_03_key.json` : 9箇所を会話＋地の文へ分離
+- `yozora_affection_80_00_main.json` : 11箇所を会話＋地の文へ分離
 
-## バージョン表示更新
+追加ファイル：
+- `images/assets/bg/bg_hidamari_store_front_winter_day_snow.png`
+- `program/v039/backgroundCatalog_v039_193_additions.js`
+
+背景カタログ追加キー：
+- `hidamari_store_front_winter_day_snow`
+
+同梱ファイル：
 - `index.html`
 - `VERSION.txt`
 - `program/v039/version.js`
-- `scenario/v039/storyIndex.js` の対象4本 version を `v039_192` に更新。
-
-## 備考
-- 新規画像なし。
-- メニュータイトルは変更しない。
+- `program/v039/backgroundCatalog_v039_193_additions.js`
+- `scenario/v039/events/yozora_affection_70_01_key.json`
+- `scenario/v039/events/yozora_affection_70_02_key.json`
+- `scenario/v039/events/yozora_affection_70_03_key.json`
+- `scenario/v039/events/yozora_affection_80_00_main.json`
+- `images/assets/bg/bg_hidamari_store_front_winter_day_snow.png`
