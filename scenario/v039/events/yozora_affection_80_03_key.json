@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_80_03_key",
   "title": "怖いけど、見たい",
-  "version": "v039_197",
+  "version": "v039_198",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_80_03_key",
@@ -40,8 +40,8 @@
     {
       "speaker": "",
       "text": "――双沢家・白黒ツインルーム・夜――",
-      "bg": "images/assets/bg/bg_sugosawa_twin_room_night_lights.png",
-      "bgMode": "forceReplace",
+      "bg": "images/assets/bg/bg_sugosawa_room_night_light_on.png",
+      "bgMode": "cover",
       "forceBackgroundReplace": true,
       "clearStorySprites": true
     },
@@ -51,12 +51,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -67,12 +67,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -83,12 +83,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -99,12 +99,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -115,12 +115,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -131,12 +131,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -147,12 +147,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -163,12 +163,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -179,12 +179,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -195,12 +195,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -211,12 +211,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -227,12 +227,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -243,12 +243,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -259,12 +259,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -275,12 +275,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -291,12 +291,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -307,12 +307,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -323,12 +323,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -339,12 +339,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -355,12 +355,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -371,12 +371,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -387,12 +387,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -403,12 +403,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -419,12 +419,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -435,12 +435,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -455,12 +455,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -471,12 +471,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -487,12 +487,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -503,12 +503,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -519,12 +519,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -535,12 +535,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -551,12 +551,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -567,12 +567,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -583,12 +583,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -599,12 +599,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -615,12 +615,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -631,12 +631,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -647,12 +647,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -663,12 +663,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -679,12 +679,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -699,12 +699,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -715,12 +715,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -731,12 +731,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -747,12 +747,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -763,12 +763,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -779,12 +779,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -795,12 +795,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -811,12 +811,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -827,12 +827,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -843,12 +843,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -859,12 +859,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -875,12 +875,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -891,12 +891,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -907,12 +907,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -923,12 +923,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -939,12 +939,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -955,12 +955,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -971,12 +971,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -987,12 +987,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1003,12 +1003,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1019,12 +1019,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1035,12 +1035,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1051,12 +1051,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1067,12 +1067,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1083,12 +1083,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1099,12 +1099,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1115,12 +1115,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1131,12 +1131,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1147,12 +1147,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1163,12 +1163,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1179,12 +1179,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1199,12 +1199,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1215,12 +1215,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1231,12 +1231,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1247,12 +1247,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1263,12 +1263,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1279,12 +1279,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1295,12 +1295,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1311,12 +1311,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1327,12 +1327,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1343,12 +1343,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1359,12 +1359,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1375,12 +1375,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1391,12 +1391,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1407,12 +1407,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1423,12 +1423,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1439,12 +1439,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1455,12 +1455,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1471,12 +1471,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1487,12 +1487,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1503,12 +1503,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1519,12 +1519,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1535,12 +1535,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1551,12 +1551,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1567,12 +1567,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_pajama_generic.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_pajama_generic.png",
           "opacity": 1
         }
       ]
@@ -1598,12 +1598,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1614,12 +1614,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1634,12 +1634,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1654,12 +1654,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1670,12 +1670,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1686,12 +1686,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1702,12 +1702,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1722,12 +1722,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1742,12 +1742,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1762,12 +1762,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1782,12 +1782,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1802,12 +1802,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1822,12 +1822,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1838,12 +1838,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1854,12 +1854,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1870,12 +1870,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1890,12 +1890,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1910,12 +1910,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1930,12 +1930,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1950,12 +1950,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1974,12 +1974,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -1994,12 +1994,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2010,12 +2010,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2026,12 +2026,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2042,12 +2042,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2058,12 +2058,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2074,12 +2074,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2098,12 +2098,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2118,12 +2118,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2134,12 +2134,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2150,12 +2150,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2170,12 +2170,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2186,12 +2186,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2202,12 +2202,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2226,12 +2226,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2246,12 +2246,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2262,12 +2262,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2278,12 +2278,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2294,12 +2294,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]
@@ -2310,12 +2310,12 @@
       "storySprites": [
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         },
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         }
       ]

@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_90_00_main",
   "title": "本物の星を見る夜",
-  "version": "v039_197",
+  "version": "v039_198",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_90_00_main",
@@ -40,8 +40,8 @@
     {
       "speaker": "",
       "text": "――羽白湖・バス停前・夜――",
-      "bg": "images/assets/bg/bg_hashiro_lake_bus_stop_night.png",
-      "bgMode": "forceReplace",
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
       "forceBackgroundReplace": true,
       "clearStorySprites": true
     },
