@@ -1,25 +1,18 @@
-# ten_otsu v039_195 差分パッチ
+# ten_otsu v039_196 差分パッチ
 
 ## 適用前提
-- **v039_194適用済みへ上書き**
+- **v039_195適用済みへ上書き**
 
 ## 修正内容
 ### ストーリー：帰ったら、好きな物の話をしよう
-- ステップ184以降、背景を `images/assets/bg/bg_hidamari_store_front_closed.png` に変更
-- ステップ184以降、美空立ち絵を `images/assets/char/misora_coat_muffler_main50.png` に変更
-- ステップ184以降、夜空立ち絵を `images/assets/char/yozora_coat_main50.png` に変更
-- ステップ218の `――` 4個分を **4ステップに分解**
+- ステップ165内の `――` 混在地の文を分解
+  - 旧ステップ165を2ステップ構成に変更
 
 ### ストーリー：一緒だね
-- 美空立ち絵を `images/assets/char/misora_pajama_generic.png` に変更
-- 夜空立ち絵を `images/assets/char/yozora_pajama_generic.png` に変更
-- ステップ144にイベントCG追加（添付1枚目）
-- ステップ236にイベントCG追加（添付2枚目）
-- ステップ261の `――` 3個分を **3ステップに分解**
-
-### 追加画像
-- `images/assets/cg/cg_yozora80_twins_room_01.png`
-- `images/assets/cg/cg_yozora80_twins_room_02.png`
+- 立ち絵の同時表示順を調整
+  - 左：美空
+  - 右：夜空
+- 対象シナリオ内の `storySprites` を `美空(ah) → 夜空(ai)` の順に統一
 
 ### バージョン更新
 - `index.html`
