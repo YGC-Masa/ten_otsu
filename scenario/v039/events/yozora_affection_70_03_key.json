@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_70_03_key",
   "title": "帰ったら、好きなものの話をしよう",
-  "version": "v039_192",
+  "version": "v039_195",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_70_03_key",
@@ -2793,21 +2793,30 @@
     {
       "speaker": "",
       "text": "――ひだまりストア・帰り道――",
-      "bg": "images/assets/bg/bg_hidamari_store_front_night.png",
-      "bgMode": "forceReplace",
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
       "forceBackgroundReplace": true
     },
     {
       "speaker": "",
-      "text": "――閉店後。"
+      "text": "――閉店後。",
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "",
-      "text": "店の外に出ると、空はすっかり夜に近づいていた。"
+      "text": "店の外に出ると、空はすっかり夜に近づいていた。",
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "",
-      "text": "街灯が歩道を照らし、二人の影が横に並ぶ。"
+      "text": "街灯が歩道を照らし、二人の影が横に並ぶ。",
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -2815,15 +2824,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -2831,15 +2843,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -2847,15 +2862,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -2863,15 +2881,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -2879,15 +2900,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -2895,15 +2919,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -2911,15 +2938,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -2927,15 +2957,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -2943,15 +2976,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -2959,15 +2995,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -2975,19 +3014,25 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "",
-      "text": "――夜空は少しだけ視線をそらした。\nでも、歩く速度は落とさなかった。\n美空の隣を、同じ歩幅で歩いている。"
+      "text": "――夜空は少しだけ視線をそらした。\nでも、歩く速度は落とさなかった。\n美空の隣を、同じ歩幅で歩いている。",
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -2995,15 +3040,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -3011,15 +3059,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -3027,15 +3078,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -3043,15 +3097,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -3059,15 +3116,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -3075,15 +3135,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -3091,15 +3154,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -3107,15 +3173,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -3123,15 +3192,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -3139,15 +3211,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -3155,15 +3230,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -3171,15 +3249,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -3187,15 +3268,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -3203,15 +3287,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -3219,15 +3306,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -3235,15 +3325,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
@@ -3251,15 +3344,18 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "夜空",
@@ -3267,19 +3363,37 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/i10101.webp",
+          "src": "images/assets/char/yozora_coat_main50.png",
           "opacity": 1
         },
         {
           "id": "ah",
-          "src": "images/assets/char/h10202.webp",
+          "src": "images/assets/char/misora_coat_muffler_main50.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "",
-      "text": "――二人は夜の道を歩いていく。\n昨日言ったことは消えない。\n気まずさも、痛みも、まだ少し残っている。\nけれど、美空はその痛みだけで夜空を見なかった。\n――痛い話のあとに、好きなものの話をしようと言う。\n重さだけで終わらせず、あたたかい飲み物と、二人の部屋と、いつもの声で続きを作ろうとする。\nそれが美空らしくて、少しだけずるくて、少しだけ救いだった。\n――夜空はまだ知らない。\nその夜、双沢家のツインルームで、自分が選んだものを好きだと気づくことを。\n美空もまた、夜空の色を大事にしていたと知ることを。\nそして、美空に「大好き」を返せることを。\n――けれど、その入口はもう開いていた。"
+      "text": "――二人は夜の道を歩いていく。\n昨日言ったことは消えない。\n気まずさも、痛みも、まだ少し残っている。\nけれど、美空はその痛みだけで夜空を見なかった。",
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "cover",
+      "forceBackgroundReplace": true
+    },
+    {
+      "speaker": "",
+      "text": "――痛い話のあとに、好きなものの話をしようと言う。\n重さだけで終わらせず、あたたかい飲み物と、二人の部屋と、いつもの声で続きを作ろうとする。\nそれが美空らしくて、少しだけずるくて、少しだけ救いだった。"
+    },
+    {
+      "speaker": "",
+      "text": "――夜空はまだ知らない。\nその夜、双沢家のツインルームで、自分が選んだものを好きだと気づくことを。\n美空もまた、夜空の色を大事にしていたと知ることを。\nそして、美空に「大好き」を返せることを。"
+    },
+    {
+      "speaker": "",
+      "text": "――けれど、その入口はもう開いていた。"
     }
   ],
   "keyScenarioIndex": 3,
