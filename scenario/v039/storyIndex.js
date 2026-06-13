@@ -871,7 +871,7 @@ window.TENOTSU_STORY_INDEX = [
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_60_01_key.json",
-    "version": "v039_181",
+    "version": "v039_185",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
@@ -903,7 +903,7 @@ window.TENOTSU_STORY_INDEX = [
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_60_02_key.json",
-    "version": "v039_181",
+    "version": "v039_185",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
@@ -935,7 +935,7 @@ window.TENOTSU_STORY_INDEX = [
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_60_03_key.json",
-    "version": "v039_181",
+    "version": "v039_185",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
@@ -967,7 +967,7 @@ window.TENOTSU_STORY_INDEX = [
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_70_00_main.json",
-    "version": "v039_181",
+    "version": "v039_185",
     "unlock": {
       "type": "all_story_cleared",
       "storyIds": [
