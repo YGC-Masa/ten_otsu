@@ -4325,3 +4325,84 @@ body.tenotsu-story-active #tenotsu-story-body-sprite-layer .tenotsu-story-body-s
   border-color: rgba(255,232,128,0.7);
   outline: none;
 }
+
+/* v039_229 shop exchange item list */
+body[data-v039-mode="shop"] .tenotsu-shop-info-panel {
+  max-height: calc(100vh - 140px);
+  overflow: hidden;
+  display: flex !important;
+  flex-direction: column;
+}
+
+.tenotsu-shop-exchange-body {
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tenotsu-shop-exchange-list {
+  min-height: 0;
+  max-height: min(56vh, 520px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: grid;
+  gap: 10px;
+  padding-right: 4px;
+  overscroll-behavior: contain;
+}
+
+.tenotsu-shop-exchange-card {
+  border: 1px solid rgba(215,190,255,.42);
+  border-radius: 12px;
+  padding: 10px 11px;
+  background: rgba(34, 28, 54, .74);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.tenotsu-shop-exchange-card-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 6px;
+}
+
+.tenotsu-shop-exchange-name {
+  font-weight: 900;
+  color: #fff1c7;
+  letter-spacing: .02em;
+}
+
+.tenotsu-shop-exchange-roman {
+  font-size: 11px;
+  color: rgba(255,255,255,.64);
+  margin-top: 2px;
+}
+
+.tenotsu-shop-exchange-type {
+  flex: 0 0 auto;
+  max-width: 9em;
+  border-radius: 999px;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 900;
+  color: #3b260c;
+  background: linear-gradient(180deg, #ffe7a8, #e5b75d);
+  text-align: center;
+  white-space: normal;
+}
+
+.tenotsu-shop-exchange-desc {
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(255,255,255,.88);
+}
+
+.tenotsu-shop-exchange-status {
+  margin-top: 7px;
+  font-size: 11px;
+  color: rgba(255,255,255,.58);
+  text-align: right;
+}

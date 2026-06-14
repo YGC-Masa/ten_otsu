@@ -1,12 +1,125 @@
-/* v039_37 shop */
+/* v039_229 shop / exchange items */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039;
 
+  ns.SHOP_EXCHANGE_ITEMS = [
+    {
+      id: "time_thymus",
+      name: "タイムタイム",
+      roman: "TimeThymus",
+      type: "時間変更",
+      desc: "時間帯を変えられる特別な交換品。朝・昼・夕方・夜などの時間演出切替に使う想定。",
+      status: "交換準備中"
+    },
+    {
+      id: "season_raisin",
+      name: "シーズンレーズン",
+      roman: "SeasonRaisin",
+      type: "季節変更",
+      desc: "季節を変えられる特別な交換品。春・夏・秋・冬の季節演出切替に使う想定。",
+      status: "交換準備中"
+    },
+    {
+      id: "rock_heart_chocolat",
+      name: "ロックハートショコラ",
+      roman: "RockHeartChocolat",
+      type: "親愛メイン開放",
+      desc: "親愛メインストーリーの開放に関係する特別なショコラ。",
+      status: "交換準備中"
+    },
+    {
+      id: "biribiri_mabo_tofu",
+      name: "ビリビリ麻婆豆腐",
+      roman: "BiribiriMaboTofu",
+      type: "親愛開放",
+      desc: "とあるメンバーの親愛開放に関係する、刺激的な特別交換品。",
+      status: "交換準備中"
+    },
+    {
+      id: "hyakucho_momo",
+      name: "百超桃",
+      roman: "HyakuchoMomo",
+      type: "親愛開放",
+      desc: "とあるメンバーの親愛開放に関係する、不思議な桃の特別交換品。",
+      status: "交換準備中"
+    },
+    {
+      id: "makai_brandy",
+      name: "魔界のブランデー",
+      roman: "MakaiBrandy",
+      type: "親愛開放",
+      desc: "とあるメンバーの親愛開放に関係する、妖しい香りの特別交換品。",
+      status: "交換準備中"
+    }
+  ];
+
+  function escapeHtml(value) {
+    return String(value == null ? "" : value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function renderExchangeItemsInfo() {
+    const cards = (ns.SHOP_EXCHANGE_ITEMS || []).map((item) => `
+      <article class="tenotsu-shop-exchange-card" data-exchange-item="${escapeHtml(item.id)}">
+        <div class="tenotsu-shop-exchange-card-head">
+          <div>
+            <div class="tenotsu-shop-exchange-name">${escapeHtml(item.name)}</div>
+            <div class="tenotsu-shop-exchange-roman">${escapeHtml(item.roman)}</div>
+          </div>
+          <span class="tenotsu-shop-exchange-type">${escapeHtml(item.type)}</span>
+        </div>
+        <div class="tenotsu-shop-exchange-desc">${escapeHtml(item.desc)}</div>
+        <div class="tenotsu-shop-exchange-status">${escapeHtml(item.status)}</div>
+      </article>
+    `).join("");
+
+    return `
+      <div class="tenotsu-shop-info-title">交換品リスト</div>
+      <div class="tenotsu-shop-info-body tenotsu-shop-exchange-body">
+        <p>現在の交換候補です。効果処理・所持数・交換コストは後続で接続します。</p>
+        <div class="tenotsu-shop-exchange-list">
+          ${cards}
+        </div>
+      </div>
+    `;
+  }
+
+  function renderShopHelpInfo() {
+    return `
+      <div class="tenotsu-shop-info-title">交換所の説明</div>
+      <div class="tenotsu-shop-info-body">
+        <p>交換所では、イベント素材やスタンプ、特別な品を交換できる予定です。</p>
+        <p>時間・季節変更系、親愛開放系の特別アイテムは、ここから管理していきます。</p>
+      </div>
+    `;
+  }
+
+  function renderDefaultInfo() {
+    return `
+      <div class="tenotsu-shop-info-title">アイテム交換所</div>
+      <div class="tenotsu-shop-info-body">
+        <p>イベント交換・スタンプ交換・特別な合言葉交換をここへ接続予定です。</p>
+        <p>左のメニューから交換品リストを確認できます。</p>
+      </div>
+    `;
+  }
+
+  function setShopInfo(html) {
+    const layers = ns.layers || ns.ensureLayers();
+    if (!layers || !layers.shopInfo) return;
+    layers.shopInfo.hidden = false;
+    layers.shopInfo.innerHTML = html || "";
+  }
+
   ns.renderShopMenu = function renderShopMenu() {
     const menuHtml = `
       <div class="tenotsu-menu-version">
-        <span class="tenotsu-menu-version-main">${ns.VERSION || "v039_37"}</span>
+        <span class="tenotsu-menu-version-main">${ns.VERSION || "v039_229"}</span>
         <span class="tenotsu-menu-version-sub">shop / exchange</span>
       </div>
       <div class="tenotsu-shop-menu-title">ショップメニュー</div>
@@ -18,15 +131,7 @@
       </div>
     `;
 
-    const infoHtml = `
-      <div class="tenotsu-shop-info-title">アイテム交換所</div>
-      <div class="tenotsu-shop-info-body">
-        <p>イベント交換・スタンプ交換・特別な合言葉交換をここへ接続予定です。</p>
-        <p>v039_37では、まず事務所とショップ間の安定した画面遷移を確認します。</p>
-      </div>
-    `;
-
-    ns.showShopPanel(menuHtml, infoHtml);
+    ns.showShopPanel(menuHtml, renderDefaultInfo());
 
     const panel = ns.layers.shopMenu;
     panel.querySelectorAll("[data-shop-action]").forEach((btn) => {
@@ -59,18 +164,20 @@
   ns.handleShopMenu = function handleShopMenu(action) {
     switch(action) {
       case "exchange-items":
-        ns.setText("朔夜", "交換品リストは次の段階でデータ接続します。まずは表示の安定化を確認しましょう。");
+        setShopInfo(renderExchangeItemsInfo());
+        ns.setText("朔夜", "現在の交換品リストです。気になる品はございますか？");
         break;
       case "secret-word":
         ns.setText("朔夜", "秘密の言葉ですね。合言葉入力UIは後続バージョンで接続します。");
         break;
       case "shop-help":
-        ns.setText("朔夜", "交換所ではイベント素材やスタンプを、特別な品と交換できる予定です。");
+        setShopInfo(renderShopHelpInfo());
+        ns.setText("朔夜", "交換所の使い方をご説明します。");
         break;
       case "back-office":
         if (typeof ns.hideShopPanel === "function") ns.hideShopPanel();
-    if (typeof ns.hideTownPanel === "function") ns.hideTownPanel();
-    if (typeof ns.hideSalesPanel === "function") ns.hideSalesPanel();
+        if (typeof ns.hideTownPanel === "function") ns.hideTownPanel();
+        if (typeof ns.hideSalesPanel === "function") ns.hideSalesPanel();
         ns.enterOffice({ speaker: "店長", message: "事務所に戻りました。" });
         break;
       default:
