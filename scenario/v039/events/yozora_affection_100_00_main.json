@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_100_00_main",
   "title": "春の中で、ありがとう",
-  "version": "v039_203",
+  "version": "v039_204",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_100_00_main",
@@ -992,13 +992,6 @@
     },
     {
       "speaker": "",
-      "text": "――春待ち花畑・昼――",
-      "bg": "images/assets/bg/bg_harumachi_flower_field_day.png",
-      "bgMode": "forceReplace",
-      "forceBackgroundReplace": true
-    },
-    {
-      "speaker": "",
       "text": "――店長と夜空は、花畑の中をゆっくり歩く。"
     },
     {
@@ -1259,7 +1252,12 @@
     },
     {
       "speaker": "",
-      "text": "――夜空は花冠をそっと頭に乗せた。\n白いワンピース。\n黒と青の髪。\nその上に、白と青と少しのピンクの花冠。"
+      "text": "――夜空は花冠をそっと頭に乗せた。\n白いワンピース。\n黒と青の髪。\nその上に、白と青と少しのピンクの花冠。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora100_flower_crown.png",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
@@ -1350,7 +1348,9 @@
       "text": "――花畑・小さな丘――",
       "bg": "images/assets/bg/bg_harumachi_flower_field_day.png",
       "bgMode": "forceReplace",
-      "forceBackgroundReplace": true
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true,
+      "hideEventCg": true
     },
     {
       "speaker": "",
@@ -1358,7 +1358,7 @@
     },
     {
       "speaker": "",
-      "text": "低い木のベンチと、花に囲まれた小さな丘。"
+      "text": "色とりどりの花に囲まれた小さな丘。"
     },
     {
       "speaker": "",
@@ -1422,52 +1422,12 @@
     },
     {
       "speaker": "",
-      "text": "――夜空は花畑の中の小さな丘に座る。\n店長は少し距離を空けて隣に座った。\n近すぎず、遠すぎず。\n夜空が自分で選べる距離。"
-    },
-    {
-      "speaker": "",
-      "text": "【イベントCG】",
+      "text": "――夜空は花畑の中の小さな丘に座る。\n店長は少し距離を空けて隣に座った。\n近すぎず、遠すぎず。\n夜空が自分で選べる距離。",
       "showEventCg": true,
-      "eventCg": "images/assets/cg/cg_yozora_spring_flower_field_thanks.png",
+      "eventCg": "images/assets/cg/cg_yozora100_sitting_flower_field.png",
       "cgFit": "cover",
       "cgAlign": "center center",
       "clearStorySprites": true
-    },
-    {
-      "speaker": "",
-      "text": "春の花畑。"
-    },
-    {
-      "speaker": "",
-      "text": "カラフルな花々の中に座る双沢夜空。"
-    },
-    {
-      "speaker": "",
-      "text": "夜空は白いワンピース姿で、頭には自分で作った小さな花冠。"
-    },
-    {
-      "speaker": "",
-      "text": "黒と青の髪が春の光にやわらかく揺れている。"
-    },
-    {
-      "speaker": "",
-      "text": "表情は照れと穏やかさが混ざった微笑み。"
-    },
-    {
-      "speaker": "",
-      "text": "隣には店長が座り、夜空を急かさず見守っている。"
-    },
-    {
-      "speaker": "",
-      "text": "色調は明るい春の光、白、淡い青、ピンク、黄色、緑。"
-    },
-    {
-      "speaker": "",
-      "text": "冬の夜・羽白湖・ブックカフェを越えた、春の解放感を重視。"
-    },
-    {
-      "speaker": "",
-      "text": "――夜空はしばらく、花畑を見ていた。"
     },
     {
       "speaker": "",
@@ -1651,7 +1611,12 @@
           "src": "images/assets/char/yozora_story100_special.png",
           "opacity": 1
         }
-      ]
+      ],
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora100_closeup_flower_field.png",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",

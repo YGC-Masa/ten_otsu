@@ -1,32 +1,26 @@
-# ten_otsu v039_203 差分パッチ
+# ten_otsu v039_204 差分パッチ
 
 ## 適用前提
-- **v039_202 適用済みへ上書き**
+- **v039_203 適用済みへ上書き**
 
 ## 修正内容
-
-### ストーリー：夜のブックカフェ企画
-- 背景を `images/assets/bg/bg_hidamari_store_salesfloor_night.png` に変更
-
-### ストーリー：アントステラへ行こう
-- 背景を `images/assets/bg/bg_hidamari_store_salesfloor_night.png` に変更
-
-### ストーリー：二人だから、少し素直になる
-- 背景を `images/assets/bg/bg_hidamari_store_front_closed.png` に変更
-- 美空立ち絵を `images/assets/char/misora_coat_muffler_main50.png` に変更
-- 夜空立ち絵を `images/assets/char/yozora_coat_main50_custom_star.png` に変更
-- ステップ3文言変更
-- 旧ステップ5〜9相当の導入文を削除
-- ステップ43を `――住宅街・夜――` に変更し、背景を `images/assets/bg/bg_residential_area_night.png` に変更
-- ステップ43で美空を非表示
-- ステップ155を店員台詞に変更
-
 ### ストーリー：春の中で、ありがとう
-- ステップ1〜50の夜空立ち絵を `images/assets/char/i10901.webp` に変更
-- 背景を `images/assets/bgev/bg_office_hidamari.png` に変更
-- ステップ51で人物非表示、背景を `images/assets/bg/bg_sugosawa_room_night_light_on.png` に変更
-- ステップ53〜54の立ち絵をパジャマ差分に変更
-- ステップ55〜75で人物非表示
+- 旧ステップ129：イベントCG追加（花冠CG）
+  - `images/assets/cg/cg_yozora100_flower_crown.png`
+- 旧ステップ139：人物・イベントCG非表示
+- 旧ステップ141：文言変更
+  - `色とりどりの花に囲まれた小さな丘。`
+- 旧ステップ148：イベントCG追加（座るCG1）
+  - `images/assets/cg/cg_yozora100_sitting_flower_field.png`
+- 旧ステップ177：イベントCG追加（クローズアップCG）
+  - `images/assets/cg/cg_yozora100_closeup_flower_field.png`
+- 旧ステップ96：`――春待ち花畑・昼――` を削除
+- 旧ステップ149〜158：既存の【イベントCG】説明ブロックを削除
+
+## 追加画像
+- `images/assets/cg/cg_yozora100_flower_crown.png`
+- `images/assets/cg/cg_yozora100_sitting_flower_field.png`
+- `images/assets/cg/cg_yozora100_closeup_flower_field.png`
 
 ## 更新ファイル
 - `README_DIFF.md`
@@ -34,7 +28,4 @@
 - `index.html`
 - `program/v039/version.js`
 - `scenario/v039/storyIndex.js`
-- `scenario/v039/events/yozora_affection_90_01_key.json`
-- `scenario/v039/events/yozora_affection_90_02_key.json`
-- `scenario/v039/events/yozora_affection_90_03_key.json`
 - `scenario/v039/events/yozora_affection_100_00_main.json`
