@@ -115,3 +115,47 @@ body[data-v039-mode="members"] .tenotsu-members-panel{
 .tenotsu-member-story-block-nav{display:grid;grid-template-columns:auto 1fr auto auto;gap:6px;align-items:center;margin:8px 0 10px;padding:7px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
 .tenotsu-member-story-block-nav button{border:1px solid rgba(255,226,163,.34);background:rgba(255,226,163,.12);color:#fff;border-radius:9px;padding:6px 9px;font-weight:800;cursor:pointer}.tenotsu-member-story-block-nav button:disabled{opacity:.35;cursor:not-allowed}.tenotsu-member-story-block-nav button.current{font-size:11px;white-space:nowrap;background:rgba(160,220,255,.12);border-color:rgba(160,220,255,.28)}.tenotsu-member-story-block-nav b{display:block;font-size:13px;color:#fff2c8}.tenotsu-member-story-block-nav small{display:block;font-size:10px;opacity:.72}
 @media (max-width:900px){.tenotsu-member-story-block-nav{grid-template-columns:auto 1fr auto}.tenotsu-member-story-block-nav button.current{grid-column:1 / -1}}
+
+
+/* v039_223: recollection album seasonal/event submenu layout */
+body[data-v039-mode="storyMenu"] .tenotsu-story-menu-tabs{
+  display:grid !important;
+  grid-template-columns:repeat(6,minmax(0,1fr)) !important;
+  gap:7px !important;
+  margin:8px 0 10px !important;
+}
+body[data-v039-mode="storyMenu"] .tenotsu-story-menu-tab{
+  min-height:34px !important;
+  padding:6px 7px !important;
+  border-radius:10px !important;
+  border:1px solid rgba(255,226,163,.50) !important;
+  background:rgba(40,30,24,.86) !important;
+  color:#fff !important;
+  font-weight:900 !important;
+  cursor:pointer !important;
+  pointer-events:auto !important;
+  white-space:nowrap !important;
+}
+body[data-v039-mode="storyMenu"] .tenotsu-story-menu-tab.active{
+  background:linear-gradient(180deg,#fff4d6,#d9a64d) !important;
+  color:#3a2510 !important;
+}
+body[data-v039-mode="storyMenu"] .tenotsu-story-menu-list{
+  max-height:calc((var(--tenotsu-vh, 1vh) * 100) - 260px) !important;
+  min-height:160px !important;
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+  padding-right:6px !important;
+}
+body[data-v039-mode="storyMenu"] .tenotsu-story-menu-subtitle{
+  max-width:760px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+@media (max-width: 980px){
+  body[data-v039-mode="storyMenu"] .tenotsu-story-menu-tabs{grid-template-columns:repeat(3,minmax(0,1fr)) !important;}
+  body[data-v039-mode="storyMenu"] .tenotsu-story-menu-list{max-height:calc((var(--tenotsu-vh, 1vh) * 100) - 300px) !important;}
+}
+@media (max-width: 620px){
+  body[data-v039-mode="storyMenu"] .tenotsu-story-menu-tabs{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+}
