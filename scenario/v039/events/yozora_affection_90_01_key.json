@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_90_01_key",
   "title": "夜のブックカフェ企画",
-  "version": "v039_213",
+  "version": "v039_214",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_90_01_key",
@@ -54,11 +54,6 @@
       "text": "……うん。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
           "opacity": 1
@@ -74,11 +69,6 @@
       "text": "練習の成果。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
           "opacity": 1
@@ -93,11 +83,6 @@
       "speaker": "夜空",
       "text": "褒めすぎ。短めでも、褒められると恥ずかしい。",
       "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -118,11 +103,6 @@
       "text": "……またってなに。羽白湖の時のこと、覚えてなくていい。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
           "opacity": 1
@@ -137,11 +117,6 @@
       "speaker": "夜空",
       "text": "……ずるい。",
       "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -162,11 +137,6 @@
       "text": "店内の照明を少し落として、静かな音楽を流すって書いてある。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
           "opacity": 1
@@ -181,11 +151,6 @@
       "speaker": "夜空",
       "text": "……そういう決めつけ。違わないけど。",
       "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -202,11 +167,6 @@
       "text": "前回、寒かったから。羽白湖は綺麗だったけど、寒かった。ここなら、寒くない。本もある。静かそう。確認にはちょうどいい。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
           "opacity": 1
@@ -221,11 +181,6 @@
       "speaker": "夜空",
       "text": "ココアもあるって書いてある。……たまたま見えただけ。",
       "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
@@ -667,50 +622,6 @@
     },
     {
       "speaker": "店長",
-      "text": "でも、行くなら予約した方がよさそうだな。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "店長は、行くつもりなの。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "夜空が行くなら。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "そういう返し。だめじゃない。でも、ずるい。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "",
-      "text": "夜空はチラシを手元で軽く折り直す。美空は少し離れた棚で、閉店後の片づけをしていた。"
-    },
-    {
-      "speaker": "店長",
       "text": "美空は来ないんだったな。じゃあ、二人で行くことになるのか。夜のブックカフェに、二人で。"
     },
     {
@@ -914,12 +825,8 @@
       ]
     },
     {
-      "speaker": "",
-      "text": "そこへ、美空が戻ってくる。夜空の耳が赤いことに気づき、少し首をかしげた。"
-    },
-    {
       "speaker": "美空",
-      "text": "夜空？ 顔、赤いよ？ 何かありました？",
+      "text": "夜空、大丈夫。店長はからかってなんていないよ。",
       "storySprites": [
         {
           "id": "ah",
@@ -935,7 +842,7 @@
     },
     {
       "speaker": "店長",
-      "text": "俺が余計なことを言った。ブックカフェ、二人で行くならデートみたいだなって。"
+      "text": "俺が余計なことを言った。すまん。"
     },
     {
       "speaker": "夜空",

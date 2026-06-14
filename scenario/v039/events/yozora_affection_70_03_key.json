@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_70_03_key",
   "title": "帰ったら、好きなものの話をしよう",
-  "version": "v039_196",
+  "version": "v039_214",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_70_03_key",
@@ -2799,47 +2799,40 @@
       "text": "――ひだまりストア・帰り道――",
       "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
       "bgMode": "cover",
-      "forceBackgroundReplace": true
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
     },
     {
       "speaker": "",
       "text": "――閉店後。",
       "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
       "bgMode": "cover",
-      "forceBackgroundReplace": true
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
     },
     {
       "speaker": "",
       "text": "店の外に出ると、空はすっかり夜に近づいていた。",
       "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
       "bgMode": "cover",
-      "forceBackgroundReplace": true
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
     },
     {
       "speaker": "",
       "text": "街灯が歩道を照らし、二人の影が横に並ぶ。",
       "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
       "bgMode": "cover",
-      "forceBackgroundReplace": true
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
     },
     {
       "speaker": "美空",
       "text": "夜空、寒くない？",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
-          "opacity": 1
-        },
-        {
-          "id": "ah",
-          "src": "images/assets/char/misora_coat_muffler_main50.png",
-          "opacity": 1
-        }
-      ],
       "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
       "bgMode": "cover",
-      "forceBackgroundReplace": true
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
     },
     {
       "speaker": "夜空",

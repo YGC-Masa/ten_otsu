@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_100_00_main",
   "title": "春の中で、ありがとう",
-  "version": "v039_207",
+  "version": "v039_214",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_100_00_main",
@@ -1311,22 +1311,18 @@
     },
     {
       "speaker": "店長",
-      "text": "悪い。\n言いすぎたか？"
+      "text": "悪い。\n言いすぎたか？",
+      "clearStorySprites": true
     },
     {
       "speaker": "夜空",
       "text": "ううん。\n今日は、ちゃんと聞く。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/yozora_story100_special.png",
-          "opacity": 1
-        }
-      ]
+      "clearStorySprites": true
     },
     {
       "speaker": "",
-      "text": "――夜空は花冠にそっと触れる。\nすぐに外そうとはしない。\n少し照れて、少し落ち着かなくて。\nそれでも、ちゃんと受け取っていた。"
+      "text": "――夜空は花冠にそっと触れる。\nすぐに外そうとはしない。\n少し照れて、少し落ち着かなくて。\nそれでも、ちゃんと受け取っていた。",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
@@ -1339,56 +1335,43 @@
     },
     {
       "speaker": "",
-      "text": "――花畑の奥に、少し開けた場所があった。"
+      "text": "――花畑の奥に、少し開けた場所があった。",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
-      "text": "色とりどりの花に囲まれた小さな丘。"
+      "text": "色とりどりの花に囲まれた小さな丘。",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
-      "text": "夜空はそこで足を止めた。"
+      "text": "夜空はそこで足を止めた。",
+      "clearStorySprites": true
     },
     {
       "speaker": "夜空",
       "text": "店長。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/yozora_story100_special.png",
-          "opacity": 1
-        }
-      ]
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",
-      "text": "ん？"
+      "text": "ん？",
+      "clearStorySprites": true
     },
     {
       "speaker": "夜空",
       "text": "ここで、少し座っていい？",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/yozora_story100_special.png",
-          "opacity": 1
-        }
-      ]
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",
-      "text": "もちろん。"
+      "text": "もちろん。",
+      "clearStorySprites": true
     },
     {
       "speaker": "夜空",
       "text": "……うん。",
-      "storySprites": [
-        {
-          "id": "ai",
-          "src": "images/assets/char/yozora_story100_special.png",
-          "opacity": 1
-        }
-      ]
+      "clearStorySprites": true
     },
     {
       "speaker": "",

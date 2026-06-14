@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_90_03_key",
   "title": "二人だから、少し素直になる",
-  "version": "v039_203",
+  "version": "v039_214",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_90_03_key",
@@ -47,22 +47,25 @@
     {
       "speaker": "",
       "text": "――ひだまりストア・閉店後――",
-      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
       "clearStorySprites": true
     },
     {
       "speaker": "",
-      "text": "――閉店後のひだまりストア。"
+      "text": "――閉店後のひだまりストア。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "",
-      "text": "売り場の照明が落とされ、店内には静けさが漂っていた。"
+      "text": "閉店業務も順調にすすみ、店内には静けさが漂っていた。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "",
-      "text": "今日は、アントステラの夜のブックカフェに行く日だった。"
+      "text": "今日は、アントステラの夜のブックカフェに行く日だった。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "美空",
@@ -78,7 +81,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "夜空",
@@ -94,7 +98,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "美空",
@@ -110,7 +115,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "夜空",
@@ -126,7 +132,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "美空",
@@ -142,7 +149,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "夜空",
@@ -158,7 +166,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "美空",
@@ -174,7 +183,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "夜空",
@@ -190,7 +200,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "美空",
@@ -206,7 +217,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "夜空",
@@ -222,7 +234,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "美空",
@@ -238,7 +251,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "夜空",
@@ -254,7 +268,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "美空",
@@ -270,7 +285,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "夜空",
@@ -286,11 +302,13 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "店長",
-      "text": "夜空、そろそろ行くか？"
+      "text": "夜空、そろそろ行くか？",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "夜空",
@@ -306,7 +324,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "美空",
@@ -322,7 +341,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "夜空",
@@ -338,7 +358,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "美空",
@@ -354,7 +375,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "夜空",
@@ -370,7 +392,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "美空",
@@ -386,7 +409,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "夜空",
@@ -402,7 +426,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "美空",
@@ -418,7 +443,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "夜空",
@@ -434,11 +460,13 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "",
-      "text": "――美空は夜空のマフラーを少しだけ直す。\n夜空は一瞬だけ身を引きかけたが、そのままされるに任せた。"
+      "text": "――美空は夜空のマフラーを少しだけ直す。\n夜空は一瞬だけ身を引きかけたが、そのままされるに任せた。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "美空",
@@ -454,7 +482,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "夜空",
@@ -470,7 +499,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "美空",
@@ -486,7 +516,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "夜空",
@@ -502,7 +533,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "美空",
@@ -518,7 +550,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "夜空",
@@ -534,7 +567,8 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "美空",
@@ -550,63 +584,59 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "",
-      "text": "――夜空は店長の隣へ歩き出す。\n美空は店先で小さく手を振っていた。\n夜空は振り返りかけて、少しだけ止まり、前を向いた。"
+      "text": "――夜空は店長の隣へ歩き出す。\n美空は店先で小さく手を振っていた。\n夜空は振り返りかけて、少しだけ止まり、前を向いた。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png"
     },
     {
       "speaker": "",
       "text": "――ひだまりストア前・夜――",
-      "bg": "images/assets/bg/bg_hidamari_store_front_night_open.png",
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true
     },
     {
       "speaker": "店長",
-      "text": "寒くないか？"
+      "text": "寒くないか？",
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png"
     },
     {
       "speaker": "夜空",
       "text": "今日は、平気。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/misora_coat_muffler_main50.png",
-          "opacity": 1
-        },
-        {
           "id": "ai",
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png"
     },
     {
       "speaker": "店長",
-      "text": "その平気は信用していいやつか？"
+      "text": "その平気は信用していいやつか？",
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png"
     },
     {
       "speaker": "夜空",
       "text": "……今日は、信用していい。",
       "storySprites": [
         {
-          "id": "ah",
-          "src": "images/assets/char/misora_coat_muffler_main50.png",
-          "opacity": 1
-        },
-        {
           "id": "ai",
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png"
     },
     {
       "speaker": "店長",
       "text": "――住宅街・夜――",
-      "bg": "images/assets/bg/bg_residential_area_night.png",
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
       "storySprites": [
         {
           "id": "ai",
@@ -1016,7 +1046,7 @@
     },
     {
       "speaker": "",
-      "text": "――店員に案内された先は、二階奥の赤いカップルシートだった。\n丸く囲まれたような座席で、普通のソファよりも距離が近い。\n小さなテーブルには、読書灯がひとつ置かれている。"
+      "text": "――店員に案内された先は、二階奥の大型カップルシートだった。\n丸く囲まれたような座席で、普通のソファよりも距離が近い。\nテーブルには、読書灯がひとつ置かれている。"
     },
     {
       "speaker": "夜空",
@@ -1366,11 +1396,13 @@
       "text": "――しばらく、二人は静かに本を開く。\n店内には小さな音楽が流れ、ページをめくる音とカップが置かれる音だけが聞こえた。"
     },
     {
-      "speaker": "",
-      "text": "――アントステラ2階・赤いカップルシート――",
-      "bg": "images/assets/bg/bg_bookcafe_antostella_2f_night.png",
+      "speaker": "店員",
+      "text": "失礼いたします。お待たせいたしました。お飲み物になります。",
       "bgMode": "forceReplace",
-      "forceBackgroundReplace": true
+      "forceBackgroundReplace": true,
+      "eventCg": "images/assets/cg/cg_yozora90_bookcafe_01_smile.png",
+      "showEventCg": true,
+      "clearStorySprites": true
     },
     {
       "speaker": "",
@@ -1401,8 +1433,8 @@
       "text": "羽白湖とは違うな。"
     },
     {
-      "speaker": "店員",
-      "text": "失礼いたします。お待たせいたしました。お飲み物になります。",
+      "speaker": "夜空",
+      "text": "うん。\nあそこは寒かった。",
       "storySprites": [
         {
           "id": "ai",

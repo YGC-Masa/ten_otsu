@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_80_03_key",
   "title": "怖いけど、見たい",
-  "version": "v039_198",
+  "version": "v039_214",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_80_03_key",
@@ -1586,11 +1586,13 @@
       "text": "――翌日・ひだまりストア前・夕方――",
       "bg": "images/assets/bg/bg_hidamari_store_front_evening.png",
       "bgMode": "forceReplace",
-      "forceBackgroundReplace": true
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",
-      "text": "夜空、美空。"
+      "text": "夜空、美空。",
+      "clearStorySprites": true
     },
     {
       "speaker": "美空",
@@ -1603,7 +1605,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -1619,7 +1621,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -1639,7 +1641,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -1659,7 +1661,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -1675,7 +1677,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -1691,7 +1693,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -1707,7 +1709,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -1727,7 +1729,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -1747,7 +1749,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -1767,7 +1769,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -1787,7 +1789,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -1807,7 +1809,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -1827,7 +1829,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -1843,7 +1845,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -1859,7 +1861,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -1875,7 +1877,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -1895,7 +1897,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -1915,7 +1917,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -1935,7 +1937,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -1955,7 +1957,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -1979,7 +1981,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -1999,7 +2001,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -2015,7 +2017,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -2031,7 +2033,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -2047,7 +2049,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -2063,7 +2065,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -2079,7 +2081,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -2103,7 +2105,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -2123,7 +2125,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -2139,7 +2141,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -2155,7 +2157,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -2175,7 +2177,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -2191,7 +2193,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -2207,7 +2209,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -2231,7 +2233,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -2251,7 +2253,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -2267,7 +2269,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -2283,7 +2285,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -2299,7 +2301,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]
@@ -2315,7 +2317,7 @@
         },
         {
           "id": "ai",
-          "src": "images/assets/char/yozora_coat_main50.png",
+          "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
       ]

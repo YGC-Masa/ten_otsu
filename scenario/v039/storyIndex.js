@@ -1008,7 +1008,7 @@ window.TENOTSU_STORY_INDEX = [
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_70_01_key.json",
-    "version": "v039_194",
+    "version": "v039_214",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
@@ -1040,7 +1040,7 @@ window.TENOTSU_STORY_INDEX = [
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_70_02_key.json",
-    "version": "v039_194",
+    "version": "v039_214",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
@@ -1072,7 +1072,7 @@ window.TENOTSU_STORY_INDEX = [
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_70_03_key.json",
-    "version": "v039_192",
+    "version": "v039_214",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
@@ -1145,7 +1145,7 @@ window.TENOTSU_STORY_INDEX = [
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_80_01_key.json",
-    "version": "v039_197",
+    "version": "v039_214",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
@@ -1209,7 +1209,7 @@ window.TENOTSU_STORY_INDEX = [
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_80_03_key.json",
-    "version": "v039_198",
+    "version": "v039_214",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
@@ -1282,7 +1282,7 @@ window.TENOTSU_STORY_INDEX = [
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_90_01_key.json",
-    "version": "v039_213",
+    "version": "v039_214",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
@@ -1346,7 +1346,7 @@ window.TENOTSU_STORY_INDEX = [
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_90_03_key.json",
-    "version": "v039_203",
+    "version": "v039_214",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
@@ -1378,7 +1378,7 @@ window.TENOTSU_STORY_INDEX = [
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_100_00_main.json",
-    "version": "v039_203",
+    "version": "v039_214",
     "unlock": {
       "type": "all_story_cleared",
       "storyIds": [
