@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_100_00_main",
   "title": "春の中で、ありがとう",
-  "version": "v039_204",
+  "version": "v039_205",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_100_00_main",
@@ -685,52 +685,162 @@
     {
       "speaker": "美空",
       "text": "うん。\n白いワンピース。",
-      "clearStorySprites": true
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/misora_pajama_generic.png",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/yozora_pajama_generic.png",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "夜空",
       "text": "前なら、選ばなかった。",
-      "clearStorySprites": true
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/misora_pajama_generic.png",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/yozora_pajama_generic.png",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "美空",
       "text": "うん。",
-      "clearStorySprites": true
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/misora_pajama_generic.png",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/yozora_pajama_generic.png",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "夜空",
       "text": "白は、美空の色だと思ってた。\nでも、今は少し違う。",
-      "clearStorySprites": true
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/misora_pajama_generic.png",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/yozora_pajama_generic.png",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "美空",
       "text": "うん。",
-      "clearStorySprites": true
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/misora_pajama_generic.png",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/yozora_pajama_generic.png",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "夜空",
       "text": "きっかけが美空でも。\n今、ぼくが選ぶなら……ぼくの白でもいいんだよね。",
-      "clearStorySprites": true
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/misora_pajama_generic.png",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/yozora_pajama_generic.png",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "美空",
       "text": "うん。\nそうだよ。",
-      "clearStorySprites": true
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/misora_pajama_generic.png",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/yozora_pajama_generic.png",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "夜空",
       "text": "……じゃあ、これにする。",
-      "clearStorySprites": true
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/misora_pajama_generic.png",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/yozora_pajama_generic.png",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "美空",
       "text": "うん。",
-      "clearStorySprites": true
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/misora_pajama_generic.png",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/yozora_pajama_generic.png",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "夜空",
       "text": "今日は、ぼくが選ぶ。\nちゃんと。",
-      "clearStorySprites": true
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/misora_pajama_generic.png",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/yozora_pajama_generic.png",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "",
