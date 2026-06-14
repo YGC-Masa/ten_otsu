@@ -1,23 +1,19 @@
-# ten_otsu v039_211 差分パッチ
+# ten_otsu v039_212 差分パッチ
 
 ## 適用前提
-- **v039_210適用済みへ上書き**
+- **v039_211適用済みへ上書き**
 
 ## 修正内容
 ### ストーリー：探さないで、の前兆
-- ステップ281
-  - 背景変更：`images/assets/bg/bg_sugosawa_room_night_light_on.png`
-- ステップ282以降
-  - 美空立ち絵：`images/assets/char/misora_pajama_generic.png`
-- ステップ283以降
-  - 夜空立ち絵：`images/assets/char/yozora_pajama_generic.png`
-- 上記修正後、`―― / ーー` で始まる地の文が同一ステップ内に混在している箇所を別ステップへ分離
-  - 分離追加数：12ステップ
+- 人物同時表示対応
+  - 序盤〜美空退場前は、美空・夜空を同時表示
+  - 美空退場後は夜空のみ表示
+  - 双沢家ツインルーム場面は、美空・夜空を同時表示
+- 美空退場時の表示クリアを整理
 
 ## 更新ファイル
-- `README_DIFF.md`
-- `VERSION.txt`
-- `index.html`
-- `program/v039/version.js`
-- `scenario/v039/storyIndex.js`
 - `scenario/v039/events/yozora_affection_50_00_main.json`
+- `scenario/v039/storyIndex.js`
+- `index.html`
+- `VERSION.txt`
+- `program/v039/version.js`
