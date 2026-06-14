@@ -208,7 +208,7 @@ window.TENOTSU_STORY_INDEX = [
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_10_01_key.json",
-    "version": "v039_117",
+    "version": "v039_210",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
@@ -567,7 +567,7 @@ window.TENOTSU_STORY_INDEX = [
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_40_00_main.json",
-    "version": "v039_161",
+    "version": "v039_210",
     "unlock": {
       "type": "all_story_cleared",
       "storyIds": [
@@ -1321,7 +1321,7 @@ window.TENOTSU_STORY_INDEX = [
       "level": 95
     },
     "order": 3094,
-    "summary": "90-2 素直じゃないのは、私か。場所：双沢家・白黒ツインルーム・夜。",
+    "summary": "90-2 素直じゃないのは、私か。。場所：双沢家・白黒ツインルーム・夜。",
     "rawTitle": "素直じゃないのは、私か。",
     "affectionLabel": "親愛Lv.95",
     "menuTitle": "親愛Lv.95：素直じゃないのは、私か。",

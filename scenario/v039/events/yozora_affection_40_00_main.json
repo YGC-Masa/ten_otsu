@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_40_00_main",
   "title": "嬉しいのに、苦しい",
-  "version": "v039_165",
+  "version": "v039_210",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_40_00_main",
@@ -411,7 +411,7 @@
     },
     {
       "speaker": "",
-      "text": "――美空の演武が始まる。\n竹刀が空を切る音。\n踏み込みの音。\n澄んだ気合いの声。\n会場の空気が、一瞬で引き締まった。",
+      "text": "――美空の演武が始まる。\n木刀が空を切る音。\n踏み込みの音。\n澄んだ気合いの声。\n会場の空気が、一瞬で引き締まった。",
       "showEventCg": true,
       "eventCg": "images/assets/cg/cg_yozora_main40_misora_enbu.png",
       "cgFit": "cover",
@@ -682,7 +682,7 @@
     },
     {
       "speaker": "",
-      "text": "――夜空は小さく息を吐き、弓道場へ向かう。\n美空は心配そうに、その背中を見送った。"
+      "text": "――夜空は小さく息を吐き、特設スペースへ向かう。\n美空は心配そうに、その背中を見送った。"
     },
     {
       "speaker": "美空",
