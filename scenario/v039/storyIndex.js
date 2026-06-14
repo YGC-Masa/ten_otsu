@@ -1282,22 +1282,22 @@ window.TENOTSU_STORY_INDEX = [
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_90_01_key.json",
-    "version": "v039_203",
+    "version": "v039_209",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
       "level": 93
     },
     "order": 3091,
-    "summary": "90-1 夜のブックカフェ企画。場所：hidamari_store_breakroom。",
+    "summary": "90-1 夜のブックカフェ企画。場所：ひだまりストア・閉店後の売り場。",
     "rawTitle": "夜のブックカフェ企画",
     "affectionLabel": "親愛Lv.93",
     "menuTitle": "親愛Lv.93：夜のブックカフェ企画",
-    "locationName": "hidamari_store_breakroom"
+    "locationName": "ひだまりストア・閉店後の売り場"
   },
   {
     "id": "yozora_affection_90_02_key",
-    "title": "アントステラへ行こう",
+    "title": "素直じゃないのは、私か。",
     "type": "key",
     "category": "character_key",
     "character": "ai",
@@ -1314,18 +1314,18 @@ window.TENOTSU_STORY_INDEX = [
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_90_02_key.json",
-    "version": "v039_203",
+    "version": "v039_209",
     "unlock": {
       "type": "affection_level",
       "character": "ai",
       "level": 95
     },
     "order": 3094,
-    "summary": "90-2 アントステラへ行こう。場所：hidamari_store_breakroom。",
-    "rawTitle": "アントステラへ行こう",
+    "summary": "90-2 素直じゃないのは、私か。場所：双沢家・白黒ツインルーム・夜。",
+    "rawTitle": "素直じゃないのは、私か。",
     "affectionLabel": "親愛Lv.95",
-    "menuTitle": "親愛Lv.95：アントステラへ行こう",
-    "locationName": "hidamari_store_breakroom"
+    "menuTitle": "親愛Lv.95：素直じゃないのは、私か。",
+    "locationName": "双沢家・白黒ツインルーム・夜"
   },
   {
     "id": "yozora_affection_90_03_key",

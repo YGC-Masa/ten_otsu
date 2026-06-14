@@ -1,26 +1,21 @@
-# ten_otsu v039_208 差分パッチ
+# ten_otsu v039_209 差分パッチ
 
 ## 適用前提
-- **v039_207 適用済みへ上書き**
+- **v039_208 適用済みへ上書き**
 
 ## 修正内容
 
-### ストーリー：二人だから、少し素直になる
-- ステップ121でイベントCG（添付1枚目）を表示
-- ステップ151でイベントCG（添付2枚目）を表示
-- ステップ187でイベントCG（添付3枚目）を表示
-- ステップ206でイベントCG（添付4枚目）を表示
-- ステップ232の文言を指定内容へ変更し、イベントCG（添付5枚目）を表示
-- ステップ275でイベントCGを終了
-- ステップ121以降の夜空立ち絵を `images/assets/char/yozora_bookcafe_blueknit_stand.png` に変更
+### ストーリー再編成
+- 親愛Lv.93 **「夜のブックカフェ企画」** に、従来の親愛Lv.95 **「アントステラへ行こう」** の内容をマージして集約
+- 親愛Lv.95 を新規ストーリー **「素直じゃないのは、私か。」** に差し替え
 
-## 追加アセット
-- `images/assets/cg/cg_yozora90_bookcafe_01_smile.png`
-- `images/assets/cg/cg_yozora90_bookcafe_02_cocoa.png`
-- `images/assets/cg/cg_yozora90_bookcafe_03_shy_front.png`
-- `images/assets/cg/cg_yozora90_bookcafe_04_shy_profile.png`
-- `images/assets/cg/cg_yozora90_bookcafe_05_overheat.png`
-- `images/assets/char/yozora_bookcafe_blueknit_stand.png`
+### 親愛Lv.93：夜のブックカフェ企画
+- 従来の 93 / 95 の内容を連結統合
+- 夜空がブックカフェに興味を持ち、店長と二人で行くことを意識し始める流れを 93 に集約
+
+### 親愛Lv.95：素直じゃないのは、私か。
+- 双沢家・白黒ツインルーム・夜の新規キーストーリーへ差し替え
+- 美空と夜空の反省会、夜空の本音、美空の小さな自覚までを収録
 
 ## 更新ファイル
 - `README_DIFF.md`
@@ -28,10 +23,5 @@
 - `index.html`
 - `program/v039/version.js`
 - `scenario/v039/storyIndex.js`
-- `scenario/v039/events/yozora_affection_90_03_key.json`
-- `images/assets/cg/cg_yozora90_bookcafe_01_smile.png`
-- `images/assets/cg/cg_yozora90_bookcafe_02_cocoa.png`
-- `images/assets/cg/cg_yozora90_bookcafe_03_shy_front.png`
-- `images/assets/cg/cg_yozora90_bookcafe_04_shy_profile.png`
-- `images/assets/cg/cg_yozora90_bookcafe_05_overheat.png`
-- `images/assets/char/yozora_bookcafe_blueknit_stand.png`
+- `scenario/v039/events/yozora_affection_90_01_key.json`
+- `scenario/v039/events/yozora_affection_90_02_key.json`
