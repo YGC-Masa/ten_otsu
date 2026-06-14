@@ -695,7 +695,7 @@ window.TENOTSU_STORY_INDEX = [
       "双沢 夜空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_50_00_main.json",
-    "version": "v039_160",
+    "version": "v039_211",
     "unlock": {
       "type": "all_story_cleared",
       "storyIds": [
