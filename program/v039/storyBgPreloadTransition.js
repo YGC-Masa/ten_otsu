@@ -1,4 +1,4 @@
-/* v039_215 story bg preload transition + input lock / sprite clear */
+/* v039_220 story bg preload transition + loaded bg cache / input lock */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
@@ -116,7 +116,7 @@
       try { document.body.classList.add("tenotsu-story-bg-preparing"); } catch (_) {}
       try { if (typeof ns.clearStoryTextBoxForTransition === "function") ns.clearStoryTextBoxForTransition(); } catch (_) {}
       try { if (typeof ns.clearStorySpritesV2 === "function") ns.clearStorySpritesV2(); else if (typeof ns.hideStoryCharacters === "function") ns.hideStoryCharacters(); } catch (_) {}
-      try { ns.storyCurrentSpriteKey = ""; } catch (_) {}
+      // Do not reset sprite keys here; sprite transition guard decides whether sprites actually changed.
     }
 
     await ns.prepareStoryBackgroundTransition(step.bg);
