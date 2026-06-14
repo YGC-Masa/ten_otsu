@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_90_00_main",
   "title": "本物の星を見る夜",
-  "version": "v039_200",
+  "version": "v039_201",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_90_00_main",
@@ -913,7 +913,11 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora90_starry_night_01.png",
+      "cgFit": "cover",
+      "cgAlign": "center center"
     },
     {
       "speaker": "店長",
@@ -1281,7 +1285,11 @@
     },
     {
       "speaker": "",
-      "text": "――三人はしばらく空を見上げる。\n誰もすぐには喋らなかった。"
+      "text": "――三人はしばらく空を見上げる。\n誰もすぐには喋らなかった。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora90_starry_night_02.png",
+      "cgFit": "cover",
+      "cgAlign": "center center"
     },
     {
       "speaker": "夜空",
@@ -2005,7 +2013,11 @@
     },
     {
       "speaker": "",
-      "text": "――美空は嬉しそうに笑う。\n夜空も、ほんのわずかに口元を緩めた。"
+      "text": "――美空は嬉しそうに笑う。\n夜空も、ほんのわずかに口元を緩めた。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora90_starry_night_03.png",
+      "cgFit": "cover",
+      "cgAlign": "center center"
     },
     {
       "speaker": "店長",
@@ -2145,7 +2157,11 @@
           "src": "images/assets/char/yozora_coat_main50_custom_star.png",
           "opacity": 1
         }
-      ]
+      ],
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_yozora90_starry_night_04.png",
+      "cgFit": "cover",
+      "cgAlign": "center center"
     },
     {
       "speaker": "店長",
