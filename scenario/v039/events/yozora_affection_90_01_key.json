@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_90_01_key",
   "title": "夜のブックカフェ企画",
-  "version": "v039_209",
+  "version": "v039_213",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_90_01_key",
@@ -664,54 +664,6 @@
     {
       "speaker": "",
       "text": "夜空はチラシを丁寧に自分のバッグへしまう。まだ二人で行くことの意味を、深くは考えていなかった。ただ、静かな夜の本棚と、温かいココアのある場所へ行ってみたい。その気持ちは、確かに夜空自身のものだった。"
-    },
-    {
-      "speaker": "",
-      "text": "――ひだまりストア・閉店後の売り場――",
-      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
-      "bgMode": "forceReplace",
-      "forceBackgroundReplace": true,
-      "clearStorySprites": true
-    },
-    {
-      "speaker": "店長",
-      "text": "夜空、この前のブックカフェのチラシだけど。開催日、今週の金曜だったよな。"
-    },
-    {
-      "speaker": "夜空",
-      "text": "うん。十九時から二十一時。ラストオーダーは二十時半。入場は予約優先。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "店長",
-      "text": "しっかり確認してるな。予約は？"
-    },
-    {
-      "speaker": "夜空",
-      "text": "……まだ。仮確認だから。",
-      "storySprites": [
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ai",
-          "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        }
-      ]
     },
     {
       "speaker": "店長",

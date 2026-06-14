@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_60_01_key",
   "title": "店長、大丈夫？",
-  "version": "v039_186",
+  "version": "v039_213",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_60_01_key",
@@ -289,7 +289,8 @@
       "text": "――ひだまりストア・バックヤード――",
       "bg": "images/assets/bg/bg_hidamari_warehouse.png",
       "bgMode": "forceReplace",
-      "forceBackgroundReplace": true
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
     },
     {
       "speaker": "",
@@ -900,11 +901,6 @@
         {
           "id": "ai",
           "src": "images/assets/char/i10101.webp",
-          "opacity": 1
-        },
-        {
-          "id": "ah",
-          "src": "images/assets/char/h10202.webp",
           "opacity": 1
         }
       ]

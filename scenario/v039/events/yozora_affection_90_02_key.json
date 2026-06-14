@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_90_02_key",
   "title": "素直じゃないのは、私か。",
-  "version": "v039_209",
+  "version": "v039_213",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_90_02_key",
@@ -2934,7 +2934,10 @@
     },
     {
       "speaker": "",
-      "text": "――美空は自分のベッドに入る。\n部屋の灯りをさらに落とし、夜空の方を一度だけ見る。"
+      "text": "――美空は自分のベッドに入る。\n部屋の灯りをさらに落とし、夜空の方を一度だけ見る。",
+      "bg": "images/assets/bg/bg_sugosawa_room_night_indirect.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "美空",
