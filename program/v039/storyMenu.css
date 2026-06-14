@@ -192,3 +192,50 @@ body[data-v039-mode="town"] .tenotsu-town-candidate-list {
   body[data-v039-mode="town"] .tenotsu-town-place-grid { max-height: 34vh !important; }
   body[data-v039-mode="town"] .tenotsu-town-candidate-list { max-height: 26vh !important; }
 }
+
+
+/* v039_228: 回想アルバム本体スクロール再調整 */
+body[data-v039-mode="storyMenu"] .tenotsu-town-panel{
+  top: max(18px, env(safe-area-inset-top)) !important;
+  bottom: max(128px, env(safe-area-inset-bottom)) !important;
+  transform: none !important;
+  max-height: none !important;
+  height: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+body[data-v039-mode="storyMenu"] .tenotsu-story-menu-title,
+body[data-v039-mode="storyMenu"] .tenotsu-story-menu-subtitle,
+body[data-v039-mode="storyMenu"] .tenotsu-story-menu-tabs,
+body[data-v039-mode="storyMenu"] .tenotsu-story-menu-debug,
+body[data-v039-mode="storyMenu"] .tenotsu-story-menu-actions{
+  flex: 0 0 auto !important;
+}
+body[data-v039-mode="storyMenu"] .tenotsu-story-menu-list{
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding-right: 8px !important;
+  scrollbar-gutter: stable both-edges;
+}
+body[data-v039-mode="storyMenu"] .tenotsu-story-menu-tabs{
+  grid-template-columns: repeat(6, minmax(72px, 1fr)) !important;
+}
+body[data-v039-mode="storyMenu"] .tenotsu-story-menu-card{
+  min-height: 76px !important;
+}
+body[data-v039-mode="storyMenu"] .tenotsu-story-menu-card-summary{
+  padding-right: 64px !important;
+}
+@media (max-height: 760px){
+  body[data-v039-mode="storyMenu"] .tenotsu-town-panel{
+    top: 10px !important;
+    bottom: 110px !important;
+    padding: 14px !important;
+  }
+  body[data-v039-mode="storyMenu"] .tenotsu-story-menu-subtitle{display:none !important;}
+}

@@ -1,4 +1,4 @@
-/* v039_225 recollection album category submenus + target filter. Member affection / intro stories live elsewhere. */
+/* v039_228 recollection album separate index + seasonal category fix. Member affection / intro stories live elsewhere. */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
@@ -13,7 +13,10 @@
   ];
 
   function esc(value){ return String(value == null ? "" : value).replace(/[&<>"]/g, (ch) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch])); }
-  function allStories(){ return (Array.isArray(window.TENOTSU_STORY_INDEX) ? window.TENOTSU_STORY_INDEX : []).slice().sort((a,b)=>(a.order||0)-(b.order||0)); }
+  function allStories(){
+    const source = Array.isArray(window.TENOTSU_RECOLLECTION_STORY_INDEX) ? window.TENOTSU_RECOLLECTION_STORY_INDEX : (Array.isArray(window.TENOTSU_STORY_INDEX) ? window.TENOTSU_STORY_INDEX : []);
+    return source.slice().sort((a,b)=>(a.order||0)-(b.order||0));
+  }
   function storyTypeLabel(type){ return ({ normal:"通常", key:"キー", main:"メイン" })[type] || type || "story"; }
   function characterLine(story){ return (story.characterNames || story.characters || []).join(" / ") || "-"; }
 
@@ -71,8 +74,12 @@
   }
 
   function tabForStory(story){
+    if (story && story.albumTab) return story.albumTab;
+    const season = seasonOfStory(story);
+    // 季節情報があるストーリーは、イベント系でも春夏秋冬へ優先分類する。
+    if (season !== "other") return season;
     if (isEventStory(story)) return "event";
-    return seasonOfStory(story);
+    return "other";
   }
 
   function tabLabel(tab){
