@@ -1346,7 +1346,7 @@ window.TENOTSU_STORY_INDEX = [
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/yozora_affection_90_03_key.json",
-    "version": "v039_214",
+    "version": "v039_216",
     "unlock": {
       "type": "affection_level",
       "character": "ai",

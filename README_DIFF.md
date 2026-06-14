@@ -1,25 +1,18 @@
-# ten_otsu v039_215 差分パッチ
+# ten_otsu v039_216 差分パッチ
 
 ## 適用前提
-- **v039_214適用済みへ上書き**
+- **v039_215適用済みへ上書き**
 
 ## 修正内容
 
-### ゲーム側：背景変更時の共通演出
-シナリオファイルには手を入れず、`bg` が変わるステップをゲーム側で検知して共通演出を挟むようにしました。
-
-背景変更時の流れ：
-1. テキスト進行受付停止
-2. 旧人物立ち絵を非表示
-3. テキスト欄を一時クリア
-4. 次背景をプリロード
-5. 背景フェード切替
-6. ステップ指定の人物・テキストを表示
-7. テキスト進行受付再開
+### ストーリー：二人だから、少し素直になる
+- ステップ38〜39で人物表示をクリア
+- 美空が前ステップから残らないよう `clearStorySprites` を追加
 
 ## 更新ファイル
 - `README_DIFF.md`
 - `VERSION.txt`
 - `index.html`
 - `program/v039/version.js`
-- `program/v039/storyBgPreloadTransition.js`
+- `scenario/v039/storyIndex.js`
+- `scenario/v039/events/yozora_affection_90_03_key.json`
