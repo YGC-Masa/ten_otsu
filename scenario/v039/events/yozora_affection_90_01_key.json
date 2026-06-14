@@ -1,7 +1,7 @@
 {
   "id": "yozora_affection_90_01_key",
   "title": "夜のブックカフェ企画",
-  "version": "v039_197",
+  "version": "v039_203",
   "return": {
     "mode": "storyMenu",
     "storyId": "yozora_affection_90_01_key",
@@ -40,7 +40,7 @@
     {
       "speaker": "",
       "text": "――ひだまりストア・閉店後の売り場――",
-      "bg": "images/assets/bg/bg_hidamari_store_closed_night.png",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
       "clearStorySprites": true
