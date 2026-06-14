@@ -3,6 +3,21 @@
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
 
+  function ensureSpriteLoadedCache() {
+    if (!ns.__storySpriteLoadedCache) ns.__storySpriteLoadedCache = Object.create(null);
+    return ns.__storySpriteLoadedCache;
+  }
+
+  function markSpriteLoaded(src) {
+    if (!src || String(src).endsWith('/NULL')) return;
+    ensureSpriteLoadedCache()[src] = true;
+  }
+
+  function isSpriteAlreadyLoaded(src) {
+    if (!src || String(src).endsWith('/NULL')) return true;
+    return !!ensureSpriteLoadedCache()[src];
+  }
+
   const FADE_OUT_MS = 180;
   const FADE_IN_MS = 180;
   const LOAD_TIMEOUT_MS = 2600;
@@ -12,6 +27,7 @@
 
   function preloadSprite(src, timeout = LOAD_TIMEOUT_MS) {
     if (!src || String(src).endsWith("/NULL")) return Promise.resolve({ ok:false, src:null });
+    if (isSpriteAlreadyLoaded(src)) return Promise.resolve({ ok:true, src, cached:true });
     return new Promise((resolve) => {
       const img = new Image();
       let done = false;
@@ -22,7 +38,7 @@
       };
       const timer = setTimeout(() => finish(false), timeout);
       img.onload = () => {
-        const afterDecode = () => { clearTimeout(timer); finish(true); };
+        const afterDecode = () => { clearTimeout(timer); markSpriteLoaded(src); finish(true); };
         if (typeof img.decode === "function") img.decode().then(afterDecode).catch(afterDecode);
         else afterDecode();
       };
@@ -57,7 +73,21 @@
   function currentSpriteImages() {
     const layer = getSpriteLayer();
     if (!layer) return [];
-    return Array.from(layer.querySelectorAll(".tenotsu-story-body-standing, .tenotsu-story-standing, img"));
+    const imgs = Array.from(layer.querySelectorAll(".tenotsu-story-body-standing, .tenotsu-story-standing, img"));
+    imgs.forEach((img) => {
+      const raw = img.getAttribute('src') || img.currentSrc || '';
+      const dataSrc = img.getAttribute('data-src') || '';
+      [raw, dataSrc].forEach((value) => {
+        if (!value) return;
+        try {
+          const normalized = new URL(value, window.location.href).pathname.replace(/^\/+/, '');
+          if (normalized) markSpriteLoaded(normalized);
+        } catch (_) {
+          markSpriteLoaded(value);
+        }
+      });
+    });
+    return imgs;
   }
 
   function shouldHandleSpriteTransition(step, targetList) {
@@ -74,7 +104,8 @@
   }
 
   async function preloadTargetSprites(targetList) {
-    const srcs = Array.from(new Set((targetList || []).map((s) => s && s.src).filter(Boolean)));
+    const srcs = Array.from(new Set((targetList || []).map((s) => s && s.src).filter(Boolean)))
+      .filter((src) => !isSpriteAlreadyLoaded(src));
     if (!srcs.length) return;
     await Promise.all(srcs.map((src) => preloadSprite(src)));
   }
@@ -127,6 +158,9 @@
   if (typeof originalShowStoryCharacters === "function") {
     ns.showStoryCharacters = function showStoryCharactersSpriteTransitionPatched(characters) {
       originalShowStoryCharacters.call(ns, characters);
+      (Array.isArray(characters) ? characters : []).forEach((ch) => {
+        if (ch && ch.src) markSpriteLoaded(ch.src);
+      });
       if (!ns.__storySpriteTransitionRenderHidden) return;
       const imgs = currentSpriteImages();
       imgs.forEach((img) => {

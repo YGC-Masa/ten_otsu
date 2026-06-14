@@ -3,8 +3,25 @@
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
 
+  function ensureBgLoadedCache() {
+    if (!ns.__storyBgLoadedCache) ns.__storyBgLoadedCache = Object.create(null);
+    return ns.__storyBgLoadedCache;
+  }
+
+  function isBgAlreadyLoaded(src) {
+    if (!src) return false;
+    const cache = ensureBgLoadedCache();
+    return !!cache[src] || ns.storyCurrentBackground === src || (ns.story && ns.story.lastBg === src);
+  }
+
+  function markBgLoaded(src) {
+    if (!src) return;
+    ensureBgLoadedCache()[src] = true;
+  }
+
   async function preloadAndDecode(src, timeout = 2600) {
     if (!src) return { ok:false, src:null, img:null };
+    if (isBgAlreadyLoaded(src)) return { ok:true, src, img:null, cached:true };
     return await new Promise((resolve) => {
       const img = new Image();
       let done = false;
@@ -15,7 +32,7 @@
       };
       const timer = setTimeout(() => finish(false), timeout);
       img.onload = () => {
-        const afterDecode = () => { clearTimeout(timer); finish(true); };
+        const afterDecode = () => { clearTimeout(timer); markBgLoaded(src); finish(true); };
         if (typeof img.decode === "function") img.decode().then(afterDecode).catch(afterDecode);
         else afterDecode();
       };
@@ -74,6 +91,7 @@
 
     ns.storyCurrentBackground = bgPath;
     if (ns.story) ns.story.lastBg = bgPath;
+    markBgLoaded(bgPath);
     ns.__storyBgPrepared = null;
     if (typeof ns.suppressStoryFadeLayer === "function") ns.suppressStoryFadeLayer();
     return bgPath;
