@@ -1,4 +1,4 @@
-/* v039_181 story bg preload transition */
+/* v039_215 story bg preload transition + input lock / sprite clear */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
@@ -79,14 +79,44 @@
     return bgPath;
   };
 
+  function isStoryBackgroundChanging(step) {
+    try {
+      const forceBg = !!(step && (step.forceBackgroundReplace || step.bgMode === "forceReplace"));
+      return !!(step && step.bg && (forceBg || step.bg !== (ns.story && ns.story.lastBg) || step.bg !== ns.storyCurrentBackground));
+    } catch (_) {
+      return false;
+    }
+  }
+
+  ns.prepareCommonStoryBackgroundChange = async function prepareCommonStoryBackgroundChange(step, options = {}) {
+    if (!isStoryBackgroundChanging(step)) return false;
+
+    // Initial story reveal is already covered by the story start black fade.
+    // For normal bg changes, lock input first, remove old sprites/text, then load the next bg.
+    if (!options || !options.initial) {
+      try { if (typeof ns.setStoryLoading === "function") ns.setStoryLoading(true); } catch (_) {}
+      try { document.body.classList.add("tenotsu-story-bg-preparing"); } catch (_) {}
+      try { if (typeof ns.clearStoryTextBoxForTransition === "function") ns.clearStoryTextBoxForTransition(); } catch (_) {}
+      try { if (typeof ns.clearStorySpritesV2 === "function") ns.clearStorySpritesV2(); else if (typeof ns.hideStoryCharacters === "function") ns.hideStoryCharacters(); } catch (_) {}
+      try { ns.storyCurrentSpriteKey = ""; } catch (_) {}
+    }
+
+    await ns.prepareStoryBackgroundTransition(step.bg);
+    return true;
+  };
+
   if (typeof originalApplyStoryStep === "function") {
     ns.applyStoryStep = async function applyStoryStepPatched(step, options = {}) {
+      const bgChanged = isStoryBackgroundChanging(step);
       try {
-        const forceBg = !!(step && (step.forceBackgroundReplace || step.bgMode === "forceReplace"));
-        const bgChanged = !!(step && step.bg && (forceBg || step.bg !== (ns.story && ns.story.lastBg) || step.bg !== ns.storyCurrentBackground));
-        if (bgChanged) await ns.prepareStoryBackgroundTransition(step.bg);
-      } catch (_) {}
-      return originalApplyStoryStep.call(ns, step, options);
+        if (bgChanged) await ns.prepareCommonStoryBackgroundChange(step, options);
+        return await originalApplyStoryStep.call(ns, step, options);
+      } finally {
+        if (bgChanged && (!options || !options.initial)) {
+          try { document.body.classList.remove("tenotsu-story-bg-preparing"); } catch (_) {}
+          try { if (typeof ns.setStoryLoading === "function") ns.setStoryLoading(false); } catch (_) {}
+        }
+      }
     };
   }
 })();
