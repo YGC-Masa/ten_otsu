@@ -90,7 +90,21 @@
       completeReward: { title: "夜空との絆" }
     },
     aj: empty("芝桜 桃", "桃との絆"),
-    ak: empty("紫藤 彩愛", "彩愛との絆"),
+    ak: {
+      characterName: "紫藤 彩愛",
+      requiredStories: [
+        "ayame_affection_00_01_key",
+        "ayame_affection_00_02_key",
+        "ayame_affection_00_03_key"
+      ],
+      slotStories: {
+        b1_key1: "ayame_affection_00_01_key",
+        b1_key2: "ayame_affection_00_02_key",
+        b1_key3: "ayame_affection_00_03_key",
+        b1_main: "ayame_affection_10_00_main"
+      },
+      completeReward: { title: "彩愛との絆" }
+    },
     al: empty("餅月 里美", "里美との絆"),
     am: empty("草壁 萌", "萌との絆"),
     ba: empty("天神 小春", "小春との因縁"),

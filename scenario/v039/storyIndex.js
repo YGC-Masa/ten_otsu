@@ -1567,5 +1567,137 @@ window.TENOTSU_STORY_INDEX = [
     "affectionLabel": "親愛Lv.100",
     "menuTitle": "親愛Lv.100：春の中で、ありがとう",
     "locationName": "春待ち花畑・昼"
+  },
+  {
+    "id": "ayame_affection_00_01_key",
+    "title": "暮らしを見て選ぶ洗濯機",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 1,
+    "affectionSlot": "key1",
+    "unlockLevel": 3,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_00_01_key.json",
+    "version": "v039_230",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 3
+    },
+    "order": 3110,
+    "summary": "彩愛が洗濯機売場で、家族客の暮らしに合わせた接客を行う。店長は、彩愛の接客が商品説明ではなく暮らしを見る接客であることに気づく。",
+    "rawTitle": "暮らしを見て選ぶ洗濯機",
+    "affectionLabel": "親愛Lv.3",
+    "menuTitle": "親愛Lv.3：暮らしを見て選ぶ洗濯機",
+    "locationName": "ひだまりストア・洗濯機売場"
+  },
+  {
+    "id": "ayame_affection_00_02_key",
+    "title": "節水性能は侮れませんわ",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 1,
+    "affectionSlot": "key2",
+    "unlockLevel": 5,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_00_02_key.json",
+    "version": "v039_230",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 5
+    },
+    "order": 3111,
+    "summary": "洗濯機フェアのPOP作成中、彩愛は節水性能や洗剤自動投入の重要性を語る。店長は、彩愛の生活感ある視点を魅力として肯定する。",
+    "rawTitle": "節水性能は侮れませんわ",
+    "affectionLabel": "親愛Lv.5",
+    "menuTitle": "親愛Lv.5：節水性能は侮れませんわ",
+    "locationName": "ひだまりストア・洗濯機売場"
+  },
+  {
+    "id": "ayame_affection_00_03_key",
+    "title": "春の香りは、ふきのとう",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 1,
+    "affectionSlot": "key3",
+    "unlockLevel": 8,
+    "characters": [
+      "ak",
+      "aa"
+    ],
+    "characterNames": [
+      "紫藤 彩愛",
+      "星野 緋奈"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_00_03_key.json",
+    "version": "v039_230",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 8
+    },
+    "order": 3112,
+    "summary": "春フェアの売場作りをきっかけに、彩愛が子どもの頃にふきのとうを採りに行っていた思い出を語る。",
+    "rawTitle": "春の香りは、ふきのとう",
+    "affectionLabel": "親愛Lv.8",
+    "menuTitle": "親愛Lv.8：春の香りは、ふきのとう",
+    "locationName": "ひだまりストア・洗濯機売場"
+  },
+  {
+    "id": "ayame_affection_10_00_main",
+    "title": "暮らしを知っている人",
+    "type": "main",
+    "category": "character_main",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 1,
+    "affectionSlot": "main",
+    "unlockLevel": 10,
+    "characters": [
+      "ak",
+      "aa"
+    ],
+    "characterNames": [
+      "紫藤 彩愛",
+      "星野 緋奈"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_10_00_main.json",
+    "version": "v039_230",
+    "unlock": {
+      "type": "all_story_cleared",
+      "storyIds": [
+        "ayame_affection_00_01_key",
+        "ayame_affection_00_02_key",
+        "ayame_affection_00_03_key"
+      ],
+      "fallback": {
+        "type": "affection_level",
+        "character": "ak",
+        "level": 10
+      }
+    },
+    "order": 3113,
+    "summary": "春の新生活フェアを終えた店長は、彩愛の接客が暮らしを知っている人の言葉だからこそ届くのだと伝える。",
+    "rawTitle": "暮らしを知っている人",
+    "affectionLabel": "親愛Lv.10",
+    "menuTitle": "親愛Lv.10：暮らしを知っている人",
+    "locationName": "ひだまりストア・洗濯機売場"
   }
 ];

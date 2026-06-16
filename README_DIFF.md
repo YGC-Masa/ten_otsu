@@ -1,34 +1,32 @@
-# ten_otsu v039_229 差分パッチ
+# ten_otsu v039_230 差分パッチ
 
 ## 適用前提
-- **v039_228適用済みへ上書き**
+- **v039_229適用済みへ上書き**
 
-## 修正内容
+## 内容
 
-### ショップメニュー：交換品リスト追加
-ショップメニューの「交換品を見る」に、以下の交換候補を追加しました。
+### 紫藤 彩愛 親愛3〜10をJSON実装
+以下の本文ファイルを `v039_steps` 形式のシナリオJSONへ変換しました。
 
-- タイムタイム（TimeThymus）
-  - 時間を変えられる交換品
-- シーズンレーズン（SeasonRaisin）
-  - 季節を変えられる交換品
-- ロックハートショコラ（RockHeartChocolat）
-  - 親愛メインの開放アイテム
-- ビリビリ麻婆豆腐
-  - とあるメンバーの親愛開放アイテム
-- 百超桃
-  - とあるメンバーの親愛開放アイテム
-- 魔界のブランデー
-  - とあるメンバーの親愛開放アイテム
+- 親愛Lv.3 キー1：`暮らしを見て選ぶ洗濯機`
+- 親愛Lv.5 キー2：`節水性能は侮れませんわ`
+- 親愛Lv.8 キー3：`春の香りは、ふきのとう`
+- 親愛Lv.10 メイン：`暮らしを知っている人`
 
-## 補足
-- 今回は交換品リストへの表示追加です。
-- 所持数、交換コスト、実際の時間・季節変更処理、親愛開放処理は後続で接続します。
+### 管理ファイル更新
+- `scenario/v039/storyIndex.js` に彩愛ルート親愛0〜10の4本を追加
+- `scenario/v039/keyStoryConfig.js` に彩愛のブロック1スロットを追加
+
+## 追加ファイル
+- `scenario/v039/events/ayame_affection_00_01_key.json`
+- `scenario/v039/events/ayame_affection_00_02_key.json`
+- `scenario/v039/events/ayame_affection_00_03_key.json`
+- `scenario/v039/events/ayame_affection_10_00_main.json`
 
 ## 更新ファイル
-- `program/v039/shop.js`
-- `program/v039/core.css`
+- `scenario/v039/storyIndex.js`
+- `scenario/v039/keyStoryConfig.js`
 - `program/v039/version.js`
 - `VERSION.txt`
-- `README_DIFF.md`
 - `index.html`
+- `README_DIFF.md`
