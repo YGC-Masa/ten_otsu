@@ -1,0 +1,1521 @@
+{
+  "id": "ayame_affection_20_02_key",
+  "title": "川魚の焼き方",
+  "version": "v039_233",
+  "return": {
+    "mode": "storyMenu",
+    "storyId": "ayame_affection_20_02_key",
+    "storyMenuTab": "key"
+  },
+  "format": "v039_steps",
+  "type": "character_key_story",
+  "characterId": "ak",
+  "route": "ayame",
+  "affectionRange": {
+    "min": 20,
+    "max": 30
+  },
+  "location": {
+    "id": "hidamari_cooking_appliances",
+    "name": "ひだまりストア・調理家電売場"
+  },
+  "summary": "調理家電売場で川魚の焼き方を話題に、彩愛の田舎での経験と暮らしの知恵が接客につながっていく。",
+  "purpose": "彩愛の生活経験が家電説明に活きることを、調理家電と魚焼きの話から描く。",
+  "tags": [
+    "彩愛ルート",
+    "親愛度20-30",
+    "生活家電",
+    "暮らし",
+    "田舎育ち"
+  ],
+  "clearFlags": [
+    "ayame_affection_20_02_key_cleared"
+  ],
+  "nextHint": "次のキーでは、彩愛にとっての「普通」のスケールがさらに見えてくる。",
+  "renderPolicy": {
+    "spritePosition": "logical_split_n_plus_1",
+    "eventCgLayer": "frontOfCharacters"
+  },
+  "steps": [
+    {
+      "speaker": "",
+      "text": "ひだまりストア、調理家電売場。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "昼過ぎの店内は、少し落ち着いていた。"
+    },
+    {
+      "speaker": "",
+      "text": "洗濯機フェアの流れで生活家電売場を見て回るお客様は多いが、今はちょうど客足が途切れた時間帯だ。"
+    },
+    {
+      "speaker": "",
+      "text": "俺は調理家電売場で、魚焼きグリル付きのオーブンレンジのPOPを確認していた。"
+    },
+    {
+      "speaker": "店長",
+      "text": "魚の焼き方って、意外と説明が難しいな……"
+    },
+    {
+      "speaker": "",
+      "text": "グリル機能。両面焼き。自動調理。焦げ目調整。"
+    },
+    {
+      "speaker": "",
+      "text": "機能としては分かるが、お客様にどう伝えるかは少し悩む。"
+    },
+    {
+      "speaker": "",
+      "text": "そこへ、彩愛さんがやってきた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長。今度は調理家電ですか？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "あ、彩愛さん。はい。魚焼きグリルの説明をどうするか考えていて"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "魚焼きですか。良いですね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さん、魚焼くの得意ですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "得意というほどではありませんが、焼き加減を見るのは好きですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "焼き加減を見るのが好き"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。魚は火を通しすぎると、身が固くなってしまいますもの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "そこが難しいんですよね。焼きすぎるとパサつくし、足りないと不安だし"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "大きさや脂の乗り方でも変わりますわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "詳しいですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "昔、川魚を焼いていただいたことがありましたから",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "川魚？"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、何気なくそう言った。"
+    },
+    {
+      "speaker": "",
+      "text": "俺が聞き返すと、彩愛さんは少しだけ懐かしそうに微笑む。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。子どもの頃、川で捕った魚を焼いて食べたことがありますの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "捕った魚を？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "買った魚じゃなくて？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "田舎でしたから",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "最近、その一言でだいたい説明されるようになってきましたね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "便利な言葉ですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さんの“田舎でしたから”は、かなり強いです"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "まあ。失礼ですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "褒めてます"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "今のは、褒めているようには聞こえませんでした",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "すみません"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "謝られると、それはそれで困ります",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "いつもの流れになって、彩愛さんが小さく笑う。"
+    },
+    {
+      "speaker": "",
+      "text": "そこへ、緋奈が通りかかった。"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "あれ？　調理家電の話ですか？",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "魚焼きグリルの話をしてた"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "魚！　いいですね！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "緋奈さんは、お魚もお好きですか？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "好きです！　でも骨が多いのはちょっと苦手です！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "正直だな"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "食べるの大変じゃないですか",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "川魚は、小さいものですと骨も気になりますわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "川魚？",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さん、子どもの頃に川で魚を捕って焼いて食べたらしい"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "えっ、ワイルド！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ワイルド……でしょうか",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "かなりワイルドです！　彩愛さん、上品なのに！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "上品な者でも、川魚くらいいただきますわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "川魚くらい、なんですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "田舎では珍しくありませんわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "また出た！　田舎では珍しくありませんわ！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "緋奈さん、真似をしないでくださいませ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "すみません！　でも言いたくなっちゃって",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "まったく",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "そう言いながらも、彩愛さんは少し楽しそうだった。"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "どうやって捕るんですか？　釣りですか？",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "釣りもありましたが、小さな魚なら網を使うこともありましたわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "網！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "本格的だな"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "子どもたちで遊ぶ時は、浅いところで小魚を追い込んだりしましたの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "やっぱりワイルドです！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "緋奈さん",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "あ、でも楽しそうです！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。楽しかったですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ遠くを見るような顔をした。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "川の水は冷たくて、石の陰には小さな魚がいて。夏になると、川の近くは涼しかったですの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "いいですね"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "めっちゃ夏休みって感じです！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ。たしかに、夏休みの思い出ですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "捕った魚は、そのまま焼くんですか？",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "もちろん、きちんと下処理はしますわ。大人の方に見てもらいながらですけれど",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "子どもだけじゃないんですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "川遊びは、大人が近くにいなければいけませんわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "その言葉だけ、少しだけ真面目だった。"
+    },
+    {
+      "speaker": "店長",
+      "text": "……そうですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。水辺は楽しいですが、油断してよい場所ではありませんもの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "一瞬、彩愛さんの表情が落ち着く。けれどすぐに、いつもの微笑みに戻った。"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "焼いた魚って美味しいですか？",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。小さいものでも、自分たちで捕ったと思うと特別に感じましたわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "味そのものより、思い出込みで美味しい感じですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そうですわね。塩を振って、少し焦げたところを気にしながらいただくのです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "うわー、お腹空いてきた！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "緋奈は毎回空くな"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "だって彩愛さんの話、美味しそうなんですもん！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "それは光栄ですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "今日の晩ご飯、魚にしようかな……",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "完全に影響されてる"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "されてます！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ。では、骨にはお気をつけくださいませ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "はい！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "その時、調理家電売場に男性のお客様がやってきた。"
+    },
+    {
+      "speaker": "お客様・男性",
+      "text": "すみません。魚焼きに使えるオーブンレンジを見たいんですが"
+    },
+    {
+      "speaker": "店長",
+      "text": "いらっしゃいませ。こちらです"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "焼き魚をよく召し上がるのですか？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・男性",
+      "text": "はい。グリルの掃除が大変なので、レンジで楽に焼けるならと思って"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "それでしたら、自動調理機能のあるものが便利ですわ。焼き加減を調整できる機種もございます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "こちらは魚の種類に合わせた自動メニューがあります"
+    },
+    {
+      "speaker": "お客様・男性",
+      "text": "魚の種類で変えられるんですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。魚は大きさや脂の乗り方で火の通りが変わりますから",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・男性",
+      "text": "なるほど"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ただ、自動調理でも、最初は少し様子を見ると安心ですわ。焼きすぎると身が固くなってしまいますもの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・男性",
+      "text": "たしかに。いつも少し焼きすぎるんですよね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "少し控えめにして、様子を見ながら調整するのもよろしいかと思います",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・男性",
+      "text": "分かりやすいですね。ありがとうございます"
+    },
+    {
+      "speaker": "",
+      "text": "説明は短かったが、お客様は納得した様子で機種を見比べ始めた。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、必要以上に詳しく語らない。でも、言葉の端に実感がある。"
+    },
+    {
+      "speaker": "",
+      "text": "魚を焼くという暮らしの感覚を知っているからだろう。"
+    },
+    {
+      "speaker": "",
+      "text": "お客様が売場を離れた後、緋奈が小声で言った。"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "彩愛さん、やっぱり説明うまいですね",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ありがとうございます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "川魚経験が活きましたね！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "その言い方ですと、少し野性味が強く聞こえますわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "でも、経験が接客につながってるのは本当だと思います"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長まで",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "今日もちゃんと届いてました"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……そう言われると、悪い気はいたしません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "彩愛さん、最近ちょっと褒められ慣れてきました？",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "慣れておりません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "少し慣れてきた気はします"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "褒めすぎ注意ですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "里美さんみたいですね！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "緋奈さん",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "はい、すみません！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "緋奈は笑いながら、別の売場へ戻っていった。"
+    },
+    {
+      "speaker": "",
+      "text": "調理家電売場には、俺と彩愛さんが残る。"
+    },
+    {
+      "speaker": "店長",
+      "text": "川遊びの話、前にも少しだけ出ましたよね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そうでしたか？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "おやつの話の時に。川では昔よく遊んだけど、今はあまり近づかないって"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは一瞬だけ黙った。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……ええ。そうお話ししましたわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "今はあまり、なんですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "大人になりましたから",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "それだけですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少し困ったように笑った。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長は、時々鋭すぎますわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "すみません。無理に聞くつもりは"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "分かっております",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、展示されているオーブンレンジのガラス面に視線を落とした。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "昔は、平気でしたの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "川が？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。泳ぐのも、魚を探すのも、足を水に入れて涼むのも。夏の楽しみでしたわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "今は？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "今は……少しだけ、苦手です",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "水が？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "正確には、水辺そのものではなく……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "そこで彩愛さんは言葉を止めた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "いえ。今は、これくらいにしておきますわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "分かりました"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "申し訳ありません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "謝らなくていいです"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……そう言っていただけると思いました",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "なら、よかったです"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "本当に、店長は困った方ですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "また困りましたか"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。こういう時に、無理に聞かないところが",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは少しだけ笑った。その笑顔はいつものように整っていたが、どこか静かだった。"
+    },
+    {
+      "speaker": "店長",
+      "text": "話したくなった時に、聞かせてください"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……はい",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "小さな返事だった。けれど、拒まれたわけではない。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ただ、誤解しないでくださいませ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "誤解？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "川の思い出が嫌いなわけではありません。楽しいことも、たくさんありましたの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "川魚を焼いたことも、夏の水の冷たさも、今でもよく覚えていますわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "いい思い出なんですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。少しだけ、怖い記憶も混ざってしまっただけです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "その言葉は穏やかだった。でも、俺はそれ以上聞かなかった。"
+    },
+    {
+      "speaker": "",
+      "text": "今は、彩愛さんが話してくれた分だけで十分だ。"
+    },
+    {
+      "speaker": "店長",
+      "text": "今日の話、聞けてよかったです"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "川魚の話ですか？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "それもです。彩愛さんの昔の夏の話も"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そんなに面白いものではありませんわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "でも、彩愛さんのことが少し分かります"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……また、そういうことを",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "だめでした？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "だめではありません。ただ、少し困るだけです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "じゃあ、また困らせましたね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。困った店長ですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ口元を緩めた。"
+    },
+    {
+      "speaker": "",
+      "text": "調理家電売場には、魚焼きグリルのPOPが並んでいる。"
+    },
+    {
+      "speaker": "",
+      "text": "焼き加減。焦げ目。手軽さ。掃除のしやすさ。"
+    },
+    {
+      "speaker": "",
+      "text": "そのどれもが、ただの機能ではなく、誰かの食卓につながっている。"
+    },
+    {
+      "speaker": "",
+      "text": "そして彩愛さんの中には、川の冷たさや、焼いた魚の匂いが、今も残っているのだろう。"
+    },
+    {
+      "speaker": "",
+      "text": "楽しい記憶と、少しだけ怖い記憶。"
+    },
+    {
+      "speaker": "",
+      "text": "その両方があるからこそ、彩愛さんの言葉には静かな重みがある。"
+    },
+    {
+      "speaker": "",
+      "text": "締めモノローグ"
+    },
+    {
+      "speaker": "",
+      "text": "調理家電売場で、彩愛さんは川魚の思い出を話してくれた。"
+    },
+    {
+      "speaker": "",
+      "text": "子どもの頃、川で魚を捕って焼いて食べたこと。夏の川が涼しくて、楽しい場所だったこと。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、今はあまり水辺に近づかないという。"
+    },
+    {
+      "speaker": "",
+      "text": "理由はまだ分からない。彩愛さんは、今はこれくらいにしておくと言った。"
+    },
+    {
+      "speaker": "",
+      "text": "楽しい記憶の中に、少しだけ怖い記憶が混ざっている。そのことだけを、店長は知った。"
+    },
+    {
+      "speaker": "",
+      "text": "解放後メモ案"
+    },
+    {
+      "speaker": "",
+      "text": "紫藤 彩愛 親愛25「川魚の焼き方」読了。\n調理家電売場で魚焼きの話になり、彩愛は子どもの頃に川で魚を捕って焼いて食べた思い出を語った。\n昔は川で遊ぶのが好きだったが、今は少し水が苦手だということも分かる。ただし、その理由はまだ明かされていない。"
+    }
+  ],
+  "keyScenarioIndex": 2
+}

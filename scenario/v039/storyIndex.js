@@ -1839,5 +1839,287 @@ window.TENOTSU_STORY_INDEX = [
     "affectionLabel": "親愛Lv.20",
     "menuTitle": "親愛Lv.20：頼られる理由",
     "locationName": "ひだまりストア・生活家電売場"
+  },
+  {
+    "id": "ayame_affection_20_01_key",
+    "title": "おやつは自然の恵みですわ",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 3,
+    "affectionSlot": "key1",
+    "unlockLevel": 23,
+    "characters": [
+      "ak",
+      "aa",
+      "al"
+    ],
+    "characterNames": [
+      "紫藤 彩愛",
+      "星野 緋奈",
+      "餅月 里美"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_20_01_key.json",
+    "version": "v039_233",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 23
+    },
+    "order": 3118,
+    "summary": "休憩室でのおやつ話から、彩愛の田舎での季節の恵みの記憶が語られる。緋奈や里美とのやり取りを通じて、彩愛の「普通」のスケールが少し見えてくる。",
+    "rawTitle": "おやつは自然の恵みですわ",
+    "affectionLabel": "親愛Lv.23",
+    "menuTitle": "親愛Lv.23：おやつは自然の恵みですわ",
+    "locationName": "ひだまりストア・休憩室"
+  },
+  {
+    "id": "ayame_affection_20_02_key",
+    "title": "川魚の焼き方",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 3,
+    "affectionSlot": "key2",
+    "unlockLevel": 25,
+    "characters": [
+      "ak",
+      "aa"
+    ],
+    "characterNames": [
+      "紫藤 彩愛",
+      "星野 緋奈"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_20_02_key.json",
+    "version": "v039_233",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 25
+    },
+    "order": 3119,
+    "summary": "調理家電売場で川魚の焼き方を話題に、彩愛の田舎での経験と暮らしの知恵が接客につながっていく。",
+    "rawTitle": "川魚の焼き方",
+    "affectionLabel": "親愛Lv.25",
+    "menuTitle": "親愛Lv.25：川魚の焼き方",
+    "locationName": "ひだまりストア・調理家電売場"
+  },
+  {
+    "id": "ayame_affection_20_03_key",
+    "title": "普通ですわよ？",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 3,
+    "affectionSlot": "key3",
+    "unlockLevel": 28,
+    "characters": [
+      "ak",
+      "aa",
+      "al"
+    ],
+    "characterNames": [
+      "紫藤 彩愛",
+      "星野 緋奈",
+      "餅月 里美"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_20_03_key.json",
+    "version": "v039_233",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 28
+    },
+    "order": 3120,
+    "summary": "休憩室で田舎話を聞く中、彩愛にとっての普通と周囲にとっての驚きの差が浮かび上がる。",
+    "rawTitle": "普通ですわよ？",
+    "affectionLabel": "親愛Lv.28",
+    "menuTitle": "親愛Lv.28：普通ですわよ？",
+    "locationName": "ひだまりストア・休憩室"
+  },
+  {
+    "id": "ayame_affection_30_00_main",
+    "title": "彩愛さんの普通",
+    "type": "main",
+    "category": "character_main",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 3,
+    "affectionSlot": "main",
+    "unlockLevel": 30,
+    "characters": [
+      "ak",
+      "aa",
+      "al"
+    ],
+    "characterNames": [
+      "紫藤 彩愛",
+      "星野 緋奈",
+      "餅月 里美"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_30_00_main.json",
+    "version": "v039_233",
+    "unlock": {
+      "type": "all_story_cleared",
+      "storyIds": [
+        "ayame_affection_20_01_key",
+        "ayame_affection_20_02_key",
+        "ayame_affection_20_03_key"
+      ],
+      "fallback": {
+        "type": "affection_level",
+        "character": "ak",
+        "level": 30
+      }
+    },
+    "order": 3121,
+    "summary": "生活家電売場での接客を通じ、彩愛の暮らし目線が売場の強みになっていることが描かれる。",
+    "rawTitle": "彩愛さんの普通",
+    "affectionLabel": "親愛Lv.30",
+    "menuTitle": "親愛Lv.30：彩愛さんの普通",
+    "locationName": "ひだまりストア・生活家電売場"
+  },
+  {
+    "id": "ayame_affection_30_01_key",
+    "title": "それはプロポーズですか？",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 4,
+    "affectionSlot": "key1",
+    "unlockLevel": 33,
+    "characters": [
+      "ak",
+      "aa",
+      "al"
+    ],
+    "characterNames": [
+      "紫藤 彩愛",
+      "星野 緋奈",
+      "餅月 里美"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_30_01_key.json",
+    "version": "v039_233",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 33
+    },
+    "order": 3122,
+    "summary": "若い夫婦への接客を通じて、彩愛の暮らしを想像する力が見える。「プロポーズ」という言葉に彩愛が動揺する。",
+    "rawTitle": "それはプロポーズですか？",
+    "affectionLabel": "親愛Lv.33",
+    "menuTitle": "親愛Lv.33：それはプロポーズですか？",
+    "locationName": "ひだまりストア・生活家電売場"
+  },
+  {
+    "id": "ayame_affection_30_02_key",
+    "title": "親戚の集まりというものは",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 4,
+    "affectionSlot": "key2",
+    "unlockLevel": 35,
+    "characters": [
+      "ak",
+      "aa",
+      "al"
+    ],
+    "characterNames": [
+      "紫藤 彩愛",
+      "星野 緋奈",
+      "餅月 里美"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_30_02_key.json",
+    "version": "v039_233",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 35
+    },
+    "order": 3123,
+    "summary": "バックヤードで実家からの電話を受けた彩愛が、親戚の集まりと結婚話への疲れを少しだけ見せる。",
+    "rawTitle": "親戚の集まりというものは",
+    "affectionLabel": "親愛Lv.35",
+    "menuTitle": "親愛Lv.35：親戚の集まりというものは",
+    "locationName": "ひだまりストア・バックヤード"
+  },
+  {
+    "id": "ayame_affection_30_03_key",
+    "title": "ビールは淑女の嗜みですわ",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 4,
+    "affectionSlot": "key3",
+    "unlockLevel": 38,
+    "characters": [
+      "ak",
+      "aa",
+      "al"
+    ],
+    "characterNames": [
+      "紫藤 彩愛",
+      "星野 緋奈",
+      "餅月 里美"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_30_03_key.json",
+    "version": "v039_233",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 38
+    },
+    "order": 3124,
+    "summary": "休憩室でクラフトビールフェスの話題になり、彩愛の息抜きと意外な酒の嗜みが描かれる。",
+    "rawTitle": "ビールは淑女の嗜みですわ",
+    "affectionLabel": "親愛Lv.38",
+    "menuTitle": "親愛Lv.38：ビールは淑女の嗜みですわ",
+    "locationName": "ひだまりストア・休憩室"
+  },
+  {
+    "id": "ayame_affection_40_00_main",
+    "title": "少しだけ、焦っています",
+    "type": "main",
+    "category": "character_main",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 4,
+    "affectionSlot": "main",
+    "unlockLevel": 40,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_40_00_main.json",
+    "version": "v039_233",
+    "unlock": {
+      "type": "all_story_cleared",
+      "storyIds": [
+        "ayame_affection_30_01_key",
+        "ayame_affection_30_02_key",
+        "ayame_affection_30_03_key"
+      ],
+      "fallback": {
+        "type": "affection_level",
+        "character": "ak",
+        "level": 40
+      }
+    },
+    "order": 3125,
+    "summary": "閉店後の生活家電売場で、彩愛が家族や結婚への焦りを店長に少しだけ打ち明ける。",
+    "rawTitle": "少しだけ、焦っています",
+    "affectionLabel": "親愛Lv.40",
+    "menuTitle": "親愛Lv.40：少しだけ、焦っています",
+    "locationName": "ひだまりストア・生活家電売場"
   }
 ];

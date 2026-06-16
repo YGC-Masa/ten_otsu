@@ -1,0 +1,958 @@
+{
+  "id": "ayame_affection_30_02_key",
+  "title": "親戚の集まりというものは",
+  "version": "v039_233",
+  "return": {
+    "mode": "storyMenu",
+    "storyId": "ayame_affection_30_02_key",
+    "storyMenuTab": "key"
+  },
+  "format": "v039_steps",
+  "type": "character_key_story",
+  "characterId": "ak",
+  "route": "ayame",
+  "affectionRange": {
+    "min": 30,
+    "max": 40
+  },
+  "location": {
+    "id": "hidamari_backyard",
+    "name": "ひだまりストア・バックヤード"
+  },
+  "summary": "バックヤードで実家からの電話を受けた彩愛が、親戚の集まりと結婚話への疲れを少しだけ見せる。",
+  "purpose": "親戚の集まりと結婚圧を提示し、彩愛の焦りの背景を描く。",
+  "tags": [
+    "彩愛ルート",
+    "親愛度30-40",
+    "生活家電",
+    "暮らし",
+    "田舎育ち"
+  ],
+  "clearFlags": [
+    "ayame_affection_30_02_key_cleared"
+  ],
+  "nextHint": "次のキーでは、彩愛の息抜きとしてビールフェスの話題へ移る。",
+  "renderPolicy": {
+    "spritePosition": "logical_split_n_plus_1",
+    "eventCgLayer": "frontOfCharacters"
+  },
+  "steps": [
+    {
+      "speaker": "",
+      "text": "ひだまりストア、バックヤード。",
+      "bg": "images/assets/bg/bg_hidamari_warehouse.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "夕方の混雑が少し落ち着き、俺は在庫確認のためにバックヤードへ入っていた。"
+    },
+    {
+      "speaker": "",
+      "text": "洗剤の販促品。\n生活家電フェア用の案内用紙。\n設置確認シートの予備。"
+    },
+    {
+      "speaker": "",
+      "text": "棚を確認していると、少し離れたところから彩愛さんの声が聞こえた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。分かっておりますわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "電話中らしい。"
+    },
+    {
+      "speaker": "",
+      "text": "声はいつも通り落ち着いている。\nけれど、普段より少しだけ硬い。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい。次のお休みはまだ決まっておりませんので……ええ、帰れそうなら連絡いたします",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "俺は邪魔をしないように、棚の確認を続ける。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……皆様にもよろしくお伝えくださいませ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "そこで、彩愛さんの声が少し止まった。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……その話は、また今度に",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "短い沈黙。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい。失礼いたします",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "通話が終わる音がした。"
+    },
+    {
+      "speaker": "",
+      "text": "しばらくして、彩愛さんが小さく息をつく。"
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さん"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……店長",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "振り返った彩愛さんは、すぐにいつもの微笑みを浮かべた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "お聞きになっていました？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "少しだけ。すみません、聞くつもりはなかったんですが"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "いえ。こちらこそ、バックヤードで電話をしてしまいましたわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "ご実家からですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。親戚の集まりがあるそうで",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "親戚の集まり"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "田舎では、何かと集まりたがるものですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "なんとなく想像できます"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ。以前お話しした通りです。誰かが来るとお茶になり、お茶になると世間話になり、世間話になると夕方になります",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "そんなものなんですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。田舎では珍しくありませんわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "なるほど……親戚の集まりって、なかなか長そうですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。長いですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは困ったように笑った。\nけれど、その笑顔はいつもより少し薄い。"
+    },
+    {
+      "speaker": "店長",
+      "text": "帰る予定なんですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "まだ分かりませんわ。仕事の都合もありますし",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "親戚の集まりって、大変そうですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "大変、というほどではありません。皆、悪い方ではありませんもの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "でも、少し疲れます？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ目を伏せた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そうですわね。少しだけ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "無理に聞くつもりはなかった。\nけれど、彩愛さんの声には、いつもの余裕とは違うものが混ざっている。"
+    },
+    {
+      "speaker": "店長",
+      "text": "さっき、“その話はまた今度に”って言ってましたけど"
+    },
+    {
+      "speaker": "",
+      "text": "言ってから、少し踏み込みすぎたかもしれないと思った。"
+    },
+    {
+      "speaker": "店長",
+      "text": "あ、答えにくかったら大丈夫です"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……店長は、最近少し学習なさいましたね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "一応、前に不用意なことを言った自覚はあるので"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ。よろしいことですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ表情を緩めた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "親戚が集まると、決まって出る話題がございますの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "決まって出る話題？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "仕事のこと、健康のこと、昔話。それから……結婚のことですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "ああ……"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "悪気があるわけではありませんの。皆さん、心配してくださっているのでしょう",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "だからこそ、受け流すのも難しいんですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。笑って流せばよいだけなのですが、何度も続くと少しだけ疲れますわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "それは疲れますよ"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……そう言っていただけると、少し楽です",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、手にしていたスマホをそっとしまった。"
+    },
+    {
+      "speaker": "",
+      "text": "そこへ、緋奈と里美が一緒にバックヤードへ顔を出した。"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "店長ー！　案内用紙、追加でもらっていいですか？",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "里美",
+      "text": "補充分、ここで合ってますか〜？",
+      "storySprites": [
+        {
+          "id": "al",
+          "src": "images/assets/char/l10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "ああ、そこだな"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "あれ？　彩愛さんもいた！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "里美",
+      "text": "彩愛さん、なんだか少しお疲れですね〜",
+      "storySprites": [
+        {
+          "id": "al",
+          "src": "images/assets/char/l10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そう見えますか？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "はい！　いつもより、ちゃんとしすぎてる感じがします！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ちゃんとしすぎてる……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "里美",
+      "text": "こういう時は、甘いものが効きますよ〜",
+      "storySprites": [
+        {
+          "id": "al",
+          "src": "images/assets/char/l10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "そうです！　甘いものは正義です！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "二人とも説得力あるな"
+    },
+    {
+      "speaker": "里美",
+      "text": "疲れた時は糖分です〜",
+      "storySprites": [
+        {
+          "id": "al",
+          "src": "images/assets/char/l10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "あたし、付き合います！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "付き合うというか、一緒に食べたいだけだろ"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "ばれました！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ。ありがとうございます。お二人とも",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "無理しすぎちゃだめですよ？",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "里美",
+      "text": "あとで休憩室に甘いもの、置いておきますね〜",
+      "storySprites": [
+        {
+          "id": "al",
+          "src": "images/assets/char/l10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "お気遣い、感謝いたしますわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "じゃあ、売場戻ります！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "里美",
+      "text": "戻ります〜",
+      "storySprites": [
+        {
+          "id": "al",
+          "src": "images/assets/char/l10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "里美、行こー！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "里美",
+      "text": "はい〜",
+      "storySprites": [
+        {
+          "id": "al",
+          "src": "images/assets/char/l10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "二人は案内用紙を持って、わちゃわちゃと売場へ戻っていった。"
+    },
+    {
+      "speaker": "",
+      "text": "バックヤードには、また俺と彩愛さんが残る。"
+    },
+    {
+      "speaker": "店長",
+      "text": "少し、空気が軽くなりましたね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。本当ににぎやかな方たちですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ肩の力が抜けたように見えた。"
+    },
+    {
+      "speaker": "店長",
+      "text": "親戚の話って、悪気がない分、難しそうですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そうですわね。心配してくださる気持ちは、ありがたいのです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "けれど、そろそろ結婚はどうなのか、良い方はいないのか、紹介しましょうか……と続くと、少しだけ疲れてしまいます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "それは、疲れますよ"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ。二度も言ってくださいましたね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "大事なことなので"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……ありがとうございます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "少しだけ、穏やかな沈黙が落ちた。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんはスマホをしまい直し、いつものように姿勢を整える。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "さて。そろそろ売場に戻りましょうか",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "もう大丈夫ですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。彼女たちに元気をいただきましたから",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "それならよかったです"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは一度、柔らかく微笑んだ。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "親戚の集まりというものは、なかなか手強いものですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "田舎では珍しくありませんか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……店長",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "すみません"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ。ですが、そうですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは少しだけ、いたずらっぽく笑った。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "珍しくは、ありませんわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "やっぱり"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。普通ですわよ？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "二人で少し笑う。"
+    },
+    {
+      "speaker": "",
+      "text": "重くなりかけた空気が、少しだけほどけた。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、いつもの上品な足取りで売場へ戻っていく。"
+    },
+    {
+      "speaker": "",
+      "text": "その背中は、やはり凛としている。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど今日の俺には、その凛とした姿の奥にある小さな疲れも、少しだけ見えた気がした。"
+    },
+    {
+      "speaker": "",
+      "text": "親戚の集まり。\n結婚の話。\n悪気のない心配。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、それらを笑って受け流している。\nでも、その笑顔の裏で、少し疲れてしまうこともあるのだろう。"
+    },
+    {
+      "speaker": "",
+      "text": "今はまだ、何かを解決できるわけではない。\nただ、彩愛さんが少しでもここで息をつけるなら。"
+    },
+    {
+      "speaker": "",
+      "text": "ひだまりストアが、そういう場所であれたらいいと思った。"
+    },
+    {
+      "speaker": "",
+      "text": "締めモノローグ"
+    },
+    {
+      "speaker": "",
+      "text": "実家からの電話をきっかけに、彩愛さんの親戚付き合いの話を聞いた。"
+    },
+    {
+      "speaker": "",
+      "text": "田舎の親戚の集まり。\n心配という名目で出てくる、結婚の話。"
+    },
+    {
+      "speaker": "",
+      "text": "悪気があるわけではない。\nむしろ心配してくれている。"
+    },
+    {
+      "speaker": "",
+      "text": "だからこそ、彩愛さんは笑って受け流す。\nけれど、何度も続くと少しだけ疲れてしまう。"
+    },
+    {
+      "speaker": "",
+      "text": "緋奈と里美のにぎやかな言葉で、空気は少し和らいだ。"
+    },
+    {
+      "speaker": "",
+      "text": "今はまだ、何かを解決できるわけではない。\nただ、彩愛さんが少し疲れていたことだけは、覚えておこうと思った。"
+    },
+    {
+      "speaker": "",
+      "text": "解放後メモ案"
+    },
+    {
+      "speaker": "",
+      "text": "紫藤 彩愛 親愛35「親戚の集まりというものは」読了。\n実家からの電話をきっかけに、彩愛は親戚の集まりで結婚の話をされることが多いと語った。\n悪気のない心配だからこそ、受け流すのにも疲れる。\n緋奈と里美は甘いものの話でわちゃわちゃと空気を和らげ、彩愛は「彼女たちに元気をいただきました」と少し肩の力を抜く。\n店長は、彩愛が笑って受け流している言葉の裏に、小さな疲れがあることを知る。"
+    }
+  ],
+  "keyScenarioIndex": 2
+}
