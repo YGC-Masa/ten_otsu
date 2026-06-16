@@ -1,11 +1,11 @@
-/* v039_234 */
+/* v039_236 */
 (function(){
   "use strict";
-  window.TENOTSU_BUILD_VERSION = "v039_234";
-  window.TENOTSU_BUILD_LABEL = "彩愛 親愛41〜60 JSON実装";
-  window.TEN_OTSU_PATCH_VERSION = "v039_234";
-  window.TEN_OTSU_PATCH_LABEL = "彩愛 親愛41〜60 JSON実装";
+  window.TENOTSU_BUILD_VERSION = "v039_236";
+  window.TENOTSU_BUILD_LABEL = "彩愛 親愛71〜80 JSON実装";
+  window.TEN_OTSU_PATCH_VERSION = "v039_236";
+  window.TEN_OTSU_PATCH_LABEL = "彩愛 親愛71〜80 JSON実装";
   window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  window.TENOTSU_V039.VERSION = "v039_234";
-  window.TENOTSU_V039.BUILD_LABEL = "彩愛 親愛41〜60 JSON実装";
+  window.TENOTSU_V039.VERSION = "v039_236";
+  window.TENOTSU_V039.BUILD_LABEL = "彩愛 親愛71〜80 JSON実装";
 })();

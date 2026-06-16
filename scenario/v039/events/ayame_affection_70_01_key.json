@@ -1,0 +1,1434 @@
+{
+  "id": "ayame_affection_70_01_key",
+  "title": "怖かったものの正体",
+  "version": "v039_236",
+  "return": {
+    "mode": "storyMenu",
+    "storyId": "ayame_affection_70_01_key",
+    "storyMenuTab": "key"
+  },
+  "format": "v039_steps",
+  "type": "character_key_story",
+  "characterId": "ak",
+  "route": "ayame",
+  "affectionRange": {
+    "min": 70,
+    "max": 80
+  },
+  "location": {
+    "id": "hidamari_store_salesfloor",
+    "name": "ひだまりストア・生活家電売場"
+  },
+  "summary": "彩愛 親愛Lv.73「怖かったものの正体」。",
+  "purpose": "彩愛ルートの親愛ストーリーとして、生活家電・暮らし・彩愛の感情変化を描く。",
+  "tags": [
+    "彩愛ルート",
+    "親愛度70-80",
+    "生活家電",
+    "暮らし",
+    "雨の日"
+  ],
+  "clearFlags": [
+    "ayame_affection_70_01_key_cleared"
+  ],
+  "nextHint": "次の彩愛親愛ストーリーへ。",
+  "renderPolicy": {
+    "spritePosition": "logical_split_n_plus_1",
+    "eventCgLayer": "frontOfCharacters"
+  },
+  "steps": [
+    {
+      "speaker": "",
+      "text": "ひだまりストア、生活家電売場。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "朝から、細い雨が降っていた。"
+    },
+    {
+      "speaker": "",
+      "text": "強い雨ではない。\nけれど、入口の自動ドアが開くたびに、湿った空気と雨音が店内へ流れ込んでくる。"
+    },
+    {
+      "speaker": "",
+      "text": "傘立てに並ぶ濡れた傘。\n入口マットに落ちる水滴。\n外の歩道に残る小さな水たまり。"
+    },
+    {
+      "speaker": "",
+      "text": "梅雨前の暮らし応援フェアには、今日も洗濯まわりの相談が増えていた。"
+    },
+    {
+      "speaker": "",
+      "text": "乾燥機能付き洗濯機。\n洗濯乾燥機。\n衣類乾燥機。\nランドリー用品。"
+    },
+    {
+      "speaker": "",
+      "text": "雨の日だからこそ、生活家電売場は忙しい。"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "店長ー！　入口のマット、もう一枚出します？",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "そうだな。滑ると危ないから頼む"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "はーい！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "里美",
+      "text": "濡れた傘用の袋、補充しておきますね〜",
+      "storySprites": [
+        {
+          "id": "al",
+          "src": "images/assets/char/l10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "ありがとう、里美"
+    },
+    {
+      "speaker": "里美",
+      "text": "は〜い",
+      "storySprites": [
+        {
+          "id": "al",
+          "src": "images/assets/char/l10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、洗濯乾燥機売場で展示カードを整えていた。"
+    },
+    {
+      "speaker": "",
+      "text": "いつものように背筋を伸ばし、丁寧にPOPの端を揃えている。\nただ、入口の方で水滴が落ちる音がすると、ほんの少しだけ指先が止まった。"
+    },
+    {
+      "speaker": "",
+      "text": "それでも、すぐに呼吸を整えて、作業へ戻る。"
+    },
+    {
+      "speaker": "",
+      "text": "以前とは、少し違って見えた。"
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さん"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "入口近くは、俺と緋奈で見ます。彩愛さんは洗濯乾燥機コーナーをお願いします"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、一瞬だけこちらを見る。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……お気遣い、ありがとうございます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "いえ。今日は洗濯まわりの相談が多そうですし"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ。そういうことにしておきますわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "そういうことです"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ目を細めた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "でも、店長",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "今日は、大丈夫です",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "怖くなくなった、というわけではありませんけれど",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、入口の方を一度だけ見る。"
+    },
+    {
+      "speaker": "",
+      "text": "傘袋から落ちた水滴が、ぽたりと床に落ちた。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんの肩が、ほんの少し動く。\nけれど、すぐに止まった。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "前ほど、苦しくはありません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "そうですか"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ不思議そうに自分の手元を見る。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "自分でも、少し驚いておりますわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "午前中の売場は、思った以上に忙しかった。"
+    },
+    {
+      "speaker": "",
+      "text": "雨の日の相談は具体的だ。"
+    },
+    {
+      "speaker": "",
+      "text": "部屋干しのにおい。\n洗濯物の乾きにくさ。\n干す場所の不足。\n雨続きで洗濯の予定が崩れること。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、一つひとつ丁寧に聞き取りながら、乾燥機能付き洗濯機の使い方を説明していた。"
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "雨の日の部屋干し臭が気になっていて。除湿機を買うべきなのか、乾燥機付きの洗濯機に替えるべきなのか迷っていて"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "干す場所を確保できる場合は、除湿機やサーキュレーターも有効ですわ。ですが、部屋干しのにおいや衛生面を重視されるなら、乾燥機能付きの洗濯機もおすすめです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "その場で乾かせるんですよね？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい。洗濯から乾燥まで一台で完結できますので、干す手間が減ります",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "湿った洗濯物を室内に長く置かずに済みますから、部屋干し臭も出にくく、衛生的ですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "便利そうですね。でも、電気代は高そうで"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そこは確認が必要です。乾燥機能を使う分、電気代はかかります",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "それに、乾燥までかけると衣類によってはシワがつきやすいものもございます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "あ、そうなんですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ですので、靴下や肌着、タオルなど、人目に触れにくいものから使うのもおすすめですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "全部じゃなくてもいいんですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。毎回すべてを乾燥させなくてもよいのです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "干すのが大変な日だけ。雨が続く日だけ。靴下や肌着だけ。そういう使い方でも、家事の負担はかなり変わりますわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "なるほど……"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "電気代はかかります。けれど、ボタン一つで干さなくていい、天気を気にしなくていい、というのは新しい価値です",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "家族のためにも、ご自身のためにも。その時間を、皆様には自由に使っていただきたいのです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "好きなことをする時間や、少し休む時間にしていただけたら……家電をおすすめする者として、とても嬉しく思いますわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "……なんだか、少し気が楽になりました"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そう言っていただけるなら、何よりです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "その時、入口の方で傘が倒れる音がした。"
+    },
+    {
+      "speaker": "",
+      "text": "ぱしゃり、と水が跳ねる。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんの指先が、一瞬だけ止まる。"
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "……？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "失礼いたしました",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、すぐに微笑みを戻した。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "こちらが乾燥機能の方式と、電気代の目安ですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "声は落ち着いている。"
+    },
+    {
+      "speaker": "",
+      "text": "無理に何もなかったことにしているのではない。\n怖いまま、自分の呼吸を確かめているように見えた。"
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "ありがとうございます。家族と相談してみます"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ご不明な点があれば、いつでもお声がけくださいませ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "お客様が離れていく。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、静かに息を吐いた。"
+    },
+    {
+      "speaker": "店長",
+      "text": "少し、休みますか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "いいえ。大丈夫です",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "分かりました"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……本当に、大丈夫ですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、自分に言い聞かせるようにではなく、確認するように言った。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "少し驚きはしました。けれど、前ほど身体が固まりませんでした",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "不思議ですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "不思議ですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、入口の濡れた傘立てを見る。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "水が怖くなくなったわけではありません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "けれど、店長に“怖いままでもいい”と言っていただいてから",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ目を伏せた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "怖さの形が、少し変わった気がします",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "怖さの形"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、すぐに続きを言わなかった。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、その沈黙は重くなかった。\n自分の中にある言葉を、ゆっくり探しているようだった。"
+    },
+    {
+      "speaker": "",
+      "text": "昼過ぎ。"
+    },
+    {
+      "speaker": "",
+      "text": "少しだけ売場が落ち着いたタイミングで、俺は彩愛さんに休憩を勧めた。"
+    },
+    {
+      "speaker": "",
+      "text": "休憩室には、緋奈が買ってきた小さなお菓子と、里美が淹れた温かいお茶が置かれていた。"
+    },
+    {
+      "speaker": "",
+      "text": "二人はもう入口側へ戻っている。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは椅子に座ると、温かいお茶に手を添え、静かに息をついた。"
+    },
+    {
+      "speaker": "店長",
+      "text": "今日は、少し疲れましたか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "疲れた、というより……不思議ですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "不思議？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "怖さは、まだあります。雨音にも、水滴にも、身体は少し反応します",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "でも、前ほど苦しくありません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "以前なら、怖いと感じた自分をすぐに責めておりました。大人なのに。仕事中なのに。水くらいで、と",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "でも今日は、そう思っても、すぐに戻ってこられます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "戻ってこられる"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、湯呑みを両手で包む。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "怖いままでもよい、と言っていただけたからでしょうか",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "そうかもしれません"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ。店長にそう言われると、少しだけ本当にそう思えますわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "それならよかったです"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "お礼を言われると困りますわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "言ってません"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "あら。本当ですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "二人で少しだけ笑う。"
+    },
+    {
+      "speaker": "",
+      "text": "その笑い方も、前よりずっと自然だった。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "もしかすると、わたくしが本当に怖かったものは、水だけではなかったのかもしれません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "水くらいで怖がるなんて、と言われること",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そんなことで怯える弱い自分を見られること",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そちらの方が、ずっと怖かったのかもしれませんわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "その声は静かだった。"
+    },
+    {
+      "speaker": "",
+      "text": "悲しさよりも、納得に近い響きだった。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "大人なのだから平気でいなければ。きちんとしていなければ。格好がつかなくては",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ笑う。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ずっと、そう思っておりました",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "でも、怖い自分を隠さなくてもいいのだと分かったら……水の怖さまで、少し軽くなった気がしました",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "不思議ですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "いい変化だと思います"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そうでしょうか",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ胸元に手を添えた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "怖いままでも、立っていられる",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "怖いままでも、仕事ができる",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "怖いままでも……誰かに助けてと言ってもよい",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "もちろんです"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "即答ですのね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "迷うところじゃないので"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……そういうところですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、困ったように笑った。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、その表情はとても穏やかだった。"
+    },
+    {
+      "speaker": "",
+      "text": "午後の売場。"
+    },
+    {
+      "speaker": "",
+      "text": "雨はまだ降っていたが、彩愛さんは洗濯乾燥機コーナーに戻った。"
+    },
+    {
+      "speaker": "",
+      "text": "入口で傘袋が揺れる音。\n床に落ちる水滴。\n遠くから聞こえる雨音。"
+    },
+    {
+      "speaker": "",
+      "text": "どれも、消えたわけではない。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、彩愛さんは必要以上に身構えなかった。"
+    },
+    {
+      "speaker": "",
+      "text": "お客様に声をかけ、カタログを開き、生活に合う商品を提案していく。"
+    },
+    {
+      "speaker": "",
+      "text": "その姿は、いつもの彩愛さんだった。"
+    },
+    {
+      "speaker": "",
+      "text": "でも、少し違う。"
+    },
+    {
+      "speaker": "",
+      "text": "完璧に見せようとしている彩愛さんではなく、怖さを知ったまま売場に立っている彩愛さん。"
+    },
+    {
+      "speaker": "",
+      "text": "その方が、どこか柔らかく見えた。"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "彩愛さん！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい、星野さん",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "このPOP、どうですか？",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんが、緋奈の持ってきたPOPを見る。"
+    },
+    {
+      "speaker": "",
+      "text": "そこには、太い文字でこう書かれていた。"
+    },
+    {
+      "speaker": "",
+      "text": "干さない日が、あってもいい。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、しばらくその言葉を見つめた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……よい言葉ですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "ほんとですか？",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。とても",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんはPOPを受け取り、展示台の前にそっと置いた。"
+    },
+    {
+      "speaker": "",
+      "text": "干さない日が、あってもいい。"
+    },
+    {
+      "speaker": "",
+      "text": "その文字の前で、彩愛さんは小さく息を整える。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "毎日、きちんと干さなくてもいい",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "雨の日や、疲れた日や、気持ちが追いつかない日には、家電に任せてもいい",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、濡れた傘立ての方を少しだけ見た。"
+    },
+    {
+      "speaker": "",
+      "text": "ぽたり、と水滴が落ちる。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、彩愛さんは目を逸らさなかった。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "怖い日にも、似ているのかもしれませんわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ちゃんと立てない日があってもいい",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "止まってしまう日があってもいい",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、やわらかく笑った。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "それでも、また少しずつ戻ってこられれば",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "きっと、それでよいのですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "その言葉は、誰かに言い聞かせるためのものではなく。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんが、自分自身に初めて許した言葉のように聞こえた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "怖いままでも、少しずつ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "雨の日の売場で、彩愛さんは前より少し自然に笑っていた。"
+    },
+    {
+      "speaker": "",
+      "text": "締めモノローグ"
+    },
+    {
+      "speaker": "",
+      "text": "雨の日の生活家電売場。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、乾燥機能付き洗濯機を案内しながら、水滴の音や雨音に少し反応していた。"
+    },
+    {
+      "speaker": "",
+      "text": "水そのものが、完全に怖くなくなったわけではない。\n川の記憶も、まだ消えてはいない。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、彩愛さんは気づいた。"
+    },
+    {
+      "speaker": "",
+      "text": "本当に怖かったのは、水だけではなかったのかもしれない。"
+    },
+    {
+      "speaker": "",
+      "text": "「水くらいで怖がるなんて」と言われること。\nそんなことで怯える弱い自分を見られること。"
+    },
+    {
+      "speaker": "",
+      "text": "その方が、ずっと怖かったのかもしれない。"
+    },
+    {
+      "speaker": "",
+      "text": "怖い自分を隠さなくてもいい。\n弱いところを見せてもいい。"
+    },
+    {
+      "speaker": "",
+      "text": "そう思えたことで、水への怖さも少し軽くなった。"
+    },
+    {
+      "speaker": "",
+      "text": "売場に置かれたPOPには、こう書かれていた。"
+    },
+    {
+      "speaker": "",
+      "text": "干さない日が、あってもいい。"
+    },
+    {
+      "speaker": "",
+      "text": "毎日、きちんと干さなくてもいい。\n疲れた日や、雨の日には、家電に任せてもいい。"
+    },
+    {
+      "speaker": "",
+      "text": "それと同じように、怖い日があってもいい。\nちゃんと立てない日があってもいい。\n止まってしまう日があってもいい。"
+    },
+    {
+      "speaker": "",
+      "text": "また少しずつ戻ってこられれば、それでいい。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは言った。"
+    },
+    {
+      "speaker": "",
+      "text": "「怖いままでも、少しずつ」"
+    },
+    {
+      "speaker": "",
+      "text": "雨の日の売場で、彩愛さんは前より少し自然に笑っていた。"
+    },
+    {
+      "speaker": "",
+      "text": "解放後メモ案"
+    },
+    {
+      "speaker": "",
+      "text": "雨の日の生活家電売場で、彩愛は乾燥機能付き洗濯機を案内する。\n部屋干し臭や衛生面への対策として、干す手間を減らし、雨の日でも洗濯を止めなくてよい価値を提案した。\n一方で、水滴や雨音に反応しながらも、以前より落ち着いて売場に立つ。\n店長に「怖いままでもいい」と受け止められたことで、彩愛は本当に怖かったものが水そのものだけではなかったのかもしれないと気づく。\n「水くらいで怖がるなんて」と言われること、弱い自分を見られることが怖かったのだと認める。\nPOP「干さない日が、あってもいい。」と重なるように、彩愛は怖い日や止まってしまう日があってもいいのだと少しずつ自分を許し始める。"
+    }
+  ],
+  "keyScenarioIndex": 1
+}

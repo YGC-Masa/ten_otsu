@@ -110,7 +110,11 @@
         "ayame_affection_40_03_key",
         "ayame_affection_50_01_key",
         "ayame_affection_50_02_key",
-        "ayame_affection_50_03_key"
+        "ayame_affection_50_03_key",
+        "ayame_affection_60_01_key",
+        "ayame_affection_60_02_key",
+        "ayame_affection_60_03_key",
+        "ayame_affection_70_01_key"
       ],
       slotStories: {
         "b1_key1": "ayame_affection_00_01_key",
@@ -136,7 +140,15 @@
         "b6_key1": "ayame_affection_50_01_key",
         "b6_key2": "ayame_affection_50_02_key",
         "b6_key3": "ayame_affection_50_03_key",
-        "b6_main": "ayame_affection_60_00_main"
+        "b6_main": "ayame_affection_60_00_main",
+        "b7_key1": "ayame_affection_60_01_key",
+        "b7_key2": "ayame_affection_60_02_key",
+        "b7_key3": "ayame_affection_60_03_key",
+        "b7_main": "ayame_affection_70_00_main",
+        "b8_key1": "ayame_affection_70_01_key",
+        "b8_key2": "ayame_affection_70_02_key",
+        "b8_key3": "ayame_affection_70_03_key",
+        "b8_main": "ayame_affection_80_00_main"
       },
       completeReward: { title: "彩愛との絆" }
     },

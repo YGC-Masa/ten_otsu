@@ -1,0 +1,1776 @@
+{
+  "id": "ayame_affection_70_03_key",
+  "title": "自然体の美しさ",
+  "version": "v039_236",
+  "return": {
+    "mode": "storyMenu",
+    "storyId": "ayame_affection_70_03_key",
+    "storyMenuTab": "key"
+  },
+  "format": "v039_steps",
+  "type": "character_key_story",
+  "characterId": "ak",
+  "route": "ayame",
+  "affectionRange": {
+    "min": 70,
+    "max": 80
+  },
+  "location": {
+    "id": "hidamari_store_salesfloor",
+    "name": "ひだまりストア・生活家電売場"
+  },
+  "summary": "彩愛 親愛Lv.78「自然体の美しさ」。",
+  "purpose": "彩愛ルートの親愛ストーリーとして、生活家電・暮らし・彩愛の感情変化を描く。",
+  "tags": [
+    "彩愛ルート",
+    "親愛度70-80",
+    "生活家電",
+    "暮らし",
+    "雨の日"
+  ],
+  "clearFlags": [
+    "ayame_affection_70_03_key_cleared"
+  ],
+  "nextHint": "次の彩愛親愛ストーリーへ。",
+  "renderPolicy": {
+    "spritePosition": "logical_split_n_plus_1",
+    "eventCgLayer": "frontOfCharacters"
+  },
+  "steps": [
+    {
+      "speaker": "",
+      "text": "ひだまりストア、生活家電売場。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "雨は上がっていた。"
+    },
+    {
+      "speaker": "",
+      "text": "店頭にはまだ濡れた傘立てが残っているが、入口の床はすっかり拭き終わっている。"
+    },
+    {
+      "speaker": "",
+      "text": "昨日の雨の日の出来事もあって、入口まわりの安全確認はいつもより丁寧になっていた。"
+    },
+    {
+      "speaker": "",
+      "text": "洗濯乾燥機売場には、今日もあのPOPが置かれている。"
+    },
+    {
+      "speaker": "",
+      "text": "干さない日が、あってもいい。"
+    },
+    {
+      "speaker": "",
+      "text": "緋奈が作ったその言葉は、展示台の前でよく目立っていた。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、そのPOPの横で展示札を整えている。"
+    },
+    {
+      "speaker": "",
+      "text": "いつものように丁寧で、姿勢も綺麗だ。\nけれど、どこか少しだけ違う。"
+    },
+    {
+      "speaker": "",
+      "text": "以前より、肩の力が抜けている。"
+    },
+    {
+      "speaker": "",
+      "text": "完璧に整えようとしているというより、自然にそこに立っているように見えた。"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "……彩愛さん",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい、星野さん？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "緋奈は、じっと彩愛さんを見つめていた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "どうかなさいましたか？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "なんか……悔しい？　いや、嬉しい？　でも、やっぱりちょっと悔しいです",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "何のお話ですの？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "彩愛さん、どんどん美人になってません？",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……え？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "緋奈？"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "いや、前から美人でしたよ！　もちろん前からすっごく美人でしたけど！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "里美",
+      "text": "ふふ〜、慌ててますね〜",
+      "storySprites": [
+        {
+          "id": "al",
+          "src": "images/assets/char/l10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "でも最近、なんかもっとこう……自然に綺麗っていうか！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "自然に、綺麗……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "そうです！　前は“ちゃんと綺麗な人”って感じだったんですけど、今は“普通に笑ってても綺麗な人”って感じです！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "それは……褒め言葉として受け取ってよろしいのでしょうか",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "もちろんです！　でも悔しいです！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "なんで悔しいんだ"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "だって、もともと美人なのに、さらに美人になるのずるくないですか！？",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "里美",
+      "text": "分かります〜",
+      "storySprites": [
+        {
+          "id": "al",
+          "src": "images/assets/char/l10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "餅月さんまで",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "里美",
+      "text": "前より、リラックスしているいいお顔です〜",
+      "storySprites": [
+        {
+          "id": "al",
+          "src": "images/assets/char/l10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "リラックス……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "里美",
+      "text": "はい〜。前は、綺麗に背筋を伸ばしている感じでしたけど、今は自然に立っている感じです〜",
+      "storySprites": [
+        {
+          "id": "al",
+          "src": "images/assets/char/l10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "それです！　無理してない感じ！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ困ったように目を伏せた。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、否定はしなかった。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "わたくし、そんなに変わりましたか？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "変わりました！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "里美",
+      "text": "変わりましたね〜",
+      "storySprites": [
+        {
+          "id": "al",
+          "src": "images/assets/char/l10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "俺も、そう思います"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長まで……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんの頬が、ほんの少し赤くなる。"
+    },
+    {
+      "speaker": "店長",
+      "text": "前の彩愛さんも素敵でしたが、どちらが良いとか悪いとかではなく"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "俺には今、少し楽に笑っているように見えます"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "楽に、笑う",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、展示台のPOPへ視線を落とした。"
+    },
+    {
+      "speaker": "",
+      "text": "干さない日が、あってもいい。"
+    },
+    {
+      "speaker": "",
+      "text": "その言葉を、少しだけ指先でなぞる。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……そう、ですのね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "はい！　すごくいいです！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "里美",
+      "text": "いいお顔です〜",
+      "storySprites": [
+        {
+          "id": "al",
+          "src": "images/assets/char/l10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "皆さん、今日はわたくしを困らせる日ですの？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "褒める日です！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "里美",
+      "text": "同じようなものですね〜",
+      "storySprites": [
+        {
+          "id": "al",
+          "src": "images/assets/char/l10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "違いますわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "そう言いながらも、彩愛さんは小さく笑った。"
+    },
+    {
+      "speaker": "",
+      "text": "その笑顔を見て、緋奈がまた少し悔しそうに頬を膨らませる。"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "ほら！　そういう顔です！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "星野さん？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "今の顔！　なんか、すごく綺麗でした！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……もう。あまりまっすぐ言わないでくださいませ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "まっすぐしか言えません！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "それは本当だな"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "店長、それ褒めてます？",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "褒めてる"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "ならよし！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "里美",
+      "text": "緋奈ちゃんもまっすぐで可愛いですよ〜",
+      "storySprites": [
+        {
+          "id": "al",
+          "src": "images/assets/char/l10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "えっ、ほんとですか！？　やった！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ。星野さんらしいですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "売場に、少しだけ明るい空気が広がった。"
+    },
+    {
+      "speaker": "",
+      "text": "昼過ぎ。"
+    },
+    {
+      "speaker": "",
+      "text": "生活家電売場は、少し落ち着いていた。"
+    },
+    {
+      "speaker": "",
+      "text": "雨の日ほどの混雑はないが、洗濯乾燥機の前では何度かお客様が足を止めていた。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、展示台の前でカタログを整えている。"
+    },
+    {
+      "speaker": "",
+      "text": "俺が近づくと、彩愛さんは少しだけ視線を上げた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "先ほどの星野さんの話ですが",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "美人になっている、の話ですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "その言い方は、少し困りますわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "すみません"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ですが……少しだけ、気になりました",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "何がですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "わたくし、本当にそんなに変わったのでしょうか",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "即答ですのね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "迷うところじゃないので"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "また、それですか",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ笑った。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "以前のわたくしは、そんなに余裕がなさそうに見えていたのでしょうか",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "余裕がない、というより"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "ずっと、きちんとしていようと、心がけているようには見えました"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "お客様の前でも、親戚の話をする時でも、自分の弱さを話す時でも"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "ちゃんと綺麗に整えてから、言葉にしていた気がします"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……そうかもしれませんわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、静かに息を吐いた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "わたくし、ずっと“崩れない自分”でいようとしていたのかもしれません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "けれど、崩れてはいけないと思えば思うほど、息が苦しくなっていたのでしょうね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "そうかもしれません"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "怖いものがあってもいい。止まってしまう日があってもいい",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、POPの方を見る。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そう思えたら、少しだけリラックスできるようになったのかもしれません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "それが、星野さんには“美人になった”ように見えたのでしょうか",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "たぶん"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長には？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "俺にも、そう見えました"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……聞く相手を間違えましたわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "すみません"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "謝られると、それはそれで困ります",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは困ったように言う。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、その表情はやはり柔らかい。"
+    },
+    {
+      "speaker": "店長",
+      "text": "でも、本当にいい顔をしていると思います"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "無理に完璧でいようとしない彩愛さんも、すごく素敵です"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "今日は皆さん、わたくしを困らせすぎですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "困らせましたか"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。とても",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "すみません"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "謝らないでくださいませ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ目を伏せる。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "今のは……少しだけ、嬉しかったので",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "夕方。"
+    },
+    {
+      "speaker": "",
+      "text": "売場の片付けをしていると、昨日転んだ小さなお客様と母親が店に顔を出した。"
+    },
+    {
+      "speaker": "母親",
+      "text": "昨日はありがとうございました。これ、ほんの気持ちですが……"
+    },
+    {
+      "speaker": "",
+      "text": "母親が小さな菓子折りを差し出す。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そんな、お気遣いなく",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "母親",
+      "text": "娘が、どうしてもお礼を言いたいって"
+    },
+    {
+      "speaker": "",
+      "text": "小さなお客様は、母親の後ろから少しだけ顔を出した。"
+    },
+    {
+      "speaker": "",
+      "text": "膝には絆創膏が貼られているが、元気そうだった。"
+    },
+    {
+      "speaker": "小さなお客様",
+      "text": "きのう、ありがと"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんの表情が、ふっとやわらぐ。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "こちらこそ、元気なお顔が見られて安心しましたわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "小さなお客様",
+      "text": "もう、ころばないようにする"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。雨の日は、ゆっくり歩きましょうね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "小さなお客様",
+      "text": "うん！"
+    },
+    {
+      "speaker": "母親",
+      "text": "本当にありがとうございました"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "大きなお怪我がなくて何よりです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "親子が帰っていく。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、その背中をしばらく見送っていた。"
+    },
+    {
+      "speaker": "店長",
+      "text": "よかったですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ目を細める。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "昨日、濡れてしまったことも、悪くありませんでしたわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "そうですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "怖いままでも、誰かに手を伸ばせたこと",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "それを、あの子が笑って返してくれたこと",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、小さく息をつく。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "その記憶も、残るのですね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "怖い記憶だけではなく、助けられた記憶や、助けたことを喜べた記憶も",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "少しずつ、重なっていくのですね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "そうだと思います"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、静かに頷いた。"
+    },
+    {
+      "speaker": "",
+      "text": "その横顔は、確かに綺麗だった。"
+    },
+    {
+      "speaker": "",
+      "text": "ただ整っているという意味ではない。"
+    },
+    {
+      "speaker": "",
+      "text": "自分の弱さも、怖さも、少しずつ受け入れ始めた人の、自然な美しさだった。"
+    },
+    {
+      "speaker": "",
+      "text": "閉店後。"
+    },
+    {
+      "speaker": "",
+      "text": "緋奈が、また彩愛さんをじっと見ていた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "星野さん。今度は何でしょう",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "やっぱり、悔しいです",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "まだその話ですの？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "はい！　彩愛さん、今日も美人でした！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……ありがとうございます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "あっ、受け取った！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "里美",
+      "text": "進歩ですね〜",
+      "storySprites": [
+        {
+          "id": "al",
+          "src": "images/assets/char/l10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "皆さん、本当に大げさですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "いいことだと思います"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長まで",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "でも、あたしも負けません！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "勝負だったのですか？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "はい！　あたしも自然体で可愛くなります！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "里美",
+      "text": "緋奈ちゃんはもう自然体ですね〜",
+      "storySprites": [
+        {
+          "id": "al",
+          "src": "images/assets/char/l10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "たしかに"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "えっ、じゃあもう勝ってます？",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ。星野さんらしいですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "緋奈の明るさに、彩愛さんが自然に笑う。"
+    },
+    {
+      "speaker": "",
+      "text": "その笑顔を見て、緋奈はまた「ほら！」と言いかけたが、今度は少しだけ我慢した。"
+    },
+    {
+      "speaker": "里美",
+      "text": "よかったですね〜",
+      "storySprites": [
+        {
+          "id": "al",
+          "src": "images/assets/char/l10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "何がですの？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "里美",
+      "text": "みんな、いいお顔です〜",
+      "storySprites": [
+        {
+          "id": "al",
+          "src": "images/assets/char/l10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "その言葉に、誰もすぐには返さなかった。"
+    },
+    {
+      "speaker": "",
+      "text": "ただ、少しだけ笑った。"
+    },
+    {
+      "speaker": "",
+      "text": "店を出る前、彩愛さんは洗濯乾燥機売場の前で立ち止まった。"
+    },
+    {
+      "speaker": "",
+      "text": "干さない日が、あってもいい。"
+    },
+    {
+      "speaker": "",
+      "text": "そのPOPの横で、彩愛さんは自分の手を見つめる。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "弱いところを見せてもよいのだと思えたら",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "少しだけ、リラックスできるようになったのかもしれません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "それが、顔にも出ているのだとしたら",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ照れたように笑った。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "悪いことでは、ありませんわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい。すごくいいことだと思います"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "また、そうやって",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "本当にそう思ったので"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ視線を伏せる。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "今日は、素直に受け取っておきます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ただし",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "あまり褒めすぎると、星野さんが悔しがりますわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "それは困りますね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、やわらかく笑った。"
+    },
+    {
+      "speaker": "",
+      "text": "無理に完璧でいようとしない笑顔。"
+    },
+    {
+      "speaker": "",
+      "text": "緋奈が言った通り、自然に綺麗な笑顔だった。"
+    },
+    {
+      "speaker": "",
+      "text": "締めモノローグ"
+    },
+    {
+      "speaker": "",
+      "text": "最近の彩愛さんは、どこか少し違って見える。"
+    },
+    {
+      "speaker": "",
+      "text": "そう最初に言ったのは、緋奈だった。"
+    },
+    {
+      "speaker": "",
+      "text": "「なんか……悔しい？　いや、嬉しい？　でも、やっぱりちょっと悔しいです」"
+    },
+    {
+      "speaker": "",
+      "text": "そして、こう続けた。"
+    },
+    {
+      "speaker": "",
+      "text": "「彩愛さん、どんどん美人になってません？」"
+    },
+    {
+      "speaker": "",
+      "text": "以前の彩愛さんも綺麗だった。\nきちんとしていて、上品で、崩れない人だった。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど今の彩愛さんは、少し違う。"
+    },
+    {
+      "speaker": "",
+      "text": "弱いところを見せてもいい。\n怖いままでもいい。\n止まってしまう日があってもいい。"
+    },
+    {
+      "speaker": "",
+      "text": "そう思えたことで、少しだけリラックスして笑えるようになった。"
+    },
+    {
+      "speaker": "",
+      "text": "その変化が、表情にも出ていたのかもしれない。"
+    },
+    {
+      "speaker": "",
+      "text": "昨日助けた小さなお客様が、笑顔でお礼を言いに来てくれた。"
+    },
+    {
+      "speaker": "",
+      "text": "怖い雨の日の記憶に、誰かを助けられた記憶が重なった。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは言った。"
+    },
+    {
+      "speaker": "",
+      "text": "「弱いところを見せてもよいのだと思えたら、少しだけ、リラックスできるようになったのかもしれません」"
+    },
+    {
+      "speaker": "",
+      "text": "その顔は、確かに前より自然で、綺麗だった。"
+    },
+    {
+      "speaker": "",
+      "text": "解放後メモ案"
+    },
+    {
+      "speaker": "",
+      "text": "緋奈は、最近の彩愛がどんどん美人になっていると感じる。\n前から美人だったが、今は「普通に笑っていても綺麗」だと言う。\n里美は、彩愛が前よりリラックスしているいい顔をしていると表現する。\n店長は、前の彩愛も素敵だったが、どちらが良い悪いではなく、今は少し楽に笑っているように見えると伝える。\n彩愛は、弱いところを見せてもいいと思えたことで、少しだけリラックスできるようになったのかもしれないと気づく。\nまた、昨日助けた小さなお客様が笑顔でお礼を言いに来たことで、雨の日の記憶に新しい温かい記憶が重なる。\n彩愛の自然体の美しさが、周囲にも伝わり始める回。"
+    }
+  ],
+  "keyScenarioIndex": 3
+}

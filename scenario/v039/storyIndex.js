@@ -2377,5 +2377,261 @@ window.TENOTSU_STORY_INDEX = [
     "affectionLabel": "親愛Lv.60",
     "menuTitle": "親愛Lv.60：本音を言える相手",
     "locationName": "駅前の店"
+  },
+  {
+    "id": "ayame_affection_60_01_key",
+    "title": "田舎の親というものは",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 7,
+    "affectionSlot": "key1",
+    "unlockLevel": 63,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_60_01_key.json",
+    "version": "v039_235",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 63
+    },
+    "order": 3134,
+    "summary": "彩愛 親愛Lv.63「田舎の親というものは」。",
+    "rawTitle": "田舎の親というものは",
+    "affectionLabel": "親愛Lv.63",
+    "menuTitle": "親愛Lv.63：田舎の親というものは",
+    "locationName": "ひだまりストア・生活家電売場"
+  },
+  {
+    "id": "ayame_affection_60_02_key",
+    "title": "水しぶきの向こう",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 7,
+    "affectionSlot": "key2",
+    "unlockLevel": 65,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_60_02_key.json",
+    "version": "v039_235",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 65
+    },
+    "order": 3135,
+    "summary": "彩愛 親愛Lv.65「水しぶきの向こう」。",
+    "rawTitle": "水しぶきの向こう",
+    "affectionLabel": "親愛Lv.65",
+    "menuTitle": "親愛Lv.65：水しぶきの向こう",
+    "locationName": "ひだまりストア・店頭イベントスペース"
+  },
+  {
+    "id": "ayame_affection_60_03_key",
+    "title": "帰るべきか、残るべきか",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 7,
+    "affectionSlot": "key3",
+    "unlockLevel": 68,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_60_03_key.json",
+    "version": "v039_235",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 68
+    },
+    "order": 3136,
+    "summary": "彩愛 親愛Lv.68「帰るべきか、残るべきか」。",
+    "rawTitle": "帰るべきか、残るべきか",
+    "affectionLabel": "親愛Lv.68",
+    "menuTitle": "親愛Lv.68：帰るべきか、残るべきか",
+    "locationName": "ひだまりストア・休憩室"
+  },
+  {
+    "id": "ayame_affection_70_00_main",
+    "title": "川の記憶",
+    "type": "main",
+    "category": "character_main",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 7,
+    "affectionSlot": "main",
+    "unlockLevel": 70,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_70_00_main.json",
+    "version": "v039_235",
+    "unlock": {
+      "type": "all_story_cleared",
+      "storyIds": [
+        "ayame_affection_60_01_key",
+        "ayame_affection_60_02_key",
+        "ayame_affection_60_03_key"
+      ],
+      "fallback": {
+        "type": "affection_level",
+        "character": "ak",
+        "level": 70
+      }
+    },
+    "order": 3137,
+    "summary": "彩愛 親愛Lv.70「川の記憶」。",
+    "rawTitle": "川の記憶",
+    "affectionLabel": "親愛Lv.70",
+    "menuTitle": "親愛Lv.70：川の記憶",
+    "locationName": "駅前の店"
+  },
+  {
+    "id": "ayame_affection_70_01_key",
+    "title": "怖かったものの正体",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 8,
+    "affectionSlot": "key1",
+    "unlockLevel": 73,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_70_01_key.json",
+    "version": "v039_236",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 73
+    },
+    "order": 3137,
+    "summary": "彩愛 親愛Lv.73「怖かったものの正体」。",
+    "rawTitle": "怖かったものの正体",
+    "affectionLabel": "親愛Lv.73",
+    "menuTitle": "親愛Lv.73：怖かったものの正体",
+    "locationName": "ひだまりストア・生活家電売場"
+  },
+  {
+    "id": "ayame_affection_70_02_key",
+    "title": "手を伸ばせる人",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 8,
+    "affectionSlot": "key2",
+    "unlockLevel": 75,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_70_02_key.json",
+    "version": "v039_236",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 75
+    },
+    "order": 3138,
+    "summary": "彩愛 親愛Lv.75「手を伸ばせる人」。",
+    "rawTitle": "手を伸ばせる人",
+    "affectionLabel": "親愛Lv.75",
+    "menuTitle": "親愛Lv.75：手を伸ばせる人",
+    "locationName": "ひだまりストア・店頭入口"
+  },
+  {
+    "id": "ayame_affection_70_03_key",
+    "title": "自然体の美しさ",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 8,
+    "affectionSlot": "key3",
+    "unlockLevel": 78,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_70_03_key.json",
+    "version": "v039_236",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 78
+    },
+    "order": 3139,
+    "summary": "彩愛 親愛Lv.78「自然体の美しさ」。",
+    "rawTitle": "自然体の美しさ",
+    "affectionLabel": "親愛Lv.78",
+    "menuTitle": "親愛Lv.78：自然体の美しさ",
+    "locationName": "ひだまりストア・生活家電売場"
+  },
+  {
+    "id": "ayame_affection_80_00_main",
+    "title": "アヤメの刺繍",
+    "type": "main",
+    "category": "character_main",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 8,
+    "affectionSlot": "main",
+    "unlockLevel": 80,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_80_00_main.json",
+    "version": "v039_236",
+    "unlock": {
+      "type": "all_story_cleared",
+      "storyIds": [
+        "ayame_affection_70_01_key",
+        "ayame_affection_70_02_key",
+        "ayame_affection_70_03_key"
+      ],
+      "fallback": {
+        "type": "affection_level",
+        "character": "ak",
+        "level": 80
+      }
+    },
+    "order": 3140,
+    "summary": "彩愛 親愛Lv.80「アヤメの刺繍」。",
+    "rawTitle": "アヤメの刺繍",
+    "affectionLabel": "親愛Lv.80",
+    "menuTitle": "親愛Lv.80：アヤメの刺繍",
+    "locationName": "駅前のビールバー"
   }
 ];
