@@ -1,0 +1,1411 @@
+{
+  "id": "ayame_affection_50_03_key",
+  "title": "選ばれるために",
+  "version": "v039_234",
+  "return": {
+    "mode": "storyMenu",
+    "storyId": "ayame_affection_50_03_key",
+    "storyMenuTab": "key"
+  },
+  "format": "v039_steps",
+  "type": "character_key_story",
+  "characterId": "ak",
+  "route": "ayame",
+  "affectionRange": {
+    "min": 50,
+    "max": 60
+  },
+  "location": {
+    "id": "hidamari_store_salesfloor",
+    "name": "ひだまりストア・生活家電売場"
+  },
+  "summary": "彩愛 親愛Lv.58「選ばれるために」。",
+  "purpose": "彩愛ルートの親愛ストーリーとして、生活家電・暮らし・彩愛の感情変化を描く。",
+  "tags": [
+    "彩愛ルート",
+    "親愛度50-60",
+    "生活家電",
+    "暮らし",
+    "田舎育ち"
+  ],
+  "clearFlags": [
+    "ayame_affection_50_03_key_cleared"
+  ],
+  "nextHint": "次の彩愛親愛ストーリーへ。",
+  "renderPolicy": {
+    "spritePosition": "logical_split_n_plus_1",
+    "eventCgLayer": "frontOfCharacters"
+  },
+  "steps": [
+    {
+      "speaker": "",
+      "text": "ひだまりストア、生活家電売場。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "週末の午後。"
+    },
+    {
+      "speaker": "",
+      "text": "家事応援フェアの売場には、今日も何組かのお客様が足を止めていた。"
+    },
+    {
+      "speaker": "",
+      "text": "掃除機、洗濯機、衣類スチーマー、調理家電。"
+    },
+    {
+      "speaker": "",
+      "text": "どの商品にも、ただ便利なだけではなく、暮らしの悩みを少し軽くするための説明が添えられている。"
+    },
+    {
+      "speaker": "",
+      "text": "ちゃんとしたい人こそ、ちゃんとラクしていい。"
+    },
+    {
+      "speaker": "",
+      "text": "緋奈の作ったそのPOPも、すっかり売場に馴染んでいた。"
+    },
+    {
+      "speaker": "",
+      "text": "俺は売場の端で、在庫確認をしながら接客の様子を見ていた。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、若い男女のお客様を案内している。"
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "新生活用の家電を見ていて。洗濯機と掃除機と、あと炊飯器も必要で"
+    },
+    {
+      "speaker": "お客様・男性",
+      "text": "二人で暮らす予定なんですけど、何から決めればいいか分からなくて"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "二人暮らしを始められるのですね。でしたら、まずは毎日使うものから優先するとよろしいかと思いますわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "毎日使うもの……"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "洗濯機、冷蔵庫、電子レンジ、炊飯器などですわね。掃除機はお部屋の広さや床の種類によっても変わります",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・男性",
+      "text": "なるほど"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "お二人の生活時間は似ていらっしゃいますか？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "私の方が帰りが遅いことが多いです"
+    },
+    {
+      "speaker": "お客様・男性",
+      "text": "自分は朝が早いですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "でしたら、夜でも使いやすい静音性や、予約機能は見ておくと安心ですわ。生活時間が違うと、小さな音や手間が負担になることもございますから",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "ああ……確かに"
+    },
+    {
+      "speaker": "お客様・男性",
+      "text": "夜中に洗濯機がうるさいと気になりますよね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。お互いに気を遣うのは素敵なことです。けれど、気を遣い続けるだけでは疲れてしまいますもの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "二人は顔を見合わせて、少し笑った。"
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "それ、今から大事そうです"
+    },
+    {
+      "speaker": "お客様・男性",
+      "text": "ちゃんと考えます"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ。暮らしは、二人で作るものですから",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんの言葉は、自然だった。"
+    },
+    {
+      "speaker": "",
+      "text": "押しつけるわけでも、理想を語りすぎるわけでもない。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、その言葉には、ここ最近の彩愛さん自身の悩みも少しだけ滲んでいる気がした。"
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "私、家事が得意ってわけじゃないんです。彼のお母さんに会う時とか、ちょっと不安で"
+    },
+    {
+      "speaker": "お客様・男性",
+      "text": "そんなの気にしなくていいよ"
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "でも、ちゃんとできる人だと思われたいじゃん"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんの表情が、ほんの少しだけ静かになる。"
+    },
+    {
+      "speaker": "",
+      "text": "けれどすぐに、いつもの穏やかな微笑みに戻った。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そう思うお気持ちは、とても自然ですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "自然ですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。大切な方のご家族に会う時、きちんとしていたいと思うのは、悪いことではありません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "ですよね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ただ、完璧な人だと思われるために頑張りすぎると、あとで苦しくなることもございます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・男性",
+      "text": "……あー"
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "それも、そうかも"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "家電を選ぶ時も同じですわ。最初から完璧な暮らしを作ろうとするより、無理なく続けられる形を選ぶ方がよいと思います",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "無理なく続ける"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい。きちんとしたい気持ちは大切です。けれど、毎日の暮らしは、誰かに見せるためだけのものではありませんもの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "その言葉に、女性のお客様は少しだけほっとした顔をした。"
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "なんか……安心しました"
+    },
+    {
+      "speaker": "お客様・男性",
+      "text": "うん。無理しなくていいよ"
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "あなたもやるんだよ？"
+    },
+    {
+      "speaker": "お客様・男性",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ。そのお気持ちが一番大切ですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "二人は笑いながら、候補の商品をメモしていった。"
+    },
+    {
+      "speaker": "",
+      "text": "洗濯機は静音性と予約機能。\n掃除機は軽量タイプ。\n炊飯器は保温機能と手入れのしやすさ。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、二人の生活に合わせて無理のない組み合わせを提案していく。"
+    },
+    {
+      "speaker": "",
+      "text": "最後に、お客様の女性が小さく頭を下げた。"
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "ありがとうございました。ちょっと肩の力が抜けました"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "お役に立てたなら何よりです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・男性",
+      "text": "また二人で相談して来ます"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "お待ちしております",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "二人のお客様が売場を離れていく。"
+    },
+    {
+      "speaker": "",
+      "text": "その背中を見送りながら、彩愛さんは静かに息をついた。"
+    },
+    {
+      "speaker": "店長",
+      "text": "今の接客、良かったです"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ありがとうございます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "お客様、安心してましたね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……そう見えましたか？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "それなら、よかったですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんはそう言って、展示棚に戻されたカタログを整える。"
+    },
+    {
+      "speaker": "",
+      "text": "その手つきはいつも通り丁寧だった。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、どこか考え込んでいるようにも見える。"
+    },
+    {
+      "speaker": "店長",
+      "text": "さっきのお客様の言葉、少し気になりました？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……店長は、やはりよく見ていらっしゃいますわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "最近は、聞いていいか迷うようになりました"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ。学習の成果ですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "今回は、聞いても大丈夫ですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……ええ。少しだけなら",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、売場のPOPを見上げた。"
+    },
+    {
+      "speaker": "",
+      "text": "ちゃんとしたい人こそ、ちゃんとラクしていい。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "選ばれるためには、ちゃんとしていなければならない。そう思ってしまうことがございます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "選ばれるために"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい。結婚に限った話ではありませんわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "仕事でも、親戚付き合いでも、ご近所付き合いでも。誰かの隣に立つ時でも",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ目を伏せる。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "きちんとしていて、気配りができて、家のこともできて、恥ずかしくない人でいること",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そういう自分でなければ、選ばれないのではないかと",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "その言葉は、とても静かだった。"
+    },
+    {
+      "speaker": "",
+      "text": "大きな弱音ではない。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、彩愛さんが普段は見せない場所にある言葉だった。"
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さん"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "それは、かなり疲れますね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "ずっと選ばれるためにちゃんとしていたら、休む場所がなくなりそうです"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ驚いたように俺を見た。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "休む場所",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……そうですわね。もしかすると、そうなのかもしれません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "お客様には、無理なく続けることが大事って言ってましたよね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さんにも、同じことが言える気がします"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "わたくしにも？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい。ちゃんとしている彩愛さんも素敵ですけど"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "普通に唐揚げと枝豆を頼む彩愛さんも、俺はいいと思いました"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……店長",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "急にその話を出すのは、少しずるいですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "すみません"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "謝られると、それはそれで困ります",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "いつもの返し。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、彩愛さんの声は少しだけ揺れていた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "普通のわたくしでも、よいのでしょうか",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "いいと思います"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そんなに簡単に？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長は、時々本当に簡単にしてしまいますわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "簡単にした方がいいこともあると思います"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さんが誰かに選ばれるとしたら、完璧だからじゃないと思います"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "では、何故ですの？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さんだから、じゃないですか"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "言ってから、少しだけ心配になった。"
+    },
+    {
+      "speaker": "",
+      "text": "また踏み込みすぎただろうか。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど彩愛さんは、すぐには怒らなかった。"
+    },
+    {
+      "speaker": "",
+      "text": "ただ、少し困ったように目を伏せる。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そういう言葉は、少し危険ですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "危険"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい。真に受けたくなります",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……すみません"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ですが",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ深呼吸した。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "今日は、少しだけ受け取っておきます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "少しだけ"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。少しだけです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、緋奈のPOPをもう一度見た。"
+    },
+    {
+      "speaker": "",
+      "text": "ちゃんとしたい人こそ、ちゃんとラクしていい。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "きちんとしていたい自分も、普通の自分も、どちらもわたくしなのでしょうね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "お嬢様のように見られる自分も、唐揚げと枝豆を美味しいと思う自分も",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "どちらかだけを選んで見せようとすると、疲れてしまうのかもしれません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "そう思います"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……店長は、今日は随分と素直に頷きますわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "余計なことを言わない練習中です"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "それでも、時々余計なことをおっしゃいます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "すみません"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……けれど、今日の余計な言葉は",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "少しだけ、助かりました",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "それならよかったです"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ微笑んだ。"
+    },
+    {
+      "speaker": "",
+      "text": "その笑顔は、いつものように完璧ではなかった。"
+    },
+    {
+      "speaker": "",
+      "text": "少し照れていて、少し困っていて、少しだけ素直だった。"
+    },
+    {
+      "speaker": "",
+      "text": "そこへ、緋奈が売場の奥から顔を出した。"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "店長ー！　彩愛さんー！　追加POP貼りましたー！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "ありがとう"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "見てください！　場所、いい感じですよ！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。見に行きますわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "あれ？　彩愛さん、なんか顔赤いです？",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "気のせいです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "気のせいかな？",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "気のせいだな"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "店長が乗った！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "緋奈さん、売場で大きな声を出さないでくださいませ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "はーい！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "緋奈は笑いながら売場の奥へ戻っていった。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ頬を押さえる。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "まったく……油断も隙もありませんわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "緋奈ですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "緋奈さんも、店長もです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "俺もですか"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "今日は、余計なことを言わない練習中だったんですが"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "練習不足ですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "頑張ります"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ。期待しております",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "二人で、緋奈の貼ったPOPを見に行く。"
+    },
+    {
+      "speaker": "",
+      "text": "家事応援フェアの売場には、明るい文字が並んでいた。"
+    },
+    {
+      "speaker": "",
+      "text": "ちゃんとしたい人こそ、ちゃんとラクしていい。"
+    },
+    {
+      "speaker": "",
+      "text": "その言葉の前で、彩愛さんは静かに立ち止まる。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "選ばれるために、ちゃんとしていたい",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "でも、ちゃんとしているところだけを選ばれたいわけではないのかもしれません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "普通のわたくしも、少しずつ見せられるようになれたら",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、そこまで言って、少しだけ言葉を止めた。"
+    },
+    {
+      "speaker": "",
+      "text": "そして、こちらを見る。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……いえ。今のは、少し恥ずかしいですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "聞けてよかったです"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そういうところですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "今日、何度目か分からないその言葉。"
+    },
+    {
+      "speaker": "",
+      "text": "でも、その声はやわらかかった。"
+    },
+    {
+      "speaker": "",
+      "text": "締めモノローグ"
+    },
+    {
+      "speaker": "",
+      "text": "新生活を控えたお客様への接客を通して、彩愛さんは“選ばれるためにちゃんとしていたい”という気持ちを口にした。"
+    },
+    {
+      "speaker": "",
+      "text": "きちんとしていること。\n気配りができること。\n恥ずかしくない自分でいること。"
+    },
+    {
+      "speaker": "",
+      "text": "それらは、彩愛さんが大切にしているものだ。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、選ばれるためにずっとちゃんとしていたら、休む場所がなくなってしまう。"
+    },
+    {
+      "speaker": "",
+      "text": "普通の彩愛さん。\n唐揚げと枝豆を美味しいと言える彩愛さん。\n少し照れて、少し困って、完璧ではない彩愛さん。"
+    },
+    {
+      "speaker": "",
+      "text": "それも全部、彩愛さんだ。"
+    },
+    {
+      "speaker": "",
+      "text": "きちんとしているところだけではなく、普通の自分も少しずつ見せられるようになれたら。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、そう思い始めたのかもしれない。"
+    },
+    {
+      "speaker": "",
+      "text": "解放後メモ案"
+    },
+    {
+      "speaker": "",
+      "text": "紫藤 彩愛 親愛58「選ばれるために」読了。\n新生活を控えたお客様への接客をきっかけに、彩愛は“選ばれるためには、ちゃんとしていなければならない”という気持ちを口にする。\n店長は、完璧だから選ばれるのではなく、彩愛だから選ばれるのではないかと伝える。\n彩愛は、きちんとしている自分も普通の自分もどちらも自分なのだと少しずつ受け止め始める。"
+    }
+  ],
+  "keyScenarioIndex": 3
+}

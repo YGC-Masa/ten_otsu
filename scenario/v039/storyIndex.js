@@ -2121,5 +2121,261 @@ window.TENOTSU_STORY_INDEX = [
     "affectionLabel": "親愛Lv.40",
     "menuTitle": "親愛Lv.40：少しだけ、焦っています",
     "locationName": "ひだまりストア・生活家電売場"
+  },
+  {
+    "id": "ayame_affection_40_01_key",
+    "title": "家事応援フェアですわ",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 4,
+    "affectionSlot": "key1",
+    "unlockLevel": 43,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_40_01_key.json",
+    "version": "v039_234",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 43
+    },
+    "order": 3126,
+    "summary": "彩愛 親愛Lv.43「家事応援フェアですわ」。",
+    "rawTitle": "家事応援フェアですわ",
+    "affectionLabel": "親愛Lv.43",
+    "menuTitle": "親愛Lv.43：家事応援フェアですわ",
+    "locationName": "ひだまりストア・生活家電売場"
+  },
+  {
+    "id": "ayame_affection_40_02_key",
+    "title": "誰に紹介しても恥ずかしくないように",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 4,
+    "affectionSlot": "key2",
+    "unlockLevel": 45,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_40_02_key.json",
+    "version": "v039_234",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 45
+    },
+    "order": 3127,
+    "summary": "彩愛 親愛Lv.45「誰に紹介しても恥ずかしくないように」。",
+    "rawTitle": "誰に紹介しても恥ずかしくないように",
+    "affectionLabel": "親愛Lv.45",
+    "menuTitle": "親愛Lv.45：誰に紹介しても恥ずかしくないように",
+    "locationName": "ひだまりストア・生活家電売場"
+  },
+  {
+    "id": "ayame_affection_40_03_key",
+    "title": "完璧ではありませんわ",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 4,
+    "affectionSlot": "key3",
+    "unlockLevel": 48,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_40_03_key.json",
+    "version": "v039_234",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 48
+    },
+    "order": 3128,
+    "summary": "彩愛 親愛Lv.48「完璧ではありませんわ」。",
+    "rawTitle": "完璧ではありませんわ",
+    "affectionLabel": "親愛Lv.48",
+    "menuTitle": "親愛Lv.48：完璧ではありませんわ",
+    "locationName": "ひだまりストア・生活家電売場"
+  },
+  {
+    "id": "ayame_affection_50_00_main",
+    "title": "完璧じゃなくても、頼れる人",
+    "type": "main",
+    "category": "character_main",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 5,
+    "affectionSlot": "main",
+    "unlockLevel": 50,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_50_00_main.json",
+    "version": "v039_234",
+    "unlock": {
+      "type": "all_story_cleared",
+      "storyIds": [
+        "ayame_affection_40_01_key",
+        "ayame_affection_40_02_key",
+        "ayame_affection_40_03_key"
+      ],
+      "fallback": {
+        "type": "affection_level",
+        "character": "ak",
+        "level": 50
+      }
+    },
+    "order": 3129,
+    "summary": "彩愛 親愛Lv.50「完璧じゃなくても、頼れる人」。",
+    "rawTitle": "完璧じゃなくても、頼れる人",
+    "affectionLabel": "親愛Lv.50",
+    "menuTitle": "親愛Lv.50：完璧じゃなくても、頼れる人",
+    "locationName": "ひだまりストア・生活家電売場"
+  },
+  {
+    "id": "ayame_affection_50_01_key",
+    "title": "店長からのお誘いでしたら",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 5,
+    "affectionSlot": "key1",
+    "unlockLevel": 53,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_50_01_key.json",
+    "version": "v039_234",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 53
+    },
+    "order": 3130,
+    "summary": "彩愛 親愛Lv.53「店長からのお誘いでしたら」。",
+    "rawTitle": "店長からのお誘いでしたら",
+    "affectionLabel": "親愛Lv.53",
+    "menuTitle": "親愛Lv.53：店長からのお誘いでしたら",
+    "locationName": "ひだまりストア・生活家電売場"
+  },
+  {
+    "id": "ayame_affection_50_02_key",
+    "title": "普通のわたくし",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 5,
+    "affectionSlot": "key2",
+    "unlockLevel": 55,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_50_02_key.json",
+    "version": "v039_234",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 55
+    },
+    "order": 3131,
+    "summary": "彩愛 親愛Lv.55「普通のわたくし」。",
+    "rawTitle": "普通のわたくし",
+    "affectionLabel": "親愛Lv.55",
+    "menuTitle": "親愛Lv.55：普通のわたくし",
+    "locationName": "駅前の店"
+  },
+  {
+    "id": "ayame_affection_50_03_key",
+    "title": "選ばれるために",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 5,
+    "affectionSlot": "key3",
+    "unlockLevel": 58,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_50_03_key.json",
+    "version": "v039_234",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 58
+    },
+    "order": 3132,
+    "summary": "彩愛 親愛Lv.58「選ばれるために」。",
+    "rawTitle": "選ばれるために",
+    "affectionLabel": "親愛Lv.58",
+    "menuTitle": "親愛Lv.58：選ばれるために",
+    "locationName": "ひだまりストア・生活家電売場"
+  },
+  {
+    "id": "ayame_affection_60_00_main",
+    "title": "本音を言える相手",
+    "type": "main",
+    "category": "character_main",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 6,
+    "affectionSlot": "main",
+    "unlockLevel": 60,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_60_00_main.json",
+    "version": "v039_234",
+    "unlock": {
+      "type": "all_story_cleared",
+      "storyIds": [
+        "ayame_affection_50_01_key",
+        "ayame_affection_50_02_key",
+        "ayame_affection_50_03_key"
+      ],
+      "fallback": {
+        "type": "affection_level",
+        "character": "ak",
+        "level": 60
+      }
+    },
+    "order": 3133,
+    "summary": "彩愛 親愛Lv.60「本音を言える相手」。",
+    "rawTitle": "本音を言える相手",
+    "affectionLabel": "親愛Lv.60",
+    "menuTitle": "親愛Lv.60：本音を言える相手",
+    "locationName": "駅前の店"
   }
 ];
