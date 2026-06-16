@@ -1585,7 +1585,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_00_01_key.json",
-    "version": "v039_230",
+    "version": "v039_231",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -1615,7 +1615,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_00_02_key.json",
-    "version": "v039_230",
+    "version": "v039_231",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -1647,7 +1647,7 @@ window.TENOTSU_STORY_INDEX = [
       "星野 緋奈"
     ],
     "scenario": "scenario/v039/events/ayame_affection_00_03_key.json",
-    "version": "v039_230",
+    "version": "v039_231",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -1679,7 +1679,7 @@ window.TENOTSU_STORY_INDEX = [
       "星野 緋奈"
     ],
     "scenario": "scenario/v039/events/ayame_affection_10_00_main.json",
-    "version": "v039_230",
+    "version": "v039_231",
     "unlock": {
       "type": "all_story_cleared",
       "storyIds": [

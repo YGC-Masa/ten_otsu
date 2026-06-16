@@ -1,7 +1,7 @@
 {
   "id": "ayame_affection_00_03_key",
   "title": "春の香りは、ふきのとう",
-  "version": "v039_230",
+  "version": "v039_231",
   "return": {
     "mode": "storyMenu",
     "storyId": "ayame_affection_00_03_key",
@@ -47,7 +47,11 @@
     },
     {
       "speaker": "",
-      "text": "店内は少しずつ春の装いに変わり始めていた。\n新生活フェアの準備に合わせて、入口付近には明るい色のPOPが並び、調理家電売場には新生活向けの炊飯器や電子レンジが配置されている。"
+      "text": "店内は少しずつ春の装いに変わり始めていた。"
+    },
+    {
+      "speaker": "",
+      "text": "新生活フェアの準備に合わせて、入口付近には明るい色のPOPが並び、調理家電売場には新生活向けの炊飯器や電子レンジが配置されている。"
     },
     {
       "speaker": "",
@@ -59,7 +63,11 @@
     },
     {
       "speaker": "",
-      "text": "俺は春フェア用の装飾案を見ながら、売場の前で腕を組んでいた。\nそこへ、彩愛さんがやってくる。"
+      "text": "俺は春フェア用の装飾案を見ながら、売場の前で腕を組んでいた。"
+    },
+    {
+      "speaker": "",
+      "text": "そこへ、彩愛さんがやってくる。"
     },
     {
       "speaker": "彩愛",
@@ -122,6 +130,10 @@
       "text": "はい。彩愛さんなら、春って聞いて何を思い浮かべます？"
     },
     {
+      "speaker": "",
+      "text": "彩愛さんは少し考えるように、指先を頬に添えた。"
+    },
+    {
       "speaker": "彩愛",
       "text": "そうですわね……",
       "storySprites": [
@@ -168,7 +180,11 @@
     },
     {
       "speaker": "",
-      "text": "思わず聞き返してしまった。\n彩愛さんは、特に変わったことを言ったつもりもないように、穏やかに微笑んでいる。"
+      "text": "思わず聞き返してしまった。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、特に変わったことを言ったつもりもないように、穏やかに微笑んでいる。"
     },
     {
       "speaker": "彩愛",
@@ -273,7 +289,11 @@
     },
     {
       "speaker": "",
-      "text": "その言い方が、少しだけ楽しそうだった。\nいつもの上品な彩愛さんとは少し違う。\n懐かしいものを思い出しているような、柔らかい表情。"
+      "text": "その言い方が、少しだけ楽しそうだった。"
+    },
+    {
+      "speaker": "",
+      "text": "いつもの上品な彩愛さんとは少し違う。\n懐かしいものを思い出しているような、柔らかい表情。"
     },
     {
       "speaker": "店長",
@@ -340,6 +360,14 @@
       "text": "その表現が、彩愛さんらしいと思った。"
     },
     {
+      "speaker": "",
+      "text": "土の中から顔を出すふきのとう。\nそれを見つけて、春を感じる。"
+    },
+    {
+      "speaker": "",
+      "text": "派手ではないけれど、ちゃんと季節が生活の中にある。"
+    },
+    {
       "speaker": "店長",
       "text": "彩愛さんのそういう話、いいですね"
     },
@@ -404,6 +432,10 @@
       "text": "俺、そういう話好きです"
     },
     {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ黙った。\nそして、困ったように視線を逸らす。"
+    },
+    {
       "speaker": "彩愛",
       "text": "店長は、本当に不意打ちがお上手ですわね",
       "storySprites": [
@@ -415,8 +447,53 @@
       ]
     },
     {
+      "speaker": "店長",
+      "text": "不意打ちでした？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。十分に",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "すみません"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "謝られると、また困ります",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "すみま……あ"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ。よろしいです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
       "speaker": "",
-      "text": "そこへ、入口付近から元気な声が聞こえた。"
+      "text": "彩愛さんが小さく笑ったところで、入口付近から元気な声が聞こえた。"
     },
     {
       "speaker": "緋奈",
@@ -459,14 +536,37 @@
       ]
     },
     {
-      "speaker": "彩愛",
-      "text": "ええ。とても華やかですわ",
+      "speaker": "",
+      "text": "緋奈は桜色のPOPを広げて見せた。"
+    },
+    {
+      "speaker": "",
+      "text": "そこには大きく、\n『新生活応援！ 春の家電フェア！』\nと書かれている。"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "どうですか？　春っぽいですよね！",
       "storySprites": [
         {
           "id": "aa",
           "src": "images/assets/char/a10101.webp",
           "opacity": 1
         },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "うん、明るくていいな"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。とても華やかですわ",
+      "storySprites": [
         {
           "id": "ak",
           "src": "images/assets/char/k10101.webp",
@@ -491,8 +591,62 @@
       ]
     },
     {
-      "speaker": "",
-      "text": "店長がふきのとうの話をすると、緋奈も食べ物の話としてすぐに食いついた。"
+      "speaker": "彩愛",
+      "text": "ふふ。素直でよろしいですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "で、洗濯機売場はどうするんですか？",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "それを相談してたところ。彩愛さんは春といえば、ふきのとうらしい"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "ふきのとう？",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。春の味ですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "緋奈",
@@ -514,11 +668,6 @@
       "speaker": "彩愛",
       "text": "まあ。緋奈さんもお好きなのですね",
       "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        },
         {
           "id": "ak",
           "src": "images/assets/char/k10101.webp",
@@ -547,6 +696,17 @@
       "text": "ふふ。揚げたては格別ですものね",
       "storySprites": [
         {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "ですよねー！",
+      "storySprites": [
+        {
           "id": "aa",
           "src": "images/assets/char/a10101.webp",
           "opacity": 1
@@ -557,6 +717,484 @@
           "opacity": 1
         }
       ]
+    },
+    {
+      "speaker": "",
+      "text": "二人がふきのとうで盛り上がっている。\n緋奈は食べ物の話になると本当に反応が早い。"
+    },
+    {
+      "speaker": "店長",
+      "text": "洗濯機売場にふきのとうのPOPって、ちょっと渋くないですか？"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "いや、でも春っぽいですよ！　『春の泥汚れもすっきり！』とか",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "それは良いかもしれませんわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "春の泥汚れ？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "春は外へ出る機会も増えますでしょう。新生活、部活動、散歩、山菜採り……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "山菜採り！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。そういう季節の汚れに合わせた提案なら、洗濯機売場にも自然ですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "なるほど。桜だけじゃなくて、春の暮らしに寄せるわけですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい。華やかさは緋奈さんのPOPで出していただいて、洗濯機売場では“春の生活”を支える方向にするのはいかがでしょう",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "いいですね！　春の生活！　なんか彩愛さんっぽい！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "わたくしっぽい、ですか？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "はい！　おしゃれだけど、ちゃんと役に立つ感じ！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……まあ。ありがとうございます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "えへへ",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "じゃあ、洗濯機売場は『春の新生活と外遊びの汚れ対策』みたいな方向で作りましょうか"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。泥汚れに強いコース、洗剤自動投入、時短コースあたりを並べると分かりやすいですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "いいですね"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "あたし、POP作ります！　ふきのとうのイラストも入れます？",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "それは……少し控えめでよろしいかと",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "えー、可愛いのに",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "洗濯機売場でふきのとうが主役になると、何の売場か分からなくなるからな"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "たしかに！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ。ですが、季節感の差し色としてなら素敵かもしれませんわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "じゃあ小さめに入れます！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "緋奈は元気よくPOP用の紙を抱えて戻っていった。"
+    },
+    {
+      "speaker": "",
+      "text": "その背中を見送りながら、彩愛さんが微笑む。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "緋奈さんは、いつも明るいですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "ですね。食べ物の話だと特に"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ。そこも可愛らしいところですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さんも、ふきのとうの話をしてる時、少し楽しそうでしたよ"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……そうでしたか？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "懐かしかったのかもしれませんわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "実家のことを思い出して？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。春になると、土の匂いや草の匂いが少し変わりますの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "土の匂い"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "田舎でしたから。季節の変わり目は、景色より先に匂いで分かることもありましたわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "それ、いいですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "本当にそう思っていらっしゃいます？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "思ってます"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "都会の方には、少し地味な話かと思いました",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "地味じゃないですよ。彩愛さんの話を聞いてると、春ってちゃんと生活の中にあるんだなって思います"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは少しだけ、手元のチェック表を見下ろした。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "わたくしにとっては、普通のことでしたわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "普通のことを覚えてるのって、いいと思います"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……普通のこと、ですか",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい。ふきのとうを見つけて春だなって思うとか、そういうの"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長は、不思議なところを褒めますのね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "そうですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。ですが……悪い気はいたしません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "そう言って、彩愛さんは少しだけ微笑んだ。"
+    },
+    {
+      "speaker": "",
+      "text": "その後、俺たちは洗濯機売場の装飾を進めた。"
     },
     {
       "speaker": "",
@@ -579,11 +1217,6 @@
       "text": "いらっしゃいませ。新生活や外出が増える季節に合わせた洗濯機をご案内しております",
       "storySprites": [
         {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        },
-        {
           "id": "ak",
           "src": "images/assets/char/k10101.webp",
           "opacity": 1
@@ -599,16 +1232,15 @@
       "text": "それでしたら、泥汚れに強いコースがある機種をご覧になりますか？",
       "storySprites": [
         {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        },
-        {
           "id": "ak",
           "src": "images/assets/char/k10101.webp",
           "opacity": 1
         }
       ]
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "お願いします"
     },
     {
       "speaker": "",
@@ -619,10 +1251,20 @@
       "text": "春は新しいことが始まる季節ですわ。洗濯物の種類も少し変わりますから、生活に合わせて選んでいただくと安心です",
       "storySprites": [
         {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
           "opacity": 1
-        },
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "なるほど。季節で洗濯機の選び方って変わるんですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。毎日の暮らしは、季節と一緒に少しずつ変わりますもの",
+      "storySprites": [
         {
           "id": "ak",
           "src": "images/assets/char/k10101.webp",
@@ -632,17 +1274,20 @@
     },
     {
       "speaker": "",
+      "text": "俺はその言葉を聞きながら、少しだけ笑った。"
+    },
+    {
+      "speaker": "",
+      "text": "ふきのとうから始まった話が、ちゃんと売場につながっている。\n彩愛さんの中では、季節も、生活も、家電も、全部が自然につながっているのだ。"
+    },
+    {
+      "speaker": "",
       "text": "接客が終わった後、彩愛さんがこちらへ戻ってきた。"
     },
     {
       "speaker": "彩愛",
       "text": "店長",
       "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        },
         {
           "id": "ak",
           "src": "images/assets/char/k10101.webp",
@@ -659,11 +1304,6 @@
       "text": "ふきのとう、意外と役に立ちましたわね",
       "storySprites": [
         {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        },
-        {
           "id": "ak",
           "src": "images/assets/char/k10101.webp",
           "opacity": 1
@@ -678,11 +1318,6 @@
       "speaker": "彩愛",
       "text": "大げさですわ",
       "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        },
         {
           "id": "ak",
           "src": "images/assets/char/k10101.webp",
@@ -699,11 +1334,6 @@
       "text": "それなら、よかったです",
       "storySprites": [
         {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        },
-        {
           "id": "ak",
           "src": "images/assets/char/k10101.webp",
           "opacity": 1
@@ -718,11 +1348,6 @@
       "speaker": "彩愛",
       "text": "……そんなに面白いものではありませんわよ",
       "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        },
         {
           "id": "ak",
           "src": "images/assets/char/k10101.webp",
@@ -739,11 +1364,6 @@
       "text": "……",
       "storySprites": [
         {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        },
-        {
           "id": "ak",
           "src": "images/assets/char/k10101.webp",
           "opacity": 1
@@ -758,11 +1378,6 @@
       "speaker": "彩愛",
       "text": "では、いつか",
       "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        },
         {
           "id": "ak",
           "src": "images/assets/char/k10101.webp",
@@ -779,11 +1394,6 @@
       "text": "ふふ。店長は、約束にするのがお上手ですわね",
       "storySprites": [
         {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        },
-        {
           "id": "ak",
           "src": "images/assets/char/k10101.webp",
           "opacity": 1
@@ -798,11 +1408,6 @@
       "speaker": "彩愛",
       "text": "いいえ",
       "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        },
         {
           "id": "ak",
           "src": "images/assets/char/k10101.webp",
@@ -819,11 +1424,6 @@
       "text": "春は、いろいろなものが顔を出す季節ですもの",
       "storySprites": [
         {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        },
-        {
           "id": "ak",
           "src": "images/assets/char/k10101.webp",
           "opacity": 1
@@ -839,11 +1439,6 @@
       "text": "ええ。ふきのとうみたいに",
       "storySprites": [
         {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        },
-        {
           "id": "ak",
           "src": "images/assets/char/k10101.webp",
           "opacity": 1
@@ -858,11 +1453,6 @@
       "speaker": "彩愛",
       "text": "わたくしの話も、少しずつなら……顔を出すかもしれませんわね",
       "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        },
         {
           "id": "ak",
           "src": "images/assets/char/k10101.webp",
@@ -883,11 +1473,6 @@
       "text": "期待しすぎてはいけませんわよ",
       "storySprites": [
         {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        },
-        {
           "id": "ak",
           "src": "images/assets/char/k10101.webp",
           "opacity": 1
@@ -903,11 +1488,6 @@
       "text": "よろしいです",
       "storySprites": [
         {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        },
-        {
           "id": "ak",
           "src": "images/assets/char/k10101.webp",
           "opacity": 1
@@ -916,7 +1496,11 @@
     },
     {
       "speaker": "",
-      "text": "彩愛さんはそう言って、またいつもの上品な笑顔に戻った。\nけれど今日、その笑顔の奥に少しだけ、懐かしい春の景色を見た気がした。"
+      "text": "彩愛さんはそう言って、またいつもの上品な笑顔に戻った。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど今日、その笑顔の奥に少しだけ、懐かしい春の景色を見た気がした。"
     },
     {
       "speaker": "",
@@ -924,7 +1508,15 @@
     },
     {
       "speaker": "",
-      "text": "彩愛さんの中にある、静かな春。\n俺はそれを、もう少し知りたいと思った。"
+      "text": "彩愛さんの中にある、静かな春。"
+    },
+    {
+      "speaker": "",
+      "text": "俺はそれを、もう少し知りたいと思った。"
+    },
+    {
+      "speaker": "",
+      "text": "締めモノローグ"
     },
     {
       "speaker": "",
@@ -941,6 +1533,14 @@
     {
       "speaker": "",
       "text": "彩愛さんの話は、まだ少しずつしか聞けない。\nけれど、春に顔を出すふきのとうのように、これから少しずつ見えてくるのかもしれない。"
+    },
+    {
+      "speaker": "",
+      "text": "解放後メモ案"
+    },
+    {
+      "speaker": "",
+      "text": "紫藤 彩愛 親愛8「春の香りは、ふきのとう」読了。\n春フェアの売場作りをきっかけに、彩愛が子どもの頃にふきのとうを採りに行っていた思い出を語った。\n店長は、彩愛の上品さの奥にある田舎育ちの素朴な一面を知り、もっと話を聞いてみたいと思う。"
     }
   ],
   "keyScenarioIndex": 3
