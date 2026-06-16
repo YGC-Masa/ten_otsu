@@ -1699,5 +1699,145 @@ window.TENOTSU_STORY_INDEX = [
     "affectionLabel": "親愛Lv.10",
     "menuTitle": "親愛Lv.10：暮らしを知っている人",
     "locationName": "ひだまりストア・洗濯機売場"
+  },
+  {
+    "id": "ayame_affection_10_01_key",
+    "title": "洗濯機フェア、開幕ですわ",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 2,
+    "affectionSlot": "key1",
+    "unlockLevel": 13,
+    "characters": [
+      "ak",
+      "aa",
+      "al"
+    ],
+    "characterNames": [
+      "紫藤 彩愛",
+      "星野 緋奈",
+      "餅月 里美"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_10_01_key.json",
+    "version": "v039_232",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 13
+    },
+    "order": 3114,
+    "summary": "彩愛の提案で、洗濯機フェアの売場を価格帯別ではなく暮らし別に構成する。緋奈や里美も交えながら、暮らしを想像できる売場を作り上げる。",
+    "rawTitle": "洗濯機フェア、開幕ですわ",
+    "affectionLabel": "親愛Lv.13",
+    "menuTitle": "親愛Lv.13：洗濯機フェア、開幕ですわ",
+    "locationName": "ひだまりストア・生活家電売場"
+  },
+  {
+    "id": "ayame_affection_10_02_key",
+    "title": "筍掘りと泥汚れ",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 2,
+    "affectionSlot": "key2",
+    "unlockLevel": 15,
+    "characters": [
+      "ak",
+      "aa"
+    ],
+    "characterNames": [
+      "紫藤 彩愛",
+      "星野 緋奈"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_10_02_key.json",
+    "version": "v039_232",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 15
+    },
+    "order": 3115,
+    "summary": "泥汚れに悩む親子への接客中、彩愛は子どもの頃の筍掘りの思い出を語る。田舎育ちの経験が接客につながっていることが見えてくる。",
+    "rawTitle": "筍掘りと泥汚れ",
+    "affectionLabel": "親愛Lv.15",
+    "menuTitle": "親愛Lv.15：筍掘りと泥汚れ",
+    "locationName": "ひだまりストア・生活家電売場"
+  },
+  {
+    "id": "ayame_affection_10_03_key",
+    "title": "軽さも、やさしさですわ",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 2,
+    "affectionSlot": "key3",
+    "unlockLevel": 18,
+    "characters": [
+      "ak",
+      "aa"
+    ],
+    "characterNames": [
+      "紫藤 彩愛",
+      "星野 緋奈"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_10_03_key.json",
+    "version": "v039_232",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 18
+    },
+    "order": 3116,
+    "summary": "掃除機売場で、彩愛は吸引力だけでなく軽さや扱いやすさも大切だと説明する。毎日の家事に寄り添う視点が描かれる。",
+    "rawTitle": "軽さも、やさしさですわ",
+    "affectionLabel": "親愛Lv.18",
+    "menuTitle": "親愛Lv.18：軽さも、やさしさですわ",
+    "locationName": "ひだまりストア・生活家電売場"
+  },
+  {
+    "id": "ayame_affection_20_00_main",
+    "title": "頼られる理由",
+    "type": "main",
+    "category": "character_main",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 2,
+    "affectionSlot": "main",
+    "unlockLevel": 20,
+    "characters": [
+      "ak",
+      "aa",
+      "al"
+    ],
+    "characterNames": [
+      "紫藤 彩愛",
+      "星野 緋奈",
+      "餅月 里美"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_20_00_main.json",
+    "version": "v039_232",
+    "unlock": {
+      "type": "all_story_cleared",
+      "storyIds": [
+        "ayame_affection_10_01_key",
+        "ayame_affection_10_02_key",
+        "ayame_affection_10_03_key"
+      ],
+      "fallback": {
+        "type": "affection_level",
+        "character": "ak",
+        "level": 20
+      }
+    },
+    "order": 3117,
+    "summary": "洗濯機フェアと掃除機売場の成果を振り返る中で、店長は彩愛が頼られる理由を言語化する。",
+    "rawTitle": "頼られる理由",
+    "affectionLabel": "親愛Lv.20",
+    "menuTitle": "親愛Lv.20：頼られる理由",
+    "locationName": "ひだまりストア・生活家電売場"
   }
 ];

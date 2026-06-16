@@ -1,0 +1,1277 @@
+{
+  "id": "ayame_affection_10_02_key",
+  "title": "筍掘りと泥汚れ",
+  "version": "v039_232",
+  "return": {
+    "mode": "storyMenu",
+    "storyId": "ayame_affection_10_02_key",
+    "storyMenuTab": "key"
+  },
+  "format": "v039_steps",
+  "type": "character_key_story",
+  "characterId": "ak",
+  "route": "ayame",
+  "affectionRange": {
+    "min": 10,
+    "max": 20
+  },
+  "location": {
+    "id": "hidamari_store_salesfloor",
+    "name": "ひだまりストア・生活家電売場"
+  },
+  "summary": "泥汚れに悩む親子への接客中、彩愛は子どもの頃の筍掘りの思い出を語る。田舎育ちの経験が接客につながっていることが見えてくる。",
+  "purpose": "彩愛の生活感と田舎の記憶を、洗濯機フェアの接客に自然に絡めて見せる。",
+  "tags": [
+    "彩愛ルート",
+    "親愛度10-20",
+    "生活家電",
+    "洗濯機",
+    "掃除機",
+    "暮らし"
+  ],
+  "clearFlags": [
+    "ayame_affection_10_02_key_cleared"
+  ],
+  "nextHint": "次のキーでは、掃除機売場で軽さとやさしさの話へ広がる。",
+  "renderPolicy": {
+    "spritePosition": "logical_split_n_plus_1",
+    "eventCgLayer": "frontOfCharacters"
+  },
+  "steps": [
+    {
+      "speaker": "",
+      "text": "ひだまりストア、洗濯機フェア当日。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "売場には、先日作った“暮らし別”のPOPが並んでいた。"
+    },
+    {
+      "speaker": "",
+      "text": "子育て家庭向け\n一人暮らし向け\n共働き向け\n泥汚れ・作業着向け"
+    },
+    {
+      "speaker": "",
+      "text": "価格帯で並べるよりも、お客様が自分の生活に合うコーナーを見つけやすい。"
+    },
+    {
+      "speaker": "",
+      "text": "その中でも、今日は泥汚れ・作業着向けの前で足を止める人が多かった。"
+    },
+    {
+      "speaker": "店長",
+      "text": "泥汚れコーナー、けっこう見られてますね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "春は外で活動する機会が増えますから",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "部活とか、外遊びとか"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。元気なのは良いことですわ。洗う方は少し大変ですけれど",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんが、少しだけ苦笑する。"
+    },
+    {
+      "speaker": "",
+      "text": "その時、小さな男の子を連れた女性のお客様が近づいてきた。"
+    },
+    {
+      "speaker": "",
+      "text": "男の子の靴には、元気に遊んできた証拠のように、うっすら泥がついている。"
+    },
+    {
+      "speaker": "お客様・母",
+      "text": "すみません。この“泥汚れに強い”っていうのは、普通の洗濯機と違うんですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "いらっしゃいませ。泥汚れ向けのコースがある機種ですと、通常より落としやすいですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・母",
+      "text": "うちの子、外で遊ぶのが好きで……ズボンも靴下もすぐ泥だらけなんです"
+    },
+    {
+      "speaker": "お客様・子ども",
+      "text": "だって外楽しいもん！"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ。それは素敵なことですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・母",
+      "text": "素敵ですかね……洗う方は大変で"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。お母様は本当に大変だと思います",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "子どもの元気さを否定せず、母親の大変さにも寄り添う。\n彩愛さんらしい接客だ。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "泥汚れは、軽く払ってから洗うだけでも違いますわ。ですが、それが毎日ですと負担になりますものね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・母",
+      "text": "そうなんです。毎回やるのが面倒で……"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "分かりますわ。泥汚れは、本当に厄介ですもの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さん、やけに実感こもってますね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "昔、筍掘りの後などは泥だらけでしたから",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "筍掘り？"
+    },
+    {
+      "speaker": "お客様・母",
+      "text": "筍掘りですか？"
+    },
+    {
+      "speaker": "お客様・子ども",
+      "text": "たけのこって掘るの？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。土の中に少しだけ顔を出しているものを見つけて、掘り起こすのです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・子ども",
+      "text": "楽しそう！"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "楽しいですわよ。ですが、足元は見事に泥だらけになります",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "買うんじゃなくて、掘る方なんですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ。掘りたては格別ですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・母",
+      "text": "いいですね。そういう経験、うちの子にもさせてあげたいです"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "きっと喜ばれると思います。ただし、お洗濯は覚悟してくださいませ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・母",
+      "text": "やっぱりそこですよね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい。ですから、泥汚れの多いご家庭では、洗浄力だけでなく、洗い直しを減らせるかどうかも大切ですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・母",
+      "text": "洗い直し、よくやります……"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "一度で落ちないと、気持ちも疲れてしまいますものね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・母",
+      "text": "分かります"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、展示機を軽く示しながら説明する。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "こちらは泥汚れ向けのコースがございます。日常的に外遊びや運動着が多いご家庭には、候補に入れてよろしいかと思います",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "設置寸法の確認用紙もありますので、必要でしたらお渡しします"
+    },
+    {
+      "speaker": "お客様・母",
+      "text": "お願いします"
+    },
+    {
+      "speaker": "お客様・子ども",
+      "text": "ぼく、たけのこ掘ってみたい！"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ。では、その時はお洗濯のお手伝いもしてくださいませね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・子ども",
+      "text": "うん！　靴下、洗濯機に入れる！"
+    },
+    {
+      "speaker": "お客様・母",
+      "text": "それだけでも助かるかな"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "小さなお手伝いでも、毎日続けば大きな助けになりますわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "お客様は笑顔で用紙を受け取り、候補の機種をもう一度見てから売場を離れていった。"
+    },
+    {
+      "speaker": "",
+      "text": "子どもは去り際に、彩愛さんへ大きく手を振る。"
+    },
+    {
+      "speaker": "お客様・子ども",
+      "text": "たけのこ、掘ってみたい！"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "いつか機会があるとよいですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "お客様が離れた後、俺は彩愛さんを見る。"
+    },
+    {
+      "speaker": "店長",
+      "text": "筍掘り、やったことあるんですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。春になると、よく近くの山で掘りましたの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "近くの山"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい。春の楽しみですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さんの田舎エピソード、毎回ちょっと強いですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "強い、ですか？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "ふきのとうを採りに行ったり、筍を掘ったり"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "田舎では普通ですわよ？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "普通……なんですかね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。少なくとも、わたくしの周りでは珍しくありませんでした",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "なるほど"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ただ、筍掘りの後の洗濯は大変でしたわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "やっぱり泥だらけに？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。靴下も裾も、なかなか見事なことになります",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さんが泥だらけ……"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "何か想像しました？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "少し"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "すみません"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "謝られると、それはそれで困ります",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "いつものやつですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。そろそろ学んでいただけると嬉しいですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんはそう言いながら、小さく笑った。"
+    },
+    {
+      "speaker": "",
+      "text": "そこへ、POPを抱えた緋奈が戻ってくる。"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "店長ー！　泥汚れコーナーの追加POPできました！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "お、早いな"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "見てください！　『泥んこ上等！　まとめてすっきり洗濯！』です！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "勢いがありますわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "ちょっと元気すぎます？",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "子どもの泥汚れ向けなら、これくらい目立ってもいいかもな"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。明るく見せるのは良いと思いますわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "やった！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "緋奈はPOPを売場に合わせてみる。\n泥だらけの靴下と、ピカピカの洗濯物のイラストが入っていた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "可愛らしいですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "彩愛さんの筍掘りの話を聞いて、泥んこ感を足してみました！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "聞いてたのか"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "ちょっとだけ！　筍いいなーって思って",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "緋奈さんも筍がお好きなのですか？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "好きです！　筍ご飯とか最高じゃないですか！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "若竹煮も捨てがたいですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "うわー、お腹空いてきた！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "開店中だぞ"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "あ、そうでした！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "緋奈は慌ててPOPを固定する。"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "でも、泥汚れコーナーって明るくするといいですね。大変だけど、元気に遊んだ証拠って感じで",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "緋奈さんらしい見方ですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "彩愛さんの接客もそうでしたよ。お母さんも子どもも、どっちも悪くない感じで話してて",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "どちらかを責めても、暮らしは楽になりませんもの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さんらしいですね"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "ですよね！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "お二人とも、わたくしらしいと言えば良いと思っていません？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "褒めてます"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "あたしも褒めてます！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……それなら、よろしいですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは少し照れたように、POPの位置を整えた。"
+    },
+    {
+      "speaker": "",
+      "text": "緋奈は別の売場に呼ばれ、元気に戻っていく。"
+    },
+    {
+      "speaker": "",
+      "text": "売場には、俺と彩愛さんが残った。"
+    },
+    {
+      "speaker": "店長",
+      "text": "でも本当に、さっきの接客は良かったです"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ありがとうございます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "子どもが泥だらけになることも、お母さんが大変なことも、どっちも否定しないのが彩愛さんらしいなって"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "どちらも本当のことですもの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "本当のこと？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "子どもが元気に遊ぶのは素敵なことです。けれど、それを洗う方が大変なのも本当です",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "家電は、そのどちらかを我慢させるためではなく、少しでも両方を楽にするためにあるのだと思いますわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……いいですね、それ"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "またPOPに使うおつもりですか？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "少し思いました"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "まったく。油断も隙もありませんわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "そう言いながらも、彩愛さんは少し嬉しそうだった。"
+    },
+    {
+      "speaker": "店長",
+      "text": "筍掘りの話、もっと聞いてみたいです"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "本当に、そんなに面白いものではありませんわよ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "でも、彩愛さんが楽しそうに話してました"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……そうでしたか？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "懐かしかったのかもしれません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "春の楽しみ、でしたっけ"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。ふきのとうを見つけて、筍を掘って……春は、足元から賑やかになる季節でしたわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "足元から賑やかになる"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "草も、土も、芽も。気づくといろいろなものが顔を出しているのです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さんのそういう表現、いいですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……また、不意打ちですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "すみません"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "謝られると困ると、何度申し上げればよろしいのでしょう",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "あ"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ。少しずつで構いませんわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、泥汚れコーナーのPOPを見上げた。"
+    },
+    {
+      "speaker": "",
+      "text": "泥んこ上等！　まとめてすっきり洗濯！"
+    },
+    {
+      "speaker": "",
+      "text": "その横で、泥汚れに強いコースが分かりやすく紹介されている。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "良い売場になりましたね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい。彩愛さんの筍掘り経験も役立ちました"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "それは少し恥ずかしいですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "どうしてですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "泥だらけになっていた話ですもの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "でも、そういう経験があるから、お客様に寄り添えるんだと思います"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "今日も、ちゃんと届いてました"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長は、本当に……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "本当に？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "いえ。油断ならない方ですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "そう言いながら、彩愛さんは少しだけ笑った。"
+    },
+    {
+      "speaker": "",
+      "text": "その笑顔は、どこか懐かしそうで、少し照れくさそうでもあった。"
+    },
+    {
+      "speaker": "",
+      "text": "ふきのとうに続いて、今度は筍掘り。\n彩愛さんの話には、少しずつ田舎の景色が増えていく。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、それはただの思い出話ではない。"
+    },
+    {
+      "speaker": "",
+      "text": "その経験が、今の接客につながっている。\n暮らしを知っている人だからこそ、お客様の困りごとに寄り添える。"
+    },
+    {
+      "speaker": "",
+      "text": "俺は、彩愛さんの中にある春の記憶を、もう少し聞いてみたいと思った。"
+    },
+    {
+      "speaker": "",
+      "text": "締めモノローグ"
+    },
+    {
+      "speaker": "",
+      "text": "泥汚れの相談から、彩愛さんの筍掘りの思い出を聞くことになった。"
+    },
+    {
+      "speaker": "",
+      "text": "春になると、近くの山で筍を掘っていたという彩愛さん。\nその話は、上品な彼女の印象とは少し違っていて、でも不思議とよく似合っていた。"
+    },
+    {
+      "speaker": "",
+      "text": "泥だらけになった経験を知っているからこそ、泥汚れに悩むお客様にも寄り添える。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんの田舎の思い出は、今の接客の中にもちゃんと息づいている。"
+    },
+    {
+      "speaker": "",
+      "text": "解放後メモ案"
+    },
+    {
+      "speaker": "",
+      "text": "泥汚れに悩むお客様への接客中、彩愛は子どもの頃に筍掘りで泥だらけになった思い出を語った。\n店長は、彩愛の田舎育ちの経験が、暮らしに寄り添う接客につながっていることを知る。"
+    }
+  ],
+  "keyScenarioIndex": 2
+}

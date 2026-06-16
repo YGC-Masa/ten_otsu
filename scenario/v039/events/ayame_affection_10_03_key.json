@@ -1,0 +1,1219 @@
+{
+  "id": "ayame_affection_10_03_key",
+  "title": "軽さも、やさしさですわ",
+  "version": "v039_232",
+  "return": {
+    "mode": "storyMenu",
+    "storyId": "ayame_affection_10_03_key",
+    "storyMenuTab": "key"
+  },
+  "format": "v039_steps",
+  "type": "character_key_story",
+  "characterId": "ak",
+  "route": "ayame",
+  "affectionRange": {
+    "min": 10,
+    "max": 20
+  },
+  "location": {
+    "id": "hidamari_store_salesfloor",
+    "name": "ひだまりストア・生活家電売場"
+  },
+  "summary": "掃除機売場で、彩愛は吸引力だけでなく軽さや扱いやすさも大切だと説明する。毎日の家事に寄り添う視点が描かれる。",
+  "purpose": "生活家電担当としての彩愛の視野を、洗濯機から掃除機へ広げる。",
+  "tags": [
+    "彩愛ルート",
+    "親愛度10-20",
+    "生活家電",
+    "洗濯機",
+    "掃除機",
+    "暮らし"
+  ],
+  "clearFlags": [
+    "ayame_affection_10_03_key_cleared"
+  ],
+  "nextHint": "次のメインでは、彩愛が頼られる理由を店長が言語化する。",
+  "renderPolicy": {
+    "spritePosition": "logical_split_n_plus_1",
+    "eventCgLayer": "frontOfCharacters"
+  },
+  "steps": [
+    {
+      "speaker": "",
+      "text": "ひだまりストア、掃除機売場。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "洗濯機フェアの準備が一段落したので、今日は生活家電コーナー全体を軽く見直していた。"
+    },
+    {
+      "speaker": "",
+      "text": "洗濯機、掃除機、調理家電。\nどれも毎日の暮らしに近い家電だ。"
+    },
+    {
+      "speaker": "",
+      "text": "俺は掃除機売場の価格札を整えながら、展示機を見比べていた。"
+    },
+    {
+      "speaker": "店長",
+      "text": "掃除機も、見せ方を少し変えたいな"
+    },
+    {
+      "speaker": "",
+      "text": "そこへ、彩愛さんがやってくる。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "掃除機売場ですか？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい。洗濯機みたいに、暮らし別に見せられないかなと思って"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "よろしいと思いますわ。掃除機も、使う方によって求めるものが変わりますもの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "吸引力とか、コードレスとか、紙パック式とかですかね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。ただ、吸引力だけで選ぶと、毎日の負担になることもございます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "負担？"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、展示されているコードレス掃除機を一台、そっと手に取った。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "掃除機は、持って動かす家電ですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "たしかに"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ですから、軽さや扱いやすさも大切です",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "軽さ、ですか"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。毎日使うなら、軽さも性能ですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、掃除機をゆっくり元の位置に戻した。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "いえ……性能というより、やさしさかもしれませんね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "やさしさ？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "使う方の身体に、余計な負担をかけないことですもの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "その言葉が、妙に彩愛さんらしいと思った。"
+    },
+    {
+      "speaker": "",
+      "text": "そこへ、売場の入口に二人組のお客様がやってきた。\n年配の女性と、その娘らしき女性だ。"
+    },
+    {
+      "speaker": "お客様・娘",
+      "text": "すみません、掃除機を探しているんですけど"
+    },
+    {
+      "speaker": "店長",
+      "text": "いらっしゃいませ。どのようなものをお探しですか？"
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "今使っているのが重くてね。掃除するたびに疲れてしまって"
+    },
+    {
+      "speaker": "お客様・娘",
+      "text": "母が使うので、軽いものがいいかなと思って"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんが、柔らかく微笑んで一歩前に出る。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "それでしたら、まずは実際に持って比べてみませんか？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "持ってもいいんですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "もちろんです。掃除機は、使う時の感覚がとても大切ですから",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、軽量タイプのコードレス掃除機を手渡した。"
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "あら、軽い"
+    },
+    {
+      "speaker": "お客様・娘",
+      "text": "これなら使いやすそう？"
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "そうね。片手でも動かせそう"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "持った時だけでなく、前後に動かした時の負担も見ていただくとよろしいですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "なるほど"
+    },
+    {
+      "speaker": "",
+      "text": "女性は展示用の床スペースで、掃除機を少し動かしてみる。"
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "ああ、これなら楽かもしれない"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "掃除は、毎日のことですから。使うたびに疲れてしまっては、掃除そのものが負担になりますもの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "本当にそうなのよ。重いと、今日はいいかって思っちゃうの"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "分かりますわ。始める前に疲れてしまう家事は、続けるのが大変ですものね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・娘",
+      "text": "母、それよく言ってます"
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "言ってるわね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "でしたら、“使おうと思える軽さ”を大切にしていただくのが良いと思います",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "使おうと思える軽さ……"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんらしい表現だ。"
+    },
+    {
+      "speaker": "",
+      "text": "俺は簡単に吸引力やゴミ捨ての方法を補足した。\n彩愛さんは、お客様が無理なく扱えるかを中心に、いくつか候補を見せる。"
+    },
+    {
+      "speaker": "",
+      "text": "長い説明ではない。\nけれど、お客様の表情は明らかにほっとしていた。"
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "これ、候補にしたいわ"
+    },
+    {
+      "speaker": "お客様・娘",
+      "text": "よかったね、お母さん"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ご自宅の収納場所も確認しておくと、さらに安心ですわ。出しやすい場所に置けると、毎日の掃除が少し楽になります",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "出しやすい場所……たしかに、それも大事ね"
+    },
+    {
+      "speaker": "お客様・娘",
+      "text": "物置の奥に入れちゃうと、出さなくなるもんね"
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "そうなのよ"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "家電は、しまうところまで含めて暮らしですから",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様・娘",
+      "text": "すごく分かりやすかったです"
+    },
+    {
+      "speaker": "お客様・女性",
+      "text": "ありがとう。重さばかりじゃなくて、使いやすさも見た方がいいのね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "お役に立てたなら何よりです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "二人のお客様は候補の機種をメモして、売場を離れていった。"
+    },
+    {
+      "speaker": "",
+      "text": "俺は彩愛さんの方を向く。"
+    },
+    {
+      "speaker": "店長",
+      "text": "今の接客、すごく良かったです"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ありがとうございます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "吸引力とか価格じゃなくて、使う人の負担を見てましたね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "掃除機は、使う方が疲れてしまっては意味がありませんもの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "軽さも、やさしさですわ、でしたっけ"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "まあ。覚えていらしたのですか？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "いい言葉だったので"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……店長は、本当に油断なりませんわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "褒めてるつもりです"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "分かっております。分かっているから困るのです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは少し困ったように笑った。"
+    },
+    {
+      "speaker": "",
+      "text": "そこへ、緋奈がPOP用のメモ帳を持ってやってくる。"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "店長、彩愛さん！　掃除機売場のPOP、何か追加します？",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "ちょうどいいところに。『軽さも、やさしさですわ』ってどうかな"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "おお、いいですね！　誰の言葉ですか？",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さん"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "さすが彩愛さん！　なんか上品！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "上品でしょうか",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "はい！　優しい感じがします！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "それなら、よかったですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "じゃあ、軽い掃除機のPOPに使いますね！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "頼む"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "でも彩愛さん、重さの話すごく具体的でしたね",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そうでしょうか？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "はい。もしかして、重いもの苦手なんですか？",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "苦手というほどではありませんわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "あれ、そうなんですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長。なぜ少し意外そうなのです？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "いや、軽さの話がすごく実感こもっていたので"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "持てることと、毎日気軽に使えることは違いますもの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "あー、たしかに！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "家事は根性で続けるものではありませんわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "それもいい言葉ですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "あ、すみません。POPに使えそうだなと"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "わたくしを名言製造機のように扱わないでくださいませ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "名言製造機！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "緋奈さん、笑いすぎです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "すみません！　でもちょっと可愛くて！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "可愛い……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "あ、彩愛さんが固まった"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "固まっておりません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "照れてます？",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "照れておりません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "本当に？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい、すみません"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……謝られると、それはそれで困ります",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "緋奈",
+      "text": "いつもの流れだ！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "緋奈は笑いながら、POP作成のために売場の奥へ戻っていった。"
+    },
+    {
+      "speaker": "",
+      "text": "掃除機売場には、俺と彩愛さんが残る。"
+    },
+    {
+      "speaker": "店長",
+      "text": "でも、本当に勉強になりました"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "掃除機のことですか？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい。俺も吸引力とか価格を見がちでしたけど、使う人の負担って大事ですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長は、いつも素直に受け止めてくださいますわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "そうですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。だから、お話ししやすいのです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "それは嬉しいです"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……また、そういう",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "今のもだめでした？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "だめではありません。ただ、少し困るだけです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "困らせてばかりですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "本当に",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "そう言いながらも、彩愛さんは少しだけ笑っていた。"
+    },
+    {
+      "speaker": "",
+      "text": "俺は掃除機売場を見渡した。"
+    },
+    {
+      "speaker": "",
+      "text": "吸引力。\n価格。\n重さ。\n収納。\nゴミ捨て。"
+    },
+    {
+      "speaker": "",
+      "text": "カタログでは小さく並ぶ項目でも、毎日使う人にとっては大きな違いになる。"
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さんの接客って、やっぱり暮らしに近いですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "以前も似たようなことをおっしゃっていましたわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "何度でも思います"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "何度でも、ですか",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……本当に、油断なりませんわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "褒めてます"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "分かっております。だから困るのです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、緋奈が貼っていった仮POPを見上げた。"
+    },
+    {
+      "speaker": "",
+      "text": "軽さも、やさしさですわ"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……改めて文字にされると、少し恥ずかしいですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "いい言葉です"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長、その言葉を気に入りすぎですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "気に入りました"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "では、責任を持って売場で活かしてくださいませ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "もちろんです"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは掃除機売場を見渡し、穏やかに微笑んだ。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "家事は、毎日のことですから",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "だからこそ、少しでも楽に、少しでも優しくできる家電を選んでいただきたいのです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "その言葉は、今日のお客様に向けたものでもあり、これから売場に来る誰かに向けたものでもあった。"
+    },
+    {
+      "speaker": "",
+      "text": "俺はまた少し、彩愛さんの考え方を知った。"
+    },
+    {
+      "speaker": "",
+      "text": "彼女は、ただ便利な機能をすすめているわけではない。\nその機能が、誰かの毎日をどう軽くするのかを考えている。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、重いものがまったく苦手というわけではない。\nただ、毎日使う家電を力任せで選ぶべきではないと知っている。"
+    },
+    {
+      "speaker": "",
+      "text": "使う人が、気軽に続けられること。\n無理なく暮らしに馴染むこと。"
+    },
+    {
+      "speaker": "",
+      "text": "紫藤 彩愛さんの接客は、やっぱり暮らしにやさしかった。"
+    },
+    {
+      "speaker": "",
+      "text": "締めモノローグ"
+    },
+    {
+      "speaker": "",
+      "text": "掃除機売場で、彩愛さんは“軽さ”の大切さを教えてくれた。"
+    },
+    {
+      "speaker": "",
+      "text": "吸引力だけではなく、持ちやすさ、動かしやすさ、出しやすさ。\nそれらはすべて、使う人の毎日を少し楽にするためのものだった。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは言った。"
+    },
+    {
+      "speaker": "",
+      "text": "「軽さも、やさしさですわ」"
+    },
+    {
+      "speaker": "",
+      "text": "そしてもう一つ。"
+    },
+    {
+      "speaker": "",
+      "text": "「持てることと、毎日気軽に使えることは違いますもの」"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、非力だから軽さを重視しているわけではない。\n毎日の家事を、根性や我慢で続けるものにしたくないのだ。"
+    },
+    {
+      "speaker": "",
+      "text": "その考え方は、やっぱり彩愛さんらしくて、やさしい。"
+    },
+    {
+      "speaker": "",
+      "text": "解放後メモ案"
+    },
+    {
+      "speaker": "",
+      "text": "掃除機売場で、彩愛は吸引力だけでなく軽さや扱いやすさも大切だと説明した。\n彩愛は重いものがまったく苦手というわけではなく、毎日使う家電を力任せで選ぶべきではないと考えている。\n店長は、彩愛の“暮らしにやさしい”接客を改めて知る。"
+    }
+  ],
+  "keyScenarioIndex": 3
+}
