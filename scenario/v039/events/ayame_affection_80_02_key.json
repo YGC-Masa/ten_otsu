@@ -1,0 +1,862 @@
+{
+  "id": "ayame_affection_80_02_key",
+  "title": "何を急いでいるのでしょうね",
+  "version": "v039_237",
+  "return": {
+    "mode": "storyMenu",
+    "storyId": "ayame_affection_80_02_key",
+    "storyMenuTab": "key"
+  },
+  "format": "v039_steps",
+  "type": "character_key_story",
+  "characterId": "ak",
+  "route": "ayame",
+  "affectionRange": {
+    "min": 80,
+    "max": 90
+  },
+  "location": {
+    "id": "hidamari_store_salesfloor",
+    "name": "ひだまりストア・生活家電売場"
+  },
+  "summary": "彩愛 親愛Lv.85「何を急いでいるのでしょうね」。",
+  "purpose": "彩愛ルートの親愛80代として、結婚・暮らし・未来への現実的な悩みと、90以降の実家編導入を描く。",
+  "tags": [
+    "彩愛ルート",
+    "親愛度80-90",
+    "結婚観",
+    "暮らし",
+    "未来"
+  ],
+  "clearFlags": [
+    "ayame_affection_80_02_key_cleared"
+  ],
+  "nextHint": "次の彩愛親愛ストーリーへ。",
+  "renderPolicy": {
+    "spritePosition": "logical_split_n_plus_1",
+    "eventCgLayer": "frontOfCharacters"
+  },
+  "steps": [
+    {
+      "speaker": "",
+      "text": "ひだまりストア、生活家電売場。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_night.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "新生活向けコーナーの展示が、少しだけ変わっていた。"
+    },
+    {
+      "speaker": "",
+      "text": "洗濯機や冷蔵庫の前には、彩愛さんが作った新しい資料が置かれている。"
+    },
+    {
+      "speaker": "",
+      "text": "分かち合う暮らし、みんなの暮らしへ。"
+    },
+    {
+      "speaker": "",
+      "text": "その見出しを見て、俺は少し足を止めた。"
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さん、この資料、また直したんですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい。前回の接客を踏まえて、少し整理しました",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "みんなの暮らしへ、ですか"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少し照れくさそうに資料の端を整えた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "二人だけの暮らしから始まっても、いずれ周りの方々と関わることになりますもの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "相手の家族とか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい。ご実家、ご両親、ご親戚。もちろん、友人や職場の方も",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "現実的ですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "暮らしですから",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "そう言った彩愛さんの表情は、真面目だった。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、以前のように切羽詰まってはいない。"
+    },
+    {
+      "speaker": "",
+      "text": "その時、売場に一組の家族連れがやってきた。"
+    },
+    {
+      "speaker": "",
+      "text": "若い夫婦と、その両親らしき年配の男女。"
+    },
+    {
+      "speaker": "お客様の女性",
+      "text": "新居用の冷蔵庫を見に来たんですけど"
+    },
+    {
+      "speaker": "年配の女性",
+      "text": "二人なら、そんなに大きくなくてもいいと思うのよ"
+    },
+    {
+      "speaker": "年配の男性",
+      "text": "いや、子どもができたら大きい方がいいだろう"
+    },
+    {
+      "speaker": "お客様の男性",
+      "text": "まだ先の話だって"
+    },
+    {
+      "speaker": "お客様の女性",
+      "text": "でも、買い替えは簡単じゃないし……"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、全員の話を静かに聞いた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "皆様のお考え、それぞれに大切ですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "年配の女性",
+      "text": "あら、そう？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい。今のお二人の暮らしに合うこと。将来的に困りにくいこと。そして、ご家族皆様が安心できること",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "家電選びは、ひとつの正解を押しつけるものではありませんもの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様の女性",
+      "text": "そう言ってもらえると、少し楽です"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "まずは、今の買い物頻度や自炊の量から見てみましょう",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、冷蔵庫の容量表を開く。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "週に一度まとめ買いをされるなら、少し余裕がある方が安心です。反対に、こまめに買い物をされるなら、大きすぎる冷蔵庫は持て余してしまうこともございます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "年配の男性",
+      "text": "大きければいいわけじゃないのか"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい。暮らしに合うことが大切ですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様の男性",
+      "text": "それ、分かりやすいですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ありがとうございます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、家族全員に確認しながら、丁寧に提案していった。"
+    },
+    {
+      "speaker": "",
+      "text": "誰か一人の意見を勝たせるのではなく、全員が納得できる落としどころを探していく。"
+    },
+    {
+      "speaker": "",
+      "text": "その姿は、以前よりずっと自然だった。"
+    },
+    {
+      "speaker": "",
+      "text": "接客が終わり、お客様たちが笑顔で帰っていく。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、深く息をついた。"
+    },
+    {
+      "speaker": "店長",
+      "text": "いい接客でしたね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ありがとうございます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "家族みんなで選んだ感じでした"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "それが一番よいと思いましたの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、資料の見出しを見る。"
+    },
+    {
+      "speaker": "",
+      "text": "分かち合う暮らし、みんなの暮らしへ。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "結婚は、二人だけのものではないのだと、改めて思いました",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "けれど、以前のわたくしは、それを少し重く捉えすぎていたのかもしれません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "重く？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい。相手のご家族にも、親戚にも、周囲の方々にも、絶対に認められなければならない",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "少しでも恥ずかしいところを見せてはいけない。失敗してはいけない。期待に応えなければならない",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、困ったように笑った。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そのように、大げさに考えすぎていた気がします",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "大げさに背負う、とかではなく、みんなに認めてもらって、祝ってもらうイベントくらいに考えてもいいんじゃないですか"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "祝ってもらうイベント",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、その言葉を少し意外そうに受け止めた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "結婚を、祝ってもらうものとして考える",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "そうです"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "わたくしは、認められるためのものだと思っていたのかもしれません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "認めてもらうことも、大事だと思います"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "でも、責められないために完璧でいる場所ではないと思います"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さんが幸せになるなら、周りの人も祝いたいと思うんじゃないでしょうか"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ目を伏せた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長は、本当に簡単におっしゃいますわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "すみません"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ですが、今のは少し……ありがたい簡単さでした",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "それならよかったです"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "また、お礼を言う流れにされましたわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "言わせたつもりはないです"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そういうところですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ笑った。"
+    },
+    {
+      "speaker": "",
+      "text": "その笑顔は、以前より柔らかい。"
+    },
+    {
+      "speaker": "",
+      "text": "閉店後。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは売場に残り、新生活向け資料の見出しを見直していた。"
+    },
+    {
+      "speaker": "店長",
+      "text": "まだ作業しますか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "少しだけ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "手伝います"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ありがとうございます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、ペンを持ったまましばらく考える。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "わたくしは、何を急いでいるのでしょうね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "二十九歳だから。周りがそういう時期だから。親戚に言われるから",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "誰に紹介しても恥ずかしくない人でいたいから",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そういう気持ちが、いつの間にか前へ前へと急がせていたのかもしれません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "けれど、今日のお客様を見ていて思いました",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "何をですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "暮らしは、急いで整えるものではないのですね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "話して、悩んで、ときには周りの人にも相談して",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "少しずつ、自分たちに合う形を探していくものなのかもしれません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "そう思います"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、資料の端をそっと整えた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "急がず、でも目を逸らさずに",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "わたくしも、そうできたらよいと思います",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さんならできます"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "即答ですのね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "迷うところじゃないので"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "本当に、そういうところですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、困ったように笑った。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、その表情は少し晴れていた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "では、少しずつ見直してまいります",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "資料をですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "資料も、わたくし自身もです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、そう言って静かにペンを動かし始めた。"
+    },
+    {
+      "speaker": "",
+      "text": "分かち合う暮らし、みんなの暮らしへ。"
+    },
+    {
+      "speaker": "",
+      "text": "その見出しは、少しだけ未来へ向いていた。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、新生活向けの家電接客を通して、結婚を少し違う角度から見つめ直した。"
+    },
+    {
+      "speaker": "",
+      "text": "相手の家族。\n自分の家。\n親戚や周囲の人たち。\nそして、みんなに認めてもらい、祝ってもらうこと。"
+    },
+    {
+      "speaker": "",
+      "text": "それは、重く背負い込むものではないのかもしれない。"
+    },
+    {
+      "speaker": "",
+      "text": "責められないために完璧でいる場所ではなく、幸せになることを周りに祝ってもらうもの。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、静かに問いかけた。"
+    },
+    {
+      "speaker": "",
+      "text": "「わたくしは、何を急いでいるのでしょうね」"
+    },
+    {
+      "speaker": "",
+      "text": "二十九歳だから。\n親戚に言われるから。\n誰に紹介しても恥ずかしくない人でいたいから。"
+    },
+    {
+      "speaker": "",
+      "text": "そんな気持ちに急かされていたのかもしれない。"
+    },
+    {
+      "speaker": "",
+      "text": "急がず、でも目を逸らさずに。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、暮らしの提案を見直しながら、自分自身の未来も少しずつ見直し始めていた。"
+    },
+    {
+      "speaker": "",
+      "text": "紫藤 彩愛 親愛85「何を急いでいるのでしょうね」読了。\n彩愛は、新生活向け家電の接客を通して、結婚を「相手と自分だけ」ではなく、家族や周囲に認めてもらい、祝ってもらうものとして考え始める。\nこれまでの彩愛は、失敗せず、恥ずかしくない人でいなければならないと重く考えすぎていた。\n店長の「大げさに背負う、とかではなく、みんなに認めてもらって、祝ってもらうイベントくらいに考えてもいいんじゃないですか」という言葉を受け、彩愛は「何を急いでいるのでしょうね」と自分自身に問いかける。\n急がず、でも目を逸らさずに。彩愛は未来との向き合い方を少しずつ見直し始める。"
+    }
+  ],
+  "keyScenarioIndex": 2
+}

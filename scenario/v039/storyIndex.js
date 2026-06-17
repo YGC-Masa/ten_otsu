@@ -2633,5 +2633,133 @@ window.TENOTSU_STORY_INDEX = [
     "affectionLabel": "親愛Lv.80",
     "menuTitle": "親愛Lv.80：アヤメの刺繍",
     "locationName": "駅前のビールバー"
+  },
+  {
+    "id": "ayame_affection_80_01_key",
+    "title": "本当に結婚したいのでしょうか",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 9,
+    "affectionSlot": "key1",
+    "unlockLevel": 83,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_80_01_key.json",
+    "version": "v039_237",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 83
+    },
+    "order": 3141,
+    "summary": "彩愛 親愛Lv.83「本当に結婚したいのでしょうか」。",
+    "rawTitle": "本当に結婚したいのでしょうか",
+    "affectionLabel": "親愛Lv.83",
+    "menuTitle": "親愛Lv.83：本当に結婚したいのでしょうか",
+    "locationName": "ひだまりストア・生活家電売場"
+  },
+  {
+    "id": "ayame_affection_80_02_key",
+    "title": "何を急いでいるのでしょうね",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 9,
+    "affectionSlot": "key2",
+    "unlockLevel": 85,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_80_02_key.json",
+    "version": "v039_237",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 85
+    },
+    "order": 3142,
+    "summary": "彩愛 親愛Lv.85「何を急いでいるのでしょうね」。",
+    "rawTitle": "何を急いでいるのでしょうね",
+    "affectionLabel": "親愛Lv.85",
+    "menuTitle": "親愛Lv.85：何を急いでいるのでしょうね",
+    "locationName": "ひだまりストア・生活家電売場"
+  },
+  {
+    "id": "ayame_affection_80_03_key",
+    "title": "ライフスタイルの研究ですわ",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 9,
+    "affectionSlot": "key3",
+    "unlockLevel": 88,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_80_03_key.json",
+    "version": "v039_237",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 88
+    },
+    "order": 3143,
+    "summary": "彩愛 親愛Lv.88「ライフスタイルの研究ですわ」。",
+    "rawTitle": "ライフスタイルの研究ですわ",
+    "affectionLabel": "親愛Lv.88",
+    "menuTitle": "親愛Lv.88：ライフスタイルの研究ですわ",
+    "locationName": "ひだまりストア・生活家電売場"
+  },
+  {
+    "id": "ayame_affection_90_00_main",
+    "title": "チチキトク、スグカエレ",
+    "type": "main",
+    "category": "character_main",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 9,
+    "affectionSlot": "main",
+    "unlockLevel": 90,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_90_00_main.json",
+    "version": "v039_237",
+    "unlock": {
+      "type": "all_story_cleared",
+      "storyIds": [
+        "ayame_affection_80_01_key",
+        "ayame_affection_80_02_key",
+        "ayame_affection_80_03_key"
+      ],
+      "fallback": {
+        "type": "affection_level",
+        "character": "ak",
+        "level": 90
+      }
+    },
+    "order": 3144,
+    "summary": "彩愛 親愛Lv.90「チチキトク、スグカエレ」。",
+    "rawTitle": "チチキトク、スグカエレ",
+    "affectionLabel": "親愛Lv.90",
+    "menuTitle": "親愛Lv.90：チチキトク、スグカエレ",
+    "locationName": "ひだまりストア・感謝祭"
   }
 ];

@@ -1,0 +1,1157 @@
+{
+  "id": "ayame_affection_90_00_main",
+  "title": "チチキトク、スグカエレ",
+  "version": "v039_237",
+  "return": {
+    "mode": "storyMenu",
+    "storyId": "ayame_affection_90_00_main",
+    "storyMenuTab": "main"
+  },
+  "format": "v039_steps",
+  "type": "character_main_story",
+  "characterId": "ak",
+  "route": "ayame",
+  "affectionRange": {
+    "min": 80,
+    "max": 90
+  },
+  "location": {
+    "id": "hidamari_store_front_day",
+    "name": "ひだまりストア・感謝祭"
+  },
+  "summary": "彩愛 親愛Lv.90「チチキトク、スグカエレ」。",
+  "purpose": "彩愛ルートの親愛80代として、結婚・暮らし・未来への現実的な悩みと、90以降の実家編導入を描く。",
+  "tags": [
+    "彩愛ルート",
+    "親愛度80-90",
+    "結婚観",
+    "暮らし",
+    "未来"
+  ],
+  "clearFlags": [
+    "ayame_affection_90_00_main_cleared"
+  ],
+  "nextHint": "次の彩愛親愛ストーリーへ。",
+  "renderPolicy": {
+    "spritePosition": "logical_split_n_plus_1",
+    "eventCgLayer": "frontOfCharacters"
+  },
+  "steps": [
+    {
+      "speaker": "",
+      "text": "ひだまりストア、感謝祭当日。",
+      "bg": "images/assets/bg/bg_hidamari_store_front_day.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "店頭には、朝からいつもより多くのお客様が集まっていた。"
+    },
+    {
+      "speaker": "",
+      "text": "目玉商品は、生活家電の特価販売。\nそして、来店者向けの豚汁サービス。"
+    },
+    {
+      "speaker": "",
+      "text": "店の入口横には、大きな鍋が置かれている。"
+    },
+    {
+      "speaker": "",
+      "text": "湯気の向こうで、彩愛さんが手際よくお椀によそっていた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "熱いですから、気をつけてお持ちくださいませ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様",
+      "text": "ありがとう。具だくさんで美味しそうねえ"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ。お野菜をたくさん使っておりますの",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "今回の豚汁に使われている野菜は、彩愛さんが実家から分けてもらったものらしい。"
+    },
+    {
+      "speaker": "",
+      "text": "大根。\nにんじん。\nごぼう。\n里芋。\n長ねぎ。"
+    },
+    {
+      "speaker": "",
+      "text": "どれも立派で、売場のスタッフたちも朝から驚いていた。"
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さん、すごい量でしたね。あのお野菜"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。少し多めに送っていただきました",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "少し、ですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい。感謝祭で使うと伝えましたら、ちょうどよい量を用意してくださって",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……ちょうどよい量……？　なのか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "何か？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "いえ。助かりました"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ。なんてことはありませんわ。お料理も好きですし",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、そう言って鍋を軽くかき混ぜる。"
+    },
+    {
+      "speaker": "",
+      "text": "味の調整も、盛り付けも、手際がいい。"
+    },
+    {
+      "speaker": "",
+      "text": "接客中の上品な所作とはまた違う、暮らしに根づいた自然な動きだった。"
+    },
+    {
+      "speaker": "店長",
+      "text": "プロ並みの腕前ですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "まあ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "家庭的です"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……っ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "その瞬間、彩愛さんの手元が少しだけ跳ねた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "あつっ！",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "大丈夫ですか、彩愛さん"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "だ、大丈夫ですわ。少し跳ねただけです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "見せてください"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "本当に平気です。火傷というほどではありません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "でも"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "んもう。動揺してしまいました",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少し拗ねたようにそう言った。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、耳まで赤くなっている。"
+    },
+    {
+      "speaker": "店長",
+      "text": "すみません"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長が急に変なことをおっしゃるからです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "家庭的って、変ですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……変ではありません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "じゃあ"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そういうところですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、わざとらしく咳払いをして、またお椀を手に取った。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "次のお客様をお待たせしてはいけません。店長も、お手伝いをお願いします",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "",
+      "text": "その後も、豚汁サービスは大盛況だった。"
+    },
+    {
+      "speaker": "",
+      "text": "具だくさんで温かい豚汁は、来店したお客様にとても喜ばれた。"
+    },
+    {
+      "speaker": "",
+      "text": "生活家電を見に来たお客様が、そのまま洗濯機や冷蔵庫の相談をしてくれることもあり、感謝祭は予想以上の盛り上がりを見せた。"
+    },
+    {
+      "speaker": "",
+      "text": "閉店後。"
+    },
+    {
+      "speaker": "",
+      "text": "片付けを終えた俺たちは、事務所へ戻った。"
+    },
+    {
+      "speaker": "店長",
+      "text": "今日は大盛況でしたね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。皆様に喜んでいただけて、何よりですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "豚汁も評判でした"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "それは……少し、嬉しいです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、ほんの少し照れたように微笑んだ。"
+    },
+    {
+      "speaker": "",
+      "text": "その表情を見ながら、俺は事務所の机に置かれた郵便物の束へ目をやった。"
+    },
+    {
+      "speaker": "",
+      "text": "本社からの書類。\n業者からの請求書。\nメーカーの案内。"
+    },
+    {
+      "speaker": "",
+      "text": "その中に一通だけ、見慣れない雰囲気の封筒が混じっていた。"
+    },
+    {
+      "speaker": "",
+      "text": "古い和紙の封筒。"
+    },
+    {
+      "speaker": "",
+      "text": "少し黄みがかった紙。\n封の部分には、見慣れない模様のようなものが押されている。"
+    },
+    {
+      "speaker": "",
+      "text": "宛名は、達筆な筆文字で書かれていた。"
+    },
+    {
+      "speaker": "",
+      "text": "紫藤 彩愛 様"
+    },
+    {
+      "speaker": "",
+      "text": "差出人の欄は、読みづらい。"
+    },
+    {
+      "speaker": "",
+      "text": "というより、達筆すぎてほとんど模様のように見える。"
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さん。これ、彩愛さん宛です"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "わたくし宛？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは封筒を受け取った瞬間、表情を変えた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……実家からですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "分かるんですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。この紙と、この封の仕方は……おそらく",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、封筒を両手で持った。"
+    },
+    {
+      "speaker": "",
+      "text": "その手が、ほんの少しだけ強張っている。"
+    },
+    {
+      "speaker": "店長",
+      "text": "開けますか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、丁寧に封を開けた。"
+    },
+    {
+      "speaker": "",
+      "text": "中には、短い紙が一枚だけ入っていた。"
+    },
+    {
+      "speaker": "",
+      "text": "そこには、太く、古風な字でこう書かれていた。"
+    },
+    {
+      "speaker": "",
+      "text": "『チチキトク　スグカエレ　バアヤ』"
+    },
+    {
+      "speaker": "",
+      "text": "短い沈黙。"
+    },
+    {
+      "speaker": "店長",
+      "text": "……父、危篤？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……バアヤ？　ばあや？！",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんの顔から、すっと血の気が引いた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "確認します",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、すぐにスマホを取り出した。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、番号を押しかけて、一度こちらを見る。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "申し訳ありません。少しだけ、席を外してもよろしいでしょうか",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "もちろんです。俺は事務所で待っています"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ありがとうございます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは封筒を握りしめたまま、休憩室の方へ急いだ。"
+    },
+    {
+      "speaker": "",
+      "text": "事務所で待つ時間は、妙に長く感じた。"
+    },
+    {
+      "speaker": "",
+      "text": "古い和紙の封筒。\n『チチキトク　スグカエレ　バアヤ』という短い文。\n父、危篤。\nそして、ばあや。"
+    },
+    {
+      "speaker": "",
+      "text": "どれも、ひだまりストアの日常には似合わない言葉だった。"
+    },
+    {
+      "speaker": "",
+      "text": "さっきまで、彩愛さんは感謝祭の大鍋の前で笑っていた。"
+    },
+    {
+      "speaker": "",
+      "text": "家庭的だと言われて動揺して。\n少し拗ねて。\nそれでも、お客様のために手際よく豚汁をよそっていた。"
+    },
+    {
+      "speaker": "",
+      "text": "あの穏やかな時間から、急に遠い場所へ連れていかれたような気がした。"
+    },
+    {
+      "speaker": "",
+      "text": "しばらくして、休憩室の扉が開いた。"
+    },
+    {
+      "speaker": "",
+      "text": "戻ってきた彩愛さんは、いつものように背筋を伸ばしていた。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、指先が小さく震えていた。"
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さん"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……電話は、つながりました",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "お父様は？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "出られる状態ではありました",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "それなら"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "けれど……体調は、思わしくないようです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "声も、少し弱くて",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、封筒を握る手に力を込めた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "もう長くないかもしれないと",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "孫の顔が見たい。せめて、わたくしの結婚式に出たかった。相手の顔だけでも見ておきたかった、と",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……そうでしたか"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、深く息を吸った。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、すぐには吐き出せなかったようだった。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "わたくし、動揺しておりました",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ですから……その",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "相手なら、いると……言ってしまいました",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……え"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、封筒を握ったまま、こちらを見る。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "お願いがございます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "わたくしの帰省に、付き添っていただけませんか",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "付き添い、ですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、顔を赤くしたまま、けれど真剣にこちらを見る。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "それから……大変申し上げにくいのですが",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "少しの間だけ、恋人役を……お願いいたします",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "短い沈黙。"
+    },
+    {
+      "speaker": "",
+      "text": "閉店後の事務所が、妙に静かに感じられた。"
+    },
+    {
+      "speaker": "",
+      "text": "俺は、彩愛さんの震える指先を見る。"
+    },
+    {
+      "speaker": "",
+      "text": "冗談ではない。\n勢いだけでもない。"
+    },
+    {
+      "speaker": "",
+      "text": "それでも、自分だけでは抱えきれないから、こうして言葉にしてくれている。"
+    },
+    {
+      "speaker": "店長",
+      "text": "行きましょう"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……え？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "行きましょう。ひとりで抱えなくていいです"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……また、簡単に",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ唇を結んだ。"
+    },
+    {
+      "speaker": "",
+      "text": "それから、小さく息を吐く。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "でも、今は助かります",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "いつ出ますか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "早い方がよいと思います。明日の朝には",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "分かりました"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "即答ですのね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "迷うところじゃないので"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、困ったように笑った。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、今にも泣きそうな表情でもあった。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "本当に、貴方は困った方ですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "困らせましたか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "いいえ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、古い和紙の手紙をそっと畳む。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "今は、困るほど頼もしいです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "その言葉を最後に、彩愛さんは封筒を胸元に抱えた。"
+    },
+    {
+      "speaker": "",
+      "text": "不安はまだ消えていない。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、ひとりで抱えているわけではない。"
+    },
+    {
+      "speaker": "",
+      "text": "父の危篤と、謎のばあやと、恋人役を抱えて。"
+    },
+    {
+      "speaker": "",
+      "text": "明日、俺たちは彩愛さんの実家へ向かうことになった。"
+    },
+    {
+      "speaker": "",
+      "text": "ひだまりストアの感謝祭は、大盛況だった。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんの実家から届いた野菜をたっぷり使った豚汁は、お客様にも好評で、彩愛さんは手際よくお椀によそいながら、柔らかく笑っていた。"
+    },
+    {
+      "speaker": "",
+      "text": "料理も好きなのだと、何でもないことのように言う彩愛さん。"
+    },
+    {
+      "speaker": "",
+      "text": "家庭的だと伝えると、少し動揺して、熱い汁に驚いて、拗ねたようにこちらを見る彩愛さん。"
+    },
+    {
+      "speaker": "",
+      "text": "そんな穏やかな時間のあと。"
+    },
+    {
+      "speaker": "",
+      "text": "事務所で、見慣れない雰囲気の封筒が見つかった。"
+    },
+    {
+      "speaker": "",
+      "text": "宛名は、紫藤 彩愛 様。"
+    },
+    {
+      "speaker": "",
+      "text": "中には短い一文。"
+    },
+    {
+      "speaker": "",
+      "text": "『チチキトク　スグカエレ　バアヤ』"
+    },
+    {
+      "speaker": "",
+      "text": "父が危篤。"
+    },
+    {
+      "speaker": "",
+      "text": "そう思った彩愛さんは、席を外して実家へ電話した。"
+    },
+    {
+      "speaker": "",
+      "text": "電話には出られる状態ではあった。\nけれど、体調は思わしくないらしい。"
+    },
+    {
+      "speaker": "",
+      "text": "父は、もう長くないかもしれない、孫の顔が見たい、せめて結婚式に出たかった、相手の顔だけでも見ておきたかったと言った。"
+    },
+    {
+      "speaker": "",
+      "text": "動揺した彩愛さんは、つい言ってしまった。"
+    },
+    {
+      "speaker": "",
+      "text": "「相手なら、いると……言ってしまいました」"
+    },
+    {
+      "speaker": "",
+      "text": "そして、店長に頼んだ。"
+    },
+    {
+      "speaker": "",
+      "text": "「少しの間だけ、恋人役を……お願いいたします」"
+    },
+    {
+      "speaker": "",
+      "text": "店長は、行きましょうと言った。"
+    },
+    {
+      "speaker": "",
+      "text": "ひとりで抱えなくていい、と。"
+    },
+    {
+      "speaker": "",
+      "text": "父の危篤と、謎のばあやと、恋人役を抱えて。"
+    },
+    {
+      "speaker": "",
+      "text": "店長と彩愛さんの帰省が始まろうとしていた。"
+    },
+    {
+      "speaker": "",
+      "text": "紫藤 彩愛 親愛90「チチキトク、スグカエレ」読了。\nひだまりストアの感謝祭で、彩愛は実家から分けてもらった野菜を使い、来店者向けの豚汁を振る舞う。\n料理上手で家庭的な一面を見せた彩愛は、店長に「家庭的です」と言われて動揺してしまう。\n感謝祭が大盛況で終わったあと、事務所で古い和紙の封筒が見つかる。\n中には『チチキトク　スグカエレ　バアヤ』という短い文面。\n父が危篤だと思った彩愛は席を外して実家へ電話する。\n父は電話に出られる状態ではあるものの、体調は思わしくないらしく、「孫の顔が見たい」「相手の顔だけでも見たい」と言われる。\n動揺した彩愛は「相手なら、いる」と口を滑らせてしまう。\n彩愛は店長に帰省への付き添いと恋人役をお願いする。\n店長は「行きましょう。ひとりで抱えなくていいです」と答え、90代の実家ドタバタ編へ入る。"
+    }
+  ]
+}
