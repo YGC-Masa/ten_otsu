@@ -1,7 +1,7 @@
 {
   "id": "ayame_affection_00_01_key",
   "title": "暮らしを見て選ぶ洗濯機",
-  "version": "v039_231",
+  "version": "v039_239",
   "return": {
     "mode": "storyMenu",
     "storyId": "ayame_affection_00_01_key",
@@ -51,10 +51,6 @@
     },
     {
       "speaker": "",
-      "text": "俺は売場の様子を確認しながら、洗濯機コーナーへ向かった。"
-    },
-    {
-      "speaker": "",
       "text": "そこには、紫藤 彩愛さんの姿があった。\n背筋を伸ばし、柔らかく微笑みながら、お客様の話に耳を傾けている。"
     },
     {
@@ -82,14 +78,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ふふ、元気でよろしいですわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ふふ、元気でよろしいですわね"
     },
     {
       "speaker": "",
@@ -97,14 +86,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "でしたら、単純な容量だけではなく、洗浄力と予洗いのしやすさも大切になりますわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "でしたら、単純な容量だけではなく、洗浄力と予洗いのしやすさも大切になりますわ"
     },
     {
       "speaker": "お客様・母",
@@ -112,14 +94,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "大容量は便利です。けれど、ご家庭によっては大きすぎると水道代や設置場所の負担が増えてしまいます",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "大容量は便利です。けれど、ご家庭によっては大きすぎると水道代や設置場所の負担が増えてしまいます"
     },
     {
       "speaker": "お客様・父",
@@ -127,29 +102,11 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。毎日使うものですから、少しの差でも積み重なると大きいですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "",
-      "text": "俺は少し離れた場所で、その接客を見守ることにした。\n彩愛さんは、売場に並んだ洗濯機をただ順番に説明しているわけではなかった。\nお客様の生活を聞いてから、それに合うものを選んでいる。"
+      "text": "ええ。毎日使うものですから、少しの差でも積み重なると大きいですわ"
     },
     {
       "speaker": "彩愛",
-      "text": "ちなみに、洗濯機を置く場所は脱衣所でしょうか？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ちなみに、洗濯機を置く場所は脱衣所でしょうか？"
     },
     {
       "speaker": "お客様・母",
@@ -157,14 +114,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "扉の開く向きも確認しておいた方がよろしいですわ。せっかく良い機種を選んでも、使うたびに動きにくいと負担になってしまいますから",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "扉の開く向きも確認しておいた方がよろしいですわ。せっかく良い機種を選んでも、使うたびに動きにくいと負担になってしまいますから"
     },
     {
       "speaker": "お客様・父",
@@ -172,14 +122,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "難しく考えすぎる必要はありません。ただ、毎日使うものですから、無理なく続けられることが一番です",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "難しく考えすぎる必要はありません。ただ、毎日使うものですから、無理なく続けられることが一番です"
     },
     {
       "speaker": "お客様・母",
@@ -187,14 +130,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "はい。洗浄力、容量、設置場所、音、節水性能。どれも大切ですが、優先順位はご家庭ごとに違いますわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "はい。洗浄力、容量、設置場所、音、節水性能。どれも大切ですが、優先順位はご家庭ごとに違いますわ"
     },
     {
       "speaker": "お客様・子ども",
@@ -202,14 +138,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "夜に洗濯する時、大きな音がすると眠れなくなってしまうかもしれませんでしょう？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "夜に洗濯する時、大きな音がすると眠れなくなってしまうかもしれませんでしょう？"
     },
     {
       "speaker": "お客様・子ども",
@@ -217,14 +146,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ふふ。ですから、静かに動いてくれることも、立派な性能なのです",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ふふ。ですから、静かに動いてくれることも、立派な性能なのです"
     },
     {
       "speaker": "",
@@ -236,14 +158,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "もちろん大切な部分ですわ。ただ、洗濯は買ったその日だけではなく、毎日続いていくものですから",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "もちろん大切な部分ですわ。ただ、洗濯は買ったその日だけではなく、毎日続いていくものですから"
     },
     {
       "speaker": "お客様・父",
@@ -251,14 +166,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "こちらの機種でしたら、容量は十分ありますし、泥汚れにも強いコースがございます。さらに、夜に使っても音が控えめです",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "こちらの機種でしたら、容量は十分ありますし、泥汚れにも強いコースがございます。さらに、夜に使っても音が控えめです"
     },
     {
       "speaker": "お客様・母",
@@ -266,14 +174,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "寸法を確認いたしましょう。念のため、ご自宅の設置場所も測っていただけると安心ですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "寸法を確認いたしましょう。念のため、ご自宅の設置場所も測っていただけると安心ですわ"
     },
     {
       "speaker": "お客様・父",
@@ -281,14 +182,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "はい。ご不明な点があれば、いつでもお声がけくださいませ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "はい。ご不明な点があれば、いつでもお声がけくださいませ"
     },
     {
       "speaker": "お客様・母",
@@ -296,14 +190,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "お役に立てたなら何よりです",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "お役に立てたなら何よりです"
     },
     {
       "speaker": "お客様・子ども",
@@ -311,14 +198,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "泥だらけになる前提なのですか？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "泥だらけになる前提なのですか？"
     },
     {
       "speaker": "お客様・子ども",
@@ -326,14 +206,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ふふ。それなら、お母様のお手伝いもしてくださいませね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ふふ。それなら、お母様のお手伝いもしてくださいませね"
     },
     {
       "speaker": "お客様・子ども",
@@ -344,23 +217,12 @@
       "text": "家族は笑いながら売場を離れていった。"
     },
     {
-      "speaker": "",
-      "text": "俺は、彩愛さんに近づいた。"
-    },
-    {
       "speaker": "店長",
       "text": "お疲れさまです、彩愛さん"
     },
     {
       "speaker": "彩愛",
-      "text": "まあ、店長。見ていらしたのですか？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "まあ、店長。見ていらしたのですか？"
     },
     {
       "speaker": "店長",
@@ -368,14 +230,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ありがとうございます。ですが、特別なことはしておりませんわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ありがとうございます。ですが、特別なことはしておりませんわ"
     },
     {
       "speaker": "店長",
@@ -383,14 +238,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。お客様のお話を伺って、必要なものを整理しただけですもの",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。お客様のお話を伺って、必要なものを整理しただけですもの"
     },
     {
       "speaker": "店長",
@@ -398,14 +246,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……すごい、ですか？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……すごい、ですか？"
     },
     {
       "speaker": "店長",
@@ -417,14 +258,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "暮らしを、ですか",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "暮らしを、ですか"
     },
     {
       "speaker": "店長",
@@ -432,14 +266,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "毎日使うものですから、そこは大切ですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "毎日使うものですから、そこは大切ですわ"
     },
     {
       "speaker": "店長",
@@ -447,14 +274,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……店長は、よく見ていらっしゃるのですね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……店長は、よく見ていらっしゃるのですね"
     },
     {
       "speaker": "店長",
@@ -462,14 +282,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ふふ。頼もしいお返事ですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ふふ。頼もしいお返事ですわ"
     },
     {
       "speaker": "",
@@ -481,14 +294,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "生活家電は、使う方の毎日に寄り添うものですから",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "生活家電は、使う方の毎日に寄り添うものですから"
     },
     {
       "speaker": "店長",
@@ -496,14 +302,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。洗濯機も、掃除機も、冷蔵庫も、調理家電も……派手ではないかもしれませんが、暮らしを支える大切な道具ですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。洗濯機も、掃除機も、冷蔵庫も、調理家電も……派手ではないかもしれませんが、暮らしを支える大切な道具ですわ"
     },
     {
       "speaker": "店長",
@@ -511,14 +310,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "わたくしらしい、ですか？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "わたくしらしい、ですか？"
     },
     {
       "speaker": "店長",
@@ -526,14 +318,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……あまり褒められると、反応に困ってしまいますわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……あまり褒められると、反応に困ってしまいますわ"
     },
     {
       "speaker": "店長",
@@ -541,14 +326,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "謝られると、それはそれで困ります",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "謝られると、それはそれで困ります"
     },
     {
       "speaker": "店長",
@@ -556,14 +334,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ふふ。店長には、もう少し女性の扱いを学んでいただく必要がありそうですわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ふふ。店長には、もう少し女性の扱いを学んでいただく必要がありそうですわね"
     },
     {
       "speaker": "店長",
@@ -571,14 +342,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "期待しておりますわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "期待しておりますわ"
     },
     {
       "speaker": "",
@@ -590,14 +354,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "さて。次のお客様も迷っていらっしゃるようです",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "さて。次のお客様も迷っていらっしゃるようです"
     },
     {
       "speaker": "店長",
@@ -605,14 +362,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ありがとうございます。では店長には、設置寸法の確認をお願いしてもよろしいでしょうか",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ありがとうございます。では店長には、設置寸法の確認をお願いしてもよろしいでしょうか"
     },
     {
       "speaker": "店長",
@@ -620,14 +370,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "わたくしは、お客様の使用状況を伺いますわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "わたくしは、お客様の使用状況を伺いますわ"
     },
     {
       "speaker": "店長",
@@ -643,22 +386,11 @@
     },
     {
       "speaker": "",
-      "text": "お客様の暮らしを想像して、毎日の負担を少しでも軽くしようとしている。\n俺は改めて思った。"
-    },
-    {
-      "speaker": "",
       "text": "紫藤 彩愛さんは、生活家電の売場にとてもよく似合う人だ。\n華やかさだけではなく、暮らしの細かなところに目を向けられる人。\nきっと、そういうところが、お客様に安心感を与えているのだろう。"
     },
     {
       "speaker": "彩愛",
-      "text": "店長？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "店長？"
     },
     {
       "speaker": "店長",
@@ -666,14 +398,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ぼんやりしていらっしゃる場合ではありませんわ。お客様がお待ちです",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ぼんやりしていらっしゃる場合ではありませんわ。お客様がお待ちです"
     },
     {
       "speaker": "店長",
@@ -681,22 +406,11 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ふふ。頼りにしておりますわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ふふ。頼りにしておりますわ"
     },
     {
       "speaker": "店長",
       "text": "はい"
-    },
-    {
-      "speaker": "",
-      "text": "俺は彩愛さんの隣に立ち、次のお客様を迎えた。\nこの人の接客を、もっと近くで見てみたい。\nそう思いながら。"
     },
     {
       "speaker": "",
@@ -713,10 +427,6 @@
     {
       "speaker": "",
       "text": "洗濯機を選ぶという小さな相談の中にも、毎日の生活がある。\n彩愛さんは、それを当たり前のように大切にできる人だった。"
-    },
-    {
-      "speaker": "",
-      "text": "俺はまだ、彼女のことを少ししか知らない。\nけれど今日、ひとつ分かったことがある。"
     },
     {
       "speaker": "",

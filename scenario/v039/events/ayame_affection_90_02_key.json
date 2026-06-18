@@ -1,7 +1,7 @@
 {
   "id": "ayame_affection_90_02_key",
   "title": "お父様、これは何でしょう",
-  "version": "v039_238",
+  "version": "v039_239",
   "return": {
     "mode": "storyMenu",
     "storyId": "ayame_affection_90_02_key",
@@ -51,10 +51,6 @@
     },
     {
       "speaker": "",
-      "text": "俺も慌ててその後を追う。"
-    },
-    {
-      "speaker": "",
       "text": "長い廊下。\n磨き込まれた床。\n古い柱。\n壁に掛けられた古い書。"
     },
     {
@@ -86,14 +82,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……お父様ぁ。",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……お父様ぁ。"
     },
     {
       "speaker": "",
@@ -125,14 +114,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……はい。お父様の部屋です",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……はい。お父様の部屋です"
     },
     {
       "speaker": "",
@@ -144,14 +126,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "お父様っ！",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "お父様っ！"
     },
     {
       "speaker": "",
@@ -167,14 +142,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……"
     },
     {
       "speaker": "店長",
@@ -186,14 +154,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……お父様？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……お父様？"
     },
     {
       "speaker": "",
@@ -229,14 +190,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……"
     },
     {
       "speaker": "店長",
@@ -260,14 +214,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "お父様",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "お父様"
     },
     {
       "speaker": "彩愛の父",
@@ -283,14 +230,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "お父様",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "お父様"
     },
     {
       "speaker": "彩愛の父",
@@ -322,14 +262,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……"
     },
     {
       "speaker": "彩愛の父",
@@ -349,22 +282,11 @@
     },
     {
       "speaker": "",
-      "text": "俺には分からなかった。"
-    },
-    {
-      "speaker": "",
       "text": "けれど、次に聞こえた声は、はっきり震えていた。"
     },
     {
       "speaker": "彩愛",
-      "text": "……わたくしが、どれだけ心配したことか。店長にも、わざわざご足労いただいたというのに",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……わたくしが、どれだけ心配したことか。店長にも、わざわざご足労いただいたというのに"
     },
     {
       "speaker": "彩愛の父",
@@ -372,14 +294,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "お父様。危篤とは……何でしょう",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "お父様。危篤とは……何でしょう"
     },
     {
       "speaker": "彩愛の父",
@@ -387,14 +302,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "何でしょう",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "何でしょう"
     },
     {
       "speaker": "彩愛の父",
@@ -410,14 +318,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "はい",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "はい"
     },
     {
       "speaker": "彩愛の父",
@@ -433,14 +334,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "お父様",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "お父様"
     },
     {
       "speaker": "彩愛の父",
@@ -472,14 +366,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ばあやから習った紫藤流薙刀術奥義……今こそ、お見せいたしますわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ばあやから習った紫藤流薙刀術奥義……今こそ、お見せいたしますわ"
     },
     {
       "speaker": "彩愛の父",
@@ -487,14 +374,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "成敗です",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "成敗です"
     },
     {
       "speaker": "彩愛の父",
@@ -550,14 +430,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "紫藤流奥義――紫電一閃突き！",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "紫藤流奥義――紫電一閃突き！"
     },
     {
       "speaker": "彩愛の父",
@@ -585,14 +458,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "峰打ちですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "峰打ちですわ"
     },
     {
       "speaker": "店長",
@@ -600,14 +466,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "模造刀だから大丈夫です",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "模造刀だから大丈夫です"
     },
     {
       "speaker": "彩愛の父",
@@ -663,14 +522,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……"
     },
     {
       "speaker": "彩愛の父",
@@ -702,14 +554,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "わたくしは、誰かに決められて結婚したいわけではありません。家のためでも、世間体のためでもなく……自分で選んだ人の隣に立ちたいのです",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "わたくしは、誰かに決められて結婚したいわけではありません。家のためでも、世間体のためでもなく……自分で選んだ人の隣に立ちたいのです"
     },
     {
       "speaker": "",
@@ -733,14 +578,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "お父様",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "お父様"
     },
     {
       "speaker": "彩愛の父",
@@ -748,14 +586,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "最終秘奥義、巌砕き。または、紫電改・山穿ちもご覧になりたいと？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "最終秘奥義、巌砕き。または、紫電改・山穿ちもご覧になりたいと？"
     },
     {
       "speaker": "彩愛の父",
@@ -764,10 +595,6 @@
     {
       "speaker": "",
       "text": "彩愛さんは、静かに模造刀を下ろした。"
-    },
-    {
-      "speaker": "",
-      "text": "俺はようやく息を吐く。"
     },
     {
       "speaker": "",

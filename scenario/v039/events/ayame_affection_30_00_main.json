@@ -1,7 +1,7 @@
 {
   "id": "ayame_affection_30_00_main",
   "title": "彩愛さんの普通",
-  "version": "v039_233",
+  "version": "v039_239",
   "return": {
     "mode": "storyMenu",
     "storyId": "ayame_affection_30_00_main",
@@ -62,10 +62,6 @@
       "text": "どれも、ただ機能を並べるだけではなく、実際の生活を想像できるように整えられていた。"
     },
     {
-      "speaker": "",
-      "text": "俺は売場を見回しながら、小さく頷く。"
-    },
-    {
       "speaker": "店長",
       "text": "だいぶ、生活家電売場らしくなってきたな"
     },
@@ -90,14 +86,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "皆さんが協力してくださったおかげですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "皆さんが協力してくださったおかげですわ"
     },
     {
       "speaker": "店長",
@@ -105,14 +94,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……また、そうやって",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……また、そうやって"
     },
     {
       "speaker": "店長",
@@ -120,14 +102,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "分かっております。分かっているから困るのです",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "分かっております。分かっているから困るのです"
     },
     {
       "speaker": "",
@@ -159,14 +134,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "それでしたら、まずはお母様が毎日使いやすいかを中心に考えるのがよろしいかと思いますわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "それでしたら、まずはお母様が毎日使いやすいかを中心に考えるのがよろしいかと思いますわ"
     },
     {
       "speaker": "お客様・女性",
@@ -174,14 +142,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "軽さは大切です。ただ、軽ければよいというだけでもございません。持ちやすさ、動かしやすさ、しまいやすさも見ていただくと安心です",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "軽さは大切です。ただ、軽ければよいというだけでもございません。持ちやすさ、動かしやすさ、しまいやすさも見ていただくと安心です"
     },
     {
       "speaker": "店長",
@@ -189,14 +150,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。取り出す時に無理な姿勢にならないかも大切ですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。取り出す時に無理な姿勢にならないかも大切ですわ"
     },
     {
       "speaker": "お客様・女性",
@@ -204,14 +158,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "でしたら、洗濯槽の深さも見ておきましょう。毎日のことですから、少しの負担が積み重なりますもの",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "でしたら、洗濯槽の深さも見ておきましょう。毎日のことですから、少しの負担が積み重なりますもの"
     },
     {
       "speaker": "お客様・女性",
@@ -239,14 +186,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "でしたら、本体の幅だけでなく、搬入経路も確認しておくと安心ですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "でしたら、本体の幅だけでなく、搬入経路も確認しておくと安心ですわ"
     },
     {
       "speaker": "店長",
@@ -258,14 +198,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。田舎の家は、思わぬところで通りにくいことがございますもの",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。田舎の家は、思わぬところで通りにくいことがございますもの"
     },
     {
       "speaker": "お客様・女性",
@@ -273,14 +206,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "段差も多いですし、古い建具ですと、少しの幅の違いが気になりますわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "段差も多いですし、古い建具ですと、少しの幅の違いが気になりますわね"
     },
     {
       "speaker": "お客様・女性",
@@ -288,14 +214,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ふふ。わたくしの実家も、そういうところがございましたから",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ふふ。わたくしの実家も、そういうところがございましたから"
     },
     {
       "speaker": "店長",
@@ -303,14 +222,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "店長",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "店長"
     },
     {
       "speaker": "店長",
@@ -318,14 +230,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……でしたら、よろしいですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……でしたら、よろしいですわ"
     },
     {
       "speaker": "",
@@ -337,14 +242,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "家電は、置いて終わりではありませんもの。暮らしに馴染んでこそですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "家電は、置いて終わりではありませんもの。暮らしに馴染んでこそですわ"
     },
     {
       "speaker": "お客様・女性",
@@ -355,23 +253,12 @@
       "text": "お客様は候補の機種をメモし、設置確認用紙を受け取って売場を離れていった。"
     },
     {
-      "speaker": "",
-      "text": "接客が終わると、俺は彩愛さんを見る。"
-    },
-    {
       "speaker": "店長",
       "text": "今の接客、すごく彩愛さんらしかったです"
     },
     {
       "speaker": "彩愛",
-      "text": "また“らしい”ですか？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "また“らしい”ですか？"
     },
     {
       "speaker": "店長",
@@ -379,14 +266,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "店長は、良い意味でと言えば許されると思っていません？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "店長は、良い意味でと言えば許されると思っていません？"
     },
     {
       "speaker": "店長",
@@ -394,14 +274,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "まったく",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "まったく"
     },
     {
       "speaker": "",
@@ -413,14 +286,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "田舎の家では、珍しくありませんもの",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "田舎の家では、珍しくありませんもの"
     },
     {
       "speaker": "店長",
@@ -428,14 +294,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "何がです？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "何がです？"
     },
     {
       "speaker": "店長",
@@ -443,14 +302,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "事実ですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "事実ですわ"
     },
     {
       "speaker": "店長",
@@ -469,6 +321,11 @@
       "text": "店長、彩愛さん！　この前の“毎日の家事を、少し楽に”って案内、けっこう見てもらえてますよ！",
       "storySprites": [
         {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        },
+        {
           "id": "aa",
           "src": "images/assets/char/a10101.webp",
           "opacity": 1
@@ -477,25 +334,11 @@
     },
     {
       "speaker": "彩愛",
-      "text": "まあ。そうなのですか？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "まあ。そうなのですか？"
     },
     {
       "speaker": "緋奈",
-      "text": "はい！　彩愛さんの説明を参考にしたら、お客様が相談しやすそうで！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "はい！　彩愛さんの説明を参考にしたら、お客様が相談しやすそうで！"
     },
     {
       "speaker": "店長",
@@ -510,38 +353,15 @@
       "text": "実際、相談件数も少し増えてますよ〜。彩愛さんの暮らし目線、効いてますね〜",
       "storySprites": [
         {
-          "id": "al",
-          "src": "images/assets/char/l10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "彩愛",
-      "text": "皆さん、今日はわたくしを褒める日なのですか？",
-      "storySprites": [
-        {
           "id": "ak",
           "src": "images/assets/char/k10101.webp",
           "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "緋奈",
-      "text": "褒めたい日です！",
-      "storySprites": [
+        },
         {
           "id": "aa",
           "src": "images/assets/char/a10101.webp",
           "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "里美",
-      "text": "です〜",
-      "storySprites": [
+        },
         {
           "id": "al",
           "src": "images/assets/char/l10101.webp",
@@ -551,14 +371,19 @@
     },
     {
       "speaker": "彩愛",
-      "text": "三人がかりはずるいですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "皆さん、今日はわたくしを褒める日なのですか？"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "褒めたい日です！"
+    },
+    {
+      "speaker": "里美",
+      "text": "です〜"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "三人がかりはずるいですわ"
     },
     {
       "speaker": "店長",
@@ -566,14 +391,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "店長まで……",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "店長まで……"
     },
     {
       "speaker": "店長",
@@ -581,14 +399,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "暮らしを大事に、ですか",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "暮らしを大事に、ですか"
     },
     {
       "speaker": "店長",
@@ -596,47 +407,19 @@
     },
     {
       "speaker": "緋奈",
-      "text": "分かります！　彩愛さん、家のこと全部ちゃんとしてそうですもん！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "分かります！　彩愛さん、家のこと全部ちゃんとしてそうですもん！"
     },
     {
       "speaker": "彩愛",
-      "text": "全部ではありませんわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "全部ではありませんわ"
     },
     {
       "speaker": "里美",
-      "text": "でも、気づくところが細かいですからね〜。一緒に暮らす人は助かりそうです〜",
-      "storySprites": [
-        {
-          "id": "al",
-          "src": "images/assets/char/l10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "でも、気づくところが細かいですからね〜。一緒に暮らす人は助かりそうです〜"
     },
     {
       "speaker": "彩愛",
-      "text": "里美さんまで",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "里美さんまで"
     },
     {
       "speaker": "店長",
@@ -644,14 +427,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "そんな大げさなものではありませんわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "そんな大げさなものではありませんわ"
     },
     {
       "speaker": "店長",
@@ -659,36 +435,15 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……"
     },
     {
       "speaker": "緋奈",
-      "text": "あ",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "あ"
     },
     {
       "speaker": "里美",
-      "text": "あら〜",
-      "storySprites": [
-        {
-          "id": "al",
-          "src": "images/assets/char/l10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "あら〜"
     },
     {
       "speaker": "",
@@ -704,14 +459,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……変な意味ではないのですね？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……変な意味ではないのですね？"
     },
     {
       "speaker": "店長",
@@ -719,14 +467,7 @@
     },
     {
       "speaker": "緋奈",
-      "text": "あー！　店長が彩愛さんをもてあそんでるー！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "あー！　店長が彩愛さんをもてあそんでるー！"
     },
     {
       "speaker": "店長",
@@ -734,14 +475,7 @@
     },
     {
       "speaker": "里美",
-      "text": "緋奈ちゃん〜、だめですよ〜。からかっては〜",
-      "storySprites": [
-        {
-          "id": "al",
-          "src": "images/assets/char/l10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "緋奈ちゃん〜、だめですよ〜。からかっては〜"
     },
     {
       "speaker": "店長",
@@ -749,14 +483,7 @@
     },
     {
       "speaker": "里美",
-      "text": "店長さんが彩愛さんをその気にさせちゃったら、大変ですからね〜",
-      "storySprites": [
-        {
-          "id": "al",
-          "src": "images/assets/char/l10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "店長さんが彩愛さんをその気にさせちゃったら、大変ですからね〜"
     },
     {
       "speaker": "店長",
@@ -764,36 +491,15 @@
     },
     {
       "speaker": "里美",
-      "text": "ふふ〜、なんのことでしょう〜",
-      "storySprites": [
-        {
-          "id": "al",
-          "src": "images/assets/char/l10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ふふ〜、なんのことでしょう〜"
     },
     {
       "speaker": "緋奈",
-      "text": "きゃー！　里美、逃げるよー！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "きゃー！　里美、逃げるよー！"
     },
     {
       "speaker": "里美",
-      "text": "あ、待ってください〜",
-      "storySprites": [
-        {
-          "id": "al",
-          "src": "images/assets/char/l10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "あ、待ってください〜"
     },
     {
       "speaker": "",
@@ -805,33 +511,15 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ふふ。にぎやかですこと",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ふふ。にぎやかですこと"
     },
     {
       "speaker": "店長",
       "text": "まったく……"
     },
     {
-      "speaker": "",
-      "text": "俺がため息をつくと、彩愛さんは少しだけ目を細めた。"
-    },
-    {
       "speaker": "彩愛",
-      "text": "でも、彼女たちの言うことも一理ありますわよ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "でも、彼女たちの言うことも一理ありますわよ"
     },
     {
       "speaker": "店長",
@@ -839,14 +527,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "わたくしが勘違いしたら、どう責任を取るおつもりですの？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "わたくしが勘違いしたら、どう責任を取るおつもりですの？"
     },
     {
       "speaker": "店長",
@@ -854,14 +535,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "なくて？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "なくて？"
     },
     {
       "speaker": "店長",
@@ -869,14 +543,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "え……？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "え……？"
     },
     {
       "speaker": "",
@@ -888,37 +555,15 @@
     },
     {
       "speaker": "",
-      "text": "俺はそう言って、慌てて売場の方へ向かった。"
-    },
-    {
-      "speaker": "",
       "text": "背中越しに、彩愛さんの小さな声が聞こえた気がした。"
     },
     {
       "speaker": "彩愛",
-      "text": "……もう",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……もう"
     },
     {
       "speaker": "彩愛",
-      "text": "ひどい人。そんなことを言われたら……本気にしてしまいますわよ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "",
-      "text": "その言葉が本当に俺に向けられたものだったのか。それとも、彩愛さん自身の独り言だったのか。"
+      "text": "ひどい人。そんなことを言われたら……本気にしてしまいますわよ"
     },
     {
       "speaker": "",

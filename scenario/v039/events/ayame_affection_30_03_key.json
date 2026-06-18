@@ -1,7 +1,7 @@
 {
   "id": "ayame_affection_30_03_key",
   "title": "ビールは淑女の嗜みですわ",
-  "version": "v039_233",
+  "version": "v039_239",
   "return": {
     "mode": "storyMenu",
     "storyId": "ayame_affection_30_03_key",
@@ -51,10 +51,6 @@
     },
     {
       "speaker": "",
-      "text": "売場の片付けが一段落し、俺は休憩室で明日のシフト表を確認していた。"
-    },
-    {
-      "speaker": "",
       "text": "すると、緋奈がスマホを片手に、何やら嬉しそうな顔で入ってくる。"
     },
     {
@@ -74,14 +70,7 @@
     },
     {
       "speaker": "緋奈",
-      "text": "駅前広場で、週末にクラフトビールフェスやるらしいです！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "駅前広場で、週末にクラフトビールフェスやるらしいです！"
     },
     {
       "speaker": "店長",
@@ -89,14 +78,7 @@
     },
     {
       "speaker": "緋奈",
-      "text": "はい！　ビールと屋台フードがいっぱい出るやつです！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "はい！　ビールと屋台フードがいっぱい出るやつです！"
     },
     {
       "speaker": "店長",
@@ -104,14 +86,7 @@
     },
     {
       "speaker": "緋奈",
-      "text": "食べ物だけじゃないです！　飲み物も早いです！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "食べ物だけじゃないです！　飲み物も早いです！"
     },
     {
       "speaker": "",
@@ -122,6 +97,11 @@
       "text": "ビールフェスですか〜。いいですね〜",
       "storySprites": [
         {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
           "id": "al",
           "src": "images/assets/char/l10101.webp",
           "opacity": 1
@@ -130,25 +110,11 @@
     },
     {
       "speaker": "緋奈",
-      "text": "里美も行きたい？",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "里美も行きたい？"
     },
     {
       "speaker": "里美",
-      "text": "行きたいです〜。でも自分、飲みすぎると帰る方向が分からなくなります〜",
-      "storySprites": [
-        {
-          "id": "al",
-          "src": "images/assets/char/l10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "行きたいです〜。でも自分、飲みすぎると帰る方向が分からなくなります〜"
     },
     {
       "speaker": "店長",
@@ -156,25 +122,11 @@
     },
     {
       "speaker": "里美",
-      "text": "ひどいです〜",
-      "storySprites": [
-        {
-          "id": "al",
-          "src": "images/assets/char/l10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ひどいです〜"
     },
     {
       "speaker": "緋奈",
-      "text": "あはは！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "あはは！"
     },
     {
       "speaker": "",
@@ -185,6 +137,16 @@
       "text": "何やら楽しそうなお話ですわね",
       "storySprites": [
         {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "al",
+          "src": "images/assets/char/l10101.webp",
+          "opacity": 1
+        },
+        {
           "id": "ak",
           "src": "images/assets/char/k10101.webp",
           "opacity": 1
@@ -193,25 +155,11 @@
     },
     {
       "speaker": "緋奈",
-      "text": "あ、彩愛さん！　駅前でビールフェスやるんですって！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "あ、彩愛さん！　駅前でビールフェスやるんですって！"
     },
     {
       "speaker": "彩愛",
-      "text": "まあ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "まあ"
     },
     {
       "speaker": "",
@@ -222,56 +170,24 @@
       "text": "本当に、ほんの少し。"
     },
     {
-      "speaker": "",
-      "text": "けれど、俺には分かった。"
-    },
-    {
       "speaker": "店長",
       "text": "彩愛さん、今ちょっと反応しましたね"
     },
     {
       "speaker": "彩愛",
-      "text": "……そうでしょうか",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……そうでしょうか"
     },
     {
       "speaker": "緋奈",
-      "text": "しました！　絶対しました！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "しました！　絶対しました！"
     },
     {
       "speaker": "里美",
-      "text": "彩愛さん、ビールお好きですもんね〜",
-      "storySprites": [
-        {
-          "id": "al",
-          "src": "images/assets/char/l10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "彩愛さん、ビールお好きですもんね〜"
     },
     {
       "speaker": "彩愛",
-      "text": "嗜む程度ですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "嗜む程度ですわ"
     },
     {
       "speaker": "店長",
@@ -279,47 +195,19 @@
     },
     {
       "speaker": "緋奈",
-      "text": "あ、出ました。彩愛さんの上品ワード！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "あ、出ました。彩愛さんの上品ワード！"
     },
     {
       "speaker": "彩愛",
-      "text": "緋奈さん、何でも面白がらないでくださいませ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "緋奈さん、何でも面白がらないでくださいませ"
     },
     {
       "speaker": "里美",
-      "text": "でも、彩愛さんがビールを飲むと、なんだか絵になりますね〜",
-      "storySprites": [
-        {
-          "id": "al",
-          "src": "images/assets/char/l10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "でも、彩愛さんがビールを飲むと、なんだか絵になりますね〜"
     },
     {
       "speaker": "緋奈",
-      "text": "分かる！　グラス持って、こう……優雅に！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "分かる！　グラス持って、こう……優雅に！"
     },
     {
       "speaker": "",
@@ -327,25 +215,11 @@
     },
     {
       "speaker": "緋奈",
-      "text": "『ビールは淑女の嗜みですわ』みたいな！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "『ビールは淑女の嗜みですわ』みたいな！"
     },
     {
       "speaker": "彩愛",
-      "text": "そのようなことは申しません",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "そのようなことは申しません"
     },
     {
       "speaker": "店長",
@@ -353,14 +227,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "店長まで",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "店長まで"
     },
     {
       "speaker": "店長",
@@ -368,14 +235,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……"
     },
     {
       "speaker": "",
@@ -387,36 +247,15 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ビールは、淑女の嗜みですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ビールは、淑女の嗜みですわ"
     },
     {
       "speaker": "緋奈",
-      "text": "言ったー！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "言ったー！"
     },
     {
       "speaker": "里美",
-      "text": "おお〜",
-      "storySprites": [
-        {
-          "id": "al",
-          "src": "images/assets/char/l10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "おお〜"
     },
     {
       "speaker": "店長",
@@ -424,36 +263,15 @@
     },
     {
       "speaker": "彩愛",
-      "text": "皆さんが言わせたのではありませんか",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "皆さんが言わせたのではありませんか"
     },
     {
       "speaker": "緋奈",
-      "text": "でも似合ってました！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "でも似合ってました！"
     },
     {
       "speaker": "彩愛",
-      "text": "もう……",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "もう……"
     },
     {
       "speaker": "",
@@ -465,25 +283,11 @@
     },
     {
       "speaker": "緋奈",
-      "text": "じゃあ、みんなで行きません？",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "じゃあ、みんなで行きません？"
     },
     {
       "speaker": "里美",
-      "text": "いいですね〜",
-      "storySprites": [
-        {
-          "id": "al",
-          "src": "images/assets/char/l10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "いいですね〜"
     },
     {
       "speaker": "店長",
@@ -491,58 +295,23 @@
     },
     {
       "speaker": "緋奈",
-      "text": "やった！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "やった！"
     },
     {
       "speaker": "彩愛",
-      "text": "わたくしも、都合が合えば少しだけ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "わたくしも、都合が合えば少しだけ"
     },
     {
       "speaker": "緋奈",
-      "text": "彩愛さんも行くなら決定ですね！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "彩愛さんも行くなら決定ですね！"
     },
     {
       "speaker": "彩愛",
-      "text": "決定が早すぎますわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "決定が早すぎますわ"
     },
     {
       "speaker": "里美",
-      "text": "でも楽しそうです〜",
-      "storySprites": [
-        {
-          "id": "al",
-          "src": "images/assets/char/l10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "でも楽しそうです〜"
     },
     {
       "speaker": "店長",
@@ -550,14 +319,7 @@
     },
     {
       "speaker": "緋奈",
-      "text": "はい！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "はい！"
     },
     {
       "speaker": "",
@@ -585,14 +347,7 @@
     },
     {
       "speaker": "緋奈",
-      "text": "うわー、種類多いですね！　どれが甘いやつですか？",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "うわー、種類多いですね！　どれが甘いやつですか？"
     },
     {
       "speaker": "店長",
@@ -600,47 +355,19 @@
     },
     {
       "speaker": "緋奈",
-      "text": "だって飲みやすい方がいいじゃないですか！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "だって飲みやすい方がいいじゃないですか！"
     },
     {
       "speaker": "彩愛",
-      "text": "でしたら、こちらなど良いかもしれませんわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "でしたら、こちらなど良いかもしれませんわね"
     },
     {
       "speaker": "緋奈",
-      "text": "え、彩愛さん分かるんですか？",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "え、彩愛さん分かるんですか？"
     },
     {
       "speaker": "彩愛",
-      "text": "少しだけですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "少しだけですわ"
     },
     {
       "speaker": "店長",
@@ -648,14 +375,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "店長",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "店長"
     },
     {
       "speaker": "店長",
@@ -667,91 +387,35 @@
     },
     {
       "speaker": "彩愛",
-      "text": "これは副原料に柑橘系を使っているようですわね。ビールが苦手な方でも、香りが華やかで飲みやすいことがあります",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "これは副原料に柑橘系を使っているようですわね。ビールが苦手な方でも、香りが華やかで飲みやすいことがあります"
     },
     {
       "speaker": "緋奈",
-      "text": "副原料？",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "副原料？"
     },
     {
       "speaker": "彩愛",
-      "text": "麦芽やホップ以外に、果実や香辛料などを加えることですわ。似たような方向ですと、フルーティーなベルギー産のホワイトビールなどもございます",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "麦芽やホップ以外に、果実や香辛料などを加えることですわ。似たような方向ですと、フルーティーなベルギー産のホワイトビールなどもございます"
     },
     {
       "speaker": "里美",
-      "text": "ほわいとびーる……おしゃれですね〜",
-      "storySprites": [
-        {
-          "id": "al",
-          "src": "images/assets/char/l10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ほわいとびーる……おしゃれですね〜"
     },
     {
       "speaker": "緋奈",
-      "text": "あ、分かる！　グレープフルーツみたいな味のビール、ありますよね？",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "あ、分かる！　グレープフルーツみたいな味のビール、ありますよね？"
     },
     {
       "speaker": "彩愛",
-      "text": "ふふ。それはたぶん、カスケードですわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ふふ。それはたぶん、カスケードですわね"
     },
     {
       "speaker": "里美",
-      "text": "カスケード？",
-      "storySprites": [
-        {
-          "id": "al",
-          "src": "images/assets/char/l10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "カスケード？"
     },
     {
       "speaker": "彩愛",
-      "text": "アメリカを起源とするペールエールによく使われるホップの種類ですわ。カスケードを使って醸造されたものは、グレープフルーツのような香りや味わいになることがございますの",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "アメリカを起源とするペールエールによく使われるホップの種類ですわ。カスケードを使って醸造されたものは、グレープフルーツのような香りや味わいになることがございますの"
     },
     {
       "speaker": "店長",
@@ -759,25 +423,11 @@
     },
     {
       "speaker": "緋奈",
-      "text": "彩愛さん、めっちゃ詳しい！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "彩愛さん、めっちゃ詳しい！"
     },
     {
       "speaker": "彩愛",
-      "text": "嗜む程度ですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "嗜む程度ですわ"
     },
     {
       "speaker": "店長",
@@ -785,14 +435,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "何がですの？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "何がですの？"
     },
     {
       "speaker": "店長",
@@ -800,14 +443,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "まったく",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "まったく"
     },
     {
       "speaker": "",
@@ -815,47 +451,19 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ちなみに、先ほどの副原料のように、さらに果実や果汁を入れたフルーティービアもございます。果実酒がお好きな星野さんも、気に入るものがあるかもしれませんわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ちなみに、先ほどの副原料のように、さらに果実や果汁を入れたフルーティービアもございます。果実酒がお好きな星野さんも、気に入るものがあるかもしれませんわ"
     },
     {
       "speaker": "緋奈",
-      "text": "え、あたし向けのビールもあるんですか！？",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "え、あたし向けのビールもあるんですか！？"
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。甘い香りのものや、軽めのものから試すとよろしいかと",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。甘い香りのものや、軽めのものから試すとよろしいかと"
     },
     {
       "speaker": "里美",
-      "text": "……すごいですね〜",
-      "storySprites": [
-        {
-          "id": "al",
-          "src": "images/assets/char/l10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……すごいですね〜"
     },
     {
       "speaker": "店長",
@@ -863,69 +471,27 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ですから、少しだけですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ですから、少しだけですわ"
     },
     {
       "speaker": "緋奈",
-      "text": "その“少しだけ”は信用できないやつです！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "その“少しだけ”は信用できないやつです！"
     },
     {
       "speaker": "彩愛",
-      "text": "緋奈さん",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "緋奈さん"
     },
     {
       "speaker": "緋奈",
-      "text": "はい、すみません！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "はい、すみません！"
     },
     {
       "speaker": "里美",
-      "text": "でも、彩愛さんに選んでもらうと安心ですね〜",
-      "storySprites": [
-        {
-          "id": "al",
-          "src": "images/assets/char/l10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "でも、彩愛さんに選んでもらうと安心ですね〜"
     },
     {
       "speaker": "彩愛",
-      "text": "飲みすぎない範囲で、ですわよ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "飲みすぎない範囲で、ですわよ"
     },
     {
       "speaker": "店長",
@@ -933,25 +499,11 @@
     },
     {
       "speaker": "緋奈",
-      "text": "はーい！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "はーい！"
     },
     {
       "speaker": "里美",
-      "text": "は〜い",
-      "storySprites": [
-        {
-          "id": "al",
-          "src": "images/assets/char/l10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "は〜い"
     },
     {
       "speaker": "",
@@ -971,36 +523,15 @@
     },
     {
       "speaker": "緋奈",
-      "text": "ビールには食べ物が必要です！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ビールには食べ物が必要です！"
     },
     {
       "speaker": "里美",
-      "text": "正論です〜",
-      "storySprites": [
-        {
-          "id": "al",
-          "src": "images/assets/char/l10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "正論です〜"
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。そこは否定できませんわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。そこは否定できませんわ"
     },
     {
       "speaker": "",
@@ -1008,58 +539,23 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……香りがよいですわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……香りがよいですわね"
     },
     {
       "speaker": "緋奈",
-      "text": "彩愛さん、楽しそう！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "彩愛さん、楽しそう！"
     },
     {
       "speaker": "彩愛",
-      "text": "そう見えますか？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "そう見えますか？"
     },
     {
       "speaker": "里美",
-      "text": "はい〜。いつもより少し力が抜けてます〜",
-      "storySprites": [
-        {
-          "id": "al",
-          "src": "images/assets/char/l10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "はい〜。いつもより少し力が抜けてます〜"
     },
     {
       "speaker": "彩愛",
-      "text": "……そうですか",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……そうですか"
     },
     {
       "speaker": "",
@@ -1067,22 +563,11 @@
     },
     {
       "speaker": "彩愛",
-      "text": "たまには、こういう時間も良いものですわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "たまには、こういう時間も良いものですわね"
     },
     {
       "speaker": "店長",
       "text": "ですね"
-    },
-    {
-      "speaker": "",
-      "text": "俺は、少し前の彩愛さんを思い出す。"
     },
     {
       "speaker": "",
@@ -1094,14 +579,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "店長",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "店長"
     },
     {
       "speaker": "店長",
@@ -1109,14 +587,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "今、余計なことをおっしゃろうとしませんでした？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "今、余計なことをおっしゃろうとしませんでした？"
     },
     {
       "speaker": "店長",
@@ -1124,14 +595,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ふふ。よろしいですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ふふ。よろしいですわ"
     },
     {
       "speaker": "店長",
@@ -1139,36 +603,15 @@
     },
     {
       "speaker": "彩愛",
-      "text": "それは……余計なことではありませんわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "それは……余計なことではありませんわ"
     },
     {
       "speaker": "緋奈",
-      "text": "彩愛さん、次は唐揚げです！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "彩愛さん、次は唐揚げです！"
     },
     {
       "speaker": "彩愛",
-      "text": "はいはい。いただきますわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "はいはい。いただきますわ"
     },
     {
       "speaker": "",
@@ -1180,36 +623,15 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……これは、ビールに合いますわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……これは、ビールに合いますわね"
     },
     {
       "speaker": "緋奈",
-      "text": "ですよね！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ですよね！"
     },
     {
       "speaker": "里美",
-      "text": "正義ですね〜",
-      "storySprites": [
-        {
-          "id": "al",
-          "src": "images/assets/char/l10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "正義ですね〜"
     },
     {
       "speaker": "店長",
@@ -1217,14 +639,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……ええ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……ええ"
     },
     {
       "speaker": "",
@@ -1232,36 +647,15 @@
     },
     {
       "speaker": "彩愛",
-      "text": "今日は、少しだけ気を抜くことにいたしますわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "今日は、少しだけ気を抜くことにいたしますわ"
     },
     {
       "speaker": "緋奈",
-      "text": "いいと思います！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "いいと思います！"
     },
     {
       "speaker": "里美",
-      "text": "大事です〜",
-      "storySprites": [
-        {
-          "id": "al",
-          "src": "images/assets/char/l10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "大事です〜"
     },
     {
       "speaker": "店長",

@@ -1,7 +1,7 @@
 {
   "id": "ayame_affection_20_02_key",
   "title": "川魚の焼き方",
-  "version": "v039_233",
+  "version": "v039_239",
   "return": {
     "mode": "storyMenu",
     "storyId": "ayame_affection_20_02_key",
@@ -54,10 +54,6 @@
       "text": "洗濯機フェアの流れで生活家電売場を見て回るお客様は多いが、今はちょうど客足が途切れた時間帯だ。"
     },
     {
-      "speaker": "",
-      "text": "俺は調理家電売場で、魚焼きグリル付きのオーブンレンジのPOPを確認していた。"
-    },
-    {
       "speaker": "店長",
       "text": "魚の焼き方って、意外と説明が難しいな……"
     },
@@ -90,14 +86,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "魚焼きですか。良いですね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "魚焼きですか。良いですね"
     },
     {
       "speaker": "店長",
@@ -105,14 +94,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "得意というほどではありませんが、焼き加減を見るのは好きですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "得意というほどではありませんが、焼き加減を見るのは好きですわ"
     },
     {
       "speaker": "店長",
@@ -120,14 +102,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。魚は火を通しすぎると、身が固くなってしまいますもの",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。魚は火を通しすぎると、身が固くなってしまいますもの"
     },
     {
       "speaker": "店長",
@@ -135,14 +110,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "大きさや脂の乗り方でも変わりますわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "大きさや脂の乗り方でも変わりますわね"
     },
     {
       "speaker": "店長",
@@ -150,14 +118,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "昔、川魚を焼いていただいたことがありましたから",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "昔、川魚を焼いていただいたことがありましたから"
     },
     {
       "speaker": "店長",
@@ -168,19 +129,8 @@
       "text": "彩愛さんは、何気なくそう言った。"
     },
     {
-      "speaker": "",
-      "text": "俺が聞き返すと、彩愛さんは少しだけ懐かしそうに微笑む。"
-    },
-    {
       "speaker": "彩愛",
-      "text": "ええ。子どもの頃、川で捕った魚を焼いて食べたことがありますの",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。子どもの頃、川で捕った魚を焼いて食べたことがありますの"
     },
     {
       "speaker": "店長",
@@ -188,14 +138,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "はい",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "はい"
     },
     {
       "speaker": "店長",
@@ -203,14 +146,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "田舎でしたから",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "田舎でしたから"
     },
     {
       "speaker": "店長",
@@ -218,14 +154,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "便利な言葉ですわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "便利な言葉ですわね"
     },
     {
       "speaker": "店長",
@@ -233,14 +162,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "まあ。失礼ですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "まあ。失礼ですわ"
     },
     {
       "speaker": "店長",
@@ -248,14 +170,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "今のは、褒めているようには聞こえませんでした",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "今のは、褒めているようには聞こえませんでした"
     },
     {
       "speaker": "店長",
@@ -263,14 +178,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "謝られると、それはそれで困ります",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "謝られると、それはそれで困ります"
     },
     {
       "speaker": "",
@@ -285,6 +193,11 @@
       "text": "あれ？　調理家電の話ですか？",
       "storySprites": [
         {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        },
+        {
           "id": "aa",
           "src": "images/assets/char/a10101.webp",
           "opacity": 1
@@ -297,36 +210,15 @@
     },
     {
       "speaker": "緋奈",
-      "text": "魚！　いいですね！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "魚！　いいですね！"
     },
     {
       "speaker": "彩愛",
-      "text": "緋奈さんは、お魚もお好きですか？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "緋奈さんは、お魚もお好きですか？"
     },
     {
       "speaker": "緋奈",
-      "text": "好きです！　でも骨が多いのはちょっと苦手です！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "好きです！　でも骨が多いのはちょっと苦手です！"
     },
     {
       "speaker": "店長",
@@ -334,36 +226,15 @@
     },
     {
       "speaker": "緋奈",
-      "text": "食べるの大変じゃないですか",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "食べるの大変じゃないですか"
     },
     {
       "speaker": "彩愛",
-      "text": "川魚は、小さいものですと骨も気になりますわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "川魚は、小さいものですと骨も気になりますわね"
     },
     {
       "speaker": "緋奈",
-      "text": "川魚？",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "川魚？"
     },
     {
       "speaker": "店長",
@@ -371,47 +242,19 @@
     },
     {
       "speaker": "緋奈",
-      "text": "えっ、ワイルド！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "えっ、ワイルド！"
     },
     {
       "speaker": "彩愛",
-      "text": "ワイルド……でしょうか",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ワイルド……でしょうか"
     },
     {
       "speaker": "緋奈",
-      "text": "かなりワイルドです！　彩愛さん、上品なのに！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "かなりワイルドです！　彩愛さん、上品なのに！"
     },
     {
       "speaker": "彩愛",
-      "text": "上品な者でも、川魚くらいいただきますわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "上品な者でも、川魚くらいいただきますわ"
     },
     {
       "speaker": "店長",
@@ -419,58 +262,23 @@
     },
     {
       "speaker": "彩愛",
-      "text": "田舎では珍しくありませんわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "田舎では珍しくありませんわ"
     },
     {
       "speaker": "緋奈",
-      "text": "また出た！　田舎では珍しくありませんわ！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "また出た！　田舎では珍しくありませんわ！"
     },
     {
       "speaker": "彩愛",
-      "text": "緋奈さん、真似をしないでくださいませ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "緋奈さん、真似をしないでくださいませ"
     },
     {
       "speaker": "緋奈",
-      "text": "すみません！　でも言いたくなっちゃって",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "すみません！　でも言いたくなっちゃって"
     },
     {
       "speaker": "彩愛",
-      "text": "まったく",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "まったく"
     },
     {
       "speaker": "",
@@ -478,36 +286,15 @@
     },
     {
       "speaker": "緋奈",
-      "text": "どうやって捕るんですか？　釣りですか？",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "どうやって捕るんですか？　釣りですか？"
     },
     {
       "speaker": "彩愛",
-      "text": "釣りもありましたが、小さな魚なら網を使うこともありましたわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "釣りもありましたが、小さな魚なら網を使うこともありましたわ"
     },
     {
       "speaker": "緋奈",
-      "text": "網！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "網！"
     },
     {
       "speaker": "店長",
@@ -515,58 +302,23 @@
     },
     {
       "speaker": "彩愛",
-      "text": "子どもたちで遊ぶ時は、浅いところで小魚を追い込んだりしましたの",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "子どもたちで遊ぶ時は、浅いところで小魚を追い込んだりしましたの"
     },
     {
       "speaker": "緋奈",
-      "text": "やっぱりワイルドです！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "やっぱりワイルドです！"
     },
     {
       "speaker": "彩愛",
-      "text": "緋奈さん",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "緋奈さん"
     },
     {
       "speaker": "緋奈",
-      "text": "あ、でも楽しそうです！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "あ、でも楽しそうです！"
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。楽しかったですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。楽しかったですわ"
     },
     {
       "speaker": "",
@@ -574,14 +326,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "川の水は冷たくて、石の陰には小さな魚がいて。夏になると、川の近くは涼しかったですの",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "川の水は冷たくて、石の陰には小さな魚がいて。夏になると、川の近くは涼しかったですの"
     },
     {
       "speaker": "店長",
@@ -589,47 +334,19 @@
     },
     {
       "speaker": "緋奈",
-      "text": "めっちゃ夏休みって感じです！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "めっちゃ夏休みって感じです！"
     },
     {
       "speaker": "彩愛",
-      "text": "ふふ。たしかに、夏休みの思い出ですわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ふふ。たしかに、夏休みの思い出ですわね"
     },
     {
       "speaker": "緋奈",
-      "text": "捕った魚は、そのまま焼くんですか？",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "捕った魚は、そのまま焼くんですか？"
     },
     {
       "speaker": "彩愛",
-      "text": "もちろん、きちんと下処理はしますわ。大人の方に見てもらいながらですけれど",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "もちろん、きちんと下処理はしますわ。大人の方に見てもらいながらですけれど"
     },
     {
       "speaker": "店長",
@@ -637,14 +354,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "川遊びは、大人が近くにいなければいけませんわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "川遊びは、大人が近くにいなければいけませんわ"
     },
     {
       "speaker": "",
@@ -656,14 +366,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。水辺は楽しいですが、油断してよい場所ではありませんもの",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。水辺は楽しいですが、油断してよい場所ではありませんもの"
     },
     {
       "speaker": "",
@@ -671,25 +374,11 @@
     },
     {
       "speaker": "緋奈",
-      "text": "焼いた魚って美味しいですか？",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "焼いた魚って美味しいですか？"
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。小さいものでも、自分たちで捕ったと思うと特別に感じましたわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。小さいものでも、自分たちで捕ったと思うと特別に感じましたわ"
     },
     {
       "speaker": "店長",
@@ -697,25 +386,11 @@
     },
     {
       "speaker": "彩愛",
-      "text": "そうですわね。塩を振って、少し焦げたところを気にしながらいただくのです",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "そうですわね。塩を振って、少し焦げたところを気にしながらいただくのです"
     },
     {
       "speaker": "緋奈",
-      "text": "うわー、お腹空いてきた！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "うわー、お腹空いてきた！"
     },
     {
       "speaker": "店長",
@@ -723,36 +398,15 @@
     },
     {
       "speaker": "緋奈",
-      "text": "だって彩愛さんの話、美味しそうなんですもん！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "だって彩愛さんの話、美味しそうなんですもん！"
     },
     {
       "speaker": "彩愛",
-      "text": "それは光栄ですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "それは光栄ですわ"
     },
     {
       "speaker": "緋奈",
-      "text": "今日の晩ご飯、魚にしようかな……",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "今日の晩ご飯、魚にしようかな……"
     },
     {
       "speaker": "店長",
@@ -760,36 +414,15 @@
     },
     {
       "speaker": "緋奈",
-      "text": "されてます！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "されてます！"
     },
     {
       "speaker": "彩愛",
-      "text": "ふふ。では、骨にはお気をつけくださいませ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ふふ。では、骨にはお気をつけくださいませ"
     },
     {
       "speaker": "緋奈",
-      "text": "はい！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "はい！"
     },
     {
       "speaker": "",
@@ -805,14 +438,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "焼き魚をよく召し上がるのですか？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "焼き魚をよく召し上がるのですか？"
     },
     {
       "speaker": "お客様・男性",
@@ -820,14 +446,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "それでしたら、自動調理機能のあるものが便利ですわ。焼き加減を調整できる機種もございます",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "それでしたら、自動調理機能のあるものが便利ですわ。焼き加減を調整できる機種もございます"
     },
     {
       "speaker": "店長",
@@ -839,14 +458,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。魚は大きさや脂の乗り方で火の通りが変わりますから",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。魚は大きさや脂の乗り方で火の通りが変わりますから"
     },
     {
       "speaker": "お客様・男性",
@@ -854,14 +466,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ただ、自動調理でも、最初は少し様子を見ると安心ですわ。焼きすぎると身が固くなってしまいますもの",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ただ、自動調理でも、最初は少し様子を見ると安心ですわ。焼きすぎると身が固くなってしまいますもの"
     },
     {
       "speaker": "お客様・男性",
@@ -869,14 +474,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "少し控えめにして、様子を見ながら調整するのもよろしいかと思います",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "少し控えめにして、様子を見ながら調整するのもよろしいかと思います"
     },
     {
       "speaker": "お客様・男性",
@@ -900,47 +498,19 @@
     },
     {
       "speaker": "緋奈",
-      "text": "彩愛さん、やっぱり説明うまいですね",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "彩愛さん、やっぱり説明うまいですね"
     },
     {
       "speaker": "彩愛",
-      "text": "ありがとうございます",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ありがとうございます"
     },
     {
       "speaker": "緋奈",
-      "text": "川魚経験が活きましたね！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "川魚経験が活きましたね！"
     },
     {
       "speaker": "彩愛",
-      "text": "その言い方ですと、少し野性味が強く聞こえますわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "その言い方ですと、少し野性味が強く聞こえますわ"
     },
     {
       "speaker": "店長",
@@ -948,14 +518,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "店長まで",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "店長まで"
     },
     {
       "speaker": "店長",
@@ -963,36 +526,15 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……そう言われると、悪い気はいたしません",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……そう言われると、悪い気はいたしません"
     },
     {
       "speaker": "緋奈",
-      "text": "彩愛さん、最近ちょっと褒められ慣れてきました？",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "彩愛さん、最近ちょっと褒められ慣れてきました？"
     },
     {
       "speaker": "彩愛",
-      "text": "慣れておりません",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "慣れておりません"
     },
     {
       "speaker": "店長",
@@ -1000,14 +542,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "店長",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "店長"
     },
     {
       "speaker": "店長",
@@ -1015,55 +550,23 @@
     },
     {
       "speaker": "彩愛",
-      "text": "褒めすぎ注意ですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "褒めすぎ注意ですわ"
     },
     {
       "speaker": "緋奈",
-      "text": "里美さんみたいですね！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "里美さんみたいですね！"
     },
     {
       "speaker": "彩愛",
-      "text": "緋奈さん",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "緋奈さん"
     },
     {
       "speaker": "緋奈",
-      "text": "はい、すみません！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "はい、すみません！"
     },
     {
       "speaker": "",
       "text": "緋奈は笑いながら、別の売場へ戻っていった。"
-    },
-    {
-      "speaker": "",
-      "text": "調理家電売場には、俺と彩愛さんが残る。"
     },
     {
       "speaker": "店長",
@@ -1071,14 +574,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "そうでしたか？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "そうでしたか？"
     },
     {
       "speaker": "店長",
@@ -1090,14 +586,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……ええ。そうお話ししましたわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……ええ。そうお話ししましたわね"
     },
     {
       "speaker": "店長",
@@ -1105,14 +594,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "大人になりましたから",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "大人になりましたから"
     },
     {
       "speaker": "店長",
@@ -1120,14 +602,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……"
     },
     {
       "speaker": "",
@@ -1135,14 +610,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "店長は、時々鋭すぎますわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "店長は、時々鋭すぎますわ"
     },
     {
       "speaker": "店長",
@@ -1150,14 +618,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "分かっております",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "分かっております"
     },
     {
       "speaker": "",
@@ -1165,14 +626,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "昔は、平気でしたの",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "昔は、平気でしたの"
     },
     {
       "speaker": "店長",
@@ -1180,14 +634,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。泳ぐのも、魚を探すのも、足を水に入れて涼むのも。夏の楽しみでしたわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。泳ぐのも、魚を探すのも、足を水に入れて涼むのも。夏の楽しみでしたわ"
     },
     {
       "speaker": "店長",
@@ -1195,14 +642,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "今は……少しだけ、苦手です",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "今は……少しだけ、苦手です"
     },
     {
       "speaker": "店長",
@@ -1210,14 +650,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "正確には、水辺そのものではなく……",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "正確には、水辺そのものではなく……"
     },
     {
       "speaker": "",
@@ -1225,14 +658,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "いえ。今は、これくらいにしておきますわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "いえ。今は、これくらいにしておきますわ"
     },
     {
       "speaker": "店長",
@@ -1240,14 +666,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "申し訳ありません",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "申し訳ありません"
     },
     {
       "speaker": "店長",
@@ -1255,14 +674,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……そう言っていただけると思いました",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……そう言っていただけると思いました"
     },
     {
       "speaker": "店長",
@@ -1270,14 +682,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "本当に、店長は困った方ですわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "本当に、店長は困った方ですわね"
     },
     {
       "speaker": "店長",
@@ -1285,14 +690,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。こういう時に、無理に聞かないところが",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。こういう時に、無理に聞かないところが"
     },
     {
       "speaker": "",
@@ -1304,14 +702,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……はい",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……はい"
     },
     {
       "speaker": "",
@@ -1319,14 +710,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ただ、誤解しないでくださいませ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ただ、誤解しないでくださいませ"
     },
     {
       "speaker": "店長",
@@ -1334,14 +718,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "川の思い出が嫌いなわけではありません。楽しいことも、たくさんありましたの",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "川の思い出が嫌いなわけではありません。楽しいことも、たくさんありましたの"
     },
     {
       "speaker": "店長",
@@ -1349,14 +726,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "川魚を焼いたことも、夏の水の冷たさも、今でもよく覚えていますわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "川魚を焼いたことも、夏の水の冷たさも、今でもよく覚えていますわ"
     },
     {
       "speaker": "店長",
@@ -1364,18 +734,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。少しだけ、怖い記憶も混ざってしまっただけです",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "",
-      "text": "その言葉は穏やかだった。でも、俺はそれ以上聞かなかった。"
+      "text": "ええ。少しだけ、怖い記憶も混ざってしまっただけです"
     },
     {
       "speaker": "",
@@ -1387,14 +746,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "川魚の話ですか？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "川魚の話ですか？"
     },
     {
       "speaker": "店長",
@@ -1402,14 +754,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "そんなに面白いものではありませんわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "そんなに面白いものではありませんわ"
     },
     {
       "speaker": "店長",
@@ -1417,14 +762,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……また、そういうことを",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……また、そういうことを"
     },
     {
       "speaker": "店長",
@@ -1432,14 +770,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "だめではありません。ただ、少し困るだけです",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "だめではありません。ただ、少し困るだけです"
     },
     {
       "speaker": "店長",
@@ -1447,14 +778,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。困った店長ですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。困った店長ですわ"
     },
     {
       "speaker": "",

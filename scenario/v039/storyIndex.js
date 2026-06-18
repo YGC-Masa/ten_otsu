@@ -1585,7 +1585,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_00_01_key.json",
-    "version": "v039_231",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -1615,7 +1615,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_00_02_key.json",
-    "version": "v039_231",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -1647,7 +1647,7 @@ window.TENOTSU_STORY_INDEX = [
       "星野 緋奈"
     ],
     "scenario": "scenario/v039/events/ayame_affection_00_03_key.json",
-    "version": "v039_231",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -1679,7 +1679,7 @@ window.TENOTSU_STORY_INDEX = [
       "星野 緋奈"
     ],
     "scenario": "scenario/v039/events/ayame_affection_10_00_main.json",
-    "version": "v039_231",
+    "version": "v039_239",
     "unlock": {
       "type": "all_story_cleared",
       "storyIds": [
@@ -1721,7 +1721,7 @@ window.TENOTSU_STORY_INDEX = [
       "餅月 里美"
     ],
     "scenario": "scenario/v039/events/ayame_affection_10_01_key.json",
-    "version": "v039_232",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -1753,7 +1753,7 @@ window.TENOTSU_STORY_INDEX = [
       "星野 緋奈"
     ],
     "scenario": "scenario/v039/events/ayame_affection_10_02_key.json",
-    "version": "v039_232",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -1785,7 +1785,7 @@ window.TENOTSU_STORY_INDEX = [
       "星野 緋奈"
     ],
     "scenario": "scenario/v039/events/ayame_affection_10_03_key.json",
-    "version": "v039_232",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -1819,7 +1819,7 @@ window.TENOTSU_STORY_INDEX = [
       "餅月 里美"
     ],
     "scenario": "scenario/v039/events/ayame_affection_20_00_main.json",
-    "version": "v039_232",
+    "version": "v039_239",
     "unlock": {
       "type": "all_story_cleared",
       "storyIds": [
@@ -1861,7 +1861,7 @@ window.TENOTSU_STORY_INDEX = [
       "餅月 里美"
     ],
     "scenario": "scenario/v039/events/ayame_affection_20_01_key.json",
-    "version": "v039_233",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -1893,7 +1893,7 @@ window.TENOTSU_STORY_INDEX = [
       "星野 緋奈"
     ],
     "scenario": "scenario/v039/events/ayame_affection_20_02_key.json",
-    "version": "v039_233",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -1927,7 +1927,7 @@ window.TENOTSU_STORY_INDEX = [
       "餅月 里美"
     ],
     "scenario": "scenario/v039/events/ayame_affection_20_03_key.json",
-    "version": "v039_233",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -1961,7 +1961,7 @@ window.TENOTSU_STORY_INDEX = [
       "餅月 里美"
     ],
     "scenario": "scenario/v039/events/ayame_affection_30_00_main.json",
-    "version": "v039_233",
+    "version": "v039_239",
     "unlock": {
       "type": "all_story_cleared",
       "storyIds": [
@@ -2003,7 +2003,7 @@ window.TENOTSU_STORY_INDEX = [
       "餅月 里美"
     ],
     "scenario": "scenario/v039/events/ayame_affection_30_01_key.json",
-    "version": "v039_233",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -2037,7 +2037,7 @@ window.TENOTSU_STORY_INDEX = [
       "餅月 里美"
     ],
     "scenario": "scenario/v039/events/ayame_affection_30_02_key.json",
-    "version": "v039_233",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -2071,7 +2071,7 @@ window.TENOTSU_STORY_INDEX = [
       "餅月 里美"
     ],
     "scenario": "scenario/v039/events/ayame_affection_30_03_key.json",
-    "version": "v039_233",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -2101,7 +2101,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_40_00_main.json",
-    "version": "v039_233",
+    "version": "v039_239",
     "unlock": {
       "type": "all_story_cleared",
       "storyIds": [
@@ -2139,7 +2139,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_40_01_key.json",
-    "version": "v039_234",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -2169,7 +2169,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_40_02_key.json",
-    "version": "v039_234",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -2199,7 +2199,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_40_03_key.json",
-    "version": "v039_234",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -2229,7 +2229,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_50_00_main.json",
-    "version": "v039_234",
+    "version": "v039_239",
     "unlock": {
       "type": "all_story_cleared",
       "storyIds": [
@@ -2267,7 +2267,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_50_01_key.json",
-    "version": "v039_234",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -2297,7 +2297,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_50_02_key.json",
-    "version": "v039_234",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -2327,7 +2327,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_50_03_key.json",
-    "version": "v039_234",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -2357,7 +2357,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_60_00_main.json",
-    "version": "v039_234",
+    "version": "v039_239",
     "unlock": {
       "type": "all_story_cleared",
       "storyIds": [
@@ -2395,7 +2395,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_60_01_key.json",
-    "version": "v039_235",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -2425,7 +2425,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_60_02_key.json",
-    "version": "v039_235",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -2455,7 +2455,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_60_03_key.json",
-    "version": "v039_235",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -2485,7 +2485,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_70_00_main.json",
-    "version": "v039_235",
+    "version": "v039_239",
     "unlock": {
       "type": "all_story_cleared",
       "storyIds": [
@@ -2523,7 +2523,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_70_01_key.json",
-    "version": "v039_236",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -2553,7 +2553,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_70_02_key.json",
-    "version": "v039_236",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -2583,7 +2583,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_70_03_key.json",
-    "version": "v039_236",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -2613,7 +2613,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_80_00_main.json",
-    "version": "v039_236",
+    "version": "v039_239",
     "unlock": {
       "type": "all_story_cleared",
       "storyIds": [
@@ -2651,7 +2651,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_80_01_key.json",
-    "version": "v039_237",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -2681,7 +2681,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_80_02_key.json",
-    "version": "v039_237",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -2711,7 +2711,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_80_03_key.json",
-    "version": "v039_237",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -2741,7 +2741,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_90_00_main.json",
-    "version": "v039_237",
+    "version": "v039_239",
     "unlock": {
       "type": "all_story_cleared",
       "storyIds": [
@@ -2779,7 +2779,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_90_01_key.json",
-    "version": "v039_238",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -2809,7 +2809,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_90_02_key.json",
-    "version": "v039_238",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -2839,7 +2839,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_90_03_key.json",
-    "version": "v039_238",
+    "version": "v039_239",
     "unlock": {
       "type": "affection_level",
       "character": "ak",
@@ -2869,7 +2869,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_100_00_main.json",
-    "version": "v039_238",
+    "version": "v039_239",
     "unlock": {
       "type": "all_story_cleared",
       "storyIds": [

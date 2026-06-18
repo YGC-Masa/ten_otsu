@@ -1,7 +1,7 @@
 {
   "id": "ayame_affection_100_00_main",
   "title": "あの日と変わらぬこの場所で",
-  "version": "v039_238",
+  "version": "v039_239",
   "return": {
     "mode": "storyMenu",
     "storyId": "ayame_affection_100_00_main",
@@ -106,14 +106,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "子どもの頃、何度も来た場所です",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "子どもの頃、何度も来た場所です"
     },
     {
       "speaker": "店長",
@@ -121,14 +114,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "そして、ずっと避けていた場所でもあります",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "そして、ずっと避けていた場所でもあります"
     },
     {
       "speaker": "",
@@ -145,10 +131,6 @@
     {
       "speaker": "",
       "text": "彩愛さんは、しばらく何も言わずに流れを見つめていた。"
-    },
-    {
-      "speaker": "",
-      "text": "俺も、その隣に立つ。"
     },
     {
       "speaker": "",
@@ -176,14 +158,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "不思議ですわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "不思議ですわね"
     },
     {
       "speaker": "店長",
@@ -191,14 +166,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "こんなにも綺麗な場所だったのだと、今さら気づくなんて",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "こんなにも綺麗な場所だったのだと、今さら気づくなんて"
     },
     {
       "speaker": "",
@@ -218,14 +186,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "昔のわたくしには、この音も、光も、ただ怖いものにしか感じられませんでした",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "昔のわたくしには、この音も、光も、ただ怖いものにしか感じられませんでした"
     },
     {
       "speaker": "店長",
@@ -233,36 +194,15 @@
     },
     {
       "speaker": "彩愛",
-      "text": "水が流れる音を聞くだけで、胸の奥が固くなるようで",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "水が流れる音を聞くだけで、胸の奥が固くなるようで"
     },
     {
       "speaker": "彩愛",
-      "text": "足元が揺れるようで",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "足元が揺れるようで"
     },
     {
       "speaker": "彩愛",
-      "text": "ここへ来ることなど、考えもしませんでした",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ここへ来ることなど、考えもしませんでした"
     },
     {
       "speaker": "店長",
@@ -270,14 +210,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "でも、今は",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "でも、今は"
     },
     {
       "speaker": "",
@@ -301,14 +234,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "怖いだけでは、ありません",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "怖いだけでは、ありません"
     },
     {
       "speaker": "店長",
@@ -316,14 +242,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "綺麗だと、思えます",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "綺麗だと、思えます"
     },
     {
       "speaker": "",
@@ -359,14 +278,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ええ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ"
     },
     {
       "speaker": "",
@@ -374,22 +286,11 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ただ、少しだけ手を貸していただけますか",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ただ、少しだけ手を貸していただけますか"
     },
     {
       "speaker": "店長",
       "text": "もちろんです"
-    },
-    {
-      "speaker": "",
-      "text": "俺が手を差し出すと、彩愛さんはゆっくりとその手を取った。"
     },
     {
       "speaker": "",
@@ -401,22 +302,11 @@
     },
     {
       "speaker": "",
-      "text": "彩愛さんは、俺の手を支えにしながら、ゆっくり石へ腰を下ろす。"
-    },
-    {
-      "speaker": "",
       "text": "そして、ほんの少しだけ息を吐いた。"
     },
     {
       "speaker": "彩愛",
-      "text": "ありがとうございます",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ありがとうございます"
     },
     {
       "speaker": "店長",
@@ -424,18 +314,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "はい",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
-    },
-    {
-      "speaker": "",
-      "text": "彩愛さんは、俺の手を離す。"
+      "text": "はい"
     },
     {
       "speaker": "",
@@ -443,22 +322,11 @@
     },
     {
       "speaker": "彩愛",
-      "text": "大丈夫です",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "大丈夫です"
     },
     {
       "speaker": "",
       "text": "その言葉は、今まで聞いたどの「大丈夫」よりも、自然だった。"
-    },
-    {
-      "speaker": "",
-      "text": "俺も、隣の石に腰を下ろす。"
     },
     {
       "speaker": "",
@@ -474,14 +342,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ここへ来る前に",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ここへ来る前に"
     },
     {
       "speaker": "店長",
@@ -489,14 +350,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "お父様が、また祝言だの跡継ぎだのとおっしゃっていました",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "お父様が、また祝言だの跡継ぎだのとおっしゃっていました"
     },
     {
       "speaker": "店長",
@@ -504,14 +358,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。本当に",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。本当に"
     },
     {
       "speaker": "",
@@ -519,14 +366,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "今朝も、店長が来ると知った途端に、妙にそわそわし始めまして",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "今朝も、店長が来ると知った途端に、妙にそわそわし始めまして"
     },
     {
       "speaker": "店長",
@@ -534,14 +374,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ばあやが止めてくださらなければ、今ごろ店長は、お父様から家系図を見せられていたかもしれません",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ばあやが止めてくださらなければ、今ごろ店長は、お父様から家系図を見せられていたかもしれません"
     },
     {
       "speaker": "店長",
@@ -549,14 +382,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "見てはいけません",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "見てはいけません"
     },
     {
       "speaker": "店長",
@@ -572,14 +398,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "以前のわたくしなら、ああいう言葉をもっと重く受け止めていたと思います",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "以前のわたくしなら、ああいう言葉をもっと重く受け止めていたと思います"
     },
     {
       "speaker": "店長",
@@ -587,14 +406,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "はい",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "はい"
     },
     {
       "speaker": "",
@@ -602,25 +414,11 @@
     },
     {
       "speaker": "彩愛",
-      "text": "結婚しなければならないのか。家のことを考えなければならないのか。誰かに選ばれる人でなければならないのか",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "結婚しなければならないのか。家のことを考えなければならないのか。誰かに選ばれる人でなければならないのか"
     },
     {
       "speaker": "彩愛",
-      "text": "そんなふうに、一つひとつの言葉を自分の中で重くしてしまっていたと思います",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "そんなふうに、一つひとつの言葉を自分の中で重くしてしまっていたと思います"
     },
     {
       "speaker": "店長",
@@ -628,14 +426,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "今も、考えないわけではありません",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "今も、考えないわけではありません"
     },
     {
       "speaker": "",
@@ -643,14 +434,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "けれど、以前ほど怖くはありません",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "けれど、以前ほど怖くはありません"
     },
     {
       "speaker": "店長",
@@ -658,36 +442,15 @@
     },
     {
       "speaker": "彩愛",
-      "text": "お父様の言葉は、お父様の言葉です",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "お父様の言葉は、お父様の言葉です"
     },
     {
       "speaker": "彩愛",
-      "text": "家のことも、世間体も、周りの目も、まったく無視できるものではありません",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "家のことも、世間体も、周りの目も、まったく無視できるものではありません"
     },
     {
       "speaker": "彩愛",
-      "text": "でも、それだけでわたくしの未来が決まるわけではありません",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "でも、それだけでわたくしの未来が決まるわけではありません"
     },
     {
       "speaker": "",
@@ -699,36 +462,15 @@
     },
     {
       "speaker": "彩愛",
-      "text": "誰かに急かされてではなく",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "誰かに急かされてではなく"
     },
     {
       "speaker": "彩愛",
-      "text": "誰かに決められてでもなく",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "誰かに決められてでもなく"
     },
     {
       "speaker": "彩愛",
-      "text": "わたくし自身の足で、選んだ場所へ進みたいのです",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "わたくし自身の足で、選んだ場所へ進みたいのです"
     },
     {
       "speaker": "店長",
@@ -736,14 +478,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "それに",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "それに"
     },
     {
       "speaker": "",
@@ -751,14 +486,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "お父様も、お父様なりに不器用なのだと分かりましたから",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "お父様も、お父様なりに不器用なのだと分かりましたから"
     },
     {
       "speaker": "店長",
@@ -766,14 +494,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "かなり、ですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "かなり、ですわ"
     },
     {
       "speaker": "",
@@ -782,10 +503,6 @@
     {
       "speaker": "",
       "text": "水の音が、その笑い声をやわらかく包んでいく。"
-    },
-    {
-      "speaker": "",
-      "text": "しばらくして、俺はどうしても気になっていたことを口にした。"
     },
     {
       "speaker": "店長",
@@ -809,14 +526,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "大丈夫です",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "大丈夫です"
     },
     {
       "speaker": "店長",
@@ -824,14 +534,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "はい",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "はい"
     },
     {
       "speaker": "",
@@ -855,14 +558,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "怖さが、完全になくなったわけではありません",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "怖さが、完全になくなったわけではありません"
     },
     {
       "speaker": "店長",
@@ -870,14 +566,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "過去にあったことが、何もなかったことになるわけでもありません",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "過去にあったことが、何もなかったことになるわけでもありません"
     },
     {
       "speaker": "店長",
@@ -885,14 +574,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "けれど、もう怖いだけではありません",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "けれど、もう怖いだけではありません"
     },
     {
       "speaker": "",
@@ -900,14 +582,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "それに",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "それに"
     },
     {
       "speaker": "店長",
@@ -915,14 +590,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "もしもの時は、手を差し伸べていただけるのでしょう？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "もしもの時は、手を差し伸べていただけるのでしょう？"
     },
     {
       "speaker": "",
@@ -950,14 +618,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "即答ですのね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "即答ですのね"
     },
     {
       "speaker": "店長",
@@ -965,14 +626,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……ふふ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……ふふ"
     },
     {
       "speaker": "",
@@ -1032,14 +686,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "店長",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "店長"
     },
     {
       "speaker": "店長",
@@ -1047,14 +694,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "改めて、お伝えしたいことがあります",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "改めて、お伝えしたいことがあります"
     },
     {
       "speaker": "店長",
@@ -1082,14 +722,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "自己の先入観や、過去の経験にとらわれていたわたくしを、見つけていただいてありがとうございます",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "自己の先入観や、過去の経験にとらわれていたわたくしを、見つけていただいてありがとうございます"
     },
     {
       "speaker": "店長",
@@ -1097,36 +730,15 @@
     },
     {
       "speaker": "彩愛",
-      "text": "わたくしは、ずっと自分で自分を縛っていたのだと思います",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "わたくしは、ずっと自分で自分を縛っていたのだと思います"
     },
     {
       "speaker": "彩愛",
-      "text": "ちゃんとしていなければならない。選ばれる人でなければならない。家のことも、世間体も、全部きちんと背負わなければならない",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ちゃんとしていなければならない。選ばれる人でなければならない。家のことも、世間体も、全部きちんと背負わなければならない"
     },
     {
       "speaker": "彩愛",
-      "text": "そう思い込んでおりました",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "そう思い込んでおりました"
     },
     {
       "speaker": "店長",
@@ -1134,14 +746,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "けれど、貴方は",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "けれど、貴方は"
     },
     {
       "speaker": "",
@@ -1153,14 +758,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "わたくし自身を見てくださいました",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "わたくし自身を見てくださいました"
     },
     {
       "speaker": "店長",
@@ -1168,36 +766,15 @@
     },
     {
       "speaker": "彩愛",
-      "text": "綺麗に整えたわたくしだけではなく",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "綺麗に整えたわたくしだけではなく"
     },
     {
       "speaker": "彩愛",
-      "text": "慌てるわたくしも、怒るわたくしも、怖がるわたくしも",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "慌てるわたくしも、怒るわたくしも、怖がるわたくしも"
     },
     {
       "speaker": "彩愛",
-      "text": "全部、見てくださいました",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "全部、見てくださいました"
     },
     {
       "speaker": "店長",
@@ -1205,14 +782,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "はい。ただ、そばにいてくださったのだと思います",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "はい。ただ、そばにいてくださったのだと思います"
     },
     {
       "speaker": "",
@@ -1220,14 +790,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "だからこそ、感謝しているのです",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "だからこそ、感謝しているのです"
     },
     {
       "speaker": "",
@@ -1243,14 +806,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "とても……感謝しています",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "とても……感謝しています"
     },
     {
       "speaker": "店長",
@@ -1274,14 +830,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "店長",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "店長"
     },
     {
       "speaker": "店長",
@@ -1289,14 +838,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "これからも",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "これからも"
     },
     {
       "speaker": "",
@@ -1304,14 +846,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "紫藤彩愛を、よろしくお願いします",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "紫藤彩愛を、よろしくお願いします"
     },
     {
       "speaker": "",
@@ -1331,22 +866,11 @@
     },
     {
       "speaker": "彩愛",
-      "text": "こちらこそ？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "こちらこそ？"
     },
     {
       "speaker": "店長",
       "text": "はい"
-    },
-    {
-      "speaker": "",
-      "text": "俺は、彩愛さんをまっすぐ見た。"
     },
     {
       "speaker": "店長",
@@ -1354,14 +878,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……即答ですのね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……即答ですのね"
     },
     {
       "speaker": "店長",
@@ -1369,14 +886,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ふふ。最後まで、そういうところですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ふふ。最後まで、そういうところですわ"
     },
     {
       "speaker": "",

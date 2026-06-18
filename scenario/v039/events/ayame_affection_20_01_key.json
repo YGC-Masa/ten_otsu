@@ -1,7 +1,7 @@
 {
   "id": "ayame_affection_20_01_key",
   "title": "おやつは自然の恵みですわ",
-  "version": "v039_233",
+  "version": "v039_239",
   "return": {
     "mode": "storyMenu",
     "storyId": "ayame_affection_20_01_key",
@@ -50,10 +50,6 @@
       "text": "昼休憩の時間。店内の賑わいから少し離れた休憩室には、穏やかな空気が流れていた。"
     },
     {
-      "speaker": "",
-      "text": "俺が休憩用の飲み物を持って入ると、先に休んでいた緋奈が、嬉しそうにコンビニのプリンを開けていた。"
-    },
-    {
       "speaker": "緋奈",
       "text": "んー！　やっぱり休憩中の甘いものって最高ですね！",
       "storySprites": [
@@ -70,19 +66,17 @@
     },
     {
       "speaker": "緋奈",
-      "text": "だって甘いものは正義ですから！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "だって甘いものは正義ですから！"
     },
     {
       "speaker": "彩愛",
       "text": "ふふ。緋奈さんらしいですわね",
       "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
         {
           "id": "ak",
           "src": "images/assets/char/k10101.webp",
@@ -96,36 +90,15 @@
     },
     {
       "speaker": "緋奈",
-      "text": "彩愛さんは食べないんですか？　プリン、もう一個ありますよ！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "彩愛さんは食べないんですか？　プリン、もう一個ありますよ！"
     },
     {
       "speaker": "彩愛",
-      "text": "お気持ちは嬉しいですが、わたくしはお茶だけで十分ですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "お気持ちは嬉しいですが、わたくしはお茶だけで十分ですわ"
     },
     {
       "speaker": "緋奈",
-      "text": "えー、もったいない！　休憩中のおやつですよ？",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "えー、もったいない！　休憩中のおやつですよ？"
     },
     {
       "speaker": "店長",
@@ -133,47 +106,19 @@
     },
     {
       "speaker": "緋奈",
-      "text": "もちろんです！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "もちろんです！"
     },
     {
       "speaker": "彩愛",
-      "text": "けれど、休憩中に甘いものをいただくと、気持ちが少しほぐれますものね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "けれど、休憩中に甘いものをいただくと、気持ちが少しほぐれますものね"
     },
     {
       "speaker": "緋奈",
-      "text": "ですよね！　彩愛さんも子どもの頃、おやつ好きでした？",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ですよね！　彩愛さんも子どもの頃、おやつ好きでした？"
     },
     {
       "speaker": "彩愛",
-      "text": "子どもの頃、ですか",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "子どもの頃、ですか"
     },
     {
       "speaker": "",
@@ -181,14 +126,7 @@
     },
     {
       "speaker": "緋奈",
-      "text": "あたしはプリンとか、アイスとか、駄菓子とか好きでした！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "あたしはプリンとか、アイスとか、駄菓子とか好きでした！"
     },
     {
       "speaker": "店長",
@@ -196,36 +134,15 @@
     },
     {
       "speaker": "緋奈",
-      "text": "好きなものは変わらないんです！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "好きなものは変わらないんです！"
     },
     {
       "speaker": "彩愛",
-      "text": "ふふ。それは素敵なことですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ふふ。それは素敵なことですわ"
     },
     {
       "speaker": "緋奈",
-      "text": "店長は？",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "店長は？"
     },
     {
       "speaker": "店長",
@@ -233,25 +150,11 @@
     },
     {
       "speaker": "緋奈",
-      "text": "あー、分かります！　夏のアイスは神！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "あー、分かります！　夏のアイスは神！"
     },
     {
       "speaker": "彩愛",
-      "text": "まあ、緋奈さん。表現が大きいですわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "まあ、緋奈さん。表現が大きいですわね"
     },
     {
       "speaker": "",
@@ -259,25 +162,11 @@
     },
     {
       "speaker": "緋奈",
-      "text": "で、彩愛さんは？　子どもの頃のおやつ、何でした？",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "で、彩愛さんは？　子どもの頃のおやつ、何でした？"
     },
     {
       "speaker": "彩愛",
-      "text": "そうですわね……庭の柿や、夏のとうもろこしでしょうか",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "そうですわね……庭の柿や、夏のとうもろこしでしょうか"
     },
     {
       "speaker": "店長",
@@ -285,14 +174,7 @@
     },
     {
       "speaker": "緋奈",
-      "text": "とうもろこし！？",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "とうもろこし！？"
     },
     {
       "speaker": "",
@@ -304,58 +186,23 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。季節によって違いましたわ。夏はとうもろこし、秋はさつまいもや柿。冬は干し柿やみかんをいただくこともありました",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。季節によって違いましたわ。夏はとうもろこし、秋はさつまいもや柿。冬は干し柿やみかんをいただくこともありました"
     },
     {
       "speaker": "緋奈",
-      "text": "めっちゃ豪華じゃないですか！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "めっちゃ豪華じゃないですか！"
     },
     {
       "speaker": "彩愛",
-      "text": "豪華、でしょうか？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "豪華、でしょうか？"
     },
     {
       "speaker": "緋奈",
-      "text": "だって、季節のおやつ食べ放題みたいなものですよ！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "だって、季節のおやつ食べ放題みたいなものですよ！"
     },
     {
       "speaker": "彩愛",
-      "text": "食べ放題ではありませんわ。収穫したものには、干す分、ご近所へお分けする分、保存する分もございますもの",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "食べ放題ではありませんわ。収穫したものには、干す分、ご近所へお分けする分、保存する分もございますもの"
     },
     {
       "speaker": "店長",
@@ -363,25 +210,11 @@
     },
     {
       "speaker": "緋奈",
-      "text": "スケールが家庭のおやつじゃない気がします！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "スケールが家庭のおやつじゃない気がします！"
     },
     {
       "speaker": "彩愛",
-      "text": "田舎では珍しくありませんわよ？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "田舎では珍しくありませんわよ？"
     },
     {
       "speaker": "店長",
@@ -389,14 +222,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "まあ。失礼ですわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "まあ。失礼ですわね"
     },
     {
       "speaker": "店長",
@@ -404,58 +230,23 @@
     },
     {
       "speaker": "彩愛",
-      "text": "今のは褒めておりません",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "今のは褒めておりません"
     },
     {
       "speaker": "緋奈",
-      "text": "あはは！　でもいいなー。庭の柿とか、とうもろこしとか、さつまいもとか！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "あはは！　でもいいなー。庭の柿とか、とうもろこしとか、さつまいもとか！"
     },
     {
       "speaker": "彩愛",
-      "text": "買ったお菓子とは違う楽しさがありましたわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "買ったお菓子とは違う楽しさがありましたわ"
     },
     {
       "speaker": "緋奈",
-      "text": "じゃあ、駄菓子とかは食べなかったんですか？",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "じゃあ、駄菓子とかは食べなかったんですか？"
     },
     {
       "speaker": "彩愛",
-      "text": "食べましたわ。ただ、近くに大きなお店はありませんでしたから",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "食べましたわ。ただ、近くに大きなお店はありませんでしたから"
     },
     {
       "speaker": "店長",
@@ -463,36 +254,15 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。昔ながらの個人商店が一軒ありまして、そこで買う駄菓子は少し特別でしたの",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。昔ながらの個人商店が一軒ありまして、そこで買う駄菓子は少し特別でしたの"
     },
     {
       "speaker": "緋奈",
-      "text": "駄菓子が特別……なんかいいですね！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "駄菓子が特別……なんかいいですね！"
     },
     {
       "speaker": "彩愛",
-      "text": "小さな袋菓子を大切に持って帰ったものですわ。けれど、普段のおやつは自然の恵みでしたわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "小さな袋菓子を大切に持って帰ったものですわ。けれど、普段のおやつは自然の恵みでしたわね"
     },
     {
       "speaker": "店長",
@@ -500,36 +270,15 @@
     },
     {
       "speaker": "彩愛",
-      "text": "はい。庭の柿、いただきもののみかん、蒸かしたさつまいも、茹でたとうもろこし。季節ごとに楽しみがございました",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "はい。庭の柿、いただきもののみかん、蒸かしたさつまいも、茹でたとうもろこし。季節ごとに楽しみがございました"
     },
     {
       "speaker": "緋奈",
-      "text": "言い方は上品なのに、内容はめちゃくちゃ田舎っぽいです！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "言い方は上品なのに、内容はめちゃくちゃ田舎っぽいです！"
     },
     {
       "speaker": "彩愛",
-      "text": "まあ。田舎ですもの",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "まあ。田舎ですもの"
     },
     {
       "speaker": "店長",
@@ -537,36 +286,15 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。田舎であることは否定いたしませんわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。田舎であることは否定いたしませんわ"
     },
     {
       "speaker": "緋奈",
-      "text": "でも、すごくいいです！　おやつが自然の恵みって、なんか健康的！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "でも、すごくいいです！　おやつが自然の恵みって、なんか健康的！"
     },
     {
       "speaker": "彩愛",
-      "text": "健康的ではありましたわね。ただ、甘いお菓子への憧れもございました",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "健康的ではありましたわね。ただ、甘いお菓子への憧れもございました"
     },
     {
       "speaker": "店長",
@@ -574,36 +302,15 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。買っていただいた日は、少しだけ大人になった気分でした",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。買っていただいた日は、少しだけ大人になった気分でした"
     },
     {
       "speaker": "緋奈",
-      "text": "駄菓子で大人！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "駄菓子で大人！"
     },
     {
       "speaker": "彩愛",
-      "text": "自分で選ぶ、というのが特別でしたの",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "自分で選ぶ、というのが特別でしたの"
     },
     {
       "speaker": "",
@@ -611,25 +318,11 @@
     },
     {
       "speaker": "緋奈",
-      "text": "でも、庭の柿っていいですね。取ってすぐ食べるんですか？",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "でも、庭の柿っていいですね。取ってすぐ食べるんですか？"
     },
     {
       "speaker": "彩愛",
-      "text": "食べ頃を見て、もいでいただきますわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "食べ頃を見て、もいでいただきますわ"
     },
     {
       "speaker": "店長",
@@ -637,36 +330,15 @@
     },
     {
       "speaker": "彩愛",
-      "text": "色や柔らかさを見れば、だいたい分かります。少し硬いもの、よく熟れたもの、干し柿に向くもの……木によって違いますの",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "色や柔らかさを見れば、だいたい分かります。少し硬いもの、よく熟れたもの、干し柿に向くもの……木によって違いますの"
     },
     {
       "speaker": "緋奈",
-      "text": "柿マスターだ！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "柿マスターだ！"
     },
     {
       "speaker": "彩愛",
-      "text": "柿マスターではありません",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "柿マスターではありません"
     },
     {
       "speaker": "店長",
@@ -674,14 +346,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "秋の楽しみでしたから",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "秋の楽しみでしたから"
     },
     {
       "speaker": "",
@@ -689,36 +354,15 @@
     },
     {
       "speaker": "彩愛",
-      "text": "学校から帰って、庭を通る時に、ちょうどよく色づいた柿を見つけるのです",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "学校から帰って、庭を通る時に、ちょうどよく色づいた柿を見つけるのです"
     },
     {
       "speaker": "緋奈",
-      "text": "うわー、いいなー！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "うわー、いいなー！"
     },
     {
       "speaker": "彩愛",
-      "text": "もちろん、勝手にたくさん取ると叱られますわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "もちろん、勝手にたくさん取ると叱られますわ"
     },
     {
       "speaker": "店長",
@@ -726,14 +370,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "当然です。干し柿にする分や、ご近所へお分けする分もありますもの",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "当然です。干し柿にする分や、ご近所へお分けする分もありますもの"
     },
     {
       "speaker": "店長",
@@ -741,36 +378,15 @@
     },
     {
       "speaker": "彩愛",
-      "text": "田舎では、季節のものを分け合うことも多いですわ。柿をお分けしたら、別の日に野菜やみかんをいただいたり",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "田舎では、季節のものを分け合うことも多いですわ。柿をお分けしたら、別の日に野菜やみかんをいただいたり"
     },
     {
       "speaker": "緋奈",
-      "text": "物々交換みたい！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "物々交換みたい！"
     },
     {
       "speaker": "彩愛",
-      "text": "ふふ。そう言うと少し大げさですが、助け合いのようなものですわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ふふ。そう言うと少し大げさですが、助け合いのようなものですわね"
     },
     {
       "speaker": "店長",
@@ -778,14 +394,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "良いところもございます。少し賑やかすぎるところもありますけれど",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "良いところもございます。少し賑やかすぎるところもありますけれど"
     },
     {
       "speaker": "店長",
@@ -793,14 +402,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "親戚やご近所の方が集まると、話がなかなか終わらないのです。誰かが野菜を持ってくると、そのままお茶になり、お茶になると世間話になり、世間話になると夕方になっていることもございました",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "親戚やご近所の方が集まると、話がなかなか終わらないのです。誰かが野菜を持ってくると、そのままお茶になり、お茶になると世間話になり、世間話になると夕方になっていることもございました"
     },
     {
       "speaker": "店長",
@@ -808,14 +410,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。のどかではありました",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。のどかではありました"
     },
     {
       "speaker": "",
@@ -823,47 +418,19 @@
     },
     {
       "speaker": "緋奈",
-      "text": "じゃあ、一口どうですか！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "じゃあ、一口どうですか！"
     },
     {
       "speaker": "彩愛",
-      "text": "その流れで勧められるとは思いませんでしたわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "その流れで勧められるとは思いませんでしたわ"
     },
     {
       "speaker": "緋奈",
-      "text": "美味しいものは分けたいじゃないですか！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "美味しいものは分けたいじゃないですか！"
     },
     {
       "speaker": "彩愛",
-      "text": "ふふ。ありがとうございます。では、一口だけ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ふふ。ありがとうございます。では、一口だけ"
     },
     {
       "speaker": "",
@@ -871,47 +438,19 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……甘くて、美味しいですわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……甘くて、美味しいですわね"
     },
     {
       "speaker": "緋奈",
-      "text": "ですよね！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ですよね！"
     },
     {
       "speaker": "彩愛",
-      "text": "これは、たしかに休憩中にいただきたくなります",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "これは、たしかに休憩中にいただきたくなります"
     },
     {
       "speaker": "緋奈",
-      "text": "彩愛さんがプリンを認めた！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "彩愛さんがプリンを認めた！"
     },
     {
       "speaker": "店長",
@@ -919,36 +458,15 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ふふ。ですが、自然の恵みも負けておりませんわよ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ふふ。ですが、自然の恵みも負けておりませんわよ"
     },
     {
       "speaker": "緋奈",
-      "text": "今度、彩愛さんのおすすめ自然おやつランキング聞きたいです！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "今度、彩愛さんのおすすめ自然おやつランキング聞きたいです！"
     },
     {
       "speaker": "彩愛",
-      "text": "ランキングにするほどではありませんわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ランキングにするほどではありませんわ"
     },
     {
       "speaker": "店長",
@@ -956,14 +474,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "店長まで",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "店長まで"
     },
     {
       "speaker": "店長",
@@ -971,25 +482,11 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。あとは、いただきもののびわや、栗などもありました",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。あとは、いただきもののびわや、栗などもありました"
     },
     {
       "speaker": "緋奈",
-      "text": "どんどん出てくる！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "どんどん出てくる！"
     },
     {
       "speaker": "店長",
@@ -997,14 +494,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "探すというより、季節になると自然と集まってくるのです。家で採れたもの、ご近所からいただいたもの、畑で採れたもの",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "探すというより、季節になると自然と集まってくるのです。家で採れたもの、ご近所からいただいたもの、畑で採れたもの"
     },
     {
       "speaker": "店長",
@@ -1012,14 +502,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "豊か……でしょうか",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "豊か……でしょうか"
     },
     {
       "speaker": "店長",
@@ -1027,14 +510,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……そうですか",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……そうですか"
     },
     {
       "speaker": "",
@@ -1042,58 +518,23 @@
     },
     {
       "speaker": "彩愛",
-      "text": "わたくしにとっては、普通のことでしたわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "わたくしにとっては、普通のことでしたわ"
     },
     {
       "speaker": "緋奈",
-      "text": "でも本当に面白いです！　彩愛さんの子どもの頃の話、もっと聞きたいです！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "でも本当に面白いです！　彩愛さんの子どもの頃の話、もっと聞きたいです！"
     },
     {
       "speaker": "彩愛",
-      "text": "そんなに面白いものではありませんわよ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "そんなに面白いものではありませんわよ"
     },
     {
       "speaker": "緋奈",
-      "text": "いやいや、めっちゃ面白いです！　次は川とか山の話聞きたいです！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "いやいや、めっちゃ面白いです！　次は川とか山の話聞きたいです！"
     },
     {
       "speaker": "彩愛",
-      "text": "川……ですか",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "川……ですか"
     },
     {
       "speaker": "",
@@ -1105,36 +546,15 @@
     },
     {
       "speaker": "彩愛",
-      "text": "いえ。昔は、よく遊びましたわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "いえ。昔は、よく遊びましたわ"
     },
     {
       "speaker": "緋奈",
-      "text": "川遊びですか？",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "川遊びですか？"
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。魚を見つけたり、冷たい水に足を入れたり。夏は、川の近くが涼しかったですから",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。魚を見つけたり、冷たい水に足を入れたり。夏は、川の近くが涼しかったですから"
     },
     {
       "speaker": "店長",
@@ -1142,36 +562,15 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……今は、あまり",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……今は、あまり"
     },
     {
       "speaker": "緋奈",
-      "text": "そうなんですか？",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "そうなんですか？"
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。大人になりましたもの",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。大人になりましたもの"
     },
     {
       "speaker": "",
@@ -1179,47 +578,19 @@
     },
     {
       "speaker": "緋奈",
-      "text": "じゃあ、今度は山の話ですね！　栗拾いとか！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "じゃあ、今度は山の話ですね！　栗拾いとか！"
     },
     {
       "speaker": "彩愛",
-      "text": "栗拾いも、足元に気をつけないと危ないですわ。いががありますから",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "栗拾いも、足元に気をつけないと危ないですわ。いががありますから"
     },
     {
       "speaker": "緋奈",
-      "text": "いが！　痛そう！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "いが！　痛そう！"
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。素手で触ってはいけません",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。素手で触ってはいけません"
     },
     {
       "speaker": "店長",
@@ -1227,14 +598,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "田舎では珍しくありませんわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "田舎では珍しくありませんわ"
     },
     {
       "speaker": "店長",
@@ -1242,14 +606,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "何か？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "何か？"
     },
     {
       "speaker": "店長",
@@ -1257,47 +614,19 @@
     },
     {
       "speaker": "彩愛",
-      "text": "普通のことばかりですのに",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "普通のことばかりですのに"
     },
     {
       "speaker": "緋奈",
-      "text": "普通のレベルが高いです！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "普通のレベルが高いです！"
     },
     {
       "speaker": "彩愛",
-      "text": "そうでしょうか？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "そうでしょうか？"
     },
     {
       "speaker": "緋奈",
-      "text": "はい！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "はい！"
     },
     {
       "speaker": "",
@@ -1305,47 +634,19 @@
     },
     {
       "speaker": "緋奈",
-      "text": "あー、美味しかった！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "あー、美味しかった！"
     },
     {
       "speaker": "彩愛",
-      "text": "ごちそうさまでした。緋奈さん",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ごちそうさまでした。緋奈さん"
     },
     {
       "speaker": "緋奈",
-      "text": "いえいえ！　今度は彩愛さんの自然おやつ話、もっと聞かせてくださいね！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "いえいえ！　今度は彩愛さんの自然おやつ話、もっと聞かせてくださいね！"
     },
     {
       "speaker": "彩愛",
-      "text": "機会があれば",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "機会があれば"
     },
     {
       "speaker": "店長",
@@ -1353,14 +654,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "店長まで……",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "店長まで……"
     },
     {
       "speaker": "店長",
@@ -1368,36 +662,15 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……また、そういうことを",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……また、そういうことを"
     },
     {
       "speaker": "緋奈",
-      "text": "店長、また彩愛さんを照れさせてる！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "店長、また彩愛さんを照れさせてる！"
     },
     {
       "speaker": "彩愛",
-      "text": "照れておりません",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "照れておりません"
     },
     {
       "speaker": "店長",
@@ -1405,14 +678,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "店長",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "店長"
     },
     {
       "speaker": "店長",
@@ -1420,25 +686,11 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……謝られると、それはそれで困ります",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……謝られると、それはそれで困ります"
     },
     {
       "speaker": "緋奈",
-      "text": "今日もいつもの流れだ！",
-      "storySprites": [
-        {
-          "id": "aa",
-          "src": "images/assets/char/a10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "今日もいつもの流れだ！"
     },
     {
       "speaker": "",
@@ -1451,10 +703,6 @@
     {
       "speaker": "",
       "text": "自然の恵み。畑の恵み。季節ごとに変わるおやつ。"
-    },
-    {
-      "speaker": "",
-      "text": "それは、彩愛さんにとっては普通の思い出。けれど俺にとっては、少し特別に聞こえた。"
     },
     {
       "speaker": "",
@@ -1483,10 +731,6 @@
     {
       "speaker": "",
       "text": "そして、川の話になった時、彩愛さんは少しだけ言葉を濁した。"
-    },
-    {
-      "speaker": "",
-      "text": "まだ深く聞くことではないのかもしれない。でも、彩愛さんの中には、まだ俺の知らない景色がたくさんある。"
     },
     {
       "speaker": "",

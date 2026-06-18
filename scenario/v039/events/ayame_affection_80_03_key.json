@@ -1,7 +1,7 @@
 {
   "id": "ayame_affection_80_03_key",
   "title": "ライフスタイルの研究ですわ",
-  "version": "v039_237",
+  "version": "v039_239",
   "return": {
     "mode": "storyMenu",
     "storyId": "ayame_affection_80_03_key",
@@ -90,14 +90,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "でしたら、見直した甲斐がありましたわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "でしたら、見直した甲斐がありましたわ"
     },
     {
       "speaker": "",
@@ -113,14 +106,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "はい。少しだけ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "はい。少しだけ"
     },
     {
       "speaker": "店長",
@@ -128,14 +114,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ありがとうございます",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ありがとうございます"
     },
     {
       "speaker": "",
@@ -143,14 +122,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "では、ライフスタイル別のおすすめ家電をもう少し細かく整理したいですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "では、ライフスタイル別のおすすめ家電をもう少し細かく整理したいですわ"
     },
     {
       "speaker": "店長",
@@ -158,14 +130,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。二人暮らし、共働き、ご実家との距離、将来的な家族構成",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。二人暮らし、共働き、ご実家との距離、将来的な家族構成"
     },
     {
       "speaker": "店長",
@@ -173,14 +138,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "現実的でなければ、暮らしの提案にはなりませんもの",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "現実的でなければ、暮らしの提案にはなりませんもの"
     },
     {
       "speaker": "店長",
@@ -204,14 +162,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "研究ですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "研究ですわ"
     },
     {
       "speaker": "店長",
@@ -219,14 +170,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "はい。ライフスタイルの研究です",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "はい。ライフスタイルの研究です"
     },
     {
       "speaker": "店長",
@@ -238,14 +182,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "まず、二人暮らしの場合。洗濯機は七キロから八キロ程度でも足りますが、まとめ洗いをするなら十キロ以上も候補ですわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "まず、二人暮らしの場合。洗濯機は七キロから八キロ程度でも足りますが、まとめ洗いをするなら十キロ以上も候補ですわね"
     },
     {
       "speaker": "店長",
@@ -253,14 +190,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "共働きの場合は、乾燥機能があると家事負担がかなり減ります",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "共働きの場合は、乾燥機能があると家事負担がかなり減ります"
     },
     {
       "speaker": "店長",
@@ -268,14 +198,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。あの言葉は、今でも気に入っておりますわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。あの言葉は、今でも気に入っておりますわ"
     },
     {
       "speaker": "",
@@ -283,14 +206,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "冷蔵庫は、自炊をするかどうかで大きく変わります。外食が多いなら小さめでも構いませんが、作り置きをするなら余裕が欲しいところです",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "冷蔵庫は、自炊をするかどうかで大きく変わります。外食が多いなら小さめでも構いませんが、作り置きをするなら余裕が欲しいところです"
     },
     {
       "speaker": "店長",
@@ -298,14 +214,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "炊飯器は、二人なら三合でも足ります。ただ、お弁当や冷凍保存まで考えるなら、五・五合炊きも悪くありません",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "炊飯器は、二人なら三合でも足ります。ただ、お弁当や冷凍保存まで考えるなら、五・五合炊きも悪くありません"
     },
     {
       "speaker": "店長",
@@ -313,14 +222,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "暮らしですもの",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "暮らしですもの"
     },
     {
       "speaker": "",
@@ -336,14 +238,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "掃除機は、部屋の広さと収納場所。共働きなら、ロボット掃除機も候補になりますわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "掃除機は、部屋の広さと収納場所。共働きなら、ロボット掃除機も候補になりますわね"
     },
     {
       "speaker": "店長",
@@ -351,14 +246,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "帰宅した時に床が綺麗だと、それだけで気持ちが楽になりますもの",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "帰宅した時に床が綺麗だと、それだけで気持ちが楽になりますもの"
     },
     {
       "speaker": "店長",
@@ -366,14 +254,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "それから、子どもがいる場合は",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "それから、子どもがいる場合は"
     },
     {
       "speaker": "",
@@ -381,14 +262,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "洗濯物の量がかなり増えます。男の子でしたら、スポーツで泥汚れや汗が多くなるかもしれませんし",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "洗濯物の量がかなり増えます。男の子でしたら、スポーツで泥汚れや汗が多くなるかもしれませんし"
     },
     {
       "speaker": "店長",
@@ -396,14 +270,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "女の子でしたら、おしゃれ着や制服、私服も増えるかもしれません",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "女の子でしたら、おしゃれ着や制服、私服も増えるかもしれません"
     },
     {
       "speaker": "店長",
@@ -411,14 +278,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "洗濯機は大きめ。乾燥機能もできれば欲しいところですわね。冷蔵庫も、家族の食事量に合わせて余裕を見て……",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "洗濯機は大きめ。乾燥機能もできれば欲しいところですわね。冷蔵庫も、家族の食事量に合わせて余裕を見て……"
     },
     {
       "speaker": "",
@@ -430,14 +290,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……"
     },
     {
       "speaker": "店長",
@@ -445,14 +298,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "いえ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "いえ"
     },
     {
       "speaker": "",
@@ -464,14 +310,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "研究ですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "研究ですわ"
     },
     {
       "speaker": "店長",
@@ -479,14 +318,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "本当にです",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "本当にです"
     },
     {
       "speaker": "店長",
@@ -494,14 +326,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "はい",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "はい"
     },
     {
       "speaker": "店長",
@@ -509,14 +334,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……"
     },
     {
       "speaker": "",
@@ -524,14 +342,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "一般的なご家庭ですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "一般的なご家庭ですわ"
     },
     {
       "speaker": "店長",
@@ -539,14 +350,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "店長",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "店長"
     },
     {
       "speaker": "店長",
@@ -554,14 +358,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "あまり細かいところを指摘しないでくださいませ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "あまり細かいところを指摘しないでくださいませ"
     },
     {
       "speaker": "店長",
@@ -569,14 +366,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "謝られると、それはそれで困ります",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "謝られると、それはそれで困ります"
     },
     {
       "speaker": "",
@@ -600,14 +390,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "子どもが小さいうちは、汚れ物が増えますわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "子どもが小さいうちは、汚れ物が増えますわね"
     },
     {
       "speaker": "店長",
@@ -615,14 +398,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "食べこぼし、外遊び、汗、タオル類",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "食べこぼし、外遊び、汗、タオル類"
     },
     {
       "speaker": "店長",
@@ -630,14 +406,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "予洗い機能や温水洗浄があると便利かもしれません",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "予洗い機能や温水洗浄があると便利かもしれません"
     },
     {
       "speaker": "店長",
@@ -645,14 +414,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "それから、冷蔵庫は大きめが安心です。作り置き、冷凍保存、週末のまとめ買い",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "それから、冷蔵庫は大きめが安心です。作り置き、冷凍保存、週末のまとめ買い"
     },
     {
       "speaker": "店長",
@@ -660,14 +422,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "もしご実家から食材などをいただくご家庭なら、野菜室も大切ですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "もしご実家から食材などをいただくご家庭なら、野菜室も大切ですわ"
     },
     {
       "speaker": "店長",
@@ -675,14 +430,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "そうですわね。食べきれる量だけにしてもらってはいますが",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "そうですわね。食べきれる量だけにしてもらってはいますが"
     },
     {
       "speaker": "店長",
@@ -690,14 +438,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ああ、そうか、そうですね。大きすぎてもいけないですものね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ああ、そうか、そうですね。大きすぎてもいけないですものね"
     },
     {
       "speaker": "",
@@ -705,14 +446,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "食材は、使い切れるだけ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "食材は、使い切れるだけ"
     },
     {
       "speaker": "店長",
@@ -720,14 +454,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "冷蔵庫は大きければよい、というものでもありませんわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "冷蔵庫は大きければよい、というものでもありませんわね"
     },
     {
       "speaker": "店長",
@@ -735,25 +462,11 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。買い置きやいただきものが多いご家庭なら容量に余裕がある方が安心です",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。買い置きやいただきものが多いご家庭なら容量に余裕がある方が安心です"
     },
     {
       "speaker": "彩愛",
-      "text": "ですが、使い切れずに傷ませてしまっては本末転倒ですもの",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ですが、使い切れずに傷ませてしまっては本末転倒ですもの"
     },
     {
       "speaker": "店長",
@@ -761,14 +474,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "暮らしに合う容量。これが大事ですわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "暮らしに合う容量。これが大事ですわ"
     },
     {
       "speaker": "店長",
@@ -776,14 +482,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "暮らしですから",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "暮らしですから"
     },
     {
       "speaker": "",
@@ -811,14 +510,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……そう見えますか？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……そう見えますか？"
     },
     {
       "speaker": "店長",
@@ -826,14 +518,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "そうですか",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "そうですか"
     },
     {
       "speaker": "",
@@ -841,14 +526,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "少し、楽しいです",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "少し、楽しいです"
     },
     {
       "speaker": "店長",
@@ -856,14 +534,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "以前なら、こういう未来の話を考えると、すぐに身構えていたと思います",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "以前なら、こういう未来の話を考えると、すぐに身構えていたと思います"
     },
     {
       "speaker": "店長",
@@ -871,25 +542,11 @@
     },
     {
       "speaker": "彩愛",
-      "text": "相手のこと、家族のこと、実家のこと、生活のこと",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "相手のこと、家族のこと、実家のこと、生活のこと"
     },
     {
       "speaker": "彩愛",
-      "text": "考えなければならないことが多すぎて、怖くなっていました",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "考えなければならないことが多すぎて、怖くなっていました"
     },
     {
       "speaker": "店長",
@@ -897,14 +554,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "今も、大きなことだとは思います",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "今も、大きなことだとは思います"
     },
     {
       "speaker": "店長",
@@ -912,14 +562,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "でも、怖いだけではありません",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "でも、怖いだけではありません"
     },
     {
       "speaker": "",
@@ -927,25 +570,11 @@
     },
     {
       "speaker": "彩愛",
-      "text": "洗濯機の容量を考えることも、冷蔵庫の大きさを考えることも、炊飯器の合数を考えることも",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "洗濯機の容量を考えることも、冷蔵庫の大きさを考えることも、炊飯器の合数を考えることも"
     },
     {
       "speaker": "彩愛",
-      "text": "そういう一つひとつが、暮らしを考えることなのですね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "そういう一つひとつが、暮らしを考えることなのですね"
     },
     {
       "speaker": "店長",
@@ -953,14 +582,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "それは、少し幸せなことなのかもしれません",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "それは、少し幸せなことなのかもしれません"
     },
     {
       "speaker": "",
@@ -980,14 +602,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……"
     },
     {
       "speaker": "店長",
@@ -995,14 +610,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "いえ、その",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "いえ、その"
     },
     {
       "speaker": "店長",
@@ -1010,14 +618,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "家族構成の想定をすると、どうしても確認したい項目がありまして",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "家族構成の想定をすると、どうしても確認したい項目がありまして"
     },
     {
       "speaker": "店長",
@@ -1025,14 +626,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "はい",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "はい"
     },
     {
       "speaker": "",
@@ -1040,14 +634,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "その……店長だったら",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "その……店長だったら"
     },
     {
       "speaker": "店長",
@@ -1055,14 +642,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……店長だったら……子どもは何人欲しいですか……？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……店長だったら……子どもは何人欲しいですか……？"
     },
     {
       "speaker": "",
@@ -1078,14 +658,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "いやだわ！　わたくしったら！　つい！",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "いやだわ！　わたくしったら！　つい！"
     },
     {
       "speaker": "店長",
@@ -1093,14 +666,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "もう。そう、そうです。あの。そう！",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "もう。そう、そうです。あの。そう！"
     },
     {
       "speaker": "",
@@ -1108,14 +674,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ライフスタイルの研究ですわ！",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ライフスタイルの研究ですわ！"
     },
     {
       "speaker": "店長",
@@ -1123,14 +682,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……店長。あまり意地悪を言わないでくださいませ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……店長。あまり意地悪を言わないでくださいませ"
     },
     {
       "speaker": "店長",
@@ -1138,14 +690,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "今日は、やめておきます。今聞くと、わたくしが冷静ではいられない気がします",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "今日は、やめておきます。今聞くと、わたくしが冷静ではいられない気がします"
     },
     {
       "speaker": "店長",
@@ -1153,14 +698,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "そこは、何も言わないところです",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "そこは、何も言わないところです"
     },
     {
       "speaker": "店長",
@@ -1168,14 +706,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "本当に？",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "本当に？"
     },
     {
       "speaker": "店長",
@@ -1183,14 +714,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "んもう。調子が狂いますわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "んもう。調子が狂いますわ"
     },
     {
       "speaker": "",
@@ -1242,14 +766,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "今日は、少し失敗いたしましたわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "今日は、少し失敗いたしましたわね"
     },
     {
       "speaker": "店長",
@@ -1257,14 +774,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。仕事の研究に、私情が混ざりました",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ。仕事の研究に、私情が混ざりました"
     },
     {
       "speaker": "店長",
@@ -1272,14 +782,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "簡単におっしゃいますわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "簡単におっしゃいますわね"
     },
     {
       "speaker": "店長",
@@ -1287,14 +790,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "でも",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "でも"
     },
     {
       "speaker": "",
@@ -1302,14 +798,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "今日は、少しだけその簡単さに助けられました",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "今日は、少しだけその簡単さに助けられました"
     },
     {
       "speaker": "店長",
@@ -1317,14 +806,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "お礼を言われると困りますわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "お礼を言われると困りますわ"
     },
     {
       "speaker": "店長",
@@ -1332,14 +814,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "あら。本当ですわね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "あら。本当ですわね"
     },
     {
       "speaker": "",
@@ -1347,14 +822,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "未来を考えるのは、まだ少し照れくさいです",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "未来を考えるのは、まだ少し照れくさいです"
     },
     {
       "speaker": "店長",
@@ -1362,14 +830,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "でも、怖いだけではありません",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "でも、怖いだけではありません"
     },
     {
       "speaker": "店長",
@@ -1377,14 +838,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "少し楽しくて、少し幸せで",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "少し楽しくて、少し幸せで"
     },
     {
       "speaker": "",
@@ -1392,14 +846,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "少し、困ります",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "少し、困ります"
     },
     {
       "speaker": "店長",
@@ -1407,14 +854,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ええ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "ええ"
     },
     {
       "speaker": "",
@@ -1422,14 +862,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "でも、悪い困り方ではありませんわ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "でも、悪い困り方ではありませんわ"
     },
     {
       "speaker": "店長",
@@ -1437,14 +870,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "店長",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "店長"
     },
     {
       "speaker": "店長",
@@ -1452,14 +878,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "今日の質問は、忘れてくださいませ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "今日の質問は、忘れてくださいませ"
     },
     {
       "speaker": "店長",
@@ -1467,14 +886,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "でしょうね",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "でしょうね"
     },
     {
       "speaker": "店長",
@@ -1482,14 +894,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "はい",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "はい"
     },
     {
       "speaker": "",
@@ -1497,14 +902,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "わたくしも、忘れられそうにありませんから",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "わたくしも、忘れられそうにありませんから"
     },
     {
       "speaker": "",
@@ -1516,14 +914,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……今のも、聞かなかったことにしてくださいませ",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "……今のも、聞かなかったことにしてくださいませ"
     },
     {
       "speaker": "店長",
@@ -1531,14 +922,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "もう",
-      "storySprites": [
-        {
-          "id": "ak",
-          "src": "images/assets/char/k10101.webp",
-          "opacity": 1
-        }
-      ]
+      "text": "もう"
     },
     {
       "speaker": "",

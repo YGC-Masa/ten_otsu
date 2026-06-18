@@ -1,30 +1,28 @@
-# ten_otsu v039_238 差分パッチ
+# ten_otsu v039_239 差分パッチ
 
 ## 適用前提
-- **v039_237適用済みへ上書き**
+- **v039_238適用済みへ上書き**
 
-## 内容
+## 修正内容
 
-### 紫藤 彩愛 親愛91〜100 JSON実装
-`ayame_affection_091_100_fulltexts_v001.zip` から、以下4本を `v039_steps` 形式に変換しました。
+### 紫藤 彩愛シナリオ全体の見直し
+- 彩愛親愛シナリオ40本を対象に、本文中の店長一人称モノローグを整理
+- `speaker:""` で、本文中に `俺` を含むモノローグ/一人称地の文を削除
+- 削除数：**161ステップ**
 
-- 親愛Lv.93 キー1：`田舎では普通ですわ`
-- 親愛Lv.95 キー2：`お父様、これは何でしょう`
-- 親愛Lv.98 キー3：`本気にしてしまいますよ`
-- 親愛Lv.100 メイン：`あの日と変わらぬこの場所で`
+### 人物同時表示・リロード抑制
+- 彩愛・緋奈・里美など、表示対象人物が同じ場に残っている場合は同時表示を維持
+- 同じ人物構成が続くステップでは `storySprites` の再指定を削除
+- 人物がその場から消える明示的な場面転換/背景変更/`clearStorySprites` までは、原則として立ち絵を消さない運用に整理
+- 画像ファイルが変わらない限り、不要なリロード/再フェードが起きにくい構造へ調整
 
-## 追加ファイル
-
-- `scenario/v039/events/ayame_affection_90_01_key.json`
-- `scenario/v039/events/ayame_affection_90_02_key.json`
-- `scenario/v039/events/ayame_affection_90_03_key.json`
-- `scenario/v039/events/ayame_affection_100_00_main.json`
-
-## 更新ファイル
-
+## 更新対象
+- `scenario/v039/events/ayame_affection_*.json`
 - `scenario/v039/storyIndex.js`
-- `scenario/v039/keyStoryConfig.js`
 - `program/v039/version.js`
 - `VERSION.txt`
 - `index.html`
-- `README_DIFF.md`
+
+## 備考
+- シーン見出し、背景変更、イベントCG、人物非表示指定は保持しています。
+- 客や店長など立ち絵アセットがない話者には立ち絵を追加していません。
