@@ -1,0 +1,1414 @@
+{
+  "id": "ayame_affection_100_00_main",
+  "title": "あの日と変わらぬこの場所で",
+  "version": "v039_238",
+  "return": {
+    "mode": "storyMenu",
+    "storyId": "ayame_affection_100_00_main",
+    "storyMenuTab": "main"
+  },
+  "format": "v039_steps",
+  "type": "character_main_story",
+  "characterId": "ak",
+  "route": "ayame",
+  "affectionRange": {
+    "min": 90,
+    "max": 100
+  },
+  "location": {
+    "id": "ayame_route_90s",
+    "name": "紫藤家裏手の清流"
+  },
+  "summary": "彩愛 親愛Lv.100「あの日と変わらぬこの場所で」。",
+  "purpose": "彩愛ルート親愛90代として、実家編のドタバタと、これからの未来へ向かう関係を描く。",
+  "tags": [
+    "彩愛ルート",
+    "親愛度90-100",
+    "実家編",
+    "未来",
+    "家族"
+  ],
+  "clearFlags": [
+    "ayame_affection_100_00_main_cleared"
+  ],
+  "nextHint": "次の彩愛親愛ストーリーへ。",
+  "renderPolicy": {
+    "spritePosition": "logical_split_n_plus_1",
+    "eventCgLayer": "frontOfCharacters"
+  },
+  "steps": [
+    {
+      "speaker": "",
+      "text": "水の音が聞こえていた。",
+      "bg": "images/assets/bg/bg_hashiro_lake_day.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "さらさらと、石の間を抜ける透明な流れ。"
+    },
+    {
+      "speaker": "",
+      "text": "木漏れ日が水面に落ちて、細かく揺れている。"
+    },
+    {
+      "speaker": "",
+      "text": "紫藤家の裏手から少し歩いた先に、その清流はあった。"
+    },
+    {
+      "speaker": "",
+      "text": "大きな屋敷の気配は、もう遠い。"
+    },
+    {
+      "speaker": "",
+      "text": "父親の騒がしい声も、ばあやの静かな足音も、ここまでは届かない。"
+    },
+    {
+      "speaker": "",
+      "text": "聞こえるのは、水の音。"
+    },
+    {
+      "speaker": "",
+      "text": "風が葉を揺らす音。"
+    },
+    {
+      "speaker": "",
+      "text": "そして、隣を歩く彩愛さんの、静かな足音だけだった。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、清流の少し手前で足を止めた。"
+    },
+    {
+      "speaker": "",
+      "text": "淡い紫のワンピースの裾が、風に小さく揺れている。"
+    },
+    {
+      "speaker": "店長",
+      "text": "ここだったんですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、水の流れを見つめたまま、静かに頷いた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "子どもの頃、何度も来た場所です",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そして、ずっと避けていた場所でもあります",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "水の音は、穏やかだった。"
+    },
+    {
+      "speaker": "",
+      "text": "怖いほど静かで。"
+    },
+    {
+      "speaker": "",
+      "text": "そして、綺麗だった。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、しばらく何も言わずに流れを見つめていた。"
+    },
+    {
+      "speaker": "",
+      "text": "俺も、その隣に立つ。"
+    },
+    {
+      "speaker": "",
+      "text": "水は浅く、透明だった。"
+    },
+    {
+      "speaker": "",
+      "text": "石の形まで見える。"
+    },
+    {
+      "speaker": "",
+      "text": "小さな魚影が、光の中をすっと横切っていく。"
+    },
+    {
+      "speaker": "",
+      "text": "ここが、彩愛さんにとって怖い場所だった。"
+    },
+    {
+      "speaker": "",
+      "text": "昔の記憶と結びついて、長い間、近づくことすら難しかった場所。"
+    },
+    {
+      "speaker": "",
+      "text": "その場所に、今、彩愛さんは自分の足で立っている。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "不思議ですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "何がですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "こんなにも綺麗な場所だったのだと、今さら気づくなんて",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんの声は、穏やかだった。"
+    },
+    {
+      "speaker": "",
+      "text": "無理に明るくしているわけではない。"
+    },
+    {
+      "speaker": "",
+      "text": "怖くないふりをしているわけでもない。"
+    },
+    {
+      "speaker": "",
+      "text": "ただ、そこにあるものを、そのまま見ている声だった。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "昔のわたくしには、この音も、光も、ただ怖いものにしか感じられませんでした",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "水が流れる音を聞くだけで、胸の奥が固くなるようで",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "足元が揺れるようで",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ここへ来ることなど、考えもしませんでした",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "でも、今は",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、ほんの少しだけ水辺へ近づいた。"
+    },
+    {
+      "speaker": "",
+      "text": "靴の先が、湿った石の手前で止まる。"
+    },
+    {
+      "speaker": "",
+      "text": "その動きは慎重だった。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、逃げるための慎重さではない。"
+    },
+    {
+      "speaker": "",
+      "text": "自分の心を確かめながら、一歩ずつ進むための慎重さだった。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "怖いだけでは、ありません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "綺麗だと、思えます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "風が吹いた。"
+    },
+    {
+      "speaker": "",
+      "text": "木漏れ日が、水面の上で揺れる。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんの髪が、頬の横でそっと揺れた。"
+    },
+    {
+      "speaker": "",
+      "text": "その横顔は、とても静かだった。"
+    },
+    {
+      "speaker": "",
+      "text": "まるで、長い間閉じていた扉を、ようやく自分で開けたような顔だった。"
+    },
+    {
+      "speaker": "",
+      "text": "少し歩くと、川岸に腰を下ろせそうな平たい石があった。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、その手前で迷うように立ち止まる。"
+    },
+    {
+      "speaker": "店長",
+      "text": "座りますか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "そう答えてから、彩愛さんは少しだけこちらを見た。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ただ、少しだけ手を貸していただけますか",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "もちろんです"
+    },
+    {
+      "speaker": "",
+      "text": "俺が手を差し出すと、彩愛さんはゆっくりとその手を取った。"
+    },
+    {
+      "speaker": "",
+      "text": "指先は、少しだけ冷たい。"
+    },
+    {
+      "speaker": "",
+      "text": "でも、震えてはいなかった。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、俺の手を支えにしながら、ゆっくり石へ腰を下ろす。"
+    },
+    {
+      "speaker": "",
+      "text": "そして、ほんの少しだけ息を吐いた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ありがとうございます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "大丈夫ですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、俺の手を離す。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、すぐに水から目を逸らすことはなかった。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "大丈夫です",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "その言葉は、今まで聞いたどの「大丈夫」よりも、自然だった。"
+    },
+    {
+      "speaker": "",
+      "text": "俺も、隣の石に腰を下ろす。"
+    },
+    {
+      "speaker": "",
+      "text": "二人で、しばらく水の流れを見ていた。"
+    },
+    {
+      "speaker": "",
+      "text": "流れは速すぎず、遅すぎず。"
+    },
+    {
+      "speaker": "",
+      "text": "ただ、途切れることなく続いている。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ここへ来る前に",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "お父様が、また祝言だの跡継ぎだのとおっしゃっていました",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "相変わらずですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。本当に",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、呆れたように、けれど少しだけ楽しそうに笑った。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "今朝も、店長が来ると知った途端に、妙にそわそわし始めまして",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "お父様らしいです"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ばあやが止めてくださらなければ、今ごろ店長は、お父様から家系図を見せられていたかもしれません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "それは少し見てみたかったかもしれません"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "見てはいけません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、くすりと笑う。"
+    },
+    {
+      "speaker": "",
+      "text": "その笑い方は、とても自然だった。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "以前のわたくしなら、ああいう言葉をもっと重く受け止めていたと思います",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "結婚や、跡継ぎの話ですか"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、水面を見つめる。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "結婚しなければならないのか。家のことを考えなければならないのか。誰かに選ばれる人でなければならないのか",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そんなふうに、一つひとつの言葉を自分の中で重くしてしまっていたと思います",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "今は？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "今も、考えないわけではありません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、そう言って小さく息を吐いた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "けれど、以前ほど怖くはありません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "お父様の言葉は、お父様の言葉です",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "家のことも、世間体も、周りの目も、まったく無視できるものではありません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "でも、それだけでわたくしの未来が決まるわけではありません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "その言葉は、静かだった。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、芯があった。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "誰かに急かされてではなく",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "誰かに決められてでもなく",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "わたくし自身の足で、選んだ場所へ進みたいのです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "それに",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ困ったように笑う。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "お父様も、お父様なりに不器用なのだと分かりましたから",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "かなり不器用ですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "かなり、ですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "二人で少しだけ笑った。"
+    },
+    {
+      "speaker": "",
+      "text": "水の音が、その笑い声をやわらかく包んでいく。"
+    },
+    {
+      "speaker": "",
+      "text": "しばらくして、俺はどうしても気になっていたことを口にした。"
+    },
+    {
+      "speaker": "店長",
+      "text": "水、もう大丈夫なんですか？"
+    },
+    {
+      "speaker": "",
+      "text": "言ってから、少しだけ後悔する。"
+    },
+    {
+      "speaker": "",
+      "text": "聞かない方がよかったかもしれない。"
+    },
+    {
+      "speaker": "",
+      "text": "でも、彩愛さんは嫌な顔をしなかった。"
+    },
+    {
+      "speaker": "",
+      "text": "むしろ、こちらがそう聞くことを分かっていたように、穏やかに微笑んだ。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "大丈夫です",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "本当に？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、水の流れを見つめる。"
+    },
+    {
+      "speaker": "",
+      "text": "そして、ほんの少しだけ水辺へ手を伸ばした。"
+    },
+    {
+      "speaker": "",
+      "text": "指先が、水に触れるほど近くまで下りる。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、無理には触れない。"
+    },
+    {
+      "speaker": "",
+      "text": "その距離で、静かに止まる。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "怖さが、完全になくなったわけではありません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "過去にあったことが、何もなかったことになるわけでもありません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "けれど、もう怖いだけではありません",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、こちらを振り向いた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "それに",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "もしもの時は、手を差し伸べていただけるのでしょう？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "その笑顔は、驚くほど綺麗だった。"
+    },
+    {
+      "speaker": "",
+      "text": "不安を隠すための笑顔ではない。"
+    },
+    {
+      "speaker": "",
+      "text": "誰かに選ばれるために整えた笑顔でもない。"
+    },
+    {
+      "speaker": "",
+      "text": "怖さを知っていて。"
+    },
+    {
+      "speaker": "",
+      "text": "それでも、前へ進むと決めた人の笑顔だった。"
+    },
+    {
+      "speaker": "店長",
+      "text": "もちろんです"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "即答ですのね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "迷うところじゃないので"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……ふふ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、嬉しそうに笑った。"
+    },
+    {
+      "speaker": "",
+      "text": "その笑顔を見て、胸の奥が少し熱くなる。"
+    },
+    {
+      "speaker": "",
+      "text": "以前、彩愛さんは言っていた。"
+    },
+    {
+      "speaker": "",
+      "text": "いつか、もう一度、川を見てもよいかもしれない、と。"
+    },
+    {
+      "speaker": "",
+      "text": "その言葉が、まさに今、目の前で現実となっている。"
+    },
+    {
+      "speaker": "",
+      "text": "逃げずに。"
+    },
+    {
+      "speaker": "",
+      "text": "強がらずに。"
+    },
+    {
+      "speaker": "",
+      "text": "ここへ来て、水の流れを見つめている。"
+    },
+    {
+      "speaker": "",
+      "text": "それが、ただ嬉しかった。"
+    },
+    {
+      "speaker": "",
+      "text": "水辺に、少しだけ沈黙が落ちる。"
+    },
+    {
+      "speaker": "",
+      "text": "重い沈黙ではない。"
+    },
+    {
+      "speaker": "",
+      "text": "互いの言葉を急がなくていい沈黙だった。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、膝の上で指をそろえる。"
+    },
+    {
+      "speaker": "",
+      "text": "そして、ゆっくりこちらへ向き直った。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "改めて、お伝えしたいことがあります",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ姿勢を正した。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、それは仕事中のような完璧な所作ではなかった。"
+    },
+    {
+      "speaker": "",
+      "text": "自然で。"
+    },
+    {
+      "speaker": "",
+      "text": "柔らかくて。"
+    },
+    {
+      "speaker": "",
+      "text": "それでいて、凛としていた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "自己の先入観や、過去の経験にとらわれていたわたくしを、見つけていただいてありがとうございます",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "わたくしは、ずっと自分で自分を縛っていたのだと思います",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ちゃんとしていなければならない。選ばれる人でなければならない。家のことも、世間体も、全部きちんと背負わなければならない",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そう思い込んでおりました",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さん"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "けれど、貴方は",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ言葉を切った。"
+    },
+    {
+      "speaker": "",
+      "text": "水の音が、二人の間を流れる。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "わたくし自身を見てくださいました",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "綺麗に整えたわたくしだけではなく",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "慌てるわたくしも、怒るわたくしも、怖がるわたくしも",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "全部、見てくださいました",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "俺は、ただ"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい。ただ、そばにいてくださったのだと思います",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、穏やかに微笑む。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "だからこそ、感謝しているのです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "風が吹く。"
+    },
+    {
+      "speaker": "",
+      "text": "水面がきらきらと揺れた。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、深く頭を下げた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "とても……感謝しています",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "顔を上げてください"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、ゆっくり顔を上げる。"
+    },
+    {
+      "speaker": "",
+      "text": "目元は少しだけ潤んでいた。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、泣いてはいない。"
+    },
+    {
+      "speaker": "",
+      "text": "強く、優しく、こちらを見ている。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "これからも",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ照れたように息を整える。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "紫藤彩愛を、よろしくお願いします",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "その言葉は、告白ではない。"
+    },
+    {
+      "speaker": "",
+      "text": "約束でもない。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、その両方に少しだけ似ていた。"
+    },
+    {
+      "speaker": "店長",
+      "text": "こちらこそ"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "こちらこそ？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "",
+      "text": "俺は、彩愛さんをまっすぐ見た。"
+    },
+    {
+      "speaker": "店長",
+      "text": "これからも、よろしくお願いします"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……即答ですのね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "迷うところじゃないので"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ。最後まで、そういうところですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、清流のそばで笑った。"
+    },
+    {
+      "speaker": "",
+      "text": "水の音。"
+    },
+    {
+      "speaker": "",
+      "text": "木漏れ日。"
+    },
+    {
+      "speaker": "",
+      "text": "透明な流れ。"
+    },
+    {
+      "speaker": "",
+      "text": "そして、彩愛さんの穏やかな笑顔。"
+    },
+    {
+      "speaker": "",
+      "text": "怖かった水辺は、もう怖いだけの場所ではない。"
+    },
+    {
+      "speaker": "",
+      "text": "そこに立つ彩愛さんは、誰かに選ばれるための彼女ではなかった。"
+    },
+    {
+      "speaker": "",
+      "text": "自分で選び、自分で歩き、自分の言葉で未来を見つめる人だった。"
+    }
+  ]
+}

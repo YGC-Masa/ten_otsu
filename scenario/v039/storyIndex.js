@@ -2761,5 +2761,133 @@ window.TENOTSU_STORY_INDEX = [
     "affectionLabel": "親愛Lv.90",
     "menuTitle": "親愛Lv.90：チチキトク、スグカエレ",
     "locationName": "ひだまりストア・感謝祭"
+  },
+  {
+    "id": "ayame_affection_90_01_key",
+    "title": "田舎では普通ですわ",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 10,
+    "affectionSlot": "key1",
+    "unlockLevel": 93,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_90_01_key.json",
+    "version": "v039_238",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 93
+    },
+    "order": 3145,
+    "summary": "彩愛 親愛Lv.93「田舎では普通ですわ」。",
+    "rawTitle": "田舎では普通ですわ",
+    "affectionLabel": "親愛Lv.93",
+    "menuTitle": "親愛Lv.93：田舎では普通ですわ",
+    "locationName": "紫藤家へ向かう道中・実家到着"
+  },
+  {
+    "id": "ayame_affection_90_02_key",
+    "title": "お父様、これは何でしょう",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 10,
+    "affectionSlot": "key2",
+    "unlockLevel": 95,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_90_02_key.json",
+    "version": "v039_238",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 95
+    },
+    "order": 3146,
+    "summary": "彩愛 親愛Lv.95「お父様、これは何でしょう」。",
+    "rawTitle": "お父様、これは何でしょう",
+    "affectionLabel": "親愛Lv.95",
+    "menuTitle": "親愛Lv.95：お父様、これは何でしょう",
+    "locationName": "紫藤家・父の部屋"
+  },
+  {
+    "id": "ayame_affection_90_03_key",
+    "title": "本気にしてしまいますよ",
+    "type": "key",
+    "category": "character_key",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 10,
+    "affectionSlot": "key3",
+    "unlockLevel": 98,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_90_03_key.json",
+    "version": "v039_238",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ak",
+      "level": 98
+    },
+    "order": 3147,
+    "summary": "彩愛 親愛Lv.98「本気にしてしまいますよ」。",
+    "rawTitle": "本気にしてしまいますよ",
+    "affectionLabel": "親愛Lv.98",
+    "menuTitle": "親愛Lv.98：本気にしてしまいますよ",
+    "locationName": "紫藤家・夜"
+  },
+  {
+    "id": "ayame_affection_100_00_main",
+    "title": "あの日と変わらぬこの場所で",
+    "type": "main",
+    "category": "character_main",
+    "character": "ak",
+    "route": "ayame",
+    "affectionBlock": 10,
+    "affectionSlot": "main",
+    "unlockLevel": 100,
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_affection_100_00_main.json",
+    "version": "v039_238",
+    "unlock": {
+      "type": "all_story_cleared",
+      "storyIds": [
+        "ayame_affection_90_01_key",
+        "ayame_affection_90_02_key",
+        "ayame_affection_90_03_key"
+      ],
+      "fallback": {
+        "type": "affection_level",
+        "character": "ak",
+        "level": 100
+      }
+    },
+    "order": 3148,
+    "summary": "彩愛 親愛Lv.100「あの日と変わらぬこの場所で」。",
+    "rawTitle": "あの日と変わらぬこの場所で",
+    "affectionLabel": "親愛Lv.100",
+    "menuTitle": "親愛Lv.100：あの日と変わらぬこの場所で",
+    "locationName": "紫藤家裏手の清流"
   }
 ];

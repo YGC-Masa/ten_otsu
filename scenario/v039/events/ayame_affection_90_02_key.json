@@ -1,0 +1,810 @@
+{
+  "id": "ayame_affection_90_02_key",
+  "title": "お父様、これは何でしょう",
+  "version": "v039_238",
+  "return": {
+    "mode": "storyMenu",
+    "storyId": "ayame_affection_90_02_key",
+    "storyMenuTab": "key"
+  },
+  "format": "v039_steps",
+  "type": "character_key_story",
+  "characterId": "ak",
+  "route": "ayame",
+  "affectionRange": {
+    "min": 90,
+    "max": 100
+  },
+  "location": {
+    "id": "ayame_route_90s",
+    "name": "紫藤家・父の部屋"
+  },
+  "summary": "彩愛 親愛Lv.95「お父様、これは何でしょう」。",
+  "purpose": "彩愛ルート親愛90代として、実家編のドタバタと、これからの未来へ向かう関係を描く。",
+  "tags": [
+    "彩愛ルート",
+    "親愛度90-100",
+    "実家編",
+    "未来",
+    "家族"
+  ],
+  "clearFlags": [
+    "ayame_affection_90_02_key_cleared"
+  ],
+  "nextHint": "次の彩愛親愛ストーリーへ。",
+  "renderPolicy": {
+    "spritePosition": "logical_split_n_plus_1",
+    "eventCgLayer": "frontOfCharacters"
+  },
+  "steps": [
+    {
+      "speaker": "",
+      "text": "彩愛さんは、ばあやの言葉も待たずに屋敷の奥へ駆け出した。",
+      "bg": "images/assets/bg/bg_sugosawa_house_day.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さん！"
+    },
+    {
+      "speaker": "",
+      "text": "俺も慌ててその後を追う。"
+    },
+    {
+      "speaker": "",
+      "text": "長い廊下。\n磨き込まれた床。\n古い柱。\n壁に掛けられた古い書。"
+    },
+    {
+      "speaker": "",
+      "text": "そのどれもが、この家の長い時間を物語っているようだった。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど今は、それを眺めている余裕などない。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんの足音だけが、屋敷の奥へまっすぐ響いていく。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "お父様！",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "返事はない。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……お父様ぁ。",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "さっきよりも少し弱い声だった。"
+    },
+    {
+      "speaker": "",
+      "text": "怒りではない。\n焦りでもない。\n間に合ってほしいと願うような、震えた声。"
+    },
+    {
+      "speaker": "",
+      "text": "廊下の突き当たり。"
+    },
+    {
+      "speaker": "",
+      "text": "一枚の襖の向こうから、かすかに光が漏れている。"
+    },
+    {
+      "speaker": "",
+      "text": "人の話し声のようなものも聞こえた。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんが立ち止まる。"
+    },
+    {
+      "speaker": "店長",
+      "text": "……ここですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……はい。お父様の部屋です",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、襖の前で一瞬だけ息を飲んだ。"
+    },
+    {
+      "speaker": "",
+      "text": "それから。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "お父様っ！",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "勢いよく襖を開けた。"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "よいではないか～！"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "はっはっはっは！"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "もっと近う寄れ～！ そうそう、それでよい！"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……お父様？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "そこには、病人の部屋とは思えない光景が広がっていた。"
+    },
+    {
+      "speaker": "",
+      "text": "壁一面を占める巨大テレビ。\n足を伸ばせる高級リクライニングベッド。\n飲みかけのお茶。\n開けかけの菓子袋。"
+    },
+    {
+      "speaker": "",
+      "text": "そして、リクライニングベッドに深く腰かけ、頭にVRゴーグルを装着した父親。"
+    },
+    {
+      "speaker": "",
+      "text": "巨大テレビには、VRのミラーリング映像らしきものが映し出されていた。"
+    },
+    {
+      "speaker": "",
+      "text": "画面中央には、堂々たる文字。"
+    },
+    {
+      "speaker": "",
+      "text": "『VRお殿様』"
+    },
+    {
+      "speaker": "",
+      "text": "その周囲では、芸者風の女の子たちが楽しそうに踊っている。"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "よいではないか～！ はっはっはっは！"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "……"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "ええい、邪魔をするでない！ 今いいところなのじゃ！"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは何も言わない。"
+    },
+    {
+      "speaker": "",
+      "text": "ただ、静かに立っている。"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "ばあやか？ あと五分！ 五分待て！"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "お父様",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "だから今は――"
+    },
+    {
+      "speaker": "",
+      "text": "父はそこで、ようやくVRゴーグルを外した。"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "……あ"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "お父様",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "彩愛"
+    },
+    {
+      "speaker": "",
+      "text": "短い沈黙。"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "ゴホン"
+    },
+    {
+      "speaker": "",
+      "text": "父は静かにVRゴーグルとコントローラを置いた。"
+    },
+    {
+      "speaker": "",
+      "text": "そして、何事もなかったかのように毛布を掛け直す。"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "おお、彩愛……生きている間に、また会えようとは……"
+    },
+    {
+      "speaker": "店長",
+      "text": "……"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "感動の再会というやつじゃ"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、それでも何も言わなかった。"
+    },
+    {
+      "speaker": "",
+      "text": "肩が小さく震えている。"
+    },
+    {
+      "speaker": "",
+      "text": "怒りなのか。\n安心なのか。\nそれとも、その両方なのか。"
+    },
+    {
+      "speaker": "",
+      "text": "俺には分からなかった。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、次に聞こえた声は、はっきり震えていた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……わたくしが、どれだけ心配したことか。店長にも、わざわざご足労いただいたというのに",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "いや、その"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "お父様。危篤とは……何でしょう",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "それはじゃな"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "何でしょう",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "……"
+    },
+    {
+      "speaker": "",
+      "text": "店長\n（怒ってる）"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "実は……"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "嘘だよーん！ なんちゃってー！ あっはっはー！"
+    },
+    {
+      "speaker": "",
+      "text": "沈黙。"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "あはは……あは……は"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "お父様",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "はい"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、ゆっくりと踵を返した。"
+    },
+    {
+      "speaker": "",
+      "text": "部屋の隅へ向かう。"
+    },
+    {
+      "speaker": "",
+      "text": "そこには、床の間に観賞用の模造刀が飾られていた。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、それを静かに手に取る。"
+    },
+    {
+      "speaker": "",
+      "text": "その所作があまりにも丁寧で、逆に怖かった。"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "……彩愛？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ばあやから習った紫藤流薙刀術奥義……今こそ、お見せいたしますわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "待て彩愛。目が笑っておらん"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "成敗です",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "まて！ 早まるな彩愛！"
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さん！？ それはさすがに！"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "ばあや！ ばあやー！ 彩愛が！"
+    },
+    {
+      "speaker": "",
+      "text": "廊下から、控えめな足音が近づいてくる。"
+    },
+    {
+      "speaker": "",
+      "text": "襖の外に立ったばあやは、部屋の中を一目見て、すべてを理解したように静かに息をついた。"
+    },
+    {
+      "speaker": "ばあや",
+      "text": "旦那様。残念ながら、ばあやは彩愛さまの味方でございます"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "裏切ったな、ばあや！"
+    },
+    {
+      "speaker": "ばあや",
+      "text": "いえ。旦那様が自滅なさっただけでございます"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "ぐうの音も出ぬ！"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは模造刀を構えた。"
+    },
+    {
+      "speaker": "",
+      "text": "上品で、凛としていて、無駄のない動き。"
+    },
+    {
+      "speaker": "",
+      "text": "普段の彩愛さんからは想像もできないほど、足運びが綺麗だった。"
+    },
+    {
+      "speaker": "",
+      "text": "いや、綺麗だからこそ怖い。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "紫藤流奥義――紫電一閃突き！",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "ぐほっ！？"
+    },
+    {
+      "speaker": "",
+      "text": "父の身体が、リクライニングベッドの上で大げさに跳ねた。"
+    },
+    {
+      "speaker": "",
+      "text": "模造刀の先は、父の腹の少し手前で止まっている。"
+    },
+    {
+      "speaker": "",
+      "text": "……ようにも見えた。"
+    },
+    {
+      "speaker": "",
+      "text": "いや、当たっていた気もする。"
+    },
+    {
+      "speaker": "店長",
+      "text": "……いや、今、思い切り突いたような"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "峰打ちですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "突きで峰打ちって成立するんですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "模造刀だから大丈夫です",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "危うく本当にあの世に行くところだったわい……"
+    },
+    {
+      "speaker": "ばあや",
+      "text": "旦那様"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "はい"
+    },
+    {
+      "speaker": "ばあや",
+      "text": "自業自得でございます"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "ばあやまで厳しい……"
+    },
+    {
+      "speaker": "",
+      "text": "しばらくして。"
+    },
+    {
+      "speaker": "",
+      "text": "父はようやくVRゴーグルから離れ、ベッドの上で正座に近い姿勢を取った。"
+    },
+    {
+      "speaker": "",
+      "text": "毛布はまだ膝の上に残っている。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは模造刀を手にしたまま、静かに父の前に立っていた。"
+    },
+    {
+      "speaker": "",
+      "text": "父は気まずそうに頭をかく。"
+    },
+    {
+      "speaker": "",
+      "text": "さっきまでの軽薄さは少しだけ消えている。"
+    },
+    {
+      "speaker": "",
+      "text": "視線だけが、娘を見る父親のものになった。"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "……寂しかったんじゃ。最近、あまり帰ってこなかっただろう"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "分かっておる。仕事がある。暮らしがある。お前の人生がある。それでも、元気にしておるか、顔が見たかった"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは何も言わなかった。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、模造刀を握る手の力が少しだけ緩んだ。"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "家のことも、結婚のことも、親の顔色で決めてほしくなかったんだ。彩愛が誰を選ぶのか、何を選ぶのか……ちゃんと自分の口で聞きたかった"
+    },
+    {
+      "speaker": "",
+      "text": "部屋が静かになる。"
+    },
+    {
+      "speaker": "",
+      "text": "巨大テレビには、まだ『VRお殿様』のタイトル画面が映っている。"
+    },
+    {
+      "speaker": "",
+      "text": "その場違いな明るさだけが、部屋をぼんやり照らしていた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "わたくしは、誰かに決められて結婚したいわけではありません。家のためでも、世間体のためでもなく……自分で選んだ人の隣に立ちたいのです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "その声は、もう震えていなかった。"
+    },
+    {
+      "speaker": "",
+      "text": "さっきまでの怒りとも違う。"
+    },
+    {
+      "speaker": "",
+      "text": "もっと静かで、もっと強いものだった。"
+    },
+    {
+      "speaker": "",
+      "text": "父は、ゆっくりこちらを見る。"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "それは、そちらの店長くんのことか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "お父様",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "最終秘奥義、巌砕き。または、紫電改・山穿ちもご覧になりたいと？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "いえ。黙ります。結構です"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、静かに模造刀を下ろした。"
+    },
+    {
+      "speaker": "",
+      "text": "俺はようやく息を吐く。"
+    },
+    {
+      "speaker": "",
+      "text": "父は毛布を抱えたまま、少しだけ小さくなっていた。"
+    },
+    {
+      "speaker": "",
+      "text": "ばあやは、何事もなかったかのように襖の横に立っている。"
+    },
+    {
+      "speaker": "",
+      "text": "巨大テレビには、相変わらず『VRお殿様』の文字。"
+    },
+    {
+      "speaker": "",
+      "text": "危篤。\n封筒。\nばあやの名前。"
+    },
+    {
+      "speaker": "",
+      "text": "全部、父の仕業だった。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、父が無事だったことだけは、本当に良かった。"
+    },
+    {
+      "speaker": "",
+      "text": "本当に、良かったのだが。"
+    },
+    {
+      "speaker": "店長",
+      "text": "……"
+    },
+    {
+      "speaker": "",
+      "text": "この家では、安心する暇もないのかもしれない。"
+    }
+  ],
+  "keyScenarioIndex": 2
+}

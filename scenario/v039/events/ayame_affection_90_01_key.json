@@ -1,0 +1,740 @@
+{
+  "id": "ayame_affection_90_01_key",
+  "title": "田舎では普通ですわ",
+  "version": "v039_238",
+  "return": {
+    "mode": "storyMenu",
+    "storyId": "ayame_affection_90_01_key",
+    "storyMenuTab": "key"
+  },
+  "format": "v039_steps",
+  "type": "character_key_story",
+  "characterId": "ak",
+  "route": "ayame",
+  "affectionRange": {
+    "min": 90,
+    "max": 100
+  },
+  "location": {
+    "id": "ayame_route_90s",
+    "name": "紫藤家へ向かう道中・実家到着"
+  },
+  "summary": "彩愛 親愛Lv.93「田舎では普通ですわ」。",
+  "purpose": "彩愛ルート親愛90代として、実家編のドタバタと、これからの未来へ向かう関係を描く。",
+  "tags": [
+    "彩愛ルート",
+    "親愛度90-100",
+    "実家編",
+    "未来",
+    "家族"
+  ],
+  "clearFlags": [
+    "ayame_affection_90_01_key_cleared"
+  ],
+  "nextHint": "次の彩愛親愛ストーリーへ。",
+  "renderPolicy": {
+    "spritePosition": "logical_split_n_plus_1",
+    "eventCgLayer": "frontOfCharacters"
+  },
+  "steps": [
+    {
+      "speaker": "",
+      "text": "翌朝。",
+      "bg": "images/assets/bg/bg_hiyorizaka_station_day.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "駅の改札前で、彩愛さんは小さな旅行鞄を両手で持って立っていた。"
+    },
+    {
+      "speaker": "",
+      "text": "いつもの制服姿ではない。"
+    },
+    {
+      "speaker": "",
+      "text": "落ち着いた色のワンピースに、薄手のカーディガン。"
+    },
+    {
+      "speaker": "",
+      "text": "きちんとしている。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、どこか落ち着かない。"
+    },
+    {
+      "speaker": "",
+      "text": "そんな姿だった。"
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さん"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "こちらに気づいた彩愛さんが、軽く頭を下げる。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "本日は、よろしくお願いいたします",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "こちらこそ"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……本当に、来てくださるのですね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "昨日、行きましょうって言いましたから"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そうですけれど",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ視線を伏せる。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "来てくださって、嬉しいです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "それならよかったです"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "お礼を言われると困りますわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "言ってません"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "あら。本当ですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ笑った。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、その笑顔はどこか不安そうだった。"
+    },
+    {
+      "speaker": "",
+      "text": "ホームに入ってきた電車に乗り込む。"
+    },
+    {
+      "speaker": "",
+      "text": "窓際の席に並んで座ると、発車のベルが鳴った。"
+    },
+    {
+      "speaker": "",
+      "text": "ゆっくりと駅を離れ、見慣れた街並みが後ろへ流れていく。"
+    },
+    {
+      "speaker": "",
+      "text": "しばらくは無言だった。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは窓の外を見つめている。"
+    },
+    {
+      "speaker": "店長",
+      "text": "久しぶりなんですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "実家ですか？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……そうですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは小さく頷いた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "学生の頃は、長期休暇になると帰っておりました",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "この路線も、よく乗っていたのです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "じゃあ、懐かしいですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "窓の外には住宅街が広がり、その先には緑が増えていく。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "この辺りに来ると、いつも思い出しますわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "何をですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "子供の頃、父に連れられて街へ出た帰りです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "眠ってしまって、気づいたら家に着いていたことが何度もありました",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そのたびに父が抱えて運んでくれていたそうです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "そう話す彩愛さんの表情は、少しだけ柔らかかった。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、その後すぐに視線を落とす。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……最近は、あまり帰れておりませんでした",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "そうだったんですね"
+    },
+    {
+      "speaker": "",
+      "text": "流れていく風景を見ながら、彩愛さんは静かに目を細める。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……わたくしは、親不孝者かもしれませんね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "駅を降りると、空気が少し変わった。"
+    },
+    {
+      "speaker": "",
+      "text": "街の音が遠い。"
+    },
+    {
+      "speaker": "",
+      "text": "風の音と、鳥の声。"
+    },
+    {
+      "speaker": "",
+      "text": "遠くには山が見える。"
+    },
+    {
+      "speaker": "",
+      "text": "駅前に停まっていたタクシーに乗り込む。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "紫藤の家まで、お願いいたします",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "運転手\n「はいよ、紫藤さんち……って」"
+    },
+    {
+      "speaker": "",
+      "text": "運転手はバックミラー越しに彩愛さんを見た。"
+    },
+    {
+      "speaker": "",
+      "text": "運転手\n「あれ？ 彩愛お嬢さんじゃないですか」"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……ご無沙汰しております",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛お嬢さん？"
+    },
+    {
+      "speaker": "",
+      "text": "運転手\n「そりゃそうだよ。紫藤さんちでしょ？」"
+    },
+    {
+      "speaker": "",
+      "text": "運転手\n「ここいらじゃ、彩愛お嬢様のこと知らない人はいないよ」"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "運転手さん、あまり大げさに言わないでくださいませ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "運転手\n「大げさじゃないって」"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは苦笑した。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、父のことが気になるのか、すぐに窓の外へ視線を戻した。"
+    },
+    {
+      "speaker": "",
+      "text": "しばらく走ると、景色はさらに山の方へ変わっていった。"
+    },
+    {
+      "speaker": "",
+      "text": "広い田んぼ。"
+    },
+    {
+      "speaker": "",
+      "text": "古い蔵のような建物。"
+    },
+    {
+      "speaker": "",
+      "text": "長い石垣。"
+    },
+    {
+      "speaker": "",
+      "text": "窓の外を見ながら、俺は少しずつ違和感を覚え始めていた。"
+    },
+    {
+      "speaker": "",
+      "text": "もちろん悪い意味ではない。"
+    },
+    {
+      "speaker": "",
+      "text": "ただ、彩愛さんの言う「田舎」が、俺の想像していたものとは少し違う気がする。"
+    },
+    {
+      "speaker": "",
+      "text": "やがてタクシーは、大きな門の前で停まった。"
+    },
+    {
+      "speaker": "店長",
+      "text": "……ここですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい。実家です",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "立派な木造の門。"
+    },
+    {
+      "speaker": "",
+      "text": "左右に続く塀。"
+    },
+    {
+      "speaker": "",
+      "text": "門の奥には、手入れされた庭と大きな母屋が見える。"
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さん"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "大きくないですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "田舎では普通ですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "普通、ですか"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ええ。土地だけはありますから",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "土地だけの規模ではない気がします"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そうでしょうか",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、本気で不思議そうだった。"
+    },
+    {
+      "speaker": "",
+      "text": "門をくぐる。"
+    },
+    {
+      "speaker": "",
+      "text": "砂利道の先に、大きな玄関が見える。"
+    },
+    {
+      "speaker": "",
+      "text": "その時。"
+    },
+    {
+      "speaker": "",
+      "text": "引き戸が静かに開いた。"
+    },
+    {
+      "speaker": "",
+      "text": "中から現れたのは、年配の女性だった。"
+    },
+    {
+      "speaker": "",
+      "text": "背筋がまっすぐ伸びている。"
+    },
+    {
+      "speaker": "",
+      "text": "白髪をきちんとまとめ、和装に身を包んでいる。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ばあや！",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "ばあや",
+      "text": "あら？ 彩愛お嬢様？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ばあや！",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "ばあや",
+      "text": "そんなに慌ててどうなさったのですか？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "これが慌てずにいられますか……！ お父様はどこに？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "ばあや",
+      "text": "旦那様なら、お部屋だと思いますよ"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "あんなに元気な方が……まさか伏せっているのですか？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "ばあや",
+      "text": "え？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……！",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "ばあや",
+      "text": "いえ、そのようなことは……"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "ばあや",
+      "text": "しかしながら、今はお部屋には行かない方がよろしいかと"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……そんな……お父様っ！",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "ばあや",
+      "text": "あ、お嬢様"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、ばあやの言葉も待たずに屋敷の奥へ駆け出した。"
+    },
+    {
+      "speaker": "店長",
+      "text": "失礼します"
+    },
+    {
+      "speaker": "ばあや",
+      "text": "あらまあ……"
+    },
+    {
+      "speaker": "",
+      "text": "俺も慌てて、その後を追った。"
+    }
+  ],
+  "keyScenarioIndex": 1
+}
