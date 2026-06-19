@@ -618,39 +618,39 @@
     },
     {
       "speaker": "",
-      "text": "その笑顔は、驚くほど綺麗だった。"
-    },
-    {
-      "speaker": "",
-      "text": "不安を隠すための笑顔ではない。"
-    },
-    {
-      "speaker": "",
-      "text": "誰かに選ばれるために整えた笑顔でもない。"
-    },
-    {
-      "speaker": "",
-      "text": "怖さを知っていて。"
-    },
-    {
-      "speaker": "",
-      "text": "それでも、前へ進むと決めた人の笑顔だった。"
-    },
-    {
-      "speaker": "店長",
-      "text": "もちろんです"
+      "text": "その眼差しは真剣で、はにかんでいた。"
     },
     {
       "speaker": "彩愛",
-      "text": "即答ですのね"
+      "text": "大丈夫・・貴方を信頼しているのです・・"
+    },
+    {
+      "speaker": "",
+      "text": "その高貴な佇まいが、あまりにも美しすぎて思わず見惚れてしまっていた"
     },
     {
       "speaker": "店長",
-      "text": "迷うところじゃないので"
+      "text": "も、もちろんです。"
     },
     {
       "speaker": "彩愛",
-      "text": "……ふふ",
+      "text": "あら？即答していただけないのかしら？"
+    },
+    {
+      "speaker": "店長",
+      "text": "・・・すみません、即答すべきでした。不安にさせてしまいましたね。気持ち的には迷っていません。しかし・・・その・・・"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "その？"
+    },
+    {
+      "speaker": "店長",
+      "text": "正直に言いますと・・・その、あまりの美しさに見惚れていました。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ、そういう事でしたら許します。",
       "showEventCg": true,
       "eventCg": "images/assets/cg/cg_ayame100_step119.png",
       "cgFit": "cover",
@@ -716,143 +716,34 @@
     {
       "speaker": "彩愛",
       "text": "店長",
-      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp"
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",
-      "text": "はい"
+      "text": "はい",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "彩愛",
-      "text": "改めて、お伝えしたいことがあります"
+      "text": "改めて、お伝えしたいことがあります",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",
-      "text": "はい"
-    },
-    {
-      "speaker": "",
-      "text": "彩愛さんは、少しだけ姿勢を正した。"
-    },
-    {
-      "speaker": "",
-      "text": "けれど、それは仕事中のような完璧な所作ではなかった。"
-    },
-    {
-      "speaker": "",
-      "text": "自然で。"
-    },
-    {
-      "speaker": "",
-      "text": "柔らかくて。"
-    },
-    {
-      "speaker": "",
-      "text": "それでいて、凛としていた。"
-    },
-    {
-      "speaker": "彩愛",
-      "text": "自己の先入観や、過去の経験にとらわれていたわたくしを、見つけていただいてありがとうございます"
-    },
-    {
-      "speaker": "店長",
-      "text": "……"
-    },
-    {
-      "speaker": "彩愛",
-      "text": "わたくしは、ずっと自分で自分を縛っていたのだと思います"
-    },
-    {
-      "speaker": "彩愛",
-      "text": "ちゃんとしていなければならない。選ばれる人でなければならない。家のことも、世間体も、全部きちんと背負わなければならない"
-    },
-    {
-      "speaker": "彩愛",
-      "text": "そう思い込んでおりました"
-    },
-    {
-      "speaker": "店長",
-      "text": "彩愛さん"
-    },
-    {
-      "speaker": "彩愛",
-      "text": "けれど、貴方は"
-    },
-    {
-      "speaker": "",
-      "text": "彩愛さんは、少しだけ言葉を切った。"
-    },
-    {
-      "speaker": "",
-      "text": "水の音が、二人の間を流れる。"
-    },
-    {
-      "speaker": "彩愛",
-      "text": "わたくし自身を見てくださいました"
-    },
-    {
-      "speaker": "店長",
-      "text": "……"
-    },
-    {
-      "speaker": "彩愛",
-      "text": "綺麗に整えたわたくしだけではなく"
-    },
-    {
-      "speaker": "彩愛",
-      "text": "慌てるわたくしも、怒るわたくしも、怖がるわたくしも"
-    },
-    {
-      "speaker": "彩愛",
-      "text": "全部、見てくださいました"
-    },
-    {
-      "speaker": "店長",
-      "text": "俺は、ただ"
-    },
-    {
-      "speaker": "彩愛",
-      "text": "はい。ただ、そばにいてくださったのだと思います"
-    },
-    {
-      "speaker": "",
-      "text": "彩愛さんは、穏やかに微笑む。"
-    },
-    {
-      "speaker": "彩愛",
-      "text": "だからこそ、感謝しているのです"
-    },
-    {
-      "speaker": "",
-      "text": "風が吹く。"
-    },
-    {
-      "speaker": "",
-      "text": "水面がきらきらと揺れた。"
-    },
-    {
-      "speaker": "",
-      "text": "彩愛さんは、深く頭を下げた。"
-    },
-    {
-      "speaker": "彩愛",
-      "text": "とても……感謝しています"
-    },
-    {
-      "speaker": "店長",
-      "text": "顔を上げてください"
-    },
-    {
-      "speaker": "",
-      "text": "彩愛さんは、ゆっくり顔を上げる。"
-    },
-    {
-      "speaker": "",
-      "text": "目元は少しだけ潤んでいた。"
-    },
-    {
-      "speaker": "",
-      "text": "けれど、泣いてはいない。",
+      "text": "はい",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
       "showEventCg": true,
       "cgFit": "cover",
       "cgAlign": "center center",
@@ -860,12 +751,300 @@
     },
     {
       "speaker": "",
-      "text": "強く、優しく、こちらを見ている。"
+      "text": "彩愛さんは、少しだけ姿勢を正した。",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "けれど、それは仕事中のような完璧な所作ではなかった。",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "自然で。",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "柔らかくて。",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "それでいて、凛としていた。",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "彩愛",
+      "text": "自己の先入観や、過去の経験にとらわれていたわたくしを、見つけていただいてありがとうございます",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "店長",
+      "text": "……",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "彩愛",
+      "text": "わたくしは、ずっと自分で自分を縛っていたのだと思います",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ちゃんとしていなければならない。選ばれる人でなければならない。家のことも、世間体も、全部きちんと背負わなければならない",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そう思い込んでおりました",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さん",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "彩愛",
+      "text": "けれど、貴方は",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ言葉を切った。",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "水の音が、二人の間を流れる。",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "彩愛",
+      "text": "わたくし自身を見てくださいました",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "店長",
+      "text": "……",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "彩愛",
+      "text": "綺麗に整えたわたくしだけではなく",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "彩愛",
+      "text": "慌てるわたくしも、怒るわたくしも、怖がるわたくしも",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "彩愛",
+      "text": "全部、見てくださいました",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "店長",
+      "text": "俺は、ただ",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい。ただ、そばにいてくださったのだと思います",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、穏やかに微笑む。",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "彩愛",
+      "text": "だからこそ、感謝しているのです",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "風が吹く。",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "水面がきらきらと揺れた。",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、深く頭を下げた。",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "彩愛",
+      "text": "とても……感謝しています",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "店長",
+      "text": "顔を上げてください",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、ゆっくり顔を上げる。",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "目元は少しだけ潤んでいた。",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "けれど、泣いてはいない。",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true,
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp"
+    },
+    {
+      "speaker": "",
+      "text": "強く、優しく、こちらを見ている。",
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "彩愛",
       "text": "店長",
-      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp"
+      "eventCg": "images/assets/cg/cg_ayame100_step160_196.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",
