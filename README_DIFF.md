@@ -1,36 +1,37 @@
-# ten_otsu v039_241 差分パッチ
+# ten_otsu v039_242 差分パッチ
 
 ## 適用前提
-- **v039_240適用済みへ上書き**
+- **v039_241適用済みへ上書き**
 
 ## 修正内容
 
 ### ストーリー：彩愛 親愛Lv.100「あの日と変わらぬこの場所で」
-- 添付1枚目を背景として追加・適用
-  - `images/assets/bg/bg_ayame100_clear_stream_day.webp`
-- ステップ13で彩愛立ち絵を添付2枚目へ変更
-  - `images/assets/char/ayame_100_riverside_dress.webp`
-- 指定ステップにイベントCGを設定
-  - ステップ65：添付3枚目
-  - ステップ109：添付4枚目
-  - ステップ119：添付5枚目
-  - ステップ133：添付6枚目
-  - ステップ136：添付7枚目
-  - ステップ145：添付5枚目
-  - ステップ194：添付6枚目
+- ステップ13
+  - 彩愛立ち絵を添付1枚目へ変更
+  - `images/assets/char/ayame_100_step013_sprite.webp`
+- イベントCG差し替え
+  - ステップ65：添付2枚目
+  - ステップ109：添付3枚目
+  - ステップ119：添付4枚目
+  - ステップ133〜144：添付5枚目を継続表示
+  - ステップ145：添付4枚目
+  - ステップ160：添付6枚目
   - ステップ200：添付7枚目
-  - ステップ210：添付5枚目
+  - ステップ210：添付8枚目
+- 旧指定の以下を整理
+  - ステップ136 のイベントCG差し替えを削除
+  - ステップ194 のイベントCG差し替えを削除
 
 ## 更新ファイル
 - `scenario/v039/events/ayame_affection_100_00_main.json`
-- `scenario/v039/storyIndex.js`
-- `images/assets/bg/bg_ayame100_clear_stream_day.webp`
-- `images/assets/char/ayame_100_riverside_dress.webp`
-- `images/assets/cg/cg_ayame100_stream_sitting_01.webp`
-- `images/assets/cg/cg_ayame100_stream_closeup_teary.webp`
-- `images/assets/cg/cg_ayame100_stream_closeup_smile.webp`
-- `images/assets/cg/cg_ayame100_stream_closeup_bright_smile.webp`
-- `images/assets/cg/cg_ayame100_stream_closeup_soft_smile.webp`
+- `images/assets/char/ayame_100_step013_sprite.webp`
+- `images/assets/cg/cg_ayame100_step065.webp`
+- `images/assets/cg/cg_ayame100_step109.png`
+- `images/assets/cg/cg_ayame100_step119.png`
+- `images/assets/cg/cg_ayame100_step133_144.png`
+- `images/assets/cg/cg_ayame100_step160.png`
+- `images/assets/cg/cg_ayame100_step200.png`
+- `images/assets/cg/cg_ayame100_step210.png`
 - `program/v039/version.js`
 - `VERSION.txt`
 - `index.html`
