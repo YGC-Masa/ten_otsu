@@ -1,7 +1,7 @@
 {
   "id": "ayame_affection_100_00_main",
   "title": "あの日と変わらぬこの場所で",
-  "version": "v039_239",
+  "version": "v039_241",
   "return": {
     "mode": "storyMenu",
     "storyId": "ayame_affection_100_00_main",
@@ -40,7 +40,7 @@
     {
       "speaker": "",
       "text": "水の音が聞こえていた。",
-      "bg": "images/assets/bg/bg_hashiro_lake_day.png",
+      "bg": "images/assets/bg/bg_ayame100_clear_stream_day.webp",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
       "clearStorySprites": true
@@ -95,7 +95,7 @@
       "storySprites": [
         {
           "id": "ak",
-          "src": "images/assets/char/k10101.webp",
+          "src": "images/assets/char/ayame_100_riverside_dress.webp",
           "opacity": 1
         }
       ]
@@ -306,7 +306,12 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ありがとうございます"
+      "text": "ありがとうございます",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_ayame100_stream_sitting_01.webp",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",
@@ -482,7 +487,12 @@
     },
     {
       "speaker": "",
-      "text": "彩愛さんは、少しだけ困ったように笑う。"
+      "text": "彩愛さんは、少しだけ困ったように笑う。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_ayame100_stream_closeup_teary.webp",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "彩愛",
@@ -522,7 +532,12 @@
     },
     {
       "speaker": "",
-      "text": "むしろ、こちらがそう聞くことを分かっていたように、穏やかに微笑んだ。"
+      "text": "むしろ、こちらがそう聞くことを分かっていたように、穏やかに微笑んだ。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_ayame100_stream_closeup_smile.webp",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "彩愛",
@@ -578,7 +593,12 @@
     },
     {
       "speaker": "",
-      "text": "彩愛さんは、こちらを振り向いた。"
+      "text": "彩愛さんは、こちらを振り向いた。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_ayame100_stream_closeup_bright_smile.webp",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "彩愛",
@@ -590,7 +610,12 @@
     },
     {
       "speaker": "彩愛",
-      "text": "もしもの時は、手を差し伸べていただけるのでしょう？"
+      "text": "もしもの時は、手を差し伸べていただけるのでしょう？",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_ayame100_stream_closeup_soft_smile.webp",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
@@ -626,7 +651,12 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……ふふ"
+      "text": "……ふふ",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_ayame100_stream_closeup_smile.webp",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
@@ -822,7 +852,12 @@
     },
     {
       "speaker": "",
-      "text": "けれど、泣いてはいない。"
+      "text": "けれど、泣いてはいない。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_ayame100_stream_closeup_bright_smile.webp",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
@@ -846,7 +881,12 @@
     },
     {
       "speaker": "彩愛",
-      "text": "紫藤彩愛を、よろしくお願いします"
+      "text": "紫藤彩愛を、よろしくお願いします",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_ayame100_stream_closeup_soft_smile.webp",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
@@ -886,7 +926,12 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ふふ。最後まで、そういうところですわ"
+      "text": "ふふ。最後まで、そういうところですわ",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_ayame100_stream_closeup_smile.webp",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "",

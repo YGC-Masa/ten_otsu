@@ -2869,7 +2869,7 @@ window.TENOTSU_STORY_INDEX = [
       "紫藤 彩愛"
     ],
     "scenario": "scenario/v039/events/ayame_affection_100_00_main.json",
-    "version": "v039_239",
+    "version": "v039_241",
     "unlock": {
       "type": "all_story_cleared",
       "storyIds": [
@@ -2888,6 +2888,6 @@ window.TENOTSU_STORY_INDEX = [
     "rawTitle": "あの日と変わらぬこの場所で",
     "affectionLabel": "親愛Lv.100",
     "menuTitle": "親愛Lv.100：あの日と変わらぬこの場所で",
-    "locationName": "紫藤家裏手の清流"
+    "locationName": "清流の川辺・昼"
   }
 ];
