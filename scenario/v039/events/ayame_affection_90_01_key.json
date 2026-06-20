@@ -1,7 +1,7 @@
 {
   "id": "ayame_affection_90_01_key",
   "title": "田舎では普通ですわ",
-  "version": "v039_239",
+  "version": "v039_238",
   "return": {
     "mode": "storyMenu",
     "storyId": "ayame_affection_90_01_key",
@@ -79,7 +79,7 @@
       "storySprites": [
         {
           "id": "ak",
-          "src": "images/assets/char/k10101.webp",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
           "opacity": 1
         }
       ]
@@ -90,7 +90,14 @@
     },
     {
       "speaker": "彩愛",
-      "text": "本日は、よろしくお願いいたします"
+      "text": "本日は、よろしくお願いいたします",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "店長",
@@ -98,7 +105,14 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……本当に、来てくださるのですね"
+      "text": "……本当に、来てくださるのですね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "店長",
@@ -106,7 +120,14 @@
     },
     {
       "speaker": "彩愛",
-      "text": "そうですけれど"
+      "text": "そうですけれど",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "",
@@ -114,7 +135,14 @@
     },
     {
       "speaker": "彩愛",
-      "text": "来てくださって、嬉しいです"
+      "text": "来てくださって、嬉しいです",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "店長",
@@ -122,7 +150,14 @@
     },
     {
       "speaker": "彩愛",
-      "text": "お礼を言われると困りますわ"
+      "text": "お礼を言われると困りますわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "店長",
@@ -130,7 +165,14 @@
     },
     {
       "speaker": "彩愛",
-      "text": "あら。本当ですわね"
+      "text": "あら。本当ですわね",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "",
@@ -146,107 +188,233 @@
     },
     {
       "speaker": "",
-      "text": "窓際の席に並んで座ると、発車のベルが鳴った。"
+      "text": "窓際の席に並んで座ると、発車のベルが鳴った。",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
-      "text": "ゆっくりと駅を離れ、見慣れた街並みが後ろへ流れていく。"
+      "text": "ゆっくりと駅を離れ、見慣れた街並みが後ろへ流れていく。",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
-      "text": "しばらくは無言だった。"
+      "text": "しばらくは無言だった。",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
-      "text": "彩愛さんは窓の外を見つめている。"
+      "text": "彩愛さんは窓の外を見つめている。",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",
-      "text": "久しぶりなんですか？"
+      "text": "久しぶりなんですか？",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "彩愛",
-      "text": "実家ですか？"
+      "text": "実家ですか？",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",
-      "text": "はい"
+      "text": "はい",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "彩愛",
-      "text": "……そうですわね"
+      "text": "……そうですわね",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
-      "text": "彩愛さんは小さく頷いた。"
+      "text": "彩愛さんは小さく頷いた。",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "彩愛",
-      "text": "学生の頃は、長期休暇になると帰っておりました"
+      "text": "学生の頃は、長期休暇になると帰っておりました",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "彩愛",
-      "text": "この路線も、よく乗っていたのです"
+      "text": "この路線も、よく乗っていたのです",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",
-      "text": "じゃあ、懐かしいですね"
+      "text": "じゃあ、懐かしいですね",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "彩愛",
-      "text": "ええ"
+      "text": "ええ",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
-      "text": "窓の外には住宅街が広がり、その先には緑が増えていく。"
+      "text": "窓の外には住宅街が広がり、その先には緑が増えていく。",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "彩愛",
-      "text": "この辺りに来ると、いつも思い出しますわ"
+      "text": "この辺りに来ると、いつも思い出しますわ",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",
-      "text": "何をですか？"
+      "text": "何をですか？",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "彩愛",
-      "text": "子供の頃、父に連れられて街へ出た帰りです"
+      "text": "子供の頃、父に連れられて街へ出た帰りです",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "彩愛",
-      "text": "眠ってしまって、気づいたら家に着いていたことが何度もありました"
+      "text": "眠ってしまって、気づいたら家に着いていたことが何度もありました",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "彩愛",
-      "text": "そのたびに父が抱えて運んでくれていたそうです"
+      "text": "そのたびに父が抱えて運んでくれていたそうです",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
-      "text": "そう話す彩愛さんの表情は、少しだけ柔らかかった。"
+      "text": "そう話す彩愛さんの表情は、少しだけ柔らかかった。",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
-      "text": "けれど、その後すぐに視線を落とす。"
+      "text": "けれど、その後すぐに視線を落とす。",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window_down.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "彩愛",
-      "text": "……最近は、あまり帰れておりませんでした"
+      "text": "……最近は、あまり帰れておりませんでした",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window_down.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",
-      "text": "そうだったんですね"
+      "text": "そうだったんですね",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window_down.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
-      "text": "流れていく風景を見ながら、彩愛さんは静かに目を細める。"
+      "text": "流れていく風景を見ながら、彩愛さんは静かに目を細める。",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window_down.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "彩愛",
-      "text": "……わたくしは、親不孝者かもしれませんね"
+      "text": "……わたくしは、親不孝者かもしれませんね",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window_down.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
-      "text": "駅を降りると、空気が少し変わった。"
+      "text": "駅を降りると、空気が少し変わった。",
+      "bg": "images/assets/bg/bg_ayame93_station_exterior_day.webp"
     },
     {
       "speaker": "",
@@ -266,7 +434,14 @@
     },
     {
       "speaker": "彩愛",
-      "text": "紫藤の家まで、お願いいたします"
+      "text": "紫藤の家まで、お願いいたします",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "",
@@ -282,7 +457,14 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……ご無沙汰しております"
+      "text": "……ご無沙汰しております",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "店長",
@@ -298,7 +480,14 @@
     },
     {
       "speaker": "彩愛",
-      "text": "運転手さん、あまり大げさに言わないでくださいませ"
+      "text": "運転手さん、あまり大げさに言わないでくださいませ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "",
@@ -306,7 +495,14 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……"
+      "text": "……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "",
@@ -334,7 +530,16 @@
     },
     {
       "speaker": "",
-      "text": "もちろん悪い意味ではない。"
+      "text": "窓の外を見ながら、俺は少しずつ違和感を覚え始めていた。"
+    },
+    {
+      "speaker": "",
+      "text": "もちろん悪い意味ではない。",
+      "bg": "images/assets/bg/bg_ayame93_estate_gate_day.webp"
+    },
+    {
+      "speaker": "",
+      "text": "ただ、彩愛さんの言う「田舎」が、俺の想像していたものとは少し違う気がする。"
     },
     {
       "speaker": "",
@@ -346,7 +551,14 @@
     },
     {
       "speaker": "彩愛",
-      "text": "はい。実家です"
+      "text": "はい。実家です",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "",
@@ -366,7 +578,14 @@
     },
     {
       "speaker": "彩愛",
-      "text": "はい"
+      "text": "はい",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "店長",
@@ -374,7 +593,14 @@
     },
     {
       "speaker": "彩愛",
-      "text": "田舎では普通ですわ"
+      "text": "田舎では普通ですわ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "店長",
@@ -382,7 +608,14 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ええ。土地だけはありますから"
+      "text": "ええ。土地だけはありますから",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "店長",
@@ -390,7 +623,14 @@
     },
     {
       "speaker": "彩愛",
-      "text": "そうでしょうか"
+      "text": "そうでしょうか",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "",
@@ -398,7 +638,8 @@
     },
     {
       "speaker": "",
-      "text": "門をくぐる。"
+      "text": "門をくぐる。",
+      "bg": "images/assets/bg/bg_ayame93_estate_house_day.webp"
     },
     {
       "speaker": "",
@@ -426,7 +667,14 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ばあや！"
+      "text": "ばあや！",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "ばあや",
@@ -434,7 +682,14 @@
     },
     {
       "speaker": "彩愛",
-      "text": "ばあや！"
+      "text": "ばあや！",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "ばあや",
@@ -442,7 +697,14 @@
     },
     {
       "speaker": "彩愛",
-      "text": "これが慌てずにいられますか……！ お父様はどこに？"
+      "text": "これが慌てずにいられますか……！ お父様はどこに？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "ばあや",
@@ -450,7 +712,14 @@
     },
     {
       "speaker": "彩愛",
-      "text": "あんなに元気な方が……まさか伏せっているのですか？"
+      "text": "あんなに元気な方が……まさか伏せっているのですか？",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "ばあや",
@@ -458,7 +727,14 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……！"
+      "text": "……！",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "ばあや",
@@ -466,7 +742,14 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……"
+      "text": "……",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "ばあや",
@@ -474,7 +757,14 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……そんな……お父様っ！"
+      "text": "……そんな……お父様っ！",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/k10101.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "ばあや",
@@ -491,6 +781,10 @@
     {
       "speaker": "ばあや",
       "text": "あらまあ……"
+    },
+    {
+      "speaker": "",
+      "text": "俺も慌てて、その後を追った。"
     }
   ],
   "keyScenarioIndex": 1
