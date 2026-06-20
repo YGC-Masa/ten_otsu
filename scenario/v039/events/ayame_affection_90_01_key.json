@@ -1,7 +1,7 @@
 {
   "id": "ayame_affection_90_01_key",
   "title": "田舎では普通ですわ",
-  "version": "v039_238",
+  "version": "v039_246",
   "return": {
     "mode": "storyMenu",
     "storyId": "ayame_affection_90_01_key",
@@ -55,7 +55,7 @@
     },
     {
       "speaker": "",
-      "text": "落ち着いた色のワンピースに、薄手のカーディガン。"
+      "text": "白いブラウスに、薄紫のロングスカート。"
     },
     {
       "speaker": "",
@@ -413,16 +413,80 @@
     },
     {
       "speaker": "",
-      "text": "駅を降りると、空気が少し変わった。",
-      "bg": "images/assets/bg/bg_ayame93_station_exterior_day.webp"
+      "text": "ーーそんなことない、と言いかけたが口をつぐむ。",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window_down.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
-      "text": "街の音が遠い。"
+      "text": "自分が彼女の事情の何を知っているというのだ。",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window_down.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんの葛藤をわかりきったつもりで軽々しくかける言葉ではないなとは思いつつも。",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window_down.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "店長",
+      "text": "・・まずは元気な姿を見せましょう。",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window_down.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "彩愛",
+      "text": "・・はい。",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window_down.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "車内に目的の駅到着のアナウンスが流れる。",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window_down.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "俺は彩愛さんの気持ちが少しでも軽くなればと願わずにはいられなかった。",
+      "eventCg": "images/assets/cg/cg_ayame93_train_window_down.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "街の音が遠い。",
+      "bg": "images/assets/bg/bg_ayame93_station_exterior_day.webp",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
       "text": "風の音と、鳥の声。"
+    },
+    {
+      "speaker": "",
+      "text": "駅を降りると、空気が少し変わった。"
     },
     {
       "speaker": "",
@@ -438,7 +502,7 @@
       "storySprites": [
         {
           "id": "ak",
-          "src": "images/assets/char/k10101.webp",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
           "opacity": 1
         }
       ]
@@ -461,7 +525,7 @@
       "storySprites": [
         {
           "id": "ak",
-          "src": "images/assets/char/k10101.webp",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
           "opacity": 1
         }
       ]
@@ -484,7 +548,7 @@
       "storySprites": [
         {
           "id": "ak",
-          "src": "images/assets/char/k10101.webp",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
           "opacity": 1
         }
       ]
@@ -499,7 +563,7 @@
       "storySprites": [
         {
           "id": "ak",
-          "src": "images/assets/char/k10101.webp",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
           "opacity": 1
         }
       ]
@@ -555,7 +619,7 @@
       "storySprites": [
         {
           "id": "ak",
-          "src": "images/assets/char/k10101.webp",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
           "opacity": 1
         }
       ]
@@ -582,7 +646,7 @@
       "storySprites": [
         {
           "id": "ak",
-          "src": "images/assets/char/k10101.webp",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
           "opacity": 1
         }
       ]
@@ -597,7 +661,7 @@
       "storySprites": [
         {
           "id": "ak",
-          "src": "images/assets/char/k10101.webp",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
           "opacity": 1
         }
       ]
@@ -612,7 +676,7 @@
       "storySprites": [
         {
           "id": "ak",
-          "src": "images/assets/char/k10101.webp",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
           "opacity": 1
         }
       ]
@@ -627,7 +691,7 @@
       "storySprites": [
         {
           "id": "ak",
-          "src": "images/assets/char/k10101.webp",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
           "opacity": 1
         }
       ]
@@ -671,7 +735,7 @@
       "storySprites": [
         {
           "id": "ak",
-          "src": "images/assets/char/k10101.webp",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
           "opacity": 1
         }
       ]
@@ -686,7 +750,7 @@
       "storySprites": [
         {
           "id": "ak",
-          "src": "images/assets/char/k10101.webp",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
           "opacity": 1
         }
       ]
@@ -701,7 +765,7 @@
       "storySprites": [
         {
           "id": "ak",
-          "src": "images/assets/char/k10101.webp",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
           "opacity": 1
         }
       ]
@@ -716,7 +780,7 @@
       "storySprites": [
         {
           "id": "ak",
-          "src": "images/assets/char/k10101.webp",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
           "opacity": 1
         }
       ]
@@ -731,7 +795,7 @@
       "storySprites": [
         {
           "id": "ak",
-          "src": "images/assets/char/k10101.webp",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
           "opacity": 1
         }
       ]
@@ -746,7 +810,7 @@
       "storySprites": [
         {
           "id": "ak",
-          "src": "images/assets/char/k10101.webp",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
           "opacity": 1
         }
       ]
@@ -761,7 +825,7 @@
       "storySprites": [
         {
           "id": "ak",
-          "src": "images/assets/char/k10101.webp",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
           "opacity": 1
         }
       ]
@@ -785,6 +849,34 @@
     {
       "speaker": "",
       "text": "俺も慌てて、その後を追った。"
+    },
+    {
+      "speaker": "",
+      "text": "父の危篤。"
+    },
+    {
+      "speaker": "",
+      "text": "謎の封筒。"
+    },
+    {
+      "speaker": "",
+      "text": "そして、想像していたよりずっと大きな彩愛さんの実家。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、屋敷の奥へ駆けていく。"
+    },
+    {
+      "speaker": "",
+      "text": "俺は、その背中を追った。"
+    },
+    {
+      "speaker": "",
+      "text": "この先で何が待っているのか。"
+    },
+    {
+      "speaker": "",
+      "text": "まだ、何も分からなかった。"
     }
   ],
   "keyScenarioIndex": 1
