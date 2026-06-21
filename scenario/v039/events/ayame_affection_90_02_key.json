@@ -530,7 +530,12 @@
     },
     {
       "speaker": "",
-      "text": "しばらくして。"
+      "text": "しばらくして。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_ayame93_father_bed_bowed.webp",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
