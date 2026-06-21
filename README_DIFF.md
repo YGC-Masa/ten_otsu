@@ -1,17 +1,22 @@
-# ten_otsu_v039_252_ayame93_ofusama_nani_patch
+# ten_otsu v039_251 差分パッチ
 
-対象: 彩愛 ストーリー93「お父様、これは何でしょう」
+## 適用前提
+- **v039_250適用済みへ上書き**
 
-変更内容:
-- 背景を新規廊下背景に差し替え
-- 彩愛立ち絵を ayame_93_trip_sprite.webp に統一
-- ステップ22/52/69/79/96 に指定イベントCGを設定
-- ステップ87でばあや立ち絵を表示
-- 添付画像をすべて WebP 化して同梱
+## 修正内容
+### 彩愛：ストーリー93「田舎では普通ですわ」
+- ステップ54から背景変更指定を外し、イベントCG表示を維持
+- ステップ55で彩愛イベントCGを表示したまま、裏側背景を `images/assets/bg/bg_ayame93_station_exterior_day.webp` に切替
+- ステップ56で彩愛イベントCGを終了し、背景表示へ移行
 
-同梱ファイル:
-- scenario/v039/events/ayame_affection_90_02_key.json
-- images/assets/bg/bg_ayame93_estate_corridor_day.webp
-- images/assets/cg/*.webp
-- images/assets/char/ayame_93_trip_sprite.webp
-- images/assets/char/ayame93_baaya_sprite.webp
+### ゲーム側：背景切替時のイベントCG維持対応
+- `showEventCg: true` と `eventCg` がある背景変更ステップでは、背景更新時にイベントCGを強制非表示にしないよう調整
+- 背景更新の一瞬だけ旧背景が見える問題を軽減
+
+## 更新ファイル
+- `scenario/v039/events/ayame_affection_90_01_key.json`
+- `program/v039/storyBgPreloadTransition.js`
+- `program/v039/version.js`
+- `VERSION.txt`
+- `index.html`
+- `README_DIFF.md`
