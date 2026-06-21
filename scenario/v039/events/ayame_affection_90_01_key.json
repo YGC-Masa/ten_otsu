@@ -1,7 +1,7 @@
 {
   "id": "ayame_affection_90_01_key",
   "title": "田舎では普通ですわ",
-  "version": "v039_249",
+  "version": "v039_250",
   "return": {
     "mode": "storyMenu",
     "storyId": "ayame_affection_90_01_key",
@@ -454,17 +454,19 @@
       "showEventCg": true,
       "cgFit": "cover",
       "cgAlign": "center center",
-      "clearStorySprites": true
+      "clearStorySprites": true,
+      "bg": "images/assets/bg/bg_ayame93_station_exterior_day.webp",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "",
       "text": "俺は彩愛さんの気持ちが少しでも軽くなればと願わずにはいられなかった。",
       "clearStorySprites": true,
-      "eventCg": "images/assets/cg/cg_ayame93_train_window_down.webp",
-      "showEventCg": true,
-      "cgFit": "cover",
-      "cgAlign": "center center",
-      "bg": "images/assets/bg/bg_ayame93_station_exterior_day.webp"
+      "bg": "images/assets/bg/bg_ayame93_station_exterior_day.webp",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "hideEventCg": true
     },
     {
       "speaker": "",
