@@ -40,7 +40,7 @@
     {
       "speaker": "",
       "text": "彩愛さんは、ばあやの言葉も待たずに屋敷の奥へ駆け出した。",
-      "bg": "images/assets/bg/bg_sugosawa_house_day.png",
+      "bg": "images/assets/bg/bg_ayame93_estate_corridor_day.webp",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
       "clearStorySprites": true
@@ -71,7 +71,7 @@
       "storySprites": [
         {
           "id": "ak",
-          "src": "images/assets/char/k10101.webp",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
           "opacity": 1
         }
       ]
@@ -134,7 +134,12 @@
     },
     {
       "speaker": "彩愛の父",
-      "text": "よいではないか～！"
+      "text": "よいではないか～！",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_ayame93_father_vr_room.webp",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "彩愛の父",
@@ -254,7 +259,12 @@
     },
     {
       "speaker": "彩愛の父",
-      "text": "おお、彩愛……生きている間に、また会えようとは……"
+      "text": "おお、彩愛……生きている間に、また会えようとは……",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_ayame93_father_bed_smile.webp",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",
@@ -322,7 +332,12 @@
     },
     {
       "speaker": "彩愛の父",
-      "text": "嘘だよーん！ なんちゃってー！ あっはっはー！"
+      "text": "嘘だよーん！ なんちゃってー！ あっはっはー！",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_ayame93_father_bed_laugh.webp",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
@@ -362,7 +377,12 @@
     },
     {
       "speaker": "彩愛の父",
-      "text": "……彩愛？"
+      "text": "……彩愛？",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_ayame93_father_bed_shock.webp",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "彩愛",
@@ -394,7 +414,18 @@
     },
     {
       "speaker": "",
-      "text": "襖の外に立ったばあやは、部屋の中を一目見て、すべてを理解したように静かに息をついた。"
+      "text": "襖の外に立ったばあやは、部屋の中を一目見て、すべてを理解したように静かに息をついた。",
+      "bg": "images/assets/bg/bg_ayame93_estate_corridor_day.webp",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "hideEventCg": true,
+      "storySprites": [
+        {
+          "id": "baaya",
+          "src": "images/assets/char/ayame93_baaya_sprite.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "ばあや",
@@ -430,7 +461,12 @@
     },
     {
       "speaker": "彩愛",
-      "text": "紫藤流奥義――紫電一閃突き！"
+      "text": "紫藤流奥義――紫電一閃突き！",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_ayame93_shiden_issen_thrust.webp",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "彩愛の父",
