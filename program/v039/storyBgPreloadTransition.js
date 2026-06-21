@@ -1,4 +1,4 @@
-/* v039_220 story bg preload transition + loaded bg cache / input lock */
+/* v039_251 story bg preload transition + keep event CG during bg swap */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
@@ -66,7 +66,7 @@
     }
 
     if (typeof ns.disableUnifiedStoryBackgroundLayer === "function") ns.disableUnifiedStoryBackgroundLayer();
-    if (typeof ns.hideEventCgSurface === "function") ns.hideEventCgSurface();
+    if (!ns.__storyBgTransitionKeepEventCg && typeof ns.hideEventCgSurface === "function") ns.hideEventCgSurface();
     if (typeof ns.suppressStoryFadeLayer === "function") ns.suppressStoryFadeLayer();
 
     layers.bg.hidden = false;
@@ -126,10 +126,14 @@
   if (typeof originalApplyStoryStep === "function") {
     ns.applyStoryStep = async function applyStoryStepPatched(step, options = {}) {
       const bgChanged = isStoryBackgroundChanging(step);
+      const keepEventCg = !!(step && bgChanged && step.eventCg && step.showEventCg && !step.hideEventCg);
+      const prevKeepEventCg = ns.__storyBgTransitionKeepEventCg;
       try {
+        ns.__storyBgTransitionKeepEventCg = keepEventCg;
         if (bgChanged) await ns.prepareCommonStoryBackgroundChange(step, options);
         return await originalApplyStoryStep.call(ns, step, options);
       } finally {
+        ns.__storyBgTransitionKeepEventCg = prevKeepEventCg;
         if (bgChanged && (!options || !options.initial)) {
           try { document.body.classList.remove("tenotsu-story-bg-preparing"); } catch (_) {}
           try { if (typeof ns.setStoryLoading === "function") ns.setStoryLoading(false); } catch (_) {}

@@ -1,7 +1,7 @@
 {
   "id": "ayame_affection_90_01_key",
   "title": "田舎では普通ですわ",
-  "version": "v039_250",
+  "version": "v039_251",
   "return": {
     "mode": "storyMenu",
     "storyId": "ayame_affection_90_01_key",
@@ -454,10 +454,7 @@
       "showEventCg": true,
       "cgFit": "cover",
       "cgAlign": "center center",
-      "clearStorySprites": true,
-      "bg": "images/assets/bg/bg_ayame93_station_exterior_day.webp",
-      "bgMode": "forceReplace",
-      "forceBackgroundReplace": true
+      "clearStorySprites": true
     },
     {
       "speaker": "",
@@ -466,7 +463,10 @@
       "bg": "images/assets/bg/bg_ayame93_station_exterior_day.webp",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
-      "hideEventCg": true
+      "eventCg": "images/assets/cg/cg_ayame93_train_window_down.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center"
     },
     {
       "speaker": "",
