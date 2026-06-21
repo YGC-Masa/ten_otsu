@@ -43,11 +43,7 @@
       "bg": "images/assets/bg/bg_ayame93_estate_corridor_day.webp",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
-      "clearStorySprites": true,
-      "showEventCg": true,
-      "eventCg": "images/assets/cg/cg_ayame93_step1_corridor_run.webp",
-      "cgFit": "cover",
-      "cgAlign": "center center"
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",
