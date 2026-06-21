@@ -1,7 +1,7 @@
 {
   "id": "ayame_affection_90_01_key",
   "title": "田舎では普通ですわ",
-  "version": "v039_246",
+  "version": "v039_247",
   "return": {
     "mode": "storyMenu",
     "storyId": "ayame_affection_90_01_key",
@@ -468,11 +468,9 @@
     {
       "speaker": "",
       "text": "俺は彩愛さんの気持ちが少しでも軽くなればと願わずにはいられなかった。",
-      "eventCg": "images/assets/cg/cg_ayame93_train_window_down.webp",
-      "showEventCg": true,
-      "cgFit": "cover",
-      "cgAlign": "center center",
-      "clearStorySprites": true
+      "clearStorySprites": true,
+      "bg": "images/assets/bg/bg_ayame93_station_exterior_day.webp",
+      "hideEventCg": true
     },
     {
       "speaker": "",
@@ -508,16 +506,16 @@
       ]
     },
     {
-      "speaker": "",
-      "text": "運転手\n「はいよ、紫藤さんち……って」"
+      "speaker": "運転手",
+      "text": "はいよ、紫藤さんち……って"
     },
     {
       "speaker": "",
       "text": "運転手はバックミラー越しに彩愛さんを見た。"
     },
     {
-      "speaker": "",
-      "text": "運転手\n「あれ？ 彩愛お嬢さんじゃないですか」"
+      "speaker": "運転手",
+      "text": "あれ？ 彩愛お嬢さんじゃないですか"
     },
     {
       "speaker": "彩愛",
@@ -535,12 +533,12 @@
       "text": "彩愛お嬢さん？"
     },
     {
-      "speaker": "",
-      "text": "運転手\n「そりゃそうだよ。紫藤さんちでしょ？」"
+      "speaker": "運転手",
+      "text": "そりゃそうだよ。紫藤さんちでしょ？"
     },
     {
-      "speaker": "",
-      "text": "運転手\n「ここいらじゃ、彩愛お嬢様のこと知らない人はいないよ」"
+      "speaker": "運転手",
+      "text": "ここいらじゃ、彩愛お嬢様のこと知らない人はいないよ"
     },
     {
       "speaker": "彩愛",
@@ -554,12 +552,12 @@
       ]
     },
     {
-      "speaker": "",
-      "text": "運転手\n「大げさじゃないって」"
+      "speaker": "運転手",
+      "text": "大げさじゃないですって、紫藤家あってのこの界隈だ。"
     },
     {
       "speaker": "彩愛",
-      "text": "……",
+      "text": "まぁ。でも、このあたりの事情に疎い方は驚いてしまいますわ。どうぞ、控えめにお願いいたします。",
       "storySprites": [
         {
           "id": "ak",
@@ -578,36 +576,37 @@
     },
     {
       "speaker": "",
-      "text": "しばらく走ると、景色はさらに山の方へ変わっていった。"
+      "text": "しばらく走ると、風景は豊かな農村へと変わってきた。",
+      "bg": "images/assets/bg/bg_ayame93_country_road_day.webp"
     },
     {
       "speaker": "",
-      "text": "広い田んぼ。"
+      "text": "広い田んぼ。農作業に汗を流す人達。古い蔵のような建物のある家。"
     },
     {
       "speaker": "",
-      "text": "古い蔵のような建物。"
+      "text": "日本の原風景とまではいかないが、そこそこ田舎とはこういう物だという風景が広がっていた。"
+    },
+    {
+      "speaker": "運転手",
+      "text": "お嬢様、正門の前でよろしかったでしょうか？"
     },
     {
       "speaker": "",
-      "text": "長い石垣。"
+      "text": "（正門の前・・・）"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい。正門の前でお願いします。"
+    },
+    {
+      "speaker": "運転手",
+      "text": "承知しました。もうすぐ着きますからね。"
     },
     {
       "speaker": "",
-      "text": "窓の外を見ながら、俺は少しずつ違和感を覚え始めていた。"
-    },
-    {
-      "speaker": "",
-      "text": "もちろん悪い意味ではない。",
+      "text": "やがてタクシーは、大きな門の前で停まった。",
       "bg": "images/assets/bg/bg_ayame93_estate_gate_day.webp"
-    },
-    {
-      "speaker": "",
-      "text": "ただ、彩愛さんの言う「田舎」が、俺の想像していたものとは少し違う気がする。"
-    },
-    {
-      "speaker": "",
-      "text": "やがてタクシーは、大きな門の前で停まった。"
     },
     {
       "speaker": "店長",
@@ -719,7 +718,14 @@
     },
     {
       "speaker": "",
-      "text": "中から現れたのは、年配の女性だった。"
+      "text": "中から現れたのは、年配の女性だった。",
+      "storySprites": [
+        {
+          "id": "baaya",
+          "src": "images/assets/char/ayame93_baaya_sprite.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "",
@@ -733,6 +739,11 @@
       "speaker": "彩愛",
       "text": "ばあや！",
       "storySprites": [
+        {
+          "id": "baaya",
+          "src": "images/assets/char/ayame93_baaya_sprite.webp",
+          "opacity": 1
+        },
         {
           "id": "ak",
           "src": "images/assets/char/ayame_93_trip_sprite.webp",
@@ -749,6 +760,11 @@
       "text": "ばあや！",
       "storySprites": [
         {
+          "id": "baaya",
+          "src": "images/assets/char/ayame93_baaya_sprite.webp",
+          "opacity": 1
+        },
+        {
           "id": "ak",
           "src": "images/assets/char/ayame_93_trip_sprite.webp",
           "opacity": 1
@@ -763,6 +779,11 @@
       "speaker": "彩愛",
       "text": "これが慌てずにいられますか……！ お父様はどこに？",
       "storySprites": [
+        {
+          "id": "baaya",
+          "src": "images/assets/char/ayame93_baaya_sprite.webp",
+          "opacity": 1
+        },
         {
           "id": "ak",
           "src": "images/assets/char/ayame_93_trip_sprite.webp",
@@ -779,6 +800,11 @@
       "text": "あんなに元気な方が……まさか伏せっているのですか？",
       "storySprites": [
         {
+          "id": "baaya",
+          "src": "images/assets/char/ayame93_baaya_sprite.webp",
+          "opacity": 1
+        },
+        {
           "id": "ak",
           "src": "images/assets/char/ayame_93_trip_sprite.webp",
           "opacity": 1
@@ -793,6 +819,11 @@
       "speaker": "彩愛",
       "text": "……！",
       "storySprites": [
+        {
+          "id": "baaya",
+          "src": "images/assets/char/ayame93_baaya_sprite.webp",
+          "opacity": 1
+        },
         {
           "id": "ak",
           "src": "images/assets/char/ayame_93_trip_sprite.webp",
@@ -809,6 +840,11 @@
       "text": "……",
       "storySprites": [
         {
+          "id": "baaya",
+          "src": "images/assets/char/ayame93_baaya_sprite.webp",
+          "opacity": 1
+        },
+        {
           "id": "ak",
           "src": "images/assets/char/ayame_93_trip_sprite.webp",
           "opacity": 1
@@ -824,6 +860,11 @@
       "text": "……そんな……お父様っ！",
       "storySprites": [
         {
+          "id": "baaya",
+          "src": "images/assets/char/ayame93_baaya_sprite.webp",
+          "opacity": 1
+        },
+        {
           "id": "ak",
           "src": "images/assets/char/ayame_93_trip_sprite.webp",
           "opacity": 1
@@ -836,11 +877,18 @@
     },
     {
       "speaker": "",
-      "text": "彩愛さんは、ばあやの言葉も待たずに屋敷の奥へ駆け出した。"
+      "text": "彩愛さんは、ばあやの言葉も待たずに屋敷の奥へ駆け出した。",
+      "storySprites": [
+        {
+          "id": "baaya",
+          "src": "images/assets/char/ayame93_baaya_sprite.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "店長",
-      "text": "失礼します"
+      "text": "お邪魔します。"
     },
     {
       "speaker": "ばあや",
@@ -848,7 +896,8 @@
     },
     {
       "speaker": "",
-      "text": "俺も慌てて、その後を追った。"
+      "text": "俺も慌てて、その後を追った。",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
