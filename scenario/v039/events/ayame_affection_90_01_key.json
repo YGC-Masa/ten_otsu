@@ -1,7 +1,7 @@
 {
   "id": "ayame_affection_90_01_key",
   "title": "田舎では普通ですわ",
-  "version": "v039_248",
+  "version": "v039_249",
   "return": {
     "mode": "storyMenu",
     "storyId": "ayame_affection_90_01_key",
@@ -463,16 +463,15 @@
       "eventCg": "images/assets/cg/cg_ayame93_train_window_down.webp",
       "showEventCg": true,
       "cgFit": "cover",
-      "cgAlign": "center center"
+      "cgAlign": "center center",
+      "bg": "images/assets/bg/bg_ayame93_station_exterior_day.webp"
     },
     {
       "speaker": "",
       "text": "街の音が遠い。",
       "clearStorySprites": true,
-      "eventCg": "images/assets/cg/cg_ayame93_train_window_down.webp",
-      "showEventCg": true,
-      "cgFit": "cover",
-      "cgAlign": "center center"
+      "bg": "images/assets/bg/bg_ayame93_station_exterior_day.webp",
+      "hideEventCg": true
     },
     {
       "speaker": "",
