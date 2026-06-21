@@ -1,7 +1,7 @@
 {
   "id": "ayame_affection_90_01_key",
   "title": "田舎では普通ですわ",
-  "version": "v039_247",
+  "version": "v039_248",
   "return": {
     "mode": "storyMenu",
     "storyId": "ayame_affection_90_01_key",
@@ -150,7 +150,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "お礼を言われると困りますわ",
+      "text": "・・・私の個人的な事情に突き合わせてしまって・・とても申し訳なく思っています",
       "storySprites": [
         {
           "id": "ak",
@@ -161,11 +161,11 @@
     },
     {
       "speaker": "店長",
-      "text": "言ってません"
+      "text": "気にしないでください、彩愛さんの為ですから。それに・・・俺が行きたかったんです。"
     },
     {
       "speaker": "彩愛",
-      "text": "あら。本当ですわね",
+      "text": "・・・店長、ありがとうございます・・嬉しいです。",
       "storySprites": [
         {
           "id": "ak",
@@ -430,17 +430,8 @@
       "clearStorySprites": true
     },
     {
-      "speaker": "",
-      "text": "彩愛さんの葛藤をわかりきったつもりで軽々しくかける言葉ではないなとは思いつつも。",
-      "eventCg": "images/assets/cg/cg_ayame93_train_window_down.webp",
-      "showEventCg": true,
-      "cgFit": "cover",
-      "cgAlign": "center center",
-      "clearStorySprites": true
-    },
-    {
       "speaker": "店長",
-      "text": "・・まずは元気な姿を見せましょう。",
+      "text": "まずは元気な姿を見せましょう。",
       "eventCg": "images/assets/cg/cg_ayame93_train_window_down.webp",
       "showEventCg": true,
       "cgFit": "cover",
@@ -449,7 +440,7 @@
     },
     {
       "speaker": "彩愛",
-      "text": "・・はい。",
+      "text": "・・・はい。",
       "eventCg": "images/assets/cg/cg_ayame93_train_window_down.webp",
       "showEventCg": true,
       "cgFit": "cover",
@@ -469,18 +460,26 @@
       "speaker": "",
       "text": "俺は彩愛さんの気持ちが少しでも軽くなればと願わずにはいられなかった。",
       "clearStorySprites": true,
-      "bg": "images/assets/bg/bg_ayame93_station_exterior_day.webp",
-      "hideEventCg": true
+      "eventCg": "images/assets/cg/cg_ayame93_train_window_down.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center"
     },
     {
       "speaker": "",
       "text": "街の音が遠い。",
-      "bg": "images/assets/bg/bg_ayame93_station_exterior_day.webp",
-      "clearStorySprites": true
+      "clearStorySprites": true,
+      "eventCg": "images/assets/cg/cg_ayame93_train_window_down.webp",
+      "showEventCg": true,
+      "cgFit": "cover",
+      "cgAlign": "center center"
     },
     {
       "speaker": "",
-      "text": "風の音と、鳥の声。"
+      "text": "風の音と、鳥の声。",
+      "bg": "images/assets/bg/bg_ayame93_station_exterior_day.webp",
+      "clearStorySprites": true,
+      "hideEventCg": true
     },
     {
       "speaker": "",
