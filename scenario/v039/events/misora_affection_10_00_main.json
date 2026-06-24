@@ -1,0 +1,642 @@
+{
+  "id": "misora_affection_10_00_main",
+  "title": "どれでもいい",
+  "version": "v039_257",
+  "return": {
+    "mode": "storyMenu",
+    "storyId": "misora_affection_10_00_main",
+    "storyMenuTab": "key"
+  },
+  "format": "v039_steps",
+  "type": "character_main_story",
+  "characterId": "ah",
+  "route": "misora",
+  "affectionRange": {
+    "min": 0,
+    "max": 10
+  },
+  "location": {
+    "id": "supermarket_drink_corner",
+    "name": "スーパー・飲料コーナー"
+  },
+  "summary": "双沢美空の親愛Lv.10ストーリー「どれでもいい」。",
+  "purpose": "美空の観察力、自然な優しさ、周囲との距離感を描く。",
+  "tags": [
+    "美空ルート",
+    "親愛度0-10",
+    "双沢美空"
+  ],
+  "clearFlags": [
+    "misora_affection_10_00_main_cleared"
+  ],
+  "nextHint": "次の美空ストーリーへ進みます。",
+  "renderPolicy": {
+    "spritePosition": "logical_split_n_plus_1",
+    "eventCgLayer": "frontOfCharacters"
+  },
+  "steps": [
+    {
+      "speaker": "",
+      "text": "休日の午後。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_day.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "ひだまりストアの飲み物補充のため、店長と美空は近所のスーパーへ来ていた。"
+    },
+    {
+      "speaker": "",
+      "text": "店長はカゴを持ち、もう片方の手に買い出しメモを持っている。"
+    },
+    {
+      "speaker": "",
+      "text": "美空はその横を、少し楽しそうに歩いていた。"
+    },
+    {
+      "speaker": "店長",
+      "text": "次は飲み物か"
+    },
+    {
+      "speaker": "美空",
+      "text": "うん",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "飲料コーナーに入る。"
+    },
+    {
+      "speaker": "",
+      "text": "店長がメモを見ようとした、その前に。"
+    },
+    {
+      "speaker": "美空",
+      "text": "緋奈ちゃんはオレンジジュース"
+    },
+    {
+      "speaker": "",
+      "text": "美空は迷わず一本取って、店長のカゴへ入れる。"
+    },
+    {
+      "speaker": "店長",
+      "text": "正解"
+    },
+    {
+      "speaker": "美空",
+      "text": "桃ちゃんは炭酸"
+    },
+    {
+      "speaker": "",
+      "text": "ポン。"
+    },
+    {
+      "speaker": "美空",
+      "text": "藍ちゃんはお茶"
+    },
+    {
+      "speaker": "",
+      "text": "ポン。"
+    },
+    {
+      "speaker": "美空",
+      "text": "彩愛さんは紅茶"
+    },
+    {
+      "speaker": "",
+      "text": "ポン。"
+    },
+    {
+      "speaker": "",
+      "text": "店長はメモを見る。"
+    },
+    {
+      "speaker": "",
+      "text": "全部合っている。"
+    },
+    {
+      "speaker": "店長",
+      "text": "よく覚えてるな"
+    },
+    {
+      "speaker": "美空",
+      "text": "え？"
+    },
+    {
+      "speaker": "店長",
+      "text": "メモ見てないだろ"
+    },
+    {
+      "speaker": "美空",
+      "text": "一回見ましたよ？"
+    },
+    {
+      "speaker": "店長",
+      "text": "一回かよ"
+    },
+    {
+      "speaker": "美空",
+      "text": "うん"
+    },
+    {
+      "speaker": "店長",
+      "text": "それで覚えたのか"
+    },
+    {
+      "speaker": "美空",
+      "text": "みんなイメージ通りだから\n頭に入ってる"
+    },
+    {
+      "speaker": "店長",
+      "text": "イメージ通り？"
+    },
+    {
+      "speaker": "美空",
+      "text": "うん\n緋奈ちゃんはオレンジジュース\n桃ちゃんは炭酸\n藍ちゃんはお茶\n彩愛さんは紅茶"
+    },
+    {
+      "speaker": "店長",
+      "text": "なるほどな"
+    },
+    {
+      "speaker": "美空",
+      "text": "ね？"
+    },
+    {
+      "speaker": "店長",
+      "text": "仕事できるな"
+    },
+    {
+      "speaker": "美空",
+      "text": "えへへ\n買い出し得意かも"
+    },
+    {
+      "speaker": "店長",
+      "text": "今さらだな"
+    },
+    {
+      "speaker": "美空",
+      "text": "あはは"
+    },
+    {
+      "speaker": "",
+      "text": "少し進む。"
+    },
+    {
+      "speaker": "店長",
+      "text": "夜空は？"
+    },
+    {
+      "speaker": "",
+      "text": "即答する。"
+    },
+    {
+      "speaker": "美空",
+      "text": "コーヒー"
+    },
+    {
+      "speaker": "店長",
+      "text": "だな"
+    },
+    {
+      "speaker": "",
+      "text": "美空はコーヒーを手に取る。"
+    },
+    {
+      "speaker": "美空",
+      "text": "昔はココアだったんだけどね"
+    },
+    {
+      "speaker": "店長",
+      "text": "へぇ"
+    },
+    {
+      "speaker": "美空",
+      "text": "今はコーヒー"
+    },
+    {
+      "speaker": "",
+      "text": "少し考える。"
+    },
+    {
+      "speaker": "美空",
+      "text": "でも\nココアも好きな気がする"
+    },
+    {
+      "speaker": "店長",
+      "text": "気がする？"
+    },
+    {
+      "speaker": "美空",
+      "text": "うん\nなんかそんな気がする"
+    },
+    {
+      "speaker": "店長",
+      "text": "聞いたのか？"
+    },
+    {
+      "speaker": "美空",
+      "text": "ううん\n聞いたことない"
+    },
+    {
+      "speaker": "店長",
+      "text": "またたぶんか？"
+    },
+    {
+      "speaker": "美空",
+      "text": "たぶん"
+    },
+    {
+      "speaker": "",
+      "text": "苦笑する。"
+    },
+    {
+      "speaker": "店長",
+      "text": "でも\nきっと当たってるんだろうな"
+    },
+    {
+      "speaker": "美空",
+      "text": "そうかな？"
+    },
+    {
+      "speaker": "店長",
+      "text": "今まで外したことあったか？"
+    },
+    {
+      "speaker": "",
+      "text": "少し考える。"
+    },
+    {
+      "speaker": "美空",
+      "text": "・・・ないかも"
+    },
+    {
+      "speaker": "店長",
+      "text": "だろ"
+    },
+    {
+      "speaker": "美空",
+      "text": "えへへ"
+    },
+    {
+      "speaker": "",
+      "text": "コーヒーをカゴへ入れる。"
+    },
+    {
+      "speaker": "店長",
+      "text": "じゃあ\n俺は？"
+    },
+    {
+      "speaker": "",
+      "text": "美空は立ち止まる。"
+    },
+    {
+      "speaker": "店長",
+      "text": "お？"
+    },
+    {
+      "speaker": "",
+      "text": "美空は少し考える。"
+    },
+    {
+      "speaker": "美空",
+      "text": "・・・"
+    },
+    {
+      "speaker": "店長",
+      "text": "長いな"
+    },
+    {
+      "speaker": "美空",
+      "text": "分かんない"
+    },
+    {
+      "speaker": "店長",
+      "text": "おいおい\nそこは即答じゃないのかよ"
+    },
+    {
+      "speaker": "",
+      "text": "美空はくすっと笑った。"
+    },
+    {
+      "speaker": "美空",
+      "text": "ふふ\n冗談です"
+    },
+    {
+      "speaker": "店長",
+      "text": "おい"
+    },
+    {
+      "speaker": "美空",
+      "text": "メロンソーダですよね"
+    },
+    {
+      "speaker": "",
+      "text": "店長は思わず足を止めた。"
+    },
+    {
+      "speaker": "店長",
+      "text": "なんで知ってる"
+    },
+    {
+      "speaker": "美空",
+      "text": "だって\nいつも飲んでるし"
+    },
+    {
+      "speaker": "店長",
+      "text": "それだけか？"
+    },
+    {
+      "speaker": "美空",
+      "text": "ううん"
+    },
+    {
+      "speaker": "",
+      "text": "少し考える。"
+    },
+    {
+      "speaker": "美空",
+      "text": "あと\nいつも嬉しそうに飲んでる"
+    },
+    {
+      "speaker": "店長",
+      "text": "……"
+    },
+    {
+      "speaker": "美空",
+      "text": "違う？"
+    },
+    {
+      "speaker": "店長",
+      "text": "いや\n合ってる"
+    },
+    {
+      "speaker": "美空",
+      "text": "でしょ？"
+    },
+    {
+      "speaker": "",
+      "text": "少し得意げに笑う。"
+    },
+    {
+      "speaker": "店長",
+      "text": "よく見てるな"
+    },
+    {
+      "speaker": "美空",
+      "text": "そうかな？"
+    },
+    {
+      "speaker": "店長",
+      "text": "そうだよ"
+    },
+    {
+      "speaker": "美空",
+      "text": "見てるっていうか\nなんか、分かる"
+    },
+    {
+      "speaker": "店長",
+      "text": "それがすごいんだよ"
+    },
+    {
+      "speaker": "美空",
+      "text": "へぇー"
+    },
+    {
+      "speaker": "",
+      "text": "美空は不思議そうに首を傾げる。"
+    },
+    {
+      "speaker": "店長",
+      "text": "じゃあ美空は？"
+    },
+    {
+      "speaker": "美空",
+      "text": "んー？"
+    },
+    {
+      "speaker": "店長",
+      "text": "美空が飲むやつ"
+    },
+    {
+      "speaker": "",
+      "text": "美空は飲料棚を見る。"
+    },
+    {
+      "speaker": "",
+      "text": "ジュース。"
+    },
+    {
+      "speaker": "",
+      "text": "お茶。"
+    },
+    {
+      "speaker": "",
+      "text": "コーヒー。"
+    },
+    {
+      "speaker": "",
+      "text": "牛乳。"
+    },
+    {
+      "speaker": "",
+      "text": "乳酸菌飲料。"
+    },
+    {
+      "speaker": "",
+      "text": "炭酸飲料。"
+    },
+    {
+      "speaker": "",
+      "text": "色々な飲み物が並んでいる。"
+    },
+    {
+      "speaker": "店長",
+      "text": "好きなのあるだろ"
+    },
+    {
+      "speaker": "美空",
+      "text": "あるよ？"
+    },
+    {
+      "speaker": "店長",
+      "text": "どれだ"
+    },
+    {
+      "speaker": "美空",
+      "text": "全部"
+    },
+    {
+      "speaker": "店長",
+      "text": "全部？"
+    },
+    {
+      "speaker": "美空",
+      "text": "ジュース好き\nお茶好き\n牛乳好き\nコーヒーも好き\n炭酸も好き"
+    },
+    {
+      "speaker": "店長",
+      "text": "結局どれなんだ"
+    },
+    {
+      "speaker": "美空",
+      "text": "んー……"
+    },
+    {
+      "speaker": "",
+      "text": "本気で考える。"
+    },
+    {
+      "speaker": "店長",
+      "text": "長いな"
+    },
+    {
+      "speaker": "美空",
+      "text": "分かんない"
+    },
+    {
+      "speaker": "店長",
+      "text": "分かんないのか"
+    },
+    {
+      "speaker": "美空",
+      "text": "うん\nどれも好きだから"
+    },
+    {
+      "speaker": "",
+      "text": "少し考える。"
+    },
+    {
+      "speaker": "美空",
+      "text": "これ！\nってやつが無い"
+    },
+    {
+      "speaker": "店長",
+      "text": "へぇ"
+    },
+    {
+      "speaker": "美空",
+      "text": "変かな？"
+    },
+    {
+      "speaker": "店長",
+      "text": "いや\n別に変じゃないだろ"
+    },
+    {
+      "speaker": "美空",
+      "text": "そっか"
+    },
+    {
+      "speaker": "店長",
+      "text": "好きなものが多いってことだしな"
+    },
+    {
+      "speaker": "美空",
+      "text": "うん\nそうかも"
+    },
+    {
+      "speaker": "",
+      "text": "美空は乳酸菌飲料を手に取る。"
+    },
+    {
+      "speaker": "美空",
+      "text": "今日はこれ"
+    },
+    {
+      "speaker": "店長",
+      "text": "結局それか"
+    },
+    {
+      "speaker": "美空",
+      "text": "これも好き"
+    },
+    {
+      "speaker": "",
+      "text": "カゴへ入れる。"
+    },
+    {
+      "speaker": "店長",
+      "text": "美空らしいな"
+    },
+    {
+      "speaker": "美空",
+      "text": "そう？"
+    },
+    {
+      "speaker": "店長",
+      "text": "そう"
+    },
+    {
+      "speaker": "",
+      "text": "会計を済ませる。"
+    },
+    {
+      "speaker": "",
+      "text": "店の外へ出ると、午後の空気が少しだけあたたかかった。"
+    },
+    {
+      "speaker": "",
+      "text": "買い物袋を持つ店長の横を、美空が歩く。"
+    },
+    {
+      "speaker": "美空",
+      "text": "でも"
+    },
+    {
+      "speaker": "店長",
+      "text": "ん？"
+    },
+    {
+      "speaker": "美空",
+      "text": "いつか見つかるかな"
+    },
+    {
+      "speaker": "店長",
+      "text": "何が"
+    },
+    {
+      "speaker": "美空",
+      "text": "これ！\nってやつ"
+    },
+    {
+      "speaker": "",
+      "text": "少し笑う。"
+    },
+    {
+      "speaker": "店長",
+      "text": "見つかるだろ"
+    },
+    {
+      "speaker": "美空",
+      "text": "そうかな？"
+    },
+    {
+      "speaker": "店長",
+      "text": "たぶん"
+    },
+    {
+      "speaker": "",
+      "text": "美空は一瞬きょとんとして、それから笑った。"
+    },
+    {
+      "speaker": "美空",
+      "text": "あはは\nじゃあ楽しみにしてよっと"
+    },
+    {
+      "speaker": "",
+      "text": "買い物袋の中で、缶とペットボトルが小さく鳴った。"
+    },
+    {
+      "speaker": "",
+      "text": "その音を聞きながら、美空はいつも通りの笑顔で歩いていた。"
+    }
+  ]
+}

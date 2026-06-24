@@ -1,0 +1,471 @@
+{
+  "id": "misora_affection_00_03_key",
+  "title": "それ、たぶんこっち",
+  "version": "v039_257",
+  "return": {
+    "mode": "storyMenu",
+    "storyId": "misora_affection_00_03_key",
+    "storyMenuTab": "key"
+  },
+  "format": "v039_steps",
+  "type": "character_key_story",
+  "characterId": "ah",
+  "route": "misora",
+  "affectionRange": {
+    "min": 0,
+    "max": 10
+  },
+  "location": {
+    "id": "hidamari_store_tv",
+    "name": "ひだまりストア・テレビ売り場"
+  },
+  "summary": "双沢美空の親愛Lv.8ストーリー「それ、たぶんこっち」。",
+  "purpose": "美空の観察力、自然な優しさ、周囲との距離感を描く。",
+  "tags": [
+    "美空ルート",
+    "親愛度0-10",
+    "双沢美空"
+  ],
+  "clearFlags": [
+    "misora_affection_00_03_key_cleared"
+  ],
+  "nextHint": "次の美空ストーリーへ進みます。",
+  "renderPolicy": {
+    "spritePosition": "logical_split_n_plus_1",
+    "eventCgLayer": "frontOfCharacters"
+  },
+  "steps": [
+    {
+      "speaker": "",
+      "text": "午後。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_day.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "店内はそれなりに賑わっている。"
+    },
+    {
+      "speaker": "",
+      "text": "店長が売り場を見回していると、少し離れた場所で緋奈がお客様を接客していた。"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "このテレビも人気なんですよー！",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "お客様",
+      "text": "へぇ"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "映画を見るならこっちもいいですし！"
+    },
+    {
+      "speaker": "お客様",
+      "text": "うーん……"
+    },
+    {
+      "speaker": "",
+      "text": "テレビの前で悩んでいる。"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "サイズもいい感じですし……"
+    },
+    {
+      "speaker": "お客様",
+      "text": "どうしようかなぁ"
+    },
+    {
+      "speaker": "店長",
+      "text": "決めきれない感じだな"
+    },
+    {
+      "speaker": "",
+      "text": "近くで様子を見ていた美空が小さく頷く。"
+    },
+    {
+      "speaker": "美空",
+      "text": "・・・うん",
+      "storySprites": [
+        {
+          "id": "aa",
+          "src": "images/assets/char/a10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "少し考える。"
+    },
+    {
+      "speaker": "美空",
+      "text": "でも\nなんか違う気がする"
+    },
+    {
+      "speaker": "店長",
+      "text": "何が？"
+    },
+    {
+      "speaker": "美空",
+      "text": "分かんない"
+    },
+    {
+      "speaker": "店長",
+      "text": "またか"
+    },
+    {
+      "speaker": "美空",
+      "text": "でも\nたぶん奥の方"
+    },
+    {
+      "speaker": "店長",
+      "text": "奥？"
+    },
+    {
+      "speaker": "美空",
+      "text": "スポーツ観戦コーナー"
+    },
+    {
+      "speaker": "店長",
+      "text": "なんで？"
+    },
+    {
+      "speaker": "美空",
+      "text": "分かんない"
+    },
+    {
+      "speaker": "店長",
+      "text": "分かんないのに言うな"
+    },
+    {
+      "speaker": "美空",
+      "text": "でもなんか違う"
+    },
+    {
+      "speaker": "店長",
+      "text": "便利な言葉だな"
+    },
+    {
+      "speaker": "美空",
+      "text": "えへへ"
+    },
+    {
+      "speaker": "",
+      "text": "店長は少し考える。"
+    },
+    {
+      "speaker": "店長",
+      "text": "緋奈"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "はい？"
+    },
+    {
+      "speaker": "店長",
+      "text": "奥も見せてみたらどうだ？"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "スポーツ観戦コーナーですか？"
+    },
+    {
+      "speaker": "店長",
+      "text": "ああ"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "スポーツ好きって言ってましたっけ？"
+    },
+    {
+      "speaker": "店長",
+      "text": "いや"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "じゃあ何でですか？"
+    },
+    {
+      "speaker": "",
+      "text": "店長は美空を見る。"
+    },
+    {
+      "speaker": "美空",
+      "text": "なんか"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "なんか！？"
+    },
+    {
+      "speaker": "店長",
+      "text": "まぁ行ってこい"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "うーん……"
+    },
+    {
+      "speaker": "",
+      "text": "少し悩みながら、お客様を案内する。"
+    },
+    {
+      "speaker": "",
+      "text": "数分後。"
+    },
+    {
+      "speaker": "",
+      "text": "奥のスポーツ観戦コーナー。"
+    },
+    {
+      "speaker": "お客様",
+      "text": "あっ"
+    },
+    {
+      "speaker": "",
+      "text": "立ち止まる。"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "どうしました？"
+    },
+    {
+      "speaker": "お客様",
+      "text": "これ\nいいな"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "え？"
+    },
+    {
+      "speaker": "お客様",
+      "text": "サッカー観戦するんですよ\nこういうモード欲しかったんだよね"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "なるほど！"
+    },
+    {
+      "speaker": "お客様",
+      "text": "これにします"
+    },
+    {
+      "speaker": "",
+      "text": "購入決定。"
+    },
+    {
+      "speaker": "",
+      "text": "しばらく後。"
+    },
+    {
+      "speaker": "",
+      "text": "緋奈が勢いよく売り場へ戻ってくる。"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "美空ちゃーん！"
+    },
+    {
+      "speaker": "美空",
+      "text": "ん？"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "当たった！"
+    },
+    {
+      "speaker": "美空",
+      "text": "おー"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "おーじゃないよ！\n何で分かったの！？"
+    },
+    {
+      "speaker": "店長",
+      "text": "俺も聞きたい"
+    },
+    {
+      "speaker": "美空",
+      "text": "んー……"
+    },
+    {
+      "speaker": "",
+      "text": "考える。"
+    },
+    {
+      "speaker": "美空",
+      "text": "分かんない"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "またそれ！"
+    },
+    {
+      "speaker": "美空",
+      "text": "でも"
+    },
+    {
+      "speaker": "",
+      "text": "少し考える。"
+    },
+    {
+      "speaker": "美空",
+      "text": "あ"
+    },
+    {
+      "speaker": "店長",
+      "text": "お？"
+    },
+    {
+      "speaker": "美空",
+      "text": "スマホ"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "スマホ？"
+    },
+    {
+      "speaker": "美空",
+      "text": "スマホケース\nサッカーボール付いてた"
+    },
+    {
+      "speaker": "店長",
+      "text": "ああ"
+    },
+    {
+      "speaker": "美空",
+      "text": "あとキーホルダー\nチームカラーっぽかった"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "あー！"
+    },
+    {
+      "speaker": "美空",
+      "text": "あと\nサッカーの映像流れてた時だけ\nちょっと近付いてた"
+    },
+    {
+      "speaker": "店長",
+      "text": "……"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "……"
+    },
+    {
+      "speaker": "美空",
+      "text": "たぶん\nそれ"
+    },
+    {
+      "speaker": "店長",
+      "text": "先に言えよ"
+    },
+    {
+      "speaker": "美空",
+      "text": "後から気付いた"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "あはははっ！"
+    },
+    {
+      "speaker": "店長",
+      "text": "なんだそれ"
+    },
+    {
+      "speaker": "美空",
+      "text": "えへへ"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "でもさー\nそれ勘じゃないよね？"
+    },
+    {
+      "speaker": "美空",
+      "text": "そうなの？"
+    },
+    {
+      "speaker": "店長",
+      "text": "勘じゃない"
+    },
+    {
+      "speaker": "美空",
+      "text": "え？"
+    },
+    {
+      "speaker": "店長",
+      "text": "美空はさ\n無意識でも\n一瞬の情報で\n相手がどんな人か見てるんだよ"
+    },
+    {
+      "speaker": "美空",
+      "text": "そうなの？"
+    },
+    {
+      "speaker": "店長",
+      "text": "そう\nしかも結構正確"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "確かに\n普通スマホケースとか見ないよね"
+    },
+    {
+      "speaker": "美空",
+      "text": "見てた？"
+    },
+    {
+      "speaker": "店長",
+      "text": "美空は見てたからこそ、感じたんだよ\n無自覚でもね"
+    },
+    {
+      "speaker": "美空",
+      "text": "へぇー"
+    },
+    {
+      "speaker": "",
+      "text": "店長は少し笑う。"
+    },
+    {
+      "speaker": "店長",
+      "text": "すごいことだと思うぞ"
+    },
+    {
+      "speaker": "",
+      "text": "少し考える。"
+    },
+    {
+      "speaker": "美空",
+      "text": "じゃあ\n特技かな？"
+    },
+    {
+      "speaker": "店長",
+      "text": "今さら？"
+    },
+    {
+      "speaker": "緋奈",
+      "text": "あははははっ！"
+    },
+    {
+      "speaker": "",
+      "text": "テレビ売り場に、楽しそうな笑い声が響いた。"
+    }
+  ],
+  "keyScenarioIndex": 3
+}

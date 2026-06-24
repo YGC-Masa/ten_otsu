@@ -2889,5 +2889,125 @@ window.TENOTSU_STORY_INDEX = [
     "affectionLabel": "親愛Lv.100",
     "menuTitle": "親愛Lv.100：あの日と変わらぬこの場所で",
     "locationName": "清流の川辺・昼"
+  },
+  {
+    "id": "misora_affection_00_01_key",
+    "title": "上手なこと言えないかも",
+    "type": "key",
+    "category": "character_key",
+    "character": "ah",
+    "route": "misora",
+    "affectionBlock": 1,
+    "affectionSlot": "key1",
+    "unlockLevel": 3,
+    "characters": [
+      "ah"
+    ],
+    "characterNames": [
+      "双沢 美空"
+    ],
+    "scenario": "scenario/v039/events/misora_affection_00_01_key.json",
+    "version": "v039_257",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ah",
+      "level": 3
+    },
+    "order": 3150,
+    "summary": "美空の親愛Lv.3ストーリー「上手なこと言えないかも」。",
+    "rawTitle": "上手なこと言えないかも",
+    "affectionLabel": "親愛Lv.3",
+    "menuTitle": "親愛Lv.3：上手なこと言えないかも",
+    "locationName": "ひだまりストア・事務所"
+  },
+  {
+    "id": "misora_affection_00_02_key",
+    "title": "なんかパリっとしてる",
+    "type": "key",
+    "category": "character_key",
+    "character": "ah",
+    "route": "misora",
+    "affectionBlock": 1,
+    "affectionSlot": "key2",
+    "unlockLevel": 5,
+    "characters": [
+      "ah"
+    ],
+    "characterNames": [
+      "双沢 美空"
+    ],
+    "scenario": "scenario/v039/events/misora_affection_00_02_key.json",
+    "version": "v039_257",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ah",
+      "level": 5
+    },
+    "order": 3151,
+    "summary": "美空の親愛Lv.5ストーリー「なんかパリっとしてる」。",
+    "rawTitle": "なんかパリっとしてる",
+    "affectionLabel": "親愛Lv.5",
+    "menuTitle": "親愛Lv.5：なんかパリっとしてる",
+    "locationName": "ひだまりストア・開店前"
+  },
+  {
+    "id": "misora_affection_00_03_key",
+    "title": "それ、たぶんこっち",
+    "type": "key",
+    "category": "character_key",
+    "character": "ah",
+    "route": "misora",
+    "affectionBlock": 1,
+    "affectionSlot": "key3",
+    "unlockLevel": 8,
+    "characters": [
+      "ah"
+    ],
+    "characterNames": [
+      "双沢 美空"
+    ],
+    "scenario": "scenario/v039/events/misora_affection_00_03_key.json",
+    "version": "v039_257",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ah",
+      "level": 8
+    },
+    "order": 3152,
+    "summary": "美空の親愛Lv.8ストーリー「それ、たぶんこっち」。",
+    "rawTitle": "それ、たぶんこっち",
+    "affectionLabel": "親愛Lv.8",
+    "menuTitle": "親愛Lv.8：それ、たぶんこっち",
+    "locationName": "ひだまりストア・テレビ売り場"
+  },
+  {
+    "id": "misora_affection_10_00_main",
+    "title": "どれでもいい",
+    "type": "main",
+    "category": "character_main",
+    "character": "ah",
+    "route": "misora",
+    "affectionBlock": 1,
+    "affectionSlot": "main",
+    "unlockLevel": 10,
+    "characters": [
+      "ah"
+    ],
+    "characterNames": [
+      "双沢 美空"
+    ],
+    "scenario": "scenario/v039/events/misora_affection_10_00_main.json",
+    "version": "v039_257",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ah",
+      "level": 10
+    },
+    "order": 3153,
+    "summary": "美空の親愛Lv.10ストーリー「どれでもいい」。",
+    "rawTitle": "どれでもいい",
+    "affectionLabel": "親愛Lv.10",
+    "menuTitle": "親愛Lv.10：どれでもいい",
+    "locationName": "スーパー・飲料コーナー"
   }
 ];

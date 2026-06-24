@@ -10,7 +10,21 @@
     ae: empty("春日原 琥珀", "琥珀との絆"),
     af: empty("大道寺 真花", "真花との絆"),
     ag: empty("氷神 雪乃", "雪乃との絆"),
-    ah: empty("双沢 美空", "美空との絆"),
+    ah: {
+      characterName: "双沢 美空",
+      requiredStories: [
+        "misora_affection_00_01_key",
+        "misora_affection_00_02_key",
+        "misora_affection_00_03_key"
+      ],
+      slotStories: {
+        "b1_key1": "misora_affection_00_01_key",
+        "b1_key2": "misora_affection_00_02_key",
+        "b1_key3": "misora_affection_00_03_key",
+        "b1_main": "misora_affection_10_00_main"
+      },
+      completeReward: { title: "美空との絆" }
+    },
     ai: {
       characterName: "双沢 夜空",
       requiredStories: [

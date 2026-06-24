@@ -1,0 +1,520 @@
+{
+  "id": "misora_affection_00_02_key",
+  "title": "なんかパリっとしてる",
+  "version": "v039_257",
+  "return": {
+    "mode": "storyMenu",
+    "storyId": "misora_affection_00_02_key",
+    "storyMenuTab": "key"
+  },
+  "format": "v039_steps",
+  "type": "character_key_story",
+  "characterId": "ah",
+  "route": "misora",
+  "affectionRange": {
+    "min": 0,
+    "max": 10
+  },
+  "location": {
+    "id": "hidamari_store_salesfloor",
+    "name": "ひだまりストア・開店前"
+  },
+  "summary": "双沢美空の親愛Lv.5ストーリー「なんかパリっとしてる」。",
+  "purpose": "美空の観察力、自然な優しさ、周囲との距離感を描く。",
+  "tags": [
+    "美空ルート",
+    "親愛度0-10",
+    "双沢美空"
+  ],
+  "clearFlags": [
+    "misora_affection_00_02_key_cleared"
+  ],
+  "nextHint": "次の美空ストーリーへ進みます。",
+  "renderPolicy": {
+    "spritePosition": "logical_split_n_plus_1",
+    "eventCgLayer": "frontOfCharacters"
+  },
+  "steps": [
+    {
+      "speaker": "",
+      "text": "朝。",
+      "bg": "images/assets/bg/bg_hidamari_store_salesfloor_day.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "開店準備中の店内。"
+    },
+    {
+      "speaker": "",
+      "text": "商品を並べていた美空は、出勤してきた店長を見てふと手を止める。"
+    },
+    {
+      "speaker": "美空",
+      "text": "あ",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "ん？"
+    },
+    {
+      "speaker": "",
+      "text": "じーっ。"
+    },
+    {
+      "speaker": "店長",
+      "text": "なんだよ"
+    },
+    {
+      "speaker": "美空",
+      "text": "うーん……"
+    },
+    {
+      "speaker": "店長",
+      "text": "なんだ"
+    },
+    {
+      "speaker": "美空",
+      "text": "なんか違う"
+    },
+    {
+      "speaker": "店長",
+      "text": "何が"
+    },
+    {
+      "speaker": "",
+      "text": "美空は首を傾げる。"
+    },
+    {
+      "speaker": "美空",
+      "text": "分かんない"
+    },
+    {
+      "speaker": "店長",
+      "text": "おい"
+    },
+    {
+      "speaker": "美空",
+      "text": "でもなんか違う"
+    },
+    {
+      "speaker": "店長",
+      "text": "失礼だな"
+    },
+    {
+      "speaker": "美空",
+      "text": "違う違う\n悪い意味じゃない"
+    },
+    {
+      "speaker": "店長",
+      "text": "じゃあ何だよ"
+    },
+    {
+      "speaker": "",
+      "text": "美空は少し考える。"
+    },
+    {
+      "speaker": "美空",
+      "text": "なんか\n今日\nパリっとしてる"
+    },
+    {
+      "speaker": "店長",
+      "text": "パリっと？"
+    },
+    {
+      "speaker": "美空",
+      "text": "うん\nなんかパリっとしてる"
+    },
+    {
+      "speaker": "店長",
+      "text": "なんだそれ"
+    },
+    {
+      "speaker": "美空",
+      "text": "分かんない\nでもパリっとしてる"
+    },
+    {
+      "speaker": "",
+      "text": "そこへ。"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "おーっす！",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ae",
+          "src": "images/assets/char/e10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "元気よく店内へ入ってくる。"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "何の話だ？"
+    },
+    {
+      "speaker": "美空",
+      "text": "店長なんか違う"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "は？"
+    },
+    {
+      "speaker": "店長",
+      "text": "オレもそう言った"
+    },
+    {
+      "speaker": "美空",
+      "text": "なんかパリっとしてる"
+    },
+    {
+      "speaker": "",
+      "text": "琥珀はじーっと店長を見る。"
+    },
+    {
+      "speaker": "店長",
+      "text": "見るな"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "そうだな……"
+    },
+    {
+      "speaker": "美空",
+      "text": "でしょ？"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "いや、でしょじゃねぇ\n全然分かんねぇ"
+    },
+    {
+      "speaker": "美空",
+      "text": "えー"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "店長は店長だろ"
+    },
+    {
+      "speaker": "店長",
+      "text": "それはそう"
+    },
+    {
+      "speaker": "美空",
+      "text": "でも違うんだよなぁ"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "分かんねぇって"
+    },
+    {
+      "speaker": "",
+      "text": "その時。"
+    },
+    {
+      "speaker": "雪乃",
+      "text": "・・・店長",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ae",
+          "src": "images/assets/char/e10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ag",
+          "src": "images/assets/char/g10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "ん？"
+    },
+    {
+      "speaker": "雪乃",
+      "text": "・・・今日は\n・・・取引先様のところへ伺うはず・・・"
+    },
+    {
+      "speaker": "店長",
+      "text": "あ"
+    },
+    {
+      "speaker": "美空",
+      "text": "あっ！"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "なんだよ！"
+    },
+    {
+      "speaker": "店長",
+      "text": "今日は訪問用に、いいワイシャツに変えた"
+    },
+    {
+      "speaker": "美空",
+      "text": "それだー！\nなんかパリっとしてると思った！"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "分かるかそんなの！"
+    },
+    {
+      "speaker": "美空",
+      "text": "分かったもん"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "なんでだよ"
+    },
+    {
+      "speaker": "美空",
+      "text": "なんか\nパリっとしてた"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "説明になってねぇ！"
+    },
+    {
+      "speaker": "雪乃",
+      "text": "・・・ふふ"
+    },
+    {
+      "speaker": "店長",
+      "text": "まあ、当たってたな"
+    },
+    {
+      "speaker": "",
+      "text": "美空は少し得意げに笑う。"
+    },
+    {
+      "speaker": "美空",
+      "text": "でしょ？"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "偶然だろ"
+    },
+    {
+      "speaker": "美空",
+      "text": "違うもん"
+    },
+    {
+      "speaker": "雪乃",
+      "text": "・・・春日原さんも"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "ん？"
+    },
+    {
+      "speaker": "雪乃",
+      "text": "・・・気付いていた・・・はず？"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "はずって何だよ！"
+    },
+    {
+      "speaker": "美空",
+      "text": "あははっ"
+    },
+    {
+      "speaker": "雪乃",
+      "text": "・・・先週も\n・・・店長様が髪を切った時\n・・・最初に反応していた・・・はず？"
+    },
+    {
+      "speaker": "",
+      "text": "琥珀は固まった。"
+    },
+    {
+      "speaker": "店長",
+      "text": "あー"
+    },
+    {
+      "speaker": "美空",
+      "text": "あ"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "そ、それは！"
+    },
+    {
+      "speaker": "雪乃",
+      "text": "・・・いつもは\n・・・店長のこと\n・・・よく気付く\n・・・違う？"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "違わねぇけど！"
+    },
+    {
+      "speaker": "雪乃",
+      "text": "・・・良かった"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "良かったじゃねぇ！"
+    },
+    {
+      "speaker": "",
+      "text": "美空はにやにやしている。"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "でもな！\nい、いつもそんなに見てる訳じゃないんだぞ！！"
+    },
+    {
+      "speaker": "店長",
+      "text": "お、おう"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "いつもジロジロ見るの失礼だろ！\nだからずっとは見てないだけで！"
+    },
+    {
+      "speaker": "美空",
+      "text": "見てるんだ"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "あっ"
+    },
+    {
+      "speaker": "雪乃",
+      "text": "・・・ふふ"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "あと！\nいつものシャツもかっこいいからな！"
+    },
+    {
+      "speaker": "全員",
+      "text": "……"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "違う！\n何言ってんだオレ！\nシャツだよ！\nシャツ！"
+    },
+    {
+      "speaker": "美空",
+      "text": "あはははっ！"
+    },
+    {
+      "speaker": "雪乃",
+      "text": "・・・照れてる・・・"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "照れてねぇ！"
+    },
+    {
+      "speaker": "",
+      "text": "雪乃は少し考える。"
+    },
+    {
+      "speaker": "雪乃",
+      "text": "・・・可愛い。"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "雪乃ぉぉぉ！！"
+    },
+    {
+      "speaker": "美空",
+      "text": "あれ？\nでも、氷神さんも気づいてたってことは……"
+    },
+    {
+      "speaker": "雪乃",
+      "text": "・・・たぶん・・・"
+    },
+    {
+      "speaker": "店長",
+      "text": "たぶん？"
+    },
+    {
+      "speaker": "",
+      "text": "雪乃は少し考える。"
+    },
+    {
+      "speaker": "雪乃",
+      "text": "・・・私も\n・・・多分\n・・・ジロジロは\n・・・見てない？"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "なんで疑問形なんだよ"
+    },
+    {
+      "speaker": "美空",
+      "text": "あははっ"
+    },
+    {
+      "speaker": "店長",
+      "text": "見てないのか？"
+    },
+    {
+      "speaker": "雪乃",
+      "text": "・・・じゃ"
+    },
+    {
+      "speaker": "",
+      "text": "雪乃はさらに考える。"
+    },
+    {
+      "speaker": "雪乃",
+      "text": "・・・ジロジロ\n・・・じゃなければ？"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "何が違うんだよ"
+    },
+    {
+      "speaker": "雪乃",
+      "text": "・・・ん\n・・・ないしょ"
+    },
+    {
+      "speaker": "琥珀",
+      "text": "そこは認めろよ！"
+    },
+    {
+      "speaker": "美空",
+      "text": "あはははっ！"
+    },
+    {
+      "speaker": "店長",
+      "text": "なんだそれ"
+    },
+    {
+      "speaker": "雪乃",
+      "text": "・・・ふふ"
+    },
+    {
+      "speaker": "",
+      "text": "開店前の店内に、明るい笑い声が広がった。"
+    }
+  ],
+  "keyScenarioIndex": 2
+}

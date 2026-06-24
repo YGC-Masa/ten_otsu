@@ -1,0 +1,691 @@
+{
+  "id": "misora_affection_00_01_key",
+  "title": "上手なこと言えないかも",
+  "version": "v039_257",
+  "return": {
+    "mode": "storyMenu",
+    "storyId": "misora_affection_00_01_key",
+    "storyMenuTab": "key"
+  },
+  "format": "v039_steps",
+  "type": "character_key_story",
+  "characterId": "ah",
+  "route": "misora",
+  "affectionRange": {
+    "min": 0,
+    "max": 10
+  },
+  "location": {
+    "id": "hidamari_office",
+    "name": "ひだまりストア・事務所"
+  },
+  "summary": "双沢美空の親愛Lv.3ストーリー「上手なこと言えないかも」。",
+  "purpose": "美空の観察力、自然な優しさ、周囲との距離感を描く。",
+  "tags": [
+    "美空ルート",
+    "親愛度0-10",
+    "双沢美空"
+  ],
+  "clearFlags": [
+    "misora_affection_00_01_key_cleared"
+  ],
+  "nextHint": "次の美空ストーリーへ進みます。",
+  "renderPolicy": {
+    "spritePosition": "logical_split_n_plus_1",
+    "eventCgLayer": "frontOfCharacters"
+  },
+  "steps": [
+    {
+      "speaker": "",
+      "text": "昼前。",
+      "bg": "images/assets/bgev/bg_office_hidamari.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "接客がひと段落し、店内も少し落ち着いていた。"
+    },
+    {
+      "speaker": "",
+      "text": "事務所へ飲み物を取りに来た美空は、小さなうめき声を聞いて足を止める。"
+    },
+    {
+      "speaker": "藍",
+      "text": "うぅ……",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/b10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "藍ちゃん？",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/b10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "パソコンの前。"
+    },
+    {
+      "speaker": "",
+      "text": "速水川藍が、難しい顔で画面を見つめていた。"
+    },
+    {
+      "speaker": "藍",
+      "text": "あ……\n美空ちゃん"
+    },
+    {
+      "speaker": "美空",
+      "text": "どうしたの？"
+    },
+    {
+      "speaker": "藍",
+      "text": "その……"
+    },
+    {
+      "speaker": "",
+      "text": "藍は画面を指差した。"
+    },
+    {
+      "speaker": "藍",
+      "text": "取引先さんとのグループチャットなんですけど……\n明日までに送らないといけない資料があって……"
+    },
+    {
+      "speaker": "美空",
+      "text": "うんうん"
+    },
+    {
+      "speaker": "藍",
+      "text": "添付ファイルを開こうとしたら……\n変な画面になっちゃって……"
+    },
+    {
+      "speaker": "美空",
+      "text": "どれどれ？"
+    },
+    {
+      "speaker": "",
+      "text": "藍が少し席をずらす。"
+    },
+    {
+      "speaker": "",
+      "text": "美空が隣から画面を覗き込む。"
+    },
+    {
+      "speaker": "",
+      "text": "画面には英語のメッセージが表示されていた。"
+    },
+    {
+      "speaker": "",
+      "text": "Access Denied"
+    },
+    {
+      "speaker": "美空",
+      "text": "アクセスでねーど？"
+    },
+    {
+      "speaker": "藍",
+      "text": "アクセスでねーど……？"
+    },
+    {
+      "speaker": "美空",
+      "text": "アクセスできないどってこと？"
+    },
+    {
+      "speaker": "",
+      "text": "藍は少し考える。"
+    },
+    {
+      "speaker": "藍",
+      "text": "できないど……ですかね……"
+    },
+    {
+      "speaker": "美空",
+      "text": "できないどだね？"
+    },
+    {
+      "speaker": "藍",
+      "text": "できないどですね……"
+    },
+    {
+      "speaker": "",
+      "text": "二人で頷く。"
+    },
+    {
+      "speaker": "美空",
+      "text": "なるほど"
+    },
+    {
+      "speaker": "藍",
+      "text": "なるほど……？"
+    },
+    {
+      "speaker": "美空",
+      "text": "分からん"
+    },
+    {
+      "speaker": "藍",
+      "text": "分かりませんね……"
+    },
+    {
+      "speaker": "",
+      "text": "藍の肩が、また少し落ちる。"
+    },
+    {
+      "speaker": "藍",
+      "text": "どうしよう……\n明日までに送らないといけないのに……"
+    },
+    {
+      "speaker": "美空",
+      "text": "草壁さんは？"
+    },
+    {
+      "speaker": "藍",
+      "text": "今日お休みです"
+    },
+    {
+      "speaker": "美空",
+      "text": "里美さんは？"
+    },
+    {
+      "speaker": "藍",
+      "text": "備品買い出し中です……"
+    },
+    {
+      "speaker": "美空",
+      "text": "うーん"
+    },
+    {
+      "speaker": "",
+      "text": "美空は少しだけ考えた。"
+    },
+    {
+      "speaker": "美空",
+      "text": "じゃあ、もう一回だけ見てみよっか"
+    },
+    {
+      "speaker": "藍",
+      "text": "はい……"
+    },
+    {
+      "speaker": "",
+      "text": "美空がマウスを動かす。"
+    },
+    {
+      "speaker": "",
+      "text": "藍が不安そうに画面を見守る。"
+    },
+    {
+      "speaker": "美空",
+      "text": "ここかな？"
+    },
+    {
+      "speaker": "藍",
+      "text": "たぶん……"
+    },
+    {
+      "speaker": "美空",
+      "text": "えい"
+    },
+    {
+      "speaker": "",
+      "text": "クリックする。"
+    },
+    {
+      "speaker": "",
+      "text": "画面が切り替わる。"
+    },
+    {
+      "speaker": "",
+      "text": "Permission Denied"
+    },
+    {
+      "speaker": "美空",
+      "text": "ぱーみっしょんでねーど"
+    },
+    {
+      "speaker": "藍",
+      "text": "ぱーみっしょんでねーどです"
+    },
+    {
+      "speaker": "美空",
+      "text": "強そう"
+    },
+    {
+      "speaker": "藍",
+      "text": "強そうですね……"
+    },
+    {
+      "speaker": "美空",
+      "text": "中ボスくらい？"
+    },
+    {
+      "speaker": "藍",
+      "text": "中ボスですね……"
+    },
+    {
+      "speaker": "美空",
+      "text": "翻訳してみる？"
+    },
+    {
+      "speaker": "藍",
+      "text": "やってみます"
+    },
+    {
+      "speaker": "",
+      "text": "藍が翻訳サイトを開く。"
+    },
+    {
+      "speaker": "",
+      "text": "Permission Denied"
+    },
+    {
+      "speaker": "",
+      "text": "↓"
+    },
+    {
+      "speaker": "",
+      "text": "権限がありません"
+    },
+    {
+      "speaker": "二人",
+      "text": "……"
+    },
+    {
+      "speaker": "美空",
+      "text": "あ"
+    },
+    {
+      "speaker": "藍",
+      "text": "あ"
+    },
+    {
+      "speaker": "美空",
+      "text": "そういうことか"
+    },
+    {
+      "speaker": "藍",
+      "text": "そういうことでした"
+    },
+    {
+      "speaker": "美空",
+      "text": "でも"
+    },
+    {
+      "speaker": "藍",
+      "text": "はい"
+    },
+    {
+      "speaker": "美空",
+      "text": "どうすればいいかは分かんない"
+    },
+    {
+      "speaker": "藍",
+      "text": "私もです"
+    },
+    {
+      "speaker": "",
+      "text": "二人で沈黙する。"
+    },
+    {
+      "speaker": "",
+      "text": "美空は画面を見る。"
+    },
+    {
+      "speaker": "",
+      "text": "藍を見る。"
+    },
+    {
+      "speaker": "",
+      "text": "また画面を見る。"
+    },
+    {
+      "speaker": "美空",
+      "text": "とりあえず"
+    },
+    {
+      "speaker": "藍",
+      "text": "はい"
+    },
+    {
+      "speaker": "美空",
+      "text": "それ以上触るのやめよっか"
+    },
+    {
+      "speaker": "藍",
+      "text": "え？"
+    },
+    {
+      "speaker": "美空",
+      "text": "なんか\nこれ以上やると\nもっと大変になりそう"
+    },
+    {
+      "speaker": "藍",
+      "text": "あ……"
+    },
+    {
+      "speaker": "美空",
+      "text": "店長、お昼には帰ってくるし\nそれまで出来ることやろ？"
+    },
+    {
+      "speaker": "藍",
+      "text": "出来ること……？"
+    },
+    {
+      "speaker": "美空",
+      "text": "うん\n送る資料は分かってる？"
+    },
+    {
+      "speaker": "藍",
+      "text": "はい\nこれです"
+    },
+    {
+      "speaker": "美空",
+      "text": "じゃあ内容確認しよう\n返信文も先に作ろう\n準備だけ終わらせちゃえば楽だよ"
+    },
+    {
+      "speaker": "藍",
+      "text": "……はい"
+    },
+    {
+      "speaker": "",
+      "text": "それから二人で資料を確認した。"
+    },
+    {
+      "speaker": "",
+      "text": "取引先とのやり取りを読み返す。"
+    },
+    {
+      "speaker": "",
+      "text": "返信文の下書きを作る。"
+    },
+    {
+      "speaker": "",
+      "text": "開けないファイルはそのまま。"
+    },
+    {
+      "speaker": "",
+      "text": "でも、出来る部分だけ少しずつ進めていく。"
+    },
+    {
+      "speaker": "藍",
+      "text": "ありがとうございます"
+    },
+    {
+      "speaker": "美空",
+      "text": "ん？"
+    },
+    {
+      "speaker": "藍",
+      "text": "美空ちゃんって\nこういう時、落ち着いてますよね"
+    },
+    {
+      "speaker": "美空",
+      "text": "そうかな？"
+    },
+    {
+      "speaker": "藍",
+      "text": "私\nこうなると頭真っ白になっちゃうので……"
+    },
+    {
+      "speaker": "",
+      "text": "少し笑う。"
+    },
+    {
+      "speaker": "美空",
+      "text": "分かんなかったら\n分かる人呼べばいいじゃん"
+    },
+    {
+      "speaker": "藍",
+      "text": "ふふっ"
+    },
+    {
+      "speaker": "美空",
+      "text": "一人で困るより\n二人で困った方が楽しいし"
+    },
+    {
+      "speaker": "藍",
+      "text": "それは初めて聞きました"
+    },
+    {
+      "speaker": "",
+      "text": "その時。"
+    },
+    {
+      "speaker": "店長",
+      "text": "ただいまー"
+    },
+    {
+      "speaker": "美空",
+      "text": "店長ーーー！"
+    },
+    {
+      "speaker": "藍",
+      "text": "店長ーーー！"
+    },
+    {
+      "speaker": "店長",
+      "text": "なんだなんだ！？"
+    },
+    {
+      "speaker": "美空",
+      "text": "お願い！"
+    },
+    {
+      "speaker": "藍",
+      "text": "お願いします……！"
+    },
+    {
+      "speaker": "",
+      "text": "二人で事情を説明する。"
+    },
+    {
+      "speaker": "",
+      "text": "店長は画面を確認した。"
+    },
+    {
+      "speaker": "店長",
+      "text": "ああ\nこれか"
+    },
+    {
+      "speaker": "",
+      "text": "数回クリック。"
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "藍",
+      "text": "あっ！\n開いた……！"
+    },
+    {
+      "speaker": "店長",
+      "text": "共有権限が切れてただけだな"
+    },
+    {
+      "speaker": "藍",
+      "text": "ありがとうございます……！"
+    },
+    {
+      "speaker": "",
+      "text": "藍が心の底から安心した顔になる。"
+    },
+    {
+      "speaker": "美空",
+      "text": "さすが店長！"
+    },
+    {
+      "speaker": "店長",
+      "text": "美空らしくないな"
+    },
+    {
+      "speaker": "美空",
+      "text": "え？"
+    },
+    {
+      "speaker": "店長",
+      "text": "こういうの、何とかしそうなのに"
+    },
+    {
+      "speaker": "",
+      "text": "画面を指差す。"
+    },
+    {
+      "speaker": "美空",
+      "text": "だって\nメニューとかメッセージが英語で難しいんだもん"
+    },
+    {
+      "speaker": "店長",
+      "text": "そこかよ"
+    },
+    {
+      "speaker": "藍",
+      "text": "ふふっ"
+    },
+    {
+      "speaker": "",
+      "text": "思わず吹き出す。"
+    },
+    {
+      "speaker": "美空",
+      "text": "でも良かったー"
+    },
+    {
+      "speaker": "藍",
+      "text": "はい"
+    },
+    {
+      "speaker": "",
+      "text": "少し考えて。"
+    },
+    {
+      "speaker": "藍",
+      "text": "美空ちゃん"
+    },
+    {
+      "speaker": "美空",
+      "text": "ん？"
+    },
+    {
+      "speaker": "藍",
+      "text": "ありがとう\n助かりました"
+    },
+    {
+      "speaker": "美空",
+      "text": "えへへ"
+    },
+    {
+      "speaker": "藍",
+      "text": "私、一人だったら\nたぶん泣いてました"
+    },
+    {
+      "speaker": "美空",
+      "text": "それは大げさだよー"
+    },
+    {
+      "speaker": "藍",
+      "text": "そんなことないです"
+    },
+    {
+      "speaker": "店長",
+      "text": "ま、結果オーライか"
+    },
+    {
+      "speaker": "美空",
+      "text": "はいっ！"
+    },
+    {
+      "speaker": "店長",
+      "text": "美空のおかげで藍ちゃんも安心したしな\nありがとな、美空"
+    },
+    {
+      "speaker": "美空",
+      "text": "えへへ\nどういたしまして！"
+    },
+    {
+      "speaker": "",
+      "text": "美空は少し考える。"
+    },
+    {
+      "speaker": "美空",
+      "text": "あ"
+    },
+    {
+      "speaker": "藍",
+      "text": "？"
+    },
+    {
+      "speaker": "美空",
+      "text": "今思ったんだけど"
+    },
+    {
+      "speaker": "藍",
+      "text": "はい"
+    },
+    {
+      "speaker": "美空",
+      "text": "アクセスできないどって"
+    },
+    {
+      "speaker": "藍",
+      "text": "はい"
+    },
+    {
+      "speaker": "美空",
+      "text": "意味あってたんじゃん！"
+    },
+    {
+      "speaker": "",
+      "text": "一瞬の沈黙。"
+    },
+    {
+      "speaker": "藍",
+      "text": "……"
+    },
+    {
+      "speaker": "美空",
+      "text": "……"
+    },
+    {
+      "speaker": "藍",
+      "text": "ふふっ"
+    },
+    {
+      "speaker": "美空",
+      "text": "あはははっ！"
+    },
+    {
+      "speaker": "藍",
+      "text": "確かに\nアクセスできないどでしたね"
+    },
+    {
+      "speaker": "美空",
+      "text": "でしょ！"
+    },
+    {
+      "speaker": "店長",
+      "text": "お前らなぁ……"
+    },
+    {
+      "speaker": "",
+      "text": "事務所に、明るい笑い声が響いた。"
+    }
+  ],
+  "keyScenarioIndex": 1
+}
