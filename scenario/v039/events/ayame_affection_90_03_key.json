@@ -320,7 +320,7 @@
     {
       "speaker": "",
       "text": "夕食は、屋敷の広い和室で用意された。",
-      "bg": "images/assets/bg/bg_ayame98_father_room_dusk.webp",
+      "bg": "images/assets/bg/bg_ayame98_washitsu_dinner.webp",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
       "clearStorySprites": true
@@ -635,7 +635,10 @@
     },
     {
       "speaker": "",
-      "text": "けれど彩愛さんが、勝手の知らぬ家で店長に何かあったら困るからと、強く申し入れたのだ。"
+      "text": "けれど彩愛さんが、勝手の知らぬ家で店長に何かあったら困るからと、強く申し入れたのだ。",
+      "bg": "images/assets/bg/bg_ayame98_guestroom_night.webp",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true
     },
     {
       "speaker": "",
