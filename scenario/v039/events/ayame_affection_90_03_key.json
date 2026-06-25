@@ -1,7 +1,7 @@
 {
   "id": "ayame_affection_90_03_key",
   "title": "本気にしてしまいますよ",
-  "version": "v039_239",
+  "version": "v039_258",
   "return": {
     "mode": "storyMenu",
     "storyId": "ayame_affection_90_03_key",
@@ -40,7 +40,7 @@
     {
       "speaker": "",
       "text": "紫藤家の屋敷に、夕方の色が落ち始めていた。",
-      "bg": "images/assets/bg/bg_sugosawa_house_night.png",
+      "bg": "images/assets/bg/bg_ayame98_father_room_dusk.webp",
       "bgMode": "forceReplace",
       "forceBackgroundReplace": true,
       "clearStorySprites": true
@@ -63,15 +63,27 @@
     },
     {
       "speaker": "彩愛の父",
-      "text": "……反省しております"
+      "text": "……反省しております",
+      "storySprites": [
+        {
+          "id": "otousama",
+          "src": "images/assets/char/ayame93_otousama_sprite.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "彩愛",
       "text": "本当に？",
       "storySprites": [
         {
+          "id": "otousama",
+          "src": "images/assets/char/ayame93_otousama_sprite.webp",
+          "opacity": 1
+        },
+        {
           "id": "ak",
-          "src": "images/assets/char/k10101.webp",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
           "opacity": 1
         }
       ]
@@ -98,7 +110,24 @@
     },
     {
       "speaker": "ばあや",
-      "text": "よろしいかと存じます"
+      "text": "よろしいかと存じます",
+      "storySprites": [
+        {
+          "id": "otousama",
+          "src": "images/assets/char/ayame93_otousama_sprite.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
+          "opacity": 1
+        },
+        {
+          "id": "baaya",
+          "src": "images/assets/char/ayame93_baaya_sprite.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "彩愛の父",
@@ -290,7 +319,11 @@
     },
     {
       "speaker": "",
-      "text": "夕食は、屋敷の広い和室で用意された。"
+      "text": "夕食は、屋敷の広い和室で用意された。",
+      "bg": "images/assets/bg/bg_ayame98_father_room_dusk.webp",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
     },
     {
       "speaker": "",
@@ -326,15 +359,7 @@
     },
     {
       "speaker": "",
-      "text": "父親は、さすがに少し疲れたのか、先に自室へ戻ったらしい。"
-    },
-    {
-      "speaker": "",
-      "text": "もちろん、VRゴーグルはばあやに没収されていた。"
-    },
-    {
-      "speaker": "",
-      "text": "長い廊下に、夜の静けさが戻っている。"
+      "text": "俺は先に湯浴みをとの事で、お風呂に案内された"
     },
     {
       "speaker": "",
@@ -346,7 +371,7 @@
     },
     {
       "speaker": "",
-      "text": "やがて、客間の前で立ち止まる。"
+      "text": "脱衣所の前で立ち止まる"
     },
     {
       "speaker": "彩愛",
