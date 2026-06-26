@@ -998,7 +998,12 @@
     },
     {
       "speaker": "",
-      "text": "彩愛さんは、自分の布団に横になる。"
+      "text": "彩愛さんは、自分の布団に横になる。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_ayame98_step217_futon.webp",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
@@ -1026,7 +1031,12 @@
     },
     {
       "speaker": "彩愛",
-      "text": "今日のわたくしを見ても、嫌いにならないでくださいね"
+      "text": "今日のわたくしを見ても、嫌いにならないでくださいね",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_ayame98_step224_best_smile.webp",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",
