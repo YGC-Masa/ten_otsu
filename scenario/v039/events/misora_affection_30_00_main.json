@@ -1,0 +1,1756 @@
+{
+  "id": "misora_affection_30_00_main",
+  "title": "同じでも、同じじゃない",
+  "version": "v039_265",
+  "return": {
+    "mode": "storyMenu",
+    "storyId": "misora_affection_30_00_main",
+    "storyMenuTab": "main"
+  },
+  "format": "v039_steps",
+  "type": "character_main_story",
+  "characterId": "ah",
+  "route": "misora",
+  "affectionRange": {
+    "min": 20,
+    "max": 30
+  },
+  "location": {
+    "id": "misora_route_20s",
+    "name": "帰り道"
+  },
+  "summary": "美空 親愛Lv.30「同じでも、同じじゃない」。",
+  "purpose": "美空ルート親愛20代として、夜空との関係や「同じものを選ぶ」感情を描く。",
+  "tags": [
+    "美空ルート",
+    "親愛度20-30",
+    "双子",
+    "夜空",
+    "選択"
+  ],
+  "clearFlags": [
+    "misora_affection_30_00_main_cleared"
+  ],
+  "nextHint": "次の美空親愛ストーリーへ。",
+  "renderPolicy": {
+    "spritePosition": "logical_split_n_plus_1",
+    "eventCgLayer": "frontOfCharacters"
+  },
+  "steps": [
+    {
+      "speaker": "",
+      "text": "閉店後。",
+      "bg": "images/assets/bg/bg_hidamari_store_front_closed.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "ひだまりストアのシャッターが下りる音が、夜の通りに静かに響いた。"
+    },
+    {
+      "speaker": "",
+      "text": "店内の灯りが落ち、看板の明かりだけがぼんやりと歩道を照らしている。"
+    },
+    {
+      "speaker": "",
+      "text": "美空と夜空は、並んで店を出た。"
+    },
+    {
+      "speaker": "",
+      "text": "夜風は少し涼しい。"
+    },
+    {
+      "speaker": "",
+      "text": "昼間の季節展示の熱気が、まだ少しだけ体に残っている。"
+    },
+    {
+      "speaker": "美空",
+      "text": "今日の星柄の飾り",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "よかったね"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……普通",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10101.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ai",
+          "src": "images/assets/char/i10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空の普通は"
+    },
+    {
+      "speaker": "美空",
+      "text": "けっこういいって意味だもんね"
+    },
+    {
+      "speaker": "夜空",
+      "text": "勝手に訳さないで"
+    },
+    {
+      "speaker": "美空",
+      "text": "ふふ"
+    },
+    {
+      "speaker": "夜空",
+      "text": "でも"
+    },
+    {
+      "speaker": "夜空",
+      "text": "悪くはなかった"
+    },
+    {
+      "speaker": "美空",
+      "text": "それ、やっぱりいいってことだよ"
+    },
+    {
+      "speaker": "夜空",
+      "text": "違う"
+    },
+    {
+      "speaker": "美空",
+      "text": "違うんだ"
+    },
+    {
+      "speaker": "夜空",
+      "text": "違う"
+    },
+    {
+      "speaker": "",
+      "text": "美空は笑った。"
+    },
+    {
+      "speaker": "",
+      "text": "夜空はいつも通り、少しだけそっけない。"
+    },
+    {
+      "speaker": "",
+      "text": "でも、そのそっけなさが、今は少し安心する。"
+    },
+    {
+      "speaker": "",
+      "text": "しばらく、二人は並んで歩いた。"
+    },
+    {
+      "speaker": "",
+      "text": "街灯の下を通るたびに、二人の影が伸びたり縮んだりする。"
+    },
+    {
+      "speaker": "",
+      "text": "美空は夜空の横顔を見る。"
+    },
+    {
+      "speaker": "",
+      "text": "静かな横顔。"
+    },
+    {
+      "speaker": "",
+      "text": "自分と同じ日に生まれた妹。"
+    },
+    {
+      "speaker": "",
+      "text": "ずっと一緒にいたはずなのに。"
+    },
+    {
+      "speaker": "",
+      "text": "聞いてこなかったことが、いくつもある。"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空"
+    },
+    {
+      "speaker": "夜空",
+      "text": "何"
+    },
+    {
+      "speaker": "美空",
+      "text": "……"
+    },
+    {
+      "speaker": "",
+      "text": "美空は言いかけて、止まった。"
+    },
+    {
+      "speaker": "",
+      "text": "今日こそ聞こうと思っていた。"
+    },
+    {
+      "speaker": "",
+      "text": "でも、いざ言葉にしようとすると、喉の奥で少し引っかかる。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "何"
+    },
+    {
+      "speaker": "美空",
+      "text": "えっと"
+    },
+    {
+      "speaker": "美空",
+      "text": "今日、少し寒いね"
+    },
+    {
+      "speaker": "夜空",
+      "text": "別に"
+    },
+    {
+      "speaker": "美空",
+      "text": "そっか"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……"
+    },
+    {
+      "speaker": "",
+      "text": "夜空は少しだけ、美空の方を見る。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "言いたいことあるなら言えば"
+    },
+    {
+      "speaker": "美空",
+      "text": "え？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "美空"
+    },
+    {
+      "speaker": "夜空",
+      "text": "そういう時、歩くの遅くなる"
+    },
+    {
+      "speaker": "",
+      "text": "美空は足元を見る。"
+    },
+    {
+      "speaker": "",
+      "text": "たしかに、いつの間にか歩く速度が落ちていた。"
+    },
+    {
+      "speaker": "美空",
+      "text": "分かるんだ"
+    },
+    {
+      "speaker": "夜空",
+      "text": "分かる"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空、よく見てるね"
+    },
+    {
+      "speaker": "夜空",
+      "text": "美空のことだから"
+    },
+    {
+      "speaker": "",
+      "text": "夜空は何でもないように言う。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、その言葉は美空の胸に少し温かく残った。"
+    },
+    {
+      "speaker": "美空",
+      "text": "……そっか"
+    },
+    {
+      "speaker": "美空",
+      "text": "私のことだから"
+    },
+    {
+      "speaker": "夜空",
+      "text": "で"
+    },
+    {
+      "speaker": "夜空",
+      "text": "何"
+    },
+    {
+      "speaker": "",
+      "text": "美空は立ち止まった。"
+    },
+    {
+      "speaker": "",
+      "text": "夜空も少し先で足を止め、振り返る。"
+    },
+    {
+      "speaker": "",
+      "text": "二人の間に、街灯の光が落ちる。"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空"
+    },
+    {
+      "speaker": "夜空",
+      "text": "うん"
+    },
+    {
+      "speaker": "美空",
+      "text": "私と同じものを選ぶの"
+    },
+    {
+      "speaker": "美空",
+      "text": "嫌だった？"
+    },
+    {
+      "speaker": "",
+      "text": "夜空の目が、ほんの少しだけ大きくなった。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……何、それ"
+    },
+    {
+      "speaker": "美空",
+      "text": "ずっと"
+    },
+    {
+      "speaker": "美空",
+      "text": "私は白で"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空は黒で"
+    },
+    {
+      "speaker": "美空",
+      "text": "私は明るい方で"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空は静かな方で"
+    },
+    {
+      "speaker": "美空",
+      "text": "そういうものだと思ってた"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……"
+    },
+    {
+      "speaker": "美空",
+      "text": "私は夏っぽいもの"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空は冬っぽいもの"
+    },
+    {
+      "speaker": "美空",
+      "text": "私は甘いもの"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空は少し苦いもの"
+    },
+    {
+      "speaker": "美空",
+      "text": "なんとなく"
+    },
+    {
+      "speaker": "美空",
+      "text": "そうやって分かれてるのが、普通だと思ってた"
+    },
+    {
+      "speaker": "",
+      "text": "夜空は黙っている。"
+    },
+    {
+      "speaker": "",
+      "text": "美空は、その沈黙に急かされないように、ゆっくり言葉を選んだ。"
+    },
+    {
+      "speaker": "美空",
+      "text": "でも"
+    },
+    {
+      "speaker": "美空",
+      "text": "ココアを一緒に飲んで"
+    },
+    {
+      "speaker": "美空",
+      "text": "同じ星柄の飾りを使って"
+    },
+    {
+      "speaker": "美空",
+      "text": "思ったの"
+    },
+    {
+      "speaker": "美空",
+      "text": "同じものを選んでも"
+    },
+    {
+      "speaker": "美空",
+      "text": "別に、夜空は夜空で"
+    },
+    {
+      "speaker": "美空",
+      "text": "私は私なんだなって"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……"
+    },
+    {
+      "speaker": "美空",
+      "text": "だから"
+    },
+    {
+      "speaker": "美空",
+      "text": "聞きたくなった"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空は"
+    },
+    {
+      "speaker": "美空",
+      "text": "私と同じものを選ぶの"
+    },
+    {
+      "speaker": "美空",
+      "text": "嫌だった？"
+    },
+    {
+      "speaker": "",
+      "text": "夜空はすぐには答えなかった。"
+    },
+    {
+      "speaker": "",
+      "text": "一度、視線を外す。"
+    },
+    {
+      "speaker": "",
+      "text": "そして、また美空を見る。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "嫌じゃない"
+    },
+    {
+      "speaker": "美空",
+      "text": "……本当？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "嫌なら"
+    },
+    {
+      "speaker": "夜空",
+      "text": "もっと前に言ってる"
+    },
+    {
+      "speaker": "美空",
+      "text": "そっか"
+    },
+    {
+      "speaker": "夜空",
+      "text": "うん"
+    },
+    {
+      "speaker": "",
+      "text": "美空は少しだけ息を吐いた。"
+    },
+    {
+      "speaker": "",
+      "text": "安心したような。"
+    },
+    {
+      "speaker": "",
+      "text": "でも、まだ全部はほどけていないような。"
+    },
+    {
+      "speaker": "",
+      "text": "そんな息だった。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "ただ"
+    },
+    {
+      "speaker": "美空",
+      "text": "ただ？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "美空が白を選ぶから"
+    },
+    {
+      "speaker": "夜空",
+      "text": "ぼくは黒でいいと思ってただけ"
+    },
+    {
+      "speaker": "美空",
+      "text": "……私が？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "うん"
+    },
+    {
+      "speaker": "夜空",
+      "text": "美空は白が似合うし"
+    },
+    {
+      "speaker": "夜空",
+      "text": "明るい方が似合うし"
+    },
+    {
+      "speaker": "夜空",
+      "text": "そっちを選んでる方が"
+    },
+    {
+      "speaker": "夜空",
+      "text": "美空らしいと思ったから"
+    },
+    {
+      "speaker": "美空",
+      "text": "……"
+    },
+    {
+      "speaker": "夜空",
+      "text": "だから"
+    },
+    {
+      "speaker": "夜空",
+      "text": "ぼくは黒でいい"
+    },
+    {
+      "speaker": "夜空",
+      "text": "静かな方でいい"
+    },
+    {
+      "speaker": "夜空",
+      "text": "そう思ってた"
+    },
+    {
+      "speaker": "",
+      "text": "美空は胸の奥を、そっと押されたような気がした。"
+    },
+    {
+      "speaker": "",
+      "text": "夜空も。"
+    },
+    {
+      "speaker": "",
+      "text": "自分と同じように。"
+    },
+    {
+      "speaker": "",
+      "text": "相手を見て、選んでいた。"
+    },
+    {
+      "speaker": "美空",
+      "text": "私も"
+    },
+    {
+      "speaker": "夜空",
+      "text": "何"
+    },
+    {
+      "speaker": "美空",
+      "text": "私も"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空が黒を選びやすいように"
+    },
+    {
+      "speaker": "美空",
+      "text": "先に白を選んでたのかもしれない"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……何それ"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空は黒が似合うから"
+    },
+    {
+      "speaker": "美空",
+      "text": "静かな方が落ち着くと思ってたから"
+    },
+    {
+      "speaker": "美空",
+      "text": "私が明るい方を選んでおけば"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空が迷わなくていいかなって"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……"
+    },
+    {
+      "speaker": "美空",
+      "text": "だから"
+    },
+    {
+      "speaker": "美空",
+      "text": "私たち"
+    },
+    {
+      "speaker": "美空",
+      "text": "同じことしてたのかな"
+    },
+    {
+      "speaker": "夜空",
+      "text": "同じ？"
+    },
+    {
+      "speaker": "美空",
+      "text": "うん"
+    },
+    {
+      "speaker": "美空",
+      "text": "違うものを選んでたのに"
+    },
+    {
+      "speaker": "美空",
+      "text": "相手が選びやすいように"
+    },
+    {
+      "speaker": "美空",
+      "text": "自分が先に、違う方を選ぶところ"
+    },
+    {
+      "speaker": "",
+      "text": "夜空は黙った。"
+    },
+    {
+      "speaker": "",
+      "text": "少しだけ考えているようだった。"
+    },
+    {
+      "speaker": "",
+      "text": "それから、小さく息を吐く。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……面倒くさい姉妹"
+    },
+    {
+      "speaker": "美空",
+      "text": "ふふ"
+    },
+    {
+      "speaker": "美空",
+      "text": "そうかも"
+    },
+    {
+      "speaker": "夜空",
+      "text": "笑うところじゃない"
+    },
+    {
+      "speaker": "美空",
+      "text": "でも"
+    },
+    {
+      "speaker": "美空",
+      "text": "なんだか、ちょっと安心した"
+    },
+    {
+      "speaker": "夜空",
+      "text": "何が"
+    },
+    {
+      "speaker": "美空",
+      "text": "私だけじゃなかったんだなって"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空も"
+    },
+    {
+      "speaker": "美空",
+      "text": "私のこと、見てくれてたんだなって"
+    },
+    {
+      "speaker": "夜空",
+      "text": "見てる"
+    },
+    {
+      "speaker": "美空",
+      "text": "うん"
+    },
+    {
+      "speaker": "夜空",
+      "text": "見てなかったら"
+    },
+    {
+      "speaker": "夜空",
+      "text": "美空が歩くの遅くなるのとか"
+    },
+    {
+      "speaker": "夜空",
+      "text": "分からない"
+    },
+    {
+      "speaker": "美空",
+      "text": "……そうだね"
+    },
+    {
+      "speaker": "",
+      "text": "美空は小さく笑った。"
+    },
+    {
+      "speaker": "",
+      "text": "その笑顔は、少し照れていた。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "美空も"
+    },
+    {
+      "speaker": "夜空",
+      "text": "ぼくのこと、見てたんでしょ"
+    },
+    {
+      "speaker": "美空",
+      "text": "見てたよ"
+    },
+    {
+      "speaker": "美空",
+      "text": "ずっと"
+    },
+    {
+      "speaker": "夜空",
+      "text": "なら"
+    },
+    {
+      "speaker": "夜空",
+      "text": "それでいいんじゃない"
+    },
+    {
+      "speaker": "美空",
+      "text": "それでいい？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "うん"
+    },
+    {
+      "speaker": "夜空",
+      "text": "たぶん"
+    },
+    {
+      "speaker": "美空",
+      "text": "たぶんなんだ"
+    },
+    {
+      "speaker": "夜空",
+      "text": "分かんないことは、たぶんでいいでしょ"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空らしい"
+    },
+    {
+      "speaker": "夜空",
+      "text": "褒めてる？"
+    },
+    {
+      "speaker": "美空",
+      "text": "褒めてる"
+    },
+    {
+      "speaker": "夜空",
+      "text": "そう"
+    },
+    {
+      "speaker": "",
+      "text": "二人はまた、ゆっくり歩き出した。"
+    },
+    {
+      "speaker": "",
+      "text": "夜の通りは静かだった。"
+    },
+    {
+      "speaker": "",
+      "text": "少し離れたところに、自販機の明かりが見える。"
+    },
+    {
+      "speaker": "",
+      "text": "美空はそれを見て、ココアのことを思い出した。"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空"
+    },
+    {
+      "speaker": "夜空",
+      "text": "今度は何"
+    },
+    {
+      "speaker": "美空",
+      "text": "これからは"
+    },
+    {
+      "speaker": "美空",
+      "text": "聞いてもいい？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "何を"
+    },
+    {
+      "speaker": "美空",
+      "text": "同じのにする？って"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空と同じもの"
+    },
+    {
+      "speaker": "美空",
+      "text": "選んでもいい？って"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……いちいち聞かなくていい"
+    },
+    {
+      "speaker": "美空",
+      "text": "え？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "同じのがいいなら"
+    },
+    {
+      "speaker": "夜空",
+      "text": "同じのでいいじゃん"
+    },
+    {
+      "speaker": "",
+      "text": "美空は立ち止まりそうになった。"
+    },
+    {
+      "speaker": "",
+      "text": "夜空は前を向いたまま歩いている。"
+    },
+    {
+      "speaker": "",
+      "text": "その横顔は、いつも通りそっけない。"
+    },
+    {
+      "speaker": "",
+      "text": "でも、美空には分かった。"
+    },
+    {
+      "speaker": "",
+      "text": "それは、拒絶ではない。"
+    },
+    {
+      "speaker": "",
+      "text": "夜空らしい、受け入れ方だった。"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空"
+    },
+    {
+      "speaker": "夜空",
+      "text": "何"
+    },
+    {
+      "speaker": "美空",
+      "text": "それ"
+    },
+    {
+      "speaker": "美空",
+      "text": "すごく嬉しい"
+    },
+    {
+      "speaker": "夜空",
+      "text": "大げさ"
+    },
+    {
+      "speaker": "美空",
+      "text": "大げさじゃないよ"
+    },
+    {
+      "speaker": "夜空",
+      "text": "ココアの時も言ってた"
+    },
+    {
+      "speaker": "美空",
+      "text": "だって"
+    },
+    {
+      "speaker": "美空",
+      "text": "嬉しかったから"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……"
+    },
+    {
+      "speaker": "美空",
+      "text": "今日も、嬉しい"
+    },
+    {
+      "speaker": "",
+      "text": "夜空は少しだけ目をそらした。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "変なの"
+    },
+    {
+      "speaker": "美空",
+      "text": "うん"
+    },
+    {
+      "speaker": "美空",
+      "text": "でも、嬉しい"
+    },
+    {
+      "speaker": "夜空",
+      "text": "それに"
+    },
+    {
+      "speaker": "美空",
+      "text": "うん？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "美空と同じだからって"
+    },
+    {
+      "speaker": "夜空",
+      "text": "別に、嫌じゃないし"
+    },
+    {
+      "speaker": "美空",
+      "text": "……夜空"
+    },
+    {
+      "speaker": "夜空",
+      "text": "変に感動しないで"
+    },
+    {
+      "speaker": "美空",
+      "text": "してないよ"
+    },
+    {
+      "speaker": "夜空",
+      "text": "してる顔"
+    },
+    {
+      "speaker": "美空",
+      "text": "してるかも"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……"
+    },
+    {
+      "speaker": "",
+      "text": "夜空は小さくため息をついた。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、歩く速度は少しだけ美空に合わせている。"
+    },
+    {
+      "speaker": "",
+      "text": "美空は、それに気づいて、また少し嬉しくなった。"
+    },
+    {
+      "speaker": "",
+      "text": "自販機の前に着く。"
+    },
+    {
+      "speaker": "",
+      "text": "美空は立ち止まった。"
+    },
+    {
+      "speaker": "美空",
+      "text": "じゃあ"
+    },
+    {
+      "speaker": "美空",
+      "text": "今度また、ココア飲む？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……また？"
+    },
+    {
+      "speaker": "美空",
+      "text": "うん"
+    },
+    {
+      "speaker": "美空",
+      "text": "今度は最初から"
+    },
+    {
+      "speaker": "美空",
+      "text": "一緒のにする？って聞く"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……"
+    },
+    {
+      "speaker": "美空",
+      "text": "だめ？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "別に"
+    },
+    {
+      "speaker": "美空",
+      "text": "別に？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "飲まないとは言ってない"
+    },
+    {
+      "speaker": "美空",
+      "text": "ふふ"
+    },
+    {
+      "speaker": "美空",
+      "text": "じゃあ、飲むんだ"
+    },
+    {
+      "speaker": "夜空",
+      "text": "勝手に決めないで"
+    },
+    {
+      "speaker": "美空",
+      "text": "でも、飲まないとは言ってない"
+    },
+    {
+      "speaker": "夜空",
+      "text": "それ、ぼくの言い方"
+    },
+    {
+      "speaker": "美空",
+      "text": "うん"
+    },
+    {
+      "speaker": "美空",
+      "text": "借りました"
+    },
+    {
+      "speaker": "夜空",
+      "text": "返して"
+    },
+    {
+      "speaker": "美空",
+      "text": "返すものなの？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "知らない"
+    },
+    {
+      "speaker": "",
+      "text": "美空は笑った。"
+    },
+    {
+      "speaker": "",
+      "text": "夜空も、ほんの少しだけ口元を緩めた。"
+    },
+    {
+      "speaker": "",
+      "text": "美空は自販機のボタンを見る。"
+    },
+    {
+      "speaker": "",
+      "text": "ココアはない。"
+    },
+    {
+      "speaker": "",
+      "text": "缶コーヒー。"
+    },
+    {
+      "speaker": "",
+      "text": "お茶。"
+    },
+    {
+      "speaker": "",
+      "text": "炭酸。"
+    },
+    {
+      "speaker": "",
+      "text": "ミルクティー。"
+    },
+    {
+      "speaker": "",
+      "text": "いろいろ並んでいる。"
+    },
+    {
+      "speaker": "美空",
+      "text": "今日は"
+    },
+    {
+      "speaker": "美空",
+      "text": "何にする？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "美空が先"
+    },
+    {
+      "speaker": "美空",
+      "text": "私が？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "うん"
+    },
+    {
+      "speaker": "夜空",
+      "text": "聞きたいんでしょ"
+    },
+    {
+      "speaker": "夜空",
+      "text": "自分が選びたいもの"
+    },
+    {
+      "speaker": "",
+      "text": "美空は少し驚いた。"
+    },
+    {
+      "speaker": "",
+      "text": "夜空は、何でもないように言う。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、それはきっと、夜空なりに美空を見ている言葉だった。"
+    },
+    {
+      "speaker": "美空",
+      "text": "じゃあ"
+    },
+    {
+      "speaker": "美空",
+      "text": "今日は、ミルクティー"
+    },
+    {
+      "speaker": "夜空",
+      "text": "甘そう"
+    },
+    {
+      "speaker": "美空",
+      "text": "うん"
+    },
+    {
+      "speaker": "美空",
+      "text": "甘いのがいい気分"
+    },
+    {
+      "speaker": "夜空",
+      "text": "そう"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空は？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……同じのでいい"
+    },
+    {
+      "speaker": "美空",
+      "text": "え"
+    },
+    {
+      "speaker": "夜空",
+      "text": "何"
+    },
+    {
+      "speaker": "美空",
+      "text": "同じのでいいの？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "美空が選んだの"
+    },
+    {
+      "speaker": "夜空",
+      "text": "たまには飲んでみる"
+    },
+    {
+      "speaker": "美空",
+      "text": "……"
+    },
+    {
+      "speaker": "夜空",
+      "text": "何"
+    },
+    {
+      "speaker": "美空",
+      "text": "嬉しい"
+    },
+    {
+      "speaker": "夜空",
+      "text": "また"
+    },
+    {
+      "speaker": "美空",
+      "text": "何回でも言うよ"
+    },
+    {
+      "speaker": "夜空",
+      "text": "うるさい"
+    },
+    {
+      "speaker": "美空",
+      "text": "ふふ"
+    },
+    {
+      "speaker": "",
+      "text": "美空はミルクティーを二本買った。"
+    },
+    {
+      "speaker": "",
+      "text": "一本を夜空に渡す。"
+    },
+    {
+      "speaker": "",
+      "text": "夜空は受け取り、缶を見た。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "甘そう"
+    },
+    {
+      "speaker": "美空",
+      "text": "甘いと思う"
+    },
+    {
+      "speaker": "夜空",
+      "text": "まあ"
+    },
+    {
+      "speaker": "夜空",
+      "text": "今日はいい"
+    },
+    {
+      "speaker": "美空",
+      "text": "今日はいいんだ"
+    },
+    {
+      "speaker": "夜空",
+      "text": "うん"
+    },
+    {
+      "speaker": "",
+      "text": "二人は自販機の近くの低い柵に並んで座った。"
+    },
+    {
+      "speaker": "",
+      "text": "夜空が缶を開ける。"
+    },
+    {
+      "speaker": "",
+      "text": "美空も同じように開ける。"
+    },
+    {
+      "speaker": "",
+      "text": "同じ音が、夜の通りに小さく響いた。"
+    },
+    {
+      "speaker": "美空",
+      "text": "同じ音"
+    },
+    {
+      "speaker": "夜空",
+      "text": "缶だから"
+    },
+    {
+      "speaker": "美空",
+      "text": "そうだけど"
+    },
+    {
+      "speaker": "美空",
+      "text": "なんか、いいなって"
+    },
+    {
+      "speaker": "夜空",
+      "text": "美空って"
+    },
+    {
+      "speaker": "夜空",
+      "text": "たまに何でも嬉しがる"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空と一緒だと"
+    },
+    {
+      "speaker": "美空",
+      "text": "嬉しいことが増えるんだよ"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……"
+    },
+    {
+      "speaker": "",
+      "text": "夜空は缶に口をつけた。"
+    },
+    {
+      "speaker": "",
+      "text": "一口飲んで、少しだけ眉を寄せる。"
+    },
+    {
+      "speaker": "美空",
+      "text": "どう？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "甘い"
+    },
+    {
+      "speaker": "美空",
+      "text": "だよね"
+    },
+    {
+      "speaker": "夜空",
+      "text": "でも"
+    },
+    {
+      "speaker": "美空",
+      "text": "でも？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "悪くない"
+    },
+    {
+      "speaker": "美空",
+      "text": "ふふ"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空の悪くない、好き"
+    },
+    {
+      "speaker": "夜空",
+      "text": "好きとか言わないで"
+    },
+    {
+      "speaker": "美空",
+      "text": "え、言い方の話だよ？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "分かってる"
+    },
+    {
+      "speaker": "美空",
+      "text": "分かってて照れた？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "照れてない"
+    },
+    {
+      "speaker": "美空",
+      "text": "そっか"
+    },
+    {
+      "speaker": "美空",
+      "text": "照れてないか"
+    },
+    {
+      "speaker": "夜空",
+      "text": "その顔やめて"
+    },
+    {
+      "speaker": "",
+      "text": "美空は笑う。"
+    },
+    {
+      "speaker": "",
+      "text": "その笑い声は、夜の道に柔らかく溶けた。"
+    },
+    {
+      "speaker": "",
+      "text": "しばらく、二人は同じミルクティーを飲んだ。"
+    },
+    {
+      "speaker": "",
+      "text": "何を話すわけでもない。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、沈黙は苦しくなかった。"
+    },
+    {
+      "speaker": "",
+      "text": "美空は缶を両手で包む。"
+    },
+    {
+      "speaker": "",
+      "text": "少し温かい。"
+    },
+    {
+      "speaker": "",
+      "text": "ココアほどではないけれど、じんわりと指先に熱が移る。"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空"
+    },
+    {
+      "speaker": "夜空",
+      "text": "何"
+    },
+    {
+      "speaker": "美空",
+      "text": "同じものを選んでも"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空は夜空だね"
+    },
+    {
+      "speaker": "夜空",
+      "text": "当たり前でしょ"
+    },
+    {
+      "speaker": "美空",
+      "text": "うん"
+    },
+    {
+      "speaker": "美空",
+      "text": "私は私だね"
+    },
+    {
+      "speaker": "夜空",
+      "text": "当たり前"
+    },
+    {
+      "speaker": "美空",
+      "text": "ふふ"
+    },
+    {
+      "speaker": "美空",
+      "text": "当たり前なんだ"
+    },
+    {
+      "speaker": "夜空",
+      "text": "何が面白いの"
+    },
+    {
+      "speaker": "美空",
+      "text": "嬉しいなって"
+    },
+    {
+      "speaker": "夜空",
+      "text": "変なの"
+    },
+    {
+      "speaker": "美空",
+      "text": "うん"
+    },
+    {
+      "speaker": "美空",
+      "text": "でも、嬉しい"
+    },
+    {
+      "speaker": "",
+      "text": "夜空はまた、少しだけ息を吐いた。"
+    },
+    {
+      "speaker": "",
+      "text": "でも、今度は呆れたというより、少しだけ安心したような息だった。"
+    },
+    {
+      "speaker": "夜空",
+      "text": "美空"
+    },
+    {
+      "speaker": "美空",
+      "text": "なに？"
+    },
+    {
+      "speaker": "夜空",
+      "text": "ぼくが違うのを選んでも"
+    },
+    {
+      "speaker": "夜空",
+      "text": "別に、遠くなるわけじゃないから"
+    },
+    {
+      "speaker": "美空",
+      "text": "……"
+    },
+    {
+      "speaker": "夜空",
+      "text": "同じのを選んでも"
+    },
+    {
+      "speaker": "夜空",
+      "text": "美空になるわけじゃないし"
+    },
+    {
+      "speaker": "夜空",
+      "text": "美空がぼくになるわけでもない"
+    },
+    {
+      "speaker": "美空",
+      "text": "うん"
+    },
+    {
+      "speaker": "夜空",
+      "text": "だから"
+    },
+    {
+      "speaker": "夜空",
+      "text": "その時、選びたい方でいい"
+    },
+    {
+      "speaker": "美空",
+      "text": "……うん"
+    },
+    {
+      "speaker": "美空",
+      "text": "そうだね"
+    },
+    {
+      "speaker": "夜空",
+      "text": "分かった？"
+    },
+    {
+      "speaker": "美空",
+      "text": "分かった"
+    },
+    {
+      "speaker": "美空",
+      "text": "たぶん"
+    },
+    {
+      "speaker": "夜空",
+      "text": "たぶん？"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空がさっき、たぶんでいいって言ったから"
+    },
+    {
+      "speaker": "夜空",
+      "text": "そこ拾わなくていい"
+    },
+    {
+      "speaker": "美空",
+      "text": "ふふ"
+    },
+    {
+      "speaker": "",
+      "text": "二人は缶を持ったまま、少しだけ夜空を見上げた。"
+    },
+    {
+      "speaker": "",
+      "text": "空は黒い。"
+    },
+    {
+      "speaker": "",
+      "text": "星は少しだけ見える。"
+    },
+    {
+      "speaker": "",
+      "text": "美空は思った。"
+    },
+    {
+      "speaker": "",
+      "text": "同じものを選んでも、夜空は夜空で、私は私。"
+    },
+    {
+      "speaker": "",
+      "text": "違うものを選んでも、夜空は遠くならない。"
+    },
+    {
+      "speaker": "",
+      "text": "きっと、これからも迷うことはある。"
+    },
+    {
+      "speaker": "",
+      "text": "でも、その時は聞けばいい。"
+    },
+    {
+      "speaker": "",
+      "text": "同じのにする？"
+    },
+    {
+      "speaker": "",
+      "text": "違うのにする？"
+    },
+    {
+      "speaker": "",
+      "text": "夜空はきっと、そっけない顔で答える。"
+    },
+    {
+      "speaker": "",
+      "text": "でも、その答えを聞けることが。"
+    },
+    {
+      "speaker": "",
+      "text": "今は、少しだけ嬉しかった。"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空"
+    },
+    {
+      "speaker": "夜空",
+      "text": "何"
+    },
+    {
+      "speaker": "美空",
+      "text": "また、聞くね"
+    },
+    {
+      "speaker": "夜空",
+      "text": "何を"
+    },
+    {
+      "speaker": "美空",
+      "text": "同じのにする？って"
+    },
+    {
+      "speaker": "夜空",
+      "text": "……好きにすれば"
+    },
+    {
+      "speaker": "美空",
+      "text": "うん"
+    },
+    {
+      "speaker": "美空",
+      "text": "好きにする"
+    },
+    {
+      "speaker": "夜空",
+      "text": "素直"
+    },
+    {
+      "speaker": "美空",
+      "text": "今日はね"
+    },
+    {
+      "speaker": "夜空",
+      "text": "いつも素直でいいのに"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空もね"
+    },
+    {
+      "speaker": "夜空",
+      "text": "ぼくは素直"
+    },
+    {
+      "speaker": "美空",
+      "text": "えっ"
+    },
+    {
+      "speaker": "夜空",
+      "text": "何"
+    },
+    {
+      "speaker": "美空",
+      "text": "ううん"
+    },
+    {
+      "speaker": "美空",
+      "text": "そうだね"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空は素直だね"
+    },
+    {
+      "speaker": "夜空",
+      "text": "絶対思ってない"
+    },
+    {
+      "speaker": "美空",
+      "text": "ふふ"
+    },
+    {
+      "speaker": "夜空",
+      "text": "笑わないで"
+    },
+    {
+      "speaker": "",
+      "text": "二人は並んで歩き出す。"
+    },
+    {
+      "speaker": "",
+      "text": "同じミルクティーを持って。"
+    },
+    {
+      "speaker": "",
+      "text": "同じ道を、少し違う歩幅で。"
+    },
+    {
+      "speaker": "",
+      "text": "でも、ちゃんと隣に並んで。"
+    },
+    {
+      "speaker": "",
+      "text": "美空は夜空の横顔を見て、静かに笑った。"
+    },
+    {
+      "speaker": "",
+      "text": "同じでも、同じじゃない。"
+    },
+    {
+      "speaker": "",
+      "text": "違っても、遠くない。"
+    },
+    {
+      "speaker": "",
+      "text": "そのことを、今日、少しだけ分かった気がした。"
+    }
+  ]
+}

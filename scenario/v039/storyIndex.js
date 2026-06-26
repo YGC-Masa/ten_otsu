@@ -3135,5 +3135,133 @@ window.TENOTSU_STORY_INDEX = [
     "affectionLabel": "親愛Lv.20",
     "menuTitle": "親愛Lv.20：同じものを選んでも",
     "locationName": "ひだまりストア・屋上"
+  },
+  {
+    "id": "misora_affection_20_01_key",
+    "title": "同じココアを買ってみる",
+    "type": "key",
+    "category": "character_key",
+    "character": "ah",
+    "route": "misora",
+    "affectionBlock": 3,
+    "affectionSlot": "key1",
+    "unlockLevel": 23,
+    "characters": [
+      "ah",
+      "ai"
+    ],
+    "characterNames": [
+      "双沢 美空",
+      "双沢 夜空"
+    ],
+    "scenario": "scenario/v039/events/misora_affection_20_01_key.json",
+    "version": "v039_265",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ah",
+      "level": 23
+    },
+    "order": 3158,
+    "summary": "美空の親愛Lv.23ストーリー「同じココアを買ってみる」。",
+    "rawTitle": "同じココアを買ってみる",
+    "affectionLabel": "親愛Lv.23",
+    "menuTitle": "親愛Lv.23：同じココアを買ってみる",
+    "locationName": "スーパー・飲料売り場／ひだまりストア・ロッカー前"
+  },
+  {
+    "id": "misora_affection_20_02_key",
+    "title": "ココア、飲む？",
+    "type": "key",
+    "category": "character_key",
+    "character": "ah",
+    "route": "misora",
+    "affectionBlock": 3,
+    "affectionSlot": "key2",
+    "unlockLevel": 25,
+    "characters": [
+      "ah",
+      "ai"
+    ],
+    "characterNames": [
+      "双沢 美空",
+      "双沢 夜空"
+    ],
+    "scenario": "scenario/v039/events/misora_affection_20_02_key.json",
+    "version": "v039_265",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ah",
+      "level": 25
+    },
+    "order": 3159,
+    "summary": "美空の親愛Lv.25ストーリー「ココア、飲む？」。",
+    "rawTitle": "ココア、飲む？",
+    "affectionLabel": "親愛Lv.25",
+    "menuTitle": "親愛Lv.25：ココア、飲む？",
+    "locationName": "ひだまりストア・休憩室"
+  },
+  {
+    "id": "misora_affection_20_03_key",
+    "title": "同じものを選ぶ日",
+    "type": "key",
+    "category": "character_key",
+    "character": "ah",
+    "route": "misora",
+    "affectionBlock": 3,
+    "affectionSlot": "key3",
+    "unlockLevel": 28,
+    "characters": [
+      "ah",
+      "ai"
+    ],
+    "characterNames": [
+      "双沢 美空",
+      "双沢 夜空"
+    ],
+    "scenario": "scenario/v039/events/misora_affection_20_03_key.json",
+    "version": "v039_265",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ah",
+      "level": 28
+    },
+    "order": 3160,
+    "summary": "美空の親愛Lv.28ストーリー「同じものを選ぶ日」。",
+    "rawTitle": "同じものを選ぶ日",
+    "affectionLabel": "親愛Lv.28",
+    "menuTitle": "親愛Lv.28：同じものを選ぶ日",
+    "locationName": "ひだまりストア・季節展示売り場"
+  },
+  {
+    "id": "misora_affection_30_00_main",
+    "title": "同じでも、同じじゃない",
+    "type": "main",
+    "category": "character_main",
+    "character": "ah",
+    "route": "misora",
+    "affectionBlock": 3,
+    "affectionSlot": "main",
+    "unlockLevel": 30,
+    "characters": [
+      "ah",
+      "ai"
+    ],
+    "characterNames": [
+      "双沢 美空",
+      "双沢 夜空"
+    ],
+    "scenario": "scenario/v039/events/misora_affection_30_00_main.json",
+    "version": "v039_265",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ah",
+      "level": 30
+    },
+    "order": 3161,
+    "summary": "美空の親愛Lv.30ストーリー「同じでも、同じじゃない」。",
+    "rawTitle": "同じでも、同じじゃない",
+    "affectionLabel": "親愛Lv.30",
+    "menuTitle": "親愛Lv.30：同じでも、同じじゃない",
+    "locationName": "帰り道"
   }
 ];
