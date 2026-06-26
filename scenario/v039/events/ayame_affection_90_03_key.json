@@ -363,7 +363,18 @@
     },
     {
       "speaker": "彩愛",
-      "text": "店長"
+      "text": "店長",
+      "bg": "images/assets/bg/bg_ayame98_estate_corridor_night.webp",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true,
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "店長",
@@ -523,7 +534,12 @@
     },
     {
       "speaker": "彩愛",
-      "text": "……っ！"
+      "text": "……っ！",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_ayame98_step111_corridor_close.webp",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",
@@ -610,7 +626,8 @@
       "text": "ーー風呂から上がって客間に戻ると二組の布団が敷かれていた",
       "bg": "images/assets/bg/bg_ayame98_guestroom_night.webp",
       "bgMode": "forceReplace",
-      "forceBackgroundReplace": true
+      "forceBackgroundReplace": true,
+      "hideEventCg": true
     },
     {
       "speaker": "",
@@ -642,7 +659,12 @@
     },
     {
       "speaker": "彩愛",
-      "text": "お風呂、大丈夫でしたか？長いので心配しましたわ。"
+      "text": "お風呂、大丈夫でしたか？長いので心配しましたわ。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_ayame98_step140_yukata_recline.webp",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
@@ -666,7 +688,12 @@
     },
     {
       "speaker": "彩愛",
-      "text": "・・・店長、・・あのよろしければ、もう少しこちらへ・・いけませんか？"
+      "text": "・・・店長、・・あのよろしければ、もう少しこちらへ・・いけませんか？",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_ayame98_step146_yukata_close.webp",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
     },
     {
       "speaker": "店長",
@@ -786,7 +813,12 @@
     },
     {
       "speaker": "",
-      "text": "彩愛さんは一歩引き、枕を構えた。"
+      "text": "彩愛さんは一歩引き、枕を構えた。",
+      "bg": "images/assets/bg/bg_ayame98_guestroom_night.webp",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "hideEventCg": true,
+      "clearStorySprites": true
     },
     {
       "speaker": "彩愛",
@@ -834,7 +866,14 @@
     },
     {
       "speaker": "彩愛の父",
-      "text": "おのれ……父に向かって、何たる乱暴を……"
+      "text": "おのれ……父に向かって、何たる乱暴を……",
+      "storySprites": [
+        {
+          "id": "otousama",
+          "src": "images/assets/char/ayame93_otousama_sprite.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "彩愛",
@@ -866,7 +905,15 @@
     },
     {
       "speaker": "",
-      "text": "父親は静かに沈んだ。"
+      "text": "父親は静かに沈んだ。",
+      "clearStorySprites": true,
+      "storySprites": [
+        {
+          "id": "baaya",
+          "src": "images/assets/char/ayame93_baaya_sprite.webp",
+          "opacity": 1
+        }
+      ]
     },
     {
       "speaker": "",
@@ -878,7 +925,8 @@
     },
     {
       "speaker": "",
-      "text": "ばあやは外れたふすまを元に戻し、何事もなかったかのように父親を引きずって廊下の奥へ消えていった。"
+      "text": "ばあやは外れたふすまを元に戻し、何事もなかったかのように父親を引きずって廊下の奥へ消えていった。",
+      "clearStorySprites": true
     },
     {
       "speaker": "",
