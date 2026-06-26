@@ -1,0 +1,621 @@
+{
+  "id": "misora_affection_10_01_key",
+  "title": "夜空はすごい",
+  "version": "v039_263",
+  "return": {
+    "mode": "storyMenu",
+    "storyId": "misora_affection_10_01_key",
+    "storyMenuTab": "key"
+  },
+  "format": "v039_steps",
+  "type": "character_key_story",
+  "characterId": "ah",
+  "route": "misora",
+  "affectionRange": {
+    "min": 10,
+    "max": 20
+  },
+  "location": {
+    "id": "hidamari_break_room",
+    "name": "ひだまりストア・休憩室"
+  },
+  "summary": "美空 親愛Lv.13「夜空はすごい」。",
+  "purpose": "美空ルート親愛10〜20として、夜空との関係や自分らしさを見つめる段階を描く。",
+  "tags": [
+    "美空ルート",
+    "親愛度10-20",
+    "双子",
+    "夜空",
+    "自分らしさ"
+  ],
+  "clearFlags": [
+    "misora_affection_10_01_key_cleared"
+  ],
+  "nextHint": "次の美空親愛ストーリーへ。",
+  "renderPolicy": {
+    "spritePosition": "logical_split_n_plus_1",
+    "eventCgLayer": "frontOfCharacters"
+  },
+  "steps": [
+    {
+      "speaker": "",
+      "text": "午後。",
+      "bg": "images/assets/bgev/bg_office_hidamari.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "休憩室には、店内放送の音が遠く聞こえていた。"
+    },
+    {
+      "speaker": "",
+      "text": "昼の混雑が少し落ち着き、店長は休憩室のテーブルで資料を確認していた。"
+    },
+    {
+      "speaker": "",
+      "text": "そこへ、美空が紙コップを持って入ってくる。"
+    },
+    {
+      "speaker": "美空",
+      "text": "店長、休憩中ですか？",
+      "storySprites": [
+        {
+          "id": "ah",
+          "src": "images/assets/char/h10101.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "まあな"
+    },
+    {
+      "speaker": "店長",
+      "text": "美空も休憩か？"
+    },
+    {
+      "speaker": "美空",
+      "text": "はい"
+    },
+    {
+      "speaker": "美空",
+      "text": "少しだけ"
+    },
+    {
+      "speaker": "",
+      "text": "美空は店長の向かいに座る。"
+    },
+    {
+      "speaker": "",
+      "text": "紙コップから、温かい湯気が上がっていた。"
+    },
+    {
+      "speaker": "店長",
+      "text": "夜空は？"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空は、売り場演出物を買いに行ってます"
+    },
+    {
+      "speaker": "店長",
+      "text": "演出物？"
+    },
+    {
+      "speaker": "美空",
+      "text": "はい"
+    },
+    {
+      "speaker": "美空",
+      "text": "夏物家電コーナー用のPOPとか"
+    },
+    {
+      "speaker": "美空",
+      "text": "飾りとか"
+    },
+    {
+      "speaker": "美空",
+      "text": "棚に置く小物とか"
+    },
+    {
+      "speaker": "店長",
+      "text": "ああ、あれか"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空、そういうの得意なんです"
+    },
+    {
+      "speaker": "店長",
+      "text": "へぇ"
+    },
+    {
+      "speaker": "美空",
+      "text": "頭いいし"
+    },
+    {
+      "speaker": "美空",
+      "text": "判断早いし"
+    },
+    {
+      "speaker": "美空",
+      "text": "私よりしっかりしてますし"
+    },
+    {
+      "speaker": "店長",
+      "text": "美空より？"
+    },
+    {
+      "speaker": "美空",
+      "text": "はい"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空の方が、先に決めてくれるんです"
+    },
+    {
+      "speaker": "店長",
+      "text": "そうなのか"
+    },
+    {
+      "speaker": "美空",
+      "text": "そうですよ"
+    },
+    {
+      "speaker": "美空",
+      "text": "私が迷ってる間に"
+    },
+    {
+      "speaker": "美空",
+      "text": "それはこっち、これはいらない、って"
+    },
+    {
+      "speaker": "美空",
+      "text": "すぐ決めてくれます"
+    },
+    {
+      "speaker": "店長",
+      "text": "夜空もしっかりしてるんだな"
+    },
+    {
+      "speaker": "美空",
+      "text": "はい"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空はすごいんです"
+    },
+    {
+      "speaker": "",
+      "text": "美空は、当たり前のように言った。"
+    },
+    {
+      "speaker": "",
+      "text": "その声には、少しの迷いもない。"
+    },
+    {
+      "speaker": "美空",
+      "text": "私、夜空のそういうところ、すごいなって思います"
+    },
+    {
+      "speaker": "店長",
+      "text": "本人に言ったことあるのか？"
+    },
+    {
+      "speaker": "美空",
+      "text": "ありますよ"
+    },
+    {
+      "speaker": "店長",
+      "text": "夜空はなんて？"
+    },
+    {
+      "speaker": "美空",
+      "text": "べつに……って"
+    },
+    {
+      "speaker": "店長",
+      "text": "はは、言いそうだ"
+    },
+    {
+      "speaker": "美空",
+      "text": "言います"
+    },
+    {
+      "speaker": "美空",
+      "text": "でも、ちょっとだけ嬉しそうなんです"
+    },
+    {
+      "speaker": "店長",
+      "text": "分かるのか？"
+    },
+    {
+      "speaker": "美空",
+      "text": "分かります"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空のことですから"
+    },
+    {
+      "speaker": "店長",
+      "text": "さすが姉"
+    },
+    {
+      "speaker": "美空",
+      "text": "ふふ"
+    },
+    {
+      "speaker": "",
+      "text": "美空は紙コップを両手で包む。"
+    },
+    {
+      "speaker": "",
+      "text": "その表情は、どこか誇らしげだった。"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空は、私と違って綺麗ですし"
+    },
+    {
+      "speaker": "店長",
+      "text": "綺麗？"
+    },
+    {
+      "speaker": "美空",
+      "text": "そうですよ"
+    },
+    {
+      "speaker": "美空",
+      "text": "目も綺麗だし"
+    },
+    {
+      "speaker": "美空",
+      "text": "髪も綺麗だし"
+    },
+    {
+      "speaker": "美空",
+      "text": "背も高いし"
+    },
+    {
+      "speaker": "",
+      "text": "美空はそこまで言って、少しうつむく。"
+    },
+    {
+      "speaker": "",
+      "text": "しかし、その顔はとても誇らしげだった。"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空って"
+    },
+    {
+      "speaker": "美空",
+      "text": "静かに立ってるだけで綺麗なんです"
+    },
+    {
+      "speaker": "美空",
+      "text": "私にはないもの、いっぱい持ってますから"
+    },
+    {
+      "speaker": "店長",
+      "text": "……まぁ、そうだな"
+    },
+    {
+      "speaker": "美空",
+      "text": "ですよね"
+    },
+    {
+      "speaker": "店長",
+      "text": "でもさ"
+    },
+    {
+      "speaker": "店長",
+      "text": "美空はかわいい系だろ"
+    },
+    {
+      "speaker": "美空",
+      "text": "……"
+    },
+    {
+      "speaker": "",
+      "text": "美空の動きが止まった。"
+    },
+    {
+      "speaker": "",
+      "text": "紙コップを持ったまま、目だけが店長を見る。"
+    },
+    {
+      "speaker": "美空",
+      "text": "……え？"
+    },
+    {
+      "speaker": "店長",
+      "text": "だから"
+    },
+    {
+      "speaker": "店長",
+      "text": "夜空は綺麗系で"
+    },
+    {
+      "speaker": "店長",
+      "text": "美空はかわいい系だろ"
+    },
+    {
+      "speaker": "美空",
+      "text": "やだー、もう！"
+    },
+    {
+      "speaker": "",
+      "text": "美空は耳まで赤くなり、手のひらで軽く叩くようなしぐさをした。"
+    },
+    {
+      "speaker": "店長",
+      "text": "な、なんだよ"
+    },
+    {
+      "speaker": "美空",
+      "text": "そういうこと簡単に言わないの！"
+    },
+    {
+      "speaker": "店長",
+      "text": "いや、普通に言っただけだぞ"
+    },
+    {
+      "speaker": "美空",
+      "text": "普通に言うからだめなんです！"
+    },
+    {
+      "speaker": "店長",
+      "text": "難しいな"
+    },
+    {
+      "speaker": "美空",
+      "text": "難しくないです"
+    },
+    {
+      "speaker": "美空",
+      "text": "恥ずかしいだけです"
+    },
+    {
+      "speaker": "店長",
+      "text": "かわいいって言われるのが？"
+    },
+    {
+      "speaker": "美空",
+      "text": "だから！"
+    },
+    {
+      "speaker": "店長",
+      "text": "何がだよ"
+    },
+    {
+      "speaker": "美空",
+      "text": "あーもう！"
+    },
+    {
+      "speaker": "",
+      "text": "美空は小さく咳払いをし、手のひらでぱたぱたと顔を仰ぐ。"
+    },
+    {
+      "speaker": "",
+      "text": "その頬には、まだ赤みが残っていた。"
+    },
+    {
+      "speaker": "店長",
+      "text": "でも、本当にそう思うぞ"
+    },
+    {
+      "speaker": "美空",
+      "text": "……もういいです"
+    },
+    {
+      "speaker": "店長",
+      "text": "怒った？"
+    },
+    {
+      "speaker": "美空",
+      "text": "怒ってないです"
+    },
+    {
+      "speaker": "美空",
+      "text": "でも、次言ったら怒ります"
+    },
+    {
+      "speaker": "店長",
+      "text": "分かった"
+    },
+    {
+      "speaker": "店長",
+      "text": "かわいい系の話はしない"
+    },
+    {
+      "speaker": "美空",
+      "text": "今も言ってます"
+    },
+    {
+      "speaker": "店長",
+      "text": "あ"
+    },
+    {
+      "speaker": "美空",
+      "text": "もう"
+    },
+    {
+      "speaker": "",
+      "text": "二人の間に、小さな笑いが落ちる。"
+    },
+    {
+      "speaker": "",
+      "text": "少しして、美空は紙コップに視線を戻した。"
+    },
+    {
+      "speaker": "美空",
+      "text": "でも"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空は本当にすごいんです"
+    },
+    {
+      "speaker": "店長",
+      "text": "うん"
+    },
+    {
+      "speaker": "美空",
+      "text": "私、夜空みたいにすぐ決められないし"
+    },
+    {
+      "speaker": "美空",
+      "text": "静かに考えるのも、あまり得意じゃないし"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空みたいに、きれいに整理して考えるのもできないです"
+    },
+    {
+      "speaker": "店長",
+      "text": "美空には美空の良さがあるだろ"
+    },
+    {
+      "speaker": "美空",
+      "text": "それは、そうかもしれませんけど"
+    },
+    {
+      "speaker": "美空",
+      "text": "でも、夜空のすごいところは、本当にすごいんです"
+    },
+    {
+      "speaker": "",
+      "text": "美空は、まっすぐ言った。"
+    },
+    {
+      "speaker": "",
+      "text": "そこに卑屈さはなかった。"
+    },
+    {
+      "speaker": "",
+      "text": "ただ、大事な妹を誇る声だった。"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空は"
+    },
+    {
+      "speaker": "美空",
+      "text": "私の自慢の妹ですから"
+    },
+    {
+      "speaker": "店長",
+      "text": "そっか"
+    },
+    {
+      "speaker": "美空",
+      "text": "はい"
+    },
+    {
+      "speaker": "美空",
+      "text": "自慢の妹です"
+    },
+    {
+      "speaker": "",
+      "text": "店長は少しだけ笑う。"
+    },
+    {
+      "speaker": "",
+      "text": "美空も、少し照れたように笑った。"
+    },
+    {
+      "speaker": "",
+      "text": "その時、休憩室の外から足音が近づいてくる。"
+    },
+    {
+      "speaker": "店長",
+      "text": "噂をすれば、かな"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空ですかね"
+    },
+    {
+      "speaker": "",
+      "text": "扉の向こうから、静かな声が聞こえた気がした。"
+    },
+    {
+      "speaker": "",
+      "text": "美空は少しだけ姿勢を正す。"
+    },
+    {
+      "speaker": "",
+      "text": "頬の赤みは、まだ少し残っている。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、その表情は嬉しそうだった。"
+    },
+    {
+      "speaker": "美空",
+      "text": "店長"
+    },
+    {
+      "speaker": "店長",
+      "text": "ん？"
+    },
+    {
+      "speaker": "美空",
+      "text": "今の話、夜空には内緒ですよ"
+    },
+    {
+      "speaker": "店長",
+      "text": "褒めてたことか？"
+    },
+    {
+      "speaker": "美空",
+      "text": "それもです"
+    },
+    {
+      "speaker": "店長",
+      "text": "かわいい系のことか？"
+    },
+    {
+      "speaker": "美空",
+      "text": "それはもっと内緒です！"
+    },
+    {
+      "speaker": "店長",
+      "text": "はいはい"
+    },
+    {
+      "speaker": "美空",
+      "text": "絶対ですよ"
+    },
+    {
+      "speaker": "店長",
+      "text": "分かった"
+    },
+    {
+      "speaker": "",
+      "text": "美空は少しだけ安心したように頷く。"
+    },
+    {
+      "speaker": "",
+      "text": "それから、扉の方を見た。"
+    },
+    {
+      "speaker": "美空",
+      "text": "夜空、おかえり"
+    },
+    {
+      "speaker": "",
+      "text": "扉の向こうに、いつもの静かな気配が近づいてくる。"
+    },
+    {
+      "speaker": "",
+      "text": "美空の声は、自然と明るくなっていた。"
+    }
+  ],
+  "keyScenarioIndex": 1
+}

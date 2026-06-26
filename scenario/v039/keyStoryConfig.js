@@ -15,13 +15,20 @@
       requiredStories: [
         "misora_affection_00_01_key",
         "misora_affection_00_02_key",
-        "misora_affection_00_03_key"
+        "misora_affection_00_03_key",
+        "misora_affection_10_01_key",
+        "misora_affection_10_02_key",
+        "misora_affection_10_03_key"
       ],
       slotStories: {
         "b1_key1": "misora_affection_00_01_key",
         "b1_key2": "misora_affection_00_02_key",
         "b1_key3": "misora_affection_00_03_key",
-        "b1_main": "misora_affection_10_00_main"
+        "b1_main": "misora_affection_10_00_main",
+        "b2_key1": "misora_affection_10_01_key",
+        "b2_key2": "misora_affection_10_02_key",
+        "b2_key3": "misora_affection_10_03_key",
+        "b2_main": "misora_affection_20_00_main"
       },
       completeReward: { title: "美空との絆" }
     },

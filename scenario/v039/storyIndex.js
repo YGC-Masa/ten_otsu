@@ -3009,5 +3009,131 @@ window.TENOTSU_STORY_INDEX = [
     "affectionLabel": "親愛Lv.10",
     "menuTitle": "親愛Lv.10：どれでもいい",
     "locationName": "スーパー・飲料コーナー"
+  },
+  {
+    "id": "misora_affection_10_01_key",
+    "title": "夜空はすごい",
+    "type": "key",
+    "category": "character_key",
+    "character": "ah",
+    "route": "misora",
+    "affectionBlock": 2,
+    "affectionSlot": "key1",
+    "unlockLevel": 13,
+    "characters": [
+      "ah",
+      "ai"
+    ],
+    "characterNames": [
+      "双沢 美空",
+      "双沢 夜空"
+    ],
+    "scenario": "scenario/v039/events/misora_affection_10_01_key.json",
+    "version": "v039_263",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ah",
+      "level": 13
+    },
+    "order": 3154,
+    "summary": "美空の親愛Lv.13ストーリー「夜空はすごい」。",
+    "rawTitle": "夜空はすごい",
+    "affectionLabel": "親愛Lv.13",
+    "menuTitle": "親愛Lv.13：夜空はすごい",
+    "locationName": "ひだまりストア・休憩室"
+  },
+  {
+    "id": "misora_affection_10_02_key",
+    "title": "美空の方がすごい",
+    "type": "key",
+    "category": "character_key",
+    "character": "ah",
+    "route": "misora",
+    "affectionBlock": 2,
+    "affectionSlot": "key2",
+    "unlockLevel": 15,
+    "characters": [
+      "ah",
+      "ai"
+    ],
+    "characterNames": [
+      "双沢 美空",
+      "双沢 夜空"
+    ],
+    "scenario": "scenario/v039/events/misora_affection_10_02_key.json",
+    "version": "v039_263",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ah",
+      "level": 15
+    },
+    "order": 3155,
+    "summary": "美空の親愛Lv.15ストーリー「美空の方がすごい」。",
+    "rawTitle": "美空の方がすごい",
+    "affectionLabel": "親愛Lv.15",
+    "menuTitle": "親愛Lv.15：美空の方がすごい",
+    "locationName": "ひだまりストア・閉店前"
+  },
+  {
+    "id": "misora_affection_10_03_key",
+    "title": "同じものを選んでも",
+    "type": "key",
+    "category": "character_key",
+    "character": "ah",
+    "route": "misora",
+    "affectionBlock": 2,
+    "affectionSlot": "key3",
+    "unlockLevel": 18,
+    "characters": [
+      "ah",
+      "am"
+    ],
+    "characterNames": [
+      "双沢 美空",
+      "草壁 萌"
+    ],
+    "scenario": "scenario/v039/events/misora_affection_10_03_key.json",
+    "version": "v039_263",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ah",
+      "level": 18
+    },
+    "order": 3156,
+    "summary": "美空の親愛Lv.18ストーリー「同じものを選んでも」。",
+    "rawTitle": "同じものを選んでも",
+    "affectionLabel": "親愛Lv.18",
+    "menuTitle": "親愛Lv.18：同じものを選んでも",
+    "locationName": "ひだまりストア・休憩室"
+  },
+  {
+    "id": "misora_affection_20_00_main",
+    "title": "同じものを選んでも",
+    "type": "main",
+    "category": "character_main",
+    "character": "ah",
+    "route": "misora",
+    "affectionBlock": 2,
+    "affectionSlot": "main",
+    "unlockLevel": 20,
+    "characters": [
+      "ah"
+    ],
+    "characterNames": [
+      "双沢 美空"
+    ],
+    "scenario": "scenario/v039/events/misora_affection_20_00_main.json",
+    "version": "v039_263",
+    "unlock": {
+      "type": "affection_level",
+      "character": "ah",
+      "level": 20
+    },
+    "order": 3157,
+    "summary": "美空の親愛Lv.20ストーリー「同じものを選んでも」。",
+    "rawTitle": "同じものを選んでも",
+    "affectionLabel": "親愛Lv.20",
+    "menuTitle": "親愛Lv.20：同じものを選んでも",
+    "locationName": "ひだまりストア・屋上"
   }
 ];
