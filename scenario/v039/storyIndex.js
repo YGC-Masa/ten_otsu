@@ -3108,7 +3108,7 @@ window.TENOTSU_STORY_INDEX = [
   },
   {
     "id": "misora_affection_20_00_main",
-    "title": "同じものを選んでも",
+    "title": "同じでも、違っても",
     "type": "main",
     "category": "character_main",
     "character": "ah",
@@ -3123,17 +3123,17 @@ window.TENOTSU_STORY_INDEX = [
       "双沢 美空"
     ],
     "scenario": "scenario/v039/events/misora_affection_20_00_main.json",
-    "version": "v039_263",
+    "version": "v039_266",
     "unlock": {
       "type": "affection_level",
       "character": "ah",
       "level": 20
     },
     "order": 3157,
-    "summary": "美空の親愛Lv.20ストーリー「同じものを選んでも」。",
-    "rawTitle": "同じものを選んでも",
+    "summary": "美空の親愛Lv.20ストーリー「同じでも、違っても」。",
+    "rawTitle": "同じでも、違っても",
     "affectionLabel": "親愛Lv.20",
-    "menuTitle": "親愛Lv.20：同じものを選んでも",
+    "menuTitle": "親愛Lv.20：同じでも、違っても",
     "locationName": "ひだまりストア・屋上"
   },
   {
