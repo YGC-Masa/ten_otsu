@@ -48,7 +48,7 @@ window.TENOTSU_STORY_INDEX = [
     "locationName": "春の公園"
   },
   {
-    "id": "kogane_natsu_marinpia",
+    "id": "kogane_natsumi_marinpia",
     "title": "マリンピアの海中トンネル",
     "type": "normal",
     "category": "town_encounter",
@@ -61,9 +61,9 @@ window.TENOTSU_STORY_INDEX = [
     ],
     "characterNames": [
       "小麦沢 こがね",
-      "日向 なつ"
+      "日向 夏海"
     ],
-    "scenario": "scenario/v039/events/kogane_natsu_marinpia.json",
+    "scenario": "scenario/v039/events/kogane_natsumi_marinpia.json",
     "version": "v039_105",
     "unlock": {
       "type": "always"
@@ -189,7 +189,7 @@ window.TENOTSU_STORY_INDEX = [
     "characterNames": [
       "天神 小春",
       "霧島 真冬",
-      "日向 なつ"
+      "日向 夏海"
     ],
     "scenario": "scenario/v039/events/biribiri_intro_rival_battle_unlock_003_flow_fix.json",
     "version": "v039_227",

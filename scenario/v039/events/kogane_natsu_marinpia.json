@@ -1,14 +1,14 @@
 {
-  "id": "kogane_natsu_marinpia",
+  "id": "kogane_natsumi_marinpia",
   "title": "マリンピアの海中トンネル",
   "return": {
     "mode": "town",
     "season": "summer",
-    "eventId": "kogane_natsu_marinpia"
+    "eventId": "kogane_natsumi_marinpia"
   },
   "format": "v039_steps",
   "type": "summer_memory_event",
-  "summary": "小麦沢こがねと日向なつ、そして店長がマリンピアの海中トンネル展示を見に行く夏の外回りイベント。スマホ・写真・涼感家電・接客のヒントを絡めた、明るくほんわかした試作シナリオ。",
+  "summary": "小麦沢こがねと日向夏海、そして店長がマリンピアの海中トンネル展示を見に行く夏の外回りイベント。スマホ・写真・涼感家電・接客のヒントを絡めた、明るくほんわかした試作シナリオ。",
   "steps": [
     {
       "bg": "images/assets/bgev/bg_beach.jpg",
@@ -43,7 +43,7 @@
         },
         {
           "id": "bc",
-          "src": "images/assets/rival/story_natsu_stand.png",
+          "src": "images/assets/rival/story_natsu_stand.webp",
           "side": "right",
           "left": "72%",
           "opacity": 1
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "speaker": "日向 なつ",
+      "speaker": "日向 夏海",
       "text": "わぁ～、水の音が涼しいね～。あちし、もうここ好きかも～。",
       "storySprites": [
         {
@@ -63,7 +63,7 @@
         },
         {
           "id": "bc",
-          "src": "images/assets/rival/story_natsu_stand.png",
+          "src": "images/assets/rival/story_natsu_stand.webp",
           "side": "right",
           "left": "72%",
           "opacity": 1
@@ -72,14 +72,14 @@
     },
     {
       "speaker": "店長",
-      "text": "こがねとなつが一緒だと、夏休み感がすごいな。"
+      "text": "こがねと夏海が一緒だと、夏休み感がすごいな。"
     },
     {
       "speaker": "小麦沢 こがね",
       "text": "それ、褒めてる？　褒めてるよね？　じゃあ今日の案内役、あーしに任せて！"
     },
     {
-      "speaker": "日向 なつ",
+      "speaker": "日向 夏海",
       "text": "あちしも案内するよ～。迷ったら、たぶん人の流れについていけば着くし～。"
     },
     {
@@ -107,7 +107,7 @@
         },
         {
           "id": "bc",
-          "src": "images/assets/rival/story_natsu_stand.png",
+          "src": "images/assets/rival/story_natsu_stand.webp",
           "side": "right",
           "left": "72%",
           "opacity": 1
@@ -115,15 +115,15 @@
       ]
     },
     {
-      "speaker": "日向 なつ",
+      "speaker": "日向 夏海",
       "text": "お魚さんたち、みんなでお散歩してるみたいだね～。"
     },
     {
       "speaker": "店長",
-      "text": "なつ、魚を見ても食べ物の話にならないんだな。"
+      "text": "夏海、魚を見ても食べ物の話にならないんだな。"
     },
     {
-      "speaker": "日向 なつ",
+      "speaker": "日向 夏海",
       "text": "ん～、ここでは見るだけ～。でも帰りにフルーツパフェは食べたいな～。"
     },
     {
@@ -151,7 +151,7 @@
         },
         {
           "id": "bc",
-          "src": "images/assets/rival/story_natsu_stand.png",
+          "src": "images/assets/rival/story_natsu_stand.webp",
           "side": "right",
           "left": "72%",
           "opacity": 1
@@ -159,15 +159,15 @@
       ]
     },
     {
-      "speaker": "日向 なつ",
+      "speaker": "日向 夏海",
       "text": "ふふ～。こがねちゃん、目がきらきらしてる～。"
     },
     {
       "speaker": "小麦沢 こがね",
-      "text": "なっちゃんも立って立って！　イルカのヘアピンと水槽、相性よすぎだし！"
+      "text": "夏海ちゃんも立って立って！　イルカのヘアピンと水槽、相性よすぎだし！"
     },
     {
-      "speaker": "日向 なつ",
+      "speaker": "日向 夏海",
       "text": "えへへ～。じゃあ、あちしも映えるポーズするね～。……こう？"
     },
     {
@@ -176,10 +176,10 @@
     },
     {
       "speaker": "小麦沢 こがね",
-      "text": "そこがいいの！　なっちゃんは、ゆるさが最強なんだから！"
+      "text": "そこがいいの！　夏海ちゃんは、ゆるさが最強なんだから！"
     },
     {
-      "speaker": "日向 なつ",
+      "speaker": "日向 夏海",
       "text": "こがねちゃんは褒めるの上手だね～。お礼にあとでパフェ一口あげる～。"
     },
     {
@@ -195,7 +195,7 @@
       "text": "水槽の上を、大きなエイがゆっくりと通り過ぎていく。影が三人の足元をなぞった。"
     },
     {
-      "speaker": "日向 なつ",
+      "speaker": "日向 夏海",
       "text": "わぁ～。お空を飛んでるみたいなお魚さんだ～。",
       "storySprites": [
         {
@@ -207,7 +207,7 @@
         },
         {
           "id": "bc",
-          "src": "images/assets/rival/story_natsu_stand.png",
+          "src": "images/assets/rival/story_natsu_stand.webp",
           "side": "right",
           "left": "72%",
           "opacity": 1
@@ -227,23 +227,23 @@
       "text": "そそ！　ただ商品を並べるだけじゃなくて、“使ったら楽しい”って見せる感じ！"
     },
     {
-      "speaker": "日向 なつ",
+      "speaker": "日向 夏海",
       "text": "ビリビリ電機でも、涼しい家電の展示でこういう青い光を使ったら楽しそう～。"
     },
     {
       "speaker": "店長",
-      "text": "お、なつも仕事モードか。"
+      "text": "お、夏海も仕事モードか。"
     },
     {
-      "speaker": "日向 なつ",
+      "speaker": "日向 夏海",
       "text": "うん～。暑い日に来たお客さんが、見ただけで涼しくなる売り場っていいな～って。"
     },
     {
       "speaker": "小麦沢 こがね",
-      "text": "なっちゃん、そういうの自然に言えるの強いよね。接客向きって感じ。"
+      "text": "夏海ちゃん、そういうの自然に言えるの強いよね。接客向きって感じ。"
     },
     {
-      "speaker": "日向 なつ",
+      "speaker": "日向 夏海",
       "text": "そうかな～。あちし、難しいことは苦手だけど、お客さんがにこにこしてるのは好き～。"
     },
     {
@@ -251,7 +251,7 @@
       "text": "それは十分、強みだと思うぞ。"
     },
     {
-      "speaker": "日向 なつ",
+      "speaker": "日向 夏海",
       "text": "えへへ～。店長さんに言われると、ちょっと照れるね～。",
       "storySprites": [
         {
@@ -263,7 +263,7 @@
         },
         {
           "id": "bc",
-          "src": "images/assets/rival/story_natsu_stand.png",
+          "src": "images/assets/rival/story_natsu_stand.webp",
           "side": "right",
           "left": "72%",
           "opacity": 1
@@ -288,7 +288,7 @@
     },
     {
       "speaker": "小麦沢 こがね",
-      "text": "あ、さっきの写真、もういい感じに撮れてる！　店長もなっちゃんも、めっちゃ自然！",
+      "text": "あ、さっきの写真、もういい感じに撮れてる！　店長も夏海ちゃんも、めっちゃ自然！",
       "storySprites": [
         {
           "id": "ad",
@@ -299,7 +299,7 @@
         },
         {
           "id": "bc",
-          "src": "images/assets/rival/story_natsu_stand.png",
+          "src": "images/assets/rival/story_natsu_stand.webp",
           "side": "right",
           "left": "72%",
           "opacity": 1
@@ -315,12 +315,12 @@
       "text": "もちろん！　店長がいないと、ひだまり感出ないじゃん。"
     },
     {
-      "speaker": "日向 なつ",
+      "speaker": "日向 夏海",
       "text": "うんうん。店長さんがいると、こがねちゃんも楽しそうだし～。"
     },
     {
       "speaker": "小麦沢 こがね",
-      "text": "ちょ、なっちゃん！？　それは言い方！"
+      "text": "ちょ、夏海ちゃん！？　それは言い方！"
     },
     {
       "speaker": "店長",
@@ -339,7 +339,7 @@
         },
         {
           "id": "bc",
-          "src": "images/assets/rival/story_natsu_stand.png",
+          "src": "images/assets/rival/story_natsu_stand.webp",
           "side": "right",
           "left": "72%",
           "opacity": 1
@@ -347,19 +347,19 @@
       ]
     },
     {
-      "speaker": "日向 なつ",
+      "speaker": "日向 夏海",
       "text": "館内、涼しいよ～？"
     },
     {
       "speaker": "小麦沢 こがね",
-      "text": "なっちゃん、今だけ正確な温度感出さないで！"
+      "text": "夏海ちゃん、今だけ正確な温度感出さないで！"
     },
     {
       "speaker": "",
       "text": "海中トンネルを抜けると、出口側の休憩スペースに小さな売店があった。"
     },
     {
-      "speaker": "日向 なつ",
+      "speaker": "日向 夏海",
       "text": "店長さん、こがねちゃん。パフェ、あったよ～。夏限定だって～。"
     },
     {
@@ -375,7 +375,7 @@
       "text": "いいじゃん。ちゃんと仕事のヒントも見つけたし、写真も撮れたし！"
     },
     {
-      "speaker": "日向 なつ",
+      "speaker": "日向 夏海",
       "text": "それに、三人で来ると楽しいって分かったしね～。"
     },
     {
@@ -389,7 +389,7 @@
     },
     {
       "speaker": "",
-      "text": "【イベント終了】こがねとなつの距離が少し近づきました。"
+      "text": "【イベント終了】こがねと夏海の距離が少し近づきました。"
     }
   ]
 }
