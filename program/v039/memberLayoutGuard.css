@@ -1,0 +1,45 @@
+/* v039_269 member layout guard: keep large transparent rival assets inside member cards */
+.tenotsu-member-layout-guard,
+.tenotsu-member-layout-guard * {
+  box-sizing: border-box;
+}
+
+/* member/rival cards should not be stretched by tall character sprites */
+[class*="member" i] img[src*="images/assets/rival/story_"],
+[class*="member" i] img[src*="images/assets/char/"],
+[class*="member" i] img[src$="_stand.webp"],
+[class*="member" i] img[src$="_stand.png"],
+.tenotsu-member-layout-guard img[src*="images/assets/rival/story_"] {
+  max-width: 100% !important;
+  max-height: min(58vh, 560px) !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  object-position: center bottom !important;
+  display: block !important;
+  flex: 0 0 auto !important;
+}
+
+[class*="member" i],
+[class*="member" i] > *,
+.tenotsu-member-layout-guard {
+  min-width: 0 !important;
+  min-height: 0;
+}
+
+/* right/left detail areas remain scrollable instead of pushing the whole layout */
+[class*="member" i][class*="detail" i],
+[class*="member" i][class*="panel" i],
+[class*="member" i][class*="list" i],
+.tenotsu-member-layout-guard [class*="detail" i],
+.tenotsu-member-layout-guard [class*="panel" i],
+.tenotsu-member-layout-guard [class*="list" i] {
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Prevent huge character art from forcing horizontal overflow */
+body.tenotsu-member-screen-active {
+  overflow-x: hidden;
+}

@@ -1,40 +1,41 @@
-# ten_otsu v039_268 差分パッチ
+# ten_otsu v039_269 差分パッチ
 
 ## 適用前提
-- **v039_267適用済みへ上書き**
+- **v039_268適用済みへ上書き**
 
 ## 修正内容
-### 日向 夏海 表記の完全統一
-- `storyIndex.js` の表示名を `日向 夏海` へ修正
-- `keyStoryConfig.js` の表示名を `日向 夏海` へ修正
-- `recollectionIndex.js` の表示名・回想イベントID/シナリオパスを夏海版へ修正
-- 対象イベントJSON内の表示名・セリフを `日向 夏海` / `夏海` へ統一
+### メンバー画面レイアウト復旧
+- 大きい透過立ち絵でメンバー画面が崩れないよう、`memberLayoutGuard.css/js` を追加しました。
+- メンバー/キャラ画面内の立ち絵は `object-fit: contain` / `max-height` / `max-width` で表示枠内に収めます。
 
-### ビリビリメンバー立ち絵を透過WebP化
-- 添付のカウボーイショット3枚を **RGBA透過WebP** として実装
-- JSON参照も `.webp` へ更新
+### ビリビリメンバー立ち絵の互換対応
+- 透過WebP版を正式採用しつつ、既存の `.png` 参照が残っていても壊れないよう、PNG互換ファイルも同梱しました。
+- JSON内のビリビリ立ち絵参照は `.webp` に更新しました。
   - `images/assets/rival/story_koharu_stand.webp`
   - `images/assets/rival/story_mafuyu_stand.webp`
   - `images/assets/rival/story_natsu_stand.webp`
+  - 互換用: `.png` 版も同梱
+
+### 日向夏海 表記確認・追加修正
+- `storyIndex.js` / `keyStoryConfig.js` / `recollectionIndex.js` と同梱JSONを再確認し、旧表記を追加修正しました。
+- `なつとの縁` → `夏海との縁`
+- summary内の `小春・真冬・なつ` / `こがねとなつ` も修正済み。
 
 ## 更新ファイル
+- `index.html`
+- `program/v039/version.js`
+- `program/v039/memberLayoutGuard.css`
+- `program/v039/memberLayoutGuard.js`
 - `scenario/v039/storyIndex.js`
 - `scenario/v039/keyStoryConfig.js`
 - `scenario/v039/recollectionIndex.js`
-- `scenario/v039/events/kogane_natsumi_marinpia.json`
-- `scenario/v039/events/kogane_natsu_marinpia.json`
-- `scenario/v039/events/event_black_kadenseijin_battle_unlock_003_ayame_line_fix.json`
-- `scenario/v039/events/biribiri_intro_rival_battle_unlock_003_flow_fix.json`
-- `images/assets/rival/story_koharu_stand.webp`
-- `images/assets/rival/story_mafuyu_stand.webp`
-- `images/assets/rival/story_natsu_stand.webp`
-- `program/v039/version.js`
-- `VERSION.txt`
-- `index.html`
-- `README_DIFF.md`
+- `scenario/v039/events/*.json`
+- `images/assets/rival/story_koharu_stand.webp` / `.png`
+- `images/assets/rival/story_mafuyu_stand.webp` / `.png`
+- `images/assets/rival/story_natsu_stand.webp` / `.png`
 
 ## 確認
 - JSON構文チェック済み
-- 追加WebPがRGBA透過であることを確認済み
-- 旧名称系の残存は同梱JSON/JS内で0件
-- バージョン表示：v039_268
+- 透過WebP / PNG互換ファイル出力済み
+- 旧表記 `日向 なつ` / `日向なつ` / `夏美` の残存チェック済み
+- バージョン表示: v039_269
