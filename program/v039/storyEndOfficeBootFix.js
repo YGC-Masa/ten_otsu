@@ -1,9 +1,9 @@
-/* v039_285 story end office boot slow black-release fix */
+/* v039_286 story end office boot slower black-release fix */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  if (ns.__storyEndOfficeBootFixV039285) return;
-  ns.__storyEndOfficeBootFixV039285 = true;
+  if (ns.__storyEndOfficeBootFixV039286) return;
+  ns.__storyEndOfficeBootFixV039286 = true;
 
   let ending = false;
   const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -39,7 +39,7 @@
 
   async function releaseBlackAlways(duration){
     const fade = elevateFade();
-    const d = typeof duration === "number" ? duration : 1200;
+    const d = typeof duration === "number" ? duration : 1600;
     try {
       if (d > 0 && typeof ns.releaseBlack === "function") {
         await ns.releaseBlack(d);
@@ -154,7 +154,7 @@
       forceBlackNow();
       await delay(3000);
       await bootOfficeLikeStart();
-      await releaseBlackAlways(1200);
+      await releaseBlackAlways(1600);
     } finally {
       ending = false;
       await releaseBlackAlways(0);
@@ -162,11 +162,11 @@
   }
 
   ns.fadeToBlackThenReturn = endStoryToOfficeBoot;
-  ns.beginStoryEnd = function beginStoryEndV039285(){
+  ns.beginStoryEnd = function beginStoryEndV039286(){
     endStoryToOfficeBoot();
   };
 
-  ns.storyEndOfficeBootFixV039285 = {
+  ns.storyEndOfficeBootFixV039286 = {
     endStoryToOfficeBoot,
     bootOfficeLikeStart,
     releaseBlackAlways
