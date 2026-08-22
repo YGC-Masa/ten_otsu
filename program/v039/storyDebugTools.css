@@ -1,5 +1,13 @@
-/* v039_270 story debug overlay and autoplay notice */
+/* v039_271 story debug overlay, UI toggle, autoplay notice */
 .tenotsu-story-debug-overlay{position:fixed;right:max(12px,env(safe-area-inset-right));top:max(12px,env(safe-area-inset-top));z-index:99999;min-width:220px;max-width:min(360px,calc(100vw - 24px));padding:10px 12px;border:1px solid rgba(255,255,255,.32);border-radius:12px;background:rgba(0,0,0,.72);color:#fff;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:12px;line-height:1.45;white-space:pre-wrap;pointer-events:none;text-shadow:0 1px 2px rgba(0,0,0,.9);box-shadow:0 8px 24px rgba(0,0,0,.35)}
 .tenotsu-story-debug-overlay[hidden]{display:none!important}
 .tenotsu-story-autoplay-toast{position:fixed;left:50%;top:18%;z-index:100000;transform:translateX(-50%);padding:12px 18px;border-radius:999px;background:rgba(0,0,0,.78);color:#fff;font-weight:700;letter-spacing:.04em;pointer-events:none;text-shadow:0 1px 2px rgba(0,0,0,.9);box-shadow:0 8px 24px rgba(0,0,0,.35)}
 .tenotsu-story-autoplay-toast[hidden]{display:none!important}
+body.tenotsu-story-ui-hidden .tenotsu-story-ui,
+body.tenotsu-story-ui-hidden .tenotsu-story-title,
+body.tenotsu-story-ui-hidden .tenotsu-story-progress,
+body.tenotsu-story-ui-hidden .tenotsu-story-skip,
+body.tenotsu-story-ui-hidden .tenotsu-story-hint,
+body.tenotsu-story-ui-hidden [data-story-progress],
+body.tenotsu-story-ui-hidden [data-story-action='end']{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}
+body.tenotsu-story-ending-blackfade .tenotsu-story-click{pointer-events:none!important}
