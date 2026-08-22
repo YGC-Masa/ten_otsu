@@ -1,8 +1,8 @@
-/* v039_277 story debug overlay, UI hotkeys, default autoplay, 2s hold + 1s fade-in */
+/* v039_278 story debug overlay, default-hidden story UI, true black start, and autoplay */
 (function(){
   "use strict";
   const ns=window.TENOTSU_V039=window.TENOTSU_V039||{};
-  const st={debugVisible:false,storyUiVisible:true,autoActive:false,autoPending:false,autoTimer:null,pendingTimers:[],overlay:null,toast:null,wrapped:false,hiddenUi:new Map(),startHold:false};
+  const st={debugVisible:false,storyUiVisible:false,autoActive:false,autoPending:false,autoTimer:null,pendingTimers:[],overlay:null,toast:null,wrapped:false,hiddenUi:new Map(),startHold:false};
 
   function isTypingTarget(el){if(!el)return false;const tag=String(el.tagName||"").toLowerCase();return tag==="input"||tag==="textarea"||tag==="select"||!!el.isContentEditable;}
   function ensureOverlay(){if(!st.overlay){st.overlay=document.createElement("div");st.overlay.className="tenotsu-story-debug-overlay";st.overlay.hidden=true;document.body.appendChild(st.overlay);}return st.overlay;}
@@ -74,17 +74,21 @@
   function startAutoNow(){clearPending();const story=ns.story||{};if(!story.active||story.isEnding||st.startHold)return;st.autoActive=true;if(st.autoTimer)clearInterval(st.autoTimer);st.autoTimer=setInterval(autoTick,2400);updateOverlay();}
   function toggleAuto(){if(st.autoActive||st.autoPending)stopAuto();else startAutoNow();}
 
-  function holdBlackThenFadeIn(){
+  function forceBlack(){
     const fade=getFade();
-    if(!fade)return Promise.resolve();
+    if(!fade)return;
     st.startHold=true;
-    stopAuto();
     document.body.classList.add("tenotsu-story-start-hold-black");
     fade.style.display="block";
     fade.style.visibility="visible";
     fade.style.pointerEvents="auto";
     fade.style.transition="none";
     fade.style.opacity="1";
+  }
+  function trueBlackStartFadeIn(){
+    const fade=getFade();
+    if(!fade){st.startHold=false;return Promise.resolve();}
+    forceBlack();
     return new Promise(resolve=>{
       setTimeout(()=>{
         fade.style.transition="opacity 1000ms ease";
@@ -138,7 +142,20 @@
   function wrap(){
     if(st.wrapped)return;st.wrapped=true;
     const n=ns.nextStoryStep;if(typeof n==="function")ns.nextStoryStep=async function(o){const r=await n.call(this,o||{});if(!st.storyUiVisible)applyStoryUiVisibility();updateOverlay();return r;};
-    const ss=ns.startStory;if(typeof ss==="function")ns.startStory=async function(){stopAuto();setStoryUiVisible(true);const r=await ss.apply(this,arguments);await holdBlackThenFadeIn();setTimeout(startAutoNow,120);updateOverlay();return r;};
+    const ss=ns.startStory;if(typeof ss==="function")ns.startStory=async function(){
+      stopAuto();
+      setStoryUiVisible(false);
+      const oldFadeOut=ns.fadeOutForStoryStart;
+      const oldFadeIn=ns.fadeInForStoryStart;
+      ns.fadeOutForStoryStart=function(){forceBlack();return Promise.resolve();};
+      ns.fadeInForStoryStart=function(){return trueBlackStartFadeIn();};
+      let r;
+      try{r=await ss.apply(this,arguments);}finally{ns.fadeOutForStoryStart=oldFadeOut;ns.fadeInForStoryStart=oldFadeIn;}
+      setStoryUiVisible(false);
+      setTimeout(startAutoNow,120);
+      updateOverlay();
+      return r;
+    };
     const e=ns.endStory;if(typeof e==="function")ns.endStory=function(){stopAuto();setStoryUiVisible(true);const r=e.apply(this,arguments);scheduleOfficeStabilize();updateOverlay();return r;};
     const b=ns.beginStoryEnd;if(typeof b==="function")ns.beginStoryEnd=function(){stopAuto();setStoryUiVisible(true);const r=b.apply(this,arguments);updateOverlay();return r;};
     const eo=ns.enterOffice;if(typeof eo==="function")ns.enterOffice=function(){const r=eo.apply(this,arguments);Promise.resolve(r).finally(scheduleOfficeStabilize);return r;};
@@ -147,5 +164,5 @@
 
   function boot(){hotkeys();wrap();window.setInterval(()=>{if(!st.storyUiVisible)applyStoryUiVisibility();updateOverlay();},500);if((ns.state&&ns.state.mode)==="office"||document.body.classList.contains("v039-mode-office"))scheduleOfficeStabilize();}
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot,{once:true});else boot();
-  ns.storyDebugToolsV039277={toggleDebugOverlay:toggleDebug,toggleStoryUi:toggleStoryUi,setStoryUiVisible:setStoryUiVisible,updateOverlay:updateOverlay,stopAutoplay:stopAuto,startAutoplayNow:startAutoNow,toggleAutoplay:toggleAuto,storyEndBlackFadeToTitle:storyEndBlackFadeToTitle,stabilizeOfficeLayout:stabilizeOfficeLayout,holdBlackThenFadeIn:holdBlackThenFadeIn};
+  ns.storyDebugToolsV039278={toggleDebugOverlay:toggleDebug,toggleStoryUi:toggleStoryUi,setStoryUiVisible:setStoryUiVisible,updateOverlay:updateOverlay,stopAutoplay:stopAuto,startAutoplayNow:startAutoNow,toggleAutoplay:toggleAuto,storyEndBlackFadeToTitle:storyEndBlackFadeToTitle,stabilizeOfficeLayout:stabilizeOfficeLayout,trueBlackStartFadeIn:trueBlackStartFadeIn};
 })();
