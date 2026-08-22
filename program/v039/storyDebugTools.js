@@ -1,4 +1,4 @@
-/* v039_280 story debug overlay, default-hidden story UI, global transition fade, and autoplay */
+/* v039_281 story debug overlay, default-hidden story UI, black-to-scene start fade, and autoplay */
 (function(){
   "use strict";
   const ns=window.TENOTSU_V039=window.TENOTSU_V039||{};
@@ -58,18 +58,23 @@
   function startAutoNow(){clearPending();const story=ns.story||{};if(!story.active||story.isEnding||st.startHold)return;st.autoActive=true;if(st.autoTimer)clearInterval(st.autoTimer);st.autoTimer=setInterval(autoTick,2400);updateOverlay();}
   function toggleAuto(){if(st.autoActive||st.autoPending)stopAuto();else startAutoNow();}
 
-  function installGlobalStoryStartFade(){
+  function installBlackToSceneStoryStartFade(){
     if(st.fadeInstalled)return;
     st.fadeInstalled=true;
     ns.fadeOutForStoryStart=function(){
       st.startHold=true;
-      if(typeof ns.fadeOutBlack==="function") return ns.fadeOutBlack(420);
-      if(typeof ns.forceBlack==="function"){ns.forceBlack();return Promise.resolve();}
+      document.body.classList.add("tenotsu-story-start-hold-black");
+      if(typeof ns.forceBlack==="function") ns.forceBlack();
       return Promise.resolve();
     };
     ns.fadeInForStoryStart=async function(){
-      await delay(2000);
-      try{if(typeof ns.releaseBlack==="function") await ns.releaseBlack(1000);}finally{st.startHold=false;document.body.classList.remove("tenotsu-story-start-hold-black");}
+      try{
+        await delay(2000);
+        if(typeof ns.releaseBlack==="function") await ns.releaseBlack(1000);
+      } finally {
+        st.startHold=false;
+        document.body.classList.remove("tenotsu-story-start-hold-black");
+      }
     };
   }
 
@@ -97,9 +102,9 @@
 
   function wrap(){
     if(st.wrapped)return;st.wrapped=true;
-    installGlobalStoryStartFade();
+    installBlackToSceneStoryStartFade();
     const n=ns.nextStoryStep;if(typeof n==="function")ns.nextStoryStep=async function(o){const r=await n.call(this,o||{});if(!st.storyUiVisible)applyStoryUiVisibility();updateOverlay();return r;};
-    const ss=ns.startStory;if(typeof ss==="function")ns.startStory=async function(){stopAuto();setStoryUiVisible(false);installGlobalStoryStartFade();const r=await ss.apply(this,arguments);setStoryUiVisible(false);setTimeout(startAutoNow,120);updateOverlay();return r;};
+    const ss=ns.startStory;if(typeof ss==="function")ns.startStory=async function(){stopAuto();setStoryUiVisible(false);installBlackToSceneStoryStartFade();const r=await ss.apply(this,arguments);setStoryUiVisible(false);setTimeout(startAutoNow,120);updateOverlay();return r;};
     const e=ns.endStory;if(typeof e==="function")ns.endStory=function(){stopAuto();setStoryUiVisible(true);const r=e.apply(this,arguments);scheduleOfficeStabilize();updateOverlay();return r;};
     const b=ns.beginStoryEnd;if(typeof b==="function")ns.beginStoryEnd=function(){stopAuto();setStoryUiVisible(true);storyEndBlackFadeToTitle();updateOverlay();};
     const eo=ns.enterOffice;if(typeof eo==="function")ns.enterOffice=function(){const r=eo.apply(this,arguments);Promise.resolve(r).finally(scheduleOfficeStabilize);return r;};
@@ -108,5 +113,5 @@
 
   function boot(){hotkeys();wrap();window.setInterval(()=>{if(!st.storyUiVisible)applyStoryUiVisibility();updateOverlay();},500);if((ns.state&&ns.state.mode)==="office"||document.body.classList.contains("v039-mode-office"))scheduleOfficeStabilize();}
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot,{once:true});else boot();
-  ns.storyDebugToolsV039280={toggleDebugOverlay:toggleDebug,toggleStoryUi:toggleStoryUi,setStoryUiVisible:setStoryUiVisible,updateOverlay:updateOverlay,stopAutoplay:stopAuto,startAutoplayNow:startAutoNow,toggleAutoplay:toggleAuto,storyEndBlackFadeToTitle:storyEndBlackFadeToTitle,installGlobalStoryStartFade:installGlobalStoryStartFade};
+  ns.storyDebugToolsV039281={toggleDebugOverlay:toggleDebug,toggleStoryUi:toggleStoryUi,setStoryUiVisible:setStoryUiVisible,updateOverlay:updateOverlay,stopAutoplay:stopAuto,startAutoplayNow:startAutoNow,toggleAutoplay:toggleAuto,storyEndBlackFadeToTitle:storyEndBlackFadeToTitle,installBlackToSceneStoryStartFade:installBlackToSceneStoryStartFade};
 })();
