@@ -1,9 +1,9 @@
-/* v039_284 story end office boot black-release fix */
+/* v039_285 story end office boot slow black-release fix */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  if (ns.__storyEndOfficeBootFixV039284) return;
-  ns.__storyEndOfficeBootFixV039284 = true;
+  if (ns.__storyEndOfficeBootFixV039285) return;
+  ns.__storyEndOfficeBootFixV039285 = true;
 
   let ending = false;
   const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -39,17 +39,18 @@
 
   async function releaseBlackAlways(duration){
     const fade = elevateFade();
+    const d = typeof duration === "number" ? duration : 1200;
     try {
-      if (typeof ns.releaseBlack === "function") {
-        await ns.releaseBlack(duration || 650);
+      if (d > 0 && typeof ns.releaseBlack === "function") {
+        await ns.releaseBlack(d);
       } else if (fade) {
         fade.style.display = "block";
         fade.style.visibility = "visible";
         fade.style.pointerEvents = "auto";
-        fade.style.transition = `opacity ${duration || 650}ms ease`;
+        fade.style.transition = d > 0 ? `opacity ${d}ms ease` : "none";
         fade.style.opacity = "1";
         requestAnimationFrame(() => { fade.style.opacity = "0"; });
-        await delay((duration || 650) + 60);
+        await delay(d + 80);
       }
     } finally {
       if (fade) {
@@ -153,7 +154,7 @@
       forceBlackNow();
       await delay(3000);
       await bootOfficeLikeStart();
-      await releaseBlackAlways(650);
+      await releaseBlackAlways(1200);
     } finally {
       ending = false;
       await releaseBlackAlways(0);
@@ -161,11 +162,11 @@
   }
 
   ns.fadeToBlackThenReturn = endStoryToOfficeBoot;
-  ns.beginStoryEnd = function beginStoryEndV039284(){
+  ns.beginStoryEnd = function beginStoryEndV039285(){
     endStoryToOfficeBoot();
   };
 
-  ns.storyEndOfficeBootFixV039284 = {
+  ns.storyEndOfficeBootFixV039285 = {
     endStoryToOfficeBoot,
     bootOfficeLikeStart,
     releaseBlackAlways
