@@ -1,8 +1,8 @@
-/* v039_272 story debug overlay, UI hotkeys, autoplay, and end fade */
+/* v039_273 story debug overlay, UI hotkeys, default autoplay, and end fade */
 (function(){
   "use strict";
   const ns=window.TENOTSU_V039=window.TENOTSU_V039||{};
-  const st={debugVisible:false,storyUiVisible:true,autoActive:false,autoPending:false,autoTimer:null,pendingTimers:[],overlay:null,toast:null,wrapped:false};
+  const st={debugVisible:false,storyUiVisible:true,autoActive:false,autoPending:false,autoTimer:null,pendingTimers:[],overlay:null,toast:null,wrapped:false,hiddenUi:new Map()};
   function isTypingTarget(el){if(!el)return false;const tag=String(el.tagName||"").toLowerCase();return tag==="input"||tag==="textarea"||tag==="select"||!!el.isContentEditable;}
   function ensureOverlay(){if(!st.overlay){st.overlay=document.createElement("div");st.overlay.className="tenotsu-story-debug-overlay";st.overlay.hidden=true;document.body.appendChild(st.overlay);}return st.overlay;}
   function ensureToast(){if(!st.toast){st.toast=document.createElement("div");st.toast.className="tenotsu-story-autoplay-toast";st.toast.hidden=true;document.body.appendChild(st.toast);}return st.toast;}
@@ -12,45 +12,22 @@
   function updateOverlay(){if(!st.debugVisible)return;const el=ensureOverlay(),story=ns.story||{},data=story.data||{},steps=Array.isArray(data.steps)?data.steps:[],i=Number.isFinite(story.index)?story.index:-1,step=currentStep(),ret=story.returnInfo||{};el.textContent=["STORY DEBUG  [Q: debug] [W: ui] [A: auto]","title: "+(data.title||"-"),"id: "+(ret.storyId||ret.eventId||data.id||"-"),"step: "+(i+1)+" / "+steps.length+"  (index "+i+")","speaker: "+((step&&step.speaker)||"-"),"bg: "+shortPath((step&&step.bg)||story.lastBg||ns.storyCurrentBackground||""),"eventCg: "+shortPath(step&&(step.eventCg||step.cg)||""),"sprites: "+spriteText(step),"loading: "+(!!story.isLoadingStep),"ending: "+(!!story.isEnding),"storyUi: "+(st.storyUiVisible?"ON":"OFF"),"auto: "+(st.autoActive?"ON":st.autoPending?"PENDING":"OFF")].join("\n");el.hidden=false;}
   function hideOverlay(){ensureOverlay().hidden=true;}
   function toggleDebug(){st.debugVisible=!st.debugVisible;if(st.debugVisible)updateOverlay();else hideOverlay();}
-  function setStoryUiVisible(v){st.storyUiVisible=!!v;document.body.classList.toggle("tenotsu-story-ui-hidden",!st.storyUiVisible);updateOverlay();}
+  function collectStoryUiTargets(){const list=[];const add=el=>{if(el&&el.nodeType===1&&!list.includes(el))list.push(el);};[".tenotsu-story-ui",".tenotsu-story-title",".tenotsu-story-progress",".tenotsu-story-skip",".tenotsu-story-hint","[data-story-progress]","[data-story-action='end']",".tenotsu-menu-version",".tenotsu-menu-version-main",".tenotsu-menu-version-sub","[class*='version']"].forEach(sel=>document.querySelectorAll(sel).forEach(add));const ver=String(ns.VERSION||window.TENOTSU_BUILD_VERSION||"");if(ver){document.querySelectorAll("body *").forEach(el=>{const t=(el.textContent||"").trim();if(t===ver||t.startsWith(ver)||/^v\d{3}_\d{3}/.test(t))add(el);});}return list;}
+  function hideElement(el){if(!st.hiddenUi.has(el)){st.hiddenUi.set(el,{display:el.style.display,visibility:el.style.visibility,opacity:el.style.opacity,pointerEvents:el.style.pointerEvents});}el.setAttribute("data-tenotsu-story-ui-hidden-target","1");el.style.setProperty("display","none","important");el.style.setProperty("visibility","hidden","important");el.style.setProperty("opacity","0","important");el.style.setProperty("pointer-events","none","important");}
+  function restoreHiddenElements(){st.hiddenUi.forEach((old,el)=>{if(!el||!el.style)return;el.removeAttribute("data-tenotsu-story-ui-hidden-target");el.style.display=old.display||"";el.style.visibility=old.visibility||"";el.style.opacity=old.opacity||"";el.style.pointerEvents=old.pointerEvents||"";});st.hiddenUi.clear();}
+  function applyStoryUiVisibility(){document.body.classList.toggle("tenotsu-story-ui-hidden",!st.storyUiVisible);if(st.storyUiVisible){restoreHiddenElements();return;}collectStoryUiTargets().forEach(hideElement);}
+  function setStoryUiVisible(v){st.storyUiVisible=!!v;applyStoryUiVisibility();updateOverlay();}
   function toggleStoryUi(){setStoryUiVisible(!st.storyUiVisible);}
   function clearPending(){st.pendingTimers.forEach(id=>clearTimeout(id));st.pendingTimers.length=0;st.autoPending=false;ensureToast().hidden=true;}
   function stopAuto(){clearPending();st.autoActive=false;if(st.autoTimer)clearInterval(st.autoTimer);st.autoTimer=null;updateOverlay();}
   function autoTick(){const story=ns.story||{};if(!story.active||story.isEnding){stopAuto();return;}if(story.isLoadingStep)return;if(typeof ns.nextStoryStep==="function")ns.nextStoryStep({autoplay:true});}
-  function startAutoNow(){clearPending();st.autoActive=true;if(st.autoTimer)clearInterval(st.autoTimer);st.autoTimer=setInterval(autoTick,2400);updateOverlay();}
+  function startAutoNow(){clearPending();const story=ns.story||{};if(!story.active||story.isEnding)return;st.autoActive=true;if(st.autoTimer)clearInterval(st.autoTimer);st.autoTimer=setInterval(autoTick,2400);updateOverlay();}
+  function toggleAuto(){if(st.autoActive||st.autoPending)stopAuto();else startAutoNow();}
   function beginCountdown(){const story=ns.story||{};if(!story.active)return;if(st.autoActive||st.autoPending){stopAuto();return;}st.autoPending=true;const toast=ensureToast();toast.textContent="3秒後オートプレイ";toast.hidden=false;updateOverlay();st.pendingTimers.push(setTimeout(()=>{toast.hidden=true;updateOverlay();},1000));st.pendingTimers.push(setTimeout(startAutoNow,3000));}
-  function hotkeys(){if(document.__tenotsuStoryDebugHotkeysInstalled)return;document.__tenotsuStoryDebugHotkeysInstalled=true;document.addEventListener("keydown",ev=>{if(ev.defaultPrevented||ev.repeat||isTypingTarget(ev.target))return;const k=String(ev.key||"").toLowerCase();if(k==="q"){ev.preventDefault();toggleDebug();}else if(k==="w"){ev.preventDefault();toggleStoryUi();}else if(k==="a"){ev.preventDefault();beginCountdown();}},true);}
-  function storyEndBlackFadeToTitle(){
-    stopAuto();
-    const layers=ns.layers||ns.ensureLayers&&ns.ensureLayers()||{};
-    const fade=layers.fade||document.querySelector(".tenotsu-fade-layer");
-    if(!fade){if(typeof ns.endStory==="function")ns.endStory();return;}
-    document.body.classList.add("tenotsu-story-ending-blackfade");
-    fade.style.display="block";
-    fade.style.visibility="visible";
-    fade.style.pointerEvents="auto";
-    fade.style.transition="opacity 650ms ease";
-    fade.style.opacity="0";
-    requestAnimationFrame(()=>{fade.style.opacity="1";});
-    setTimeout(()=>{
-      if(ns.story) ns.story.returnInfo={mode:"office"};
-      if(typeof ns.endStory==="function")ns.endStory();
-      try{if(typeof ns.setText==="function")ns.setText("店長お疲れ様です","事務所に戻りました。");}catch(_){}
-      fade.style.transition="opacity 650ms ease";
-      requestAnimationFrame(()=>{fade.style.opacity="0";});
-      setTimeout(()=>{
-        fade.style.display="none";
-        fade.style.visibility="hidden";
-        fade.style.pointerEvents="none";
-        fade.style.transition="";
-        fade.style.opacity="0";
-        document.body.classList.remove("tenotsu-story-ending-blackfade");
-        if(ns.layers&&ns.layers.story){ns.layers.story.classList.remove("ending");ns.layers.story.style.removeProperty("pointer-events");}
-      },700);
-    },3000);
-  }
-  function wrap(){if(st.wrapped)return;st.wrapped=true;const n=ns.nextStoryStep;if(typeof n==="function")ns.nextStoryStep=async function(o){const r=await n.call(this,o||{});updateOverlay();return r;};const ss=ns.startStory;if(typeof ss==="function")ns.startStory=async function(){stopAuto();setStoryUiVisible(true);const r=await ss.apply(this,arguments);updateOverlay();return r;};const e=ns.endStory;if(typeof e==="function")ns.endStory=function(){stopAuto();setStoryUiVisible(true);const r=e.apply(this,arguments);updateOverlay();return r;};const b=ns.beginStoryEnd;if(typeof b==="function")ns.beginStoryEnd=function(){stopAuto();setStoryUiVisible(true);const r=b.apply(this,arguments);updateOverlay();return r;};ns.fadeToBlackThenReturn=storyEndBlackFadeToTitle;}
-  function boot(){hotkeys();wrap();window.setInterval(updateOverlay,500);}
+  function hotkeys(){if(document.__tenotsuStoryDebugHotkeysInstalled)return;document.__tenotsuStoryDebugHotkeysInstalled=true;document.addEventListener("keydown",ev=>{if(ev.defaultPrevented||ev.repeat||isTypingTarget(ev.target))return;const k=String(ev.key||"").toLowerCase();if(k==="q"){ev.preventDefault();toggleDebug();}else if(k==="w"){ev.preventDefault();toggleStoryUi();}else if(k==="a"){ev.preventDefault();toggleAuto();}},true);}
+  function storyEndBlackFadeToTitle(){stopAuto();const layers=ns.layers||ns.ensureLayers&&ns.ensureLayers()||{};const fade=layers.fade||document.querySelector(".tenotsu-fade-layer");if(!fade){if(typeof ns.endStory==="function")ns.endStory();return;}document.body.classList.add("tenotsu-story-ending-blackfade");fade.style.display="block";fade.style.visibility="visible";fade.style.pointerEvents="auto";fade.style.transition="opacity 650ms ease";fade.style.opacity="0";requestAnimationFrame(()=>{fade.style.opacity="1";});setTimeout(()=>{if(ns.story)ns.story.returnInfo={mode:"office"};if(typeof ns.endStory==="function")ns.endStory();try{if(typeof ns.setText==="function")ns.setText("店長お疲れ様です","事務所に戻りました。");}catch(_){}fade.style.transition="opacity 650ms ease";requestAnimationFrame(()=>{fade.style.opacity="0";});setTimeout(()=>{fade.style.display="none";fade.style.visibility="hidden";fade.style.pointerEvents="none";fade.style.transition="";fade.style.opacity="0";document.body.classList.remove("tenotsu-story-ending-blackfade");if(ns.layers&&ns.layers.story){ns.layers.story.classList.remove("ending");ns.layers.story.style.removeProperty("pointer-events");}},700);},3000);}
+  function wrap(){if(st.wrapped)return;st.wrapped=true;const n=ns.nextStoryStep;if(typeof n==="function")ns.nextStoryStep=async function(o){const r=await n.call(this,o||{});if(!st.storyUiVisible)applyStoryUiVisibility();updateOverlay();return r;};const ss=ns.startStory;if(typeof ss==="function")ns.startStory=async function(){stopAuto();setStoryUiVisible(true);const r=await ss.apply(this,arguments);setTimeout(startAutoNow,900);updateOverlay();return r;};const e=ns.endStory;if(typeof e==="function")ns.endStory=function(){stopAuto();setStoryUiVisible(true);const r=e.apply(this,arguments);updateOverlay();return r;};const b=ns.beginStoryEnd;if(typeof b==="function")ns.beginStoryEnd=function(){stopAuto();setStoryUiVisible(true);const r=b.apply(this,arguments);updateOverlay();return r;};ns.fadeToBlackThenReturn=storyEndBlackFadeToTitle;}
+  function boot(){hotkeys();wrap();window.setInterval(()=>{if(!st.storyUiVisible)applyStoryUiVisibility();updateOverlay();},500);}
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot,{once:true});else boot();
-  ns.storyDebugToolsV039272={toggleDebugOverlay:toggleDebug,toggleStoryUi:toggleStoryUi,setStoryUiVisible:setStoryUiVisible,updateOverlay:updateOverlay,stopAutoplay:stopAuto,startAutoplayNow:startAutoNow,beginAutoplayCountdown:beginCountdown,storyEndBlackFadeToTitle:storyEndBlackFadeToTitle};
+  ns.storyDebugToolsV039273={toggleDebugOverlay:toggleDebug,toggleStoryUi:toggleStoryUi,setStoryUiVisible:setStoryUiVisible,updateOverlay:updateOverlay,stopAutoplay:stopAuto,startAutoplayNow:startAutoNow,toggleAutoplay:toggleAuto,beginAutoplayCountdown:beginCountdown,storyEndBlackFadeToTitle:storyEndBlackFadeToTitle};
 })();
