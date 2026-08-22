@@ -1,4 +1,4 @@
-/* v039_271 story debug overlay, UI hotkeys, autoplay, and end fade */
+/* v039_272 story debug overlay, UI hotkeys, autoplay, and end fade */
 (function(){
   "use strict";
   const ns=window.TENOTSU_V039=window.TENOTSU_V039||{};
@@ -35,7 +35,7 @@
     setTimeout(()=>{
       if(ns.story) ns.story.returnInfo={mode:"office"};
       if(typeof ns.endStory==="function")ns.endStory();
-      try{if(typeof ns.setText==="function")ns.setText("店長お疲れ様です","タイトルに戻りました。");}catch(_){}
+      try{if(typeof ns.setText==="function")ns.setText("店長お疲れ様です","事務所に戻りました。");}catch(_){}
       fade.style.transition="opacity 650ms ease";
       requestAnimationFrame(()=>{fade.style.opacity="0";});
       setTimeout(()=>{
@@ -52,5 +52,5 @@
   function wrap(){if(st.wrapped)return;st.wrapped=true;const n=ns.nextStoryStep;if(typeof n==="function")ns.nextStoryStep=async function(o){const r=await n.call(this,o||{});updateOverlay();return r;};const ss=ns.startStory;if(typeof ss==="function")ns.startStory=async function(){stopAuto();setStoryUiVisible(true);const r=await ss.apply(this,arguments);updateOverlay();return r;};const e=ns.endStory;if(typeof e==="function")ns.endStory=function(){stopAuto();setStoryUiVisible(true);const r=e.apply(this,arguments);updateOverlay();return r;};const b=ns.beginStoryEnd;if(typeof b==="function")ns.beginStoryEnd=function(){stopAuto();setStoryUiVisible(true);const r=b.apply(this,arguments);updateOverlay();return r;};ns.fadeToBlackThenReturn=storyEndBlackFadeToTitle;}
   function boot(){hotkeys();wrap();window.setInterval(updateOverlay,500);}
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot,{once:true});else boot();
-  ns.storyDebugToolsV039271={toggleDebugOverlay:toggleDebug,toggleStoryUi:toggleStoryUi,setStoryUiVisible:setStoryUiVisible,updateOverlay:updateOverlay,stopAutoplay:stopAuto,startAutoplayNow:startAutoNow,beginAutoplayCountdown:beginCountdown,storyEndBlackFadeToTitle:storyEndBlackFadeToTitle};
+  ns.storyDebugToolsV039272={toggleDebugOverlay:toggleDebug,toggleStoryUi:toggleStoryUi,setStoryUiVisible:setStoryUiVisible,updateOverlay:updateOverlay,stopAutoplay:stopAuto,startAutoplayNow:startAutoNow,beginAutoplayCountdown:beginCountdown,storyEndBlackFadeToTitle:storyEndBlackFadeToTitle};
 })();
