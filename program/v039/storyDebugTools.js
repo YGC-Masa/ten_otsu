@@ -1,13 +1,15 @@
-/* v039_281 story debug overlay, default-hidden story UI, black-to-scene start fade, and autoplay */
+/* v039_282 story debug overlay, default-hidden story UI, existing black fade, and office surface reset */
 (function(){
   "use strict";
   const ns=window.TENOTSU_V039=window.TENOTSU_V039||{};
-  const st={debugVisible:false,storyUiVisible:false,autoActive:false,autoPending:false,autoTimer:null,pendingTimers:[],overlay:null,toast:null,wrapped:false,hiddenUi:new Map(),startHold:false,fadeInstalled:false};
+  const st={debugVisible:false,storyUiVisible:false,autoActive:false,autoPending:false,autoTimer:null,pendingTimers:[],overlay:null,toast:null,wrapped:false,hiddenUi:new Map(),startHold:false,fadeInstalled:false,officeStabilizeTimer:null};
 
   function delay(ms){return new Promise(resolve=>setTimeout(resolve,ms));}
   function isTypingTarget(el){if(!el)return false;const tag=String(el.tagName||"").toLowerCase();return tag==="input"||tag==="textarea"||tag==="select"||!!el.isContentEditable;}
   function ensureOverlay(){if(!st.overlay){st.overlay=document.createElement("div");st.overlay.className="tenotsu-story-debug-overlay";st.overlay.hidden=true;document.body.appendChild(st.overlay);}return st.overlay;}
   function ensureToast(){if(!st.toast){st.toast=document.createElement("div");st.toast.className="tenotsu-story-autoplay-toast";st.toast.hidden=true;document.body.appendChild(st.toast);}return st.toast;}
+  function getFade(){try{const layers=ns.layers||ns.ensureLayers&&ns.ensureLayers()||{};return layers.fade||document.querySelector(".tenotsu-fade-layer");}catch(_){return document.querySelector(".tenotsu-fade-layer");}}
+  function elevateFadeLayer(){const fade=getFade();if(!fade)return;fade.style.setProperty("z-index","2147483647","important");fade.style.setProperty("background","#000","important");}
   function currentStep(){const story=ns.story||{},data=story.data||{},steps=Array.isArray(data.steps)?data.steps:[],i=Number.isFinite(story.index)?story.index:-1;return steps[i]||null;}
   function shortPath(v){const s=String(v||"");if(!s)return "-";const p=s.split("/");return p.length>3?p.slice(-3).join("/"):s;}
   function spriteText(step){const sprites=step&&(Array.isArray(step.storySprites)?step.storySprites:Array.isArray(step.characters)?step.characters:[]);if(!sprites||!sprites.length)return "-";return sprites.map(s=>(s.id||s.name||s.side||"?")+":"+shortPath(s.src||s.image||"")).join("\n  ");}
@@ -65,11 +67,13 @@
       st.startHold=true;
       document.body.classList.add("tenotsu-story-start-hold-black");
       if(typeof ns.forceBlack==="function") ns.forceBlack();
+      elevateFadeLayer();
       return Promise.resolve();
     };
     ns.fadeInForStoryStart=async function(){
       try{
         await delay(2000);
+        elevateFadeLayer();
         if(typeof ns.releaseBlack==="function") await ns.releaseBlack(1000);
       } finally {
         st.startHold=false;
@@ -78,20 +82,64 @@
     };
   }
 
+  function hideResidualStorySurfaces(){
+    const selectors=[
+      "#tenotsu-unified-story-bg-layer","#tenotsu-event-cg-surface",".tenotsu-event-cg-layer",".tenotsu-cg-layer",".event-cg-layer",".memory-cg-layer","[data-event-cg]","[data-cg-layer]",
+      "#tenotsu-story-body-sprite-layer",".tenotsu-story-standing",".tenotsu-story-body-standing"
+    ];
+    document.querySelectorAll(selectors.join(",")).forEach(el=>{
+      el.hidden=true;
+      el.style.setProperty("display","none","important");
+      el.style.setProperty("visibility","hidden","important");
+      el.style.setProperty("opacity","0","important");
+      el.style.setProperty("pointer-events","none","important");
+    });
+    try{ if(typeof ns.hideEventCgSurface==="function") ns.hideEventCgSurface({noRestore:true}); }catch(_){}
+    try{ if(typeof ns.disableUnifiedStoryBackgroundLayer==="function") ns.disableUnifiedStoryBackgroundLayer(); }catch(_){}
+    try{ if(typeof ns.hideStoryCharacters==="function") ns.hideStoryCharacters(); }catch(_){}
+  }
+
+  function forceOfficeBackground(){
+    try{
+      const bg=ns.paths&&ns.paths.officeBg;
+      if(!bg)return;
+      const layers=ns.layers||ns.ensureLayers&&ns.ensureLayers()||{};
+      if(layers.bg){layers.bg.hidden=false;layers.bg.style.setProperty("display","block","important");layers.bg.style.setProperty("visibility","visible","important");layers.bg.style.setProperty("opacity","1","important");layers.bg.style.setProperty("background-image",`url("${bg}")`,"important");layers.bg.style.setProperty("background-size","cover","important");layers.bg.style.setProperty("background-position","center center","important");}
+      if(layers.bgImg){layers.bgImg.hidden=false;layers.bgImg.removeAttribute("hidden");layers.bgImg.style.setProperty("display","block","important");layers.bgImg.style.setProperty("visibility","visible","important");layers.bgImg.style.setProperty("opacity","1","important");layers.bgImg.style.setProperty("object-fit","cover","important");layers.bgImg.style.setProperty("object-position","center center","important");layers.bgImg.src=bg;}
+      if(typeof ns.setBackgroundReady==="function") ns.setBackgroundReady(bg).catch(()=>{});
+      else if(typeof ns.setBackground==="function") ns.setBackground(bg);
+      ns.storyCurrentBackground=bg;
+      if(ns.story) ns.story.lastBg=bg;
+    }catch(_){}
+  }
+
   function stabilizeOfficeLayout(){
     document.body.classList.remove("tenotsu-story-active","tenotsu-story-final-line","tenotsu-story-loading","tenotsu-story-bg-blackfade","tenotsu-story-ending-blackfade","tenotsu-story-start-hold-black","tenotsu-story-ui-hidden");
     restoreHiddenElements();
-    try{const layers=ns.layers||ns.ensureLayers&&ns.ensureLayers()||{};if(layers.story){layers.story.classList.remove("ending","loading");layers.story.style.removeProperty("pointer-events");}if(layers.menu){layers.menu.hidden=false;layers.menu.style.removeProperty("display");layers.menu.style.removeProperty("visibility");layers.menu.style.removeProperty("opacity");}if(layers.officeChars){layers.officeChars.hidden=false;layers.officeChars.style.removeProperty("display");layers.officeChars.style.removeProperty("visibility");layers.officeChars.style.removeProperty("opacity");}}catch(_){}
+    hideResidualStorySurfaces();
+    try{const layers=ns.layers||ns.ensureLayers&&ns.ensureLayers()||{};if(layers.story){layers.story.classList.remove("ending","loading");layers.story.style.removeProperty("pointer-events");layers.story.hidden=true;}if(layers.menu){layers.menu.hidden=false;layers.menu.style.removeProperty("display");layers.menu.style.removeProperty("visibility");layers.menu.style.removeProperty("opacity");}if(layers.officeChars){layers.officeChars.hidden=false;layers.officeChars.style.removeProperty("display");layers.officeChars.style.removeProperty("visibility");layers.officeChars.style.removeProperty("opacity");}}catch(_){}
+    forceOfficeBackground();
   }
-  function scheduleOfficeStabilize(){requestAnimationFrame(stabilizeOfficeLayout);setTimeout(stabilizeOfficeLayout,200);setTimeout(stabilizeOfficeLayout,700);}
+  function scheduleOfficeStabilize(){
+    if(st.officeStabilizeTimer) clearTimeout(st.officeStabilizeTimer);
+    requestAnimationFrame(stabilizeOfficeLayout);
+    st.officeStabilizeTimer=setTimeout(stabilizeOfficeLayout,160);
+  }
 
   function storyEndBlackFadeToTitle(){
     stopAuto();
     if(typeof ns.transitionTo==="function"){
-      ns.transitionTo(()=>{if(ns.story)ns.story.returnInfo={mode:"office"};if(typeof ns.endStory==="function")ns.endStory();scheduleOfficeStabilize();try{if(typeof ns.setText==="function")ns.setText("店長お疲れ様です","事務所に戻りました。");}catch(_){}},{out:650,hold:3000,in:650});
+      elevateFadeLayer();
+      ns.transitionTo(()=>{
+        if(ns.story)ns.story.returnInfo={mode:"office"};
+        if(typeof ns.endStory==="function")ns.endStory();
+        stabilizeOfficeLayout();
+        try{if(typeof ns.setText==="function")ns.setText("店長お疲れ様です","事務所に戻りました。");}catch(_){}
+      },{out:650,hold:3000,in:650,skipOutIfBlack:false});
       return;
     }
     if(typeof ns.endStory==="function")ns.endStory();
+    scheduleOfficeStabilize();
   }
 
   function hotkeys(){
@@ -113,5 +161,5 @@
 
   function boot(){hotkeys();wrap();window.setInterval(()=>{if(!st.storyUiVisible)applyStoryUiVisibility();updateOverlay();},500);if((ns.state&&ns.state.mode)==="office"||document.body.classList.contains("v039-mode-office"))scheduleOfficeStabilize();}
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot,{once:true});else boot();
-  ns.storyDebugToolsV039281={toggleDebugOverlay:toggleDebug,toggleStoryUi:toggleStoryUi,setStoryUiVisible:setStoryUiVisible,updateOverlay:updateOverlay,stopAutoplay:stopAuto,startAutoplayNow:startAutoNow,toggleAutoplay:toggleAuto,storyEndBlackFadeToTitle:storyEndBlackFadeToTitle,installBlackToSceneStoryStartFade:installBlackToSceneStoryStartFade};
+  ns.storyDebugToolsV039282={toggleDebugOverlay:toggleDebug,toggleStoryUi:toggleStoryUi,setStoryUiVisible:setStoryUiVisible,updateOverlay:updateOverlay,stopAutoplay:stopAuto,startAutoplayNow:startAutoNow,toggleAutoplay:toggleAuto,storyEndBlackFadeToTitle:storyEndBlackFadeToTitle,installBlackToSceneStoryStartFade:installBlackToSceneStoryStartFade,stabilizeOfficeLayout:stabilizeOfficeLayout,forceOfficeBackground:forceOfficeBackground};
 })();
