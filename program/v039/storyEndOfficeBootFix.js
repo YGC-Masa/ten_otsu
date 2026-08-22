@@ -1,9 +1,9 @@
-/* v039_286 story end office boot slower black-release fix */
+/* v039_287 story end office boot fade-out-in fix */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  if (ns.__storyEndOfficeBootFixV039286) return;
-  ns.__storyEndOfficeBootFixV039286 = true;
+  if (ns.__storyEndOfficeBootFixV039287) return;
+  ns.__storyEndOfficeBootFixV039287 = true;
 
   let ending = false;
   const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -26,15 +26,24 @@
     return fade;
   }
 
-  function forceBlackNow(){
+  async function fadeOutToBlackAlways(duration){
+    const d = typeof duration === "number" ? duration : 1000;
+    elevateFade();
+    if (d > 0 && typeof ns.fadeOutBlack === "function") {
+      await ns.fadeOutBlack(d);
+      elevateFade();
+      return;
+    }
     const fade = elevateFade();
     if (!fade) return;
     fade.style.display = "block";
     fade.style.visibility = "visible";
     fade.style.pointerEvents = "auto";
-    fade.style.transition = "none";
+    fade.style.transition = d > 0 ? `opacity ${d}ms ease` : "none";
     fade.style.animation = "none";
-    fade.style.opacity = "1";
+    fade.style.opacity = "0";
+    requestAnimationFrame(() => { fade.style.opacity = "1"; });
+    await delay(d + 80);
   }
 
   async function releaseBlackAlways(duration){
@@ -151,7 +160,7 @@
         if (dbg && typeof dbg.stopAutoplay === "function") dbg.stopAutoplay();
       } catch (_) {}
       document.body.classList.add("tenotsu-story-ending-blackfade");
-      forceBlackNow();
+      await fadeOutToBlackAlways(1000);
       await delay(3000);
       await bootOfficeLikeStart();
       await releaseBlackAlways(1600);
@@ -162,13 +171,14 @@
   }
 
   ns.fadeToBlackThenReturn = endStoryToOfficeBoot;
-  ns.beginStoryEnd = function beginStoryEndV039286(){
+  ns.beginStoryEnd = function beginStoryEndV039287(){
     endStoryToOfficeBoot();
   };
 
-  ns.storyEndOfficeBootFixV039286 = {
+  ns.storyEndOfficeBootFixV039287 = {
     endStoryToOfficeBoot,
     bootOfficeLikeStart,
-    releaseBlackAlways
+    releaseBlackAlways,
+    fadeOutToBlackAlways
   };
 })();
