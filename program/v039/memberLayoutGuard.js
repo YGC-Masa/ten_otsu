@@ -1,4 +1,4 @@
-/* v039_269 member layout guard */
+/* v039_288 member layout guard */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
@@ -11,7 +11,7 @@
 
   function apply(){
     const text = document.body ? (document.body.innerText || "") : "";
-    const hasMemberWords = /メンバー|ステータス|親愛|美空|夜空|緋奈|彩愛|小春|真冬|夏海/.test(text);
+    const hasMemberWords = /メンバー|ステータス|親愛|美空|夜空|緋奈|彩愛|小春|真冬|夏海|チャコール/.test(text);
     let active = false;
 
     document.querySelectorAll('img[src*="images/assets/rival/story_"], img[src*="images/assets/char/"]').forEach((img)=>{
@@ -43,6 +43,7 @@
 
   document.addEventListener('DOMContentLoaded', schedule);
   window.addEventListener('resize', schedule);
+  window.addEventListener('orientationchange', schedule);
   window.addEventListener('hashchange', schedule);
   document.addEventListener('click', () => setTimeout(schedule, 0), true);
   const mo = new MutationObserver(schedule);
