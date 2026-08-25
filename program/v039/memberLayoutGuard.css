@@ -1,4 +1,4 @@
-/* v039_269 member layout guard: keep large transparent rival assets inside member cards */
+/* v039_288 member layout guard: keep large assets inside member cards and improve mobile landscape */
 .tenotsu-member-layout-guard,
 .tenotsu-member-layout-guard * {
   box-sizing: border-box;
@@ -42,4 +42,120 @@
 /* Prevent huge character art from forcing horizontal overflow */
 body.tenotsu-member-screen-active {
   overflow-x: hidden;
+}
+
+/* v039_288: mobile landscape member panel tuning */
+@media (orientation: landscape) and (max-height: 540px),
+       (orientation: landscape) and (max-width: 980px) {
+  .tenotsu-office-character-layer img {
+    max-height: 52vh !important;
+    max-width: 44vw !important;
+  }
+
+  .tenotsu-office-stand-0 {
+    left: 31% !important;
+    transform: translateX(-50%) scale(1.12) !important;
+  }
+
+  .tenotsu-office-stand-1 {
+    left: 17% !important;
+    transform: translateX(-50%) scale(1.02) !important;
+  }
+
+  .tenotsu-office-stand-2 {
+    left: 45% !important;
+    transform: translateX(-50%) scale(1.02) !important;
+  }
+
+  .tenotsu-members-title {
+    font-size: clamp(20px, 4.2vh, 30px) !important;
+    margin: 0 0 8px !important;
+    line-height: 1.15 !important;
+  }
+
+  .tenotsu-members-body,
+  .tenotsu-members-body-v110 {
+    display: grid !important;
+    grid-template-columns: minmax(150px, 23%) minmax(210px, 34%) minmax(240px, 1fr) !important;
+    grid-template-rows: minmax(0, 1fr) !important;
+    gap: 10px !important;
+    max-height: calc(100dvh - 118px) !important;
+    height: calc(100dvh - 118px) !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .tenotsu-members-list,
+  .tenotsu-member-detail,
+  .tenotsu-member-story-side {
+    max-height: none !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  .tenotsu-member-card {
+    min-height: 38px !important;
+    padding: 7px 10px !important;
+    gap: 6px !important;
+  }
+
+  .tenotsu-member-card .tenotsu-member-name,
+  .tenotsu-member-name {
+    font-size: clamp(13px, 2.6vh, 17px) !important;
+  }
+
+  .tenotsu-member-card .tenotsu-member-role,
+  .tenotsu-member-role {
+    font-size: clamp(10px, 2.1vh, 13px) !important;
+  }
+
+  .tenotsu-member-detail-head,
+  .tenotsu-member-detail-head-v110 {
+    display: grid !important;
+    grid-template-columns: minmax(72px, 31%) minmax(0, 1fr) !important;
+    align-items: start !important;
+    gap: 10px !important;
+  }
+
+  .tenotsu-member-detail-img {
+    max-height: 34dvh !important;
+    max-width: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: center bottom !important;
+  }
+
+  .tenotsu-member-detail-name {
+    font-size: clamp(17px, 3.4vh, 23px) !important;
+  }
+
+  .tenotsu-member-detail-role,
+  .tenotsu-member-detail-specialty,
+  .tenotsu-member-detail-comment,
+  .tenotsu-member-detail-note,
+  .tenotsu-member-equipment-mini,
+  .tenotsu-member-stat-mini {
+    font-size: clamp(11px, 2.2vh, 14px) !important;
+    line-height: 1.45 !important;
+  }
+
+  .tenotsu-member-stat-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 5px !important;
+  }
+
+  .tenotsu-member-story-side .tenotsu-member-story-slot,
+  .tenotsu-member-story-side [class*="slot" i] {
+    min-height: 34px !important;
+  }
+
+  .tenotsu-members-back {
+    height: 34px !important;
+    min-height: 34px !important;
+    margin-top: 7px !important;
+    font-size: clamp(13px, 2.6vh, 17px) !important;
+  }
 }
