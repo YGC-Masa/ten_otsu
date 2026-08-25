@@ -1,9 +1,9 @@
-/* v039_289 charcoal member patch */
+/* v039_291 charcoal member patch */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  if (ns.__charcoalMemberPatchV039289) return;
-  ns.__charcoalMemberPatchV039289 = true;
+  if (ns.__charcoalMemberPatchV039291) return;
+  ns.__charcoalMemberPatchV039291 = true;
 
   const charcoal = {
     name: "チャコール",
@@ -11,7 +11,7 @@
     color: "#3f424a",
     role: "Web実験班",
     specialty: "HTML・CSS・UI検証",
-    image: "charcoal_placeholder.svg?v=v039_289",
+    image: "../Char/member_charcoal.webp?v=v039_291",
     comment: "店長、Web側の小さな実験は任せて。智恵さんの本線に戻しやすい形で試します。"
   };
 
