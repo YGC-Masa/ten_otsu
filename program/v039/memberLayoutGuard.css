@@ -47,26 +47,6 @@ body.tenotsu-member-screen-active {
 /* v039_288: mobile landscape member panel tuning */
 @media (orientation: landscape) and (max-height: 540px),
        (orientation: landscape) and (max-width: 980px) {
-  .tenotsu-office-character-layer img {
-    max-height: 52vh !important;
-    max-width: 44vw !important;
-  }
-
-  .tenotsu-office-stand-0 {
-    left: 31% !important;
-    transform: translateX(-50%) scale(1.12) !important;
-  }
-
-  .tenotsu-office-stand-1 {
-    left: 17% !important;
-    transform: translateX(-50%) scale(1.02) !important;
-  }
-
-  .tenotsu-office-stand-2 {
-    left: 45% !important;
-    transform: translateX(-50%) scale(1.02) !important;
-  }
-
   .tenotsu-members-title {
     font-size: clamp(20px, 4.2vh, 30px) !important;
     margin: 0 0 8px !important;
