@@ -15,6 +15,12 @@
     let active = false;
 
     document.querySelectorAll('img[src*="images/assets/rival/story_"], img[src*="images/assets/char/"]').forEach((img)=>{
+      // Office standing sprites use the full-height office layout and must not
+      // inherit the compact member-card sizing.
+      if (img.classList.contains('tenotsu-office-stand') || img.closest('.tenotsu-office-character-layer')) {
+        return;
+      }
+
       let p = img.closest('[class*="member" i], [class*="character" i], [data-member-id], [data-character-id]');
       if (p || hasMemberWords) {
         active = true;
