@@ -80,6 +80,12 @@
       "characterId": "am"
     },
     {
+      "text": "チャコール 表情一覧",
+      "action": "custom",
+      "custom": "expression-character",
+      "characterId": "ha"
+    },
+    {
       "text": "戻る",
       "action": "list",
       "list": "members.json"

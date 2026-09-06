@@ -1,5 +1,5 @@
 {
-  "version": "v037_85",
+  "version": "v039_292",
   "namingRule": {
     "pattern": "{characterLetter}1{expressionNo}{variantNo}.webp",
     "example": {
@@ -7,8 +7,8 @@
       "b10501.webp": "b1=藍, 05=笑顔, 01=1枚目"
     },
     "parts": {
-      "characterLetterPlusOne": "a1〜m1",
-      "expressionNo": "01〜12",
+      "characterLetterPlusOne": "a1〜n1",
+      "expressionNo": "01〜25",
       "variantNo": "01=1枚目"
     }
   },
@@ -90,9 +90,43 @@
       "id": "am",
       "name": "萌",
       "full": "草壁 萌"
+    },
+    "n": {
+      "base": "n1",
+      "id": "ha",
+      "legacyId": "ch",
+      "name": "チャコール",
+      "full": "チャコール"
     }
   },
   "expressions": {
+    "10": {
+      "label": "軽い嫌悪",
+      "aliases": [
+        "軽い嫌悪",
+        "嫌悪",
+        "むすっ",
+        "不満"
+      ]
+    },
+    "11": {
+      "label": "心配不安",
+      "aliases": [
+        "心配",
+        "不安",
+        "困り",
+        "悲しみ共通"
+      ]
+    },
+    "12": {
+      "label": "動揺",
+      "aliases": [
+        "動揺",
+        "パニック",
+        "混乱",
+        "汗"
+      ]
+    },
     "01": {
       "label": "澄まし",
       "aliases": [
@@ -168,33 +202,6 @@
         "顎だし笑顔",
         "ドヤ顔"
       ]
-    },
-    "10": {
-      "label": "軽い嫌悪",
-      "aliases": [
-        "軽い嫌悪",
-        "嫌悪",
-        "むすっ",
-        "不満"
-      ]
-    },
-    "11": {
-      "label": "心配不安",
-      "aliases": [
-        "心配",
-        "不安",
-        "困り",
-        "悲しみ共通"
-      ]
-    },
-    "12": {
-      "label": "動揺",
-      "aliases": [
-        "動揺",
-        "パニック",
-        "混乱",
-        "汗"
-      ]
     }
   },
   "assets": {
@@ -204,6 +211,54 @@
       "name": "緋奈",
       "fullName": "星野 緋奈",
       "expressions": {
+        "10": {
+          "label": "軽い嫌悪",
+          "file": "a11001.webp",
+          "path": "images/assets/char/a11001.webp",
+          "engineSrc": "a11001.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "a11001.webp",
+              "path": "images/assets/char/a11001.webp",
+              "engineSrc": "a11001.webp",
+              "exists": true
+            }
+          }
+        },
+        "11": {
+          "label": "心配不安",
+          "file": "a11101.webp",
+          "path": "images/assets/char/a11101.webp",
+          "engineSrc": "a11101.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "a11101.webp",
+              "path": "images/assets/char/a11101.webp",
+              "engineSrc": "a11101.webp",
+              "exists": true
+            }
+          }
+        },
+        "12": {
+          "label": "動揺",
+          "file": "a11201.webp",
+          "path": "images/assets/char/a11201.webp",
+          "engineSrc": "a11201.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "a11201.webp",
+              "path": "images/assets/char/a11201.webp",
+              "engineSrc": "a11201.webp",
+              "exists": true
+            }
+          }
+        },
         "01": {
           "label": "澄まし",
           "file": "a10101.webp",
@@ -383,54 +438,6 @@
               "exists": true
             }
           }
-        },
-        "10": {
-          "label": "軽い嫌悪",
-          "file": "a11001.webp",
-          "path": "images/assets/char/a11001.webp",
-          "engineSrc": "a11001.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "a11001.webp",
-              "path": "images/assets/char/a11001.webp",
-              "engineSrc": "a11001.webp",
-              "exists": true
-            }
-          }
-        },
-        "11": {
-          "label": "心配不安",
-          "file": "a11101.webp",
-          "path": "images/assets/char/a11101.webp",
-          "engineSrc": "a11101.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "a11101.webp",
-              "path": "images/assets/char/a11101.webp",
-              "engineSrc": "a11101.webp",
-              "exists": true
-            }
-          }
-        },
-        "12": {
-          "label": "動揺",
-          "file": "a11201.webp",
-          "path": "images/assets/char/a11201.webp",
-          "engineSrc": "a11201.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "a11201.webp",
-              "path": "images/assets/char/a11201.webp",
-              "engineSrc": "a11201.webp",
-              "exists": true
-            }
-          }
         }
       }
     },
@@ -440,6 +447,60 @@
       "name": "藍",
       "fullName": "速水川 藍",
       "expressions": {
+        "10": {
+          "label": "軽い嫌悪",
+          "file": "b11001.webp",
+          "path": "images/assets/char/b11001.webp",
+          "engineSrc": "b11001.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "b11001.webp",
+              "path": "images/assets/char/b11001.webp",
+              "engineSrc": "b11001.webp",
+              "exists": true
+            }
+          }
+        },
+        "11": {
+          "label": "心配不安",
+          "file": "b11101.webp",
+          "path": "images/assets/char/b11101.webp",
+          "engineSrc": "b11101.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "b11101.webp",
+              "path": "images/assets/char/b11101.webp",
+              "engineSrc": "b11101.webp",
+              "exists": true
+            }
+          }
+        },
+        "12": {
+          "label": "動揺",
+          "file": "b11201.webp",
+          "path": "images/assets/char/b11201.webp",
+          "engineSrc": "b11201.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "b11201.webp",
+              "path": "images/assets/char/b11201.webp",
+              "engineSrc": "b11201.webp",
+              "exists": true
+            },
+            "02": {
+              "file": "b11202.webp",
+              "path": "images/assets/char/b11202.webp",
+              "engineSrc": "b11202.webp",
+              "exists": true
+            }
+          }
+        },
         "01": {
           "label": "澄まし",
           "file": "b10101.webp",
@@ -583,60 +644,6 @@
               "exists": true
             }
           }
-        },
-        "10": {
-          "label": "軽い嫌悪",
-          "file": "b11001.webp",
-          "path": "images/assets/char/b11001.webp",
-          "engineSrc": "b11001.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "b11001.webp",
-              "path": "images/assets/char/b11001.webp",
-              "engineSrc": "b11001.webp",
-              "exists": true
-            }
-          }
-        },
-        "11": {
-          "label": "心配不安",
-          "file": "b11101.webp",
-          "path": "images/assets/char/b11101.webp",
-          "engineSrc": "b11101.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "b11101.webp",
-              "path": "images/assets/char/b11101.webp",
-              "engineSrc": "b11101.webp",
-              "exists": true
-            }
-          }
-        },
-        "12": {
-          "label": "動揺",
-          "file": "b11201.webp",
-          "path": "images/assets/char/b11201.webp",
-          "engineSrc": "b11201.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "b11201.webp",
-              "path": "images/assets/char/b11201.webp",
-              "engineSrc": "b11201.webp",
-              "exists": true
-            },
-            "02": {
-              "file": "b11202.webp",
-              "path": "images/assets/char/b11202.webp",
-              "engineSrc": "b11202.webp",
-              "exists": true
-            }
-          }
         }
       }
     },
@@ -646,6 +653,66 @@
       "name": "翠",
       "fullName": "草壁 翠",
       "expressions": {
+        "10": {
+          "label": "軽い嫌悪",
+          "file": "c11001.webp",
+          "path": "images/assets/char/c11001.webp",
+          "engineSrc": "c11001.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "c11001.webp",
+              "path": "images/assets/char/c11001.webp",
+              "engineSrc": "c11001.webp",
+              "exists": true
+            }
+          }
+        },
+        "11": {
+          "label": "心配不安",
+          "file": "c11101.webp",
+          "path": "images/assets/char/c11101.webp",
+          "engineSrc": "c11101.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "c11101.webp",
+              "path": "images/assets/char/c11101.webp",
+              "engineSrc": "c11101.webp",
+              "exists": true
+            },
+            "02": {
+              "file": "c11102.webp",
+              "path": "images/assets/char/c11102.webp",
+              "engineSrc": "c11102.webp",
+              "exists": true
+            }
+          }
+        },
+        "12": {
+          "label": "動揺",
+          "file": "c11201.webp",
+          "path": "images/assets/char/c11201.webp",
+          "engineSrc": "c11201.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "c11201.webp",
+              "path": "images/assets/char/c11201.webp",
+              "engineSrc": "c11201.webp",
+              "exists": true
+            },
+            "02": {
+              "file": "c11202.webp",
+              "path": "images/assets/char/c11202.webp",
+              "engineSrc": "c11202.webp",
+              "exists": true
+            }
+          }
+        },
         "01": {
           "label": "澄まし",
           "file": "c10101.webp",
@@ -813,66 +880,6 @@
               "exists": true
             }
           }
-        },
-        "10": {
-          "label": "軽い嫌悪",
-          "file": "c11001.webp",
-          "path": "images/assets/char/c11001.webp",
-          "engineSrc": "c11001.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "c11001.webp",
-              "path": "images/assets/char/c11001.webp",
-              "engineSrc": "c11001.webp",
-              "exists": true
-            }
-          }
-        },
-        "11": {
-          "label": "心配不安",
-          "file": "c11101.webp",
-          "path": "images/assets/char/c11101.webp",
-          "engineSrc": "c11101.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "c11101.webp",
-              "path": "images/assets/char/c11101.webp",
-              "engineSrc": "c11101.webp",
-              "exists": true
-            },
-            "02": {
-              "file": "c11102.webp",
-              "path": "images/assets/char/c11102.webp",
-              "engineSrc": "c11102.webp",
-              "exists": true
-            }
-          }
-        },
-        "12": {
-          "label": "動揺",
-          "file": "c11201.webp",
-          "path": "images/assets/char/c11201.webp",
-          "engineSrc": "c11201.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "c11201.webp",
-              "path": "images/assets/char/c11201.webp",
-              "engineSrc": "c11201.webp",
-              "exists": true
-            },
-            "02": {
-              "file": "c11202.webp",
-              "path": "images/assets/char/c11202.webp",
-              "engineSrc": "c11202.webp",
-              "exists": true
-            }
-          }
         }
       }
     },
@@ -882,6 +889,54 @@
       "name": "こがね",
       "fullName": "小麦沢 こがね",
       "expressions": {
+        "10": {
+          "label": "軽い嫌悪",
+          "file": "d11001.webp",
+          "path": "images/assets/char/d11001.webp",
+          "engineSrc": "d11001.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "d11001.webp",
+              "path": "images/assets/char/d11001.webp",
+              "engineSrc": "d11001.webp",
+              "exists": true
+            }
+          }
+        },
+        "11": {
+          "label": "心配不安",
+          "file": "d11101.webp",
+          "path": "images/assets/char/d11101.webp",
+          "engineSrc": "d11101.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "d11101.webp",
+              "path": "images/assets/char/d11101.webp",
+              "engineSrc": "d11101.webp",
+              "exists": true
+            }
+          }
+        },
+        "12": {
+          "label": "動揺",
+          "file": "d11201.webp",
+          "path": "images/assets/char/d11201.webp",
+          "engineSrc": "d11201.webp",
+          "variant": "01",
+          "exists": false,
+          "variants": {
+            "01": {
+              "file": "d11201.webp",
+              "path": "images/assets/char/d11201.webp",
+              "engineSrc": "d11201.webp",
+              "exists": false
+            }
+          }
+        },
         "01": {
           "label": "澄まし",
           "file": "d10101.webp",
@@ -1049,54 +1104,6 @@
               "exists": true
             }
           }
-        },
-        "10": {
-          "label": "軽い嫌悪",
-          "file": "d11001.webp",
-          "path": "images/assets/char/d11001.webp",
-          "engineSrc": "d11001.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "d11001.webp",
-              "path": "images/assets/char/d11001.webp",
-              "engineSrc": "d11001.webp",
-              "exists": true
-            }
-          }
-        },
-        "11": {
-          "label": "心配不安",
-          "file": "d11101.webp",
-          "path": "images/assets/char/d11101.webp",
-          "engineSrc": "d11101.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "d11101.webp",
-              "path": "images/assets/char/d11101.webp",
-              "engineSrc": "d11101.webp",
-              "exists": true
-            }
-          }
-        },
-        "12": {
-          "label": "動揺",
-          "file": "d11201.webp",
-          "path": "images/assets/char/d11201.webp",
-          "engineSrc": "d11201.webp",
-          "variant": "01",
-          "exists": false,
-          "variants": {
-            "01": {
-              "file": "d11201.webp",
-              "path": "images/assets/char/d11201.webp",
-              "engineSrc": "d11201.webp",
-              "exists": false
-            }
-          }
         }
       }
     },
@@ -1106,6 +1113,54 @@
       "name": "琥珀",
       "fullName": "春日原 琥珀",
       "expressions": {
+        "10": {
+          "label": "軽い嫌悪",
+          "file": "e11001.webp",
+          "path": "images/assets/char/e11001.webp",
+          "engineSrc": "e11001.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "e11001.webp",
+              "path": "images/assets/char/e11001.webp",
+              "engineSrc": "e11001.webp",
+              "exists": true
+            }
+          }
+        },
+        "11": {
+          "label": "心配不安",
+          "file": "e11101.webp",
+          "path": "images/assets/char/e11101.webp",
+          "engineSrc": "e11101.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "e11101.webp",
+              "path": "images/assets/char/e11101.webp",
+              "engineSrc": "e11101.webp",
+              "exists": true
+            }
+          }
+        },
+        "12": {
+          "label": "動揺",
+          "file": "e11201.webp",
+          "path": "images/assets/char/e11201.webp",
+          "engineSrc": "e11201.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "e11201.webp",
+              "path": "images/assets/char/e11201.webp",
+              "engineSrc": "e11201.webp",
+              "exists": true
+            }
+          }
+        },
         "01": {
           "label": "澄まし",
           "file": "e10101.webp",
@@ -1255,54 +1310,6 @@
               "exists": true
             }
           }
-        },
-        "10": {
-          "label": "軽い嫌悪",
-          "file": "e11001.webp",
-          "path": "images/assets/char/e11001.webp",
-          "engineSrc": "e11001.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "e11001.webp",
-              "path": "images/assets/char/e11001.webp",
-              "engineSrc": "e11001.webp",
-              "exists": true
-            }
-          }
-        },
-        "11": {
-          "label": "心配不安",
-          "file": "e11101.webp",
-          "path": "images/assets/char/e11101.webp",
-          "engineSrc": "e11101.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "e11101.webp",
-              "path": "images/assets/char/e11101.webp",
-              "engineSrc": "e11101.webp",
-              "exists": true
-            }
-          }
-        },
-        "12": {
-          "label": "動揺",
-          "file": "e11201.webp",
-          "path": "images/assets/char/e11201.webp",
-          "engineSrc": "e11201.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "e11201.webp",
-              "path": "images/assets/char/e11201.webp",
-              "engineSrc": "e11201.webp",
-              "exists": true
-            }
-          }
         }
       }
     },
@@ -1312,6 +1319,54 @@
       "name": "真花",
       "fullName": "大道寺 真花",
       "expressions": {
+        "10": {
+          "label": "軽い嫌悪",
+          "file": "f11001.webp",
+          "path": "images/assets/char/f11001.webp",
+          "engineSrc": "f11001.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "f11001.webp",
+              "path": "images/assets/char/f11001.webp",
+              "engineSrc": "f11001.webp",
+              "exists": true
+            }
+          }
+        },
+        "11": {
+          "label": "心配不安",
+          "file": "f11101.webp",
+          "path": "images/assets/char/f11101.webp",
+          "engineSrc": "f11101.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "f11101.webp",
+              "path": "images/assets/char/f11101.webp",
+              "engineSrc": "f11101.webp",
+              "exists": true
+            }
+          }
+        },
+        "12": {
+          "label": "動揺",
+          "file": "f11201.webp",
+          "path": "images/assets/char/f11201.webp",
+          "engineSrc": "f11201.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "f11201.webp",
+              "path": "images/assets/char/f11201.webp",
+              "engineSrc": "f11201.webp",
+              "exists": true
+            }
+          }
+        },
         "01": {
           "label": "澄まし",
           "file": "f10101.webp",
@@ -1479,54 +1534,6 @@
               "exists": true
             }
           }
-        },
-        "10": {
-          "label": "軽い嫌悪",
-          "file": "f11001.webp",
-          "path": "images/assets/char/f11001.webp",
-          "engineSrc": "f11001.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "f11001.webp",
-              "path": "images/assets/char/f11001.webp",
-              "engineSrc": "f11001.webp",
-              "exists": true
-            }
-          }
-        },
-        "11": {
-          "label": "心配不安",
-          "file": "f11101.webp",
-          "path": "images/assets/char/f11101.webp",
-          "engineSrc": "f11101.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "f11101.webp",
-              "path": "images/assets/char/f11101.webp",
-              "engineSrc": "f11101.webp",
-              "exists": true
-            }
-          }
-        },
-        "12": {
-          "label": "動揺",
-          "file": "f11201.webp",
-          "path": "images/assets/char/f11201.webp",
-          "engineSrc": "f11201.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "f11201.webp",
-              "path": "images/assets/char/f11201.webp",
-              "engineSrc": "f11201.webp",
-              "exists": true
-            }
-          }
         }
       }
     },
@@ -1536,6 +1543,54 @@
       "name": "雪乃",
       "fullName": "氷神 雪乃",
       "expressions": {
+        "10": {
+          "label": "軽い嫌悪",
+          "file": "g11001.webp",
+          "path": "images/assets/char/g11001.webp",
+          "engineSrc": "g11001.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "g11001.webp",
+              "path": "images/assets/char/g11001.webp",
+              "engineSrc": "g11001.webp",
+              "exists": true
+            }
+          }
+        },
+        "11": {
+          "label": "心配不安",
+          "file": "g11101.webp",
+          "path": "images/assets/char/g11101.webp",
+          "engineSrc": "g11101.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "g11101.webp",
+              "path": "images/assets/char/g11101.webp",
+              "engineSrc": "g11101.webp",
+              "exists": true
+            }
+          }
+        },
+        "12": {
+          "label": "動揺",
+          "file": "g11201.webp",
+          "path": "images/assets/char/g11201.webp",
+          "engineSrc": "g11201.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "g11201.webp",
+              "path": "images/assets/char/g11201.webp",
+              "engineSrc": "g11201.webp",
+              "exists": true
+            }
+          }
+        },
         "01": {
           "label": "澄まし",
           "file": "g10101.webp",
@@ -1679,54 +1734,6 @@
               "exists": false
             }
           }
-        },
-        "10": {
-          "label": "軽い嫌悪",
-          "file": "g11001.webp",
-          "path": "images/assets/char/g11001.webp",
-          "engineSrc": "g11001.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "g11001.webp",
-              "path": "images/assets/char/g11001.webp",
-              "engineSrc": "g11001.webp",
-              "exists": true
-            }
-          }
-        },
-        "11": {
-          "label": "心配不安",
-          "file": "g11101.webp",
-          "path": "images/assets/char/g11101.webp",
-          "engineSrc": "g11101.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "g11101.webp",
-              "path": "images/assets/char/g11101.webp",
-              "engineSrc": "g11101.webp",
-              "exists": true
-            }
-          }
-        },
-        "12": {
-          "label": "動揺",
-          "file": "g11201.webp",
-          "path": "images/assets/char/g11201.webp",
-          "engineSrc": "g11201.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "g11201.webp",
-              "path": "images/assets/char/g11201.webp",
-              "engineSrc": "g11201.webp",
-              "exists": true
-            }
-          }
         }
       }
     },
@@ -1736,6 +1743,60 @@
       "name": "美空",
       "fullName": "双沢 美空",
       "expressions": {
+        "10": {
+          "label": "軽い嫌悪",
+          "file": "h11001.webp",
+          "path": "images/assets/char/h11001.webp",
+          "engineSrc": "h11001.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "h11001.webp",
+              "path": "images/assets/char/h11001.webp",
+              "engineSrc": "h11001.webp",
+              "exists": true
+            }
+          }
+        },
+        "11": {
+          "label": "心配不安",
+          "file": "h11101.webp",
+          "path": "images/assets/char/h11101.webp",
+          "engineSrc": "h11101.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "h11101.webp",
+              "path": "images/assets/char/h11101.webp",
+              "engineSrc": "h11101.webp",
+              "exists": true
+            }
+          }
+        },
+        "12": {
+          "label": "動揺",
+          "file": "h11201.webp",
+          "path": "images/assets/char/h11201.webp",
+          "engineSrc": "h11201.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "h11201.webp",
+              "path": "images/assets/char/h11201.webp",
+              "engineSrc": "h11201.webp",
+              "exists": true
+            },
+            "02": {
+              "file": "h11202.webp",
+              "path": "images/assets/char/h11202.webp",
+              "engineSrc": "h11202.webp",
+              "exists": true
+            }
+          }
+        },
         "01": {
           "label": "澄まし",
           "file": "h10101.webp",
@@ -1885,60 +1946,6 @@
               "exists": true
             }
           }
-        },
-        "10": {
-          "label": "軽い嫌悪",
-          "file": "h11001.webp",
-          "path": "images/assets/char/h11001.webp",
-          "engineSrc": "h11001.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "h11001.webp",
-              "path": "images/assets/char/h11001.webp",
-              "engineSrc": "h11001.webp",
-              "exists": true
-            }
-          }
-        },
-        "11": {
-          "label": "心配不安",
-          "file": "h11101.webp",
-          "path": "images/assets/char/h11101.webp",
-          "engineSrc": "h11101.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "h11101.webp",
-              "path": "images/assets/char/h11101.webp",
-              "engineSrc": "h11101.webp",
-              "exists": true
-            }
-          }
-        },
-        "12": {
-          "label": "動揺",
-          "file": "h11201.webp",
-          "path": "images/assets/char/h11201.webp",
-          "engineSrc": "h11201.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "h11201.webp",
-              "path": "images/assets/char/h11201.webp",
-              "engineSrc": "h11201.webp",
-              "exists": true
-            },
-            "02": {
-              "file": "h11202.webp",
-              "path": "images/assets/char/h11202.webp",
-              "engineSrc": "h11202.webp",
-              "exists": true
-            }
-          }
         }
       }
     },
@@ -1948,6 +1955,54 @@
       "name": "夜空",
       "fullName": "双沢 夜空",
       "expressions": {
+        "10": {
+          "label": "軽い嫌悪",
+          "file": "i11001.webp",
+          "path": "images/assets/char/i11001.webp",
+          "engineSrc": "i11001.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "i11001.webp",
+              "path": "images/assets/char/i11001.webp",
+              "engineSrc": "i11001.webp",
+              "exists": true
+            }
+          }
+        },
+        "11": {
+          "label": "心配不安",
+          "file": "i11101.webp",
+          "path": "images/assets/char/i11101.webp",
+          "engineSrc": "i11101.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "i11101.webp",
+              "path": "images/assets/char/i11101.webp",
+              "engineSrc": "i11101.webp",
+              "exists": true
+            }
+          }
+        },
+        "12": {
+          "label": "動揺",
+          "file": "i11201.webp",
+          "path": "images/assets/char/i11201.webp",
+          "engineSrc": "i11201.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "i11201.webp",
+              "path": "images/assets/char/i11201.webp",
+              "engineSrc": "i11201.webp",
+              "exists": true
+            }
+          }
+        },
         "01": {
           "label": "澄まし",
           "file": "i10101.webp",
@@ -2103,54 +2158,6 @@
               "exists": true
             }
           }
-        },
-        "10": {
-          "label": "軽い嫌悪",
-          "file": "i11001.webp",
-          "path": "images/assets/char/i11001.webp",
-          "engineSrc": "i11001.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "i11001.webp",
-              "path": "images/assets/char/i11001.webp",
-              "engineSrc": "i11001.webp",
-              "exists": true
-            }
-          }
-        },
-        "11": {
-          "label": "心配不安",
-          "file": "i11101.webp",
-          "path": "images/assets/char/i11101.webp",
-          "engineSrc": "i11101.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "i11101.webp",
-              "path": "images/assets/char/i11101.webp",
-              "engineSrc": "i11101.webp",
-              "exists": true
-            }
-          }
-        },
-        "12": {
-          "label": "動揺",
-          "file": "i11201.webp",
-          "path": "images/assets/char/i11201.webp",
-          "engineSrc": "i11201.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "i11201.webp",
-              "path": "images/assets/char/i11201.webp",
-              "engineSrc": "i11201.webp",
-              "exists": true
-            }
-          }
         }
       }
     },
@@ -2160,6 +2167,54 @@
       "name": "桃",
       "fullName": "芝桜 桃",
       "expressions": {
+        "10": {
+          "label": "軽い嫌悪",
+          "file": "j11001.webp",
+          "path": "images/assets/char/j11001.webp",
+          "engineSrc": "j11001.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "j11001.webp",
+              "path": "images/assets/char/j11001.webp",
+              "engineSrc": "j11001.webp",
+              "exists": true
+            }
+          }
+        },
+        "11": {
+          "label": "心配不安",
+          "file": "j11101.webp",
+          "path": "images/assets/char/j11101.webp",
+          "engineSrc": "j11101.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "j11101.webp",
+              "path": "images/assets/char/j11101.webp",
+              "engineSrc": "j11101.webp",
+              "exists": true
+            }
+          }
+        },
+        "12": {
+          "label": "動揺",
+          "file": "j11201.webp",
+          "path": "images/assets/char/j11201.webp",
+          "engineSrc": "j11201.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "j11201.webp",
+              "path": "images/assets/char/j11201.webp",
+              "engineSrc": "j11201.webp",
+              "exists": true
+            }
+          }
+        },
         "01": {
           "label": "澄まし",
           "file": "j10101.webp",
@@ -2315,54 +2370,6 @@
               "exists": true
             }
           }
-        },
-        "10": {
-          "label": "軽い嫌悪",
-          "file": "j11001.webp",
-          "path": "images/assets/char/j11001.webp",
-          "engineSrc": "j11001.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "j11001.webp",
-              "path": "images/assets/char/j11001.webp",
-              "engineSrc": "j11001.webp",
-              "exists": true
-            }
-          }
-        },
-        "11": {
-          "label": "心配不安",
-          "file": "j11101.webp",
-          "path": "images/assets/char/j11101.webp",
-          "engineSrc": "j11101.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "j11101.webp",
-              "path": "images/assets/char/j11101.webp",
-              "engineSrc": "j11101.webp",
-              "exists": true
-            }
-          }
-        },
-        "12": {
-          "label": "動揺",
-          "file": "j11201.webp",
-          "path": "images/assets/char/j11201.webp",
-          "engineSrc": "j11201.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "j11201.webp",
-              "path": "images/assets/char/j11201.webp",
-              "engineSrc": "j11201.webp",
-              "exists": true
-            }
-          }
         }
       }
     },
@@ -2372,6 +2379,63 @@
       "name": "彩愛",
       "fullName": "紫藤 彩愛",
       "expressions": {
+        "10": {
+          "label": "軽い嫌悪",
+          "file": "k11001.webp",
+          "path": "images/assets/char/k11001.webp",
+          "engineSrc": "k11001.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "k11001.webp",
+              "path": "images/assets/char/k11001.webp",
+              "engineSrc": "k11001.webp",
+              "exists": true
+            },
+            "02": {
+              "file": "k11002.webp",
+              "path": "images/assets/char/k11002.webp",
+              "engineSrc": "k11002.webp",
+              "exists": true
+            }
+          },
+          "notes": [
+            "k100102.webpをk11002.webpとして正規採用"
+          ]
+        },
+        "11": {
+          "label": "心配不安",
+          "file": "k11101.webp",
+          "path": "images/assets/char/k11101.webp",
+          "engineSrc": "k11101.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "k11101.webp",
+              "path": "images/assets/char/k11101.webp",
+              "engineSrc": "k11101.webp",
+              "exists": true
+            }
+          }
+        },
+        "12": {
+          "label": "動揺",
+          "file": "k11201.webp",
+          "path": "images/assets/char/k11201.webp",
+          "engineSrc": "k11201.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "k11201.webp",
+              "path": "images/assets/char/k11201.webp",
+              "engineSrc": "k11201.webp",
+              "exists": true
+            }
+          }
+        },
         "01": {
           "label": "澄まし",
           "file": "k10101.webp",
@@ -2542,63 +2606,6 @@
               "exists": true
             }
           }
-        },
-        "10": {
-          "label": "軽い嫌悪",
-          "file": "k11001.webp",
-          "path": "images/assets/char/k11001.webp",
-          "engineSrc": "k11001.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "k11001.webp",
-              "path": "images/assets/char/k11001.webp",
-              "engineSrc": "k11001.webp",
-              "exists": true
-            },
-            "02": {
-              "file": "k11002.webp",
-              "path": "images/assets/char/k11002.webp",
-              "engineSrc": "k11002.webp",
-              "exists": true
-            }
-          },
-          "notes": [
-            "k100102.webpをk11002.webpとして正規採用"
-          ]
-        },
-        "11": {
-          "label": "心配不安",
-          "file": "k11101.webp",
-          "path": "images/assets/char/k11101.webp",
-          "engineSrc": "k11101.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "k11101.webp",
-              "path": "images/assets/char/k11101.webp",
-              "engineSrc": "k11101.webp",
-              "exists": true
-            }
-          }
-        },
-        "12": {
-          "label": "動揺",
-          "file": "k11201.webp",
-          "path": "images/assets/char/k11201.webp",
-          "engineSrc": "k11201.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "k11201.webp",
-              "path": "images/assets/char/k11201.webp",
-              "engineSrc": "k11201.webp",
-              "exists": true
-            }
-          }
         }
       }
     },
@@ -2608,6 +2615,54 @@
       "name": "里美",
       "fullName": "餅月 里美",
       "expressions": {
+        "10": {
+          "label": "軽い嫌悪",
+          "file": "l11001.webp",
+          "path": "images/assets/char/l11001.webp",
+          "engineSrc": "l11001.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "l11001.webp",
+              "path": "images/assets/char/l11001.webp",
+              "engineSrc": "l11001.webp",
+              "exists": true
+            }
+          }
+        },
+        "11": {
+          "label": "心配不安",
+          "file": "l11101.webp",
+          "path": "images/assets/char/l11101.webp",
+          "engineSrc": "l11101.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "l11101.webp",
+              "path": "images/assets/char/l11101.webp",
+              "engineSrc": "l11101.webp",
+              "exists": true
+            }
+          }
+        },
+        "12": {
+          "label": "動揺",
+          "file": "l11201.webp",
+          "path": "images/assets/char/l11201.webp",
+          "engineSrc": "l11201.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "l11201.webp",
+              "path": "images/assets/char/l11201.webp",
+              "engineSrc": "l11201.webp",
+              "exists": true
+            }
+          }
+        },
         "01": {
           "label": "澄まし",
           "file": "l10101.webp",
@@ -2751,54 +2806,6 @@
               "exists": true
             }
           }
-        },
-        "10": {
-          "label": "軽い嫌悪",
-          "file": "l11001.webp",
-          "path": "images/assets/char/l11001.webp",
-          "engineSrc": "l11001.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "l11001.webp",
-              "path": "images/assets/char/l11001.webp",
-              "engineSrc": "l11001.webp",
-              "exists": true
-            }
-          }
-        },
-        "11": {
-          "label": "心配不安",
-          "file": "l11101.webp",
-          "path": "images/assets/char/l11101.webp",
-          "engineSrc": "l11101.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "l11101.webp",
-              "path": "images/assets/char/l11101.webp",
-              "engineSrc": "l11101.webp",
-              "exists": true
-            }
-          }
-        },
-        "12": {
-          "label": "動揺",
-          "file": "l11201.webp",
-          "path": "images/assets/char/l11201.webp",
-          "engineSrc": "l11201.webp",
-          "variant": "01",
-          "exists": true,
-          "variants": {
-            "01": {
-              "file": "l11201.webp",
-              "path": "images/assets/char/l11201.webp",
-              "engineSrc": "l11201.webp",
-              "exists": true
-            }
-          }
         }
       }
     },
@@ -2808,6 +2815,60 @@
       "name": "萌",
       "fullName": "草壁 萌",
       "expressions": {
+        "10": {
+          "label": "軽い嫌悪",
+          "file": "m11001.webp",
+          "path": "images/assets/char/m11001.webp",
+          "engineSrc": "m11001.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "m11001.webp",
+              "path": "images/assets/char/m11001.webp",
+              "engineSrc": "m11001.webp",
+              "exists": true
+            },
+            "02": {
+              "file": "m11002.webp",
+              "path": "images/assets/char/m11002.webp",
+              "engineSrc": "m11002.webp",
+              "exists": true
+            }
+          }
+        },
+        "11": {
+          "label": "心配不安",
+          "file": "m11101.webp",
+          "path": "images/assets/char/m11101.webp",
+          "engineSrc": "m11101.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "m11101.webp",
+              "path": "images/assets/char/m11101.webp",
+              "engineSrc": "m11101.webp",
+              "exists": true
+            }
+          }
+        },
+        "12": {
+          "label": "動揺",
+          "file": "m11201.webp",
+          "path": "images/assets/char/m11201.webp",
+          "engineSrc": "m11201.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "m11201.webp",
+              "path": "images/assets/char/m11201.webp",
+              "engineSrc": "m11201.webp",
+              "exists": true
+            }
+          }
+        },
         "01": {
           "label": "澄まし",
           "file": "m10101.webp",
@@ -2957,57 +3018,412 @@
               "exists": true
             }
           }
-        },
+        }
+      }
+    },
+    "ha": {
+      "characterLetter": "n",
+      "base": "n1",
+      "name": "チャコール",
+      "fullName": "チャコール",
+      "legacyId": "ch",
+      "expressions": {
         "10": {
-          "label": "軽い嫌悪",
-          "file": "m11001.webp",
-          "path": "images/assets/char/m11001.webp",
-          "engineSrc": "m11001.webp",
+          "label": "照れ",
+          "file": "n11001.webp",
+          "path": "images/assets/char/n11001.webp",
+          "engineSrc": "n11001.webp",
           "variant": "01",
           "exists": true,
           "variants": {
             "01": {
-              "file": "m11001.webp",
-              "path": "images/assets/char/m11001.webp",
-              "engineSrc": "m11001.webp",
-              "exists": true
-            },
-            "02": {
-              "file": "m11002.webp",
-              "path": "images/assets/char/m11002.webp",
-              "engineSrc": "m11002.webp",
+              "file": "n11001.webp",
+              "path": "images/assets/char/n11001.webp",
+              "engineSrc": "n11001.webp",
               "exists": true
             }
           }
         },
         "11": {
-          "label": "心配不安",
-          "file": "m11101.webp",
-          "path": "images/assets/char/m11101.webp",
-          "engineSrc": "m11101.webp",
+          "label": "期待",
+          "file": "n11101.webp",
+          "path": "images/assets/char/n11101.webp",
+          "engineSrc": "n11101.webp",
           "variant": "01",
           "exists": true,
           "variants": {
             "01": {
-              "file": "m11101.webp",
-              "path": "images/assets/char/m11101.webp",
-              "engineSrc": "m11101.webp",
+              "file": "n11101.webp",
+              "path": "images/assets/char/n11101.webp",
+              "engineSrc": "n11101.webp",
               "exists": true
             }
           }
         },
         "12": {
-          "label": "動揺",
-          "file": "m11201.webp",
-          "path": "images/assets/char/m11201.webp",
-          "engineSrc": "m11201.webp",
+          "label": "得意げ",
+          "file": "n11201.webp",
+          "path": "images/assets/char/n11201.webp",
+          "engineSrc": "n11201.webp",
           "variant": "01",
           "exists": true,
           "variants": {
             "01": {
-              "file": "m11201.webp",
-              "path": "images/assets/char/m11201.webp",
-              "engineSrc": "m11201.webp",
+              "file": "n11201.webp",
+              "path": "images/assets/char/n11201.webp",
+              "engineSrc": "n11201.webp",
+              "exists": true
+            }
+          }
+        },
+        "13": {
+          "label": "いたずらな笑顔・舌出しウィンク",
+          "file": "n11301.webp",
+          "path": "images/assets/char/n11301.webp",
+          "engineSrc": "n11301.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "n11301.webp",
+              "path": "images/assets/char/n11301.webp",
+              "engineSrc": "n11301.webp",
+              "exists": true
+            }
+          }
+        },
+        "14": {
+          "label": "いたずらな笑顔・歯見せウィンク",
+          "file": "n11401.webp",
+          "path": "images/assets/char/n11401.webp",
+          "engineSrc": "n11401.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "n11401.webp",
+              "path": "images/assets/char/n11401.webp",
+              "engineSrc": "n11401.webp",
+              "exists": true
+            }
+          }
+        },
+        "15": {
+          "label": "困り笑い",
+          "file": "n11501.webp",
+          "path": "images/assets/char/n11501.webp",
+          "engineSrc": "n11501.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "n11501.webp",
+              "path": "images/assets/char/n11501.webp",
+              "engineSrc": "n11501.webp",
+              "exists": true
+            }
+          }
+        },
+        "16": {
+          "label": "真剣 / 決意",
+          "file": "n11601.webp",
+          "path": "images/assets/char/n11601.webp",
+          "engineSrc": "n11601.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "n11601.webp",
+              "path": "images/assets/char/n11601.webp",
+              "engineSrc": "n11601.webp",
+              "exists": true
+            }
+          }
+        },
+        "17": {
+          "label": "伏し目 / 余韻",
+          "file": "n11701.webp",
+          "path": "images/assets/char/n11701.webp",
+          "engineSrc": "n11701.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "n11701.webp",
+              "path": "images/assets/char/n11701.webp",
+              "engineSrc": "n11701.webp",
+              "exists": true
+            }
+          }
+        },
+        "18": {
+          "label": "拗ね / ぷいっ",
+          "file": "n11801.webp",
+          "path": "images/assets/char/n11801.webp",
+          "engineSrc": "n11801.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "n11801.webp",
+              "path": "images/assets/char/n11801.webp",
+              "engineSrc": "n11801.webp",
+              "exists": true
+            }
+          }
+        },
+        "19": {
+          "label": "泣き笑い",
+          "file": "n11901.webp",
+          "path": "images/assets/char/n11901.webp",
+          "engineSrc": "n11901.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "n11901.webp",
+              "path": "images/assets/char/n11901.webp",
+              "engineSrc": "n11901.webp",
+              "exists": true
+            }
+          }
+        },
+        "20": {
+          "label": "無言の圧 / 見透かす",
+          "file": "n12001.webp",
+          "path": "images/assets/char/n12001.webp",
+          "engineSrc": "n12001.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "n12001.webp",
+              "path": "images/assets/char/n12001.webp",
+              "engineSrc": "n12001.webp",
+              "exists": true
+            }
+          }
+        },
+        "21": {
+          "label": "黒い微笑み / 不穏",
+          "file": "n12101.webp",
+          "path": "images/assets/char/n12101.webp",
+          "engineSrc": "n12101.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "n12101.webp",
+              "path": "images/assets/char/n12101.webp",
+              "engineSrc": "n12101.webp",
+              "exists": true
+            }
+          }
+        },
+        "22": {
+          "label": "ほっとした顔",
+          "file": "n12201.webp",
+          "path": "images/assets/char/n12201.webp",
+          "engineSrc": "n12201.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "n12201.webp",
+              "path": "images/assets/char/n12201.webp",
+              "engineSrc": "n12201.webp",
+              "exists": true
+            }
+          }
+        },
+        "23": {
+          "label": "見惚れ / ときめき前",
+          "file": "n12301.webp",
+          "path": "images/assets/char/n12301.webp",
+          "engineSrc": "n12301.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "n12301.webp",
+              "path": "images/assets/char/n12301.webp",
+              "engineSrc": "n12301.webp",
+              "exists": true
+            }
+          }
+        },
+        "24": {
+          "label": "眠そう / 気だるげ",
+          "file": "n12401.webp",
+          "path": "images/assets/char/n12401.webp",
+          "engineSrc": "n12401.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "n12401.webp",
+              "path": "images/assets/char/n12401.webp",
+              "engineSrc": "n12401.webp",
+              "exists": true
+            }
+          }
+        },
+        "25": {
+          "label": "照れ隠し怒り",
+          "file": "n12501.webp",
+          "path": "images/assets/char/n12501.webp",
+          "engineSrc": "n12501.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "n12501.webp",
+              "path": "images/assets/char/n12501.webp",
+              "engineSrc": "n12501.webp",
+              "exists": true
+            }
+          }
+        },
+        "01": {
+          "label": "澄まし",
+          "file": "n10101.webp",
+          "path": "images/assets/char/n10101.webp",
+          "engineSrc": "n10101.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "n10101.webp",
+              "path": "images/assets/char/n10101.webp",
+              "engineSrc": "n10101.webp",
+              "exists": true
+            }
+          }
+        },
+        "02": {
+          "label": "微笑み",
+          "file": "n10201.webp",
+          "path": "images/assets/char/n10201.webp",
+          "engineSrc": "n10201.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "n10201.webp",
+              "path": "images/assets/char/n10201.webp",
+              "engineSrc": "n10201.webp",
+              "exists": true
+            }
+          }
+        },
+        "03": {
+          "label": "笑顔",
+          "file": "n10301.webp",
+          "path": "images/assets/char/n10301.webp",
+          "engineSrc": "n10301.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "n10301.webp",
+              "path": "images/assets/char/n10301.webp",
+              "engineSrc": "n10301.webp",
+              "exists": true
+            }
+          }
+        },
+        "04": {
+          "label": "怒り",
+          "file": "n10401.webp",
+          "path": "images/assets/char/n10401.webp",
+          "engineSrc": "n10401.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "n10401.webp",
+              "path": "images/assets/char/n10401.webp",
+              "engineSrc": "n10401.webp",
+              "exists": true
+            }
+          }
+        },
+        "05": {
+          "label": "軽い嫌悪",
+          "file": "n10501.webp",
+          "path": "images/assets/char/n10501.webp",
+          "engineSrc": "n10501.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "n10501.webp",
+              "path": "images/assets/char/n10501.webp",
+              "engineSrc": "n10501.webp",
+              "exists": true
+            }
+          }
+        },
+        "06": {
+          "label": "悲しみ",
+          "file": "n10601.webp",
+          "path": "images/assets/char/n10601.webp",
+          "engineSrc": "n10601.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "n10601.webp",
+              "path": "images/assets/char/n10601.webp",
+              "engineSrc": "n10601.webp",
+              "exists": true
+            }
+          }
+        },
+        "07": {
+          "label": "心配不安",
+          "file": "n10701.webp",
+          "path": "images/assets/char/n10701.webp",
+          "engineSrc": "n10701.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "n10701.webp",
+              "path": "images/assets/char/n10701.webp",
+              "engineSrc": "n10701.webp",
+              "exists": true
+            }
+          }
+        },
+        "08": {
+          "label": "動揺",
+          "file": "n10801.webp",
+          "path": "images/assets/char/n10801.webp",
+          "engineSrc": "n10801.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "n10801.webp",
+              "path": "images/assets/char/n10801.webp",
+              "engineSrc": "n10801.webp",
+              "exists": true
+            }
+          }
+        },
+        "09": {
+          "label": "驚き",
+          "file": "n10901.webp",
+          "path": "images/assets/char/n10901.webp",
+          "engineSrc": "n10901.webp",
+          "variant": "01",
+          "exists": true,
+          "variants": {
+            "01": {
+              "file": "n10901.webp",
+              "path": "images/assets/char/n10901.webp",
+              "engineSrc": "n10901.webp",
               "exists": true
             }
           }
