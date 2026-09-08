@@ -234,5 +234,33 @@ window.TENOTSU_RECOLLECTION_STORY_INDEX = [
     "rawTitle": "アイテム交換所解放：朔夜の交換カウンター",
     "locationName": "交換カウンター",
     "albumTab": "event"
+  },
+  {
+    "id": "hina_expression_25_test",
+    "title": "緋奈の表情テスト：消えたカレー試食会",
+    "type": "normal",
+    "category": "test",
+    "season": "other",
+    "placeId": "hidamari_office",
+    "placeName": "ひだまりストア事務所",
+    "characters": [
+      "aa"
+    ],
+    "characterNames": [
+      "星野 緋奈"
+    ],
+    "scenario": "scenario/v039/events/hina_expression_25_test.json",
+    "version": "v039_292",
+    "unlock": {
+      "type": "always"
+    },
+    "order": 9901,
+    "summary": "緋奈の正式表情25種を順番に確認する開発用シナリオ。",
+    "rawTitle": "緋奈の表情テスト：消えたカレー試食会",
+    "locationName": "ひだまりストア事務所",
+    "albumTab": "other",
+    "encounter": {
+      "enabled": false
+    }
   }
 ];
