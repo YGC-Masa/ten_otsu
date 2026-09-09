@@ -7,8 +7,8 @@
 
   const charcoal = {
     name: "チャコール",
-    id: "ha",
-    legacyId: "ch",
+    id: "an",
+    legacyIds: ["ha", "ch"],
     characterLetter: "n",
     color: "#3f424a",
     role: "Web実験班",
@@ -17,12 +17,12 @@
     comment: "店長、Web側の小さな実験は任せて。智恵さんの本線に戻しやすい形で試します。"
   };
 
-  if (ns.state && ns.state.lastSelectedMemberId === charcoal.legacyId) {
+  if (ns.state && charcoal.legacyIds.includes(ns.state.lastSelectedMemberId)) {
     ns.state.lastSelectedMemberId = charcoal.id;
   }
 
   ns.memberProfiles = Array.isArray(ns.memberProfiles) ? ns.memberProfiles : [];
-  const existingIndex = ns.memberProfiles.findIndex((m) => m && (m.id === charcoal.id || m.id === charcoal.legacyId || m.name === charcoal.name));
+  const existingIndex = ns.memberProfiles.findIndex((m) => m && (m.id === charcoal.id || charcoal.legacyIds.includes(m.id) || m.name === charcoal.name));
   if (existingIndex >= 0) {
     ns.memberProfiles[existingIndex] = Object.assign({}, ns.memberProfiles[existingIndex], charcoal);
   } else {
