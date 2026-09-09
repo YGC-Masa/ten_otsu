@@ -3171,7 +3171,7 @@ window.addEventListener("load", () => {
     ["双沢 夜空","i10201.webp","あんた、今日もちゃんと見てるから。"],
     ["芝桜 桃","j10501.webp","店長、ウチに任せとけばバズるって！"],
     ["紫藤 彩愛","k10201.webp","貴方、今日も美しく整えてまいりましょう。"],
-    ["餅月 里美","l10501.webp","てんちょ～、お茶でも飲んでいきます～？"],
+    ["餅月 里美","al_satomi/standing/al_satomi_expression_02_gentle_smile.webp","てんちょ～、お茶でも飲んでいきます～？"],
     ["草壁 萌","m10201.webp","おにいちゃん、今日も一緒にがんばろうね。"]
   ];
   function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
@@ -3272,7 +3272,7 @@ window.addEventListener("load", () => {
     ["双沢 夜空","i10201.webp","あんた、今日もちゃんと見てるから。"],
     ["芝桜 桃","j10501.webp","店長、ウチに任せとけばバズるって！"],
     ["紫藤 彩愛","k10201.webp","貴方、今日も美しく整えてまいりましょう。"],
-    ["餅月 里美","l10501.webp","てんちょ～、お茶でも飲んでいきます～？"],
+    ["餅月 里美","al_satomi/standing/al_satomi_expression_02_gentle_smile.webp","てんちょ～、お茶でも飲んでいきます～？"],
     ["草壁 萌","m10201.webp","おにいちゃん、今日も一緒にがんばろうね。"]
   ];
   function qs(s){ return document.querySelector(s); }
@@ -3707,7 +3707,7 @@ window.addEventListener("load", () => {
     ["双沢 夜空","i10201.webp","あんた、今日もちゃんと見てるから。"],
     ["芝桜 桃","j10501.webp","店長、ウチに任せとけばバズるって！"],
     ["紫藤 彩愛","k10201.webp","貴方、今日も美しく整えてまいりましょう。"],
-    ["餅月 里美","l10501.webp","てんちょ～、お茶でも飲んでいきます～？"],
+    ["餅月 里美","al_satomi/standing/al_satomi_expression_02_gentle_smile.webp","てんちょ～、お茶でも飲んでいきます～？"],
     ["草壁 萌","m10201.webp","おにいちゃん、今日も一緒にがんばろうね。"]
   ];
 
@@ -4452,7 +4452,7 @@ window.addEventListener("load", () => {
     ["双沢 夜空","i10201.webp","あんた、これなら見える？"],
     ["芝桜 桃","j10501.webp","店長、ウチ参上！"],
     ["紫藤 彩愛","k10201.webp","貴方、こちらで確認くださいませ。"],
-    ["餅月 里美","l10501.webp","てんちょ～、見えてますか～？"],
+    ["餅月 里美","al_satomi/standing/al_satomi_expression_02_gentle_smile.webp","てんちょ～、見えてますか～？"],
     ["草壁 萌","m10501.webp","おにいちゃん、ここにいるよ。"]
   ];
 

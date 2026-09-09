@@ -29,7 +29,7 @@
     { id: "ai", name: "夜空", attr: "加湿", color: "#214a9d", image: "i10501.webp" },
     { id: "aj", name: "桃", attr: "配信", color: "#f7adc3", image: "j10501.webp" },
     { id: "ak", name: "彩愛", attr: "生活", color: "#694d9f", image: "k10501.webp" },
-    { id: "al", name: "里美", attr: "レジ", color: "#8d5025", image: "l10501.webp" },
+    { id: "al", name: "里美", attr: "レジ", color: "#8d5025", image: "al_satomi/standing/al_satomi_expression_02_gentle_smile.webp" },
     { id: "am", name: "萌", attr: "リラックス", color: "#33cc99", image: "m10501.webp" },
     { id: "ba", name: "小春", attr: "テレビ・オーディオ・美容品・マッサージ", attrs: ["映像", "オーディオ", "美容", "リラックス"], color: "#e33a2f", image: "images/assets/rival/koharu_stand.png", rivalSupport: true },
     { id: "bb", name: "真冬", attr: "パソコン・事務機器・配信機材・スマホ", attrs: ["PC", "レジ", "配信", "スマホ"], color: "#3f67d8", image: "images/assets/rival/mafuyu_stand.png", rivalSupport: true },

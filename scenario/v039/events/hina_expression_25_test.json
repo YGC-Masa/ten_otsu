@@ -34,7 +34,7 @@
       "text": "［01/25 通常］おつかれさまです、店長。こんな時間にどうしたんです？",
       "expressionId": "01",
       "expressionLabel": "通常",
-      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina_expression_01.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_01.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "店長",
@@ -45,7 +45,7 @@
       "text": "［02/25 笑顔］カレー！？　やります、ぜひ！　味見なら何杯でも任せてください！",
       "expressionId": "02",
       "expressionLabel": "笑顔",
-      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina_expression_02.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_02.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "店長",
@@ -56,14 +56,14 @@
       "text": "［03/25 にっこり（目閉じ）］えへへ。細かいことはいいじゃないですか。お腹も準備万端です！",
       "expressionId": "03",
       "expressionLabel": "にっこり（目閉じ）",
-      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina_expression_03.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_03.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "星野 緋奈",
       "text": "［04/25 ウィンク］採点は、緋奈特別審査員が公平にやりますからねっ。",
       "expressionId": "04",
       "expressionLabel": "ウィンク",
-      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina_expression_04.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_04.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "",
@@ -74,7 +74,7 @@
       "text": "［05/25 驚き］ええっ！？　カレー、ないじゃないですか！",
       "expressionId": "05",
       "expressionLabel": "驚き",
-      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina_expression_05.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_05.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "店長",
@@ -85,14 +85,14 @@
       "text": "［06/25 困り］うーん。匂いはするのに鍋だけ消えるって、どういう状況です？",
       "expressionId": "06",
       "expressionLabel": "困り",
-      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina_expression_06.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_06.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "星野 緋奈",
       "text": "［07/25 しょんぼり］せっかく店長が、あたしのために用意してくれたのに……。",
       "expressionId": "07",
       "expressionLabel": "しょんぼり",
-      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina_expression_07.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_07.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "店長",
@@ -103,7 +103,7 @@
       "text": "［08/25 泣きそう］でも、最初の一皿を一緒に食べたかったんです……。",
       "expressionId": "08",
       "expressionLabel": "泣きそう",
-      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina_expression_08.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_08.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "",
@@ -114,14 +114,14 @@
       "text": "［09/25 泣き］ひどいですー！　あたしのカレー、返してくださーい！",
       "expressionId": "09",
       "expressionLabel": "泣き",
-      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina_expression_09.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_09.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "星野 緋奈",
       "text": "［10/25 怒り］……犯人、ぜったい許しません。食べ物の恨みは怖いんですよ！",
       "expressionId": "10",
       "expressionLabel": "怒り",
-      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina_expression_10.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_10.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "店長",
@@ -132,7 +132,7 @@
       "text": "［11/25 期待］おっ、手がかり！　なんだか宝探しみたいになってきましたね！",
       "expressionId": "11",
       "expressionLabel": "期待",
-      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina_expression_11.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_11.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "",
@@ -143,7 +143,7 @@
       "text": "［12/25 照れ］う、腕を……？　これ、誰が書いた指示なんですか……。",
       "expressionId": "12",
       "expressionLabel": "照れ",
-      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina_expression_12.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_12.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "店長",
@@ -154,7 +154,7 @@
       "text": "［13/25 照れ笑い］い、嫌とは言ってません。テストなら仕方ないですもんね。えへへ。",
       "expressionId": "13",
       "expressionLabel": "照れ笑い",
-      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina_expression_13.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_13.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "",
@@ -165,14 +165,14 @@
       "text": "［14/25 真剣］ここからは本気で捜します。店長、床の跡を踏まないでください。",
       "expressionId": "14",
       "expressionLabel": "真剣",
-      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina_expression_14.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_14.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "星野 緋奈",
       "text": "［15/25 考え中］台車は倉庫から休憩室へ……でも、途中で跡が消えてますね。うーん。",
       "expressionId": "15",
       "expressionLabel": "考え中",
-      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina_expression_15.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_15.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "",
@@ -183,7 +183,7 @@
       "text": "［16/25 不安］三分！？　冷めたら店長の苦労が台無しです。間に合いますよね？",
       "expressionId": "16",
       "expressionLabel": "不安",
-      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina_expression_16.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_16.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "",
@@ -194,7 +194,7 @@
       "text": "［17/25 ドヤ顔］にしし。映像と配線はあたしの担当です。この線の先がゴールですよ！",
       "expressionId": "17",
       "expressionLabel": "ドヤ顔",
-      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina_expression_17.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_17.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "",
@@ -205,14 +205,14 @@
       "text": "［18/25 あくび］ふぁぁ……って、違います！　退屈してるんじゃなくて、今日は朝が早くて。",
       "expressionId": "18",
       "expressionLabel": "あくび",
-      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina_expression_18.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_18.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "星野 緋奈",
       "text": "［19/25 疲れ］このコード、どこまで続くんですかぁ……。カレー一杯が遠い……。",
       "expressionId": "19",
       "expressionLabel": "疲れ",
-      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina_expression_19.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_19.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "店長",
@@ -223,7 +223,7 @@
       "text": "［20/25 眠い］ん……じゃあ、三秒だけ。店長の肩、ちょうどいい高さ……。",
       "expressionId": "20",
       "expressionLabel": "眠い",
-      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina_expression_20.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_20.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "",
@@ -234,7 +234,7 @@
       "text": "［21/25 黒い微笑み］……店長。この字、見覚えがありますよね？　正直に言ったほうが楽ですよ？",
       "expressionId": "21",
       "expressionLabel": "黒い微笑み",
-      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina_expression_21.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_21.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "店長",
@@ -245,7 +245,7 @@
       "text": "［22/25 ぽっとした］……あたしを楽しませるために、全部用意してくれたんですか。",
       "expressionId": "22",
       "expressionLabel": "ぽっとした",
-      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina_expression_22.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_22.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "",
@@ -256,7 +256,7 @@
       "text": "［23/25 見惚れ／ときめき顔］わぁ……きれい。カレーを見てこんなにどきどきするの、初めてかも。",
       "expressionId": "23",
       "expressionLabel": "見惚れ／ときめき顔",
-      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina_expression_23.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_23.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "",
@@ -267,7 +267,7 @@
       "text": "［24/25 真剣怒り］危ないっ！　食べ物を持ってる時は、ちゃんと両手で持ってください！",
       "expressionId": "24",
       "expressionLabel": "真剣怒り",
-      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina_expression_24.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_24.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "店長",
@@ -278,7 +278,7 @@
       "text": "［25/25 照れ隠し怒り］べ、別に怒ってません！　ただ……最初から一緒に食べるつもりでしたからっ！",
       "expressionId": "25",
       "expressionLabel": "照れ隠し怒り",
-      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina_expression_25.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+      "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_25.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "",

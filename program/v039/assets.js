@@ -25,7 +25,7 @@
     ["双沢 夜空", "i10501.webp", "あんたの事、ちゃんと見てるからね。"],
     ["芝桜 桃", "j10501.webp", "店長、ウチ参上！"],
     ["紫藤 彩愛", "k10501.webp", "貴方、こちらで確認くださいませ。"],
-    ["餅月 里美", "l10501.webp", "てんちょ～、お茶でも飲んでいきます～？"],
+    ["餅月 里美", "al_satomi/standing/al_satomi_expression_02_gentle_smile.webp", "てんちょ～、お茶でも飲んでいきます～？"],
     ["草壁 萌", "m10501.webp", "おにいちゃん、ここにいるよ。"]
   ];
 
@@ -42,7 +42,7 @@
     { name: "双沢 夜空", id: "ai", color: "#00152d", role: "クールで綺麗な双子妹", specialty: "冬物・加湿", image: "i10501.webp", comment: "あんたの事、ちゃんと見てるからね。" },
     { name: "芝桜 桃", id: "aj", color: "#F7ADC3", role: "破天荒ポジティブ", specialty: "配信機材・ゲーム機", image: "j10501.webp", comment: "店長、ウチ参上！" },
     { name: "紫藤 彩愛", id: "ak", color: "#694D9F", role: "お嬢様ぽい庶民", specialty: "洗濯機・掃除機", image: "k10501.webp", comment: "貴方、こちらで確認くださいませ。" },
-    { name: "餅月 里美", id: "al", color: "#8d5025", role: "ゆるふわ事務員", specialty: "事務・経理", image: "l10501.webp", comment: "てんちょ～、お茶でも飲んでいきます～？" },
+    { name: "餅月 里美", id: "al", color: "#8d5025", role: "ゆるふわ事務員", specialty: "事務・経理", image: "al_satomi/standing/al_satomi_expression_02_gentle_smile.webp", comment: "てんちょ～、お茶でも飲んでいきます～？" },
     { name: "草壁 萌", id: "am", color: "#33CC99", role: "おとなしい甘えん坊妹系", specialty: "マッサージ・リラックス用品", image: "m10501.webp", comment: "おにいちゃん、ここにいるよ。" }
   ];
 

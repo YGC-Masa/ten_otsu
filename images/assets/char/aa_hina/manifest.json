@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "characterId": "aa",
+  "slug": "hina",
+  "displayName": "星野 緋奈",
+  "assetSetId": "aa_standing_25",
+  "assetType": "standing_expression",
+  "basePath": "images/assets/char/aa_hina/standing",
+  "status": "adopted",
+  "expressions": [
+    {
+      "expressionId": "01",
+      "name": "通常",
+      "usage": "通常会話の基準",
+      "file": "aa_hina_expression_01.webp",
+      "path": "images/assets/char/aa_hina/standing/aa_hina_expression_01.webp"
+    },
+    {
+      "expressionId": "02",
+      "name": "笑顔",
+      "usage": "明るい肯定・喜び",
+      "file": "aa_hina_expression_02.webp",
+      "path": "images/assets/char/aa_hina/standing/aa_hina_expression_02.webp"
+    },
+    {
+      "expressionId": "03",
+      "name": "にっこり（目閉じ）",
+      "usage": "強い喜び・満足",
+      "file": "aa_hina_expression_03.webp",
+      "path": "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp"
+    },
+    {
+      "expressionId": "04",
+      "name": "ウィンク",
+      "usage": "冗談・親しい合図",
+      "file": "aa_hina_expression_04.webp",
+      "path": "images/assets/char/aa_hina/standing/aa_hina_expression_04.webp"
+    },
+    {
+      "expressionId": "05",
+      "name": "驚き",
+      "usage": "予想外の出来事",
+      "file": "aa_hina_expression_05.webp",
+      "path": "images/assets/char/aa_hina/standing/aa_hina_expression_05.webp"
+    },
+    {
+      "expressionId": "06",
+      "name": "困り",
+      "usage": "判断に迷う場面",
+      "file": "aa_hina_expression_06.webp",
+      "path": "images/assets/char/aa_hina/standing/aa_hina_expression_06.webp"
+    },
+    {
+      "expressionId": "07",
+      "name": "しょんぼり",
+      "usage": "落胆・拗ね",
+      "file": "aa_hina_expression_07.webp",
+      "path": "images/assets/char/aa_hina/standing/aa_hina_expression_07.webp"
+    },
+    {
+      "expressionId": "08",
+      "name": "泣きそう",
+      "usage": "涙をこらえる場面",
+      "file": "aa_hina_expression_08.webp",
+      "path": "images/assets/char/aa_hina/standing/aa_hina_expression_08.webp"
+    },
+    {
+      "expressionId": "09",
+      "name": "泣き",
+      "usage": "感情があふれた場面",
+      "file": "aa_hina_expression_09.webp",
+      "path": "images/assets/char/aa_hina/standing/aa_hina_expression_09.webp"
+    },
+    {
+      "expressionId": "10",
+      "name": "怒り",
+      "usage": "不満・抗議",
+      "file": "aa_hina_expression_10.webp",
+      "path": "images/assets/char/aa_hina/standing/aa_hina_expression_10.webp"
+    },
+    {
+      "expressionId": "11",
+      "name": "期待",
+      "usage": "期待・わくわく",
+      "file": "aa_hina_expression_11.webp",
+      "path": "images/assets/char/aa_hina/standing/aa_hina_expression_11.webp"
+    },
+    {
+      "expressionId": "12",
+      "name": "照れ",
+      "usage": "照れ・赤面",
+      "file": "aa_hina_expression_12.webp",
+      "path": "images/assets/char/aa_hina/standing/aa_hina_expression_12.webp"
+    },
+    {
+      "expressionId": "13",
+      "name": "照れ笑い",
+      "usage": "照れながら喜ぶ場面",
+      "file": "aa_hina_expression_13.webp",
+      "path": "images/assets/char/aa_hina/standing/aa_hina_expression_13.webp"
+    },
+    {
+      "expressionId": "14",
+      "name": "真剣",
+      "usage": "集中・重要な発言",
+      "file": "aa_hina_expression_14.webp",
+      "path": "images/assets/char/aa_hina/standing/aa_hina_expression_14.webp"
+    },
+    {
+      "expressionId": "15",
+      "name": "考え中",
+      "usage": "思案・確認",
+      "file": "aa_hina_expression_15.webp",
+      "path": "images/assets/char/aa_hina/standing/aa_hina_expression_15.webp"
+    },
+    {
+      "expressionId": "16",
+      "name": "不安",
+      "usage": "心配・緊張",
+      "file": "aa_hina_expression_16.webp",
+      "path": "images/assets/char/aa_hina/standing/aa_hina_expression_16.webp"
+    },
+    {
+      "expressionId": "17",
+      "name": "ドヤ顔",
+      "usage": "自信・得意げ",
+      "file": "aa_hina_expression_17.webp",
+      "path": "images/assets/char/aa_hina/standing/aa_hina_expression_17.webp"
+    },
+    {
+      "expressionId": "18",
+      "name": "あくび",
+      "usage": "気の緩み・あくび",
+      "file": "aa_hina_expression_18.webp",
+      "path": "images/assets/char/aa_hina/standing/aa_hina_expression_18.webp"
+    },
+    {
+      "expressionId": "19",
+      "name": "疲れ",
+      "usage": "疲労",
+      "file": "aa_hina_expression_19.webp",
+      "path": "images/assets/char/aa_hina/standing/aa_hina_expression_19.webp"
+    },
+    {
+      "expressionId": "20",
+      "name": "眠い",
+      "usage": "眠気",
+      "file": "aa_hina_expression_20.webp",
+      "path": "images/assets/char/aa_hina/standing/aa_hina_expression_20.webp"
+    },
+    {
+      "expressionId": "21",
+      "name": "黒い微笑み",
+      "usage": "圧・含みのある笑み",
+      "file": "aa_hina_expression_21.webp",
+      "path": "images/assets/char/aa_hina/standing/aa_hina_expression_21.webp"
+    },
+    {
+      "expressionId": "22",
+      "name": "ぽっとした",
+      "usage": "好意で頬が熱くなる場面",
+      "file": "aa_hina_expression_22.webp",
+      "path": "images/assets/char/aa_hina/standing/aa_hina_expression_22.webp"
+    },
+    {
+      "expressionId": "23",
+      "name": "見惚れ／ときめき顔",
+      "usage": "強い好意・見惚れ",
+      "file": "aa_hina_expression_23.webp",
+      "path": "images/assets/char/aa_hina/standing/aa_hina_expression_23.webp"
+    },
+    {
+      "expressionId": "24",
+      "name": "真剣怒り",
+      "usage": "本気の抗議・怒り",
+      "file": "aa_hina_expression_24.webp",
+      "path": "images/assets/char/aa_hina/standing/aa_hina_expression_24.webp"
+    },
+    {
+      "expressionId": "25",
+      "name": "照れ隠し怒り",
+      "usage": "照れを怒りで隠す場面",
+      "file": "aa_hina_expression_25.webp",
+      "path": "images/assets/char/aa_hina/standing/aa_hina_expression_25.webp"
+    }
+  ]
+}
