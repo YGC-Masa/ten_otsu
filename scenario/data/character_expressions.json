@@ -93,10 +93,13 @@
     },
     "n": {
       "base": "n1",
-      "id": "ha",
-      "legacyId": "ch",
+      "id": "an",
       "name": "チャコール",
-      "full": "チャコール"
+      "full": "チャコール",
+      "legacyIds": [
+        "ha",
+        "ch"
+      ]
     }
   },
   "expressions": {
@@ -3021,12 +3024,11 @@
         }
       }
     },
-    "ha": {
+    "an": {
       "characterLetter": "n",
       "base": "n1",
       "name": "チャコール",
       "fullName": "チャコール",
-      "legacyId": "ch",
       "expressions": {
         "10": {
           "label": "照れ",
@@ -3428,7 +3430,15 @@
             }
           }
         }
-      }
+      },
+      "legacyIds": [
+        "ha",
+        "ch"
+      ]
     }
+  },
+  "idAliases": {
+    "ha": "an",
+    "ch": "an"
   }
 }
