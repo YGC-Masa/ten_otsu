@@ -2901,10 +2901,18 @@ async function tenotsuLoadExpressionMaster() {
   return data;
 }
 
+function tenotsuCanonicalCharacterId(master, characterId) {
+  const id = String(characterId || "");
+  return master && master.idAliases && master.idAliases[id]
+    ? master.idAliases[id]
+    : id;
+}
+
 function tenotsuExpressionFile(characterId, expressionNo = "01", variantNo = "01") {
   const master = window.__TENOTSU_EXPRESSION_MASTER__;
-  if (!master || !master.assets || !master.assets[characterId]) return "";
-  const exp = master.assets[characterId].expressions[String(expressionNo).padStart(2, "0")];
+  const canonicalId = tenotsuCanonicalCharacterId(master, characterId);
+  if (!master || !master.assets || !master.assets[canonicalId]) return "";
+  const exp = master.assets[canonicalId].expressions[String(expressionNo).padStart(2, "0")];
   return exp ? exp.engineSrc : "";
 }
 
@@ -2915,7 +2923,8 @@ function tenotsuExpressionPath(characterId, expressionNo = "01", variantNo = "01
 
 async function tenotsuShowExpressionCharacter(characterId) {
   const master = await tenotsuLoadExpressionMaster();
-  const char = master.assets[characterId];
+  const canonicalId = tenotsuCanonicalCharacterId(master, characterId);
+  const char = master.assets[canonicalId];
   if (!char) {
     tenotsuShowDynamicPanel("表情マスター", `<div class="status-card"><p>表情データがありません。</p><button class="menu-item" data-engine-action="members">戻る</button></div>`);
     return;
