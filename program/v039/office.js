@@ -134,11 +134,22 @@
     if (typeof ns.hideMembersPanel === "function") ns.hideMembersPanel();
     if (typeof ns.hideStoreStatusPanel === "function") ns.hideStoreStatusPanel();
     if (typeof ns.hideTuningPanel === "function") ns.hideTuningPanel();
+    const autoplayDelayMs = typeof ns.getStoryAutoplayDelayMs === "function" ? ns.getStoryAutoplayDelayMs() : 4000;
+    const autoplayDelayOptions = [1000, 1500, 2000, 2400, 3000, 4000, 5000]
+      .map((ms) => `<option value="${ms}"${ms === autoplayDelayMs ? " selected" : ""}>${ms === 4000 ? "4秒（標準）" : `${ms / 1000}秒`}</option>`)
+      .join("");
     const html = `
       <div class="tenotsu-settings-title">設定</div>
       <div class="tenotsu-settings-body">
         <div>現在のバージョン: <strong>${ns.VERSION || window.TENOTSU_BUILD_VERSION || "v039_177"}</strong></div>
         <div>表示やキャッシュ、営業リソースの調整を行います。</div>
+        <label class="tenotsu-settings-field">
+          <span>オートプレイ間隔</span>
+          <select class="tenotsu-settings-select" data-settings-autoplay-delay aria-label="オートプレイ時の台詞送り間隔">
+            ${autoplayDelayOptions}
+          </select>
+        </label>
+        <div class="tenotsu-settings-resource-note">オートプレイで次の台詞へ進むまでの秒数です。変更は自動保存されます。</div>
         <div class="tenotsu-settings-resource-note">ST/BPリセットは検証用です。スタミナとバトルPを最大値に戻します。</div>
         <div class="tenotsu-settings-resource-note">親愛テスト用：初期親愛Lvは100扱いです。必要に応じて全員Lv100化・親愛ストーリー全クリアを実行できます。</div>
       </div>
@@ -158,6 +169,7 @@
 
     const panel = ns.layers.settings;
     const result = panel.querySelector("[data-settings-result]");
+    const autoplayDelaySelect = panel.querySelector("[data-settings-autoplay-delay]");
     const clearButton = panel.querySelector('[data-settings-action="clear-cache"]');
     const resetAllButton = panel.querySelector('[data-settings-action="reset-stamina-bp"]');
     const resetStaminaButton = panel.querySelector('[data-settings-action="reset-stamina"]');
@@ -171,6 +183,17 @@
       try { if (window.TenotsuBattlePoint && typeof window.TenotsuBattlePoint.refreshAll === "function") window.TenotsuBattlePoint.refreshAll(); } catch (_) {}
       if (result) result.textContent = message;
       ns.setText("設定", message);
+    }
+
+    if (autoplayDelaySelect) {
+      autoplayDelaySelect.addEventListener("change", () => {
+        const requestedMs = Number(autoplayDelaySelect.value);
+        const savedMs = typeof ns.setStoryAutoplayDelayMs === "function"
+          ? ns.setStoryAutoplayDelayMs(requestedMs)
+          : requestedMs;
+        const seconds = savedMs / 1000;
+        updateResourceResetResult(`オートプレイ間隔を${seconds}秒に設定しました。`);
+      });
     }
 
     if (resetAllButton) {

@@ -35,6 +35,8 @@
   transform: translateY(-50%);
   width: min(390px, 36vw);
   min-width: 300px;
+  max-height: calc(100vh - 24px);
+  overflow-y: auto;
   padding: 16px;
   border-radius: 18px;
   background: rgba(18,16,28,.9);
@@ -62,6 +64,38 @@
   line-height: 1.7;
   color: rgba(255,255,255,.92);
   margin-bottom: 14px;
+}
+
+.tenotsu-settings-field {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  margin: 10px 0 4px;
+  padding: 9px 10px;
+  border: 1px solid rgba(215,190,255,.34);
+  border-radius: 12px;
+  background: rgba(255,255,255,.07);
+  font-weight: 800;
+}
+
+.tenotsu-settings-select {
+  min-width: 132px;
+  min-height: 36px;
+  padding: 6px 30px 6px 10px;
+  border: 1px solid rgba(215,190,255,.64);
+  border-radius: 9px;
+  color: #fff;
+  background: #34265c;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.tenotsu-settings-select:focus-visible {
+  outline: 2px solid #ffe2a3;
+  outline-offset: 2px;
 }
 
 .tenotsu-settings-actions {
