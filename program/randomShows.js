@@ -102,7 +102,7 @@ function tenotsuHideRandomShowLayers() {
 
 
 const TENOTSU_TITLE_DEFAULT_CHARACTERS = [
-  { id: "aa", name: "緋奈", src: "a10501.webp" },
+  { id: "aa", name: "緋奈", src: "aa_hina/standing/aa_hina_expression_03.webp" },
   { id: "ab", name: "藍", src: "b10501.webp" },
   { id: "ac", name: "翠", src: "c10201.webp" },
   { id: "ad", name: "こがね", src: "d10501.webp" },
@@ -113,7 +113,7 @@ const TENOTSU_TITLE_DEFAULT_CHARACTERS = [
   { id: "ai", name: "夜空", src: "i10201.webp" },
   { id: "aj", name: "桃", src: "j10501.webp" },
   { id: "ak", name: "彩愛", src: "k10201.webp" },
-  { id: "al", name: "里美", src: "l10501.webp" },
+  { id: "al", name: "里美", src: "al_satomi/standing/al_satomi_expression_02_gentle_smile.webp" },
   { id: "am", name: "萌", src: "m10501.webp" }
 ];
 

@@ -51,7 +51,7 @@ images/assets/event/dirty_alien_13.png
 メンバー画像は既存の以下のパスを使用する。
 
 ```text
-images/assets/char/a10501.webp
+images/assets/char/aa_hina/standing/aa_hina_expression_03.webp
 images/assets/char/b10501.webp
 images/assets/char/c10501.webp
 images/assets/char/d10501.webp

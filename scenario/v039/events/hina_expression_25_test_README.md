@@ -4,7 +4,7 @@
 
 - シナリオ: `hina_expression_25_test.json`
 - 対象キャラID: `aa`
-- 使用アセット: `images/assets/char/aa_hina_expression_01.webp` ～ `25.webp`
+- 使用アセット: `images/assets/char/aa_hina/standing/aa_hina_expression_01.webp` ～ `25.webp`
 - 背景: `images/assets/bgev/bg_office_hidamari.png`
 - 回想アルバム: 「その他」タブへ常設登録
 

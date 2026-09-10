@@ -3160,7 +3160,7 @@ window.addEventListener("load", () => {
   }
 
   const OFFICE_CHARS = [
-    ["星野 緋奈","a10501.webp","店長、今日も一緒にがんばりましょう！"],
+    ["星野 緋奈","aa_hina/standing/aa_hina_expression_03.webp","店長、今日も一緒にがんばりましょう！"],
     ["速水川 藍","b10201.webp","てんちょー、少し休憩も大事ですよ。"],
     ["草壁 翠","c10201.webp","キミ、今日の予定は確認済みかな？"],
     ["小麦沢 こがね","d10501.webp","店長、今日もアゲてこー！"],
@@ -3171,7 +3171,7 @@ window.addEventListener("load", () => {
     ["双沢 夜空","i10201.webp","あんた、今日もちゃんと見てるから。"],
     ["芝桜 桃","j10501.webp","店長、ウチに任せとけばバズるって！"],
     ["紫藤 彩愛","k10201.webp","貴方、今日も美しく整えてまいりましょう。"],
-    ["餅月 里美","l10501.webp","てんちょ～、お茶でも飲んでいきます～？"],
+    ["餅月 里美","al_satomi/standing/al_satomi_expression_02_gentle_smile.webp","てんちょ～、お茶でも飲んでいきます～？"],
     ["草壁 萌","m10201.webp","おにいちゃん、今日も一緒にがんばろうね。"]
   ];
   function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
@@ -3261,7 +3261,7 @@ window.addEventListener("load", () => {
 (function(){
   const VERSION = "v038_27";
   const OFFICE_CHARS = [
-    ["星野 緋奈","a10501.webp","店長、今日も一緒にがんばりましょう！"],
+    ["星野 緋奈","aa_hina/standing/aa_hina_expression_03.webp","店長、今日も一緒にがんばりましょう！"],
     ["速水川 藍","b10201.webp","てんちょー、少し休憩も大事ですよ。"],
     ["草壁 翠","c10201.webp","キミ、今日の予定は確認済みかな？"],
     ["小麦沢 こがね","d10501.webp","店長、今日もアゲてこー！"],
@@ -3272,7 +3272,7 @@ window.addEventListener("load", () => {
     ["双沢 夜空","i10201.webp","あんた、今日もちゃんと見てるから。"],
     ["芝桜 桃","j10501.webp","店長、ウチに任せとけばバズるって！"],
     ["紫藤 彩愛","k10201.webp","貴方、今日も美しく整えてまいりましょう。"],
-    ["餅月 里美","l10501.webp","てんちょ～、お茶でも飲んでいきます～？"],
+    ["餅月 里美","al_satomi/standing/al_satomi_expression_02_gentle_smile.webp","てんちょ～、お茶でも飲んでいきます～？"],
     ["草壁 萌","m10201.webp","おにいちゃん、今日も一緒にがんばろうね。"]
   ];
   function qs(s){ return document.querySelector(s); }
@@ -3696,7 +3696,7 @@ window.addEventListener("load", () => {
   const SHOP_BG = "images/assets/bgev/bg_exchange_item_counter.png";
 
   const OFFICE_CHARS = [
-    ["星野 緋奈","a10501.webp","店長、今日も一緒にがんばりましょう！"],
+    ["星野 緋奈","aa_hina/standing/aa_hina_expression_03.webp","店長、今日も一緒にがんばりましょう！"],
     ["速水川 藍","b10201.webp","てんちょー、少し休憩も大事ですよ。"],
     ["草壁 翠","c10201.webp","キミ、今日の予定は確認済みかな？"],
     ["小麦沢 こがね","d10501.webp","店長、今日もアゲてこー！"],
@@ -3707,7 +3707,7 @@ window.addEventListener("load", () => {
     ["双沢 夜空","i10201.webp","あんた、今日もちゃんと見てるから。"],
     ["芝桜 桃","j10501.webp","店長、ウチに任せとけばバズるって！"],
     ["紫藤 彩愛","k10201.webp","貴方、今日も美しく整えてまいりましょう。"],
-    ["餅月 里美","l10501.webp","てんちょ～、お茶でも飲んでいきます～？"],
+    ["餅月 里美","al_satomi/standing/al_satomi_expression_02_gentle_smile.webp","てんちょ～、お茶でも飲んでいきます～？"],
     ["草壁 萌","m10201.webp","おにいちゃん、今日も一緒にがんばろうね。"]
   ];
 
@@ -4441,7 +4441,7 @@ window.addEventListener("load", () => {
 /* v038_27 office forced foreground diagnostic render */
 (function(){
   const OFFICE_FORCE_CHARS = [
-    ["星野 緋奈","a10501.webp","店長、今日も一緒にがんばりましょう！"],
+    ["星野 緋奈","aa_hina/standing/aa_hina_expression_03.webp","店長、今日も一緒にがんばりましょう！"],
     ["速水川 藍","b10501.webp","てんちょー、事務所でお待ちしていました。"],
     ["草壁 翠","c10201.webp","キミ、表示確認を続けよう。"],
     ["小麦沢 こがね","d10501.webp","店長、ここなら見えてるっしょ？"],
@@ -4452,7 +4452,7 @@ window.addEventListener("load", () => {
     ["双沢 夜空","i10201.webp","あんた、これなら見える？"],
     ["芝桜 桃","j10501.webp","店長、ウチ参上！"],
     ["紫藤 彩愛","k10201.webp","貴方、こちらで確認くださいませ。"],
-    ["餅月 里美","l10501.webp","てんちょ～、見えてますか～？"],
+    ["餅月 里美","al_satomi/standing/al_satomi_expression_02_gentle_smile.webp","てんちょ～、見えてますか～？"],
     ["草壁 萌","m10501.webp","おにいちゃん、ここにいるよ。"]
   ];
 

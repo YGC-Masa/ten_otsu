@@ -13,4 +13,4 @@
 - #tenotsu-story-body-sprite-layer
 - .tenotsu-story-body-standing
 - img[src*="b10501.webp"]
-- img[src*="a10501.webp"]
+- img[src*="aa_hina/standing/aa_hina_expression_03.webp"]

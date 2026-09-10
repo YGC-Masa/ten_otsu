@@ -11,7 +11,7 @@
 - `scenario/v039/events/hina_spring_bento.json` へ v039 story-v2 形式で同期。
 - 「本当ですよ！？　もう、そこ疑うところじゃないですって！」では立ち絵差し替えを行わない。
 - 「えへへ……そこまで言われると、ちょっと照れますね。」でも立ち絵差し替えを行わない。
-- 公園背景へ戻る「この腕前なら、いいお嫁さんになれるよ。」のタイミングで `a10501.webp` をセンター表示。
+- 公園背景へ戻る「この腕前なら、いいお嫁さんになれるよ。」のタイミングで `aa_hina/standing/aa_hina_expression_03.webp` をセンター表示。
 - 緋奈退場時の `characters: []` は `clearStorySprites: true` + `spriteMode: "hide"` に変換。
 
 ## 維持

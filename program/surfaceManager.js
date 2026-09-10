@@ -15,7 +15,7 @@
   const SAKUYA_INTRO_KEY = "tenotsu_sakuya_exchange_intro_seen_v1";
 
   const OFFICE_CHARS = [
-    ["星野 緋奈","a10501.webp","店長、今日も一緒にがんばりましょう！"],
+    ["星野 緋奈","aa_hina/standing/aa_hina_expression_03.webp","店長、今日も一緒にがんばりましょう！"],
     ["速水川 藍","b10501.webp","てんちょー、事務所でお待ちしていました。"],
     ["草壁 翠","c10501.webp","キミ、今日の予定は確認済みかな？"],
     ["小麦沢 こがね","d10501.webp","店長、今日もアゲてこー！"],
@@ -26,7 +26,7 @@
     ["双沢 夜空","i10501.webp","あんた、今日もちゃんと見てるから。"],
     ["芝桜 桃","j10501.webp","店長、ウチ参上！"],
     ["紫藤 彩愛","k10501.webp","貴方、こちらで確認くださいませ。"],
-    ["餅月 里美","l10501.webp","てんちょ～、お茶でも飲んでいきます～？"],
+    ["餅月 里美","al_satomi/standing/al_satomi_expression_02_gentle_smile.webp","てんちょ～、お茶でも飲んでいきます～？"],
     ["草壁 萌","m10501.webp","おにいちゃん、ここにいるよ。"]
   ];
 
@@ -534,7 +534,7 @@
       img.src = "images/assets/char/" + c[1];
       img.onerror = () => {
         img.onerror = null;
-        img.src = "images/assets/char/a10501.webp";
+        img.src = "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp";
       };
       layer.appendChild(img);
     });
