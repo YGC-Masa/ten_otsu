@@ -262,5 +262,33 @@ window.TENOTSU_RECOLLECTION_STORY_INDEX = [
     "encounter": {
       "enabled": false
     }
+  },
+  {
+    "id": "satomi_expression_25_test",
+    "title": "里美の表情テスト：消えた経費精算書",
+    "type": "normal",
+    "category": "test",
+    "season": "other",
+    "placeId": "hidamari_office",
+    "placeName": "ひだまりストア事務所",
+    "characters": [
+      "al"
+    ],
+    "characterNames": [
+      "餅月 里美"
+    ],
+    "scenario": "scenario/v039/events/satomi_expression_25_test.json",
+    "version": "v039_293",
+    "unlock": {
+      "type": "always"
+    },
+    "order": 9902,
+    "summary": "里美の正式表情25種を順番に確認する開発用シナリオ。",
+    "rawTitle": "里美の表情テスト：消えた経費精算書",
+    "locationName": "ひだまりストア事務所",
+    "albumTab": "other",
+    "encounter": {
+      "enabled": false
+    }
   }
 ];

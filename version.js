@@ -20,7 +20,7 @@
       img.src = ns.paths.charBase + member[1];
       img.onerror = () => {
         img.onerror = null;
-        img.src = ns.paths.charBase + "a10501.webp";
+        img.src = ns.paths.charBase + "aa_hina/standing/aa_hina_expression_03.webp";
       };
       layers.officeChars.appendChild(img);
     });

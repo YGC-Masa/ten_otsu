@@ -102,7 +102,7 @@ function tenotsuHideRandomShowLayers() {
 
 
 const TENOTSU_TITLE_DEFAULT_CHARACTERS = [
-  { id: "aa", name: "緋奈", src: "a10501.webp" },
+  { id: "aa", name: "緋奈", src: "aa_hina/standing/aa_hina_expression_03.webp" },
   { id: "ab", name: "藍", src: "b10501.webp" },
   { id: "ac", name: "翠", src: "c10201.webp" },
   { id: "ad", name: "こがね", src: "d10501.webp" },

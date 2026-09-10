@@ -3160,7 +3160,7 @@ window.addEventListener("load", () => {
   }
 
   const OFFICE_CHARS = [
-    ["星野 緋奈","a10501.webp","店長、今日も一緒にがんばりましょう！"],
+    ["星野 緋奈","aa_hina/standing/aa_hina_expression_03.webp","店長、今日も一緒にがんばりましょう！"],
     ["速水川 藍","b10201.webp","てんちょー、少し休憩も大事ですよ。"],
     ["草壁 翠","c10201.webp","キミ、今日の予定は確認済みかな？"],
     ["小麦沢 こがね","d10501.webp","店長、今日もアゲてこー！"],
@@ -3261,7 +3261,7 @@ window.addEventListener("load", () => {
 (function(){
   const VERSION = "v038_27";
   const OFFICE_CHARS = [
-    ["星野 緋奈","a10501.webp","店長、今日も一緒にがんばりましょう！"],
+    ["星野 緋奈","aa_hina/standing/aa_hina_expression_03.webp","店長、今日も一緒にがんばりましょう！"],
     ["速水川 藍","b10201.webp","てんちょー、少し休憩も大事ですよ。"],
     ["草壁 翠","c10201.webp","キミ、今日の予定は確認済みかな？"],
     ["小麦沢 こがね","d10501.webp","店長、今日もアゲてこー！"],
@@ -3696,7 +3696,7 @@ window.addEventListener("load", () => {
   const SHOP_BG = "images/assets/bgev/bg_exchange_item_counter.png";
 
   const OFFICE_CHARS = [
-    ["星野 緋奈","a10501.webp","店長、今日も一緒にがんばりましょう！"],
+    ["星野 緋奈","aa_hina/standing/aa_hina_expression_03.webp","店長、今日も一緒にがんばりましょう！"],
     ["速水川 藍","b10201.webp","てんちょー、少し休憩も大事ですよ。"],
     ["草壁 翠","c10201.webp","キミ、今日の予定は確認済みかな？"],
     ["小麦沢 こがね","d10501.webp","店長、今日もアゲてこー！"],
@@ -4441,7 +4441,7 @@ window.addEventListener("load", () => {
 /* v038_27 office forced foreground diagnostic render */
 (function(){
   const OFFICE_FORCE_CHARS = [
-    ["星野 緋奈","a10501.webp","店長、今日も一緒にがんばりましょう！"],
+    ["星野 緋奈","aa_hina/standing/aa_hina_expression_03.webp","店長、今日も一緒にがんばりましょう！"],
     ["速水川 藍","b10501.webp","てんちょー、事務所でお待ちしていました。"],
     ["草壁 翠","c10201.webp","キミ、表示確認を続けよう。"],
     ["小麦沢 こがね","d10501.webp","店長、ここなら見えてるっしょ？"],

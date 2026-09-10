@@ -1,0 +1,244 @@
+{
+  "id": "satomi_expression_25_test",
+  "title": "里美の表情テスト：消えた経費精算書",
+  "version": "v039_293",
+  "return": {
+    "mode": "storyMenu",
+    "storyMenuTab": "other",
+    "storyId": "satomi_expression_25_test",
+    "eventId": "satomi_expression_25_test"
+  },
+  "format": "v039_steps",
+  "renderPolicy": {
+    "background": "forceReplace",
+    "sprites": "storyOnly",
+    "forceCenterSprites": true
+  },
+  "summary": "閉店後の事務所で消えた経費精算書を店長と探しながら、里美の正式25表情を順番に確認する表示確認用シナリオ。",
+  "testPurpose": "al_satomi_expression_01 から 25 までの表示、切替、透過、位置、トリミングを一巡確認する。",
+  "steps": [
+    {
+      "bg": "images/assets/bgev/bg_office_hidamari.png",
+      "speaker": "",
+      "text": "【表情テスト】里美と消えた経費精算書",
+      "bgMode": "forceReplace",
+      "clearStorySprites": true,
+      "forceBackgroundReplace": true
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "［01/25 澄まし］てんちょ～、月末の経費精算を始めますよ～。まずは書類を順番に確認しましょう～。",
+      "expressionId": "01",
+      "expressionLabel": "澄まし",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_01_composed.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "［02/25 やさしい微笑み］大丈夫です～。分からないところは、自分と一緒に見ればすぐですよ～。",
+      "expressionId": "02",
+      "expressionLabel": "やさしい微笑み",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_02_gentle_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "［03/25 笑顔］はい～、ここまではぴったりです～。てんちょ～、さすがですね～。",
+      "expressionId": "03",
+      "expressionLabel": "笑顔",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_03_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "",
+      "text": "里美が次の束をめくると、一枚だけ番号の抜けた箇所が見つかった。"
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "［04/25 怒り］てんちょ～。大事な精算書を、どこへ置いたんですか～？",
+      "expressionId": "04",
+      "expressionLabel": "怒り",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_04_anger.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "［05/25 軽い嫌悪］まさか、お菓子の袋と一緒に丸めたりしてませんよね～？",
+      "expressionId": "05",
+      "expressionLabel": "軽い嫌悪",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_05_mild_disgust.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "［06/25 悲しみ］見つからないと、今日の帳簿が閉じられません～……。",
+      "expressionId": "06",
+      "expressionLabel": "悲しみ",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_06_sadness.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "［07/25 心配］どこかへ紛れ込んだだけならいいんですけど～。",
+      "expressionId": "07",
+      "expressionLabel": "心配",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_07_worry.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "",
+      "text": "店長が机の引き出しを勢いよく開けると、電卓と付箋が床へ飛び出した。"
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "［08/25 動揺］わ、わわっ、てんちょ～！　今度は電卓まで行方不明になります～！",
+      "expressionId": "08",
+      "expressionLabel": "動揺",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_08_agitated.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "［09/25 驚き］あっ！　棚の下に白い紙が見えました～！",
+      "expressionId": "09",
+      "expressionLabel": "驚き",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_09_surprise.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "店長",
+      "text": "狭くて手が届かないな。里美、取れそうか？"
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "［10/25 照れ］せ、狭いところは苦手なんです～。てんちょ～、そばにいてくださいね～。",
+      "expressionId": "10",
+      "expressionLabel": "照れ",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_10_shy.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "［11/25 期待］あと少しです～。てんちょ～、もうちょっとだけ応援してください～。",
+      "expressionId": "11",
+      "expressionLabel": "期待",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_11_expectation.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "［12/25 得意げ］取れました～。こう見えて、自分は手先が器用なんですよ～。",
+      "expressionId": "12",
+      "expressionLabel": "得意げ",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_12_proud.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "［13/25 舌出しウィンク］ご褒美は、帰りに一杯で手を打ちます～。なんて～。",
+      "expressionId": "13",
+      "expressionLabel": "舌出しウィンク",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_13_playful_tongue_wink.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "［14/25 歯見せウィンク］もちろん、てんちょ～のおごりですよ～。",
+      "expressionId": "14",
+      "expressionLabel": "歯見せウィンク",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_14_playful_toothy_wink.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "",
+      "text": "拾った紙を開くと、それは精算書ではなく、店長の買い物メモだった。"
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "［15/25 困り笑い］あら～……お菓子の名前しか書いてありません～。",
+      "expressionId": "15",
+      "expressionLabel": "困り笑い",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_15_troubled_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "［16/25 決意］こうなったら、事務所を端から全部調べます～。",
+      "expressionId": "16",
+      "expressionLabel": "決意",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_16_determined.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "［17/25 伏し目の余韻］今日中に終わらせて、てんちょ～とゆっくりしたかったんですけどね～……。",
+      "expressionId": "17",
+      "expressionLabel": "伏し目の余韻",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_17_downcast_afterglow.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "店長",
+      "text": "見つかるまで一緒に探すよ。"
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "［18/25 拗ね］最初から、そう言ってほしかったです～。",
+      "expressionId": "18",
+      "expressionLabel": "拗ね",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_18_sulking.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "［19/25 涙笑い］ふふ～、ありがとうございます～。一人じゃないなら、もう平気です～。",
+      "expressionId": "19",
+      "expressionLabel": "涙笑い",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_19_tearful_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "",
+      "text": "店長が机の上の菓子箱へ手を伸ばすと、里美の視線が静かに止まった。"
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "［20/25 無言の圧］てんちょ～。いま、お仕事中ですよ～？",
+      "expressionId": "20",
+      "expressionLabel": "無言の圧",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_20_silent_pressure.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "［21/25 黒い微笑み］そのお菓子、経費にはできませんからね～？",
+      "expressionId": "21",
+      "expressionLabel": "黒い微笑み",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_21_dark_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "",
+      "text": "菓子箱を持ち上げると、その下から探していた精算書が現れた。"
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "［22/25 安堵］はぁ～、よかったです～。これで帳簿を閉じられます～。",
+      "expressionId": "22",
+      "expressionLabel": "安堵",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_22_relieved.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "店長",
+      "text": "最後まで付き合ってくれてありがとう、里美。"
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "［23/25 見惚れ／ときめき］そんなふうに真っすぐ言われると……てんちょ～から目が離せなくなります～。",
+      "expressionId": "23",
+      "expressionLabel": "見惚れ／ときめき",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_23_captivated.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "［24/25 眠い］数字も合いましたし～……自分、ちょっとだけ休んでもいいですか～？",
+      "expressionId": "24",
+      "expressionLabel": "眠い",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_24_sleepy.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "店長",
+      "text": "よく頑張ったな。"
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "［25/25 照れ隠し怒り］もう～、子ども扱いしないでください～。でも……褒めてもらえるのは嬉しいです～。",
+      "expressionId": "25",
+      "expressionLabel": "照れ隠し怒り",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_25_bashful_anger.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "",
+      "text": "【確認完了】里美の表情01～25をすべて表示しました。"
+    }
+  ]
+}

@@ -26,7 +26,7 @@ DOMで以下が生成されているか確認してください。
 - .tenotsu-story-character-layer
 - .tenotsu-story-standing
 - img[src*="b10501.webp"]
-- img[src*="a10501.webp"]
+- img[src*="aa_hina/standing/aa_hina_expression_03.webp"]
 
 ## 注意
 リポジトリ直下へ展開して上書きしてください。

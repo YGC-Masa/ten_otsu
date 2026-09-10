@@ -18,7 +18,7 @@
 
   const DEFAULT_STAFF_IDS = ["aa", "ab", "ac", "ad", "ae"];
   const STAFF_BASE = [
-    { id: "aa", name: "緋奈", attr: "映像", color: "#d3381c", image: "a10501.webp" },
+    { id: "aa", name: "緋奈", attr: "映像", color: "#d3381c", image: "aa_hina/standing/aa_hina_expression_03.webp" },
     { id: "ab", name: "藍", attr: "ドライヤー", color: "#0067c0", image: "b10501.webp" },
     { id: "ac", name: "翠", attr: "PC", color: "#02b308", image: "c10501.webp" },
     { id: "ad", name: "こがね", attr: "スマホ", color: "#fff450", image: "d10501.webp" },

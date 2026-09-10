@@ -100,7 +100,7 @@
   };
 
   ns.storySpriteMap = {
-    hina: "images/assets/char/a10501.webp",
+    hina: "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp",
     ai: "images/assets/char/b10501.webp"
   };
 

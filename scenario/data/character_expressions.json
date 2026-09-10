@@ -1,9 +1,9 @@
 {
   "version": "v039_character_folders_aa_al_satomi25",
   "namingRule": {
-    "pattern": "{characterLetter}1{expressionNo}{variantNo}.webp",
+    "pattern": "legacy: {characterLetter}1{expressionNo}{variantNo}.webp / adopted: {characterId}_{slug}_expression_{expressionId}.webp",
     "example": {
-      "a10101.webp": "a1=緋奈, 01=澄まし, 01=1枚目",
+      "aa_hina_expression_01.webp": "aa_hina=緋奈, 01=通常",
       "b10501.webp": "b1=藍, 05=笑顔, 01=1枚目"
     },
     "parts": {
@@ -206,235 +206,247 @@
       "expressions": {
         "10": {
           "label": "軽い嫌悪",
-          "file": "a11001.webp",
-          "path": "images/assets/char/a11001.webp",
-          "engineSrc": "a11001.webp",
+          "file": "aa_hina_expression_06.webp",
+          "path": "images/assets/char/aa_hina/standing/aa_hina_expression_06.webp",
+          "engineSrc": "aa_hina/standing/aa_hina_expression_06.webp",
           "variant": "01",
           "exists": true,
           "variants": {
             "01": {
-              "file": "a11001.webp",
-              "path": "images/assets/char/a11001.webp",
-              "engineSrc": "a11001.webp",
+              "file": "aa_hina_expression_06.webp",
+              "path": "images/assets/char/aa_hina/standing/aa_hina_expression_06.webp",
+              "engineSrc": "aa_hina/standing/aa_hina_expression_06.webp",
               "exists": true
             }
-          }
+          },
+          "assetExpressionId": "06"
         },
         "11": {
           "label": "心配不安",
-          "file": "a11101.webp",
-          "path": "images/assets/char/a11101.webp",
-          "engineSrc": "a11101.webp",
+          "file": "aa_hina_expression_16.webp",
+          "path": "images/assets/char/aa_hina/standing/aa_hina_expression_16.webp",
+          "engineSrc": "aa_hina/standing/aa_hina_expression_16.webp",
           "variant": "01",
           "exists": true,
           "variants": {
             "01": {
-              "file": "a11101.webp",
-              "path": "images/assets/char/a11101.webp",
-              "engineSrc": "a11101.webp",
+              "file": "aa_hina_expression_16.webp",
+              "path": "images/assets/char/aa_hina/standing/aa_hina_expression_16.webp",
+              "engineSrc": "aa_hina/standing/aa_hina_expression_16.webp",
               "exists": true
             }
-          }
+          },
+          "assetExpressionId": "16"
         },
         "12": {
           "label": "動揺",
-          "file": "a11201.webp",
-          "path": "images/assets/char/a11201.webp",
-          "engineSrc": "a11201.webp",
+          "file": "aa_hina_expression_16.webp",
+          "path": "images/assets/char/aa_hina/standing/aa_hina_expression_16.webp",
+          "engineSrc": "aa_hina/standing/aa_hina_expression_16.webp",
           "variant": "01",
           "exists": true,
           "variants": {
             "01": {
-              "file": "a11201.webp",
-              "path": "images/assets/char/a11201.webp",
-              "engineSrc": "a11201.webp",
+              "file": "aa_hina_expression_16.webp",
+              "path": "images/assets/char/aa_hina/standing/aa_hina_expression_16.webp",
+              "engineSrc": "aa_hina/standing/aa_hina_expression_16.webp",
               "exists": true
             }
-          }
+          },
+          "assetExpressionId": "16"
         },
         "01": {
           "label": "澄まし",
-          "file": "a10101.webp",
-          "path": "images/assets/char/a10101.webp",
-          "engineSrc": "a10101.webp",
+          "file": "aa_hina_expression_01.webp",
+          "path": "images/assets/char/aa_hina/standing/aa_hina_expression_01.webp",
+          "engineSrc": "aa_hina/standing/aa_hina_expression_01.webp",
           "variant": "01",
           "exists": true,
           "variants": {
             "01": {
-              "file": "a10101.webp",
-              "path": "images/assets/char/a10101.webp",
-              "engineSrc": "a10101.webp",
+              "file": "aa_hina_expression_01.webp",
+              "path": "images/assets/char/aa_hina/standing/aa_hina_expression_01.webp",
+              "engineSrc": "aa_hina/standing/aa_hina_expression_01.webp",
               "exists": true
             },
             "02": {
-              "file": "a10102.webp",
-              "path": "images/assets/char/a10102.webp",
-              "engineSrc": "a10102.webp",
+              "file": "aa_hina_expression_01.webp",
+              "path": "images/assets/char/aa_hina/standing/aa_hina_expression_01.webp",
+              "engineSrc": "aa_hina/standing/aa_hina_expression_01.webp",
               "exists": true
             }
-          }
+          },
+          "assetExpressionId": "01"
         },
         "02": {
           "label": "微笑み",
-          "file": "a10201.webp",
-          "path": "images/assets/char/a10201.webp",
-          "engineSrc": "a10201.webp",
+          "file": "aa_hina_expression_02.webp",
+          "path": "images/assets/char/aa_hina/standing/aa_hina_expression_02.webp",
+          "engineSrc": "aa_hina/standing/aa_hina_expression_02.webp",
           "variant": "01",
-          "exists": false,
+          "exists": true,
           "variants": {
             "01": {
-              "file": "a10201.webp",
-              "path": "images/assets/char/a10201.webp",
-              "engineSrc": "a10201.webp",
-              "exists": false
+              "file": "aa_hina_expression_02.webp",
+              "path": "images/assets/char/aa_hina/standing/aa_hina_expression_02.webp",
+              "engineSrc": "aa_hina/standing/aa_hina_expression_02.webp",
+              "exists": true
             },
             "02": {
-              "file": "a10202.webp",
-              "path": "images/assets/char/a10202.webp",
-              "engineSrc": "a10202.webp",
+              "file": "aa_hina_expression_02.webp",
+              "path": "images/assets/char/aa_hina/standing/aa_hina_expression_02.webp",
+              "engineSrc": "aa_hina/standing/aa_hina_expression_02.webp",
               "exists": true
             }
-          }
+          },
+          "assetExpressionId": "02"
         },
         "03": {
           "label": "怒り",
-          "file": "a10301.webp",
-          "path": "images/assets/char/a10301.webp",
-          "engineSrc": "a10301.webp",
+          "file": "aa_hina_expression_10.webp",
+          "path": "images/assets/char/aa_hina/standing/aa_hina_expression_10.webp",
+          "engineSrc": "aa_hina/standing/aa_hina_expression_10.webp",
           "variant": "01",
           "exists": true,
           "variants": {
             "01": {
-              "file": "a10301.webp",
-              "path": "images/assets/char/a10301.webp",
-              "engineSrc": "a10301.webp",
+              "file": "aa_hina_expression_10.webp",
+              "path": "images/assets/char/aa_hina/standing/aa_hina_expression_10.webp",
+              "engineSrc": "aa_hina/standing/aa_hina_expression_10.webp",
               "exists": true
             },
             "02": {
-              "file": "a10302.webp",
-              "path": "images/assets/char/a10302.webp",
-              "engineSrc": "a10302.webp",
+              "file": "aa_hina_expression_10.webp",
+              "path": "images/assets/char/aa_hina/standing/aa_hina_expression_10.webp",
+              "engineSrc": "aa_hina/standing/aa_hina_expression_10.webp",
               "exists": true
             }
-          }
+          },
+          "assetExpressionId": "10"
         },
         "04": {
           "label": "悲しみ",
-          "file": "a10401.webp",
-          "path": "images/assets/char/a10401.webp",
-          "engineSrc": "a10401.webp",
+          "file": "aa_hina_expression_07.webp",
+          "path": "images/assets/char/aa_hina/standing/aa_hina_expression_07.webp",
+          "engineSrc": "aa_hina/standing/aa_hina_expression_07.webp",
           "variant": "01",
           "exists": true,
           "variants": {
             "01": {
-              "file": "a10401.webp",
-              "path": "images/assets/char/a10401.webp",
-              "engineSrc": "a10401.webp",
+              "file": "aa_hina_expression_07.webp",
+              "path": "images/assets/char/aa_hina/standing/aa_hina_expression_07.webp",
+              "engineSrc": "aa_hina/standing/aa_hina_expression_07.webp",
               "exists": true
             },
             "02": {
-              "file": "a10402.webp",
-              "path": "images/assets/char/a10402.webp",
-              "engineSrc": "a10402.webp",
+              "file": "aa_hina_expression_08.webp",
+              "path": "images/assets/char/aa_hina/standing/aa_hina_expression_08.webp",
+              "engineSrc": "aa_hina/standing/aa_hina_expression_08.webp",
               "exists": true
             }
-          }
+          },
+          "assetExpressionId": "07"
         },
         "05": {
           "label": "笑顔",
-          "file": "a10501.webp",
-          "path": "images/assets/char/a10501.webp",
-          "engineSrc": "a10501.webp",
+          "file": "aa_hina_expression_03.webp",
+          "path": "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp",
+          "engineSrc": "aa_hina/standing/aa_hina_expression_03.webp",
           "variant": "01",
           "exists": true,
           "variants": {
             "01": {
-              "file": "a10501.webp",
-              "path": "images/assets/char/a10501.webp",
-              "engineSrc": "a10501.webp",
+              "file": "aa_hina_expression_03.webp",
+              "path": "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp",
+              "engineSrc": "aa_hina/standing/aa_hina_expression_03.webp",
               "exists": true
             }
-          }
+          },
+          "assetExpressionId": "03"
         },
         "06": {
           "label": "驚き",
-          "file": "a10601.webp",
-          "path": "images/assets/char/a10601.webp",
-          "engineSrc": "a10601.webp",
+          "file": "aa_hina_expression_05.webp",
+          "path": "images/assets/char/aa_hina/standing/aa_hina_expression_05.webp",
+          "engineSrc": "aa_hina/standing/aa_hina_expression_05.webp",
           "variant": "01",
           "exists": true,
           "variants": {
             "01": {
-              "file": "a10601.webp",
-              "path": "images/assets/char/a10601.webp",
-              "engineSrc": "a10601.webp",
+              "file": "aa_hina_expression_05.webp",
+              "path": "images/assets/char/aa_hina/standing/aa_hina_expression_05.webp",
+              "engineSrc": "aa_hina/standing/aa_hina_expression_05.webp",
               "exists": true
             },
             "02": {
-              "file": "a10602.webp",
-              "path": "images/assets/char/a10602.webp",
-              "engineSrc": "a10602.webp",
+              "file": "aa_hina_expression_05.webp",
+              "path": "images/assets/char/aa_hina/standing/aa_hina_expression_05.webp",
+              "engineSrc": "aa_hina/standing/aa_hina_expression_05.webp",
               "exists": true
             }
-          }
+          },
+          "assetExpressionId": "05"
         },
         "07": {
           "label": "照れ",
-          "file": "a10701.webp",
-          "path": "images/assets/char/a10701.webp",
-          "engineSrc": "a10701.webp",
+          "file": "aa_hina_expression_12.webp",
+          "path": "images/assets/char/aa_hina/standing/aa_hina_expression_12.webp",
+          "engineSrc": "aa_hina/standing/aa_hina_expression_12.webp",
           "variant": "01",
           "exists": true,
           "variants": {
             "01": {
-              "file": "a10701.webp",
-              "path": "images/assets/char/a10701.webp",
-              "engineSrc": "a10701.webp",
+              "file": "aa_hina_expression_12.webp",
+              "path": "images/assets/char/aa_hina/standing/aa_hina_expression_12.webp",
+              "engineSrc": "aa_hina/standing/aa_hina_expression_12.webp",
               "exists": true
             }
-          }
+          },
+          "assetExpressionId": "12"
         },
         "08": {
           "label": "期待",
-          "file": "a10801.webp",
-          "path": "images/assets/char/a10801.webp",
-          "engineSrc": "a10801.webp",
+          "file": "aa_hina_expression_11.webp",
+          "path": "images/assets/char/aa_hina/standing/aa_hina_expression_11.webp",
+          "engineSrc": "aa_hina/standing/aa_hina_expression_11.webp",
           "variant": "01",
           "exists": true,
           "variants": {
             "01": {
-              "file": "a10801.webp",
-              "path": "images/assets/char/a10801.webp",
-              "engineSrc": "a10801.webp",
+              "file": "aa_hina_expression_11.webp",
+              "path": "images/assets/char/aa_hina/standing/aa_hina_expression_11.webp",
+              "engineSrc": "aa_hina/standing/aa_hina_expression_11.webp",
               "exists": true
             },
             "02": {
-              "file": "a10802.webp",
-              "path": "images/assets/char/a10802.webp",
-              "engineSrc": "a10802.webp",
+              "file": "aa_hina_expression_11.webp",
+              "path": "images/assets/char/aa_hina/standing/aa_hina_expression_11.webp",
+              "engineSrc": "aa_hina/standing/aa_hina_expression_11.webp",
               "exists": true
             }
-          }
+          },
+          "assetExpressionId": "11"
         },
         "09": {
           "label": "得意げ",
-          "file": "a10901.webp",
-          "path": "images/assets/char/a10901.webp",
-          "engineSrc": "a10901.webp",
+          "file": "aa_hina_expression_17.webp",
+          "path": "images/assets/char/aa_hina/standing/aa_hina_expression_17.webp",
+          "engineSrc": "aa_hina/standing/aa_hina_expression_17.webp",
           "variant": "01",
           "exists": true,
           "variants": {
             "01": {
-              "file": "a10901.webp",
-              "path": "images/assets/char/a10901.webp",
-              "engineSrc": "a10901.webp",
+              "file": "aa_hina_expression_17.webp",
+              "path": "images/assets/char/aa_hina/standing/aa_hina_expression_17.webp",
+              "engineSrc": "aa_hina/standing/aa_hina_expression_17.webp",
               "exists": true
             }
-          }
+          },
+          "assetExpressionId": "17"
         }
       },
       "manifest": "images/assets/char/aa_hina/manifest.json",
-      "assetSet": "legacy_12_compat_plus_standing_25"
+      "assetSet": "standing_25"
     },
     "ab": {
       "characterLetter": "b",

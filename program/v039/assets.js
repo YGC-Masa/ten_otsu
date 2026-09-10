@@ -14,7 +14,7 @@
   };
 
   ns.officeMembers = [
-    ["星野 緋奈", "a10501.webp", "店長、今日も一緒にがんばりましょう！"],
+    ["星野 緋奈", "aa_hina/standing/aa_hina_expression_03.webp", "店長、今日も一緒にがんばりましょう！"],
     ["速水川 藍", "b10501.webp", "てんちょー、事務所でお待ちしていました。"],
     ["草壁 翠", "c10501.webp", "キミ、今日の予定は確認済みかな？"],
     ["小麦沢 こがね", "d10501.webp", "店長、今日もアゲてこー！"],
@@ -31,7 +31,7 @@
 
 
   ns.memberProfiles = [
-    { name: "星野 緋奈", id: "aa", color: "#d3381c", role: "天真爛漫オールラウンダー", specialty: "テレビ・映像", image: "a10501.webp", comment: "店長、今日も一緒にがんばりましょう！" },
+    { name: "星野 緋奈", id: "aa", color: "#d3381c", role: "天真爛漫オールラウンダー", specialty: "テレビ・映像", image: "aa_hina/standing/aa_hina_expression_03.webp", comment: "店長、今日も一緒にがんばりましょう！" },
     { name: "速水川 藍", id: "ab", color: "#0067C0", role: "物静かな小柄お姉さん", specialty: "ドライヤー", image: "b10501.webp", comment: "てんちょー、事務所でお待ちしていました。" },
     { name: "草壁 翠", id: "ac", color: "#02b308", role: "知的ボーイッシュ", specialty: "パソコン", image: "c10501.webp", comment: "キミ、今日の予定は確認済みかな？" },
     { name: "小麦沢 こがね", id: "ad", color: "#FFF450", role: "全員愛され超ギャル", specialty: "スマホ", image: "d10501.webp", comment: "店長、今日もアゲてこー！" },

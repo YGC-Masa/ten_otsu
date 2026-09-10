@@ -13,5 +13,5 @@
 
 ## 使用立ち絵
 
-- 緋奈: images/assets/char/a10501.webp
+- 緋奈: images/assets/char/aa_hina/standing/aa_hina_expression_03.webp
 - 藍: images/assets/char/b10501.webp
