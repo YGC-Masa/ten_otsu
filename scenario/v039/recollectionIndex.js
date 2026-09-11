@@ -290,5 +290,61 @@ window.TENOTSU_RECOLLECTION_STORY_INDEX = [
     "encounter": {
       "enabled": false
     }
+  },
+  {
+    "id": "kogane_expression_25_test",
+    "title": "こがねの表情テスト：消えた新作スマホPOP",
+    "type": "normal",
+    "category": "test",
+    "season": "other",
+    "placeId": "hidamari_office",
+    "placeName": "ひだまりストア事務所",
+    "characters": [
+      "ad"
+    ],
+    "characterNames": [
+      "小麦沢 こがね"
+    ],
+    "scenario": "scenario/v039/events/kogane_expression_25_test.json",
+    "version": "v039_294",
+    "unlock": {
+      "type": "always"
+    },
+    "order": 9903,
+    "summary": "こがねの正式表情25種を順番に確認する開発用シナリオ。",
+    "rawTitle": "こがねの表情テスト：消えた新作スマホPOP",
+    "locationName": "ひだまりストア事務所",
+    "albumTab": "other",
+    "encounter": {
+      "enabled": false
+    }
+  },
+  {
+    "id": "moe_expression_legacy_test",
+    "title": "萌の表情テスト：なくした癒やしコーナー札",
+    "type": "normal",
+    "category": "test",
+    "season": "other",
+    "placeId": "hidamari_office",
+    "placeName": "ひだまりストア事務所",
+    "characters": [
+      "am"
+    ],
+    "characterNames": [
+      "草壁 萌"
+    ],
+    "scenario": "scenario/v039/events/moe_expression_legacy_test.json",
+    "version": "v039_295",
+    "unlock": {
+      "type": "always"
+    },
+    "order": 9904,
+    "summary": "萌の現行旧式12表情・全14画像を順番に確認する開発用シナリオ。",
+    "rawTitle": "萌の表情テスト：なくした癒やしコーナー札",
+    "locationName": "ひだまりストア事務所",
+    "albumTab": "other",
+    "encounter": {
+      "enabled": false
+    }
   }
 ];
