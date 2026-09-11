@@ -1,5 +1,5 @@
 {
-  "version": "v039_character_folders_aa_al_satomi25",
+  "version": "v039_character_folders_aa_ad_al_satomi25",
   "namingRule": {
     "pattern": "legacy: {characterLetter}1{expressionNo}{variantNo}.webp / adopted: {characterId}_{slug}_expression_{expressionId}.webp",
     "example": {
@@ -898,221 +898,414 @@
       "expressions": {
         "10": {
           "label": "軽い嫌悪",
-          "file": "d11001.webp",
-          "path": "images/assets/char/d11001.webp",
-          "engineSrc": "d11001.webp",
+          "file": "ad_kogane_expression_05.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_05.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_05.webp",
           "variant": "01",
           "exists": true,
           "variants": {
             "01": {
-              "file": "d11001.webp",
-              "path": "images/assets/char/d11001.webp",
-              "engineSrc": "d11001.webp",
+              "file": "ad_kogane_expression_05.webp",
+              "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_05.webp",
+              "engineSrc": "ad_kogane/standing/ad_kogane_expression_05.webp",
               "exists": true
             }
-          }
+          },
+          "assetExpressionId": "05"
         },
         "11": {
           "label": "心配不安",
-          "file": "d11101.webp",
-          "path": "images/assets/char/d11101.webp",
-          "engineSrc": "d11101.webp",
+          "file": "ad_kogane_expression_07.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_07.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_07.webp",
           "variant": "01",
           "exists": true,
           "variants": {
             "01": {
-              "file": "d11101.webp",
-              "path": "images/assets/char/d11101.webp",
-              "engineSrc": "d11101.webp",
+              "file": "ad_kogane_expression_07.webp",
+              "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_07.webp",
+              "engineSrc": "ad_kogane/standing/ad_kogane_expression_07.webp",
               "exists": true
             }
-          }
+          },
+          "assetExpressionId": "07"
         },
         "12": {
           "label": "動揺",
-          "file": "d11201.webp",
-          "path": "images/assets/char/d11201.webp",
-          "engineSrc": "d11201.webp",
+          "file": "ad_kogane_expression_08.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_08.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_08.webp",
           "variant": "01",
-          "exists": false,
+          "exists": true,
           "variants": {
             "01": {
-              "file": "d11201.webp",
-              "path": "images/assets/char/d11201.webp",
-              "engineSrc": "d11201.webp",
-              "exists": false
+              "file": "ad_kogane_expression_08.webp",
+              "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_08.webp",
+              "engineSrc": "ad_kogane/standing/ad_kogane_expression_08.webp",
+              "exists": true
             }
-          }
+          },
+          "assetExpressionId": "08"
         },
         "01": {
           "label": "澄まし",
-          "file": "d10101.webp",
-          "path": "images/assets/char/d10101.webp",
-          "engineSrc": "d10101.webp",
+          "file": "ad_kogane_expression_01.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_01.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_01.webp",
           "variant": "01",
           "exists": true,
           "variants": {
             "01": {
-              "file": "d10101.webp",
-              "path": "images/assets/char/d10101.webp",
-              "engineSrc": "d10101.webp",
+              "file": "ad_kogane_expression_01.webp",
+              "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_01.webp",
+              "engineSrc": "ad_kogane/standing/ad_kogane_expression_01.webp",
               "exists": true
             }
-          }
+          },
+          "assetExpressionId": "01"
         },
         "02": {
           "label": "微笑み",
-          "file": "d10201.webp",
-          "path": "images/assets/char/d10201.webp",
-          "engineSrc": "d10201.webp",
+          "file": "ad_kogane_expression_02.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_02.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_02.webp",
           "variant": "01",
           "exists": true,
           "variants": {
             "01": {
-              "file": "d10201.webp",
-              "path": "images/assets/char/d10201.webp",
-              "engineSrc": "d10201.webp",
+              "file": "ad_kogane_expression_02.webp",
+              "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_02.webp",
+              "engineSrc": "ad_kogane/standing/ad_kogane_expression_02.webp",
               "exists": true
             }
-          }
+          },
+          "assetExpressionId": "02"
         },
         "03": {
           "label": "怒り",
-          "file": "d10301.webp",
-          "path": "images/assets/char/d10301.webp",
-          "engineSrc": "d10301.webp",
+          "file": "ad_kogane_expression_04.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_04.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_04.webp",
           "variant": "01",
           "exists": true,
           "variants": {
             "01": {
-              "file": "d10301.webp",
-              "path": "images/assets/char/d10301.webp",
-              "engineSrc": "d10301.webp",
-              "exists": true
-            },
-            "02": {
-              "file": "d10302.webp",
-              "path": "images/assets/char/d10302.webp",
-              "engineSrc": "d10302.webp",
-              "exists": true
-            },
-            "03": {
-              "file": "d10303.webp",
-              "path": "images/assets/char/d10303.webp",
-              "engineSrc": "d10303.webp",
+              "file": "ad_kogane_expression_04.webp",
+              "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_04.webp",
+              "engineSrc": "ad_kogane/standing/ad_kogane_expression_04.webp",
               "exists": true
             }
-          }
+          },
+          "assetExpressionId": "04"
         },
         "04": {
           "label": "悲しみ",
-          "file": "d10401.webp",
-          "path": "images/assets/char/d10401.webp",
-          "engineSrc": "d10401.webp",
+          "file": "ad_kogane_expression_06.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_06.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_06.webp",
           "variant": "01",
           "exists": true,
           "variants": {
             "01": {
-              "file": "d10401.webp",
-              "path": "images/assets/char/d10401.webp",
-              "engineSrc": "d10401.webp",
+              "file": "ad_kogane_expression_06.webp",
+              "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_06.webp",
+              "engineSrc": "ad_kogane/standing/ad_kogane_expression_06.webp",
               "exists": true
             }
-          }
+          },
+          "assetExpressionId": "06"
         },
         "05": {
           "label": "笑顔",
-          "file": "d10501.webp",
-          "path": "images/assets/char/d10501.webp",
-          "engineSrc": "d10501.webp",
+          "file": "ad_kogane_expression_03.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_03.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_03.webp",
           "variant": "01",
           "exists": true,
           "variants": {
             "01": {
-              "file": "d10501.webp",
-              "path": "images/assets/char/d10501.webp",
-              "engineSrc": "d10501.webp",
+              "file": "ad_kogane_expression_03.webp",
+              "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_03.webp",
+              "engineSrc": "ad_kogane/standing/ad_kogane_expression_03.webp",
               "exists": true
             }
-          }
+          },
+          "assetExpressionId": "03"
         },
         "06": {
           "label": "驚き",
-          "file": "d10601.webp",
-          "path": "images/assets/char/d10601.webp",
-          "engineSrc": "d10601.webp",
+          "file": "ad_kogane_expression_09.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_09.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_09.webp",
           "variant": "01",
           "exists": true,
           "variants": {
             "01": {
-              "file": "d10601.webp",
-              "path": "images/assets/char/d10601.webp",
-              "engineSrc": "d10601.webp",
-              "exists": true
-            },
-            "02": {
-              "file": "d10602.webp",
-              "path": "images/assets/char/d10602.webp",
-              "engineSrc": "d10602.webp",
+              "file": "ad_kogane_expression_09.webp",
+              "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_09.webp",
+              "engineSrc": "ad_kogane/standing/ad_kogane_expression_09.webp",
               "exists": true
             }
-          }
+          },
+          "assetExpressionId": "09"
         },
         "07": {
           "label": "照れ",
-          "file": "d10701.webp",
-          "path": "images/assets/char/d10701.webp",
-          "engineSrc": "d10701.webp",
+          "file": "ad_kogane_expression_10.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_10.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_10.webp",
           "variant": "01",
           "exists": true,
           "variants": {
             "01": {
-              "file": "d10701.webp",
-              "path": "images/assets/char/d10701.webp",
-              "engineSrc": "d10701.webp",
+              "file": "ad_kogane_expression_10.webp",
+              "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_10.webp",
+              "engineSrc": "ad_kogane/standing/ad_kogane_expression_10.webp",
               "exists": true
             }
-          }
+          },
+          "assetExpressionId": "10"
         },
         "08": {
           "label": "期待",
-          "file": "d10801.webp",
-          "path": "images/assets/char/d10801.webp",
-          "engineSrc": "d10801.webp",
+          "file": "ad_kogane_expression_11.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_11.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_11.webp",
           "variant": "01",
           "exists": true,
           "variants": {
             "01": {
-              "file": "d10801.webp",
-              "path": "images/assets/char/d10801.webp",
-              "engineSrc": "d10801.webp",
-              "exists": true
-            },
-            "02": {
-              "file": "d10802.webp",
-              "path": "images/assets/char/d10802.webp",
-              "engineSrc": "d10802.webp",
+              "file": "ad_kogane_expression_11.webp",
+              "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_11.webp",
+              "engineSrc": "ad_kogane/standing/ad_kogane_expression_11.webp",
               "exists": true
             }
-          }
+          },
+          "assetExpressionId": "11"
         },
         "09": {
           "label": "得意げ",
-          "file": "d10901.webp",
-          "path": "images/assets/char/d10901.webp",
-          "engineSrc": "d10901.webp",
+          "file": "ad_kogane_expression_12.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_12.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_12.webp",
           "variant": "01",
           "exists": true,
           "variants": {
             "01": {
-              "file": "d10901.webp",
-              "path": "images/assets/char/d10901.webp",
-              "engineSrc": "d10901.webp",
+              "file": "ad_kogane_expression_12.webp",
+              "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_12.webp",
+              "engineSrc": "ad_kogane/standing/ad_kogane_expression_12.webp",
               "exists": true
             }
-          }
+          },
+          "assetExpressionId": "12"
         }
-      }
+      },
+      "manifest": "images/assets/char/ad_kogane/manifest.json",
+      "assetSet": "standing_25",
+      "assetExpressions": {
+        "10": {
+          "label": "照れ",
+          "purpose": "照れ・好意を隠しきれない場面",
+          "file": "ad_kogane_expression_10.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_10.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_10.webp",
+          "exists": true
+        },
+        "11": {
+          "label": "期待",
+          "purpose": "期待・お願い・前向きな待機",
+          "file": "ad_kogane_expression_11.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_11.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_11.webp",
+          "exists": true
+        },
+        "12": {
+          "label": "得意げ",
+          "purpose": "自信・得意げ・小さな勝利",
+          "file": "ad_kogane_expression_12.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_12.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_12.webp",
+          "exists": true
+        },
+        "13": {
+          "label": "舌出しウィンク",
+          "purpose": "茶目っ気・からかい",
+          "file": "ad_kogane_expression_13.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_13.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_13.webp",
+          "exists": true
+        },
+        "14": {
+          "label": "歯見せウィンク",
+          "purpose": "快活な冗談・強めのウィンク",
+          "file": "ad_kogane_expression_14.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_14.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_14.webp",
+          "exists": true
+        },
+        "15": {
+          "label": "困り笑い",
+          "purpose": "困惑を含む愛想笑い",
+          "file": "ad_kogane_expression_15.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_15.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_15.webp",
+          "exists": true
+        },
+        "16": {
+          "label": "決意",
+          "purpose": "決意・覚悟・対立前",
+          "file": "ad_kogane_expression_16.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_16.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_16.webp",
+          "exists": true
+        },
+        "17": {
+          "label": "伏し目の余韻",
+          "purpose": "余韻・内省・言葉を飲み込む場面",
+          "file": "ad_kogane_expression_17.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_17.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_17.webp",
+          "exists": true
+        },
+        "18": {
+          "label": "拗ね",
+          "purpose": "不満・拗ね・軽い反発",
+          "file": "ad_kogane_expression_18.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_18.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_18.webp",
+          "exists": true
+        },
+        "19": {
+          "label": "涙笑い",
+          "purpose": "泣きながらの安堵・感謝",
+          "file": "ad_kogane_expression_19.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_19.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_19.webp",
+          "exists": true
+        },
+        "20": {
+          "label": "無言の圧",
+          "purpose": "静かな威圧・怒りの前段",
+          "file": "ad_kogane_expression_20.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_20.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_20.webp",
+          "exists": true
+        },
+        "21": {
+          "label": "黒い微笑み",
+          "purpose": "含み・策・不穏な微笑み",
+          "file": "ad_kogane_expression_21.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_21.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_21.webp",
+          "exists": true
+        },
+        "22": {
+          "label": "安堵",
+          "purpose": "緊張が解けた瞬間",
+          "file": "ad_kogane_expression_22.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_22.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_22.webp",
+          "exists": true
+        },
+        "23": {
+          "label": "見惚れ／ときめき",
+          "purpose": "見惚れ・ときめき・心を奪われた瞬間",
+          "file": "ad_kogane_expression_23.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_23.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_23.webp",
+          "exists": true
+        },
+        "24": {
+          "label": "眠い",
+          "purpose": "眠気・疲労・夜更け",
+          "file": "ad_kogane_expression_24.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_24.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_24.webp",
+          "exists": true
+        },
+        "25": {
+          "label": "照れ隠し怒り",
+          "purpose": "照れ隠しを伴う怒り",
+          "file": "ad_kogane_expression_25.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_25.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_25.webp",
+          "exists": true
+        },
+        "01": {
+          "label": "澄まし",
+          "purpose": "平常・説明・落ち着いた応対",
+          "file": "ad_kogane_expression_01.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_01.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_01.webp",
+          "exists": true
+        },
+        "02": {
+          "label": "やさしい微笑み",
+          "purpose": "親愛・安心・柔らかな応対",
+          "file": "ad_kogane_expression_02.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_02.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_02.webp",
+          "exists": true
+        },
+        "03": {
+          "label": "笑顔",
+          "purpose": "喜び・歓迎・明るい反応",
+          "file": "ad_kogane_expression_03.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_03.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_03.webp",
+          "exists": true
+        },
+        "04": {
+          "label": "怒り",
+          "purpose": "強い怒り・叱責",
+          "file": "ad_kogane_expression_04.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_04.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_04.webp",
+          "exists": true
+        },
+        "05": {
+          "label": "軽い嫌悪",
+          "purpose": "軽い拒否・呆れ・不快",
+          "file": "ad_kogane_expression_05.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_05.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_05.webp",
+          "exists": true
+        },
+        "06": {
+          "label": "悲しみ",
+          "purpose": "落胆・喪失・悲しみ",
+          "file": "ad_kogane_expression_06.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_06.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_06.webp",
+          "exists": true
+        },
+        "07": {
+          "label": "心配",
+          "purpose": "懸念・心配・迷い",
+          "file": "ad_kogane_expression_07.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_07.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_07.webp",
+          "exists": true
+        },
+        "08": {
+          "label": "動揺",
+          "purpose": "焦り・予想外の事態",
+          "file": "ad_kogane_expression_08.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_08.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_08.webp",
+          "exists": true
+        },
+        "09": {
+          "label": "驚き",
+          "purpose": "驚き・発見・急な反応",
+          "file": "ad_kogane_expression_09.webp",
+          "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_09.webp",
+          "engineSrc": "ad_kogane/standing/ad_kogane_expression_09.webp",
+          "exists": true
+        }
+      },
+      "legacyStatus": "retained_unmodified"
     },
     "ae": {
       "characterLetter": "e",
@@ -3273,6 +3466,7 @@
   },
   "characterManifests": {
     "aa": "images/assets/char/aa_hina/manifest.json",
-    "al": "images/assets/char/al_satomi/manifest.json"
+    "al": "images/assets/char/al_satomi/manifest.json",
+    "ad": "images/assets/char/ad_kogane/manifest.json"
   }
 }

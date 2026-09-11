@@ -238,7 +238,7 @@
     hina: "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp",
     ai: "images/assets/char/b10501.webp",
     midori: "images/assets/char/c10501.webp",
-    kogane: "images/assets/char/d10501.webp",
+    kogane: "images/assets/char/ad_kogane/standing/ad_kogane_expression_03.webp",
     kohaku: "images/assets/char/e10501.webp",
     yukino: "images/assets/char/g10501.webp"
   };
