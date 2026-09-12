@@ -1,0 +1,437 @@
+{
+  "id": "yukino_expression_25_test",
+  "title": "雪乃の表情テスト：消えた贈りもの",
+  "version": "v039_301",
+  "return": {
+    "mode": "storyMenu",
+    "storyMenuTab": "other",
+    "storyId": "yukino_expression_25_test",
+    "eventId": "yukino_expression_25_test"
+  },
+  "format": "v039_steps",
+  "renderPolicy": {
+    "background": "forceReplace",
+    "sprites": "storyOnly",
+    "forceCenterSprites": true
+  },
+  "summary": "閉店後の事務所で、見当たらなくなった手作り菓子の箱を店長と探しながら、雪乃の正式25表情を順番に確認する表示確認用シナリオ。",
+  "testPurpose": "雪乃の採用済み正式25表情について、最新manifestの画像パスで表示、切替、透過、位置、トリミングを一巡確認する。",
+  "steps": [
+    {
+      "bg": "images/assets/bgev/bg_office_hidamari.png",
+      "speaker": "",
+      "text": "【表情テスト】雪乃と消えた贈りもの",
+      "bgMode": "forceReplace",
+      "clearStorySprites": true,
+      "forceBackgroundReplace": true
+    },
+    {
+      "speaker": "",
+      "text": "閉店後。雪乃は翌朝みんなに配る焼き菓子を、事務所で一つずつ包んでいた。"
+    },
+    {
+      "speaker": "氷神 雪乃",
+      "text": "［01/25 澄まし］包装が終わりました。貴方様、数をご確認いただけますか？",
+      "expressionId": "01",
+      "expressionLabel": "澄まし",
+      "storySprites": [
+        {
+          "id": "ag",
+          "src": "images/assets/char/ag_yukino/standing/ag_yukino_expression_01_composed.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "氷神 雪乃",
+      "text": "［02/25 やさしい微笑み］一つだけ、味見用に取ってあります。よろしければ、貴方様に。",
+      "expressionId": "02",
+      "expressionLabel": "やさしい微笑み",
+      "storySprites": [
+        {
+          "id": "ag",
+          "src": "images/assets/char/ag_yukino/standing/ag_yukino_expression_02_gentle_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "氷神 雪乃",
+      "text": "［03/25 笑顔］今回は三種類です。皆様が喜んでくださると、嬉しいのですが。",
+      "expressionId": "03",
+      "expressionLabel": "笑顔",
+      "storySprites": [
+        {
+          "id": "ag",
+          "src": "images/assets/char/ag_yukino/standing/ag_yukino_expression_03_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "氷神 雪乃",
+      "text": "［04/25 怒り］……お配りする箱が、ありません。先ほどまで机の上にあったはずです。",
+      "expressionId": "04",
+      "expressionLabel": "怒り",
+      "storySprites": [
+        {
+          "id": "ag",
+          "src": "images/assets/char/ag_yukino/standing/ag_yukino_expression_04_anger.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "氷神 雪乃",
+      "text": "［05/25 軽い嫌悪］この棚、なぜかピクルスの匂いがしますね。お菓子を置く場所ではありません。",
+      "expressionId": "05",
+      "expressionLabel": "軽い嫌悪",
+      "storySprites": [
+        {
+          "id": "ag",
+          "src": "images/assets/char/ag_yukino/standing/ag_yukino_expression_05_mild_disgust.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "氷神 雪乃",
+      "text": "［06/25 悲しみ］皆様のお顔を思い浮かべながら作ったのに……なくしてしまったのでしょうか。",
+      "expressionId": "06",
+      "expressionLabel": "悲しみ",
+      "storySprites": [
+        {
+          "id": "ag",
+          "src": "images/assets/char/ag_yukino/standing/ag_yukino_expression_06_sadness.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "氷神 雪乃",
+      "text": "［07/25 心配／不安］アレルギー表示も箱に添えています。誰かが先に開けていないか、心配です。",
+      "expressionId": "07",
+      "expressionLabel": "心配／不安",
+      "storySprites": [
+        {
+          "id": "ag",
+          "src": "images/assets/char/ag_yukino/standing/ag_yukino_expression_07_worry.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "氷神 雪乃",
+      "text": "［08/25 動揺］あっ……オーブンのタイマー？　いえ、もう火は止めたはずです……。",
+      "expressionId": "08",
+      "expressionLabel": "動揺",
+      "storySprites": [
+        {
+          "id": "ag",
+          "src": "images/assets/char/ag_yukino/standing/ag_yukino_expression_08_agitated.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "氷神 雪乃",
+      "text": "［09/25 驚き］タイマーの下に白い粉が……砂糖の跡が、廊下へ続いています。",
+      "expressionId": "09",
+      "expressionLabel": "驚き",
+      "storySprites": [
+        {
+          "id": "ag",
+          "src": "images/assets/char/ag_yukino/standing/ag_yukino_expression_09_surprise.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "氷神 雪乃",
+      "text": "［10/25 照れ］暗い倉庫へ行くのですね。あの……少しだけ、そばにいてくださいますか？",
+      "expressionId": "10",
+      "expressionLabel": "照れ",
+      "storySprites": [
+        {
+          "id": "ag",
+          "src": "images/assets/char/ag_yukino/standing/ag_yukino_expression_10_shy.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "氷神 雪乃",
+      "text": "［11/25 期待］箱が無事である可能性が出てきました。急いで跡を追いましょう。",
+      "expressionId": "11",
+      "expressionLabel": "期待",
+      "storySprites": [
+        {
+          "id": "ag",
+          "src": "images/assets/char/ag_yukino/standing/ag_yukino_expression_11_expectation.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "氷神 雪乃",
+      "text": "［12/25 得意げ］粉の粒と香りで分かります。これは、私が使った和三盆です。",
+      "expressionId": "12",
+      "expressionLabel": "得意げ",
+      "storySprites": [
+        {
+          "id": "ag",
+          "src": "images/assets/char/ag_yukino/standing/ag_yukino_expression_12_proud.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "氷神 雪乃",
+      "text": "［13/25 いたずらな笑顔・舌出しウィンク］名探偵・雪乃、と名乗ってもよろしいでしょうか。……少しだけ、です。",
+      "expressionId": "13",
+      "expressionLabel": "いたずらな笑顔・舌出しウィンク",
+      "storySprites": [
+        {
+          "id": "ag",
+          "src": "images/assets/char/ag_yukino/standing/ag_yukino_expression_13_playful_tongue_wink.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "氷神 雪乃",
+      "text": "［14/25 いたずらな笑顔・歯見せウィンク］貴方様が助手なら、きっとすぐに解決できます。ふふ、頼りにしていますよ。",
+      "expressionId": "14",
+      "expressionLabel": "いたずらな笑顔・歯見せウィンク",
+      "storySprites": [
+        {
+          "id": "ag",
+          "src": "images/assets/char/ag_yukino/standing/ag_yukino_expression_14_playful_toothy_wink.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "氷神 雪乃",
+      "text": "［15/25 困り笑い］あら……足跡が二手に分かれています。砂糖をこぼしすぎましたね。",
+      "expressionId": "15",
+      "expressionLabel": "困り笑い",
+      "storySprites": [
+        {
+          "id": "ag",
+          "src": "images/assets/char/ag_yukino/standing/ag_yukino_expression_15_troubled_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "氷神 雪乃",
+      "text": "［16/25 真剣／決意］冷たい空気が流れてきます。保冷庫の方を調べましょう。",
+      "expressionId": "16",
+      "expressionLabel": "真剣／決意",
+      "storySprites": [
+        {
+          "id": "ag",
+          "src": "images/assets/char/ag_yukino/standing/ag_yukino_expression_16_determined.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "氷神 雪乃",
+      "text": "［17/25 伏し目／余韻］あのお菓子には、いつもお世話になっている感謝を込めたのです。",
+      "expressionId": "17",
+      "expressionLabel": "伏し目／余韻",
+      "storySprites": [
+        {
+          "id": "ag",
+          "src": "images/assets/char/ag_yukino/standing/ag_yukino_expression_17_downcast_afterglow.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "氷神 雪乃",
+      "text": "［18/25 拗ね／ぷいっ］ですが保冷庫に鍵が……。もう少しで見つかりそうでしたのに。",
+      "expressionId": "18",
+      "expressionLabel": "拗ね／ぷいっ",
+      "storySprites": [
+        {
+          "id": "ag",
+          "src": "images/assets/char/ag_yukino/standing/ag_yukino_expression_18_sulking.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "氷神 雪乃",
+      "text": "［19/25 泣き笑い］開きました……箱も無事です。よかった……本当によかった。",
+      "expressionId": "19",
+      "expressionLabel": "泣き笑い",
+      "storySprites": [
+        {
+          "id": "ag",
+          "src": "images/assets/char/ag_yukino/standing/ag_yukino_expression_19_tearful_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "氷神 雪乃",
+      "text": "［20/25 無言の圧／見透かす］……貴方様。なぜ、その鍵をお持ちだったのですか？",
+      "expressionId": "20",
+      "expressionLabel": "無言の圧／見透かす",
+      "storySprites": [
+        {
+          "id": "ag",
+          "src": "images/assets/char/ag_yukino/standing/ag_yukino_expression_20_silent_pressure.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "氷神 雪乃",
+      "text": "［21/25 黒い微笑み／不穏］まさか、最初から箱の場所をご存じだった……ということはありませんよね？",
+      "expressionId": "21",
+      "expressionLabel": "黒い微笑み／不穏",
+      "storySprites": [
+        {
+          "id": "ag",
+          "src": "images/assets/char/ag_yukino/standing/ag_yukino_expression_21_dark_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "氷神 雪乃",
+      "text": "［22/25 ほっとした顔］暖房の風から守るため、移してくださったのですね。安心いたしました。",
+      "expressionId": "22",
+      "expressionLabel": "ほっとした顔",
+      "storySprites": [
+        {
+          "id": "ag",
+          "src": "images/assets/char/ag_yukino/standing/ag_yukino_expression_22_relieved.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "氷神 雪乃",
+      "text": "［23/25 見惚れ／ときめき前］箱に『雪乃へ、いつもありがとう』と……貴方様が書いてくださったのですか？",
+      "expressionId": "23",
+      "expressionLabel": "見惚れ／ときめき前",
+      "storySprites": [
+        {
+          "id": "ag",
+          "src": "images/assets/char/ag_yukino/standing/ag_yukino_expression_23_captivated.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "氷神 雪乃",
+      "text": "［24/25 眠そう／気だるげ］気が緩んだら、少し眠くなってしまいました。夜更かしはいけませんね。",
+      "expressionId": "24",
+      "expressionLabel": "眠そう／気だるげ",
+      "storySprites": [
+        {
+          "id": "ag",
+          "src": "images/assets/char/ag_yukino/standing/ag_yukino_expression_24_sleepy.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "氷神 雪乃",
+      "text": "［25/25 照れ隠し怒り］『眠そうな顔も愛らしい』などと……もう。あまり困らせないでくださいませ。",
+      "expressionId": "25",
+      "expressionLabel": "照れ隠し怒り",
+      "storySprites": [
+        {
+          "id": "ag",
+          "src": "images/assets/char/ag_yukino/standing/ag_yukino_expression_25_bashful_anger.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "（雪乃の25表情をすべて確認しました）"
+    }
+  ]
+}
