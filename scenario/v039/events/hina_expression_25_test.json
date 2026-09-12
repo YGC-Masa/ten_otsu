@@ -1,7 +1,7 @@
 {
   "id": "hina_expression_25_test",
   "title": "緋奈の表情テスト：消えたカレー試食会",
-  "version": "v039_292",
+  "version": "v039_298",
   "return": {
     "mode": "storyMenu",
     "storyMenuTab": "other",
@@ -31,9 +31,9 @@
     },
     {
       "speaker": "星野 緋奈",
-      "text": "［01/25 通常］おつかれさまです、店長。こんな時間にどうしたんです？",
+      "text": "［01/25 澄まし］おつかれさまです、店長。こんな時間にどうしたんです？",
       "expressionId": "01",
-      "expressionLabel": "通常",
+      "expressionLabel": "澄まし",
       "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_01.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
@@ -42,9 +42,9 @@
     },
     {
       "speaker": "星野 緋奈",
-      "text": "［02/25 笑顔］カレー！？　やります、ぜひ！　味見なら何杯でも任せてください！",
+      "text": "［02/25 やさしい微笑み］あたしのために用意してくれたんですね。ありがとうございます、店長。楽しみです。",
       "expressionId": "02",
-      "expressionLabel": "笑顔",
+      "expressionLabel": "やさしい微笑み",
       "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_02.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
@@ -53,16 +53,16 @@
     },
     {
       "speaker": "星野 緋奈",
-      "text": "［03/25 にっこり（目閉じ）］えへへ。細かいことはいいじゃないですか。お腹も準備万端です！",
+      "text": "［03/25 笑顔］えへへ。細かいことはいいじゃないですか。お腹も準備万端です！",
       "expressionId": "03",
-      "expressionLabel": "にっこり（目閉じ）",
+      "expressionLabel": "笑顔",
       "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_03.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "星野 緋奈",
-      "text": "［04/25 ウィンク］採点は、緋奈特別審査員が公平にやりますからねっ。",
+      "text": "［04/25 怒り］もうっ、夕飯扱いしないでください！　試食だって大事な仕事なんですから！",
       "expressionId": "04",
-      "expressionLabel": "ウィンク",
+      "expressionLabel": "怒り",
       "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_04.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
@@ -71,9 +71,9 @@
     },
     {
       "speaker": "星野 緋奈",
-      "text": "［05/25 驚き］ええっ！？　カレー、ないじゃないですか！",
+      "text": "［05/25 軽い嫌悪］……空っぽ。店長、これ、笑えない冗談じゃないですよね？",
       "expressionId": "05",
-      "expressionLabel": "驚き",
+      "expressionLabel": "軽い嫌悪",
       "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_05.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
@@ -82,16 +82,16 @@
     },
     {
       "speaker": "星野 緋奈",
-      "text": "［06/25 困り］うーん。匂いはするのに鍋だけ消えるって、どういう状況です？",
+      "text": "［06/25 悲しみ］せっかく店長が、あたしのために作ってくれたのに……。ひと口も食べられないなんて。",
       "expressionId": "06",
-      "expressionLabel": "困り",
+      "expressionLabel": "悲しみ",
       "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_06.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "星野 緋奈",
-      "text": "［07/25 しょんぼり］せっかく店長が、あたしのために用意してくれたのに……。",
+      "text": "［07/25 心配］誰かが運んだなら、やけどしてないかな。鍋もカレーも心配です……。",
       "expressionId": "07",
-      "expressionLabel": "しょんぼり",
+      "expressionLabel": "心配",
       "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_07.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
@@ -100,9 +100,9 @@
     },
     {
       "speaker": "星野 緋奈",
-      "text": "［08/25 泣きそう］でも、最初の一皿を一緒に食べたかったんです……。",
+      "text": "［08/25 動揺］だ、だめです、今すぐ探しましょう！　最初の一皿を一緒に食べたいんです！",
       "expressionId": "08",
-      "expressionLabel": "泣きそう",
+      "expressionLabel": "動揺",
       "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_08.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
@@ -111,123 +111,123 @@
     },
     {
       "speaker": "星野 緋奈",
-      "text": "［09/25 泣き］ひどいですー！　あたしのカレー、返してくださーい！",
+      "text": "［09/25 驚き］えっ、犯人からのメモ！？　しかも『黄色い札を追え』って……！",
       "expressionId": "09",
-      "expressionLabel": "泣き",
+      "expressionLabel": "驚き",
       "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_09.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "星野 緋奈",
-      "text": "［10/25 怒り］……犯人、ぜったい許しません。食べ物の恨みは怖いんですよ！",
+      "text": "［10/25 照れ］裏に『店長と腕を組んで倉庫へ』って……こ、これも手がかりなんですか？",
       "expressionId": "10",
-      "expressionLabel": "怒り",
+      "expressionLabel": "照れ",
       "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_10.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "店長",
-      "text": "メモの裏にも何かあるぞ。『黄色い札を追え』だってさ。"
+      "text": "黄色い札なら、倉庫の前で見た気がする。"
     },
     {
       "speaker": "星野 緋奈",
-      "text": "［11/25 期待］おっ、手がかり！　なんだか宝探しみたいになってきましたね！",
+      "text": "［11/25 期待］本当ですか？　なんだか宝探しみたいになってきましたね！",
       "expressionId": "11",
       "expressionLabel": "期待",
       "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_11.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "",
-      "text": "黄色い札には、『店長と腕を組んで倉庫へ向かうこと』とある。"
+      "text": "二人で倉庫へ向かうと、黄色い札の下に台車の細い跡が残っていた。"
     },
     {
       "speaker": "星野 緋奈",
-      "text": "［12/25 照れ］う、腕を……？　これ、誰が書いた指示なんですか……。",
+      "text": "［12/25 得意げ］にしし。この跡、休憩室へ続いてます。こういうのを見つけるの、得意なんですよ！",
       "expressionId": "12",
-      "expressionLabel": "照れ",
+      "expressionLabel": "得意げ",
       "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_12.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "店長",
-      "text": "嫌なら、普通に歩いていこう。"
+      "text": "さすが緋奈。頼りになるな。"
     },
     {
       "speaker": "星野 緋奈",
-      "text": "［13/25 照れ笑い］い、嫌とは言ってません。テストなら仕方ないですもんね。えへへ。",
+      "text": "［13/25 舌出しウィンク］もっと褒めてもいいんですよ？　報酬はカレー大盛りでお願いしますっ。",
       "expressionId": "13",
-      "expressionLabel": "照れ笑い",
+      "expressionLabel": "舌出しウィンク",
       "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_13.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "",
-      "text": "倉庫の前には、カレーの香りと、台車の細い跡が残っていた。"
+      "text": "休憩室の扉には、二枚目の札が貼られていた。"
     },
     {
       "speaker": "星野 緋奈",
-      "text": "［14/25 真剣］ここからは本気で捜します。店長、床の跡を踏まないでください。",
+      "text": "［14/25 歯見せウィンク］第二関門ですね！　名探偵・緋奈にかかれば、こんなの朝飯前です！",
       "expressionId": "14",
-      "expressionLabel": "真剣",
+      "expressionLabel": "歯見せウィンク",
       "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_14.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "星野 緋奈",
-      "text": "［15/25 考え中］台車は倉庫から休憩室へ……でも、途中で跡が消えてますね。うーん。",
+      "text": "［15/25 困り笑い］……って、暗号ですか。強がりましたけど、これ、ぜんぜん分かりませんね。あはは。",
       "expressionId": "15",
-      "expressionLabel": "考え中",
+      "expressionLabel": "困り笑い",
       "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_15.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "",
-      "text": "その時、休憩室から『ピピッ、保温限界まで、あと三分』と電子音声がした。"
+      "text": "その時、机の下から『ピピッ、保温限界まで、あと三分』と電子音声がした。"
     },
     {
       "speaker": "星野 緋奈",
-      "text": "［16/25 不安］三分！？　冷めたら店長の苦労が台無しです。間に合いますよね？",
+      "text": "［16/25 決意］三分あれば十分です。店長のカレー、絶対にあたしが見つけます！",
       "expressionId": "16",
-      "expressionLabel": "不安",
+      "expressionLabel": "決意",
       "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_16.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "",
-      "text": "緋奈は壁際の配線を一目見て、休憩室のタイマーが別の延長コードにつながっていると見抜いた。"
+      "text": "緋奈は壁際の配線を追い、タイマーが別の延長コードにつながっていると見抜いた。"
     },
     {
       "speaker": "星野 緋奈",
-      "text": "［17/25 ドヤ顔］にしし。映像と配線はあたしの担当です。この線の先がゴールですよ！",
+      "text": "［17/25 伏し目の余韻］……店長が作ってくれたものだから、ちゃんと温かいうちに食べたいんです。",
       "expressionId": "17",
-      "expressionLabel": "ドヤ顔",
+      "expressionLabel": "伏し目の余韻",
       "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_17.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "",
-      "text": "二人は長い延長コードをたどる。閉店作業の疲れで、緋奈の足取りが少しだけ緩んだ。"
+      "text": "延長コードは大きく迂回し、さっきまで二人がいた事務所へ戻っていた。"
     },
     {
       "speaker": "星野 緋奈",
-      "text": "［18/25 あくび］ふぁぁ……って、違います！　退屈してるんじゃなくて、今日は朝が早くて。",
+      "text": "［18/25 拗ね］もう、店長の机に戻るなら最初からそう書いてくださいよ。遠回りさせて……。",
       "expressionId": "18",
-      "expressionLabel": "あくび",
+      "expressionLabel": "拗ね",
       "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_18.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "星野 緋奈",
-      "text": "［19/25 疲れ］このコード、どこまで続くんですかぁ……。カレー一杯が遠い……。",
+      "text": "［19/25 涙笑い］あっ……ありました！　よかったぁ。ちゃんと温かいままです、店長！",
       "expressionId": "19",
-      "expressionLabel": "疲れ",
+      "expressionLabel": "涙笑い",
       "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_19.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "店長",
-      "text": "肩、貸そうか？"
+      "text": "よく見つけたな。じゃあ、ふたを開けよう。"
     },
     {
       "speaker": "星野 緋奈",
-      "text": "［20/25 眠い］ん……じゃあ、三秒だけ。店長の肩、ちょうどいい高さ……。",
+      "text": "［20/25 無言の圧］……その前に店長。どうして鍋が、店長の机の下にあるんでしょうね？",
       "expressionId": "20",
-      "expressionLabel": "眠い",
+      "expressionLabel": "無言の圧",
       "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_20.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "",
-      "text": "コードの先は、店長の机の裏。そこには『ここまで来た緋奈へ』と書かれた箱があった。"
+      "text": "鍋の横には、『ここまで来た緋奈へ』と書かれた小さな箱も置かれていた。"
     },
     {
       "speaker": "星野 緋奈",
@@ -242,31 +242,31 @@
     },
     {
       "speaker": "星野 緋奈",
-      "text": "［22/25 ぽっとした］……あたしを楽しませるために、全部用意してくれたんですか。",
+      "text": "［22/25 安堵］……そうだったんですね。なくなったわけじゃなくて、ほんとによかった。",
       "expressionId": "22",
-      "expressionLabel": "ぽっとした",
+      "expressionLabel": "安堵",
       "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_22.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "",
-      "text": "箱を開けると、湯気の立つカレーと、緋奈専用の赤いスプーンが現れた。"
+      "text": "箱を開けると、緋奈専用の赤いスプーンが現れた。店長は照れくさそうに笑った。"
     },
     {
       "speaker": "星野 緋奈",
-      "text": "［23/25 見惚れ／ときめき顔］わぁ……きれい。カレーを見てこんなにどきどきするの、初めてかも。",
+      "text": "［23/25 見惚れ／ときめき］……店長、そんなふうに笑うの、ずるいです。なんだか目をそらせなくなっちゃう。",
       "expressionId": "23",
-      "expressionLabel": "見惚れ／ときめき顔",
+      "expressionLabel": "見惚れ／ときめき",
       "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_23.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
       "speaker": "",
-      "text": "店長が鍋を持ち上げた瞬間、ふたが大きく傾いた。"
+      "text": "安心した途端、閉店作業の疲れと眠気が一気に戻ってきた。"
     },
     {
       "speaker": "星野 緋奈",
-      "text": "［24/25 真剣怒り］危ないっ！　食べ物を持ってる時は、ちゃんと両手で持ってください！",
+      "text": "［24/25 眠い］ふぁ……食べたら目が覚めますから。あと少しだけ、店長の肩を借りてもいいですか？",
       "expressionId": "24",
-      "expressionLabel": "真剣怒り",
+      "expressionLabel": "眠い",
       "storySprites": [{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_24.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
     },
     {
