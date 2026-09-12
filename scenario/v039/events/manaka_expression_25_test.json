@@ -1,0 +1,437 @@
+{
+  "id": "manaka_expression_25_test",
+  "title": "真花の表情テスト：消えた美容ポーチ",
+  "version": "v039_303",
+  "return": {
+    "mode": "storyMenu",
+    "storyMenuTab": "other",
+    "storyId": "manaka_expression_25_test",
+    "eventId": "manaka_expression_25_test"
+  },
+  "format": "v039_steps",
+  "renderPolicy": {
+    "background": "forceReplace",
+    "sprites": "storyOnly",
+    "forceCenterSprites": true
+  },
+  "summary": "閉店後の事務所で、見当たらなくなった美容ポーチを店長と探しながら、真花の正式25表情を順番に確認する表示確認用シナリオ。",
+  "testPurpose": "真花の採用済み正式25表情について、最新manifestの画像パスで表示、切替、透過、位置、トリミングを一巡確認する。",
+  "steps": [
+    {
+      "bg": "images/assets/bgev/bg_office_hidamari.png",
+      "speaker": "",
+      "text": "【表情テスト】真花と消えた美容ポーチ",
+      "bgMode": "forceReplace",
+      "clearStorySprites": true,
+      "forceBackgroundReplace": true
+    },
+    {
+      "speaker": "",
+      "text": "閉店後。真花は翌日の美容家電相談会に備え、事務所でサンプルと資料を整えていた。"
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "［01/25 澄まし］店長、明日の相談会で使う資料を、順番どおりに並べておきました。",
+      "expressionId": "01",
+      "expressionLabel": "澄まし",
+      "storySprites": [
+        {
+          "id": "af",
+          "src": "images/assets/char/af_manaka/standing/af_manaka_expression_01_composed.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "［02/25 やさしい微笑み］緊張した時は、鏡の前で深呼吸するといいんです。店長も試しますか？",
+      "expressionId": "02",
+      "expressionLabel": "やさしい微笑み",
+      "storySprites": [
+        {
+          "id": "af",
+          "src": "images/assets/char/af_manaka/standing/af_manaka_expression_02_gentle_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "［03/25 笑顔］このライトなら肌の色が自然に見えます。お客様にも喜んでいただけそうです。",
+      "expressionId": "03",
+      "expressionLabel": "笑顔",
+      "storySprites": [
+        {
+          "id": "af",
+          "src": "images/assets/char/af_manaka/standing/af_manaka_expression_03_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "［04/25 怒り］……あの、美容ポーチがありません。ここへ置いたはずなのに。",
+      "expressionId": "04",
+      "expressionLabel": "怒り",
+      "storySprites": [
+        {
+          "id": "af",
+          "src": "images/assets/char/af_manaka/standing/af_manaka_expression_04_anger.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "［05/25 軽い嫌悪］使用済みのパフを未洗浄のまま戻すのは、衛生的によくありませんね。",
+      "expressionId": "05",
+      "expressionLabel": "軽い嫌悪",
+      "storySprites": [
+        {
+          "id": "af",
+          "src": "images/assets/char/af_manaka/standing/af_manaka_expression_05_mild_disgust.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "［06/25 悲しみ］大切に集めた色見本も入っているんです。なくしてしまったら……。",
+      "expressionId": "06",
+      "expressionLabel": "悲しみ",
+      "storySprites": [
+        {
+          "id": "af",
+          "src": "images/assets/char/af_manaka/standing/af_manaka_expression_06_sadness.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "［07/25 心配／不安］男性のお客様にも説明する予定で……ポーチがないと、余計に不安です。",
+      "expressionId": "07",
+      "expressionLabel": "心配／不安",
+      "storySprites": [
+        {
+          "id": "af",
+          "src": "images/assets/char/af_manaka/standing/af_manaka_expression_07_worry.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "［08/25 動揺］ひゃっ……店長、急に後ろから声をかけないでください。びっくりしました。",
+      "expressionId": "08",
+      "expressionLabel": "動揺",
+      "storySprites": [
+        {
+          "id": "af",
+          "src": "images/assets/char/af_manaka/standing/af_manaka_expression_08_agitated.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "［09/25 驚き］机の下にラメが一粒。もしかして、ポーチから落ちたのでしょうか。",
+      "expressionId": "09",
+      "expressionLabel": "驚き",
+      "storySprites": [
+        {
+          "id": "af",
+          "src": "images/assets/char/af_manaka/standing/af_manaka_expression_09_surprise.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "［10/25 照れ］店長と二人で探すと思うと、その……少しだけ、顔が熱くなります。",
+      "expressionId": "10",
+      "expressionLabel": "照れ",
+      "storySprites": [
+        {
+          "id": "af",
+          "src": "images/assets/char/af_manaka/standing/af_manaka_expression_10_shy.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "［11/25 期待］ラメの跡が廊下へ続いています。見つかるかもしれません。",
+      "expressionId": "11",
+      "expressionLabel": "期待",
+      "storySprites": [
+        {
+          "id": "af",
+          "src": "images/assets/char/af_manaka/standing/af_manaka_expression_11_expectation.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "［12/25 得意げ］これは限定色の微粒子です。光の角度で見分けられるんですよ。",
+      "expressionId": "12",
+      "expressionLabel": "得意げ",
+      "storySprites": [
+        {
+          "id": "af",
+          "src": "images/assets/char/af_manaka/standing/af_manaka_expression_12_proud.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "［13/25 いたずらな笑顔・舌出しウィンク］名探偵・真花です。……ふふ、今だけ言わせてください。",
+      "expressionId": "13",
+      "expressionLabel": "いたずらな笑顔・舌出しウィンク",
+      "storySprites": [
+        {
+          "id": "af",
+          "src": "images/assets/char/af_manaka/standing/af_manaka_expression_13_playful_tongue_wink.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "［14/25 いたずらな笑顔・歯見せウィンク］助手の店長には、ご褒美に似合う色を選んであげますね。",
+      "expressionId": "14",
+      "expressionLabel": "いたずらな笑顔・歯見せウィンク",
+      "storySprites": [
+        {
+          "id": "af",
+          "src": "images/assets/char/af_manaka/standing/af_manaka_expression_14_playful_toothy_wink.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "［15/25 困り笑い］でも跡が鏡の前で消えています。照明の反射だったのでしょうか……。",
+      "expressionId": "15",
+      "expressionLabel": "困り笑い",
+      "storySprites": [
+        {
+          "id": "af",
+          "src": "images/assets/char/af_manaka/standing/af_manaka_expression_15_troubled_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "［16/25 真剣／決意］もう一度、光を落として確認します。わたし、最後まで探します。",
+      "expressionId": "16",
+      "expressionLabel": "真剣／決意",
+      "storySprites": [
+        {
+          "id": "af",
+          "src": "images/assets/char/af_manaka/standing/af_manaka_expression_16_determined.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "［17/25 伏し目／余韻］このポーチは、初めて接客を褒めてもらった日に買ったものなんです。",
+      "expressionId": "17",
+      "expressionLabel": "伏し目／余韻",
+      "storySprites": [
+        {
+          "id": "af",
+          "src": "images/assets/char/af_manaka/standing/af_manaka_expression_17_downcast_afterglow.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "［18/25 拗ね／ぷいっ］店長は先に気づいていたんですか？　もう、少し意地悪です。",
+      "expressionId": "18",
+      "expressionLabel": "拗ね／ぷいっ",
+      "storySprites": [
+        {
+          "id": "af",
+          "src": "images/assets/char/af_manaka/standing/af_manaka_expression_18_sulking.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "［19/25 泣き笑い］ありました……！　鏡台の引き出しに。よかった、本当に。",
+      "expressionId": "19",
+      "expressionLabel": "泣き笑い",
+      "storySprites": [
+        {
+          "id": "af",
+          "src": "images/assets/char/af_manaka/standing/af_manaka_expression_19_tearful_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "［20/25 無言の圧／見透かす］……店長。どうして引き出しの鍵を、すぐ出せたんですか？",
+      "expressionId": "20",
+      "expressionLabel": "無言の圧／見透かす",
+      "storySprites": [
+        {
+          "id": "af",
+          "src": "images/assets/char/af_manaka/standing/af_manaka_expression_20_silent_pressure.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "［21/25 黒い微笑み／不穏］最初から場所をご存じだった、なんてことは……ありませんよね？",
+      "expressionId": "21",
+      "expressionLabel": "黒い微笑み／不穏",
+      "storySprites": [
+        {
+          "id": "af",
+          "src": "images/assets/char/af_manaka/standing/af_manaka_expression_21_dark_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "［22/25 ほっとした顔］日焼けしないよう移してくださったんですね。安心しました。",
+      "expressionId": "22",
+      "expressionLabel": "ほっとした顔",
+      "storySprites": [
+        {
+          "id": "af",
+          "src": "images/assets/char/af_manaka/standing/af_manaka_expression_22_relieved.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "［23/25 見惚れ／ときめき前］中に『明日も大丈夫』ってメモが……店長の字、きれいです。",
+      "expressionId": "23",
+      "expressionLabel": "見惚れ／ときめき前",
+      "storySprites": [
+        {
+          "id": "af",
+          "src": "images/assets/char/af_manaka/standing/af_manaka_expression_23_captivated.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "［24/25 眠そう／気だるげ］ほっとしたら眠くなってしまいました。準備、少し頑張りすぎたかも。",
+      "expressionId": "24",
+      "expressionLabel": "眠そう／気だるげ",
+      "storySprites": [
+        {
+          "id": "af",
+          "src": "images/assets/char/af_manaka/standing/af_manaka_expression_24_sleepy.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "［25/25 照れ隠し怒り］『照れてる真花も可愛い』なんて……もう、からかわないでください。",
+      "expressionId": "25",
+      "expressionLabel": "照れ隠し怒り",
+      "storySprites": [
+        {
+          "id": "af",
+          "src": "images/assets/char/af_manaka/standing/af_manaka_expression_25_bashful_anger.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "（真花の25表情をすべて確認しました）"
+    }
+  ]
+}

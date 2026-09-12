@@ -1,0 +1,437 @@
+{
+  "id": "ayame_expression_25_test",
+  "title": "彩愛の表情テスト：消えた家事ノート",
+  "version": "v039_307",
+  "return": {
+    "mode": "storyMenu",
+    "storyMenuTab": "other",
+    "storyId": "ayame_expression_25_test",
+    "eventId": "ayame_expression_25_test"
+  },
+  "format": "v039_steps",
+  "renderPolicy": {
+    "background": "forceReplace",
+    "sprites": "storyOnly",
+    "forceCenterSprites": true
+  },
+  "summary": "閉店後の家事家電コーナーで、消えた接客用ノートを店長と探しながら、彩愛の正式25表情を順番に確認する表示確認用シナリオ。",
+  "testPurpose": "彩愛の採用済み正式25表情について、最新manifestの画像パスで表示、切替、透過、位置、トリミングを一巡確認する。",
+  "steps": [
+    {
+      "bg": "images/assets/bgev/bg_office_hidamari.png",
+      "speaker": "",
+      "text": "【表情テスト】彩愛と消えた家事ノート",
+      "bgMode": "forceReplace",
+      "clearStorySprites": true,
+      "forceBackgroundReplace": true
+    },
+    {
+      "speaker": "",
+      "text": "閉店後。彩愛は洗濯機と掃除機の相談会に備え、自作の家事ノートを読み返していた。"
+    },
+    {
+      "speaker": "紫藤 彩愛",
+      "text": "［01/25 澄まし］貴方、明日の相談会の配置は整いました。最終確認をお願いいたします。",
+      "expressionId": "01",
+      "expressionLabel": "澄まし",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ak_ayame/standing/ak_ayame_expression_01_composed.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "紫藤 彩愛",
+      "text": "［02/25 やさしい微笑み］お疲れでしたら、温かいお茶をお淹れしますわ。少し休みませんこと？",
+      "expressionId": "02",
+      "expressionLabel": "やさしい微笑み",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ak_ayame/standing/ak_ayame_expression_02_gentle_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "紫藤 彩愛",
+      "text": "［03/25 笑顔］家事のお悩みなら、わたくしにお任せくださいませ。きっとお役に立ちます。",
+      "expressionId": "03",
+      "expressionLabel": "笑顔",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ak_ayame/standing/ak_ayame_expression_03_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "紫藤 彩愛",
+      "text": "［04/25 怒り］……まあ。接客用の家事ノートが見当たりません。どなたが動かしたのでしょう。",
+      "expressionId": "04",
+      "expressionLabel": "怒り",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ak_ayame/standing/ak_ayame_expression_04_anger.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "紫藤 彩愛",
+      "text": "［05/25 軽い嫌悪］洗剤の蓋が開いたままですわ。こうした扱いは感心いたしません。",
+      "expressionId": "05",
+      "expressionLabel": "軽い嫌悪",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ak_ayame/standing/ak_ayame_expression_05_mild_disgust.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "紫藤 彩愛",
+      "text": "［06/25 悲しみ］長い時間をかけて書きためたものですの。失くしたくはありませんわ。",
+      "expressionId": "06",
+      "expressionLabel": "悲しみ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ak_ayame/standing/ak_ayame_expression_06_sadness.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "紫藤 彩愛",
+      "text": "［07/25 心配／不安］お客様のご事情も記しています。誰かの目に触れていないか心配です。",
+      "expressionId": "07",
+      "expressionLabel": "心配／不安",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ak_ayame/standing/ak_ayame_expression_07_worry.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "紫藤 彩愛",
+      "text": "［08/25 動揺］きゃっ……掃除機が突然動きましたわ！　貴方、停止をお願いします！",
+      "expressionId": "08",
+      "expressionLabel": "動揺",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ak_ayame/standing/ak_ayame_expression_08_agitated.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "紫藤 彩愛",
+      "text": "［09/25 驚き］吸込口に紫色の付箋が。わたくしのノートに使っていたものです。",
+      "expressionId": "09",
+      "expressionLabel": "驚き",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ak_ayame/standing/ak_ayame_expression_09_surprise.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "紫藤 彩愛",
+      "text": "［10/25 照れ］狭い棚の下をご一緒に覗くなんて……少々、距離が近すぎますわ。",
+      "expressionId": "10",
+      "expressionLabel": "照れ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ak_ayame/standing/ak_ayame_expression_10_shy.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "紫藤 彩愛",
+      "text": "［11/25 期待］付箋をたどれば見つけられそうです。参りましょう、貴方。",
+      "expressionId": "11",
+      "expressionLabel": "期待",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ak_ayame/standing/ak_ayame_expression_11_expectation.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "紫藤 彩愛",
+      "text": "［12/25 得意げ］汚れの種類と付着した方向を見れば、移動経路は分かりますのよ。",
+      "expressionId": "12",
+      "expressionLabel": "得意げ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ak_ayame/standing/ak_ayame_expression_12_proud.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "紫藤 彩愛",
+      "text": "［13/25 いたずらな笑顔・舌出しウィンク］名探偵・彩愛の目はごまかせませんわ。……ふふ、いかが？",
+      "expressionId": "13",
+      "expressionLabel": "いたずらな笑顔・舌出しウィンク",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ak_ayame/standing/ak_ayame_expression_13_playful_tongue_wink.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "紫藤 彩愛",
+      "text": "［14/25 いたずらな笑顔・歯見せウィンク］助手の貴方には、発見後にすき焼きをご馳走して差し上げます。",
+      "expressionId": "14",
+      "expressionLabel": "いたずらな笑顔・歯見せウィンク",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ak_ayame/standing/ak_ayame_expression_14_playful_toothy_wink.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "紫藤 彩愛",
+      "text": "［15/25 困り笑い］まあ、付箋は洗濯機の前で途切れています。少々困りましたわね。",
+      "expressionId": "15",
+      "expressionLabel": "困り笑い",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ak_ayame/standing/ak_ayame_expression_15_troubled_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "紫藤 彩愛",
+      "text": "［16/25 真剣／決意］ここで諦めるわけには参りません。展示台の収納を順に確認します。",
+      "expressionId": "16",
+      "expressionLabel": "真剣／決意",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ak_ayame/standing/ak_ayame_expression_16_determined.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "紫藤 彩愛",
+      "text": "［17/25 伏し目／余韻］あのノートには、いつか築きたい暮らしのことも少し書いてありますの。",
+      "expressionId": "17",
+      "expressionLabel": "伏し目／余韻",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ak_ayame/standing/ak_ayame_expression_17_downcast_afterglow.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "紫藤 彩愛",
+      "text": "［18/25 拗ね／ぷいっ］貴方に中を読まれていたら……わたくし、しばらく口を利きませんわ。",
+      "expressionId": "18",
+      "expressionLabel": "拗ね／ぷいっ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ak_ayame/standing/ak_ayame_expression_18_sulking.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "紫藤 彩愛",
+      "text": "［19/25 泣き笑い］ございました……！　乾燥機の資料ケースに。無事でよかったですわ。",
+      "expressionId": "19",
+      "expressionLabel": "泣き笑い",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ak_ayame/standing/ak_ayame_expression_19_tearful_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "紫藤 彩愛",
+      "text": "［20/25 無言の圧／見透かす］……貴方。なぜ、そのケースの鍵をお持ちなのかしら？",
+      "expressionId": "20",
+      "expressionLabel": "無言の圧／見透かす",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ak_ayame/standing/ak_ayame_expression_20_silent_pressure.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "紫藤 彩愛",
+      "text": "［21/25 黒い微笑み／不穏］まさか、わたくしの将来設計をご覧になって、黙っていたのでは……？",
+      "expressionId": "21",
+      "expressionLabel": "黒い微笑み／不穏",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ak_ayame/standing/ak_ayame_expression_21_dark_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "紫藤 彩愛",
+      "text": "［22/25 ほっとした顔］水濡れを避けるため移してくださったのですね。安心いたしました。",
+      "expressionId": "22",
+      "expressionLabel": "ほっとした顔",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ak_ayame/standing/ak_ayame_expression_22_relieved.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "紫藤 彩愛",
+      "text": "［23/25 見惚れ／ときめき前］表紙に新しい栞が。『二人の暮らしも相談受付中』……貴方ったら。",
+      "expressionId": "23",
+      "expressionLabel": "見惚れ／ときめき前",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ak_ayame/standing/ak_ayame_expression_23_captivated.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "紫藤 彩愛",
+      "text": "［24/25 眠そう／気だるげ］ほっとしたら、少し眠くなってしまいました。今夜は早く休みますわ。",
+      "expressionId": "24",
+      "expressionLabel": "眠そう／気だるげ",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ak_ayame/standing/ak_ayame_expression_24_sleepy.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "紫藤 彩愛",
+      "text": "［25/25 照れ隠し怒り］『お嫁さんみたいで可愛い』だなんて……もう。責任を取ってくださいませ。",
+      "expressionId": "25",
+      "expressionLabel": "照れ隠し怒り",
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ak_ayame/standing/ak_ayame_expression_25_bashful_anger.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "（彩愛の25表情をすべて確認しました）"
+    }
+  ]
+}

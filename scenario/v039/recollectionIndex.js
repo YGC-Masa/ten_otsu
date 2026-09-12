@@ -430,5 +430,173 @@ window.TENOTSU_RECOLLECTION_STORY_INDEX = [
     "encounter": {
       "enabled": false
     }
+  },
+  {
+    "id": "kohaku_expression_25_test",
+    "title": "琥珀の表情テスト：倉庫に響く謎の音",
+    "type": "normal",
+    "category": "test",
+    "season": "other",
+    "placeId": "hidamari_office",
+    "placeName": "ひだまりストア事務所",
+    "characters": [
+      "ae"
+    ],
+    "characterNames": [
+      "春日原 琥珀"
+    ],
+    "scenario": "scenario/v039/events/kohaku_expression_25_test.json",
+    "version": "v039_302",
+    "unlock": {
+      "type": "always"
+    },
+    "order": 9908,
+    "summary": "琥珀の採用済み正式25表情を、最新画像で順番に確認する開発用シナリオ。",
+    "rawTitle": "琥珀の表情テスト：倉庫に響く謎の音",
+    "locationName": "ひだまりストア事務所",
+    "albumTab": "other",
+    "encounter": {
+      "enabled": false
+    }
+  },
+  {
+    "id": "manaka_expression_25_test",
+    "title": "真花の表情テスト：消えた美容ポーチ",
+    "type": "normal",
+    "category": "test",
+    "season": "other",
+    "placeId": "hidamari_office",
+    "placeName": "ひだまりストア事務所",
+    "characters": [
+      "af"
+    ],
+    "characterNames": [
+      "大道寺 真花"
+    ],
+    "scenario": "scenario/v039/events/manaka_expression_25_test.json",
+    "version": "v039_303",
+    "unlock": {
+      "type": "always"
+    },
+    "order": 9909,
+    "summary": "真花の採用済み正式25表情を、最新画像で順番に確認する開発用シナリオ。",
+    "rawTitle": "真花の表情テスト：消えた美容ポーチ",
+    "locationName": "ひだまりストア事務所",
+    "albumTab": "other",
+    "encounter": {
+      "enabled": false
+    }
+  },
+  {
+    "id": "misora_expression_25_test",
+    "title": "美空の表情テスト：消えた夏フェアPOP",
+    "type": "normal",
+    "category": "test",
+    "season": "other",
+    "placeId": "hidamari_office",
+    "placeName": "ひだまりストア事務所",
+    "characters": [
+      "ah"
+    ],
+    "characterNames": [
+      "双沢 美空"
+    ],
+    "scenario": "scenario/v039/events/misora_expression_25_test.json",
+    "version": "v039_304",
+    "unlock": {
+      "type": "always"
+    },
+    "order": 9910,
+    "summary": "美空の採用済み正式25表情を、最新画像で順番に確認する開発用シナリオ。",
+    "rawTitle": "美空の表情テスト：消えた夏フェアPOP",
+    "locationName": "ひだまりストア事務所",
+    "albumTab": "other",
+    "encounter": {
+      "enabled": false
+    }
+  },
+  {
+    "id": "yozora_expression_25_test",
+    "title": "夜空の表情テスト：消えた加湿器センサー",
+    "type": "normal",
+    "category": "test",
+    "season": "other",
+    "placeId": "hidamari_office",
+    "placeName": "ひだまりストア事務所",
+    "characters": [
+      "ai"
+    ],
+    "characterNames": [
+      "双沢 夜空"
+    ],
+    "scenario": "scenario/v039/events/yozora_expression_25_test.json",
+    "version": "v039_305",
+    "unlock": {
+      "type": "always"
+    },
+    "order": 9911,
+    "summary": "夜空の採用済み正式25表情を、最新画像で順番に確認する開発用シナリオ。",
+    "rawTitle": "夜空の表情テスト：消えた加湿器センサー",
+    "locationName": "ひだまりストア事務所",
+    "albumTab": "other",
+    "encounter": {
+      "enabled": false
+    }
+  },
+  {
+    "id": "momo_expression_25_test",
+    "title": "桃の表情テスト：消えた配信データ",
+    "type": "normal",
+    "category": "test",
+    "season": "other",
+    "placeId": "hidamari_office",
+    "placeName": "ひだまりストア事務所",
+    "characters": [
+      "aj"
+    ],
+    "characterNames": [
+      "芝桜 桃"
+    ],
+    "scenario": "scenario/v039/events/momo_expression_25_test.json",
+    "version": "v039_306",
+    "unlock": {
+      "type": "always"
+    },
+    "order": 9912,
+    "summary": "桃の採用済み正式25表情を、最新画像で順番に確認する開発用シナリオ。",
+    "rawTitle": "桃の表情テスト：消えた配信データ",
+    "locationName": "ひだまりストア事務所",
+    "albumTab": "other",
+    "encounter": {
+      "enabled": false
+    }
+  },
+  {
+    "id": "ayame_expression_25_test",
+    "title": "彩愛の表情テスト：消えた家事ノート",
+    "type": "normal",
+    "category": "test",
+    "season": "other",
+    "placeId": "hidamari_office",
+    "placeName": "ひだまりストア事務所",
+    "characters": [
+      "ak"
+    ],
+    "characterNames": [
+      "紫藤 彩愛"
+    ],
+    "scenario": "scenario/v039/events/ayame_expression_25_test.json",
+    "version": "v039_307",
+    "unlock": {
+      "type": "always"
+    },
+    "order": 9913,
+    "summary": "彩愛の採用済み正式25表情を、最新画像で順番に確認する開発用シナリオ。",
+    "rawTitle": "彩愛の表情テスト：消えた家事ノート",
+    "locationName": "ひだまりストア事務所",
+    "albumTab": "other",
+    "encounter": {
+      "enabled": false
+    }
   }
 ];
