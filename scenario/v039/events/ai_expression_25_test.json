@@ -1,0 +1,437 @@
+{
+  "id": "ai_expression_25_test",
+  "title": "藍の表情テスト：消えた思い出のしおり",
+  "version": "v039_299",
+  "return": {
+    "mode": "storyMenu",
+    "storyMenuTab": "other",
+    "storyId": "ai_expression_25_test",
+    "eventId": "ai_expression_25_test"
+  },
+  "format": "v039_steps",
+  "renderPolicy": {
+    "background": "forceReplace",
+    "sprites": "storyOnly",
+    "forceCenterSprites": true
+  },
+  "summary": "閉店後の事務所で、大切なしおりを店長と探しながら、藍の正式25表情を順番に確認する表示確認用シナリオ。",
+  "testPurpose": "藍の採用済み正式25表情について、最新manifestの画像パスで表示、切替、透過、位置、トリミングを一巡確認する。",
+  "steps": [
+    {
+      "bg": "images/assets/bgev/bg_office_hidamari.png",
+      "speaker": "",
+      "text": "【表情テスト】藍と消えた思い出のしおり",
+      "bgMode": "forceReplace",
+      "clearStorySprites": true,
+      "forceBackgroundReplace": true
+    },
+    {
+      "speaker": "",
+      "text": "閉店後。棚卸しを終えた藍は、事務所で一冊の本を開こうとしていた。"
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "［01/25 澄まし］棚卸しの集計、終わりました。てんちょー、確認をお願いします。",
+      "expressionId": "01",
+      "expressionLabel": "澄まし",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/ab_ai/standing/01_澄まし.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "［02/25 微笑み］その間、少しだけ読書をしていてもいいですか？　ここ、落ち着くので。",
+      "expressionId": "02",
+      "expressionLabel": "微笑み",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/ab_ai/standing/02_微笑み.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "［03/25 笑顔］今日はずっと楽しみにしていた続きなんです。やっと読めます。",
+      "expressionId": "03",
+      "expressionLabel": "笑顔",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/ab_ai/standing/03_笑顔.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "［04/25 怒り］……あの。机の引き出しを勝手に動かしたのは、どなたですか？",
+      "expressionId": "04",
+      "expressionLabel": "怒り",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/ab_ai/standing/04_怒り.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "［05/25 軽い嫌悪］パンくずまで入っています。大切な本を置く場所なのに、これはちょっと……。",
+      "expressionId": "05",
+      "expressionLabel": "軽い嫌悪",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/ab_ai/standing/05_軽い嫌悪.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "［06/25 悲しみ］しおりが、ありません。てんちょーにもらった、大切なものなのに……。",
+      "expressionId": "06",
+      "expressionLabel": "悲しみ",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/ab_ai/standing/06_悲しみ.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "［07/25 心配不安］誰かがごみと間違えていたら……どうしましょう。",
+      "expressionId": "07",
+      "expressionLabel": "心配不安",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/ab_ai/standing/07_心配不安.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "［08/25 動揺］ま、待ってください。今、シュレッダーが動きませんでしたか？",
+      "expressionId": "08",
+      "expressionLabel": "動揺",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/ab_ai/standing/08_動揺.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "［09/25 驚き］……紙ではなく、店内地図が出てきました。『青い印を追え』って……。",
+      "expressionId": "09",
+      "expressionLabel": "驚き",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/ab_ai/standing/09_驚き.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "［10/25 照れ］裏に『てんちょーと手をつないで探すこと』……こ、これは必要な条件ですか？",
+      "expressionId": "10",
+      "expressionLabel": "照れ",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/ab_ai/standing/10_照れ.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "［11/25 期待］でも、手がかりがあるなら見つかるかもしれません。行きましょう、てんちょー。",
+      "expressionId": "11",
+      "expressionLabel": "期待",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/ab_ai/standing/11_期待.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "［12/25 得意げ］青い印は本棚の分類番号です。読書家を甘く見ないでください。",
+      "expressionId": "12",
+      "expressionLabel": "得意げ",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/ab_ai/standing/12_得意げ.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "［13/25 いたずらな笑顔・舌出しウィンク］正解のご褒美は、新しいパン屋さんへの同行でお願いします。……冗談です。",
+      "expressionId": "13",
+      "expressionLabel": "いたずらな笑顔・舌出しウィンク",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/ab_ai/standing/13_いたずらな笑顔_舌出しウィンク.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "［14/25 いたずらな笑顔・歯見せウィンク］次の印も見つけました。今日は、わたしの勝ちですね。",
+      "expressionId": "14",
+      "expressionLabel": "いたずらな笑顔・歯見せウィンク",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/ab_ai/standing/14_いたずらな笑顔_歯見せウィンク.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "［15/25 困り笑い］……あれ。児童書の棚ではなく、実用書の棚でした。似た番号で困りますね。",
+      "expressionId": "15",
+      "expressionLabel": "困り笑い",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/ab_ai/standing/15_困り笑い.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "［16/25 真剣／決意］まだ諦めません。あのしおりは、必ず見つけます。",
+      "expressionId": "16",
+      "expressionLabel": "真剣／決意",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/ab_ai/standing/16_真剣_決意.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "［17/25 伏し目／余韻］あれを挟んで読むと、てんちょーが応援してくれているような気がするんです。",
+      "expressionId": "17",
+      "expressionLabel": "伏し目／余韻",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/ab_ai/standing/17_伏し目_余韻.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "［18/25 拗ね／ぷいっ］もう。手がかりが事務所へ戻るなら、最初からそう書いてください。",
+      "expressionId": "18",
+      "expressionLabel": "拗ね／ぷいっ",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/ab_ai/standing/18_拗ね_ぷいっ.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "［19/25 泣き笑い］ありました……！　本の間に、ちゃんと挟まっています。よかった……。",
+      "expressionId": "19",
+      "expressionLabel": "泣き笑い",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/ab_ai/standing/19_泣き笑い.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "［20/25 無言の圧／見透かす］……てんちょー。この本、さっき一度持ち上げましたよね？",
+      "expressionId": "20",
+      "expressionLabel": "無言の圧／見透かす",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/ab_ai/standing/20_無言の圧_見透かす.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "［21/25 黒い微笑み／不穏］それに、この青い印の字……見覚えがあります。正直に教えてください。",
+      "expressionId": "21",
+      "expressionLabel": "黒い微笑み／不穏",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/ab_ai/standing/21_黒い微笑み_不穏.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "［22/25 ほっとした顔］本が傷んでいないなら、ひとまず安心しました。しおりも無事です。",
+      "expressionId": "22",
+      "expressionLabel": "ほっとした顔",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/ab_ai/standing/22_ほっとした顔.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "［23/25 見惚れ／ときめき前］『頑張った藍へ』……新しいしおりまで。きれい……てんちょーが選んでくれたんですか？",
+      "expressionId": "23",
+      "expressionLabel": "見惚れ／ときめき前",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/ab_ai/standing/23_見惚れ_ときめき前.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "［24/25 眠そう／気だるげ］ふぁ……安心したら、急に眠くなってきました。今日はよく働きましたから。",
+      "expressionId": "24",
+      "expressionLabel": "眠そう／気だるげ",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/ab_ai/standing/24_眠そう_気だるげ.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "速水川 藍",
+      "text": "［25/25 照れ隠し怒り］『可愛い寝顔も見てみたい』は余計です。もう、からかわないでください……。",
+      "expressionId": "25",
+      "expressionLabel": "照れ隠し怒り",
+      "storySprites": [
+        {
+          "id": "ab",
+          "src": "images/assets/char/ab_ai/standing/25_照れ隠し怒り.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "（藍の25表情をすべて確認しました）"
+    }
+  ]
+}
