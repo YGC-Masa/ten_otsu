@@ -306,12 +306,12 @@ window.TENOTSU_RECOLLECTION_STORY_INDEX = [
       "小麦沢 こがね"
     ],
     "scenario": "scenario/v039/events/kogane_expression_25_test.json",
-    "version": "v039_294",
+    "version": "v039_296",
     "unlock": {
       "type": "always"
     },
     "order": 9903,
-    "summary": "こがねの正式表情25種を順番に確認する開発用シナリオ。",
+    "summary": "こがねの採用済み正式25表情を、最新画像で順番に確認する開発用シナリオ。",
     "rawTitle": "こがねの表情テスト：消えた新作スマホPOP",
     "locationName": "ひだまりストア事務所",
     "albumTab": "other",
@@ -320,7 +320,7 @@ window.TENOTSU_RECOLLECTION_STORY_INDEX = [
     }
   },
   {
-    "id": "moe_expression_legacy_test",
+    "id": "moe_expression_25_test",
     "title": "萌の表情テスト：なくした癒やしコーナー札",
     "type": "normal",
     "category": "test",
@@ -333,13 +333,13 @@ window.TENOTSU_RECOLLECTION_STORY_INDEX = [
     "characterNames": [
       "草壁 萌"
     ],
-    "scenario": "scenario/v039/events/moe_expression_legacy_test.json",
-    "version": "v039_295",
+    "scenario": "scenario/v039/events/moe_expression_25_test.json",
+    "version": "v039_297",
     "unlock": {
       "type": "always"
     },
     "order": 9904,
-    "summary": "萌の現行旧式12表情・全14画像を順番に確認する開発用シナリオ。",
+    "summary": "萌の採用済み正式25表情を順番に確認する開発用シナリオ。",
     "rawTitle": "萌の表情テスト：なくした癒やしコーナー札",
     "locationName": "ひだまりストア事務所",
     "albumTab": "other",

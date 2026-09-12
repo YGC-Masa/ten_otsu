@@ -1,0 +1,465 @@
+{
+  "id": "moe_expression_25_test",
+  "title": "萌の表情テスト：なくした癒やしコーナー札",
+  "version": "v039_297",
+  "return": {
+    "mode": "storyMenu",
+    "storyMenuTab": "other",
+    "storyId": "moe_expression_25_test",
+    "eventId": "moe_expression_25_test"
+  },
+  "format": "v039_steps",
+  "renderPolicy": {
+    "background": "forceReplace",
+    "sprites": "storyOnly",
+    "forceCenterSprites": true
+  },
+  "summary": "閉店後の事務所で、癒やし家電コーナーの案内札を店長と探しながら、萌の正式25表情を順番に確認する表示確認用シナリオ。",
+  "testPurpose": "萌の採用済み正式25表情について、最新manifestの画像パスで表示、切替、透過、位置、トリミングを一巡確認する。",
+  "steps": [
+    {
+      "bg": "images/assets/bgev/bg_office_hidamari.png",
+      "speaker": "",
+      "text": "【表情テスト】萌となくした癒やしコーナー札",
+      "bgMode": "forceReplace",
+      "clearStorySprites": true,
+      "forceBackgroundReplace": true
+    },
+    {
+      "speaker": "草壁 萌",
+      "text": "［01/25 澄まし］おにいちゃん、明日の癒やし家電コーナー、最後に確認してもいい？",
+      "expressionId": "01",
+      "expressionLabel": "澄まし",
+      "storySprites": [
+        {
+          "id": "am",
+          "src": "images/assets/char/am_moe/standing/am_moe_expression_01_composed.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 萌",
+      "text": "［02/25 やさしい微笑み］ふふ。おにいちゃんと一緒なら、準備も楽しいね。",
+      "expressionId": "02",
+      "expressionLabel": "やさしい微笑み",
+      "storySprites": [
+        {
+          "id": "am",
+          "src": "images/assets/char/am_moe/standing/am_moe_expression_02_gentle_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 萌",
+      "text": "［03/25 笑顔］よかった。新しい案内札も、ちゃんと見やすくできたよ。",
+      "expressionId": "03",
+      "expressionLabel": "笑顔",
+      "storySprites": [
+        {
+          "id": "am",
+          "src": "images/assets/char/am_moe/standing/am_moe_expression_03_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "ところが、萌が作った案内札が、机の上から消えていた。"
+    },
+    {
+      "speaker": "草壁 萌",
+      "text": "［04/25 怒り］もう……誰かが勝手に動かしたなら、ちゃんと元に戻してもらわないと。",
+      "expressionId": "04",
+      "expressionLabel": "怒り",
+      "storySprites": [
+        {
+          "id": "am",
+          "src": "images/assets/char/am_moe/standing/am_moe_expression_04_anger.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 萌",
+      "text": "［05/25 軽い嫌悪］まさか、べたべたの古いテープと一緒に捨てたんじゃ……それは、ちょっと嫌だな。",
+      "expressionId": "05",
+      "expressionLabel": "軽い嫌悪",
+      "storySprites": [
+        {
+          "id": "am",
+          "src": "images/assets/char/am_moe/standing/am_moe_expression_05_mild_disgust.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 萌",
+      "text": "［06/25 悲しみ］一生懸命書いたのに……なくなっちゃったら、悲しいよ。",
+      "expressionId": "06",
+      "expressionLabel": "悲しみ",
+      "storySprites": [
+        {
+          "id": "am",
+          "src": "images/assets/char/am_moe/standing/am_moe_expression_06_sadness.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "大丈夫。一緒に探せば、きっと見つかるよ。"
+    },
+    {
+      "speaker": "草壁 萌",
+      "text": "［07/25 心配］明日の開店までに見つかるかな。作り直す時間、あるかな……。",
+      "expressionId": "07",
+      "expressionLabel": "心配",
+      "storySprites": [
+        {
+          "id": "am",
+          "src": "images/assets/char/am_moe/standing/am_moe_expression_07_worry.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 萌",
+      "text": "［08/25 動揺］えっ、棚の裏にもない……ど、どうしよう、おにいちゃん。",
+      "expressionId": "08",
+      "expressionLabel": "動揺",
+      "storySprites": [
+        {
+          "id": "am",
+          "src": "images/assets/char/am_moe/standing/am_moe_expression_08_agitated.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "萌がタロットカードを一枚引くと、描かれていたのは『戦車』だった。"
+    },
+    {
+      "speaker": "草壁 萌",
+      "text": "［09/25 驚き］あっ……『戦車』。もしかして、台車の近くにあるってこと？",
+      "expressionId": "09",
+      "expressionLabel": "驚き",
+      "storySprites": [
+        {
+          "id": "am",
+          "src": "images/assets/char/am_moe/standing/am_moe_expression_09_surprise.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 萌",
+      "text": "［10/25 照れ］そ、そんなに見つめないで。占いが外れたら、恥ずかしいから……。",
+      "expressionId": "10",
+      "expressionLabel": "照れ",
+      "storySprites": [
+        {
+          "id": "am",
+          "src": "images/assets/char/am_moe/standing/am_moe_expression_10_shy.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 萌",
+      "text": "［11/25 期待］少しだけ信じてみよう？　おにいちゃん、台車置き場まで一緒に来て。",
+      "expressionId": "11",
+      "expressionLabel": "期待",
+      "storySprites": [
+        {
+          "id": "am",
+          "src": "images/assets/char/am_moe/standing/am_moe_expression_11_expectation.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "台車置き場へ向かうと、棚の下から緑色のリボンがのぞいていた。"
+    },
+    {
+      "speaker": "草壁 萌",
+      "text": "［12/25 得意げ］ほら、緑のリボンが見える。私の占い、ちゃんと当たったでしょう？",
+      "expressionId": "12",
+      "expressionLabel": "得意げ",
+      "storySprites": [
+        {
+          "id": "am",
+          "src": "images/assets/char/am_moe/standing/am_moe_expression_12_proud.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 萌",
+      "text": "［13/25 舌出しウィンク］当てたご褒美は、肩もみ一回でいいよ。……なんてね。",
+      "expressionId": "13",
+      "expressionLabel": "舌出しウィンク",
+      "storySprites": [
+        {
+          "id": "am",
+          "src": "images/assets/char/am_moe/standing/am_moe_expression_13_playful_tongue_wink.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 萌",
+      "text": "［14/25 歯見せウィンク］今日は特別。おにいちゃんにも、元気いっぱいの笑顔を見せちゃう。",
+      "expressionId": "14",
+      "expressionLabel": "歯見せウィンク",
+      "storySprites": [
+        {
+          "id": "am",
+          "src": "images/assets/char/am_moe/standing/am_moe_expression_14_playful_toothy_wink.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 萌",
+      "text": "［15/25 困り笑い］でも、裏のテープが棚板にくっついちゃってるね……これは困ったな。",
+      "expressionId": "15",
+      "expressionLabel": "困り笑い",
+      "storySprites": [
+        {
+          "id": "am",
+          "src": "images/assets/char/am_moe/standing/am_moe_expression_15_troubled_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 萌",
+      "text": "［16/25 決意］大丈夫。私がゆっくり剥がすから、おにいちゃんは札を支えて。",
+      "expressionId": "16",
+      "expressionLabel": "決意",
+      "storySprites": [
+        {
+          "id": "am",
+          "src": "images/assets/char/am_moe/standing/am_moe_expression_16_determined.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 萌",
+      "text": "［17/25 伏し目の余韻］こういう時、おねぇちゃんならもっと手際よくできるのかな……。",
+      "expressionId": "17",
+      "expressionLabel": "伏し目の余韻",
+      "storySprites": [
+        {
+          "id": "am",
+          "src": "images/assets/char/am_moe/standing/am_moe_expression_17_downcast_afterglow.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 萌",
+      "text": "［18/25 拗ね］もう。すぐおねぇちゃんと比べる癖、直したいのに……笑わないで。",
+      "expressionId": "18",
+      "expressionLabel": "拗ね",
+      "storySprites": [
+        {
+          "id": "am",
+          "src": "images/assets/char/am_moe/standing/am_moe_expression_18_sulking.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 萌",
+      "text": "［19/25 涙笑い］私のやり方でいいって言ってくれるの？　……ありがとう、おにいちゃん。",
+      "expressionId": "19",
+      "expressionLabel": "涙笑い",
+      "storySprites": [
+        {
+          "id": "am",
+          "src": "images/assets/char/am_moe/standing/am_moe_expression_19_tearful_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "萌は萌のやり方で、ちゃんと頼りになるよ。"
+    },
+    {
+      "speaker": "",
+      "text": "二人で札を救出すると、店長の指先には古い粘着テープが残っていた。"
+    },
+    {
+      "speaker": "草壁 萌",
+      "text": "［20/25 無言の圧］おにいちゃん。その、テープのついた手で私のカードに触ろうとしてないよね……？",
+      "expressionId": "20",
+      "expressionLabel": "無言の圧",
+      "storySprites": [
+        {
+          "id": "am",
+          "src": "images/assets/char/am_moe/standing/am_moe_expression_20_silent_pressure.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 萌",
+      "text": "［21/25 黒い微笑み］ふふ……触ったら、カードがきれいになるまで一緒にお掃除だからね。",
+      "expressionId": "21",
+      "expressionLabel": "黒い微笑み",
+      "storySprites": [
+        {
+          "id": "am",
+          "src": "images/assets/char/am_moe/standing/am_moe_expression_21_dark_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 萌",
+      "text": "［22/25 安堵］貼り替え完了。よかった……これで明日の準備も安心だね。",
+      "expressionId": "22",
+      "expressionLabel": "安堵",
+      "storySprites": [
+        {
+          "id": "am",
+          "src": "images/assets/char/am_moe/standing/am_moe_expression_22_relieved.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "よく頑張ったな。案内札も、とても見やすい。"
+    },
+    {
+      "speaker": "草壁 萌",
+      "text": "［23/25 見惚れ／ときめき］そんなふうに褒められたら……おにいちゃんから、目をそらせなくなるよ。",
+      "expressionId": "23",
+      "expressionLabel": "見惚れ／ときめき",
+      "storySprites": [
+        {
+          "id": "am",
+          "src": "images/assets/char/am_moe/standing/am_moe_expression_23_captivated.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 萌",
+      "text": "［24/25 眠い］ふぁ……安心したら、急に眠くなっちゃった。今日はたくさん頑張ったからかな。",
+      "expressionId": "24",
+      "expressionLabel": "眠い",
+      "storySprites": [
+        {
+          "id": "am",
+          "src": "images/assets/char/am_moe/standing/am_moe_expression_24_sleepy.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "今日はここまで。送っていくよ。"
+    },
+    {
+      "speaker": "草壁 萌",
+      "text": "［25/25 照れ隠し怒り］こ、子ども扱いしないで。でも……手をつないで送ってくれるなら、許してあげる。",
+      "expressionId": "25",
+      "expressionLabel": "照れ隠し怒り",
+      "storySprites": [
+        {
+          "id": "am",
+          "src": "images/assets/char/am_moe/standing/am_moe_expression_25_bashful_anger.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "【確認完了】萌の正式表情01～25をすべて表示しました。"
+    }
+  ]
+}
