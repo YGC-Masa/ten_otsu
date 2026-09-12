@@ -9,180 +9,30 @@
   "status": "adopted",
   "sourceVersion": "v1.1",
   "expressions": [
-    {
-      "expressionId": "01",
-      "name": "澄まし",
-      "usage": "平常・説明・落ち着いた応対",
-      "file": "ad_kogane_expression_01.webp",
-      "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_01.webp"
-    },
-    {
-      "expressionId": "02",
-      "name": "やさしい微笑み",
-      "usage": "親愛・安心・柔らかな応対",
-      "file": "ad_kogane_expression_02.webp",
-      "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_02.webp"
-    },
-    {
-      "expressionId": "03",
-      "name": "笑顔",
-      "usage": "喜び・歓迎・明るい反応",
-      "file": "ad_kogane_expression_03.webp",
-      "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_03.webp"
-    },
-    {
-      "expressionId": "04",
-      "name": "怒り",
-      "usage": "強い怒り・叱責",
-      "file": "ad_kogane_expression_04.webp",
-      "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_04.webp"
-    },
-    {
-      "expressionId": "05",
-      "name": "軽い嫌悪",
-      "usage": "軽い拒否・呆れ・不快",
-      "file": "ad_kogane_expression_05.webp",
-      "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_05.webp"
-    },
-    {
-      "expressionId": "06",
-      "name": "悲しみ",
-      "usage": "落胆・喪失・悲しみ",
-      "file": "ad_kogane_expression_06.webp",
-      "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_06.webp"
-    },
-    {
-      "expressionId": "07",
-      "name": "心配",
-      "usage": "懸念・心配・迷い",
-      "file": "ad_kogane_expression_07.webp",
-      "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_07.webp"
-    },
-    {
-      "expressionId": "08",
-      "name": "動揺",
-      "usage": "焦り・予想外の事態",
-      "file": "ad_kogane_expression_08.webp",
-      "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_08.webp"
-    },
-    {
-      "expressionId": "09",
-      "name": "驚き",
-      "usage": "驚き・発見・急な反応",
-      "file": "ad_kogane_expression_09.webp",
-      "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_09.webp"
-    },
-    {
-      "expressionId": "10",
-      "name": "照れ",
-      "usage": "照れ・好意を隠しきれない場面",
-      "file": "ad_kogane_expression_10.webp",
-      "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_10.webp"
-    },
-    {
-      "expressionId": "11",
-      "name": "期待",
-      "usage": "期待・お願い・前向きな待機",
-      "file": "ad_kogane_expression_11.webp",
-      "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_11.webp"
-    },
-    {
-      "expressionId": "12",
-      "name": "得意げ",
-      "usage": "自信・得意げ・小さな勝利",
-      "file": "ad_kogane_expression_12.webp",
-      "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_12.webp"
-    },
-    {
-      "expressionId": "13",
-      "name": "舌出しウィンク",
-      "usage": "茶目っ気・からかい",
-      "file": "ad_kogane_expression_13.webp",
-      "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_13.webp"
-    },
-    {
-      "expressionId": "14",
-      "name": "歯見せウィンク",
-      "usage": "快活な冗談・強めのウィンク",
-      "file": "ad_kogane_expression_14.webp",
-      "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_14.webp"
-    },
-    {
-      "expressionId": "15",
-      "name": "困り笑い",
-      "usage": "困惑を含む愛想笑い",
-      "file": "ad_kogane_expression_15.webp",
-      "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_15.webp"
-    },
-    {
-      "expressionId": "16",
-      "name": "決意",
-      "usage": "決意・覚悟・対立前",
-      "file": "ad_kogane_expression_16.webp",
-      "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_16.webp"
-    },
-    {
-      "expressionId": "17",
-      "name": "伏し目の余韻",
-      "usage": "余韻・内省・言葉を飲み込む場面",
-      "file": "ad_kogane_expression_17.webp",
-      "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_17.webp"
-    },
-    {
-      "expressionId": "18",
-      "name": "拗ね",
-      "usage": "不満・拗ね・軽い反発",
-      "file": "ad_kogane_expression_18.webp",
-      "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_18.webp"
-    },
-    {
-      "expressionId": "19",
-      "name": "涙笑い",
-      "usage": "泣きながらの安堵・感謝",
-      "file": "ad_kogane_expression_19.webp",
-      "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_19.webp"
-    },
-    {
-      "expressionId": "20",
-      "name": "無言の圧",
-      "usage": "静かな威圧・怒りの前段",
-      "file": "ad_kogane_expression_20.webp",
-      "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_20.webp"
-    },
-    {
-      "expressionId": "21",
-      "name": "黒い微笑み",
-      "usage": "含み・策・不穏な微笑み",
-      "file": "ad_kogane_expression_21.webp",
-      "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_21.webp"
-    },
-    {
-      "expressionId": "22",
-      "name": "安堵",
-      "usage": "緊張が解けた瞬間",
-      "file": "ad_kogane_expression_22.webp",
-      "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_22.webp"
-    },
-    {
-      "expressionId": "23",
-      "name": "見惚れ／ときめき",
-      "usage": "見惚れ・ときめき・心を奪われた瞬間",
-      "file": "ad_kogane_expression_23.webp",
-      "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_23.webp"
-    },
-    {
-      "expressionId": "24",
-      "name": "眠い",
-      "usage": "眠気・疲労・夜更け",
-      "file": "ad_kogane_expression_24.webp",
-      "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_24.webp"
-    },
-    {
-      "expressionId": "25",
-      "name": "照れ隠し怒り",
-      "usage": "照れ隠しを伴う怒り",
-      "file": "ad_kogane_expression_25.webp",
-      "path": "images/assets/char/ad_kogane/standing/ad_kogane_expression_25.webp"
-    }
+    {"expressionId":"01","name":"澄まし","usage":"平常・説明・落ち着いた応対","file":"ad_kogane_expression_01_composed.webp","path":"images/assets/char/ad_kogane/standing/ad_kogane_expression_01_composed.webp"},
+    {"expressionId":"02","name":"やさしい微笑み","usage":"親愛・安心・柔らかな応対","file":"ad_kogane_expression_02_gentle_smile.webp","path":"images/assets/char/ad_kogane/standing/ad_kogane_expression_02_gentle_smile.webp"},
+    {"expressionId":"03","name":"笑顔","usage":"喜び・歓迎・明るい反応","file":"ad_kogane_expression_03_smile.webp","path":"images/assets/char/ad_kogane/standing/ad_kogane_expression_03_smile.webp"},
+    {"expressionId":"04","name":"怒り","usage":"強い怒り・叱責","file":"ad_kogane_expression_04_anger.webp","path":"images/assets/char/ad_kogane/standing/ad_kogane_expression_04_anger.webp"},
+    {"expressionId":"05","name":"軽い嫌悪","usage":"軽い拒否・呆れ・不快","file":"ad_kogane_expression_05_mild_disgust.webp","path":"images/assets/char/ad_kogane/standing/ad_kogane_expression_05_mild_disgust.webp"},
+    {"expressionId":"06","name":"悲しみ","usage":"落胆・喪失・悲しみ","file":"ad_kogane_expression_06_sadness.webp","path":"images/assets/char/ad_kogane/standing/ad_kogane_expression_06_sadness.webp"},
+    {"expressionId":"07","name":"心配","usage":"懸念・心配・迷い","file":"ad_kogane_expression_07_worry.webp","path":"images/assets/char/ad_kogane/standing/ad_kogane_expression_07_worry.webp"},
+    {"expressionId":"08","name":"動揺","usage":"焦り・予想外の事態","file":"ad_kogane_expression_08_agitated.webp","path":"images/assets/char/ad_kogane/standing/ad_kogane_expression_08_agitated.webp"},
+    {"expressionId":"09","name":"驚き","usage":"驚き・発見・急な反応","file":"ad_kogane_expression_09_surprise.webp","path":"images/assets/char/ad_kogane/standing/ad_kogane_expression_09_surprise.webp"},
+    {"expressionId":"10","name":"照れ","usage":"照れ・好意を隠しきれない場面","file":"ad_kogane_expression_10_shy.webp","path":"images/assets/char/ad_kogane/standing/ad_kogane_expression_10_shy.webp"},
+    {"expressionId":"11","name":"期待","usage":"期待・お願い・前向きな待機","file":"ad_kogane_expression_11_expectation.webp","path":"images/assets/char/ad_kogane/standing/ad_kogane_expression_11_expectation.webp"},
+    {"expressionId":"12","name":"得意げ","usage":"自信・得意げ・小さな勝利","file":"ad_kogane_expression_12_proud.webp","path":"images/assets/char/ad_kogane/standing/ad_kogane_expression_12_proud.webp"},
+    {"expressionId":"13","name":"舌出しウィンク","usage":"茶目っ気・からかい","file":"ad_kogane_expression_13_playful_tongue_wink.webp","path":"images/assets/char/ad_kogane/standing/ad_kogane_expression_13_playful_tongue_wink.webp"},
+    {"expressionId":"14","name":"歯見せウィンク","usage":"快活な冗談・強めのウィンク","file":"ad_kogane_expression_14_playful_toothy_wink.webp","path":"images/assets/char/ad_kogane/standing/ad_kogane_expression_14_playful_toothy_wink.webp"},
+    {"expressionId":"15","name":"困り笑い","usage":"困惑を含む愛想笑い","file":"ad_kogane_expression_15_troubled_smile.webp","path":"images/assets/char/ad_kogane/standing/ad_kogane_expression_15_troubled_smile.webp"},
+    {"expressionId":"16","name":"決意","usage":"決意・覚悟・対立前","file":"ad_kogane_expression_16_determined.webp","path":"images/assets/char/ad_kogane/standing/ad_kogane_expression_16_determined.webp"},
+    {"expressionId":"17","name":"伏し目の余韻","usage":"余韻・内省・言葉を飲み込む場面","file":"ad_kogane_expression_17_downcast_afterglow.webp","path":"images/assets/char/ad_kogane/standing/ad_kogane_expression_17_downcast_afterglow.webp"},
+    {"expressionId":"18","name":"拗ね","usage":"不満・拗ね・軽い反発","file":"ad_kogane_expression_18_sulking.webp","path":"images/assets/char/ad_kogane/standing/ad_kogane_expression_18_sulking.webp"},
+    {"expressionId":"19","name":"涙笑い","usage":"泣きながらの安堵・感謝","file":"ad_kogane_expression_19_tearful_smile.webp","path":"images/assets/char/ad_kogane/standing/ad_kogane_expression_19_tearful_smile.webp"},
+    {"expressionId":"20","name":"無言の圧","usage":"静かな威圧・怒りの前段","file":"ad_kogane_expression_20_silent_pressure.webp","path":"images/assets/char/ad_kogane/standing/ad_kogane_expression_20_silent_pressure.webp"},
+    {"expressionId":"21","name":"黒い微笑み","usage":"含み・策・不穏な微笑み","file":"ad_kogane_expression_21_dark_smile.webp","path":"images/assets/char/ad_kogane/standing/ad_kogane_expression_21_dark_smile.webp"},
+    {"expressionId":"22","name":"安堵","usage":"緊張が解けた瞬間","file":"ad_kogane_expression_22_relieved.webp","path":"images/assets/char/ad_kogane/standing/ad_kogane_expression_22_relieved.webp"},
+    {"expressionId":"23","name":"見惚れ／ときめき","usage":"見惚れ・ときめき・心を奪われた瞬間","file":"ad_kogane_expression_23_captivated.webp","path":"images/assets/char/ad_kogane/standing/ad_kogane_expression_23_captivated.webp"},
+    {"expressionId":"24","name":"眠い","usage":"眠気・疲労・夜更け","file":"ad_kogane_expression_24_sleepy.webp","path":"images/assets/char/ad_kogane/standing/ad_kogane_expression_24_sleepy.webp"},
+    {"expressionId":"25","name":"照れ隠し怒り","usage":"照れ隠しを伴う怒り","file":"ad_kogane_expression_25_bashful_anger.webp","path":"images/assets/char/ad_kogane/standing/ad_kogane_expression_25_bashful_anger.webp"}
   ]
 }
