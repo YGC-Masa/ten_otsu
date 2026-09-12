@@ -1,0 +1,437 @@
+{
+  "id": "midori_expression_25_test",
+  "title": "翠の表情テスト：迷子のバックアップ",
+  "version": "v039_300",
+  "return": {
+    "mode": "storyMenu",
+    "storyMenuTab": "other",
+    "storyId": "midori_expression_25_test",
+    "eventId": "midori_expression_25_test"
+  },
+  "format": "v039_steps",
+  "renderPolicy": {
+    "background": "forceReplace",
+    "sprites": "storyOnly",
+    "forceCenterSprites": true
+  },
+  "summary": "閉店後の事務所で、消えた売上資料のバックアップを店長と復旧しながら、翠の正式25表情を順番に確認する表示確認用シナリオ。",
+  "testPurpose": "翠の採用済み正式25表情について、最新manifestの画像パスで表示、切替、透過、位置、トリミングを一巡確認する。",
+  "steps": [
+    {
+      "bg": "images/assets/bgev/bg_office_hidamari.png",
+      "speaker": "",
+      "text": "【表情テスト】翠と迷子のバックアップ",
+      "bgMode": "forceReplace",
+      "clearStorySprites": true,
+      "forceBackgroundReplace": true
+    },
+    {
+      "speaker": "",
+      "text": "閉店後。翠は翌朝の会議に使う売上資料を、事務所のパソコンで仕上げていた。"
+    },
+    {
+      "speaker": "草壁 翠",
+      "text": "［01/25 澄まし］店長、集計は終わりました。あとは保存して、共有フォルダへ置くだけです。",
+      "expressionId": "01",
+      "expressionLabel": "澄まし",
+      "storySprites": [
+        {
+          "id": "ac",
+          "src": "images/assets/char/ac_midori/standing/ac_midori_expression_01_composed.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 翠",
+      "text": "［02/25 やさしい微笑み］そんなに構えなくても大丈夫ですよ。困った時は、私を頼ってください。",
+      "expressionId": "02",
+      "expressionLabel": "やさしい微笑み",
+      "storySprites": [
+        {
+          "id": "ac",
+          "src": "images/assets/char/ac_midori/standing/ac_midori_expression_02_gentle_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 翠",
+      "text": "［03/25 笑顔］はい、完成です。今月の傾向も、きれいにまとまりました。",
+      "expressionId": "03",
+      "expressionLabel": "笑顔",
+      "storySprites": [
+        {
+          "id": "ac",
+          "src": "images/assets/char/ac_midori/standing/ac_midori_expression_03_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 翠",
+      "text": "［04/25 怒り］……保存したファイルが、消えています。誰かパソコンを触りましたか？",
+      "expressionId": "04",
+      "expressionLabel": "怒り",
+      "storySprites": [
+        {
+          "id": "ac",
+          "src": "images/assets/char/ac_midori/standing/ac_midori_expression_04_anger.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 翠",
+      "text": "［05/25 軽い嫌悪］デスクトップに『最終』『本当の最終』『今度こそ最終』……整理した人を呼びたいですね。",
+      "expressionId": "05",
+      "expressionLabel": "軽い嫌悪",
+      "storySprites": [
+        {
+          "id": "ac",
+          "src": "images/assets/char/ac_midori/standing/ac_midori_expression_05_mild_disgust.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 翠",
+      "text": "［06/25 悲しみ］何時間もかけた資料なんです。消えてしまったなら、さすがに堪えます。",
+      "expressionId": "06",
+      "expressionLabel": "悲しみ",
+      "storySprites": [
+        {
+          "id": "ac",
+          "src": "images/assets/char/ac_midori/standing/ac_midori_expression_06_sadness.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 翠",
+      "text": "［07/25 心配］明日の会議までに戻せるでしょうか。元データまで壊れていないといいのですが。",
+      "expressionId": "07",
+      "expressionLabel": "心配",
+      "storySprites": [
+        {
+          "id": "ac",
+          "src": "images/assets/char/ac_midori/standing/ac_midori_expression_07_worry.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 翠",
+      "text": "［08/25 動揺］店長、マウスから手を離して。今そこで電源を切るのは最悪手です。",
+      "expressionId": "08",
+      "expressionLabel": "動揺",
+      "storySprites": [
+        {
+          "id": "ac",
+          "src": "images/assets/char/ac_midori/standing/ac_midori_expression_08_agitated.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 翠",
+      "text": "［09/25 驚き］……外付けドライブが点滅している。自動バックアップが動いています。",
+      "expressionId": "09",
+      "expressionLabel": "驚き",
+      "storySprites": [
+        {
+          "id": "ac",
+          "src": "images/assets/char/ac_midori/standing/ac_midori_expression_09_surprise.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 翠",
+      "text": "［10/25 照れ］『さすが翠』って……今言われると、少し調子が狂いますね。",
+      "expressionId": "10",
+      "expressionLabel": "照れ",
+      "storySprites": [
+        {
+          "id": "ac",
+          "src": "images/assets/char/ac_midori/standing/ac_midori_expression_10_shy.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 翠",
+      "text": "［11/25 期待］復元候補が三つあります。最新の一つが無事なら、間に合います。",
+      "expressionId": "11",
+      "expressionLabel": "期待",
+      "storySprites": [
+        {
+          "id": "ac",
+          "src": "images/assets/char/ac_midori/standing/ac_midori_expression_11_expectation.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 翠",
+      "text": "［12/25 得意げ］更新時刻とログが一致しました。こういう調査は私の得意分野です。",
+      "expressionId": "12",
+      "expressionLabel": "得意げ",
+      "storySprites": [
+        {
+          "id": "ac",
+          "src": "images/assets/char/ac_midori/standing/ac_midori_expression_12_proud.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 翠",
+      "text": "［13/25 舌出しウィンク］パスワードのヒントは『店長の弱点』。さて、何でしょうね？",
+      "expressionId": "13",
+      "expressionLabel": "舌出しウィンク",
+      "storySprites": [
+        {
+          "id": "ac",
+          "src": "images/assets/char/ac_midori/standing/ac_midori_expression_13_playful_tongue_wink.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 翠",
+      "text": "［14/25 歯見せウィンク］冗談です。もう解除しました。驚きましたか、店長？",
+      "expressionId": "14",
+      "expressionLabel": "歯見せウィンク",
+      "storySprites": [
+        {
+          "id": "ac",
+          "src": "images/assets/char/ac_midori/standing/ac_midori_expression_14_playful_toothy_wink.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 翠",
+      "text": "［15/25 困り笑い］ただ、復元が九十九パーセントで止まりましたね。こういう演出、要りません。",
+      "expressionId": "15",
+      "expressionLabel": "困り笑い",
+      "storySprites": [
+        {
+          "id": "ac",
+          "src": "images/assets/char/ac_midori/standing/ac_midori_expression_15_troubled_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 翠",
+      "text": "［16/25 決意］ここからは一操作も間違えません。必ず資料を戻します。",
+      "expressionId": "16",
+      "expressionLabel": "決意",
+      "storySprites": [
+        {
+          "id": "ac",
+          "src": "images/assets/char/ac_midori/standing/ac_midori_expression_16_determined.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 翠",
+      "text": "［17/25 伏し目の余韻］……この資料、店長が少しでも楽に説明できるように作ったものですから。",
+      "expressionId": "17",
+      "expressionLabel": "伏し目の余韻",
+      "storySprites": [
+        {
+          "id": "ac",
+          "src": "images/assets/char/ac_midori/standing/ac_midori_expression_17_downcast_afterglow.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 翠",
+      "text": "［18/25 拗ね］ですので、『代わりに連打してみよう』は却下です。手を出さないでください。",
+      "expressionId": "18",
+      "expressionLabel": "拗ね",
+      "storySprites": [
+        {
+          "id": "ac",
+          "src": "images/assets/char/ac_midori/standing/ac_midori_expression_18_sulking.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 翠",
+      "text": "［19/25 涙笑い］復元、完了しました……。ふふ、よかった。本当に。",
+      "expressionId": "19",
+      "expressionLabel": "涙笑い",
+      "storySprites": [
+        {
+          "id": "ac",
+          "src": "images/assets/char/ac_midori/standing/ac_midori_expression_19_tearful_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 翠",
+      "text": "［20/25 無言の圧］ところで店長。共有フォルダを『謎の箱』へ改名した記憶はありますか？",
+      "expressionId": "20",
+      "expressionLabel": "無言の圧",
+      "storySprites": [
+        {
+          "id": "ac",
+          "src": "images/assets/char/ac_midori/standing/ac_midori_expression_20_silent_pressure.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 翠",
+      "text": "［21/25 黒い微笑み］操作履歴には店長のアカウント名があります。言い訳は、聞いてから判断しますね。",
+      "expressionId": "21",
+      "expressionLabel": "黒い微笑み",
+      "storySprites": [
+        {
+          "id": "ac",
+          "src": "images/assets/char/ac_midori/standing/ac_midori_expression_21_dark_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 翠",
+      "text": "［22/25 安堵］移動しただけで、データは壊れていません。……これなら安心です。",
+      "expressionId": "22",
+      "expressionLabel": "安堵",
+      "storySprites": [
+        {
+          "id": "ac",
+          "src": "images/assets/char/ac_midori/standing/ac_midori_expression_22_relieved.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 翠",
+      "text": "［23/25 見惚れ／ときめき］コーヒーまで用意してくれたんですか。こういう気遣いは……ずるいですね。",
+      "expressionId": "23",
+      "expressionLabel": "見惚れ／ときめき",
+      "storySprites": [
+        {
+          "id": "ac",
+          "src": "images/assets/char/ac_midori/standing/ac_midori_expression_23_captivated.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 翠",
+      "text": "［24/25 眠い］もう午前零時ですか。さすがに目が重くなってきました。",
+      "expressionId": "24",
+      "expressionLabel": "眠い",
+      "storySprites": [
+        {
+          "id": "ac",
+          "src": "images/assets/char/ac_midori/standing/ac_midori_expression_24_sleepy.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "草壁 翠",
+      "text": "［25/25 照れ隠し怒り］『眠そうな翠も可愛い』ではありません。誰のせいで遅くなったと思っているんです？",
+      "expressionId": "25",
+      "expressionLabel": "照れ隠し怒り",
+      "storySprites": [
+        {
+          "id": "ac",
+          "src": "images/assets/char/ac_midori/standing/ac_midori_expression_25_bashful_anger.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "（翠の25表情をすべて確認しました）"
+    }
+  ]
+}
