@@ -598,5 +598,33 @@ window.TENOTSU_RECOLLECTION_STORY_INDEX = [
     "encounter": {
       "enabled": false
     }
+  },
+  {
+    "id": "chako_expression_25_test",
+    "title": "チャコの表情テスト：消えたスタイルシート",
+    "type": "normal",
+    "category": "test",
+    "season": "other",
+    "placeId": "hidamari_office",
+    "placeName": "ひだまりストア事務所",
+    "characters": [
+      "an"
+    ],
+    "characterNames": [
+      "チャコ"
+    ],
+    "scenario": "scenario/v039/events/chako_expression_25_test.json",
+    "version": "v039_308",
+    "unlock": {
+      "type": "always"
+    },
+    "order": 9914,
+    "summary": "チャコの採用済み正式25表情を、最新画像で順番に確認する開発用シナリオ。",
+    "rawTitle": "チャコの表情テスト：消えたスタイルシート",
+    "locationName": "ひだまりストア事務所",
+    "albumTab": "other",
+    "encounter": {
+      "enabled": false
+    }
   }
 ];
