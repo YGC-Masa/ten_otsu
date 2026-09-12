@@ -1,0 +1,437 @@
+{
+  "id": "kohaku_expression_25_test",
+  "title": "琥珀の表情テスト：倉庫に響く謎の音",
+  "version": "v039_302",
+  "return": {
+    "mode": "storyMenu",
+    "storyMenuTab": "other",
+    "storyId": "kohaku_expression_25_test",
+    "eventId": "kohaku_expression_25_test"
+  },
+  "format": "v039_steps",
+  "renderPolicy": {
+    "background": "forceReplace",
+    "sprites": "storyOnly",
+    "forceCenterSprites": true
+  },
+  "summary": "閉店後の倉庫で、正体不明の音と消えたイヤホンを店長と追いながら、琥珀の正式25表情を順番に確認する表示確認用シナリオ。",
+  "testPurpose": "琥珀の採用済み正式25表情について、最新manifestの画像パスで表示、切替、透過、位置、トリミングを一巡確認する。",
+  "steps": [
+    {
+      "bg": "images/assets/bgev/bg_office_hidamari.png",
+      "speaker": "",
+      "text": "【表情テスト】琥珀と倉庫に響く謎の音",
+      "bgMode": "forceReplace",
+      "clearStorySprites": true,
+      "forceBackgroundReplace": true
+    },
+    {
+      "speaker": "",
+      "text": "閉店後。琥珀は試聴展示に使う片方のイヤホンを探して、薄暗い倉庫へ入っていった。"
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "［01/25 澄まし］旦那、棚卸しはこっちから片づけるぞ。重い箱はオレに任せな。",
+      "expressionId": "01",
+      "expressionLabel": "澄まし",
+      "storySprites": [
+        {
+          "id": "ae",
+          "src": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_01_composed.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "［02/25 やさしい微笑み］さっきの接客、ちゃんと見てたぜ。お客さん、いい音だって笑ってたな。",
+      "expressionId": "02",
+      "expressionLabel": "やさしい微笑み",
+      "storySprites": [
+        {
+          "id": "ae",
+          "src": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_02_gentle_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "［03/25 笑顔］へへっ、あのスピーカーの調整は大成功！　音が決まると気持ちいいよな。",
+      "expressionId": "03",
+      "expressionLabel": "笑顔",
+      "storySprites": [
+        {
+          "id": "ae",
+          "src": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_03_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "［04/25 怒り］……って、試聴用イヤホンが片方ないぞ。備品を雑に扱ったやつ、誰だ？",
+      "expressionId": "04",
+      "expressionLabel": "怒り",
+      "storySprites": [
+        {
+          "id": "ae",
+          "src": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_04_anger.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "［05/25 軽い嫌悪］このケーブルの絡まり方、見てるだけでむずむずする。あとで全部直すぞ。",
+      "expressionId": "05",
+      "expressionLabel": "軽い嫌悪",
+      "storySprites": [
+        {
+          "id": "ae",
+          "src": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_05_mild_disgust.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "［06/25 悲しみ］限定モデルなのに……なくしたままじゃ、明日の試聴会ができねえ。",
+      "expressionId": "06",
+      "expressionLabel": "悲しみ",
+      "storySprites": [
+        {
+          "id": "ae",
+          "src": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_06_sadness.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "［07/25 心配／不安］棚の奥から、カチ……カチ……って音がする。まさか、誰かいるのか？",
+      "expressionId": "07",
+      "expressionLabel": "心配／不安",
+      "storySprites": [
+        {
+          "id": "ae",
+          "src": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_07_worry.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "［08/25 動揺］い、今、箱が勝手に動かなかったか！？　旦那、見たよな！？",
+      "expressionId": "08",
+      "expressionLabel": "動揺",
+      "storySprites": [
+        {
+          "id": "ae",
+          "src": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_08_agitated.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "［09/25 驚き］うわっ！　急にタイマー鳴らすなよ！　心臓止まるかと思った！",
+      "expressionId": "09",
+      "expressionLabel": "驚き",
+      "storySprites": [
+        {
+          "id": "ae",
+          "src": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_09_surprise.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "［10/25 照れ］べ、別に怖くねえし。ただ……旦那の袖、ちょっと借りるだけだ。",
+      "expressionId": "10",
+      "expressionLabel": "照れ",
+      "storySprites": [
+        {
+          "id": "ae",
+          "src": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_10_shy.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "［11/25 期待］音の間隔が一定だ。機械なら、発生源をたどれば見つけられる。",
+      "expressionId": "11",
+      "expressionLabel": "期待",
+      "storySprites": [
+        {
+          "id": "ae",
+          "src": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_11_expectation.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "［12/25 得意げ］ほらな、左右の反響が違う。こっちの棚の裏だ。オレの耳はごまかせねえ。",
+      "expressionId": "12",
+      "expressionLabel": "得意げ",
+      "storySprites": [
+        {
+          "id": "ae",
+          "src": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_12_proud.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "［13/25 いたずらな笑顔・舌出しウィンク］幽霊だったら、旦那を置いて先に逃げるかもな。……冗談だって。",
+      "expressionId": "13",
+      "expressionLabel": "いたずらな笑顔・舌出しウィンク",
+      "storySprites": [
+        {
+          "id": "ae",
+          "src": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_13_playful_tongue_wink.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "［14/25 いたずらな笑顔・歯見せウィンク］でも旦那が腰抜かしたら、オレが抱えて運んでやるよ。鍛えてるからな！",
+      "expressionId": "14",
+      "expressionLabel": "いたずらな笑顔・歯見せウィンク",
+      "storySprites": [
+        {
+          "id": "ae",
+          "src": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_14_playful_toothy_wink.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "［15/25 困り笑い］あれ？　音はするのに何もない……。オレの推理、外れたか？",
+      "expressionId": "15",
+      "expressionLabel": "困り笑い",
+      "storySprites": [
+        {
+          "id": "ae",
+          "src": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_15_troubled_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "［16/25 真剣／決意］いや、諦めねえ。配線を一本ずつ追えば、絶対に原因へ着く。",
+      "expressionId": "16",
+      "expressionLabel": "真剣／決意",
+      "storySprites": [
+        {
+          "id": "ae",
+          "src": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_16_determined.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "［17/25 伏し目／余韻］このイヤホン、花の香りがするな。昼に花売り場へ寄った時のままだ。",
+      "expressionId": "17",
+      "expressionLabel": "伏し目／余韻",
+      "storySprites": [
+        {
+          "id": "ae",
+          "src": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_17_downcast_afterglow.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "［18/25 拗ね／ぷいっ］旦那だけ先に明るい方へ行くなよ。……置いてったら怒るからな。",
+      "expressionId": "18",
+      "expressionLabel": "拗ね／ぷいっ",
+      "storySprites": [
+        {
+          "id": "ae",
+          "src": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_18_sulking.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "［19/25 泣き笑い］あった！　イヤホンも無事だ……よかったぁ。ほんと、よかった。",
+      "expressionId": "19",
+      "expressionLabel": "泣き笑い",
+      "storySprites": [
+        {
+          "id": "ae",
+          "src": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_19_tearful_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "［20/25 無言の圧／見透かす］……旦那。なんでそのポケットから、もう片方のケースが出てくるんだ？",
+      "expressionId": "20",
+      "expressionLabel": "無言の圧／見透かす",
+      "storySprites": [
+        {
+          "id": "ae",
+          "src": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_20_silent_pressure.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "［21/25 黒い微笑み／不穏］まさかオレを怖がらせるために仕込んだ、とか言わねえよな……？",
+      "expressionId": "21",
+      "expressionLabel": "黒い微笑み／不穏",
+      "storySprites": [
+        {
+          "id": "ae",
+          "src": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_21_dark_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "［22/25 ほっとした顔］展示台を掃除する間、安全な場所へ移してくれたのか。なら安心した。",
+      "expressionId": "22",
+      "expressionLabel": "ほっとした顔",
+      "storySprites": [
+        {
+          "id": "ae",
+          "src": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_22_relieved.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "［23/25 見惚れ／ときめき前］ケースの中に、小さな押し花……オレが好きだって、覚えてたのか。",
+      "expressionId": "23",
+      "expressionLabel": "見惚れ／ときめき前",
+      "storySprites": [
+        {
+          "id": "ae",
+          "src": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_23_captivated.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "［24/25 眠そう／気だるげ］気が抜けたら、急に眠くなってきた。今日は走り回ったからな……。",
+      "expressionId": "24",
+      "expressionLabel": "眠そう／気だるげ",
+      "storySprites": [
+        {
+          "id": "ae",
+          "src": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_24_sleepy.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "［25/25 照れ隠し怒り］『怖がる琥珀も可愛い』って言うな！　もう……旦那のばか。",
+      "expressionId": "25",
+      "expressionLabel": "照れ隠し怒り",
+      "storySprites": [
+        {
+          "id": "ae",
+          "src": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_25_bashful_anger.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "（琥珀の25表情をすべて確認しました）"
+    }
+  ]
+}
