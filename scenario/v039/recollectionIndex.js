@@ -346,5 +346,89 @@ window.TENOTSU_RECOLLECTION_STORY_INDEX = [
     "encounter": {
       "enabled": false
     }
+  },
+  {
+    "id": "ai_expression_25_test",
+    "title": "藍の表情テスト：消えた思い出のしおり",
+    "type": "normal",
+    "category": "test",
+    "season": "other",
+    "placeId": "hidamari_office",
+    "placeName": "ひだまりストア事務所",
+    "characters": [
+      "ab"
+    ],
+    "characterNames": [
+      "速水川 藍"
+    ],
+    "scenario": "scenario/v039/events/ai_expression_25_test.json",
+    "version": "v039_299",
+    "unlock": {
+      "type": "always"
+    },
+    "order": 9905,
+    "summary": "藍の採用済み正式25表情を、最新画像で順番に確認する開発用シナリオ。",
+    "rawTitle": "藍の表情テスト：消えた思い出のしおり",
+    "locationName": "ひだまりストア事務所",
+    "albumTab": "other",
+    "encounter": {
+      "enabled": false
+    }
+  },
+  {
+    "id": "midori_expression_25_test",
+    "title": "翠の表情テスト：迷子のバックアップ",
+    "type": "normal",
+    "category": "test",
+    "season": "other",
+    "placeId": "hidamari_office",
+    "placeName": "ひだまりストア事務所",
+    "characters": [
+      "ac"
+    ],
+    "characterNames": [
+      "草壁 翠"
+    ],
+    "scenario": "scenario/v039/events/midori_expression_25_test.json",
+    "version": "v039_300",
+    "unlock": {
+      "type": "always"
+    },
+    "order": 9906,
+    "summary": "翠の採用済み正式25表情を、最新画像で順番に確認する開発用シナリオ。",
+    "rawTitle": "翠の表情テスト：迷子のバックアップ",
+    "locationName": "ひだまりストア事務所",
+    "albumTab": "other",
+    "encounter": {
+      "enabled": false
+    }
+  },
+  {
+    "id": "yukino_expression_25_test",
+    "title": "雪乃の表情テスト：消えた贈りもの",
+    "type": "normal",
+    "category": "test",
+    "season": "other",
+    "placeId": "hidamari_office",
+    "placeName": "ひだまりストア事務所",
+    "characters": [
+      "ag"
+    ],
+    "characterNames": [
+      "氷神 雪乃"
+    ],
+    "scenario": "scenario/v039/events/yukino_expression_25_test.json",
+    "version": "v039_301",
+    "unlock": {
+      "type": "always"
+    },
+    "order": 9907,
+    "summary": "雪乃の採用済み正式25表情を、最新画像で順番に確認する開発用シナリオ。",
+    "rawTitle": "雪乃の表情テスト：消えた贈りもの",
+    "locationName": "ひだまりストア事務所",
+    "albumTab": "other",
+    "encounter": {
+      "enabled": false
+    }
   }
 ];
