@@ -1,0 +1,437 @@
+{
+  "id": "chako_expression_25_test",
+  "title": "チャコの表情テスト：消えたスタイルシート",
+  "version": "v039_308",
+  "return": {
+    "mode": "storyMenu",
+    "storyMenuTab": "other",
+    "storyId": "chako_expression_25_test",
+    "eventId": "chako_expression_25_test"
+  },
+  "format": "v039_steps",
+  "renderPolicy": {
+    "background": "forceReplace",
+    "sprites": "storyOnly",
+    "forceCenterSprites": true
+  },
+  "summary": "閉店後の事務所で、反映されなくなったスタイルシートを店長と調べながら、チャコの正式25表情を順番に確認する表示確認用シナリオ。",
+  "testPurpose": "チャコの採用済み正式25表情について、最新manifestの画像パスで表示、切替、透過、位置、トリミングを一巡確認する。",
+  "steps": [
+    {
+      "bg": "images/assets/bgev/bg_office_hidamari.png",
+      "speaker": "",
+      "text": "【表情テスト】チャコと消えたスタイルシート",
+      "bgMode": "forceReplace",
+      "clearStorySprites": true,
+      "forceBackgroundReplace": true
+    },
+    {
+      "speaker": "",
+      "text": "閉店後。チャコは事務所の端末で、ひだまりストアの画面表示を一つずつ確認していた。"
+    },
+    {
+      "speaker": "チャコ",
+      "text": "［01/25 澄まし］店長、検証用ページは起動したよ。まずは表示サイズから確認しよう。",
+      "expressionId": "01",
+      "expressionLabel": "澄まし",
+      "storySprites": [
+        {
+          "id": "an",
+          "src": "images/assets/char/an_chako/standing/an_charcoal_expression_01_composed.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "［02/25 やさしい微笑み］細かい崩れまで一緒に見てくれるんだね。ありがとう、ちょっと嬉しい。",
+      "expressionId": "02",
+      "expressionLabel": "やさしい微笑み",
+      "storySprites": [
+        {
+          "id": "an",
+          "src": "images/assets/char/an_chako/standing/an_charcoal_expression_02_gentle_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "［03/25 笑顔］レスポンシブ表示も問題なし！　これなら端末が変わっても綺麗に見えるよ。",
+      "expressionId": "03",
+      "expressionLabel": "笑顔",
+      "storySprites": [
+        {
+          "id": "an",
+          "src": "images/assets/char/an_chako/standing/an_charcoal_expression_03_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "［04/25 怒り］……待って。さっき直したCSSが反映されてない。誰か上書きした？",
+      "expressionId": "04",
+      "expressionLabel": "怒り",
+      "storySprites": [
+        {
+          "id": "an",
+          "src": "images/assets/char/an_chako/standing/an_charcoal_expression_04_anger.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "［05/25 軽い嫌悪］この無意味な余白、見てるだけで気持ち悪いな。意図がないなら消したい。",
+      "expressionId": "05",
+      "expressionLabel": "軽い嫌悪",
+      "storySprites": [
+        {
+          "id": "an",
+          "src": "images/assets/char/an_chako/standing/an_charcoal_expression_05_mild_disgust.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "［06/25 悲しみ］頑張って整えた画面なのに……変更が消えてたら、さすがにへこむよ。",
+      "expressionId": "06",
+      "expressionLabel": "悲しみ",
+      "storySprites": [
+        {
+          "id": "an",
+          "src": "images/assets/char/an_chako/standing/an_charcoal_expression_06_sadness_no_tears.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "［07/25 心配／不安］本線側まで崩してないよね。店長、履歴を一緒に確認してくれる？",
+      "expressionId": "07",
+      "expressionLabel": "心配／不安",
+      "storySprites": [
+        {
+          "id": "an",
+          "src": "images/assets/char/an_chako/standing/an_charcoal_expression_07_worry.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "［08/25 動揺］えっ、プレビューが真っ白！？　ちょっと待って、落ち着いて原因を見る。",
+      "expressionId": "08",
+      "expressionLabel": "動揺",
+      "storySprites": [
+        {
+          "id": "an",
+          "src": "images/assets/char/an_chako/standing/an_charcoal_expression_08_agitated.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "［09/25 驚き］コンソールに一件だけ赤字がある。読み込み先が変わってるんだ。",
+      "expressionId": "09",
+      "expressionLabel": "驚き",
+      "storySprites": [
+        {
+          "id": "an",
+          "src": "images/assets/char/an_chako/standing/an_charcoal_expression_09_surprise.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "［10/25 照れ］店長、そんな近くで画面を覗かれると……いや、作業はしやすいけど。",
+      "expressionId": "10",
+      "expressionLabel": "照れ",
+      "storySprites": [
+        {
+          "id": "an",
+          "src": "images/assets/char/an_chako/standing/an_charcoal_expression_10_shy.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "［11/25 期待］エラーの場所は分かった。これなら、ちゃんと元へ戻せそう。",
+      "expressionId": "11",
+      "expressionLabel": "期待",
+      "storySprites": [
+        {
+          "id": "an",
+          "src": "images/assets/char/an_chako/standing/an_charcoal_expression_11_expectation.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "［12/25 得意げ］小さな実験は切り分けてあるからね。本線を傷つけずに試せるよ。",
+      "expressionId": "12",
+      "expressionLabel": "得意げ",
+      "storySprites": [
+        {
+          "id": "an",
+          "src": "images/assets/char/an_chako/standing/an_charcoal_expression_12_proud.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "［13/25 いたずらな笑顔・舌出しウィンク］ここでキャッシュを更新、と。……ぺろっ。再読み込みしてみて？",
+      "expressionId": "13",
+      "expressionLabel": "いたずらな笑顔・舌出しウィンク",
+      "storySprites": [
+        {
+          "id": "an",
+          "src": "images/assets/char/an_chako/standing/an_charcoal_expression_13_playful_tongue_wink.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "［14/25 いたずらな笑顔・歯見せウィンク］直ったら褒めてよ、店長。今日はちょっと大きめのご褒美でもいいな。",
+      "expressionId": "14",
+      "expressionLabel": "いたずらな笑顔・歯見せウィンク",
+      "storySprites": [
+        {
+          "id": "an",
+          "src": "images/assets/char/an_chako/standing/an_charcoal_expression_14_playful_toothy_wink.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "［15/25 困り笑い］あれ、今度はボタンだけずれてる。あと一歩なのに、素直じゃないな。",
+      "expressionId": "15",
+      "expressionLabel": "困り笑い",
+      "storySprites": [
+        {
+          "id": "an",
+          "src": "images/assets/char/an_chako/standing/an_charcoal_expression_15_troubled_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "［16/25 真剣／決意］原因を一つずつ潰す。最後まで見届けるのが、私の仕事だから。",
+      "expressionId": "16",
+      "expressionLabel": "真剣／決意",
+      "storySprites": [
+        {
+          "id": "an",
+          "src": "images/assets/char/an_chako/standing/an_charcoal_expression_16_determined.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "［17/25 伏し目／余韻］最初は名前も輪郭も曖昧だったのに、ここまで残してもらえたんだね。",
+      "expressionId": "17",
+      "expressionLabel": "伏し目／余韻",
+      "storySprites": [
+        {
+          "id": "an",
+          "src": "images/assets/char/an_chako/standing/an_charcoal_expression_17_downcast_afterglow.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "［18/25 拗ね／ぷいっ］なのに店長、私の確認だけ忘れてたんだ。……ちょっとくらい拗ねるよ。",
+      "expressionId": "18",
+      "expressionLabel": "拗ね／ぷいっ",
+      "storySprites": [
+        {
+          "id": "an",
+          "src": "images/assets/char/an_chako/standing/an_charcoal_expression_18_sulking.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "［19/25 泣き笑い］表示できた……！　全部戻った。よかった、本当に消えてなかった。",
+      "expressionId": "19",
+      "expressionLabel": "泣き笑い",
+      "storySprites": [
+        {
+          "id": "an",
+          "src": "images/assets/char/an_chako/standing/an_charcoal_expression_19_tearful_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "［20/25 無言の圧／見透かす］……店長。そのバックアップ、最初から別フォルダに置いてたよね？",
+      "expressionId": "20",
+      "expressionLabel": "無言の圧／見透かす",
+      "storySprites": [
+        {
+          "id": "an",
+          "src": "images/assets/char/an_chako/standing/an_charcoal_expression_20_silent_pressure.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "［21/25 黒い微笑み／不穏］私が慌てるところを見てから出そう、なんて考えてなかったよね？",
+      "expressionId": "21",
+      "expressionLabel": "黒い微笑み／不穏",
+      "storySprites": [
+        {
+          "id": "an",
+          "src": "images/assets/char/an_chako/standing/an_charcoal_expression_21_dark_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "［22/25 ほっとした顔］自動退避が動いてただけか。履歴も無事……うん、安心した。",
+      "expressionId": "22",
+      "expressionLabel": "ほっとした顔",
+      "storySprites": [
+        {
+          "id": "an",
+          "src": "images/assets/char/an_chako/standing/an_charcoal_expression_22_relieved.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "［23/25 見惚れ／ときめき前］最後の画面に『チャコ、いつもありがとう』って……これは反則だよ。",
+      "expressionId": "23",
+      "expressionLabel": "見惚れ／ときめき前",
+      "storySprites": [
+        {
+          "id": "an",
+          "src": "images/assets/char/an_chako/standing/an_charcoal_expression_23_captivated.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "［24/25 眠そう／気だるげ］気が抜けたら眠くなってきた。今日はずっと画面を見てたからね。",
+      "expressionId": "24",
+      "expressionLabel": "眠そう／気だるげ",
+      "storySprites": [
+        {
+          "id": "an",
+          "src": "images/assets/char/an_chako/standing/an_charcoal_expression_24_sleepy.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "［25/25 照れ隠し怒り］『忘れてごめん、チャコが大事』って……もう。次は最初に呼んでよ、店長。",
+      "expressionId": "25",
+      "expressionLabel": "照れ隠し怒り",
+      "storySprites": [
+        {
+          "id": "an",
+          "src": "images/assets/char/an_chako/standing/an_charcoal_expression_25_bashful_anger.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "（チャコの25表情をすべて確認しました）"
+    }
+  ]
+}
