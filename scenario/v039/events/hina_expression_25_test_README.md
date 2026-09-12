@@ -15,30 +15,30 @@
 
 | ID | 表情 | アセット |
 |---:|---|---|
-| 01 | 通常 | `aa_hina_expression_01.webp` |
-| 02 | 笑顔 | `aa_hina_expression_02.webp` |
-| 03 | にっこり（目閉じ） | `aa_hina_expression_03.webp` |
-| 04 | ウィンク | `aa_hina_expression_04.webp` |
-| 05 | 驚き | `aa_hina_expression_05.webp` |
-| 06 | 困り | `aa_hina_expression_06.webp` |
-| 07 | しょんぼり | `aa_hina_expression_07.webp` |
-| 08 | 泣きそう | `aa_hina_expression_08.webp` |
-| 09 | 泣き | `aa_hina_expression_09.webp` |
-| 10 | 怒り | `aa_hina_expression_10.webp` |
+| 01 | 澄まし | `aa_hina_expression_01.webp` |
+| 02 | やさしい微笑み | `aa_hina_expression_02.webp` |
+| 03 | 笑顔 | `aa_hina_expression_03.webp` |
+| 04 | 怒り | `aa_hina_expression_04.webp` |
+| 05 | 軽い嫌悪 | `aa_hina_expression_05.webp` |
+| 06 | 悲しみ | `aa_hina_expression_06.webp` |
+| 07 | 心配 | `aa_hina_expression_07.webp` |
+| 08 | 動揺 | `aa_hina_expression_08.webp` |
+| 09 | 驚き | `aa_hina_expression_09.webp` |
+| 10 | 照れ | `aa_hina_expression_10.webp` |
 | 11 | 期待 | `aa_hina_expression_11.webp` |
-| 12 | 照れ | `aa_hina_expression_12.webp` |
-| 13 | 照れ笑い | `aa_hina_expression_13.webp` |
-| 14 | 真剣 | `aa_hina_expression_14.webp` |
-| 15 | 考え中 | `aa_hina_expression_15.webp` |
-| 16 | 不安 | `aa_hina_expression_16.webp` |
-| 17 | ドヤ顔 | `aa_hina_expression_17.webp` |
-| 18 | あくび | `aa_hina_expression_18.webp` |
-| 19 | 疲れ | `aa_hina_expression_19.webp` |
-| 20 | 眠い | `aa_hina_expression_20.webp` |
+| 12 | 得意げ | `aa_hina_expression_12.webp` |
+| 13 | 舌出しウィンク | `aa_hina_expression_13.webp` |
+| 14 | 歯見せウィンク | `aa_hina_expression_14.webp` |
+| 15 | 困り笑い | `aa_hina_expression_15.webp` |
+| 16 | 決意 | `aa_hina_expression_16.webp` |
+| 17 | 伏し目の余韻 | `aa_hina_expression_17.webp` |
+| 18 | 拗ね | `aa_hina_expression_18.webp` |
+| 19 | 涙笑い | `aa_hina_expression_19.webp` |
+| 20 | 無言の圧 | `aa_hina_expression_20.webp` |
 | 21 | 黒い微笑み | `aa_hina_expression_21.webp` |
-| 22 | ぽっとした | `aa_hina_expression_22.webp` |
-| 23 | 見惚れ／ときめき顔 | `aa_hina_expression_23.webp` |
-| 24 | 真剣怒り | `aa_hina_expression_24.webp` |
+| 22 | 安堵 | `aa_hina_expression_22.webp` |
+| 23 | 見惚れ／ときめき | `aa_hina_expression_23.webp` |
+| 24 | 眠い | `aa_hina_expression_24.webp` |
 | 25 | 照れ隠し怒り | `aa_hina_expression_25.webp` |
 
 ## 回想アルバム登録
@@ -55,7 +55,7 @@
 - 各 `expressionId` とファイル末尾番号が一致すること
 - 25アセットがすべて存在すること
 - 透過縁、顔の位置、足元の切れ方、拡大率に不自然な差がないこと
-- 04、18、25など縦横サイズが異なる素材で表示位置が跳ねないこと
+- 04、18、25など姿勢が大きく異なる素材で表示位置が跳ねないこと
 - 最終行に「確認完了」が表示され、回想メニューへ戻れること
 
 ## 演出上の注意
