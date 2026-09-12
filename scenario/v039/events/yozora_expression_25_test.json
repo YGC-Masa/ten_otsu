@@ -1,0 +1,437 @@
+{
+  "id": "yozora_expression_25_test",
+  "title": "夜空の表情テスト：消えた加湿器センサー",
+  "version": "v039_305",
+  "return": {
+    "mode": "storyMenu",
+    "storyMenuTab": "other",
+    "storyId": "yozora_expression_25_test",
+    "eventId": "yozora_expression_25_test"
+  },
+  "format": "v039_steps",
+  "renderPolicy": {
+    "background": "forceReplace",
+    "sprites": "storyOnly",
+    "forceCenterSprites": true
+  },
+  "summary": "閉店後の売り場で、消えた加湿器センサーを店長と探しながら、夜空の正式25表情を順番に確認する表示確認用シナリオ。",
+  "testPurpose": "夜空の採用済み正式25表情について、最新manifestの画像パスで表示、切替、透過、位置、トリミングを一巡確認する。",
+  "steps": [
+    {
+      "bg": "images/assets/bgev/bg_office_hidamari.png",
+      "speaker": "",
+      "text": "【表情テスト】夜空と消えた加湿器センサー",
+      "bgMode": "forceReplace",
+      "clearStorySprites": true,
+      "forceBackgroundReplace": true
+    },
+    {
+      "speaker": "",
+      "text": "閉店後。夜空は冬物家電コーナーで、加湿器の展示精度を一台ずつ確かめていた。"
+    },
+    {
+      "speaker": "双沢 夜空",
+      "text": "［01/25 澄まし］あんた、そこに立つなら表示を遮らないで。測定が終わるまで待って。",
+      "expressionId": "01",
+      "expressionLabel": "澄まし",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_01_composed.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "双沢 夜空",
+      "text": "［02/25 やさしい微笑み］……手伝う気はあるんだ。じゃあ、その箱を静かに開けて。",
+      "expressionId": "02",
+      "expressionLabel": "やさしい微笑み",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_02_gentle_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "双沢 夜空",
+      "text": "［03/25 笑顔］数値は安定した。これなら明日、美空にも自信を持って説明させられる。",
+      "expressionId": "03",
+      "expressionLabel": "笑顔",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_03_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "双沢 夜空",
+      "text": "［04/25 怒り］待って。校正用の湿度センサーがない。勝手に動かしたのは誰？",
+      "expressionId": "04",
+      "expressionLabel": "怒り",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_04_anger.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "双沢 夜空",
+      "text": "［05/25 軽い嫌悪］給水タンクに指紋だらけ。展示品を雑に触るの、ぼくは嫌い。",
+      "expressionId": "05",
+      "expressionLabel": "軽い嫌悪",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_05_mild_disgust.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "双沢 夜空",
+      "text": "［06/25 悲しみ］あれは美空と調整した大事な機材なんだ。なくすわけにはいかない。",
+      "expressionId": "06",
+      "expressionLabel": "悲しみ",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_06_sadness.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "双沢 夜空",
+      "text": "［07/25 心配／不安］誤った数値で案内したら、お客さんにも美空にも迷惑がかかる。",
+      "expressionId": "07",
+      "expressionLabel": "心配／不安",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_07_worry.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "双沢 夜空",
+      "text": "［08/25 動揺］……っ、急に噴霧しないで。袖まで濡れたじゃないか。",
+      "expressionId": "08",
+      "expressionLabel": "動揺",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_08_agitated.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "双沢 夜空",
+      "text": "［09/25 驚き］白い蒸気の向こうに反射が見えた。金属クリップ……センサーのものだ。",
+      "expressionId": "09",
+      "expressionLabel": "驚き",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_09_surprise.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "双沢 夜空",
+      "text": "［10/25 照れ］近い。顔が近いって、あんた。べつに動揺なんかしてない。",
+      "expressionId": "10",
+      "expressionLabel": "照れ",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_10_shy.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "双沢 夜空",
+      "text": "［11/25 期待］手がかりは残ってる。蒸気の流れを追えば、たぶん見つかる。",
+      "expressionId": "11",
+      "expressionLabel": "期待",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_11_expectation.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "双沢 夜空",
+      "text": "［12/25 得意げ］空気の動きは矢筋と同じだ。乱れを見れば、向きくらい読める。",
+      "expressionId": "12",
+      "expressionLabel": "得意げ",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_12_proud.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "双沢 夜空",
+      "text": "［13/25 いたずらな笑顔・舌出しウィンク］ぼくの推理について来られる？　遅れたら置いていくよ。",
+      "expressionId": "13",
+      "expressionLabel": "いたずらな笑顔・舌出しウィンク",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_13_playful_tongue_wink.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "双沢 夜空",
+      "text": "［14/25 いたずらな笑顔・歯見せウィンク］……なんてね。あんたが迷わないよう、ちゃんと待ってあげる。",
+      "expressionId": "14",
+      "expressionLabel": "いたずらな笑顔・歯見せウィンク",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_14_playful_toothy_wink.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "双沢 夜空",
+      "text": "［15/25 困り笑い］蒸気が二方向へ分かれた。機械相手は、弓より素直じゃないな。",
+      "expressionId": "15",
+      "expressionLabel": "困り笑い",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_15_troubled_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "双沢 夜空",
+      "text": "［16/25 真剣／決意］集中する。余計な音を立てないで。次の一筋を見逃したくない。",
+      "expressionId": "16",
+      "expressionLabel": "真剣／決意",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_16_determined.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "双沢 夜空",
+      "text": "［17/25 伏し目／余韻］美空は失敗しても笑うけど、本当は人一倍気にする。ぼくが守りたいんだ。",
+      "expressionId": "17",
+      "expressionLabel": "伏し目／余韻",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_17_downcast_afterglow.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "双沢 夜空",
+      "text": "［18/25 拗ね／ぷいっ］あんた、美空のことばかり褒めるよね。……別に、どうでもいいけど。",
+      "expressionId": "18",
+      "expressionLabel": "拗ね／ぷいっ",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_18_sulking.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "双沢 夜空",
+      "text": "［19/25 泣き笑い］見つけた。収納ケースの中だ……壊れてない。よかった。",
+      "expressionId": "19",
+      "expressionLabel": "泣き笑い",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_19_tearful_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "双沢 夜空",
+      "text": "［20/25 無言の圧／見透かす］ところで、あんた。どうしてケースの暗証番号を先に押せたの？",
+      "expressionId": "20",
+      "expressionLabel": "無言の圧／見透かす",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_20_silent_pressure.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "双沢 夜空",
+      "text": "［21/25 黒い微笑み／不穏］最初から知ってて、ぼくが困るところを見てた……とかじゃないよね。",
+      "expressionId": "21",
+      "expressionLabel": "黒い微笑み／不穏",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_21_dark_smile.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "双沢 夜空",
+      "text": "［22/25 ほっとした顔］乾燥防止のために移しただけか。理由があるなら、先に言って。",
+      "expressionId": "22",
+      "expressionLabel": "ほっとした顔",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_22_relieved.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "双沢 夜空",
+      "text": "［23/25 見惚れ／ときめき前］ケースに新しい弦巻の飾り……ぼくに？　そういう不意打ちは、ずるい。",
+      "expressionId": "23",
+      "expressionLabel": "見惚れ／ときめき前",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_23_captivated.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "双沢 夜空",
+      "text": "［24/25 眠そう／気だるげ］気が抜けた。少し眠い……美空が待ってるし、もう帰ろう。",
+      "expressionId": "24",
+      "expressionLabel": "眠そう／気だるげ",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_24_sleepy.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "双沢 夜空",
+      "text": "［25/25 照れ隠し怒り］『照れた夜空も可愛い』？　……うるさい。次に言ったら、本当に怒る。",
+      "expressionId": "25",
+      "expressionLabel": "照れ隠し怒り",
+      "storySprites": [
+        {
+          "id": "ai",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_25_bashful_anger.webp",
+          "side": "center",
+          "left": "50%",
+          "zIndex": 2500,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "（夜空の25表情をすべて確認しました）"
+    }
+  ]
+}
