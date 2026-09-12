@@ -250,7 +250,7 @@ window.TENOTSU_RECOLLECTION_STORY_INDEX = [
       "星野 緋奈"
     ],
     "scenario": "scenario/v039/events/hina_expression_25_test.json",
-    "version": "v039_292",
+    "version": "v039_298",
     "unlock": {
       "type": "always"
     },
