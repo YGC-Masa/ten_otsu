@@ -32,18 +32,18 @@
 
   ns.memberProfiles = [
     { name: "星野 緋奈", id: "aa", color: "#d3381c", role: "天真爛漫オールラウンダー", specialty: "テレビ・映像", image: "aa_hina/standing/aa_hina_expression_03.webp", comment: "店長、今日も一緒にがんばりましょう！" },
-    { name: "速水川 藍", id: "ab", color: "#0067C0", role: "物静かな小柄お姉さん", specialty: "ドライヤー", image: "b10501.webp", comment: "てんちょー、事務所でお待ちしていました。" },
-    { name: "草壁 翠", id: "ac", color: "#02b308", role: "知的ボーイッシュ", specialty: "パソコン", image: "c10501.webp", comment: "キミ、今日の予定は確認済みかな？" },
-    { name: "小麦沢 こがね", id: "ad", color: "#FFF450", role: "全員愛され超ギャル", specialty: "スマホ", image: "ad_kogane/standing/ad_kogane_expression_03.webp", comment: "店長、今日もアゲてこー！" },
-    { name: "春日原 琥珀", id: "ae", color: "#F68B1F", role: "天然アスリート", specialty: "オーディオ・イヤホン", image: "e10501.webp", comment: "旦那、困ったことがあったらオレに任せな！" },
-    { name: "大道寺 真花", id: "af", color: "#C0C0C0", role: "ド正統派美少女", specialty: "美容品", image: "f10501.webp", comment: "店長、本日もよろしくお願いします。" },
-    { name: "氷神 雪乃", id: "ag", color: "#6495ED", role: "ミステリアスクール", specialty: "調理器具", image: "g10501.webp", comment: "貴方様、無理はなさらないでくださいね。" },
-    { name: "双沢 美空", id: "ah", color: "#fffef6", role: "明るく可愛い双子姉", specialty: "夏物・除湿", image: "h10501.webp", comment: "店長、今日も笑顔でいきましょう。" },
-    { name: "双沢 夜空", id: "ai", color: "#00152d", role: "クールで綺麗な双子妹", specialty: "冬物・加湿", image: "i10501.webp", comment: "あんたの事、ちゃんと見てるからね。" },
-    { name: "芝桜 桃", id: "aj", color: "#F7ADC3", role: "破天荒ポジティブ", specialty: "配信機材・ゲーム機", image: "j10501.webp", comment: "店長、ウチ参上！" },
-    { name: "紫藤 彩愛", id: "ak", color: "#694D9F", role: "お嬢様ぽい庶民", specialty: "洗濯機・掃除機", image: "k10501.webp", comment: "貴方、こちらで確認くださいませ。" },
-    { name: "餅月 里美", id: "al", color: "#8d5025", role: "ゆるふわ事務員", specialty: "事務・経理", image: "al_satomi/standing/al_satomi_expression_02_gentle_smile.webp", comment: "てんちょ～、お茶でも飲んでいきます～？" },
-    { name: "草壁 萌", id: "am", color: "#33CC99", role: "おとなしい甘えん坊妹系", specialty: "マッサージ・リラックス用品", image: "m10501.webp", comment: "おにいちゃん、ここにいるよ。" }
+    { name: "速水川 藍", id: "ab", color: "#0067C0", role: "物静かな小柄お姉さん", specialty: "ドライヤー", image: "ab_ai/standing/03_笑顔.webp", comment: "てんちょー、事務所でお待ちしていました。" },
+    { name: "草壁 翠", id: "ac", color: "#02b308", role: "知的ボーイッシュ", specialty: "パソコン", image: "ac_midori/standing/ac_midori_expression_03_smile.webp", comment: "キミ、今日の予定は確認済みかな？" },
+    { name: "小麦沢 こがね", id: "ad", color: "#FFF450", role: "全員愛され超ギャル", specialty: "スマホ", image: "ad_kogane/standing/ad_kogane_expression_03_smile.webp", comment: "店長、今日もアゲてこー！" },
+    { name: "春日原 琥珀", id: "ae", color: "#F68B1F", role: "天然アスリート", specialty: "オーディオ・イヤホン", image: "ae_kohaku/standing/ae_kohaku_expression_03_smile.webp", comment: "旦那、困ったことがあったらオレに任せな！" },
+    { name: "大道寺 真花", id: "af", color: "#C0C0C0", role: "ド正統派美少女", specialty: "美容品", image: "af_manaka/standing/af_manaka_expression_03_smile.webp", comment: "店長、本日もよろしくお願いします。" },
+    { name: "氷神 雪乃", id: "ag", color: "#6495ED", role: "ミステリアスクール", specialty: "調理器具", image: "ag_yukino/standing/ag_yukino_expression_03_smile.webp", comment: "貴方様、無理はなさらないでくださいね。" },
+    { name: "双沢 美空", id: "ah", color: "#fffef6", role: "明るく可愛い双子姉", specialty: "夏物・除湿", image: "ah_misora/standing/ah_misora_expression_03_smile.webp", comment: "店長、今日も笑顔でいきましょう。" },
+    { name: "双沢 夜空", id: "ai", color: "#00152d", role: "クールで綺麗な双子妹", specialty: "冬物・加湿", image: "ai_yozora/standing/ai_yozora_expression_03_smile.webp", comment: "あんたの事、ちゃんと見てるからね。" },
+    { name: "芝桜 桃", id: "aj", color: "#F7ADC3", role: "破天荒ポジティブ", specialty: "配信機材・ゲーム機", image: "aj_momo/standing/aj_momo_expression_03_smile.webp", comment: "店長、ウチ参上！" },
+    { name: "紫藤 彩愛", id: "ak", color: "#694D9F", role: "お嬢様ぽい庶民", specialty: "洗濯機・掃除機", image: "ak_ayame/standing/ak_ayame_expression_03_smile.webp", comment: "貴方、こちらで確認くださいませ。" },
+    { name: "餅月 里美", id: "al", color: "#8d5025", role: "ゆるふわ事務員", specialty: "事務・経理", image: "al_satomi/standing/al_satomi_expression_03_smile.webp", comment: "てんちょ～、お茶でも飲んでいきます～？" },
+    { name: "草壁 萌", id: "am", color: "#33CC99", role: "おとなしい甘えん坊妹系", specialty: "マッサージ・リラックス用品", image: "am_moe/standing/am_moe_expression_03_smile.webp", comment: "おにいちゃん、ここにいるよ。" }
   ];
 
 
