@@ -9,7 +9,8 @@
     { id:"autumn", label:"秋" },
     { id:"winter", label:"冬" },
     { id:"other", label:"その他" },
-    { id:"event", label:"イベント" }
+    { id:"event", label:"イベント" },
+    { id:"expression", label:"表情確認" }
   ];
 
   function esc(value){ return String(value == null ? "" : value).replace(/[&<>"]/g, (ch) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch])); }
@@ -73,7 +74,26 @@
     return "other";
   }
 
+  function isExpressionCheckStory(story){
+    if (!story) return false;
+    const id = String(story.id || "");
+    const cat = String(story.category || "");
+    return cat === "test" || /expression_(?:25|legacy)_test/.test(id);
+  }
+
+  function expressionGroup(story){
+    const ids = Array.isArray(story && story.characters) ? story.characters : [];
+    if (ids.some((id) => /^a[a-m]$/.test(String(id)))) return "hidamari";
+    if (ids.some((id) => /^b[a-c]$/.test(String(id)))) return "biribiri";
+    return "other";
+  }
+
+  function expressionGroupLabel(group){
+    return ({ hidamari:"ひだまりストア", biribiri:"ビリビリ電機", other:"その他" })[group] || "その他";
+  }
+
   function tabForStory(story){
+    if (isExpressionCheckStory(story)) return "expression";
     if (story && story.albumTab) return story.albumTab;
     const season = seasonOfStory(story);
     // 季節情報があるストーリーは、イベント系でも春夏秋冬へ優先分類する。
@@ -83,7 +103,7 @@
   }
 
   function tabLabel(tab){
-    return (ALBUM_TABS.find((item) => item.id === tab) || ALBUM_TABS[4]).label;
+    return (ALBUM_TABS.find((item) => item.id === tab) || ALBUM_TABS.find((item) => item.id === "other")).label;
   }
 
   ns.hideStoryMenuPanel = function hideStoryMenuPanel(){
@@ -104,31 +124,52 @@
     const stories = ns.getStoriesForTab(activeTab);
     const debugNote = window.TENOTSU_DEBUG_ALL_STORIES ? "開発用：未読・未解放も表示中" : "読了済みのみ表示";
     const tabs = ALBUM_TABS.map((item) => `<button type="button" class="tenotsu-story-menu-tab ${item.id===activeTab?"active":""}" data-story-menu-tab="${esc(item.id)}">${esc(item.label)}</button>`).join("");
-    const body = stories.length ? stories.map((story) => {
+    const renderStoryCard = (story) => {
       const unlocked = typeof ns.isStoryUnlocked === "function" ? ns.isStoryUnlocked(story) : true;
       const cleared = typeof ns.isStoryCleared === "function" ? ns.isStoryCleared(story.id) : false;
       const read = typeof ns.isStoryRead === "function" ? ns.isStoryRead(story.id) : false;
       const state = cleared ? "読了" : (read ? "既読" : "未読");
       const disabled = !unlocked || !story.scenario;
+      const expressionMeta = activeTab === "expression"
+        ? `25表情 / ${characterLine(story)}`
+        : `${storyTypeLabel(story.type)} / ${story.category || "-"} / ${characterLine(story)}`;
       return `
         <button type="button" class="tenotsu-story-menu-card ${cleared?"cleared":""} ${disabled?"locked":""}" data-story-id="${esc(story.id)}" ${disabled?"disabled":""}>
           <span class="tenotsu-story-menu-card-head">
             <b>${esc(story.title)}</b>
             <i>${esc(story.version || "")}</i>
           </span>
-          <span class="tenotsu-story-menu-card-meta">${esc(storyTypeLabel(story.type))} / ${esc(story.category || "-")} / ${esc(characterLine(story))}</span>
+          <span class="tenotsu-story-menu-card-meta">${esc(expressionMeta)}</span>
           <span class="tenotsu-story-menu-card-summary">${esc(story.summary || "")}</span>
           <span class="tenotsu-story-menu-card-state">${unlocked ? state : "未解放"}</span>
         </button>
       `;
-    }).join("") : `<div class="tenotsu-story-menu-empty">${esc(tabLabel(activeTab))}に表示できる回想ストーリーはまだありません。</div>`;
+    };
+    let body = `<div class="tenotsu-story-menu-empty">${esc(tabLabel(activeTab))}に表示できる回想ストーリーはまだありません。</div>`;
+    if (stories.length) {
+      if (activeTab === "expression") {
+        const groups = ["hidamari", "biribiri", "other"];
+        body = groups.map((group) => {
+          const groupStories = stories.filter((story) => expressionGroup(story) === group);
+          if (!groupStories.length) return "";
+          return `
+            <section class="tenotsu-expression-group" data-expression-group="${esc(group)}">
+              <h3 class="tenotsu-expression-group-title">${esc(expressionGroupLabel(group))}<small>${groupStories.length}人</small></h3>
+              <div class="tenotsu-expression-card-grid">${groupStories.map(renderStoryCard).join("")}</div>
+            </section>
+          `;
+        }).join("");
+      } else {
+        body = stories.map(renderStoryCard).join("");
+      }
+    }
 
     const html = `
       <div class="tenotsu-story-menu-title">回想アルバム</div>
       <div class="tenotsu-story-menu-subtitle">読了済みの通常・季節・イベントストーリーを再生するアルバムです。親愛系はメンバー個別プロフィール、自己紹介は自己紹介メニューから確認します。</div>
       <div class="tenotsu-story-menu-tabs" data-tenotsu-recollection-tabs="true">${tabs}</div>
       <div class="tenotsu-story-menu-debug">${esc(debugNote)}</div>
-      <div class="tenotsu-story-menu-list" data-tenotsu-recollection-list="true">${body}</div>
+      <div class="tenotsu-story-menu-list ${activeTab==="expression"?"is-expression":""}" data-tenotsu-recollection-list="true">${body}</div>
       <div class="tenotsu-story-menu-actions">
         <button type="button" class="tenotsu-town-back" data-story-menu-action="office">事務所に戻る</button>
       </div>
@@ -162,7 +203,7 @@
     if (typeof ns.clearCharacters === "function") ns.clearCharacters();
     if (typeof ns.setBackgroundReady === "function") await ns.setBackgroundReady(ns.paths.officeBg); else ns.setBackground(ns.paths.officeBg);
     ns.renderOfficeMenu();
-    ns.renderStoryMenu(options.storyMenuTab || "other");
+    ns.renderStoryMenu(options.storyMenuTab || options.tab || "other");
     ns.setText("回想アルバム", "回想アルバムを開きました。");
   };
 })();
