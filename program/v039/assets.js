@@ -15,18 +15,18 @@
 
   ns.officeMembers = [
     ["星野 緋奈", "aa_hina/standing/aa_hina_expression_03.webp", "店長、今日も一緒にがんばりましょう！"],
-    ["速水川 藍", "b10501.webp", "てんちょー、事務所でお待ちしていました。"],
-    ["草壁 翠", "c10501.webp", "キミ、今日の予定は確認済みかな？"],
-    ["小麦沢 こがね", "ad_kogane/standing/ad_kogane_expression_03.webp", "店長、今日もアゲてこー！"],
-    ["春日原 琥珀", "e10501.webp", "旦那、困ったことがあったらオレに任せな！"],
-    ["大道寺 真花", "f10501.webp", "店長、本日もよろしくお願いします。"],
-    ["氷神 雪乃", "g10501.webp", "貴方様、無理はなさらないでくださいね。"],
-    ["双沢 美空", "h10501.webp", "店長、今日も笑顔でいきましょう。"],
-    ["双沢 夜空", "i10501.webp", "あんたの事、ちゃんと見てるからね。"],
-    ["芝桜 桃", "j10501.webp", "店長、ウチ参上！"],
-    ["紫藤 彩愛", "k10501.webp", "貴方、こちらで確認くださいませ。"],
-    ["餅月 里美", "al_satomi/standing/al_satomi_expression_02_gentle_smile.webp", "てんちょ～、お茶でも飲んでいきます～？"],
-    ["草壁 萌", "m10501.webp", "おにいちゃん、ここにいるよ。"]
+    ["速水川 藍", "ab_ai/standing/03_笑顔.webp", "てんちょー、事務所でお待ちしていました。"],
+    ["草壁 翠", "ac_midori/standing/ac_midori_expression_03_smile.webp", "キミ、今日の予定は確認済みかな？"],
+    ["小麦沢 こがね", "ad_kogane/standing/ad_kogane_expression_03_smile.webp", "店長、今日もアゲてこー！"],
+    ["春日原 琥珀", "ae_kohaku/standing/ae_kohaku_expression_03_smile.webp", "旦那、困ったことがあったらオレに任せな！"],
+    ["大道寺 真花", "af_manaka/standing/af_manaka_expression_03_smile.webp", "店長、本日もよろしくお願いします。"],
+    ["氷神 雪乃", "ag_yukino/standing/ag_yukino_expression_03_smile.webp", "貴方様、無理はなさらないでくださいね。"],
+    ["双沢 美空", "ah_misora/standing/ah_misora_expression_03_smile.webp", "店長、今日も笑顔でいきましょう。"],
+    ["双沢 夜空", "ai_yozora/standing/ai_yozora_expression_03_smile.webp", "あんたの事、ちゃんと見てるからね。"],
+    ["芝桜 桃", "aj_momo/standing/aj_momo_expression_03_smile.webp", "店長、ウチ参上！"],
+    ["紫藤 彩愛", "ak_ayame/standing/ak_ayame_expression_03_smile.webp", "貴方、こちらで確認くださいませ。"],
+    ["餅月 里美", "al_satomi/standing/al_satomi_expression_03_smile.webp", "てんちょ～、お茶でも飲んでいきます～？"],
+    ["草壁 萌", "am_moe/standing/am_moe_expression_03_smile.webp", "おにいちゃん、ここにいるよ。"]
   ];
 
 
