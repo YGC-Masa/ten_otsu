@@ -1,7 +1,7 @@
 {
   "id": "yozora_expression_25_test",
   "title": "夜空の表情テスト：消えた加湿器センサー",
-  "version": "v039_305",
+  "version": "v039_320",
   "return": {
     "mode": "storyMenu",
     "storyMenuTab": "other",
@@ -133,7 +133,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_07_worry.webp",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_07_worry.webp?v=v039_320",
           "side": "center",
           "left": "50%",
           "zIndex": 2500,
@@ -165,7 +165,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_09_surprise.webp",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_09_surprise.webp?v=v039_320",
           "side": "center",
           "left": "50%",
           "zIndex": 2500,
@@ -341,7 +341,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_20_silent_pressure.webp",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_20_silent_pressure.webp?v=v039_320",
           "side": "center",
           "left": "50%",
           "zIndex": 2500,
@@ -389,7 +389,7 @@
       "storySprites": [
         {
           "id": "ai",
-          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_23_captivated.webp",
+          "src": "images/assets/char/ai_yozora/standing/ai_yozora_expression_23_captivated.webp?v=v039_320",
           "side": "center",
           "left": "50%",
           "zIndex": 2500,

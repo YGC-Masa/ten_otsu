@@ -362,7 +362,7 @@ window.TENOTSU_RECOLLECTION_STORY_INDEX = [
       "速水川 藍"
     ],
     "scenario": "scenario/v039/events/ai_expression_25_test.json",
-    "version": "v039_299",
+    "version": "v039_320",
     "unlock": {
       "type": "always"
     },
@@ -530,7 +530,7 @@ window.TENOTSU_RECOLLECTION_STORY_INDEX = [
       "双沢 夜空"
     ],
     "scenario": "scenario/v039/events/yozora_expression_25_test.json",
-    "version": "v039_305",
+    "version": "v039_320",
     "unlock": {
       "type": "always"
     },

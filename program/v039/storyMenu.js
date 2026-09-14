@@ -83,7 +83,7 @@
 
   function expressionGroup(story){
     const ids = Array.isArray(story && story.characters) ? story.characters : [];
-    if (ids.some((id) => /^a[a-m]$/.test(String(id)))) return "hidamari";
+    if (ids.some((id) => /^a[a-n]$/.test(String(id)))) return "hidamari";
     if (ids.some((id) => /^b[a-c]$/.test(String(id)))) return "biribiri";
     return "other";
   }
