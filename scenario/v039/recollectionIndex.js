@@ -362,7 +362,7 @@ window.TENOTSU_RECOLLECTION_STORY_INDEX = [
       "速水川 藍"
     ],
     "scenario": "scenario/v039/events/ai_expression_25_test.json",
-    "version": "v039_321",
+    "version": "v039_322",
     "unlock": {
       "type": "always"
     },
