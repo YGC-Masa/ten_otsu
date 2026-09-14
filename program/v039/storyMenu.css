@@ -314,10 +314,10 @@ body[data-v039-mode="storyMenu"] .tenotsu-story-menu-tabs{
   margin:5px 0 7px !important;
 }
 body[data-v039-mode="storyMenu"] .tenotsu-story-menu-tab{
-  min-height:27px !important;
-  padding:3px 5px !important;
+  min-height:25px !important;
+  padding:2px 5px !important;
   border-radius:8px !important;
-  font-size:12px !important;
+  font-size:10px !important;
   line-height:1.2 !important;
 }
 body[data-v039-mode="storyMenu"] .tenotsu-text-layer{
