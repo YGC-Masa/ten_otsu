@@ -9,7 +9,7 @@
     name: "チャコ",
     id: "an",
     color: "#3f424a",
-    role: "Web実験班",
+    role: "ひだまりストア",
     specialty: "HTML・CSS・UI検証",
     image: "an_chako/standing/an_charcoal_expression_03_smile.webp",
     comment: "店長、Web側の小さな実験は任せて。智恵さんの本線に戻しやすい形で試します。"

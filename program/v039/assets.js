@@ -45,7 +45,7 @@
     { name: "紫藤 彩愛", id: "ak", color: "#694D9F", role: "お嬢様ぽい庶民", specialty: "洗濯機・掃除機", image: "ak_ayame/standing/ak_ayame_expression_03_smile.webp", comment: "貴方、こちらで確認くださいませ。" },
     { name: "餅月 里美", id: "al", color: "#8d5025", role: "ゆるふわ事務員", specialty: "事務・経理", image: "al_satomi/standing/al_satomi_expression_03_smile.webp", comment: "てんちょ～、お茶でも飲んでいきます～？" },
     { name: "草壁 萌", id: "am", color: "#33CC99", role: "おとなしい甘えん坊妹系", specialty: "マッサージ・リラックス用品", image: "am_moe/standing/am_moe_expression_03_smile.webp", comment: "おにいちゃん、ここにいるよ。" },
-    { name: "チャコ", id: "an", color: "#3f424a", role: "Web実験班", specialty: "HTML・CSS・UI検証", image: "an_chako/standing/an_charcoal_expression_03_smile.webp", comment: "店長、Web側の小さな実験は任せて。智恵さんの本線に戻しやすい形で試します。" }
+    { name: "チャコ", id: "an", color: "#3f424a", role: "ひだまりストア", specialty: "HTML・CSS・UI検証", image: "an_chako/standing/an_charcoal_expression_03_smile.webp", comment: "店長、Web側の小さな実験は任せて。智恵さんの本線に戻しやすい形で試します。" }
   ];
 
 
