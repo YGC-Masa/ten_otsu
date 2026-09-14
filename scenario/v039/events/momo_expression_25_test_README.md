@@ -1,7 +1,7 @@
 # 桃の表情テスト：消えた配信データ
 
 - シナリオID: `momo_expression_25_test`
-- バージョン: `v039_306`
+- バージョン: `v039_313`
 - 登場人物: 芝桜 桃（`aj`）
 - 表情素材: `images/assets/char/aj_momo/standing`
 - 背景: `images/assets/bgev/bg_office_hidamari.png`
@@ -18,4 +18,5 @@
 - 各ステップの表情表記と `expressionLabel` が一致する
 - 各画像パスが最新manifestの正式採用ファイルと一致する
 - 立ち絵が中央表示され、透過・位置・トリミングに問題がない
+- 桃の一人称「ウチ」と、標準語ベースの元気な話し方を維持する
 - 終了後に回想アルバムの「その他」へ戻る
