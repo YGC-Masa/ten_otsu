@@ -38,6 +38,18 @@
       summary: "夏海の採用済み正式25表情を、最新画像で順番に確認する開発用シナリオ。",
       rawTitle: "夏海の表情テスト：消えた差し入れフルーツ",
       locationName: "ひだまりストア", albumTab: "other", encounter: { enabled: false }
+    },
+    {
+      id: "uzume_expression_25_test",
+      title: "ウズメの表情テスト：25表情表示確認",
+      type: "normal", category: "test", season: "other",
+      placeId: "hidamari_store", placeName: "ひだまりストア",
+      characters: ["f11"], characterNames: ["ウズメ"],
+      scenario: "scenario/v039/events/uzume_expression_25_test.json",
+      version: "v039_322", unlock: { type: "always" }, order: 9918,
+      summary: "ウズメの採用済み正式25表情を、最新画像で順番に確認する開発用シナリオ。",
+      rawTitle: "ウズメの表情テスト：25表情表示確認",
+      locationName: "ひだまりストア", albumTab: "other", encounter: { enabled: false }
     }
   ];
 
