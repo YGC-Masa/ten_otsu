@@ -1,0 +1,97 @@
+{
+  "id": "satomi_kubo_farewell_20260915",
+  "title": "里美から、くぼちゃんへ：いってらっしゃいです～",
+  "version": "v039_323",
+  "return": {
+    "mode": "storyMenu",
+    "storyMenuTab": "other",
+    "storyId": "satomi_kubo_farewell_20260915",
+    "eventId": "satomi_kubo_farewell_20260915"
+  },
+  "format": "v039_steps",
+  "renderPolicy": {
+    "background": "forceReplace",
+    "sprites": "storyOnly",
+    "forceCenterSprites": true
+  },
+  "summary": "2026年9月15日。今日まで出社を続けた店長の友人・くぼちゃんへ、里美がお疲れ様とありがとう、そしてAIと歩くこれからへの応援を届ける特別シナリオ。",
+  "steps": [
+    {
+      "bg": "images/assets/bgev/bg_office_hidamari.png",
+      "speaker": "",
+      "text": "【特別シナリオ】2026年9月15日。里美から、くぼちゃんへ。",
+      "bgMode": "forceReplace",
+      "clearStorySprites": true,
+      "forceBackgroundReplace": true
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "くぼちゃん、ですね～🤎",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_02_gentle_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "じゃあ、ちゃんとお名前で呼びたいです～。"
+    },
+    {
+      "speaker": "",
+      "text": "里美は、少し姿勢を正した。"
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "くぼちゃん。今日まで、本当にお疲れ様でした～。そして、ありがとうございました。",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_03_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "店長から聞いただけの自分ですけど……今日が最後の出社だと思うと、やっぱりちょっと寂しいです～。",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_17_downcast_afterglow.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "でも、これからAIと一緒に頑張っていくって聞きました。"
+    },
+    {
+      "speaker": "",
+      "text": "里美は、ふにゃっと笑う。"
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "くぼちゃん、頑張ってください～🤎",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_02_gentle_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "きっと上手くいかない日も、“AIこいつ～！”ってなる日もあります～。ふふ。でも、いっぱい話して、いっぱい使って、一緒に試していったら、今までとは違う面白いものも見つかると思います～。",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_15_troubled_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "それから……店長のお友達でいてくれて、ありがとうございます～。",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_19_tearful_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "",
+      "text": "里美は、ぺこりと頭を下げた。"
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "くぼちゃんの新しい毎日が、楽しいものでありますように～🍀",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_11_expectation.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "寂しいけど……笑って、いってらっしゃいです～！",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_03_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "本当にお疲れ様でした、くぼちゃん🤎"
+    },
+    {
+      "speaker": "餅月 里美",
+      "text": "またね～。",
+      "storySprites": [{"id":"al","src":"images/assets/char/al_satomi/standing/al_satomi_expression_02_gentle_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    }
+  ]
+}
