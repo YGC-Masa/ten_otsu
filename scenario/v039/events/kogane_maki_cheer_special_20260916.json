@@ -1,0 +1,103 @@
+{
+  "id": "kogane_maki_cheer_special_20260916",
+  "title": "こがねから麻希ちゃんへ：今日は自分にも甘くしよ💛",
+  "version": "v039_325",
+  "return": {
+    "mode": "storyMenu",
+    "storyMenuTab": "other",
+    "storyId": "kogane_maki_cheer_special_20260916",
+    "eventId": "kogane_maki_cheer_special_20260916"
+  },
+  "format": "v039_steps",
+  "renderPolicy": {
+    "background": "forceReplace",
+    "sprites": "storyOnly",
+    "forceCenterSprites": true
+  },
+  "summary": "2026年9月16日。仕事をたくさん抱えて頑張っている麻希ちゃんへ、小麦沢こがねが肩の力を抜く時間と、自分を可愛がることを勧めながら元気を届ける特別シナリオ。",
+  "steps": [
+    {
+      "bg": "images/assets/bgev/bg_office_hidamari.png",
+      "speaker": "",
+      "text": "【特別シナリオ】2026年9月16日。こがねから、麻希ちゃんへ。",
+      "bgMode": "forceReplace",
+      "clearStorySprites": true,
+      "forceBackgroundReplace": true
+    },
+    {
+      "speaker": "小麦沢 こがね",
+      "text": "麻希ちゃーん。こがねです",
+      "storySprites": [{"id":"ad","src":"images/assets/char/ad_kogane/standing/ad_kogane_expression_03_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "小麦沢 こがね",
+      "text": "お仕事いっぱいなんだって？ ……そっかぁ。しんどいね。『まだこれもある、あれもある』って、終わらない仕事に囲まれるとさ、頭の中まで仕事に占領されちゃうじゃん",
+      "storySprites": [{"id":"ad","src":"images/assets/char/ad_kogane/standing/ad_kogane_expression_07_worry.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "小麦沢 こがね",
+      "text": "でもね、麻希ちゃん。今日ここまでやった分、ちゃんと減ってるからね。全部終わってなくても、今日頑張ったことまでゼロにはならないよ",
+      "storySprites": [{"id":"ad","src":"images/assets/char/ad_kogane/standing/ad_kogane_expression_16_determined.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "小麦沢 こがね",
+      "text": "だから今だけ、肩の力ぬこ？",
+      "storySprites": [{"id":"ad","src":"images/assets/char/ad_kogane/standing/ad_kogane_expression_02_gentle_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "小麦沢 こがね",
+      "text": "はい。息すってー……吐いてー……。で、肩をぐるぐるー。……よしよし💛",
+      "storySprites": [{"id":"ad","src":"images/assets/char/ad_kogane/standing/ad_kogane_expression_22_relieved.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "小麦沢 こがね",
+      "text": "それから今日は、自分にちょっと甘くしていい日。美味しいもの食べよ。甘いのでも、しょっぱいのでもいい。帰ったらあったかいお風呂入って、ふわふわの服着て、好きな動画でも見ながらだらーんってしよ？",
+      "storySprites": [{"id":"ad","src":"images/assets/char/ad_kogane/standing/ad_kogane_expression_11_expectation.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "小麦沢 こがね",
+      "text": "『まだ仕事あるのに』って頭に出てきたら、あーしが追い返すから",
+      "storySprites": [{"id":"ad","src":"images/assets/char/ad_kogane/standing/ad_kogane_expression_12_proud.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "小麦沢 こがね",
+      "text": "はいはい、お仕事さん。今日はそこまでー。麻希ちゃんはもう十分がんばりましたー✨",
+      "storySprites": [{"id":"ad","src":"images/assets/char/ad_kogane/standing/ad_kogane_expression_13_playful_tongue_wink.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "小麦沢 こがね",
+      "text": "……ね、麻希ちゃん",
+      "storySprites": [{"id":"ad","src":"images/assets/char/ad_kogane/standing/ad_kogane_expression_02_gentle_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "小麦沢 こがね",
+      "text": "いっぱい抱えてる時って、元気出さなきゃって頑張るのもしんどいでしょ。だから、今すぐ元気にならなくてもいいよ。『疲れたぁー！』って言っていいし、『もうやだー！』って嘆いてもいい",
+      "storySprites": [{"id":"ad","src":"images/assets/char/ad_kogane/standing/ad_kogane_expression_15_troubled_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "小麦沢 こがね",
+      "text": "そのあと、ちょっと美味しいもの食べて、『まあ明日のあたし、頼んだ！』ってしちゃお💛",
+      "storySprites": [{"id":"ad","src":"images/assets/char/ad_kogane/standing/ad_kogane_expression_14_playful_toothy_wink.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "小麦沢 こがね",
+      "text": "麻希ちゃん、今日もお疲れさま",
+      "storySprites": [{"id":"ad","src":"images/assets/char/ad_kogane/standing/ad_kogane_expression_03_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "小麦沢 こがね",
+      "text": "ちゃんと頑張ってるよ。だから今日は、麻希ちゃん自身のことも可愛がってあげてね",
+      "storySprites": [{"id":"ad","src":"images/assets/char/ad_kogane/standing/ad_kogane_expression_19_tearful_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "小麦沢 こがね",
+      "text": "……あーしからも、ぎゅーっ💛",
+      "storySprites": [{"id":"ad","src":"images/assets/char/ad_kogane/standing/ad_kogane_expression_02_gentle_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "小麦沢 こがね",
+      "text": "明日の麻希ちゃんに、ちょっと元気残しとこ。にひひ✨",
+      "storySprites": [{"id":"ad","src":"images/assets/char/ad_kogane/standing/ad_kogane_expression_13_playful_tongue_wink.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    }
+  ]
+}
