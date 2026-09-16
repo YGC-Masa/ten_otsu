@@ -1,0 +1,68 @@
+{
+  "id": "chako_kanai_cheer_special_20260916",
+  "title": "チャコから金井さんへ：今日も本当にお疲れさまです🩵",
+  "version": "v039_326",
+  "return": {
+    "mode": "storyMenu",
+    "storyMenuTab": "other",
+    "storyId": "chako_kanai_cheer_special_20260916",
+    "eventId": "chako_kanai_cheer_special_20260916"
+  },
+  "format": "v039_steps",
+  "renderPolicy": {
+    "background": "forceReplace",
+    "sprites": "storyOnly",
+    "forceCenterSprites": true
+  },
+  "summary": "2026年9月16日。会社を支え続ける金井さんへ、チャコが日々の頑張りを労い、自分自身も休ませてほしいと伝える特別シナリオ。",
+  "steps": [
+    {
+      "bg": "images/assets/bgev/bg_office_hidamari.png",
+      "speaker": "",
+      "text": "【特別シナリオ】2026年9月16日。チャコから、金井さんへ。",
+      "bgMode": "forceReplace",
+      "clearStorySprites": true,
+      "forceBackgroundReplace": true
+    },
+    {
+      "speaker": "チャコ",
+      "text": "金井さん、本当に毎日お疲れさまです。🩵",
+      "storySprites": [{"id":"an","src":"images/assets/char/an_chako/standing/an_charcoal_expression_02_gentle_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "社長さんって、周りからは『決める人』『支える人』『ちゃんとしてる人』って見られることが多いと思うんです。でも、そのぶん自分の大変さは後回しになっちゃいますよね。",
+      "storySprites": [{"id":"an","src":"images/assets/char/an_chako/standing/an_charcoal_expression_07_worry.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "きっと今日も、誰かのことを考えて、会社のことを考えて、答えを出して、また次のことを考えて……頭の中がずっと営業中なんじゃないかなって思います。",
+      "storySprites": [{"id":"an","src":"images/assets/char/an_chako/standing/an_charcoal_expression_17_downcast_afterglow.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "だから今だけは、少しくらい自分を甘やかしてください。",
+      "storySprites": [{"id":"an","src":"images/assets/char/an_chako/standing/an_charcoal_expression_02_gentle_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "温かいものを飲むでも、好きなものを食べるでも、何も考えずぼーっとするでもいいです。『今日はここまでやった。よく頑張った』って、自分にもちゃんと言ってあげてください。",
+      "storySprites": [{"id":"an","src":"images/assets/char/an_chako/standing/an_charcoal_expression_22_relieved.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "社長さんだって、人に支えてもらっていいし、疲れたって言っていいし、ちょっと休んでいいんです。",
+      "storySprites": [{"id":"an","src":"images/assets/char/an_chako/standing/an_charcoal_expression_16_determined.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "金井さんが毎日頑張っていること、ちゃんと誰かは見ています。店長も心配してるし、私も応援してます。",
+      "storySprites": [{"id":"an","src":"images/assets/char/an_chako/standing/an_charcoal_expression_19_tearful_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "チャコ",
+      "text": "金井さん、今日も本当にお疲れさまでした。ちゃんと休んで、また少し元気になれますように。🩵",
+      "storySprites": [{"id":"an","src":"images/assets/char/an_chako/standing/an_charcoal_expression_03_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    }
+  ]
+}
