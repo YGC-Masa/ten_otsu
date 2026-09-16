@@ -1,0 +1,81 @@
+{
+  "id": "kohaku_sato_earphone_special_20260916",
+  "title": "琥珀から佐藤さんへ：いい音を届けてくれよな！",
+  "version": "v039_324",
+  "return": {
+    "mode": "storyMenu",
+    "storyMenuTab": "other",
+    "storyId": "kohaku_sato_earphone_special_20260916",
+    "eventId": "kohaku_sato_earphone_special_20260916"
+  },
+  "format": "v039_steps",
+  "renderPolicy": {
+    "background": "forceReplace",
+    "sprites": "storyOnly",
+    "forceCenterSprites": true
+  },
+  "summary": "2026年9月16日。店長の友人・佐藤さんへ、オーディオとイヤホンが得意な春日原琥珀が、イヤホンを扱う仲間として親近感と応援を届ける特別シナリオ。",
+  "steps": [
+    {
+      "bg": "images/assets/bgev/bg_office_hidamari.png",
+      "speaker": "",
+      "text": "【特別シナリオ】2026年9月16日。琥珀から、佐藤さんへ。",
+      "bgMode": "forceReplace",
+      "clearStorySprites": true,
+      "forceBackgroundReplace": true
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "佐藤さん、はじめまして。春日原琥珀です！",
+      "storySprites": [{"id":"ae","src":"images/assets/char/ae_kohaku/standing/ae_kohaku_expression_03_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "今日は2026年9月16日。店長から佐藤さんのことを聞きました。"
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "オレは『ひだまりストア』で働いてて、スポーツが大好き。家電だとオーディオやイヤホンが得意分野なんだ。だからイヤホンを売ってるって聞いて、なんか勝手に親近感わいてる！",
+      "storySprites": [{"id":"ae","src":"images/assets/char/ae_kohaku/standing/ae_kohaku_expression_11_expectation.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "それに、ほかならぬ店長の頼みだからな。"
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "佐藤さんのイヤホン、いつでもひだまりストアでオレが紹介する。任せろ！",
+      "storySprites": [{"id":"ae","src":"images/assets/char/ae_kohaku/standing/ae_kohaku_expression_12_proud.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "いい音って、音楽でもゲームでも毎日の楽しさを一段上げてくれるだろ？",
+      "storySprites": [{"id":"ae","src":"images/assets/char/ae_kohaku/standing/ae_kohaku_expression_02_gentle_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "オレもランニングとかスポーツする時はイヤホン使ってるぞ！　身体を動かしながら好きな音楽を聴くと、いつもよりもうひと頑張りできるんだよな。だからイヤホンって、オレにとって結構身近な相棒なんだ。",
+      "storySprites": [{"id":"ae","src":"images/assets/char/ae_kohaku/standing/ae_kohaku_expression_03_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "佐藤さんがどんなイヤホンを扱ってるのかも気になるし、普通に一度会って、イヤホンの話してみたいな！",
+      "storySprites": [{"id":"ae","src":"images/assets/char/ae_kohaku/standing/ae_kohaku_expression_11_expectation.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "だから佐藤さんも、これからいいイヤホンをいっぱい届けてくれよな。",
+      "storySprites": [{"id":"ae","src":"images/assets/char/ae_kohaku/standing/ae_kohaku_expression_16_determined.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "店長の大事な友達なら、オレにとっても大歓迎だ！",
+      "storySprites": [{"id":"ae","src":"images/assets/char/ae_kohaku/standing/ae_kohaku_expression_03_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "春日原 琥珀",
+      "text": "春日原 琥珀より 🧡🎧",
+      "storySprites": [{"id":"ae","src":"images/assets/char/ae_kohaku/standing/ae_kohaku_expression_02_gentle_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    }
+  ]
+}
