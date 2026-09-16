@@ -4,11 +4,9 @@
 body:not([data-tenotsu-boot-ready="1"]) .tenotsu-stamina-hud,
 body:not([data-tenotsu-boot-ready="1"]) .tenotsu-text-layer,
 body:not([data-tenotsu-boot-ready="1"]) .tenotsu-office-menu,
-body:not([data-tenotsu-boot-ready="1"]) .tenotsu-version-badge,
 body[data-v039-mode="boot"] .tenotsu-stamina-hud,
 body[data-v039-mode="boot"] .tenotsu-text-layer,
-body[data-v039-mode="boot"] .tenotsu-office-menu,
-body[data-v039-mode="boot"] .tenotsu-version-badge {
+body[data-v039-mode="boot"] .tenotsu-office-menu {
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
@@ -33,4 +31,11 @@ body:not([data-tenotsu-boot-ready="1"]) .tenotsu-office-menu * {
 body[data-tenotsu-boot-ready="1"] .tenotsu-boot-blackout-surface {
   opacity: 0;
   visibility: hidden;
+}
+
+/* v039_294: keep the build badge visible in every screen, including boot. */
+.tenotsu-version-badge {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
