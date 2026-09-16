@@ -272,7 +272,7 @@
     const src = ch.src || "";
     const opacity = ch.opacity === undefined ? 1 : ch.opacity;
     const isEnemyCard = !!(ch.frame === "enemy" || ch.variant === "storyEnemyCard" || id.indexOf("enemy") === 0 || id === "kd" || id === "bk" || String(src).indexOf("/enemy/") >= 0 || String(src).indexOf("/event/dirty_alien") >= 0);
-    const isRivalStoryStand = !!(id === "ba" || id === "bb" || id === "bc" || String(src).indexOf("/rival/story_") >= 0);
+    const isRivalStoryStand = String(src).indexOf("/rival/story_") >= 0;
     img.className = [
       "tenotsu-story-body-standing",
       `side-${side}`,
