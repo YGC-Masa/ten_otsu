@@ -1,0 +1,165 @@
+{
+  "id": "misora_nozomi_cheer_special_20260916",
+  "title": "美空から希望ちゃんへ：一緒に頑張りましょうね💕",
+  "version": "v039_327",
+  "return": {
+    "mode": "storyMenu",
+    "storyMenuTab": "other",
+    "storyId": "misora_nozomi_cheer_special_20260916",
+    "eventId": "misora_nozomi_cheer_special_20260916"
+  },
+  "format": "v039_steps",
+  "renderPolicy": {
+    "background": "forceReplace",
+    "sprites": "storyOnly",
+    "forceCenterSprites": true
+  },
+  "summary": "2026年9月16日。遠距離通勤と仕事、家庭、子育てを毎日頑張る希望ちゃんへ、双沢美空が未来の先輩として敬意と応援を届ける特別シナリオ。",
+  "steps": [
+    {
+      "bg": "images/assets/bgev/bg_office_hidamari.png",
+      "speaker": "",
+      "text": "【特別シナリオ】2026年9月16日。美空から、希望ちゃんへ。",
+      "bgMode": "forceReplace",
+      "clearStorySprites": true,
+      "forceBackgroundReplace": true
+    },
+    {
+      "speaker": "双沢 美空",
+      "text": "希望ちゃん、美空です。🩷",
+      "storySprites": [{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_03_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "双沢 美空",
+      "text": "店長から、希望ちゃんのお話を聞きました。"
+    },
+    {
+      "speaker": "双沢 美空",
+      "text": "毎日、遠いところからお仕事に通ってるんですよね。それだけでも朝は早かったり、帰る頃にはくたくただったりすると思うのに、お家に帰ったら今度はママで……。",
+      "storySprites": [{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_07_worry.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "双沢 美空",
+      "text": "お仕事と、お家のことと、子育てと。きっと毎日、『今日はこれでおしまい！』って簡単にはならないですよね。"
+    },
+    {
+      "speaker": "",
+      "text": "美空は少しだけ考えて、それから、やわらかく笑う。",
+      "storySprites": [{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_02_gentle_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "双沢 美空",
+      "text": "だから希望ちゃん、本当に毎日お疲れさまです。"
+    },
+    {
+      "speaker": "双沢 美空",
+      "text": "ちゃんと頑張ってること、店長も見てますよ。わたしにこうして『応援してあげて』って頼みに来るくらいですから。🩷",
+      "storySprites": [{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_03_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "双沢 美空",
+      "text": "わたしには、まだママとして毎日を頑張るって、どんな感じなのか本当のところまでは分かりません。",
+      "storySprites": [{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_17_downcast_afterglow.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "双沢 美空",
+      "text": "でもね……。"
+    },
+    {
+      "speaker": "",
+      "text": "ちょっと照れくさそうにしながらも、美空はまっすぐ希望ちゃんへ言葉を届ける。",
+      "storySprites": [{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_10_shy.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "双沢 美空",
+      "text": "わたしにも、いつかそんな日が来たら。"
+    },
+    {
+      "speaker": "双沢 美空",
+      "text": "大好きな人と家庭をつくって、ママになって、お仕事もして……毎日あっちへこっちへ頑張るようになったら。"
+    },
+    {
+      "speaker": "双沢 美空",
+      "text": "そのときは、希望ちゃんみたいに頑張りたいです。",
+      "storySprites": [{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_16_determined.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "双沢 美空",
+      "text": "きっと大変で、『今日はもう無理ぃ……』ってなる日もあると思うけど、それでも大切な人たちのために頑張れるママになりたい。"
+    },
+    {
+      "speaker": "双沢 美空",
+      "text": "だから今のわたしから見たら、希望ちゃんはちょっとだけ未来の先輩です。💕",
+      "storySprites": [{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_11_expectation.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "",
+      "text": "美空は両手をぎゅっと握る。"
+    },
+    {
+      "speaker": "双沢 美空",
+      "text": "希望ちゃん、がんばれーっ！🩷",
+      "storySprites": [{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_03_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "双沢 美空",
+      "text": "お仕事も、ママも、毎日ほんとうにお疲れさま！"
+    },
+    {
+      "speaker": "双沢 美空",
+      "text": "疲れた日は、ちゃんと自分にも『今日もよく頑張った』って言ってあげてください。",
+      "storySprites": [{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_02_gentle_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "双沢 美空",
+      "text": "全部完璧じゃなくたって、今日一日をちゃんと走ってきたことはなくならないですから。",
+      "storySprites": [{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_16_determined.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "",
+      "text": "美空は、ふわっと笑う。",
+      "storySprites": [{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_02_gentle_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "双沢 美空",
+      "text": "店長のお友達の希望ちゃんへ。"
+    },
+    {
+      "speaker": "双沢 美空",
+      "text": "美空から、いっぱい応援送ります。"
+    },
+    {
+      "speaker": "双沢 美空",
+      "text": "がんばれ、希望ちゃん！",
+      "storySprites": [{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_03_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "双沢 美空",
+      "text": "でも、頑張ったぶんだけ、いっぱい笑える日もありますように。"
+    },
+    {
+      "speaker": "双沢 美空",
+      "text": "美味しいもの食べて、ちょっとのんびりできる時間もありますように。",
+      "storySprites": [{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_22_relieved.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "双沢 美空",
+      "text": "そして明日も、『よし、行ってきます！』って出発できる朝になりますように。🩷"
+    },
+    {
+      "speaker": "双沢 美空",
+      "text": "希望ちゃん、いつもお疲れさまです。",
+      "storySprites": [{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_19_tearful_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "双沢 美空",
+      "text": "美空も、いつか希望ちゃんに続いて頑張ります！",
+      "storySprites": [{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_11_expectation.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "双沢 美空",
+      "text": "だから……一緒に頑張りましょうね。💕",
+      "storySprites": [{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_03_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    }
+  ]
+}
