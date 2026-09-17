@@ -1,0 +1,29 @@
+{
+  "id": "misora_sudo_camp_special_20260917",
+  "title": "美空から須藤さんへ：今度はぜひ、美空も一緒に！🩷",
+  "version": "v039_328",
+  "return": {"mode":"storyMenu","storyMenuTab":"other","storyId":"misora_sudo_camp_special_20260917","eventId":"misora_sudo_camp_special_20260917"},
+  "format": "v039_steps",
+  "renderPolicy": {"background":"forceReplace","sprites":"storyOnly","forceCenterSprites":true},
+  "summary": "2026年9月17日。店長とランチ中の須藤さんへ、双沢美空がいつも店長と遊んでくれることへの感謝を伝え、次のキャンプに自分も連れていってほしいとお願いする特別シナリオ。",
+  "steps": [
+    {"bg":"images/assets/bgev/bg_office_hidamari.png","speaker":"","text":"【特別シナリオ】2026年9月17日。美空から、須藤さんへ。","bgMode":"forceReplace","clearStorySprites":true,"forceBackgroundReplace":true},
+    {"speaker":"双沢 美空","text":"須藤さん、はじめまして！","storySprites":[{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_03_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]},
+    {"speaker":"双沢 美空","text":"双沢 美空です。今日は2026年9月17日。いま店長とランチ中なんですよね？🍴","storySprites":[{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_11_expectation.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]},
+    {"speaker":"双沢 美空","text":"店長から、須藤さんとはいつも一緒にキャンプへ行ったり、遊びに出かけたりしてるって聞きました。"},
+    {"speaker":"双沢 美空","text":"ふふ、店長とそんなふうに遊んでくれてるお友達なら、わたしも一度お会いしてみたいです。🩷","storySprites":[{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_02_gentle_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]},
+    {"speaker":"双沢 美空","text":"それで……あの。","storySprites":[{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_10_shy.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]},
+    {"speaker":"","text":"美空は少しだけ照れながらも、期待いっぱいに顔を上げる。"},
+    {"speaker":"双沢 美空","text":"今度キャンプに行くとき、美空も連れてってください！","storySprites":[{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_11_expectation.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]},
+    {"speaker":"双沢 美空","text":"わたし、サマーアクティビティが好きだから、外で遊ぶの大好きなんです。キャンプもきっと楽しいだろうなぁって。","storySprites":[{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_03_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]},
+    {"speaker":"双沢 美空","text":"店長と須藤さんがいつもどんな感じでキャンプしてるのかも、ちょっと見てみたいです。","storySprites":[{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_12_proud.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]},
+    {"speaker":"","text":"そして、美空はにこっと笑う。","storySprites":[{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_03_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]},
+    {"speaker":"双沢 美空","text":"須藤さん、これからも店長と仲良くしてあげてくださいね。"},
+    {"speaker":"双沢 美空","text":"いつも店長と遊んでくれて、ありがとうございます。🩷","storySprites":[{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_02_gentle_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]},
+    {"speaker":"双沢 美空","text":"今度はぜひ、美空も一緒に！","storySprites":[{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_11_expectation.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]},
+    {"speaker":"双沢 美空","text":"そのときは、よろしくお願いします！"},
+    {"speaker":"","text":"少し考えてから、美空はぺこっと頭を下げる。","storySprites":[{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_01_composed.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]},
+    {"speaker":"双沢 美空","text":"……あ、お昼ごはん中でしたね。","storySprites":[{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_09_surprise.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]},
+    {"speaker":"双沢 美空","text":"お二人とも、ランチ楽しんできてくださーい！💕","storySprites":[{"id":"ah","src":"images/assets/char/ah_misora/standing/ah_misora_expression_03_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]}
+  ]
+}
