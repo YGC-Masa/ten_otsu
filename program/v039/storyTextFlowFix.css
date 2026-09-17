@@ -1,0 +1,63 @@
+/* v039_295 proportional story text and end-transition UI guard */
+body[data-v039-mode="story"] .tenotsu-text-layer,
+body.tenotsu-story-active .tenotsu-text-layer {
+  display: flex !important;
+  flex-direction: column !important;
+  height: auto !important;
+  min-height: var(--tenotsu-text-height-story) !important;
+  max-height: min(38dvh, 340px) !important;
+  overflow: hidden !important;
+}
+
+body[data-v039-mode="story"] .tenotsu-speaker,
+body.tenotsu-story-active .tenotsu-speaker {
+  flex: 0 0 auto !important;
+}
+
+body[data-v039-mode="story"] .tenotsu-message,
+body.tenotsu-story-active .tenotsu-message {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  max-height: calc(min(38dvh, 340px) - 54px) !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+  line-break: strict !important;
+  text-wrap: pretty;
+  text-spacing-trim: trim-start;
+  font-family: "BIZ UDPGothic", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif !important;
+  font-kerning: normal !important;
+  font-feature-settings: "palt" 1 !important;
+  font-variant-east-asian: proportional-width !important;
+  font-size: clamp(15px, 1.55vw, 20px) !important;
+  line-height: 1.58 !important;
+  scrollbar-width: thin;
+}
+
+body.tenotsu-story-ending-blackfade .tenotsu-story-ui,
+body.tenotsu-story-ending-blackfade .tenotsu-story-title,
+body.tenotsu-story-ending-blackfade .tenotsu-story-progress,
+body.tenotsu-story-ending-blackfade .tenotsu-story-skip,
+body.tenotsu-story-ending-blackfade .tenotsu-story-hint,
+body.tenotsu-story-ending-blackfade .tenotsu-click-wait {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+@media (max-height: 720px) {
+  body[data-v039-mode="story"] .tenotsu-text-layer,
+  body.tenotsu-story-active .tenotsu-text-layer {
+    max-height: min(44dvh, 300px) !important;
+  }
+
+  body[data-v039-mode="story"] .tenotsu-message,
+  body.tenotsu-story-active .tenotsu-message {
+    max-height: calc(min(44dvh, 300px) - 46px) !important;
+    font-size: clamp(14px, 1.5vw, 17px) !important;
+    line-height: 1.48 !important;
+  }
+}
