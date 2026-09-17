@@ -1,0 +1,23 @@
+{
+  "id": "hina_madoka_night_cheer_special_20260917",
+  "title": "緋奈からまどかちゃんへ：ちゃんと朝になるからね❤️",
+  "version": "v039_330",
+  "return": {"mode":"storyMenu","storyMenuTab":"other","storyId":"hina_madoka_night_cheer_special_20260917","eventId":"hina_madoka_night_cheer_special_20260917"},
+  "format": "v039_steps",
+  "renderPolicy": {"background":"forceReplace","sprites":"storyOnly","forceCenterSprites":true},
+  "summary": "2026年9月17日の夜。一人で眠るのが怖いまどかちゃんへ、星野緋奈が無理に怖がらないよう頑張らなくていいと寄り添い、朝まで安心を届ける特別シナリオ。",
+  "steps": [
+    {"bg":"images/assets/bgev/bg_office_hidamari.png","speaker":"","text":"【特別シナリオ】2026年9月17日の夜。緋奈から、まどかちゃんへ。","bgMode":"forceReplace","clearStorySprites":true,"forceBackgroundReplace":true},
+    {"speaker":"星野 緋奈","text":"まどかちゃん、大丈夫だよ❤️","storySprites":[{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_02.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]},
+    {"speaker":"星野 緋奈","text":"夜ってさ、昼ならなんでもない音まで急に大きく聞こえたり、部屋の影がなんか変なものに見えたりするんだよね。怖くなっちゃうの、全然変じゃないよ。","storySprites":[{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_07.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]},
+    {"speaker":"星野 緋奈","text":"でもね、今いるお部屋はいつものお部屋。お布団も枕も、ちゃんとまどかちゃんの味方だから。","storySprites":[{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_02.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]},
+    {"speaker":"星野 緋奈","text":"怖くなったら、無理に『怖くない！』って頑張らなくていいの。お布団ぎゅってして、好きな音楽とか動画を小さく流して、明かりもちょっとだけつけとこ。","storySprites":[{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_22.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]},
+    {"speaker":"星野 緋奈","text":"『今日は一人で寝られた！』じゃなくてもいいんだよ。『昨日より5分安心できた』とか、それでも十分すごいから。","storySprites":[{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_16.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]},
+    {"speaker":"星野 緋奈","text":"それにさ。","storySprites":[{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_11.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]},
+    {"speaker":"星野 緋奈","text":"店長が、まどかちゃんのこと心配して、あたしに声かけてくれたんだよ？","storySprites":[{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_03.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]},
+    {"speaker":"星野 緋奈","text":"だから今夜は、完全に一人ってわけじゃないぞー。","storySprites":[{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_12.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]},
+    {"speaker":"星野 緋奈","text":"あたしもここから、『まどかちゃん、大丈夫。ちゃんと朝になるからね』って言っとく❤️","storySprites":[{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_02.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]},
+    {"speaker":"星野 緋奈","text":"……おやすみ、まどかちゃん。","storySprites":[{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_24.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]},
+    {"speaker":"星野 緋奈","text":"怖い夢なんか来たら、あたしが『こらーっ！』って追い返してやるからなっ。えへへ","storySprites":[{"id":"aa","src":"images/assets/char/aa_hina/standing/aa_hina_expression_14.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]}
+  ]
+}
