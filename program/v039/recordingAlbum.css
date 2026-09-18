@@ -1,0 +1,20 @@
+/* v039_298 dedicated video-recording recollection album */
+body.tenotsu-recording-album[data-v039-mode="storyMenu"] .tenotsu-office-menu,
+body.tenotsu-recording-album[data-v039-mode="storyMenu"] .tenotsu-text-layer {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+body.tenotsu-recording-album[data-v039-mode="storyMenu"] .tenotsu-town-panel {
+  width: min(1180px, 92vw) !important;
+  max-width: 1180px !important;
+}
+
+body.tenotsu-recording-album .tenotsu-story-menu-title {
+  color: #d9f3ff;
+}
+
+body.tenotsu-recording-album .tenotsu-story-menu-card {
+  border-color: rgba(170, 220, 255, .48);
+}

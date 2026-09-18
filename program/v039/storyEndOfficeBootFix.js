@@ -1,4 +1,4 @@
-/* v039_297 story end office boot fade-out-in timing fix */
+/* v039_298 story end return-target and fade timing fix */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
@@ -153,9 +153,27 @@
     hideResidualStorySurfaces();
   }
 
+  async function bootStoryReturnTarget(returnInfo){
+    const ret = returnInfo || {};
+    if (ret.mode === "recordingAlbum") {
+      closeStoryStateForOfficeBoot();
+      try {
+        if (typeof ns.enterRecordingAlbum === "function") {
+          await ns.enterRecordingAlbum({ noTransition:true, tab:ret.storyMenuTab || "other" });
+        } else if (typeof ns.enterStoryMenu === "function") {
+          await ns.enterStoryMenu({ noTransition:true, tab:ret.storyMenuTab || "other" });
+        }
+      } catch (_) {}
+      hideResidualStorySurfaces();
+      return;
+    }
+    await bootOfficeLikeStart();
+  }
+
   async function endStoryToOfficeBoot(){
     if (ending) return;
     ending = true;
+    const returnInfo = Object.assign({}, (ns.story && ns.story.returnInfo) || {});
     try {
       try {
         const dbg = ns.storyDebugToolsV039283 || ns.storyDebugToolsV039282 || ns.storyDebugToolsV039281 || ns.storyDebugToolsV039280;
@@ -164,7 +182,7 @@
       document.body.classList.add("tenotsu-story-ending-blackfade");
       await fadeOutToBlackAlways(END_FADE_OUT_MS);
       await delay(END_BLACK_HOLD_MS);
-      await bootOfficeLikeStart();
+      await bootStoryReturnTarget(returnInfo);
       await releaseBlackAlways(1600);
     } finally {
       ending = false;
