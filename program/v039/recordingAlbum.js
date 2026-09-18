@@ -1,13 +1,37 @@
-/* v039_298 dedicated video-recording recollection album */
+/* v039_300 recording mode integrated into recollection album */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  if (ns.__recordingAlbumV039298) return;
-  ns.__recordingAlbumV039298 = true;
+  if (ns.__recordingAlbumV039300) return;
+  ns.__recordingAlbumV039300 = true;
+
+  function query(){
+    try { return new URLSearchParams(location.search); }
+    catch (_) { return null; }
+  }
 
   function requested(){
-    try { return new URLSearchParams(location.search).get("recording") === "1"; }
-    catch (_) { return false; }
+    const params = query();
+    return !!(params && params.get("recording") === "1");
+  }
+
+  function requestedTab(){
+    const params = query();
+    return params ? (params.get("tab") || "") : "";
+  }
+
+  function setUrl(recording, tab){
+    try {
+      const url = new URL(location.href);
+      if (recording) {
+        url.searchParams.set("recording", "1");
+        url.searchParams.set("tab", tab || "other");
+      } else {
+        url.searchParams.delete("recording");
+        url.searchParams.delete("tab");
+      }
+      history.replaceState(null, "", url.toString());
+    } catch (_) {}
   }
 
   function normalUrl(){
@@ -21,12 +45,46 @@
     }
   }
 
+  function makeModeSwitch(panel, tab){
+    const anchor = panel.querySelector(".tenotsu-story-menu-tabs");
+    if (!anchor) return;
+
+    const row = document.createElement("div");
+    row.className = "tenotsu-recording-mode-switch";
+    row.setAttribute("aria-label", "アルバム表示モード");
+
+    const normal = document.createElement("button");
+    normal.type = "button";
+    normal.className = "tenotsu-recording-mode-button" + (ns.recordingAlbumActive ? "" : " active");
+    normal.textContent = "通常閲覧";
+    normal.addEventListener("click", () => {
+      if (ns.recordingAlbumActive) ns.leaveRecordingAlbum({ tab });
+    });
+
+    const recording = document.createElement("button");
+    recording.type = "button";
+    recording.className = "tenotsu-recording-mode-button recording" + (ns.recordingAlbumActive ? " active" : "");
+    recording.textContent = "動画録画用";
+    recording.addEventListener("click", () => {
+      if (!ns.recordingAlbumActive) ns.enterRecordingAlbum({ noTransition:true, tab });
+    });
+
+    row.appendChild(normal);
+    row.appendChild(recording);
+    anchor.parentNode.insertBefore(row, anchor);
+  }
+
   function decorate(tab){
-    if (!ns.recordingAlbumActive) return;
-    document.body.classList.add("tenotsu-recording-album");
     const panel = ns.layers && ns.layers.town;
     if (!panel) return;
+    makeModeSwitch(panel, tab);
 
+    if (!ns.recordingAlbumActive) {
+      document.body.classList.remove("tenotsu-recording-album");
+      return;
+    }
+
+    document.body.classList.add("tenotsu-recording-album");
     const title = panel.querySelector(".tenotsu-story-menu-title");
     const subtitle = panel.querySelector(".tenotsu-story-menu-subtitle");
     const note = panel.querySelector(".tenotsu-story-menu-debug");
@@ -37,18 +95,12 @@
     const oldBack = panel.querySelector('[data-story-menu-action="office"]');
     if (oldBack) {
       const back = oldBack.cloneNode(true);
-      back.textContent = "通常画面へ戻る";
+      back.textContent = "事務所に戻る";
       back.dataset.storyMenuAction = "recording-exit";
       oldBack.replaceWith(back);
       back.addEventListener("click", () => location.assign(normalUrl()));
     }
-
-    try {
-      const url = new URL(location.href);
-      url.searchParams.set("recording", "1");
-      url.searchParams.set("tab", tab || "other");
-      history.replaceState(null, "", url.toString());
-    } catch (_) {}
+    setUrl(true, tab);
   }
 
   const renderStoryMenu = ns.renderStoryMenu;
@@ -77,17 +129,23 @@
     ns.recordingAlbumActive = true;
     document.body.classList.add("tenotsu-recording-album");
     const tab = options.tab || options.storyMenuTab || requestedTab() || "other";
+    setUrl(true, tab);
     if (typeof ns.enterStoryMenu === "function") {
-      await ns.enterStoryMenu({ noTransition: options.noTransition !== false, tab });
-      decorate(tab);
+      await ns.enterStoryMenu({ noTransition:options.noTransition !== false, tab });
     }
   };
 
-  function requestedTab(){
-    try { return new URLSearchParams(location.search).get("tab") || ""; }
-    catch (_) { return ""; }
-  }
+  ns.leaveRecordingAlbum = async function leaveRecordingAlbum(options = {}){
+    const tab = options.tab || "other";
+    ns.recordingAlbumActive = false;
+    document.body.classList.remove("tenotsu-recording-album");
+    setUrl(false, tab);
+    if (typeof ns.enterStoryMenu === "function") {
+      await ns.enterStoryMenu({ noTransition:true, tab });
+    }
+  };
 
+  ns.recordingAlbumActive = requested();
   ns.isRecordingAlbumRequested = requested;
   ns.decorateRecordingAlbum = decorate;
 })();

@@ -1,4 +1,10 @@
-/* v039_298 dedicated video-recording recollection album */
+/* v039_300 recording mode integrated into recollection album */
+body.tenotsu-recording-album .tenotsu-stamina-hud {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
 body.tenotsu-recording-album[data-v039-mode="storyMenu"] .tenotsu-office-menu,
 body.tenotsu-recording-album[data-v039-mode="storyMenu"] .tenotsu-text-layer {
   display: none !important;
@@ -9,6 +15,36 @@ body.tenotsu-recording-album[data-v039-mode="storyMenu"] .tenotsu-text-layer {
 body.tenotsu-recording-album[data-v039-mode="storyMenu"] .tenotsu-town-panel {
   width: min(1180px, 92vw) !important;
   max-width: 1180px !important;
+}
+
+.tenotsu-recording-mode-switch {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 180px));
+  justify-content: center;
+  gap: 8px;
+  margin: 8px 0 12px;
+}
+
+.tenotsu-recording-mode-button {
+  min-height: 36px;
+  border: 1px solid rgba(255, 226, 163, .48);
+  border-radius: 999px;
+  background: rgba(25, 22, 28, .82);
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.tenotsu-recording-mode-button.active {
+  color: #38230f;
+  background: linear-gradient(180deg, #fff4d6, #d9a64d);
+}
+
+.tenotsu-recording-mode-button.recording.active {
+  color: #102638;
+  border-color: rgba(170, 220, 255, .8);
+  background: linear-gradient(180deg, #e9f8ff, #9fd8f4);
 }
 
 body.tenotsu-recording-album .tenotsu-story-menu-title {
