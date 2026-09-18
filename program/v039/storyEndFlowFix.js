@@ -1,9 +1,9 @@
-/* v039_295 story completion pause and end-flow guard */
+/* v039_296 story completion notice suppression and end-flow guard */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
-  if (ns.__storyEndFlowFixV039295) return;
-  ns.__storyEndFlowFixV039295 = true;
+  if (ns.__storyEndFlowFixV039296) return;
+  ns.__storyEndFlowFixV039296 = true;
 
   const COMPLETION_STORAGE_KEY = "tenotsu-story-completion-seen-v1";
   const MEMORY_REGISTERED_PATTERN = /思い出に登録しました/;
@@ -107,8 +107,8 @@
   }
 
   function install(){
-    if (ns.__storyEndFlowFixV039295Installed) return;
-    ns.__storyEndFlowFixV039295Installed = true;
+    if (ns.__storyEndFlowFixV039296Installed) return;
+    ns.__storyEndFlowFixV039296Installed = true;
 
     const startStory = ns.startStory;
     if (typeof startStory === "function") {
@@ -126,34 +126,19 @@
 
     const nextStoryStep = ns.nextStoryStep;
     if (typeof nextStoryStep === "function") {
-      ns.nextStoryStep = async function nextStoryStepWithCompletionPause(options){
+      ns.nextStoryStep = async function nextStoryStepWithoutMemoryNotice(){
         const story = ns.story || {};
-        const opts = options || {};
-
-        if (story.awaitingMemoryRegistrationAcknowledge) {
-          if (opts.autoplay) return;
-          beginBlackStoryEnd();
-          return;
-        }
-
         const data = story.data || {};
         const steps = Array.isArray(data.steps) ? data.steps : [];
         const nextIndex = (Number.isFinite(story.index) ? story.index : -1) + 1;
-        if (
-          isMemoryRegisteredStep(currentStep()) &&
-          isTerminalAutoSpacer(steps[nextIndex], nextIndex, steps)
-        ) {
+
+        // 「思い出に登録しました」は描画せず、そのまま終了フェードへ移る。
+        if (isMemoryRegisteredStep(steps[nextIndex])) {
           beginBlackStoryEnd();
           return;
         }
 
-        const result = await nextStoryStep.apply(this, arguments);
-        const displayed = currentStep();
-        if (story.active && story.wasUnreadAtStart && isMemoryRegisteredStep(displayed)) {
-          story.awaitingMemoryRegistrationAcknowledge = true;
-          stopAutoplay();
-        }
-        return result;
+        return nextStoryStep.apply(this, arguments);
       };
     }
 
@@ -166,7 +151,7 @@
     install();
   }
 
-  ns.storyEndFlowFixV039295 = {
+  ns.storyEndFlowFixV039296 = {
     install,
     beginBlackStoryEnd,
     isMemoryRegisteredStep,
