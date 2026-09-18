@@ -36,6 +36,7 @@
       ["店舗営業（バトル）", "sales"],
       ["外回り", "town"],
       ["回想アルバム", "storyMenu"],
+      ["動画録画用アルバム", "recordingAlbum"],
       ["チューニング", "tuning"],
       ["ショップ", "shop"],
       ["設定", "settings"]
@@ -307,6 +308,15 @@
           ns.transitionTo ? ns.transitionTo(() => ns.enterStoryMenu({ noTransition: true, tab: "recollection" })) : ns.enterStoryMenu({ tab: "recollection" });
         } else {
           ns.setText("店長", "回想機能を読み込めませんでした。storyMenu.js の読み込みを確認してください。");
+        }
+        break;
+      case "recordingAlbum":
+        if (typeof ns.enterRecordingAlbum === "function") {
+          ns.transitionTo
+            ? ns.transitionTo(() => ns.enterRecordingAlbum({ noTransition:true, tab:"other" }))
+            : ns.enterRecordingAlbum({ noTransition:true, tab:"other" });
+        } else {
+          ns.setText("店長", "動画録画用アルバムを読み込めませんでした。");
         }
         break;
       case "tuning":
