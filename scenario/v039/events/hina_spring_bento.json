@@ -39,7 +39,7 @@
       "storySprites": [
         {
           "id": "hina",
-          "src": "images/assets/char/aa_hina/standing/aa_hina_expression_01.webp",
+          "src": "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -56,7 +56,7 @@
       "storySprites": [
         {
           "id": "hina",
-          "src": "images/assets/char/aa_hina/standing/aa_hina_expression_12.webp",
+          "src": "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -81,7 +81,7 @@
       "storySprites": [
         {
           "id": "hina",
-          "src": "images/assets/char/aa_hina/standing/aa_hina_expression_17.webp",
+          "src": "images/assets/char/aa_hina/standing/aa_hina_expression_12.webp",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -98,7 +98,7 @@
       "storySprites": [
         {
           "id": "hina",
-          "src": "images/assets/char/aa_hina/standing/aa_hina_expression_02.webp",
+          "src": "images/assets/char/aa_hina/standing/aa_hina_expression_11.webp",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -170,7 +170,7 @@
       "storySprites": [
         {
           "id": "hina",
-          "src": "images/assets/char/aa_hina/standing/aa_hina_expression_16.webp",
+          "src": "images/assets/char/aa_hina/standing/aa_hina_expression_09.webp",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -187,7 +187,7 @@
       "storySprites": [
         {
           "id": "hina",
-          "src": "images/assets/char/aa_hina/standing/aa_hina_expression_16.webp",
+          "src": "images/assets/char/aa_hina/standing/aa_hina_expression_10.webp",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -208,7 +208,7 @@
       "storySprites": [
         {
           "id": "hina",
-          "src": "images/assets/char/aa_hina/standing/aa_hina_expression_16.webp",
+          "src": "images/assets/char/aa_hina/standing/aa_hina_expression_08.webp",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -225,7 +225,7 @@
       "storySprites": [
         {
           "id": "hina",
-          "src": "images/assets/char/aa_hina/standing/aa_hina_expression_16.webp",
+          "src": "images/assets/char/aa_hina/standing/aa_hina_expression_08.webp",
           "side": "center",
           "left": "50%",
           "opacity": 1
@@ -268,5 +268,6 @@
     "multipleSpriteVariants": true,
     "forceCenterSprites": true,
     "hideSpritesOnClear": true
-  }
+  },
+  "version": "v039_332"
 }
