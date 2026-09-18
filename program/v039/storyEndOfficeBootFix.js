@@ -1,4 +1,4 @@
-/* v039_287 story end office boot fade-out-in fix */
+/* v039_297 story end office boot fade-out-in timing fix */
 (function(){
   "use strict";
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
@@ -7,6 +7,8 @@
 
   let ending = false;
   const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+  const END_FADE_OUT_MS = 500;
+  const END_BLACK_HOLD_MS = 2000;
 
   function getLayers(){
     try { return ns.layers || (typeof ns.ensureLayers === "function" ? ns.ensureLayers() : {}); }
@@ -160,8 +162,8 @@
         if (dbg && typeof dbg.stopAutoplay === "function") dbg.stopAutoplay();
       } catch (_) {}
       document.body.classList.add("tenotsu-story-ending-blackfade");
-      await fadeOutToBlackAlways(1000);
-      await delay(3000);
+      await fadeOutToBlackAlways(END_FADE_OUT_MS);
+      await delay(END_BLACK_HOLD_MS);
       await bootOfficeLikeStart();
       await releaseBlackAlways(1600);
     } finally {

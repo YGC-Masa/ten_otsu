@@ -1,4 +1,4 @@
-/* v039_295 proportional story text and end-transition UI guard */
+/* v039_297 proportional story text, separated speaker row, and end-transition UI guard */
 body[data-v039-mode="story"] .tenotsu-text-layer,
 body.tenotsu-story-active .tenotsu-text-layer {
   display: flex !important;
@@ -7,11 +7,26 @@ body.tenotsu-story-active .tenotsu-text-layer {
   min-height: var(--tenotsu-text-height-story) !important;
   max-height: min(38dvh, 340px) !important;
   overflow: hidden !important;
+  gap: 6px !important;
 }
 
 body[data-v039-mode="story"] .tenotsu-speaker,
 body.tenotsu-story-active .tenotsu-speaker {
+  position: static !important;
+  display: block !important;
   flex: 0 0 auto !important;
+  width: 100% !important;
+  min-height: 1.4em !important;
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+body[data-v039-mode="story"] .tenotsu-message,
+body.tenotsu-story-active .tenotsu-message {
+  position: static !important;
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
 }
 
 body[data-v039-mode="story"] .tenotsu-message,
