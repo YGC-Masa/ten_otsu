@@ -1,11 +1,50 @@
-/* v039_331: Hina intro multilingual prototype */
+/* v039_333: Hina intro stable-stepId locale loader (pack round-trip) */
 (function(){"use strict";
-const ns=window.TENOTSU_V039,JA="scenario/v039/events/intro_hina.json",P="__hina_intro_locale__:";
-if(!ns)return;
-const en=["【Introduction】Hina Hoshino","(There she is. Hina.)","Hey, Hina!","Hey, Manager! Good work today!","Could you introduce yourself to the camera for a minute?","What is this? Kinda suspicious... Well, okay.","Let me introduce myself properly. I'm Hina Hoshino.","I'm 22 years old, and my blood type is B!","...Wait, do people really need to know my blood type?","Well, I guess that's what introductions are like.","Let's see... My birthday is July 22, and I'm a Cancer.","I was born in summer, but I'm actually not great with the summer heat.","When it gets hot, I end up eating ice cream all the time.","I complain that it'll make me gain weight, then eat it anyway.","I'm 158 centimeters tall. Pretty normal, right?","People do tell me my bust isn't exactly average, though.","It's one of my secret weapons! ...Just kidding.","Let's not dwell on that. It's embarrassing.","My hobbies are gaming and going around trying good food!","Lately I'm into having ramen at night and then getting dessert.","It's bad for my wallet and my figure, but great for happiness.","I wouldn't exactly call it a special talent, but...","I'm pretty good with TVs and video equipment.","I know quite a bit about new gadgets and wiring, too.","I'm actually pretty good at figuring things out.","But mental arithmetic? Absolutely hopeless.","The other day I got the change wrong and the Manager had to save me...","Numbers are seriously my nemesis.","My favorite food is curry!","I love it spicy or mild.","What I can't stand is eggplant.","No matter how hard I try, eggplant is just impossible for me.","Sorry, eggplant farmers.","I like drinking, too.","Fruit liqueurs, cocktails... sweet drinks like those.","Manager, want to go out for drinks sometime?","But careful. If I drink too much, I get really clingy.","So don't get mad if I latch onto you, okay?","And of course, I call you 'Manager.'","Ai, Midori, Kogane, Kohaku...","I'm really happy everyone gets along with me.","Though sometimes they tell me I lean on people too much.","I can't help it. I'm a softie.","Oh, and here's my unexpected side!","Believe it or not, I'm actually pretty resourceful.","I'm good at finding little tricks and shortcuts.","I do get told off if I try that when I should be serious, so I'm careful.","...So, that's me.","Hina Hoshino, your cheerful all-rounder!","You can keep spoiling me as much as you want, you know?","I'm kidding... though maybe I'm not. Hehe.","Once again, nice to meet you, Manager!","(Hina's introduction has been added to your memories.)"];
-const zh=["【自我介绍】星野绯奈","（啊，找到了，是绯奈。）","喂，绯奈！","店长，辛苦啦！","来，对着镜头做个自我介绍吧。","什么呀？感觉好可疑……不过，好吧。","正式介绍一下，我叫星野绯奈。","今年22岁，血型是B型！","……等等，自我介绍真的需要说血型吗？","不过嘛，自我介绍好像就是会说这些。","嗯……生日是7月22日，巨蟹座。","虽然出生在夏天，但我其实不太擅长应付炎热的夏天～","天气一热，我就会一直吃冰淇淋。","嘴上说着会胖，最后还是照吃不误。","身高158厘米，很普通吧？","不过大家经常说，我的胸围可不算普通。","这可是我的武器！……开玩笑的啦。","这个话题就别继续啦，会害羞的。","兴趣是打游戏和到处吃好吃的！","最近特别喜欢晚上先吃拉面，再去吃甜点。","虽然对钱包和身材都不太友好，但真的会很幸福。","也算不上什么特技啦，不过……","电视和影像设备这些，我很拿手。","新出的电子产品、接线之类的，我也挺懂的哦？","别看我这样，其实我挺会找窍门的。","但是心算完全不行。","前阵子还找错了零钱，最后是店长帮我解围的……","数字真的是我的天敌。","最喜欢吃咖喱！","辣的、甜口的我都喜欢。","最讨厌的是茄子。","唯独茄子，不管怎么努力都不行。","种茄子的大家，对不起啦。","我也喜欢喝酒。","果酒、鸡尾酒之类甜甜的那种。","店长，下次要不要一起去喝一杯？","不过先说好，喝多了我会变得特别黏人，要小心哦。","到时候可别嫌我烦呀。","我当然是叫你“店长”啦。","小蓝、翠、Kogane、琥珀……","大家都愿意跟我好好相处，我真的很开心。","不过偶尔也会被说太爱撒娇了。","因为我就是很容易心软嘛。","啊，还有我的反差萌！","别看我这样，其实我意外地很机灵。","我很擅长找些小技巧和捷径。","当然，该认真时这么做会挨骂，所以我还是会注意的。","……差不多就是这样。","我就是天真烂漫的全能型选手，星野绯奈！","以后也可以继续多宠宠我哦？","开玩笑的啦……不过也可能不完全是玩笑，嘿嘿。","总之，以后也请多多关照啦，店长！","（绯奈的自我介绍已加入回忆。）"];
-const ja=["【自己紹介】星野 緋奈","（あ、いたいた、緋奈だ。）","おーい？ひなー。","おつかれさまです、店長！","ちょっとカメラにむかってさ、自己紹介してみて。","なんですか？あやしいなぁ・・、まぁいいですけど。","改めまして、星野 緋奈（ほしの ひな）です。","年齢は22歳、血液型はB型！","……って血液型とか要ります？","でもまあ、自己紹介ってそういうもんですよね。","えーっと、誕生日は7月22日、かに座です。","夏生まれだけど、夏はそんなに得意じゃないんですよね〜。","暑いとアイスばっか食べちゃうし。","まあ太るとか言いながら、食べるんですけど。","身長は158センチ、普通でしょ？","でも胸は普通じゃないってよく言われます。","これ、あたしの武器ですから！……なんてね。","そこは触れないでください、恥ずかしいので。","趣味はゲームと食べ歩き！","最近は夜にラーメン食べてからスイーツ食べるのがブームです。","お財布と体型に悪いけど、幸せにはなれます。","特技っていうほどじゃないけど、","テレビとか映像関係は得意です。","新しいガジェットとか配線とか、けっこう詳しいんですよ？","意外と要領いいんです、あたし。","でも暗算は全然だめ。","この前もお釣り間違えて店長に助けてもらいました……。","ほんと数字は鬼門です。","好きな食べ物はカレー！","辛いのでも甘いのでも大好き。","嫌いなのはなす。","なすだけはどう頑張っても無理。","なす農家さん、ごめんなさい。","お酒も好きです。","果実酒とかカクテル系とか、甘いやつ。","店長、今度一緒に飲みに行きません？","あ、でもあんまり飲ませると絡み酒になるんで注意です。","絡まれても怒らないでくださいね。","呼び方はもちろん『店長』です。","藍ちゃん、翠さん、こがねちゃん、琥珀ちゃん……","みんな仲良くしてくれて嬉しいです。","でもたまに甘えすぎって怒られます。","だって情にもろいんですもん、あたし。","あ、あとギャップポイント！","こう見えて、意外と要領はいいです。","ちょっとした裏技とか抜け道とか、探すの得意なんで。","ただし真面目なとこでは怒られるので、そこは注意してます。","……こんな感じで、","天真爛漫オールラウンダー、星野 緋奈でした！","これからもいっぱい甘やかしてくれていいんですよ？","冗談ですけど、冗談じゃないかもですけど……えへへ。","改めて、よろしくお願いします、店長っ！","（緋奈の自己紹介を思い出に登録しました）"];
-function loc(data,l){const c=JSON.parse(JSON.stringify(data)),a=l==="en"?en:zh,m={};ja.forEach((x,i)=>m[x]=a[i]);c.id="intro_hina_"+l;c.title=l==="en"?"Introduction: Hina Hoshino":"自我介绍：星野绯奈";c.locale=l==="en"?"en":"zh-CN";(c.steps||[]).forEach(s=>{if(m[s.text])s.text=m[s.text];if(l==="en"){if(s.speaker==="店長")s.speaker="Manager";if(s.speaker==="緋奈")s.speaker="Hina";}else{if(s.speaker==="店長")s.speaker="店长";if(s.speaker==="緋奈")s.speaker="绯奈";}});return c;}
-const load=ns.loadStoryScenario.bind(ns);ns.loadStoryScenario=async p=>typeof p==="string"&&p.indexOf(P)===0?loc(await load(JA),p.slice(P.length)):load(p);
-document.addEventListener("click",e=>{const x=e.target.closest('[data-member-intro="'+JA+'"]');if(!x)return;e.preventDefault();e.stopImmediatePropagation();const l=prompt("緋奈の自己紹介 / Hina Intro\n1: 日本語\n2: English\n3: 中文（简体）","1");if(!l)return;const p=l==="2"?P+"en":l==="3"?P+"zh":JA;ns.startStory(p,{mode:"members",memberId:"aa"});},true);
+const ns=window.TENOTSU_V039;
+const JA="scenario/v039/events/intro_hina.json";
+const VIRTUAL="__hina_intro_locale__:";
+const FILES={en:"scenario/v039/locales/intro_hina.en.json","zh-CN":"scenario/v039/locales/intro_hina.zh-CN.json"};
+if(!ns||typeof ns.loadStoryScenario!=="function"||typeof ns.startStory!=="function")return;
+function applyLocale(data,pack){
+  const c=JSON.parse(JSON.stringify(data));
+  c.id="intro_hina_"+pack.locale.replace(/[^A-Za-z0-9]+/g,"_");
+  c.locale=pack.locale;
+  if(pack.title)c.title=pack.title;
+  const map=pack.steps||{};
+  (c.steps||[]).forEach((s)=>{
+    if(!s.stepId||!Object.prototype.hasOwnProperty.call(map,s.stepId))return;
+    const x=map[s.stepId]||{};
+    if(Object.prototype.hasOwnProperty.call(x,"speaker"))s.speaker=x.speaker;
+    if(Object.prototype.hasOwnProperty.call(x,"text"))s.text=x.text;
+  });
+  return c;
+}
+const baseLoad=ns.loadStoryScenario.bind(ns);
+ns.loadStoryScenario=async function(path){
+  if(typeof path!=="string"||path.indexOf(VIRTUAL)!==0)return baseLoad(path);
+  const locale=path.slice(VIRTUAL.length),file=FILES[locale];
+  if(!file)return baseLoad(JA);
+  const data=await baseLoad(JA);
+  const res=await fetch(file,{cache:"no-store"});
+  if(!res.ok)throw new Error("Hina intro locale fetch failed: "+file+" / "+res.status);
+  const pack=await res.json();
+  if(pack.scenarioId!=="intro_hina"||pack.locale!==locale)throw new Error("Hina intro locale identity mismatch: "+locale);
+  const ids=new Set((data.steps||[]).map(s=>s.stepId));
+  for(const id of ids)if(!Object.prototype.hasOwnProperty.call(pack.steps||{},id))throw new Error("Hina intro locale missing stepId: "+locale+" / "+id);
+  for(const id of Object.keys(pack.steps||{}))if(!ids.has(id))throw new Error("Hina intro locale unknown stepId: "+locale+" / "+id);
+  return applyLocale(data,pack);
+};
+document.addEventListener("click",(e)=>{
+  const x=e.target.closest('[data-member-intro="'+JA+'"]');
+  if(!x)return;
+  e.preventDefault();e.stopImmediatePropagation();
+  let locale=(window.TENOTSU_RECORDING_LOCALE||"").toLowerCase();
+  if(locale==="zh"||locale==="zh-cn")locale="zh-CN";
+  if(!["ja","en","zh-CN"].includes(locale)){
+    const answer=prompt("緋奈の自己紹介 / Hina Intro\n1: 日本語\n2: English\n3: 中文（简体）","1");
+    if(answer===null)return;
+    locale=answer==="2"?"en":answer==="3"?"zh-CN":"ja";
+  }
+  ns.startStory(locale==="ja"?JA:VIRTUAL+locale,{mode:"members",memberId:"aa"});
+},true);
 })();
