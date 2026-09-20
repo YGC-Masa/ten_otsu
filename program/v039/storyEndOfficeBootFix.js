@@ -167,6 +167,18 @@
       hideResidualStorySurfaces();
       return;
     }
+    if (ret.mode === "members" && typeof ns.enterMembers === "function") {
+      closeStoryStateForOfficeBoot();
+      try {
+        await ns.enterMembers({
+          noTransition:true,
+          selectedMemberId:ret.memberId || (ns.state && ns.state.lastSelectedMemberId) || null
+        });
+        if (typeof ns.setText === "function") ns.setText("店長", "メンバー確認に戻りました。");
+      } catch (_) {}
+      hideResidualStorySurfaces();
+      return;
+    }
     await bootOfficeLikeStart();
   }
 
