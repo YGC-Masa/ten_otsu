@@ -7,6 +7,7 @@ on:
       - "scenario/v039/events/intro_hina.json"
       - "scenario/v039/locales/intro_hina.*.json"
       - "scenario/v039/hinaIntroLocalePatch.js"
+      - "program/v039/storyEndOfficeBootFix.js"
       - "tests/hina-intro-browser.spec.cjs"
       - ".github/workflows/hina-intro-browser.yml"
   workflow_dispatch:
