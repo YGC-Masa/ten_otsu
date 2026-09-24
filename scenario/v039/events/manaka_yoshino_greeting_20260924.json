@@ -1,0 +1,84 @@
+{
+  "id": "manaka_yoshino_greeting_20260924",
+  "title": "真花から吉野さんへ：はじめまして",
+  "version": "v039_333",
+  "return": {
+    "mode": "storyMenu",
+    "storyMenuTab": "other",
+    "storyId": "manaka_yoshino_greeting_20260924",
+    "eventId": "manaka_yoshino_greeting_20260924"
+  },
+  "format": "v039_steps",
+  "renderPolicy": {
+    "background": "forceReplace",
+    "sprites": "storyOnly",
+    "forceCenterSprites": true
+  },
+  "summary": "ひだまりストアの大道寺真花から吉野さんへ、はじめましてのご挨拶を届ける特別シナリオ。",
+  "steps": [
+    {
+      "bg": "images/assets/bgev/bg_office_hidamari.png",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true,
+      "speaker": "",
+      "text": "【特別シナリオ】真花から吉野さんへ"
+    },
+    {
+      "speaker": "",
+      "text": "真花はそっと姿勢を正し、小さく息を整えた。",
+      "storySprites": [{"id":"af","src":"images/assets/char/af_manaka/standing/af_manaka_expression_01_composed.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "吉野さん、は、はじめまして。ひだまりストアの、大道寺 真花と申します。"
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "だいどうじ、まなか……です。どうぞ、よろしくお願いいたします。",
+      "storySprites": [{"id":"af","src":"images/assets/char/af_manaka/standing/af_manaka_expression_02_gentle_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "",
+      "text": "両手を前でそろえて、真花は丁寧にお辞儀をする。"
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "……あの。少しだけ、緊張しています。きちんとご挨拶したくて。",
+      "storySprites": [{"id":"af","src":"images/assets/char/af_manaka/standing/af_manaka_expression_15_troubled_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "わたしは、美容品を試したり、自分に合うものを探したりするのが好きなんです。",
+      "storySprites": [{"id":"af","src":"images/assets/char/af_manaka/standing/af_manaka_expression_02_gentle_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "お店でも、お客様のお話をちゃんと伺って、お役に立てるようになりたいと思っています。"
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "それから……パスタも好きです。おいしいお店を見つけると、ちょっと嬉しくなります。",
+      "storySprites": [{"id":"af","src":"images/assets/char/af_manaka/standing/af_manaka_expression_03_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "……ふふ。ご挨拶なのに、食べ物のお話までしてしまいました。",
+      "storySprites": [{"id":"af","src":"images/assets/char/af_manaka/standing/af_manaka_expression_10_shy.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "",
+      "text": "真花は少しはにかんでから、まっすぐに顔を上げた。"
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "吉野さんに、わたしの名前を覚えていただけたら嬉しいです。",
+      "storySprites": [{"id":"af","src":"images/assets/char/af_manaka/standing/af_manaka_expression_02_gentle_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    },
+    {
+      "speaker": "大道寺 真花",
+      "text": "これから、どうぞよろしくお願いいたします。吉野さん。",
+      "storySprites": [{"id":"af","src":"images/assets/char/af_manaka/standing/af_manaka_expression_03_smile.webp","side":"center","left":"50%","zIndex":2500,"opacity":1}]
+    }
+  ]
+}
