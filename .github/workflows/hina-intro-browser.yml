@@ -1,0 +1,38 @@
+name: Hina intro browser gate
+
+on:
+  pull_request:
+    paths:
+      - "index.html"
+      - "scenario/v039/events/intro_hina.json"
+      - "scenario/v039/locales/intro_hina.*.json"
+      - "scenario/v039/hinaIntroLocalePatch.js"
+      - "program/v039/storyEndOfficeBootFix.js"
+      - "tests/hina-intro-browser.spec.cjs"
+      - ".github/workflows/hina-intro-browser.yml"
+  workflow_dispatch:
+
+jobs:
+  browser-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Start static server
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/tenotsu-http.log 2>&1 &
+          echo $! > /tmp/tenotsu-http.pid
+          for i in {1..30}; do
+            curl -fsS http://127.0.0.1:4173/index.html >/dev/null && exit 0
+            sleep 1
+          done
+          cat /tmp/tenotsu-http.log
+          exit 1
+      - name: Run Hina intro browser gate
+        run: node tests/hina-intro-browser.spec.cjs
