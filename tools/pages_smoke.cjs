@@ -9,6 +9,7 @@ const deadline = setTimeout(() => { console.error('Browser smoke test exceeded 1
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
   const errors = [], failures = [];
+  page.on('dialog', dialog => dialog.accept('1'));
   page.on('pageerror', e => errors.push(e.message));
   page.on('response', r => { if (r.status() >= 400) failures.push([r.status(), r.url()]); });
   await page.goto(base);
