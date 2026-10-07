@@ -53,10 +53,12 @@ def main():
         target.parent.mkdir(parents=True, exist_ok=True)
         with Image.open(p) as im:
             rgba = im.convert("RGBA")
-            rgba.save(target, "WEBP", lossless=True, exact=True, method=4)
+            profile = im.info.get("icc_profile", b"")
+            rgba.save(target, "WEBP", lossless=True, exact=True, method=4, icc_profile=profile)
             with Image.open(target) as result:
                 assert result.size == rgba.size
                 assert result.convert("RGBA").tobytes() == rgba.tobytes(), str(rel)
+                assert result.info.get("icc_profile", b"") == profile, str(rel)
         # Keep a PNG when conversion does not actually save space.
         if target.stat().st_size >= p.stat().st_size:
             target.unlink()
