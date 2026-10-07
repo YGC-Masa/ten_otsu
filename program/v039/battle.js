@@ -1136,7 +1136,7 @@ const battleBackgrounds = {
     const statusText = state.running ? (state.timeSaleActive ? "タイムセール中" : "営業中") : state.finished ? "営業終了" : state.timeSaleCountdown ? "タイムセール準備中" : "待機中";
 
     root.innerHTML = `
-      <div class="battle-stage ${state.running ? "is-running" : ""} ${state.rush ? "is-rush" : ""}" style="--battle-bg-url: url(${getBattleBackground(state.battleBgId).path});">
+      <div class="battle-stage ${state.running ? "is-running" : ""} ${state.rush ? "is-rush" : ""}" style="--battle-bg-url: url(${new URL(getBattleBackground(state.battleBgId).path, document.baseURI).href});">
         <section class="battle-hud">
           <div class="battle-hud-title">店舗営業：デッキ接客バトル <span class="battle-version">${BATTLE_VERSION}</span></div>
           <div class="battle-hud-stats">
