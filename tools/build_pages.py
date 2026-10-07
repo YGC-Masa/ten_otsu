@@ -31,6 +31,7 @@ def main():
         names[p.name].append(p)
     # Only unambiguous filenames can safely rewrite relative/concatenated refs.
     candidates = [p for p in candidates if len(names[p.name]) == 1]
+    candidate_set = set(candidates)
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir()
@@ -40,6 +41,8 @@ def main():
         if rel.parts[0] in {"tools", "tests", ".github"}:
             excluded.append(rel.as_posix())
             continue
+        if p in candidate_set:
+            continue
         target = OUT / rel
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(p, target)
@@ -47,6 +50,7 @@ def main():
     def convert(p):
         rel = p.relative_to(ROOT)
         target = (OUT / rel).with_suffix(".webp")
+        target.parent.mkdir(parents=True, exist_ok=True)
         with Image.open(p) as im:
             rgba = im.convert("RGBA")
             rgba.save(target, "WEBP", lossless=True, exact=True, method=4)
@@ -56,8 +60,8 @@ def main():
         # Keep a PNG when conversion does not actually save space.
         if target.stat().st_size >= p.stat().st_size:
             target.unlink()
+            shutil.copy2(p, OUT / rel)
             return None
-        (OUT / rel).unlink()
         return {"source": rel.as_posix(), "target": rel.with_suffix(".webp").as_posix(),
                 "before": p.stat().st_size, "after": target.stat().st_size,
                 "pixel_equal": True}
