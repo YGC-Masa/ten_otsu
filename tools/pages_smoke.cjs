@@ -2,6 +2,7 @@
 const { chromium } = require('playwright');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
+const deadline = setTimeout(() => { console.error('Browser smoke test exceeded 120 seconds'); process.exit(1); }, 120000);
 
 (async () => {
   const base = process.argv[2] || 'http://127.0.0.1:8765/';
@@ -14,6 +15,7 @@ const fs = require('node:fs');
   await page.waitForFunction(() => window.TENOTSU_V039?.state?.mode === 'office', null, { timeout: 30000 });
   const screens = [];
   for (const fn of ['enterMembers', 'enterStoreStatus', 'enterSales', 'enterTuning', 'enterTown', 'enterShop', 'enterStoryMenu', 'enterRecordingAlbum', 'enterOffice']) {
+    console.log('Checking screen:', fn);
     await page.evaluate(async fn => {
       await window.TENOTSU_V039[fn]({ noTransition: true });
     }, fn);
@@ -33,6 +35,7 @@ const fs = require('node:fs');
     'intro_manaka.json', 'intro_misora.json', 'intro_yozora.json', 'intro_moe.json'];
   const stories = [];
   for (const name of scenarios) {
+    console.log('Checking story:', name);
     const result = await page.evaluate(async name => {
       const ns = window.TENOTSU_V039;
       const path = 'scenario/v039/events/' + name;
@@ -59,9 +62,10 @@ const fs = require('node:fs');
   await page.goto(new URL('recording.html', base).href);
   await page.waitForFunction(() => window.TENOTSU_V039?.recordingAlbumActive === true, null, { timeout: 30000 });
   await browser.close();
+  clearTimeout(deadline);
   const result = { base, screens, stories, errors, failures };
   fs.writeFileSync('pages-smoke-report.json', JSON.stringify(result, null, 2));
   console.log(JSON.stringify(result));
   assert.equal(errors.length, 0, JSON.stringify(errors));
   assert.equal(failures.length, 0, JSON.stringify(failures));
-})().catch(e => { console.error(e); process.exitCode = 1; });
+})().catch(e => { console.error(e); process.exit(1); });
