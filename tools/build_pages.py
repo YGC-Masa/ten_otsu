@@ -93,6 +93,19 @@ def main():
     for entry in conversions:
         (OUT / entry["source"]).unlink(missing_ok=True)
         assert (OUT / entry["target"]).is_file()
+    # Existing version query strings stay unchanged in source. Give the staged
+    # HTML content hashes so cached pre-WebP scripts cannot request removed PNGs.
+    script_ref = re.compile(r'(\b(?:src|href)=["\'])([^"\']+\.(?:js|css))([^"\']*)(["\'])')
+    for html in OUT.rglob("*.html"):
+        def bust_cache(match):
+            path = match.group(2)
+            target = html.parent / path
+            if path.startswith(("http:", "https:", "//")) or not target.is_file():
+                return match.group(0)
+            digest = hashlib.sha256(target.read_bytes()).hexdigest()[:12]
+            query = match.group(3)
+            return match.group(1) + path + query + ("&" if "?" in query else "?") + "pages=" + digest + match.group(4)
+        html.write_text(script_ref.sub(bust_cache, html.read_text(encoding="utf-8")), encoding="utf-8")
     # Every rewritten full image path must exist, including every story JSON.
     missing_before, missing_after = set(), set()
     image_ref = re.compile(r"images/assets/[^\s\"'`<>?\\]+?\.(?:png|webp|jpg|jpeg|gif)")
