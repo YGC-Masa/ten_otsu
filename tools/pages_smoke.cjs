@@ -13,7 +13,7 @@ const fs = require('node:fs');
   await page.goto(base);
   await page.waitForFunction(() => window.TENOTSU_V039?.state?.mode === 'office', null, { timeout: 30000 });
   const screens = [];
-  for (const fn of ['enterMembers', 'enterTown', 'enterShop', 'enterStoryMenu', 'enterRecordingAlbum', 'enterOffice']) {
+  for (const fn of ['enterMembers', 'enterStoreStatus', 'enterSales', 'enterTuning', 'enterTown', 'enterShop', 'enterStoryMenu', 'enterRecordingAlbum', 'enterOffice']) {
     await page.evaluate(async fn => {
       await window.TENOTSU_V039[fn]({ noTransition: true });
     }, fn);
@@ -26,6 +26,9 @@ const fs = require('node:fs');
     assert(images.every(x => x.ok), JSON.stringify({ fn, images }));
     screens.push({ screen: fn, images });
   }
+  await page.evaluate(() => window.BattleProto.openBattle());
+  await page.locator('[data-action="start"]').waitFor({ state: 'visible' });
+  await page.evaluate(() => window.BattleProto.closeBattle());
   const scenarios = ['hina_spring_bento.json', 'intro_ai.json', 'intro_midori.json', 'intro_kogane.json',
     'intro_manaka.json', 'intro_misora.json', 'intro_yozora.json', 'intro_moe.json'];
   const stories = [];
