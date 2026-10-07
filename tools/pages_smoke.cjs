@@ -11,15 +11,18 @@ const fs = require('node:fs');
   page.on('pageerror', e => errors.push(e.message));
   page.on('response', r => { if (r.status() >= 400) failures.push([r.status(), r.url()]); });
   await page.goto(base);
-  await page.waitForFunction(() => window.TENOTSU_V039?.mode === 'office');
+  await page.waitForFunction(() => window.TENOTSU_V039?.state?.mode === 'office', null, { timeout: 30000 });
   const screens = [];
   for (const fn of ['enterMembers', 'enterTown', 'enterShop', 'enterStoryMenu', 'enterRecordingAlbum', 'enterOffice']) {
     await page.evaluate(async fn => {
       await window.TENOTSU_V039[fn]({ noTransition: true });
     }, fn);
     await page.waitForTimeout(350);
-    const images = await page.locator('img').evaluateAll(xs => xs.filter(x => x.getClientRects().length)
-      .map(x => ({ src: x.getAttribute('src'), ok: x.complete && x.naturalWidth > 0 })));
+    const images = await page.locator('img').evaluateAll(async xs => {
+      const visible = xs.filter(x => x.getClientRects().length);
+      await Promise.all(visible.map(x => x.decode()));
+      return visible.map(x => ({ src: x.getAttribute('src'), ok: x.complete && x.naturalWidth > 0 }));
+    });
     assert(images.every(x => x.ok), JSON.stringify({ fn, images }));
     screens.push({ screen: fn, images });
   }
@@ -51,7 +54,7 @@ const fs = require('node:fs');
     await page.evaluate(() => window.TENOTSU_V039.endStory());
   }
   await page.goto(new URL('recording.html', base).href);
-  await page.waitForFunction(() => window.TENOTSU_V039?.recordingAlbumActive === true);
+  await page.waitForFunction(() => window.TENOTSU_V039?.recordingAlbumActive === true, null, { timeout: 30000 });
   await browser.close();
   const result = { base, screens, stories, errors, failures };
   fs.writeFileSync('pages-smoke-report.json', JSON.stringify(result, null, 2));
