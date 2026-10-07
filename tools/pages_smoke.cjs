@@ -6,7 +6,7 @@ const deadline = setTimeout(() => { console.error('Browser smoke test exceeded 1
 
 (async () => {
   const base = process.argv[2] || 'http://127.0.0.1:8765/';
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch({ headless: true, executablePath: process.env.PAGES_CHROME_PATH || undefined });
   const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
   const errors = [], failures = [];
   page.on('dialog', dialog => dialog.accept('1'));

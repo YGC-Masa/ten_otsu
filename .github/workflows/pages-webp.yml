@@ -27,10 +27,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Install browser test dependencies
+      - name: Use the runner's installed Chrome for browser checks
         run: |
           npm install --no-save --package-lock=false playwright@1.62.1
-          npx playwright install --with-deps chromium
+          echo "PAGES_CHROME_PATH=$(command -v google-chrome)" >> "$GITHUB_ENV"
       - name: Check screens, stories and images
         run: |
           python -m http.server 8765 --directory _site >/tmp/pages-http.log 2>&1 &
