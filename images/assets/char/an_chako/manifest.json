@@ -1,0 +1,42 @@
+{
+  "characterId": "an",
+  "slug": "chako",
+  "displayName": "チャコ",
+  "status": "adopted",
+  "sourceVersion": "2026-09-12",
+  "format": "webp",
+  "expressionCount": 25,
+  "preferredRuntimeFormat": "webp",
+  "notes": [
+    "Formal 25-expression standing set adopted by user decision on 2026-09-12.",
+    "Expression 06 uses the no-tears variant for runtime.",
+    "The with-tears variant is retained as a non-runtime alternate asset and is not deleted."
+  ],
+  "expressions": [
+    {"id":"01","key":"composed","file":"standing/an_charcoal_expression_01_composed.webp"},
+    {"id":"02","key":"gentle_smile","file":"standing/an_charcoal_expression_02_gentle_smile.webp"},
+    {"id":"03","key":"smile","file":"standing/an_charcoal_expression_03_smile.webp"},
+    {"id":"04","key":"anger","file":"standing/an_charcoal_expression_04_anger.webp"},
+    {"id":"05","key":"mild_disgust","file":"standing/an_charcoal_expression_05_mild_disgust.webp"},
+    {"id":"06","key":"sadness","file":"standing/an_charcoal_expression_06_sadness_no_tears.webp"},
+    {"id":"07","key":"worry","file":"standing/an_charcoal_expression_07_worry.webp"},
+    {"id":"08","key":"agitated","file":"standing/an_charcoal_expression_08_agitated.webp"},
+    {"id":"09","key":"surprise","file":"standing/an_charcoal_expression_09_surprise.webp"},
+    {"id":"10","key":"shy","file":"standing/an_charcoal_expression_10_shy.webp"},
+    {"id":"11","key":"expectation","file":"standing/an_charcoal_expression_11_expectation.webp"},
+    {"id":"12","key":"proud","file":"standing/an_charcoal_expression_12_proud.webp"},
+    {"id":"13","key":"playful_tongue_wink","file":"standing/an_charcoal_expression_13_playful_tongue_wink.webp"},
+    {"id":"14","key":"playful_toothy_wink","file":"standing/an_charcoal_expression_14_playful_toothy_wink.webp"},
+    {"id":"15","key":"troubled_smile","file":"standing/an_charcoal_expression_15_troubled_smile.webp"},
+    {"id":"16","key":"determined","file":"standing/an_charcoal_expression_16_determined.webp"},
+    {"id":"17","key":"downcast_afterglow","file":"standing/an_charcoal_expression_17_downcast_afterglow.webp"},
+    {"id":"18","key":"sulking","file":"standing/an_charcoal_expression_18_sulking.webp"},
+    {"id":"19","key":"tearful_smile","file":"standing/an_charcoal_expression_19_tearful_smile.webp"},
+    {"id":"20","key":"silent_pressure","file":"standing/an_charcoal_expression_20_silent_pressure.webp"},
+    {"id":"21","key":"dark_smile","file":"standing/an_charcoal_expression_21_dark_smile.webp"},
+    {"id":"22","key":"relieved","file":"standing/an_charcoal_expression_22_relieved.webp"},
+    {"id":"23","key":"captivated","file":"standing/an_charcoal_expression_23_captivated.webp"},
+    {"id":"24","key":"sleepy","file":"standing/an_charcoal_expression_24_sleepy.webp"},
+    {"id":"25","key":"bashful_anger","file":"standing/an_charcoal_expression_25_bashful_anger.webp"}
+  ]
+}

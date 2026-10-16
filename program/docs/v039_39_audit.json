@@ -1,0 +1,30 @@
+{
+  "version": "v039_47",
+  "ai_storySprites_steps": 39,
+  "hina_storySprites_steps": 28,
+  "ai_cg_indices": [
+    15,
+    37
+  ],
+  "hina_cg_indices": [
+    17
+  ],
+  "ai_clear_indices": [
+    0,
+    15,
+    37
+  ],
+  "hina_clear_indices": [
+    0,
+    17
+  ],
+  "ai_variants": [
+    "images/assets/char/b10501.webp"
+  ],
+  "hina_variants": [
+    "images/assets/char/aa_hina/standing/aa_hina_expression_01.webp",
+    "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp"
+  ],
+  "layer_z_lowered": true,
+  "text_z_above": true
+}

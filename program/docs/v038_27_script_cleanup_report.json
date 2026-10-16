@@ -1,0 +1,12 @@
+{
+  "version": "v038_27",
+  "script_size": 177390,
+  "guards": {
+    "runtime_helper": true,
+    "loadScenario_start_skip": false,
+    "showScene_office_takeover": true,
+    "loadList_noop": false,
+    "showList_noop": true,
+    "mutationObserver_guard": false
+  }
+}

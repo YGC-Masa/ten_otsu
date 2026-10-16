@@ -1,0 +1,13 @@
+{
+  "version": "v039_54",
+  "source": "v039_53",
+  "hinaScenarioValid": true,
+  "eventPath": "scenario/v039/events/hina_spring_bento.json",
+  "legacyPathSynced": "scenario/scenario/memory_hina_spring_bento.json",
+  "allStorySpritesCenter": true,
+  "hinaExitClearsSprites": true,
+  "noSpeakerOnlySteps": true,
+  "renderPolicyForceCenterSprites": true,
+  "renderPolicyHideSpritesOnClear": true,
+  "stepCount": 39
+}

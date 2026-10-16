@@ -1,0 +1,144 @@
+{
+  "characterId": "ab",
+  "slug": "ai",
+  "displayName": "速水川 藍",
+  "status": "adopted",
+  "sourceVersion": "2026-09-14",
+  "format": "webp",
+  "expressionCount": 25,
+  "preferredRuntimeFormat": "webp",
+  "notes": [
+    "01-09 use v02 reframed rewrite set.",
+    "10-21 were re-selected from the latest rewrite candidates by expression match and framing.",
+    "22-25 use v02 reframed rewrite set.",
+    "12,14,15,17 use the final four targeted rewrites.",
+    "All runtime files were encoded as lossless RGBA WebP without resizing."
+  ],
+  "expressions": [
+    {
+      "no": 1,
+      "key": "composed",
+      "path": "standing/ab_ai_expression_01_composed.webp"
+    },
+    {
+      "no": 2,
+      "key": "gentle_smile",
+      "path": "standing/ab_ai_expression_02_gentle_smile.webp"
+    },
+    {
+      "no": 3,
+      "key": "smile",
+      "path": "standing/ab_ai_expression_03_smile.webp"
+    },
+    {
+      "no": 4,
+      "key": "anger",
+      "path": "standing/ab_ai_expression_04_anger.webp"
+    },
+    {
+      "no": 5,
+      "key": "mild_disgust",
+      "path": "standing/ab_ai_expression_05_mild_disgust.webp"
+    },
+    {
+      "no": 6,
+      "key": "sadness",
+      "path": "standing/ab_ai_expression_06_sadness.webp"
+    },
+    {
+      "no": 7,
+      "key": "worry",
+      "path": "standing/ab_ai_expression_07_worry.webp"
+    },
+    {
+      "no": 8,
+      "key": "agitated",
+      "path": "standing/ab_ai_expression_08_agitated.webp"
+    },
+    {
+      "no": 9,
+      "key": "surprise",
+      "path": "standing/ab_ai_expression_09_surprise.webp"
+    },
+    {
+      "no": 10,
+      "key": "shy",
+      "path": "standing/ab_ai_expression_10_shy.webp"
+    },
+    {
+      "no": 11,
+      "key": "expectation",
+      "path": "standing/ab_ai_expression_11_expectation.webp"
+    },
+    {
+      "no": 12,
+      "key": "proud",
+      "path": "standing/ab_ai_expression_12_proud.webp"
+    },
+    {
+      "no": 13,
+      "key": "playful_tongue_wink",
+      "path": "standing/ab_ai_expression_13_playful_tongue_wink.webp"
+    },
+    {
+      "no": 14,
+      "key": "playful_toothy_wink",
+      "path": "standing/ab_ai_expression_14_playful_toothy_wink.webp"
+    },
+    {
+      "no": 15,
+      "key": "troubled_smile",
+      "path": "standing/ab_ai_expression_15_troubled_smile.webp"
+    },
+    {
+      "no": 16,
+      "key": "determined",
+      "path": "standing/ab_ai_expression_16_determined.webp"
+    },
+    {
+      "no": 17,
+      "key": "downcast_afterglow",
+      "path": "standing/ab_ai_expression_17_downcast_afterglow.webp"
+    },
+    {
+      "no": 18,
+      "key": "sulking",
+      "path": "standing/ab_ai_expression_18_sulking.webp"
+    },
+    {
+      "no": 19,
+      "key": "tearful_smile",
+      "path": "standing/ab_ai_expression_19_tearful_smile.webp"
+    },
+    {
+      "no": 20,
+      "key": "silent_pressure",
+      "path": "standing/ab_ai_expression_20_silent_pressure.webp"
+    },
+    {
+      "no": 21,
+      "key": "dark_smile",
+      "path": "standing/ab_ai_expression_21_dark_smile.webp"
+    },
+    {
+      "no": 22,
+      "key": "relieved",
+      "path": "standing/ab_ai_expression_22_relieved.webp"
+    },
+    {
+      "no": 23,
+      "key": "captivated",
+      "path": "standing/ab_ai_expression_23_captivated.webp"
+    },
+    {
+      "no": 24,
+      "key": "sleepy",
+      "path": "standing/ab_ai_expression_24_sleepy.webp"
+    },
+    {
+      "no": 25,
+      "key": "bashful_anger",
+      "path": "standing/ab_ai_expression_25_bashful_anger.webp"
+    }
+  ]
+}

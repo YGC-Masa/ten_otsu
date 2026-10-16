@@ -1,0 +1,1075 @@
+{
+  "id": "ayame_affection_90_03_key",
+  "title": "本気にしてしまいますよ",
+  "version": "v039_261",
+  "return": {
+    "mode": "storyMenu",
+    "storyId": "ayame_affection_90_03_key",
+    "storyMenuTab": "key"
+  },
+  "format": "v039_steps",
+  "type": "character_key_story",
+  "characterId": "ak",
+  "route": "ayame",
+  "affectionRange": {
+    "min": 90,
+    "max": 100
+  },
+  "location": {
+    "id": "ayame_route_90s",
+    "name": "紫藤家・夜"
+  },
+  "summary": "彩愛 親愛Lv.98「本気にしてしまいますよ」。",
+  "purpose": "彩愛ルート親愛90代として、実家編のドタバタと、これからの未来へ向かう関係を描く。",
+  "tags": [
+    "彩愛ルート",
+    "親愛度90-100",
+    "実家編",
+    "未来",
+    "家族"
+  ],
+  "clearFlags": [
+    "ayame_affection_90_03_key_cleared"
+  ],
+  "nextHint": "次の彩愛親愛ストーリーへ。",
+  "renderPolicy": {
+    "spritePosition": "logical_split_n_plus_1",
+    "eventCgLayer": "frontOfCharacters"
+  },
+  "steps": [
+    {
+      "speaker": "",
+      "text": "紫藤家の屋敷に、夕方の色が落ち始めていた。",
+      "bg": "images/assets/bg/bg_ayame98_father_room_dusk.webp",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "大きな庭の向こうで、空がゆっくり赤く染まっていく。"
+    },
+    {
+      "speaker": "",
+      "text": "あれだけ騒がしかった父親の部屋も、ようやく静かになっていた。"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "だがな、彩愛よ・・・わしも反省しておるのだ。",
+      "storySprites": [
+        {
+          "id": "otousama",
+          "src": "images/assets/char/ayame93_otousama_sprite.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "本当に？",
+      "storySprites": [
+        {
+          "id": "otousama",
+          "src": "images/assets/char/ayame93_otousama_sprite.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "嘘は良くなかったが、それでもお前の顔を見れた喜びは何事にも代えられん"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "もう、そんな風に言われたら何も言えなくなってしましまいます"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "許してくれるか、彩愛よ。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "・・・次に同じことをなさったら、巌砕きか山穿ちですからね。"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "もう絶対にしません"
+    },
+    {
+      "speaker": "ばあや",
+      "text": "お嬢様のお怒りもごもっとも。でもそろそろお許しになったらよろしいかと存じます",
+      "storySprites": [
+        {
+          "id": "otousama",
+          "src": "images/assets/char/ayame93_otousama_sprite.webp",
+          "opacity": 1
+        },
+        {
+          "id": "ak",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
+          "opacity": 1
+        },
+        {
+          "id": "baaya",
+          "src": "images/assets/char/ayame93_baaya_sprite.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "・・・ほかならぬばあやがそう言うのであれば。許します。"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "ばあや"
+    },
+    {
+      "speaker": "ばあや",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "お前はいつから彩愛の味方になったのじゃ"
+    },
+    {
+      "speaker": "ばあや",
+      "text": "お嬢様がお生まれになった日からでございます"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "昔からだった"
+    },
+    {
+      "speaker": "ばあや",
+      "text": "はい"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、模造刀を床の間へ戻した。"
+    },
+    {
+      "speaker": "",
+      "text": "その所作は相変わらず丁寧で、静かで、きれいだった。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "お父様"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長には、改めてきちんとお詫びをしてくださいませ"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "もちろんじゃ"
+    },
+    {
+      "speaker": "",
+      "text": "父親は、こちらへ向き直る。"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "店長くん。このたびは、わしの軽率な行いにより、遠いところまで足を運ばせてしまい、まことに申し訳なかった"
+    },
+    {
+      "speaker": "",
+      "text": "さっきまでの軽い調子とは違う。"
+    },
+    {
+      "speaker": "",
+      "text": "深く頭を下げる姿は、騒がしいだけの人ではないのだと分かるものだった。"
+    },
+    {
+      "speaker": "店長",
+      "text": "いえ。お父様が無事で、本当に良かったです"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "……"
+    },
+    {
+      "speaker": "",
+      "text": "父親は、少しだけ目を丸くした。"
+    },
+    {
+      "speaker": "",
+      "text": "それから、照れたように咳払いをする。"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "そうか"
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "それで……その？ 祝言はいつなのじゃ？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "お父様！"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "はい"
+    },
+    {
+      "speaker": "",
+      "text": "父親はまた小さくなった。"
+    },
+    {
+      "speaker": "",
+      "text": "屋敷の時計が、低く時刻を告げる。"
+    },
+    {
+      "speaker": "",
+      "text": "窓の外は、すっかり薄暗くなっていた。"
+    },
+    {
+      "speaker": "ばあや",
+      "text": "お嬢様、店長様。本日はもうお戻りになるには遅いかと存じます"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ですが"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "そうじゃ。今日はもう泊まっていきなさい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "お父様"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "帰りの足も用意はたやすい。でも無理に戻ることはなかろう"
+    },
+    {
+      "speaker": "",
+      "text": "父親は、さっきよりも少しだけ真面目な顔をした。"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "店長くんにも、改めて礼をしたい"
+    },
+    {
+      "speaker": "店長",
+      "text": "そんな。お気持ちだけで結構です。"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "そう言わずに。わしのせいで来てもらったのじゃ。せめて、食事と部屋くらいは用意させてくれ"
+    },
+    {
+      "speaker": "ばあや",
+      "text": "客間はすぐに整えられます。もちろん、お部屋はこちらでご用意いたしますので"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長、本当に大丈夫ですか？"
+    },
+    {
+      "speaker": "店長",
+      "text": "はい。むしろ、こちらこそ急にお世話になってしまって"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "いやいや、遠慮はいらん。未来の――"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "お父様。"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "・・・客人じゃ"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "よろしいです"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "命拾いしたわい。"
+    },
+    {
+      "speaker": "ばあや",
+      "text": "では、お部屋を整えてまいります"
+    },
+    {
+      "speaker": "",
+      "text": "ばあやは静かに一礼し、廊下へ下がっていった。"
+    },
+    {
+      "speaker": "",
+      "text": "夕食は、屋敷の広い和室で用意された。",
+      "bg": "images/assets/bg/bg_ayame98_washitsu_dinner.webp",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "並べられた料理は、ひとつひとつ丁寧だった。"
+    },
+    {
+      "speaker": "",
+      "text": "山菜の小鉢。\n焼き魚。\n炊き込みご飯。\n味噌汁。\n地元の野菜を使った煮物。"
+    },
+    {
+      "speaker": "",
+      "text": "派手ではないのに、どれも手がかかっている。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、食事の間もどこか落ち着かない様子だった。"
+    },
+    {
+      "speaker": "",
+      "text": "父が何か言おうとするたび、先に視線で止める。"
+    },
+    {
+      "speaker": "",
+      "text": "父はそのたびに、静かに箸を動かす。"
+    },
+    {
+      "speaker": "",
+      "text": "その様子が少しだけおかしくて、けれどあたたかかった。"
+    },
+    {
+      "speaker": "",
+      "text": "食後。"
+    },
+    {
+      "speaker": "",
+      "text": "俺は先に湯浴みをとの事で、お風呂を案内された"
+    },
+    {
+      "speaker": "",
+      "text": "長い廊下を彩愛さんは、しばらく黙って歩いていた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長",
+      "bg": "images/assets/bg/bg_ayame98_estate_corridor_night.webp",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "clearStorySprites": true,
+      "storySprites": [
+        {
+          "id": "ak",
+          "src": "images/assets/char/ayame_93_trip_sprite.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "本日は、本当に申し訳ありませんでした"
+    },
+    {
+      "speaker": "店長",
+      "text": "謝らないでください"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ですが"
+    },
+    {
+      "speaker": "店長",
+      "text": "巻き込まれたとは思っていません"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ視線を上げた。"
+    },
+    {
+      "speaker": "店長",
+      "text": "お父様が無事で良かったですし"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "はい"
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さんが大事にしている場所を、少し知ることができた気がします"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "大事にしている場所……"
+    },
+    {
+      "speaker": "店長",
+      "text": "はい。広くて、少し驚きましたけど"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "田舎では普通ですわ"
+    },
+    {
+      "speaker": "店長",
+      "text": "まだ言いますか"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "言います"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ拗ねるように言った。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、その顔には昼間よりも少し余裕が戻っていた。"
+    },
+    {
+      "speaker": "店長",
+      "text": "それに"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "それに？"
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さんの新しいところも知れました"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "新しいところ、ですか"
+    },
+    {
+      "speaker": "店長",
+      "text": "はい。お父様を本気で心配しているところとか"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……"
+    },
+    {
+      "speaker": "店長",
+      "text": "すごく怒っているのに、ちゃんと安心していたところとか"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……見ていらしたのですね"
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "恥ずかしいですわ"
+    },
+    {
+      "speaker": "店長",
+      "text": "あと、紫藤流薙刀術が思ったより本格的だったところとか"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そ、そこは忘れてくださいまし"
+    },
+    {
+      "speaker": "店長",
+      "text": "……いや……難しいです"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "んもう。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ肩を落とした。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、すぐに小さく笑う。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "まさか、店長にあんなところを見られるとは思いませんでした"
+    },
+    {
+      "speaker": "店長",
+      "text": "俺は、見られてよかったです"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "よかった？"
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "",
+      "text": "言ってから、少しだけ言葉を選ぶ。"
+    },
+    {
+      "speaker": "",
+      "text": "でも、うまく選びきれなかった。"
+    },
+    {
+      "speaker": "店長",
+      "text": "新しい魅力を知ったというか、惚れ直したというか"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……っ！",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_ayame98_step111_corridor_close.webp",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "店長",
+      "text": "あ、いや"
+    },
+    {
+      "speaker": "",
+      "text": "慌てて言い直す。"
+    },
+    {
+      "speaker": "店長",
+      "text": "恋人役として、です"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんが、こちらを見る。"
+    },
+    {
+      "speaker": "",
+      "text": "夜の廊下。"
+    },
+    {
+      "speaker": "",
+      "text": "障子越しの薄い月明かり。"
+    },
+    {
+      "speaker": "",
+      "text": "その中で、彩愛さんの頬が少しずつ赤くなっていくのが分かった。"
+    },
+    {
+      "speaker": "店長",
+      "text": "すみません。変な言い方をしました"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……たとえ、恋人役だとしてでも"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、視線を少しだけ逸らす。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……嬉しいです"
+    },
+    {
+      "speaker": "",
+      "text": "その声は、小さかった。"
+    },
+    {
+      "speaker": "",
+      "text": "けれど、はっきりしていた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ですが、あまり、そういうことを簡単におっしゃらないでくださいませ"
+    },
+    {
+      "speaker": "店長",
+      "text": "すみません"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "本気にしてしまいますよ"
+    },
+    {
+      "speaker": "",
+      "text": "静かな声だった。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "そ、それでは、また、後ほど。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは奥の部屋へと姿を消し、その言葉が、夜の廊下にそっと落ちる。"
+    },
+    {
+      "speaker": "",
+      "text": "なんだか一人の時間が寂しくなったような、今はそんな気がした。"
+    },
+    {
+      "speaker": "",
+      "text": "ーー風呂から上がって客間に戻ると二組の布団が敷かれていた",
+      "bg": "images/assets/bg/bg_ayame98_guestroom_night.webp",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "hideEventCg": true
+    },
+    {
+      "speaker": "",
+      "text": "俺は無作法かな？とおもいつつも布団の上にお邪魔する。"
+    },
+    {
+      "speaker": "",
+      "text": "ーー気持ちいい。ごろりと横になると布団に溶けてしまうかと思った。"
+    },
+    {
+      "speaker": "店長",
+      "text": "あんなに広い風呂で・・男女別って。まるで温泉旅館だな・・"
+    },
+    {
+      "speaker": "",
+      "text": "（コンコン）"
+    },
+    {
+      "speaker": "",
+      "text": "ーーふすまが開き、お風呂上がりの彩愛さんがもどってくる。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "あら、お戻りでしたか？よかった。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんはもう一つの布団を整え、同じように上に乗り、こちらを見つめる。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "お風呂、大丈夫でしたか？長いので心配しましたわ。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_ayame98_step140_yukata_recline.webp",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "ほんのり桜色にも見える上気したその肌は。いつもの色白の彩愛さんと違い、鼓動を早くさせる。"
+    },
+    {
+      "speaker": "店長",
+      "text": "はい、とても良いお風呂でしたので。思わず長湯をしてしまいました。"
+    },
+    {
+      "speaker": "",
+      "text": "なんだか悪いことをしている気がして、思わず顔をそらしてしまった。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ、良かったです"
+    },
+    {
+      "speaker": "",
+      "text": "ふわりと、彩愛さんの香りが鼻孔をくすぐる。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "・・・店長、・・あのよろしければ、もう少しこちらへ・・いけませんか？",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_ayame98_step146_yukata_close.webp",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "店長",
+      "text": "え？"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ頬を赤くしたまま、視線を伏せる。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……その、できれば布団ごと隣に……だめでしょうか？"
+    },
+    {
+      "speaker": "店長",
+      "text": "あ、彩愛さん？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "だめ、ですか？"
+    },
+    {
+      "speaker": "店長",
+      "text": "いえ……だめでは、ないです"
+    },
+    {
+      "speaker": "",
+      "text": "畳の上を、布団が静かに擦れる。"
+    },
+    {
+      "speaker": "",
+      "text": "距離が近い。"
+    },
+    {
+      "speaker": "",
+      "text": "指先が、掛け布団の端をそっとなでる。"
+    },
+    {
+      "speaker": "",
+      "text": "ふわり。"
+    },
+    {
+      "speaker": "",
+      "text": "再び、甘い香りが揺れる。"
+    },
+    {
+      "speaker": "",
+      "text": "いや、待って。"
+    },
+    {
+      "speaker": "",
+      "text": "近すぎやしませんか？"
+    },
+    {
+      "speaker": "",
+      "text": "枕元。\n布団の縁。\n畳との隙間。"
+    },
+    {
+      "speaker": "",
+      "text": "ゆっくりと確かめるようなその動きが、妙になまめかしく見えてしまう。"
+    },
+    {
+      "speaker": "店長",
+      "text": "あ、あの……彩愛さん"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは答えない。"
+    },
+    {
+      "speaker": "",
+      "text": "ただ、真剣な顔で布団の感触を確かめている。"
+    },
+    {
+      "speaker": "",
+      "text": "こちらだけが、勝手に冷静さを失っていた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "枕を、お貸しください"
+    },
+    {
+      "speaker": "店長",
+      "text": "は、はい"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんはそれを受け取ると、両手で抱えるように持った。"
+    },
+    {
+      "speaker": "",
+      "text": "そして、そっと表面をなでる。"
+    },
+    {
+      "speaker": "",
+      "text": "白く細い指先が、月明かりの下で枕の縁を滑っていく。"
+    },
+    {
+      "speaker": "",
+      "text": "ゆっくりと。\n確かめるように。"
+    },
+    {
+      "speaker": "",
+      "text": "店長\n（ごくり。）"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……やはり"
+    },
+    {
+      "speaker": "店長",
+      "text": "や、やはり？"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは一歩引き、枕を構えた。",
+      "bg": "images/assets/bg/bg_ayame98_guestroom_night.webp",
+      "bgMode": "forceReplace",
+      "forceBackgroundReplace": true,
+      "hideEventCg": true,
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "彩愛",
+      "text": "紫藤流投擲術――"
+    },
+    {
+      "speaker": "店長",
+      "text": "彩愛さん！？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "椿散花っ！"
+    },
+    {
+      "speaker": "",
+      "text": "枕が、ふすま目がけて一直線に飛んだ。"
+    },
+    {
+      "speaker": "",
+      "text": "次の瞬間。"
+    },
+    {
+      "speaker": "",
+      "text": "轟音。"
+    },
+    {
+      "speaker": "",
+      "text": "投げ放たれた枕は、ふすま一枚を形のまま打ち抜き、向こう側へ倒した。"
+    },
+    {
+      "speaker": "？？？",
+      "text": "「ぐえっ！？」"
+    },
+    {
+      "speaker": "",
+      "text": "聞き覚えのある声が、倒れたふすまの向こうから響いた。"
+    },
+    {
+      "speaker": "店長",
+      "text": "お父さん！？"
+    },
+    {
+      "speaker": "",
+      "text": "そこには、ふすまの下敷きになった父親が倒れ込んでいた。"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "おのれ……父に向かって、何たる乱暴を……",
+      "storySprites": [
+        {
+          "id": "otousama",
+          "src": "images/assets/char/ayame93_otousama_sprite.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふん。余計な出歯亀ですわっ"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "やかましい！ こちとら早く孫の顔が見たいんじゃ！"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "な゛っ……！！"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "彩愛だって、店長くんの事、気に入っておるじゃろう！バレバレじゃ！"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長の前でなんてことをっ！"
+    },
+    {
+      "speaker": "",
+      "text": "次の瞬間。"
+    },
+    {
+      "speaker": "彩愛の父",
+      "text": "ぐほっ"
+    },
+    {
+      "speaker": "",
+      "text": "父親は静かに沈んだ。",
+      "clearStorySprites": true,
+      "storySprites": [
+        {
+          "id": "baaya",
+          "src": "images/assets/char/ayame93_baaya_sprite.webp",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "speaker": "",
+      "text": "音もなく現れたばあやが、父親の背後に立っていた。"
+    },
+    {
+      "speaker": "ばあや",
+      "text": "失礼いたしました。ごゆっくり"
+    },
+    {
+      "speaker": "",
+      "text": "ばあやは外れたふすまを元に戻し、何事もなかったかのように父親を引きずって廊下の奥へ消えていった。",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "夜の静けさが戻る。"
+    },
+    {
+      "speaker": "店長",
+      "text": "……"
+    },
+    {
+      "speaker": "店長",
+      "text": "今、音も気配もなかったぞ……"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……やっと、おとなしくなりましたわ"
+    },
+    {
+      "speaker": "店長",
+      "text": "はは……楽しいご家族ですね"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "楽しい、ですか？"
+    },
+    {
+      "speaker": "店長",
+      "text": "はい"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少し驚いたようにこちらを見た。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……そんな。なんて懐の深い方なのかしら"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは小さく視線を逸らす。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "んもう……だから、素敵なのに"
+    },
+    {
+      "speaker": "店長",
+      "text": "え？"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "な、なんでもありませんわ……"
+    },
+    {
+      "speaker": "",
+      "text": "それ以上は、互いに何も言わなかった。"
+    },
+    {
+      "speaker": "",
+      "text": "父親の部屋からは、もうVRの音は聞こえない。"
+    },
+    {
+      "speaker": "",
+      "text": "庭の方から、虫の声だけが聞こえてくる。"
+    },
+    {
+      "speaker": "",
+      "text": "客間には、夜の静けさが戻っていた。"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、自分の布団に横になる。",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_ayame98_step217_futon.webp",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "",
+      "text": "月明かりの差し込む畳の上で、彩愛さんはしばらく天井を見つめていた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "店長……本日は、本当にありがとうございました"
+    },
+    {
+      "speaker": "店長",
+      "text": "いえ。……俺も一緒に来ることができてよかったです"
+    },
+    {
+      "speaker": "",
+      "text": "彩愛さんは、少しだけ目を伏せた。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "ふふ。わたくしの全てを見られてしまったような気分です"
+    },
+    {
+      "speaker": "",
+      "text": "その声は、昼間よりもずっと静かだった。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "今日のわたくしを見ても、嫌いにならないでくださいね",
+      "showEventCg": true,
+      "eventCg": "images/assets/cg/cg_ayame98_step224_best_smile.webp",
+      "cgFit": "cover",
+      "cgAlign": "center center",
+      "clearStorySprites": true
+    },
+    {
+      "speaker": "店長",
+      "text": "もちろんです"
+    },
+    {
+      "speaker": "",
+      "text": "怒って、慌てて、照れて、笑って。"
+    },
+    {
+      "speaker": "",
+      "text": "長い一日の終わりに残ったのは、彩愛さんの穏やかな声と、最高の微笑みだった。"
+    },
+    {
+      "speaker": "彩愛",
+      "text": "……おやすみなさいませ"
+    },
+    {
+      "speaker": "店長",
+      "text": "おやすみなさい"
+    },
+    {
+      "speaker": "",
+      "text": "寄せた布団は、そのまま。"
+    },
+    {
+      "speaker": "",
+      "text": "客間に焚きしめられた、かすかな香の匂い。"
+    },
+    {
+      "speaker": "",
+      "text": "その奥に、彩愛さんの髪の香りが混じっている気がした。"
+    }
+  ],
+  "keyScenarioIndex": 3
+}
