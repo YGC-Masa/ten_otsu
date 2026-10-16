@@ -15,7 +15,7 @@
 
   ns.officeMembers = [
     ["星野 緋奈", "aa_hina/standing/aa_hina_expression_03.webp", "店長、今日も一緒にがんばりましょう！"],
-    ["速水川 藍", "ab_ai/standing/02_微笑み.webp", "てんちょー、事務所でお待ちしていました。"],
+    ["速水川 藍", "ab_ai/standing/ab_ai_expression_02_gentle_smile.webp", "てんちょー、事務所でお待ちしていました。"],
     ["草壁 翠", "ac_midori/standing/ac_midori_expression_03_smile.webp", "キミ、今日の予定は確認済みかな？"],
     ["小麦沢 こがね", "ad_kogane/standing/ad_kogane_expression_03_smile.webp", "店長、今日もアゲてこー！"],
     ["春日原 琥珀", "ae_kohaku/standing/ae_kohaku_expression_03_smile.webp", "旦那、困ったことがあったらオレに任せな！"],
@@ -33,7 +33,7 @@
 
   ns.memberProfiles = [
     { name: "星野 緋奈", id: "aa", color: "#d3381c", role: "天真爛漫オールラウンダー", specialty: "テレビ・映像", image: "aa_hina/standing/aa_hina_expression_03.webp", comment: "店長、今日も一緒にがんばりましょう！" },
-    { name: "速水川 藍", id: "ab", color: "#0067C0", role: "物静かな小柄お姉さん", specialty: "ドライヤー", image: "ab_ai/standing/02_微笑み.webp", comment: "てんちょー、事務所でお待ちしていました。" },
+    { name: "速水川 藍", id: "ab", color: "#0067C0", role: "物静かな小柄お姉さん", specialty: "ドライヤー", image: "ab_ai/standing/ab_ai_expression_02_gentle_smile.webp", comment: "てんちょー、事務所でお待ちしていました。" },
     { name: "草壁 翠", id: "ac", color: "#02b308", role: "知的ボーイッシュ", specialty: "パソコン", image: "ac_midori/standing/ac_midori_expression_03_smile.webp", comment: "キミ、今日の予定は確認済みかな？" },
     { name: "小麦沢 こがね", id: "ad", color: "#FFF450", role: "全員愛され超ギャル", specialty: "スマホ", image: "ad_kogane/standing/ad_kogane_expression_03_smile.webp", comment: "店長、今日もアゲてこー！" },
     { name: "春日原 琥珀", id: "ae", color: "#F68B1F", role: "天然アスリート", specialty: "オーディオ・イヤホン", image: "ae_kohaku/standing/ae_kohaku_expression_03_smile.webp", comment: "旦那、困ったことがあったらオレに任せな！" },
