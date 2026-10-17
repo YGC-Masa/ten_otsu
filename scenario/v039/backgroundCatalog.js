@@ -156,3 +156,14 @@
     hidamari_store_closed_night: { name: "ひだまりストア閉店後・店内売り場", path: "images/assets/bg/bg_hidamari_store_salesfloor_night.webp", status: "正式採用・互換" }
   });
 })();
+
+
+/* v039_158 AST salon backgrounds */
+(function(){
+  "use strict";
+  window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
+    ast_salon_exterior_day: { name: "エステサロン・アスト・外観・昼", path: "images/assets/bg/bg_ast_salon_exterior_day.webp", location: "エステサロン・アスト", time: "day", status: "正式採用" },
+    ast_herbal_tea_lounge_day: { name: "エステサロン・アスト・ハーブティーラウンジ・昼", path: "images/assets/bg/bg_ast_herbal_tea_lounge_day.webp", location: "エステサロン・アスト／ハーブティーラウンジ", time: "day", status: "正式採用" },
+    ast_treatment_room_day: { name: "エステサロン・アスト・個室施術室・昼", path: "images/assets/bg_ast_treatment_room_day.webp", location: "エステサロン・アスト／個室施術室", time: "day", status: "正式採用" }
+  });
+})();
