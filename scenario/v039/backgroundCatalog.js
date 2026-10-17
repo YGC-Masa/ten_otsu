@@ -167,3 +167,34 @@
     ast_treatment_room_day: { name: "エステサロン・アスト・個室施術室・昼", path: "images/assets/bg_ast_treatment_room_day.webp", location: "エステサロン・アスト／個室施術室", time: "day", status: "正式採用" }
   });
 })();
+
+
+/* v039_159 Existing building/background assets catalog registration */
+(function(){
+  "use strict";
+  window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
+    ayame_estate_gate_day: { name: "紫藤家・屋敷門・昼", path: "images/assets/bg/bg_ayame93_estate_gate_day.webp", location: "紫藤家", time: "day", status: "正式採用" },
+    ayame_estate_house_day: { name: "紫藤家・屋敷外観・昼", path: "images/assets/bg/bg_ayame93_estate_house_day.webp", location: "紫藤家", time: "day", status: "正式採用" },
+    ayame_estate_corridor_day: { name: "紫藤家・屋敷廊下・昼", path: "images/assets/bg/bg_ayame93_estate_corridor_day.webp", location: "紫藤家", time: "day", status: "正式採用" },
+    ayame_estate_corridor_night: { name: "紫藤家・屋敷廊下・夜", path: "images/assets/bg/bg_ayame98_estate_corridor_night.webp", location: "紫藤家", time: "night", status: "正式採用" },
+    ayame_father_room_dusk: { name: "紫藤家・父親の部屋・夕暮れ", path: "images/assets/bg/bg_ayame98_father_room_dusk.webp", location: "紫藤家", time: "dusk", status: "正式採用" },
+    ayame_guestroom_night: { name: "紫藤家・客間・夜", path: "images/assets/bg/bg_ayame98_guestroom_night.webp", location: "紫藤家", time: "night", status: "正式採用" },
+    ayame_station_exterior_day: { name: "紫藤家最寄り駅・外観・昼", path: "images/assets/bg/bg_ayame93_station_exterior_day.webp", location: "紫藤家最寄り駅", time: "day", status: "正式採用" },
+    hidamari_store_front_winter_day: { name: "ひだまりストア外観・冬・昼", path: "images/assets/bg/bg_hidamari_store_front_winter_day.webp", location: "ひだまりストア", time: "day", season: "winter", snow: false, status: "正式採用" },
+    hidamari_store_front_winter_day_snow: { name: "ひだまりストア外観・冬・雪", path: "images/assets/bg/bg_hidamari_store_front_winter_day_snow.webp", location: "ひだまりストア", time: "day", season: "winter", snow: true, status: "正式採用" },
+    hidamari_store_salesfloor_day: { name: "ひだまりストア店内売り場・昼", path: "images/assets/bg/bg_hidamari_store_salesfloor_day.webp", location: "ひだまりストア", time: "day", status: "正式採用" },
+    homecenter_outdoor_corner_day: { name: "ホームセンター・屋外コーナー・昼", path: "images/assets/bg/bg_homecenter_outdoor_corner_day.webp", location: "ホームセンター", time: "day", status: "正式採用" },
+    lumiere_cafe_interior_day: { name: "ルミエール・カフェ店内・昼", path: "images/assets/bg/bg_lumiere_cafe_interior_day.webp", location: "ルミエール", time: "day", status: "正式採用" },
+    lumiere_pension_balcony_day: { name: "ルミエール・ペンションバルコニー・昼", path: "images/assets/bg/bg_lumiere_pension_balcony_day.webp", location: "ルミエール", time: "day", status: "正式採用" },
+    lumiere_pension_room_day: { name: "ルミエール・ペンション客室・昼", path: "images/assets/bg/bg_lumiere_pension_room_day.webp", location: "ルミエール", time: "day", status: "正式採用" },
+    misora_room_day: { name: "美空の部屋・昼", path: "images/assets/bg/bg_misora_room_day.webp", location: "双沢家", time: "day", status: "正式採用・互換" },
+    misora_room_night: { name: "美空の部屋・夜", path: "images/assets/bg/bg_misora_room_night.webp", location: "双沢家", time: "night", status: "正式採用・互換" },
+    takadai_shrine_courtyard_day: { name: "高台神社・境内・昼", path: "images/assets/bg/bg_takadai_shrine_courtyard_day.webp", location: "高台神社", time: "day", status: "正式採用" },
+    takadai_shrine_courtyard_spring: { name: "高台神社・境内・春", path: "images/assets/bg/bg_takadai_shrine_courtyard_spring.webp", location: "高台神社", season: "spring", status: "正式採用" },
+    takadai_shrine_overlook_autumn: { name: "高台神社・展望所・秋", path: "images/assets/bg/bg_takadai_shrine_overlook_autumn.webp", location: "高台神社", season: "autumn", status: "正式採用" },
+    takadai_shrine_overlook_sunset: { name: "高台神社・展望所・夕焼け", path: "images/assets/bg/bg_takadai_shrine_overlook_sunset.webp", location: "高台神社", time: "sunset", status: "正式採用" },
+    takadai_shrine_steps_day: { name: "高台神社・参道階段・昼", path: "images/assets/bg/bg_takadai_shrine_steps_day.webp", location: "高台神社", time: "day", status: "正式採用" },
+    yozora_room_day: { name: "夜空の部屋・昼", path: "images/assets/bg/bg_yozora_room_day.webp", location: "双沢家", time: "day", status: "正式採用・互換" },
+    yozora_room_night: { name: "夜空の部屋・夜", path: "images/assets/bg/bg_yozora_room_night.webp", location: "双沢家", time: "night", status: "正式採用・互換" }
+  });
+})();
