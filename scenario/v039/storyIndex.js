@@ -5,7 +5,7 @@ window.TENOTSU_STORY_INDEX = [
     "type": "normal",
     "category": "season_memory",
     "season": "spring",
-    "placeId": "spring_park",
+    "placeId": "wakaba_central_park",
     "placeName": "春の公園",
     "characters": [
       "ab"
@@ -29,7 +29,7 @@ window.TENOTSU_STORY_INDEX = [
     "type": "normal",
     "category": "season_memory",
     "season": "spring",
-    "placeId": "spring_park",
+    "placeId": "wakaba_central_park",
     "placeName": "春の公園",
     "characters": [
       "aa"

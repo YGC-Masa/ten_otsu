@@ -162,6 +162,11 @@ body[data-v039-mode="storyMenu"] .tenotsu-story-menu-subtitle{
 
 
 /* v039_227: 外回りメニュー縦見切れ対策 */
+/* Town now has six direct sections, not the legacy two-row landscape grid.
+   Keep them in normal flow so short viewports cannot collapse the place list. */
+body[data-v039-mode="town"] .tenotsu-town-panel {
+  display: block !important;
+}
 body[data-v039-mode="town"] .tenotsu-town-panel,
 .tenotsu-town-panel.tenotsu-town-scroll-guard {
   max-height: calc((var(--tenotsu-vh, 1vh) * 100) - 36px) !important;
