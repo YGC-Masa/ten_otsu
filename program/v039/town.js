@@ -69,7 +69,7 @@
       <div class="tenotsu-town-encounter-status">
         <div><span>現在の季節</span><b>${esc(season.label)}</b></div>
         <div class="tenotsu-town-season-pills">${seasonOptionsHtml(data.currentSeason)}</div>
-        ${ns.calendar ? `<div><button type="button" class="tenotsu-town-tool" data-town-tool="time-thymus">朝・昼・夜を無料試用</button><button type="button" class="tenotsu-town-tool" data-town-tool="real-time">時間帯の試用を解除</button><button type="button" class="tenotsu-town-tool" data-town-tool="season-raisin">季節を無料試用</button><button type="button" class="tenotsu-town-tool" data-town-tool="real-season">季節の試用を解除</button><small>所持数・消費は未接続。選択は解除まで端末に保持。自動失効は未接続。</small></div>` : `<button type="button" class="tenotsu-town-tool" data-town-tool="season">${esc((cfg().items && cfg().items.season && cfg().items.season.label) || "季節を変える")}</button>`}
+        ${ns.calendar ? `<div><button type="button" class="tenotsu-town-tool" data-town-tool="time-thymus">朝・昼・夜を無料試用</button><button type="button" class="tenotsu-town-tool" data-town-tool="real-time">時間帯の試用を解除</button><button type="button" class="tenotsu-town-tool" data-town-tool="season-raisin">季節を無料試用</button><button type="button" class="tenotsu-town-tool" data-town-tool="real-season">季節の試用を解除</button><small>無料試用・所持数と消費は未接続。季節は使用翌日23:59まで、時間帯は解除まで端末に保持。</small></div>` : `<button type="button" class="tenotsu-town-tool" data-town-tool="season">${esc((cfg().items && cfg().items.season && cfg().items.season.label) || "季節を変える")}</button>`}
       </div>
       <div class="tenotsu-town-place-grid">
         ${places.map((p)=>placeCard(p, data)).join("")}

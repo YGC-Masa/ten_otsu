@@ -4,7 +4,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const test = require('node:test');
 const root = path.resolve(__dirname, '..');
-const key = 'tenotsu_time_thymus_v1';
+const key = 'tenotsu_season_raisin_v1';
 
 function fixture(iso, storage = new Map()) {
   let now = Date.parse(iso);
@@ -62,20 +62,55 @@ test('SeasonRaisin switches four seasons without assigning a time period or movi
   const f=fixture('2026-12-31T23:59:00+09:00');f.cal.usePeriod('day');
   for(const season of ['spring','summer','autumn','winter']){
     assert(f.cal.useSeason(season).ok);const s=f.cal.getSnapshot();assert.equal(s.season,season);assert.equal(s.month,12);
-    assert.equal(s.period,'day');assert.equal(s.seasonTrial.itemId,'season_raisin');assert(!('expiresAt' in s.seasonTrial));
+    assert.equal(s.period,'day');assert.equal(s.seasonTrial.itemId,'season_raisin');assert.equal(s.seasonTrial.expiresAt,'2027-01-01T15:00:00.000Z');
   }
   assert(!f.cal.useSeason('13').ok);
   f.cal.returnToReality();assert.equal(f.cal.getSnapshot().period,'day');assert.equal(f.cal.getSnapshot().seasonTrial,null);
   f.cal.useSeason('spring');f.cal.returnTimeToReality();assert.equal(f.cal.getSnapshot().season,'spring');assert.equal(f.cal.getSnapshot().period,null);
 });
 
-test('free trial reload/resume keeps independent selections; no old month deadline is assigned',()=>{
+test('season expiry last millisecond and reload/resume never extend the deadline or expire TimeThymus',()=>{
   let f=fixture('2026-12-31T23:59:00+09:00');f.cal.usePeriod('night');f.cal.useSeason('spring');
-  const time=f.storage.get('tenotsu_time_thymus_period_v1'),season=f.storage.get('tenotsu_season_raisin_v1');
-  f=fixture('2027-01-02T00:00:00+09:00',f.storage);f.events.focus();f.events.pageshow();f.events.visibilitychange();
-  assert.equal(f.cal.getSnapshot().period,'night');assert.equal(f.cal.getSnapshot().season,'spring');
-  assert.equal(f.storage.get('tenotsu_time_thymus_period_v1'),time);assert.equal(f.storage.get('tenotsu_season_raisin_v1'),season);
-  assert.equal(f.cal.getSnapshot().month,1);
+  const time=f.storage.get('tenotsu_time_thymus_period_v1'),saved=f.storage.get(key);
+  f=fixture('2027-01-01T23:59:59.999+09:00',f.storage);f.events.focus();f.events.pageshow();f.events.visibilitychange();
+  assert.equal(f.cal.getSnapshot().season,'spring');assert.equal(f.storage.get(key),saved);
+  f.setTime('2027-01-02T00:00:00+09:00');f.events.pageshow();
+  assert.equal(f.cal.getSnapshot().season,'winter');assert.equal(f.cal.getSnapshot().seasonTrial,null);
+  assert.equal(f.cal.getSnapshot().period,'night');assert.equal(f.storage.get('tenotsu_time_thymus_period_v1'),time);
+  assert(!f.storage.has(key));
+  f=fixture('2027-01-02T00:00:00.001+09:00',f.storage);assert.equal(f.cal.getSnapshot().season,'winter');
+});
+
+test('JST next-next midnight handles month/year ends and leap years, not a fixed 24 hours',()=>{
+  for(const [used,end] of [
+    ['2026-12-31T23:59:00+09:00','2027-01-01T15:00:00.000Z'],
+    ['2026-01-31T00:01:00+09:00','2026-02-01T15:00:00.000Z'],
+    ['2028-02-28T23:59:00+09:00','2028-02-29T15:00:00.000Z'],
+    ['2027-02-28T23:59:00+09:00','2027-03-01T15:00:00.000Z']
+  ]){
+    const f=fixture(used);assert.equal(f.cal.useSeason('spring').seasonTrial.expiresAt,end);
+    assert.notEqual(Date.parse(end)-Date.parse(used),24*60*60*1000);
+  }
+});
+
+test('published no-expiry saves migrate once from selectedAt; stale/missing/future/corrupt saves cannot extend',()=>{
+  const legacy={version:1,itemId:'season_raisin',season:'spring',selectedAt:'2026-12-31T14:59:00.000Z'};
+  const storage=new Map([[key,JSON.stringify(legacy)]]);
+  let f=fixture('2027-01-01T12:00:00+09:00',storage);
+  assert.equal(f.cal.getSnapshot().seasonTrial.expiresAt,'2027-01-01T15:00:00.000Z');
+  const migrated=storage.get(key);
+  f=fixture('2027-01-01T23:59:59.999+09:00',storage);f.events.pageshow();assert.equal(storage.get(key),migrated);
+  f=fixture('2027-01-02T00:00:00+09:00',storage);assert.equal(f.cal.getSnapshot().seasonTrial,null);
+  for(const record of [
+    {...legacy,selectedAt:'2026-12-20T00:00:00.000Z'},
+    {...legacy,selectedAt:undefined}, {...legacy,selectedAt:'invalid'},
+    {...legacy,selectedAt:'2026-12-31T14:59:00'},
+    {...legacy,selectedAt:'2099-01-01T00:00:00Z'},
+    {...legacy,expiresAt:'2099-01-01T00:00:00Z'}, {...legacy,expiresAt:null}
+  ]){
+    const f=fixture('2027-01-01T12:00:00+09:00',new Map([[key,JSON.stringify(record)]]));
+    assert.equal(f.cal.getSnapshot().seasonTrial,null);assert(!f.storage.has(key));
+  }
 });
 
 test('legacy progress/ST and discarded unpublished wrong-name travel data remain intact',()=>{
