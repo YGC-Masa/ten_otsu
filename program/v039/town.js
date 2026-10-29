@@ -12,7 +12,7 @@
     try { data = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null"); } catch (_) { data = null; }
     if (!data || typeof data !== "object") data = {};
     data.version = "v039_117";
-    data.currentSeason = data.currentSeason || (cfg().defaultSeason || "summer");
+    data.currentSeason = ns.calendar ? ns.calendar.getSnapshot().season : data.currentSeason || (cfg().defaultSeason || "summer");
     data.revealedPlaces = data.revealedPlaces && typeof data.revealedPlaces === "object" ? data.revealedPlaces : {};
     return data;
   }
@@ -34,6 +34,10 @@
     return allStories().filter((story) => story && story.type === "normal" && story.scenario && story.placeId === placeId && (!story.season || story.season === seasonId));
   }
   function seasonOptionsHtml(currentSeason){
+    if (ns.calendar) {
+      const snapshot = ns.calendar.getSnapshot();
+      return `${ns.calendar.statusHtml()}<label>タイムタイム：<select data-time-thymus-period aria-label="朝・昼・夜">${Object.entries({morning:"朝",day:"昼",night:"夜"}).map(([value,label])=>`<option value="${value}"${snapshot.period===value?" selected":""}>${label}</option>`).join("")}</select></label><label>シーズンレーズン：<select data-season-raisin-season aria-label="季節">${Object.entries({spring:"春",summer:"夏",autumn:"秋",winter:"冬"}).map(([value,label])=>`<option value="${value}"${snapshot.season===value?" selected":""}>${label}</option>`).join("")}</select></label>`;
+    }
     return (cfg().seasons || []).map((s) => `
       <button type="button" class="tenotsu-town-season-pill ${s.id===currentSeason?"active":""}" data-town-season="${esc(s.id)}">${esc(s.label)}</button>
     `).join("");
@@ -65,7 +69,7 @@
       <div class="tenotsu-town-encounter-status">
         <div><span>現在の季節</span><b>${esc(season.label)}</b></div>
         <div class="tenotsu-town-season-pills">${seasonOptionsHtml(data.currentSeason)}</div>
-        <button type="button" class="tenotsu-town-tool" data-town-tool="season">${esc((cfg().items && cfg().items.season && cfg().items.season.label) || "季節を変える")}</button>
+        ${ns.calendar ? `<div><button type="button" class="tenotsu-town-tool" data-town-tool="time-thymus">朝・昼・夜を無料試用</button><button type="button" class="tenotsu-town-tool" data-town-tool="real-time">時間帯の試用を解除</button><button type="button" class="tenotsu-town-tool" data-town-tool="season-raisin">季節を無料試用</button><button type="button" class="tenotsu-town-tool" data-town-tool="real-season">季節の試用を解除</button><small>所持数・消費は未接続。選択は解除まで端末に保持。自動失効は未接続。</small></div>` : `<button type="button" class="tenotsu-town-tool" data-town-tool="season">${esc((cfg().items && cfg().items.season && cfg().items.season.label) || "季節を変える")}</button>`}
       </div>
       <div class="tenotsu-town-place-grid">
         ${places.map((p)=>placeCard(p, data)).join("")}
@@ -77,6 +81,15 @@
     `;
     ns.showTownPanel(html);
     const panel = ns.layers.town;
+    if (ns.calendar) {
+      panel.querySelector('[data-town-tool="time-thymus"]').addEventListener("click", () => {
+        ns.calendar.usePeriod(panel.querySelector('[data-time-thymus-period]').value);
+      });
+      panel.querySelector('[data-town-tool="real-time"]').addEventListener("click", () => ns.calendar.returnTimeToReality());
+      panel.querySelector('[data-town-tool="season-raisin"]').addEventListener("click", () => ns.calendar.useSeason(panel.querySelector('[data-season-raisin-season]').value));
+      panel.querySelector('[data-town-tool="real-season"]').addEventListener("click", () => ns.calendar.returnToReality());
+      ns.calendar.updateClock();
+    }
     panel.querySelectorAll("[data-town-place]").forEach((btn)=>btn.addEventListener("click",()=>ns.renderTownPlaceDetail(btn.dataset.townPlace)));
     const seasonBtn = panel.querySelector('[data-town-tool="season"]');
     if (seasonBtn) seasonBtn.addEventListener("click",()=>ns.useSeasonChangeItem());

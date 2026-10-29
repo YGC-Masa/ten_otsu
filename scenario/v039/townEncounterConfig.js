@@ -13,7 +13,8 @@
     ],
     items: {
       reveal: { id: "visitor_scope", name: "来客メモ", label: "キャラがいるか確認", note: "試作では消費なし。正式版では外回り用アイテムを消費予定。" },
-      season: { id: "season_ticket", name: "季節チケット", label: "季節を変える", note: "試作では春→夏→秋→冬を切り替えます。" }
+      season: { id: "season_raisin", name: "シーズンレーズン", label: "季節を変更", note: "所持数・消費は未接続の無料試用です。" },
+      time: { id: "time_thymus", name: "タイムタイム", label: "朝・昼・夜を変更", note: "所持数・消費は未接続の無料試用です。自動失効は未接続です。" }
     },
     places: [
       { id: "hidamari_store_front", name: "ひだまりストア前", type: "自店", seasons: ["spring", "summer", "autumn", "winter"], description: "ひだまりストアの外観。開店前・営業中・夕方・夜・閉店後など時間帯別イベント向き。", bg: "images/assets/bg/bg_hidamari_store_front_day.webp" },

@@ -3,12 +3,13 @@
   "use strict";
   const ns = window.TENOTSU_V039;
 
-  ns.renderOfficeCharacters = function renderOfficeCharacters() {
+  ns.renderOfficeCharacters = function renderOfficeCharacters(options = {}) {
     const layers = ns.layers || ns.ensureLayers();
     layers.officeChars.innerHTML = "";
 
     const count = Math.random() < 0.55 ? 3 : 2;
-    const picks = ns.shuffle(ns.officeMembers).slice(0, count);
+    const picks = options.preserveSelection && ns.state.officeSelection && ns.state.officeSelection.length
+      ? ns.state.officeSelection : ns.shuffle(ns.officeMembers).slice(0, count);
     ns.state.officeSelection = picks;
     ns.state.frontCharacter = picks[0] || null;
 
@@ -17,7 +18,7 @@
       img.className = "tenotsu-office-stand tenotsu-office-stand-" + index;
       img.alt = member[0];
       img.draggable = false;
-      img.src = ns.paths.charBase + member[1];
+      img.src = ns.calendar ? ns.calendar.officeOutfit(member) : ns.paths.charBase + member[1];
       img.onerror = () => {
         img.onerror = null;
         img.src = ns.paths.charBase + "aa_hina/standing/aa_hina_expression_03.webp";
@@ -54,6 +55,13 @@
     version.appendChild(versionMain);
     version.appendChild(versionSub);
     layers.menu.appendChild(version);
+    if (ns.calendar) {
+      const clock = document.createElement("div");
+      clock.className = "tenotsu-calendar-status";
+      clock.innerHTML = ns.calendar.statusHtml();
+      layers.menu.appendChild(clock);
+      ns.calendar.updateClock();
+    }
 
 
     const grid = document.createElement("div");

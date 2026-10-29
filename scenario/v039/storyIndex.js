@@ -72,7 +72,7 @@ window.TENOTSU_STORY_INDEX = [
       "enabled": true,
       "staminaCost": 10,
       "revealItem": "visitor_scope",
-      "seasonItem": "season_ticket"
+      "seasonItem": "season_raisin"
     },
     "order": 105,
     "summary": "こがねと夏海と一緒に、マリンピアの海中トンネルを見に行く夏の外回りイベント。"

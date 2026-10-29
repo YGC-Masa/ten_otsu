@@ -279,9 +279,12 @@
   };
 
   ns.loadStoryScenario = async function loadStoryScenario(path) {
-    const res = await fetch(path, { cache: "no-store" });
+    const month = ns.calendar && ns.calendar.getSnapshot().month;
+    const resolved = ns.calendar ? ns.calendar.resolveContent(path, month) : path;
+    const res = await fetch(resolved, { cache: "no-store" });
     if (!res.ok) throw new Error("scenario fetch failed: " + path + " / " + res.status);
-    return await res.json();
+    const data = await res.json();
+    return ns.calendar ? ns.calendar.freezeStoryAssets(data, month) : data;
   };
 
   ns.prepareStoryFirstBackground = async function prepareStoryFirstBackground(data) {

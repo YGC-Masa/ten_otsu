@@ -162,6 +162,10 @@ body[data-v039-mode="storyMenu"] .tenotsu-story-menu-subtitle{
 
 
 /* v039_227: 外回りメニュー縦見切れ対策 */
+.tenotsu-calendar-status { font-size: 11px; line-height: 1.5; overflow-wrap: anywhere; }
+body[data-v039-mode="town"] .tenotsu-town-encounter-status { flex-wrap: wrap; }
+body[data-v039-mode="town"] .tenotsu-town-season-pills { min-width: 0; }
+body[data-v039-mode="town"] [data-time-thymus-period], body[data-v039-mode="town"] [data-season-raisin-season] { color: #222; font: inherit; }
 /* Town now has six direct sections, not the legacy two-row landscape grid.
    Keep them in normal flow so short viewports cannot collapse the place list. */
 body[data-v039-mode="town"] .tenotsu-town-panel {
