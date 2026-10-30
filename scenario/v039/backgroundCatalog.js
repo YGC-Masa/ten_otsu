@@ -885,3 +885,14 @@
     "status": "初版空間案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-092 landmark proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "hiyorizaka_local_history_museum_entrance_day": {
+    "name": "日和坂郷土歴史館 入口・昼（初版外観案）",
+    "path": "images/assets/bg/bg_hiyorizaka_local_history_museum_entrance_day.webp",
+    "spaceId": "SPACE-LM092-ENTRANCE",
+    "time": "day",
+    "status": "初版空間案/間取り・設備・採否未確定"
+  }
+});})();
