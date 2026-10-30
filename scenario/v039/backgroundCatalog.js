@@ -1006,3 +1006,14 @@
     "status": "初版空間案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-103 landmark proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "hiyorizaka_morning_market_morning": {
+    "name": "日和坂朝市 代表導線・朝（初版市場案）",
+    "path": "images/assets/bg/bg_hiyorizaka_morning_market_morning.webp",
+    "spaceId": "SPACE-LM103-MARKET",
+    "time": "morning",
+    "status": "初版空間案/間取り・設備・採否未確定"
+  }
+});})();

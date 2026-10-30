@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-103",
+  "facility": "FAC-048",
+  "space": "SPACE-LM103-MARKET",
+  "name": "日和坂朝市 代表導線・朝（初版市場案）",
+  "canon": "港〜旧市街、朝市/食べ歩き/地域。緋奈/里美/なつ/陽里/萌。朝食/地元食材/仕入れ手伝い/眠い朝。通年早朝〜昼。",
+  "proposal": "港〜旧市街の朝市通行帯案。左右に低い仮設庇/木台・無銘の野菜/果物/包装食品の仮陳列、中央連続歩行帯、搬入箱は脇奥。既存港まつり/暮らしマルシェ/花市場と同一視しない。開催日/店名/仕入先/品種/数量/正確な位置は未確定。",
+  "unconfirmed": "建築/設備/配置/採否/正確寸法未確定。代表背景各1枚のみ、施設接続/営業条件/全館階数/住所・方位・距離を確定しない。防災設備性能・灯台の航路機能/灯質/登塔可否・SAの道路所属/上下線は原設定以上を追加しない。",
+  "sources": {
+    "world": "02_ランドマーク LM-103",
+    "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/英語別名検索2組・scenario/v039本文を照合、専用6画像未発見。6施設の直接シナリオ出典は未発見。既存横丁夜/温泉街冬夕/港岸壁/潮見浜夕の実画像を比較し、類似だけで同一施設としない。未発見は不存在の断定ではない。",
+    "references": []
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、用途/素材/窓扉/通行/中央ADV余白を目視確認。銭湯は既存温泉街と別、横丁は既存店を置換しない近景案。防災性能/航路機能/道路所属は未設定。設備規格・法令/正確寸法と全市地理は未検証。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-208",
+    "img": "IMG-WLD-132",
+    "key": "hiyorizaka_morning_market_morning",
+    "path": "images/assets/bg/bg_hiyorizaka_morning_market_morning.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "c1dffc332d67f16daf3807051ecdd9ee37aa184654772d426822ec059df82f8d"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "9812473315a645f1b5c3bb808471329b887334f2"
+}
