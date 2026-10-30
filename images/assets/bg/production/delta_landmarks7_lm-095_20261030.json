@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-095",
+  "facility": "FAC-040",
+  "space": "SPACE-LM095-APPROACH",
+  "name": "潮見ハーバーテラス 来店導線・夜（初版外観案）",
+  "canon": "港エリア、海沿いレストラン/夜景。雪乃/彩愛/真花/里美/夜空。海沿いディナー/港夜景/記念日/大人デート。通年夕方〜夜。",
+  "proposal": "港沿いレストランへの入口経路案。左低層の暖色ガラス/木と石の店、入口庇と小さな案内台、壁際少数2人卓、中央は連続する歩行帯、右海側黒柵と港灯り。一般開放岸壁の建物を改装扱いにせず、正確な岸位置/方位/接続は未確定。",
+  "unconfirmed": "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理隣接/地下接続/店名/営業条件/全館階数/住所・方位・距離を確定しない。窓内の仮商品や機器は可動の意匠例。",
+  "sources": {
+    "world": "02_ランドマーク LM-095",
+    "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/英語別名検索2組・scenario/v039本文を照合、専用5画像未発見。施設名/地下街/アーケード等のシナリオ直接一致なし。駅昼/港岸壁BG-158/ひだまり店頭昼/つくもBG-137を実画素参照。用途や近隣の類似だけで同一施設としない。未発見は不存在の断定ではない。",
+    "references": [
+      "/workspace/delta_landmarks7/bg_hiyorizaka_port_public_quay_day.webp"
+    ]
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、用途/素材/窓扉/主通行帯/中央ADV余白を目視確認。地下街の仮陳列は窓内、館周辺はつくも所在地を複製しないよう修正。港は既存岸壁を改装扱いにせず位置未確定。アーケードは既存ストアに接続/増築させない。設備/法令/正確寸法は未検証。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-200",
+    "img": "IMG-WLD-124",
+    "key": "shiomi_harbor_terrace_approach_night",
+    "path": "images/assets/bg/bg_shiomi_harbor_terrace_approach_night.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "059c729e9c6a1ad01afd927e7851ddd991d39f8799baaec2f47c5ca70a14d36d"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "f35aefd13e0ee5190e09f5d63d33488344e6bccf"
+}

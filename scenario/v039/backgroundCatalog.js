@@ -918,3 +918,14 @@
     "status": "初版空間案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-095 landmark proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "shiomi_harbor_terrace_approach_night": {
+    "name": "潮見ハーバーテラス 来店導線・夜（初版外観案）",
+    "path": "images/assets/bg/bg_shiomi_harbor_terrace_approach_night.webp",
+    "spaceId": "SPACE-LM095-APPROACH",
+    "time": "night",
+    "status": "初版空間案/間取り・設備・採否未確定"
+  }
+});})();
