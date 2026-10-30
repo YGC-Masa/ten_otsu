@@ -984,3 +984,14 @@
     "status": "初版空間案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-101 landmark proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "hiyorizaka_craft_workshop_lane_day": {
+    "name": "日和坂クラフト工房街 入口導線・昼（初版街路案）",
+    "path": "images/assets/bg/bg_hiyorizaka_craft_workshop_lane_day.webp",
+    "spaceId": "SPACE-LM101-LANE",
+    "time": "day",
+    "status": "初版空間案/間取り・設備・採否未確定"
+  }
+});})();

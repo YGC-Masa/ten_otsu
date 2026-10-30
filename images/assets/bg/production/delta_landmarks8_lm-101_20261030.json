@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-101",
+  "facility": "FAC-046",
+  "space": "SPACE-LM101-LANE",
+  "name": "日和坂クラフト工房街 入口導線・昼（初版街路案）",
+  "canon": "旧市街〜高台文化ゾーン、工芸/体験/アクセ作り。真花/彩愛/萌/藍/こがね/ひかる。陶芸/ガラス細工/アクセ/ペア小物/手先。通年昼。",
+  "proposal": "旧市街側の工房街入口案。低層白壁/木格子/灰瓦、左窓に陶器/右窓に無銘ガラス・小物と窓奥作業卓の仮配置、中央連続石畳/脇ベンチ。窯/火気設備・個別工房名/運営/営業条件・具体接合点は未確定。海沿いシーグラス通りとは別項目。",
+  "unconfirmed": "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理接続/上映作品/広告/店名/営業条件/全館階数/住所・方位・距離を確定しない。道路の停車区画/車内は未設計、車線幅/標示/規格も未検証。",
+  "sources": {
+    "world": "02_ランドマーク LM-101",
+    "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/別名検索2組・scenario/v039本文を照合、専用5画像未発見。ドライブ検索の外付けドライブ文脈は除外し、5施設の直接出典は未発見。潮見浜夕BG-004実WebP/自転車道BG-102/青葉キャンプBG-088/シーグラスBG-107を実画素確認。類似だけで同一施設としない。未発見は不存在の断定ではない。",
+    "references": []
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、用途/素材/窓扉/主通行帯/中央ADV余白を目視確認。映画館の手前車道を歩行前庭へ修正。ログ村は湖/テントなし、クラフトは海沿い通りと分離。道路は車道と歩行帯の縁石/海柵を確認。停車区画は描かれていない。海岸形の参照は定性的比較で座標/方位/山稜重畳/規格寸法は未検証。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-206",
+    "img": "IMG-WLD-130",
+    "key": "hiyorizaka_craft_workshop_lane_day",
+    "path": "images/assets/bg/bg_hiyorizaka_craft_workshop_lane_day.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "42545ba050ad2be1bb258982c0710664b54868304bca3c9e9e8c2a3bc43843a6"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "2251ceb843ed6fcf033d7d4013e20c0960b395b8"
+}
