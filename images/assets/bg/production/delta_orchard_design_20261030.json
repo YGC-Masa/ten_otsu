@@ -143,10 +143,29 @@
   "registration": {
     "bg": "BG-147〜151",
     "image": "IMG-WLD-071〜075",
-    "sheetWrite": "remote配置後に実施・読み戻し確認予定",
-    "remoteFiles": "同コミットの画像blobとカタログ参照を検証予定",
+    "mainAssetCommit": "383ece86457f0db5bd364ba6c013512755627d5e",
+    "sheet": {
+      "id": "19jxSOwhG1aysiBAY0onX20xJNTYJ2ilRrBoVh-p-Zx4",
+      "bg": "08_背景アセット!A151:L155",
+      "image": "04_イラスト管理!A70:L74",
+      "facility": "03_建物施設!A7:L7",
+      "space": "09_空間・間取り管理!A80:O80",
+      "landmark": "02_ランドマーク!K53:M53"
+    },
+    "verification": {
+      "remoteImageBlobs": 5,
+      "remoteDocumentBlobs": 2,
+      "catalogExact": true,
+      "sheetCellsReadbackMatched": 150,
+      "liveScreen": false,
+      "adoption": "未確定",
+      "catalogRuntime": "VMで5キー/path/SPACEと実ファイル存在一致",
+      "allCatalogMissingPaths": 0,
+      "syntax": "node --check passed"
+    },
     "liveScreen": "未確認",
-    "scenarios": "割当なし"
+    "scenarios": "割当なし",
+    "zip": "ローカルのみ。外部へのZIP納品/アップロード未実施"
   },
   "remaining": [
     "LM-017図書館：既存背景への紐付けQC",
