@@ -118,7 +118,37 @@
       "timeDifference": "正本の昼のみ4点。昼夕差分は今回追加していない。"
     }
   },
-  "registration": "remote反映・台帳登録・読み戻し検証の実施後、この記録を更新する",
+  "registration": {
+    "mainAssetCommit": "28addd14b2283390a9a111f7a69072a837130344",
+    "sheet": {
+      "id": "19jxSOwhG1aysiBAY0onX20xJNTYJ2ilRrBoVh-p-Zx4",
+      "bg": "08_背景アセット!A156:L160",
+      "image": "04_イラスト管理!A75:L79",
+      "facility": "03_建物施設!A8:L8",
+      "librarySpace": "09_空間・間取り管理!A46:O46",
+      "marcheSpace": "09_空間・間取り管理!A88:O88",
+      "landmarks": [
+        "02_ランドマーク!K17:M17",
+        "02_ランドマーク!K55:M55"
+      ]
+    },
+    "verification": {
+      "newImages": 4,
+      "reusedImage": 1,
+      "remoteImageBlobsMatched": 5,
+      "remoteRecordsMatched": 2,
+      "catalogExact": true,
+      "sheetCellsReadbackMatched": 168,
+      "liveScreen": false,
+      "adoption": "未確定",
+      "catalogRuntime": "VMで5キー/path/SPACEと実ファイル存在一致",
+      "allCatalogMissingPaths": 0,
+      "syntax": "node --check passed"
+    },
+    "liveScreen": "未確認",
+    "scenarios": "新規割当/プログラム変更なし",
+    "zip": "ローカルのみ。外部ZIP納品未実施"
+  },
   "remainingScopeFile": "delta_remaining_scope_20261030.md",
   "searchEvidence": "existing_repo_search.json：現HEADのテキスト走査、図書館の藍サンプル使用を確認、中央図書館固有名とマルシェ専用既存資産は未発見。Drive公式アカウント画像名で暮らし/マルシェ/marche/雑貨は0件。別名未知資産の不存在までは断定しない。"
 }
