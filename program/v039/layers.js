@@ -196,6 +196,7 @@
 
   ns.showTownPanel = function showTownPanel(html) {
     const layers = ns.ensureLayers();
+    layers.town.classList.remove("tenotsu-menu-finder");
     layers.town.hidden = false;
     layers.town.innerHTML = html || "";
   };

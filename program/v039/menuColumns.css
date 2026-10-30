@@ -1,0 +1,48 @@
+/* Navigation surfaces only: never scale story text or the battle renderer. */
+body .tenotsu-menu-finder:not([hidden]) {
+  position:fixed !important; left:2vw !important; right:auto !important; top:2vh !important; bottom:2vh !important;
+  width:96vw !important; max-width:1120px !important; height:auto !important; max-height:none !important;
+  transform:none !important; zoom:1; padding:10px !important; box-sizing:border-box;
+  display:flex !important; flex-direction:column; gap:7px; overflow:hidden !important;
+  background:rgba(18,23,28,.97) !important; border:1px solid #687989; border-radius:10px;
+  color:#f2f4f6 !important; z-index:1800 !important; pointer-events:auto;
+  font-size:12px; line-height:1.5;
+}
+body .tenotsu-menu-finder[hidden], .tenotsu-menu-finder [hidden] { display:none !important; }
+.tenotsu-menu-finder .tenotsu-menu-heading { flex:none; margin:0; font-size:15px; line-height:1.4; color:#ffe2a3; }
+.tenotsu-menu-finder .tenotsu-menu-columns { display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.15fr) minmax(0,2fr); flex:1 1 0; min-height:0; min-width:0; overflow:hidden; border:1px solid #495663; border-radius:6px; }
+.tenotsu-menu-finder .tenotsu-menu-column { display:flex; flex-direction:column; min-height:0; min-width:0; background:#151b22; }
+.tenotsu-menu-finder .tenotsu-menu-column + .tenotsu-menu-column { border-left:1px solid #495663; }
+.tenotsu-menu-finder .tenotsu-menu-column h2 { margin:0; padding:6px; font-size:11px; color:#ffe2a3; background:#252f3a; }
+.tenotsu-menu-finder .tenotsu-menu-column-scroll { flex:1 1 0; min-height:0; min-width:0; overflow-y:auto; overflow-x:hidden; padding:5px; overscroll-behavior:contain; }
+body .tenotsu-menu-finder button, body .tenotsu-menu-finder select { min-height:44px !important; font-size:12px !important; line-height:1.4 !important; touch-action:manipulation; cursor:pointer; }
+body .tenotsu-menu-finder button { border:1px solid #536474; border-radius:5px !important; padding:7px !important; background:#253444; color:#f6f6f4 !important; white-space:normal; overflow-wrap:anywhere; }
+body .tenotsu-menu-finder .tenotsu-menu-column-scroll > button { display:block; width:100%; margin:0 0 4px !important; text-align:left; }
+body .tenotsu-menu-finder button.menu-selected { background:#355f82 !important; border-color:#9abbd5; }
+.tenotsu-menu-finder button:focus-visible, .tenotsu-menu-finder select:focus-visible { outline:2px solid #ffe2a3; outline-offset:-2px; }
+body .tenotsu-menu-finder :is(b,strong,h3,.tenotsu-town-detail-title) { font-size:13px !important; line-height:1.5 !important; }
+body .tenotsu-menu-finder :is(p,small,i,label,.tenotsu-town-detail-meta,.tenotsu-town-detail-summary,.tenotsu-town-start-note,.tenotsu-settings-resource-note) { font-size:12px !important; line-height:1.5 !important; overflow-wrap:anywhere; }
+body .tenotsu-menu-finder .tenotsu-town-place-card { min-height:44px !important; }
+body .tenotsu-menu-finder .tenotsu-town-place-card :is(.place-type,small,i) { display:none; }
+body .tenotsu-menu-finder .tenotsu-town-detail { margin:0; padding:5px; border:0; }
+.tenotsu-menu-finder .tenotsu-menu-footer { flex:none; display:flex; flex-wrap:wrap; align-items:center; gap:7px; font-size:11px; }
+.tenotsu-menu-finder .tenotsu-menu-footer [data-settings-result] { flex:1; }
+body .tenotsu-menu-finder .tenotsu-settings-field { display:flex; flex-direction:column; align-items:stretch; gap:6px; margin:6px 0; padding:6px; }
+body .tenotsu-menu-finder .tenotsu-settings-resource-note { margin:7px 0; padding:7px; background:#253444; color:#e0e6eb; }
+body .tenotsu-menu-finder :is(select,.tenotsu-settings-select) { width:100%; min-width:0; max-width:100%; background:#253444; color:#fff; }
+body .tenotsu-menu-finder [data-calendar-stay], body .tenotsu-menu-finder [data-calendar-period] { font-size:11px; }
+body:is([data-v039-mode="town"],[data-v039-mode="settings"]) .tenotsu-orientation-notice { display:none !important; pointer-events:none !important; }
+@media(min-width:1200px) { body .tenotsu-menu-finder:not([hidden]) { width:calc(100vw - 350px) !important; } }
+@media(max-width:620px), (max-height:560px) {
+ body .tenotsu-menu-finder:not([hidden]) { padding:7px !important; gap:5px; font-size:11px; }
+ body .tenotsu-menu-finder button, body .tenotsu-menu-finder select { font-size:11px !important; }
+ body .tenotsu-menu-finder :is(b,strong,h3,.tenotsu-town-detail-title) { font-size:12px !important; }
+ body .tenotsu-menu-finder :is(p,small,i,label,.tenotsu-town-detail-meta,.tenotsu-town-detail-summary,.tenotsu-town-start-note,.tenotsu-settings-resource-note) { font-size:11px !important; }
+ .tenotsu-menu-finder .tenotsu-menu-columns { grid-template-columns:minmax(0,.7fr) minmax(0,1.05fr) minmax(0,1.7fr); }
+ .tenotsu-menu-finder .tenotsu-menu-column-scroll { padding:4px; }
+}
+
+body .tenotsu-menu-finder .tenotsu-town-encounter-status { display:block; margin:0; padding:5px; }
+body .tenotsu-menu-finder .tenotsu-town-season-pills { display:block; }
+body .tenotsu-menu-finder .tenotsu-town-season-pills label { display:block; margin:8px 0; }
+body .tenotsu-menu-finder .tenotsu-town-encounter-status button { display:block; width:100%; margin:5px 0; }

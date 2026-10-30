@@ -176,6 +176,27 @@
     ns.setText("設定", "設定画面を開きました。");
 
     const panel = ns.layers.settings;
+    if (ns.mountMenuColumns) {
+      const body = panel.querySelector('.tenotsu-settings-body');
+      const notes = body.querySelectorAll('.tenotsu-settings-resource-note');
+      function item(id, label, nodes) {
+        const node = document.createElement("div");
+        nodes.filter(Boolean).forEach(part => node.append(part));
+        return {id, label, node};
+      }
+      const action = id => panel.querySelector(`[data-settings-action="${id}"]`);
+      const groups = [
+        {id:"playback", label:"再生", items:[item("autoplay", "オートプレイ間隔", [body.querySelector('label'), notes[0]])]},
+        {id:"test", label:"検証用", items:[
+          item("reset-stamina-bp", "ST/BP回復", [notes[1], action("reset-stamina-bp"), action("reset-stamina"), action("reset-bp")]),
+          item("affection", "親愛テスト", [notes[2], action("set-affection-100"), action("clear-affection-stories")])]},
+        {id:"maintenance", label:"保守", items:[item("cache", "バージョン・キャッシュ", [body, action("clear-cache")])]}
+      ];
+      const footer = document.createElement("div"); footer.className = "tenotsu-menu-footer";
+      footer.append(action("close-settings"), panel.querySelector('[data-settings-result]'));
+      ns.mountMenuColumns(panel, {key:"settings", title:"設定", groups, footer});
+    }
+
     const result = panel.querySelector("[data-settings-result]");
     const autoplayDelaySelect = panel.querySelector("[data-settings-autoplay-delay]");
     const clearButton = panel.querySelector('[data-settings-action="clear-cache"]');

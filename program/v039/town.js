@@ -98,6 +98,22 @@
     });
     const back = panel.querySelector('[data-town-action="back-office"]');
     if (back) back.addEventListener("click",()=>{ ns.hideTownPanel(); ns.enterOffice({ speaker:"店長", message:"事務所に戻りました。" }); });
+    if (ns.mountMenuColumns) {
+      const detail = panel.querySelector('[data-town-encounter-detail]');
+      const items = places.map(place => ({ id:place.id, label:place.name,
+        button:panel.querySelector(`[data-town-place="${place.id}"]`), node:detail,
+        onSelect:() => ns.renderTownPlaceDetail(place.id) }));
+      const groups = [{id:"places", label:"すべての場所", items},
+        ...Array.from(new Set(places.map(place => place.type || "場所"))).map(type => ({
+          id:"type:" + type, label:type, items:items.filter(item => (getPlace(item.id).type || "場所") === type)
+        }))];
+      const tools = document.createElement("div");
+      tools.append(panel.querySelector('.tenotsu-town-encounter-status'));
+      groups.push({id:"tools", label:"時間・季節", items:[{id:"tools", label:"アイテム試用", node:tools}]});
+      const footer = document.createElement("div"); footer.className = "tenotsu-menu-footer"; footer.append(back);
+      ns.mountMenuColumns(panel, {key:"town", title:"外回り", groups, footer});
+    }
+
   };
 
   ns.setTownSeason = async function setTownSeason(seasonId){
