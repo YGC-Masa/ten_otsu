@@ -4,59 +4,115 @@
   "counts": {
     "total": 50,
     "existing": 4,
-    "notFound": 46,
+    "newFirstDrafts": 5,
+    "notFound": 41,
     "needsRegeneration": 0
   },
   "items": [
     {
       "id": "LM-061",
       "facility": "星野家のリビング",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "採否/住居原設定追加照合/実画面/寸法",
+      "visual": "新規1枚目視QC済、人物/生活動線/趣味と用途を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-168",
+        "img": "IMG-WLD-092",
+        "key": "hoshino_living_room_night",
+        "path": "images/assets/bg/bg_hoshino_living_room_night.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "b3cb75c422c3f559b22f6b6bf46e5d47bc5125712f79537f20358fd447459bcd"
+      }
     },
     {
       "id": "LM-062",
       "facility": "速水川マンションの読書部屋",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "採否/住居原設定追加照合/実画面/寸法",
+      "visual": "新規1枚目視QC済、人物/生活動線/趣味と用途を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-169",
+        "img": "IMG-WLD-093",
+        "key": "hayamikawa_reading_room_day",
+        "path": "images/assets/bg/bg_hayamikawa_reading_room_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "ee03dc516c44617b98c6bf678cb07a92249786d0d4d3ebfa5d6a0ab113c851c1"
+      }
     },
     {
       "id": "LM-063",
       "facility": "草壁家の共有リビング",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "採否/住居原設定追加照合/実画面/寸法",
+      "visual": "新規1枚目視QC済、人物/生活動線/趣味と用途を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-170",
+        "img": "IMG-WLD-094",
+        "key": "kusakabe_shared_living_room_evening",
+        "path": "images/assets/bg/bg_kusakabe_shared_living_room_evening.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "6df4d57e972e7cab903c6a2e365d7453cfb155769b8c9134c4688f3c0a170783"
+      }
     },
     {
       "id": "LM-064",
       "facility": "小麦沢家のギャル部屋",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "採否/住居原設定追加照合/実画面/寸法",
+      "visual": "新規1枚目視QC済、人物/生活動線/趣味と用途を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-171",
+        "img": "IMG-WLD-095",
+        "key": "komugisawa_room_night",
+        "path": "images/assets/bg/bg_komugisawa_room_night.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "4bd7801325c66b36d0f0380f236d4678028934041f6795da913deaf793469ada"
+      }
     },
     {
       "id": "LM-065",
       "facility": "春日原家のトレーニングルーム",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "採否/住居原設定追加照合/実画面/寸法",
+      "visual": "新規1枚目視QC済、人物/生活動線/趣味と用途を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-172",
+        "img": "IMG-WLD-096",
+        "key": "kasugahara_training_room_evening",
+        "path": "images/assets/bg/bg_kasugahara_training_room_evening.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "871d4095693bf1e285de7dd52b7e5931a4a6e6b44f40f58a432c28a01b55f162"
+      }
     },
     {
       "id": "LM-066",
@@ -121,9 +177,16 @@
         }
       ],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "再生成せず、正本SPACEとの紐付け・シナリオ出典を確認",
+      "next": "再生成せず既存採否/記録した個別QC/実画面を確認",
       "visual": "美空/夜空の昼実画素確認。白/黒の別室、共有1室に合成しない。家外観/夜差分は未目視。",
-      "regenerate": "現時点では指示しない"
+      "regenerate": "現時点では指示しない",
+      "followup": {
+        "status": "正本・シナリオと既存共有画像が一致。既存SPACEへ紐付け補完、再生成なし",
+        "space": "SPACE-SUGOSAWA-TWINROOM",
+        "bg": "BG-026〜028",
+        "source": "scenario/v039/events/yozora_affection_30_00_main.json location=sugosawa_white_black_twin_room、BG_sugosawa夜。09正本は1室3ゾーンを正式運用。",
+        "difference": "前回見たmisora/yozora旧別室画像は旧案と正本に明記。今回それらを結合/変更していない。既存catalogの旧キー→共有画像エイリアスも変更しない。共有昼画像の左右窓で時刻の見え方が異なる点は既存QC残件、承認済み画像は勝手に再生成しない。"
+      }
     },
     {
       "id": "LM-069",
@@ -252,9 +315,16 @@
         }
       ],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "再生成せず、正本SPACEとの紐付け・シナリオ出典を確認",
+      "next": "再生成せず既存採否/記録した個別QC/実画面を確認",
       "visual": "夜実画素確認。海景と坂道あり、正確な店長宅地理との整合は未確認。",
-      "regenerate": "現時点では指示しない"
+      "regenerate": "現時点では指示しない",
+      "followup": {
+        "status": "出典の場所名一致。BG-167/SPACEを補完、地理は未確定",
+        "space": "SPACE-LM079-ROAD",
+        "bg": "BG-167",
+        "source": "scenario/v039/events/yozora_affection_50_00_main.json location.id=manager_mansion_road,name=店長マンション前の帰り道、実bg_manager_mansion_road_night",
+        "difference": "実画素は海を望む坂道。正本はひだまりストア〜店長宅/近隣住宅マンションで、海景/坂の方位は明示なし。禁止根拠も未発見。地理確定せず既存画像と不確定点を記録。"
+      }
     },
     {
       "id": "LM-080",
@@ -557,9 +627,16 @@
         }
       ],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "再生成せず、正本SPACEとの紐付け・シナリオ出典を確認",
+      "next": "再生成せず既存採否/記録した個別QC/実画面を確認",
       "visual": "夜実画素確認。あかり通りの文字とイルミあり、背景モブあり。無人版が必要かは未判断。",
-      "regenerate": "現時点では指示しない"
+      "regenerate": "現時点では指示しない",
+      "followup": {
+        "status": "正本背景IDと複数シナリオ一致。既存BG-074へSPACE紐付け補完",
+        "space": "SPACE-LM109-AKARI-DORI",
+        "bg": "BG-074",
+        "source": "正本LM-109 背景ID akari_dori_night、scenario/v039/events/ayame_affection_50_02_key.json、60_00_main、yozora10_03。",
+        "difference": "実画像に背景モブとあかり通りの文字。除去/再生成なし。旧png→現行webpのみ整流。"
+      }
     },
     {
       "id": "LM-110",
@@ -572,9 +649,16 @@
         }
       ],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "再生成せず、正本SPACEとの紐付け・シナリオ出典を確認",
+      "next": "再生成せず既存採否/記録した個別QC/実画面を確認",
       "visual": "夜実画素確認。住宅街の三叉路と坂道、海なし。立ち絵/実画面未確認。",
-      "regenerate": "現時点では指示しない"
+      "regenerate": "現時点では指示しない",
+      "followup": {
+        "status": "正本背景ID/実装catalog一致。BG-166/SPACEを補完",
+        "space": "SPACE-LM110-RESIDENTIAL-NIGHT",
+        "bg": "BG-166",
+        "source": "正本LM-110背景ID residential_area_night、program/v039/backgroundCatalog_v039_181_additions.js。今回走査のシナリオ本文では直接使用一致を未発見。",
+        "difference": "実画素は坂の住宅三叉路。正本の住宅街夜と用途適合。特定人物の家/番地・地理方位を新設しない。"
+      }
     }
   ],
   "ambiguousAssets": [
@@ -587,6 +671,6 @@
       "visual": "汎用PC机の実画素確認。LM-073真冬/LM-076ひかるの机と同定できないため未割当。"
     }
   ],
-  "methodLimit": "一次照合。未発見46件を未制作確定にしない。要再生成0件は品質承認ではなく再生成判断未実施。既存候補4施設はリンク候補記録のみ、正本設定の変更/再生成なし。"
+  "methodLimit": "一次照合。未発見46件を未制作確定にしない。要再生成0件は品質承認ではなく再生成判断未実施。既存候補4施設はリンク候補記録のみ、正本設定の変更/再生成なし。",
+  "followupHead": "a432e36698739d10a796b56e4c5510b289a5fb47"
 }
-

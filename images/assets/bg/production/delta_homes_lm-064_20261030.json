@@ -25,5 +25,12 @@
     ],
     "sha256": "4bd7801325c66b36d0f0380f236d4678028934041f6795da913deaf793469ada"
   },
-  "status": "remote配置・台帳登録は検証後追記"
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "登録/読み戻し済",
+    "remoteCommit": "fd5387e674bc528ffd30b724d5b83bbdfa54e893",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  }
 }

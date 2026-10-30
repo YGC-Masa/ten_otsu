@@ -30,5 +30,17 @@
       "difference": "実画素は坂の住宅三叉路。正本の住宅街夜と用途適合。特定人物の家/番地・地理方位を新設しない。"
     }
   },
-  "sourceHead": "a30ba19a57a5f850f9f4883618702b9b693b92de"
+  "sourceHead": "a30ba19a57a5f850f9f4883618702b9b693b92de",
+  "verification": {
+    "newImages": 5,
+    "reusedExistingImages": 2,
+    "existingFacilitiesQC": 4,
+    "sheetCellsMatched": 399,
+    "liveScreen": false,
+    "adoption": "新5件未確定、既存4件は記載範囲で紐付け補完",
+    "catalogEntriesChecked": 8,
+    "imageBlobMatches": 7,
+    "allCatalogMissingPaths": 0
+  },
+  "registrationCommit": "ca0d3c1a0ddf357b20a17437218abb6d9221a6c5"
 }
