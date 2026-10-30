@@ -449,3 +449,15 @@
     "status": "既存流用提案/施設同定未確定"
   }
 });})();
+
+
+/* Delta: vip facility proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "tsukumo_basement_vip_night": {
+    "name": "つくも地下VIPルーム 夜（初版内装案）",
+    "path": "images/assets/bg/bg_tsukumo_basement_vip_night.webp",
+    "spaceId": "SPACE-LM034-VIP",
+    "time": "night",
+    "status": "初版提案/採否未確定"
+  }
+});})();

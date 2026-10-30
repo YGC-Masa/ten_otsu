@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-30",
+  "group": "vip",
+  "facility": "FAC-004/テックラボつくも",
+  "canon": "LM-034 地下VIP・青紫/紫紺・特別修理/非公開相談・夜。",
+  "proposal": "既存受付のクリーム壁/木材/濃青緑建具とコンクリート梁を継承。左修理机、右ソファ/低卓、奥右閉じた扉。窓/外景/階段/EVを描かず直接接続方式を確定しない。",
+  "references": [
+    "bg_tsukumo_exterior_day.webp",
+    "bg_tsukumo_reception_lounge_day.webp"
+  ],
+  "qc": "外観/受付実画素を参照。地下らしい無窓/設備梁、素材と色、中央会話余白と扉からの導線を目視確認。",
+  "assets": [
+    {
+      "key": "tsukumo_basement_vip_night",
+      "name": "つくも地下VIPルーム 夜（初版内装案）",
+      "lm": "LM-034",
+      "lmRow": 34,
+      "space": "SPACE-LM034-VIP",
+      "spaceRow": 64,
+      "group": "vip",
+      "time": "night",
+      "ref": "/workspace/delta_festivals/bg_tsukumo_reception_lounge_day.webp",
+      "bg": "BG-157",
+      "img": "IMG-WLD-081",
+      "note": "つくも既存内装を参照した地下の初版案。直接接続/階段/EV方式は確定しない。",
+      "repoPath": "images/assets/bg/bg_tsukumo_basement_vip_night.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "d17d6cae1700e15f398ec62ddb862906d16f512d2b31fd0edcb4e53d5e6e7c6c",
+      "blob": "4b3fa276d76f96c4ebb65e7c482dbcddb6117a57"
+    }
+  ],
+  "status": {
+    "generated": 1,
+    "visuallyInspected": 1,
+    "ledger": "登録/読み戻しは後続工程で確認",
+    "remote": "本記録と同コミットの画像/カタログを後続で検証",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "limitations": "厳密寸法/地形方位/設備/衛生安全監修/立ち絵重ねは未実施。生成1672×941 WebP90、本番サイズ統一は残件。プログラム/シナリオ割当は追加しない。"
+}
