@@ -973,3 +973,14 @@
     "status": "初版空間案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-100 landmark proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "yamazato_loghouse_village_entrance_autumn_evening": {
+    "name": "山里ログハウス村 入口・秋夕方（初版宿泊施設案）",
+    "path": "images/assets/bg/bg_yamazato_loghouse_village_entrance_autumn_evening.webp",
+    "spaceId": "SPACE-LM100-ENTRANCE",
+    "time": "evening",
+    "status": "初版空間案/間取り・設備・採否未確定"
+  }
+});})();

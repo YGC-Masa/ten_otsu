@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-100",
+  "facility": "FAC-045",
+  "space": "SPACE-LM100-ENTRANCE",
+  "name": "山里ログハウス村 入口・秋夕方（初版宿泊施設案）",
+  "canon": "山側観光エリア、宿泊/自然/キャンプ。なつ/琥珀/雪乃/夜空/萌。宿泊/焚き火/星空/雪の日ロッジ/複数人旅行。通年、春秋冬が強い。",
+  "proposal": "山側林間のログハウス村来訪入口案。左に丸太壁/灰緑切妻の受付ロッジ・暖色窓、奥に同素材の宿泊棟外形が少し見える。中央歩行/荷物路、脇に搬入/車両境界候補。棟数/部屋内部/焚き火区画未確定。青葉湖畔キャンプ場とは別施設、湖/テントは描かない。",
+  "unconfirmed": "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理接続/上映作品/広告/店名/営業条件/全館階数/住所・方位・距離を確定しない。道路の停車区画/車内は未設計、車線幅/標示/規格も未検証。",
+  "sources": {
+    "world": "02_ランドマーク LM-100",
+    "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/別名検索2組・scenario/v039本文を照合、専用5画像未発見。ドライブ検索の外付けドライブ文脈は除外し、5施設の直接出典は未発見。潮見浜夕BG-004実WebP/自転車道BG-102/青葉キャンプBG-088/シーグラスBG-107を実画素確認。類似だけで同一施設としない。未発見は不存在の断定ではない。",
+    "references": []
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、用途/素材/窓扉/主通行帯/中央ADV余白を目視確認。映画館の手前車道を歩行前庭へ修正。ログ村は湖/テントなし、クラフトは海沿い通りと分離。道路は車道と歩行帯の縁石/海柵を確認。停車区画は描かれていない。海岸形の参照は定性的比較で座標/方位/山稜重畳/規格寸法は未検証。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-205",
+    "img": "IMG-WLD-129",
+    "key": "yamazato_loghouse_village_entrance_autumn_evening",
+    "path": "images/assets/bg/bg_yamazato_loghouse_village_entrance_autumn_evening.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "5d2b3a94597424c5c0095e251fa20141a7e7caca273f0f6b5733ae32b64d60c1"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "902b86e03b272867a2b55728db968765b565a452"
+}
