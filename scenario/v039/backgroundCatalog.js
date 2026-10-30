@@ -311,3 +311,12 @@
   hiyorizaka_sakura_embankment_spring_day: {"name":"日和坂さくら堤 春昼","path":"images/assets/bg/bg_hiyorizaka_sakura_embankment_spring_day.webp","spaceId":"SPACE-WAKABA-CENTRAL-PARK","time":"day","season":"spring","status":"初版完成"},
   lm006_courtyard_school_festival_day: {"name":"日和坂学園 校舎前 学園祭昼","path":"images/assets/bg/bg_lm006_courtyard_school_festival_day.webp","spaceId":"SPACE-LM006-COURTYARD","time":"day","status":"初版完成"}
 });})();
+
+/* Delta: Tsukumo first-edition architecture proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  tsukumo_exterior_day: {"name":"テックラボつくも 建築外観案 昼","path":"images/assets/bg/bg_tsukumo_exterior_day.webp","spaceId":"SPACE-LM028-LOUNGE","time":"day","status":"初版案/制作済み"},
+  tsukumo_reception_lounge_day: {"name":"テックラボつくも 受付ラウンジ 昼","path":"images/assets/bg/bg_tsukumo_reception_lounge_day.webp","spaceId":"SPACE-LM028-LOUNGE","time":"day","status":"初版案/制作済み"},
+  tsukumo_second_floor_lab_day: {"name":"テックラボつくも 2階ラボ 昼","path":"images/assets/bg/bg_tsukumo_second_floor_lab_day.webp","spaceId":"SPACE-LM029-LAB","time":"day","status":"初版案/制作済み"},
+  tsukumo_parts_storage_day: {"name":"ひかるのパーツ保管庫 昼","path":"images/assets/bg/bg_tsukumo_parts_storage_day.webp","spaceId":"SPACE-LM036-PARTS-STORAGE","time":"day","status":"初版案/制作済み"},
+  tsukumo_rooftop_garden_evening: {"name":"陽里の屋上菜園 夕方","path":"images/assets/bg/bg_tsukumo_rooftop_garden_evening.webp","spaceId":"SPACE-LM035-ROOFTOP-GARDEN","time":"evening","status":"初版案/制作済み"}
+});})();
