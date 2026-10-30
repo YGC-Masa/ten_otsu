@@ -208,3 +208,15 @@
     yoiyami_koryori_yokocho_evening: { name: "宵闇小料理横丁・夕方", path: "images/assets/bg/bg_yoiyami_koryori_yokocho_evening.webp", time: "evening", status: "初版完成" }
   });
 })();
+
+/* Delta: five first-edition landmark backgrounds, 2026-10-30 */
+(function(){
+  "use strict";
+  window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
+    kirishima_onsen_lounge: {"name":"霧島式サウナ＆温浴研究所 湯上がりラウンジ","path":"images/assets/bg/bg_kirishima_onsen_lounge.webp","location":"霧島式サウナ＆温浴研究所 湯上がりラウンジ","spaceId":"SPACE-LM051-LOUNGE","status":"初版完成"},
+    logica_boardgame_cafe_interior: {"name":"日和坂ボードゲームカフェ ロジカ 店内","path":"images/assets/bg/bg_logica_boardgame_cafe_interior.webp","location":"日和坂ボードゲームカフェ ロジカ 店内","spaceId":"SPACE-LM052-CAFE","status":"初版完成"},
+    hiyorizaka_handball_court_interior: {"name":"日和坂ハンドボールコート 内観","path":"images/assets/bg/bg_hiyorizaka_handball_court_interior.webp","location":"日和坂ハンドボールコート 内観","spaceId":"SPACE-LM058-HANDBALL-COURT","status":"初版完成"},
+    hiyorizaka_game_arena_interior: {"name":"日和坂ゲームアリーナ 内観","path":"images/assets/bg/bg_hiyorizaka_game_arena_interior.webp","location":"日和坂ゲームアリーナ 内観","spaceId":"SPACE-LM050-GAME-ARENA","status":"初版完成"},
+    hanamori_shibazakura_garden_spring_day: {"name":"芝桜の丘 花守ガーデン 春昼","path":"images/assets/bg/bg_hanamori_shibazakura_garden_spring_day.webp","location":"芝桜の丘 花守ガーデン 春昼","spaceId":"SPACE-LM038-GARDEN","status":"初版完成","time":"day","season":"spring"}
+  });
+})();
