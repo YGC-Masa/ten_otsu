@@ -841,3 +841,14 @@
     "status": "初版空間案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-088 landmark proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "hiyorizaka_trick_art_entrance_day": {
+    "name": "日和坂トリックアート館 入口・昼（初版外観案）",
+    "path": "images/assets/bg/bg_hiyorizaka_trick_art_entrance_day.webp",
+    "spaceId": "SPACE-LM088-ENTRANCE",
+    "time": "day",
+    "status": "初版空間案/間取り・設備・採否未確定"
+  }
+});})();
