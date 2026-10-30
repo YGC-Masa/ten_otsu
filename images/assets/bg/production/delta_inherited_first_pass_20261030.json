@@ -4,8 +4,8 @@
   "counts": {
     "total": 50,
     "existing": 4,
-    "newFirstDrafts": 40,
-    "notFound": 6,
+    "newFirstDrafts": 46,
+    "notFound": 0,
     "needsRegeneration": 0
   },
   "items": [
@@ -28,7 +28,8 @@
           941
         ],
         "sha256": "b3cb75c422c3f559b22f6b6bf46e5d47bc5125712f79537f20358fd447459bcd"
-      }
+      },
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-062",
@@ -49,7 +50,8 @@
           941
         ],
         "sha256": "ee03dc516c44617b98c6bf678cb07a92249786d0d4d3ebfa5d6a0ab113c851c1"
-      }
+      },
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-063",
@@ -70,7 +72,8 @@
           941
         ],
         "sha256": "6df4d57e972e7cab903c6a2e365d7453cfb155769b8c9134c4688f3c0a170783"
-      }
+      },
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-064",
@@ -91,7 +94,8 @@
           941
         ],
         "sha256": "4bd7801325c66b36d0f0380f236d4678028934041f6795da913deaf793469ada"
-      }
+      },
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-065",
@@ -112,7 +116,8 @@
           941
         ],
         "sha256": "871d4095693bf1e285de7dd52b7e5931a4a6e6b44f40f58a432c28a01b55f162"
-      }
+      },
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-066",
@@ -128,7 +133,8 @@
         "img": "IMG-WLD-097",
         "key": "daidoji_home_beauty_room_day",
         "path": "images/assets/bg/bg_daidoji_home_beauty_room_day.webp"
-      }
+      },
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-067",
@@ -144,7 +150,8 @@
         "img": "IMG-WLD-098",
         "key": "hikami_home_sweets_kitchen_day",
         "path": "images/assets/bg/bg_hikami_home_sweets_kitchen_day.webp"
-      }
+      },
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-068",
@@ -190,7 +197,7 @@
       ],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
       "next": "再生成せず既存採否/記録した個別QC/実画面を確認",
-      "visual": "美空/夜空の昼実画素確認。白/黒の別室、共有1室に合成しない。家外観/夜差分は未目視。",
+      "visual": "正本共有1室3ゾーンと既存BG-026〜028の対応を確認。旧別室を統合/再生成しない。昼の左右窓表現は既存QC残件。今回全差分の再目視は未実施。",
       "regenerate": "現時点では指示しない",
       "followup": {
         "status": "正本・シナリオと既存共有画像が一致。既存SPACEへ紐付け補完、再生成なし",
@@ -198,7 +205,9 @@
         "bg": "BG-026〜028",
         "source": "scenario/v039/events/yozora_affection_30_00_main.json location=sugosawa_white_black_twin_room、BG_sugosawa夜。09正本は1室3ゾーンを正式運用。",
         "difference": "前回見たmisora/yozora旧別室画像は旧案と正本に明記。今回それらを結合/変更していない。既存catalogの旧キー→共有画像エイリアスも変更しない。共有昼画像の左右窓で時刻の見え方が異なる点は既存QC残件、承認済み画像は勝手に再生成しない。"
-      }
+      },
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "firstPassVisual": "美空/夜空の昼実画素確認。白/黒の別室、共有1室に合成しない。家外観/夜差分は未目視。"
     },
     {
       "id": "LM-069",
@@ -214,7 +223,8 @@
         "img": "IMG-WLD-099",
         "key": "shibazakura_streaming_room_night",
         "path": "images/assets/bg/bg_shibazakura_streaming_room_night.webp"
-      }
+      },
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-070",
@@ -230,7 +240,8 @@
         "img": "IMG-WLD-100",
         "key": "shido_mansion_home_kitchen_evening",
         "path": "images/assets/bg/bg_shido_mansion_home_kitchen_evening.webp"
-      }
+      },
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-071",
@@ -246,7 +257,8 @@
         "img": "IMG-WLD-101",
         "key": "mochizuki_home_office_night",
         "path": "images/assets/bg/bg_mochizuki_home_office_night.webp"
-      }
+      },
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-072",
@@ -269,7 +281,8 @@
         "sha256": "db6f150e9bb669f27e6fc73fa8cd07c7137a4348b01eaa7dc55d0186beb86e4e"
       },
       "verifiedAtHead": "782e470b1af6153c229679ba8301298716327dd8",
-      "assetCommit": "849f3faa52961e6b9d53505877bb628222f921dc"
+      "assetCommit": "849f3faa52961e6b9d53505877bb628222f921dc",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-073",
@@ -292,7 +305,8 @@
         "sha256": "e23a2dc27f344234e57ffaca9a98110dbd72ae7b821ed2f43eb7d2e62b5c2dca"
       },
       "verifiedAtHead": "782e470b1af6153c229679ba8301298716327dd8",
-      "assetCommit": "c0abc2ee2e3caa6db39d359cab9e21fe4a9009dc"
+      "assetCommit": "c0abc2ee2e3caa6db39d359cab9e21fe4a9009dc",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-074",
@@ -315,7 +329,8 @@
         "sha256": "c5475935bf413cd26289f7f391903ce0061506a8b8812b2cd2cb49f81437597c"
       },
       "verifiedAtHead": "782e470b1af6153c229679ba8301298716327dd8",
-      "assetCommit": "475fecefc96c30d867dcc54fec1daaab38e0b160"
+      "assetCommit": "475fecefc96c30d867dcc54fec1daaab38e0b160",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-075",
@@ -338,7 +353,8 @@
         "sha256": "a668757a85a7fa32455df2652bb5622f7785ab25cb6988b0ffd66bd60e0ee351"
       },
       "verifiedAtHead": "782e470b1af6153c229679ba8301298716327dd8",
-      "assetCommit": "a2ac31e6ac5ce94f0787e5db6629abfea5ea94e5"
+      "assetCommit": "a2ac31e6ac5ce94f0787e5db6629abfea5ea94e5",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-076",
@@ -361,7 +377,8 @@
         "sha256": "9820d5ac2c81a84a1a098a1ab673135aca6559107771ac5e27d386d60f9ab0f7"
       },
       "verifiedAtHead": "782e470b1af6153c229679ba8301298716327dd8",
-      "assetCommit": "782e470b1af6153c229679ba8301298716327dd8"
+      "assetCommit": "782e470b1af6153c229679ba8301298716327dd8",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-077",
@@ -384,7 +401,8 @@
         "sha256": "ac196371bcb9702b990f8122cbccfad9c5745ffec251bb5c89ef5988392c6f69"
       },
       "verifiedAtHead": "3a229989e82b02646f747bf3296626da16ab12d6",
-      "assetCommit": "87f6710976286b6ec0e5edab78a697ec78ae043b"
+      "assetCommit": "87f6710976286b6ec0e5edab78a697ec78ae043b",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-078",
@@ -407,7 +425,8 @@
         "sha256": "df536319de08bd4fb9eb28c9d679496a662cd46a48da0e11f4c59b5f9c59351e"
       },
       "verifiedAtHead": "3a229989e82b02646f747bf3296626da16ab12d6",
-      "assetCommit": "d98f49a1042df3cbb2c0ae8f12f01754756f48f7"
+      "assetCommit": "d98f49a1042df3cbb2c0ae8f12f01754756f48f7",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-079",
@@ -445,7 +464,8 @@
         "bg": "BG-167",
         "source": "scenario/v039/events/yozora_affection_50_00_main.json location.id=manager_mansion_road,name=店長マンション前の帰り道、実bg_manager_mansion_road_night",
         "difference": "実画素は海を望む坂道。正本はひだまりストア〜店長宅/近隣住宅マンションで、海景/坂の方位は明示なし。禁止根拠も未発見。地理確定せず既存画像と不確定点を記録。"
-      }
+      },
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-080",
@@ -468,7 +488,8 @@
         "sha256": "c9653b7a94ffbc2fc0621e1666c69b87193e0ca86512e797b1b082625ad6baa5"
       },
       "verifiedAtHead": "3a229989e82b02646f747bf3296626da16ab12d6",
-      "assetCommit": "d3d636f4a6b6d69fb060e80497e361e5f38734f5"
+      "assetCommit": "d3d636f4a6b6d69fb060e80497e361e5f38734f5",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-081",
@@ -491,7 +512,8 @@
         "sha256": "fcff8c30a41f1915538d2fa58a46d442cdb772ae2749a59b73ecc40c7e8a5fa5"
       },
       "verifiedAtHead": "3a229989e82b02646f747bf3296626da16ab12d6",
-      "assetCommit": "361c3bad573876745b84ec4e61073c7ae436f2ee"
+      "assetCommit": "361c3bad573876745b84ec4e61073c7ae436f2ee",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-082",
@@ -514,7 +536,8 @@
         "sha256": "34c68013ec525d07d1d1d84923321c0b9573b3bb5172c8b373f6c8fdfdb6fe33"
       },
       "verifiedAtHead": "3a229989e82b02646f747bf3296626da16ab12d6",
-      "assetCommit": "3a229989e82b02646f747bf3296626da16ab12d6"
+      "assetCommit": "3a229989e82b02646f747bf3296626da16ab12d6",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-083",
@@ -537,7 +560,8 @@
         "sha256": "92cd9a64d8a38036a55b8f8c255e28a42c886603d2f7e8aa954049d2aa821420"
       },
       "verifiedAtHead": "609b4962a285e015d6191e3cc500c344c10bf60e",
-      "assetCommit": "a458baa8be9d2c07ff06ce9e5364192669ecfb5d"
+      "assetCommit": "a458baa8be9d2c07ff06ce9e5364192669ecfb5d",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-084",
@@ -560,7 +584,8 @@
         "sha256": "63e063479f42132d5accf75d0c66ced9d0ebef59368493f6e881d35f7025e92b"
       },
       "verifiedAtHead": "609b4962a285e015d6191e3cc500c344c10bf60e",
-      "assetCommit": "3a2bb585da1927b23c06ea954451cc1e11635902"
+      "assetCommit": "3a2bb585da1927b23c06ea954451cc1e11635902",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-085",
@@ -583,7 +608,8 @@
         "sha256": "92413f97934c3fed7f7837809bf11ef423c95df4a4be8963e0bbcef50747da72"
       },
       "verifiedAtHead": "609b4962a285e015d6191e3cc500c344c10bf60e",
-      "assetCommit": "8883c2f3ef3ce9f4481ed42656bc6f98c51bffa5"
+      "assetCommit": "8883c2f3ef3ce9f4481ed42656bc6f98c51bffa5",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-086",
@@ -606,7 +632,8 @@
         "sha256": "7f07b1b40cdb1638cf8fb9e56b58c2652eb168b24327a8b30dd15c6b2714061d"
       },
       "verifiedAtHead": "609b4962a285e015d6191e3cc500c344c10bf60e",
-      "assetCommit": "58e8a97874236363483c13b82b2705ebaf8283f0"
+      "assetCommit": "58e8a97874236363483c13b82b2705ebaf8283f0",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-087",
@@ -629,7 +656,8 @@
         "sha256": "631cb294f6379d3c257cc3c7b8eab8a1f54f0cdd1ef28d751425ab88ea95c925"
       },
       "verifiedAtHead": "609b4962a285e015d6191e3cc500c344c10bf60e",
-      "assetCommit": "609b4962a285e015d6191e3cc500c344c10bf60e"
+      "assetCommit": "609b4962a285e015d6191e3cc500c344c10bf60e",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-088",
@@ -652,7 +680,8 @@
         "sha256": "7ab9cc0d6d680300b910d47edcfc111d5b29c3edaf3c73cde3ac35df9fe50caa"
       },
       "verifiedAtHead": "c397f8a9df3ad2e2aa4f75b3ef62db1f8f30f77f",
-      "assetCommit": "c53a1598386a2f819c12667e32b2e383395f5a6e"
+      "assetCommit": "c53a1598386a2f819c12667e32b2e383395f5a6e",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-089",
@@ -675,7 +704,8 @@
         "sha256": "659f9d144f3159e0aec984eac29a5dc79b2f3f470191cbf66a4b1b83b4c60f8f"
       },
       "verifiedAtHead": "c397f8a9df3ad2e2aa4f75b3ef62db1f8f30f77f",
-      "assetCommit": "62bbf9cd9038d9a70db5936b10404c200dc00562"
+      "assetCommit": "62bbf9cd9038d9a70db5936b10404c200dc00562",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-090",
@@ -698,7 +728,8 @@
         "sha256": "317849840299e7738ab33be21f68533c2fe3182ee27119e72dcb336418cb9269"
       },
       "verifiedAtHead": "c397f8a9df3ad2e2aa4f75b3ef62db1f8f30f77f",
-      "assetCommit": "c5cc6d124739b132ecdf9878bf18cb3c30d07b66"
+      "assetCommit": "c5cc6d124739b132ecdf9878bf18cb3c30d07b66",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-091",
@@ -721,7 +752,8 @@
         "sha256": "97d60c904da0a44db7492d3405bd647a42a801df4e164aef2fb01b26042de863"
       },
       "verifiedAtHead": "c397f8a9df3ad2e2aa4f75b3ef62db1f8f30f77f",
-      "assetCommit": "72d39f98d6b27931d7fff1f7e02587a8c8ff3c70"
+      "assetCommit": "72d39f98d6b27931d7fff1f7e02587a8c8ff3c70",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-092",
@@ -744,7 +776,8 @@
         "sha256": "2c95951f3f020425457807bd9481741a0735e1c66f9f3cfc5a0be7112acef625"
       },
       "verifiedAtHead": "c397f8a9df3ad2e2aa4f75b3ef62db1f8f30f77f",
-      "assetCommit": "c397f8a9df3ad2e2aa4f75b3ef62db1f8f30f77f"
+      "assetCommit": "c397f8a9df3ad2e2aa4f75b3ef62db1f8f30f77f",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-093",
@@ -767,7 +800,8 @@
         "sha256": "dc4886d00c11b407aa4e3a08d313e3422fbad4419d6b16291de66b3065e9c317"
       },
       "verifiedAtHead": "d7e580c3094251d71dfe9303e93a0524a9d81377",
-      "assetCommit": "c37097af85ef9405d64a2741751ad54bc4780ea7"
+      "assetCommit": "c37097af85ef9405d64a2741751ad54bc4780ea7",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-094",
@@ -790,7 +824,8 @@
         "sha256": "1bf13974ce941b80b4fc3736aca9603da2c2107816e8a77e503a422cbef4d633"
       },
       "verifiedAtHead": "d7e580c3094251d71dfe9303e93a0524a9d81377",
-      "assetCommit": "f35aefd13e0ee5190e09f5d63d33488344e6bccf"
+      "assetCommit": "f35aefd13e0ee5190e09f5d63d33488344e6bccf",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-095",
@@ -813,7 +848,8 @@
         "sha256": "059c729e9c6a1ad01afd927e7851ddd991d39f8799baaec2f47c5ca70a14d36d"
       },
       "verifiedAtHead": "d7e580c3094251d71dfe9303e93a0524a9d81377",
-      "assetCommit": "5d0a688bfee5162264923a88c029e042a5bf3765"
+      "assetCommit": "5d0a688bfee5162264923a88c029e042a5bf3765",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-096",
@@ -836,7 +872,8 @@
         "sha256": "aa8c2bd0e08c26b949a059e8c3f09afa88a58f6b502923a15885a7467928a307"
       },
       "verifiedAtHead": "d7e580c3094251d71dfe9303e93a0524a9d81377",
-      "assetCommit": "1ee3ad0a89d556c0d46e4d92c9eec5e9f18a2c6f"
+      "assetCommit": "1ee3ad0a89d556c0d46e4d92c9eec5e9f18a2c6f",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-097",
@@ -859,7 +896,8 @@
         "sha256": "7ca73d0e11795755bf83c258f050b3bc15dca362b6613a0d475c34798568e211"
       },
       "verifiedAtHead": "d7e580c3094251d71dfe9303e93a0524a9d81377",
-      "assetCommit": "d7e580c3094251d71dfe9303e93a0524a9d81377"
+      "assetCommit": "d7e580c3094251d71dfe9303e93a0524a9d81377",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-098",
@@ -882,7 +920,8 @@
         "sha256": "30c41e48dc8ebb093bb6c73e93b2ab7c0c0995d0d1f11aecd90bb6d127d6e3ce"
       },
       "verifiedAtHead": "f1ddcbe47d0fc85b0271f53a8af8a940022583d5",
-      "assetCommit": "316578dde97301374d3e9aacb25220573efc3410"
+      "assetCommit": "316578dde97301374d3e9aacb25220573efc3410",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-099",
@@ -905,7 +944,8 @@
         "sha256": "6b0d3370bf78ccec7bcefcaaf999e1c2ca81304ba973f3708f24d1aaf5894420"
       },
       "verifiedAtHead": "f1ddcbe47d0fc85b0271f53a8af8a940022583d5",
-      "assetCommit": "902b86e03b272867a2b55728db968765b565a452"
+      "assetCommit": "902b86e03b272867a2b55728db968765b565a452",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-100",
@@ -928,7 +968,8 @@
         "sha256": "5d2b3a94597424c5c0095e251fa20141a7e7caca273f0f6b5733ae32b64d60c1"
       },
       "verifiedAtHead": "f1ddcbe47d0fc85b0271f53a8af8a940022583d5",
-      "assetCommit": "2251ceb843ed6fcf033d7d4013e20c0960b395b8"
+      "assetCommit": "2251ceb843ed6fcf033d7d4013e20c0960b395b8",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-101",
@@ -951,7 +992,8 @@
         "sha256": "42545ba050ad2be1bb258982c0710664b54868304bca3c9e9e8c2a3bc43843a6"
       },
       "verifiedAtHead": "f1ddcbe47d0fc85b0271f53a8af8a940022583d5",
-      "assetCommit": "a71d654c1895e04c453b1ea60a0723805329fbe8"
+      "assetCommit": "a71d654c1895e04c453b1ea60a0723805329fbe8",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-102",
@@ -974,67 +1016,152 @@
         "sha256": "f00888cafbb572e5b6591e314f95a9d11b6e17f88dc8ba6e789d45178a852986"
       },
       "verifiedAtHead": "f1ddcbe47d0fc85b0271f53a8af8a940022583d5",
-      "assetCommit": "f1ddcbe47d0fc85b0271f53a8af8a940022583d5"
+      "assetCommit": "f1ddcbe47d0fc85b0271f53a8af8a940022583d5",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-103",
       "facility": "日和坂朝市",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "初版採否/追加原設定/実画面/寸法・設備/地理接続・運用（内部拡張なし）",
+      "visual": "代表1枚目視QC済。人物なし、素材/用途/窓扉/通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "newAsset": {
+        "bg": "BG-208",
+        "img": "IMG-WLD-132",
+        "key": "hiyorizaka_morning_market_morning",
+        "path": "images/assets/bg/bg_hiyorizaka_morning_market_morning.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "c1dffc332d67f16daf3807051ecdd9ee37aa184654772d426822ec059df82f8d"
+      },
+      "verifiedAtHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "assetCommit": "729b8830adb20b2be7ddf92852dd4921472813db"
     },
     {
       "id": "LM-104",
       "facility": "灯見坂ジャズバー",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "初版採否/追加原設定/実画面/寸法・設備/地理接続・運用（内部拡張なし）",
+      "visual": "代表1枚目視QC済。人物なし、素材/用途/窓扉/通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "newAsset": {
+        "bg": "BG-209",
+        "img": "IMG-WLD-133",
+        "key": "tomizaka_jazz_bar_entrance_night",
+        "path": "images/assets/bg/bg_tomizaka_jazz_bar_entrance_night.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "5244e4ee18da1044df467a6c9e9b8ed97ee0a1c3ea9368cb9fedb3e502a599ce"
+      },
+      "verifiedAtHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "assetCommit": "9bf842971742037ea19f0532470aec837cd41ef4"
     },
     {
       "id": "LM-105",
       "facility": "ひだまり銭湯 ぽかぽか湯",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "初版採否/追加原設定/実画面/寸法・設備/地理接続・運用（内部拡張なし）",
+      "visual": "代表1枚目視QC済。人物なし、素材/用途/窓扉/通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "newAsset": {
+        "bg": "BG-210",
+        "img": "IMG-WLD-134",
+        "key": "hidamari_pokapoka_sento_entrance_evening",
+        "path": "images/assets/bg/bg_hidamari_pokapoka_sento_entrance_evening.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "fc9294ec3f44a23831699425228f1eb08d95837d85a758d37a60a642f3c4f8f1"
+      },
+      "verifiedAtHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "assetCommit": "2dbb92ee99e73c00d7529856dcb9e62a7f9eb9bb"
     },
     {
       "id": "LM-106",
       "facility": "日和坂防災センター",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "初版採否/追加原設定/実画面/寸法・設備/地理接続・運用（内部拡張なし）",
+      "visual": "代表1枚目視QC済。人物なし、素材/用途/窓扉/通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "newAsset": {
+        "bg": "BG-211",
+        "img": "IMG-WLD-135",
+        "key": "hiyorizaka_disaster_learning_center_entrance_day",
+        "path": "images/assets/bg/bg_hiyorizaka_disaster_learning_center_entrance_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "9b2579ccc2292f1328cf2d09ef4675e3ed1ac53465b8d94ba7771b00f3259806"
+      },
+      "verifiedAtHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "assetCommit": "53ebce1ef2d644fbb6fd8038b0af433e2512f115"
     },
     {
       "id": "LM-107",
       "facility": "潮見灯台",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "初版採否/追加原設定/実画面/寸法・設備/地理接続・運用（内部拡張なし）",
+      "visual": "代表1枚目視QC済。人物なし、素材/用途/窓扉/通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "newAsset": {
+        "bg": "BG-212",
+        "img": "IMG-WLD-136",
+        "key": "shiomi_lighthouse_approach_evening",
+        "path": "images/assets/bg/bg_shiomi_lighthouse_approach_evening.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "4dd02be58bd5b502befaa59baef8ebf1504a6789a72d24eacce8542037763be3"
+      },
+      "verifiedAtHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "assetCommit": "53acb95adf29605f5cdd00e27b6d1f199ba272be"
     },
     {
       "id": "LM-108",
       "facility": "日和坂サービスエリア",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "初版採否/追加原設定/実画面/寸法・設備/地理接続・運用（内部拡張なし）",
+      "visual": "代表1枚目視QC済。人物なし、素材/用途/窓扉/通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "newAsset": {
+        "bg": "BG-213",
+        "img": "IMG-WLD-137",
+        "key": "hiyorizaka_service_area_entrance_night",
+        "path": "images/assets/bg/bg_hiyorizaka_service_area_entrance_night.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "c822f399922a03bb7bb650d2404c3872f3764e4d96a7aef5fad6227f1f908c24"
+      },
+      "verifiedAtHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "assetCommit": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-109",
@@ -1056,7 +1183,8 @@
         "bg": "BG-074",
         "source": "正本LM-109 背景ID akari_dori_night、scenario/v039/events/ayame_affection_50_02_key.json、60_00_main、yozora10_03。",
         "difference": "実画像に背景モブとあかり通りの文字。除去/再生成なし。旧png→現行webpのみ整流。"
-      }
+      },
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     },
     {
       "id": "LM-110",
@@ -1078,7 +1206,8 @@
         "bg": "BG-166",
         "source": "正本LM-110背景ID residential_area_night、program/v039/backgroundCatalog_v039_181_additions.js。今回走査のシナリオ本文では直接使用一致を未発見。",
         "difference": "実画素は坂の住宅三叉路。正本の住宅街夜と用途適合。特定人物の家/番地・地理方位を新設しない。"
-      }
+      },
+      "latestMappingVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
     }
   ],
   "ambiguousAssets": [
@@ -1093,5 +1222,18 @@
   ],
   "methodLimit": "一次照合。未発見46件を未制作確定にしない。要再生成0件は品質承認ではなく再生成判断未実施。既存候補4施設はリンク候補記録のみ、正本設定の変更/再生成なし。",
   "followupHead": "13df15865ddd0e0af18ef2a17b7d71ce00e98796",
-  "latestVerificationHead": "f1ddcbe47d0fc85b0271f53a8af8a940022583d5"
+  "latestVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+  "all50MappingVerification": {
+    "head": "630bea12296237152e6ce44c1afa7e0a3115065d",
+    "facilities": 50,
+    "newFirstDrafts": 46,
+    "existingLinkedQC": 4,
+    "notFound": 0,
+    "needsRegenerationDecision": 0,
+    "mappedImageFiles": 52,
+    "fileSha256Matches": 52,
+    "catalogPathAndSpaceMatches": 52,
+    "ledgerFacilityMatches": 50,
+    "inventory": "delta_inherited_50_inventory_20261030.json"
+  }
 }

@@ -1,0 +1,2662 @@
+{
+  "asOf": "2026-10-30",
+  "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+  "spreadsheet": "https://docs.google.com/spreadsheets/d/19jxSOwhG1aysiBAY0onX20xJNTYJ2ilRrBoVh-p-Zx4",
+  "counts": {
+    "facilities": 50,
+    "newFirstDrafts": 46,
+    "existingLinkedQC": 4,
+    "notFound": 0,
+    "needsRegenerationDecision": 0,
+    "mappedImageFiles": 52,
+    "fileSha256Matches": 52,
+    "catalogPathAndSpaceMatches": 52,
+    "ledgerFacilityMatches": 50
+  },
+  "method": "同一remote HEADの実Git画像バイトを52件SHA256再計算、WebPヘッダ実寸を確認。正本LM/背景/SPACEとカタログpath+spaceIdを照合。全52点の今回再目視/実画面確認ではない。",
+  "records": [
+    {
+      "landmark": "LM-061",
+      "name": "星野家のリビング",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-168",
+          "path": "images/assets/bg/bg_hoshino_living_room_night.webp",
+          "sha256": "b3cb75c422c3f559b22f6b6bf46e5d47bc5125712f79537f20358fd447459bcd",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "hoshino_living_room_night"
+          ],
+          "spaceId": "SPACE-LM061-LIVING",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A172:L172",
+            "backgroundAdoptionText": "初版内装案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM061-LIVING",
+      "illustrationId": "IMG-WLD-092",
+      "facilityId": "FAC-011",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A61:R61",
+        "spaceRange": "'09_空間・間取り管理'!A95:O95",
+        "landmarkStatus": "初版空間案/配置・カタログ登録済",
+        "spaceStatus": "初版空間案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_homes_lm-061_20261030.json",
+      "assetCommit": "47d109aa4a38cf1efc9d5c0068ce1411a2c562f3",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "家族構成/同居人数/住居全体の階数・間取り・番地を追加しない。窓・扉・家具位置/採否は初版案。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-062",
+      "name": "速水川マンションの読書部屋",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-169",
+          "path": "images/assets/bg/bg_hayamikawa_reading_room_day.webp",
+          "sha256": "ee03dc516c44617b98c6bf678cb07a92249786d0d4d3ebfa5d6a0ab113c851c1",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "hayamikawa_reading_room_day"
+          ],
+          "spaceId": "SPACE-LM062-READING",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A173:L173",
+            "backgroundAdoptionText": "初版内装案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM062-READING",
+      "illustrationId": "IMG-WLD-093",
+      "facilityId": "FAC-012",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A62:R62",
+        "spaceRange": "'09_空間・間取り管理'!A96:O96",
+        "landmarkStatus": "初版空間案/配置・カタログ登録済",
+        "spaceStatus": "初版空間案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_homes_lm-062_20261030.json",
+      "assetCommit": "969790a2446b75a3f605fc94b6b3228562174343",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "家族構成/同居人数/住居全体の階数・間取り・番地を追加しない。窓・扉・家具位置/採否は初版案。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-063",
+      "name": "草壁家の共有リビング",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-170",
+          "path": "images/assets/bg/bg_kusakabe_shared_living_room_evening.webp",
+          "sha256": "6df4d57e972e7cab903c6a2e365d7453cfb155769b8c9134c4688f3c0a170783",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "kusakabe_shared_living_room_evening"
+          ],
+          "spaceId": "SPACE-LM063-LIVING",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A174:L174",
+            "backgroundAdoptionText": "初版内装案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM063-LIVING",
+      "illustrationId": "IMG-WLD-094",
+      "facilityId": "FAC-013",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A63:R63",
+        "spaceRange": "'09_空間・間取り管理'!A97:O97",
+        "landmarkStatus": "初版空間案/配置・カタログ登録済",
+        "spaceStatus": "初版空間案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_homes_lm-063_20261030.json",
+      "assetCommit": "621447539f29a17413da443d516512e32e613836",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "家族構成/同居人数/住居全体の階数・間取り・番地を追加しない。窓・扉・家具位置/採否は初版案。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-064",
+      "name": "小麦沢家のギャル部屋",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-171",
+          "path": "images/assets/bg/bg_komugisawa_room_night.webp",
+          "sha256": "4bd7801325c66b36d0f0380f236d4678028934041f6795da913deaf793469ada",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "komugisawa_room_night"
+          ],
+          "spaceId": "SPACE-LM064-ROOM",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A175:L175",
+            "backgroundAdoptionText": "初版内装案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM064-ROOM",
+      "illustrationId": "IMG-WLD-095",
+      "facilityId": "FAC-014",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A64:R64",
+        "spaceRange": "'09_空間・間取り管理'!A98:O98",
+        "landmarkStatus": "初版空間案/配置・カタログ登録済",
+        "spaceStatus": "初版空間案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_homes_lm-064_20261030.json",
+      "assetCommit": "fd5387e674bc528ffd30b724d5b83bbdfa54e893",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "家族構成/同居人数/住居全体の階数・間取り・番地を追加しない。窓・扉・家具位置/採否は初版案。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-065",
+      "name": "春日原家のトレーニングルーム",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-172",
+          "path": "images/assets/bg/bg_kasugahara_training_room_evening.webp",
+          "sha256": "871d4095693bf1e285de7dd52b7e5931a4a6e6b44f40f58a432c28a01b55f162",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "kasugahara_training_room_evening"
+          ],
+          "spaceId": "SPACE-LM065-TRAINING",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A176:L176",
+            "backgroundAdoptionText": "初版内装案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM065-TRAINING",
+      "illustrationId": "IMG-WLD-096",
+      "facilityId": "FAC-015",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A65:R65",
+        "spaceRange": "'09_空間・間取り管理'!A99:O99",
+        "landmarkStatus": "初版空間案/配置・カタログ登録済",
+        "spaceStatus": "初版空間案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_homes_lm-065_20261030.json",
+      "assetCommit": "a432e36698739d10a796b56e4c5510b289a5fb47",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "家族構成/同居人数/住居全体の階数・間取り・番地を追加しない。窓・扉・家具位置/採否は初版案。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-066",
+      "name": "大道寺家のエステルーム",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-173",
+          "path": "images/assets/bg/bg_daidoji_home_beauty_room_day.webp",
+          "sha256": "bf5825f22020cb6763be0f6307e1eeea284f8f0844362b1ab432cb50666231d4",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "daidoji_home_beauty_room_day"
+          ],
+          "spaceId": "SPACE-LM066-BEAUTY",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A177:L177",
+            "backgroundAdoptionText": "住居初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM066-BEAUTY",
+      "illustrationId": "IMG-WLD-097",
+      "facilityId": "FAC-016",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A66:R66",
+        "spaceRange": "'09_空間・間取り管理'!A100:O100",
+        "landmarkStatus": "住居初版案/配置・カタログ登録済",
+        "spaceStatus": "住居初版案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_homes_lm-066_20261030.json",
+      "assetCommit": "5654a2d1e556bb7502f858db7a64cf546a08d060",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "部屋名以上の間取り・家具・設備・全館階数・家族人数・居住者/所有者追加・住所は確定しない。採否/詳細寸法未確認。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-067",
+      "name": "氷神家の小さな菓子工房",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-174",
+          "path": "images/assets/bg/bg_hikami_home_sweets_kitchen_day.webp",
+          "sha256": "6d4a64b4587a2470e8ffb1a9c6a33dadb13afa1d5d04ef5a2e4805f0e0ec2f46",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "hikami_home_sweets_kitchen_day"
+          ],
+          "spaceId": "SPACE-LM067-SWEETS",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A178:L178",
+            "backgroundAdoptionText": "住居初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM067-SWEETS",
+      "illustrationId": "IMG-WLD-098",
+      "facilityId": "FAC-017",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A67:R67",
+        "spaceRange": "'09_空間・間取り管理'!A101:O101",
+        "landmarkStatus": "住居初版案/配置・カタログ登録済",
+        "spaceStatus": "住居初版案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_homes_lm-067_20261030.json",
+      "assetCommit": "19893e4226518b723cec7e8b82a85c64bccf2ab3",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "部屋名以上の間取り・家具・設備・全館階数・家族人数・居住者/所有者追加・住所は確定しない。採否/詳細寸法未確認。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-068",
+      "name": "双沢家の白黒ツインルーム",
+      "kind": "既存紐付けQC",
+      "assets": [
+        {
+          "bg": "BG-026",
+          "path": "images/assets/bg/bg_sugosawa_room_day.webp",
+          "sha256": "ee715f7610dfa4adbae3e621c060f544c60a45a444f673b5fceb542550adbede",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "sugosawa_room_day"
+          ],
+          "spaceId": "SPACE-SUGOSAWA-TWINROOM",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A30:L30",
+            "backgroundAdoptionText": "正式採用"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        },
+        {
+          "bg": "BG-027",
+          "path": "images/assets/bg/bg_sugosawa_room_night_indirect.webp",
+          "sha256": "f5d35f1698f35249779ae5155d805d8bc6da753881bd0cf8982f117d9c0306b0",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "sugosawa_room_night_indirect"
+          ],
+          "spaceId": "SPACE-SUGOSAWA-TWINROOM",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A31:L31",
+            "backgroundAdoptionText": "正式採用"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        },
+        {
+          "bg": "BG-028",
+          "path": "images/assets/bg/bg_sugosawa_room_night_light_on.webp",
+          "sha256": "c98bb01309638c91cf60831ae985abcf3b5efb69c6eee70847c06728b1ed369d",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "sugosawa_room_night_light_on"
+          ],
+          "spaceId": "SPACE-SUGOSAWA-TWINROOM",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A32:L32",
+            "backgroundAdoptionText": "正式採用"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-SUGOSAWA-TWINROOM",
+      "illustrationId": null,
+      "facilityId": null,
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A68:R68",
+        "spaceRange": "'09_空間・間取り管理'!A5:O5",
+        "landmarkStatus": "正本・シナリオと既存共有画像が一致。既存SPACEへ紐付け補完、再生成なし",
+        "spaceStatus": "正式運用"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_homes_existing-qc_20261030.json",
+      "assetCommit": "ca0d3c1a0ddf357b20a17437218abb6d9221a6c5",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "既存台帳の採用状態を保持、今回の再承認なし",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "既存実画素QC記録を参照。今回の全差分再目視は未実施",
+        "facilitySpecific": [
+          "前回見たmisora/yozora旧別室画像は旧案と正本に明記。今回それらを結合/変更していない。既存catalogの旧キー→共有画像エイリアスも変更しない。共有昼画像の左右窓で時刻の見え方が異なる点は既存QC残件、承認済み画像は勝手に再生成しない。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-069",
+      "name": "芝桜家の配信部屋",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-175",
+          "path": "images/assets/bg/bg_shibazakura_streaming_room_night.webp",
+          "sha256": "65e4fa56b5ec96c0be8d5aae853fda01c35d1fb6f384b4d72ca263504a924750",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "shibazakura_streaming_room_night"
+          ],
+          "spaceId": "SPACE-LM069-STREAM",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A179:L179",
+            "backgroundAdoptionText": "住居初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM069-STREAM",
+      "illustrationId": "IMG-WLD-099",
+      "facilityId": "FAC-018",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A69:R69",
+        "spaceRange": "'09_空間・間取り管理'!A102:O102",
+        "landmarkStatus": "住居初版案/配置・カタログ登録済",
+        "spaceStatus": "住居初版案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_homes_lm-069_20261030.json",
+      "assetCommit": "fe3f31185eb51ba9850b846bd365bc2eb82f8c2b",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "部屋名以上の間取り・家具・設備・全館階数・家族人数・居住者/所有者追加・住所は確定しない。採否/詳細寸法未確認。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-070",
+      "name": "紫藤マンションの花嫁修業キッチン",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-176",
+          "path": "images/assets/bg/bg_shido_mansion_home_kitchen_evening.webp",
+          "sha256": "568508083822bf5bbda589bc3bef87540acfa12fea73bb102e9f00d4826cb253",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "shido_mansion_home_kitchen_evening"
+          ],
+          "spaceId": "SPACE-LM070-KITCHEN",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A180:L180",
+            "backgroundAdoptionText": "住居初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM070-KITCHEN",
+      "illustrationId": "IMG-WLD-100",
+      "facilityId": "FAC-019",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A70:R70",
+        "spaceRange": "'09_空間・間取り管理'!A103:O103",
+        "landmarkStatus": "住居初版案/配置・カタログ登録済",
+        "spaceStatus": "住居初版案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_homes_lm-070_20261030.json",
+      "assetCommit": "ee5175dcf0ee13bdfb355fbeffabd3339005d5ef",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "部屋名以上の間取り・家具・設備・全館階数・家族人数・居住者/所有者追加・住所は確定しない。採否/詳細寸法未確認。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-071",
+      "name": "餅月マンションのゆるふわ事務部屋",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-177",
+          "path": "images/assets/bg/bg_mochizuki_home_office_night.webp",
+          "sha256": "380a3495acba1bcb763f8366d01ab547d7643015d6e7f83dbdb34c29cbb8269e",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "mochizuki_home_office_night"
+          ],
+          "spaceId": "SPACE-LM071-HOME-OFFICE",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A181:L181",
+            "backgroundAdoptionText": "住居初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM071-HOME-OFFICE",
+      "illustrationId": "IMG-WLD-101",
+      "facilityId": "FAC-020",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A71:R71",
+        "spaceRange": "'09_空間・間取り管理'!A104:O104",
+        "landmarkStatus": "住居初版案/配置・カタログ登録済",
+        "spaceStatus": "住居初版案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_homes_lm-071_20261030.json",
+      "assetCommit": "13df15865ddd0e0af18ef2a17b7d71ce00e98796",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "部屋名以上の間取り・家具・設備・全館階数・家族人数・居住者/所有者追加・住所は確定しない。採否/詳細寸法未確認。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-072",
+      "name": "天神家のにぎやかゲーム部屋",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-178",
+          "path": "images/assets/bg/bg_tenjin_home_game_room_night.webp",
+          "sha256": "db6f150e9bb669f27e6fc73fa8cd07c7137a4348b01eaa7dc55d0186beb86e4e",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "tenjin_home_game_room_night"
+          ],
+          "spaceId": "SPACE-LM072-GAME",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A182:L182",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM072-GAME",
+      "illustrationId": "IMG-WLD-102",
+      "facilityId": "FAC-021",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A72:R72",
+        "spaceRange": "'09_空間・間取り管理'!A105:O105",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "住居初版案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_homes_lm-072_20261030.json",
+      "assetCommit": "849f3faa52961e6b9d53505877bb628222f921dc",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "家具/間取り/設備/採否/正確寸法未確定。家族人数/全館階数/所有者/住所を追加しない。LM-076は建物と階数も未確定。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-073",
+      "name": "霧島家の分析デスク",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-179",
+          "path": "images/assets/bg/bg_kirishima_home_analysis_desk_rain_night.webp",
+          "sha256": "e23a2dc27f344234e57ffaca9a98110dbd72ae7b821ed2f43eb7d2e62b5c2dca",
+          "size": [
+            1672,
+            940
+          ],
+          "catalogKeys": [
+            "kirishima_home_analysis_desk_rain_night"
+          ],
+          "spaceId": "SPACE-LM073-ANALYSIS",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A183:L183",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM073-ANALYSIS",
+      "illustrationId": "IMG-WLD-103",
+      "facilityId": "FAC-022",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A73:R73",
+        "spaceRange": "'09_空間・間取り管理'!A106:O106",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "住居初版案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_homes_lm-073_20261030.json",
+      "assetCommit": "c0abc2ee2e3caa6db39d359cab9e21fe4a9009dc",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "家具/間取り/設備/採否/正確寸法未確定。家族人数/全館階数/所有者/住所を追加しない。LM-076は建物と階数も未確定。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-074",
+      "name": "日向家のまんぷく台所",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-180",
+          "path": "images/assets/bg/bg_hinata_home_manpuku_kitchen_day.webp",
+          "sha256": "c5475935bf413cd26289f7f391903ce0061506a8b8812b2cd2cb49f81437597c",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "hinata_home_manpuku_kitchen_day"
+          ],
+          "spaceId": "SPACE-LM074-KITCHEN",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A184:L184",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM074-KITCHEN",
+      "illustrationId": "IMG-WLD-104",
+      "facilityId": "FAC-023",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A74:R74",
+        "spaceRange": "'09_空間・間取り管理'!A107:O107",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "住居初版案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_homes_lm-074_20261030.json",
+      "assetCommit": "475fecefc96c30d867dcc54fec1daaab38e0b160",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "家具/間取り/設備/採否/正確寸法未確定。家族人数/全館階数/所有者/住所を追加しない。LM-076は建物と階数も未確定。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-075",
+      "name": "陽里の住居リビング",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-181",
+          "path": "images/assets/bg/bg_tsukumo_3f_hiyori_living_evening.webp",
+          "sha256": "a668757a85a7fa32455df2652bb5622f7785ab25cb6988b0ffd66bd60e0ee351",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "tsukumo_3f_hiyori_living_evening"
+          ],
+          "spaceId": "SPACE-LM075-LIVING",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A185:L185",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM075-LIVING",
+      "illustrationId": "IMG-WLD-105",
+      "facilityId": "FAC-004",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A75:R75",
+        "spaceRange": "'09_空間・間取り管理'!A108:O108",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "住居初版案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_homes_lm-075_20261030.json",
+      "assetCommit": "a2ac31e6ac5ce94f0787e5db6629abfea5ea94e5",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "家具/間取り/設備/採否/正確寸法未確定。家族人数/全館階数/所有者/住所を追加しない。LM-076は建物と階数も未確定。",
+          "FAC-004 3F正面右の3分割窓区画案。左バルコニー扉＋固定窓2枚/黒柵、右ソファと古いラジオ/室内扉、クリーム壁・濃青緑建具・木床。屋上は別階"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-076",
+      "name": "ひかるの作業机",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-182",
+          "path": "images/assets/bg/bg_momose_hikaru_private_workdesk_night.webp",
+          "sha256": "9820d5ac2c81a84a1a098a1ab673135aca6559107771ac5e27d386d60f9ab0f7",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "momose_hikaru_private_workdesk_night"
+          ],
+          "spaceId": "SPACE-LM076-WORKDESK",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A186:L186",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM076-WORKDESK",
+      "illustrationId": "IMG-WLD-106",
+      "facilityId": "FAC-024",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A76:R76",
+        "spaceRange": "'09_空間・間取り管理'!A109:O109",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "住居初版案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_homes_lm-076_20261030.json",
+      "assetCommit": "782e470b1af6153c229679ba8301298716327dd8",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "家具/間取り/設備/採否/正確寸法未確定。家族人数/全館階数/所有者/住所を追加しない。LM-076は建物と階数も未確定。",
+          "左自作PC机/整理引出し、右個人棚と差し入れ/来客腰掛け、奥閉カーテン/室内扉。外景・住所・建物階数は描かない"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-077",
+      "name": "朔夜の青紫ネオンルーム",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-183",
+          "path": "images/assets/bg/bg_sakuya_blue_violet_neon_room_midnight.webp",
+          "sha256": "ac196371bcb9702b990f8122cbccfad9c5745ffec251bb5c89ef5988392c6f69",
+          "size": [
+            1670,
+            942
+          ],
+          "catalogKeys": [
+            "sakuya_blue_violet_neon_room_midnight"
+          ],
+          "spaceId": "SPACE-LM077-NEON",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A187:L187",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM077-NEON",
+      "illustrationId": "IMG-WLD-107",
+      "facilityId": "FAC-004",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A77:R77",
+        "spaceRange": "'09_空間・間取り管理'!A110:O110",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版空間案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_homes_lm-077_20261030.json",
+      "assetCommit": "87f6710976286b6ec0e5edab78a697ec78ae043b",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "家具/間取り/設備/採否/正確寸法未確定。住所・居住階数・海坂の位置関係を確定しない。LM-077住居/職場の区別・VIPとの同一性/接続は未確定。テーマパークの全館構成/鉄道経路を追加しない。",
+          "無窓の小さな会話室案。青紫間接光・濃紺壁/黒建具・木床、右二人相談席と低卓、左少数の閉じた小物箱棚、奥閉扉。LM-034VIPとの同一/別室や直接接続は未確定。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-078",
+      "name": "店長の自宅マンション",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-184",
+          "path": "images/assets/bg/bg_manager_apartment_living_night.webp",
+          "sha256": "df536319de08bd4fb9eb28c9d679496a662cd46a48da0e11f4c59b5f9c59351e",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "manager_apartment_living_night"
+          ],
+          "spaceId": "SPACE-LM078-LIVING",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A188:L188",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM078-LIVING",
+      "illustrationId": "IMG-WLD-108",
+      "facilityId": "FAC-025",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A78:R78",
+        "spaceRange": "'09_空間・間取り管理'!A111:O111",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版空間案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_homes_lm-078_20261030.json",
+      "assetCommit": "d98f49a1042df3cbb2c0ae8f12f01754756f48f7",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "家具/間取り/設備/採否/正確寸法未確定。住所・居住階数・海坂の位置関係を確定しない。LM-077住居/職場の区別・VIPとの同一性/接続は未確定。テーマパークの全館構成/鉄道経路を追加しない。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-079",
+      "name": "店長マンション前の帰り道",
+      "kind": "既存紐付けQC",
+      "assets": [
+        {
+          "bg": "BG-167",
+          "path": "images/assets/bg/bg_manager_mansion_road_night.webp",
+          "sha256": "99e591bfca00422a364618efd8203fe67260617aefc1a078087c68c35b717e04",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "lm079_manager_mansion_road_night"
+          ],
+          "spaceId": "SPACE-LM079-ROAD",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A171:L171",
+            "backgroundAdoptionText": "既存紐付け/再生成なし"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM079-ROAD",
+      "illustrationId": null,
+      "facilityId": null,
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A79:R79",
+        "spaceRange": "'09_空間・間取り管理'!A92:O92",
+        "landmarkStatus": "出典の場所名一致。BG-167/SPACEを補完、地理は未確定",
+        "spaceStatus": "既存紐付け/出典照合済・地理要確認"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_homes_existing-qc_20261030.json",
+      "assetCommit": "ca0d3c1a0ddf357b20a17437218abb6d9221a6c5",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "既存台帳の採用状態を保持、今回の再承認なし",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "既存実画素QC記録を参照。今回の全差分再目視は未実施",
+        "facilitySpecific": [
+          "実画素は海を望む坂道。正本はひだまりストア〜店長宅/近隣住宅マンションで、海景/坂の方位は明示なし。禁止根拠も未発見。地理確定せず既存画像と不確定点を記録。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-080",
+      "name": "店長マンションの小さなベランダ",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-185",
+          "path": "images/assets/bg/bg_manager_apartment_balcony_night.webp",
+          "sha256": "c9653b7a94ffbc2fc0621e1666c69b87193e0ca86512e797b1b082625ad6baa5",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "manager_apartment_balcony_night"
+          ],
+          "spaceId": "SPACE-LM080-BALCONY",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A189:L189",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM080-BALCONY",
+      "illustrationId": "IMG-WLD-109",
+      "facilityId": "FAC-025",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A80:R80",
+        "spaceRange": "'09_空間・間取り管理'!A112:O112",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版空間案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_homes_lm-080_20261030.json",
+      "assetCommit": "d3d636f4a6b6d69fb060e80497e361e5f38734f5",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "家具/間取り/設備/採否/正確寸法未確定。住所・居住階数・海坂の位置関係を確定しない。LM-077住居/職場の区別・VIPとの同一性/接続は未確定。テーマパークの全館構成/鉄道経路を追加しない。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-081",
+      "name": "星海ワンダーリゾート",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-186",
+          "path": "images/assets/bg/bg_hoshiumi_wonder_resort_entrance_day.webp",
+          "sha256": "fcff8c30a41f1915538d2fa58a46d442cdb772ae2749a59b73ecc40c7e8a5fa5",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "hoshiumi_wonder_resort_entrance_day"
+          ],
+          "spaceId": "SPACE-LM081-ENTRANCE",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A190:L190",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM081-ENTRANCE",
+      "illustrationId": "IMG-WLD-110",
+      "facilityId": "FAC-026",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A81:R81",
+        "spaceRange": "'09_空間・間取り管理'!A113:O113",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版空間案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_homes_lm-081_20261030.json",
+      "assetCommit": "361c3bad573876745b84ec4e61073c7ae436f2ee",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "家具/間取り/設備/採否/正確寸法未確定。住所・居住階数・海坂の位置関係を確定しない。LM-077住居/職場の区別・VIPとの同一性/接続は未確定。テーマパークの全館構成/鉄道経路を追加しない。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-082",
+      "name": "蒼波メガシーパーク",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-187",
+          "path": "images/assets/bg/bg_aonami_megaseapark_entrance_night.webp",
+          "sha256": "34c68013ec525d07d1d1d84923321c0b9573b3bb5172c8b373f6c8fdfdb6fe33",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "aonami_megaseapark_entrance_night"
+          ],
+          "spaceId": "SPACE-LM082-ENTRANCE",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A191:L191",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM082-ENTRANCE",
+      "illustrationId": "IMG-WLD-111",
+      "facilityId": "FAC-027",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A82:R82",
+        "spaceRange": "'09_空間・間取り管理'!A114:O114",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版空間案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_homes_lm-082_20261030.json",
+      "assetCommit": "3a229989e82b02646f747bf3296626da16ab12d6",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "家具/間取り/設備/採否/正確寸法未確定。住所・居住階数・海坂の位置関係を確定しない。LM-077住居/職場の区別・VIPとの同一性/接続は未確定。テーマパークの全館構成/鉄道経路を追加しない。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-083",
+      "name": "日和坂ふれあい動物公園",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-188",
+          "path": "images/assets/bg/bg_hiyorizaka_fureai_zoo_entrance_spring_day.webp",
+          "sha256": "92cd9a64d8a38036a55b8f8c255e28a42c886603d2f7e8aa954049d2aa821420",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "hiyorizaka_fureai_zoo_entrance_spring_day"
+          ],
+          "spaceId": "SPACE-LM083-ENTRANCE",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A192:L192",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM083-ENTRANCE",
+      "illustrationId": "IMG-WLD-112",
+      "facilityId": "FAC-028",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A83:R83",
+        "spaceRange": "'09_空間・間取り管理'!A115:O115",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版入口案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_landmarks5_lm-083_20261030.json",
+      "assetCommit": "a458baa8be9d2c07ff06ce9e5364192669ecfb5d",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "建築・外装・設備・入口配置・採否・正確寸法未確定。代表入口各1枚のみ、内部展示/動物種/詳細ゾーン/全館階数/正確な住所方位は確定しない。サファリの二次ゲート/飼育区画と安全設備は未設計。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-084",
+      "name": "日和坂アクア＆レプタイル館",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-189",
+          "path": "images/assets/bg/bg_hiyorizaka_aqua_reptile_entrance_day.webp",
+          "sha256": "63e063479f42132d5accf75d0c66ced9d0ebef59368493f6e881d35f7025e92b",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "hiyorizaka_aqua_reptile_entrance_day"
+          ],
+          "spaceId": "SPACE-LM084-ENTRANCE",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A193:L193",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM084-ENTRANCE",
+      "illustrationId": "IMG-WLD-113",
+      "facilityId": "FAC-029",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A84:R84",
+        "spaceRange": "'09_空間・間取り管理'!A116:O116",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版入口案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_landmarks5_lm-084_20261030.json",
+      "assetCommit": "3a2bb585da1927b23c06ea954451cc1e11635902",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "建築・外装・設備・入口配置・採否・正確寸法未確定。代表入口各1枚のみ、内部展示/動物種/詳細ゾーン/全館階数/正確な住所方位は確定しない。サファリの二次ゲート/飼育区画と安全設備は未設計。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-085",
+      "name": "青嶺サファリパーク",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-190",
+          "path": "images/assets/bg/bg_aomine_safari_entrance_autumn_day.webp",
+          "sha256": "92413f97934c3fed7f7837809bf11ef423c95df4a4be8963e0bbcef50747da72",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "aomine_safari_entrance_autumn_day"
+          ],
+          "spaceId": "SPACE-LM085-ENTRANCE",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A194:L194",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM085-ENTRANCE",
+      "illustrationId": "IMG-WLD-114",
+      "facilityId": "FAC-030",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A85:R85",
+        "spaceRange": "'09_空間・間取り管理'!A117:O117",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版入口案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_landmarks5_lm-085_20261030.json",
+      "assetCommit": "8883c2f3ef3ce9f4481ed42656bc6f98c51bffa5",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "建築・外装・設備・入口配置・採否・正確寸法未確定。代表入口各1枚のみ、内部展示/動物種/詳細ゾーン/全館階数/正確な住所方位は確定しない。サファリの二次ゲート/飼育区画と安全設備は未設計。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-086",
+      "name": "日和坂市立美術館",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-191",
+          "path": "images/assets/bg/bg_hiyorizaka_art_museum_entrance_rain_day.webp",
+          "sha256": "7f07b1b40cdb1638cf8fb9e56b58c2652eb168b24327a8b30dd15c6b2714061d",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "hiyorizaka_art_museum_entrance_rain_day"
+          ],
+          "spaceId": "SPACE-LM086-ENTRANCE",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A195:L195",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM086-ENTRANCE",
+      "illustrationId": "IMG-WLD-115",
+      "facilityId": "FAC-031",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A86:R86",
+        "spaceRange": "'09_空間・間取り管理'!A118:O118",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版入口案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_landmarks5_lm-086_20261030.json",
+      "assetCommit": "58e8a97874236363483c13b82b2705ebaf8283f0",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "建築・外装・設備・入口配置・採否・正確寸法未確定。代表入口各1枚のみ、内部展示/動物種/詳細ゾーン/全館階数/正確な住所方位は確定しない。サファリの二次ゲート/飼育区画と安全設備は未設計。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-087",
+      "name": "潮見県立科学館",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-192",
+          "path": "images/assets/bg/bg_shiomi_science_museum_entrance_day.webp",
+          "sha256": "631cb294f6379d3c257cc3c7b8eab8a1f54f0cdd1ef28d751425ab88ea95c925",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "shiomi_science_museum_entrance_day"
+          ],
+          "spaceId": "SPACE-LM087-ENTRANCE",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A196:L196",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM087-ENTRANCE",
+      "illustrationId": "IMG-WLD-116",
+      "facilityId": "FAC-032",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A87:R87",
+        "spaceRange": "'09_空間・間取り管理'!A119:O119",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版入口案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_landmarks5_lm-087_20261030.json",
+      "assetCommit": "609b4962a285e015d6191e3cc500c344c10bf60e",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "建築・外装・設備・入口配置・採否・正確寸法未確定。代表入口各1枚のみ、内部展示/動物種/詳細ゾーン/全館階数/正確な住所方位は確定しない。サファリの二次ゲート/飼育区画と安全設備は未設計。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-088",
+      "name": "日和坂トリックアート館",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-193",
+          "path": "images/assets/bg/bg_hiyorizaka_trick_art_entrance_day.webp",
+          "sha256": "7ab9cc0d6d680300b910d47edcfc111d5b29c3edaf3c73cde3ac35df9fe50caa",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "hiyorizaka_trick_art_entrance_day"
+          ],
+          "spaceId": "SPACE-LM088-ENTRANCE",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A197:L197",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM088-ENTRANCE",
+      "illustrationId": "IMG-WLD-117",
+      "facilityId": "FAC-033",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A88:R88",
+        "spaceRange": "'09_空間・間取り管理'!A120:O120",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版入口案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_landmarks6_lm-088_20261030.json",
+      "assetCommit": "c53a1598386a2f819c12667e32b2e383395f5a6e",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "建築・外装・設備・入口配置・採否・正確寸法未確定。代表入口各1枚のみ、内部展示/詳細ゾーン/全館階数/正確な住所・方位・距離・接続を確定しない。花守茶苑と芝桜ガーデンは同一としない。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-089",
+      "name": "羽白湖自然科学センター",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-194",
+          "path": "images/assets/bg/bg_hashiro_nature_science_center_entrance_day.webp",
+          "sha256": "659f9d144f3159e0aec984eac29a5dc79b2f3f470191cbf66a4b1b83b4c60f8f",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "hashiro_nature_science_center_entrance_day"
+          ],
+          "spaceId": "SPACE-LM089-ENTRANCE",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A198:L198",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM089-ENTRANCE",
+      "illustrationId": "IMG-WLD-118",
+      "facilityId": "FAC-034",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A89:R89",
+        "spaceRange": "'09_空間・間取り管理'!A121:O121",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版入口案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_landmarks6_lm-089_20261030.json",
+      "assetCommit": "62bbf9cd9038d9a70db5936b10404c200dc00562",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "建築・外装・設備・入口配置・採否・正確寸法未確定。代表入口各1枚のみ、内部展示/詳細ゾーン/全館階数/正確な住所・方位・距離・接続を確定しない。花守茶苑と芝桜ガーデンは同一としない。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-090",
+      "name": "日和坂きもの小路",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-195",
+          "path": "images/assets/bg/bg_hiyorizaka_kimono_lane_day.webp",
+          "sha256": "317849840299e7738ab33be21f68533c2fe3182ee27119e72dcb336418cb9269",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "hiyorizaka_kimono_lane_day"
+          ],
+          "spaceId": "SPACE-LM090-LANE",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A199:L199",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM090-LANE",
+      "illustrationId": "IMG-WLD-119",
+      "facilityId": "FAC-035",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A90:R90",
+        "spaceRange": "'09_空間・間取り管理'!A122:O122",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版入口案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_landmarks6_lm-090_20261030.json",
+      "assetCommit": "c5cc6d124739b132ecdf9878bf18cb3c30d07b66",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "建築・外装・設備・入口配置・採否・正確寸法未確定。代表入口各1枚のみ、内部展示/詳細ゾーン/全館階数/正確な住所・方位・距離・接続を確定しない。花守茶苑と芝桜ガーデンは同一としない。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-091",
+      "name": "花守茶苑公園",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-196",
+          "path": "images/assets/bg/bg_hanamori_tea_garden_entrance_autumn_day.webp",
+          "sha256": "97d60c904da0a44db7492d3405bd647a42a801df4e164aef2fb01b26042de863",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "hanamori_tea_garden_entrance_autumn_day"
+          ],
+          "spaceId": "SPACE-LM091-ENTRANCE",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A200:L200",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM091-ENTRANCE",
+      "illustrationId": "IMG-WLD-120",
+      "facilityId": "FAC-036",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A91:R91",
+        "spaceRange": "'09_空間・間取り管理'!A123:O123",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版入口案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_landmarks6_lm-091_20261030.json",
+      "assetCommit": "72d39f98d6b27931d7fff1f7e02587a8c8ff3c70",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "建築・外装・設備・入口配置・採否・正確寸法未確定。代表入口各1枚のみ、内部展示/詳細ゾーン/全館階数/正確な住所・方位・距離・接続を確定しない。花守茶苑と芝桜ガーデンは同一としない。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-092",
+      "name": "日和坂郷土歴史館",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-197",
+          "path": "images/assets/bg/bg_hiyorizaka_local_history_museum_entrance_day.webp",
+          "sha256": "2c95951f3f020425457807bd9481741a0735e1c66f9f3cfc5a0be7112acef625",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "hiyorizaka_local_history_museum_entrance_day"
+          ],
+          "spaceId": "SPACE-LM092-ENTRANCE",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A201:L201",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM092-ENTRANCE",
+      "illustrationId": "IMG-WLD-121",
+      "facilityId": "FAC-037",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A92:R92",
+        "spaceRange": "'09_空間・間取り管理'!A124:O124",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版入口案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_landmarks6_lm-092_20261030.json",
+      "assetCommit": "c397f8a9df3ad2e2aa4f75b3ef62db1f8f30f77f",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "建築・外装・設備・入口配置・採否・正確寸法未確定。代表入口各1枚のみ、内部展示/詳細ゾーン/全館階数/正確な住所・方位・距離・接続を確定しない。花守茶苑と芝桜ガーデンは同一としない。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-093",
+      "name": "潮見時代村 撮影村",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-198",
+          "path": "images/assets/bg/bg_shiomi_jidaimura_entrance_day.webp",
+          "sha256": "dc4886d00c11b407aa4e3a08d313e3422fbad4419d6b16291de66b3065e9c317",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "shiomi_jidaimura_entrance_day"
+          ],
+          "spaceId": "SPACE-LM093-ENTRANCE",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A202:L202",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM093-ENTRANCE",
+      "illustrationId": "IMG-WLD-122",
+      "facilityId": "FAC-038",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A93:R93",
+        "spaceRange": "'09_空間・間取り管理'!A125:O125",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版空間案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_landmarks7_lm-093_20261030.json",
+      "assetCommit": "c37097af85ef9405d64a2741751ad54bc4780ea7",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理隣接/地下接続/店名/営業条件/全館階数/住所・方位・距離を確定しない。窓内の仮商品や機器は可動の意匠例。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-094",
+      "name": "日和坂地下街 ひよりモール",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-199",
+          "path": "images/assets/bg/bg_hiyori_underground_mall_passage_day.webp",
+          "sha256": "1bf13974ce941b80b4fc3736aca9603da2c2107816e8a77e503a422cbef4d633",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "hiyori_underground_mall_passage_day"
+          ],
+          "spaceId": "SPACE-LM094-PASSAGE",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A203:L203",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM094-PASSAGE",
+      "illustrationId": "IMG-WLD-123",
+      "facilityId": "FAC-039",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A94:R94",
+        "spaceRange": "'09_空間・間取り管理'!A126:O126",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版空間案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_landmarks7_lm-094_20261030.json",
+      "assetCommit": "f35aefd13e0ee5190e09f5d63d33488344e6bccf",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理隣接/地下接続/店名/営業条件/全館階数/住所・方位・距離を確定しない。窓内の仮商品や機器は可動の意匠例。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-095",
+      "name": "潮見ハーバーテラス",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-200",
+          "path": "images/assets/bg/bg_shiomi_harbor_terrace_approach_night.webp",
+          "sha256": "059c729e9c6a1ad01afd927e7851ddd991d39f8799baaec2f47c5ca70a14d36d",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "shiomi_harbor_terrace_approach_night"
+          ],
+          "spaceId": "SPACE-LM095-APPROACH",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A204:L204",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM095-APPROACH",
+      "illustrationId": "IMG-WLD-124",
+      "facilityId": "FAC-040",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A95:R95",
+        "spaceRange": "'09_空間・間取り管理'!A127:O127",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版空間案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_landmarks7_lm-095_20261030.json",
+      "assetCommit": "5d0a688bfee5162264923a88c029e042a5bf3765",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理隣接/地下接続/店名/営業条件/全館階数/住所・方位・距離を確定しない。窓内の仮商品や機器は可動の意匠例。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-096",
+      "name": "日和坂家電ミュージアム",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-201",
+          "path": "images/assets/bg/bg_hiyorizaka_appliance_museum_entrance_day.webp",
+          "sha256": "aa8c2bd0e08c26b949a059e8c3f09afa88a58f6b502923a15885a7467928a307",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "hiyorizaka_appliance_museum_entrance_day"
+          ],
+          "spaceId": "SPACE-LM096-ENTRANCE",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A205:L205",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM096-ENTRANCE",
+      "illustrationId": "IMG-WLD-125",
+      "facilityId": "FAC-041",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A96:R96",
+        "spaceRange": "'09_空間・間取り管理'!A128:O128",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版空間案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_landmarks7_lm-096_20261030.json",
+      "assetCommit": "1ee3ad0a89d556c0d46e4d92c9eec5e9f18a2c6f",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理隣接/地下接続/店名/営業条件/全館階数/住所・方位・距離を確定しない。窓内の仮商品や機器は可動の意匠例。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-097",
+      "name": "ひだまり商店街 屋根付きアーケード",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-202",
+          "path": "images/assets/bg/bg_hidamari_shopping_arcade_day.webp",
+          "sha256": "7ca73d0e11795755bf83c258f050b3bc15dca362b6613a0d475c34798568e211",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "hidamari_shopping_arcade_day"
+          ],
+          "spaceId": "SPACE-LM097-ARCADE",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A206:L206",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM097-ARCADE",
+      "illustrationId": "IMG-WLD-126",
+      "facilityId": "FAC-042",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A97:R97",
+        "spaceRange": "'09_空間・間取り管理'!A129:O129",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版空間案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_landmarks7_lm-097_20261030.json",
+      "assetCommit": "d7e580c3094251d71dfe9303e93a0524a9d81377",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理隣接/地下接続/店名/営業条件/全館階数/住所・方位・距離を確定しない。窓内の仮商品や機器は可動の意匠例。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-098",
+      "name": "日和坂中央映画館",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-203",
+          "path": "images/assets/bg/bg_hiyorizaka_central_cinema_entrance_rain_day.webp",
+          "sha256": "30c41e48dc8ebb093bb6c73e93b2ab7c0c0995d0d1f11aecd90bb6d127d6e3ce",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "hiyorizaka_central_cinema_entrance_rain_day"
+          ],
+          "spaceId": "SPACE-LM098-ENTRANCE",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A207:L207",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM098-ENTRANCE",
+      "illustrationId": "IMG-WLD-127",
+      "facilityId": "FAC-043",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A98:R98",
+        "spaceRange": "'09_空間・間取り管理'!A130:O130",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版空間案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_landmarks8_lm-098_20261030.json",
+      "assetCommit": "316578dde97301374d3e9aacb25220573efc3410",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理接続/上映作品/広告/店名/営業条件/全館階数/住所・方位・距離を確定しない。道路の停車区画/車内は未設計、車線幅/標示/規格も未検証。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-099",
+      "name": "潮見ボウル＆カラオケ",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-204",
+          "path": "images/assets/bg/bg_shiomi_bowl_karaoke_entrance_evening.webp",
+          "sha256": "6b0d3370bf78ccec7bcefcaaf999e1c2ca81304ba973f3708f24d1aaf5894420",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "shiomi_bowl_karaoke_entrance_evening"
+          ],
+          "spaceId": "SPACE-LM099-ENTRANCE",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A208:L208",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM099-ENTRANCE",
+      "illustrationId": "IMG-WLD-128",
+      "facilityId": "FAC-044",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A99:R99",
+        "spaceRange": "'09_空間・間取り管理'!A131:O131",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版空間案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_landmarks8_lm-099_20261030.json",
+      "assetCommit": "902b86e03b272867a2b55728db968765b565a452",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理接続/上映作品/広告/店名/営業条件/全館階数/住所・方位・距離を確定しない。道路の停車区画/車内は未設計、車線幅/標示/規格も未検証。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-100",
+      "name": "山里ログハウス村",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-205",
+          "path": "images/assets/bg/bg_yamazato_loghouse_village_entrance_autumn_evening.webp",
+          "sha256": "5d2b3a94597424c5c0095e251fa20141a7e7caca273f0f6b5733ae32b64d60c1",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "yamazato_loghouse_village_entrance_autumn_evening"
+          ],
+          "spaceId": "SPACE-LM100-ENTRANCE",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A209:L209",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM100-ENTRANCE",
+      "illustrationId": "IMG-WLD-129",
+      "facilityId": "FAC-045",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A100:R100",
+        "spaceRange": "'09_空間・間取り管理'!A132:O132",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版空間案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_landmarks8_lm-100_20261030.json",
+      "assetCommit": "2251ceb843ed6fcf033d7d4013e20c0960b395b8",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理接続/上映作品/広告/店名/営業条件/全館階数/住所・方位・距離を確定しない。道路の停車区画/車内は未設計、車線幅/標示/規格も未検証。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-101",
+      "name": "日和坂クラフト工房街",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-206",
+          "path": "images/assets/bg/bg_hiyorizaka_craft_workshop_lane_day.webp",
+          "sha256": "42545ba050ad2be1bb258982c0710664b54868304bca3c9e9e8c2a3bc43843a6",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "hiyorizaka_craft_workshop_lane_day"
+          ],
+          "spaceId": "SPACE-LM101-LANE",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A210:L210",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM101-LANE",
+      "illustrationId": "IMG-WLD-130",
+      "facilityId": "FAC-046",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A101:R101",
+        "spaceRange": "'09_空間・間取り管理'!A133:O133",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版空間案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_landmarks8_lm-101_20261030.json",
+      "assetCommit": "a71d654c1895e04c453b1ea60a0723805329fbe8",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理接続/上映作品/広告/店名/営業条件/全館階数/住所・方位・距離を確定しない。道路の停車区画/車内は未設計、車線幅/標示/規格も未検証。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-102",
+      "name": "潮風ドライブロード",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-207",
+          "path": "images/assets/bg/bg_shiokaze_drive_road_evening.webp",
+          "sha256": "f00888cafbb572e5b6591e314f95a9d11b6e17f88dc8ba6e789d45178a852986",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "shiokaze_drive_road_evening"
+          ],
+          "spaceId": "SPACE-LM102-ROAD",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A211:L211",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM102-ROAD",
+      "illustrationId": "IMG-WLD-131",
+      "facilityId": "FAC-047",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A102:R102",
+        "spaceRange": "'09_空間・間取り管理'!A134:O134",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版空間案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_landmarks8_lm-102_20261030.json",
+      "assetCommit": "f1ddcbe47d0fc85b0271f53a8af8a940022583d5",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理接続/上映作品/広告/店名/営業条件/全館階数/住所・方位・距離を確定しない。道路の停車区画/車内は未設計、車線幅/標示/規格も未検証。",
+          "海岸道路SPACEの代表構図案。左の車道と手前中央の連続歩行帯を縁石で分離、右海側防護柵、既存参照の湾曲する浜と山並み。画像に停車区画/車内は描けておらず未設計。LM-015自転車道を改造/共用扱いにしない。座標/方位/距離/接続・車線幅や標示の詳細は未確定。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-103",
+      "name": "日和坂朝市",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-208",
+          "path": "images/assets/bg/bg_hiyorizaka_morning_market_morning.webp",
+          "sha256": "c1dffc332d67f16daf3807051ecdd9ee37aa184654772d426822ec059df82f8d",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "hiyorizaka_morning_market_morning"
+          ],
+          "spaceId": "SPACE-LM103-MARKET",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A212:L212",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM103-MARKET",
+      "illustrationId": "IMG-WLD-132",
+      "facilityId": "FAC-048",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A103:R103",
+        "spaceRange": "'09_空間・間取り管理'!A135:O135",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版空間案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_landmarks9_lm-103_20261030.json",
+      "assetCommit": "729b8830adb20b2be7ddf92852dd4921472813db",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "建築/設備/配置/採否/正確寸法未確定。代表背景各1枚のみ、施設接続/営業条件/全館階数/住所・方位・距離を確定しない。防災設備性能・灯台の航路機能/灯質/登塔可否・SAの道路所属/上下線は原設定以上を追加しない。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-104",
+      "name": "灯見坂ジャズバー",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-209",
+          "path": "images/assets/bg/bg_tomizaka_jazz_bar_entrance_night.webp",
+          "sha256": "5244e4ee18da1044df467a6c9e9b8ed97ee0a1c3ea9368cb9fedb3e502a599ce",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "tomizaka_jazz_bar_entrance_night"
+          ],
+          "spaceId": "SPACE-LM104-ENTRANCE",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A213:L213",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM104-ENTRANCE",
+      "illustrationId": "IMG-WLD-133",
+      "facilityId": "FAC-049",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A104:R104",
+        "spaceRange": "'09_空間・間取り管理'!A136:O136",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版空間案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_landmarks9_lm-104_20261030.json",
+      "assetCommit": "9bf842971742037ea19f0532470aec837cd41ef4",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "建築/設備/配置/採否/正確寸法未確定。代表背景各1枚のみ、施設接続/営業条件/全館階数/住所・方位・距離を確定しない。防災設備性能・灯台の航路機能/灯質/登塔可否・SAの道路所属/上下線は原設定以上を追加しない。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-105",
+      "name": "ひだまり銭湯 ぽかぽか湯",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-210",
+          "path": "images/assets/bg/bg_hidamari_pokapoka_sento_entrance_evening.webp",
+          "sha256": "fc9294ec3f44a23831699425228f1eb08d95837d85a758d37a60a642f3c4f8f1",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "hidamari_pokapoka_sento_entrance_evening"
+          ],
+          "spaceId": "SPACE-LM105-ENTRANCE",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A214:L214",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM105-ENTRANCE",
+      "illustrationId": "IMG-WLD-134",
+      "facilityId": "FAC-050",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A105:R105",
+        "spaceRange": "'09_空間・間取り管理'!A137:O137",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版空間案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_landmarks9_lm-105_20261030.json",
+      "assetCommit": "2dbb92ee99e73c00d7529856dcb9e62a7f9eb9bb",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "建築/設備/配置/採否/正確寸法未確定。代表背景各1枚のみ、施設接続/営業条件/全館階数/住所・方位・距離を確定しない。防災設備性能・灯台の航路機能/灯質/登塔可否・SAの道路所属/上下線は原設定以上を追加しない。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-106",
+      "name": "日和坂防災センター",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-211",
+          "path": "images/assets/bg/bg_hiyorizaka_disaster_learning_center_entrance_day.webp",
+          "sha256": "9b2579ccc2292f1328cf2d09ef4675e3ed1ac53465b8d94ba7771b00f3259806",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "hiyorizaka_disaster_learning_center_entrance_day"
+          ],
+          "spaceId": "SPACE-LM106-ENTRANCE",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A215:L215",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM106-ENTRANCE",
+      "illustrationId": "IMG-WLD-135",
+      "facilityId": "FAC-051",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A106:R106",
+        "spaceRange": "'09_空間・間取り管理'!A138:O138",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版空間案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_landmarks9_lm-106_20261030.json",
+      "assetCommit": "53ebce1ef2d644fbb6fd8038b0af433e2512f115",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "建築/設備/配置/採否/正確寸法未確定。代表背景各1枚のみ、施設接続/営業条件/全館階数/住所・方位・距離を確定しない。防災設備性能・灯台の航路機能/灯質/登塔可否・SAの道路所属/上下線は原設定以上を追加しない。",
+          "地域向け防災学習施設の来館入口案。淡灰公共建築/橙の小アクセント、庇付きガラス風除室・左案内/右退出、中央前庭/脇スロープ。展示設備・発電/備蓄/耐震/通信性能や災害対策本部機能は未設計。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-107",
+      "name": "潮見灯台",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-212",
+          "path": "images/assets/bg/bg_shiomi_lighthouse_approach_evening.webp",
+          "sha256": "4dd02be58bd5b502befaa59baef8ebf1504a6789a72d24eacce8542037763be3",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "shiomi_lighthouse_approach_evening"
+          ],
+          "spaceId": "SPACE-LM107-APPROACH",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A216:L216",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM107-APPROACH",
+      "illustrationId": "IMG-WLD-136",
+      "facilityId": "FAC-052",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A107:R107",
+        "spaceRange": "'09_空間・間取り管理'!A139:O139",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版空間案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_landmarks9_lm-107_20261030.json",
+      "assetCommit": "53acb95adf29605f5cdd00e27b6d1f199ba272be",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "建築/設備/配置/採否/正確寸法未確定。代表背景各1枚のみ、施設接続/営業条件/全館階数/住所・方位・距離を確定しない。防災設備性能・灯台の航路機能/灯質/登塔可否・SAの道路所属/上下線は原設定以上を追加しない。",
+          "潮見浜東端という正本条件の灯台外観/外側歩行導線案。控えめな白い円筒塔/濃灰灯室、基部管理扉は閉じたまま、広い舗装会話帯と海側防護柵。湾曲浜/低い山並みは既存夕景参照。高さ/航路/灯質/運用/登塔可否/正確地点・方位は未確定。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-108",
+      "name": "日和坂サービスエリア",
+      "kind": "新規初版",
+      "assets": [
+        {
+          "bg": "BG-213",
+          "path": "images/assets/bg/bg_hiyorizaka_service_area_entrance_night.webp",
+          "sha256": "c822f399922a03bb7bb650d2404c3872f3764e4d96a7aef5fad6227f1f908c24",
+          "size": [
+            1672,
+            941
+          ],
+          "catalogKeys": [
+            "hiyorizaka_service_area_entrance_night"
+          ],
+          "spaceId": "SPACE-LM108-ENTRANCE",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A217:L217",
+            "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM108-ENTRANCE",
+      "illustrationId": "IMG-WLD-137",
+      "facilityId": "FAC-053",
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A108:R108",
+        "spaceRange": "'09_空間・間取り管理'!A140:O140",
+        "landmarkStatus": "初版案/配置・カタログ登録済",
+        "spaceStatus": "初版空間案/配置・カタログ登録済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_landmarks9_lm-108_20261030.json",
+      "assetCommit": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "初版案・採否未確定",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "各制作時の目視QC記録あり。今回全画像の再目視は未実施",
+        "facilitySpecific": [
+          "建築/設備/配置/採否/正確寸法未確定。代表背景各1枚のみ、施設接続/営業条件/全館階数/住所・方位・距離を確定しない。防災設備性能・灯台の航路機能/灯質/登塔可否・SAの道路所属/上下線は原設定以上を追加しない。",
+          "市外高速SAの歩行前庭/主入口案。低層クリーム/灰金属の休憩商業棟・深い庇/中央ガラス入口、脇に少数の無銘自販機とベンチ/土産窓の仮意匠。車両帯は低柱で外側分離。道路名/上下線/IC接続/運営店/営業時間/給油・充電設備は未確定。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-109",
+      "name": "駅前あかり通り：夜",
+      "kind": "既存紐付けQC",
+      "assets": [
+        {
+          "bg": "BG-074",
+          "path": "images/assets/bg/bg_akari_dori_night.webp",
+          "sha256": "afd9f8a4403164b92e745d260e32f32093a36d91e77c28eb09369ded5625a04e",
+          "size": [
+            1920,
+            1080
+          ],
+          "catalogKeys": [
+            "lm109_akari_dori_night"
+          ],
+          "spaceId": "SPACE-LM109-AKARI-DORI",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A78:L78",
+            "backgroundAdoptionText": "既存実装/台帳追補"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM109-AKARI-DORI",
+      "illustrationId": null,
+      "facilityId": null,
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A109:R109",
+        "spaceRange": "'09_空間・間取り管理'!A93:O93",
+        "landmarkStatus": "正本背景IDと複数シナリオ一致。既存BG-074へSPACE紐付け補完",
+        "spaceStatus": "既存紐付け/正本・シナリオ照合済"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_homes_existing-qc_20261030.json",
+      "assetCommit": "ca0d3c1a0ddf357b20a17437218abb6d9221a6c5",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "既存台帳の採用状態を保持、今回の再承認なし",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "既存実画素QC記録を参照。今回の全差分再目視は未実施",
+        "facilitySpecific": [
+          "実画像に背景モブとあかり通りの文字。除去/再生成なし。旧png→現行webpのみ整流。"
+        ]
+      }
+    },
+    {
+      "landmark": "LM-110",
+      "name": "住宅街：夜",
+      "kind": "既存紐付けQC",
+      "assets": [
+        {
+          "bg": "BG-166",
+          "path": "images/assets/bg/bg_residential_area_night.webp",
+          "sha256": "bbd009b4fbeb426759883f1d137f7224d529bf8e5ee53e0c5d4ba1dba8c87f39",
+          "size": [
+            1920,
+            1080
+          ],
+          "catalogKeys": [
+            "lm110_residential_area_night"
+          ],
+          "spaceId": "SPACE-LM110-RESIDENTIAL-NIGHT",
+          "ledger": {
+            "backgroundRange": "'08_背景アセット'!A170:L170",
+            "backgroundAdoptionText": "既存紐付け/再生成なし"
+          },
+          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+        }
+      ],
+      "spaceId": "SPACE-LM110-RESIDENTIAL-NIGHT",
+      "illustrationId": null,
+      "facilityId": null,
+      "ledger": {
+        "landmarkRange": "'02_ランドマーク'!A110:R110",
+        "spaceRange": "'09_空間・間取り管理'!A94:O94",
+        "landmarkStatus": "正本背景ID/実装catalog一致。BG-166/SPACEを補完",
+        "spaceStatus": "既存紐付け/正本照合済・シナリオ出典未発見"
+      },
+      "sourceRecord": "images/assets/bg/production/delta_homes_existing-qc_20261030.json",
+      "assetCommit": "ca0d3c1a0ddf357b20a17437218abb6d9221a6c5",
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "verified": {
+        "fileSha256": true,
+        "catalogPathAndSpace": true,
+        "canonicalLedgerLinks": true
+      },
+      "remaining": {
+        "adoption": "既存台帳の採用状態を保持、今回の再承認なし",
+        "liveScreen": "未確認",
+        "spriteOverlay": "未確認",
+        "exactDimensionsAndSettings": "要確認",
+        "visualQC": "既存実画素QC記録を参照。今回の全差分再目視は未実施",
+        "facilitySpecific": [
+          "実画素は坂の住宅三叉路。正本の住宅街夜と用途適合。特定人物の家/番地・地理方位を新設しない。"
+        ]
+      }
+    }
+  ]
+}

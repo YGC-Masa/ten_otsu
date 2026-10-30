@@ -1,0 +1,355 @@
+{
+  "date": "2026-10-30",
+  "sourceHead": "ac2a26e36b41b2b89dc54624a60286cd95a43c11",
+  "verifiedAtHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+  "commits": {
+    "LM-103": "729b8830adb20b2be7ddf92852dd4921472813db",
+    "LM-104": "9bf842971742037ea19f0532470aec837cd41ef4",
+    "LM-105": "2dbb92ee99e73c00d7529856dcb9e62a7f9eb9bb",
+    "LM-106": "53ebce1ef2d644fbb6fd8038b0af433e2512f115",
+    "LM-107": "53acb95adf29605f5cdd00e27b6d1f199ba272be",
+    "LM-108": "630bea12296237152e6ce44c1afa7e0a3115065d"
+  },
+  "sharedRoomCatalogMetadataCommit": "9812473315a645f1b5c3bb808471329b887334f2",
+  "verification": {
+    "head": "630bea12296237152e6ce44c1afa7e0a3115065d",
+    "remoteHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+    "imagesSha256Matched": 6,
+    "catalogAndSpaceMatched": 6,
+    "newKeysUnique": 6,
+    "allCatalogMissingPaths": [],
+    "checksums": {
+      "entries": 1721,
+      "mismatches": [],
+      "freshActualGitBytesHashed": 93,
+      "unchangedBlobUsingPriorFullByteHash": 1628,
+      "baseline": "f52697ebd230255e1802f3a56583605fa4811b03"
+    },
+    "adoption": "未確定",
+    "liveScreen": "未確認",
+    "sheetCellsMatched": 324,
+    "visuallyInspected": 6,
+    "all50": {
+      "facilities": 50,
+      "newFirstDrafts": 46,
+      "existingLinkedQC": 4,
+      "notFound": 0,
+      "needsRegenerationDecision": 0,
+      "mappedImageFiles": 52,
+      "fileSha256Matches": 52,
+      "catalogPathAndSpaceMatches": 52,
+      "ledgerFacilityMatches": 50
+    }
+  },
+  "records": [
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-103",
+      "facility": "FAC-048",
+      "space": "SPACE-LM103-MARKET",
+      "name": "日和坂朝市 代表導線・朝（初版市場案）",
+      "canon": "港〜旧市街、朝市/食べ歩き/地域。緋奈/里美/なつ/陽里/萌。朝食/地元食材/仕入れ手伝い/眠い朝。通年早朝〜昼。",
+      "proposal": "港〜旧市街の朝市通行帯案。左右に低い仮設庇/木台・無銘の野菜/果物/包装食品の仮陳列、中央連続歩行帯、搬入箱は脇奥。既存港まつり/暮らしマルシェ/花市場と同一視しない。開催日/店名/仕入先/品種/数量/正確な位置は未確定。",
+      "unconfirmed": "建築/設備/配置/採否/正確寸法未確定。代表背景各1枚のみ、施設接続/営業条件/全館階数/住所・方位・距離を確定しない。防災設備性能・灯台の航路機能/灯質/登塔可否・SAの道路所属/上下線は原設定以上を追加しない。",
+      "sources": {
+        "world": "02_ランドマーク LM-103",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/英語別名検索2組・scenario/v039本文を照合、専用6画像未発見。6施設の直接シナリオ出典は未発見。既存横丁夜/温泉街冬夕/港岸壁/潮見浜夕の実画像を比較し、類似だけで同一施設としない。未発見は不存在の断定ではない。",
+        "references": []
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/素材/窓扉/通行/中央ADV余白を目視確認。銭湯は既存温泉街と別、横丁は既存店を置換しない近景案。防災性能/航路機能/道路所属は未設定。設備規格・法令/正確寸法と全市地理は未検証。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-208",
+        "img": "IMG-WLD-132",
+        "key": "hiyorizaka_morning_market_morning",
+        "path": "images/assets/bg/bg_hiyorizaka_morning_market_morning.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "c1dffc332d67f16daf3807051ecdd9ee37aa184654772d426822ec059df82f8d"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回324セル読み戻し一致",
+        "assetCommit": "729b8830adb20b2be7ddf92852dd4921472813db",
+        "verifiedAtHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "9812473315a645f1b5c3bb808471329b887334f2"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-104",
+      "facility": "FAC-049",
+      "space": "SPACE-LM104-ENTRANCE",
+      "name": "灯見坂ジャズバー 入口・夜（初版外観案）",
+      "canon": "灯見坂レトロ横丁、バー/音楽/大人夜。里美/雪乃/彩愛/真冬/陽里。ジャズライブ/静かな酒/常連感。通年夜。",
+      "proposal": "横丁内の近景入口案。濃木/暗い煉瓦・真鍮灯、中央奥まった店扉・すりガラス窓と小さな無地案内板、脇のサックス形意匠。手前連続歩行帯。既存横丁の特定店舗を置換せず、位置/店名/出演者/公演/営業時間/内部舞台は未確定。",
+      "unconfirmed": "建築/設備/配置/採否/正確寸法未確定。代表背景各1枚のみ、施設接続/営業条件/全館階数/住所・方位・距離を確定しない。防災設備性能・灯台の航路機能/灯質/登塔可否・SAの道路所属/上下線は原設定以上を追加しない。",
+      "sources": {
+        "world": "02_ランドマーク LM-104",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/英語別名検索2組・scenario/v039本文を照合、専用6画像未発見。6施設の直接シナリオ出典は未発見。既存横丁夜/温泉街冬夕/港岸壁/潮見浜夕の実画像を比較し、類似だけで同一施設としない。未発見は不存在の断定ではない。",
+        "references": [
+          "/workspace/delta_landmarks9/bg_tomizaka_retro_yokocho_entrance_night.webp"
+        ]
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/素材/窓扉/通行/中央ADV余白を目視確認。銭湯は既存温泉街と別、横丁は既存店を置換しない近景案。防災性能/航路機能/道路所属は未設定。設備規格・法令/正確寸法と全市地理は未検証。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-209",
+        "img": "IMG-WLD-133",
+        "key": "tomizaka_jazz_bar_entrance_night",
+        "path": "images/assets/bg/bg_tomizaka_jazz_bar_entrance_night.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "5244e4ee18da1044df467a6c9e9b8ed97ee0a1c3ea9368cb9fedb3e502a599ce"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回324セル読み戻し一致",
+        "assetCommit": "9bf842971742037ea19f0532470aec837cd41ef4",
+        "verifiedAtHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "729b8830adb20b2be7ddf92852dd4921472813db"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-105",
+      "facility": "FAC-050",
+      "space": "SPACE-LM105-ENTRANCE",
+      "name": "ひだまり銭湯 ぽかぽか湯 入口・夕方（初版外観案）",
+      "canon": "ひだまり商店街裏、銭湯/日常/温浴。緋奈/里美/なつ/陽里/真冬。仕事帰り/牛乳/商店街常連/日常の癒し。通年夕方〜夜。",
+      "proposal": "商店街裏の小さな銭湯入口案。白壁/木腰壁/灰瓦と庇、中央の共用入口と無地のれん、脇ベンチ/小さな無銘飲料ケース。歩行前庭と側方退出候補。温泉郷/サウナ施設とは別、浴室/脱衣室/泉質/熱源/料金/営業時間/煙突性能は未確定。",
+      "unconfirmed": "建築/設備/配置/採否/正確寸法未確定。代表背景各1枚のみ、施設接続/営業条件/全館階数/住所・方位・距離を確定しない。防災設備性能・灯台の航路機能/灯質/登塔可否・SAの道路所属/上下線は原設定以上を追加しない。",
+      "sources": {
+        "world": "02_ランドマーク LM-105",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/英語別名検索2組・scenario/v039本文を照合、専用6画像未発見。6施設の直接シナリオ出典は未発見。既存横丁夜/温泉街冬夕/港岸壁/潮見浜夕の実画像を比較し、類似だけで同一施設としない。未発見は不存在の断定ではない。",
+        "references": []
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/素材/窓扉/通行/中央ADV余白を目視確認。銭湯は既存温泉街と別、横丁は既存店を置換しない近景案。防災性能/航路機能/道路所属は未設定。設備規格・法令/正確寸法と全市地理は未検証。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-210",
+        "img": "IMG-WLD-134",
+        "key": "hidamari_pokapoka_sento_entrance_evening",
+        "path": "images/assets/bg/bg_hidamari_pokapoka_sento_entrance_evening.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "fc9294ec3f44a23831699425228f1eb08d95837d85a758d37a60a642f3c4f8f1"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回324セル読み戻し一致",
+        "assetCommit": "2dbb92ee99e73c00d7529856dcb9e62a7f9eb9bb",
+        "verifiedAtHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "9bf842971742037ea19f0532470aec837cd41ef4"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-106",
+      "facility": "FAC-051",
+      "space": "SPACE-LM106-ENTRANCE",
+      "name": "日和坂防災センター 入口・昼（初版公共施設案）",
+      "canon": "市街地、公共施設/防災/家電。翠/百瀬ひかる/陽里/店長/琥珀。防災講座/非常用家電/停電対策/地域イベント/ストア出張相談。通年昼。",
+      "proposal": "地域向け防災学習施設の来館入口案。淡灰公共建築/橙の小アクセント、庇付きガラス風除室・左案内/右退出、中央前庭/脇スロープ。展示設備・発電/備蓄/耐震/通信性能や災害対策本部機能は未設計。",
+      "unconfirmed": "建築/設備/配置/採否/正確寸法未確定。代表背景各1枚のみ、施設接続/営業条件/全館階数/住所・方位・距離を確定しない。防災設備性能・灯台の航路機能/灯質/登塔可否・SAの道路所属/上下線は原設定以上を追加しない。",
+      "sources": {
+        "world": "02_ランドマーク LM-106",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/英語別名検索2組・scenario/v039本文を照合、専用6画像未発見。6施設の直接シナリオ出典は未発見。既存横丁夜/温泉街冬夕/港岸壁/潮見浜夕の実画像を比較し、類似だけで同一施設としない。未発見は不存在の断定ではない。",
+        "references": []
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/素材/窓扉/通行/中央ADV余白を目視確認。銭湯は既存温泉街と別、横丁は既存店を置換しない近景案。防災性能/航路機能/道路所属は未設定。設備規格・法令/正確寸法と全市地理は未検証。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-211",
+        "img": "IMG-WLD-135",
+        "key": "hiyorizaka_disaster_learning_center_entrance_day",
+        "path": "images/assets/bg/bg_hiyorizaka_disaster_learning_center_entrance_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "9b2579ccc2292f1328cf2d09ef4675e3ed1ac53465b8d94ba7771b00f3259806"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回324セル読み戻し一致",
+        "assetCommit": "53ebce1ef2d644fbb6fd8038b0af433e2512f115",
+        "verifiedAtHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "2dbb92ee99e73c00d7529856dcb9e62a7f9eb9bb"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-107",
+      "facility": "FAC-052",
+      "space": "SPACE-LM107-APPROACH",
+      "name": "潮見灯台 代表導線・夕方（初版灯台案）",
+      "canon": "潮見浜東端、灯台/海辺/告白スポット。藍/雪乃/夜空/真花/萌。夕暮れ/初日の出/海風/告白/約束。通年夕方〜夜/元旦。",
+      "proposal": "潮見浜東端という正本条件の灯台外観/外側歩行導線案。控えめな白い円筒塔/濃灰灯室、基部管理扉は閉じたまま、広い舗装会話帯と海側防護柵。湾曲浜/低い山並みは既存夕景参照。高さ/航路/灯質/運用/登塔可否/正確地点・方位は未確定。",
+      "unconfirmed": "建築/設備/配置/採否/正確寸法未確定。代表背景各1枚のみ、施設接続/営業条件/全館階数/住所・方位・距離を確定しない。防災設備性能・灯台の航路機能/灯質/登塔可否・SAの道路所属/上下線は原設定以上を追加しない。",
+      "sources": {
+        "world": "02_ランドマーク LM-107",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/英語別名検索2組・scenario/v039本文を照合、専用6画像未発見。6施設の直接シナリオ出典は未発見。既存横丁夜/温泉街冬夕/港岸壁/潮見浜夕の実画像を比較し、類似だけで同一施設としない。未発見は不存在の断定ではない。",
+        "references": [
+          "/workspace/delta_landmarks8/bg_shiomi_beach_evening.webp"
+        ]
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/素材/窓扉/通行/中央ADV余白を目視確認。銭湯は既存温泉街と別、横丁は既存店を置換しない近景案。防災性能/航路機能/道路所属は未設定。設備規格・法令/正確寸法と全市地理は未検証。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-212",
+        "img": "IMG-WLD-136",
+        "key": "shiomi_lighthouse_approach_evening",
+        "path": "images/assets/bg/bg_shiomi_lighthouse_approach_evening.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "4dd02be58bd5b502befaa59baef8ebf1504a6789a72d24eacce8542037763be3"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回324セル読み戻し一致",
+        "assetCommit": "53acb95adf29605f5cdd00e27b6d1f199ba272be",
+        "verifiedAtHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "53ebce1ef2d644fbb6fd8038b0af433e2512f115"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-108",
+      "facility": "FAC-053",
+      "space": "SPACE-LM108-ENTRANCE",
+      "name": "日和坂サービスエリア 入口・夜（初版SA案）",
+      "canon": "高速道路・日和坂市外、市外移動/SA/遠出導線、全員。買い食い/帰路休憩/土産/深夜自販機前会話。通年遠出時。",
+      "proposal": "市外高速SAの歩行前庭/主入口案。低層クリーム/灰金属の休憩商業棟・深い庇/中央ガラス入口、脇に少数の無銘自販機とベンチ/土産窓の仮意匠。車両帯は低柱で外側分離。道路名/上下線/IC接続/運営店/営業時間/給油・充電設備は未確定。",
+      "unconfirmed": "建築/設備/配置/採否/正確寸法未確定。代表背景各1枚のみ、施設接続/営業条件/全館階数/住所・方位・距離を確定しない。防災設備性能・灯台の航路機能/灯質/登塔可否・SAの道路所属/上下線は原設定以上を追加しない。",
+      "sources": {
+        "world": "02_ランドマーク LM-108",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/英語別名検索2組・scenario/v039本文を照合、専用6画像未発見。6施設の直接シナリオ出典は未発見。既存横丁夜/温泉街冬夕/港岸壁/潮見浜夕の実画像を比較し、類似だけで同一施設としない。未発見は不存在の断定ではない。",
+        "references": []
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/素材/窓扉/通行/中央ADV余白を目視確認。銭湯は既存温泉街と別、横丁は既存店を置換しない近景案。防災性能/航路機能/道路所属は未設定。設備規格・法令/正確寸法と全市地理は未検証。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-213",
+        "img": "IMG-WLD-137",
+        "key": "hiyorizaka_service_area_entrance_night",
+        "path": "images/assets/bg/bg_hiyorizaka_service_area_entrance_night.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "c822f399922a03bb7bb650d2404c3872f3764e4d96a7aef5fad6227f1f908c24"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回324セル読み戻し一致",
+        "assetCommit": "630bea12296237152e6ce44c1afa7e0a3115065d",
+        "verifiedAtHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "53acb95adf29605f5cdd00e27b6d1f199ba272be"
+    }
+  ],
+  "scopeCounts": {
+    "total": 50,
+    "newFirstDrafts": 46,
+    "existingLinkedQC": 4,
+    "notFound": 0,
+    "needsRegeneration": 0
+  },
+  "inventory": "delta_inherited_50_inventory_20261030.json / .md",
+  "references": {
+    "pixels": [
+      "既存横丁夜をジャズバーの色材のみ参照、既存店や看板を置換しない。",
+      "既存温泉街冬夕を比較、銭湯は商店街裏の日常施設として別案。",
+      "既存港岸壁/潮見浜夕を比較、朝市/灯台を似た遠景だけで既存施設と同一視しない。"
+    ],
+    "texts": [
+      "02_ランドマーク A103:R108",
+      "08_背景アセット A5:L211",
+      "09_空間・間取り管理 A5:O134",
+      "03_建物施設 A2:L48",
+      "scenario/v039の6施設名/朝市/ジャズバー/灯台/サービスエリア検索：直接出典未発見"
+    ],
+    "searchLimits": "Drive画像名2組は結果0。main全画像名・正本台帳・scenario/v039本文の確認範囲で専用6背景未発見。未発見は不存在の断定ではない。制作後の登録によって50施設の初版対応未発見枠は0となった。"
+  },
+  "unconfirmed": [
+    "今回6点を含む新規46施設の採否、全50施設の今回実画面/立ち絵重ね・正確寸法・設定追加照合",
+    "全館構成/内部詳細/住所・正確な方位/距離/接続/営業条件",
+    "防災設備の発電/備蓄/耐震/通信性能や対策本部機能は未設計",
+    "灯台の航路機能/高さ/灯質/運用/登塔可否は未設定。潮見浜東端は正本、画角の厳密位置と方位の地図照合は未了",
+    "SAの道路名/上下線/IC接続/運営店/営業時間/給油充電の有無は未確定",
+    "銭湯の泉質/熱源/料金/営業時間/脱衣・浴室は未設定",
+    "朝市の商品/開催日/店名、ジャズバーの出演/演目/営業時間も未確定",
+    "旧共有部屋の昼窓表現、店長宅の海坂地理、あかり通りのモブ保持、住宅街夜の直接シナリオ出典未発見、彩愛原設定差、つくも接続/朔夜用途、ひかる所在地、湖岸地点、道路の停車区画/車内など既存残件を維持",
+    "既存BG-061〜110の引継ぎQCはLM-061〜110と別番号体系。既存台帳PNG/WebP差や実画面QCは継続"
+  ],
+  "delivery": "GitHub main配置。Drive画像転記なし。ローカルZIPを外部納品済みとは扱わない。"
+}
