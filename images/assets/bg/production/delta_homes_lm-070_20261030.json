@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-070",
+  "facility": "FAC-019",
+  "space": "SPACE-LM070-KITCHEN",
+  "name": "紫藤マンションの花嫁修業キッチン 夕方（家庭キッチン案）",
+  "canon": "街中マンション、彩愛、家事/すき焼き/家庭的な素、夕方〜夜。intro_ayameに普通の家庭育ちと家事全般。",
+  "proposal": "左家庭調理/洗浄/冷蔵・右二人卓、奥窓と扉/掃除機収納、中央通行。豪華実家の和室会食画像とは別場所。",
+  "unconfirmed": "部屋名以上の間取り・家具・設備・全館階数・家族人数・居住者/所有者追加・住所は確定しない。採否/詳細寸法未確認。",
+  "excludedOtherFacilities": "既存ayame93/98実家屋敷背景をマンション台所に流用しない。introの普通家庭育ちと実家屋敷編の表現差は未解決。今回変更しない。",
+  "sources": {
+    "world": "02_ランドマーク LM-070",
+    "scenario": "scenario/v039/events/intro_ayame.json",
+    "search": "main全画像名/台帳/517テキスト/Drive画像名(5姓・部屋名称)を検索。専用住居画像は未発見。未発見は不存在の断定ではない。家族/全住居設定の追加資料は未確認。"
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし/セルアニメ調、用途・小物・窓扉/動線/中央ADV余白を確認。室内鏡や設備の厳密監修は未実施。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-176",
+    "img": "IMG-WLD-100",
+    "key": "shido_mansion_home_kitchen_evening",
+    "path": "images/assets/bg/bg_shido_mansion_home_kitchen_evening.webp",
+    "sha256": "568508083822bf5bbda589bc3bef87540acfa12fea73bb102e9f00d4826cb253",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  "status": "remote配置/台帳読み戻しは後続確認",
+  "verificationParentHead": "fe3f31185eb51ba9850b846bd365bc2eb82f8c2b"
+}

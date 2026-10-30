@@ -654,3 +654,14 @@
     "status": "住居初版案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-070 residential proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "shido_mansion_home_kitchen_evening": {
+    "name": "紫藤マンションの花嫁修業キッチン 夕方（家庭キッチン案）",
+    "path": "images/assets/bg/bg_shido_mansion_home_kitchen_evening.webp",
+    "spaceId": "SPACE-LM070-KITCHEN",
+    "time": "evening",
+    "status": "住居初版案/間取り・設備・採否未確定"
+  }
+});})();
