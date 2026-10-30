@@ -1,0 +1,291 @@
+{
+  "date": "2026-10-30",
+  "sourceHead": "2684a39b68c691a29cb0df56654ee45cdfad10cd",
+  "verifiedAtHead": "609b4962a285e015d6191e3cc500c344c10bf60e",
+  "commits": {
+    "LM-083": "a458baa8be9d2c07ff06ce9e5364192669ecfb5d",
+    "LM-084": "3a2bb585da1927b23c06ea954451cc1e11635902",
+    "LM-085": "8883c2f3ef3ce9f4481ed42656bc6f98c51bffa5",
+    "LM-086": "58e8a97874236363483c13b82b2705ebaf8283f0",
+    "LM-087": "609b4962a285e015d6191e3cc500c344c10bf60e"
+  },
+  "verification": {
+    "head": "609b4962a285e015d6191e3cc500c344c10bf60e",
+    "remoteHead": "609b4962a285e015d6191e3cc500c344c10bf60e",
+    "imagesSha256Matched": 5,
+    "catalogAndSpaceMatched": 5,
+    "newKeysUnique": 5,
+    "allCatalogMissingPaths": [],
+    "checksums": {
+      "entries": 1675,
+      "mismatches": [],
+      "freshActualGitBytesHashed": 47,
+      "unchangedBlobUsingPriorFullByteHash": 1628,
+      "baseline": "f52697ebd230255e1802f3a56583605fa4811b03"
+    },
+    "adoption": "未確定",
+    "liveScreen": "未確認",
+    "sheetCellsMatched": 270,
+    "visuallyInspected": 5
+  },
+  "records": [
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-083",
+      "facility": "FAC-028",
+      "space": "SPACE-LM083-ENTRANCE",
+      "name": "日和坂ふれあい動物公園 入口・春昼（初版外観案）",
+      "canon": "郊外・若葉中央公園方面。動物園/ふれあい施設。琥珀/萌/美空/こがね/緋奈/藍/翠。小動物ふれあい・アルパカ散歩・翠の克服・藍の爬虫類コーナー。通年昼、春秋が強い。",
+      "proposal": "人が歩いて入る親しみやすい小規模ゲート案。木/淡クリーム・緑切妻の低い受付、左チケット窓口・中央歩行者入園門・右出口、脇にベンチ/手洗い候補、植栽越しの園路。展示/飼育ゾーンは未設計。",
+      "unconfirmed": "建築・外装・設備・入口配置・採否・正確寸法未確定。代表入口各1枚のみ、内部展示/動物種/詳細ゾーン/全館階数/正確な住所方位は確定しない。サファリの二次ゲート/飼育区画と安全設備は未設計。",
+      "sources": {
+        "world": "02_ランドマーク LM-083",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/動物/英語別名検索2組・scenario/v039本文を照合、専用5画像未発見。scenario/v039に今回の施設名/用途語一致は未発見。隣接マリンピアBG-126を実画素確認、LM-084は独立館として設計。未発見は不存在の断定ではない。",
+        "references": []
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物/実動物なし、用途/素材/窓扉/入口・出口/歩行余白を目視確認。各施設入口1枚のみ。LM-085は歩行前庭と右車両レーンの柵を確認、二次閉鎖/飼育境界は未設計。LM-086は段差と右スロープが見えるが勾配/法令寸法は未検証。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-188",
+        "img": "IMG-WLD-112",
+        "key": "hiyorizaka_fureai_zoo_entrance_spring_day",
+        "path": "images/assets/bg/bg_hiyorizaka_fureai_zoo_entrance_spring_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "92cd9a64d8a38036a55b8f8c255e28a42c886603d2f7e8aa954049d2aa821420"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回270セル読み戻し一致",
+        "assetCommit": "a458baa8be9d2c07ff06ce9e5364192669ecfb5d",
+        "verifiedAtHead": "609b4962a285e015d6191e3cc500c344c10bf60e",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "2684a39b68c691a29cb0df56654ee45cdfad10cd"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-084",
+      "facility": "FAC-029",
+      "space": "SPACE-LM084-ENTRANCE",
+      "name": "日和坂アクア＆レプタイル館 入口・昼（初版外観案）",
+      "canon": "日和坂マリンピア隣接、爬虫類/小型水族館。藍/夜空/雪乃/ひかる/真冬。爬虫類展示/カエルグッズ/夜の水槽。通年昼〜夜/雨。マリンピアとは別館。",
+      "proposal": "独立低層小型館案。淡いコンクリート/セージ緑金属と木ルーバー、小さな奥まった2枚ガラス入口と庇、左案内窓・右出口候補、広い正面歩行面。マリンピアの形/大水槽は再現せず隣接方向/接続詳細は未確定。",
+      "unconfirmed": "建築・外装・設備・入口配置・採否・正確寸法未確定。代表入口各1枚のみ、内部展示/動物種/詳細ゾーン/全館階数/正確な住所方位は確定しない。サファリの二次ゲート/飼育区画と安全設備は未設計。",
+      "sources": {
+        "world": "02_ランドマーク LM-084",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/動物/英語別名検索2組・scenario/v039本文を照合、専用5画像未発見。scenario/v039に今回の施設名/用途語一致は未発見。隣接マリンピアBG-126を実画素確認、LM-084は独立館として設計。未発見は不存在の断定ではない。",
+        "references": [
+          "/workspace/delta_landmarks5/bg_marinpia_entrance_day.webp"
+        ]
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物/実動物なし、用途/素材/窓扉/入口・出口/歩行余白を目視確認。各施設入口1枚のみ。LM-085は歩行前庭と右車両レーンの柵を確認、二次閉鎖/飼育境界は未設計。LM-086は段差と右スロープが見えるが勾配/法令寸法は未検証。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-189",
+        "img": "IMG-WLD-113",
+        "key": "hiyorizaka_aqua_reptile_entrance_day",
+        "path": "images/assets/bg/bg_hiyorizaka_aqua_reptile_entrance_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "63e063479f42132d5accf75d0c66ced9d0ebef59368493f6e881d35f7025e92b"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回270セル読み戻し一致",
+        "assetCommit": "3a2bb585da1927b23c06ea954451cc1e11635902",
+        "verifiedAtHead": "609b4962a285e015d6191e3cc500c344c10bf60e",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "a458baa8be9d2c07ff06ce9e5364192669ecfb5d"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-085",
+      "facility": "FAC-030",
+      "space": "SPACE-LM085-ENTRANCE",
+      "name": "青嶺サファリパーク 入口・秋昼（初版外観案）",
+      "canon": "日和坂市外・山側観光圏、大型動物園/サファリ。全員特に琥珀/こがね/美空/なつ/藍。サファリバス/餌やり/撮影/遠出/帰りSA。春〜秋休日昼。",
+      "proposal": "市外山側のサファリ来訪入口案。左歩行受付/待合・中央歩行広場を防護柵で分離、右に車両受付レーンと閉じた二枚扉ゲート。低い木石受付棟と遠い山稜/秋木立。二次閉鎖/飼育境界・動物種・バス運行方式は未設計。",
+      "unconfirmed": "建築・外装・設備・入口配置・採否・正確寸法未確定。代表入口各1枚のみ、内部展示/動物種/詳細ゾーン/全館階数/正確な住所方位は確定しない。サファリの二次ゲート/飼育区画と安全設備は未設計。",
+      "sources": {
+        "world": "02_ランドマーク LM-085",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/動物/英語別名検索2組・scenario/v039本文を照合、専用5画像未発見。scenario/v039に今回の施設名/用途語一致は未発見。隣接マリンピアBG-126を実画素確認、LM-084は独立館として設計。未発見は不存在の断定ではない。",
+        "references": []
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物/実動物なし、用途/素材/窓扉/入口・出口/歩行余白を目視確認。各施設入口1枚のみ。LM-085は歩行前庭と右車両レーンの柵を確認、二次閉鎖/飼育境界は未設計。LM-086は段差と右スロープが見えるが勾配/法令寸法は未検証。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-190",
+        "img": "IMG-WLD-114",
+        "key": "aomine_safari_entrance_autumn_day",
+        "path": "images/assets/bg/bg_aomine_safari_entrance_autumn_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "92413f97934c3fed7f7837809bf11ef423c95df4a4be8963e0bbcef50747da72"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回270セル読み戻し一致",
+        "assetCommit": "8883c2f3ef3ce9f4481ed42656bc6f98c51bffa5",
+        "verifiedAtHead": "609b4962a285e015d6191e3cc500c344c10bf60e",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "3a2bb585da1927b23c06ea954451cc1e11635902"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-086",
+      "facility": "FAC-031",
+      "space": "SPACE-LM086-ENTRANCE",
+      "name": "日和坂市立美術館 入口・雨昼（初版外観案）",
+      "canon": "高台文化ゾーン、美術館/文化施設。真花/彩愛/雪乃/藍/翠。企画展/静かな鑑賞/雨の日/感想・真花の感性。通年昼〜夕/雨。",
+      "proposal": "高台の静かな公立館入口案。淡石/白い水平箱形壁と奥まったガラス風除室、庇下左チケット案内、右退出扉。低い段差と横の緩いバリアフリー経路/雨の前庭。作品/企画名/展示室未設計。",
+      "unconfirmed": "建築・外装・設備・入口配置・採否・正確寸法未確定。代表入口各1枚のみ、内部展示/動物種/詳細ゾーン/全館階数/正確な住所方位は確定しない。サファリの二次ゲート/飼育区画と安全設備は未設計。",
+      "sources": {
+        "world": "02_ランドマーク LM-086",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/動物/英語別名検索2組・scenario/v039本文を照合、専用5画像未発見。scenario/v039に今回の施設名/用途語一致は未発見。隣接マリンピアBG-126を実画素確認、LM-084は独立館として設計。未発見は不存在の断定ではない。",
+        "references": []
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物/実動物なし、用途/素材/窓扉/入口・出口/歩行余白を目視確認。各施設入口1枚のみ。LM-085は歩行前庭と右車両レーンの柵を確認、二次閉鎖/飼育境界は未設計。LM-086は段差と右スロープが見えるが勾配/法令寸法は未検証。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-191",
+        "img": "IMG-WLD-115",
+        "key": "hiyorizaka_art_museum_entrance_rain_day",
+        "path": "images/assets/bg/bg_hiyorizaka_art_museum_entrance_rain_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "7f07b1b40cdb1638cf8fb9e56b58c2652eb168b24327a8b30dd15c6b2714061d"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回270セル読み戻し一致",
+        "assetCommit": "58e8a97874236363483c13b82b2705ebaf8283f0",
+        "verifiedAtHead": "609b4962a285e015d6191e3cc500c344c10bf60e",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "8883c2f3ef3ce9f4481ed42656bc6f98c51bffa5"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-087",
+      "facility": "FAC-032",
+      "space": "SPACE-LM087-ENTRANCE",
+      "name": "潮見県立科学館 入口・昼（初版外観案）",
+      "canon": "市街地・潮見ドーム周辺、科学館/体験施設。百瀬ひかる/翠/真冬/藍/桃。実験ショー/家電仕組み/ロボット体験/ひかる解説/藍PC克服。通年昼/雨。",
+      "proposal": "都市の県立科学館入口案。白/灰金属の角形低中層ボリューム・青灰ガラス、橙/黄の縦ルーバー、庇付き風除室・左案内/右出口、中央広場と歩行/自転車分離。潮見ドーム本体は画面外、館内展示未設計。",
+      "unconfirmed": "建築・外装・設備・入口配置・採否・正確寸法未確定。代表入口各1枚のみ、内部展示/動物種/詳細ゾーン/全館階数/正確な住所方位は確定しない。サファリの二次ゲート/飼育区画と安全設備は未設計。",
+      "sources": {
+        "world": "02_ランドマーク LM-087",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/動物/英語別名検索2組・scenario/v039本文を照合、専用5画像未発見。scenario/v039に今回の施設名/用途語一致は未発見。隣接マリンピアBG-126を実画素確認、LM-084は独立館として設計。未発見は不存在の断定ではない。",
+        "references": []
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物/実動物なし、用途/素材/窓扉/入口・出口/歩行余白を目視確認。各施設入口1枚のみ。LM-085は歩行前庭と右車両レーンの柵を確認、二次閉鎖/飼育境界は未設計。LM-086は段差と右スロープが見えるが勾配/法令寸法は未検証。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-192",
+        "img": "IMG-WLD-116",
+        "key": "shiomi_science_museum_entrance_day",
+        "path": "images/assets/bg/bg_shiomi_science_museum_entrance_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "631cb294f6379d3c257cc3c7b8eab8a1f54f0cdd1ef28d751425ab88ea95c925"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回270セル読み戻し一致",
+        "assetCommit": "609b4962a285e015d6191e3cc500c344c10bf60e",
+        "verifiedAtHead": "609b4962a285e015d6191e3cc500c344c10bf60e",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "58e8a97874236363483c13b82b2705ebaf8283f0"
+    }
+  ],
+  "scopeCounts": {
+    "total": 50,
+    "newFirstDrafts": 25,
+    "existingLinkedQC": 4,
+    "notFound": 21,
+    "needsRegeneration": 0
+  },
+  "references": {
+    "pixels": [
+      "隣接設定のあるマリンピアBG-126を取得して目視。LM-084は別館として独立入口/小型建築案にした。既存マリンピアの描き替えなし。"
+    ],
+    "texts": [
+      "02_ランドマーク A83:R87",
+      "08_背景アセット A5:L191",
+      "09_空間・間取り管理 A5:O114",
+      "03_建物施設 A2:L28",
+      "scenario/v039本文の施設名/用途語検索：該当なし",
+      "main画像名の固有名/英語別名照合"
+    ],
+    "searchLimits": "Drive画像名検索2組は結果0。main全画像名・台帳・scenario/v039本文の確認範囲では5施設の専用背景未発見。未発見は不存在の断定ではなく、Drive全画像の実画素総点検はしていない。"
+  },
+  "unconfirmed": [
+    "全5点の採否/正確寸法/立ち絵重ね/実画面",
+    "各施設の全館階数/内部詳細ゾーン/動物種・展示内容/住所・方位",
+    "LM-084 マリンピア隣接は正本確定、直接接続・方位・共通チケット等は未確定",
+    "LM-085 二枚扉の一段ゲートのみ描写。二次閉鎖・飼育境界・安全設備・バス運行方式は未設計",
+    "LM-086 右スロープ/段差の寸法・勾配・法令整合は未検証",
+    "LM-087 潮見ドーム本体の形状/直接接続は未設定・画面外",
+    "彩愛の普通家庭育ちと屋敷編の原設定差、店長宅地理、朔夜の用途/VIP関係など前組の未確定事項は維持"
+  ],
+  "delivery": "GitHub main配置。Drive画像転記なし。ローカルZIPを外部納品済みとは扱わない。"
+}

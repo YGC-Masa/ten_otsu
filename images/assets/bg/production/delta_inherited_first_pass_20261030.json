@@ -4,8 +4,8 @@
   "counts": {
     "total": 50,
     "existing": 4,
-    "newFirstDrafts": 20,
-    "notFound": 26,
+    "newFirstDrafts": 25,
+    "notFound": 21,
     "needsRegeneration": 0
   },
   "items": [
@@ -519,52 +519,117 @@
     {
       "id": "LM-083",
       "facility": "日和坂ふれあい動物公園",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "入口案の採否/追加原設定照合/実画面/寸法（内部詳細拡張なし）",
+      "visual": "入口1枚目視QC済。人物/実動物なし、素材/受付/窓扉/通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-188",
+        "img": "IMG-WLD-112",
+        "key": "hiyorizaka_fureai_zoo_entrance_spring_day",
+        "path": "images/assets/bg/bg_hiyorizaka_fureai_zoo_entrance_spring_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "92cd9a64d8a38036a55b8f8c255e28a42c886603d2f7e8aa954049d2aa821420"
+      },
+      "verifiedAtHead": "609b4962a285e015d6191e3cc500c344c10bf60e",
+      "assetCommit": "a458baa8be9d2c07ff06ce9e5364192669ecfb5d"
     },
     {
       "id": "LM-084",
       "facility": "日和坂アクア＆レプタイル館",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "入口案の採否/追加原設定照合/実画面/寸法（内部詳細拡張なし）",
+      "visual": "入口1枚目視QC済。人物/実動物なし、素材/受付/窓扉/通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-189",
+        "img": "IMG-WLD-113",
+        "key": "hiyorizaka_aqua_reptile_entrance_day",
+        "path": "images/assets/bg/bg_hiyorizaka_aqua_reptile_entrance_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "63e063479f42132d5accf75d0c66ced9d0ebef59368493f6e881d35f7025e92b"
+      },
+      "verifiedAtHead": "609b4962a285e015d6191e3cc500c344c10bf60e",
+      "assetCommit": "3a2bb585da1927b23c06ea954451cc1e11635902"
     },
     {
       "id": "LM-085",
       "facility": "青嶺サファリパーク",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "入口案の採否/追加原設定照合/実画面/寸法（内部詳細拡張なし）/二次閉鎖・安全設備未設計",
+      "visual": "入口1枚目視QC済。人物/実動物なし、素材/受付/窓扉/通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-190",
+        "img": "IMG-WLD-114",
+        "key": "aomine_safari_entrance_autumn_day",
+        "path": "images/assets/bg/bg_aomine_safari_entrance_autumn_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "92413f97934c3fed7f7837809bf11ef423c95df4a4be8963e0bbcef50747da72"
+      },
+      "verifiedAtHead": "609b4962a285e015d6191e3cc500c344c10bf60e",
+      "assetCommit": "8883c2f3ef3ce9f4481ed42656bc6f98c51bffa5"
     },
     {
       "id": "LM-086",
       "facility": "日和坂市立美術館",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "入口案の採否/追加原設定照合/実画面/寸法（内部詳細拡張なし）",
+      "visual": "入口1枚目視QC済。人物/実動物なし、素材/受付/窓扉/通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-191",
+        "img": "IMG-WLD-115",
+        "key": "hiyorizaka_art_museum_entrance_rain_day",
+        "path": "images/assets/bg/bg_hiyorizaka_art_museum_entrance_rain_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "7f07b1b40cdb1638cf8fb9e56b58c2652eb168b24327a8b30dd15c6b2714061d"
+      },
+      "verifiedAtHead": "609b4962a285e015d6191e3cc500c344c10bf60e",
+      "assetCommit": "58e8a97874236363483c13b82b2705ebaf8283f0"
     },
     {
       "id": "LM-087",
       "facility": "潮見県立科学館",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "入口案の採否/追加原設定照合/実画面/寸法（内部詳細拡張なし）",
+      "visual": "入口1枚目視QC済。人物/実動物なし、素材/受付/窓扉/通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-192",
+        "img": "IMG-WLD-116",
+        "key": "shiomi_science_museum_entrance_day",
+        "path": "images/assets/bg/bg_shiomi_science_museum_entrance_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "631cb294f6379d3c257cc3c7b8eab8a1f54f0cdd1ef28d751425ab88ea95c925"
+      },
+      "verifiedAtHead": "609b4962a285e015d6191e3cc500c344c10bf60e",
+      "assetCommit": "609b4962a285e015d6191e3cc500c344c10bf60e"
     },
     {
       "id": "LM-088",
@@ -833,5 +898,5 @@
   ],
   "methodLimit": "一次照合。未発見46件を未制作確定にしない。要再生成0件は品質承認ではなく再生成判断未実施。既存候補4施設はリンク候補記録のみ、正本設定の変更/再生成なし。",
   "followupHead": "13df15865ddd0e0af18ef2a17b7d71ce00e98796",
-  "latestVerificationHead": "3a229989e82b02646f747bf3296626da16ab12d6"
+  "latestVerificationHead": "609b4962a285e015d6191e3cc500c344c10bf60e"
 }
