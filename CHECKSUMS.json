@@ -1230,7 +1230,7 @@
   "images/assets/voice/kogane001.mp3": "f52321e965f51f19aa479130b76e4a31a46485b628dac34ed07857f9649536b2",
   "images/assets/voice/kohaku02.mp3": "9549136e9ffce4193855af293f29f6ec0041604060ccdab26534ea06f6e2649f",
   "images/assets/voice/midori02.mp3": "c0781ba16c1dbecaf6d5688ed8b4a4404d176cd14bbdbd3f4b9dad4ce84c28ce",
-  "index.html": "20f63814f935fe66e7490dbc6562d9af717c86b160904ed4922b2e8eaff5578b",
+  "index.html": "49e376db34b31c8142823e088c6437f69caa285e0bae031573054c49a80cf9cc",
   "landmark_rows_v039_181.tsv": "45ac38ec8f62bf4a843befcb2b978a10c727d93ec02b15ff486f834dce86cf15",
   "manifest/v039_49_checks.json": "81c427bc6c3bf599587d98e517c6a429f71aac2df00c0d56661e821ee0cc8b69",
   "program/Readme.md": "a74dbb92d5460f5e6fea8b110b016b8da6ad6305ff65429448ccdbd9a975faee",
@@ -1429,7 +1429,7 @@
   "program/v039/office.js": "749dae19a0a8a4feb54e702849f2260df59caa80986111d622360aa532ddc8da",
   "program/v039/officeUiSurfaceFix.css": "95b0bc5fc7a1b69c642991779d7030f9df929a7e8beae4f1c85963121518ebb1",
   "program/v039/recordingAlbum.css": "2cad17614e924e98b2a04ef9521fd381d19798f9bf261055ba1a38caec2ebe62",
-  "program/v039/recordingAlbum.js": "7c5a4378d0d8c20959e8ee7073eb52c2934b1006f2408ada98ad155ac7081662",
+  "program/v039/recordingAlbum.js": "c5bc52405e73f0b4ef9c8db86c4cae25e721ff02600814481c519c9a0e3a1213",
   "program/v039/rightMenuViewportGuard.css": "e14ab7583f370894fbdeb30958793be18002d35e68aae11efaf589cfbaea6815",
   "program/v039/rightMenuViewportGuard.js": "53bc0b551ffd2bffcad8ce0d154195952f44cff82fdf72c8550e22595c1c7ccb",
   "program/v039/rivalBattle.css": "2127c4fbc9042c03011c5487771d2df246ab89202516c6cc5a026990bd32f10a",
@@ -1737,5 +1737,6 @@
   "images/assets/bg/production/delta_legacy_bg061_110_sheet_20261031.json": "c3de363ed65818691ad0112bf2907857ed8d85ef738ce8fb202d3a2b1ed1d8ab",
   "images/assets/bg/production/delta_background_capacity_estimate_20261031.json": "137a082c9ff8aa67192b659429af5bf39ea329b1843efffe98e77f451afe8e6f",
   "images/assets/bg/production/delta_legacy_bg061_110_delivery_20261031.json": "f5526f884220d6ff578da73f336aa744f64469dd7b2de76034fd41fe13fcebe0",
-  "images/assets/bg/production/delta_legacy_bg061_110_qc_20261031.txt": "1a1ec0cd0d3a74eb1ad3e568d2c93a5dfc177d55d9b7b4781ce084d03c53f4c3"
+  "images/assets/bg/production/delta_legacy_bg061_110_qc_20261031.txt": "1a1ec0cd0d3a74eb1ad3e568d2c93a5dfc177d55d9b7b4781ce084d03c53f4c3",
+  "tests/album_normal_mode.test.cjs": "87ee18c015c5ed01c98a8462abcfbf2b5cc0ed57bcdc582544460f4a931c7eb9"
 }

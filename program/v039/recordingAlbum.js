@@ -45,39 +45,9 @@
     }
   }
 
-  function makeModeSwitch(panel, tab){
-    const anchor = panel.querySelector(".tenotsu-album-columns") || panel.querySelector(".tenotsu-story-menu-tabs");
-    if (!anchor) return;
-
-    const row = document.createElement("div");
-    row.className = "tenotsu-recording-mode-switch";
-    row.setAttribute("aria-label", "アルバム表示モード");
-
-    const normal = document.createElement("button");
-    normal.type = "button";
-    normal.className = "tenotsu-recording-mode-button" + (ns.recordingAlbumActive ? "" : " active");
-    normal.textContent = "通常閲覧";
-    normal.addEventListener("click", () => {
-      if (ns.recordingAlbumActive) ns.leaveRecordingAlbum({ tab });
-    });
-
-    const recording = document.createElement("button");
-    recording.type = "button";
-    recording.className = "tenotsu-recording-mode-button recording" + (ns.recordingAlbumActive ? " active" : "");
-    recording.textContent = "動画録画用";
-    recording.addEventListener("click", () => {
-      if (!ns.recordingAlbumActive) ns.enterRecordingAlbum({ noTransition:true, tab });
-    });
-
-    row.appendChild(normal);
-    row.appendChild(recording);
-    anchor.parentNode.insertBefore(row, anchor);
-  }
-
   function decorate(tab){
     const panel = ns.layers && ns.layers.town;
     if (!panel) return;
-    makeModeSwitch(panel, tab);
 
     if (!ns.recordingAlbumActive) {
       document.body.classList.remove("tenotsu-recording-album");
@@ -107,6 +77,10 @@
   if (typeof renderStoryMenu === "function") {
     ns.renderStoryMenu = function renderRecordingAwareStoryMenu(tab){
       const activeTab = tab || "other";
+      // Recollection browsing is always normal, including legacy recording URLs/state.
+      ns.recordingAlbumActive = false;
+      document.body.classList.remove("tenotsu-recording-album");
+      setUrl(false, activeTab);
       const result = renderStoryMenu.call(this, activeTab);
       decorate(activeTab);
       return result;
@@ -145,7 +119,7 @@
     }
   };
 
-  ns.recordingAlbumActive = requested();
+  ns.recordingAlbumActive = false;
   ns.isRecordingAlbumRequested = requested;
   ns.decorateRecordingAlbum = decorate;
 })();
