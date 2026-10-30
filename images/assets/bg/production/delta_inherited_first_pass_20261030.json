@@ -4,8 +4,8 @@
   "counts": {
     "total": 50,
     "existing": 4,
-    "newFirstDrafts": 5,
-    "notFound": 41,
+    "newFirstDrafts": 10,
+    "notFound": 36,
     "needsRegeneration": 0
   },
   "items": [
@@ -117,22 +117,34 @@
     {
       "id": "LM-066",
       "facility": "大道寺家のエステルーム",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "採否/原住居追加資料/設備・寸法/実画面",
+      "visual": "新規1枚を目視QC。人物なし・生活用途と動線・中央ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-173",
+        "img": "IMG-WLD-097",
+        "key": "daidoji_home_beauty_room_day",
+        "path": "images/assets/bg/bg_daidoji_home_beauty_room_day.webp"
+      }
     },
     {
       "id": "LM-067",
       "facility": "氷神家の小さな菓子工房",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "採否/原住居追加資料/設備・寸法/実画面",
+      "visual": "新規1枚を目視QC。人物なし・生活用途と動線・中央ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-174",
+        "img": "IMG-WLD-098",
+        "key": "hikami_home_sweets_kitchen_day",
+        "path": "images/assets/bg/bg_hikami_home_sweets_kitchen_day.webp"
+      }
     },
     {
       "id": "LM-068",
@@ -191,32 +203,50 @@
     {
       "id": "LM-069",
       "facility": "芝桜家の配信部屋",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "採否/原住居追加資料/設備・寸法/実画面",
+      "visual": "新規1枚を目視QC。人物なし・生活用途と動線・中央ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-175",
+        "img": "IMG-WLD-099",
+        "key": "shibazakura_streaming_room_night",
+        "path": "images/assets/bg/bg_shibazakura_streaming_room_night.webp"
+      }
     },
     {
       "id": "LM-070",
       "facility": "紫藤マンションの花嫁修業キッチン",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "採否/原住居追加資料/設備・寸法/実画面",
+      "visual": "新規1枚を目視QC。人物なし・生活用途と動線・中央ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-176",
+        "img": "IMG-WLD-100",
+        "key": "shido_mansion_home_kitchen_evening",
+        "path": "images/assets/bg/bg_shido_mansion_home_kitchen_evening.webp"
+      }
     },
     {
       "id": "LM-071",
       "facility": "餅月マンションのゆるふわ事務部屋",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "採否/原住居追加資料/設備・寸法/実画面",
+      "visual": "新規1枚を目視QC。人物なし・生活用途と動線・中央ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-177",
+        "img": "IMG-WLD-101",
+        "key": "mochizuki_home_office_night",
+        "path": "images/assets/bg/bg_mochizuki_home_office_night.webp"
+      }
     },
     {
       "id": "LM-072",
@@ -672,5 +702,5 @@
     }
   ],
   "methodLimit": "一次照合。未発見46件を未制作確定にしない。要再生成0件は品質承認ではなく再生成判断未実施。既存候補4施設はリンク候補記録のみ、正本設定の変更/再生成なし。",
-  "followupHead": "a432e36698739d10a796b56e4c5510b289a5fb47"
+  "followupHead": "13df15865ddd0e0af18ef2a17b7d71ce00e98796"
 }

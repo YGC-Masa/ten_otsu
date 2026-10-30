@@ -31,6 +31,13 @@
       941
     ]
   },
-  "status": "remote配置/台帳読み戻しは後続確認",
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "登録/270セル全体読み戻し一致",
+    "remoteCommit": "ee5175dcf0ee13bdfb355fbeffabd3339005d5ef",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
   "verificationParentHead": "fe3f31185eb51ba9850b846bd365bc2eb82f8c2b"
 }
