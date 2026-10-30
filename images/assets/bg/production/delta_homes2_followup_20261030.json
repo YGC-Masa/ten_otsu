@@ -54,7 +54,16 @@
         "key": "daidoji_home_beauty_room_day",
         "path": "images/assets/bg/bg_daidoji_home_beauty_room_day.webp"
       },
-      "status": "remote配置/台帳読み戻しは後続確認"
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録・今回270セル再照合一致",
+        "assetCommit": "5654a2d1e556bb7502f858db7a64cf546a08d060",
+        "verifiedAtHead": "ba8b69b792ee01c58da716df13318854323a62df",
+        "catalog": "key/path/SPACE登録済",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      }
     },
     {
       "date": "2026-10-30",
@@ -84,7 +93,16 @@
         "key": "hikami_home_sweets_kitchen_day",
         "path": "images/assets/bg/bg_hikami_home_sweets_kitchen_day.webp"
       },
-      "status": "remote配置/台帳読み戻しは後続確認"
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録・今回270セル再照合一致",
+        "assetCommit": "19893e4226518b723cec7e8b82a85c64bccf2ab3",
+        "verifiedAtHead": "ba8b69b792ee01c58da716df13318854323a62df",
+        "catalog": "key/path/SPACE登録済",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      }
     },
     {
       "date": "2026-10-30",
@@ -114,7 +132,16 @@
         "key": "shibazakura_streaming_room_night",
         "path": "images/assets/bg/bg_shibazakura_streaming_room_night.webp"
       },
-      "status": "remote配置/台帳読み戻しは後続確認"
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録・今回270セル再照合一致",
+        "assetCommit": "fe3f31185eb51ba9850b846bd365bc2eb82f8c2b",
+        "verifiedAtHead": "ba8b69b792ee01c58da716df13318854323a62df",
+        "catalog": "key/path/SPACE登録済",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      }
     },
     {
       "date": "2026-10-30",
@@ -144,7 +171,16 @@
         "key": "shido_mansion_home_kitchen_evening",
         "path": "images/assets/bg/bg_shido_mansion_home_kitchen_evening.webp"
       },
-      "status": "remote配置/台帳読み戻しは後続確認"
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録・今回270セル再照合一致",
+        "assetCommit": "ee5175dcf0ee13bdfb355fbeffabd3339005d5ef",
+        "verifiedAtHead": "ba8b69b792ee01c58da716df13318854323a62df",
+        "catalog": "key/path/SPACE登録済",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      }
     },
     {
       "date": "2026-10-30",
@@ -174,7 +210,16 @@
         "key": "mochizuki_home_office_night",
         "path": "images/assets/bg/bg_mochizuki_home_office_night.webp"
       },
-      "status": "remote配置/台帳読み戻しは後続確認"
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録・今回270セル再照合一致",
+        "assetCommit": "13df15865ddd0e0af18ef2a17b7d71ce00e98796",
+        "verifiedAtHead": "ba8b69b792ee01c58da716df13318854323a62df",
+        "catalog": "key/path/SPACE登録済",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      }
     }
   ],
   "rollup": {
@@ -187,5 +232,11 @@
   "scope": "未発見は不存在の断定ではない。LM-068既存対応を維持し再生成なし。プログラム/シナリオ本文を変更せず。",
   "checksum": "各施設の画像/カタログ/設計記録は同コミットで実バイトSHA256更新。他キー値保持を検証。最終記録/進捗更新も同じ方法で必要行のみ更新。",
   "remaining": "採否/実画面/立ち絵/寸法/機器監修/家族や住居原設定の追加照合。彩愛introの普通家庭育ちと既存屋敷実家編の表現差は記録し変更しない。",
-  "verificationHead": "13df15865ddd0e0af18ef2a17b7d71ce00e98796"
+  "verificationHead": "13df15865ddd0e0af18ef2a17b7d71ce00e98796",
+  "recordsStatusReconciliation": {
+    "verifiedAtHead": "ba8b69b792ee01c58da716df13318854323a62df",
+    "sheetCellsRechecked": 270,
+    "imageBytesSHA256Matched": 5,
+    "basis": "台帳値を再読し前回更新値と全件一致、Git実バイトを個別制作記録と照合。目視QCは元の制作時点。採否/実画面は未確認を維持。"
+  }
 }
