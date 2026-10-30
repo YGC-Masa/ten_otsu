@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-081",
+  "facility": "FAC-026",
+  "space": "SPACE-LM081-ENTRANCE",
+  "name": "星海ワンダーリゾート 代表入口・昼（初版外観案）",
+  "canon": "日和坂市外、新幹線/特急で日帰り圏、巨大テーマパーク。大型デート/絶叫系/パレード/限定グッズ/閉園間際の観覧車。通年休日昼〜夜。",
+  "proposal": "入口だけの案。星を抽象化した独自の3連門・淡クリーム/紺/金、左チケットと右手荷物検査/出口、中央広い入場前広場。奥遠景に観覧車と控えめなコースター線、個別施設は登録しない。",
+  "unconfirmed": "家具/間取り/設備/採否/正確寸法未確定。住所・居住階数・海坂の位置関係を確定しない。LM-077住居/職場の区別・VIPとの同一性/接続は未確定。テーマパークの全館構成/鉄道経路を追加しない。",
+  "sources": {
+    "world": "02_ランドマーク LM-081",
+    "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の固有名/別名検索2組・scenario/v039本文を照合、専用5画像未発見。既存BG-167/BG-157/交換所WebPを実画素参照。朔夜導入と使用差分表も確認。未発見は不存在の断定ではない。",
+    "references": []
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、用途/小物/窓扉/通行/ADV余白を目視確認。LM-078/080は実画像を参照して扉枠・レンガ・黒柵・淡灰角タイル/暖色室内を比較。テーマパークは入口各1枚。寸法・階段/EV・住所/方位は未確定。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-186",
+    "img": "IMG-WLD-110",
+    "key": "hoshiumi_wonder_resort_entrance_day",
+    "path": "images/assets/bg/bg_hoshiumi_wonder_resort_entrance_day.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "fcff8c30a41f1915538d2fa58a46d442cdb772ae2749a59b73ecc40c7e8a5fa5"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "d3d636f4a6b6d69fb060e80497e361e5f38734f5"
+}
