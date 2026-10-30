@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-072",
+  "facility": "FAC-021",
+  "space": "SPACE-LM072-GAME",
+  "name": "天神家のにぎやかゲーム部屋 夜（自宅空間案）",
+  "canon": "駅近マンション/小春/ゲーム勝負・寂しがりやの素/通年夜",
+  "proposal": "左TVとゲーム機/後方机・右ソファと二人分飲物、奥窓と右室内扉、中央通路",
+  "unconfirmed": "家具/間取り/設備/採否/正確寸法未確定。家族人数/全館階数/所有者/住所を追加しない。LM-076は建物と階数も未確定。",
+  "sources": {
+    "world": "02_ランドマーク LM-072",
+    "search": "main画像名・台帳・Drive画像名(姓/人物/部屋)と499テキストを照合、専用背景未発見。未発見は不存在の断定ではない。intro個別5ファイルは取得できず未確認。職場bg011・汎用bg020は流用しない。",
+    "references": []
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、用途/小物/窓扉/通行/中央ADV余白を目視確認。LM-075は既存外観参照で窓を3分割へ修正。階段/EV方式は描かず未確定。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-178",
+    "img": "IMG-WLD-102",
+    "key": "tenjin_home_game_room_night",
+    "path": "images/assets/bg/bg_tenjin_home_game_room_night.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "db6f150e9bb669f27e6fc73fa8cd07c7137a4348b01eaa7dc55d0186beb86e4e"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "2a92d9b93fd2d165d9007a819043bda356bd3b17"
+}

@@ -676,3 +676,14 @@
     "status": "住居初版案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-072 residential proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "tenjin_home_game_room_night": {
+    "name": "天神家のにぎやかゲーム部屋 夜（自宅空間案）",
+    "path": "images/assets/bg/bg_tenjin_home_game_room_night.webp",
+    "spaceId": "SPACE-LM072-GAME",
+    "time": "night",
+    "status": "住居初版案/間取り・設備・採否未確定"
+  }
+});})();
