@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-108",
+  "facility": "FAC-053",
+  "space": "SPACE-LM108-ENTRANCE",
+  "name": "日和坂サービスエリア 入口・夜（初版SA案）",
+  "canon": "高速道路・日和坂市外、市外移動/SA/遠出導線、全員。買い食い/帰路休憩/土産/深夜自販機前会話。通年遠出時。",
+  "proposal": "市外高速SAの歩行前庭/主入口案。低層クリーム/灰金属の休憩商業棟・深い庇/中央ガラス入口、脇に少数の無銘自販機とベンチ/土産窓の仮意匠。車両帯は低柱で外側分離。道路名/上下線/IC接続/運営店/営業時間/給油・充電設備は未確定。",
+  "unconfirmed": "建築/設備/配置/採否/正確寸法未確定。代表背景各1枚のみ、施設接続/営業条件/全館階数/住所・方位・距離を確定しない。防災設備性能・灯台の航路機能/灯質/登塔可否・SAの道路所属/上下線は原設定以上を追加しない。",
+  "sources": {
+    "world": "02_ランドマーク LM-108",
+    "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/英語別名検索2組・scenario/v039本文を照合、専用6画像未発見。6施設の直接シナリオ出典は未発見。既存横丁夜/温泉街冬夕/港岸壁/潮見浜夕の実画像を比較し、類似だけで同一施設としない。未発見は不存在の断定ではない。",
+    "references": []
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、用途/素材/窓扉/通行/中央ADV余白を目視確認。銭湯は既存温泉街と別、横丁は既存店を置換しない近景案。防災性能/航路機能/道路所属は未設定。設備規格・法令/正確寸法と全市地理は未検証。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-213",
+    "img": "IMG-WLD-137",
+    "key": "hiyorizaka_service_area_entrance_night",
+    "path": "images/assets/bg/bg_hiyorizaka_service_area_entrance_night.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "c822f399922a03bb7bb650d2404c3872f3764e4d96a7aef5fad6227f1f908c24"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "53acb95adf29605f5cdd00e27b6d1f199ba272be"
+}

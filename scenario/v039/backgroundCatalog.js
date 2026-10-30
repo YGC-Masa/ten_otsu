@@ -1061,3 +1061,14 @@
     "status": "初版空間案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-108 landmark proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "hiyorizaka_service_area_entrance_night": {
+    "name": "日和坂サービスエリア 入口・夜（初版SA案）",
+    "path": "images/assets/bg/bg_hiyorizaka_service_area_entrance_night.webp",
+    "spaceId": "SPACE-LM108-ENTRANCE",
+    "time": "night",
+    "status": "初版空間案/間取り・設備・採否未確定"
+  }
+});})();
