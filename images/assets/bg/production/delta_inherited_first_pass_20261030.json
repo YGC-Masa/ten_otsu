@@ -4,8 +4,8 @@
   "counts": {
     "total": 50,
     "existing": 4,
-    "newFirstDrafts": 35,
-    "notFound": 11,
+    "newFirstDrafts": 40,
+    "notFound": 6,
     "needsRegeneration": 0
   },
   "items": [
@@ -864,52 +864,117 @@
     {
       "id": "LM-098",
       "facility": "日和坂中央映画館",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "初版採否/追加原設定/実画面/寸法・地理接続（内部拡張なし）",
+      "visual": "代表1枚目視QC済。人物なし、素材/用途/窓扉/通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-203",
+        "img": "IMG-WLD-127",
+        "key": "hiyorizaka_central_cinema_entrance_rain_day",
+        "path": "images/assets/bg/bg_hiyorizaka_central_cinema_entrance_rain_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "30c41e48dc8ebb093bb6c73e93b2ab7c0c0995d0d1f11aecd90bb6d127d6e3ce"
+      },
+      "verifiedAtHead": "f1ddcbe47d0fc85b0271f53a8af8a940022583d5",
+      "assetCommit": "316578dde97301374d3e9aacb25220573efc3410"
     },
     {
       "id": "LM-099",
       "facility": "潮見ボウル＆カラオケ",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "初版採否/追加原設定/実画面/寸法・地理接続（内部拡張なし）",
+      "visual": "代表1枚目視QC済。人物なし、素材/用途/窓扉/通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-204",
+        "img": "IMG-WLD-128",
+        "key": "shiomi_bowl_karaoke_entrance_evening",
+        "path": "images/assets/bg/bg_shiomi_bowl_karaoke_entrance_evening.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "6b0d3370bf78ccec7bcefcaaf999e1c2ca81304ba973f3708f24d1aaf5894420"
+      },
+      "verifiedAtHead": "f1ddcbe47d0fc85b0271f53a8af8a940022583d5",
+      "assetCommit": "902b86e03b272867a2b55728db968765b565a452"
     },
     {
       "id": "LM-100",
       "facility": "山里ログハウス村",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "初版採否/追加原設定/実画面/寸法・地理接続（内部拡張なし）",
+      "visual": "代表1枚目視QC済。人物なし、素材/用途/窓扉/通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-205",
+        "img": "IMG-WLD-129",
+        "key": "yamazato_loghouse_village_entrance_autumn_evening",
+        "path": "images/assets/bg/bg_yamazato_loghouse_village_entrance_autumn_evening.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "5d2b3a94597424c5c0095e251fa20141a7e7caca273f0f6b5733ae32b64d60c1"
+      },
+      "verifiedAtHead": "f1ddcbe47d0fc85b0271f53a8af8a940022583d5",
+      "assetCommit": "2251ceb843ed6fcf033d7d4013e20c0960b395b8"
     },
     {
       "id": "LM-101",
       "facility": "日和坂クラフト工房街",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "初版採否/追加原設定/実画面/寸法・地理接続（内部拡張なし）",
+      "visual": "代表1枚目視QC済。人物なし、素材/用途/窓扉/通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-206",
+        "img": "IMG-WLD-130",
+        "key": "hiyorizaka_craft_workshop_lane_day",
+        "path": "images/assets/bg/bg_hiyorizaka_craft_workshop_lane_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "42545ba050ad2be1bb258982c0710664b54868304bca3c9e9e8c2a3bc43843a6"
+      },
+      "verifiedAtHead": "f1ddcbe47d0fc85b0271f53a8af8a940022583d5",
+      "assetCommit": "a71d654c1895e04c453b1ea60a0723805329fbe8"
     },
     {
       "id": "LM-102",
       "facility": "潮風ドライブロード",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "初版採否/追加原設定/実画面/寸法・地理接続/停車区画・車内未設計/道路規格未検証",
+      "visual": "代表1枚目視QC済。人物なし、素材/用途/窓扉/通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-207",
+        "img": "IMG-WLD-131",
+        "key": "shiokaze_drive_road_evening",
+        "path": "images/assets/bg/bg_shiokaze_drive_road_evening.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "f00888cafbb572e5b6591e314f95a9d11b6e17f88dc8ba6e789d45178a852986"
+      },
+      "verifiedAtHead": "f1ddcbe47d0fc85b0271f53a8af8a940022583d5",
+      "assetCommit": "f1ddcbe47d0fc85b0271f53a8af8a940022583d5"
     },
     {
       "id": "LM-103",
@@ -1028,5 +1093,5 @@
   ],
   "methodLimit": "一次照合。未発見46件を未制作確定にしない。要再生成0件は品質承認ではなく再生成判断未実施。既存候補4施設はリンク候補記録のみ、正本設定の変更/再生成なし。",
   "followupHead": "13df15865ddd0e0af18ef2a17b7d71ce00e98796",
-  "latestVerificationHead": "d7e580c3094251d71dfe9303e93a0524a9d81377"
+  "latestVerificationHead": "f1ddcbe47d0fc85b0271f53a8af8a940022583d5"
 }

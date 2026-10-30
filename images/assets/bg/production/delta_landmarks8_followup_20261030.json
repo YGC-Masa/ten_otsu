@@ -1,0 +1,295 @@
+{
+  "date": "2026-10-30",
+  "sourceHead": "57a55dee05ecf8d01088d930de5603f6c03a253a",
+  "verifiedAtHead": "f1ddcbe47d0fc85b0271f53a8af8a940022583d5",
+  "commits": {
+    "LM-098": "316578dde97301374d3e9aacb25220573efc3410",
+    "LM-099": "902b86e03b272867a2b55728db968765b565a452",
+    "LM-100": "2251ceb843ed6fcf033d7d4013e20c0960b395b8",
+    "LM-101": "a71d654c1895e04c453b1ea60a0723805329fbe8",
+    "LM-102": "f1ddcbe47d0fc85b0271f53a8af8a940022583d5"
+  },
+  "verification": {
+    "head": "f1ddcbe47d0fc85b0271f53a8af8a940022583d5",
+    "remoteHead": "f1ddcbe47d0fc85b0271f53a8af8a940022583d5",
+    "imagesSha256Matched": 5,
+    "catalogAndSpaceMatched": 5,
+    "newKeysUnique": 5,
+    "allCatalogMissingPaths": [],
+    "checksums": {
+      "entries": 1708,
+      "mismatches": [],
+      "freshActualGitBytesHashed": 80,
+      "unchangedBlobUsingPriorFullByteHash": 1628,
+      "baseline": "f52697ebd230255e1802f3a56583605fa4811b03"
+    },
+    "adoption": "未確定",
+    "liveScreen": "未確認",
+    "sheetCellsMatched": 270,
+    "visuallyInspected": 5
+  },
+  "records": [
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-098",
+      "facility": "FAC-043",
+      "space": "SPACE-LM098-ENTRANCE",
+      "name": "日和坂中央映画館 入口・雨昼（初版外観案）",
+      "canon": "駅前商業エリア、映画館/雨の日デート。翠/藍/真花/夜空/緋奈、ホラーで琥珀/感動作で翠等。映画鑑賞/VOD談義。通年昼〜夜/雨。",
+      "proposal": "街の映画館入口案。濃灰/クリーム壁・深い庇・小球照明、左チケット窓口/中央ガラス風除室/右退出、横に完全無地のポスター枠。雨の前庭と庇下会話帯。作品名/広告/料金/上映時刻/スクリーン数は未設定。 手前車道/縁石/ボラードを除去し、画面下端まで連続する歩行前庭へ修正。",
+      "unconfirmed": "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理接続/上映作品/広告/店名/営業条件/全館階数/住所・方位・距離を確定しない。道路の停車区画/車内は未設計、車線幅/標示/規格も未検証。",
+      "sources": {
+        "world": "02_ランドマーク LM-098",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/別名検索2組・scenario/v039本文を照合、専用5画像未発見。ドライブ検索の外付けドライブ文脈は除外し、5施設の直接出典は未発見。潮見浜夕BG-004実WebP/自転車道BG-102/青葉キャンプBG-088/シーグラスBG-107を実画素確認。類似だけで同一施設としない。未発見は不存在の断定ではない。",
+        "references": []
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/素材/窓扉/主通行帯/中央ADV余白を目視確認。映画館の手前車道を歩行前庭へ修正。ログ村は湖/テントなし、クラフトは海沿い通りと分離。道路は車道と歩行帯の縁石/海柵を確認。停車区画は描かれていない。海岸形の参照は定性的比較で座標/方位/山稜重畳/規格寸法は未検証。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-203",
+        "img": "IMG-WLD-127",
+        "key": "hiyorizaka_central_cinema_entrance_rain_day",
+        "path": "images/assets/bg/bg_hiyorizaka_central_cinema_entrance_rain_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "30c41e48dc8ebb093bb6c73e93b2ab7c0c0995d0d1f11aecd90bb6d127d6e3ce"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回270セル読み戻し一致",
+        "assetCommit": "316578dde97301374d3e9aacb25220573efc3410",
+        "verifiedAtHead": "f1ddcbe47d0fc85b0271f53a8af8a940022583d5",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "57a55dee05ecf8d01088d930de5603f6c03a253a"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-099",
+      "facility": "FAC-044",
+      "space": "SPACE-LM099-ENTRANCE",
+      "name": "潮見ボウル＆カラオケ 入口・夕方（初版外観案）",
+      "canon": "市街地、ボウリング/カラオケ/遊び場。緋奈/こがね/小春/桃/琥珀/なつ。ボウリング勝負/カラオケ/罰ゲーム/グループデート。通年昼〜夜。",
+      "proposal": "複合遊戯施設の代表入口案。青紺/クリーム・橙の控えめライン、左に無銘のピン/マイク形意匠、中央風除室・左受付/右退出候補、広い舗装前庭。レーン/個室/料金/営業時間/階別用途は未確定。",
+      "unconfirmed": "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理接続/上映作品/広告/店名/営業条件/全館階数/住所・方位・距離を確定しない。道路の停車区画/車内は未設計、車線幅/標示/規格も未検証。",
+      "sources": {
+        "world": "02_ランドマーク LM-099",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/別名検索2組・scenario/v039本文を照合、専用5画像未発見。ドライブ検索の外付けドライブ文脈は除外し、5施設の直接出典は未発見。潮見浜夕BG-004実WebP/自転車道BG-102/青葉キャンプBG-088/シーグラスBG-107を実画素確認。類似だけで同一施設としない。未発見は不存在の断定ではない。",
+        "references": []
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/素材/窓扉/主通行帯/中央ADV余白を目視確認。映画館の手前車道を歩行前庭へ修正。ログ村は湖/テントなし、クラフトは海沿い通りと分離。道路は車道と歩行帯の縁石/海柵を確認。停車区画は描かれていない。海岸形の参照は定性的比較で座標/方位/山稜重畳/規格寸法は未検証。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-204",
+        "img": "IMG-WLD-128",
+        "key": "shiomi_bowl_karaoke_entrance_evening",
+        "path": "images/assets/bg/bg_shiomi_bowl_karaoke_entrance_evening.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "6b0d3370bf78ccec7bcefcaaf999e1c2ca81304ba973f3708f24d1aaf5894420"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回270セル読み戻し一致",
+        "assetCommit": "902b86e03b272867a2b55728db968765b565a452",
+        "verifiedAtHead": "f1ddcbe47d0fc85b0271f53a8af8a940022583d5",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "316578dde97301374d3e9aacb25220573efc3410"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-100",
+      "facility": "FAC-045",
+      "space": "SPACE-LM100-ENTRANCE",
+      "name": "山里ログハウス村 入口・秋夕方（初版宿泊施設案）",
+      "canon": "山側観光エリア、宿泊/自然/キャンプ。なつ/琥珀/雪乃/夜空/萌。宿泊/焚き火/星空/雪の日ロッジ/複数人旅行。通年、春秋冬が強い。",
+      "proposal": "山側林間のログハウス村来訪入口案。左に丸太壁/灰緑切妻の受付ロッジ・暖色窓、奥に同素材の宿泊棟外形が少し見える。中央歩行/荷物路、脇に搬入/車両境界候補。棟数/部屋内部/焚き火区画未確定。青葉湖畔キャンプ場とは別施設、湖/テントは描かない。",
+      "unconfirmed": "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理接続/上映作品/広告/店名/営業条件/全館階数/住所・方位・距離を確定しない。道路の停車区画/車内は未設計、車線幅/標示/規格も未検証。",
+      "sources": {
+        "world": "02_ランドマーク LM-100",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/別名検索2組・scenario/v039本文を照合、専用5画像未発見。ドライブ検索の外付けドライブ文脈は除外し、5施設の直接出典は未発見。潮見浜夕BG-004実WebP/自転車道BG-102/青葉キャンプBG-088/シーグラスBG-107を実画素確認。類似だけで同一施設としない。未発見は不存在の断定ではない。",
+        "references": []
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/素材/窓扉/主通行帯/中央ADV余白を目視確認。映画館の手前車道を歩行前庭へ修正。ログ村は湖/テントなし、クラフトは海沿い通りと分離。道路は車道と歩行帯の縁石/海柵を確認。停車区画は描かれていない。海岸形の参照は定性的比較で座標/方位/山稜重畳/規格寸法は未検証。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-205",
+        "img": "IMG-WLD-129",
+        "key": "yamazato_loghouse_village_entrance_autumn_evening",
+        "path": "images/assets/bg/bg_yamazato_loghouse_village_entrance_autumn_evening.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "5d2b3a94597424c5c0095e251fa20141a7e7caca273f0f6b5733ae32b64d60c1"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回270セル読み戻し一致",
+        "assetCommit": "2251ceb843ed6fcf033d7d4013e20c0960b395b8",
+        "verifiedAtHead": "f1ddcbe47d0fc85b0271f53a8af8a940022583d5",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "902b86e03b272867a2b55728db968765b565a452"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-101",
+      "facility": "FAC-046",
+      "space": "SPACE-LM101-LANE",
+      "name": "日和坂クラフト工房街 入口導線・昼（初版街路案）",
+      "canon": "旧市街〜高台文化ゾーン、工芸/体験/アクセ作り。真花/彩愛/萌/藍/こがね/ひかる。陶芸/ガラス細工/アクセ/ペア小物/手先。通年昼。",
+      "proposal": "旧市街側の工房街入口案。低層白壁/木格子/灰瓦、左窓に陶器/右窓に無銘ガラス・小物と窓奥作業卓の仮配置、中央連続石畳/脇ベンチ。窯/火気設備・個別工房名/運営/営業条件・具体接合点は未確定。海沿いシーグラス通りとは別項目。",
+      "unconfirmed": "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理接続/上映作品/広告/店名/営業条件/全館階数/住所・方位・距離を確定しない。道路の停車区画/車内は未設計、車線幅/標示/規格も未検証。",
+      "sources": {
+        "world": "02_ランドマーク LM-101",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/別名検索2組・scenario/v039本文を照合、専用5画像未発見。ドライブ検索の外付けドライブ文脈は除外し、5施設の直接出典は未発見。潮見浜夕BG-004実WebP/自転車道BG-102/青葉キャンプBG-088/シーグラスBG-107を実画素確認。類似だけで同一施設としない。未発見は不存在の断定ではない。",
+        "references": []
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/素材/窓扉/主通行帯/中央ADV余白を目視確認。映画館の手前車道を歩行前庭へ修正。ログ村は湖/テントなし、クラフトは海沿い通りと分離。道路は車道と歩行帯の縁石/海柵を確認。停車区画は描かれていない。海岸形の参照は定性的比較で座標/方位/山稜重畳/規格寸法は未検証。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-206",
+        "img": "IMG-WLD-130",
+        "key": "hiyorizaka_craft_workshop_lane_day",
+        "path": "images/assets/bg/bg_hiyorizaka_craft_workshop_lane_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "42545ba050ad2be1bb258982c0710664b54868304bca3c9e9e8c2a3bc43843a6"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回270セル読み戻し一致",
+        "assetCommit": "a71d654c1895e04c453b1ea60a0723805329fbe8",
+        "verifiedAtHead": "f1ddcbe47d0fc85b0271f53a8af8a940022583d5",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "2251ceb843ed6fcf033d7d4013e20c0960b395b8"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-102",
+      "facility": "FAC-047",
+      "space": "SPACE-LM102-ROAD",
+      "name": "潮風ドライブロード 海岸道路・夕方（初版道路案）",
+      "canon": "潮見浜〜郊外海岸、海岸線/ドライブ。琥珀/雪乃/彩愛/夜空/里美。夕日ドライブ/海沿い停車/車内会話/雨上がり海岸。春〜秋夕方〜夜。",
+      "proposal": "海岸道路SPACEの代表構図案。左の車道と手前中央の連続歩行帯を縁石で分離、右海側防護柵、既存参照の湾曲する浜と山並み。画像に停車区画/車内は描けておらず未設計。LM-015自転車道を改造/共用扱いにしない。座標/方位/距離/接続・車線幅や標示の詳細は未確定。",
+      "unconfirmed": "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理接続/上映作品/広告/店名/営業条件/全館階数/住所・方位・距離を確定しない。道路の停車区画/車内は未設計、車線幅/標示/規格も未検証。",
+      "sources": {
+        "world": "02_ランドマーク LM-102",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/別名検索2組・scenario/v039本文を照合、専用5画像未発見。ドライブ検索の外付けドライブ文脈は除外し、5施設の直接出典は未発見。潮見浜夕BG-004実WebP/自転車道BG-102/青葉キャンプBG-088/シーグラスBG-107を実画素確認。類似だけで同一施設としない。未発見は不存在の断定ではない。",
+        "references": [
+          "/workspace/delta_landmarks8/bg_shiomi_beach_evening.webp",
+          "/workspace/delta_landmarks8/bg_shiokaze_cycling_road_morning.webp"
+        ]
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/素材/窓扉/主通行帯/中央ADV余白を目視確認。映画館の手前車道を歩行前庭へ修正。ログ村は湖/テントなし、クラフトは海沿い通りと分離。道路は車道と歩行帯の縁石/海柵を確認。停車区画は描かれていない。海岸形の参照は定性的比較で座標/方位/山稜重畳/規格寸法は未検証。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-207",
+        "img": "IMG-WLD-131",
+        "key": "shiokaze_drive_road_evening",
+        "path": "images/assets/bg/bg_shiokaze_drive_road_evening.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "f00888cafbb572e5b6591e314f95a9d11b6e17f88dc8ba6e789d45178a852986"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回270セル読み戻し一致",
+        "assetCommit": "f1ddcbe47d0fc85b0271f53a8af8a940022583d5",
+        "verifiedAtHead": "f1ddcbe47d0fc85b0271f53a8af8a940022583d5",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "a71d654c1895e04c453b1ea60a0723805329fbe8"
+    }
+  ],
+  "scopeCounts": {
+    "total": 50,
+    "newFirstDrafts": 40,
+    "existingLinkedQC": 4,
+    "notFound": 6,
+    "needsRegeneration": 0
+  },
+  "references": {
+    "pixels": [
+      "BG-004潮見浜夕の実WebP：浜の湾曲/海/低い山並み/夕景を定性的に参照。正確な地点/方位/山稜重畳は未検証。",
+      "BG-102潮風サイクリングロード：地域植生/海岸の参照のみ、既存自転車道は改造/共用扱いにしない。",
+      "BG-088青葉キャンプ場：湖畔テント場とログハウス村を区別。新村は湖/テント/既存焚き火区画を描かない。",
+      "BG-107シーグラス通り：海沿い都市商業帯と旧市街クラフト工房街を区別、同一/直結扱いにしない。"
+    ],
+    "texts": [
+      "02_ランドマーク A98:R102",
+      "08_背景アセット A5:L206",
+      "09_空間・間取り管理 A5:O129",
+      "03_建物施設 A2:L43",
+      "scenario/v039本文の5施設名/映画館/カラオケ/ドライブ検索：施設出典は未発見。外付けドライブの文脈は無関係として除外。"
+    ],
+    "searchLimits": "Drive画像名2組は結果0。main全画像名・台帳・scenario/v039本文の確認範囲で専用5背景未発見。未発見は不存在の断定ではなく、Drive全画像の実画素総点検はしていない。"
+  },
+  "unconfirmed": [
+    "全5点の採否/正確寸法/立ち絵重ね/実画面",
+    "全館階数/全域配置/住所・方位・距離・施設間接続",
+    "LM-098 上映作品/ポスター/広告/料金/時刻/スクリーン数未設定。暗い雨昼案、晴れ/夜専用差分は未制作。手前車道を歩行前庭へ修正済。",
+    "LM-099 レーン/個室/階別用途/営業条件は未設定、入口だけ。",
+    "LM-100 棟数/客室/焚き火区画/接続未確定。秋夕案、冬等の差分未制作。",
+    "LM-101 個別工房名/所有運営/営業条件・窯や火気設備は未確定。陶器/ガラス/小物は仮の意匠例。",
+    "LM-102 最終画像は左車道・中央歩行帯・海側柵の代表景。停車区画/車内は描けておらず未設計。生成意図のpull-offを完成扱いにせず名称を海岸道路へ修正。幅員/標示/道路規格/厳密地形/地図照合も未検証。",
+    "彩愛原設定差、店長宅地理、朔夜用途/VIP、湖岸地点、前組設備寸法など既存未確定事項は維持"
+  ],
+  "delivery": "GitHub main配置。Drive画像転記なし。ローカルZIPを外部納品済みとは扱わない。"
+}
