@@ -687,3 +687,14 @@
     "status": "住居初版案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-073 residential proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "kirishima_home_analysis_desk_rain_night": {
+    "name": "霧島家の分析デスク 雨の夜（自宅作業案）",
+    "path": "images/assets/bg/bg_kirishima_home_analysis_desk_rain_night.webp",
+    "spaceId": "SPACE-LM073-ANALYSIS",
+    "time": "night",
+    "status": "住居初版案/間取り・設備・採否未確定"
+  }
+});})();

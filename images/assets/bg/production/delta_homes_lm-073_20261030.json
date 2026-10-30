@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-073",
+  "facility": "FAC-022",
+  "space": "SPACE-LM073-ANALYSIS",
+  "name": "霧島家の分析デスク 雨の夜（自宅作業案）",
+  "canon": "静かな住宅街/真冬/売上データ分析・数学パズル・テーブルゲーム/通年夜雨",
+  "proposal": "左分析机と本・パズル、右読書椅子、奥雨窓と右扉、中央余白",
+  "unconfirmed": "家具/間取り/設備/採否/正確寸法未確定。家族人数/全館階数/所有者/住所を追加しない。LM-076は建物と階数も未確定。",
+  "sources": {
+    "world": "02_ランドマーク LM-073",
+    "search": "main画像名・台帳・Drive画像名(姓/人物/部屋)と499テキストを照合、専用背景未発見。未発見は不存在の断定ではない。intro個別5ファイルは取得できず未確認。職場bg011・汎用bg020は流用しない。",
+    "references": []
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、用途/小物/窓扉/通行/中央ADV余白を目視確認。LM-075は既存外観参照で窓を3分割へ修正。階段/EV方式は描かず未確定。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-179",
+    "img": "IMG-WLD-103",
+    "key": "kirishima_home_analysis_desk_rain_night",
+    "path": "images/assets/bg/bg_kirishima_home_analysis_desk_rain_night.webp",
+    "size": [
+      1672,
+      940
+    ],
+    "sha256": "e23a2dc27f344234e57ffaca9a98110dbd72ae7b821ed2f43eb7d2e62b5c2dca"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "849f3faa52961e6b9d53505877bb628222f921dc"
+}
