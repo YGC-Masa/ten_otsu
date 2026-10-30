@@ -1039,3 +1039,14 @@
     "status": "初版空間案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-106 landmark proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "hiyorizaka_disaster_learning_center_entrance_day": {
+    "name": "日和坂防災センター 入口・昼（初版公共施設案）",
+    "path": "images/assets/bg/bg_hiyorizaka_disaster_learning_center_entrance_day.webp",
+    "spaceId": "SPACE-LM106-ENTRANCE",
+    "time": "day",
+    "status": "初版空間案/間取り・設備・採否未確定"
+  }
+});})();

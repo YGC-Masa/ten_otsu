@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-106",
+  "facility": "FAC-051",
+  "space": "SPACE-LM106-ENTRANCE",
+  "name": "日和坂防災センター 入口・昼（初版公共施設案）",
+  "canon": "市街地、公共施設/防災/家電。翠/百瀬ひかる/陽里/店長/琥珀。防災講座/非常用家電/停電対策/地域イベント/ストア出張相談。通年昼。",
+  "proposal": "地域向け防災学習施設の来館入口案。淡灰公共建築/橙の小アクセント、庇付きガラス風除室・左案内/右退出、中央前庭/脇スロープ。展示設備・発電/備蓄/耐震/通信性能や災害対策本部機能は未設計。",
+  "unconfirmed": "建築/設備/配置/採否/正確寸法未確定。代表背景各1枚のみ、施設接続/営業条件/全館階数/住所・方位・距離を確定しない。防災設備性能・灯台の航路機能/灯質/登塔可否・SAの道路所属/上下線は原設定以上を追加しない。",
+  "sources": {
+    "world": "02_ランドマーク LM-106",
+    "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/英語別名検索2組・scenario/v039本文を照合、専用6画像未発見。6施設の直接シナリオ出典は未発見。既存横丁夜/温泉街冬夕/港岸壁/潮見浜夕の実画像を比較し、類似だけで同一施設としない。未発見は不存在の断定ではない。",
+    "references": []
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、用途/素材/窓扉/通行/中央ADV余白を目視確認。銭湯は既存温泉街と別、横丁は既存店を置換しない近景案。防災性能/航路機能/道路所属は未設定。設備規格・法令/正確寸法と全市地理は未検証。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-211",
+    "img": "IMG-WLD-135",
+    "key": "hiyorizaka_disaster_learning_center_entrance_day",
+    "path": "images/assets/bg/bg_hiyorizaka_disaster_learning_center_entrance_day.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "9b2579ccc2292f1328cf2d09ef4675e3ed1ac53465b8d94ba7771b00f3259806"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "2dbb92ee99e73c00d7529856dcb9e62a7f9eb9bb"
+}
