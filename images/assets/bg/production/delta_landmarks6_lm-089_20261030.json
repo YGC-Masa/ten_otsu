@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-089",
+  "facility": "FAC-034",
+  "space": "SPACE-LM089-ENTRANCE",
+  "name": "羽白湖自然科学センター 入口・昼（初版外観案）",
+  "canon": "羽白湖周辺、自然科学館/湖畔施設。雪乃/百瀬ひかる/藍/夜空/萌。湖の生態展示/星空講座/気象観測/自然保護。通年昼〜夕。",
+  "proposal": "湖周辺の小規模自然学習館案。左〜中央に低い杉木/淡石・濃灰切妻の館、庇付きガラス入口と左案内、右退出。右端に既存湖昼景を参照した湖面/森林岸/山稜の限定的な背景。岸の方位/距離・既存遊歩道との直接接続は未確定。",
+  "unconfirmed": "建築・外装・設備・入口配置・採否・正確寸法未確定。代表入口各1枚のみ、内部展示/詳細ゾーン/全館階数/正確な住所・方位・距離・接続を確定しない。花守茶苑と芝桜ガーデンは同一としない。",
+  "sources": {
+    "world": "02_ランドマーク LM-089",
+    "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/別名検索2組・scenario/v039本文を照合、専用5画像未発見。施設5名称のシナリオ直接一致なし。羽白湖の星空観察出典はあるが自然科学センター主催/直結根拠にはしない。湖BG-039の実WebP、神社参道BG-046、芝桜BG-095を実画素確認。未発見は不存在の断定ではない。",
+    "references": [
+      "/workspace/delta_landmarks6/bg_hashiro_lake_day.webp"
+    ]
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、用途/素材/窓扉/入口・出口/中央ADV・歩行余白を目視確認。LM-089は湖の森林岸/山稜/淡水景観を参照画像と比較、厳密地点・方位は未確認。小路は個別店SPACEなし、庭園は芝桜背景と分離。法令/正確寸法は未検証。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-194",
+    "img": "IMG-WLD-118",
+    "key": "hashiro_nature_science_center_entrance_day",
+    "path": "images/assets/bg/bg_hashiro_nature_science_center_entrance_day.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "659f9d144f3159e0aec984eac29a5dc79b2f3f470191cbf66a4b1b83b4c60f8f"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "c53a1598386a2f819c12667e32b2e383395f5a6e"
+}
