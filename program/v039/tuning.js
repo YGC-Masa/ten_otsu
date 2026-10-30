@@ -102,6 +102,15 @@
     root.querySelectorAll("[data-tuning-action]").forEach((btn) => {
       btn.addEventListener("click", () => ns.handleTuningAction(btn.dataset.tuningAction));
     });
+    if (ns.mountMenuColumns) {
+      const detail = root.querySelector('.tenotsu-tuning-detail');
+      const footer = document.createElement("div"); footer.className = "tenotsu-menu-footer";
+      footer.append(root.querySelector('[data-tuning-action="office"]'));
+      ns.mountMenuColumns(root, {key:"tuning", title:"チューニング", footer, groups:[{id:"gear", label:"強化対象", items:
+        Object.entries(TUNING_ITEMS).map(([id, item]) => ({id, label:item.label, node:detail,
+          onSelect:() => { if (id !== key) ns.handleTuningAction(id); }}))}]});
+    }
+
   }
 
   ns.enterTuning = async function enterTuning(options = {}) {

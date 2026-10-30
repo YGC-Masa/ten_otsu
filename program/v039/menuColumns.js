@@ -13,9 +13,10 @@
     const groups = options.groups.filter(group => group.items.length);
     if (!groups.length) return;
     const state = selections.get(options.key) || { group:groups[0].id, items:{} };
+    if (options.initialGroup) state.group = options.initialGroup;
     selections.set(options.key, state);
     const shell = element("div", "tenotsu-menu-columns");
-    const columns = ["分類", "項目", "詳細・操作"].map(label => {
+    const columns = (options.headings || ["分類", "項目", "詳細・操作"]).map(label => {
       const column = element("section", "tenotsu-menu-column");
       column.append(element("h2", "", label));
       const scroll = element("div", "tenotsu-menu-column-scroll");
@@ -55,7 +56,23 @@
     });
     root.classList.add("tenotsu-menu-finder");
     root.replaceChildren(element("h1", "tenotsu-menu-heading", options.title), shell);
-    if (options.footer) root.append(options.footer);
+    if (options.footer) {
+      let feedback = options.footer.querySelector('[data-settings-result]');
+      if (!feedback) { feedback = element("div", ""); options.footer.append(feedback); }
+      feedback.textContent = ns.layers?.message?.textContent || "";
+      feedback.classList.add("tenotsu-menu-feedback");
+      feedback.dataset.menuFeedback = "true"; feedback.setAttribute("aria-live", "polite");
+      root.append(options.footer);
+    }
     selectGroup(groups.find(group => group.id === state.group) || groups[0]);
+  };
+  // Keep existing action/error messages readable above the scene's message panel.
+  const setText = ns.setText;
+  ns.setText = function(speaker, message) {
+    const result = setText.apply(this, arguments);
+    document.querySelectorAll('.tenotsu-menu-finder:not([hidden]) [data-menu-feedback]').forEach(node => {
+      node.textContent = message == null ? "" : String(message);
+    });
+    return result;
   };
 })();

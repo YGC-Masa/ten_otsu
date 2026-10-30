@@ -67,7 +67,7 @@
       </div>
       ${renderStatsMini(member)}
       ${renderEquipmentMini(member)}
-      <div class="tenotsu-member-detail-note">右側の親愛ストーリースロットから、メイン/キーストーリーを解放・再生します。</div>
+      <div class="tenotsu-member-detail-note">項目の「親愛ストーリー」から、メイン/キーストーリーを解放・再生します。</div>
     `;
     const introBtn = detail.querySelector("[data-member-intro]");
     if (introBtn) {
@@ -145,6 +145,32 @@
       });
     });
 
+    const back = panel.querySelector('[data-members-action="back-office"]');
+    if (back) {
+      back.addEventListener("click", () => {
+        ns.hideMembersPanel();
+        ns.enterOffice({ speaker: "店長", message: "事務所に戻りました。" });
+      });
+    }
+
+    if (ns.mountMenuColumns) {
+      const footer = document.createElement("div"); footer.className = "tenotsu-menu-footer";
+      footer.append(panel.querySelector('[data-members-action="back-office"]'));
+      const groups = members.map((member, index) => {
+        const selectMember = () => {
+          ns.state.lastSelectedMemberId = member.id;
+          const rerender = next => { renderMemberDetail(detail, next); renderMemberStoryArea(storyArea, next, rerender); };
+          rerender(member); ns.setText(member.name, member.comment);
+        };
+        return {id:member.id, label:member.name, items:[
+          {id:"profile", label:"プロフィール", node:detail, onSelect:selectMember},
+          {id:"stories", label:"親愛ストーリー", node:storyArea, onSelect:selectMember}
+        ]};
+      });
+      ns.mountMenuColumns(panel, {key:"members", title:"メンバー", headings:["人物", "項目", "詳細・作品"], initialGroup:options.selectedMemberId || ns.state.lastSelectedMemberId, groups, footer});
+      return;
+    }
+
     const selectedId = options.selectedMemberId || ns.state.lastSelectedMemberId || null;
     if (selectedId) {
       const selectedIndex = members.findIndex((m) => m && m.id === selectedId);
@@ -154,13 +180,7 @@
       }
     }
 
-    const back = panel.querySelector('[data-members-action="back-office"]');
-    if (back) {
-      back.addEventListener("click", () => {
-        ns.hideMembersPanel();
-        ns.enterOffice({ speaker: "店長", message: "事務所に戻りました。" });
-      });
-    }
+
   };
 
   ns.enterMembers = async function enterMembers(options = {}) {

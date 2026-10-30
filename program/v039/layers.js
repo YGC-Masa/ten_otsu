@@ -416,6 +416,7 @@
 
   ns.showSalesPanel = function showSalesPanel(html) {
     const layers = ns.ensureLayers();
+    layers.sales.classList.remove("tenotsu-menu-finder");
     layers.sales.hidden = false;
     layers.sales.innerHTML = html || "";
   };

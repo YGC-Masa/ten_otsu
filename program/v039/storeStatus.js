@@ -82,6 +82,15 @@
     root.querySelectorAll("[data-store-status-action]").forEach((btn) => {
       btn.addEventListener("click", () => ns.handleStoreStatusAction(btn.dataset.storeStatusAction));
     });
+    if (ns.mountMenuColumns) {
+      const detail = root.querySelector('.tenotsu-store-status-detail');
+      const footer = document.createElement("div"); footer.className = "tenotsu-menu-footer";
+      footer.append(root.querySelector('[data-store-status-action="office"]'));
+      ns.mountMenuColumns(root, {key:"storeStatus", title:"店舗", footer, groups:[{id:"status", label:"ステータス", items:
+        Object.entries(STATUS_PANELS).map(([id, panel]) => ({id, label:panel.label, node:detail,
+          onSelect:() => { if (id !== key) ns.handleStoreStatusAction(id); }}))}]});
+    }
+
   }
 
   ns.enterStoreStatus = async function enterStoreStatus(options = {}) {

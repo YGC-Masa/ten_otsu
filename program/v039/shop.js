@@ -137,6 +137,23 @@
     panel.querySelectorAll("[data-shop-action]").forEach((btn) => {
       btn.addEventListener("click", () => ns.handleShopMenu(btn.dataset.shopAction));
     });
+    if (ns.mountMenuColumns) {
+      const info = ns.layers.shopInfo;
+      const footer = document.createElement("div"); footer.className = "tenotsu-menu-footer";
+      footer.append(panel.querySelector('[data-shop-action="back-office"]'));
+      const items = Array.from(panel.querySelectorAll('[data-shop-action]')).map(button => ({
+        id:button.dataset.shopAction, label:button.textContent, node:info,
+        onSelect:() => {
+          ns.handleShopMenu(button.dataset.shopAction);
+          if (button.dataset.shopAction === "secret-word") {
+            const note = document.createElement("p"); note.textContent = ns.layers.message.textContent;
+            info.replaceChildren(note);
+          }
+        }
+      }));
+      ns.mountMenuColumns(panel, {key:"shop", title:"ショップ", footer, groups:[{id:"exchange", label:"交換所", items}]});
+    }
+
   };
 
   ns.enterShop = async function enterShop(options = {}) {

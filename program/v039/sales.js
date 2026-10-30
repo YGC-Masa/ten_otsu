@@ -113,8 +113,8 @@
     const payment = consumeResources(mode);
     if (!payment.ok) {
       const label = payment.type === "BP" ? "バトルP" : "スタミナ";
-      ns.setText("店長", `${label}が足りません。現在 ${payment.current}/${payment.max}、必要 ${payment.cost} です。`);
       ns.renderSalesPanel(mode.id);
+      ns.setText("店長", `${label}が足りません。現在 ${payment.current}/${payment.max}、必要 ${payment.cost} です。`);
       return;
     }
     ns.state.currentSalesMode = mode;
@@ -192,10 +192,17 @@
       btn.addEventListener("click", () => selectMode(btn.dataset.salesMode));
     });
 
-    // v039_50: バトル前メニューの導線整理。
-    // 事務所へ戻る専用ボタンは表示せず、店舗営業内でモード選択→営業開始に集中させる。
+    // Battle preparation keeps its existing mode selection and start handlers.
 
     if (selectedId) selectMode(selectedId);
+    if (ns.mountMenuColumns) {
+      const footer = document.createElement("div"); footer.className = "tenotsu-menu-footer";
+      const back = document.createElement("button"); back.type = "button"; back.textContent = "事務所に戻る";
+      back.dataset.salesMenuBack = "office"; back.addEventListener("click", () => ns.enterOffice()); footer.append(back);
+      ns.mountMenuColumns(panel, {key:"sales", title:"店舗営業", footer, groups:[{id:"modes", label:"営業モード", items:
+        modes.map(mode => ({id:mode.id, label:mode.label, button:panel.querySelector(`[data-sales-mode="${mode.id}"]`), node:detail, onSelect:() => selectMode(mode.id)}))}]});
+    }
+
   };
 
 
@@ -273,8 +280,8 @@
       const payment = consumeResources(mode);
       if (!payment.ok) {
         const label = payment.type === "BP" ? "バトルP" : "スタミナ";
-        ns.setText("店長", `${label}が足りません。現在 ${payment.current}/${payment.max}、必要 ${payment.cost} です。`);
         ns.renderSalesPanel(mode.id);
+        ns.setText("店長", `${label}が足りません。現在 ${payment.current}/${payment.max}、必要 ${payment.cost} です。`);
         return;
       }
       ns.state.currentSalesMode = mode;

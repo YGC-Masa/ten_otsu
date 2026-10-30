@@ -15,7 +15,7 @@ body .tenotsu-menu-finder[hidden], .tenotsu-menu-finder [hidden] { display:none 
 .tenotsu-menu-finder .tenotsu-menu-column + .tenotsu-menu-column { border-left:1px solid #495663; }
 .tenotsu-menu-finder .tenotsu-menu-column h2 { margin:0; padding:6px; font-size:11px; color:#ffe2a3; background:#252f3a; }
 .tenotsu-menu-finder .tenotsu-menu-column-scroll { flex:1 1 0; min-height:0; min-width:0; overflow-y:auto; overflow-x:hidden; padding:5px; overscroll-behavior:contain; }
-body .tenotsu-menu-finder button, body .tenotsu-menu-finder select { min-height:44px !important; font-size:12px !important; line-height:1.4 !important; touch-action:manipulation; cursor:pointer; }
+body .tenotsu-menu-finder button, body .tenotsu-menu-finder select { min-height:44px !important; min-width:44px; font-size:12px !important; line-height:1.4 !important; touch-action:manipulation; cursor:pointer; }
 body .tenotsu-menu-finder button { border:1px solid #536474; border-radius:5px !important; padding:7px !important; background:#253444; color:#f6f6f4 !important; white-space:normal; overflow-wrap:anywhere; }
 body .tenotsu-menu-finder .tenotsu-menu-column-scroll > button { display:block; width:100%; margin:0 0 4px !important; text-align:left; }
 body .tenotsu-menu-finder button.menu-selected { background:#355f82 !important; border-color:#9abbd5; }
@@ -46,3 +46,39 @@ body .tenotsu-menu-finder .tenotsu-town-encounter-status { display:block; margin
 body .tenotsu-menu-finder .tenotsu-town-season-pills { display:block; }
 body .tenotsu-menu-finder .tenotsu-town-season-pills label { display:block; margin:8px 0; }
 body .tenotsu-menu-finder .tenotsu-town-encounter-status button { display:block; width:100%; margin:5px 0; }
+/* Details use the same compact type and fit their column, rather than legacy modal grids. */
+body .tenotsu-menu-finder :is(.tenotsu-member-detail,.tenotsu-member-story-side,.tenotsu-store-status-detail,.tenotsu-tuning-detail,.tenotsu-sales-detail,.tenotsu-shop-info-panel) {
+ position:static !important; transform:none !important; width:auto !important; min-width:0 !important; max-width:100% !important; height:auto !important; max-height:none !important; margin:0 !important; padding:6px !important; overflow:visible !important; color:#f2f4f6 !important;
+}
+body .tenotsu-menu-finder :is(.tenotsu-member-detail-name,.tenotsu-member-story-head b,.tenotsu-sales-detail-title,.tenotsu-shop-info-title,.tenotsu-store-status-detail h3,.tenotsu-tuning-detail h3) { font-size:13px !important; line-height:1.4 !important; }
+body .tenotsu-menu-finder :is(.tenotsu-member-detail-role,.tenotsu-member-detail-specialty,.tenotsu-member-comment-text,.tenotsu-member-detail-note,.tenotsu-sales-detail-desc,.tenotsu-sales-detail-tag,.tenotsu-shop-info-text) { font-size:12px !important; line-height:1.5 !important; }
+body .tenotsu-menu-finder :is(.tenotsu-member-detail-head-v110,.tenotsu-sales-detail-main) { display:flex !important; flex-direction:column; gap:8px; }
+body .tenotsu-menu-finder .tenotsu-member-detail-img { width:auto !important; max-width:100% !important; height:120px !important; object-fit:contain; align-self:flex-start; }
+body .tenotsu-menu-finder :is(.tenotsu-member-story-slot-grid,.tenotsu-store-status-grid,.tenotsu-tuning-grid,.tenotsu-member-stat-grid) { display:grid !important; grid-template-columns:minmax(0,1fr) !important; min-width:0 !important; }
+body .tenotsu-menu-finder :is(.tenotsu-member-stat-mini,.tenotsu-member-equipment-mini,.tenotsu-member-detail-info-stack,.tenotsu-sales-start-panel) { min-width:0 !important; max-width:100% !important; width:auto !important; }
+body .tenotsu-menu-finder img { max-width:100%; }
+body:is([data-v039-mode="members"],[data-v039-mode="sales"],[data-v039-mode="storeStatus"],[data-v039-mode="tuning"],[data-v039-mode="shop"]):has(.tenotsu-menu-finder:not([hidden])) .tenotsu-orientation-notice { display:none !important; pointer-events:none !important; }
+@media(max-width:620px), (max-height:560px) {
+ body .tenotsu-menu-finder :is(.tenotsu-member-detail-name,.tenotsu-member-story-head b,.tenotsu-sales-detail-title,.tenotsu-shop-info-title) { font-size:12px !important; }
+ body .tenotsu-menu-finder :is(.tenotsu-member-detail-role,.tenotsu-member-detail-specialty,.tenotsu-member-comment-text,.tenotsu-member-detail-note,.tenotsu-sales-detail-desc,.tenotsu-sales-detail-tag,.tenotsu-shop-info-text) { font-size:11px !important; }
+}
+body .tenotsu-menu-finder .tenotsu-menu-column-scroll > .tenotsu-sales-card { min-height:44px !important; padding:7px !important; }
+body .tenotsu-menu-finder .tenotsu-menu-column-scroll > .tenotsu-sales-card :is(.tenotsu-sales-card-meta,.tenotsu-sales-card-desc) { display:none; }
+body .tenotsu-menu-finder .tenotsu-sales-card-title { font-size:12px !important; }
+@media(max-width:620px), (max-height:560px) { body .tenotsu-menu-finder .tenotsu-sales-card-title { font-size:11px !important; } }
+body .tenotsu-menu-finder :is(.tenotsu-shop-info-body,.tenotsu-shop-exchange-body,.tenotsu-shop-exchange-list) { max-height:none !important; overflow:visible !important; }
+body .tenotsu-menu-finder .tenotsu-shop-exchange-name { font-size:13px !important; }
+body .tenotsu-menu-finder .tenotsu-shop-exchange-desc { font-size:12px !important; line-height:1.5; }
+@media(max-width:620px), (max-height:560px) {
+ body .tenotsu-menu-finder .tenotsu-shop-exchange-name { font-size:12px !important; }
+ body .tenotsu-menu-finder .tenotsu-shop-exchange-desc { font-size:11px !important; }
+}
+body .tenotsu-menu-finder .tenotsu-menu-column-scroll button { min-width:44px !important; }
+body .tenotsu-menu-finder .tenotsu-shop-exchange-card-head { flex-wrap:wrap; gap:5px; }
+body .tenotsu-menu-finder .tenotsu-shop-exchange-card-head > div { min-width:0; overflow-wrap:anywhere; }
+body .tenotsu-menu-finder .tenotsu-shop-exchange-card { min-width:0; padding:8px; }
+body .tenotsu-menu-finder .tenotsu-member-story-head { flex-wrap:wrap; }
+body .tenotsu-menu-finder .tenotsu-member-story-block-nav { display:flex !important; flex-wrap:wrap; gap:4px; padding:5px; }
+body .tenotsu-menu-finder .tenotsu-member-story-block-nav > div { width:100%; order:-1; }
+body .tenotsu-menu-finder .tenotsu-member-story-block-nav button { flex:1; }
+.tenotsu-menu-finder .tenotsu-menu-feedback { flex-basis:100%; width:100%; max-height:4.5em; overflow-y:auto; font-size:11px; line-height:1.5; color:#d9e3eb; overflow-wrap:anywhere; }
