@@ -244,3 +244,15 @@
     hiyorizaka_arena_interior: {"name":"日和坂アリーナ メインアリーナ","path":"images/assets/bg/bg_hiyorizaka_arena_interior.webp","location":"日和坂アリーナ メインアリーナ","spaceId":"SPACE-LM021-ARENA","status":"初版完成"}
   });
 })();
+
+/* Delta: LM-006 / 007 / 026 / 041 / 043 first editions */
+(function(){
+  "use strict";
+  window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
+    lm006_gate_after_school: {"name":"日和坂学園 校門 放課後","path":"images/assets/bg/bg_lm006_gate_after_school.webp","location":"日和坂学園 校門 放課後","spaceId":"SPACE-LM006-GATE","time":"afternoon","status":"初版完成"},
+    hiyorizaka_seaglass_street_day: {"name":"日和坂シーグラス通り 昼","path":"images/assets/bg/bg_hiyorizaka_seaglass_street_day.webp","location":"日和坂シーグラス通り 昼","spaceId":"SPACE-LM007-STREET","time":"day","status":"初版完成"},
+    hiyorizaka_bookcafe_street_day: {"name":"日和坂ブックカフェ通り 昼","path":"images/assets/bg/bg_hiyorizaka_bookcafe_street_day.webp","location":"日和坂ブックカフェ通り 昼","spaceId":"SPACE-LM026-STREET","time":"day","status":"初版完成"},
+    momijidani_ropeway_station_autumn_day: {"name":"紅葉谷ロープウェイ 乗降駅 秋昼","path":"images/assets/bg/bg_momijidani_ropeway_station_autumn_day.webp","location":"紅葉谷ロープウェイ 乗降駅 秋昼","spaceId":"SPACE-LM041-STATION","time":"day","season":"autumn","status":"初版完成"},
+    shirane_snowpark_slope_winter_day: {"name":"白嶺スノーパーク ゲレンデ 冬昼","path":"images/assets/bg/bg_shirane_snowpark_slope_winter_day.webp","location":"白嶺スノーパーク ゲレンデ 冬昼","spaceId":"SPACE-LM043-SLOPE","time":"day","season":"winter","status":"初版完成"}
+  });
+})();
