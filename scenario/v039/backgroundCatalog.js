@@ -541,3 +541,28 @@
   }
 });})();
 
+
+/* Delta existing-qc */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "lm110_residential_area_night": {
+    "name": "住宅街 夜（既存紐付け）",
+    "path": "images/assets/bg/bg_residential_area_night.webp",
+    "spaceId": "SPACE-LM110-RESIDENTIAL-NIGHT",
+    "time": "night",
+    "status": "既存紐付け/QC済・地理未確定"
+  },
+  "lm079_manager_mansion_road_night": {
+    "name": "店長マンション前の帰り道 夜（既存紐付け）",
+    "path": "images/assets/bg/bg_manager_mansion_road_night.webp",
+    "spaceId": "SPACE-LM079-ROAD",
+    "time": "night",
+    "status": "既存紐付け/QC済・地理未確定"
+  },
+  "lm109_akari_dori_night": {
+    "name": "駅前あかり通り 夜（既存紐付け）",
+    "path": "images/assets/bg/bg_akari_dori_night.webp",
+    "spaceId": "SPACE-LM109-AKARI-DORI",
+    "time": "night",
+    "status": "既存紐付け/モブ保持"
+  }
+});})();
