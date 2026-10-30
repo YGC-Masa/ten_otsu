@@ -320,3 +320,48 @@
   tsukumo_parts_storage_day: {"name":"ひかるのパーツ保管庫 昼","path":"images/assets/bg/bg_tsukumo_parts_storage_day.webp","spaceId":"SPACE-LM036-PARTS-STORAGE","time":"day","status":"初版案/制作済み"},
   tsukumo_rooftop_garden_evening: {"name":"陽里の屋上菜園 夕方","path":"images/assets/bg/bg_tsukumo_rooftop_garden_evening.webp","spaceId":"SPACE-LM035-ROOFTOP-GARDEN","time":"evening","status":"初版案/制作済み"}
 });})();
+
+
+/* Delta: Hiyorizaka onsen shared street/footbath proposal v1 */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "hiyorizaka_onsen_street_winter_day": {
+    "name": "日和坂温泉郷 温泉街 冬昼",
+    "path": "images/assets/bg/bg_hiyorizaka_onsen_street_winter_day.webp",
+    "spaceId": "SPACE-LM045-ONSEN-STREET",
+    "time": "day",
+    "season": "winter",
+    "status": "初版案/制作済み"
+  },
+  "hiyorizaka_onsen_street_winter_evening": {
+    "name": "日和坂温泉郷 温泉街 冬夕方",
+    "path": "images/assets/bg/bg_hiyorizaka_onsen_street_winter_evening.webp",
+    "spaceId": "SPACE-LM045-ONSEN-STREET",
+    "time": "evening",
+    "season": "winter",
+    "status": "初版案/制作済み"
+  },
+  "hiyorizaka_onsen_footbath_winter_day": {
+    "name": "日和坂温泉郷 足湯 冬昼",
+    "path": "images/assets/bg/bg_hiyorizaka_onsen_footbath_winter_day.webp",
+    "spaceId": "SPACE-LM045-FOOTBATH",
+    "time": "day",
+    "season": "winter",
+    "status": "初版案/制作済み"
+  },
+  "hiyorizaka_onsen_footbath_winter_evening": {
+    "name": "日和坂温泉郷 足湯 冬夕方",
+    "path": "images/assets/bg/bg_hiyorizaka_onsen_footbath_winter_evening.webp",
+    "spaceId": "SPACE-LM045-FOOTBATH",
+    "time": "evening",
+    "season": "winter",
+    "status": "初版案/制作済み"
+  },
+  "hiyorizaka_onsen_street_footbath_approach_day": {
+    "name": "日和坂温泉郷 通り→足湯導線 冬昼",
+    "path": "images/assets/bg/bg_hiyorizaka_onsen_street_footbath_approach_day.webp",
+    "spaceId": "SPACE-LM045-ONSEN-STREET",
+    "time": "day",
+    "season": "winter",
+    "status": "初版案/制作済み"
+  }
+});})();
