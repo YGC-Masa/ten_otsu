@@ -1,0 +1,278 @@
+{
+  "date": "2026-10-30",
+  "sourceHead": "ba8b69b792ee01c58da716df13318854323a62df",
+  "verifiedAtHead": "782e470b1af6153c229679ba8301298716327dd8",
+  "commits": {
+    "LM-072": "849f3faa52961e6b9d53505877bb628222f921dc",
+    "LM-073": "c0abc2ee2e3caa6db39d359cab9e21fe4a9009dc",
+    "LM-074": "475fecefc96c30d867dcc54fec1daaab38e0b160",
+    "LM-075": "a2ac31e6ac5ce94f0787e5db6629abfea5ea94e5",
+    "LM-076": "782e470b1af6153c229679ba8301298716327dd8"
+  },
+  "previousRecordStatusFixCommit": "2a92d9b93fd2d165d9007a819043bda356bd3b17",
+  "verification": {
+    "head": "782e470b1af6153c229679ba8301298716327dd8",
+    "remoteHead": "782e470b1af6153c229679ba8301298716327dd8",
+    "imagesSha256Matched": 5,
+    "catalogAndSpaceMatched": 5,
+    "newKeysUnique": 5,
+    "allCatalogMissingPaths": [],
+    "checksums": {
+      "entries": 1653,
+      "mismatches": [],
+      "freshActualGitBytesHashed": 25,
+      "unchangedBlobUsingPriorFullByteHash": 1628,
+      "baseline": "f52697ebd230255e1802f3a56583605fa4811b03"
+    },
+    "adoption": "未確定",
+    "liveScreen": "未確認",
+    "sheetCellsMatched": 262,
+    "visuallyInspected": 5
+  },
+  "records": [
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-072",
+      "facility": "FAC-021",
+      "space": "SPACE-LM072-GAME",
+      "name": "天神家のにぎやかゲーム部屋 夜（自宅空間案）",
+      "canon": "駅近マンション/小春/ゲーム勝負・寂しがりやの素/通年夜",
+      "proposal": "左TVとゲーム機/後方机・右ソファと二人分飲物、奥窓と右室内扉、中央通路",
+      "unconfirmed": "家具/間取り/設備/採否/正確寸法未確定。家族人数/全館階数/所有者/住所を追加しない。LM-076は建物と階数も未確定。",
+      "sources": {
+        "world": "02_ランドマーク LM-072",
+        "search": "main画像名・台帳・Drive画像名(姓/人物/部屋)と499テキストを照合、専用背景未発見。未発見は不存在の断定ではない。intro個別5ファイルは取得できず未確認。職場bg011・汎用bg020は流用しない。",
+        "references": []
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/小物/窓扉/通行/中央ADV余白を目視確認。LM-075は既存外観参照で窓を3分割へ修正。階段/EV方式は描かず未確定。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-178",
+        "img": "IMG-WLD-102",
+        "key": "tenjin_home_game_room_night",
+        "path": "images/assets/bg/bg_tenjin_home_game_room_night.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "db6f150e9bb669f27e6fc73fa8cd07c7137a4348b01eaa7dc55d0186beb86e4e"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回262セル読み戻し一致",
+        "assetCommit": "849f3faa52961e6b9d53505877bb628222f921dc",
+        "verifiedAtHead": "782e470b1af6153c229679ba8301298716327dd8",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "2a92d9b93fd2d165d9007a819043bda356bd3b17"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-073",
+      "facility": "FAC-022",
+      "space": "SPACE-LM073-ANALYSIS",
+      "name": "霧島家の分析デスク 雨の夜（自宅作業案）",
+      "canon": "静かな住宅街/真冬/売上データ分析・数学パズル・テーブルゲーム/通年夜雨",
+      "proposal": "左分析机と本・パズル、右読書椅子、奥雨窓と右扉、中央余白",
+      "unconfirmed": "家具/間取り/設備/採否/正確寸法未確定。家族人数/全館階数/所有者/住所を追加しない。LM-076は建物と階数も未確定。",
+      "sources": {
+        "world": "02_ランドマーク LM-073",
+        "search": "main画像名・台帳・Drive画像名(姓/人物/部屋)と499テキストを照合、専用背景未発見。未発見は不存在の断定ではない。intro個別5ファイルは取得できず未確認。職場bg011・汎用bg020は流用しない。",
+        "references": []
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/小物/窓扉/通行/中央ADV余白を目視確認。LM-075は既存外観参照で窓を3分割へ修正。階段/EV方式は描かず未確定。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-179",
+        "img": "IMG-WLD-103",
+        "key": "kirishima_home_analysis_desk_rain_night",
+        "path": "images/assets/bg/bg_kirishima_home_analysis_desk_rain_night.webp",
+        "size": [
+          1672,
+          940
+        ],
+        "sha256": "e23a2dc27f344234e57ffaca9a98110dbd72ae7b821ed2f43eb7d2e62b5c2dca"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回262セル読み戻し一致",
+        "assetCommit": "c0abc2ee2e3caa6db39d359cab9e21fe4a9009dc",
+        "verifiedAtHead": "782e470b1af6153c229679ba8301298716327dd8",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "849f3faa52961e6b9d53505877bb628222f921dc"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-074",
+      "facility": "FAC-023",
+      "space": "SPACE-LM074-KITCHEN",
+      "name": "日向家のまんぷく台所 昼（家庭台所案）",
+      "canon": "住宅街/なつ/食べ物・フルーツ・焼酎・柔道の思い出/通年昼〜夜",
+      "proposal": "左家庭調理/洗浄/冷蔵、右食卓/果物、後方窓/扉、中央床。体重計は通路外",
+      "unconfirmed": "家具/間取り/設備/採否/正確寸法未確定。家族人数/全館階数/所有者/住所を追加しない。LM-076は建物と階数も未確定。",
+      "sources": {
+        "world": "02_ランドマーク LM-074",
+        "search": "main画像名・台帳・Drive画像名(姓/人物/部屋)と499テキストを照合、専用背景未発見。未発見は不存在の断定ではない。intro個別5ファイルは取得できず未確認。職場bg011・汎用bg020は流用しない。",
+        "references": []
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/小物/窓扉/通行/中央ADV余白を目視確認。LM-075は既存外観参照で窓を3分割へ修正。階段/EV方式は描かず未確定。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-180",
+        "img": "IMG-WLD-104",
+        "key": "hinata_home_manpuku_kitchen_day",
+        "path": "images/assets/bg/bg_hinata_home_manpuku_kitchen_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "c5475935bf413cd26289f7f391903ce0061506a8b8812b2cd2cb49f81437597c"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回262セル読み戻し一致",
+        "assetCommit": "475fecefc96c30d867dcc54fec1daaab38e0b160",
+        "verifiedAtHead": "782e470b1af6153c229679ba8301298716327dd8",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "c0abc2ee2e3caa6db39d359cab9e21fe4a9009dc"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-075",
+      "facility": "FAC-004",
+      "space": "SPACE-LM075-LIVING",
+      "name": "陽里の住居リビング 夕方（つくも3階案）",
+      "canon": "テックラボつくも3階/陽里/手料理・祖父の昔話・古い家電・屋上菜園への導線/夕方〜夜",
+      "proposal": "FAC-004 3F正面右の3分割窓区画案。左バルコニー扉＋固定窓2枚/黒柵、右ソファと古いラジオ/室内扉、クリーム壁・濃青緑建具・木床。屋上は別階",
+      "unconfirmed": "家具/間取り/設備/採否/正確寸法未確定。家族人数/全館階数/所有者/住所を追加しない。LM-076は建物と階数も未確定。",
+      "sources": {
+        "world": "02_ランドマーク LM-075",
+        "search": "main画像名・台帳・Drive画像名(姓/人物/部屋)と499テキストを照合、専用背景未発見。未発見は不存在の断定ではない。intro個別5ファイルは取得できず未確認。職場bg011・汎用bg020は流用しない。",
+        "references": [
+          "/workspace/delta_tsukumo/bg_tsukumo_exterior_day.webp",
+          "/workspace/delta_tsukumo/bg_tsukumo_reception_lounge_day.webp",
+          "/workspace/delta_tsukumo/bg_tsukumo_rooftop_garden_evening.webp"
+        ]
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/小物/窓扉/通行/中央ADV余白を目視確認。LM-075は既存外観参照で窓を3分割へ修正。階段/EV方式は描かず未確定。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-181",
+        "img": "IMG-WLD-105",
+        "key": "tsukumo_3f_hiyori_living_evening",
+        "path": "images/assets/bg/bg_tsukumo_3f_hiyori_living_evening.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "a668757a85a7fa32455df2652bb5622f7785ab25cb6988b0ffd66bd60e0ee351"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回262セル読み戻し一致",
+        "assetCommit": "a2ac31e6ac5ce94f0787e5db6629abfea5ea94e5",
+        "verifiedAtHead": "782e470b1af6153c229679ba8301298716327dd8",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "475fecefc96c30d867dcc54fec1daaab38e0b160"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-076",
+      "facility": "FAC-024",
+      "space": "SPACE-LM076-WORKDESK",
+      "name": "ひかるの作業机 夜（所在地未確定の自室案）",
+      "canon": "テックラボつくも周辺/百瀬ひかる/自室・自作PC・部品整理・徹夜作業・差し入れ/夜",
+      "proposal": "左自作PC机/整理引出し、右個人棚と差し入れ/来客腰掛け、奥閉カーテン/室内扉。外景・住所・建物階数は描かない",
+      "unconfirmed": "家具/間取り/設備/採否/正確寸法未確定。家族人数/全館階数/所有者/住所を追加しない。LM-076は建物と階数も未確定。",
+      "sources": {
+        "world": "02_ランドマーク LM-076",
+        "search": "main画像名・台帳・Drive画像名(姓/人物/部屋)と499テキストを照合、専用背景未発見。未発見は不存在の断定ではない。intro個別5ファイルは取得できず未確認。職場bg011・汎用bg020は流用しない。",
+        "references": []
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/小物/窓扉/通行/中央ADV余白を目視確認。LM-075は既存外観参照で窓を3分割へ修正。階段/EV方式は描かず未確定。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-182",
+        "img": "IMG-WLD-106",
+        "key": "momose_hikaru_private_workdesk_night",
+        "path": "images/assets/bg/bg_momose_hikaru_private_workdesk_night.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "9820d5ac2c81a84a1a098a1ab673135aca6559107771ac5e27d386d60f9ab0f7"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回262セル読み戻し一致",
+        "assetCommit": "782e470b1af6153c229679ba8301298716327dd8",
+        "verifiedAtHead": "782e470b1af6153c229679ba8301298716327dd8",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "a2ac31e6ac5ce94f0787e5db6629abfea5ea94e5"
+    }
+  ],
+  "scopeCounts": {
+    "total": 50,
+    "newFirstDrafts": 15,
+    "existingLinkedQC": 4,
+    "notFound": 31,
+    "needsRegeneration": 0
+  },
+  "unconfirmed": [
+    "採否/寸法/設備監修/立ち絵重ね/実画面",
+    "LM-076 建物・階数・具体的居場所",
+    "LM-075 非SPACE階段/EV方式と全館間取り",
+    "彩愛の普通家庭育ちと屋敷編の原設定差（既存記録維持）",
+    "intro個別5ファイル取得不可、追加原設定資料未確認"
+  ],
+  "delivery": "GitHub main配置。Drive画像転記なし。ローカルZIPを外部納品済みとは扱わない。"
+}

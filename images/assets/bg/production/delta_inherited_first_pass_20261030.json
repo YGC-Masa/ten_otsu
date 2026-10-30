@@ -4,8 +4,8 @@
   "counts": {
     "total": 50,
     "existing": 4,
-    "newFirstDrafts": 10,
-    "notFound": 36,
+    "newFirstDrafts": 15,
+    "notFound": 31,
     "needsRegeneration": 0
   },
   "items": [
@@ -251,52 +251,117 @@
     {
       "id": "LM-072",
       "facility": "天神家のにぎやかゲーム部屋",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "採否/住居原設定追加照合/実画面/寸法",
+      "visual": "新規1枚目視QC済、人物なし/生活動線/用途/窓扉を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-178",
+        "img": "IMG-WLD-102",
+        "key": "tenjin_home_game_room_night",
+        "path": "images/assets/bg/bg_tenjin_home_game_room_night.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "db6f150e9bb669f27e6fc73fa8cd07c7137a4348b01eaa7dc55d0186beb86e4e"
+      },
+      "verifiedAtHead": "782e470b1af6153c229679ba8301298716327dd8",
+      "assetCommit": "849f3faa52961e6b9d53505877bb628222f921dc"
     },
     {
       "id": "LM-073",
       "facility": "霧島家の分析デスク",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "採否/住居原設定追加照合/実画面/寸法",
+      "visual": "新規1枚目視QC済、人物なし/生活動線/用途/窓扉を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-179",
+        "img": "IMG-WLD-103",
+        "key": "kirishima_home_analysis_desk_rain_night",
+        "path": "images/assets/bg/bg_kirishima_home_analysis_desk_rain_night.webp",
+        "size": [
+          1672,
+          940
+        ],
+        "sha256": "e23a2dc27f344234e57ffaca9a98110dbd72ae7b821ed2f43eb7d2e62b5c2dca"
+      },
+      "verifiedAtHead": "782e470b1af6153c229679ba8301298716327dd8",
+      "assetCommit": "c0abc2ee2e3caa6db39d359cab9e21fe4a9009dc"
     },
     {
       "id": "LM-074",
       "facility": "日向家のまんぷく台所",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "採否/住居原設定追加照合/実画面/寸法",
+      "visual": "新規1枚目視QC済、人物なし/生活動線/用途/窓扉を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-180",
+        "img": "IMG-WLD-104",
+        "key": "hinata_home_manpuku_kitchen_day",
+        "path": "images/assets/bg/bg_hinata_home_manpuku_kitchen_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "c5475935bf413cd26289f7f391903ce0061506a8b8812b2cd2cb49f81437597c"
+      },
+      "verifiedAtHead": "782e470b1af6153c229679ba8301298716327dd8",
+      "assetCommit": "475fecefc96c30d867dcc54fec1daaab38e0b160"
     },
     {
       "id": "LM-075",
       "facility": "陽里の住居リビング",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "採否/住居原設定追加照合/実画面/寸法",
+      "visual": "新規1枚目視QC済、人物なし/生活動線/用途/窓扉を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-181",
+        "img": "IMG-WLD-105",
+        "key": "tsukumo_3f_hiyori_living_evening",
+        "path": "images/assets/bg/bg_tsukumo_3f_hiyori_living_evening.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "a668757a85a7fa32455df2652bb5622f7785ab25cb6988b0ffd66bd60e0ee351"
+      },
+      "verifiedAtHead": "782e470b1af6153c229679ba8301298716327dd8",
+      "assetCommit": "a2ac31e6ac5ce94f0787e5db6629abfea5ea94e5"
     },
     {
       "id": "LM-076",
       "facility": "ひかるの作業机",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "採否/住居原設定追加照合/実画面/寸法/所在地・建物・階数",
+      "visual": "新規1枚目視QC済、人物なし/生活動線/用途/窓扉を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-182",
+        "img": "IMG-WLD-106",
+        "key": "momose_hikaru_private_workdesk_night",
+        "path": "images/assets/bg/bg_momose_hikaru_private_workdesk_night.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "9820d5ac2c81a84a1a098a1ab673135aca6559107771ac5e27d386d60f9ab0f7"
+      },
+      "verifiedAtHead": "782e470b1af6153c229679ba8301298716327dd8",
+      "assetCommit": "782e470b1af6153c229679ba8301298716327dd8"
     },
     {
       "id": "LM-077",
@@ -702,5 +767,6 @@
     }
   ],
   "methodLimit": "一次照合。未発見46件を未制作確定にしない。要再生成0件は品質承認ではなく再生成判断未実施。既存候補4施設はリンク候補記録のみ、正本設定の変更/再生成なし。",
-  "followupHead": "13df15865ddd0e0af18ef2a17b7d71ce00e98796"
+  "followupHead": "13df15865ddd0e0af18ef2a17b7d71ce00e98796",
+  "latestVerificationHead": "782e470b1af6153c229679ba8301298716327dd8"
 }
