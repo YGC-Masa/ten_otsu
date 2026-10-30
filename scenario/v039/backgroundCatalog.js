@@ -962,3 +962,14 @@
     "status": "初版空間案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-099 landmark proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "shiomi_bowl_karaoke_entrance_evening": {
+    "name": "潮見ボウル＆カラオケ 入口・夕方（初版外観案）",
+    "path": "images/assets/bg/bg_shiomi_bowl_karaoke_entrance_evening.webp",
+    "spaceId": "SPACE-LM099-ENTRANCE",
+    "time": "evening",
+    "status": "初版空間案/間取り・設備・採否未確定"
+  }
+});})();
