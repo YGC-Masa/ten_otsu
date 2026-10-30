@@ -164,7 +164,7 @@
   window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
     ast_salon_exterior_day: { name: "エステサロン・アスト・外観・昼", path: "images/assets/bg/bg_ast_salon_exterior_day.webp", location: "エステサロン・アスト", time: "day", status: "正式採用" },
     ast_herbal_tea_lounge_day: { name: "エステサロン・アスト・ハーブティーラウンジ・昼", path: "images/assets/bg/bg_ast_herbal_tea_lounge_day.webp", location: "エステサロン・アスト／ハーブティーラウンジ", time: "day", status: "正式採用" },
-    ast_treatment_room_day: { name: "エステサロン・アスト・個室施術室・昼", path: "images/assets/bg_ast_treatment_room_day.webp", location: "エステサロン・アスト／個室施術室", time: "day", status: "正式採用" }
+    ast_treatment_room_day: { name: "エステサロン・アスト・個室施術室・昼", path: "images/assets/bg/bg_ast_treatment_room_day.webp", location: "エステサロン・アスト／個室施術室", time: "day", status: "正式採用" }
   });
 })();
 
@@ -196,5 +196,15 @@
     takadai_shrine_steps_day: { name: "高台神社・参道階段・昼", path: "images/assets/bg/bg_takadai_shrine_steps_day.webp", location: "高台神社", time: "day", status: "正式採用" },
     yozora_room_day: { name: "夜空の部屋・昼", path: "images/assets/bg/bg_yozora_room_day.webp", location: "双沢家", time: "day", status: "正式採用・互換" },
     yozora_room_night: { name: "夜空の部屋・夜", path: "images/assets/bg/bg_yozora_room_night.webp", location: "双沢家", time: "night", status: "正式採用・互換" }
+  });
+})();
+
+/* Delta: LM-054 / LM-056 / LM-057 first edition */
+(function(){
+  "use strict";
+  window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
+    aoba_campfield_evening: { name: "青葉キャンプフィールド・夕方", path: "images/assets/bg/bg_aoba_campfield_evening.webp", time: "evening", status: "初版完成" },
+    hiyorizaka_bridal_terrace_day: { name: "日和坂ブライダルテラス・昼", path: "images/assets/bg/bg_hiyorizaka_bridal_terrace_day.webp", time: "day", status: "初版完成" },
+    yoiyami_koryori_yokocho_evening: { name: "宵闇小料理横丁・夕方", path: "images/assets/bg/bg_yoiyami_koryori_yokocho_evening.webp", time: "evening", status: "初版完成" }
   });
 })();
