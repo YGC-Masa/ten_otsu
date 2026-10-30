@@ -189,11 +189,11 @@
     lumiere_pension_room_day: { name: "ルミエール・ペンション客室・昼", path: "images/assets/bg/bg_lumiere_pension_room_day.webp", location: "ルミエール", time: "day", status: "正式採用" },
     misora_room_day: { name: "美空の部屋・昼", path: "images/assets/bg/bg_misora_room_day.webp", location: "双沢家", time: "day", status: "正式採用・互換" },
     misora_room_night: { name: "美空の部屋・夜", path: "images/assets/bg/bg_misora_room_night.webp", location: "双沢家", time: "night", status: "正式採用・互換" },
-    takadai_shrine_courtyard_day: { name: "高台神社・境内・昼", path: "images/assets/bg/bg_takadai_shrine_courtyard_day.webp", location: "高台神社", time: "day", status: "正式採用" },
-    takadai_shrine_courtyard_spring: { name: "高台神社・境内・春", path: "images/assets/bg/bg_takadai_shrine_courtyard_spring.webp", location: "高台神社", season: "spring", status: "正式採用" },
-    takadai_shrine_overlook_autumn: { name: "高台神社・展望所・秋", path: "images/assets/bg/bg_takadai_shrine_overlook_autumn.webp", location: "高台神社", season: "autumn", status: "正式採用" },
-    takadai_shrine_overlook_sunset: { name: "高台神社・展望所・夕焼け", path: "images/assets/bg/bg_takadai_shrine_overlook_sunset.webp", location: "高台神社", time: "sunset", status: "正式採用" },
-    takadai_shrine_steps_day: { name: "高台神社・参道階段・昼", path: "images/assets/bg/bg_takadai_shrine_steps_day.webp", location: "高台神社", time: "day", status: "正式採用" },
+    takadai_shrine_courtyard_day: { name: "わだつみ神社・境内・昼", path: "images/assets/bg/bg_takadai_shrine_courtyard_day.webp", location: "わだつみ神社", time: "day", status: "正式採用" },
+    takadai_shrine_courtyard_spring: { name: "わだつみ神社・境内・春", path: "images/assets/bg/bg_takadai_shrine_courtyard_spring.webp", location: "わだつみ神社", season: "spring", status: "正式採用" },
+    takadai_shrine_overlook_autumn: { name: "わだつみ神社・展望所・秋", path: "images/assets/bg/bg_takadai_shrine_overlook_autumn.webp", location: "わだつみ神社", season: "autumn", status: "正式採用" },
+    takadai_shrine_overlook_sunset: { name: "わだつみ神社・展望所・夕焼け", path: "images/assets/bg/bg_takadai_shrine_overlook_sunset.webp", location: "わだつみ神社", time: "sunset", status: "正式採用" },
+    takadai_shrine_steps_day: { name: "わだつみ神社・参道階段・昼", path: "images/assets/bg/bg_takadai_shrine_steps_day.webp", location: "わだつみ神社", time: "day", status: "正式採用" },
     yozora_room_day: { name: "夜空の部屋・昼", path: "images/assets/bg/bg_yozora_room_day.webp", location: "双沢家", time: "day", status: "正式採用・互換" },
     yozora_room_night: { name: "夜空の部屋・夜", path: "images/assets/bg/bg_yozora_room_night.webp", location: "双沢家", time: "night", status: "正式採用・互換" }
   });
@@ -305,7 +305,7 @@
 /* Delta: seasonal and event coverage */
 (function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
   shiomi_beach_fireworks_night: {"name":"潮見浜 花火大会 夜","path":"images/assets/bg/bg_shiomi_beach_fireworks_night.webp","spaceId":"SPACE-SHIOMI-BEACH","time":"night","season":"summer","status":"初版完成"},
-  takadai_shrine_festival_night: {"name":"高台神社 境内祭り 夜","path":"images/assets/bg/bg_takadai_shrine_festival_night.webp","spaceId":"SPACE-LM002-COURTYARD","time":"night","season":"summer","status":"初版完成"},
+  takadai_shrine_festival_night: {"name":"わだつみ神社 境内祭り 夜","path":"images/assets/bg/bg_takadai_shrine_festival_night.webp","spaceId":"SPACE-LM002-COURTYARD","time":"night","season":"summer","status":"初版完成"},
   hashiro_boardwalk_autumn_day: {"name":"羽白湖もみじ遊歩道 秋昼","path":"images/assets/bg/bg_hashiro_boardwalk_autumn_day.webp","spaceId":"SPACE-HASHIRO-PATH","time":"day","season":"autumn","status":"初版完成"},
   hashiro_boardwalk_autumn_evening: {"name":"羽白湖もみじ遊歩道 秋夕方","path":"images/assets/bg/bg_hashiro_boardwalk_autumn_evening.webp","spaceId":"SPACE-HASHIRO-PATH","time":"evening","season":"autumn","status":"初版完成"},
   hiyorizaka_sakura_embankment_spring_day: {"name":"日和坂さくら堤 春昼","path":"images/assets/bg/bg_hiyorizaka_sakura_embankment_spring_day.webp","spaceId":"SPACE-WAKABA-CENTRAL-PARK","time":"day","season":"spring","status":"初版完成"},

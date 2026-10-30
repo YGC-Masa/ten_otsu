@@ -1,4 +1,4 @@
-高台神社 背景アセット候補
+わだつみ神社 背景アセット候補
 
 - bg_takadai_shrine_courtyard_day.webp : 境内・社殿前 昼
 - bg_takadai_shrine_steps_day.webp : 石段・参道 昼
