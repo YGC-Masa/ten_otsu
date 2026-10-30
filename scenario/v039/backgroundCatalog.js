@@ -665,3 +665,14 @@
     "status": "住居初版案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-071 residential proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "mochizuki_home_office_night": {
+    "name": "餅月マンションのゆるふわ事務部屋 夜（自宅事務室案）",
+    "path": "images/assets/bg/bg_mochizuki_home_office_night.webp",
+    "spaceId": "SPACE-LM071-HOME-OFFICE",
+    "time": "night",
+    "status": "住居初版案/間取り・設備・採否未確定"
+  }
+});})();
