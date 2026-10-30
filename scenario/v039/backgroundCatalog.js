@@ -1028,3 +1028,14 @@
     "status": "初版空間案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-105 landmark proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "hidamari_pokapoka_sento_entrance_evening": {
+    "name": "ひだまり銭湯 ぽかぽか湯 入口・夕方（初版外観案）",
+    "path": "images/assets/bg/bg_hidamari_pokapoka_sento_entrance_evening.webp",
+    "spaceId": "SPACE-LM105-ENTRANCE",
+    "time": "evening",
+    "status": "初版空間案/間取り・設備・採否未確定"
+  }
+});})();
