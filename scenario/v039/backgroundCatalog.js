@@ -742,3 +742,14 @@
     "status": "初版空間案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-078 landmark proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "manager_apartment_living_night": {
+    "name": "店長の自宅マンション 室内・夜（初版住居案）",
+    "path": "images/assets/bg/bg_manager_apartment_living_night.webp",
+    "spaceId": "SPACE-LM078-LIVING",
+    "time": "night",
+    "status": "初版空間案/間取り・設備・採否未確定"
+  }
+});})();
