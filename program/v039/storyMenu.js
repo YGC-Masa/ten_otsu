@@ -123,7 +123,29 @@
     const activeTab = ALBUM_TABS.some((item) => item.id === tab) ? tab : "other";
     const stories = ns.getStoriesForTab(activeTab);
     const debugNote = window.TENOTSU_DEBUG_ALL_STORIES ? "開発用：未読・未解放も表示中" : "読了済みのみ表示";
-    const tabs = ALBUM_TABS.map((item) => `<button type="button" class="tenotsu-story-menu-tab ${item.id===activeTab?"active":""}" data-story-menu-tab="${esc(item.id)}">${esc(item.label)}</button>`).join("");
+    const tabs = ALBUM_TABS.map((item) => `<button type="button" class="tenotsu-story-menu-tab ${item.id===activeTab?"active":""}" data-story-menu-tab="${esc(item.id)}" aria-pressed="${item.id===activeTab}">${esc(item.label)}<span aria-hidden="true">›</span></button>`).join("");
+    const people = new Map();
+    stories.forEach((story) => {
+      const ids = Array.isArray(story.characters) ? story.characters : [];
+      const names = Array.isArray(story.characterNames) ? story.characterNames : [];
+      const count = Math.max(ids.length, names.length, 1);
+      for (let index = 0; index < count; index++) {
+        const key = ids[index] ? `id:${ids[index]}` : names[index] ? `name:${names[index]}` : "unlisted";
+        if (!people.has(key)) people.set(key, { key, label:names[index] || ids[index] || "人物情報なし", stories:[], group:expressionGroup(story) });
+        const person = people.get(key);
+        if (!person.stories.includes(story)) person.stories.push(story);
+      }
+    });
+    const selections = ns.storyMenuSelectedCharacters = ns.storyMenuSelectedCharacters || {};
+    const selected = people.get(selections[activeTab]) || people.values().next().value;
+    if (selected) selections[activeTab] = selected.key;
+    let lastGroup = "";
+    const characters = [...people.values()].map((person) => {
+      const groupTitle = activeTab === "expression" && person.group !== lastGroup
+        ? `<h3 class="tenotsu-album-group">${esc(expressionGroupLabel(person.group))}</h3>` : "";
+      lastGroup = person.group;
+      return `${groupTitle}<button type="button" class="tenotsu-album-character ${selected === person?"active":""}" data-album-character="${esc(person.key)}" aria-pressed="${selected === person}"><span>${esc(person.label)}</span><small>${person.stories.length}作品 ›</small></button>`;
+    }).join("");
     const renderStoryCard = (story) => {
       const unlocked = typeof ns.isStoryUnlocked === "function" ? ns.isStoryUnlocked(story) : true;
       const cleared = typeof ns.isStoryCleared === "function" ? ns.isStoryCleared(story.id) : false;
@@ -145,31 +167,18 @@
         </button>
       `;
     };
-    let body = `<div class="tenotsu-story-menu-empty">${esc(tabLabel(activeTab))}に表示できる回想ストーリーはまだありません。</div>`;
-    if (stories.length) {
-      if (activeTab === "expression") {
-        const groups = ["hidamari", "biribiri", "other"];
-        body = groups.map((group) => {
-          const groupStories = stories.filter((story) => expressionGroup(story) === group);
-          if (!groupStories.length) return "";
-          return `
-            <section class="tenotsu-expression-group" data-expression-group="${esc(group)}">
-              <h3 class="tenotsu-expression-group-title">${esc(expressionGroupLabel(group))}<small>${groupStories.length}人</small></h3>
-              <div class="tenotsu-expression-card-grid">${groupStories.map(renderStoryCard).join("")}</div>
-            </section>
-          `;
-        }).join("");
-      } else {
-        body = stories.map(renderStoryCard).join("");
-      }
-    }
+    const body = selected ? selected.stories.map(renderStoryCard).join("")
+      : `<div class="tenotsu-story-menu-empty">${esc(tabLabel(activeTab))}に表示できる回想ストーリーはまだありません。</div>`;
 
     const html = `
       <div class="tenotsu-story-menu-title">回想アルバム</div>
       <div class="tenotsu-story-menu-subtitle">読了済みの通常・季節・イベントストーリーを再生するアルバムです。親愛系はメンバー個別プロフィール、自己紹介は自己紹介メニューから確認します。</div>
-      <div class="tenotsu-story-menu-tabs" data-tenotsu-recollection-tabs="true">${tabs}</div>
       <div class="tenotsu-story-menu-debug">${esc(debugNote)}</div>
-      <div class="tenotsu-story-menu-list ${activeTab==="expression"?"is-expression":""}" data-tenotsu-recollection-list="true">${body}</div>
+      <div class="tenotsu-album-columns" aria-label="分類・登場人物・作品">
+        <section class="tenotsu-album-column"><h2>分類</h2><div class="tenotsu-story-menu-tabs tenotsu-album-column-scroll" data-tenotsu-recollection-tabs="true">${tabs}</div></section>
+        <section class="tenotsu-album-column"><h2>登場人物</h2><div class="tenotsu-album-characters tenotsu-album-column-scroll">${characters || '<div class="tenotsu-album-empty">表示できる人物はいません。</div>'}</div></section>
+        <section class="tenotsu-album-column"><h2>作品${selected ? ` · ${esc(selected.label)}` : ""}</h2><div class="tenotsu-story-menu-list tenotsu-album-column-scroll" data-tenotsu-recollection-list="true">${body}</div></section>
+      </div>
       <div class="tenotsu-story-menu-actions">
         <button type="button" class="tenotsu-town-back" data-story-menu-action="office">事務所に戻る</button>
       </div>
@@ -178,7 +187,22 @@
     const panel = ns.layers && ns.layers.town;
     if (!panel) return;
     panel.querySelectorAll("[data-story-menu-tab]").forEach((btn)=>btn.addEventListener("click",()=>{
+      const categoryScroll = panel.querySelector(".tenotsu-story-menu-tabs").scrollTop;
       ns.renderStoryMenu(btn.dataset.storyMenuTab || "other");
+      panel.querySelector(".tenotsu-story-menu-tabs").scrollTop = categoryScroll;
+      const current = panel.querySelector('[data-story-menu-tab="' + (btn.dataset.storyMenuTab || "other") + '"]');
+      if (current) current.focus({ preventScroll:true });
+    }));
+    panel.querySelectorAll("[data-album-character]").forEach((btn)=>btn.addEventListener("click",()=>{
+      const characterScroll = panel.querySelector(".tenotsu-album-characters").scrollTop;
+      const categoryScroll = panel.querySelector(".tenotsu-story-menu-tabs").scrollTop;
+      selections[activeTab] = btn.dataset.albumCharacter;
+      ns.renderStoryMenu(activeTab);
+      const list = panel.querySelector(".tenotsu-album-characters");
+      if (list) list.scrollTop = characterScroll;
+      panel.querySelector(".tenotsu-story-menu-tabs").scrollTop = categoryScroll;
+      const current = [...panel.querySelectorAll("[data-album-character]")].find((node)=>node.dataset.albumCharacter === selections[activeTab]);
+      if (current) current.focus({ preventScroll:true });
     }));
     panel.querySelectorAll("[data-story-id]").forEach((btn)=>btn.addEventListener("click",()=>{
       const story = allStories().find((s)=>s.id === btn.dataset.storyId);

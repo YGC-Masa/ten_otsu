@@ -46,7 +46,7 @@
   }
 
   function makeModeSwitch(panel, tab){
-    const anchor = panel.querySelector(".tenotsu-story-menu-tabs");
+    const anchor = panel.querySelector(".tenotsu-album-columns") || panel.querySelector(".tenotsu-story-menu-tabs");
     if (!anchor) return;
 
     const row = document.createElement("div");

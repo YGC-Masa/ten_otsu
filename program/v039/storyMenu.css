@@ -332,3 +332,81 @@ body[data-v039-mode="storyMenu"] .tenotsu-story-menu-tab{
 body[data-v039-mode="storyMenu"] .tenotsu-text-layer{
   display:none !important;
 }
+
+/* Recollection only: Finder-like category / character / story columns. */
+body[data-v039-mode="storyMenu"] .tenotsu-album-columns {
+  display:grid; grid-template-columns:minmax(0,.65fr) minmax(0,1fr) minmax(0,2fr);
+  flex:1 1 0; min-height:0; gap:0; overflow:hidden; border:1px solid rgba(255,226,163,.3); border-radius:10px;
+}
+.tenotsu-album-column { display:flex; flex-direction:column; min-height:0; min-width:0; background:rgba(16,19,25,.9); }
+.tenotsu-album-column + .tenotsu-album-column { border-left:1px solid rgba(255,226,163,.22); }
+.tenotsu-album-column h2 { flex:none; margin:0; padding:7px 9px; font-size:11px; line-height:1.35; color:#ffe2a3; background:rgba(255,255,255,.06); overflow-wrap:anywhere; }
+body[data-v039-mode="storyMenu"] .tenotsu-album-columns .tenotsu-album-column-scroll {
+  display:flex !important; flex-direction:column; flex:1 1 0 !important; min-height:0 !important; max-height:none !important;
+  overflow-y:auto !important; overflow-x:hidden !important; gap:3px !important; margin:0 !important; padding:4px !important;
+  scrollbar-gutter:auto; overscroll-behavior:contain;
+}
+body[data-v039-mode="storyMenu"] .tenotsu-album-columns .tenotsu-story-menu-tab,
+body[data-v039-mode="storyMenu"] .tenotsu-album-character {
+  display:flex; justify-content:space-between; align-items:center; gap:5px; flex:none;
+  min-height:36px !important; width:100%; box-sizing:border-box; text-align:left; white-space:normal !important;
+  border:1px solid transparent !important; border-radius:5px !important; padding:7px 8px !important;
+  background:transparent !important; color:#f6f4ee !important; font-size:12px !important; line-height:1.35 !important; font-weight:600 !important; cursor:pointer;
+}
+.tenotsu-album-character span { overflow-wrap:anywhere; }
+.tenotsu-album-character small { font-size:10px; color:#c5cbd0; flex:none; white-space:nowrap; }
+body[data-v039-mode="storyMenu"] .tenotsu-album-columns button.active { background:#355875 !important; color:white !important; }
+.tenotsu-album-columns button:focus-visible { outline:2px solid #ffdf91; outline-offset:-2px; }
+body[data-v039-mode="storyMenu"] .tenotsu-album-columns .tenotsu-story-menu-card {
+  display:block; flex:none; width:100%; box-sizing:border-box; min-height:0 !important;
+  border-radius:5px; padding:8px !important; background:rgba(255,255,255,.035);
+}
+.tenotsu-album-columns .tenotsu-story-menu-card-head { display:block; }
+.tenotsu-album-columns .tenotsu-story-menu-card-head b { display:block; font-size:12px; line-height:1.45; overflow-wrap:anywhere; }
+.tenotsu-album-columns .tenotsu-story-menu-card-head i { display:block; font-size:10px; margin-top:2px; }
+.tenotsu-album-columns .tenotsu-story-menu-card-meta,
+.tenotsu-album-columns .tenotsu-story-menu-card-summary { font-size:11px; line-height:1.45; }
+body[data-v039-mode="storyMenu"] .tenotsu-album-columns .tenotsu-story-menu-card-summary { padding-right:0 !important; }
+.tenotsu-album-columns .tenotsu-story-menu-card-state { position:static; font-size:10px; margin-top:4px; }
+.tenotsu-album-columns .tenotsu-story-menu-card::after { display:none; }
+.tenotsu-album-group { margin:5px 3px 2px; font-size:10px; color:#ffe2a3; }
+.tenotsu-album-empty { padding:8px; font-size:11px; color:#c5cbd0; }
+.tenotsu-album-columns .tenotsu-story-menu-empty { font-size:11px; line-height:1.5; padding:10px; }
+body[data-v039-mode="storyMenu"] .tenotsu-recording-mode-switch { flex:none; gap:5px; margin:4px 0 7px; }
+body[data-v039-mode="storyMenu"] .tenotsu-recording-mode-button { min-height:30px; font-size:11px; }
+@media(max-width:620px) {
+  body[data-v039-mode="storyMenu"] .tenotsu-album-columns { grid-template-columns:minmax(0,.65fr) minmax(0,1fr) minmax(0,1.6fr); }
+  body[data-v039-mode="storyMenu"] .tenotsu-town-panel:has(.tenotsu-album-columns),
+  body.tenotsu-recording-album[data-v039-mode="storyMenu"] .tenotsu-town-panel:has(.tenotsu-album-columns) { width:96vw !important; max-width:96vw !important; left:2vw !important; right:auto !important; padding:8px !important; }
+  body[data-v039-mode="storyMenu"] .tenotsu-album-character { display:block; padding:7px 5px !important; }
+  .tenotsu-album-character small { display:block; margin-top:2px; }
+  .tenotsu-album-column h2 { padding:6px; font-size:10px; }
+}
+@media(max-height:450px) {
+  body[data-v039-mode="storyMenu"] .tenotsu-town-panel:has(.tenotsu-album-columns) { padding:8px !important; top:6px !important; bottom:6px !important; }
+  body[data-v039-mode="storyMenu"] .tenotsu-story-menu-debug { font-size:10px; margin:0 0 4px; }
+  body[data-v039-mode="storyMenu"] .tenotsu-story-menu-actions { margin-top:5px; }
+  body[data-v039-mode="storyMenu"] .tenotsu-story-menu-actions button { min-height:28px; font-size:11px; padding:4px 8px; }
+}
+/* Small type with generous touch targets; viewport geometry, not a device preset. */
+@media (max-height:560px), (max-width:620px) {
+  body[data-v039-mode="storyMenu"] .tenotsu-album-columns .tenotsu-story-menu-tab,
+  body[data-v039-mode="storyMenu"] .tenotsu-album-character { min-height:44px !important; font-size:11px !important; }
+  body[data-v039-mode="storyMenu"] .tenotsu-album-columns .tenotsu-story-menu-card { min-height:44px !important; }
+  .tenotsu-album-columns .tenotsu-story-menu-card-head b { font-size:11px; }
+  .tenotsu-album-columns .tenotsu-story-menu-card-meta,
+  .tenotsu-album-columns .tenotsu-story-menu-card-summary { font-size:10.5px; }
+  body[data-v039-mode="storyMenu"] .tenotsu-recording-mode-button,
+  body[data-v039-mode="storyMenu"] .tenotsu-story-menu-actions button { min-height:44px; font-size:11px; }
+}
+/* Browsing the album is usable vertically; story/office orientation policy stays intact. */
+body[data-v039-mode="storyMenu"] .tenotsu-orientation-notice { display:none !important; pointer-events:none !important; }
+/* Keep the album header legible when its narrow modal overlaps the office HUD. */
+body[data-v039-mode="storyMenu"] .tenotsu-town-panel:has(.tenotsu-album-columns) {
+  z-index:780 !important;
+  background:rgba(18,23,28,.97) !important;
+}
+@media (max-height:560px), (max-width:620px) {
+  body[data-v039-mode="storyMenu"] .tenotsu-story-menu-subtitle { font-size:11px !important; line-height:1.4; }
+  body[data-v039-mode="storyMenu"] .tenotsu-story-menu-debug { font-size:10px; }
+}

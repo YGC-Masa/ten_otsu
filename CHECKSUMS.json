@@ -1230,7 +1230,7 @@
   "images/assets/voice/kogane001.mp3": "f52321e965f51f19aa479130b76e4a31a46485b628dac34ed07857f9649536b2",
   "images/assets/voice/kohaku02.mp3": "9549136e9ffce4193855af293f29f6ec0041604060ccdab26534ea06f6e2649f",
   "images/assets/voice/midori02.mp3": "c0781ba16c1dbecaf6d5688ed8b4a4404d176cd14bbdbd3f4b9dad4ce84c28ce",
-  "index.html": "689feaeef937e4e7b25991f39cc1385b85ed7601a28c6cdb7278b967015499a4",
+  "index.html": "20f63814f935fe66e7490dbc6562d9af717c86b160904ed4922b2e8eaff5578b",
   "landmark_rows_v039_181.tsv": "45ac38ec8f62bf4a843befcb2b978a10c727d93ec02b15ff486f834dce86cf15",
   "manifest/v039_49_checks.json": "81c427bc6c3bf599587d98e517c6a429f71aac2df00c0d56661e821ee0cc8b69",
   "program/Readme.md": "a74dbb92d5460f5e6fea8b110b016b8da6ad6305ff65429448ccdbd9a975faee",
@@ -1429,7 +1429,7 @@
   "program/v039/office.js": "749dae19a0a8a4feb54e702849f2260df59caa80986111d622360aa532ddc8da",
   "program/v039/officeUiSurfaceFix.css": "95b0bc5fc7a1b69c642991779d7030f9df929a7e8beae4f1c85963121518ebb1",
   "program/v039/recordingAlbum.css": "2cad17614e924e98b2a04ef9521fd381d19798f9bf261055ba1a38caec2ebe62",
-  "program/v039/recordingAlbum.js": "0ae840cbf34f7d403aa8e06c703554cffb265db24c056557a22e355b325c653e",
+  "program/v039/recordingAlbum.js": "7c5a4378d0d8c20959e8ee7073eb52c2934b1006f2408ada98ad155ac7081662",
   "program/v039/rightMenuViewportGuard.css": "e14ab7583f370894fbdeb30958793be18002d35e68aae11efaf589cfbaea6815",
   "program/v039/rightMenuViewportGuard.js": "53bc0b551ffd2bffcad8ce0d154195952f44cff82fdf72c8550e22595c1c7ccb",
   "program/v039/rivalBattle.css": "2127c4fbc9042c03011c5487771d2df246ab89202516c6cc5a026990bd32f10a",
@@ -1445,8 +1445,8 @@
   "program/v039/storyEndFlowFix.js": "b30e348670cf8522611e430b828fe44b5d8347e888f0356c6d3cb3e57fc0f625",
   "program/v039/storyEndOfficeBootFix.js": "2c52eddb21c9ddadbd1209bb503055acff9b0a7cbad00c870d6425940959c222",
   "program/v039/storyLayout.js": "fc3f60d0a421f0dedc1da7a192adfa587f4c8a613db17eb1fe9bab61261cb5e7",
-  "program/v039/storyMenu.css": "6ae1ce80369ec87fd16443b155cb4128295951f6b50b835116197304c57a4aa8",
-  "program/v039/storyMenu.js": "026bb124dca7c611633e0877b0aed365f8299f0f4fd6616abd0c1fe7df5aef20",
+  "program/v039/storyMenu.css": "a7d4ee567b641fde58f33ab2b03a00287c3a52337a5cb4a8bd0f837be7def863",
+  "program/v039/storyMenu.js": "e82c5b5791e353a6ef726f79b34731f0d9b82184ed073e1d49bbce68cad5b14e",
   "program/v039/storyMenuLvTitlePatch.js": "ca34262ea5ef1f62bde077d1d51f74b44c0c1c7a727c02c02a7aac3d3758265b",
   "program/v039/storyPlayer.js": "67ef0d2d4c8a29604f7b8dfb457dd69f62a64abfdaaac23e8285d037fcef3eb0",
   "program/v039/storyProgress.js": "7717e876b204726eb3d32fbfacad9538e28baeca45c8fd0ae7e6aaab2e423086",
@@ -1729,5 +1729,6 @@
   "images/assets/bg/production/delta_3background_composition_revision_20261030.json": "183cfd7a7c009a4045d776784b873eabf444be2be8f241cd0e45dd043d532357",
   "images/assets/bg/production/delta_3background_display_regression_20261030.json": "699ff5b9b899733d11dddc25bd8f88806d6ade1ef31707937839d478ec5240d8",
   "images/assets/bg/production/delta_3background_sheet_readback_20261030.json": "ddc0db7644b97b9e8ae1cb03205d29b2fd51fb45a7be1874576a5f5292e4b18d",
-  "images/assets/bg/production/delta_3background_comparison_delivery_20261030.json": "b41ebc0f6981c147821aed7c78141dc3ac7b880fac17395b6f7640d6a3917b82"
+  "images/assets/bg/production/delta_3background_comparison_delivery_20261030.json": "b41ebc0f6981c147821aed7c78141dc3ac7b880fac17395b6f7640d6a3917b82",
+  "tests/album_columns.test.cjs": "451a305ff264411d7b709d1a91bb904d9b51e3d59e0b14ece7ed4e7fb4660a09"
 }
