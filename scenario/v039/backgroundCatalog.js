@@ -292,3 +292,12 @@
     marinpia_seaside_deck_day: {"name":"マリンピア 海辺デッキ 昼","path":"images/assets/bg/bg_marinpia_seaside_deck_day.webp","location":"マリンピア 海辺デッキ 昼","spaceId":"SPACE-LM010-SEASIDE-DECK","time":"day","status":"初版完成"}
   });
 })();
+
+/* Delta: Marinpia entry and time variants */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  marinpia_entrance_day: {"name":"マリンピア 入口 昼","path":"images/assets/bg/bg_marinpia_entrance_day.webp","spaceId":"SPACE-LM010-ENTRANCE","time":"day","status":"初版完成"},
+  marinpia_entrance_night: {"name":"マリンピア 入口 夜","path":"images/assets/bg/bg_marinpia_entrance_night.webp","spaceId":"SPACE-LM010-ENTRANCE","time":"night","status":"初版完成"},
+  marinpia_seasonal_gallery_base: {"name":"マリンピア 企画展示室 建築基準","path":"images/assets/bg/bg_marinpia_seasonal_gallery_base.webp","spaceId":"SPACE-LM010-SEASONAL","status":"初版完成"},
+  marinpia_rooftop_terrace_day: {"name":"マリンピア 屋上展望テラス 昼","path":"images/assets/bg/bg_marinpia_rooftop_terrace_day.webp","spaceId":"SPACE-LM010-ROOFTOP","time":"day","status":"初版完成"},
+  marinpia_seaside_deck_evening: {"name":"マリンピア 海辺デッキ 夕方","path":"images/assets/bg/bg_marinpia_seaside_deck_evening.webp","spaceId":"SPACE-LM010-SEASIDE-DECK","time":"evening","status":"初版完成"}
+});})();
