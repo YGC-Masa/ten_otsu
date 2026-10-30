@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-082",
+  "facility": "FAC-027",
+  "space": "SPACE-LM082-ENTRANCE",
+  "name": "蒼波メガシーパーク 代表入口・夜（初版外観案）",
+  "canon": "隣県沿岸部、新幹線＋在来線で日帰り圏、市外海洋テーマパーク。巨大水族館/イルカショー/ナイトアクアリウム/海辺ホテルはイベント特徴。通年夏・冬夜が強い。",
+  "proposal": "入口だけの夜案。低い白い波形庇と濃青ガラス/淡い水色照明、左チケット/右出口、中央乾いた入場前広場、奥控えめな展示ドーム。ショー/ホテル/内観を追加しない。",
+  "unconfirmed": "家具/間取り/設備/採否/正確寸法未確定。住所・居住階数・海坂の位置関係を確定しない。LM-077住居/職場の区別・VIPとの同一性/接続は未確定。テーマパークの全館構成/鉄道経路を追加しない。",
+  "sources": {
+    "world": "02_ランドマーク LM-082",
+    "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の固有名/別名検索2組・scenario/v039本文を照合、専用5画像未発見。既存BG-167/BG-157/交換所WebPを実画素参照。朔夜導入と使用差分表も確認。未発見は不存在の断定ではない。",
+    "references": []
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、用途/小物/窓扉/通行/ADV余白を目視確認。LM-078/080は実画像を参照して扉枠・レンガ・黒柵・淡灰角タイル/暖色室内を比較。テーマパークは入口各1枚。寸法・階段/EV・住所/方位は未確定。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-187",
+    "img": "IMG-WLD-111",
+    "key": "aonami_megaseapark_entrance_night",
+    "path": "images/assets/bg/bg_aonami_megaseapark_entrance_night.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "34c68013ec525d07d1d1d84923321c0b9573b3bb5172c8b373f6c8fdfdb6fe33"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "361c3bad573876745b84ec4e61073c7ae436f2ee"
+}

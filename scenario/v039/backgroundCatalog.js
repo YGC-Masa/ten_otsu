@@ -775,3 +775,14 @@
     "status": "初版空間案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-082 landmark proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "aonami_megaseapark_entrance_night": {
+    "name": "蒼波メガシーパーク 代表入口・夜（初版外観案）",
+    "path": "images/assets/bg/bg_aonami_megaseapark_entrance_night.webp",
+    "spaceId": "SPACE-LM082-ENTRANCE",
+    "time": "night",
+    "status": "初版空間案/間取り・設備・採否未確定"
+  }
+});})();
