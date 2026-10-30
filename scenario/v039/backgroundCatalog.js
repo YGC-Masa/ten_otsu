@@ -577,3 +577,14 @@
     "status": "初版空間案/採否未確定"
   }
 });})();
+
+/* Delta LM-062 */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "hayamikawa_reading_room_day": {
+    "name": "速水川マンションの読書部屋 昼（初版空間案）",
+    "path": "images/assets/bg/bg_hayamikawa_reading_room_day.webp",
+    "spaceId": "SPACE-LM062-READING",
+    "time": "day",
+    "status": "初版空間案/採否未確定"
+  }
+});})();

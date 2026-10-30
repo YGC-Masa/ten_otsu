@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-062",
+  "facility": "FAC-012",
+  "space": "SPACE-LM062-READING",
+  "name": "速水川マンションの読書部屋 昼（初版空間案）",
+  "canon": "静かな駅近マンション/藍/読書・パン・爬虫類グッズ・大人の酒/昼〜夜・雨",
+  "proposal": "左書架/奥机・右読書椅子/パン試食・後窓/右扉/中央床。爬虫類は置物のみ",
+  "unconfirmed": "家族構成/同居人数/住居全体の階数・間取り・番地を追加しない。窓・扉・家具位置/採否は初版案。",
+  "search": "mainの509テキスト・全画像名・正本台帳とDrive画像名を照合。専用住居BGは発見せず。Drive画像名ヒットは緋奈の人物/コミック等で住居背景の根拠にしない。bg011はひだまり職場、bg020汎用机は流用しない。原デザイン01/02とキャラCMSは外見主体で家族/全住居設定なし。未探索資料の不存在までは断定しない。",
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、住宅用途、趣味と生活小物、窓/扉と中央通行・ADV余白を目視。",
+    "remaining": "立ち絵重ね、厳密寸法、採否、実画面、原設定追加資料との最終照合。"
+  },
+  "asset": {
+    "bg": "BG-169",
+    "img": "IMG-WLD-093",
+    "key": "hayamikawa_reading_room_day",
+    "path": "images/assets/bg/bg_hayamikawa_reading_room_day.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "ee03dc516c44617b98c6bf678cb07a92249786d0d4d3ebfa5d6a0ab113c851c1"
+  },
+  "status": "remote配置・台帳登録は検証後追記"
+}
