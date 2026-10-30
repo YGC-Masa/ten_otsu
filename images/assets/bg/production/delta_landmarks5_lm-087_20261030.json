@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-087",
+  "facility": "FAC-032",
+  "space": "SPACE-LM087-ENTRANCE",
+  "name": "潮見県立科学館 入口・昼（初版外観案）",
+  "canon": "市街地・潮見ドーム周辺、科学館/体験施設。百瀬ひかる/翠/真冬/藍/桃。実験ショー/家電仕組み/ロボット体験/ひかる解説/藍PC克服。通年昼/雨。",
+  "proposal": "都市の県立科学館入口案。白/灰金属の角形低中層ボリューム・青灰ガラス、橙/黄の縦ルーバー、庇付き風除室・左案内/右出口、中央広場と歩行/自転車分離。潮見ドーム本体は画面外、館内展示未設計。",
+  "unconfirmed": "建築・外装・設備・入口配置・採否・正確寸法未確定。代表入口各1枚のみ、内部展示/動物種/詳細ゾーン/全館階数/正確な住所方位は確定しない。サファリの二次ゲート/飼育区画と安全設備は未設計。",
+  "sources": {
+    "world": "02_ランドマーク LM-087",
+    "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/動物/英語別名検索2組・scenario/v039本文を照合、専用5画像未発見。scenario/v039に今回の施設名/用途語一致は未発見。隣接マリンピアBG-126を実画素確認、LM-084は独立館として設計。未発見は不存在の断定ではない。",
+    "references": []
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物/実動物なし、用途/素材/窓扉/入口・出口/歩行余白を目視確認。各施設入口1枚のみ。LM-085は歩行前庭と右車両レーンの柵を確認、二次閉鎖/飼育境界は未設計。LM-086は段差と右スロープが見えるが勾配/法令寸法は未検証。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-192",
+    "img": "IMG-WLD-116",
+    "key": "shiomi_science_museum_entrance_day",
+    "path": "images/assets/bg/bg_shiomi_science_museum_entrance_day.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "631cb294f6379d3c257cc3c7b8eab8a1f54f0cdd1ef28d751425ab88ea95c925"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "58e8a97874236363483c13b82b2705ebaf8283f0"
+}
