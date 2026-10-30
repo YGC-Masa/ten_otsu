@@ -232,3 +232,15 @@
     hashiro_plateau_snowfield_winter_evening: {"name":"羽白高原 雪原 冬夕方","path":"images/assets/bg/bg_hashiro_plateau_snowfield_winter_evening.webp","location":"羽白高原 雪原 冬夕方","spaceId":"SPACE-LM044-SNOWFIELD","time":"evening","season":"winter","status":"初版完成"}
   });
 })();
+
+/* Delta: LM-014 / 015 / 018 / 019 / 021 first editions */
+(function(){
+  "use strict";
+  window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
+    hidamarizaka_bakery_street_morning: {"name":"ひだまり坂ベーカリー街 朝","path":"images/assets/bg/bg_hidamarizaka_bakery_street_morning.webp","location":"ひだまり坂ベーカリー街 朝","spaceId":"SPACE-LM014-STREET","time":"morning","status":"初版完成"},
+    shiokaze_cycling_road_morning: {"name":"潮風サイクリングロード 朝","path":"images/assets/bg/bg_shiokaze_cycling_road_morning.webp","location":"潮風サイクリングロード 朝","spaceId":"SPACE-LM015-ROUTE","time":"morning","status":"初版完成"},
+    hiyorizaka_civic_hall_auditorium: {"name":"日和坂市民ホール メインホール","path":"images/assets/bg/bg_hiyorizaka_civic_hall_auditorium.webp","location":"日和坂市民ホール メインホール","spaceId":"SPACE-LM018-AUDITORIUM","status":"初版完成"},
+    shiomi_beach_live_deck_evening: {"name":"潮見浜ライブデッキ 夕方","path":"images/assets/bg/bg_shiomi_beach_live_deck_evening.webp","location":"潮見浜ライブデッキ 夕方","spaceId":"SPACE-LM019-LIVEDECK","time":"evening","status":"初版完成"},
+    hiyorizaka_arena_interior: {"name":"日和坂アリーナ メインアリーナ","path":"images/assets/bg/bg_hiyorizaka_arena_interior.webp","location":"日和坂アリーナ メインアリーナ","spaceId":"SPACE-LM021-ARENA","status":"初版完成"}
+  });
+})();
