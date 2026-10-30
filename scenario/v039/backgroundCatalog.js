@@ -819,3 +819,14 @@
     "status": "初版空間案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-086 landmark proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "hiyorizaka_art_museum_entrance_rain_day": {
+    "name": "日和坂市立美術館 入口・雨昼（初版外観案）",
+    "path": "images/assets/bg/bg_hiyorizaka_art_museum_entrance_rain_day.webp",
+    "spaceId": "SPACE-LM086-ENTRANCE",
+    "time": "day",
+    "status": "初版空間案/間取り・設備・採否未確定"
+  }
+});})();

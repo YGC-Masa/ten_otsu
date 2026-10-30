@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-086",
+  "facility": "FAC-031",
+  "space": "SPACE-LM086-ENTRANCE",
+  "name": "日和坂市立美術館 入口・雨昼（初版外観案）",
+  "canon": "高台文化ゾーン、美術館/文化施設。真花/彩愛/雪乃/藍/翠。企画展/静かな鑑賞/雨の日/感想・真花の感性。通年昼〜夕/雨。",
+  "proposal": "高台の静かな公立館入口案。淡石/白い水平箱形壁と奥まったガラス風除室、庇下左チケット案内、右退出扉。低い段差と横の緩いバリアフリー経路/雨の前庭。作品/企画名/展示室未設計。",
+  "unconfirmed": "建築・外装・設備・入口配置・採否・正確寸法未確定。代表入口各1枚のみ、内部展示/動物種/詳細ゾーン/全館階数/正確な住所方位は確定しない。サファリの二次ゲート/飼育区画と安全設備は未設計。",
+  "sources": {
+    "world": "02_ランドマーク LM-086",
+    "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/動物/英語別名検索2組・scenario/v039本文を照合、専用5画像未発見。scenario/v039に今回の施設名/用途語一致は未発見。隣接マリンピアBG-126を実画素確認、LM-084は独立館として設計。未発見は不存在の断定ではない。",
+    "references": []
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物/実動物なし、用途/素材/窓扉/入口・出口/歩行余白を目視確認。各施設入口1枚のみ。LM-085は歩行前庭と右車両レーンの柵を確認、二次閉鎖/飼育境界は未設計。LM-086は段差と右スロープが見えるが勾配/法令寸法は未検証。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-191",
+    "img": "IMG-WLD-115",
+    "key": "hiyorizaka_art_museum_entrance_rain_day",
+    "path": "images/assets/bg/bg_hiyorizaka_art_museum_entrance_rain_day.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "7f07b1b40cdb1638cf8fb9e56b58c2652eb168b24327a8b30dd15c6b2714061d"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "8883c2f3ef3ce9f4481ed42656bc6f98c51bffa5"
+}
