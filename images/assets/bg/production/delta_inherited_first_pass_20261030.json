@@ -4,8 +4,8 @@
   "counts": {
     "total": 50,
     "existing": 4,
-    "newFirstDrafts": 25,
-    "notFound": 21,
+    "newFirstDrafts": 30,
+    "notFound": 16,
     "needsRegeneration": 0
   },
   "items": [
@@ -634,52 +634,117 @@
     {
       "id": "LM-088",
       "facility": "日和坂トリックアート館",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "入口案の採否/追加原設定照合/実画面/寸法/地理接続（内部詳細拡張なし）",
+      "visual": "入口1枚目視QC済。人物なし、素材/用途/窓扉/通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-193",
+        "img": "IMG-WLD-117",
+        "key": "hiyorizaka_trick_art_entrance_day",
+        "path": "images/assets/bg/bg_hiyorizaka_trick_art_entrance_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "7ab9cc0d6d680300b910d47edcfc111d5b29c3edaf3c73cde3ac35df9fe50caa"
+      },
+      "verifiedAtHead": "c397f8a9df3ad2e2aa4f75b3ef62db1f8f30f77f",
+      "assetCommit": "c53a1598386a2f819c12667e32b2e383395f5a6e"
     },
     {
       "id": "LM-089",
       "facility": "羽白湖自然科学センター",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "入口案の採否/追加原設定照合/実画面/寸法/地理接続（内部詳細拡張なし）",
+      "visual": "入口1枚目視QC済。人物なし、素材/用途/窓扉/通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-194",
+        "img": "IMG-WLD-118",
+        "key": "hashiro_nature_science_center_entrance_day",
+        "path": "images/assets/bg/bg_hashiro_nature_science_center_entrance_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "659f9d144f3159e0aec984eac29a5dc79b2f3f470191cbf66a4b1b83b4c60f8f"
+      },
+      "verifiedAtHead": "c397f8a9df3ad2e2aa4f75b3ef62db1f8f30f77f",
+      "assetCommit": "62bbf9cd9038d9a70db5936b10404c200dc00562"
     },
     {
       "id": "LM-090",
       "facility": "日和坂きもの小路",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "入口案の採否/追加原設定照合/実画面/寸法/地理接続（内部詳細拡張なし）",
+      "visual": "入口1枚目視QC済。人物なし、素材/用途/窓扉/通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-195",
+        "img": "IMG-WLD-119",
+        "key": "hiyorizaka_kimono_lane_day",
+        "path": "images/assets/bg/bg_hiyorizaka_kimono_lane_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "317849840299e7738ab33be21f68533c2fe3182ee27119e72dcb336418cb9269"
+      },
+      "verifiedAtHead": "c397f8a9df3ad2e2aa4f75b3ef62db1f8f30f77f",
+      "assetCommit": "c5cc6d124739b132ecdf9878bf18cb3c30d07b66"
     },
     {
       "id": "LM-091",
       "facility": "花守茶苑公園",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "入口案の採否/追加原設定照合/実画面/寸法/地理接続（内部詳細拡張なし）",
+      "visual": "入口1枚目視QC済。人物なし、素材/用途/窓扉/通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-196",
+        "img": "IMG-WLD-120",
+        "key": "hanamori_tea_garden_entrance_autumn_day",
+        "path": "images/assets/bg/bg_hanamori_tea_garden_entrance_autumn_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "97d60c904da0a44db7492d3405bd647a42a801df4e164aef2fb01b26042de863"
+      },
+      "verifiedAtHead": "c397f8a9df3ad2e2aa4f75b3ef62db1f8f30f77f",
+      "assetCommit": "72d39f98d6b27931d7fff1f7e02587a8c8ff3c70"
     },
     {
       "id": "LM-092",
       "facility": "日和坂郷土歴史館",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "入口案の採否/追加原設定照合/実画面/寸法/地理接続（内部詳細拡張なし）",
+      "visual": "入口1枚目視QC済。人物なし、素材/用途/窓扉/通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-197",
+        "img": "IMG-WLD-121",
+        "key": "hiyorizaka_local_history_museum_entrance_day",
+        "path": "images/assets/bg/bg_hiyorizaka_local_history_museum_entrance_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "2c95951f3f020425457807bd9481741a0735e1c66f9f3cfc5a0be7112acef625"
+      },
+      "verifiedAtHead": "c397f8a9df3ad2e2aa4f75b3ef62db1f8f30f77f",
+      "assetCommit": "c397f8a9df3ad2e2aa4f75b3ef62db1f8f30f77f"
     },
     {
       "id": "LM-093",
@@ -898,5 +963,5 @@
   ],
   "methodLimit": "一次照合。未発見46件を未制作確定にしない。要再生成0件は品質承認ではなく再生成判断未実施。既存候補4施設はリンク候補記録のみ、正本設定の変更/再生成なし。",
   "followupHead": "13df15865ddd0e0af18ef2a17b7d71ce00e98796",
-  "latestVerificationHead": "609b4962a285e015d6191e3cc500c344c10bf60e"
+  "latestVerificationHead": "c397f8a9df3ad2e2aa4f75b3ef62db1f8f30f77f"
 }

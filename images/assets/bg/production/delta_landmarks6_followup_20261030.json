@@ -1,0 +1,298 @@
+{
+  "date": "2026-10-30",
+  "sourceHead": "0143ccf902654bb19e8539bda577c21600650fdc",
+  "verifiedAtHead": "c397f8a9df3ad2e2aa4f75b3ef62db1f8f30f77f",
+  "commits": {
+    "LM-088": "c53a1598386a2f819c12667e32b2e383395f5a6e",
+    "LM-089": "62bbf9cd9038d9a70db5936b10404c200dc00562",
+    "LM-090": "c5cc6d124739b132ecdf9878bf18cb3c30d07b66",
+    "LM-091": "72d39f98d6b27931d7fff1f7e02587a8c8ff3c70",
+    "LM-092": "c397f8a9df3ad2e2aa4f75b3ef62db1f8f30f77f"
+  },
+  "verification": {
+    "head": "c397f8a9df3ad2e2aa4f75b3ef62db1f8f30f77f",
+    "remoteHead": "c397f8a9df3ad2e2aa4f75b3ef62db1f8f30f77f",
+    "imagesSha256Matched": 5,
+    "catalogAndSpaceMatched": 5,
+    "newKeysUnique": 5,
+    "allCatalogMissingPaths": [],
+    "checksums": {
+      "entries": 1686,
+      "mismatches": [],
+      "freshActualGitBytesHashed": 58,
+      "unchangedBlobUsingPriorFullByteHash": 1628,
+      "baseline": "f52697ebd230255e1802f3a56583605fa4811b03"
+    },
+    "adoption": "未確定",
+    "liveScreen": "未確認",
+    "sheetCellsMatched": 270,
+    "visuallyInspected": 5
+  },
+  "records": [
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-088",
+      "facility": "FAC-033",
+      "space": "SPACE-LM088-ENTRANCE",
+      "name": "日和坂トリックアート館 入口・昼（初版外観案）",
+      "canon": "海側観光エリア、体験型美術館/写真スポット。桃/こがね/緋奈/小春/美空。写真/SNS/錯覚アート/配信企画。通年昼/雨。",
+      "proposal": "独立したコンパクト館入口案。クリーム箱形外壁に青/橙の幾何学パネル、左に平面錯視装飾、中央は実際のガラス入口と庇/左案内、右退出扉。色付き縁取りだけの撮影目印は通路外。展示内容/海景方位は未設計。",
+      "unconfirmed": "建築・外装・設備・入口配置・採否・正確寸法未確定。代表入口各1枚のみ、内部展示/詳細ゾーン/全館階数/正確な住所・方位・距離・接続を確定しない。花守茶苑と芝桜ガーデンは同一としない。",
+      "sources": {
+        "world": "02_ランドマーク LM-088",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/別名検索2組・scenario/v039本文を照合、専用5画像未発見。施設5名称のシナリオ直接一致なし。羽白湖の星空観察出典はあるが自然科学センター主催/直結根拠にはしない。湖BG-039の実WebP、神社参道BG-046、芝桜BG-095を実画素確認。未発見は不存在の断定ではない。",
+        "references": []
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/素材/窓扉/入口・出口/中央ADV・歩行余白を目視確認。LM-089は湖の森林岸/山稜/淡水景観を参照画像と比較、厳密地点・方位は未確認。小路は個別店SPACEなし、庭園は芝桜背景と分離。法令/正確寸法は未検証。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-193",
+        "img": "IMG-WLD-117",
+        "key": "hiyorizaka_trick_art_entrance_day",
+        "path": "images/assets/bg/bg_hiyorizaka_trick_art_entrance_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "7ab9cc0d6d680300b910d47edcfc111d5b29c3edaf3c73cde3ac35df9fe50caa"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回270セル読み戻し一致",
+        "assetCommit": "c53a1598386a2f819c12667e32b2e383395f5a6e",
+        "verifiedAtHead": "c397f8a9df3ad2e2aa4f75b3ef62db1f8f30f77f",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "0143ccf902654bb19e8539bda577c21600650fdc"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-089",
+      "facility": "FAC-034",
+      "space": "SPACE-LM089-ENTRANCE",
+      "name": "羽白湖自然科学センター 入口・昼（初版外観案）",
+      "canon": "羽白湖周辺、自然科学館/湖畔施設。雪乃/百瀬ひかる/藍/夜空/萌。湖の生態展示/星空講座/気象観測/自然保護。通年昼〜夕。",
+      "proposal": "湖周辺の小規模自然学習館案。左〜中央に低い杉木/淡石・濃灰切妻の館、庇付きガラス入口と左案内、右退出。右端に既存湖昼景を参照した湖面/森林岸/山稜の限定的な背景。岸の方位/距離・既存遊歩道との直接接続は未確定。",
+      "unconfirmed": "建築・外装・設備・入口配置・採否・正確寸法未確定。代表入口各1枚のみ、内部展示/詳細ゾーン/全館階数/正確な住所・方位・距離・接続を確定しない。花守茶苑と芝桜ガーデンは同一としない。",
+      "sources": {
+        "world": "02_ランドマーク LM-089",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/別名検索2組・scenario/v039本文を照合、専用5画像未発見。施設5名称のシナリオ直接一致なし。羽白湖の星空観察出典はあるが自然科学センター主催/直結根拠にはしない。湖BG-039の実WebP、神社参道BG-046、芝桜BG-095を実画素確認。未発見は不存在の断定ではない。",
+        "references": [
+          "/workspace/delta_landmarks6/bg_hashiro_lake_day.webp"
+        ]
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/素材/窓扉/入口・出口/中央ADV・歩行余白を目視確認。LM-089は湖の森林岸/山稜/淡水景観を参照画像と比較、厳密地点・方位は未確認。小路は個別店SPACEなし、庭園は芝桜背景と分離。法令/正確寸法は未検証。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-194",
+        "img": "IMG-WLD-118",
+        "key": "hashiro_nature_science_center_entrance_day",
+        "path": "images/assets/bg/bg_hashiro_nature_science_center_entrance_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "659f9d144f3159e0aec984eac29a5dc79b2f3f470191cbf66a4b1b83b4c60f8f"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回270セル読み戻し一致",
+        "assetCommit": "62bbf9cd9038d9a70db5936b10404c200dc00562",
+        "verifiedAtHead": "c397f8a9df3ad2e2aa4f75b3ef62db1f8f30f77f",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "c53a1598386a2f819c12667e32b2e383395f5a6e"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-090",
+      "facility": "FAC-035",
+      "space": "SPACE-LM090-LANE",
+      "name": "日和坂きもの小路 入口導線・昼（初版街路案）",
+      "canon": "わだつみ神社〜レトロ商店街、和服体験/観光通り。真花/藍/萌/桃/彩愛/こがね。着物浴衣レンタル/髪飾り/参拝/写真。春夏秋昼〜夕。",
+      "proposal": "参道周辺の歩行小路入口案。低層木造/白壁/灰瓦、左レンタル相談窓・布反物/畳んだ帯、右小さな髪飾りケース、中央連続石畳。神社本体/鳥居/石段や商店街の接合点を画面外にし距離/方位は未確定。個別店舗SPACEは増やさない。",
+      "unconfirmed": "建築・外装・設備・入口配置・採否・正確寸法未確定。代表入口各1枚のみ、内部展示/詳細ゾーン/全館階数/正確な住所・方位・距離・接続を確定しない。花守茶苑と芝桜ガーデンは同一としない。",
+      "sources": {
+        "world": "02_ランドマーク LM-090",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/別名検索2組・scenario/v039本文を照合、専用5画像未発見。施設5名称のシナリオ直接一致なし。羽白湖の星空観察出典はあるが自然科学センター主催/直結根拠にはしない。湖BG-039の実WebP、神社参道BG-046、芝桜BG-095を実画素確認。未発見は不存在の断定ではない。",
+        "references": [
+          "/workspace/delta_landmarks6/bg_takadai_shrine_steps_day.webp"
+        ]
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/素材/窓扉/入口・出口/中央ADV・歩行余白を目視確認。LM-089は湖の森林岸/山稜/淡水景観を参照画像と比較、厳密地点・方位は未確認。小路は個別店SPACEなし、庭園は芝桜背景と分離。法令/正確寸法は未検証。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-195",
+        "img": "IMG-WLD-119",
+        "key": "hiyorizaka_kimono_lane_day",
+        "path": "images/assets/bg/bg_hiyorizaka_kimono_lane_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "317849840299e7738ab33be21f68533c2fe3182ee27119e72dcb336418cb9269"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回270セル読み戻し一致",
+        "assetCommit": "c5cc6d124739b132ecdf9878bf18cb3c30d07b66",
+        "verifiedAtHead": "c397f8a9df3ad2e2aa4f75b3ef62db1f8f30f77f",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "62bbf9cd9038d9a70db5936b10404c200dc00562"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-091",
+      "facility": "FAC-036",
+      "space": "SPACE-LM091-ENTRANCE",
+      "name": "花守茶苑公園 入口導線・秋昼（初版庭園案）",
+      "canon": "高台文化ゾーン、茶会/日本庭園/公園。彩愛/真花/雪乃/藍/萌/陽里。野点/茶会/和菓子/散歩/作法。春秋昼。芝桜の丘花守ガーデンとは同一根拠なし。",
+      "proposal": "静かな日本庭園の入口経路案。小さな木の屋根門・白土塀/竹垣・低い生垣、中央歩きやすい石敷き、左右苔と秋木立、脇の低い赤布ベンチ。池・茶室内部・芝桜斜面・市街遠景は追加しない。",
+      "unconfirmed": "建築・外装・設備・入口配置・採否・正確寸法未確定。代表入口各1枚のみ、内部展示/詳細ゾーン/全館階数/正確な住所・方位・距離・接続を確定しない。花守茶苑と芝桜ガーデンは同一としない。",
+      "sources": {
+        "world": "02_ランドマーク LM-091",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/別名検索2組・scenario/v039本文を照合、専用5画像未発見。施設5名称のシナリオ直接一致なし。羽白湖の星空観察出典はあるが自然科学センター主催/直結根拠にはしない。湖BG-039の実WebP、神社参道BG-046、芝桜BG-095を実画素確認。未発見は不存在の断定ではない。",
+        "references": []
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/素材/窓扉/入口・出口/中央ADV・歩行余白を目視確認。LM-089は湖の森林岸/山稜/淡水景観を参照画像と比較、厳密地点・方位は未確認。小路は個別店SPACEなし、庭園は芝桜背景と分離。法令/正確寸法は未検証。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-196",
+        "img": "IMG-WLD-120",
+        "key": "hanamori_tea_garden_entrance_autumn_day",
+        "path": "images/assets/bg/bg_hanamori_tea_garden_entrance_autumn_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "97d60c904da0a44db7492d3405bd647a42a801df4e164aef2fb01b26042de863"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回270セル読み戻し一致",
+        "assetCommit": "72d39f98d6b27931d7fff1f7e02587a8c8ff3c70",
+        "verifiedAtHead": "c397f8a9df3ad2e2aa4f75b3ef62db1f8f30f77f",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "c5cc6d124739b132ecdf9878bf18cb3c30d07b66"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-092",
+      "facility": "FAC-037",
+      "space": "SPACE-LM092-ENTRANCE",
+      "name": "日和坂郷土歴史館 入口・昼（初版外観案）",
+      "canon": "旧市街/わだつみ神社参道、歴史施設/郷土資料館。藍/翠/真花/雪乃/桃/朔夜。郷土史/古い家電・商店街史/付喪神めいた伝承/時代劇好き桃。通年昼/雨。",
+      "proposal": "旧市街の小規模資料館入口案。白漆喰と濃木腰壁/格子、灰瓦切妻、現代の庇下ガラス風除室・左案内窓/右退出、平らな石敷きと脇の緩い経路。建物の年代/由来・実物展示/伝承の真偽は確定しない。",
+      "unconfirmed": "建築・外装・設備・入口配置・採否・正確寸法未確定。代表入口各1枚のみ、内部展示/詳細ゾーン/全館階数/正確な住所・方位・距離・接続を確定しない。花守茶苑と芝桜ガーデンは同一としない。",
+      "sources": {
+        "world": "02_ランドマーク LM-092",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/別名検索2組・scenario/v039本文を照合、専用5画像未発見。施設5名称のシナリオ直接一致なし。羽白湖の星空観察出典はあるが自然科学センター主催/直結根拠にはしない。湖BG-039の実WebP、神社参道BG-046、芝桜BG-095を実画素確認。未発見は不存在の断定ではない。",
+        "references": [
+          "/workspace/delta_landmarks6/bg_takadai_shrine_steps_day.webp"
+        ]
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/素材/窓扉/入口・出口/中央ADV・歩行余白を目視確認。LM-089は湖の森林岸/山稜/淡水景観を参照画像と比較、厳密地点・方位は未確認。小路は個別店SPACEなし、庭園は芝桜背景と分離。法令/正確寸法は未検証。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-197",
+        "img": "IMG-WLD-121",
+        "key": "hiyorizaka_local_history_museum_entrance_day",
+        "path": "images/assets/bg/bg_hiyorizaka_local_history_museum_entrance_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "2c95951f3f020425457807bd9481741a0735e1c66f9f3cfc5a0be7112acef625"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回270セル読み戻し一致",
+        "assetCommit": "c397f8a9df3ad2e2aa4f75b3ef62db1f8f30f77f",
+        "verifiedAtHead": "c397f8a9df3ad2e2aa4f75b3ef62db1f8f30f77f",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "72d39f98d6b27931d7fff1f7e02587a8c8ff3c70"
+    }
+  ],
+  "scopeCounts": {
+    "total": 50,
+    "newFirstDrafts": 30,
+    "existingLinkedQC": 4,
+    "notFound": 16,
+    "needsRegeneration": 0
+  },
+  "references": {
+    "pixels": [
+      "BG-039羽白湖昼の実WebP。森林岸/山稜/淡水湖面を参照、厳密地点・山稜重畳は未検証。",
+      "BG-046わだつみ神社参道。木・灰瓦・石材の地域意匠参照、既存鳥居/石段を変更せず、新接合点も描かない。",
+      "BG-095芝桜の丘 花守ガーデン。LM-091茶苑公園との同一根拠なし、統合/流用しない。"
+    ],
+    "texts": [
+      "02_ランドマーク A88:R92",
+      "08_背景アセット A5:L196",
+      "09_空間・間取り管理 A5:O119",
+      "03_建物施設 A2:L33",
+      "scenario/v039本文の5施設名検索：該当なし",
+      "羽白湖90メインと80キー群に星空観察会/バス停/遊歩道出典あり。センター主催/直結の根拠にはしない。"
+    ],
+    "searchLimits": "Drive画像名検索2組は結果0。main全画像名・台帳・scenario/v039本文の確認範囲では専用5背景未発見。未発見は不存在の断定ではなく、Drive全画像の実画素総点検はしていない。"
+  },
+  "sheetExpansion": "登録行確保のためBG台帳200→220行、イラスト管理120→140行へ末尾20行ずつ追加。既存行の移動なし。",
+  "unconfirmed": [
+    "全5点の採否/正確寸法/立ち絵重ね/実画面",
+    "全館階数/内部詳細ゾーン/展示内容/住所・方位・距離・既存経路との接続",
+    "LM-089 既存湖背景との定性的な森林岸/山稜表現比較のみ。正確な湖岸地点・方位・距離・山稜重畳や全市地図照合は未検証。観測テラス/ルミエール/観察会への直結・主催は未設定。",
+    "LM-090/092 神社とレトロ商店街/旧市街の正本関係を維持。接合点・神社までの距離・方位未確定。",
+    "LM-091 花守茶苑と芝桜ガーデンの関係未確定、同一施設扱いなし。",
+    "LM-092 建物年代/文化財指定/伝承の真偽は未設定。",
+    "彩愛原設定差、店長宅地理、朔夜用途/VIP、前組の設備寸法など既存未確定事項は維持"
+  ],
+  "delivery": "GitHub main配置。Drive画像転記なし。ローカルZIPを外部納品済みとは扱わない。"
+}
