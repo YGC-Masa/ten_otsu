@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-094",
+  "facility": "FAC-039",
+  "space": "SPACE-LM094-PASSAGE",
+  "name": "日和坂地下街 ひよりモール 代表通路（初版空間案）",
+  "canon": "日和坂駅地下、地下街/買い物/雨の日。こがね/緋奈/彩愛/里美/真花。雨のショッピング/地下グルメ/迷子/生活雑貨/仕事帰り。通年昼〜夜/雨。",
+  "proposal": "駅地下の代表共用通路案。淡灰タイル/クリーム天井・青灰金属柱、左右の匿名店頭窓と天井照明、中央広い歩行帯/点字誘導、脇ベンチと閉じた管理扉。階段/改札/地上出口・他地下接続やテナント/営業時間は未確定。 窓内のタオル/食器/袋は可動の仮陳列、テナント・商品構成の確定ではない。",
+  "unconfirmed": "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理隣接/地下接続/店名/営業条件/全館階数/住所・方位・距離を確定しない。窓内の仮商品や機器は可動の意匠例。",
+  "sources": {
+    "world": "02_ランドマーク LM-094",
+    "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/英語別名検索2組・scenario/v039本文を照合、専用5画像未発見。施設名/地下街/アーケード等のシナリオ直接一致なし。駅昼/港岸壁BG-158/ひだまり店頭昼/つくもBG-137を実画素参照。用途や近隣の類似だけで同一施設としない。未発見は不存在の断定ではない。",
+    "references": [
+      "/workspace/delta_landmarks7/bg_hiyorizaka_station_day.webp"
+    ]
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、用途/素材/窓扉/主通行帯/中央ADV余白を目視確認。地下街の仮陳列は窓内、館周辺はつくも所在地を複製しないよう修正。港は既存岸壁を改装扱いにせず位置未確定。アーケードは既存ストアに接続/増築させない。設備/法令/正確寸法は未検証。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-199",
+    "img": "IMG-WLD-123",
+    "key": "hiyori_underground_mall_passage_day",
+    "path": "images/assets/bg/bg_hiyori_underground_mall_passage_day.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "1bf13974ce941b80b4fc3736aca9603da2c2107816e8a77e503a422cbef4d633"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "c37097af85ef9405d64a2741751ad54bc4780ea7"
+}

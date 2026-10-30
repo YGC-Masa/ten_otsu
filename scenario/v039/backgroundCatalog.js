@@ -907,3 +907,14 @@
     "status": "初版空間案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-094 landmark proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "hiyori_underground_mall_passage_day": {
+    "name": "日和坂地下街 ひよりモール 代表通路（初版空間案）",
+    "path": "images/assets/bg/bg_hiyori_underground_mall_passage_day.webp",
+    "spaceId": "SPACE-LM094-PASSAGE",
+    "time": "day",
+    "status": "初版空間案/間取り・設備・採否未確定"
+  }
+});})();
