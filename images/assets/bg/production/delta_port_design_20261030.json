@@ -56,10 +56,31 @@
   "status": {
     "generated": 2,
     "visuallyInspected": 2,
-    "ledger": "登録/読み戻しは後続工程で確認",
-    "remote": "本記録と同コミットの画像/カタログを後続で検証",
+    "ledger": "登録済・読み戻し一致",
+    "remote": "画像blob・カタログpath/SPACE一致",
     "adoption": "未確定",
     "liveScreen": "未確認"
   },
-  "limitations": "厳密寸法/地形方位/設備/衛生安全監修/立ち絵重ねは未実施。生成1672×941 WebP90、本番サイズ統一は残件。プログラム/シナリオ割当は追加しない。"
+  "limitations": "厳密寸法/地形方位/設備/衛生安全監修/立ち絵重ねは未実施。生成1672×941 WebP90、本番サイズ統一は残件。プログラム/シナリオ割当は追加しない。",
+  "registration": {
+    "assetCommit": "bb5dd3d7337346c5df39a1e9ad04f8fefb0af5e3",
+    "globalVerification": {
+      "newImages": 6,
+      "remoteImageBlobsMatched": 6,
+      "catalogExact": true,
+      "sheetCellsReadbackMatched": 252,
+      "liveScreen": false,
+      "adoption": "未確定",
+      "catalogRuntime": "6キー/path/SPACE一致・カタログ全体の存在しないパス0件"
+    },
+    "ledgerBg": [
+      "BG-158",
+      "BG-159"
+    ],
+    "images": [
+      "IMG-WLD-082",
+      "IMG-WLD-083"
+    ],
+    "scenarios": "プログラム変更/シナリオ割当なし"
+  }
 }
