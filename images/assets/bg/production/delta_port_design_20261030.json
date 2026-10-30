@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-30",
+  "group": "port",
+  "facility": "FAC-008/日和坂港 一般開放岸壁（母体案）",
+  "canon": "LM-025 港エリア・春/夏・昼〜夜の港まつり。公園イベント広場とは同一視しない。",
+  "proposal": "左港湾小施設・右海沿い安全柵/管理された浮桟橋・中央広い岸壁。港内の一般開放区画を母体案とし、屋台/仮設低ステージはイベント状態。既存海景の色調と都市/山並み規模を参照、正確な方位/番地/岸壁位置は未確定。船上イベントの運航や乗船方式は追加しない。",
+  "references": [
+    "bg_minato_seaside_fence_day.webp",
+    "bg_hiyorizaka_port_public_quay_day.webp"
+  ],
+  "qc": "母体/祭りで左建物の窓/扉/屋根、右柵/浮輪/閉鎖桟橋ゲート/小船、対岸クレーン/灯台/山並み、舗装構図を比較。中央/建物扉/海側管理帯を空けた。",
+  "assets": [
+    {
+      "key": "hiyorizaka_port_public_quay_day",
+      "name": "日和坂港 一般開放岸壁 昼（母体案）",
+      "lm": "LM-025",
+      "lmRow": 25,
+      "space": "SPACE-LM025-PORT-QUAY",
+      "spaceRow": 89,
+      "group": "port",
+      "time": "day",
+      "ref": "/workspace/delta_festivals/bg_minato_seaside_fence_day.webp",
+      "bg": "BG-158",
+      "img": "IMG-WLD-082",
+      "note": "港一般開放岸壁を母体にした初版案。みなと公園イベント広場とは別実体。正確な方位/敷地/採否未確定。",
+      "repoPath": "images/assets/bg/bg_hiyorizaka_port_public_quay_day.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "f9f5d58d6cf83256f43a0219439183119a83bcdf82369d563b6918852a289e3a",
+      "blob": "b1bf1f0c20855bc54c2a666846e666a4ce38f92f"
+    },
+    {
+      "key": "hiyorizaka_port_festival_day",
+      "name": "日和坂港まつり 昼（岸壁イベント案）",
+      "lm": "LM-025",
+      "lmRow": 25,
+      "space": "SPACE-LM025-PORT-QUAY",
+      "spaceRow": 89,
+      "group": "port",
+      "time": "day",
+      "ref": "/workspace/generated_images/exec-2e99feef-81b6-4dbc-96ab-6dfeecff3f83.png",
+      "bg": "BG-159",
+      "img": "IMG-WLD-083",
+      "note": "港一般開放岸壁を母体にした初版案。みなと公園イベント広場とは別実体。正確な方位/敷地/採否未確定。",
+      "repoPath": "images/assets/bg/bg_hiyorizaka_port_festival_day.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "c028e8e003adac3af52c518e84ec4f1577ed66896989195cbc84eb685421579f",
+      "blob": "386f4dd64f1984782c0ab399f63f61b9090d8859"
+    }
+  ],
+  "status": {
+    "generated": 2,
+    "visuallyInspected": 2,
+    "ledger": "登録/読み戻しは後続工程で確認",
+    "remote": "本記録と同コミットの画像/カタログを後続で検証",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "limitations": "厳密寸法/地形方位/設備/衛生安全監修/立ち絵重ねは未実施。生成1672×941 WebP90、本番サイズ統一は残件。プログラム/シナリオ割当は追加しない。"
+}

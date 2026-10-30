@@ -461,3 +461,22 @@
     "status": "初版提案/採否未確定"
   }
 });})();
+
+
+/* Delta: port facility proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "hiyorizaka_port_public_quay_day": {
+    "name": "日和坂港 一般開放岸壁 昼（母体案）",
+    "path": "images/assets/bg/bg_hiyorizaka_port_public_quay_day.webp",
+    "spaceId": "SPACE-LM025-PORT-QUAY",
+    "time": "day",
+    "status": "初版提案/採否未確定"
+  },
+  "hiyorizaka_port_festival_day": {
+    "name": "日和坂港まつり 昼（岸壁イベント案）",
+    "path": "images/assets/bg/bg_hiyorizaka_port_festival_day.webp",
+    "spaceId": "SPACE-LM025-PORT-QUAY",
+    "time": "day",
+    "status": "初版提案/採否未確定"
+  }
+});})();
