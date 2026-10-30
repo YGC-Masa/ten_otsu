@@ -256,3 +256,15 @@
     shirane_snowpark_slope_winter_day: {"name":"白嶺スノーパーク ゲレンデ 冬昼","path":"images/assets/bg/bg_shirane_snowpark_slope_winter_day.webp","location":"白嶺スノーパーク ゲレンデ 冬昼","spaceId":"SPACE-LM043-SLOPE","time":"day","season":"winter","status":"初版完成"}
   });
 })();
+
+/* Delta: foyer, two event plazas, radio terrace and lodge */
+(function(){
+  "use strict";
+  window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
+    hiyorizaka_civic_hall_foyer: {"name":"日和坂市民ホール ホワイエ","path":"images/assets/bg/bg_hiyorizaka_civic_hall_foyer.webp","location":"日和坂市民ホール ホワイエ","spaceId":"SPACE-LM018-FOYER","status":"初版完成"},
+    shiomi_dome_event_plaza_day: {"name":"潮見ドーム前イベント広場 昼","path":"images/assets/bg/bg_shiomi_dome_event_plaza_day.webp","location":"潮見ドーム前イベント広場 昼","spaceId":"SPACE-LM027-EVENTPLAZA","time":"day","status":"初版完成"},
+    hashiro_radio_observation_terrace_evening: {"name":"羽白湖 電波観測テラス 夕方","path":"images/assets/bg/bg_hashiro_radio_observation_terrace_evening.webp","location":"羽白湖 電波観測テラス 夕方","spaceId":"SPACE-LM032-TERRACE","time":"evening","status":"初版完成"},
+    shirane_snowpark_lodge_winter_day: {"name":"白嶺スノーパーク ロッジ 冬昼","path":"images/assets/bg/bg_shirane_snowpark_lodge_winter_day.webp","location":"白嶺スノーパーク ロッジ 冬昼","spaceId":"SPACE-LM043-LODGE","time":"day","season":"winter","status":"初版完成"},
+    biribiri_station_event_plaza_day: {"name":"ビリビリ電機 駅前イベント広場 昼","path":"images/assets/bg/bg_biribiri_station_event_plaza_day.webp","location":"ビリビリ電機 駅前イベント広場 昼","spaceId":"SPACE-LM049-EVENTPLAZA","time":"day","status":"初版完成"}
+  });
+})();
