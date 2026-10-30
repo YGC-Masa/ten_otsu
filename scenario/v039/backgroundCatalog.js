@@ -621,3 +621,14 @@
     "status": "初版空間案/採否未確定"
   }
 });})();
+
+/* Delta LM-066 residential proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "daidoji_home_beauty_room_day": {
+    "name": "大道寺家のエステルーム 昼（自宅美容室案）",
+    "path": "images/assets/bg/bg_daidoji_home_beauty_room_day.webp",
+    "spaceId": "SPACE-LM066-BEAUTY",
+    "time": "day",
+    "status": "住居初版案/間取り・設備・採否未確定"
+  }
+});})();

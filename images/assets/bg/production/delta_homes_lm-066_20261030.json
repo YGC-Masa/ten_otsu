@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-066",
+  "facility": "FAC-016",
+  "space": "SPACE-LM066-BEAUTY",
+  "name": "大道寺家のエステルーム 昼（自宅美容室案）",
+  "canon": "住宅街/実家、真花、美容ケア/お茶、通年昼〜夕。intro_manakaは実家建築会社・美容品/エステ趣味。",
+  "proposal": "左化粧品/清潔タオル収納と手洗い、右リクライニング椅子/鏡/茶、奥窓と右室内扉、中央余白。美容営業/医療施設としない。",
+  "unconfirmed": "部屋名以上の間取り・家具・設備・全館階数・家族人数・居住者/所有者追加・住所は確定しない。採否/詳細寸法未確認。",
+  "excludedOtherFacilities": "既存FAC-003アスト店舗を大道寺家と同一視しない。",
+  "sources": {
+    "world": "02_ランドマーク LM-066",
+    "scenario": "scenario/v039/events/intro_manaka.json",
+    "search": "main全画像名/台帳/517テキスト/Drive画像名(5姓・部屋名称)を検索。専用住居画像は未発見。未発見は不存在の断定ではない。家族/全住居設定の追加資料は未確認。"
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし/セルアニメ調、用途・小物・窓扉/動線/中央ADV余白を確認。室内鏡や設備の厳密監修は未実施。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-173",
+    "img": "IMG-WLD-097",
+    "key": "daidoji_home_beauty_room_day",
+    "path": "images/assets/bg/bg_daidoji_home_beauty_room_day.webp",
+    "sha256": "bf5825f22020cb6763be0f6307e1eeea284f8f0844362b1ab432cb50666231d4",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  "status": "remote配置/台帳読み戻しは後続確認",
+  "verificationParentHead": "ee1d98f2fecc4184a0d4be7b3c717e63db38901d"
+}
