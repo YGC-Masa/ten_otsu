@@ -610,3 +610,14 @@
     "status": "初版空間案/採否未確定"
   }
 });})();
+
+/* Delta LM-065 */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "kasugahara_training_room_evening": {
+    "name": "春日原家のトレーニングルーム 夕方（初版空間案）",
+    "path": "images/assets/bg/bg_kasugahara_training_room_evening.webp",
+    "spaceId": "SPACE-LM065-TRAINING",
+    "time": "evening",
+    "status": "初版空間案/採否未確定"
+  }
+});})();
