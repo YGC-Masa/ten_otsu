@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-067",
+  "facility": "FAC-017",
+  "space": "SPACE-LM067-SWEETS",
+  "name": "氷神家の小さな菓子工房 昼（自宅製菓室案）",
+  "canon": "山寄り住宅地、雪乃、お菓子作り/ナッツ/和食、通年昼〜夜。intro_yukinoにお菓子作り。",
+  "proposal": "家庭用シンク/オーブン/調理台/ミキサー/材料収納、右壁作業台と椅子、中央床、後右すりガラス扉は勝手口候補で採否未確定。販売厨房/パン屋にはしない。",
+  "unconfirmed": "部屋名以上の間取り・家具・設備・全館階数・家族人数・居住者/所有者追加・住所は確定しない。採否/詳細寸法未確認。",
+  "excludedOtherFacilities": "ベーカリー街/店舗菓子設備を雪乃自宅と同一視しない。",
+  "sources": {
+    "world": "02_ランドマーク LM-067",
+    "scenario": "scenario/v039/events/intro_yukino.json",
+    "search": "main全画像名/台帳/517テキスト/Drive画像名(5姓・部屋名称)を検索。専用住居画像は未発見。未発見は不存在の断定ではない。家族/全住居設定の追加資料は未確認。"
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし/セルアニメ調、用途・小物・窓扉/動線/中央ADV余白を確認。室内鏡や設備の厳密監修は未実施。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-174",
+    "img": "IMG-WLD-098",
+    "key": "hikami_home_sweets_kitchen_day",
+    "path": "images/assets/bg/bg_hikami_home_sweets_kitchen_day.webp",
+    "sha256": "6d4a64b4587a2470e8ffb1a9c6a33dadb13afa1d5d04ef5a2e4805f0e0ec2f46",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  "status": "remote配置/台帳読み戻しは後続確認",
+  "verificationParentHead": "5654a2d1e556bb7502f858db7a64cf546a08d060"
+}

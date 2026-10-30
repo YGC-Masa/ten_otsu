@@ -632,3 +632,14 @@
     "status": "住居初版案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-067 residential proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "hikami_home_sweets_kitchen_day": {
+    "name": "氷神家の小さな菓子工房 昼（自宅製菓室案）",
+    "path": "images/assets/bg/bg_hikami_home_sweets_kitchen_day.webp",
+    "spaceId": "SPACE-LM067-SWEETS",
+    "time": "day",
+    "status": "住居初版案/間取り・設備・採否未確定"
+  }
+});})();
