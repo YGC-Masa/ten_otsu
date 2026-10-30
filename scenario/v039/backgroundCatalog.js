@@ -940,3 +940,14 @@
     "status": "初版空間案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-097 landmark proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "hidamari_shopping_arcade_day": {
+    "name": "ひだまり商店街 屋根付きアーケード 代表通路・昼（初版街路案）",
+    "path": "images/assets/bg/bg_hidamari_shopping_arcade_day.webp",
+    "spaceId": "SPACE-LM097-ARCADE",
+    "time": "day",
+    "status": "初版空間案/間取り・設備・採否未確定"
+  }
+});})();

@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-097",
+  "facility": "FAC-042",
+  "space": "SPACE-LM097-ARCADE",
+  "name": "ひだまり商店街 屋根付きアーケード 代表通路・昼（初版街路案）",
+  "canon": "ひだまりストア周辺、商店街/日常拠点、全員。買い物/雨宿り/商店街フェア/偶然出会い/閉店後帰路。通年昼〜夜/雨。",
+  "proposal": "ひだまり周辺の別区画・屋根付き歩行通路案。低中層店頭帯と乳白透光屋根/細い緑灰金属アーチ、左右匿名店舗窓/庇、中央広い歩行帯、脇小ベンチ。既存ストア前駐車場に屋根を追加せず、直接接合点・店名/業態/営業時間は未確定。",
+  "unconfirmed": "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理隣接/地下接続/店名/営業条件/全館階数/住所・方位・距離を確定しない。窓内の仮商品や機器は可動の意匠例。",
+  "sources": {
+    "world": "02_ランドマーク LM-097",
+    "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/英語別名検索2組・scenario/v039本文を照合、専用5画像未発見。施設名/地下街/アーケード等のシナリオ直接一致なし。駅昼/港岸壁BG-158/ひだまり店頭昼/つくもBG-137を実画素参照。用途や近隣の類似だけで同一施設としない。未発見は不存在の断定ではない。",
+    "references": [
+      "/workspace/delta_landmarks7/bg_hidamari_store_front_day.webp"
+    ]
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、用途/素材/窓扉/主通行帯/中央ADV余白を目視確認。地下街の仮陳列は窓内、館周辺はつくも所在地を複製しないよう修正。港は既存岸壁を改装扱いにせず位置未確定。アーケードは既存ストアに接続/増築させない。設備/法令/正確寸法は未検証。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-202",
+    "img": "IMG-WLD-126",
+    "key": "hidamari_shopping_arcade_day",
+    "path": "images/assets/bg/bg_hidamari_shopping_arcade_day.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "7ca73d0e11795755bf83c258f050b3bc15dca362b6613a0d475c34798568e211"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "1ee3ad0a89d556c0d46e4d92c9eec5e9f18a2c6f"
+}
