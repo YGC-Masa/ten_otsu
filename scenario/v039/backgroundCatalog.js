@@ -808,3 +808,14 @@
     "status": "初版空間案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-085 landmark proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "aomine_safari_entrance_autumn_day": {
+    "name": "青嶺サファリパーク 入口・秋昼（初版外観案）",
+    "path": "images/assets/bg/bg_aomine_safari_entrance_autumn_day.webp",
+    "spaceId": "SPACE-LM085-ENTRANCE",
+    "time": "day",
+    "status": "初版空間案/間取り・設備・採否未確定"
+  }
+});})();

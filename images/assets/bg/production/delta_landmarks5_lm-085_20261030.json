@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-085",
+  "facility": "FAC-030",
+  "space": "SPACE-LM085-ENTRANCE",
+  "name": "青嶺サファリパーク 入口・秋昼（初版外観案）",
+  "canon": "日和坂市外・山側観光圏、大型動物園/サファリ。全員特に琥珀/こがね/美空/なつ/藍。サファリバス/餌やり/撮影/遠出/帰りSA。春〜秋休日昼。",
+  "proposal": "市外山側のサファリ来訪入口案。左歩行受付/待合・中央歩行広場を防護柵で分離、右に車両受付レーンと閉じた二枚扉ゲート。低い木石受付棟と遠い山稜/秋木立。二次閉鎖/飼育境界・動物種・バス運行方式は未設計。",
+  "unconfirmed": "建築・外装・設備・入口配置・採否・正確寸法未確定。代表入口各1枚のみ、内部展示/動物種/詳細ゾーン/全館階数/正確な住所方位は確定しない。サファリの二次ゲート/飼育区画と安全設備は未設計。",
+  "sources": {
+    "world": "02_ランドマーク LM-085",
+    "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/動物/英語別名検索2組・scenario/v039本文を照合、専用5画像未発見。scenario/v039に今回の施設名/用途語一致は未発見。隣接マリンピアBG-126を実画素確認、LM-084は独立館として設計。未発見は不存在の断定ではない。",
+    "references": []
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物/実動物なし、用途/素材/窓扉/入口・出口/歩行余白を目視確認。各施設入口1枚のみ。LM-085は歩行前庭と右車両レーンの柵を確認、二次閉鎖/飼育境界は未設計。LM-086は段差と右スロープが見えるが勾配/法令寸法は未検証。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-190",
+    "img": "IMG-WLD-114",
+    "key": "aomine_safari_entrance_autumn_day",
+    "path": "images/assets/bg/bg_aomine_safari_entrance_autumn_day.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "92413f97934c3fed7f7837809bf11ef423c95df4a4be8963e0bbcef50747da72"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "3a2bb585da1927b23c06ea954451cc1e11635902"
+}
