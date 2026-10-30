@@ -220,3 +220,15 @@
     hanamori_shibazakura_garden_spring_day: {"name":"芝桜の丘 花守ガーデン 春昼","path":"images/assets/bg/bg_hanamori_shibazakura_garden_spring_day.webp","location":"芝桜の丘 花守ガーデン 春昼","spaceId":"SPACE-LM038-GARDEN","status":"初版完成","time":"day","season":"spring"}
   });
 })();
+
+/* Delta: LM-031 / 033 / 040 / 041 / 044 first editions */
+(function(){
+  "use strict";
+  window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
+    tsukumozaka_retro_electric_alley_day: {"name":"九十九坂レトロ電器小路 昼","path":"images/assets/bg/bg_tsukumozaka_retro_electric_alley_day.webp","location":"九十九坂レトロ電器小路 昼","spaceId":"SPACE-LM031-STREET","time":"day","status":"初版完成"},
+    hiyorizaka_digital_workshop_day: {"name":"日和坂デジタル工作室 昼","path":"images/assets/bg/bg_hiyorizaka_digital_workshop_day.webp","location":"日和坂デジタル工作室 昼","spaceId":"SPACE-LM033-WORKSHOP","time":"day","status":"初版完成"},
+    hiyorizaka_aquapool_summer_day: {"name":"日和坂アクアプール 夏昼","path":"images/assets/bg/bg_hiyorizaka_aquapool_summer_day.webp","location":"日和坂アクアプール 夏昼","spaceId":"SPACE-LM040-AQUAPOOL","time":"day","season":"summer","status":"初版完成"},
+    momijidani_ropeway_cabin_autumn_day: {"name":"紅葉谷ロープウェイ ゴンドラ 秋昼","path":"images/assets/bg/bg_momijidani_ropeway_cabin_autumn_day.webp","location":"紅葉谷ロープウェイ ゴンドラ 秋昼","spaceId":"SPACE-LM041-CABIN","time":"day","season":"autumn","status":"初版完成"},
+    hashiro_plateau_snowfield_winter_evening: {"name":"羽白高原 雪原 冬夕方","path":"images/assets/bg/bg_hashiro_plateau_snowfield_winter_evening.webp","location":"羽白高原 雪原 冬夕方","spaceId":"SPACE-LM044-SNOWFIELD","time":"evening","season":"winter","status":"初版完成"}
+  });
+})();
