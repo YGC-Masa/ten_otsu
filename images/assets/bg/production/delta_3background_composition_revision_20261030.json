@@ -1,0 +1,470 @@
+{
+  "beforeDisplayHead": "b90dfe29deb1bb1b5ae00a742af4d44f9f84e687",
+  "afterDisplayHead": "05d31c974fbd0aab3d5741e9884aa588ee823784",
+  "revisions": [
+    {
+      "bg": "BG-196",
+      "path": "images/assets/bg/bg_hanamori_tea_garden_entrance_autumn_day.webp",
+      "sha256": "c849cd209a7227a4e3b621ec4fb1fbe4f9b34b612bfe48a1ae55cb5750f8e811",
+      "size": [
+        1672,
+        941
+      ],
+      "catalogKeys": [
+        "hanamori_tea_garden_entrance_autumn_day"
+      ],
+      "spaceId": "SPACE-LM091-ENTRANCE",
+      "ledger": {
+        "backgroundRange": "'08_背景アセット'!A200:L200",
+        "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+      },
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "landmark": "LM-091",
+      "name": "花守茶苑公園",
+      "kind": "新規初版",
+      "oldSha256": "97d60c904da0a44db7492d3405bd647a42a801df4e164aef2fb01b26042de863",
+      "generatedSource": "/workspace/generated_images/exec-b3a0881d-082f-4ca7-a380-6698032a1d27.png",
+      "generatedSourceSha256": "a4f0ee4c39924f3103f2b302ae056c2be6baf315667c45c1f08acd79b3379ff5"
+    },
+    {
+      "bg": "BG-204",
+      "path": "images/assets/bg/bg_shiomi_bowl_karaoke_entrance_evening.webp",
+      "sha256": "1cfb0dcd0bbc64a29d7d85d9642cafc517e4ee00106e3f888362c1f1651e9268",
+      "size": [
+        1672,
+        941
+      ],
+      "catalogKeys": [
+        "shiomi_bowl_karaoke_entrance_evening"
+      ],
+      "spaceId": "SPACE-LM099-ENTRANCE",
+      "ledger": {
+        "backgroundRange": "'08_背景アセット'!A208:L208",
+        "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+      },
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "landmark": "LM-099",
+      "name": "潮見ボウル＆カラオケ",
+      "kind": "新規初版",
+      "oldSha256": "6b0d3370bf78ccec7bcefcaaf999e1c2ca81304ba973f3708f24d1aaf5894420",
+      "generatedSource": "/workspace/generated_images/exec-2d9bc617-ea86-4b8d-af7a-bbe37a1cffc2.png",
+      "generatedSourceSha256": "f084f57cce8d1832b358f4164990b697fb682dfad834450943e76078244d805f"
+    },
+    {
+      "bg": "BG-212",
+      "path": "images/assets/bg/bg_shiomi_lighthouse_approach_evening.webp",
+      "sha256": "26d553782b8bc8879e413c2c3cef4a3937c2ab4466cc48db70b9d56e0d717ea3",
+      "size": [
+        1672,
+        941
+      ],
+      "catalogKeys": [
+        "shiomi_lighthouse_approach_evening"
+      ],
+      "spaceId": "SPACE-LM107-APPROACH",
+      "ledger": {
+        "backgroundRange": "'08_背景アセット'!A216:L216",
+        "backgroundAdoptionText": "初版案/配置・カタログ登録済"
+      },
+      "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d",
+      "landmark": "LM-107",
+      "name": "潮見灯台",
+      "kind": "新規初版",
+      "oldSha256": "4dd02be58bd5b502befaa59baef8ebf1504a6789a72d24eacce8542037763be3",
+      "generatedSource": "/workspace/generated_images/exec-96921b0f-7538-4356-810c-690ad3c9fab4.png",
+      "generatedSourceSha256": "d7d5379c011a5d3de08a9227609fb22a4ebd551e11c413afe83f615b4a72d9bf"
+    }
+  ],
+  "displayCount": 104,
+  "imagesPerViewport": 52,
+  "viewports": {
+    "pc": [
+      1920,
+      1080
+    ],
+    "mobile_landscape": [
+      844,
+      390
+    ]
+  },
+  "finalConsoleErrors": 0,
+  "all52AssetCatalogSpaceVerification": [
+    {
+      "bg": "BG-168",
+      "path": "images/assets/bg/bg_hoshino_living_room_night.webp",
+      "sha256": "b3cb75c422c3f559b22f6b6bf46e5d47bc5125712f79537f20358fd447459bcd",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-169",
+      "path": "images/assets/bg/bg_hayamikawa_reading_room_day.webp",
+      "sha256": "ee03dc516c44617b98c6bf678cb07a92249786d0d4d3ebfa5d6a0ab113c851c1",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-170",
+      "path": "images/assets/bg/bg_kusakabe_shared_living_room_evening.webp",
+      "sha256": "6df4d57e972e7cab903c6a2e365d7453cfb155769b8c9134c4688f3c0a170783",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-171",
+      "path": "images/assets/bg/bg_komugisawa_room_night.webp",
+      "sha256": "4bd7801325c66b36d0f0380f236d4678028934041f6795da913deaf793469ada",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-172",
+      "path": "images/assets/bg/bg_kasugahara_training_room_evening.webp",
+      "sha256": "871d4095693bf1e285de7dd52b7e5931a4a6e6b44f40f58a432c28a01b55f162",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-173",
+      "path": "images/assets/bg/bg_daidoji_home_beauty_room_day.webp",
+      "sha256": "bf5825f22020cb6763be0f6307e1eeea284f8f0844362b1ab432cb50666231d4",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-174",
+      "path": "images/assets/bg/bg_hikami_home_sweets_kitchen_day.webp",
+      "sha256": "6d4a64b4587a2470e8ffb1a9c6a33dadb13afa1d5d04ef5a2e4805f0e0ec2f46",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-026",
+      "path": "images/assets/bg/bg_sugosawa_room_day.webp",
+      "sha256": "ee715f7610dfa4adbae3e621c060f544c60a45a444f673b5fceb542550adbede",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-027",
+      "path": "images/assets/bg/bg_sugosawa_room_night_indirect.webp",
+      "sha256": "f5d35f1698f35249779ae5155d805d8bc6da753881bd0cf8982f117d9c0306b0",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-028",
+      "path": "images/assets/bg/bg_sugosawa_room_night_light_on.webp",
+      "sha256": "c98bb01309638c91cf60831ae985abcf3b5efb69c6eee70847c06728b1ed369d",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-175",
+      "path": "images/assets/bg/bg_shibazakura_streaming_room_night.webp",
+      "sha256": "65e4fa56b5ec96c0be8d5aae853fda01c35d1fb6f384b4d72ca263504a924750",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-176",
+      "path": "images/assets/bg/bg_shido_mansion_home_kitchen_evening.webp",
+      "sha256": "568508083822bf5bbda589bc3bef87540acfa12fea73bb102e9f00d4826cb253",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-177",
+      "path": "images/assets/bg/bg_mochizuki_home_office_night.webp",
+      "sha256": "380a3495acba1bcb763f8366d01ab547d7643015d6e7f83dbdb34c29cbb8269e",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-178",
+      "path": "images/assets/bg/bg_tenjin_home_game_room_night.webp",
+      "sha256": "db6f150e9bb669f27e6fc73fa8cd07c7137a4348b01eaa7dc55d0186beb86e4e",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-179",
+      "path": "images/assets/bg/bg_kirishima_home_analysis_desk_rain_night.webp",
+      "sha256": "e23a2dc27f344234e57ffaca9a98110dbd72ae7b821ed2f43eb7d2e62b5c2dca",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-180",
+      "path": "images/assets/bg/bg_hinata_home_manpuku_kitchen_day.webp",
+      "sha256": "c5475935bf413cd26289f7f391903ce0061506a8b8812b2cd2cb49f81437597c",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-181",
+      "path": "images/assets/bg/bg_tsukumo_3f_hiyori_living_evening.webp",
+      "sha256": "a668757a85a7fa32455df2652bb5622f7785ab25cb6988b0ffd66bd60e0ee351",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-182",
+      "path": "images/assets/bg/bg_momose_hikaru_private_workdesk_night.webp",
+      "sha256": "9820d5ac2c81a84a1a098a1ab673135aca6559107771ac5e27d386d60f9ab0f7",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-183",
+      "path": "images/assets/bg/bg_sakuya_blue_violet_neon_room_midnight.webp",
+      "sha256": "ac196371bcb9702b990f8122cbccfad9c5745ffec251bb5c89ef5988392c6f69",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-184",
+      "path": "images/assets/bg/bg_manager_apartment_living_night.webp",
+      "sha256": "df536319de08bd4fb9eb28c9d679496a662cd46a48da0e11f4c59b5f9c59351e",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-167",
+      "path": "images/assets/bg/bg_manager_mansion_road_night.webp",
+      "sha256": "99e591bfca00422a364618efd8203fe67260617aefc1a078087c68c35b717e04",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-185",
+      "path": "images/assets/bg/bg_manager_apartment_balcony_night.webp",
+      "sha256": "c9653b7a94ffbc2fc0621e1666c69b87193e0ca86512e797b1b082625ad6baa5",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-186",
+      "path": "images/assets/bg/bg_hoshiumi_wonder_resort_entrance_day.webp",
+      "sha256": "fcff8c30a41f1915538d2fa58a46d442cdb772ae2749a59b73ecc40c7e8a5fa5",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-187",
+      "path": "images/assets/bg/bg_aonami_megaseapark_entrance_night.webp",
+      "sha256": "34c68013ec525d07d1d1d84923321c0b9573b3bb5172c8b373f6c8fdfdb6fe33",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-188",
+      "path": "images/assets/bg/bg_hiyorizaka_fureai_zoo_entrance_spring_day.webp",
+      "sha256": "92cd9a64d8a38036a55b8f8c255e28a42c886603d2f7e8aa954049d2aa821420",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-189",
+      "path": "images/assets/bg/bg_hiyorizaka_aqua_reptile_entrance_day.webp",
+      "sha256": "63e063479f42132d5accf75d0c66ced9d0ebef59368493f6e881d35f7025e92b",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-190",
+      "path": "images/assets/bg/bg_aomine_safari_entrance_autumn_day.webp",
+      "sha256": "92413f97934c3fed7f7837809bf11ef423c95df4a4be8963e0bbcef50747da72",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-191",
+      "path": "images/assets/bg/bg_hiyorizaka_art_museum_entrance_rain_day.webp",
+      "sha256": "7f07b1b40cdb1638cf8fb9e56b58c2652eb168b24327a8b30dd15c6b2714061d",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-192",
+      "path": "images/assets/bg/bg_shiomi_science_museum_entrance_day.webp",
+      "sha256": "631cb294f6379d3c257cc3c7b8eab8a1f54f0cdd1ef28d751425ab88ea95c925",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-193",
+      "path": "images/assets/bg/bg_hiyorizaka_trick_art_entrance_day.webp",
+      "sha256": "7ab9cc0d6d680300b910d47edcfc111d5b29c3edaf3c73cde3ac35df9fe50caa",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-194",
+      "path": "images/assets/bg/bg_hashiro_nature_science_center_entrance_day.webp",
+      "sha256": "659f9d144f3159e0aec984eac29a5dc79b2f3f470191cbf66a4b1b83b4c60f8f",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-195",
+      "path": "images/assets/bg/bg_hiyorizaka_kimono_lane_day.webp",
+      "sha256": "317849840299e7738ab33be21f68533c2fe3182ee27119e72dcb336418cb9269",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-196",
+      "path": "images/assets/bg/bg_hanamori_tea_garden_entrance_autumn_day.webp",
+      "sha256": "c849cd209a7227a4e3b621ec4fb1fbe4f9b34b612bfe48a1ae55cb5750f8e811",
+      "changed": true,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-197",
+      "path": "images/assets/bg/bg_hiyorizaka_local_history_museum_entrance_day.webp",
+      "sha256": "2c95951f3f020425457807bd9481741a0735e1c66f9f3cfc5a0be7112acef625",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-198",
+      "path": "images/assets/bg/bg_shiomi_jidaimura_entrance_day.webp",
+      "sha256": "dc4886d00c11b407aa4e3a08d313e3422fbad4419d6b16291de66b3065e9c317",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-199",
+      "path": "images/assets/bg/bg_hiyori_underground_mall_passage_day.webp",
+      "sha256": "1bf13974ce941b80b4fc3736aca9603da2c2107816e8a77e503a422cbef4d633",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-200",
+      "path": "images/assets/bg/bg_shiomi_harbor_terrace_approach_night.webp",
+      "sha256": "059c729e9c6a1ad01afd927e7851ddd991d39f8799baaec2f47c5ca70a14d36d",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-201",
+      "path": "images/assets/bg/bg_hiyorizaka_appliance_museum_entrance_day.webp",
+      "sha256": "aa8c2bd0e08c26b949a059e8c3f09afa88a58f6b502923a15885a7467928a307",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-202",
+      "path": "images/assets/bg/bg_hidamari_shopping_arcade_day.webp",
+      "sha256": "7ca73d0e11795755bf83c258f050b3bc15dca362b6613a0d475c34798568e211",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-203",
+      "path": "images/assets/bg/bg_hiyorizaka_central_cinema_entrance_rain_day.webp",
+      "sha256": "30c41e48dc8ebb093bb6c73e93b2ab7c0c0995d0d1f11aecd90bb6d127d6e3ce",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-204",
+      "path": "images/assets/bg/bg_shiomi_bowl_karaoke_entrance_evening.webp",
+      "sha256": "1cfb0dcd0bbc64a29d7d85d9642cafc517e4ee00106e3f888362c1f1651e9268",
+      "changed": true,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-205",
+      "path": "images/assets/bg/bg_yamazato_loghouse_village_entrance_autumn_evening.webp",
+      "sha256": "5d2b3a94597424c5c0095e251fa20141a7e7caca273f0f6b5733ae32b64d60c1",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-206",
+      "path": "images/assets/bg/bg_hiyorizaka_craft_workshop_lane_day.webp",
+      "sha256": "42545ba050ad2be1bb258982c0710664b54868304bca3c9e9e8c2a3bc43843a6",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-207",
+      "path": "images/assets/bg/bg_shiokaze_drive_road_evening.webp",
+      "sha256": "f00888cafbb572e5b6591e314f95a9d11b6e17f88dc8ba6e789d45178a852986",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-208",
+      "path": "images/assets/bg/bg_hiyorizaka_morning_market_morning.webp",
+      "sha256": "c1dffc332d67f16daf3807051ecdd9ee37aa184654772d426822ec059df82f8d",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-209",
+      "path": "images/assets/bg/bg_tomizaka_jazz_bar_entrance_night.webp",
+      "sha256": "5244e4ee18da1044df467a6c9e9b8ed97ee0a1c3ea9368cb9fedb3e502a599ce",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-210",
+      "path": "images/assets/bg/bg_hidamari_pokapoka_sento_entrance_evening.webp",
+      "sha256": "fc9294ec3f44a23831699425228f1eb08d95837d85a758d37a60a642f3c4f8f1",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-211",
+      "path": "images/assets/bg/bg_hiyorizaka_disaster_learning_center_entrance_day.webp",
+      "sha256": "9b2579ccc2292f1328cf2d09ef4675e3ed1ac53465b8d94ba7771b00f3259806",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-212",
+      "path": "images/assets/bg/bg_shiomi_lighthouse_approach_evening.webp",
+      "sha256": "26d553782b8bc8879e413c2c3cef4a3937c2ab4466cc48db70b9d56e0d717ea3",
+      "changed": true,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-213",
+      "path": "images/assets/bg/bg_hiyorizaka_service_area_entrance_night.webp",
+      "sha256": "c822f399922a03bb7bb650d2404c3872f3764e4d96a7aef5fad6227f1f908c24",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-074",
+      "path": "images/assets/bg/bg_akari_dori_night.webp",
+      "sha256": "afd9f8a4403164b92e745d260e32f32093a36d91e77c28eb09369ded5625a04e",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    },
+    {
+      "bg": "BG-166",
+      "path": "images/assets/bg/bg_residential_area_night.webp",
+      "sha256": "bbd009b4fbeb426759883f1d137f7224d529bf8e5ee53e0c5d4ba1dba8c87f39",
+      "changed": false,
+      "catalogAndSpace": "一致"
+    }
+  ],
+  "unchangedAssetCount": 49,
+  "unchangedPlayerSourceBlobCount": 70,
+  "changedSixDisplayScreenshotsVisuallyReviewed": true,
+  "sheetUpdatedAndReadBackCells": 15,
+  "sheetVisualLimit": "ネイティブUI未確認。API値と既存書式読み戻し。",
+  "architectureReview": "円筒灯台/窓1/入口1/灯室/バルコニー、木造門/瓦屋根/両開き扉/白壁、家電ではなくボウル施設の看板/庇/中央ガラス両扉/右両扉/柱を元画像と目視比較。再描画に伴う瓦・雲・植栽・格子・街並みの細部ピクセルは同一ではない。建築規格/正確寸法/地図上の位置は未確定のまま。",
+  "rejectedTrials": "最初の灯台案の新規太陽を除去。引きすぎで灯台/看板が立ち絵に隠れる案、入口敷居が下がりすぎる案は採用せず再編集。未公開の試作コミットは破棄。",
+  "limits": [
+    "ローカルChromium共通プレイヤーのみ。物理端末/公開ゲーム/配信キャッシュ未確認。",
+    "代表2立ち絵と検証文のみ。全人物/全テキスト/全画面サイズではない。",
+    "BG-196屋根両端/柱、BG-204マイクの一部は立ち絵遮蔽あり。背景説明場面では人物配置調整が必要。",
+    "旧BG-061〜110引継ぎQCは別残件。画像追加なし、シナリオ/描画コード変更なし。"
+  ]
+}

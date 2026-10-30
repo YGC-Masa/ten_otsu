@@ -1622,7 +1622,7 @@
         {
           "bg": "BG-196",
           "path": "images/assets/bg/bg_hanamori_tea_garden_entrance_autumn_day.webp",
-          "sha256": "97d60c904da0a44db7492d3405bd647a42a801df4e164aef2fb01b26042de863",
+          "sha256": "c849cd209a7227a4e3b621ec4fb1fbe4f9b34b612bfe48a1ae55cb5750f8e811",
           "size": [
             1672,
             941
@@ -1635,7 +1635,12 @@
             "backgroundRange": "'08_背景アセット'!A200:L200",
             "backgroundAdoptionText": "初版案/配置・カタログ登録済"
           },
-          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+          "verificationHead": "05d31c974fbd0aab3d5741e9884aa588ee823784",
+          "previousVersion": {
+            "sha256": "97d60c904da0a44db7492d3405bd647a42a801df4e164aef2fb01b26042de863",
+            "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+          },
+          "compositionRevision": "スマホ横上端切れ修正/PC・スマホ横ローカル表示確認済。採否/寸法/公開画面未確認。"
         }
       ],
       "spaceId": "SPACE-LM091-ENTRANCE",
@@ -2038,7 +2043,7 @@
         {
           "bg": "BG-204",
           "path": "images/assets/bg/bg_shiomi_bowl_karaoke_entrance_evening.webp",
-          "sha256": "6b0d3370bf78ccec7bcefcaaf999e1c2ca81304ba973f3708f24d1aaf5894420",
+          "sha256": "1cfb0dcd0bbc64a29d7d85d9642cafc517e4ee00106e3f888362c1f1651e9268",
           "size": [
             1672,
             941
@@ -2051,7 +2056,12 @@
             "backgroundRange": "'08_背景アセット'!A208:L208",
             "backgroundAdoptionText": "初版案/配置・カタログ登録済"
           },
-          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+          "verificationHead": "05d31c974fbd0aab3d5741e9884aa588ee823784",
+          "previousVersion": {
+            "sha256": "6b0d3370bf78ccec7bcefcaaf999e1c2ca81304ba973f3708f24d1aaf5894420",
+            "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+          },
+          "compositionRevision": "スマホ横上端切れ修正/PC・スマホ横ローカル表示確認済。採否/寸法/公開画面未確認。"
         }
       ],
       "spaceId": "SPACE-LM099-ENTRANCE",
@@ -2456,7 +2466,7 @@
         {
           "bg": "BG-212",
           "path": "images/assets/bg/bg_shiomi_lighthouse_approach_evening.webp",
-          "sha256": "4dd02be58bd5b502befaa59baef8ebf1504a6789a72d24eacce8542037763be3",
+          "sha256": "26d553782b8bc8879e413c2c3cef4a3937c2ab4466cc48db70b9d56e0d717ea3",
           "size": [
             1672,
             941
@@ -2469,7 +2479,12 @@
             "backgroundRange": "'08_背景アセット'!A216:L216",
             "backgroundAdoptionText": "初版案/配置・カタログ登録済"
           },
-          "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+          "verificationHead": "05d31c974fbd0aab3d5741e9884aa588ee823784",
+          "previousVersion": {
+            "sha256": "4dd02be58bd5b502befaa59baef8ebf1504a6789a72d24eacce8542037763be3",
+            "verificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+          },
+          "compositionRevision": "スマホ横上端切れ修正/PC・スマホ横ローカル表示確認済。採否/寸法/公開画面未確認。"
         }
       ],
       "spaceId": "SPACE-LM107-APPROACH",
@@ -2658,5 +2673,16 @@
         ]
       }
     }
-  ]
+  ],
+  "compositionRevision": {
+    "verificationHead": "05d31c974fbd0aab3d5741e9884aa588ee823784",
+    "images": [
+      "BG-196",
+      "BG-204",
+      "BG-212"
+    ],
+    "all52FileCatalogSpaceRechecked": true,
+    "report": "delta_3background_composition_revision_20261030.json",
+    "historicalVerificationHead": "630bea12296237152e6ce44c1afa7e0a3115065d"
+  }
 }
