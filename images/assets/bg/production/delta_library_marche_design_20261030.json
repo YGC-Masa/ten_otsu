@@ -1,0 +1,124 @@
+{
+  "date": "2026-10-30",
+  "library": {
+    "bg": "BG-152",
+    "img": "IMG-WLD-076",
+    "key": "lm017_library_existing_reuse_proposal",
+    "name": "日和坂市立中央図書館 書架・貸出フロア（既存流用案）",
+    "repoPath": "images/assets/bgev/bg_library.webp",
+    "space": "SPACE-LM017-READING",
+    "size": [
+      900,
+      506
+    ],
+    "sha256": "e7c4c3dad6bc539d0e4d54e09abf50fc33a7c81e062401d4597f7df267238ea4",
+    "blob": "1b7639e2859c1c081e5b0de49de6ad9517bc54da",
+    "note": "再生成なし。既存実画素/藍のgoto_library使用確認。旧jpg表記を現行webpへ整流。中央図書館名の明示根拠は未発見、流用提案/採否未確定。閲覧席近景は本画像では未確認。実画面未確認。"
+  },
+  "marche": {
+    "landmark": "LM-055",
+    "facility": "FAC-007",
+    "space": "SPACE-LM055-MARCHE",
+    "canon": {
+      "name": "日和坂暮らしマルシェ",
+      "type": "生活雑貨/家事/商店街",
+      "area": "中心市街地",
+      "time": "通年/昼",
+      "characters": "彩愛、里美、真花、萌、陽里"
+    },
+    "proposal": {
+      "form": "A屋内/B半屋内/C屋外未確定のためA屋内を初版提案。平屋1SPACE。確定設定ではない。",
+      "architecture": "クリーム壁・濃緑鋼製枠・木製棚・濃灰金属切妻。棟は正面から奥へ。正面3区画=左窓/中央引戸/右窓。右側面5窓と奥の両開き搬入口。正面右内側に灰色椅子3脚と低卓。",
+      "customers": "正面引戸→中央回遊→左リネン/掃除用品・右陶器/調理器具→奥中央会計→正面退店。休憩は正面右の壁際。",
+      "service": "正面脇から右側通路→奥搬入口→在庫帯→売場補充。搬入は来客導線と分離する案。寸法/裏在庫室平面は未確定。",
+      "merchandise": "家庭用品・リネン・掃除用品・調理器具の提案。固有ブランド・食品市場・カフェ・個別店舗は追加しない。",
+      "people": "既存関連人物を維持。所有/勤務・番地・地理接続を新設しない。"
+    },
+    "assets": [
+      {
+        "key": "hiyorizaka_kurashi_marche_exterior_day",
+        "name": "日和坂暮らしマルシェ 外観・入口 昼（屋内市場案）",
+        "view": "exterior",
+        "bg": "BG-153",
+        "img": "IMG-WLD-077",
+        "space": "SPACE-LM055-MARCHE",
+        "note": "屋内型の平屋市場/商品構成は初版提案、採否未確定。正本の中心市街地・生活雑貨・通年昼と関連人物を維持。",
+        "repoPath": "images/assets/bg/bg_hiyorizaka_kurashi_marche_exterior_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "ba20fdbf2f6aa97c5be7c59692b0a41dc22190853184318b07df03ffc072c546",
+        "blob": "162921b6580bac7b2a4678139b0de25bb6fd79c1"
+      },
+      {
+        "key": "hiyorizaka_kurashi_marche_sales_hall_day",
+        "name": "日和坂暮らしマルシェ 売場・回遊 昼（屋内市場案）",
+        "view": "hall",
+        "bg": "BG-154",
+        "img": "IMG-WLD-078",
+        "space": "SPACE-LM055-MARCHE",
+        "note": "屋内型の平屋市場/商品構成は初版提案、採否未確定。正本の中心市街地・生活雑貨・通年昼と関連人物を維持。",
+        "repoPath": "images/assets/bg/bg_hiyorizaka_kurashi_marche_sales_hall_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "d7c60029677b7770a41011e515dca842c91baa20b954b0595a73df8a9c2c4db3",
+        "blob": "44dfbb0c2d12afdd5fdb77940e04eab46100430f"
+      },
+      {
+        "key": "hiyorizaka_kurashi_marche_rest_corner_day",
+        "name": "日和坂暮らしマルシェ 窓際休憩席 昼（屋内市場案）",
+        "view": "rest",
+        "bg": "BG-155",
+        "img": "IMG-WLD-079",
+        "space": "SPACE-LM055-MARCHE",
+        "note": "屋内型の平屋市場/商品構成は初版提案、採否未確定。正本の中心市街地・生活雑貨・通年昼と関連人物を維持。",
+        "repoPath": "images/assets/bg/bg_hiyorizaka_kurashi_marche_rest_corner_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "0a7ad6a0fefeb3e0cae8921602cbb98cf861c016be7f3e913e7858e8f80d78f5",
+        "blob": "917e9f2ecb9ea1151dfe1d41d34222253386bc1c"
+      },
+      {
+        "key": "hiyorizaka_kurashi_marche_service_access_day",
+        "name": "日和坂暮らしマルシェ 搬入動線 昼（屋内市場案）",
+        "view": "service",
+        "bg": "BG-156",
+        "img": "IMG-WLD-080",
+        "space": "SPACE-LM055-MARCHE",
+        "note": "屋内型の平屋市場/商品構成は初版提案、採否未確定。正本の中心市街地・生活雑貨・通年昼と関連人物を維持。",
+        "repoPath": "images/assets/bg/bg_hiyorizaka_kurashi_marche_service_access_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "637e1e1a98080f9b6415da02bb84fd078d99705d83d5a84e95d82262bfc843aa",
+        "blob": "936836226c863ed6f7eb2aae3e7ff0dcb1058af1"
+      }
+    ],
+    "qc": {
+      "generated": 4,
+      "visuallyInspected": 4,
+      "pass": [
+        "平屋/素材/屋根形状/正面入口区画を外観と内観で比較",
+        "来客中央通路・壁際休憩・側面搬入を目視確認",
+        "搬入側の初稿6窓を外観の5窓へ画像編集し修正",
+        "既存マルシェ/雑貨の専用背景は台帳・repo・Drive画像名の検索で未発見"
+      ],
+      "remaining": [
+        "内観の側面窓数/割付の最終照合",
+        "厳密な寸法・排煙/設備・裏室の平面整合",
+        "立ち絵重ね/実画面表示/採否",
+        "本番1920×1080の統一（現1672×941、WebP90）"
+      ],
+      "timeDifference": "正本の昼のみ4点。昼夕差分は今回追加していない。"
+    }
+  },
+  "registration": "remote反映・台帳登録・読み戻し検証の実施後、この記録を更新する",
+  "remainingScopeFile": "delta_remaining_scope_20261030.md",
+  "searchEvidence": "existing_repo_search.json：現HEADのテキスト走査、図書館の藍サンプル使用を確認、中央図書館固有名とマルシェ専用既存資産は未発見。Drive公式アカウント画像名で暮らし/マルシェ/marche/雑貨は0件。別名未知資産の不存在までは断定しない。"
+}

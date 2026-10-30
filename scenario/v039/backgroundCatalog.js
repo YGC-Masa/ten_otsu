@@ -410,3 +410,42 @@
     "status": "初版提案/果物・収穫期未確定"
   }
 });})();
+
+
+/* Delta: library existing-image reuse proposal and LM-055 indoor market draft */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "hiyorizaka_kurashi_marche_exterior_day": {
+    "name": "日和坂暮らしマルシェ 外観・入口 昼（屋内市場案）",
+    "path": "images/assets/bg/bg_hiyorizaka_kurashi_marche_exterior_day.webp",
+    "spaceId": "SPACE-LM055-MARCHE",
+    "time": "day",
+    "status": "初版提案/屋内型・採否未確定"
+  },
+  "hiyorizaka_kurashi_marche_sales_hall_day": {
+    "name": "日和坂暮らしマルシェ 売場・回遊 昼（屋内市場案）",
+    "path": "images/assets/bg/bg_hiyorizaka_kurashi_marche_sales_hall_day.webp",
+    "spaceId": "SPACE-LM055-MARCHE",
+    "time": "day",
+    "status": "初版提案/屋内型・採否未確定"
+  },
+  "hiyorizaka_kurashi_marche_rest_corner_day": {
+    "name": "日和坂暮らしマルシェ 窓際休憩席 昼（屋内市場案）",
+    "path": "images/assets/bg/bg_hiyorizaka_kurashi_marche_rest_corner_day.webp",
+    "spaceId": "SPACE-LM055-MARCHE",
+    "time": "day",
+    "status": "初版提案/屋内型・採否未確定"
+  },
+  "hiyorizaka_kurashi_marche_service_access_day": {
+    "name": "日和坂暮らしマルシェ 搬入動線 昼（屋内市場案）",
+    "path": "images/assets/bg/bg_hiyorizaka_kurashi_marche_service_access_day.webp",
+    "spaceId": "SPACE-LM055-MARCHE",
+    "time": "day",
+    "status": "初版提案/屋内型・採否未確定"
+  },
+  "lm017_library_existing_reuse_proposal": {
+    "name": "日和坂市立中央図書館 書架・貸出フロア（既存流用案）",
+    "path": "images/assets/bgev/bg_library.webp",
+    "spaceId": "SPACE-LM017-READING",
+    "status": "既存流用提案/施設同定未確定"
+  }
+});})();
