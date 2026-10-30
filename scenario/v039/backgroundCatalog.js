@@ -268,3 +268,15 @@
     biribiri_station_event_plaza_day: {"name":"ビリビリ電機 駅前イベント広場 昼","path":"images/assets/bg/bg_biribiri_station_event_plaza_day.webp","location":"ビリビリ電機 駅前イベント広場 昼","spaceId":"SPACE-LM049-EVENTPLAZA","time":"day","status":"初版完成"}
   });
 })();
+
+/* Delta: Marinpia five additional spaces */
+(function(){
+  "use strict";
+  window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
+    marinpia_learning_lab_day: {"name":"マリンピア 潮だまり・海の学習ラボ 昼","path":"images/assets/bg/bg_marinpia_learning_lab_day.webp","location":"マリンピア 潮だまり・海の学習ラボ 昼","spaceId":"SPACE-LM010-LAB","time":"day","status":"初版完成"},
+    marinpia_penguin_seabird_area_day: {"name":"マリンピア ペンギン・海鳥エリア 昼","path":"images/assets/bg/bg_marinpia_penguin_seabird_area_day.webp","location":"マリンピア ペンギン・海鳥エリア 昼","spaceId":"SPACE-LM010-PENGUIN","time":"day","status":"初版完成"},
+    marinpia_ocean_cafe_day: {"name":"マリンピア OCEAN CAFE 昼","path":"images/assets/bg/bg_marinpia_ocean_cafe_day.webp","location":"マリンピア OCEAN CAFE 昼","spaceId":"SPACE-LM010-OCEAN-CAFE","time":"day","status":"初版完成"},
+    marinpia_rooftop_terrace_evening: {"name":"マリンピア 屋上展望テラス 夕方","path":"images/assets/bg/bg_marinpia_rooftop_terrace_evening.webp","location":"マリンピア 屋上展望テラス 夕方","spaceId":"SPACE-LM010-ROOFTOP","time":"evening","status":"初版完成"},
+    marinpia_backyard_tour_passage_day: {"name":"マリンピア バックヤード見学通路 昼","path":"images/assets/bg/bg_marinpia_backyard_tour_passage_day.webp","location":"マリンピア バックヤード見学通路 昼","spaceId":"SPACE-LM010-BACKYARD","time":"day","status":"初版完成"}
+  });
+})();
