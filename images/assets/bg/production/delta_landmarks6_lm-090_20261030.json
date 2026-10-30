@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-090",
+  "facility": "FAC-035",
+  "space": "SPACE-LM090-LANE",
+  "name": "日和坂きもの小路 入口導線・昼（初版街路案）",
+  "canon": "わだつみ神社〜レトロ商店街、和服体験/観光通り。真花/藍/萌/桃/彩愛/こがね。着物浴衣レンタル/髪飾り/参拝/写真。春夏秋昼〜夕。",
+  "proposal": "参道周辺の歩行小路入口案。低層木造/白壁/灰瓦、左レンタル相談窓・布反物/畳んだ帯、右小さな髪飾りケース、中央連続石畳。神社本体/鳥居/石段や商店街の接合点を画面外にし距離/方位は未確定。個別店舗SPACEは増やさない。",
+  "unconfirmed": "建築・外装・設備・入口配置・採否・正確寸法未確定。代表入口各1枚のみ、内部展示/詳細ゾーン/全館階数/正確な住所・方位・距離・接続を確定しない。花守茶苑と芝桜ガーデンは同一としない。",
+  "sources": {
+    "world": "02_ランドマーク LM-090",
+    "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/別名検索2組・scenario/v039本文を照合、専用5画像未発見。施設5名称のシナリオ直接一致なし。羽白湖の星空観察出典はあるが自然科学センター主催/直結根拠にはしない。湖BG-039の実WebP、神社参道BG-046、芝桜BG-095を実画素確認。未発見は不存在の断定ではない。",
+    "references": [
+      "/workspace/delta_landmarks6/bg_takadai_shrine_steps_day.webp"
+    ]
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、用途/素材/窓扉/入口・出口/中央ADV・歩行余白を目視確認。LM-089は湖の森林岸/山稜/淡水景観を参照画像と比較、厳密地点・方位は未確認。小路は個別店SPACEなし、庭園は芝桜背景と分離。法令/正確寸法は未検証。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-195",
+    "img": "IMG-WLD-119",
+    "key": "hiyorizaka_kimono_lane_day",
+    "path": "images/assets/bg/bg_hiyorizaka_kimono_lane_day.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "317849840299e7738ab33be21f68533c2fe3182ee27119e72dcb336418cb9269"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "62bbf9cd9038d9a70db5936b10404c200dc00562"
+}
