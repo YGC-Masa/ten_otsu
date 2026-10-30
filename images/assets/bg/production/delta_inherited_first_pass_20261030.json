@@ -4,8 +4,8 @@
   "counts": {
     "total": 50,
     "existing": 4,
-    "newFirstDrafts": 30,
-    "notFound": 16,
+    "newFirstDrafts": 35,
+    "notFound": 11,
     "needsRegeneration": 0
   },
   "items": [
@@ -749,52 +749,117 @@
     {
       "id": "LM-093",
       "facility": "潮見時代村 撮影村",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "初版案の採否/追加原設定照合/実画面/寸法/地理接続・営業条件（内部拡張なし）",
+      "visual": "代表1枚目視QC済。人物なし、用途/窓扉/共用通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-198",
+        "img": "IMG-WLD-122",
+        "key": "shiomi_jidaimura_entrance_day",
+        "path": "images/assets/bg/bg_shiomi_jidaimura_entrance_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "dc4886d00c11b407aa4e3a08d313e3422fbad4419d6b16291de66b3065e9c317"
+      },
+      "verifiedAtHead": "d7e580c3094251d71dfe9303e93a0524a9d81377",
+      "assetCommit": "c37097af85ef9405d64a2741751ad54bc4780ea7"
     },
     {
       "id": "LM-094",
       "facility": "日和坂地下街 ひよりモール",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "初版案の採否/追加原設定照合/実画面/寸法/地理接続・営業条件（内部拡張なし）",
+      "visual": "代表1枚目視QC済。人物なし、用途/窓扉/共用通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-199",
+        "img": "IMG-WLD-123",
+        "key": "hiyori_underground_mall_passage_day",
+        "path": "images/assets/bg/bg_hiyori_underground_mall_passage_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "1bf13974ce941b80b4fc3736aca9603da2c2107816e8a77e503a422cbef4d633"
+      },
+      "verifiedAtHead": "d7e580c3094251d71dfe9303e93a0524a9d81377",
+      "assetCommit": "f35aefd13e0ee5190e09f5d63d33488344e6bccf"
     },
     {
       "id": "LM-095",
       "facility": "潮見ハーバーテラス",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "初版案の採否/追加原設定照合/実画面/寸法/地理接続・営業条件（内部拡張なし）",
+      "visual": "代表1枚目視QC済。人物なし、用途/窓扉/共用通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-200",
+        "img": "IMG-WLD-124",
+        "key": "shiomi_harbor_terrace_approach_night",
+        "path": "images/assets/bg/bg_shiomi_harbor_terrace_approach_night.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "059c729e9c6a1ad01afd927e7851ddd991d39f8799baaec2f47c5ca70a14d36d"
+      },
+      "verifiedAtHead": "d7e580c3094251d71dfe9303e93a0524a9d81377",
+      "assetCommit": "5d0a688bfee5162264923a88c029e042a5bf3765"
     },
     {
       "id": "LM-096",
       "facility": "日和坂家電ミュージアム",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "初版案の採否/追加原設定照合/実画面/寸法/地理接続・営業条件（内部拡張なし）",
+      "visual": "代表1枚目視QC済。人物なし、用途/窓扉/共用通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-201",
+        "img": "IMG-WLD-125",
+        "key": "hiyorizaka_appliance_museum_entrance_day",
+        "path": "images/assets/bg/bg_hiyorizaka_appliance_museum_entrance_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "aa8c2bd0e08c26b949a059e8c3f09afa88a58f6b502923a15885a7467928a307"
+      },
+      "verifiedAtHead": "d7e580c3094251d71dfe9303e93a0524a9d81377",
+      "assetCommit": "1ee3ad0a89d556c0d46e4d92c9eec5e9f18a2c6f"
     },
     {
       "id": "LM-097",
       "facility": "ひだまり商店街 屋根付きアーケード",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "初版案の採否/追加原設定照合/実画面/寸法/地理接続・営業条件（内部拡張なし）",
+      "visual": "代表1枚目視QC済。人物なし、用途/窓扉/共用通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-202",
+        "img": "IMG-WLD-126",
+        "key": "hidamari_shopping_arcade_day",
+        "path": "images/assets/bg/bg_hidamari_shopping_arcade_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "7ca73d0e11795755bf83c258f050b3bc15dca362b6613a0d475c34798568e211"
+      },
+      "verifiedAtHead": "d7e580c3094251d71dfe9303e93a0524a9d81377",
+      "assetCommit": "d7e580c3094251d71dfe9303e93a0524a9d81377"
     },
     {
       "id": "LM-098",
@@ -963,5 +1028,5 @@
   ],
   "methodLimit": "一次照合。未発見46件を未制作確定にしない。要再生成0件は品質承認ではなく再生成判断未実施。既存候補4施設はリンク候補記録のみ、正本設定の変更/再生成なし。",
   "followupHead": "13df15865ddd0e0af18ef2a17b7d71ce00e98796",
-  "latestVerificationHead": "c397f8a9df3ad2e2aa4f75b3ef62db1f8f30f77f"
+  "latestVerificationHead": "d7e580c3094251d71dfe9303e93a0524a9d81377"
 }

@@ -1,0 +1,301 @@
+{
+  "date": "2026-10-30",
+  "sourceHead": "06e464f96d6f7778d45af603bded0c78e4f915af",
+  "verifiedAtHead": "d7e580c3094251d71dfe9303e93a0524a9d81377",
+  "commits": {
+    "LM-093": "c37097af85ef9405d64a2741751ad54bc4780ea7",
+    "LM-094": "f35aefd13e0ee5190e09f5d63d33488344e6bccf",
+    "LM-095": "5d0a688bfee5162264923a88c029e042a5bf3765",
+    "LM-096": "1ee3ad0a89d556c0d46e4d92c9eec5e9f18a2c6f",
+    "LM-097": "d7e580c3094251d71dfe9303e93a0524a9d81377"
+  },
+  "verification": {
+    "head": "d7e580c3094251d71dfe9303e93a0524a9d81377",
+    "remoteHead": "d7e580c3094251d71dfe9303e93a0524a9d81377",
+    "imagesSha256Matched": 5,
+    "catalogAndSpaceMatched": 5,
+    "newKeysUnique": 5,
+    "allCatalogMissingPaths": [],
+    "checksums": {
+      "entries": 1697,
+      "mismatches": [],
+      "freshActualGitBytesHashed": 69,
+      "unchangedBlobUsingPriorFullByteHash": 1628,
+      "baseline": "f52697ebd230255e1802f3a56583605fa4811b03"
+    },
+    "adoption": "未確定",
+    "liveScreen": "未確認",
+    "sheetCellsMatched": 270,
+    "visuallyInspected": 5
+  },
+  "records": [
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-093",
+      "facility": "FAC-038",
+      "space": "SPACE-LM093-ENTRANCE",
+      "name": "潮見時代村 撮影村 入口・昼（初版外観案）",
+      "canon": "日和坂市外・山側観光圏、市外/撮影村/時代劇テーマ施設。桃/真花/琥珀/小春/こがね/藍。時代劇セット/忍者侍体験/町娘衣装/撮影。通年休日昼。",
+      "proposal": "観光用撮影村の入口案。木造瓦屋根の門と左の現代受付・右退出脇門、奥は時代劇用町並みの外形のみ、中央平坦な来場路と山側木立。歴史建築/実際の旧市街とは確定せず、体験内部や撮影設備の運用を追加しない。",
+      "unconfirmed": "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理隣接/地下接続/店名/営業条件/全館階数/住所・方位・距離を確定しない。窓内の仮商品や機器は可動の意匠例。",
+      "sources": {
+        "world": "02_ランドマーク LM-093",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/英語別名検索2組・scenario/v039本文を照合、専用5画像未発見。施設名/地下街/アーケード等のシナリオ直接一致なし。駅昼/港岸壁BG-158/ひだまり店頭昼/つくもBG-137を実画素参照。用途や近隣の類似だけで同一施設としない。未発見は不存在の断定ではない。",
+        "references": []
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/素材/窓扉/主通行帯/中央ADV余白を目視確認。地下街の仮陳列は窓内、館周辺はつくも所在地を複製しないよう修正。港は既存岸壁を改装扱いにせず位置未確定。アーケードは既存ストアに接続/増築させない。設備/法令/正確寸法は未検証。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-198",
+        "img": "IMG-WLD-122",
+        "key": "shiomi_jidaimura_entrance_day",
+        "path": "images/assets/bg/bg_shiomi_jidaimura_entrance_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "dc4886d00c11b407aa4e3a08d313e3422fbad4419d6b16291de66b3065e9c317"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回270セル読み戻し一致",
+        "assetCommit": "c37097af85ef9405d64a2741751ad54bc4780ea7",
+        "verifiedAtHead": "d7e580c3094251d71dfe9303e93a0524a9d81377",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "06e464f96d6f7778d45af603bded0c78e4f915af"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-094",
+      "facility": "FAC-039",
+      "space": "SPACE-LM094-PASSAGE",
+      "name": "日和坂地下街 ひよりモール 代表通路（初版空間案）",
+      "canon": "日和坂駅地下、地下街/買い物/雨の日。こがね/緋奈/彩愛/里美/真花。雨のショッピング/地下グルメ/迷子/生活雑貨/仕事帰り。通年昼〜夜/雨。",
+      "proposal": "駅地下の代表共用通路案。淡灰タイル/クリーム天井・青灰金属柱、左右の匿名店頭窓と天井照明、中央広い歩行帯/点字誘導、脇ベンチと閉じた管理扉。階段/改札/地上出口・他地下接続やテナント/営業時間は未確定。 窓内のタオル/食器/袋は可動の仮陳列、テナント・商品構成の確定ではない。",
+      "unconfirmed": "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理隣接/地下接続/店名/営業条件/全館階数/住所・方位・距離を確定しない。窓内の仮商品や機器は可動の意匠例。",
+      "sources": {
+        "world": "02_ランドマーク LM-094",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/英語別名検索2組・scenario/v039本文を照合、専用5画像未発見。施設名/地下街/アーケード等のシナリオ直接一致なし。駅昼/港岸壁BG-158/ひだまり店頭昼/つくもBG-137を実画素参照。用途や近隣の類似だけで同一施設としない。未発見は不存在の断定ではない。",
+        "references": [
+          "/workspace/delta_landmarks7/bg_hiyorizaka_station_day.webp"
+        ]
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/素材/窓扉/主通行帯/中央ADV余白を目視確認。地下街の仮陳列は窓内、館周辺はつくも所在地を複製しないよう修正。港は既存岸壁を改装扱いにせず位置未確定。アーケードは既存ストアに接続/増築させない。設備/法令/正確寸法は未検証。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-199",
+        "img": "IMG-WLD-123",
+        "key": "hiyori_underground_mall_passage_day",
+        "path": "images/assets/bg/bg_hiyori_underground_mall_passage_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "1bf13974ce941b80b4fc3736aca9603da2c2107816e8a77e503a422cbef4d633"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回270セル読み戻し一致",
+        "assetCommit": "f35aefd13e0ee5190e09f5d63d33488344e6bccf",
+        "verifiedAtHead": "d7e580c3094251d71dfe9303e93a0524a9d81377",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "c37097af85ef9405d64a2741751ad54bc4780ea7"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-095",
+      "facility": "FAC-040",
+      "space": "SPACE-LM095-APPROACH",
+      "name": "潮見ハーバーテラス 来店導線・夜（初版外観案）",
+      "canon": "港エリア、海沿いレストラン/夜景。雪乃/彩愛/真花/里美/夜空。海沿いディナー/港夜景/記念日/大人デート。通年夕方〜夜。",
+      "proposal": "港沿いレストランへの入口経路案。左低層の暖色ガラス/木と石の店、入口庇と小さな案内台、壁際少数2人卓、中央は連続する歩行帯、右海側黒柵と港灯り。一般開放岸壁の建物を改装扱いにせず、正確な岸位置/方位/接続は未確定。",
+      "unconfirmed": "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理隣接/地下接続/店名/営業条件/全館階数/住所・方位・距離を確定しない。窓内の仮商品や機器は可動の意匠例。",
+      "sources": {
+        "world": "02_ランドマーク LM-095",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/英語別名検索2組・scenario/v039本文を照合、専用5画像未発見。施設名/地下街/アーケード等のシナリオ直接一致なし。駅昼/港岸壁BG-158/ひだまり店頭昼/つくもBG-137を実画素参照。用途や近隣の類似だけで同一施設としない。未発見は不存在の断定ではない。",
+        "references": [
+          "/workspace/delta_landmarks7/bg_hiyorizaka_port_public_quay_day.webp"
+        ]
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/素材/窓扉/主通行帯/中央ADV余白を目視確認。地下街の仮陳列は窓内、館周辺はつくも所在地を複製しないよう修正。港は既存岸壁を改装扱いにせず位置未確定。アーケードは既存ストアに接続/増築させない。設備/法令/正確寸法は未検証。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-200",
+        "img": "IMG-WLD-124",
+        "key": "shiomi_harbor_terrace_approach_night",
+        "path": "images/assets/bg/bg_shiomi_harbor_terrace_approach_night.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "059c729e9c6a1ad01afd927e7851ddd991d39f8799baaec2f47c5ca70a14d36d"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回270セル読み戻し一致",
+        "assetCommit": "5d0a688bfee5162264923a88c029e042a5bf3765",
+        "verifiedAtHead": "d7e580c3094251d71dfe9303e93a0524a9d81377",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "f35aefd13e0ee5190e09f5d63d33488344e6bccf"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-096",
+      "facility": "FAC-041",
+      "space": "SPACE-LM096-ENTRANCE",
+      "name": "日和坂家電ミュージアム 入口・昼（初版外観案）",
+      "canon": "テックラボつくも周辺、博物館/家電/技術史。陽里/百瀬ひかる/翠/藍/真冬。古い家電/修理文化/祖父の昔話/家電フェア。通年昼/雨。",
+      "proposal": "つくも周辺の独立した小規模博物館入口案。淡灰壁・濃青緑金属/暖木の低層公共館、中央ガラス入口・左案内窓/小さな展示窓・右退出扉。展示窓の無銘ラジオ/小型TVは仮の意匠例。つくも店舗/保管庫/ラボや家電販売店とは同一視しない。 つくも所在地と同一に見えないよう参照から写った周辺建物/電柱を非特定の植栽背景へ修正。",
+      "unconfirmed": "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理隣接/地下接続/店名/営業条件/全館階数/住所・方位・距離を確定しない。窓内の仮商品や機器は可動の意匠例。",
+      "sources": {
+        "world": "02_ランドマーク LM-096",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/英語別名検索2組・scenario/v039本文を照合、専用5画像未発見。施設名/地下街/アーケード等のシナリオ直接一致なし。駅昼/港岸壁BG-158/ひだまり店頭昼/つくもBG-137を実画素参照。用途や近隣の類似だけで同一施設としない。未発見は不存在の断定ではない。",
+        "references": [
+          "/workspace/delta_landmarks7/bg_tsukumo_exterior_day.webp"
+        ]
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/素材/窓扉/主通行帯/中央ADV余白を目視確認。地下街の仮陳列は窓内、館周辺はつくも所在地を複製しないよう修正。港は既存岸壁を改装扱いにせず位置未確定。アーケードは既存ストアに接続/増築させない。設備/法令/正確寸法は未検証。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-201",
+        "img": "IMG-WLD-125",
+        "key": "hiyorizaka_appliance_museum_entrance_day",
+        "path": "images/assets/bg/bg_hiyorizaka_appliance_museum_entrance_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "aa8c2bd0e08c26b949a059e8c3f09afa88a58f6b502923a15885a7467928a307"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回270セル読み戻し一致",
+        "assetCommit": "1ee3ad0a89d556c0d46e4d92c9eec5e9f18a2c6f",
+        "verifiedAtHead": "d7e580c3094251d71dfe9303e93a0524a9d81377",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "5d0a688bfee5162264923a88c029e042a5bf3765"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-097",
+      "facility": "FAC-042",
+      "space": "SPACE-LM097-ARCADE",
+      "name": "ひだまり商店街 屋根付きアーケード 代表通路・昼（初版街路案）",
+      "canon": "ひだまりストア周辺、商店街/日常拠点、全員。買い物/雨宿り/商店街フェア/偶然出会い/閉店後帰路。通年昼〜夜/雨。",
+      "proposal": "ひだまり周辺の別区画・屋根付き歩行通路案。低中層店頭帯と乳白透光屋根/細い緑灰金属アーチ、左右匿名店舗窓/庇、中央広い歩行帯、脇小ベンチ。既存ストア前駐車場に屋根を追加せず、直接接合点・店名/業態/営業時間は未確定。",
+      "unconfirmed": "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理隣接/地下接続/店名/営業条件/全館階数/住所・方位・距離を確定しない。窓内の仮商品や機器は可動の意匠例。",
+      "sources": {
+        "world": "02_ランドマーク LM-097",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/英語別名検索2組・scenario/v039本文を照合、専用5画像未発見。施設名/地下街/アーケード等のシナリオ直接一致なし。駅昼/港岸壁BG-158/ひだまり店頭昼/つくもBG-137を実画素参照。用途や近隣の類似だけで同一施設としない。未発見は不存在の断定ではない。",
+        "references": [
+          "/workspace/delta_landmarks7/bg_hidamari_store_front_day.webp"
+        ]
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/素材/窓扉/主通行帯/中央ADV余白を目視確認。地下街の仮陳列は窓内、館周辺はつくも所在地を複製しないよう修正。港は既存岸壁を改装扱いにせず位置未確定。アーケードは既存ストアに接続/増築させない。設備/法令/正確寸法は未検証。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-202",
+        "img": "IMG-WLD-126",
+        "key": "hidamari_shopping_arcade_day",
+        "path": "images/assets/bg/bg_hidamari_shopping_arcade_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "7ca73d0e11795755bf83c258f050b3bc15dca362b6613a0d475c34798568e211"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回270セル読み戻し一致",
+        "assetCommit": "d7e580c3094251d71dfe9303e93a0524a9d81377",
+        "verifiedAtHead": "d7e580c3094251d71dfe9303e93a0524a9d81377",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "1ee3ad0a89d556c0d46e4d92c9eec5e9f18a2c6f"
+    }
+  ],
+  "scopeCounts": {
+    "total": 50,
+    "newFirstDrafts": 35,
+    "existingLinkedQC": 4,
+    "notFound": 11,
+    "needsRegeneration": 0
+  },
+  "references": {
+    "pixels": [
+      "日和坂駅昼の実WebP：地下街は色材の地域文脈のみ参照、駅前店名/出口位置は移植しない。",
+      "BG-158港一般開放岸壁：港/黒柵/水景の定性的な参照のみ。ハーバーテラスは岸壁母体の建替えと扱わない。",
+      "ひだまりストア店頭昼：既存単独店と駐車場を確認。アーケードは既存敷地の増築と扱わない。",
+      "BG-137つくも外観：地域色材の参照のみ。家電館は別の低層施設案、写り込んだ周辺建築を非特定の植栽へ修正。"
+    ],
+    "texts": [
+      "02_ランドマーク A93:R97",
+      "08_背景アセット A5:L201",
+      "09_空間・間取り管理 A5:O124",
+      "03_建物施設 A2:L38",
+      "scenario/v039本文の施設名/地下街/アーケード検索：該当なし",
+      "SPACE-HIYORIZAKA-STATIONの既存台帳にLM-094地下街関係あり。具体経路/出口位置の確定根拠ではない。"
+    ],
+    "searchLimits": "Drive画像名の固有名/英語別名等2組は結果0。main全画像名・台帳・scenario/v039本文の確認範囲では専用5背景未発見。未発見は不存在ではなく、Drive全画像の実画素総点検はしていない。"
+  },
+  "unconfirmed": [
+    "全5点の採否/正確寸法/立ち絵重ね/実画面",
+    "全館階数/内部詳細/住所・方位・距離・地理隣接・地下接続",
+    "LM-093 歴史建築/実際の旧市街ではなく観光撮影セットの入口案。体験/撮影運用未設計。",
+    "LM-094 窓内のタオル/食器/袋は可動の仮陳列。店名/テナント/商品構成/営業時間/地下階数/改札や地上出口は未確定。",
+    "LM-095 港内の岸位置/既存岸壁・公園との直接接続/メニュー/営業時間は未確定。",
+    "LM-096 ラジオ/小型TVは展示意匠例。つくも/ラボ/保管庫/家電販売店と同一視せず、所有/運営人物も追加しない。",
+    "LM-097 店頭/屋根は別区画案、既存ストア建物/看板/駐車場を変更せず、接合点/店名/営業条件未確定。",
+    "彩愛原設定差、店長宅地理、朔夜用途/VIP、湖岸地点、前組設備寸法など既存未確定事項は維持"
+  ],
+  "delivery": "GitHub main配置。Drive画像転記なし。ローカルZIPを外部納品済みとは扱わない。"
+}

@@ -35,8 +35,11 @@
   "status": {
     "generated": true,
     "visuallyInspected": true,
-    "ledger": "未登録（後続の登録確認記録で更新）",
-    "remote": "このcommitで配置、push後照合予定",
+    "ledger": "登録/今回270セル読み戻し一致",
+    "assetCommit": "f35aefd13e0ee5190e09f5d63d33488344e6bccf",
+    "verifiedAtHead": "d7e580c3094251d71dfe9303e93a0524a9d81377",
+    "catalog": "path/SPACE/新規key一意照合済",
+    "remote": "remote main実バイトSHA256一致",
     "adoption": "未確定",
     "liveScreen": "未確認"
   },
