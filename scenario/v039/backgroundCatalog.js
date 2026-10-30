@@ -566,3 +566,14 @@
     "status": "既存紐付け/モブ保持"
   }
 });})();
+
+/* Delta LM-061 */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "hoshino_living_room_night": {
+    "name": "星野家のリビング 夜（初版空間案）",
+    "path": "images/assets/bg/bg_hoshino_living_room_night.webp",
+    "spaceId": "SPACE-LM061-LIVING",
+    "time": "night",
+    "status": "初版空間案/採否未確定"
+  }
+});})();
