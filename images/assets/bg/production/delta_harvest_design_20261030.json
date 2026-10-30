@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-30",
+  "group": "harvest",
+  "facility": "FAC-009/山側集落 交流広場（収穫祭母体案）",
+  "canon": "LM-047 山側集落・秋昼・焼き芋/地元野菜/農産物市・温かな地域感。",
+  "proposal": "母体種別は未確定のため交流広場案を先行制作。背面左の平屋共同利用棟、右の屋根付き休憩/物置帯、右奥搬入門、石壁/ベンチと中央土広場。農園/個人宅/神社と同一視しない。収穫祭は左周縁の仮設販売と焼芋カートのイベント状態、建築/地形は母体参照。",
+  "references": [
+    "bg_yamasato_community_square_autumn_day.webp"
+  ],
+  "qc": "母体/祭りで左棟の瓦屋根/2窓/ガラス引戸、右小屋の柱/屋根/平台、右奥門と道、石壁/ベンチ/山並み/木立、中央床形を目視比較。入口と搬入路、中央会話余白を空けた。",
+  "assets": [
+    {
+      "key": "yamasato_community_square_autumn_day",
+      "name": "山側集落 交流広場 秋昼（収穫祭母体案）",
+      "lm": "LM-047",
+      "lmRow": 47,
+      "space": "SPACE-LM047-VILLAGE-SQUARE",
+      "spaceRow": 90,
+      "group": "harvest",
+      "time": "day",
+      "bg": "BG-161",
+      "img": "IMG-WLD-085",
+      "note": "山側集落の交流広場を母体にした初版案。既存の農園や人物自宅とは同一視しない。敷地/採否未確定。",
+      "repoPath": "images/assets/bg/bg_yamasato_community_square_autumn_day.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "38966d395b41748b788b83a52ada6d80e653d92042214cb1b343fc88aee49016",
+      "blob": "272fd6cd0e13c5e7ca53997d3de95a0a9e247a82"
+    },
+    {
+      "key": "yamasato_harvest_festival_autumn_day",
+      "name": "山里収穫祭会場 秋昼（交流広場イベント案）",
+      "lm": "LM-047",
+      "lmRow": 47,
+      "space": "SPACE-LM047-VILLAGE-SQUARE",
+      "spaceRow": 90,
+      "group": "harvest",
+      "time": "day",
+      "ref": "/workspace/generated_images/exec-c3064cdf-722e-4343-a6d7-01facb6732fb.png",
+      "bg": "BG-162",
+      "img": "IMG-WLD-086",
+      "note": "山側集落の交流広場を母体にした初版案。既存の農園や人物自宅とは同一視しない。敷地/採否未確定。",
+      "repoPath": "images/assets/bg/bg_yamasato_harvest_festival_autumn_day.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "6e7d775f07187765abbfdf3382021ec02104162edeac448109b34321911b1ff5",
+      "blob": "56c0c51a451209ec0768654746d91962c5bf62fb"
+    }
+  ],
+  "status": {
+    "generated": 2,
+    "visuallyInspected": 2,
+    "ledger": "登録/読み戻しは後続工程で確認",
+    "remote": "本記録と同コミットの画像/カタログを後続で検証",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "limitations": "厳密寸法/地形方位/設備/衛生安全監修/立ち絵重ねは未実施。生成1672×941 WebP90、本番サイズ統一は残件。プログラム/シナリオ割当は追加しない。"
+}

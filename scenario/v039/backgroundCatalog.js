@@ -493,3 +493,24 @@
     "status": "初版提案/採否未確定"
   }
 });})();
+
+
+/* Delta: harvest facility proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "yamasato_community_square_autumn_day": {
+    "name": "山側集落 交流広場 秋昼（収穫祭母体案）",
+    "path": "images/assets/bg/bg_yamasato_community_square_autumn_day.webp",
+    "spaceId": "SPACE-LM047-VILLAGE-SQUARE",
+    "time": "day",
+    "season": "autumn",
+    "status": "初版提案/採否未確定"
+  },
+  "yamasato_harvest_festival_autumn_day": {
+    "name": "山里収穫祭会場 秋昼（交流広場イベント案）",
+    "path": "images/assets/bg/bg_yamasato_harvest_festival_autumn_day.webp",
+    "spaceId": "SPACE-LM047-VILLAGE-SQUARE",
+    "time": "day",
+    "season": "autumn",
+    "status": "初版提案/採否未確定"
+  }
+});})();
