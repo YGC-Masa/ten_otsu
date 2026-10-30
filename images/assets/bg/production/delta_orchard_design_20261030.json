@@ -1,0 +1,159 @@
+{
+  "date": "2026-10-30",
+  "facility": "FAC-006",
+  "landmark": "LM-053",
+  "space": "SPACE-LM053-ORCHARD",
+  "baselineHead": "f9fa08dd73ca322cd5c574ee9379309b29a80dcb",
+  "existingCanon": {
+    "name": "日向夏フルーツロード",
+    "area": "山側集落〜郊外",
+    "seasonTime": "春〜秋/昼",
+    "characters": [
+      "なつ",
+      "緋奈",
+      "里美",
+      "萌",
+      "陽里"
+    ],
+    "events": [
+      "フルーツ狩り",
+      "試食",
+      "ジャム作り",
+      "食べ歩き",
+      "なつの餌付けイベント"
+    ]
+  },
+  "proposals": {
+    "fruit": "日本梨。品種未確定。「日向夏」という名前から果種を推定していない",
+    "harvest": "初秋・9月相当の仮案。現地気候/品種と収穫期は未確定",
+    "business": "受付・貸籠→収穫→同受付で計量/購入/籠返却→手洗い/試食休憩。夕景は照明差分候補のみ、夕方営業を確定しない",
+    "architecture": "平屋クリーム壁/杉材/濃灰金属切妻屋根。正面左から開放受付カウンター・ガラス引戸・横長2分割窓。受付左に手洗いと籠棚。左付属半屋外テラスに2卓。左側入口から梨棚列へ。棟は生成外観に合わせ正面に平行。右奥サービス帯は仮の非来客導線。",
+    "spacePolicy": "既存1SPACE内の入口/園路/休憩ゾーン。個別農園/道路/売店/ジャム工房/カフェSPACEや新人物は追加しない。"
+  },
+  "searchEvidence": {
+    "backgroundLedger": "08_背景アセット A5:F150に果樹/農園/日向夏/果物/fruit/orchard/farm一致なし",
+    "repo": "mainツリーの果樹園関連画像名なし、501テキストファイルの果樹/観光農園/日向夏フルーツ/orchard/fruit_road一致なし。existing_repo_search.json参照",
+    "drive": "公式アカウント画像メタデータ名で果樹/フルーツ/orchard/農園を検索、0件。未知の別名資産の不存在までは保証しない",
+    "references": "専用既存画像は発見せず。本バッチ入口昼を画像アンカーとして派生参照。"
+  },
+  "assets": [
+    {
+      "key": "hinatanatsu_orchard_entrance_earlyautumn_day",
+      "name": "日向夏フルーツロード 入口・受付 初秋昼（梨園案）",
+      "view": "entrance",
+      "time": "day",
+      "bg": "BG-147",
+      "img": "IMG-WLD-071",
+      "space": "SPACE-LM053-ORCHARD",
+      "note": "初版提案：日本梨/初秋。果物・品種・収穫期・採否未確定。正本の春〜秋/昼の範囲内で仮案化。",
+      "repoPath": "images/assets/bg/bg_hinatanatsu_orchard_entrance_earlyautumn_day.webp",
+      "size": [
+        1672,
+        940
+      ],
+      "sha256": "e8f5663cd9867ae3d595b502c7cfac96dda4ae19c2d7535d41228528968d9e81",
+      "blob": "046f7368b340072a86398ba25b14bb73d094b746"
+    },
+    {
+      "key": "hinatanatsu_orchard_aisle_earlyautumn_day",
+      "name": "日向夏フルーツロード 収穫園路 初秋昼（梨園案）",
+      "view": "aisle",
+      "time": "day",
+      "bg": "BG-148",
+      "img": "IMG-WLD-072",
+      "space": "SPACE-LM053-ORCHARD",
+      "note": "初版提案：日本梨/初秋。果物・品種・収穫期・採否未確定。正本の春〜秋/昼の範囲内で仮案化。",
+      "repoPath": "images/assets/bg/bg_hinatanatsu_orchard_aisle_earlyautumn_day.webp",
+      "size": [
+        1672,
+        940
+      ],
+      "sha256": "2a78bc43a5115d2aa6c0d8c989a1d8c3255ef7a2cf18a7732632856e9a392804",
+      "blob": "ff427c576600e32ce99b7ad45220d8934960789b"
+    },
+    {
+      "key": "hinatanatsu_orchard_terrace_earlyautumn_day",
+      "name": "日向夏フルーツロード 試食・休憩テラス 初秋昼（梨園案）",
+      "view": "terrace",
+      "time": "day",
+      "bg": "BG-149",
+      "img": "IMG-WLD-073",
+      "space": "SPACE-LM053-ORCHARD",
+      "note": "初版提案：日本梨/初秋。果物・品種・収穫期・採否未確定。正本の春〜秋/昼の範囲内で仮案化。",
+      "repoPath": "images/assets/bg/bg_hinatanatsu_orchard_terrace_earlyautumn_day.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "0cbe0d2b480410a1cf0d6072a8a5f83a20a0a8447f4952b9b3437a348062efd1",
+      "blob": "22ffeb4a5beef08b7b1ef5c3956b7537dc9b7671"
+    },
+    {
+      "key": "hinatanatsu_orchard_entrance_earlyautumn_evening",
+      "name": "日向夏フルーツロード 入口・受付 初秋夕景（差分案）",
+      "view": "entrance",
+      "time": "evening",
+      "bg": "BG-150",
+      "img": "IMG-WLD-074",
+      "space": "SPACE-LM053-ORCHARD",
+      "note": "初版提案：日本梨/初秋。果物・品種・収穫期・採否未確定。夕景差分候補。夕方営業を確定しない。",
+      "repoPath": "images/assets/bg/bg_hinatanatsu_orchard_entrance_earlyautumn_evening.webp",
+      "size": [
+        1672,
+        940
+      ],
+      "sha256": "1b2d97bf3a3a6e16da1daa114536cb567c1f7b93a8f5d388351c0ac27bfd827a",
+      "blob": "cabc07c20738c1814390687699e97dd91356b378"
+    },
+    {
+      "key": "hinatanatsu_orchard_aisle_earlyautumn_evening",
+      "name": "日向夏フルーツロード 収穫園路 初秋夕景（差分案）",
+      "view": "aisle",
+      "time": "evening",
+      "bg": "BG-151",
+      "img": "IMG-WLD-075",
+      "space": "SPACE-LM053-ORCHARD",
+      "note": "初版提案：日本梨/初秋。果物・品種・収穫期・採否未確定。夕景差分候補。夕方営業を確定しない。",
+      "repoPath": "images/assets/bg/bg_hinatanatsu_orchard_aisle_earlyautumn_evening.webp",
+      "size": [
+        1672,
+        940
+      ],
+      "sha256": "dadbf1523e08b1c00d2dcf69e56f5c3b9ac6e47ba83744acfa7876eaed449e60",
+      "blob": "cd905fa82243f86e804cb66dc95851592d62ea86"
+    }
+  ],
+  "qc": {
+    "generated": 5,
+    "visuallyInspected": 5,
+    "comparisons": [
+      "入口昼夕：切妻屋根、受付・引戸・大窓、手洗い、門柱、左テラスの相対位置",
+      "園路昼夕：梨棚の支柱と横材、中央園路、両端排水溝、右テラス、遠山の構図",
+      "テラス近景：平屋白壁/杉材、側面小窓、受付角と手洗い、2卓と中央人物余白",
+      "山側地理：海/湖/別施設なし。梨と緑葉を統一"
+    ],
+    "limitations": [
+      "入口とテラスの厳密な平面・寸法/接合部は未検証",
+      "梨の樹形/棚高/収穫期の栽培監修未実施",
+      "ネイティブ1672×940/941のままWebP90変換、1920×1080未統一",
+      "人の立ち絵重ねと実画面読み込みは未確認"
+    ],
+    "adoption": "未確定"
+  },
+  "registration": {
+    "bg": "BG-147〜151",
+    "image": "IMG-WLD-071〜075",
+    "sheetWrite": "remote配置後に実施・読み戻し確認予定",
+    "remoteFiles": "同コミットの画像blobとカタログ参照を検証予定",
+    "liveScreen": "未確認",
+    "scenarios": "割当なし"
+  },
+  "remaining": [
+    "LM-017図書館：既存背景への紐付けQC",
+    "LM-034地下VIP：接続詳細を確定しない初版空間案",
+    "LM-055暮らしマルシェ：施設形態仮案選定",
+    "LM-061〜110引継ぎ地理/空間QC証跡の確認",
+    "既存BG-061〜110の引継ぎQCと実画面表示の残件",
+    "今回および既存制作分の実画面表示/立ち絵重ね/採否/本番サイズ統一"
+  ]
+}

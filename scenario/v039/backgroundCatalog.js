@@ -365,3 +365,48 @@
     "status": "初版案/制作済み"
   }
 });})();
+
+
+/* Delta: LM-053 provisional pear orchard, fruit/season not canon */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "hinatanatsu_orchard_entrance_earlyautumn_day": {
+    "name": "日向夏フルーツロード 入口・受付 初秋昼（梨園案）",
+    "path": "images/assets/bg/bg_hinatanatsu_orchard_entrance_earlyautumn_day.webp",
+    "spaceId": "SPACE-LM053-ORCHARD",
+    "time": "day",
+    "season": "earlyAutumn",
+    "status": "初版提案/果物・収穫期未確定"
+  },
+  "hinatanatsu_orchard_aisle_earlyautumn_day": {
+    "name": "日向夏フルーツロード 収穫園路 初秋昼（梨園案）",
+    "path": "images/assets/bg/bg_hinatanatsu_orchard_aisle_earlyautumn_day.webp",
+    "spaceId": "SPACE-LM053-ORCHARD",
+    "time": "day",
+    "season": "earlyAutumn",
+    "status": "初版提案/果物・収穫期未確定"
+  },
+  "hinatanatsu_orchard_terrace_earlyautumn_day": {
+    "name": "日向夏フルーツロード 試食・休憩テラス 初秋昼（梨園案）",
+    "path": "images/assets/bg/bg_hinatanatsu_orchard_terrace_earlyautumn_day.webp",
+    "spaceId": "SPACE-LM053-ORCHARD",
+    "time": "day",
+    "season": "earlyAutumn",
+    "status": "初版提案/果物・収穫期未確定"
+  },
+  "hinatanatsu_orchard_entrance_earlyautumn_evening": {
+    "name": "日向夏フルーツロード 入口・受付 初秋夕景（差分案）",
+    "path": "images/assets/bg/bg_hinatanatsu_orchard_entrance_earlyautumn_evening.webp",
+    "spaceId": "SPACE-LM053-ORCHARD",
+    "time": "evening",
+    "season": "earlyAutumn",
+    "status": "初版提案/果物・収穫期未確定"
+  },
+  "hinatanatsu_orchard_aisle_earlyautumn_evening": {
+    "name": "日向夏フルーツロード 収穫園路 初秋夕景（差分案）",
+    "path": "images/assets/bg/bg_hinatanatsu_orchard_aisle_earlyautumn_evening.webp",
+    "spaceId": "SPACE-LM053-ORCHARD",
+    "time": "evening",
+    "season": "earlyAutumn",
+    "status": "初版提案/果物・収穫期未確定"
+  }
+});})();
