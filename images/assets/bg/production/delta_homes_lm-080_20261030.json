@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-080",
+  "facility": "FAC-025",
+  "space": "SPACE-LM080-BALCONY",
+  "name": "店長マンションの小さなベランダ 夜（同一住戸案）",
+  "canon": "店長の自宅マンション、春〜秋夜、小さな休憩場所。夜風/缶飲料/ミニ家庭菜園/洗濯物/二人の静かな会話。住所/居住階数/海坂との位置関係未確定。",
+  "proposal": "LM-078と同一住戸案。茶金属2枚引違い扉・茶灰レンガ/淡灰角タイル・黒縦格子手すり、奥小鉢と畳んだ物干し・缶飲料。扉から同じベージュソファ/木卓/木床が見える。外景は暗い植栽/目隠しで位置を限定しない。",
+  "unconfirmed": "家具/間取り/設備/採否/正確寸法未確定。住所・居住階数・海坂の位置関係を確定しない。LM-077住居/職場の区別・VIPとの同一性/接続は未確定。テーマパークの全館構成/鉄道経路を追加しない。",
+  "sources": {
+    "world": "02_ランドマーク LM-080",
+    "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の固有名/別名検索2組・scenario/v039本文を照合、専用5画像未発見。既存BG-167/BG-157/交換所WebPを実画素参照。朔夜導入と使用差分表も確認。未発見は不存在の断定ではない。",
+    "references": [
+      "/workspace/generated_images/exec-998c7da4-e9c7-4f3e-9e66-71c59b27710f.png",
+      "/workspace/delta_homes4/bg_manager_mansion_road_night.webp"
+    ]
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、用途/小物/窓扉/通行/ADV余白を目視確認。LM-078/080は実画像を参照して扉枠・レンガ・黒柵・淡灰角タイル/暖色室内を比較。テーマパークは入口各1枚。寸法・階段/EV・住所/方位は未確定。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-185",
+    "img": "IMG-WLD-109",
+    "key": "manager_apartment_balcony_night",
+    "path": "images/assets/bg/bg_manager_apartment_balcony_night.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "c9653b7a94ffbc2fc0621e1666c69b87193e0ca86512e797b1b082625ad6baa5"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "d98f49a1042df3cbb2c0ae8f12f01754756f48f7"
+}

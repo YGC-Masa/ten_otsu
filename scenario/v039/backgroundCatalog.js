@@ -753,3 +753,14 @@
     "status": "初版空間案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-080 landmark proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "manager_apartment_balcony_night": {
+    "name": "店長マンションの小さなベランダ 夜（同一住戸案）",
+    "path": "images/assets/bg/bg_manager_apartment_balcony_night.webp",
+    "spaceId": "SPACE-LM080-BALCONY",
+    "time": "night",
+    "status": "初版空間案/間取り・設備・採否未確定"
+  }
+});})();
