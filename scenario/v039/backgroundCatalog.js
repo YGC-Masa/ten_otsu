@@ -301,3 +301,13 @@
   marinpia_rooftop_terrace_day: {"name":"マリンピア 屋上展望テラス 昼","path":"images/assets/bg/bg_marinpia_rooftop_terrace_day.webp","spaceId":"SPACE-LM010-ROOFTOP","time":"day","status":"初版完成"},
   marinpia_seaside_deck_evening: {"name":"マリンピア 海辺デッキ 夕方","path":"images/assets/bg/bg_marinpia_seaside_deck_evening.webp","spaceId":"SPACE-LM010-SEASIDE-DECK","time":"evening","status":"初版完成"}
 });})();
+
+/* Delta: seasonal and event coverage */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  shiomi_beach_fireworks_night: {"name":"潮見浜 花火大会 夜","path":"images/assets/bg/bg_shiomi_beach_fireworks_night.webp","spaceId":"SPACE-SHIOMI-BEACH","time":"night","season":"summer","status":"初版完成"},
+  takadai_shrine_festival_night: {"name":"高台神社 境内祭り 夜","path":"images/assets/bg/bg_takadai_shrine_festival_night.webp","spaceId":"SPACE-LM002-COURTYARD","time":"night","season":"summer","status":"初版完成"},
+  hashiro_boardwalk_autumn_day: {"name":"羽白湖もみじ遊歩道 秋昼","path":"images/assets/bg/bg_hashiro_boardwalk_autumn_day.webp","spaceId":"SPACE-HASHIRO-PATH","time":"day","season":"autumn","status":"初版完成"},
+  hashiro_boardwalk_autumn_evening: {"name":"羽白湖もみじ遊歩道 秋夕方","path":"images/assets/bg/bg_hashiro_boardwalk_autumn_evening.webp","spaceId":"SPACE-HASHIRO-PATH","time":"evening","season":"autumn","status":"初版完成"},
+  hiyorizaka_sakura_embankment_spring_day: {"name":"日和坂さくら堤 春昼","path":"images/assets/bg/bg_hiyorizaka_sakura_embankment_spring_day.webp","spaceId":"SPACE-WAKABA-CENTRAL-PARK","time":"day","season":"spring","status":"初版完成"},
+  lm006_courtyard_school_festival_day: {"name":"日和坂学園 校舎前 学園祭昼","path":"images/assets/bg/bg_lm006_courtyard_school_festival_day.webp","spaceId":"SPACE-LM006-COURTYARD","time":"day","status":"初版完成"}
+});})();
