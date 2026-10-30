@@ -588,3 +588,14 @@
     "status": "初版空間案/採否未確定"
   }
 });})();
+
+/* Delta LM-063 */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "kusakabe_shared_living_room_evening": {
+    "name": "草壁家の共有リビング 夕方（姉妹共有案）",
+    "path": "images/assets/bg/bg_kusakabe_shared_living_room_evening.webp",
+    "spaceId": "SPACE-LM063-LIVING",
+    "time": "evening",
+    "status": "初版空間案/採否未確定"
+  }
+});})();
