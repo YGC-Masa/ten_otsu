@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-064",
+  "facility": "FAC-014",
+  "space": "SPACE-LM064-ROOM",
+  "name": "小麦沢家のギャル部屋 夜（マンション内装案）",
+  "canon": "駅近マンション/こがね/スマホ・服・英語/夜・休日",
+  "proposal": "左ベッド/衣類棚・右机/スマホ/勉強・奥窓/右玄関風扉/中央床。1K全体間取りや単身を確定しない",
+  "unconfirmed": "家族構成/同居人数/住居全体の階数・間取り・番地を追加しない。窓・扉・家具位置/採否は初版案。",
+  "search": "mainの509テキスト・全画像名・正本台帳とDrive画像名を照合。専用住居BGは発見せず。Drive画像名ヒットは緋奈の人物/コミック等で住居背景の根拠にしない。bg011はひだまり職場、bg020汎用机は流用しない。原デザイン01/02とキャラCMSは外見主体で家族/全住居設定なし。未探索資料の不存在までは断定しない。",
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、住宅用途、趣味と生活小物、窓/扉と中央通行・ADV余白を目視。",
+    "remaining": "立ち絵重ね、厳密寸法、採否、実画面、原設定追加資料との最終照合。"
+  },
+  "asset": {
+    "bg": "BG-171",
+    "img": "IMG-WLD-095",
+    "key": "komugisawa_room_night",
+    "path": "images/assets/bg/bg_komugisawa_room_night.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "4bd7801325c66b36d0f0380f236d4678028934041f6795da913deaf793469ada"
+  },
+  "status": "remote配置・台帳登録は検証後追記"
+}

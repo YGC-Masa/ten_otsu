@@ -599,3 +599,14 @@
     "status": "初版空間案/採否未確定"
   }
 });})();
+
+/* Delta LM-064 */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "komugisawa_room_night": {
+    "name": "小麦沢家のギャル部屋 夜（マンション内装案）",
+    "path": "images/assets/bg/bg_komugisawa_room_night.webp",
+    "spaceId": "SPACE-LM064-ROOM",
+    "time": "night",
+    "status": "初版空間案/採否未確定"
+  }
+});})();
