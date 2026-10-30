@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-075",
+  "facility": "FAC-004",
+  "space": "SPACE-LM075-LIVING",
+  "name": "陽里の住居リビング 夕方（つくも3階案）",
+  "canon": "テックラボつくも3階/陽里/手料理・祖父の昔話・古い家電・屋上菜園への導線/夕方〜夜",
+  "proposal": "FAC-004 3F正面右の3分割窓区画案。左バルコニー扉＋固定窓2枚/黒柵、右ソファと古いラジオ/室内扉、クリーム壁・濃青緑建具・木床。屋上は別階",
+  "unconfirmed": "家具/間取り/設備/採否/正確寸法未確定。家族人数/全館階数/所有者/住所を追加しない。LM-076は建物と階数も未確定。",
+  "sources": {
+    "world": "02_ランドマーク LM-075",
+    "search": "main画像名・台帳・Drive画像名(姓/人物/部屋)と499テキストを照合、専用背景未発見。未発見は不存在の断定ではない。intro個別5ファイルは取得できず未確認。職場bg011・汎用bg020は流用しない。",
+    "references": [
+      "/workspace/delta_tsukumo/bg_tsukumo_exterior_day.webp",
+      "/workspace/delta_tsukumo/bg_tsukumo_reception_lounge_day.webp",
+      "/workspace/delta_tsukumo/bg_tsukumo_rooftop_garden_evening.webp"
+    ]
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、用途/小物/窓扉/通行/中央ADV余白を目視確認。LM-075は既存外観参照で窓を3分割へ修正。階段/EV方式は描かず未確定。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-181",
+    "img": "IMG-WLD-105",
+    "key": "tsukumo_3f_hiyori_living_evening",
+    "path": "images/assets/bg/bg_tsukumo_3f_hiyori_living_evening.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "a668757a85a7fa32455df2652bb5622f7785ab25cb6988b0ffd66bd60e0ee351"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "475fecefc96c30d867dcc54fec1daaab38e0b160"
+}

@@ -709,3 +709,14 @@
     "status": "住居初版案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-075 residential proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "tsukumo_3f_hiyori_living_evening": {
+    "name": "陽里の住居リビング 夕方（つくも3階案）",
+    "path": "images/assets/bg/bg_tsukumo_3f_hiyori_living_evening.webp",
+    "spaceId": "SPACE-LM075-LIVING",
+    "time": "evening",
+    "status": "住居初版案/間取り・設備・採否未確定"
+  }
+});})();
