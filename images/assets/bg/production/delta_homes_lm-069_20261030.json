@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-069",
+  "facility": "FAC-018",
+  "space": "SPACE-LM069-STREAM",
+  "name": "芝桜家の配信部屋 夜（自宅配信室案）",
+  "canon": "住宅街、桃、配信/ゲーム/時代劇グッズ/家事苦手、通年夜。intro_momoに配信機材/編集/洗濯や料理苦手。",
+  "proposal": "左配信机/2画面/マイク/カメラ、機材配線は整頓、右ソファと周縁衣類籠、奥時代劇小物棚/右扉/中央余白。特定作品のロゴなし。",
+  "unconfirmed": "部屋名以上の間取り・家具・設備・全館階数・家族人数・居住者/所有者追加・住所は確定しない。採否/詳細寸法未確認。",
+  "excludedOtherFacilities": "momo_expression_25_testの閉店後配信スペースは職場文脈。自宅根拠にしない。",
+  "sources": {
+    "world": "02_ランドマーク LM-069",
+    "scenario": "scenario/v039/events/intro_momo.json",
+    "search": "main全画像名/台帳/517テキスト/Drive画像名(5姓・部屋名称)を検索。専用住居画像は未発見。未発見は不存在の断定ではない。家族/全住居設定の追加資料は未確認。"
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし/セルアニメ調、用途・小物・窓扉/動線/中央ADV余白を確認。室内鏡や設備の厳密監修は未実施。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-175",
+    "img": "IMG-WLD-099",
+    "key": "shibazakura_streaming_room_night",
+    "path": "images/assets/bg/bg_shibazakura_streaming_room_night.webp",
+    "sha256": "65e4fa56b5ec96c0be8d5aae853fda01c35d1fb6f384b4d72ca263504a924750",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  "status": "remote配置/台帳読み戻しは後続確認",
+  "verificationParentHead": "19893e4226518b723cec7e8b82a85c64bccf2ab3"
+}

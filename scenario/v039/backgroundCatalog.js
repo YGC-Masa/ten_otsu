@@ -643,3 +643,14 @@
     "status": "住居初版案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-069 residential proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "shibazakura_streaming_room_night": {
+    "name": "芝桜家の配信部屋 夜（自宅配信室案）",
+    "path": "images/assets/bg/bg_shibazakura_streaming_room_night.webp",
+    "spaceId": "SPACE-LM069-STREAM",
+    "time": "night",
+    "status": "住居初版案/間取り・設備・採否未確定"
+  }
+});})();
