@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-093",
+  "facility": "FAC-038",
+  "space": "SPACE-LM093-ENTRANCE",
+  "name": "潮見時代村 撮影村 入口・昼（初版外観案）",
+  "canon": "日和坂市外・山側観光圏、市外/撮影村/時代劇テーマ施設。桃/真花/琥珀/小春/こがね/藍。時代劇セット/忍者侍体験/町娘衣装/撮影。通年休日昼。",
+  "proposal": "観光用撮影村の入口案。木造瓦屋根の門と左の現代受付・右退出脇門、奥は時代劇用町並みの外形のみ、中央平坦な来場路と山側木立。歴史建築/実際の旧市街とは確定せず、体験内部や撮影設備の運用を追加しない。",
+  "unconfirmed": "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理隣接/地下接続/店名/営業条件/全館階数/住所・方位・距離を確定しない。窓内の仮商品や機器は可動の意匠例。",
+  "sources": {
+    "world": "02_ランドマーク LM-093",
+    "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/英語別名検索2組・scenario/v039本文を照合、専用5画像未発見。施設名/地下街/アーケード等のシナリオ直接一致なし。駅昼/港岸壁BG-158/ひだまり店頭昼/つくもBG-137を実画素参照。用途や近隣の類似だけで同一施設としない。未発見は不存在の断定ではない。",
+    "references": []
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、用途/素材/窓扉/主通行帯/中央ADV余白を目視確認。地下街の仮陳列は窓内、館周辺はつくも所在地を複製しないよう修正。港は既存岸壁を改装扱いにせず位置未確定。アーケードは既存ストアに接続/増築させない。設備/法令/正確寸法は未検証。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-198",
+    "img": "IMG-WLD-122",
+    "key": "shiomi_jidaimura_entrance_day",
+    "path": "images/assets/bg/bg_shiomi_jidaimura_entrance_day.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "dc4886d00c11b407aa4e3a08d313e3422fbad4419d6b16291de66b3065e9c317"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "06e464f96d6f7778d45af603bded0c78e4f915af"
+}

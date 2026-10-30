@@ -896,3 +896,14 @@
     "status": "初版空間案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-093 landmark proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "shiomi_jidaimura_entrance_day": {
+    "name": "潮見時代村 撮影村 入口・昼（初版外観案）",
+    "path": "images/assets/bg/bg_shiomi_jidaimura_entrance_day.webp",
+    "spaceId": "SPACE-LM093-ENTRANCE",
+    "time": "day",
+    "status": "初版空間案/間取り・設備・採否未確定"
+  }
+});})();
