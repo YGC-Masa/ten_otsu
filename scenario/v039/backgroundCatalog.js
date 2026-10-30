@@ -874,3 +874,14 @@
     "status": "初版空間案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-091 landmark proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "hanamori_tea_garden_entrance_autumn_day": {
+    "name": "花守茶苑公園 入口導線・秋昼（初版庭園案）",
+    "path": "images/assets/bg/bg_hanamori_tea_garden_entrance_autumn_day.webp",
+    "spaceId": "SPACE-LM091-ENTRANCE",
+    "time": "day",
+    "status": "初版空間案/間取り・設備・採否未確定"
+  }
+});})();

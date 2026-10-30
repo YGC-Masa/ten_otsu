@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-091",
+  "facility": "FAC-036",
+  "space": "SPACE-LM091-ENTRANCE",
+  "name": "花守茶苑公園 入口導線・秋昼（初版庭園案）",
+  "canon": "高台文化ゾーン、茶会/日本庭園/公園。彩愛/真花/雪乃/藍/萌/陽里。野点/茶会/和菓子/散歩/作法。春秋昼。芝桜の丘花守ガーデンとは同一根拠なし。",
+  "proposal": "静かな日本庭園の入口経路案。小さな木の屋根門・白土塀/竹垣・低い生垣、中央歩きやすい石敷き、左右苔と秋木立、脇の低い赤布ベンチ。池・茶室内部・芝桜斜面・市街遠景は追加しない。",
+  "unconfirmed": "建築・外装・設備・入口配置・採否・正確寸法未確定。代表入口各1枚のみ、内部展示/詳細ゾーン/全館階数/正確な住所・方位・距離・接続を確定しない。花守茶苑と芝桜ガーデンは同一としない。",
+  "sources": {
+    "world": "02_ランドマーク LM-091",
+    "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/別名検索2組・scenario/v039本文を照合、専用5画像未発見。施設5名称のシナリオ直接一致なし。羽白湖の星空観察出典はあるが自然科学センター主催/直結根拠にはしない。湖BG-039の実WebP、神社参道BG-046、芝桜BG-095を実画素確認。未発見は不存在の断定ではない。",
+    "references": []
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、用途/素材/窓扉/入口・出口/中央ADV・歩行余白を目視確認。LM-089は湖の森林岸/山稜/淡水景観を参照画像と比較、厳密地点・方位は未確認。小路は個別店SPACEなし、庭園は芝桜背景と分離。法令/正確寸法は未検証。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-196",
+    "img": "IMG-WLD-120",
+    "key": "hanamori_tea_garden_entrance_autumn_day",
+    "path": "images/assets/bg/bg_hanamori_tea_garden_entrance_autumn_day.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "97d60c904da0a44db7492d3405bd647a42a801df4e164aef2fb01b26042de863"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "c5cc6d124739b132ecdf9878bf18cb3c30d07b66"
+}
