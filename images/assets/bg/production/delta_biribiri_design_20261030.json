@@ -48,13 +48,38 @@
       "path": "images/assets/bg/bg_biribiri_koharu_plaza_stage_day.webp"
     }
   ],
-  "status": "生成/目視QC済。remote・台帳反映は検証後追記。",
+  "status": {
+    "generated": 3,
+    "visuallyInspected": 3,
+    "ledger": "登録・122セル読み戻し一致",
+    "remote": "3画像blob/3catalogキー/SPACE一致、全catalog不存在パス0",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
   "inheritedAudit": {
     "total": 50,
     "existing": 4,
     "notFound": 46,
     "needsRegeneration": 0
   },
-  "writeIssue": "GitHub create_blobが画像/テキスト両方500/内部エラー。認証済CLI/APIも同様のためgit転送へ切替。"
+  "writeIssue": "GitHub create_blobが画像/テキスト両方500/内部エラー。認証済CLI/APIも同様のためgit転送へ切替。",
+  "registration": {
+    "assetCommit": "a78317547e734f4b3b2e3efd3d1cb3e35188f936",
+    "verification": {
+      "remoteCatalogMatchedIgnoringTerminalBlankLine": true,
+      "sheetCellsMatched": 122,
+      "liveScreen": false,
+      "adoption": "未確定",
+      "sixFacilityProduction": "6件すべて初版制作/台帳登録/remote反映あり。未制作0件。採否・実画面未確認は残る"
+    },
+    "inheritedAudit": {
+      "total": 50,
+      "existing": 4,
+      "notFound": 46,
+      "needsRegeneration": 0
+    },
+    "remaining": "6施設枠の初版未制作0件。既存背景QC・採否・実画面・明示差分は継続。",
+    "transport": "GitHub API書込500をgit通常pushで回避。forceなし。",
+    "zip": "ローカル保管のみ、外部ZIP納品未実施"
+  }
 }
-
