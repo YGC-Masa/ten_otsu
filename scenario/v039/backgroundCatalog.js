@@ -280,3 +280,15 @@
     marinpia_backyard_tour_passage_day: {"name":"マリンピア バックヤード見学通路 昼","path":"images/assets/bg/bg_marinpia_backyard_tour_passage_day.webp","location":"マリンピア バックヤード見学通路 昼","spaceId":"SPACE-LM010-BACKYARD","time":"day","status":"初版完成"}
   });
 })();
+
+/* Delta: Marinpia dolphin, deepsea, restaurant, shop and deck */
+(function(){
+  "use strict";
+  window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
+    marinpia_dolphin_pool_day: {"name":"マリンピア イルカショープール 昼","path":"images/assets/bg/bg_marinpia_dolphin_pool_day.webp","location":"マリンピア イルカショープール 昼","spaceId":"SPACE-LM010-DOLPHIN","time":"day","status":"初版完成"},
+    marinpia_deepsea_gallery: {"name":"マリンピア 深海・発光生物エリア","path":"images/assets/bg/bg_marinpia_deepsea_gallery.webp","location":"マリンピア 深海・発光生物エリア","spaceId":"SPACE-LM010-DEEPSEA","status":"初版完成"},
+    marinpia_aquarium_restaurant_day: {"name":"マリンピア 水槽レストラン 昼","path":"images/assets/bg/bg_marinpia_aquarium_restaurant_day.webp","location":"マリンピア 水槽レストラン 昼","spaceId":"SPACE-LM010-RESTAURANT","time":"day","status":"初版完成"},
+    marinpia_gift_shop_day: {"name":"マリンピアショップ 昼","path":"images/assets/bg/bg_marinpia_gift_shop_day.webp","location":"マリンピアショップ 昼","spaceId":"SPACE-LM010-SHOP","time":"day","status":"初版完成"},
+    marinpia_seaside_deck_day: {"name":"マリンピア 海辺デッキ 昼","path":"images/assets/bg/bg_marinpia_seaside_deck_day.webp","location":"マリンピア 海辺デッキ 昼","spaceId":"SPACE-LM010-SEASIDE-DECK","time":"day","status":"初版完成"}
+  });
+})();
