@@ -27,9 +27,9 @@
     sugosawa_house_day: { name: "双沢家・昼", path: "images/assets/bg/bg_sugosawa_house_day.webp" },
     sugosawa_house_night: { name: "双沢家・夜", path: "images/assets/bg/bg_sugosawa_house_night.webp" },
 
-    sugosawa_room_day: { name: "双沢姉妹の部屋・昼", path: "images/assets/bg/bg_sugosawa_room_day.webp" },
-    sugosawa_room_night_indirect: { name: "双沢姉妹の部屋・夜（間接照明）", path: "images/assets/bg/bg_sugosawa_room_night_indirect.webp" },
-    sugosawa_room_night_light_on: { name: "双沢姉妹の部屋・夜（照明ON）", path: "images/assets/bg/bg_sugosawa_room_night_light_on.webp" },
+    sugosawa_room_day: { name: "双沢姉妹の部屋・昼", path: "images/assets/bg/bg_sugosawa_room_day.webp", spaceId: "SPACE-SUGOSAWA-TWINROOM" },
+    sugosawa_room_night_indirect: { name: "双沢姉妹の部屋・夜（間接照明）", path: "images/assets/bg/bg_sugosawa_room_night_indirect.webp", spaceId: "SPACE-SUGOSAWA-TWINROOM" },
+    sugosawa_room_night_light_on: { name: "双沢姉妹の部屋・夜（照明ON）", path: "images/assets/bg/bg_sugosawa_room_night_light_on.webp", spaceId: "SPACE-SUGOSAWA-TWINROOM" },
     misora_room_day: { name: "双沢姉妹の部屋・昼（旧:美空の部屋）", path: "images/assets/bg/bg_sugosawa_room_day.webp" },
     misora_room_night: { name: "双沢姉妹の部屋・夜（旧:美空の部屋）", path: "images/assets/bg/bg_sugosawa_room_night_light_on.webp" },
     yozora_room_day: { name: "双沢姉妹の部屋・昼（旧:夜空の部屋）", path: "images/assets/bg/bg_sugosawa_room_day.webp" },
