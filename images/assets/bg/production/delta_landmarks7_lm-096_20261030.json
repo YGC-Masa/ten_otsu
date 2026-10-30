@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-096",
+  "facility": "FAC-041",
+  "space": "SPACE-LM096-ENTRANCE",
+  "name": "日和坂家電ミュージアム 入口・昼（初版外観案）",
+  "canon": "テックラボつくも周辺、博物館/家電/技術史。陽里/百瀬ひかる/翠/藍/真冬。古い家電/修理文化/祖父の昔話/家電フェア。通年昼/雨。",
+  "proposal": "つくも周辺の独立した小規模博物館入口案。淡灰壁・濃青緑金属/暖木の低層公共館、中央ガラス入口・左案内窓/小さな展示窓・右退出扉。展示窓の無銘ラジオ/小型TVは仮の意匠例。つくも店舗/保管庫/ラボや家電販売店とは同一視しない。 つくも所在地と同一に見えないよう参照から写った周辺建物/電柱を非特定の植栽背景へ修正。",
+  "unconfirmed": "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理隣接/地下接続/店名/営業条件/全館階数/住所・方位・距離を確定しない。窓内の仮商品や機器は可動の意匠例。",
+  "sources": {
+    "world": "02_ランドマーク LM-096",
+    "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/英語別名検索2組・scenario/v039本文を照合、専用5画像未発見。施設名/地下街/アーケード等のシナリオ直接一致なし。駅昼/港岸壁BG-158/ひだまり店頭昼/つくもBG-137を実画素参照。用途や近隣の類似だけで同一施設としない。未発見は不存在の断定ではない。",
+    "references": [
+      "/workspace/delta_landmarks7/bg_tsukumo_exterior_day.webp"
+    ]
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、用途/素材/窓扉/主通行帯/中央ADV余白を目視確認。地下街の仮陳列は窓内、館周辺はつくも所在地を複製しないよう修正。港は既存岸壁を改装扱いにせず位置未確定。アーケードは既存ストアに接続/増築させない。設備/法令/正確寸法は未検証。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-201",
+    "img": "IMG-WLD-125",
+    "key": "hiyorizaka_appliance_museum_entrance_day",
+    "path": "images/assets/bg/bg_hiyorizaka_appliance_museum_entrance_day.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "aa8c2bd0e08c26b949a059e8c3f09afa88a58f6b502923a15885a7467928a307"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "5d0a688bfee5162264923a88c029e042a5bf3765"
+}
