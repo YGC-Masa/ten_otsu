@@ -951,3 +951,14 @@
     "status": "初版空間案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-098 landmark proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "hiyorizaka_central_cinema_entrance_rain_day": {
+    "name": "日和坂中央映画館 入口・雨昼（初版外観案）",
+    "path": "images/assets/bg/bg_hiyorizaka_central_cinema_entrance_rain_day.webp",
+    "spaceId": "SPACE-LM098-ENTRANCE",
+    "time": "day",
+    "status": "初版空間案/間取り・設備・採否未確定"
+  }
+});})();

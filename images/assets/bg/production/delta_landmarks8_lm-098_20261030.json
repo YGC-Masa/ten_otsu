@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-098",
+  "facility": "FAC-043",
+  "space": "SPACE-LM098-ENTRANCE",
+  "name": "日和坂中央映画館 入口・雨昼（初版外観案）",
+  "canon": "駅前商業エリア、映画館/雨の日デート。翠/藍/真花/夜空/緋奈、ホラーで琥珀/感動作で翠等。映画鑑賞/VOD談義。通年昼〜夜/雨。",
+  "proposal": "街の映画館入口案。濃灰/クリーム壁・深い庇・小球照明、左チケット窓口/中央ガラス風除室/右退出、横に完全無地のポスター枠。雨の前庭と庇下会話帯。作品名/広告/料金/上映時刻/スクリーン数は未設定。 手前車道/縁石/ボラードを除去し、画面下端まで連続する歩行前庭へ修正。",
+  "unconfirmed": "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理接続/上映作品/広告/店名/営業条件/全館階数/住所・方位・距離を確定しない。道路の停車区画/車内は未設計、車線幅/標示/規格も未検証。",
+  "sources": {
+    "world": "02_ランドマーク LM-098",
+    "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/別名検索2組・scenario/v039本文を照合、専用5画像未発見。ドライブ検索の外付けドライブ文脈は除外し、5施設の直接出典は未発見。潮見浜夕BG-004実WebP/自転車道BG-102/青葉キャンプBG-088/シーグラスBG-107を実画素確認。類似だけで同一施設としない。未発見は不存在の断定ではない。",
+    "references": []
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、用途/素材/窓扉/主通行帯/中央ADV余白を目視確認。映画館の手前車道を歩行前庭へ修正。ログ村は湖/テントなし、クラフトは海沿い通りと分離。道路は車道と歩行帯の縁石/海柵を確認。停車区画は描かれていない。海岸形の参照は定性的比較で座標/方位/山稜重畳/規格寸法は未検証。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-203",
+    "img": "IMG-WLD-127",
+    "key": "hiyorizaka_central_cinema_entrance_rain_day",
+    "path": "images/assets/bg/bg_hiyorizaka_central_cinema_entrance_rain_day.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "30c41e48dc8ebb093bb6c73e93b2ab7c0c0995d0d1f11aecd90bb6d127d6e3ce"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "57a55dee05ecf8d01088d930de5603f6c03a253a"
+}
