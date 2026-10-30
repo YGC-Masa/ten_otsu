@@ -1017,3 +1017,14 @@
     "status": "初版空間案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-104 landmark proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "tomizaka_jazz_bar_entrance_night": {
+    "name": "灯見坂ジャズバー 入口・夜（初版外観案）",
+    "path": "images/assets/bg/bg_tomizaka_jazz_bar_entrance_night.webp",
+    "spaceId": "SPACE-LM104-ENTRANCE",
+    "time": "night",
+    "status": "初版空間案/間取り・設備・採否未確定"
+  }
+});})();

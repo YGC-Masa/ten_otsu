@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-104",
+  "facility": "FAC-049",
+  "space": "SPACE-LM104-ENTRANCE",
+  "name": "灯見坂ジャズバー 入口・夜（初版外観案）",
+  "canon": "灯見坂レトロ横丁、バー/音楽/大人夜。里美/雪乃/彩愛/真冬/陽里。ジャズライブ/静かな酒/常連感。通年夜。",
+  "proposal": "横丁内の近景入口案。濃木/暗い煉瓦・真鍮灯、中央奥まった店扉・すりガラス窓と小さな無地案内板、脇のサックス形意匠。手前連続歩行帯。既存横丁の特定店舗を置換せず、位置/店名/出演者/公演/営業時間/内部舞台は未確定。",
+  "unconfirmed": "建築/設備/配置/採否/正確寸法未確定。代表背景各1枚のみ、施設接続/営業条件/全館階数/住所・方位・距離を確定しない。防災設備性能・灯台の航路機能/灯質/登塔可否・SAの道路所属/上下線は原設定以上を追加しない。",
+  "sources": {
+    "world": "02_ランドマーク LM-104",
+    "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/英語別名検索2組・scenario/v039本文を照合、専用6画像未発見。6施設の直接シナリオ出典は未発見。既存横丁夜/温泉街冬夕/港岸壁/潮見浜夕の実画像を比較し、類似だけで同一施設としない。未発見は不存在の断定ではない。",
+    "references": [
+      "/workspace/delta_landmarks9/bg_tomizaka_retro_yokocho_entrance_night.webp"
+    ]
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、用途/素材/窓扉/通行/中央ADV余白を目視確認。銭湯は既存温泉街と別、横丁は既存店を置換しない近景案。防災性能/航路機能/道路所属は未設定。設備規格・法令/正確寸法と全市地理は未検証。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-209",
+    "img": "IMG-WLD-133",
+    "key": "tomizaka_jazz_bar_entrance_night",
+    "path": "images/assets/bg/bg_tomizaka_jazz_bar_entrance_night.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "5244e4ee18da1044df467a6c9e9b8ed97ee0a1c3ea9368cb9fedb3e502a599ce"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "729b8830adb20b2be7ddf92852dd4921472813db"
+}
