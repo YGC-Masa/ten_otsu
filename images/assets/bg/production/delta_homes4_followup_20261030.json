@@ -1,0 +1,307 @@
+{
+  "date": "2026-10-30",
+  "sourceHead": "4a333a3a715e3005a0217761e6557f09efceae9d",
+  "verifiedAtHead": "3a229989e82b02646f747bf3296626da16ab12d6",
+  "commits": {
+    "LM-077": "87f6710976286b6ec0e5edab78a697ec78ae043b",
+    "LM-078": "d98f49a1042df3cbb2c0ae8f12f01754756f48f7",
+    "LM-080": "d3d636f4a6b6d69fb060e80497e361e5f38734f5",
+    "LM-081": "361c3bad573876745b84ec4e61073c7ae436f2ee",
+    "LM-082": "3a229989e82b02646f747bf3296626da16ab12d6"
+  },
+  "verification": {
+    "head": "3a229989e82b02646f747bf3296626da16ab12d6",
+    "remoteHead": "3a229989e82b02646f747bf3296626da16ab12d6",
+    "imagesSha256Matched": 5,
+    "catalogAndSpaceMatched": 5,
+    "newKeysUnique": 5,
+    "allCatalogMissingPaths": [],
+    "checksums": {
+      "entries": 1664,
+      "mismatches": [],
+      "freshActualGitBytesHashed": 36,
+      "unchangedBlobUsingPriorFullByteHash": 1628,
+      "baseline": "f52697ebd230255e1802f3a56583605fa4811b03"
+    },
+    "adoption": "未確定",
+    "liveScreen": "未確認",
+    "sheetCellsMatched": 249,
+    "visuallyInspected": 5
+  },
+  "records": [
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-077",
+      "facility": "FAC-004",
+      "space": "SPACE-LM077-NEON",
+      "name": "朔夜の青紫ネオンルーム 深夜（用途未確定の会話室案）",
+      "canon": "つくも地下/夜側、自室?/夜側施設、朔夜、秘密の会話/夜の約束/異質な静けさ、通年深夜。住居確定根拠なし。",
+      "proposal": "無窓の小さな会話室案。青紫間接光・濃紺壁/黒建具・木床、右二人相談席と低卓、左少数の閉じた小物箱棚、奥閉扉。LM-034VIPとの同一/別室や直接接続は未確定。",
+      "unconfirmed": "家具/間取り/設備/採否/正確寸法未確定。住所・居住階数・海坂の位置関係を確定しない。LM-077住居/職場の区別・VIPとの同一性/接続は未確定。テーマパークの全館構成/鉄道経路を追加しない。",
+      "sources": {
+        "world": "02_ランドマーク LM-077",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の固有名/別名検索2組・scenario/v039本文を照合、専用5画像未発見。既存BG-167/BG-157/交換所WebPを実画素参照。朔夜導入と使用差分表も確認。未発見は不存在の断定ではない。",
+        "references": [
+          "/workspace/delta_homes4/bg_item_exchange_counter.webp",
+          "/workspace/delta_homes4/bg_tsukumo_basement_vip_night.webp"
+        ]
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/小物/窓扉/通行/ADV余白を目視確認。LM-078/080は実画像を参照して扉枠・レンガ・黒柵・淡灰角タイル/暖色室内を比較。テーマパークは入口各1枚。寸法・階段/EV・住所/方位は未確定。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-183",
+        "img": "IMG-WLD-107",
+        "key": "sakuya_blue_violet_neon_room_midnight",
+        "path": "images/assets/bg/bg_sakuya_blue_violet_neon_room_midnight.webp",
+        "size": [
+          1670,
+          942
+        ],
+        "sha256": "ac196371bcb9702b990f8122cbccfad9c5745ffec251bb5c89ef5988392c6f69"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回249セル読み戻し一致",
+        "assetCommit": "87f6710976286b6ec0e5edab78a697ec78ae043b",
+        "verifiedAtHead": "3a229989e82b02646f747bf3296626da16ab12d6",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "4a333a3a715e3005a0217761e6557f09efceae9d"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-078",
+      "facility": "FAC-025",
+      "space": "SPACE-LM078-LIVING",
+      "name": "店長の自宅マンション 室内・夜（初版住居案）",
+      "canon": "ひだまりストア近くの住宅マンション、主人公自宅/室内デート、全員、手料理/看病/仕事帰り休憩/家電相談/泊まり込み作業、通年夜/休日/雨。住所/居住階数/海坂との関係未確定。",
+      "proposal": "左家庭キッチンと二人卓、右ソファ/低卓と作業棚、奥右室内扉、奥左の2枚ガラス引違い扉→小ベランダ。茶系金属枠・暖色室内・クリーム壁・木床、外壁茶灰レンガと黒縦格子手すりは既存アプローチ参照。",
+      "unconfirmed": "家具/間取り/設備/採否/正確寸法未確定。住所・居住階数・海坂の位置関係を確定しない。LM-077住居/職場の区別・VIPとの同一性/接続は未確定。テーマパークの全館構成/鉄道経路を追加しない。",
+      "sources": {
+        "world": "02_ランドマーク LM-078",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の固有名/別名検索2組・scenario/v039本文を照合、専用5画像未発見。既存BG-167/BG-157/交換所WebPを実画素参照。朔夜導入と使用差分表も確認。未発見は不存在の断定ではない。",
+        "references": [
+          "/workspace/delta_homes4/bg_manager_mansion_road_night.webp"
+        ]
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/小物/窓扉/通行/ADV余白を目視確認。LM-078/080は実画像を参照して扉枠・レンガ・黒柵・淡灰角タイル/暖色室内を比較。テーマパークは入口各1枚。寸法・階段/EV・住所/方位は未確定。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-184",
+        "img": "IMG-WLD-108",
+        "key": "manager_apartment_living_night",
+        "path": "images/assets/bg/bg_manager_apartment_living_night.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "df536319de08bd4fb9eb28c9d679496a662cd46a48da0e11f4c59b5f9c59351e"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回249セル読み戻し一致",
+        "assetCommit": "d98f49a1042df3cbb2c0ae8f12f01754756f48f7",
+        "verifiedAtHead": "3a229989e82b02646f747bf3296626da16ab12d6",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "87f6710976286b6ec0e5edab78a697ec78ae043b"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-080",
+      "facility": "FAC-025",
+      "space": "SPACE-LM080-BALCONY",
+      "name": "店長マンションの小さなベランダ 夜（同一住戸案）",
+      "canon": "店長の自宅マンション、春〜秋夜、小さな休憩場所。夜風/缶飲料/ミニ家庭菜園/洗濯物/二人の静かな会話。住所/居住階数/海坂との位置関係未確定。",
+      "proposal": "LM-078と同一住戸案。茶金属2枚引違い扉・茶灰レンガ/淡灰角タイル・黒縦格子手すり、奥小鉢と畳んだ物干し・缶飲料。扉から同じベージュソファ/木卓/木床が見える。外景は暗い植栽/目隠しで位置を限定しない。",
+      "unconfirmed": "家具/間取り/設備/採否/正確寸法未確定。住所・居住階数・海坂の位置関係を確定しない。LM-077住居/職場の区別・VIPとの同一性/接続は未確定。テーマパークの全館構成/鉄道経路を追加しない。",
+      "sources": {
+        "world": "02_ランドマーク LM-080",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の固有名/別名検索2組・scenario/v039本文を照合、専用5画像未発見。既存BG-167/BG-157/交換所WebPを実画素参照。朔夜導入と使用差分表も確認。未発見は不存在の断定ではない。",
+        "references": [
+          "/workspace/generated_images/exec-998c7da4-e9c7-4f3e-9e66-71c59b27710f.png",
+          "/workspace/delta_homes4/bg_manager_mansion_road_night.webp"
+        ]
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/小物/窓扉/通行/ADV余白を目視確認。LM-078/080は実画像を参照して扉枠・レンガ・黒柵・淡灰角タイル/暖色室内を比較。テーマパークは入口各1枚。寸法・階段/EV・住所/方位は未確定。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-185",
+        "img": "IMG-WLD-109",
+        "key": "manager_apartment_balcony_night",
+        "path": "images/assets/bg/bg_manager_apartment_balcony_night.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "c9653b7a94ffbc2fc0621e1666c69b87193e0ca86512e797b1b082625ad6baa5"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回249セル読み戻し一致",
+        "assetCommit": "d3d636f4a6b6d69fb060e80497e361e5f38734f5",
+        "verifiedAtHead": "3a229989e82b02646f747bf3296626da16ab12d6",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "d98f49a1042df3cbb2c0ae8f12f01754756f48f7"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-081",
+      "facility": "FAC-026",
+      "space": "SPACE-LM081-ENTRANCE",
+      "name": "星海ワンダーリゾート 代表入口・昼（初版外観案）",
+      "canon": "日和坂市外、新幹線/特急で日帰り圏、巨大テーマパーク。大型デート/絶叫系/パレード/限定グッズ/閉園間際の観覧車。通年休日昼〜夜。",
+      "proposal": "入口だけの案。星を抽象化した独自の3連門・淡クリーム/紺/金、左チケットと右手荷物検査/出口、中央広い入場前広場。奥遠景に観覧車と控えめなコースター線、個別施設は登録しない。",
+      "unconfirmed": "家具/間取り/設備/採否/正確寸法未確定。住所・居住階数・海坂の位置関係を確定しない。LM-077住居/職場の区別・VIPとの同一性/接続は未確定。テーマパークの全館構成/鉄道経路を追加しない。",
+      "sources": {
+        "world": "02_ランドマーク LM-081",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の固有名/別名検索2組・scenario/v039本文を照合、専用5画像未発見。既存BG-167/BG-157/交換所WebPを実画素参照。朔夜導入と使用差分表も確認。未発見は不存在の断定ではない。",
+        "references": []
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/小物/窓扉/通行/ADV余白を目視確認。LM-078/080は実画像を参照して扉枠・レンガ・黒柵・淡灰角タイル/暖色室内を比較。テーマパークは入口各1枚。寸法・階段/EV・住所/方位は未確定。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-186",
+        "img": "IMG-WLD-110",
+        "key": "hoshiumi_wonder_resort_entrance_day",
+        "path": "images/assets/bg/bg_hoshiumi_wonder_resort_entrance_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "fcff8c30a41f1915538d2fa58a46d442cdb772ae2749a59b73ecc40c7e8a5fa5"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回249セル読み戻し一致",
+        "assetCommit": "361c3bad573876745b84ec4e61073c7ae436f2ee",
+        "verifiedAtHead": "3a229989e82b02646f747bf3296626da16ab12d6",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "d3d636f4a6b6d69fb060e80497e361e5f38734f5"
+    },
+    {
+      "date": "2026-10-30",
+      "landmark": "LM-082",
+      "facility": "FAC-027",
+      "space": "SPACE-LM082-ENTRANCE",
+      "name": "蒼波メガシーパーク 代表入口・夜（初版外観案）",
+      "canon": "隣県沿岸部、新幹線＋在来線で日帰り圏、市外海洋テーマパーク。巨大水族館/イルカショー/ナイトアクアリウム/海辺ホテルはイベント特徴。通年夏・冬夜が強い。",
+      "proposal": "入口だけの夜案。低い白い波形庇と濃青ガラス/淡い水色照明、左チケット/右出口、中央乾いた入場前広場、奥控えめな展示ドーム。ショー/ホテル/内観を追加しない。",
+      "unconfirmed": "家具/間取り/設備/採否/正確寸法未確定。住所・居住階数・海坂の位置関係を確定しない。LM-077住居/職場の区別・VIPとの同一性/接続は未確定。テーマパークの全館構成/鉄道経路を追加しない。",
+      "sources": {
+        "world": "02_ランドマーク LM-082",
+        "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の固有名/別名検索2組・scenario/v039本文を照合、専用5画像未発見。既存BG-167/BG-157/交換所WebPを実画素参照。朔夜導入と使用差分表も確認。未発見は不存在の断定ではない。",
+        "references": []
+      },
+      "qc": {
+        "generated": true,
+        "visuallyInspected": true,
+        "checks": "人物なし、用途/小物/窓扉/通行/ADV余白を目視確認。LM-078/080は実画像を参照して扉枠・レンガ・黒柵・淡灰角タイル/暖色室内を比較。テーマパークは入口各1枚。寸法・階段/EV・住所/方位は未確定。",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "asset": {
+        "bg": "BG-187",
+        "img": "IMG-WLD-111",
+        "key": "aonami_megaseapark_entrance_night",
+        "path": "images/assets/bg/bg_aonami_megaseapark_entrance_night.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "34c68013ec525d07d1d1d84923321c0b9573b3bb5172c8b373f6c8fdfdb6fe33"
+      },
+      "status": {
+        "generated": true,
+        "visuallyInspected": true,
+        "ledger": "登録/今回249セル読み戻し一致",
+        "assetCommit": "3a229989e82b02646f747bf3296626da16ab12d6",
+        "verifiedAtHead": "3a229989e82b02646f747bf3296626da16ab12d6",
+        "catalog": "path/SPACE/新規key一意照合済",
+        "remote": "remote main実バイトSHA256一致",
+        "adoption": "未確定",
+        "liveScreen": "未確認"
+      },
+      "verificationParentHead": "361c3bad573876745b84ec4e61073c7ae436f2ee"
+    }
+  ],
+  "scopeCounts": {
+    "total": 50,
+    "newFirstDrafts": 20,
+    "existingLinkedQC": 4,
+    "notFound": 26,
+    "needsRegeneration": 0
+  },
+  "references": {
+    "pixels": [
+      "既存BG-167店長マンション前の夜道",
+      "既存BG-157つくも地下VIP",
+      "既存交換カウンターimages/assets/bgev/bg_item_exchange_counter.webp",
+      "新規BG-184室内をBG-185ベランダの生成参照に使用"
+    ],
+    "texts": [
+      "02_ランドマーク LM-077〜082",
+      "08_背景アセット A5:L186",
+      "09_空間・間取り管理 A5:O109",
+      "03_建物施設 A2:L25",
+      "scenario/v039/events/shop_exchange_intro_sakuya.json",
+      "program/docs/sakuya_usage.md",
+      "scenario/v039/events/yozora_affection_50_00_main.json",
+      "scenario/v039/backgroundCatalog.js"
+    ],
+    "searchLimits": "Drive画像名の固有名/別名2組は結果0。main全画像名とscenario/v039本文検索では5対象専用背景未発見。未発見は不存在を意味しない。main全テキストの広域git grepは途中中止のため全件照合とは扱わない。"
+  },
+  "unconfirmed": [
+    "全5点の採否/正確寸法/立ち絵重ね/実画面",
+    "LM-077 自室か夜側施設か、LM-034と同一室/別室か、直接接続方式",
+    "店長宅の住所/住戸番号/居住階数、既存海景・坂道との位置関係",
+    "テーマパークの詳細施設/路線経路/全館配置は設計対象外",
+    "彩愛の普通家庭育ちと屋敷編の原設定差（既存記録維持）"
+  ],
+  "existingQCFindings": [
+    {
+      "target": "08_背景アセット BG-076 / 09 SPACE-TSUKUMO-EXCHANGE-COUNTER",
+      "finding": "既存台帳はbg_item_exchange_counter.png表記だが現HEADにPNGなし。実在はimages/assets/bgev/bg_item_exchange_counter.webp。今回生成参照は実WebPを取得し目視。既存カタログ/シナリオはWebP参照、全catalog path欠落0。既存台帳行の整流は残件として記録し、本まとまりでは変更しない。",
+      "verifiedAtHead": "3a229989e82b02646f747bf3296626da16ab12d6"
+    }
+  ],
+  "delivery": "GitHub main配置。Drive画像転記なし。ローカルZIPを外部納品済みとは扱わない。"
+}

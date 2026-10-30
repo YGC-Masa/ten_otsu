@@ -4,8 +4,8 @@
   "counts": {
     "total": 50,
     "existing": 4,
-    "newFirstDrafts": 15,
-    "notFound": 31,
+    "newFirstDrafts": 20,
+    "notFound": 26,
     "needsRegeneration": 0
   },
   "items": [
@@ -366,22 +366,48 @@
     {
       "id": "LM-077",
       "facility": "朔夜の青紫ネオンルーム",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "採否/追加原設定照合/実画面/寸法/住居用途・VIP同一性/接続",
+      "visual": "新規1枚目視QC済。用途/素材/窓扉/入口・通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-183",
+        "img": "IMG-WLD-107",
+        "key": "sakuya_blue_violet_neon_room_midnight",
+        "path": "images/assets/bg/bg_sakuya_blue_violet_neon_room_midnight.webp",
+        "size": [
+          1670,
+          942
+        ],
+        "sha256": "ac196371bcb9702b990f8122cbccfad9c5745ffec251bb5c89ef5988392c6f69"
+      },
+      "verifiedAtHead": "3a229989e82b02646f747bf3296626da16ab12d6",
+      "assetCommit": "87f6710976286b6ec0e5edab78a697ec78ae043b"
     },
     {
       "id": "LM-078",
       "facility": "店長の自宅マンション",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "採否/追加原設定照合/実画面/寸法/住戸の階数・住所・海坂地理",
+      "visual": "新規1枚目視QC済。用途/素材/窓扉/入口・通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-184",
+        "img": "IMG-WLD-108",
+        "key": "manager_apartment_living_night",
+        "path": "images/assets/bg/bg_manager_apartment_living_night.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "df536319de08bd4fb9eb28c9d679496a662cd46a48da0e11f4c59b5f9c59351e"
+      },
+      "verifiedAtHead": "3a229989e82b02646f747bf3296626da16ab12d6",
+      "assetCommit": "d98f49a1042df3cbb2c0ae8f12f01754756f48f7"
     },
     {
       "id": "LM-079",
@@ -424,32 +450,71 @@
     {
       "id": "LM-080",
       "facility": "店長マンションの小さなベランダ",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "採否/追加原設定照合/実画面/寸法/住戸の階数・住所・海坂地理",
+      "visual": "新規1枚目視QC済。用途/素材/窓扉/入口・通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-185",
+        "img": "IMG-WLD-109",
+        "key": "manager_apartment_balcony_night",
+        "path": "images/assets/bg/bg_manager_apartment_balcony_night.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "c9653b7a94ffbc2fc0621e1666c69b87193e0ca86512e797b1b082625ad6baa5"
+      },
+      "verifiedAtHead": "3a229989e82b02646f747bf3296626da16ab12d6",
+      "assetCommit": "d3d636f4a6b6d69fb060e80497e361e5f38734f5"
     },
     {
       "id": "LM-081",
       "facility": "星海ワンダーリゾート",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "採否/追加原設定照合/実画面/寸法/代表入口案の採否（内部拡張なし）",
+      "visual": "新規1枚目視QC済。用途/素材/窓扉/入口・通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-186",
+        "img": "IMG-WLD-110",
+        "key": "hoshiumi_wonder_resort_entrance_day",
+        "path": "images/assets/bg/bg_hoshiumi_wonder_resort_entrance_day.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "fcff8c30a41f1915538d2fa58a46d442cdb772ae2749a59b73ecc40c7e8a5fa5"
+      },
+      "verifiedAtHead": "3a229989e82b02646f747bf3296626da16ab12d6",
+      "assetCommit": "361c3bad573876745b84ec4e61073c7ae436f2ee"
     },
     {
       "id": "LM-082",
       "facility": "蒼波メガシーパーク",
-      "classification": "未発見",
+      "classification": "新規初版制作済",
       "candidates": [],
       "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
-      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
-      "visual": "専用候補の実画素未確認",
-      "regenerate": "現時点では指示しない"
+      "next": "採否/追加原設定照合/実画面/寸法/代表入口案の採否（内部拡張なし）",
+      "visual": "新規1枚目視QC済。用途/素材/窓扉/入口・通行/ADV余白を確認",
+      "regenerate": "現時点では指示しない",
+      "newAsset": {
+        "bg": "BG-187",
+        "img": "IMG-WLD-111",
+        "key": "aonami_megaseapark_entrance_night",
+        "path": "images/assets/bg/bg_aonami_megaseapark_entrance_night.webp",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "34c68013ec525d07d1d1d84923321c0b9573b3bb5172c8b373f6c8fdfdb6fe33"
+      },
+      "verifiedAtHead": "3a229989e82b02646f747bf3296626da16ab12d6",
+      "assetCommit": "3a229989e82b02646f747bf3296626da16ab12d6"
     },
     {
       "id": "LM-083",
@@ -768,5 +833,5 @@
   ],
   "methodLimit": "一次照合。未発見46件を未制作確定にしない。要再生成0件は品質承認ではなく再生成判断未実施。既存候補4施設はリンク候補記録のみ、正本設定の変更/再生成なし。",
   "followupHead": "13df15865ddd0e0af18ef2a17b7d71ce00e98796",
-  "latestVerificationHead": "782e470b1af6153c229679ba8301298716327dd8"
+  "latestVerificationHead": "3a229989e82b02646f747bf3296626da16ab12d6"
 }
