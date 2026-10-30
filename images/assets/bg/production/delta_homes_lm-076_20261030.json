@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-076",
+  "facility": "FAC-024",
+  "space": "SPACE-LM076-WORKDESK",
+  "name": "ひかるの作業机 夜（所在地未確定の自室案）",
+  "canon": "テックラボつくも周辺/百瀬ひかる/自室・自作PC・部品整理・徹夜作業・差し入れ/夜",
+  "proposal": "左自作PC机/整理引出し、右個人棚と差し入れ/来客腰掛け、奥閉カーテン/室内扉。外景・住所・建物階数は描かない",
+  "unconfirmed": "家具/間取り/設備/採否/正確寸法未確定。家族人数/全館階数/所有者/住所を追加しない。LM-076は建物と階数も未確定。",
+  "sources": {
+    "world": "02_ランドマーク LM-076",
+    "search": "main画像名・台帳・Drive画像名(姓/人物/部屋)と499テキストを照合、専用背景未発見。未発見は不存在の断定ではない。intro個別5ファイルは取得できず未確認。職場bg011・汎用bg020は流用しない。",
+    "references": []
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、用途/小物/窓扉/通行/中央ADV余白を目視確認。LM-075は既存外観参照で窓を3分割へ修正。階段/EV方式は描かず未確定。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-182",
+    "img": "IMG-WLD-106",
+    "key": "momose_hikaru_private_workdesk_night",
+    "path": "images/assets/bg/bg_momose_hikaru_private_workdesk_night.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "9820d5ac2c81a84a1a098a1ab673135aca6559107771ac5e27d386d60f9ab0f7"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "a2ac31e6ac5ce94f0787e5db6629abfea5ea94e5"
+}

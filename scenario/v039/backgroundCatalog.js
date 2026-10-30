@@ -720,3 +720,14 @@
     "status": "住居初版案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-076 residential proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "momose_hikaru_private_workdesk_night": {
+    "name": "ひかるの作業机 夜（所在地未確定の自室案）",
+    "path": "images/assets/bg/bg_momose_hikaru_private_workdesk_night.webp",
+    "spaceId": "SPACE-LM076-WORKDESK",
+    "time": "night",
+    "status": "住居初版案/間取り・設備・採否未確定"
+  }
+});})();
