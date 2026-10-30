@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-077",
+  "facility": "FAC-004",
+  "space": "SPACE-LM077-NEON",
+  "name": "朔夜の青紫ネオンルーム 深夜（用途未確定の会話室案）",
+  "canon": "つくも地下/夜側、自室?/夜側施設、朔夜、秘密の会話/夜の約束/異質な静けさ、通年深夜。住居確定根拠なし。",
+  "proposal": "無窓の小さな会話室案。青紫間接光・濃紺壁/黒建具・木床、右二人相談席と低卓、左少数の閉じた小物箱棚、奥閉扉。LM-034VIPとの同一/別室や直接接続は未確定。",
+  "unconfirmed": "家具/間取り/設備/採否/正確寸法未確定。住所・居住階数・海坂の位置関係を確定しない。LM-077住居/職場の区別・VIPとの同一性/接続は未確定。テーマパークの全館構成/鉄道経路を追加しない。",
+  "sources": {
+    "world": "02_ランドマーク LM-077",
+    "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の固有名/別名検索2組・scenario/v039本文を照合、専用5画像未発見。既存BG-167/BG-157/交換所WebPを実画素参照。朔夜導入と使用差分表も確認。未発見は不存在の断定ではない。",
+    "references": [
+      "/workspace/delta_homes4/bg_item_exchange_counter.webp",
+      "/workspace/delta_homes4/bg_tsukumo_basement_vip_night.webp"
+    ]
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、用途/小物/窓扉/通行/ADV余白を目視確認。LM-078/080は実画像を参照して扉枠・レンガ・黒柵・淡灰角タイル/暖色室内を比較。テーマパークは入口各1枚。寸法・階段/EV・住所/方位は未確定。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-183",
+    "img": "IMG-WLD-107",
+    "key": "sakuya_blue_violet_neon_room_midnight",
+    "path": "images/assets/bg/bg_sakuya_blue_violet_neon_room_midnight.webp",
+    "size": [
+      1670,
+      942
+    ],
+    "sha256": "ac196371bcb9702b990f8122cbccfad9c5745ffec251bb5c89ef5988392c6f69"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "4a333a3a715e3005a0217761e6557f09efceae9d"
+}

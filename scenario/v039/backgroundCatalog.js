@@ -731,3 +731,14 @@
     "status": "住居初版案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-077 landmark proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "sakuya_blue_violet_neon_room_midnight": {
+    "name": "朔夜の青紫ネオンルーム 深夜（用途未確定の会話室案）",
+    "path": "images/assets/bg/bg_sakuya_blue_violet_neon_room_midnight.webp",
+    "spaceId": "SPACE-LM077-NEON",
+    "time": "midnight",
+    "status": "初版空間案/間取り・設備・採否未確定"
+  }
+});})();
