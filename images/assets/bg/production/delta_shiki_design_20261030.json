@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-30",
+  "group": "shiki",
+  "facility": "みなと公園 イベント広場（LM-046共用提案）",
+  "canon": "LM-046はみなと公園隣接。既存SPACE-MINATO-EVENTPLAZAは公園内。両者の同一根拠は未確認。",
+  "proposal": "連続敷地/共用運用の初版案として、既存BG-029を母体に春の花市差分を制作。新しい別広場/SPACEは増やさない。隣接と公園内の設定を確定変更せず、同一/共用の採否を未解決として残す。既存BG-030の別フェス画像はそのまま保持。",
+  "references": [
+    "bg_minato_event_plaza.webp",
+    "bg_minato_event_plaza_festival.webp"
+  ],
+  "qc": "実画素比較：常設屋根/柱/階段、円形舗装、街灯、手前名札花壇、海景/灯台を維持。仮設花棚とテントを端に置き中央人物余白を確保。",
+  "assets": [
+    {
+      "key": "minato_shiki_flower_market_day",
+      "name": "日和坂四季まつり 春の花市 昼（広場共用案）",
+      "lm": "LM-046",
+      "lmRow": 46,
+      "space": "SPACE-MINATO-EVENTPLAZA",
+      "spaceRow": 17,
+      "group": "shiki",
+      "time": "day",
+      "ref": "/workspace/delta_festivals/bg_minato_event_plaza.webp",
+      "bg": "BG-160",
+      "img": "IMG-WLD-084",
+      "note": "みなと公園既存BG-029の花市差分。LM-046との連続敷地共用は提案で、同一地点の確定ではない。新SPACEなし。",
+      "repoPath": "images/assets/bg/bg_minato_shiki_flower_market_day.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "8a390f5ab9a4cde5c7fa2ddf5617c589bd4001a1fd424ef705420e4f306bcc61",
+      "blob": "0bc7a97b602aebab10123894065a3831519721ad"
+    }
+  ],
+  "status": {
+    "generated": 1,
+    "visuallyInspected": 1,
+    "ledger": "登録/読み戻しは後続工程で確認",
+    "remote": "本記録と同コミットの画像/カタログを後続で検証",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "limitations": "厳密寸法/地形方位/設備/衛生安全監修/立ち絵重ねは未実施。生成1672×941 WebP90、本番サイズ統一は残件。プログラム/シナリオ割当は追加しない。"
+}

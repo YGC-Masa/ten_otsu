@@ -480,3 +480,16 @@
     "status": "初版提案/採否未確定"
   }
 });})();
+
+
+/* Delta: shiki facility proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "minato_shiki_flower_market_day": {
+    "name": "日和坂四季まつり 春の花市 昼（広場共用案）",
+    "path": "images/assets/bg/bg_minato_shiki_flower_market_day.webp",
+    "spaceId": "SPACE-MINATO-EVENTPLAZA",
+    "time": "day",
+    "season": "spring",
+    "status": "初版提案/採否未確定"
+  }
+});})();
