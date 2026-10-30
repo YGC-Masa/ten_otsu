@@ -1,0 +1,2493 @@
+{
+  "head": "025f340f05f7139116edc13b7a869301b7aa5a57",
+  "records": [
+    {
+      "bg": "BG-061",
+      "name": "若葉中央公園",
+      "row": 65,
+      "sheetPathBefore": "images/assets/bg/bg_wakaba_central_park_winter_evening.png",
+      "path": "images/assets/bg/bg_wakaba_central_park_winter_evening.webp",
+      "pathCorrection": true,
+      "sha256": "e27c1977bb2db4417930275dc01a648a2124cc31b6fd9bd68c827d98d3b0dbf9",
+      "bytes": 2352640,
+      "gitBytesSha256": "e27c1977bb2db4417930275dc01a648a2124cc31b6fd9bd68c827d98d3b0dbf9",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "既存実装/台帳追補",
+      "spaceCell": "SPACE-WAKABA-CENTRAL-PARK",
+      "notes": "雪なし冬背景",
+      "catalog": [
+        {
+          "key": "wakaba_central_park_winter_evening",
+          "path": "images/assets/bg/bg_wakaba_central_park_winter_evening.webp",
+          "spaceId": null
+        }
+      ],
+      "spaces": [
+        {
+          "row": 28,
+          "id": "SPACE-WAKABA-CENTRAL-PARK",
+          "bg": "BG-059,BG-060,BG-061,BG-062,BG-063,BG-135",
+          "paths": "images/assets/bg/bg_wakaba_central_park_winter_morning.png ; images/assets/bg/bg_wakaba_central_park_winter_day.png ; images/assets/bg/bg_wakaba_central_park_winter_evening.png ; images/assets/bg/bg_wakaba_central_park_winter_night.png ; images/assets/bgev/bg_park_spring.png ; images/assets/bg/bg_hiyorizaka_sakura_embankment_spring_day.webp",
+          "notes": "LM-012。townSpot id「wakaba_central_park」、scenario location id群とは分離。川沿い遊歩道は独立SPACE化しない。LM-037日和坂さくら堤も当面このSPACEの川沿い側/春季ランドマークとして参照するが、BG-063が堤構図を満たすかは未確定。\n2026-10-30 デルタ：BG-135 既存若葉公園の川沿い側を具体化した構図。独立SPACE追加なし。川の全市位置照合は未了。 実画面未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "wakaba_central_park_winter_evening",
+          "name": "若葉中央公園・冬・夕方（雪なし）",
+          "path": "images/assets/bg/bg_wakaba_central_park_winter_evening.webp",
+          "location": "若葉中央公園",
+          "time": "evening",
+          "season": "winter",
+          "snow": false,
+          "status": "正式採用"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-062",
+      "name": "若葉中央公園",
+      "row": 66,
+      "sheetPathBefore": "images/assets/bg/bg_wakaba_central_park_winter_night.png",
+      "path": "images/assets/bg/bg_wakaba_central_park_winter_night.webp",
+      "pathCorrection": true,
+      "sha256": "a31b08aba242d5a972a39ab13386b82c00f35d37b40d0417c14851fc71628baf",
+      "bytes": 1906454,
+      "gitBytesSha256": "a31b08aba242d5a972a39ab13386b82c00f35d37b40d0417c14851fc71628baf",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "既存実装/台帳追補",
+      "spaceCell": "SPACE-WAKABA-CENTRAL-PARK",
+      "notes": "夜空シナリオで実使用",
+      "catalog": [
+        {
+          "key": "wakaba_central_park_winter_night",
+          "path": "images/assets/bg/bg_wakaba_central_park_winter_night.webp",
+          "spaceId": null
+        }
+      ],
+      "spaces": [
+        {
+          "row": 28,
+          "id": "SPACE-WAKABA-CENTRAL-PARK",
+          "bg": "BG-059,BG-060,BG-061,BG-062,BG-063,BG-135",
+          "paths": "images/assets/bg/bg_wakaba_central_park_winter_morning.png ; images/assets/bg/bg_wakaba_central_park_winter_day.png ; images/assets/bg/bg_wakaba_central_park_winter_evening.png ; images/assets/bg/bg_wakaba_central_park_winter_night.png ; images/assets/bgev/bg_park_spring.png ; images/assets/bg/bg_hiyorizaka_sakura_embankment_spring_day.webp",
+          "notes": "LM-012。townSpot id「wakaba_central_park」、scenario location id群とは分離。川沿い遊歩道は独立SPACE化しない。LM-037日和坂さくら堤も当面このSPACEの川沿い側/春季ランドマークとして参照するが、BG-063が堤構図を満たすかは未確定。\n2026-10-30 デルタ：BG-135 既存若葉公園の川沿い側を具体化した構図。独立SPACE追加なし。川の全市位置照合は未了。 実画面未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "wakaba_central_park_winter_night",
+          "name": "若葉中央公園・冬・夜（雪なし）",
+          "path": "images/assets/bg/bg_wakaba_central_park_winter_night.webp",
+          "location": "若葉中央公園",
+          "time": "night",
+          "season": "winter",
+          "snow": false,
+          "status": "正式採用"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-063",
+      "name": "若葉中央公園",
+      "row": 67,
+      "sheetPathBefore": "images/assets/bgev/bg_park_spring.png",
+      "path": "images/assets/bgev/bg_park_spring.webp",
+      "pathCorrection": true,
+      "sha256": "b8840ee3447941ae432756ab4eece9ab3da8dedd085adfccb90cd66cb69cffe5",
+      "bytes": 2292744,
+      "gitBytesSha256": "b8840ee3447941ae432756ab4eece9ab3da8dedd085adfccb90cd66cb69cffe5",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "既存実装/若葉春シナリオ正式紐付け",
+      "spaceCell": "SPACE-WAKABA-CENTRAL-PARK",
+      "notes": "春の既存背景。若葉中央公園専用ファイルへの改名はしない",
+      "catalog": [],
+      "spaces": [
+        {
+          "row": 28,
+          "id": "SPACE-WAKABA-CENTRAL-PARK",
+          "bg": "BG-059,BG-060,BG-061,BG-062,BG-063,BG-135",
+          "paths": "images/assets/bg/bg_wakaba_central_park_winter_morning.png ; images/assets/bg/bg_wakaba_central_park_winter_day.png ; images/assets/bg/bg_wakaba_central_park_winter_evening.png ; images/assets/bg/bg_wakaba_central_park_winter_night.png ; images/assets/bgev/bg_park_spring.png ; images/assets/bg/bg_hiyorizaka_sakura_embankment_spring_day.webp",
+          "notes": "LM-012。townSpot id「wakaba_central_park」、scenario location id群とは分離。川沿い遊歩道は独立SPACE化しない。LM-037日和坂さくら堤も当面このSPACEの川沿い側/春季ランドマークとして参照するが、BG-063が堤構図を満たすかは未確定。\n2026-10-30 デルタ：BG-135 既存若葉公園の川沿い側を具体化した構図。独立SPACE追加なし。川の全市位置照合は未了。 実画面未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "park_spring",
+          "name": "若葉中央公園",
+          "path": "images/assets/bgev/bg_park_spring.webp",
+          "spaceId": "SPACE-WAKABA-CENTRAL-PARK",
+          "status": "既存実装/若葉春シナリオ正式紐付け"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-064",
+      "name": "日和坂マリンピア 海中トンネル",
+      "row": 68,
+      "sheetPathBefore": "images/assets/bg/bg_marinpia_aqua_tunnel.webp",
+      "path": "images/assets/bg/bg_marinpia_aqua_tunnel.webp",
+      "pathCorrection": false,
+      "sha256": "22c2b3bf8ddcb70a770748ad6070c78eeb786343ebe41e67b65cbf9c78a8403f",
+      "bytes": 814124,
+      "gitBytesSha256": "22c2b3bf8ddcb70a770748ad6070c78eeb786343ebe41e67b65cbf9c78a8403f",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1920,
+        1080
+      ],
+      "adoptionPreserved": "正式採用/生成済み",
+      "spaceCell": "SPACE-LM010-AQUA-TUNNEL",
+      "notes": "建築アンカーv1準拠。半円形アクリルトンネル、中央一点透視、青い水槽光。PNG/WebP正式書出し済み。",
+      "catalog": [],
+      "spaces": [
+        {
+          "row": 27,
+          "id": "SPACE-LM010-AQUA-TUNNEL",
+          "bg": "BG-064",
+          "paths": "images/assets/bg/bg_marinpia_aqua_tunnel.webp",
+          "notes": "LM-010。placeId「marinpia_aqua_tunnel」と参照接続。BG-064を正式背景として採用。既存シナリオbg_beach.jpgはBG-064への置換対象。建築アンカーv1固定。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "marinpia_aqua_tunnel",
+          "name": "日和坂マリンピア 海中トンネル",
+          "path": "images/assets/bg/bg_marinpia_aqua_tunnel.webp",
+          "spaceId": "SPACE-LM010-AQUA-TUNNEL",
+          "status": "正式採用/生成済み"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-065",
+      "name": "日和坂マリンピア 巨大メイン水槽",
+      "row": 69,
+      "sheetPathBefore": "images/assets/bg/bg_marinpia_main_tank.webp",
+      "path": "images/assets/bg/bg_marinpia_main_tank.webp",
+      "pathCorrection": false,
+      "sha256": "9cd513b5c9d7bdb6c7c147859932aee599fd85b87d0828a58936dcfd8aa6dbc9",
+      "bytes": 682272,
+      "gitBytesSha256": "9cd513b5c9d7bdb6c7c147859932aee599fd85b87d0828a58936dcfd8aa6dbc9",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1920,
+        1080
+      ],
+      "adoptionPreserved": "正式採用/生成済み",
+      "spaceCell": "SPACE-LM010-MAIN-TANK",
+      "notes": "2層吹抜・正面ベンチ・左右回廊/階段・ジンベエザメ/エイ。",
+      "catalog": [],
+      "spaces": [
+        {
+          "row": 29,
+          "id": "SPACE-LM010-MAIN-TANK",
+          "bg": "BG-065",
+          "paths": "images/assets/bg/bg_marinpia_main_tank.webp",
+          "notes": "建築アンカーv1の基準背景。2層吹抜・正面ベンチ・左右回廊/階段を固定。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "marinpia_main_tank",
+          "name": "日和坂マリンピア 巨大メイン水槽",
+          "path": "images/assets/bg/bg_marinpia_main_tank.webp",
+          "spaceId": "SPACE-LM010-MAIN-TANK",
+          "status": "正式採用/生成済み"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-066",
+      "name": "日和坂マリンピア クラゲ幻想回廊",
+      "row": 70,
+      "sheetPathBefore": "images/assets/bg/bg_marinpia_jellyfish_gallery.webp",
+      "path": "images/assets/bg/bg_marinpia_jellyfish_gallery.webp",
+      "pathCorrection": false,
+      "sha256": "c27af1e898711ca53026a89869d1211de853293f05814ca2dc490e6d7b053c0c",
+      "bytes": 615528,
+      "gitBytesSha256": "c27af1e898711ca53026a89869d1211de853293f05814ca2dc490e6d7b053c0c",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1920,
+        1080
+      ],
+      "adoptionPreserved": "正式採用/生成済み",
+      "spaceCell": "SPACE-LM010-JELLYFISH",
+      "notes": "ミズクラゲ等の複数種展示。小型中心、逆さ/横向き/奥行きのある漂泳表現。",
+      "catalog": [],
+      "spaces": [
+        {
+          "row": 30,
+          "id": "SPACE-LM010-JELLYFISH",
+          "bg": "BG-066",
+          "paths": "images/assets/bg/bg_marinpia_jellyfish_gallery.webp",
+          "notes": "複数種を水槽別に展示。照明色を分け、クラゲの向き・姿勢は水流に沿ってランダム。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "marinpia_jellyfish_gallery",
+          "name": "日和坂マリンピア クラゲ幻想回廊",
+          "path": "images/assets/bg/bg_marinpia_jellyfish_gallery.webp",
+          "spaceId": "SPACE-LM010-JELLYFISH",
+          "status": "正式採用/生成済み"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-067",
+      "name": "日和坂総合運動公園",
+      "row": 71,
+      "sheetPathBefore": "images/assets/bg/bg_hiyorizaka_sports_park_early_morning.png",
+      "path": "images/assets/bg/bg_hiyorizaka_sports_park_early_morning.webp",
+      "pathCorrection": true,
+      "sha256": "8eaa3297a851b28824edde53571d8f97bd4b758d64d3f2245528a43b6e685eb1",
+      "bytes": 1985258,
+      "gitBytesSha256": "8eaa3297a851b28824edde53571d8f97bd4b758d64d3f2245528a43b6e685eb1",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "既存実装/台帳追補",
+      "spaceCell": "SPACE-HIYORIZAKA-SPORTS-PARK",
+      "notes": "総合運動公園メイン景観",
+      "catalog": [
+        {
+          "key": "hiyorizaka_sports_park_early_morning",
+          "path": "images/assets/bg/bg_hiyorizaka_sports_park_early_morning.webp",
+          "spaceId": null
+        }
+      ],
+      "spaces": [
+        {
+          "row": 50,
+          "id": "SPACE-HIYORIZAKA-SPORTS-PARK",
+          "bg": "BG-067,BG-068,BG-069,BG-070,BG-071,BG-073",
+          "paths": "images/assets/bg/bg_hiyorizaka_sports_park_early_morning.png ; images/assets/bg/bg_hiyorizaka_sports_park_morning.png ; images/assets/bg/bg_hiyorizaka_sports_park_day.png ; images/assets/bg/bg_hiyorizaka_sports_park_evening.png ; images/assets/bg/bg_hiyorizaka_sports_park_midnight.png ; images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.png",
+          "notes": "LM-020。BG-073はイベント状態。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "hiyorizaka_sports_park_early_morning",
+          "name": "日和坂総合運動公園・早朝",
+          "path": "images/assets/bg/bg_hiyorizaka_sports_park_early_morning.webp",
+          "status": "正式採用"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-068",
+      "name": "日和坂総合運動公園",
+      "row": 72,
+      "sheetPathBefore": "images/assets/bg/bg_hiyorizaka_sports_park_morning.png",
+      "path": "images/assets/bg/bg_hiyorizaka_sports_park_morning.webp",
+      "pathCorrection": true,
+      "sha256": "edbbd9e4757964929d9eea82bb0a23c395c052bbde357202e1c021f7b5d977ae",
+      "bytes": 2177736,
+      "gitBytesSha256": "edbbd9e4757964929d9eea82bb0a23c395c052bbde357202e1c021f7b5d977ae",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "既存実装/台帳追補",
+      "spaceCell": "SPACE-HIYORIZAKA-SPORTS-PARK",
+      "notes": "総合運動公園メイン景観",
+      "catalog": [
+        {
+          "key": "hiyorizaka_sports_park_morning",
+          "path": "images/assets/bg/bg_hiyorizaka_sports_park_morning.webp",
+          "spaceId": null
+        }
+      ],
+      "spaces": [
+        {
+          "row": 50,
+          "id": "SPACE-HIYORIZAKA-SPORTS-PARK",
+          "bg": "BG-067,BG-068,BG-069,BG-070,BG-071,BG-073",
+          "paths": "images/assets/bg/bg_hiyorizaka_sports_park_early_morning.png ; images/assets/bg/bg_hiyorizaka_sports_park_morning.png ; images/assets/bg/bg_hiyorizaka_sports_park_day.png ; images/assets/bg/bg_hiyorizaka_sports_park_evening.png ; images/assets/bg/bg_hiyorizaka_sports_park_midnight.png ; images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.png",
+          "notes": "LM-020。BG-073はイベント状態。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "hiyorizaka_sports_park_morning",
+          "name": "日和坂総合運動公園・朝",
+          "path": "images/assets/bg/bg_hiyorizaka_sports_park_morning.webp",
+          "status": "正式採用"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-069",
+      "name": "日和坂総合運動公園",
+      "row": 73,
+      "sheetPathBefore": "images/assets/bg/bg_hiyorizaka_sports_park_day.png",
+      "path": "images/assets/bg/bg_hiyorizaka_sports_park_day.webp",
+      "pathCorrection": true,
+      "sha256": "9672f952b87e3141e507cf99e2ea3363ccf240c26ce9550eed9457dc62e2085e",
+      "bytes": 2205288,
+      "gitBytesSha256": "9672f952b87e3141e507cf99e2ea3363ccf240c26ce9550eed9457dc62e2085e",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "既存実装/台帳追補",
+      "spaceCell": "SPACE-HIYORIZAKA-SPORTS-PARK",
+      "notes": "総合運動公園メイン景観",
+      "catalog": [
+        {
+          "key": "hiyorizaka_sports_park_day",
+          "path": "images/assets/bg/bg_hiyorizaka_sports_park_day.webp",
+          "spaceId": null
+        }
+      ],
+      "spaces": [
+        {
+          "row": 50,
+          "id": "SPACE-HIYORIZAKA-SPORTS-PARK",
+          "bg": "BG-067,BG-068,BG-069,BG-070,BG-071,BG-073",
+          "paths": "images/assets/bg/bg_hiyorizaka_sports_park_early_morning.png ; images/assets/bg/bg_hiyorizaka_sports_park_morning.png ; images/assets/bg/bg_hiyorizaka_sports_park_day.png ; images/assets/bg/bg_hiyorizaka_sports_park_evening.png ; images/assets/bg/bg_hiyorizaka_sports_park_midnight.png ; images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.png",
+          "notes": "LM-020。BG-073はイベント状態。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "hiyorizaka_sports_park_day",
+          "name": "日和坂総合運動公園・昼",
+          "path": "images/assets/bg/bg_hiyorizaka_sports_park_day.webp",
+          "status": "正式採用"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-070",
+      "name": "日和坂総合運動公園",
+      "row": 74,
+      "sheetPathBefore": "images/assets/bg/bg_hiyorizaka_sports_park_evening.png",
+      "path": "images/assets/bg/bg_hiyorizaka_sports_park_evening.webp",
+      "pathCorrection": true,
+      "sha256": "7087a8bebc93e40babe1f35a00d68f270ba6385f91e99c6afc77d4778a8a1a9c",
+      "bytes": 2105606,
+      "gitBytesSha256": "7087a8bebc93e40babe1f35a00d68f270ba6385f91e99c6afc77d4778a8a1a9c",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "既存実装/台帳追補",
+      "spaceCell": "SPACE-HIYORIZAKA-SPORTS-PARK",
+      "notes": "夜空シナリオで夕方として使用",
+      "catalog": [
+        {
+          "key": "hiyorizaka_sports_park_evening",
+          "path": "images/assets/bg/bg_hiyorizaka_sports_park_evening.webp",
+          "spaceId": null
+        }
+      ],
+      "spaces": [
+        {
+          "row": 50,
+          "id": "SPACE-HIYORIZAKA-SPORTS-PARK",
+          "bg": "BG-067,BG-068,BG-069,BG-070,BG-071,BG-073",
+          "paths": "images/assets/bg/bg_hiyorizaka_sports_park_early_morning.png ; images/assets/bg/bg_hiyorizaka_sports_park_morning.png ; images/assets/bg/bg_hiyorizaka_sports_park_day.png ; images/assets/bg/bg_hiyorizaka_sports_park_evening.png ; images/assets/bg/bg_hiyorizaka_sports_park_midnight.png ; images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.png",
+          "notes": "LM-020。BG-073はイベント状態。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "hiyorizaka_sports_park_evening",
+          "name": "日和坂総合運動公園・夕方",
+          "path": "images/assets/bg/bg_hiyorizaka_sports_park_evening.webp",
+          "status": "正式採用"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-071",
+      "name": "日和坂総合運動公園",
+      "row": 75,
+      "sheetPathBefore": "images/assets/bg/bg_hiyorizaka_sports_park_midnight.png",
+      "path": "images/assets/bg/bg_hiyorizaka_sports_park_midnight.webp",
+      "pathCorrection": true,
+      "sha256": "6d27213e68871cf2ed026fe0b066cd1b01757f4e3040c54dffc9208e737f46a0",
+      "bytes": 1641436,
+      "gitBytesSha256": "6d27213e68871cf2ed026fe0b066cd1b01757f4e3040c54dffc9208e737f46a0",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "既存実装/台帳追補",
+      "spaceCell": "SPACE-HIYORIZAKA-SPORTS-PARK",
+      "notes": "scenario location idとは分離",
+      "catalog": [
+        {
+          "key": "hiyorizaka_sports_park_midnight",
+          "path": "images/assets/bg/bg_hiyorizaka_sports_park_midnight.webp",
+          "spaceId": null
+        },
+        {
+          "key": "hiyorizaka_sports_park_night",
+          "path": "images/assets/bg/bg_hiyorizaka_sports_park_midnight.webp",
+          "spaceId": null
+        }
+      ],
+      "spaces": [
+        {
+          "row": 50,
+          "id": "SPACE-HIYORIZAKA-SPORTS-PARK",
+          "bg": "BG-067,BG-068,BG-069,BG-070,BG-071,BG-073",
+          "paths": "images/assets/bg/bg_hiyorizaka_sports_park_early_morning.png ; images/assets/bg/bg_hiyorizaka_sports_park_morning.png ; images/assets/bg/bg_hiyorizaka_sports_park_day.png ; images/assets/bg/bg_hiyorizaka_sports_park_evening.png ; images/assets/bg/bg_hiyorizaka_sports_park_midnight.png ; images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.png",
+          "notes": "LM-020。BG-073はイベント状態。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "hiyorizaka_sports_park_midnight",
+          "name": "日和坂総合運動公園・深夜",
+          "path": "images/assets/bg/bg_hiyorizaka_sports_park_midnight.webp",
+          "status": "正式採用"
+        },
+        {
+          "key": "hiyorizaka_sports_park_night",
+          "name": "日和坂総合運動公園・夜（深夜背景互換）",
+          "path": "images/assets/bg/bg_hiyorizaka_sports_park_midnight.webp",
+          "status": "正式採用・互換"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-072",
+      "name": "日和坂総合運動公園 弓道場",
+      "row": 76,
+      "sheetPathBefore": "images/assets/bg/bg_hiyorizaka_sports_park_kyudojo_day.png",
+      "path": "images/assets/bg/bg_hiyorizaka_sports_park_kyudojo_day.webp",
+      "pathCorrection": true,
+      "sha256": "0b84e2cd046556099a5e5b137db54a116ff64eab5841538e0ea0ec20ef0f9af5",
+      "bytes": 1740044,
+      "gitBytesSha256": "0b84e2cd046556099a5e5b137db54a116ff64eab5841538e0ea0ec20ef0f9af5",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "既存実装/台帳追補",
+      "spaceCell": "SPACE-HIYORIZAKA-SPORTS-PARK-KYUDOJO",
+      "notes": "直接シナリオ背景使用は今回未確認",
+      "catalog": [
+        {
+          "key": "hiyorizaka_sports_park_kyudojo_day",
+          "path": "images/assets/bg/bg_hiyorizaka_sports_park_kyudojo_day.webp",
+          "spaceId": null
+        }
+      ],
+      "spaces": [
+        {
+          "row": 51,
+          "id": "SPACE-HIYORIZAKA-SPORTS-PARK-KYUDOJO",
+          "bg": "BG-072",
+          "paths": "images/assets/bg/bg_hiyorizaka_sports_park_kyudojo_day.png",
+          "notes": "LM-020。既存実ファイルを常設施設候補として整理。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "hiyorizaka_sports_park_kyudojo_day",
+          "name": "日和坂総合運動公園・弓道場・昼",
+          "path": "images/assets/bg/bg_hiyorizaka_sports_park_kyudojo_day.webp",
+          "status": "正式採用"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-073",
+      "name": "日和坂総合運動公園 武道イベント会場",
+      "row": 77,
+      "sheetPathBefore": "images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.png",
+      "path": "images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.webp",
+      "pathCorrection": true,
+      "sha256": "9a8e654ab8411dd97bb844bf59604b662cae3a6550540bdaf3b4d22c1c1a6a3a",
+      "bytes": 2080388,
+      "gitBytesSha256": "9a8e654ab8411dd97bb844bf59604b662cae3a6550540bdaf3b4d22c1c1a6a3a",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "既存実装/イベント差分",
+      "spaceCell": "SPACE-HIYORIZAKA-SPORTS-PARK",
+      "notes": "イベント状態として管理",
+      "catalog": [
+        {
+          "key": "hiyorizaka_sports_park_budokan_evening",
+          "path": "images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.webp",
+          "spaceId": null
+        },
+        {
+          "key": "hiyorizaka_sports_park_budokan",
+          "path": "images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.webp",
+          "spaceId": null
+        },
+        {
+          "key": "hiyorizaka_bujutsu_hounousai_stage_day",
+          "path": "images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.webp",
+          "spaceId": null
+        }
+      ],
+      "spaces": [
+        {
+          "row": 50,
+          "id": "SPACE-HIYORIZAKA-SPORTS-PARK",
+          "bg": "BG-067,BG-068,BG-069,BG-070,BG-071,BG-073",
+          "paths": "images/assets/bg/bg_hiyorizaka_sports_park_early_morning.png ; images/assets/bg/bg_hiyorizaka_sports_park_morning.png ; images/assets/bg/bg_hiyorizaka_sports_park_day.png ; images/assets/bg/bg_hiyorizaka_sports_park_evening.png ; images/assets/bg/bg_hiyorizaka_sports_park_midnight.png ; images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.png",
+          "notes": "LM-020。BG-073はイベント状態。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "hiyorizaka_sports_park_budokan_evening",
+          "name": "日和坂総合運動公園・武術演武奉納祭・広場特設演舞場（互換）",
+          "path": "images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.webp",
+          "status": "正式採用"
+        },
+        {
+          "key": "hiyorizaka_sports_park_budokan",
+          "name": "日和坂総合運動公園・武術演武奉納祭・広場特設演舞場（互換）",
+          "path": "images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.webp",
+          "status": "正式採用"
+        },
+        {
+          "key": "hiyorizaka_bujutsu_hounousai_stage_day",
+          "name": "日和坂市 武術演武奉納祭・広場特設演舞場",
+          "path": "images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.webp",
+          "status": "正式採用"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-074",
+      "name": "駅前あかり通り",
+      "row": 78,
+      "sheetPathBefore": "images/assets/bg/bg_akari_dori_night.webp",
+      "path": "images/assets/bg/bg_akari_dori_night.webp",
+      "pathCorrection": false,
+      "sha256": "afd9f8a4403164b92e745d260e32f32093a36d91e77c28eb09369ded5625a04e",
+      "bytes": 2805070,
+      "gitBytesSha256": "afd9f8a4403164b92e745d260e32f32093a36d91e77c28eb09369ded5625a04e",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1920,
+        1080
+      ],
+      "adoptionPreserved": "既存実装/台帳追補",
+      "spaceCell": "SPACE-LM109-AKARI-DORI",
+      "notes": "LM-022はイベントLM。LM-109空間整理時に接続 2026-10-30 LM-109/SPACE紐付け補完。正本IDとシナリオ・実画素一致。背景モブ保持。実画面未確認。",
+      "catalog": [
+        {
+          "key": "lm109_akari_dori_night",
+          "path": "images/assets/bg/bg_akari_dori_night.webp",
+          "spaceId": "SPACE-LM109-AKARI-DORI"
+        }
+      ],
+      "spaces": [
+        {
+          "row": 93,
+          "id": "SPACE-LM109-AKARI-DORI",
+          "bg": "BG-074",
+          "paths": "images/assets/bg/bg_akari_dori_night.webp",
+          "notes": "正本LM-109 背景ID akari_dori_night、scenario/v039/events/ayame_affection_50_02_key.json、60_00_main、yozora10_03。 実画素確認、再生成なし。実画面未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "lm109_akari_dori_night",
+          "name": "駅前あかり通り 夜（既存紐付け）",
+          "path": "images/assets/bg/bg_akari_dori_night.webp",
+          "spaceId": "SPACE-LM109-AKARI-DORI",
+          "time": "night",
+          "status": "既存紐付け/モブ保持"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-075",
+      "name": "テックラボつくも チューニング画面",
+      "row": 79,
+      "sheetPathBefore": "images/assets/bgev/bg_tsukumo_tuning.png",
+      "path": "images/assets/bgev/bg_tsukumo_tuning.webp",
+      "pathCorrection": true,
+      "sha256": "9c192db29a07ba3dfee735490201a657a1eb14b29ceab6cc25ff9ebf197c42a0",
+      "bytes": 1852978,
+      "gitBytesSha256": "9c192db29a07ba3dfee735490201a657a1eb14b29ceab6cc25ff9ebf197c42a0",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "既存実装/用途確定",
+      "spaceCell": "",
+      "notes": "物理SPACEではなくチューニングUI専用背景として管理",
+      "catalog": [],
+      "spaces": [],
+      "catalogAfter": [],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。",
+      "usageNote": "assets.jsの既存UI背景パスと一致。今回の共通プレイヤー試験は画像描画確認で、チューニング/交換UI固有画面の確認ではない。"
+    },
+    {
+      "bg": "BG-076",
+      "name": "テックラボつくも 交換カウンター",
+      "row": 80,
+      "sheetPathBefore": "images/assets/bgev/bg_item_exchange_counter.png",
+      "path": "images/assets/bgev/bg_item_exchange_counter.webp",
+      "pathCorrection": true,
+      "sha256": "2e9c1cb1c44b861543aebf9cda38519aa9940158523dcd8dba312bbac5d54950",
+      "bytes": 1593088,
+      "gitBytesSha256": "2e9c1cb1c44b861543aebf9cda38519aa9940158523dcd8dba312bbac5d54950",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1670,
+        941
+      ],
+      "adoptionPreserved": "既存実装/正規経路整理",
+      "spaceCell": "SPACE-TSUKUMO-EXCHANGE-COUNTER",
+      "notes": "削除先行禁止。正規パスをbg_item_exchange_counter.pngへ寄せ、参照更新後に互換経路を整理",
+      "catalog": [],
+      "spaces": [
+        {
+          "row": 60,
+          "id": "SPACE-TSUKUMO-EXCHANGE-COUNTER",
+          "bg": "BG-076",
+          "paths": "images/assets/bgev/bg_item_exchange_counter.png",
+          "notes": "LM-030。交換カウンター自体は夜限定にしない。夜は朔夜導入等の利用時間帯の一つ。"
+        }
+      ],
+      "catalogAfter": [],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。",
+      "usageNote": "assets.jsの既存UI背景パスと一致。今回の共通プレイヤー試験は画像描画確認で、チューニング/交換UI固有画面の確認ではない。"
+    },
+    {
+      "bg": "BG-077",
+      "name": "羽白湖畔カフェ＆ペンション ルミエール 駐車場側外観",
+      "row": 81,
+      "sheetPathBefore": "images/assets/bg/bg_lumiere_parking_side_day.webp",
+      "path": "images/assets/bg/bg_lumiere_parking_side_day.webp",
+      "pathCorrection": false,
+      "sha256": "783cb0f0c8e27578a52eaf792e190eb126bbc13431a1ea5fc4051ebacb9abe7f",
+      "bytes": 820956,
+      "gitBytesSha256": "783cb0f0c8e27578a52eaf792e190eb126bbc13431a1ea5fc4051ebacb9abe7f",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1920,
+        1080
+      ],
+      "adoptionPreserved": "正式採用/GitHub実装済み",
+      "spaceCell": "SPACE-LM009-CAFE",
+      "notes": "GitHub実装確認済。湖面側を建築正本、駐車場側は同一建物の到着側外観として参照。",
+      "catalog": [],
+      "spaces": [
+        {
+          "row": 25,
+          "id": "SPACE-LM009-CAFE",
+          "bg": "BG-077,BG-078,BG-079,BG-080,BG-081,BG-082",
+          "paths": "images/assets/bg/bg_lumiere_parking_side_day.webp ; images/assets/bg/bg_lumiere_lakeside_day.webp ; images/assets/bg/bg_lumiere_cafe_interior_day.webp ; images/assets/bg/bg_lumiere_lakeside_terrace_day.webp ; images/assets/bg/bg_lumiere_window_seat_day.webp ; images/assets/bg/bg_lumiere_boat_dock_day.webp",
+          "notes": "LM-009。1Fカフェ＋湖側桟橋テラス/ボート貸出は同一SPACE。2F小規模ペンションは物理的に別階・別室のためSPACE-LM009-PENSION-ROOMとして分離。外観、階段、廊下、個別客室番号、受付はSPACE化しない。1Fカウンターが注文/ボート貸出/宿泊受付を兼用。初期BG優先はA昼全景、B昼窓際、D朝/昼桟橋。客室はF基準構図を宿泊シナリオ要求時P1。湖上花火は桟橋/客室バルコニー双方でイベント差分可能。\n2026-10-30 デルタ：既存台帳とmain実ファイルを照合し、未制作表記とBG紐付けを整流。再生成なし。実画面表示は未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "lumiere_parking_side_day",
+          "name": "羽白湖畔カフェ＆ペンション ルミエール 駐車場側外観",
+          "path": "images/assets/bg/bg_lumiere_parking_side_day.webp",
+          "spaceId": "SPACE-LM009-CAFE",
+          "status": "正式採用/GitHub実装済み"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-078",
+      "name": "羽白湖畔カフェ＆ペンション ルミエール 湖面側外観",
+      "row": 82,
+      "sheetPathBefore": "images/assets/bg/bg_lumiere_lakeside_day.webp",
+      "path": "images/assets/bg/bg_lumiere_lakeside_day.webp",
+      "pathCorrection": false,
+      "sha256": "1c6ed2da25e7c4bc9960abe960ba587d77482b9860ea71d970121aaa0c023ea3",
+      "bytes": 889222,
+      "gitBytesSha256": "1c6ed2da25e7c4bc9960abe960ba587d77482b9860ea71d970121aaa0c023ea3",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1920,
+        1080
+      ],
+      "adoptionPreserved": "正式採用/GitHub実装済み",
+      "spaceCell": "SPACE-LM009-CAFE",
+      "notes": "湖面側をルミエール建築の優先アンカーとして採用。駐車場側BG-077は同一建物の反対面。",
+      "catalog": [],
+      "spaces": [
+        {
+          "row": 25,
+          "id": "SPACE-LM009-CAFE",
+          "bg": "BG-077,BG-078,BG-079,BG-080,BG-081,BG-082",
+          "paths": "images/assets/bg/bg_lumiere_parking_side_day.webp ; images/assets/bg/bg_lumiere_lakeside_day.webp ; images/assets/bg/bg_lumiere_cafe_interior_day.webp ; images/assets/bg/bg_lumiere_lakeside_terrace_day.webp ; images/assets/bg/bg_lumiere_window_seat_day.webp ; images/assets/bg/bg_lumiere_boat_dock_day.webp",
+          "notes": "LM-009。1Fカフェ＋湖側桟橋テラス/ボート貸出は同一SPACE。2F小規模ペンションは物理的に別階・別室のためSPACE-LM009-PENSION-ROOMとして分離。外観、階段、廊下、個別客室番号、受付はSPACE化しない。1Fカウンターが注文/ボート貸出/宿泊受付を兼用。初期BG優先はA昼全景、B昼窓際、D朝/昼桟橋。客室はF基準構図を宿泊シナリオ要求時P1。湖上花火は桟橋/客室バルコニー双方でイベント差分可能。\n2026-10-30 デルタ：既存台帳とmain実ファイルを照合し、未制作表記とBG紐付けを整流。再生成なし。実画面表示は未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "lumiere_lakeside_day",
+          "name": "羽白湖畔カフェ＆ペンション ルミエール 湖面側外観",
+          "path": "images/assets/bg/bg_lumiere_lakeside_day.webp",
+          "spaceId": "SPACE-LM009-CAFE",
+          "status": "正式採用/GitHub実装済み"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-079",
+      "name": "ルミエール 1Fカフェ店内全景",
+      "row": 83,
+      "sheetPathBefore": "images/assets/bg/bg_lumiere_cafe_interior_day.webp",
+      "path": "images/assets/bg/bg_lumiere_cafe_interior_day.webp",
+      "pathCorrection": false,
+      "sha256": "d47ee1aa3113f58dc2d9d4e0b0abfe52e60fd1a77b76645076acf168b94c03cf",
+      "bytes": 746348,
+      "gitBytesSha256": "d47ee1aa3113f58dc2d9d4e0b0abfe52e60fd1a77b76645076acf168b94c03cf",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1920,
+        1080
+      ],
+      "adoptionPreserved": "正式採用/GitHub実装済み",
+      "spaceCell": "SPACE-LM009-CAFE",
+      "notes": "GitHub実装確認済：1Fカフェ店内全景",
+      "catalog": [
+        {
+          "key": "lumiere_cafe_interior_day",
+          "path": "images/assets/bg/bg_lumiere_cafe_interior_day.webp",
+          "spaceId": null
+        }
+      ],
+      "spaces": [
+        {
+          "row": 25,
+          "id": "SPACE-LM009-CAFE",
+          "bg": "BG-077,BG-078,BG-079,BG-080,BG-081,BG-082",
+          "paths": "images/assets/bg/bg_lumiere_parking_side_day.webp ; images/assets/bg/bg_lumiere_lakeside_day.webp ; images/assets/bg/bg_lumiere_cafe_interior_day.webp ; images/assets/bg/bg_lumiere_lakeside_terrace_day.webp ; images/assets/bg/bg_lumiere_window_seat_day.webp ; images/assets/bg/bg_lumiere_boat_dock_day.webp",
+          "notes": "LM-009。1Fカフェ＋湖側桟橋テラス/ボート貸出は同一SPACE。2F小規模ペンションは物理的に別階・別室のためSPACE-LM009-PENSION-ROOMとして分離。外観、階段、廊下、個別客室番号、受付はSPACE化しない。1Fカウンターが注文/ボート貸出/宿泊受付を兼用。初期BG優先はA昼全景、B昼窓際、D朝/昼桟橋。客室はF基準構図を宿泊シナリオ要求時P1。湖上花火は桟橋/客室バルコニー双方でイベント差分可能。\n2026-10-30 デルタ：既存台帳とmain実ファイルを照合し、未制作表記とBG紐付けを整流。再生成なし。実画面表示は未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "lumiere_cafe_interior_day",
+          "name": "ルミエール・カフェ店内・昼",
+          "path": "images/assets/bg/bg_lumiere_cafe_interior_day.webp",
+          "location": "ルミエール",
+          "time": "day",
+          "status": "正式採用"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-080",
+      "name": "ルミエール 湖畔テラス席",
+      "row": 84,
+      "sheetPathBefore": "images/assets/bg/bg_lumiere_lakeside_terrace_day.webp",
+      "path": "images/assets/bg/bg_lumiere_lakeside_terrace_day.webp",
+      "pathCorrection": false,
+      "sha256": "3c299cab2065a43cff0bd1a5a603bc153ba8a98881ce86afc5a60e411d56d048",
+      "bytes": 868106,
+      "gitBytesSha256": "3c299cab2065a43cff0bd1a5a603bc153ba8a98881ce86afc5a60e411d56d048",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1920,
+        1080
+      ],
+      "adoptionPreserved": "正式採用/GitHub実装済み",
+      "spaceCell": "SPACE-LM009-CAFE",
+      "notes": "GitHub実装確認済：湖畔テラス席",
+      "catalog": [],
+      "spaces": [
+        {
+          "row": 25,
+          "id": "SPACE-LM009-CAFE",
+          "bg": "BG-077,BG-078,BG-079,BG-080,BG-081,BG-082",
+          "paths": "images/assets/bg/bg_lumiere_parking_side_day.webp ; images/assets/bg/bg_lumiere_lakeside_day.webp ; images/assets/bg/bg_lumiere_cafe_interior_day.webp ; images/assets/bg/bg_lumiere_lakeside_terrace_day.webp ; images/assets/bg/bg_lumiere_window_seat_day.webp ; images/assets/bg/bg_lumiere_boat_dock_day.webp",
+          "notes": "LM-009。1Fカフェ＋湖側桟橋テラス/ボート貸出は同一SPACE。2F小規模ペンションは物理的に別階・別室のためSPACE-LM009-PENSION-ROOMとして分離。外観、階段、廊下、個別客室番号、受付はSPACE化しない。1Fカウンターが注文/ボート貸出/宿泊受付を兼用。初期BG優先はA昼全景、B昼窓際、D朝/昼桟橋。客室はF基準構図を宿泊シナリオ要求時P1。湖上花火は桟橋/客室バルコニー双方でイベント差分可能。\n2026-10-30 デルタ：既存台帳とmain実ファイルを照合し、未制作表記とBG紐付けを整流。再生成なし。実画面表示は未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "lumiere_lakeside_terrace_day",
+          "name": "ルミエール 湖畔テラス席",
+          "path": "images/assets/bg/bg_lumiere_lakeside_terrace_day.webp",
+          "spaceId": "SPACE-LM009-CAFE",
+          "status": "正式採用/GitHub実装済み"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-081",
+      "name": "ルミエール 窓際2人席",
+      "row": 85,
+      "sheetPathBefore": "images/assets/bg/bg_lumiere_window_seat_day.webp",
+      "path": "images/assets/bg/bg_lumiere_window_seat_day.webp",
+      "pathCorrection": false,
+      "sha256": "32415789e22116fbdf69f41b3eb4d65c3973e6cc691a708657958d271f21e04d",
+      "bytes": 655306,
+      "gitBytesSha256": "32415789e22116fbdf69f41b3eb4d65c3973e6cc691a708657958d271f21e04d",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1920,
+        1080
+      ],
+      "adoptionPreserved": "正式採用/GitHub実装済み",
+      "spaceCell": "SPACE-LM009-CAFE",
+      "notes": "GitHub実装確認済：窓際2人席",
+      "catalog": [],
+      "spaces": [
+        {
+          "row": 25,
+          "id": "SPACE-LM009-CAFE",
+          "bg": "BG-077,BG-078,BG-079,BG-080,BG-081,BG-082",
+          "paths": "images/assets/bg/bg_lumiere_parking_side_day.webp ; images/assets/bg/bg_lumiere_lakeside_day.webp ; images/assets/bg/bg_lumiere_cafe_interior_day.webp ; images/assets/bg/bg_lumiere_lakeside_terrace_day.webp ; images/assets/bg/bg_lumiere_window_seat_day.webp ; images/assets/bg/bg_lumiere_boat_dock_day.webp",
+          "notes": "LM-009。1Fカフェ＋湖側桟橋テラス/ボート貸出は同一SPACE。2F小規模ペンションは物理的に別階・別室のためSPACE-LM009-PENSION-ROOMとして分離。外観、階段、廊下、個別客室番号、受付はSPACE化しない。1Fカウンターが注文/ボート貸出/宿泊受付を兼用。初期BG優先はA昼全景、B昼窓際、D朝/昼桟橋。客室はF基準構図を宿泊シナリオ要求時P1。湖上花火は桟橋/客室バルコニー双方でイベント差分可能。\n2026-10-30 デルタ：既存台帳とmain実ファイルを照合し、未制作表記とBG紐付けを整流。再生成なし。実画面表示は未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "lumiere_window_seat_day",
+          "name": "ルミエール 窓際2人席",
+          "path": "images/assets/bg/bg_lumiere_window_seat_day.webp",
+          "spaceId": "SPACE-LM009-CAFE",
+          "status": "正式採用/GitHub実装済み"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-082",
+      "name": "ルミエール 桟橋・ボート乗降",
+      "row": 86,
+      "sheetPathBefore": "images/assets/bg/bg_lumiere_boat_dock_day.webp",
+      "path": "images/assets/bg/bg_lumiere_boat_dock_day.webp",
+      "pathCorrection": false,
+      "sha256": "bb72beab4755caa430344e07d298360a2f59668200b0611f50985d9d85e75ab3",
+      "bytes": 707124,
+      "gitBytesSha256": "bb72beab4755caa430344e07d298360a2f59668200b0611f50985d9d85e75ab3",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1920,
+        1080
+      ],
+      "adoptionPreserved": "正式採用/GitHub実装済み",
+      "spaceCell": "SPACE-LM009-CAFE",
+      "notes": "GitHub実装確認済：桟橋・ボート乗降",
+      "catalog": [],
+      "spaces": [
+        {
+          "row": 25,
+          "id": "SPACE-LM009-CAFE",
+          "bg": "BG-077,BG-078,BG-079,BG-080,BG-081,BG-082",
+          "paths": "images/assets/bg/bg_lumiere_parking_side_day.webp ; images/assets/bg/bg_lumiere_lakeside_day.webp ; images/assets/bg/bg_lumiere_cafe_interior_day.webp ; images/assets/bg/bg_lumiere_lakeside_terrace_day.webp ; images/assets/bg/bg_lumiere_window_seat_day.webp ; images/assets/bg/bg_lumiere_boat_dock_day.webp",
+          "notes": "LM-009。1Fカフェ＋湖側桟橋テラス/ボート貸出は同一SPACE。2F小規模ペンションは物理的に別階・別室のためSPACE-LM009-PENSION-ROOMとして分離。外観、階段、廊下、個別客室番号、受付はSPACE化しない。1Fカウンターが注文/ボート貸出/宿泊受付を兼用。初期BG優先はA昼全景、B昼窓際、D朝/昼桟橋。客室はF基準構図を宿泊シナリオ要求時P1。湖上花火は桟橋/客室バルコニー双方でイベント差分可能。\n2026-10-30 デルタ：既存台帳とmain実ファイルを照合し、未制作表記とBG紐付けを整流。再生成なし。実画面表示は未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "lumiere_boat_dock_day",
+          "name": "ルミエール 桟橋・ボート乗降",
+          "path": "images/assets/bg/bg_lumiere_boat_dock_day.webp",
+          "spaceId": "SPACE-LM009-CAFE",
+          "status": "正式採用/GitHub実装済み"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-083",
+      "name": "ルミエール 2F代表客室",
+      "row": 87,
+      "sheetPathBefore": "images/assets/bg/bg_lumiere_pension_room_day.webp",
+      "path": "images/assets/bg/bg_lumiere_pension_room_day.webp",
+      "pathCorrection": false,
+      "sha256": "9ea491b726fa4b17f2a9d5a6648e7a882eb9c55cd74549b89951b742a09f8b6a",
+      "bytes": 650996,
+      "gitBytesSha256": "9ea491b726fa4b17f2a9d5a6648e7a882eb9c55cd74549b89951b742a09f8b6a",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1920,
+        1080
+      ],
+      "adoptionPreserved": "正式採用/GitHub実装済み",
+      "spaceCell": "SPACE-LM009-PENSION-ROOM",
+      "notes": "GitHub実装確認済：2F代表客室",
+      "catalog": [
+        {
+          "key": "lumiere_pension_room_day",
+          "path": "images/assets/bg/bg_lumiere_pension_room_day.webp",
+          "spaceId": null
+        }
+      ],
+      "spaces": [
+        {
+          "row": 85,
+          "id": "SPACE-LM009-PENSION-ROOM",
+          "bg": "BG-083,BG-084",
+          "paths": "images/assets/bg/bg_lumiere_pension_room_day.webp ; images/assets/bg/bg_lumiere_pension_balcony_day.webp",
+          "notes": "LM-009拡張。小規模ペンションの代表客室。廊下/階段/個別客室/受付を独立SPACE化しない。1Fカフェが受付兼用。\n2026-10-30 デルタ：既存台帳とmain実ファイルを照合し、未制作表記とBG紐付けを整流。再生成なし。実画面表示は未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "lumiere_pension_room_day",
+          "name": "ルミエール・ペンション客室・昼",
+          "path": "images/assets/bg/bg_lumiere_pension_room_day.webp",
+          "location": "ルミエール",
+          "time": "day",
+          "status": "正式採用"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-084",
+      "name": "ルミエール 2F客室バルコニー",
+      "row": 88,
+      "sheetPathBefore": "images/assets/bg/bg_lumiere_pension_balcony_day.webp",
+      "path": "images/assets/bg/bg_lumiere_pension_balcony_day.webp",
+      "pathCorrection": false,
+      "sha256": "a6698c6e3b8d98b367eb4e3f9f4b4a088a0a66c859c9c233a0d3cf9e91e1395b",
+      "bytes": 655174,
+      "gitBytesSha256": "a6698c6e3b8d98b367eb4e3f9f4b4a088a0a66c859c9c233a0d3cf9e91e1395b",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1920,
+        1080
+      ],
+      "adoptionPreserved": "正式採用/GitHub実装済み",
+      "spaceCell": "SPACE-LM009-PENSION-ROOM",
+      "notes": "GitHub実装確認済：2F客室バルコニー",
+      "catalog": [
+        {
+          "key": "lumiere_pension_balcony_day",
+          "path": "images/assets/bg/bg_lumiere_pension_balcony_day.webp",
+          "spaceId": null
+        }
+      ],
+      "spaces": [
+        {
+          "row": 85,
+          "id": "SPACE-LM009-PENSION-ROOM",
+          "bg": "BG-083,BG-084",
+          "paths": "images/assets/bg/bg_lumiere_pension_room_day.webp ; images/assets/bg/bg_lumiere_pension_balcony_day.webp",
+          "notes": "LM-009拡張。小規模ペンションの代表客室。廊下/階段/個別客室/受付を独立SPACE化しない。1Fカフェが受付兼用。\n2026-10-30 デルタ：既存台帳とmain実ファイルを照合し、未制作表記とBG紐付けを整流。再生成なし。実画面表示は未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "lumiere_pension_balcony_day",
+          "name": "ルミエール・ペンションバルコニー・昼",
+          "path": "images/assets/bg/bg_lumiere_pension_balcony_day.webp",
+          "location": "ルミエール",
+          "time": "day",
+          "status": "正式採用"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-085",
+      "name": "エステサロン・アスト 外観",
+      "row": 89,
+      "sheetPathBefore": "images/assets/bg/bg_ast_salon_exterior_day.webp",
+      "path": "images/assets/bg/bg_ast_salon_exterior_day.webp",
+      "pathCorrection": false,
+      "sha256": "0d81513f485438062008bbc9b195b5f3c5745cc7ed6135c49b3870085299bc41",
+      "bytes": 255518,
+      "gitBytesSha256": "911b8e9c2056d80568cc92c466bd9b5092e416254448d58e4e5d7a67b08336d6",
+      "gitEncoding": "base64-text-needs-binary-repair",
+      "format": "WEBP",
+      "size": [
+        1920,
+        1080
+      ],
+      "adoptionPreserved": "正式採用/GitHub実装済み",
+      "spaceCell": "SPACE-LM111-LOUNGE",
+      "notes": "Driveソース（3点）:\n外観 https://drive.google.com/file/d/14LMHzsp2_gWJRn26-VNhuUVfOVDN60ET/view?usp=drivesdk\nラウンジ https://drive.google.com/file/d/1dn4EOcJB8RH_6roBJSDUBBybcGTuO9Hr/view?usp=drivesdk\n施術室 https://drive.google.com/file/d/1IPfuhvS_RzW6FdWMZ-L0H22GvmktQBsx/view?usp=drivesdk",
+      "catalog": [
+        {
+          "key": "ast_salon_exterior_day",
+          "path": "images/assets/bg/bg_ast_salon_exterior_day.webp",
+          "spaceId": null
+        }
+      ],
+      "spaces": [
+        {
+          "row": 86,
+          "id": "SPACE-LM111-LOUNGE",
+          "bg": "BG-085,BG-086",
+          "paths": "images/assets/bg/bg_ast_salon_exterior_day.webp ; images/assets/bg/bg_ast_herbal_tea_lounge_day.webp",
+          "notes": "Driveソース（外観）: https://drive.google.com/file/d/14LMHzsp2_gWJRn26-VNhuUVfOVDN60ET/view?usp=drivesdk\nラウンジ: https://drive.google.com/file/d/1dn4EOcJB8RH_6roBJSDUBBybcGTuO9Hr/view?usp=drivesdk\n2026-10-30 デルタ：既存台帳とmain実ファイルを照合し、未制作表記とBG紐付けを整流。再生成なし。実画面表示は未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "ast_salon_exterior_day",
+          "name": "エステサロン・アスト・外観・昼",
+          "path": "images/assets/bg/bg_ast_salon_exterior_day.webp",
+          "location": "エステサロン・アスト",
+          "time": "day",
+          "status": "正式採用"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-086",
+      "name": "エステサロン・アスト ラウンジ",
+      "row": 90,
+      "sheetPathBefore": "images/assets/bg/bg_ast_herbal_tea_lounge_day.webp",
+      "path": "images/assets/bg/bg_ast_herbal_tea_lounge_day.webp",
+      "pathCorrection": false,
+      "sha256": "8a10af08c044286a5f8c9b9859789d07f67b7b8d7f0268c9e16c0fa5ec6c758e",
+      "bytes": 221026,
+      "gitBytesSha256": "78e5416c4897e7e11966d892af88b06ae6512ec709bc8cf8ce63564e0bdd6e02",
+      "gitEncoding": "base64-text-needs-binary-repair",
+      "format": "WEBP",
+      "size": [
+        1920,
+        1080
+      ],
+      "adoptionPreserved": "正式採用/GitHub実装済み",
+      "spaceCell": "SPACE-LM111-LOUNGE",
+      "notes": "外観建築アンカー準拠。P1ラウンジ昼",
+      "catalog": [
+        {
+          "key": "ast_herbal_tea_lounge_day",
+          "path": "images/assets/bg/bg_ast_herbal_tea_lounge_day.webp",
+          "spaceId": null
+        }
+      ],
+      "spaces": [
+        {
+          "row": 86,
+          "id": "SPACE-LM111-LOUNGE",
+          "bg": "BG-085,BG-086",
+          "paths": "images/assets/bg/bg_ast_salon_exterior_day.webp ; images/assets/bg/bg_ast_herbal_tea_lounge_day.webp",
+          "notes": "Driveソース（外観）: https://drive.google.com/file/d/14LMHzsp2_gWJRn26-VNhuUVfOVDN60ET/view?usp=drivesdk\nラウンジ: https://drive.google.com/file/d/1dn4EOcJB8RH_6roBJSDUBBybcGTuO9Hr/view?usp=drivesdk\n2026-10-30 デルタ：既存台帳とmain実ファイルを照合し、未制作表記とBG紐付けを整流。再生成なし。実画面表示は未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "ast_herbal_tea_lounge_day",
+          "name": "エステサロン・アスト・ハーブティーラウンジ・昼",
+          "path": "images/assets/bg/bg_ast_herbal_tea_lounge_day.webp",
+          "location": "エステサロン・アスト／ハーブティーラウンジ",
+          "time": "day",
+          "status": "正式採用"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-087",
+      "name": "エステサロン・アスト 施術室",
+      "row": 91,
+      "sheetPathBefore": "images/assets/bg/bg_ast_treatment_room_day.webp",
+      "path": "images/assets/bg/bg_ast_treatment_room_day.webp",
+      "pathCorrection": false,
+      "sha256": "7d71751172f1536d843aa80ab5f9ec701277fc0c01aea7677d7c2d15740bd814",
+      "bytes": 145250,
+      "gitBytesSha256": "ae8990339c28e33e79a9bd4bdba1eccd2c613cb5b3126e2467ba3514c3829110",
+      "gitEncoding": "base64-text-needs-binary-repair",
+      "format": "WEBP",
+      "size": [
+        1920,
+        1080
+      ],
+      "adoptionPreserved": "正式採用/GitHub実装済み",
+      "spaceCell": "SPACE-LM111-TREATMENT",
+      "notes": "ラウンジから施術ベッドを直視できない。P2施術室昼",
+      "catalog": [
+        {
+          "key": "ast_treatment_room_day",
+          "path": "images/assets/bg/bg_ast_treatment_room_day.webp",
+          "spaceId": null
+        }
+      ],
+      "spaces": [
+        {
+          "row": 87,
+          "id": "SPACE-LM111-TREATMENT",
+          "bg": "BG-087",
+          "paths": "images/assets/bg/bg_ast_treatment_room_day.webp",
+          "notes": "Driveソース（施術室）: https://drive.google.com/file/d/1IPfuhvS_RzW6FdWMZ-L0H22GvmktQBsx/view?usp=drivesdk\n2026-10-30 デルタ：既存台帳とmain実ファイルを照合し、未制作表記とBG紐付けを整流。再生成なし。実画面表示は未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "ast_treatment_room_day",
+          "name": "エステサロン・アスト・個室施術室・昼",
+          "path": "images/assets/bg/bg_ast_treatment_room_day.webp",
+          "location": "エステサロン・アスト／個室施術室",
+          "time": "day",
+          "status": "正式採用"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-088",
+      "name": "青葉キャンプフィールド",
+      "row": 92,
+      "sheetPathBefore": "images/assets/bg/bg_aoba_campfield_evening.webp",
+      "path": "images/assets/bg/bg_aoba_campfield_evening.webp",
+      "pathCorrection": false,
+      "sha256": "0f68c6f001ea2df1d892d3a110230762b5a096095dee12bb22a9c251f97d0bda",
+      "bytes": 601334,
+      "gitBytesSha256": "0f68c6f001ea2df1d892d3a110230762b5a096095dee12bb22a9c251f97d0bda",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "初版完成/配置・カタログ登録済",
+      "spaceCell": "SPACE-LM054-CAMPFIELD",
+      "notes": "店長の初版完成方針。ブラッシュアップ後工程。シナリオ割当未実施。",
+      "catalog": [
+        {
+          "key": "aoba_campfield_evening",
+          "path": "images/assets/bg/bg_aoba_campfield_evening.webp",
+          "spaceId": null
+        }
+      ],
+      "spaces": [
+        {
+          "row": 81,
+          "id": "SPACE-LM054-CAMPFIELD",
+          "bg": "BG-088",
+          "paths": "images/assets/bg/bg_aoba_campfield_evening.webp",
+          "notes": "LM-054。テント/BBQ/焚き火を独立SPACE化しない。既存羽白湖BGは景観・接続参照のみ。P1夕方/P2夜。\n2026-10-30 デルタ：初版背景完成。main配置・カタログ登録。実画面未確認。配置詳細は初版CGを基準とし、ブラッシュアップは後工程。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "aoba_campfield_evening",
+          "name": "青葉キャンプフィールド・夕方",
+          "path": "images/assets/bg/bg_aoba_campfield_evening.webp",
+          "time": "evening",
+          "status": "初版完成"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-089",
+      "name": "日和坂ブライダルテラス",
+      "row": 93,
+      "sheetPathBefore": "images/assets/bg/bg_hiyorizaka_bridal_terrace_day.webp",
+      "path": "images/assets/bg/bg_hiyorizaka_bridal_terrace_day.webp",
+      "pathCorrection": false,
+      "sha256": "441c1123d8edb76a4253a7014b8b47322eb27d2b01e6183299b7f763c03f3f26",
+      "bytes": 455756,
+      "gitBytesSha256": "441c1123d8edb76a4253a7014b8b47322eb27d2b01e6183299b7f763c03f3f26",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "初版完成/配置・カタログ登録済",
+      "spaceCell": "SPACE-LM056-TERRACE",
+      "notes": "店長の初版完成方針。ブラッシュアップ後工程。シナリオ割当未実施。",
+      "catalog": [
+        {
+          "key": "hiyorizaka_bridal_terrace_day",
+          "path": "images/assets/bg/bg_hiyorizaka_bridal_terrace_day.webp",
+          "spaceId": null
+        }
+      ],
+      "spaces": [
+        {
+          "row": 82,
+          "id": "SPACE-LM056-TERRACE",
+          "bg": "BG-089",
+          "paths": "images/assets/bg/bg_hiyorizaka_bridal_terrace_day.webp",
+          "notes": "LM-056。チャペル/披露宴会場/控室等は増やさない。P1昼/P2夕方。\n2026-10-30 デルタ：初版背景完成。main配置・カタログ登録。実画面未確認。配置詳細は初版CGを基準とし、ブラッシュアップは後工程。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "hiyorizaka_bridal_terrace_day",
+          "name": "日和坂ブライダルテラス・昼",
+          "path": "images/assets/bg/bg_hiyorizaka_bridal_terrace_day.webp",
+          "time": "day",
+          "status": "初版完成"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-090",
+      "name": "宵闇小料理横丁",
+      "row": 94,
+      "sheetPathBefore": "images/assets/bg/bg_yoiyami_koryori_yokocho_evening.webp",
+      "path": "images/assets/bg/bg_yoiyami_koryori_yokocho_evening.webp",
+      "pathCorrection": false,
+      "sha256": "b34185daf4b770eee5c826ced6361d7148a27fe8e66c1ae5f4d8d4489a5a987c",
+      "bytes": 485134,
+      "gitBytesSha256": "b34185daf4b770eee5c826ced6361d7148a27fe8e66c1ae5f4d8d4489a5a987c",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "初版完成/配置・カタログ登録済",
+      "spaceCell": "SPACE-LM057-YOKOCHO",
+      "notes": "店長の初版完成方針。ブラッシュアップ後工程。シナリオ割当未実施。",
+      "catalog": [
+        {
+          "key": "yoiyami_koryori_yokocho_evening",
+          "path": "images/assets/bg/bg_yoiyami_koryori_yokocho_evening.webp",
+          "spaceId": null
+        }
+      ],
+      "spaces": [
+        {
+          "row": 83,
+          "id": "SPACE-LM057-YOKOCHO",
+          "bg": "BG-090",
+          "paths": "images/assets/bg/bg_yoiyami_koryori_yokocho_evening.webp",
+          "notes": "LM-057。LM-011とは別LM/別SPACE。駅裏移動道と個別小料理屋はSPACE化しない。P1夕方/P2夜。\n2026-10-30 デルタ：初版背景完成。main配置・カタログ登録。実画面未確認。配置詳細は初版CGを基準とし、ブラッシュアップは後工程。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "yoiyami_koryori_yokocho_evening",
+          "name": "宵闇小料理横丁・夕方",
+          "path": "images/assets/bg/bg_yoiyami_koryori_yokocho_evening.webp",
+          "time": "evening",
+          "status": "初版完成"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-091",
+      "name": "霧島式サウナ＆温浴研究所 湯上がりラウンジ",
+      "row": 95,
+      "sheetPathBefore": "images/assets/bg/bg_kirishima_onsen_lounge.webp",
+      "path": "images/assets/bg/bg_kirishima_onsen_lounge.webp",
+      "pathCorrection": false,
+      "sha256": "ae7cb46ec251a3315fa9bbcf8465a09d48b50b6c7867c6cc6098a2e3499a045c",
+      "bytes": 220124,
+      "gitBytesSha256": "ae7cb46ec251a3315fa9bbcf8465a09d48b50b6c7867c6cc6098a2e3499a045c",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "初版完成/配置・カタログ登録済",
+      "spaceCell": "SPACE-LM051-LOUNGE",
+      "notes": "サウナ室/浴場は未追加。温泉郷との接続は引き続き候補。 シナリオ割当未実施。",
+      "catalog": [
+        {
+          "key": "kirishima_onsen_lounge",
+          "path": "images/assets/bg/bg_kirishima_onsen_lounge.webp",
+          "spaceId": "SPACE-LM051-LOUNGE"
+        }
+      ],
+      "spaces": [
+        {
+          "row": 78,
+          "id": "SPACE-LM051-LOUNGE",
+          "bg": "BG-091",
+          "paths": "images/assets/bg/bg_kirishima_onsen_lounge.webp",
+          "notes": "LM-051。まずLOUNGEのみ。SAUNAは直接シナリオ要求までHOLD。LM-045接続は参照候補。\n2026-10-30 デルタ：BG-091初版完成。main配置・カタログ登録済。サウナ室/浴場は未追加。温泉郷との接続は引き続き候補。 実画面未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "kirishima_onsen_lounge",
+          "name": "霧島式サウナ＆温浴研究所 湯上がりラウンジ",
+          "path": "images/assets/bg/bg_kirishima_onsen_lounge.webp",
+          "location": "霧島式サウナ＆温浴研究所 湯上がりラウンジ",
+          "spaceId": "SPACE-LM051-LOUNGE",
+          "status": "初版完成"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-092",
+      "name": "日和坂ボードゲームカフェ ロジカ 店内",
+      "row": 96,
+      "sheetPathBefore": "images/assets/bg/bg_logica_boardgame_cafe_interior.webp",
+      "path": "images/assets/bg/bg_logica_boardgame_cafe_interior.webp",
+      "pathCorrection": false,
+      "sha256": "38b73c7c23d03fea93f7af90fb502b180abd5340976ab3c332121865a20bed01",
+      "bytes": 318702,
+      "gitBytesSha256": "38b73c7c23d03fea93f7af90fb502b180abd5340976ab3c332121865a20bed01",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "初版完成/配置・カタログ登録済",
+      "spaceCell": "SPACE-LM052-CAFE",
+      "notes": "通常内観。雨差分なし。市販ゲームの特定名称・ロゴは使用しない。 シナリオ割当未実施。",
+      "catalog": [
+        {
+          "key": "logica_boardgame_cafe_interior",
+          "path": "images/assets/bg/bg_logica_boardgame_cafe_interior.webp",
+          "spaceId": "SPACE-LM052-CAFE"
+        }
+      ],
+      "spaces": [
+        {
+          "row": 79,
+          "id": "SPACE-LM052-CAFE",
+          "bg": "BG-092",
+          "paths": "images/assets/bg/bg_logica_boardgame_cafe_interior.webp",
+          "notes": "LM-052。横丁既存BGは接続導線としてのみ使用。P1通常内観。雨差分は必要時のみ。\n2026-10-30 デルタ：BG-092初版完成。main配置・カタログ登録済。通常内観。雨差分なし。市販ゲームの特定名称・ロゴは使用しない。 実画面未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "logica_boardgame_cafe_interior",
+          "name": "日和坂ボードゲームカフェ ロジカ 店内",
+          "path": "images/assets/bg/bg_logica_boardgame_cafe_interior.webp",
+          "location": "日和坂ボードゲームカフェ ロジカ 店内",
+          "spaceId": "SPACE-LM052-CAFE",
+          "status": "初版完成"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-093",
+      "name": "日和坂ハンドボールコート 内観",
+      "row": 97,
+      "sheetPathBefore": "images/assets/bg/bg_hiyorizaka_handball_court_interior.webp",
+      "path": "images/assets/bg/bg_hiyorizaka_handball_court_interior.webp",
+      "pathCorrection": false,
+      "sha256": "40da0d177d9bba3102a3dcf28243cbc838d586f0964500784b97ec134be77a04",
+      "bytes": 212020,
+      "gitBytesSha256": "40da0d177d9bba3102a3dcf28243cbc838d586f0964500784b97ec134be77a04",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "初版完成/配置・カタログ登録済",
+      "spaceCell": "SPACE-LM058-HANDBALL-COURT",
+      "notes": "コート線の競技規格・寸法は未検証、後工程のブラッシュアップ対象。 シナリオ割当未実施。",
+      "catalog": [
+        {
+          "key": "hiyorizaka_handball_court_interior",
+          "path": "images/assets/bg/bg_hiyorizaka_handball_court_interior.webp",
+          "spaceId": "SPACE-LM058-HANDBALL-COURT"
+        }
+      ],
+      "spaces": [
+        {
+          "row": 84,
+          "id": "SPACE-LM058-HANDBALL-COURT",
+          "bg": "BG-093",
+          "paths": "images/assets/bg/bg_hiyorizaka_handball_court_interior.webp",
+          "notes": "LM-058。既存総合運動公園BGは接続導線のみ。専用既存BGなし。P1内観1枚。\n2026-10-30 デルタ：BG-093初版完成。main配置・カタログ登録済。コート線の競技規格・寸法は未検証、後工程のブラッシュアップ対象。 実画面未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "hiyorizaka_handball_court_interior",
+          "name": "日和坂ハンドボールコート 内観",
+          "path": "images/assets/bg/bg_hiyorizaka_handball_court_interior.webp",
+          "location": "日和坂ハンドボールコート 内観",
+          "spaceId": "SPACE-LM058-HANDBALL-COURT",
+          "status": "初版完成"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-094",
+      "name": "日和坂ゲームアリーナ 内観",
+      "row": 98,
+      "sheetPathBefore": "images/assets/bg/bg_hiyorizaka_game_arena_interior.webp",
+      "path": "images/assets/bg/bg_hiyorizaka_game_arena_interior.webp",
+      "pathCorrection": false,
+      "sha256": "5b36f0d8d51d17816b90f2db854be97d01ee66aae5b4a10a49bdd5a8bddc0a0e",
+      "bytes": 341940,
+      "gitBytesSha256": "5b36f0d8d51d17816b90f2db854be97d01ee66aae5b4a10a49bdd5a8bddc0a0e",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "初版完成/配置・カタログ登録済",
+      "spaceCell": "SPACE-LM050-GAME-ARENA",
+      "notes": "通常営業内観。LM-021とは別施設。大会装飾・観客は未追加。 シナリオ割当未実施。",
+      "catalog": [
+        {
+          "key": "hiyorizaka_game_arena_interior",
+          "path": "images/assets/bg/bg_hiyorizaka_game_arena_interior.webp",
+          "spaceId": "SPACE-LM050-GAME-ARENA"
+        }
+      ],
+      "spaces": [
+        {
+          "row": 77,
+          "id": "SPACE-LM050-GAME-ARENA",
+          "bg": "BG-094",
+          "paths": "images/assets/bg/bg_hiyorizaka_game_arena_interior.webp",
+          "notes": "LM-050。LM-021日和坂アリーナと明確に分離。P1内観1枚。\n2026-10-30 デルタ：BG-094初版完成。main配置・カタログ登録済。通常営業内観。LM-021とは別施設。大会装飾・観客は未追加。 実画面未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "hiyorizaka_game_arena_interior",
+          "name": "日和坂ゲームアリーナ 内観",
+          "path": "images/assets/bg/bg_hiyorizaka_game_arena_interior.webp",
+          "location": "日和坂ゲームアリーナ 内観",
+          "spaceId": "SPACE-LM050-GAME-ARENA",
+          "status": "初版完成"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-095",
+      "name": "芝桜の丘 花守ガーデン 春昼",
+      "row": 99,
+      "sheetPathBefore": "images/assets/bg/bg_hanamori_shibazakura_garden_spring_day.webp",
+      "path": "images/assets/bg/bg_hanamori_shibazakura_garden_spring_day.webp",
+      "pathCorrection": false,
+      "sha256": "56da7430ed1a900e4b600f149f1cc83ec39bded00fe07a1cc4a29f92c0dc4d4d",
+      "bytes": 624348,
+      "gitBytesSha256": "56da7430ed1a900e4b600f149f1cc83ec39bded00fe07a1cc4a29f92c0dc4d4d",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "初版完成/配置・カタログ登録済",
+      "spaceCell": "SPACE-LM038-GARDEN",
+      "notes": "春昼。階段状散策路。海・街の遠景は初版案で、全市マップとの位置照合未了。入口ゲート/屋台SPACEは未追加。 シナリオ割当未実施。",
+      "catalog": [
+        {
+          "key": "hanamori_shibazakura_garden_spring_day",
+          "path": "images/assets/bg/bg_hanamori_shibazakura_garden_spring_day.webp",
+          "spaceId": "SPACE-LM038-GARDEN"
+        }
+      ],
+      "spaces": [
+        {
+          "row": 67,
+          "id": "SPACE-LM038-GARDEN",
+          "bg": "BG-095",
+          "paths": "images/assets/bg/bg_hanamori_shibazakura_garden_spring_day.webp",
+          "notes": "LM-038。入口ゲート/屋台通りは別SPACE化しない。祭り屋台はイベント状態。P1春昼。\n2026-10-30 デルタ：BG-095初版完成。main配置・カタログ登録済。春昼。階段状散策路。海・街の遠景は初版案で、全市マップとの位置照合未了。入口ゲート/屋台SPACEは未追加。 実画面未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "hanamori_shibazakura_garden_spring_day",
+          "name": "芝桜の丘 花守ガーデン 春昼",
+          "path": "images/assets/bg/bg_hanamori_shibazakura_garden_spring_day.webp",
+          "location": "芝桜の丘 花守ガーデン 春昼",
+          "spaceId": "SPACE-LM038-GARDEN",
+          "status": "初版完成",
+          "time": "day",
+          "season": "spring"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-096",
+      "name": "九十九坂レトロ電器小路 昼",
+      "row": 100,
+      "sheetPathBefore": "images/assets/bg/bg_tsukumozaka_retro_electric_alley_day.webp",
+      "path": "images/assets/bg/bg_tsukumozaka_retro_electric_alley_day.webp",
+      "pathCorrection": false,
+      "sha256": "a887aa0c6c278286e54e2d0e6ae8521b44c90a4fec12a09be88e7d6312cbd62d",
+      "bytes": 512958,
+      "gitBytesSha256": "a887aa0c6c278286e54e2d0e6ae8521b44c90a4fec12a09be88e7d6312cbd62d",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "初版完成/配置・カタログ登録済",
+      "spaceCell": "SPACE-LM031-STREET",
+      "notes": "店名文字・修理店内部は未設定。つくも建物自体は主景に含めない。 シナリオ割当未実施。",
+      "catalog": [
+        {
+          "key": "tsukumozaka_retro_electric_alley_day",
+          "path": "images/assets/bg/bg_tsukumozaka_retro_electric_alley_day.webp",
+          "spaceId": "SPACE-LM031-STREET"
+        }
+      ],
+      "spaces": [
+        {
+          "row": 61,
+          "id": "SPACE-LM031-STREET",
+          "bg": "BG-096",
+          "paths": "images/assets/bg/bg_tsukumozaka_retro_electric_alley_day.webp",
+          "notes": "LM-031。P1昼。\n2026-10-30 デルタ：BG-096初版完成。main配置・カタログ登録済。店名文字・修理店内部は未設定。つくも建物自体は主景に含めない。 実画面未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "tsukumozaka_retro_electric_alley_day",
+          "name": "九十九坂レトロ電器小路 昼",
+          "path": "images/assets/bg/bg_tsukumozaka_retro_electric_alley_day.webp",
+          "location": "九十九坂レトロ電器小路 昼",
+          "spaceId": "SPACE-LM031-STREET",
+          "time": "day",
+          "status": "初版完成"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-097",
+      "name": "日和坂デジタル工作室 昼",
+      "row": 101,
+      "sheetPathBefore": "images/assets/bg/bg_hiyorizaka_digital_workshop_day.webp",
+      "path": "images/assets/bg/bg_hiyorizaka_digital_workshop_day.webp",
+      "pathCorrection": false,
+      "sha256": "883a41c8feeb49983b140f862fdb83dfe851040719fc0416d5188793e43d2b24",
+      "bytes": 236472,
+      "gitBytesSha256": "883a41c8feeb49983b140f862fdb83dfe851040719fc0416d5188793e43d2b24",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "初版完成/配置・カタログ登録済",
+      "spaceCell": "SPACE-LM033-WORKSHOP",
+      "notes": "図書館内部との接続は追加しない。受付/廊下は非SPACE。 シナリオ割当未実施。",
+      "catalog": [
+        {
+          "key": "hiyorizaka_digital_workshop_day",
+          "path": "images/assets/bg/bg_hiyorizaka_digital_workshop_day.webp",
+          "spaceId": "SPACE-LM033-WORKSHOP"
+        }
+      ],
+      "spaces": [
+        {
+          "row": 63,
+          "id": "SPACE-LM033-WORKSHOP",
+          "bg": "BG-097",
+          "paths": "images/assets/bg/bg_hiyorizaka_digital_workshop_day.webp",
+          "notes": "LM-033。受付・廊下は独立SPACE化しない。P1昼内観。\n2026-10-30 デルタ：BG-097初版完成。main配置・カタログ登録済。図書館内部との接続は追加しない。受付/廊下は非SPACE。 実画面未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "hiyorizaka_digital_workshop_day",
+          "name": "日和坂デジタル工作室 昼",
+          "path": "images/assets/bg/bg_hiyorizaka_digital_workshop_day.webp",
+          "location": "日和坂デジタル工作室 昼",
+          "spaceId": "SPACE-LM033-WORKSHOP",
+          "time": "day",
+          "status": "初版完成"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-098",
+      "name": "日和坂アクアプール 夏昼",
+      "row": 102,
+      "sheetPathBefore": "images/assets/bg/bg_hiyorizaka_aquapool_summer_day.webp",
+      "path": "images/assets/bg/bg_hiyorizaka_aquapool_summer_day.webp",
+      "pathCorrection": false,
+      "sha256": "c9d4b65aa28397b82cf6d2ed608b877abff57d00d98e39e3135fa98e3a269a94",
+      "bytes": 464228,
+      "gitBytesSha256": "c9d4b65aa28397b82cf6d2ed608b877abff57d00d98e39e3135fa98e3a269a94",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "初版完成/配置・カタログ登録済",
+      "spaceCell": "SPACE-LM040-AQUAPOOL",
+      "notes": "スライダー/流れるプールは同一SPACE内設備。無人の基準背景。夜/雨差分なし。 シナリオ割当未実施。",
+      "catalog": [
+        {
+          "key": "hiyorizaka_aquapool_summer_day",
+          "path": "images/assets/bg/bg_hiyorizaka_aquapool_summer_day.webp",
+          "spaceId": "SPACE-LM040-AQUAPOOL"
+        }
+      ],
+      "spaces": [
+        {
+          "row": 68,
+          "id": "SPACE-LM040-AQUAPOOL",
+          "bg": "BG-098",
+          "paths": "images/assets/bg/bg_hiyorizaka_aquapool_summer_day.webp",
+          "notes": "LM-040。スライダー/流れるプールを別SPACE化しない。夜・雨差分なし。P1夏昼。\n2026-10-30 デルタ：BG-098初版完成。main配置・カタログ登録済。スライダー/流れるプールは同一SPACE内設備。無人の基準背景。夜/雨差分なし。 実画面未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "hiyorizaka_aquapool_summer_day",
+          "name": "日和坂アクアプール 夏昼",
+          "path": "images/assets/bg/bg_hiyorizaka_aquapool_summer_day.webp",
+          "location": "日和坂アクアプール 夏昼",
+          "spaceId": "SPACE-LM040-AQUAPOOL",
+          "time": "day",
+          "season": "summer",
+          "status": "初版完成"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-099",
+      "name": "紅葉谷ロープウェイ ゴンドラ 秋昼",
+      "row": 103,
+      "sheetPathBefore": "images/assets/bg/bg_momijidani_ropeway_cabin_autumn_day.webp",
+      "path": "images/assets/bg/bg_momijidani_ropeway_cabin_autumn_day.webp",
+      "pathCorrection": false,
+      "sha256": "e4b3a1d29a6c5677ddeeeb0b4f0f292bc31fd56a8c7e1ab87e7d3fe09ee3743a",
+      "bytes": 348160,
+      "gitBytesSha256": "e4b3a1d29a6c5677ddeeeb0b4f0f292bc31fd56a8c7e1ab87e7d3fe09ee3743a",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "初版完成/配置・カタログ登録済",
+      "spaceCell": "SPACE-LM041-CABIN",
+      "notes": "秋昼のゴンドラのみ制作。乗降駅はP2未制作、山頂展望台は追加しない。索道機械の詳細は未検証。 シナリオ割当未実施。",
+      "catalog": [
+        {
+          "key": "momijidani_ropeway_cabin_autumn_day",
+          "path": "images/assets/bg/bg_momijidani_ropeway_cabin_autumn_day.webp",
+          "spaceId": "SPACE-LM041-CABIN"
+        }
+      ],
+      "spaces": [
+        {
+          "row": 70,
+          "id": "SPACE-LM041-CABIN",
+          "bg": "BG-099",
+          "paths": "images/assets/bg/bg_momijidani_ropeway_cabin_autumn_day.webp",
+          "notes": "LM-041。P1ゴンドラ秋昼。四季版/冬版は作らない。\n2026-10-30 デルタ：BG-099初版完成。main配置・カタログ登録済。秋昼のゴンドラのみ制作。乗降駅はP2未制作、山頂展望台は追加しない。索道機械の詳細は未検証。 実画面未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "momijidani_ropeway_cabin_autumn_day",
+          "name": "紅葉谷ロープウェイ ゴンドラ 秋昼",
+          "path": "images/assets/bg/bg_momijidani_ropeway_cabin_autumn_day.webp",
+          "location": "紅葉谷ロープウェイ ゴンドラ 秋昼",
+          "spaceId": "SPACE-LM041-CABIN",
+          "time": "day",
+          "season": "autumn",
+          "status": "初版完成"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-100",
+      "name": "羽白高原 雪原 冬夕方",
+      "row": 104,
+      "sheetPathBefore": "images/assets/bg/bg_hashiro_plateau_snowfield_winter_evening.webp",
+      "path": "images/assets/bg/bg_hashiro_plateau_snowfield_winter_evening.webp",
+      "pathCorrection": false,
+      "sha256": "94516652520e56038b61acea83bb627badc55a9e8df1de8534065acee01166f5",
+      "bytes": 337952,
+      "gitBytesSha256": "94516652520e56038b61acea83bb627badc55a9e8df1de8534065acee01166f5",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "初版完成/配置・カタログ登録済",
+      "spaceCell": "SPACE-LM044-SNOWFIELD",
+      "notes": "羽白湖より山側の別景観。湖畔背景を流用しない。積雪が基準状態。夜差分は未制作。 シナリオ割当未実施。",
+      "catalog": [
+        {
+          "key": "hashiro_plateau_snowfield_winter_evening",
+          "path": "images/assets/bg/bg_hashiro_plateau_snowfield_winter_evening.webp",
+          "spaceId": "SPACE-LM044-SNOWFIELD"
+        }
+      ],
+      "spaces": [
+        {
+          "row": 73,
+          "id": "SPACE-LM044-SNOWFIELD",
+          "bg": "BG-100",
+          "paths": "images/assets/bg/bg_hashiro_plateau_snowfield_winter_evening.webp",
+          "notes": "LM-044。羽白湖既存BGとは別景観。P1夕方/P2夜。\n2026-10-30 デルタ：BG-100初版完成。main配置・カタログ登録済。羽白湖より山側の別景観。湖畔背景を流用しない。積雪が基準状態。夜差分は未制作。 実画面未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "hashiro_plateau_snowfield_winter_evening",
+          "name": "羽白高原 雪原 冬夕方",
+          "path": "images/assets/bg/bg_hashiro_plateau_snowfield_winter_evening.webp",
+          "location": "羽白高原 雪原 冬夕方",
+          "spaceId": "SPACE-LM044-SNOWFIELD",
+          "time": "evening",
+          "season": "winter",
+          "status": "初版完成"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-101",
+      "name": "ひだまり坂ベーカリー街 朝",
+      "row": 105,
+      "sheetPathBefore": "images/assets/bg/bg_hidamarizaka_bakery_street_morning.webp",
+      "path": "images/assets/bg/bg_hidamarizaka_bakery_street_morning.webp",
+      "pathCorrection": false,
+      "sha256": "827105f905067210b97801240a7a4382fd58ecab40932185ef4a15fbaa8a88d8",
+      "bytes": 560096,
+      "gitBytesSha256": "827105f905067210b97801240a7a4382fd58ecab40932185ef4a15fbaa8a88d8",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "初版完成/配置・カタログ登録済",
+      "spaceCell": "SPACE-LM014-STREET",
+      "notes": "個別パン屋SPACEは追加しない。店名は後工程。 シナリオ割当未実施。\n2026-10-30 デルタ改訂v2：店長指定で生活商店街風へ。花飾りを減らし、色違いの庇・シャッター・配達ケース・掲示板・店先パンケースを採用。同一BG-ID/ファイル名で差替。\n2026-10-30 店長指定v3：都市型の専門ベーカリー集積街へ改訂。多い人流を背景に、食パン・ハード系・惣菜パン・サンドイッチ等の尖った専門性で需要を分担し、通り全体の比較購買・回遊需要を生む商業構成。各専門店の具体名称/配置は未確定。参考画像に沿い、車道・広い歩道・成熟街路樹・中層商業ビルの街路構成を採用。旧v1/v2の低層生活路地案は非採用。\n2026-10-30 店長指定v4：車道を廃止して歩行者専用プロムナードへ。街路樹を間引き、店舗沿いにパラソル・テーブル・椅子を配置。専門パン店の集積＋カフェ/ドリンク併売で滞在・食べ比べ・客単価向上を狙う。中央歩行動線は確保。各店名/メニュー/価格は未設定。v3車道あり版は非採用。",
+      "catalog": [
+        {
+          "key": "hidamarizaka_bakery_street_morning",
+          "path": "images/assets/bg/bg_hidamarizaka_bakery_street_morning.webp",
+          "spaceId": "SPACE-LM014-STREET"
+        }
+      ],
+      "spaces": [
+        {
+          "row": 44,
+          "id": "SPACE-LM014-STREET",
+          "bg": "BG-101",
+          "paths": "images/assets/bg/bg_hidamarizaka_bakery_street_morning.webp",
+          "notes": "LM-014。独立LMの隣接サブエリアとしてSPACE保持。P1朝。\n2026-10-30 デルタ：BG-101初版完成。main配置・カタログ登録済。個別パン屋SPACEは追加しない。店名は後工程。 実画面未確認。\n2026-10-30 デルタ改訂v2：店長指定で生活商店街風へ。花飾りを減らし、色違いの庇・シャッター・配達ケース・掲示板・店先パンケースを採用。同一BG-ID/ファイル名で差替。\n2026-10-30 店長指定v3：都市型の専門ベーカリー集積街へ改訂。多い人流を背景に、食パン・ハード系・惣菜パン・サンドイッチ等の尖った専門性で需要を分担し、通り全体の比較購買・回遊需要を生む商業構成。各専門店の具体名称/配置は未確定。参考画像に沿い、車道・広い歩道・成熟街路樹・中層商業ビルの街路構成を採用。旧v1/v2の低層生活路地案は非採用。\n2026-10-30 店長指定v4：車道を廃止して歩行者専用プロムナードへ。街路樹を間引き、店舗沿いにパラソル・テーブル・椅子を配置。専門パン店の集積＋カフェ/ドリンク併売で滞在・食べ比べ・客単価向上を狙う。中央歩行動線は確保。各店名/メニュー/価格は未設定。v3車道あり版は非採用。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "hidamarizaka_bakery_street_morning",
+          "name": "ひだまり坂ベーカリー街 朝",
+          "path": "images/assets/bg/bg_hidamarizaka_bakery_street_morning.webp",
+          "location": "ひだまり坂ベーカリー街 朝",
+          "spaceId": "SPACE-LM014-STREET",
+          "time": "morning",
+          "status": "初版完成"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-102",
+      "name": "潮風サイクリングロード 朝",
+      "row": 106,
+      "sheetPathBefore": "images/assets/bg/bg_shiokaze_cycling_road_morning.webp",
+      "path": "images/assets/bg/bg_shiokaze_cycling_road_morning.webp",
+      "pathCorrection": false,
+      "sha256": "56ef1e3018dd84e0e13bf7842cf3b39a24b985ca941131cb260cacd905ac4449",
+      "bytes": 420658,
+      "gitBytesSha256": "56ef1e3018dd84e0e13bf7842cf3b39a24b985ca941131cb260cacd905ac4449",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "初版完成/配置・カタログ登録済",
+      "spaceCell": "SPACE-LM015-ROUTE",
+      "notes": "季節共用の朝基準。休憩所の独立SPACEなし。海岸形状の全市マップ照合は未了。 シナリオ割当未実施。",
+      "catalog": [
+        {
+          "key": "shiokaze_cycling_road_morning",
+          "path": "images/assets/bg/bg_shiokaze_cycling_road_morning.webp",
+          "spaceId": "SPACE-LM015-ROUTE"
+        }
+      ],
+      "spaces": [
+        {
+          "row": 45,
+          "id": "SPACE-LM015-ROUTE",
+          "bg": "BG-102",
+          "paths": "images/assets/bg/bg_shiokaze_cycling_road_morning.webp",
+          "notes": "LM-015。休憩所は独立SPACE化しない。\n2026-10-30 デルタ：BG-102初版完成。main配置・カタログ登録済。季節共用の朝基準。休憩所の独立SPACEなし。海岸形状の全市マップ照合は未了。 実画面未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "shiokaze_cycling_road_morning",
+          "name": "潮風サイクリングロード 朝",
+          "path": "images/assets/bg/bg_shiokaze_cycling_road_morning.webp",
+          "location": "潮風サイクリングロード 朝",
+          "spaceId": "SPACE-LM015-ROUTE",
+          "time": "morning",
+          "status": "初版完成"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-103",
+      "name": "日和坂市民ホール メインホール",
+      "row": 107,
+      "sheetPathBefore": "images/assets/bg/bg_hiyorizaka_civic_hall_auditorium.webp",
+      "path": "images/assets/bg/bg_hiyorizaka_civic_hall_auditorium.webp",
+      "pathCorrection": false,
+      "sha256": "f65a75ac52c7a3d03f25b07fc4cfbcc2b78134442a2bee25b7ea64da52402023",
+      "bytes": 164678,
+      "gitBytesSha256": "f65a75ac52c7a3d03f25b07fc4cfbcc2b78134442a2bee25b7ea64da52402023",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "初版完成/配置・カタログ登録済",
+      "spaceCell": "SPACE-LM018-AUDITORIUM",
+      "notes": "夕夜利用の館内共用背景。ホワイエはP2未制作。舞台裏SPACEは追加しない。 シナリオ割当未実施。",
+      "catalog": [
+        {
+          "key": "hiyorizaka_civic_hall_auditorium",
+          "path": "images/assets/bg/bg_hiyorizaka_civic_hall_auditorium.webp",
+          "spaceId": "SPACE-LM018-AUDITORIUM"
+        }
+      ],
+      "spaces": [
+        {
+          "row": 48,
+          "id": "SPACE-LM018-AUDITORIUM",
+          "bg": "BG-103",
+          "paths": "images/assets/bg/bg_hiyorizaka_civic_hall_auditorium.webp",
+          "notes": "LM-018。P1。別施設BGは流用しない。\n2026-10-30 デルタ：BG-103初版完成。main配置・カタログ登録済。夕夜利用の館内共用背景。ホワイエはP2未制作。舞台裏SPACEは追加しない。 実画面未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "hiyorizaka_civic_hall_auditorium",
+          "name": "日和坂市民ホール メインホール",
+          "path": "images/assets/bg/bg_hiyorizaka_civic_hall_auditorium.webp",
+          "location": "日和坂市民ホール メインホール",
+          "spaceId": "SPACE-LM018-AUDITORIUM",
+          "status": "初版完成"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-104",
+      "name": "潮見浜ライブデッキ 夕方",
+      "row": 108,
+      "sheetPathBefore": "images/assets/bg/bg_shiomi_beach_live_deck_evening.webp",
+      "path": "images/assets/bg/bg_shiomi_beach_live_deck_evening.webp",
+      "pathCorrection": false,
+      "sha256": "281ab0c6b9b6dab8f22639c992a57bda33ab972b505a9a2904d5b833ac74251f",
+      "bytes": 295428,
+      "gitBytesSha256": "281ab0c6b9b6dab8f22639c992a57bda33ab972b505a9a2904d5b833ac74251f",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "初版完成/配置・カタログ登録済",
+      "spaceCell": "SPACE-LM019-LIVEDECK",
+      "notes": "ステージ/観覧/海景の1SPACE。舞台裏・控室なし。海岸形状照合は未了。 シナリオ割当未実施。",
+      "catalog": [
+        {
+          "key": "shiomi_beach_live_deck_evening",
+          "path": "images/assets/bg/bg_shiomi_beach_live_deck_evening.webp",
+          "spaceId": "SPACE-LM019-LIVEDECK"
+        }
+      ],
+      "spaces": [
+        {
+          "row": 49,
+          "id": "SPACE-LM019-LIVEDECK",
+          "bg": "BG-104",
+          "paths": "images/assets/bg/bg_shiomi_beach_live_deck_evening.webp",
+          "notes": "LM-019。舞台裏・控室なし。\n2026-10-30 デルタ：BG-104初版完成。main配置・カタログ登録済。ステージ/観覧/海景の1SPACE。舞台裏・控室なし。海岸形状照合は未了。 実画面未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "shiomi_beach_live_deck_evening",
+          "name": "潮見浜ライブデッキ 夕方",
+          "path": "images/assets/bg/bg_shiomi_beach_live_deck_evening.webp",
+          "location": "潮見浜ライブデッキ 夕方",
+          "spaceId": "SPACE-LM019-LIVEDECK",
+          "time": "evening",
+          "status": "初版完成"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-105",
+      "name": "日和坂アリーナ メインアリーナ",
+      "row": 109,
+      "sheetPathBefore": "images/assets/bg/bg_hiyorizaka_arena_interior.webp",
+      "path": "images/assets/bg/bg_hiyorizaka_arena_interior.webp",
+      "pathCorrection": false,
+      "sha256": "13d008ba8682af8966d1b2e8c2dd457aad45d6a6da45dbf8a2c78606ed362b8d",
+      "bytes": 282752,
+      "gitBytesSha256": "13d008ba8682af8966d1b2e8c2dd457aad45d6a6da45dbf8a2c78606ed362b8d",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "初版完成/配置・カタログ登録済",
+      "spaceCell": "SPACE-LM021-ARENA",
+      "notes": "LM-050ゲームアリーナとは別施設。競技/展示の装飾はイベント差分。ロビーSPACEは追加しない。 シナリオ割当未実施。",
+      "catalog": [
+        {
+          "key": "hiyorizaka_arena_interior",
+          "path": "images/assets/bg/bg_hiyorizaka_arena_interior.webp",
+          "spaceId": "SPACE-LM021-ARENA"
+        }
+      ],
+      "spaces": [
+        {
+          "row": 52,
+          "id": "SPACE-LM021-ARENA",
+          "bg": "BG-105",
+          "paths": "images/assets/bg/bg_hiyorizaka_arena_interior.webp",
+          "notes": "LM-021。ロビー等は追加しない。P1内観。\n2026-10-30 デルタ：BG-105初版完成。main配置・カタログ登録済。LM-050ゲームアリーナとは別施設。競技/展示の装飾はイベント差分。ロビーSPACEは追加しない。 実画面未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "hiyorizaka_arena_interior",
+          "name": "日和坂アリーナ メインアリーナ",
+          "path": "images/assets/bg/bg_hiyorizaka_arena_interior.webp",
+          "location": "日和坂アリーナ メインアリーナ",
+          "spaceId": "SPACE-LM021-ARENA",
+          "status": "初版完成"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-106",
+      "name": "日和坂学園 校門 放課後",
+      "row": 110,
+      "sheetPathBefore": "images/assets/bg/bg_lm006_gate_after_school.webp",
+      "path": "images/assets/bg/bg_lm006_gate_after_school.webp",
+      "pathCorrection": false,
+      "sha256": "7fc87bb8caca87a7f1c0bbe1346f9865f678c82d677b70a8550a292aa970b836",
+      "bytes": 539546,
+      "gitBytesSha256": "7fc87bb8caca87a7f1c0bbe1346f9865f678c82d677b70a8550a292aa970b836",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "初版完成/配置・カタログ登録済",
+      "spaceCell": "SPACE-LM006-GATE",
+      "notes": "正式英字読み未確定のためlm006を維持。校舎は奥の控えめな輪郭のみ、内部SPACE追加なし。 シナリオ割当未実施。",
+      "catalog": [
+        {
+          "key": "lm006_gate_after_school",
+          "path": "images/assets/bg/bg_lm006_gate_after_school.webp",
+          "spaceId": "SPACE-LM006-GATE"
+        }
+      ],
+      "spaces": [
+        {
+          "row": 21,
+          "id": "SPACE-LM006-GATE",
+          "bg": "BG-106",
+          "paths": "images/assets/bg/bg_lm006_gate_after_school.webp",
+          "notes": "LM-006。正式英字読み未確定のためLM006仮ID。P1=校門・放課後。\n2026-10-30 デルタ：BG-106初版完成。main配置・カタログ登録済。正式英字読み未確定のためlm006を維持。校舎は奥の控えめな輪郭のみ、内部SPACE追加なし。 実画面未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "lm006_gate_after_school",
+          "name": "日和坂学園 校門 放課後",
+          "path": "images/assets/bg/bg_lm006_gate_after_school.webp",
+          "location": "日和坂学園 校門 放課後",
+          "spaceId": "SPACE-LM006-GATE",
+          "time": "afternoon",
+          "status": "初版完成"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-107",
+      "name": "日和坂シーグラス通り 昼",
+      "row": 111,
+      "sheetPathBefore": "images/assets/bg/bg_hiyorizaka_seaglass_street_day.webp",
+      "path": "images/assets/bg/bg_hiyorizaka_seaglass_street_day.webp",
+      "pathCorrection": false,
+      "sha256": "82c044428ee4090d38c722efc93bce02f5009f74a420b26ee5a8da4e97f4f05c",
+      "bytes": 490202,
+      "gitBytesSha256": "82c044428ee4090d38c722efc93bce02f5009f74a420b26ee5a8da4e97f4f05c",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "初版完成/配置・カタログ登録済",
+      "spaceCell": "SPACE-LM007-STREET",
+      "notes": "都市型海沿い商業回遊。個別雑貨店・カフェSPACEなし。全市海岸形状照合は未了。 シナリオ割当未実施。",
+      "catalog": [
+        {
+          "key": "hiyorizaka_seaglass_street_day",
+          "path": "images/assets/bg/bg_hiyorizaka_seaglass_street_day.webp",
+          "spaceId": "SPACE-LM007-STREET"
+        }
+      ],
+      "spaces": [
+        {
+          "row": 23,
+          "id": "SPACE-LM007-STREET",
+          "bg": "BG-107",
+          "paths": "images/assets/bg/bg_hiyorizaka_seaglass_street_day.webp",
+          "notes": "LM-007。P1昼、P2夕方。夜・雨・個別店舗SPACEは根拠不足で追加しない。\n2026-10-30 デルタ：BG-107初版完成。main配置・カタログ登録済。都市型海沿い商業回遊。個別雑貨店・カフェSPACEなし。全市海岸形状照合は未了。 実画面未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "hiyorizaka_seaglass_street_day",
+          "name": "日和坂シーグラス通り 昼",
+          "path": "images/assets/bg/bg_hiyorizaka_seaglass_street_day.webp",
+          "location": "日和坂シーグラス通り 昼",
+          "spaceId": "SPACE-LM007-STREET",
+          "time": "day",
+          "status": "初版完成"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-108",
+      "name": "日和坂ブックカフェ通り 昼",
+      "row": 112,
+      "sheetPathBefore": "images/assets/bg/bg_hiyorizaka_bookcafe_street_day.webp",
+      "path": "images/assets/bg/bg_hiyorizaka_bookcafe_street_day.webp",
+      "pathCorrection": false,
+      "sha256": "fd4da8b34408d983685ab54de7eca3f5441fb5a5a9cd01e8a9920830f93f2f56",
+      "bytes": 520354,
+      "gitBytesSha256": "fd4da8b34408d983685ab54de7eca3f5441fb5a5a9cd01e8a9920830f93f2f56",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "初版完成/配置・カタログ登録済",
+      "spaceCell": "SPACE-LM026-STREET",
+      "notes": "中央図書館周辺の専門店集積。アントステラ既存建築は描き替えず別SPACEとして維持。個別店名未設定。 シナリオ割当未実施。",
+      "catalog": [
+        {
+          "key": "hiyorizaka_bookcafe_street_day",
+          "path": "images/assets/bg/bg_hiyorizaka_bookcafe_street_day.webp",
+          "spaceId": "SPACE-LM026-STREET"
+        }
+      ],
+      "spaces": [
+        {
+          "row": 53,
+          "id": "SPACE-LM026-STREET",
+          "bg": "BG-108",
+          "paths": "images/assets/bg/bg_hiyorizaka_bookcafe_street_day.webp",
+          "notes": "LM-026。具体店舗アントステラは既存SPACEとして分離。\n2026-10-30 デルタ：BG-108初版完成。main配置・カタログ登録済。中央図書館周辺の専門店集積。アントステラ既存建築は描き替えず別SPACEとして維持。個別店名未設定。 実画面未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "hiyorizaka_bookcafe_street_day",
+          "name": "日和坂ブックカフェ通り 昼",
+          "path": "images/assets/bg/bg_hiyorizaka_bookcafe_street_day.webp",
+          "location": "日和坂ブックカフェ通り 昼",
+          "spaceId": "SPACE-LM026-STREET",
+          "time": "day",
+          "status": "初版完成"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-109",
+      "name": "紅葉谷ロープウェイ 乗降駅 秋昼",
+      "row": 113,
+      "sheetPathBefore": "images/assets/bg/bg_momijidani_ropeway_station_autumn_day.webp",
+      "path": "images/assets/bg/bg_momijidani_ropeway_station_autumn_day.webp",
+      "pathCorrection": false,
+      "sha256": "778349dedfeff85796aad9b4ca5e0acccd828a1eb8255916df0203990e96f636",
+      "bytes": 438346,
+      "gitBytesSha256": "778349dedfeff85796aad9b4ca5e0acccd828a1eb8255916df0203990e96f636",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "初版完成/配置・カタログ登録済",
+      "spaceCell": "SPACE-LM041-STATION",
+      "notes": "BG-099のオフホワイト/暗赤色車体意匠を継承。山頂展望台追加なし。索道機械詳細は未検証。 シナリオ割当未実施。",
+      "catalog": [
+        {
+          "key": "momijidani_ropeway_station_autumn_day",
+          "path": "images/assets/bg/bg_momijidani_ropeway_station_autumn_day.webp",
+          "spaceId": "SPACE-LM041-STATION"
+        }
+      ],
+      "spaces": [
+        {
+          "row": 69,
+          "id": "SPACE-LM041-STATION",
+          "bg": "BG-109",
+          "paths": "images/assets/bg/bg_momijidani_ropeway_station_autumn_day.webp",
+          "notes": "LM-041。山頂展望台は根拠不足でSPACE化しない。P2駅。\n2026-10-30 デルタ：BG-109初版完成。main配置・カタログ登録済。BG-099のオフホワイト/暗赤色車体意匠を継承。山頂展望台追加なし。索道機械詳細は未検証。 実画面未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "momijidani_ropeway_station_autumn_day",
+          "name": "紅葉谷ロープウェイ 乗降駅 秋昼",
+          "path": "images/assets/bg/bg_momijidani_ropeway_station_autumn_day.webp",
+          "location": "紅葉谷ロープウェイ 乗降駅 秋昼",
+          "spaceId": "SPACE-LM041-STATION",
+          "time": "day",
+          "season": "autumn",
+          "status": "初版完成"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    },
+    {
+      "bg": "BG-110",
+      "name": "白嶺スノーパーク ゲレンデ 冬昼",
+      "row": 114,
+      "sheetPathBefore": "images/assets/bg/bg_shirane_snowpark_slope_winter_day.webp",
+      "path": "images/assets/bg/bg_shirane_snowpark_slope_winter_day.webp",
+      "pathCorrection": false,
+      "sha256": "4ffd440c9e6bf0c868490e1949e8c7c2d7f4c9470f5054b18dcb3cb6415f6506",
+      "bytes": 497170,
+      "gitBytesSha256": "4ffd440c9e6bf0c868490e1949e8c7c2d7f4c9470f5054b18dcb3cb6415f6506",
+      "gitEncoding": "binary",
+      "format": "WEBP",
+      "size": [
+        1672,
+        941
+      ],
+      "adoptionPreserved": "初版完成/配置・カタログ登録済",
+      "spaceCell": "SPACE-LM043-SLOPE",
+      "notes": "雪が基準状態。リフトは設備ゾーンで独立SPACEなし。ロッジはP2未制作。地形の都市周辺図照合は未了。 シナリオ割当未実施。",
+      "catalog": [
+        {
+          "key": "shirane_snowpark_slope_winter_day",
+          "path": "images/assets/bg/bg_shirane_snowpark_slope_winter_day.webp",
+          "spaceId": "SPACE-LM043-SLOPE"
+        }
+      ],
+      "spaces": [
+        {
+          "row": 71,
+          "id": "SPACE-LM043-SLOPE",
+          "bg": "BG-110",
+          "paths": "images/assets/bg/bg_shirane_snowpark_slope_winter_day.webp",
+          "notes": "LM-043。雪が基準状態。リフトは独立SPACE化しない。P1ゲレンデ。\n2026-10-30 デルタ：BG-110初版完成。main配置・カタログ登録済。雪が基準状態。リフトは設備ゾーンで独立SPACEなし。ロッジはP2未制作。地形の都市周辺図照合は未了。 実画面未確認。"
+        }
+      ],
+      "catalogAfter": [
+        {
+          "key": "shirane_snowpark_slope_winter_day",
+          "name": "白嶺スノーパーク ゲレンデ 冬昼",
+          "path": "images/assets/bg/bg_shirane_snowpark_slope_winter_day.webp",
+          "location": "白嶺スノーパーク ゲレンデ 冬昼",
+          "spaceId": "SPACE-LM043-SLOPE",
+          "time": "day",
+          "season": "winter",
+          "status": "初版完成"
+        }
+      ],
+      "fileAndMetadataVerifiedHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+      "visualReview": "原画一覧とPC/スマホ横表示一覧を全件目視。寸法/設備規格/採否は未判定。"
+    }
+  ],
+  "pathReplacements": {
+    "images/assets/bg/bg_wakaba_central_park_winter_evening.png": "images/assets/bg/bg_wakaba_central_park_winter_evening.webp",
+    "images/assets/bg/bg_wakaba_central_park_winter_night.png": "images/assets/bg/bg_wakaba_central_park_winter_night.webp",
+    "images/assets/bgev/bg_park_spring.png": "images/assets/bgev/bg_park_spring.webp",
+    "images/assets/bg/bg_hiyorizaka_sports_park_early_morning.png": "images/assets/bg/bg_hiyorizaka_sports_park_early_morning.webp",
+    "images/assets/bg/bg_hiyorizaka_sports_park_morning.png": "images/assets/bg/bg_hiyorizaka_sports_park_morning.webp",
+    "images/assets/bg/bg_hiyorizaka_sports_park_day.png": "images/assets/bg/bg_hiyorizaka_sports_park_day.webp",
+    "images/assets/bg/bg_hiyorizaka_sports_park_evening.png": "images/assets/bg/bg_hiyorizaka_sports_park_evening.webp",
+    "images/assets/bg/bg_hiyorizaka_sports_park_midnight.png": "images/assets/bg/bg_hiyorizaka_sports_park_midnight.webp",
+    "images/assets/bg/bg_hiyorizaka_sports_park_kyudojo_day.png": "images/assets/bg/bg_hiyorizaka_sports_park_kyudojo_day.webp",
+    "images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.png": "images/assets/bg/bg_hiyorizaka_bujutsu_hounousai_stage_day.webp",
+    "images/assets/bgev/bg_tsukumo_tuning.png": "images/assets/bgev/bg_tsukumo_tuning.webp",
+    "images/assets/bgev/bg_item_exchange_counter.png": "images/assets/bgev/bg_item_exchange_counter.webp"
+  },
+  "afterVerificationHead": "f0fa9a4f3d50f4ff0ef89067387f1e43483ea6ea",
+  "normalSceneCatalogMatched": 48,
+  "systemUiPathsMatched": 2,
+  "spacePolicy": "BG075は物理SPACEなしを維持。BG076は既存SPACEを維持。外観BG085のラウンジSPACE親紐付けは既存を保持、外観専用SPACEの新設なし。",
+  "catalogOptionalSpaceFieldAbsent": [
+    {
+      "bg": "BG-061",
+      "key": "wakaba_central_park_winter_evening",
+      "canonicalSpace": "SPACE-WAKABA-CENTRAL-PARK"
+    },
+    {
+      "bg": "BG-062",
+      "key": "wakaba_central_park_winter_night",
+      "canonicalSpace": "SPACE-WAKABA-CENTRAL-PARK"
+    },
+    {
+      "bg": "BG-067",
+      "key": "hiyorizaka_sports_park_early_morning",
+      "canonicalSpace": "SPACE-HIYORIZAKA-SPORTS-PARK"
+    },
+    {
+      "bg": "BG-068",
+      "key": "hiyorizaka_sports_park_morning",
+      "canonicalSpace": "SPACE-HIYORIZAKA-SPORTS-PARK"
+    },
+    {
+      "bg": "BG-069",
+      "key": "hiyorizaka_sports_park_day",
+      "canonicalSpace": "SPACE-HIYORIZAKA-SPORTS-PARK"
+    },
+    {
+      "bg": "BG-070",
+      "key": "hiyorizaka_sports_park_evening",
+      "canonicalSpace": "SPACE-HIYORIZAKA-SPORTS-PARK"
+    },
+    {
+      "bg": "BG-071",
+      "key": "hiyorizaka_sports_park_midnight",
+      "canonicalSpace": "SPACE-HIYORIZAKA-SPORTS-PARK"
+    },
+    {
+      "bg": "BG-071",
+      "key": "hiyorizaka_sports_park_night",
+      "canonicalSpace": "SPACE-HIYORIZAKA-SPORTS-PARK"
+    },
+    {
+      "bg": "BG-072",
+      "key": "hiyorizaka_sports_park_kyudojo_day",
+      "canonicalSpace": "SPACE-HIYORIZAKA-SPORTS-PARK-KYUDOJO"
+    },
+    {
+      "bg": "BG-073",
+      "key": "hiyorizaka_sports_park_budokan_evening",
+      "canonicalSpace": "SPACE-HIYORIZAKA-SPORTS-PARK"
+    },
+    {
+      "bg": "BG-073",
+      "key": "hiyorizaka_sports_park_budokan",
+      "canonicalSpace": "SPACE-HIYORIZAKA-SPORTS-PARK"
+    },
+    {
+      "bg": "BG-073",
+      "key": "hiyorizaka_bujutsu_hounousai_stage_day",
+      "canonicalSpace": "SPACE-HIYORIZAKA-SPORTS-PARK"
+    },
+    {
+      "bg": "BG-079",
+      "key": "lumiere_cafe_interior_day",
+      "canonicalSpace": "SPACE-LM009-CAFE"
+    },
+    {
+      "bg": "BG-083",
+      "key": "lumiere_pension_room_day",
+      "canonicalSpace": "SPACE-LM009-PENSION-ROOM"
+    },
+    {
+      "bg": "BG-084",
+      "key": "lumiere_pension_balcony_day",
+      "canonicalSpace": "SPACE-LM009-PENSION-ROOM"
+    },
+    {
+      "bg": "BG-085",
+      "key": "ast_salon_exterior_day",
+      "canonicalSpace": "SPACE-LM111-LOUNGE"
+    },
+    {
+      "bg": "BG-086",
+      "key": "ast_herbal_tea_lounge_day",
+      "canonicalSpace": "SPACE-LM111-LOUNGE"
+    },
+    {
+      "bg": "BG-087",
+      "key": "ast_treatment_room_day",
+      "canonicalSpace": "SPACE-LM111-TREATMENT"
+    },
+    {
+      "bg": "BG-088",
+      "key": "aoba_campfield_evening",
+      "canonicalSpace": "SPACE-LM054-CAMPFIELD"
+    },
+    {
+      "bg": "BG-089",
+      "key": "hiyorizaka_bridal_terrace_day",
+      "canonicalSpace": "SPACE-LM056-TERRACE"
+    },
+    {
+      "bg": "BG-090",
+      "key": "yoiyami_koryori_yokocho_evening",
+      "canonicalSpace": "SPACE-LM057-YOKOCHO"
+    }
+  ],
+  "pathCellCorrections": 16,
+  "backgroundPathCorrections": 12,
+  "decodedBase64Repairs": 3,
+  "newImageGeneration": false,
+  "catalogAdditions": 9,
+  "sheetMatchedCells": 25,
+  "adoption50Preserved": true,
+  "reviewFindings": {
+    "BG093": "元画像の中央円・実線/破線ゴール周辺線を目視。正確な競技規格図/寸法への照合は未実施、規格適合と判定しない。",
+    "Ast": "3画像の木材/白壁基調とガーデン側の開口・施術室の独立を目視。ラウンジから施術ベッドは直接描かれていない。窓/扉の厳密な平面位置は図面なしで未確定。",
+    "Lumiere": "外観2/内観/テラス/桟橋/客室/バルコニーの木材・白壁・湖景を目視。視点差で窓数/接続/寸法を確定しない。",
+    "remainingOutsideLegacyRange": [
+      "BG119/129マリンピア屋上遠景高度：今回は現物対比未実施。3F設定との精査が別残件。",
+      "BG001初日の出：方位を地図と照合していない。",
+      "BG153〜156マルシェ：外観側窓5との内観対応は今回未対比。"
+    ]
+  },
+  "limits": [
+    "ローカルChromium、PC1920×1080/スマホ横844×390。物理端末/公開ゲーム/キャッシュ/配信状態未確認。",
+    "正確な建築寸法、法規、競技規格、地理方位、全人物・全台詞未確認。",
+    "カタログの任意spaceId属性がない既存エントリは元の登録を保持。正本SPACE対応は一覧に記録。"
+  ]
+}

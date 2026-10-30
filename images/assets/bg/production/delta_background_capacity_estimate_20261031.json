@@ -1,0 +1,32 @@
+{
+  "formula": "6時間帯 × 4季節 × 4イベント状態 = 96枚/地点",
+  "normalPlus4Events": "通常を別に追加するなら6×4×5=120枚/地点",
+  "sample": "旧BG061〜110の50WebP。3Base64誤保存は復号後バイト、Git履歴/元画像/バックアップを含めない。",
+  "medianBytes": 608431.0,
+  "meanBytes": 896680.76,
+  "samples": 50,
+  "scenarios": [
+    {
+      "locations": 1,
+      "images": 96,
+      "medianBasedGB": 0.058409376,
+      "meanBasedGB": 0.08608135296000001,
+      "budgetGB": 0.1
+    },
+    {
+      "locations": 50,
+      "images": 4800,
+      "medianBasedGB": 2.9204688,
+      "meanBasedGB": 4.304067648,
+      "budgetGB": 5.0
+    },
+    {
+      "locations": 110,
+      "images": 10560,
+      "medianBasedGB": 6.42503136,
+      "meanBasedGB": 9.4689488256,
+      "budgetGB": 11.0
+    }
+  ],
+  "uncertainty": "中央値〜平均を利用した目安であり上下限/保証値ではない。サイズ・描き込み・圧縮品質で変わる。GB=10^9bytes。"
+}
