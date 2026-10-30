@@ -1072,3 +1072,61 @@
     "status": "初版空間案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta legacy BG-061..110 catalog omissions; no scenario assignment. */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "park_spring": {
+    "name": "若葉中央公園",
+    "path": "images/assets/bgev/bg_park_spring.webp",
+    "spaceId": "SPACE-WAKABA-CENTRAL-PARK",
+    "status": "既存実装/若葉春シナリオ正式紐付け"
+  },
+  "marinpia_aqua_tunnel": {
+    "name": "日和坂マリンピア 海中トンネル",
+    "path": "images/assets/bg/bg_marinpia_aqua_tunnel.webp",
+    "spaceId": "SPACE-LM010-AQUA-TUNNEL",
+    "status": "正式採用/生成済み"
+  },
+  "marinpia_main_tank": {
+    "name": "日和坂マリンピア 巨大メイン水槽",
+    "path": "images/assets/bg/bg_marinpia_main_tank.webp",
+    "spaceId": "SPACE-LM010-MAIN-TANK",
+    "status": "正式採用/生成済み"
+  },
+  "marinpia_jellyfish_gallery": {
+    "name": "日和坂マリンピア クラゲ幻想回廊",
+    "path": "images/assets/bg/bg_marinpia_jellyfish_gallery.webp",
+    "spaceId": "SPACE-LM010-JELLYFISH",
+    "status": "正式採用/生成済み"
+  },
+  "lumiere_parking_side_day": {
+    "name": "羽白湖畔カフェ＆ペンション ルミエール 駐車場側外観",
+    "path": "images/assets/bg/bg_lumiere_parking_side_day.webp",
+    "spaceId": "SPACE-LM009-CAFE",
+    "status": "正式採用/GitHub実装済み"
+  },
+  "lumiere_lakeside_day": {
+    "name": "羽白湖畔カフェ＆ペンション ルミエール 湖面側外観",
+    "path": "images/assets/bg/bg_lumiere_lakeside_day.webp",
+    "spaceId": "SPACE-LM009-CAFE",
+    "status": "正式採用/GitHub実装済み"
+  },
+  "lumiere_lakeside_terrace_day": {
+    "name": "ルミエール 湖畔テラス席",
+    "path": "images/assets/bg/bg_lumiere_lakeside_terrace_day.webp",
+    "spaceId": "SPACE-LM009-CAFE",
+    "status": "正式採用/GitHub実装済み"
+  },
+  "lumiere_window_seat_day": {
+    "name": "ルミエール 窓際2人席",
+    "path": "images/assets/bg/bg_lumiere_window_seat_day.webp",
+    "spaceId": "SPACE-LM009-CAFE",
+    "status": "正式採用/GitHub実装済み"
+  },
+  "lumiere_boat_dock_day": {
+    "name": "ルミエール 桟橋・ボート乗降",
+    "path": "images/assets/bg/bg_lumiere_boat_dock_day.webp",
+    "spaceId": "SPACE-LM009-CAFE",
+    "status": "正式採用/GitHub実装済み"
+  }
+});})();
