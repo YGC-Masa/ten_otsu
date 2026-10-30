@@ -1050,3 +1050,14 @@
     "status": "初版空間案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-107 landmark proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "shiomi_lighthouse_approach_evening": {
+    "name": "潮見灯台 代表導線・夕方（初版灯台案）",
+    "path": "images/assets/bg/bg_shiomi_lighthouse_approach_evening.webp",
+    "spaceId": "SPACE-LM107-APPROACH",
+    "time": "evening",
+    "status": "初版空間案/間取り・設備・採否未確定"
+  }
+});})();

@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-107",
+  "facility": "FAC-052",
+  "space": "SPACE-LM107-APPROACH",
+  "name": "潮見灯台 代表導線・夕方（初版灯台案）",
+  "canon": "潮見浜東端、灯台/海辺/告白スポット。藍/雪乃/夜空/真花/萌。夕暮れ/初日の出/海風/告白/約束。通年夕方〜夜/元旦。",
+  "proposal": "潮見浜東端という正本条件の灯台外観/外側歩行導線案。控えめな白い円筒塔/濃灰灯室、基部管理扉は閉じたまま、広い舗装会話帯と海側防護柵。湾曲浜/低い山並みは既存夕景参照。高さ/航路/灯質/運用/登塔可否/正確地点・方位は未確定。",
+  "unconfirmed": "建築/設備/配置/採否/正確寸法未確定。代表背景各1枚のみ、施設接続/営業条件/全館階数/住所・方位・距離を確定しない。防災設備性能・灯台の航路機能/灯質/登塔可否・SAの道路所属/上下線は原設定以上を追加しない。",
+  "sources": {
+    "world": "02_ランドマーク LM-107",
+    "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/英語別名検索2組・scenario/v039本文を照合、専用6画像未発見。6施設の直接シナリオ出典は未発見。既存横丁夜/温泉街冬夕/港岸壁/潮見浜夕の実画像を比較し、類似だけで同一施設としない。未発見は不存在の断定ではない。",
+    "references": [
+      "/workspace/delta_landmarks8/bg_shiomi_beach_evening.webp"
+    ]
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、用途/素材/窓扉/通行/中央ADV余白を目視確認。銭湯は既存温泉街と別、横丁は既存店を置換しない近景案。防災性能/航路機能/道路所属は未設定。設備規格・法令/正確寸法と全市地理は未検証。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-212",
+    "img": "IMG-WLD-136",
+    "key": "shiomi_lighthouse_approach_evening",
+    "path": "images/assets/bg/bg_shiomi_lighthouse_approach_evening.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "4dd02be58bd5b502befaa59baef8ebf1504a6789a72d24eacce8542037763be3"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "53ebce1ef2d644fbb6fd8038b0af433e2512f115"
+}
