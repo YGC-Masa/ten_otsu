@@ -797,3 +797,14 @@
     "status": "初版空間案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-084 landmark proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "hiyorizaka_aqua_reptile_entrance_day": {
+    "name": "日和坂アクア＆レプタイル館 入口・昼（初版外観案）",
+    "path": "images/assets/bg/bg_hiyorizaka_aqua_reptile_entrance_day.webp",
+    "spaceId": "SPACE-LM084-ENTRANCE",
+    "time": "day",
+    "status": "初版空間案/間取り・設備・採否未確定"
+  }
+});})();
