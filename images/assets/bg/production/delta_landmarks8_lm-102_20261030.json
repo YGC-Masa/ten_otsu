@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-102",
+  "facility": "FAC-047",
+  "space": "SPACE-LM102-ROAD",
+  "name": "潮風ドライブロード 海岸道路・夕方（初版道路案）",
+  "canon": "潮見浜〜郊外海岸、海岸線/ドライブ。琥珀/雪乃/彩愛/夜空/里美。夕日ドライブ/海沿い停車/車内会話/雨上がり海岸。春〜秋夕方〜夜。",
+  "proposal": "海岸道路SPACEの代表構図案。左の車道と手前中央の連続歩行帯を縁石で分離、右海側防護柵、既存参照の湾曲する浜と山並み。画像に停車区画/車内は描けておらず未設計。LM-015自転車道を改造/共用扱いにしない。座標/方位/距離/接続・車線幅や標示の詳細は未確定。",
+  "unconfirmed": "建築・外装・設備・配置・採否・正確寸法未確定。代表背景各1枚のみ、地理接続/上映作品/広告/店名/営業条件/全館階数/住所・方位・距離を確定しない。道路の停車区画/車内は未設計、車線幅/標示/規格も未検証。",
+  "sources": {
+    "world": "02_ランドマーク LM-102",
+    "search": "main全画像名・正本BG/SPACE/FAC台帳・Drive画像名の施設名/別名検索2組・scenario/v039本文を照合、専用5画像未発見。ドライブ検索の外付けドライブ文脈は除外し、5施設の直接出典は未発見。潮見浜夕BG-004実WebP/自転車道BG-102/青葉キャンプBG-088/シーグラスBG-107を実画素確認。類似だけで同一施設としない。未発見は不存在の断定ではない。",
+    "references": [
+      "/workspace/delta_landmarks8/bg_shiomi_beach_evening.webp",
+      "/workspace/delta_landmarks8/bg_shiokaze_cycling_road_morning.webp"
+    ]
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、用途/素材/窓扉/主通行帯/中央ADV余白を目視確認。映画館の手前車道を歩行前庭へ修正。ログ村は湖/テントなし、クラフトは海沿い通りと分離。道路は車道と歩行帯の縁石/海柵を確認。停車区画は描かれていない。海岸形の参照は定性的比較で座標/方位/山稜重畳/規格寸法は未検証。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-207",
+    "img": "IMG-WLD-131",
+    "key": "shiokaze_drive_road_evening",
+    "path": "images/assets/bg/bg_shiokaze_drive_road_evening.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "f00888cafbb572e5b6591e314f95a9d11b6e17f88dc8ba6e789d45178a852986"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "a71d654c1895e04c453b1ea60a0723805329fbe8"
+}

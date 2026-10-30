@@ -995,3 +995,14 @@
     "status": "初版空間案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-102 landmark proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "shiokaze_drive_road_evening": {
+    "name": "潮風ドライブロード 海岸道路・夕方（初版道路案）",
+    "path": "images/assets/bg/bg_shiokaze_drive_road_evening.webp",
+    "spaceId": "SPACE-LM102-ROAD",
+    "time": "evening",
+    "status": "初版空間案/間取り・設備・採否未確定"
+  }
+});})();
