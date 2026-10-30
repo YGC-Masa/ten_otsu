@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-30",
+  "facility": "FAC-010/ビリビリ電機",
+  "canon": "LM-059 ビリビリ内・小春/真冬/なつ・昼休み〜閉店後。LM-060ビリビリ入口の勝負ステージ。LM-049既存駅前広場と位置関係未確定。",
+  "proposal": "2階建て白壁/赤帯/紺枠、1F中央客入口と左右展示窓、正面2F売場。右側社員入口→非SPACE縦動線→2F奥食堂。階数/縦動線方式/入口と広場の共用は採否未定。ひだまり職場を流用しない。",
+  "flows": {
+    "customer": "駅前→既存LM-049広場→画面外反対側という案の店舗正面→客入口。ステージは同広場仮設、別広場を作らない。",
+    "staff": "右側社員入口→職員専用コア（階段/EV方式未描画）→食堂奥の社員扉→手洗い→清潔トレー/配膳→食事→前左返却→休憩/退室。厨房/補給は来客経路から分離する案。"
+  },
+  "qc": {
+    "generated": 3,
+    "visuallyInspected": 3,
+    "comparisons": [
+      "外観の平屋ではなく2階建て・陸屋根・赤白紺の素材と内観意匠を確認",
+      "食堂の側窓3枚と隣棟の高さ、公共入口なし、配膳/返却/休憩/社員扉の分離を目視",
+      "ステージ差分の広場舗装/点字帯/背景ビル/電源盤/街路樹をBG-115と比較"
+    ],
+    "limitations": [
+      "外観側窓4区画に対し食堂は奥3窓を使う案。内外寸法の厳密照合未実施",
+      "配膳/洗浄/厨房設備の衛生監修未実施",
+      "親建築と既存広場の反対側接続は未確定",
+      "採否/実画面/立ち絵重ね未確認"
+    ]
+  },
+  "assets": [
+    {
+      "key": "biribiri_store_exterior_day",
+      "bg": "BG-163",
+      "img": "IMG-WLD-087",
+      "space": "SPACE-LM049-EVENTPLAZA",
+      "lm": "LM-060",
+      "path": "images/assets/bg/bg_biribiri_store_exterior_day.webp"
+    },
+    {
+      "key": "biribiri_staff_dining_lounge_day",
+      "bg": "BG-164",
+      "img": "IMG-WLD-088",
+      "space": "SPACE-LM059-STAFF-LOUNGE",
+      "lm": "LM-059",
+      "path": "images/assets/bg/bg_biribiri_staff_dining_lounge_day.webp"
+    },
+    {
+      "key": "biribiri_koharu_plaza_stage_day",
+      "bg": "BG-165",
+      "img": "IMG-WLD-089",
+      "space": "SPACE-LM049-EVENTPLAZA",
+      "lm": "LM-060",
+      "path": "images/assets/bg/bg_biribiri_koharu_plaza_stage_day.webp"
+    }
+  ],
+  "status": "生成/目視QC済。remote・台帳反映は検証後追記。",
+  "inheritedAudit": {
+    "total": 50,
+    "existing": 4,
+    "notFound": 46,
+    "needsRegeneration": 0
+  },
+  "writeIssue": "GitHub create_blobが画像/テキスト両方500/内部エラー。認証済CLI/APIも同様のためgit転送へ切替。"
+}
+

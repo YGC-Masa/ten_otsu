@@ -1,0 +1,592 @@
+{
+  "asOf": "2026-10-30",
+  "sourceHead": "d7c7853a0cc9cd6098a2d22745ff69f97f74b344",
+  "counts": {
+    "total": 50,
+    "existing": 4,
+    "notFound": 46,
+    "needsRegeneration": 0
+  },
+  "items": [
+    {
+      "id": "LM-061",
+      "facility": "星野家のリビング",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-062",
+      "facility": "速水川マンションの読書部屋",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-063",
+      "facility": "草壁家の共有リビング",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-064",
+      "facility": "小麦沢家のギャル部屋",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-065",
+      "facility": "春日原家のトレーニングルーム",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-066",
+      "facility": "大道寺家のエステルーム",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-067",
+      "facility": "氷神家の小さな菓子工房",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-068",
+      "facility": "双沢家の白黒ツインルーム",
+      "classification": "既存画像あり",
+      "candidates": [
+        {
+          "path": "images/assets/bg/bg_misora_room_day.webp",
+          "sha": "3300ba199ad094fe403a4ff1343f453d354b47c4"
+        },
+        {
+          "path": "images/assets/bg/bg_misora_room_night.webp",
+          "sha": "15cf69e0cc9d57b5c49691923fa416670c3e9a56"
+        },
+        {
+          "path": "images/assets/bg/bg_sugosawa_house_day.webp",
+          "sha": "9d0893d5d97c44c084fa7c964c7f135b9e6fb6f1"
+        },
+        {
+          "path": "images/assets/bg/bg_sugosawa_house_night.webp",
+          "sha": "e9334de1a4cbff0b6c02e05a4adba23bcaa6063c"
+        },
+        {
+          "path": "images/assets/bg/bg_sugosawa_room_day.webp",
+          "sha": "9e2a971f2d5031ddf66f97fe2acf61e763062aca"
+        },
+        {
+          "path": "images/assets/bg/bg_sugosawa_room_night_indirect.webp",
+          "sha": "2a933cd574e4d4ec149c1b111b8a632897be76fc"
+        },
+        {
+          "path": "images/assets/bg/bg_sugosawa_room_night_light_on.webp",
+          "sha": "178921d89421fa20aee0c4f0e8603930a7e2157b"
+        },
+        {
+          "path": "images/assets/bg/bg_yozora_room_day.webp",
+          "sha": "3f0867b2ee104a49ab2e392f3ce89e53262a050c"
+        },
+        {
+          "path": "images/assets/bg/bg_yozora_room_night.webp",
+          "sha": "189c7220aee1b02c30a6400f542803e0518b2559"
+        }
+      ],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "再生成せず、正本SPACEとの紐付け・シナリオ出典を確認",
+      "visual": "美空/夜空の昼実画素確認。白/黒の別室、共有1室に合成しない。家外観/夜差分は未目視。",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-069",
+      "facility": "芝桜家の配信部屋",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-070",
+      "facility": "紫藤マンションの花嫁修業キッチン",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-071",
+      "facility": "餅月マンションのゆるふわ事務部屋",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-072",
+      "facility": "天神家のにぎやかゲーム部屋",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-073",
+      "facility": "霧島家の分析デスク",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-074",
+      "facility": "日向家のまんぷく台所",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-075",
+      "facility": "陽里の住居リビング",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-076",
+      "facility": "ひかるの作業机",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-077",
+      "facility": "朔夜の青紫ネオンルーム",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-078",
+      "facility": "店長の自宅マンション",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-079",
+      "facility": "店長マンション前の帰り道",
+      "classification": "既存画像あり",
+      "candidates": [
+        {
+          "path": "images/assets/bg/bg_manager_mansion_road_day.webp",
+          "sha": "69832f98b611114208dde4e57024275dc2b9d498"
+        },
+        {
+          "path": "images/assets/bg/bg_manager_mansion_road_early_morning.webp",
+          "sha": "ac6ae662ac146fc4d1e22d23b4b1eaafa66346cd"
+        },
+        {
+          "path": "images/assets/bg/bg_manager_mansion_road_evening.webp",
+          "sha": "23f34d39159308330b06885e6ab46e52b8d72736"
+        },
+        {
+          "path": "images/assets/bg/bg_manager_mansion_road_morning.webp",
+          "sha": "df098c34130198f8690bb68a864abd73e78b99c4"
+        },
+        {
+          "path": "images/assets/bg/bg_manager_mansion_road_night.webp",
+          "sha": "22bd8a7051aa9289b3ebb86610b1f76ad2cfa93b"
+        }
+      ],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "再生成せず、正本SPACEとの紐付け・シナリオ出典を確認",
+      "visual": "夜実画素確認。海景と坂道あり、正確な店長宅地理との整合は未確認。",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-080",
+      "facility": "店長マンションの小さなベランダ",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-081",
+      "facility": "星海ワンダーリゾート",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-082",
+      "facility": "蒼波メガシーパーク",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-083",
+      "facility": "日和坂ふれあい動物公園",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-084",
+      "facility": "日和坂アクア＆レプタイル館",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-085",
+      "facility": "青嶺サファリパーク",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-086",
+      "facility": "日和坂市立美術館",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-087",
+      "facility": "潮見県立科学館",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-088",
+      "facility": "日和坂トリックアート館",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-089",
+      "facility": "羽白湖自然科学センター",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-090",
+      "facility": "日和坂きもの小路",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-091",
+      "facility": "花守茶苑公園",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-092",
+      "facility": "日和坂郷土歴史館",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-093",
+      "facility": "潮見時代村 撮影村",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-094",
+      "facility": "日和坂地下街 ひよりモール",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-095",
+      "facility": "潮見ハーバーテラス",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-096",
+      "facility": "日和坂家電ミュージアム",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-097",
+      "facility": "ひだまり商店街 屋根付きアーケード",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-098",
+      "facility": "日和坂中央映画館",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-099",
+      "facility": "潮見ボウル＆カラオケ",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-100",
+      "facility": "山里ログハウス村",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-101",
+      "facility": "日和坂クラフト工房街",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-102",
+      "facility": "潮風ドライブロード",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-103",
+      "facility": "日和坂朝市",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-104",
+      "facility": "灯見坂ジャズバー",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-105",
+      "facility": "ひだまり銭湯 ぽかぽか湯",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-106",
+      "facility": "日和坂防災センター",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-107",
+      "facility": "潮見灯台",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-108",
+      "facility": "日和坂サービスエリア",
+      "classification": "未発見",
+      "candidates": [],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "別名/Drive/シナリオ文脈を追加照合後、未存在と確認した代表空間のみ設計",
+      "visual": "専用候補の実画素未確認",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-109",
+      "facility": "駅前あかり通り：夜",
+      "classification": "既存画像あり",
+      "candidates": [
+        {
+          "path": "images/assets/bg/bg_akari_dori_night.webp",
+          "sha": "10799f296fc75852dd894c16917dad54e4134b5d"
+        }
+      ],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "再生成せず、正本SPACEとの紐付け・シナリオ出典を確認",
+      "visual": "夜実画素確認。あかり通りの文字とイルミあり、背景モブあり。無人版が必要かは未判断。",
+      "regenerate": "現時点では指示しない"
+    },
+    {
+      "id": "LM-110",
+      "facility": "住宅街：夜",
+      "classification": "既存画像あり",
+      "candidates": [
+        {
+          "path": "images/assets/bg/bg_residential_area_night.webp",
+          "sha": "d0844aa0414d7fb7c5cca22be87143ef7d928498"
+        }
+      ],
+      "scope": "repo全画像名・台帳・catalog一次照合。未発見は不存在の断定ではない。",
+      "next": "再生成せず、正本SPACEとの紐付け・シナリオ出典を確認",
+      "visual": "夜実画素確認。住宅街の三叉路と坂道、海なし。立ち絵/実画面未確認。",
+      "regenerate": "現時点では指示しない"
+    }
+  ],
+  "ambiguousAssets": [
+    {
+      "path": "images/assets/bgev/bg011.webp",
+      "visual": "ひだまりストア事務/休憩室と文字で確認。個人宅やビリビリへ流用しない。"
+    },
+    {
+      "path": "images/assets/bgev/bg020.webp",
+      "visual": "汎用PC机の実画素確認。LM-073真冬/LM-076ひかるの机と同定できないため未割当。"
+    }
+  ],
+  "methodLimit": "一次照合。未発見46件を未制作確定にしない。要再生成0件は品質承認ではなく再生成判断未実施。既存候補4施設はリンク候補記録のみ、正本設定の変更/再生成なし。"
+}
+

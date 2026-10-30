@@ -514,3 +514,30 @@
     "status": "初版提案/採否未確定"
   }
 });})();
+
+
+/* Delta: Biribiri parent architecture, staff room and existing-plaza stage proposals */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "biribiri_store_exterior_day": {
+    "name": "ビリビリ電機 店舗外観 昼（親建築案）",
+    "path": "images/assets/bg/bg_biribiri_store_exterior_day.webp",
+    "spaceId": "SPACE-LM049-EVENTPLAZA",
+    "time": "day",
+    "status": "初版提案/階数・共用関係未確定"
+  },
+  "biribiri_staff_dining_lounge_day": {
+    "name": "ビリビリ社員食堂・休憩ラウンジ 昼（2階奥案）",
+    "path": "images/assets/bg/bg_biribiri_staff_dining_lounge_day.webp",
+    "spaceId": "SPACE-LM059-STAFF-LOUNGE",
+    "time": "day",
+    "status": "初版提案/階数・共用関係未確定"
+  },
+  "biribiri_koharu_plaza_stage_day": {
+    "name": "小春の勝負ステージ 昼（既存広場共用案）",
+    "path": "images/assets/bg/bg_biribiri_koharu_plaza_stage_day.webp",
+    "spaceId": "SPACE-LM049-EVENTPLAZA",
+    "time": "day",
+    "status": "初版提案/階数・共用関係未確定"
+  }
+});})();
+
