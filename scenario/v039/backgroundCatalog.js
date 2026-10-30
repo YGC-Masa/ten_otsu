@@ -698,3 +698,14 @@
     "status": "住居初版案/間取り・設備・採否未確定"
   }
 });})();
+
+/* Delta LM-074 residential proposal */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "hinata_home_manpuku_kitchen_day": {
+    "name": "日向家のまんぷく台所 昼（家庭台所案）",
+    "path": "images/assets/bg/bg_hinata_home_manpuku_kitchen_day.webp",
+    "spaceId": "SPACE-LM074-KITCHEN",
+    "time": "day",
+    "status": "住居初版案/間取り・設備・採否未確定"
+  }
+});})();

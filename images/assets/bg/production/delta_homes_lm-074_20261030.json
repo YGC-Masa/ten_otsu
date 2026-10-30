@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-30",
+  "landmark": "LM-074",
+  "facility": "FAC-023",
+  "space": "SPACE-LM074-KITCHEN",
+  "name": "日向家のまんぷく台所 昼（家庭台所案）",
+  "canon": "住宅街/なつ/食べ物・フルーツ・焼酎・柔道の思い出/通年昼〜夜",
+  "proposal": "左家庭調理/洗浄/冷蔵、右食卓/果物、後方窓/扉、中央床。体重計は通路外",
+  "unconfirmed": "家具/間取り/設備/採否/正確寸法未確定。家族人数/全館階数/所有者/住所を追加しない。LM-076は建物と階数も未確定。",
+  "sources": {
+    "world": "02_ランドマーク LM-074",
+    "search": "main画像名・台帳・Drive画像名(姓/人物/部屋)と499テキストを照合、専用背景未発見。未発見は不存在の断定ではない。intro個別5ファイルは取得できず未確認。職場bg011・汎用bg020は流用しない。",
+    "references": []
+  },
+  "qc": {
+    "generated": true,
+    "visuallyInspected": true,
+    "checks": "人物なし、用途/小物/窓扉/通行/中央ADV余白を目視確認。LM-075は既存外観参照で窓を3分割へ修正。階段/EV方式は描かず未確定。",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "asset": {
+    "bg": "BG-180",
+    "img": "IMG-WLD-104",
+    "key": "hinata_home_manpuku_kitchen_day",
+    "path": "images/assets/bg/bg_hinata_home_manpuku_kitchen_day.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "c5475935bf413cd26289f7f391903ce0061506a8b8812b2cd2cb49f81437597c"
+  },
+  "status": {
+    "generated": true,
+    "visuallyInspected": true,
+    "ledger": "未登録（後続の登録確認記録で更新）",
+    "remote": "このcommitで配置、push後照合予定",
+    "adoption": "未確定",
+    "liveScreen": "未確認"
+  },
+  "verificationParentHead": "c0abc2ee2e3caa6db39d359cab9e21fe4a9009dc"
+}
