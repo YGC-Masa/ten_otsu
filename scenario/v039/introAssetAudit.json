@@ -1,0 +1,1875 @@
+{
+  "baseCommit": "154bd4feefe4cd63b71169719b95005e802f6cdd",
+  "scope": "13 introduction stories, Hina English/Chinese reuse the same source images via hinaIntroLocalePatch.js",
+  "expressionSource": "scenario/data/character_expressions.json",
+  "records": [
+    {
+      "scenario": "scenario/v039/events/intro_ai.json",
+      "character": "ab",
+      "legacy": "images/assets/char/b10101.webp",
+      "legacy_expression": 1,
+      "candidate_expression": 1,
+      "candidate": "images/assets/char/ab_ai/standing/ab_ai_expression_01_composed.webp",
+      "manifest": "images/assets/char/ab_ai/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "d9d33662d98155f4f8ffdd2f25fb81a6be8b4a39c4edd8c790daddb2ef5df4e2",
+      "candidateSha256": "71aadf51f59ff33fb3621a4e00d4c4460529ec7bdd4467bd302361b00c8cf5a5",
+      "legacyLabel": "澄まし",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_ai.json",
+      "character": "ab",
+      "legacy": "images/assets/char/b10201.webp",
+      "legacy_expression": 2,
+      "candidate_expression": 2,
+      "candidate": "images/assets/char/ab_ai/standing/ab_ai_expression_02_gentle_smile.webp",
+      "manifest": "images/assets/char/ab_ai/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "29ad586bd2de53f5104a720554383a08d96676e464037f30fd3d6cf530962ea5",
+      "candidateSha256": "a6f35586f525126659890ba6a5043e29ba1602489be4c40894cc7bb789a34d17",
+      "legacyLabel": "微笑み",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_ai.json",
+      "character": "ab",
+      "legacy": "images/assets/char/b10601.webp",
+      "legacy_expression": 6,
+      "candidate_expression": 9,
+      "candidate": "images/assets/char/ab_ai/standing/ab_ai_expression_09_surprise.webp",
+      "manifest": "images/assets/char/ab_ai/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "20b1dd28f8513b1b515f64619f4ea399b699ab9a945d5a14b0d1594adce3f4e0",
+      "candidateSha256": "61e32339b2dd75e25a388ce888396b090488e987f52cd23e84213845063a8dea",
+      "legacyLabel": "驚き",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_ai.json",
+      "character": "ab",
+      "legacy": "images/assets/char/b11001.webp",
+      "legacy_expression": 10,
+      "candidate_expression": 5,
+      "candidate": "images/assets/char/ab_ai/standing/ab_ai_expression_05_mild_disgust.webp",
+      "manifest": "images/assets/char/ab_ai/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "f0d62527c31c1f717fa93fda7652c6f27cf82dd16e0ec6b0a4f74a51729bfc1b",
+      "candidateSha256": "8b631dcf874939db0e3268f1093958e8d0adf1473961654a24ff3872433439a8",
+      "legacyLabel": "軽い嫌悪",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 2
+    },
+    {
+      "scenario": "scenario/v039/events/intro_ai.json",
+      "character": "ab",
+      "legacy": "images/assets/char/b10901.webp",
+      "legacy_expression": 9,
+      "candidate_expression": 12,
+      "candidate": "images/assets/char/ab_ai/standing/ab_ai_expression_12_proud.webp",
+      "manifest": "images/assets/char/ab_ai/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "9ef5e0f005d35bc186566895d577ec1a9eaaffd73367e4197216b72b98fe4e2c",
+      "candidateSha256": "b13bbe6dc5e2079bd5b8c9c0704cd484315b8bde0ce2b62bf0dd8e0c04353500",
+      "legacyLabel": "得意げ",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_ayame.json",
+      "character": "ak",
+      "legacy": "images/assets/char/k10101.webp",
+      "legacy_expression": 1,
+      "candidate_expression": 1,
+      "candidate": "images/assets/char/ak_ayame/standing/ak_ayame_expression_01_composed.webp",
+      "manifest": "images/assets/char/ak_ayame/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "bbd6355ccb33ec9725f4143a1407b5a53e280f0d5b3eb65d5a9dcfe65c6e3aa6",
+      "candidateSha256": "9ecec882573863593de97709218072302c8d09ec971d8439c9915f02e8c7ba94",
+      "legacyLabel": "澄まし",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_ayame.json",
+      "character": "ak",
+      "legacy": "images/assets/char/k10201.webp",
+      "legacy_expression": 2,
+      "candidate_expression": 2,
+      "candidate": "images/assets/char/ak_ayame/standing/ak_ayame_expression_02_gentle_smile.webp",
+      "manifest": "images/assets/char/ak_ayame/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "b3c41e5fcfb1d531ddb452d03b4effeba825f3560eecd47a2903f0ce95f85ad8",
+      "candidateSha256": "0c4ea5eadd842a0d432921f3909f4b4ac71da907899e6f73d5860fb437375fda",
+      "legacyLabel": "微笑み",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_ayame.json",
+      "character": "ak",
+      "legacy": "images/assets/char/k11001.webp",
+      "legacy_expression": 10,
+      "candidate_expression": 5,
+      "candidate": "images/assets/char/ak_ayame/standing/ak_ayame_expression_05_mild_disgust.webp",
+      "manifest": "images/assets/char/ak_ayame/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "ffe1e603a0f4aa6f1f9300e0bdbfefdaaea93e81b71194d21417367cc906eb41",
+      "candidateSha256": "3ec507dd7965a899863fe6f82d771543281687cf89841061c16077a7b71c2ab5",
+      "legacyLabel": "軽い嫌悪",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 2
+    },
+    {
+      "scenario": "scenario/v039/events/intro_ayame.json",
+      "character": "ak",
+      "legacy": "images/assets/char/k10901.webp",
+      "legacy_expression": 9,
+      "candidate_expression": 12,
+      "candidate": "images/assets/char/ak_ayame/standing/ak_ayame_expression_12_proud.webp",
+      "manifest": "images/assets/char/ak_ayame/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "209e93d85c58af1bf428ec0f210b01f655430be8556de18d4f3f6645ac45a3e6",
+      "candidateSha256": "1a053f048fd68428247d0e87e9a212836ec4d949766161f1a63de30d08d20faf",
+      "legacyLabel": "得意げ",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 2
+    },
+    {
+      "scenario": "scenario/v039/events/intro_kogane.json",
+      "character": "ad",
+      "legacy": "images/assets/char/d10101.webp",
+      "legacy_expression": 1,
+      "candidate_expression": 1,
+      "candidate": "images/assets/char/ad_kogane/standing/ad_kogane_expression_01_composed.webp",
+      "manifest": "images/assets/char/ad_kogane/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "094884e98a038fffa1b586b91c01b6804f40ab5ddaa34f200026a70c1a8be0fe",
+      "candidateSha256": "4de35e448d29a5e898d662661a82d99ddc91c415d34baa25c9814305e6603095",
+      "legacyLabel": "澄まし",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_kogane.json",
+      "character": "ad",
+      "legacy": "images/assets/char/d10501.webp",
+      "legacy_expression": 5,
+      "candidate_expression": 3,
+      "candidate": "images/assets/char/ad_kogane/standing/ad_kogane_expression_03_smile.webp",
+      "manifest": "images/assets/char/ad_kogane/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "0b7d46f49a2d41750d632c7696796f2864f728fd78c886b4d3be1f03b9f72c9e",
+      "candidateSha256": "23517de46dff9dfbd580d855ef82dbf649b3b78fc69eb5d5c03b161ceeb70d2b",
+      "legacyLabel": "笑顔",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 2
+    },
+    {
+      "scenario": "scenario/v039/events/intro_kogane.json",
+      "character": "ad",
+      "legacy": "images/assets/char/d11001.webp",
+      "legacy_expression": 10,
+      "candidate_expression": 5,
+      "candidate": "images/assets/char/ad_kogane/standing/ad_kogane_expression_05_mild_disgust.webp",
+      "manifest": "images/assets/char/ad_kogane/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "05b195d6775551f4e21c4ea2ec337299b810f179ac3fe13da75c5918357a7d6a",
+      "candidateSha256": "8a26b28fc40e1ff8e8990e23480ccb450012adc70540383bf81b7143f660997e",
+      "legacyLabel": "軽い嫌悪",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_kogane.json",
+      "character": "ad",
+      "legacy": "images/assets/char/d10901.webp",
+      "legacy_expression": 9,
+      "candidate_expression": 12,
+      "candidate": "images/assets/char/ad_kogane/standing/ad_kogane_expression_12_proud.webp",
+      "manifest": "images/assets/char/ad_kogane/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "c1c4d4b22a5b4d269efd4f7d1d72d6e244d4c9c3b0e2770a31059d177e708d1c",
+      "candidateSha256": "b56b7573b43208b3bc38797eb1a8ea8676d1da9902d1b39ef28df23e5e63ebc1",
+      "legacyLabel": "得意げ",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_kohaku.json",
+      "character": "ae",
+      "legacy": "images/assets/char/e10101.webp",
+      "legacy_expression": 1,
+      "candidate_expression": 1,
+      "candidate": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_01_composed.webp",
+      "manifest": "images/assets/char/ae_kohaku/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "779cf25abe8736b1b6096d7638cd132c73e18f0aa43af47123305b442fd8ec3e",
+      "candidateSha256": "b9e7e1c34b4edca381f35db6728563b65f0bac8ad0b829b21c497211a2760d8b",
+      "legacyLabel": "澄まし",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_kohaku.json",
+      "character": "ae",
+      "legacy": "images/assets/char/e10501.webp",
+      "legacy_expression": 5,
+      "candidate_expression": 3,
+      "candidate": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_03_smile.webp",
+      "manifest": "images/assets/char/ae_kohaku/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "ba344cd2485a0521a0b5ef8a9e0fee37cbf60de4f9135564bec993fa76cd26ea",
+      "candidateSha256": "d704cd64b85d3779774674c0fa6bd9ceaeb4ac02fb39c8b7c52b6ffeda625bcd",
+      "legacyLabel": "笑顔",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_kohaku.json",
+      "character": "ae",
+      "legacy": "images/assets/char/e11201.webp",
+      "legacy_expression": 12,
+      "candidate_expression": 8,
+      "candidate": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_08_agitated.webp",
+      "manifest": "images/assets/char/ae_kohaku/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "634e5c54c3fde09e7afc95eb872ddc8aca3d6d5ada8a65c27bd81f4bc02b4d1b",
+      "candidateSha256": "2af0a1640bb0acea8c73e93b8b4ad2b95f82b915f58055983ec8693d92ae7f6e",
+      "legacyLabel": "動揺",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 4
+    },
+    {
+      "scenario": "scenario/v039/events/intro_kohaku.json",
+      "character": "ae",
+      "legacy": "images/assets/char/e11001.webp",
+      "legacy_expression": 10,
+      "candidate_expression": 5,
+      "candidate": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_05_mild_disgust.webp",
+      "manifest": "images/assets/char/ae_kohaku/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "7043894b6cc853066295d6e1cc5422acaf0c61a988ded467b00929b3f96842ca",
+      "candidateSha256": "800a989f1c68c523a1b69526c244d99804bbff3a2272768bc3915a67d56a501d",
+      "legacyLabel": "軽い嫌悪",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 3
+    },
+    {
+      "scenario": "scenario/v039/events/intro_kohaku.json",
+      "character": "ae",
+      "legacy": "images/assets/char/e10401.webp",
+      "legacy_expression": 4,
+      "candidate_expression": 6,
+      "candidate": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_06_sadness.webp",
+      "manifest": "images/assets/char/ae_kohaku/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "84ef275b433be8ea6fa37070228603b7c7e93402405030446d1249a161354206",
+      "candidateSha256": "a6d232e3ff16a8a74603a6018b247afbd0dcab5455db147444e84bce3f22d373",
+      "legacyLabel": "悲しみ",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_kohaku.json",
+      "character": "ae",
+      "legacy": "images/assets/char/e11101.webp",
+      "legacy_expression": 11,
+      "candidate_expression": 7,
+      "candidate": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_07_worry.webp",
+      "manifest": "images/assets/char/ae_kohaku/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "7a35682a15a815634330f1415d841775014e7609f648124b7cea282ad4a24b6d",
+      "candidateSha256": "7a5f4012dab85754ffc7ec42c41b00e84f448148ce49d546e5f38514186f6650",
+      "legacyLabel": "心配不安",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 2
+    },
+    {
+      "scenario": "scenario/v039/events/intro_kohaku.json",
+      "character": "ae",
+      "legacy": "images/assets/char/e10901.webp",
+      "legacy_expression": 9,
+      "candidate_expression": 12,
+      "candidate": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_12_proud.webp",
+      "manifest": "images/assets/char/ae_kohaku/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "c1557960d7835a0127db46695d9065917c02bb8c2a2eefbe37fb952bd8c76a5b",
+      "candidateSha256": "6f0f39530b2434f5a9968e7d70b5ce5193f1f8d8495ea43de1101469a541231c",
+      "legacyLabel": "得意げ",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 2
+    },
+    {
+      "scenario": "scenario/v039/events/intro_kohaku.json",
+      "character": "ae",
+      "legacy": "images/assets/char/e10301.webp",
+      "legacy_expression": 3,
+      "candidate_expression": 4,
+      "candidate": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_04_anger.webp",
+      "manifest": "images/assets/char/ae_kohaku/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "a5831a0187e27c20501a5094a4a0bc6a67cb182302a7ff0e04ccf15c9ad0ab95",
+      "candidateSha256": "0bc0dd166b3bf5f3010be39323496624d3232285fd1caec7d002e94498a88620",
+      "legacyLabel": "怒り",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_manaka.json",
+      "character": "af",
+      "legacy": "images/assets/char/f10101.webp",
+      "legacy_expression": 1,
+      "candidate_expression": 1,
+      "candidate": "images/assets/char/af_manaka/standing/af_manaka_expression_01_composed.webp",
+      "manifest": "images/assets/char/af_manaka/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "506378d300a139f083e72ec3e0376cda036ae84ce3d5f08a707186922b7bb501",
+      "candidateSha256": "b93792aabd013f89fb430b82bef2d68f12458bed4e8bfe1c9db5e3072a8ac1d7",
+      "legacyLabel": "澄まし",
+      "action": "hold",
+      "reason": "CMS prioritises face/full-uniform anchors not yet retrieved; simple anchor is secondary.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_manaka.json",
+      "character": "af",
+      "legacy": "images/assets/char/f10201.webp",
+      "legacy_expression": 2,
+      "candidate_expression": 2,
+      "candidate": "images/assets/char/af_manaka/standing/af_manaka_expression_02_gentle_smile.webp",
+      "manifest": "images/assets/char/af_manaka/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "181f56faa021ed217c2828ba2f592078a5900cf5eb5d9022d4cfe545ba1fad88",
+      "candidateSha256": "6ac687a472f71196dddd08fdcfec09f3d3fd2407d11a4152f89697b8297ac457",
+      "legacyLabel": "微笑み",
+      "action": "hold",
+      "reason": "CMS prioritises face/full-uniform anchors not yet retrieved; simple anchor is secondary.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_manaka.json",
+      "character": "af",
+      "legacy": "images/assets/char/f11201.webp",
+      "legacy_expression": 12,
+      "candidate_expression": 8,
+      "candidate": "images/assets/char/af_manaka/standing/af_manaka_expression_08_agitated.webp",
+      "manifest": "images/assets/char/af_manaka/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "327ad7f62050dfa7f9d8974b7c6cc9e4f6af3d974730992e88d2fdaed6ae7115",
+      "candidateSha256": "50baff5f01e91bf7a81e7cc58297793ca511d2ac861766fa8f0a78cc071c1dae",
+      "legacyLabel": "動揺",
+      "action": "hold",
+      "reason": "CMS prioritises face/full-uniform anchors not yet retrieved; simple anchor is secondary.",
+      "occurrences": 2
+    },
+    {
+      "scenario": "scenario/v039/events/intro_manaka.json",
+      "character": "af",
+      "legacy": "images/assets/char/f11001.webp",
+      "legacy_expression": 10,
+      "candidate_expression": 5,
+      "candidate": "images/assets/char/af_manaka/standing/af_manaka_expression_05_mild_disgust.webp",
+      "manifest": "images/assets/char/af_manaka/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "1c4bd358151d0c9e30a1ff1ccb64f8459cf0e8b7e67c4ff069d48f2b26f318e3",
+      "candidateSha256": "2099482fcb9243414a585bca275609d3cf4210caa7ee2c7bf8db7df8dfbe02e0",
+      "legacyLabel": "軽い嫌悪",
+      "action": "hold",
+      "reason": "CMS prioritises face/full-uniform anchors not yet retrieved; simple anchor is secondary.",
+      "occurrences": 2
+    },
+    {
+      "scenario": "scenario/v039/events/intro_manaka.json",
+      "character": "af",
+      "legacy": "images/assets/char/f10601.webp",
+      "legacy_expression": 6,
+      "candidate_expression": 9,
+      "candidate": "images/assets/char/af_manaka/standing/af_manaka_expression_09_surprise.webp",
+      "manifest": "images/assets/char/af_manaka/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "5f6b4164a96a013692d7af8e68cf13ed3902d85ad06dbdcb2193d4963e3248ed",
+      "candidateSha256": "e43e97257dc1367ef5b3ead305cccd946e9a4e2cf0ef9d70e8f6e7eb5a2e13b5",
+      "legacyLabel": "驚き",
+      "action": "hold",
+      "reason": "CMS prioritises face/full-uniform anchors not yet retrieved; simple anchor is secondary.",
+      "occurrences": 2
+    },
+    {
+      "scenario": "scenario/v039/events/intro_manaka.json",
+      "character": "af",
+      "legacy": "images/assets/char/f11101.webp",
+      "legacy_expression": 11,
+      "candidate_expression": 7,
+      "candidate": "images/assets/char/af_manaka/standing/af_manaka_expression_07_worry.webp",
+      "manifest": "images/assets/char/af_manaka/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "6f8bb8f703527f412075b8ccc822257afd1634e3c1da437b176c7849eb11aa4b",
+      "candidateSha256": "363f994a94d576673ae71b8b8ceb87820ae5be41f884e8cd45b36e32631f7ffa",
+      "legacyLabel": "心配不安",
+      "action": "hold",
+      "reason": "CMS prioritises face/full-uniform anchors not yet retrieved; simple anchor is secondary.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_manaka.json",
+      "character": "af",
+      "legacy": "images/assets/char/f10701.webp",
+      "legacy_expression": 7,
+      "candidate_expression": 10,
+      "candidate": "images/assets/char/af_manaka/standing/af_manaka_expression_10_shy.webp",
+      "manifest": "images/assets/char/af_manaka/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "e957bc9dd40e87882a303977d7fa2dbc0a0a395cffd4f420aab952b4e7482300",
+      "candidateSha256": "1e7411cca3bd02cac28491962f6d7e5f2f422a73ef28e04b632c7e507e50dc0d",
+      "legacyLabel": "照れ",
+      "action": "hold",
+      "reason": "CMS prioritises face/full-uniform anchors not yet retrieved; simple anchor is secondary.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_midori.json",
+      "character": "ac",
+      "legacy": "images/assets/char/c10101.webp",
+      "legacy_expression": 1,
+      "candidate_expression": 1,
+      "candidate": "images/assets/char/ac_midori/standing/ac_midori_expression_01_composed.webp",
+      "manifest": "images/assets/char/ac_midori/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "24239080e8f5b4b79f870ee870ae822afc51f3cf4f59f399bf5d937c5ccbc4f2",
+      "candidateSha256": "3161d0ae732df421e87c8aa1cdce7413f78ffd0131bf782e33ddeb95a88ac574",
+      "legacyLabel": "澄まし",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 3
+    },
+    {
+      "scenario": "scenario/v039/events/intro_midori.json",
+      "character": "ac",
+      "legacy": "images/assets/char/c11001.webp",
+      "legacy_expression": 10,
+      "candidate_expression": 5,
+      "candidate": "images/assets/char/ac_midori/standing/ac_midori_expression_05_mild_disgust.webp",
+      "manifest": "images/assets/char/ac_midori/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "5eb09156fee399ce7155d206027a5f2254dd67a149e585824bd80adc196f9f01",
+      "candidateSha256": "7221ebdc4fea1a2f2e6279ae880b58d23a7c1703c722d4fee241289eb68c070d",
+      "legacyLabel": "軽い嫌悪",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_midori.json",
+      "character": "ac",
+      "legacy": "images/assets/char/c10401.webp",
+      "legacy_expression": 4,
+      "candidate_expression": 6,
+      "candidate": "images/assets/char/ac_midori/standing/ac_midori_expression_06_sadness.webp",
+      "manifest": "images/assets/char/ac_midori/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "35d1ce5bd685c6b6714354b848e21ed8c6a0236fff578cac4134800c5613c80d",
+      "candidateSha256": "72c2552f2d1961cd1a7d32ef61d37a4794500e4ce2556dfa6f187c669148505d",
+      "legacyLabel": "悲しみ",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_midori.json",
+      "character": "ac",
+      "legacy": "images/assets/char/c11101.webp",
+      "legacy_expression": 11,
+      "candidate_expression": 7,
+      "candidate": "images/assets/char/ac_midori/standing/ac_midori_expression_07_worry.webp",
+      "manifest": "images/assets/char/ac_midori/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "082503a4be516715bc21eaf3e60925e57245974d04ea89b31eda833dbed34946",
+      "candidateSha256": "affb02cdbd8b67149193c13e34d9dc03226ff4a91746391cec80a48331ec02dc",
+      "legacyLabel": "心配不安",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_misora.json",
+      "character": "ah",
+      "legacy": "images/assets/char/h10101.webp",
+      "legacy_expression": 1,
+      "candidate_expression": 1,
+      "candidate": "images/assets/char/ah_misora/standing/ah_misora_expression_01_composed.webp",
+      "manifest": "images/assets/char/ah_misora/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "08c8a6667b6bc657218241b80c4527e144d3910fdbde3a012d74b15f809e2957",
+      "candidateSha256": "11e1116072a052bd0c28164efd4ea0bf29f7d23064fdcf17463c17d664c46aec",
+      "legacyLabel": "澄まし",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_misora.json",
+      "character": "ah",
+      "legacy": "images/assets/char/h10201.webp",
+      "legacy_expression": 2,
+      "candidate_expression": 2,
+      "candidate": "images/assets/char/ah_misora/standing/ah_misora_expression_02_gentle_smile.webp",
+      "manifest": "images/assets/char/ah_misora/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "dab3543e4eeaf3b73f68cee4e25edf36d4483b49c76067a52c370673d809732d",
+      "candidateSha256": "e435d9ff171c63566530c60aff83fcb9ddaeed4e58f3a56d95e30ad72fbdb3db",
+      "legacyLabel": "微笑み",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_misora.json",
+      "character": "ah",
+      "legacy": "images/assets/char/h10701.webp",
+      "legacy_expression": 7,
+      "candidate_expression": 10,
+      "candidate": "images/assets/char/ah_misora/standing/ah_misora_expression_10_shy.webp",
+      "manifest": "images/assets/char/ah_misora/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "1a3c683db5f57dd13e0cd870fafc105e67aae67ea8208c5b5b8a00e84c42008b",
+      "candidateSha256": "a9d8af1af65d84567c65706817e4559ed38ea04775e6b88679892759e8476653",
+      "legacyLabel": "照れ",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_misora.json",
+      "character": "ah",
+      "legacy": "images/assets/char/h10901.webp",
+      "legacy_expression": 9,
+      "candidate_expression": 12,
+      "candidate": "images/assets/char/ah_misora/standing/ah_misora_expression_12_proud.webp",
+      "manifest": "images/assets/char/ah_misora/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "3b16f907336ff9133cfb47c7882717d3b1c6b1f12dbab7dfa3836e367e7418c7",
+      "candidateSha256": "fea1d0c01316dc75e93a370967306f8ce8e19578446f56ababaf5a8304f05bbe",
+      "legacyLabel": "得意げ",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 2
+    },
+    {
+      "scenario": "scenario/v039/events/intro_misora.json",
+      "character": "ah",
+      "legacy": "images/assets/char/h11001.webp",
+      "legacy_expression": 10,
+      "candidate_expression": 5,
+      "candidate": "images/assets/char/ah_misora/standing/ah_misora_expression_05_mild_disgust.webp",
+      "manifest": "images/assets/char/ah_misora/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "7857f366d83be3824eb91319b51753d36aa6b29e24b624ff8324e8f1249d07f1",
+      "candidateSha256": "e4b2b3c413ee04c4c25c5dbd92fc7faed846100bfdc0b4fd03c15e71c24a7cd3",
+      "legacyLabel": "軽い嫌悪",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 2
+    },
+    {
+      "scenario": "scenario/v039/events/intro_misora.json",
+      "character": "ah",
+      "legacy": "images/assets/char/h11101.webp",
+      "legacy_expression": 11,
+      "candidate_expression": 7,
+      "candidate": "images/assets/char/ah_misora/standing/ah_misora_expression_07_worry.webp",
+      "manifest": "images/assets/char/ah_misora/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "e3fd8396eb8bf25670e4ee2d3db5ac5b1b4327432b3900428266a49de81772c8",
+      "candidateSha256": "394a78fb89d79134a54962b9e18d0ab05fb680e184cefb859ccdef50536d5195",
+      "legacyLabel": "心配不安",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_misora.json",
+      "character": "ah",
+      "legacy": "images/assets/char/h10601.webp",
+      "legacy_expression": 6,
+      "candidate_expression": 9,
+      "candidate": "images/assets/char/ah_misora/standing/ah_misora_expression_09_surprise.webp",
+      "manifest": "images/assets/char/ah_misora/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "705158989d3d0611e8f478577655fbfdfc24e19bb4fd525856d73530108f1bda",
+      "candidateSha256": "baaf14cf0ed10cbc80d6a497f06f788e096cf3785bf93320a58b43fd2e80bcdd",
+      "legacyLabel": "驚き",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_moe.json",
+      "character": "am",
+      "legacy": "images/assets/char/m10101.webp",
+      "legacy_expression": 1,
+      "candidate_expression": 1,
+      "candidate": "images/assets/char/am_moe/standing/am_moe_expression_01_composed.webp",
+      "manifest": "images/assets/char/am_moe/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "6e1dc6a877ac05c86c60d473ae2d90fd6afeba576748089b654e4db2550c7229",
+      "candidateSha256": "6e1dc6a877ac05c86c60d473ae2d90fd6afeba576748089b654e4db2550c7229",
+      "legacyLabel": "澄まし",
+      "action": "keep-identical",
+      "reason": "Already byte-identical to adopted asset; keep.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_moe.json",
+      "character": "am",
+      "legacy": "images/assets/char/m10201.webp",
+      "legacy_expression": 2,
+      "candidate_expression": 2,
+      "candidate": "images/assets/char/am_moe/standing/am_moe_expression_02_gentle_smile.webp",
+      "manifest": "images/assets/char/am_moe/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "f0503308efe2e62e2c49ec06cf35010fe0b86bbbb45a79cfab324cadd8c4b59a",
+      "candidateSha256": "273fc9a2d007d17c8692707934020ae6104ab50e02ebc42f890c3571422f4749",
+      "legacyLabel": "微笑み",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_moe.json",
+      "character": "am",
+      "legacy": "images/assets/char/m10601.webp",
+      "legacy_expression": 6,
+      "candidate_expression": 9,
+      "candidate": "images/assets/char/am_moe/standing/am_moe_expression_09_surprise.webp",
+      "manifest": "images/assets/char/am_moe/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "8d3b95b539a62b0b1ecd9b199ccef9723689faa7d22366b821451e984244a1e5",
+      "candidateSha256": "0bc14a6698ce7b65e365fc52e48d321cd091f50fed26ae1c11ca4dd8f8a64da3",
+      "legacyLabel": "驚き",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_moe.json",
+      "character": "am",
+      "legacy": "images/assets/char/m11201.webp",
+      "legacy_expression": 12,
+      "candidate_expression": 8,
+      "candidate": "images/assets/char/am_moe/standing/am_moe_expression_08_agitated.webp",
+      "manifest": "images/assets/char/am_moe/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "ae2f0030304978e1d18a5e3f248838779c74737b0a29c2bb3f36ea8d031fe65e",
+      "candidateSha256": "6db00f6599288ed314fe1b9793af89c3cb9b5842c8d2972c2d53f56c4e3231cc",
+      "legacyLabel": "動揺",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_moe.json",
+      "character": "am",
+      "legacy": "images/assets/char/m10901.webp",
+      "legacy_expression": 9,
+      "candidate_expression": 12,
+      "candidate": "images/assets/char/am_moe/standing/am_moe_expression_12_proud.webp",
+      "manifest": "images/assets/char/am_moe/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "97f6961be3f757b59e0b1a647b2fe2989029d9cab4d4bcb7b5138b933bd3c99c",
+      "candidateSha256": "c6053b021fac443398d094222386055ad9fc8098122e8579951376545f791852",
+      "legacyLabel": "得意げ",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 2
+    },
+    {
+      "scenario": "scenario/v039/events/intro_moe.json",
+      "character": "am",
+      "legacy": "images/assets/char/m11001.webp",
+      "legacy_expression": 10,
+      "candidate_expression": 5,
+      "candidate": "images/assets/char/am_moe/standing/am_moe_expression_05_mild_disgust.webp",
+      "manifest": "images/assets/char/am_moe/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "930364327873136db428ac554d90a77f6feb2079d03ed28ae7f2e9b44b5effcf",
+      "candidateSha256": "7b38d394f595112d73c7ca83ce0740b53aa5a560a0dae5c352324bac3fdbefa4",
+      "legacyLabel": "軽い嫌悪",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 2
+    },
+    {
+      "scenario": "scenario/v039/events/intro_moe.json",
+      "character": "am",
+      "legacy": "images/assets/char/m10401.webp",
+      "legacy_expression": 4,
+      "candidate_expression": 6,
+      "candidate": "images/assets/char/am_moe/standing/am_moe_expression_06_sadness.webp",
+      "manifest": "images/assets/char/am_moe/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "5e9f5948d8a3eebba5704e4b2087e0c0122393d2e37b9e9a4535405ffb792bd7",
+      "candidateSha256": "5e9f5948d8a3eebba5704e4b2087e0c0122393d2e37b9e9a4535405ffb792bd7",
+      "legacyLabel": "悲しみ",
+      "action": "keep-identical",
+      "reason": "Already byte-identical to adopted asset; keep.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_momo.json",
+      "character": "aj",
+      "legacy": "images/assets/char/j10101.webp",
+      "legacy_expression": 1,
+      "candidate_expression": 1,
+      "candidate": "images/assets/char/aj_momo/standing/aj_momo_expression_01_composed.webp",
+      "manifest": "images/assets/char/aj_momo/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "a1fe4eca4e33074576697aa65056006fc7c5eb4819e006a6ee45aecd08065faa",
+      "candidateSha256": "9b0aef255aa585a58c140e9c00e2a1c12a36c8f19140b85206aed9a931cab291",
+      "legacyLabel": "澄まし",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_momo.json",
+      "character": "aj",
+      "legacy": "images/assets/char/j10501.webp",
+      "legacy_expression": 5,
+      "candidate_expression": 3,
+      "candidate": "images/assets/char/aj_momo/standing/aj_momo_expression_03_smile.webp",
+      "manifest": "images/assets/char/aj_momo/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "cc5fb14e5317695c508639cb5f54910ee82e54c3f0167a5c7d1efa30fe54b378",
+      "candidateSha256": "ad55bf14b04a1cd84841b9dbae4154c92949fe8e0724de8228ef5106127376c8",
+      "legacyLabel": "笑顔",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_momo.json",
+      "character": "aj",
+      "legacy": "images/assets/char/j11001.webp",
+      "legacy_expression": 10,
+      "candidate_expression": 5,
+      "candidate": "images/assets/char/aj_momo/standing/aj_momo_expression_05_mild_disgust.webp",
+      "manifest": "images/assets/char/aj_momo/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "7c7f58ef85c493fb1369a759cc91c0da47121f096d8c063faef634cf28159efe",
+      "candidateSha256": "719ef6a1a41c42539139e89113053fd5d3440372a9f04739d0ab8ee5b295c719",
+      "legacyLabel": "軽い嫌悪",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_momo.json",
+      "character": "aj",
+      "legacy": "images/assets/char/j10901.webp",
+      "legacy_expression": 9,
+      "candidate_expression": 12,
+      "candidate": "images/assets/char/aj_momo/standing/aj_momo_expression_12_proud.webp",
+      "manifest": "images/assets/char/aj_momo/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "a1d3eaf6022e7e9d93b465ce39232fd2da16cbb9858926527509b8d4dae578c6",
+      "candidateSha256": "3af71a267ca624389aa85730fd4ef37247f3cc09faa2b34c24f204f81ab3f7d9",
+      "legacyLabel": "得意げ",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_momo.json",
+      "character": "aj",
+      "legacy": "images/assets/char/j11101.webp",
+      "legacy_expression": 11,
+      "candidate_expression": 7,
+      "candidate": "images/assets/char/aj_momo/standing/aj_momo_expression_07_worry.webp",
+      "manifest": "images/assets/char/aj_momo/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "56ae0a0a8d906c2fcf75cd5af90d4ecc54fd135807f0f54b84e0183aed8a8b02",
+      "candidateSha256": "ea60c013d014b14f5474043ca2cd064cc76a0bad027fcd4db9abb97dd47a4e3e",
+      "legacyLabel": "心配不安",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_yozora.json",
+      "character": "ai",
+      "legacy": "images/assets/char/i10101.webp",
+      "legacy_expression": 1,
+      "candidate_expression": 1,
+      "candidate": "images/assets/char/ai_yozora/standing/ai_yozora_expression_01_composed.webp",
+      "manifest": "images/assets/char/ai_yozora/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "af70e4cba8875577a6daaf43e9d5cf698eee5135a625d102a6cf58f478e89419",
+      "candidateSha256": "5bf6b1f49f9c7b89bde8fab3c54f2feec58013f62ea43eaf72ed1e248e76bf9b",
+      "legacyLabel": "澄まし",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 2
+    },
+    {
+      "scenario": "scenario/v039/events/intro_yozora.json",
+      "character": "ai",
+      "legacy": "images/assets/char/i11001.webp",
+      "legacy_expression": 10,
+      "candidate_expression": 5,
+      "candidate": "images/assets/char/ai_yozora/standing/ai_yozora_expression_05_mild_disgust.webp",
+      "manifest": "images/assets/char/ai_yozora/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "15f706b38f4eb3693171a618b3258e5a130174dfebd65d865196deb2e69de056",
+      "candidateSha256": "d4d87b86648b8d2a27ec01e60aa9cd20a930711e2f6eb13d1bde0f7e03d5e74c",
+      "legacyLabel": "軽い嫌悪",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 3
+    },
+    {
+      "scenario": "scenario/v039/events/intro_yozora.json",
+      "character": "ai",
+      "legacy": "images/assets/char/i10901.webp",
+      "legacy_expression": 9,
+      "candidate_expression": 12,
+      "candidate": "images/assets/char/ai_yozora/standing/ai_yozora_expression_12_proud.webp",
+      "manifest": "images/assets/char/ai_yozora/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "64f2fefe7285c581675a6d3ad1aa4360d745af88f240464f1942324b1988c473",
+      "candidateSha256": "9db201e2e71beb3228bc678ab8799ccd0b90dfdca46ec9eedde01a599d78194f",
+      "legacyLabel": "得意げ",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 2
+    },
+    {
+      "scenario": "scenario/v039/events/intro_yukino.json",
+      "character": "ag",
+      "legacy": "images/assets/char/g10101.webp",
+      "legacy_expression": 1,
+      "candidate_expression": 1,
+      "candidate": "images/assets/char/ag_yukino/standing/ag_yukino_expression_01_composed.webp",
+      "manifest": "images/assets/char/ag_yukino/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "860e9cf1dde7b45c6e5e6174c3ba3c759fe3124f3153c9e9c95a99ab7e562548",
+      "candidateSha256": "42e822002cb84278559720a120bbe54f010ad19d86ca64d7d04ea3263a233ab1",
+      "legacyLabel": "澄まし",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_yukino.json",
+      "character": "ag",
+      "legacy": "images/assets/char/g10201.webp",
+      "legacy_expression": 2,
+      "candidate_expression": 2,
+      "candidate": "images/assets/char/ag_yukino/standing/ag_yukino_expression_02_gentle_smile.webp",
+      "manifest": "images/assets/char/ag_yukino/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "5757eafde0c83261f849050cc7bef8bc5274ec151870ddc807e4a483fb8366a6",
+      "candidateSha256": "b54338f6559e2c95b14743e08ec8f515d5bdf91af06f85fbeb5f81a454968b59",
+      "legacyLabel": "微笑み",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 2
+    },
+    {
+      "scenario": "scenario/v039/events/intro_yukino.json",
+      "character": "ag",
+      "legacy": "images/assets/char/g10701.webp",
+      "legacy_expression": 7,
+      "candidate_expression": 10,
+      "candidate": "images/assets/char/ag_yukino/standing/ag_yukino_expression_10_shy.webp",
+      "manifest": "images/assets/char/ag_yukino/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "aabc4ecfeae264d2cb999b9bc6568f371fd80f14bce5789311194d3f2c37b65e",
+      "candidateSha256": "9e2c4df411883ffe75fa0911fb109fda87d9585ba607faad0d6823a715b284b8",
+      "legacyLabel": "照れ",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_yukino.json",
+      "character": "ag",
+      "legacy": "images/assets/char/g11101.webp",
+      "legacy_expression": 11,
+      "candidate_expression": 7,
+      "candidate": "images/assets/char/ag_yukino/standing/ag_yukino_expression_07_worry.webp",
+      "manifest": "images/assets/char/ag_yukino/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "5889d4dd672fd7d2141f0e16984fbc87217ee54fff2222770c37ba65d6db0ae7",
+      "candidateSha256": "8c59070757937ad2bd4f0dc4d52536374b9014b24b2f4d6d0e3ec18dd4c2a6f4",
+      "legacyLabel": "心配不安",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    },
+    {
+      "scenario": "scenario/v039/events/intro_yukino.json",
+      "character": "ag",
+      "legacy": "images/assets/char/g11001.webp",
+      "legacy_expression": 10,
+      "candidate_expression": 5,
+      "candidate": "images/assets/char/ag_yukino/standing/ag_yukino_expression_05_mild_disgust.webp",
+      "manifest": "images/assets/char/ag_yukino/manifest.json",
+      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "oldSha256": "62cde283f9d5a04901af1268f83ceecf1295bb91e0184b71e39fa0944aba6725",
+      "candidateSha256": "f75b6a9566899aed9fa7b1d038a3a7e1a23730ed61394d531c9296fae7eb82dd",
+      "legacyLabel": "軽い嫌悪",
+      "action": "replace",
+      "reason": "Adopted char25 manifest; semantic expression mapping, not equal ordinal.",
+      "occurrences": 1
+    }
+  ],
+  "stories": [
+    {
+      "scenario": "scenario/v039/events/intro_ai.json",
+      "id": "intro_ai",
+      "steps": 41,
+      "semanticSha256": "d42ae368e8417be0f4ae63ca70e8e64aa4905284b6b38a75204353a96cdd6602",
+      "backgrounds": [
+        "images/assets/bgev/bg011.webp"
+      ],
+      "spriteReferences": [
+        {
+          "step": 4,
+          "character": "ab",
+          "before": "images/assets/char/b10101.webp",
+          "after": "images/assets/char/ab_ai/standing/ab_ai_expression_01_composed.webp"
+        },
+        {
+          "step": 5,
+          "character": "ab",
+          "before": "images/assets/char/b10201.webp",
+          "after": "images/assets/char/ab_ai/standing/ab_ai_expression_02_gentle_smile.webp"
+        },
+        {
+          "step": 7,
+          "character": "ab",
+          "before": "images/assets/char/b10601.webp",
+          "after": "images/assets/char/ab_ai/standing/ab_ai_expression_09_surprise.webp"
+        },
+        {
+          "step": 21,
+          "character": "ab",
+          "before": "images/assets/char/b11001.webp",
+          "after": "images/assets/char/ab_ai/standing/ab_ai_expression_05_mild_disgust.webp"
+        },
+        {
+          "step": 23,
+          "character": "ab",
+          "before": "images/assets/char/b10901.webp",
+          "after": "images/assets/char/ab_ai/standing/ab_ai_expression_12_proud.webp"
+        },
+        {
+          "step": 26,
+          "character": "ab",
+          "before": "images/assets/char/b11001.webp",
+          "after": "images/assets/char/ab_ai/standing/ab_ai_expression_05_mild_disgust.webp"
+        }
+      ]
+    },
+    {
+      "scenario": "scenario/v039/events/intro_ayame.json",
+      "id": "intro_ayame",
+      "steps": 50,
+      "semanticSha256": "a94b9db59fde97f125bd261095a6724c2029d151f27fc4fdd6cc172099619e1a",
+      "backgrounds": [
+        "images/assets/bgev/bg011.webp"
+      ],
+      "spriteReferences": [
+        {
+          "step": 4,
+          "character": "ak",
+          "before": "images/assets/char/k10101.webp",
+          "after": "images/assets/char/ak_ayame/standing/ak_ayame_expression_01_composed.webp"
+        },
+        {
+          "step": 5,
+          "character": "ak",
+          "before": "images/assets/char/k10201.webp",
+          "after": "images/assets/char/ak_ayame/standing/ak_ayame_expression_02_gentle_smile.webp"
+        },
+        {
+          "step": 17,
+          "character": "ak",
+          "before": "images/assets/char/k11001.webp",
+          "after": "images/assets/char/ak_ayame/standing/ak_ayame_expression_05_mild_disgust.webp"
+        },
+        {
+          "step": 23,
+          "character": "ak",
+          "before": "images/assets/char/k10901.webp",
+          "after": "images/assets/char/ak_ayame/standing/ak_ayame_expression_12_proud.webp"
+        },
+        {
+          "step": 28,
+          "character": "ak",
+          "before": "images/assets/char/k11001.webp",
+          "after": "images/assets/char/ak_ayame/standing/ak_ayame_expression_05_mild_disgust.webp"
+        },
+        {
+          "step": 42,
+          "character": "ak",
+          "before": "images/assets/char/k10901.webp",
+          "after": "images/assets/char/ak_ayame/standing/ak_ayame_expression_12_proud.webp"
+        }
+      ]
+    },
+    {
+      "scenario": "scenario/v039/events/intro_hina.json",
+      "id": "intro_hina",
+      "steps": 55,
+      "semanticSha256": "7fc90ff37139aed0abc0f3af863ff83cce341ac26a121ea8aff33e7a1791334c",
+      "backgrounds": [
+        "images/assets/bgev/bg011.webp"
+      ],
+      "spriteReferences": [
+        {
+          "step": 4,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_01.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_01.webp"
+        },
+        {
+          "step": 5,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp"
+        },
+        {
+          "step": 7,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_15.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_15.webp"
+        },
+        {
+          "step": 8,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_02.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_02.webp"
+        },
+        {
+          "step": 9,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp"
+        },
+        {
+          "step": 10,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_15.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_15.webp"
+        },
+        {
+          "step": 11,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_02.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_02.webp"
+        },
+        {
+          "step": 13,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_15.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_15.webp"
+        },
+        {
+          "step": 14,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp"
+        },
+        {
+          "step": 15,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_15.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_15.webp"
+        },
+        {
+          "step": 16,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_02.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_02.webp"
+        },
+        {
+          "step": 17,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_12.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_12.webp"
+        },
+        {
+          "step": 19,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_10.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_10.webp"
+        },
+        {
+          "step": 20,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp"
+        },
+        {
+          "step": 22,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_15.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_15.webp"
+        },
+        {
+          "step": 23,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_02.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_02.webp"
+        },
+        {
+          "step": 24,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_12.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_12.webp"
+        },
+        {
+          "step": 27,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_15.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_15.webp"
+        },
+        {
+          "step": 30,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp"
+        },
+        {
+          "step": 32,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_05.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_05.webp"
+        },
+        {
+          "step": 34,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_15.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_15.webp"
+        },
+        {
+          "step": 35,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp"
+        },
+        {
+          "step": 37,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_11.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_11.webp"
+        },
+        {
+          "step": 38,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_13.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_13.webp"
+        },
+        {
+          "step": 40,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp"
+        },
+        {
+          "step": 42,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_02.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_02.webp"
+        },
+        {
+          "step": 43,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_15.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_15.webp"
+        },
+        {
+          "step": 44,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp"
+        },
+        {
+          "step": 46,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_12.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_12.webp"
+        },
+        {
+          "step": 47,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_13.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_13.webp"
+        },
+        {
+          "step": 48,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_15.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_15.webp"
+        },
+        {
+          "step": 49,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_02.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_02.webp"
+        },
+        {
+          "step": 50,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp"
+        },
+        {
+          "step": 51,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_11.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_11.webp"
+        },
+        {
+          "step": 52,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_10.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_10.webp"
+        },
+        {
+          "step": 53,
+          "character": "aa",
+          "before": "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp",
+          "after": "images/assets/char/aa_hina/standing/aa_hina_expression_03.webp"
+        }
+      ]
+    },
+    {
+      "scenario": "scenario/v039/events/intro_kogane.json",
+      "id": "intro_kogane",
+      "steps": 35,
+      "semanticSha256": "026b5bee1b25ce23449b06e87551fcd839057444653359d289f0c7205f241cfd",
+      "backgrounds": [
+        "images/assets/bgev/bg011.webp"
+      ],
+      "spriteReferences": [
+        {
+          "step": 4,
+          "character": "ad",
+          "before": "images/assets/char/d10101.webp",
+          "after": "images/assets/char/ad_kogane/standing/ad_kogane_expression_01_composed.webp"
+        },
+        {
+          "step": 5,
+          "character": "ad",
+          "before": "images/assets/char/d10501.webp",
+          "after": "images/assets/char/ad_kogane/standing/ad_kogane_expression_03_smile.webp"
+        },
+        {
+          "step": 12,
+          "character": "ad",
+          "before": "images/assets/char/d11001.webp",
+          "after": "images/assets/char/ad_kogane/standing/ad_kogane_expression_05_mild_disgust.webp"
+        },
+        {
+          "step": 21,
+          "character": "ad",
+          "before": "images/assets/char/d10501.webp",
+          "after": "images/assets/char/ad_kogane/standing/ad_kogane_expression_03_smile.webp"
+        },
+        {
+          "step": 23,
+          "character": "ad",
+          "before": "images/assets/char/d10901.webp",
+          "after": "images/assets/char/ad_kogane/standing/ad_kogane_expression_12_proud.webp"
+        }
+      ]
+    },
+    {
+      "scenario": "scenario/v039/events/intro_kohaku.json",
+      "id": "intro_kohaku",
+      "steps": 51,
+      "semanticSha256": "acc82d3f297ba3ea022e47924f2d675a2c5b1cea249a3ef18306eac4c4f87e83",
+      "backgrounds": [
+        "images/assets/bgev/bg011.webp"
+      ],
+      "spriteReferences": [
+        {
+          "step": 4,
+          "character": "ae",
+          "before": "images/assets/char/e10101.webp",
+          "after": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_01_composed.webp"
+        },
+        {
+          "step": 5,
+          "character": "ae",
+          "before": "images/assets/char/e10501.webp",
+          "after": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_03_smile.webp"
+        },
+        {
+          "step": 7,
+          "character": "ae",
+          "before": "images/assets/char/e11201.webp",
+          "after": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_08_agitated.webp"
+        },
+        {
+          "step": 18,
+          "character": "ae",
+          "before": "images/assets/char/e11001.webp",
+          "after": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_05_mild_disgust.webp"
+        },
+        {
+          "step": 22,
+          "character": "ae",
+          "before": "images/assets/char/e10401.webp",
+          "after": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_06_sadness.webp"
+        },
+        {
+          "step": 23,
+          "character": "ae",
+          "before": "images/assets/char/e11001.webp",
+          "after": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_05_mild_disgust.webp"
+        },
+        {
+          "step": 25,
+          "character": "ae",
+          "before": "images/assets/char/e11201.webp",
+          "after": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_08_agitated.webp"
+        },
+        {
+          "step": 26,
+          "character": "ae",
+          "before": "images/assets/char/e11101.webp",
+          "after": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_07_worry.webp"
+        },
+        {
+          "step": 35,
+          "character": "ae",
+          "before": "images/assets/char/e10901.webp",
+          "after": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_12_proud.webp"
+        },
+        {
+          "step": 40,
+          "character": "ae",
+          "before": "images/assets/char/e10301.webp",
+          "after": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_04_anger.webp"
+        },
+        {
+          "step": 42,
+          "character": "ae",
+          "before": "images/assets/char/e11001.webp",
+          "after": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_05_mild_disgust.webp"
+        },
+        {
+          "step": 43,
+          "character": "ae",
+          "before": "images/assets/char/e10901.webp",
+          "after": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_12_proud.webp"
+        },
+        {
+          "step": 44,
+          "character": "ae",
+          "before": "images/assets/char/e11201.webp",
+          "after": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_08_agitated.webp"
+        },
+        {
+          "step": 45,
+          "character": "ae",
+          "before": "images/assets/char/e11101.webp",
+          "after": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_07_worry.webp"
+        },
+        {
+          "step": 47,
+          "character": "ae",
+          "before": "images/assets/char/e11201.webp",
+          "after": "images/assets/char/ae_kohaku/standing/ae_kohaku_expression_08_agitated.webp"
+        }
+      ]
+    },
+    {
+      "scenario": "scenario/v039/events/intro_manaka.json",
+      "id": "intro_manaka",
+      "steps": 38,
+      "semanticSha256": "5f1a58711957061827f8b6f0ebf5950a5753b63f32961bd69c882c7838fcdb5b",
+      "backgrounds": [
+        "images/assets/bgev/bg011.webp"
+      ],
+      "spriteReferences": [
+        {
+          "step": 4,
+          "character": "af",
+          "before": "images/assets/char/f10101.webp",
+          "after": "images/assets/char/f10101.webp"
+        },
+        {
+          "step": 5,
+          "character": "af",
+          "before": "images/assets/char/f10201.webp",
+          "after": "images/assets/char/f10201.webp"
+        },
+        {
+          "step": 7,
+          "character": "af",
+          "before": "images/assets/char/f11201.webp",
+          "after": "images/assets/char/f11201.webp"
+        },
+        {
+          "step": 8,
+          "character": "af",
+          "before": "images/assets/char/f11001.webp",
+          "after": "images/assets/char/f11001.webp"
+        },
+        {
+          "step": 9,
+          "character": "af",
+          "before": "images/assets/char/f10601.webp",
+          "after": "images/assets/char/f10601.webp"
+        },
+        {
+          "step": 10,
+          "character": "af",
+          "before": "images/assets/char/f11201.webp",
+          "after": "images/assets/char/f11201.webp"
+        },
+        {
+          "step": 11,
+          "character": "af",
+          "before": "images/assets/char/f10601.webp",
+          "after": "images/assets/char/f10601.webp"
+        },
+        {
+          "step": 18,
+          "character": "af",
+          "before": "images/assets/char/f11001.webp",
+          "after": "images/assets/char/f11001.webp"
+        },
+        {
+          "step": 31,
+          "character": "af",
+          "before": "images/assets/char/f11101.webp",
+          "after": "images/assets/char/f11101.webp"
+        },
+        {
+          "step": 32,
+          "character": "af",
+          "before": "images/assets/char/f10701.webp",
+          "after": "images/assets/char/f10701.webp"
+        }
+      ]
+    },
+    {
+      "scenario": "scenario/v039/events/intro_midori.json",
+      "id": "intro_midori",
+      "steps": 45,
+      "semanticSha256": "ba2f09ea17278a3372808e6fb3303ac127418ea9a27d7a79c06907ae430e8d6d",
+      "backgrounds": [
+        "images/assets/bgev/bg011.webp"
+      ],
+      "spriteReferences": [
+        {
+          "step": 4,
+          "character": "ac",
+          "before": "images/assets/char/c10101.webp",
+          "after": "images/assets/char/ac_midori/standing/ac_midori_expression_01_composed.webp"
+        },
+        {
+          "step": 5,
+          "character": "ac",
+          "before": "images/assets/char/c10101.webp",
+          "after": "images/assets/char/ac_midori/standing/ac_midori_expression_01_composed.webp"
+        },
+        {
+          "step": 18,
+          "character": "ac",
+          "before": "images/assets/char/c10101.webp",
+          "after": "images/assets/char/ac_midori/standing/ac_midori_expression_01_composed.webp"
+        },
+        {
+          "step": 20,
+          "character": "ac",
+          "before": "images/assets/char/c11001.webp",
+          "after": "images/assets/char/ac_midori/standing/ac_midori_expression_05_mild_disgust.webp"
+        },
+        {
+          "step": 33,
+          "character": "ac",
+          "before": "images/assets/char/c10401.webp",
+          "after": "images/assets/char/ac_midori/standing/ac_midori_expression_06_sadness.webp"
+        },
+        {
+          "step": 35,
+          "character": "ac",
+          "before": "images/assets/char/c11101.webp",
+          "after": "images/assets/char/ac_midori/standing/ac_midori_expression_07_worry.webp"
+        }
+      ]
+    },
+    {
+      "scenario": "scenario/v039/events/intro_misora.json",
+      "id": "intro_misora",
+      "steps": 47,
+      "semanticSha256": "99cf41deb5bfdd7f3ebc7f03aea2c8907098e6ae6c853c4aa3c1e2db3abcbd89",
+      "backgrounds": [
+        "images/assets/bgev/bg011.webp"
+      ],
+      "spriteReferences": [
+        {
+          "step": 4,
+          "character": "ah",
+          "before": "images/assets/char/h10101.webp",
+          "after": "images/assets/char/ah_misora/standing/ah_misora_expression_01_composed.webp"
+        },
+        {
+          "step": 5,
+          "character": "ah",
+          "before": "images/assets/char/h10201.webp",
+          "after": "images/assets/char/ah_misora/standing/ah_misora_expression_02_gentle_smile.webp"
+        },
+        {
+          "step": 7,
+          "character": "ah",
+          "before": "images/assets/char/h10701.webp",
+          "after": "images/assets/char/ah_misora/standing/ah_misora_expression_10_shy.webp"
+        },
+        {
+          "step": 21,
+          "character": "ah",
+          "before": "images/assets/char/h10901.webp",
+          "after": "images/assets/char/ah_misora/standing/ah_misora_expression_12_proud.webp"
+        },
+        {
+          "step": 25,
+          "character": "ah",
+          "before": "images/assets/char/h11001.webp",
+          "after": "images/assets/char/ah_misora/standing/ah_misora_expression_05_mild_disgust.webp"
+        },
+        {
+          "step": 29,
+          "character": "ah",
+          "before": "images/assets/char/h11101.webp",
+          "after": "images/assets/char/ah_misora/standing/ah_misora_expression_07_worry.webp"
+        },
+        {
+          "step": 30,
+          "character": "ah",
+          "before": "images/assets/char/h11001.webp",
+          "after": "images/assets/char/ah_misora/standing/ah_misora_expression_05_mild_disgust.webp"
+        },
+        {
+          "step": 31,
+          "character": "ah",
+          "before": "images/assets/char/h10601.webp",
+          "after": "images/assets/char/ah_misora/standing/ah_misora_expression_09_surprise.webp"
+        },
+        {
+          "step": 35,
+          "character": "ah",
+          "before": "images/assets/char/h10901.webp",
+          "after": "images/assets/char/ah_misora/standing/ah_misora_expression_12_proud.webp"
+        }
+      ]
+    },
+    {
+      "scenario": "scenario/v039/events/intro_moe.json",
+      "id": "intro_moe",
+      "steps": 55,
+      "semanticSha256": "3ca47873fbf9ba76eb6a0d3fed6851f766e27caf5f9d02d902cb5d71aeac31da",
+      "backgrounds": [
+        "images/assets/bgev/bg011.webp"
+      ],
+      "spriteReferences": [
+        {
+          "step": 4,
+          "character": "am",
+          "before": "images/assets/char/m10101.webp",
+          "after": "images/assets/char/m10101.webp"
+        },
+        {
+          "step": 5,
+          "character": "am",
+          "before": "images/assets/char/m10201.webp",
+          "after": "images/assets/char/am_moe/standing/am_moe_expression_02_gentle_smile.webp"
+        },
+        {
+          "step": 7,
+          "character": "am",
+          "before": "images/assets/char/m10601.webp",
+          "after": "images/assets/char/am_moe/standing/am_moe_expression_09_surprise.webp"
+        },
+        {
+          "step": 8,
+          "character": "am",
+          "before": "images/assets/char/m11201.webp",
+          "after": "images/assets/char/am_moe/standing/am_moe_expression_08_agitated.webp"
+        },
+        {
+          "step": 29,
+          "character": "am",
+          "before": "images/assets/char/m10901.webp",
+          "after": "images/assets/char/am_moe/standing/am_moe_expression_12_proud.webp"
+        },
+        {
+          "step": 32,
+          "character": "am",
+          "before": "images/assets/char/m11001.webp",
+          "after": "images/assets/char/am_moe/standing/am_moe_expression_05_mild_disgust.webp"
+        },
+        {
+          "step": 33,
+          "character": "am",
+          "before": "images/assets/char/m10401.webp",
+          "after": "images/assets/char/m10401.webp"
+        },
+        {
+          "step": 34,
+          "character": "am",
+          "before": "images/assets/char/m10901.webp",
+          "after": "images/assets/char/am_moe/standing/am_moe_expression_12_proud.webp"
+        },
+        {
+          "step": 40,
+          "character": "am",
+          "before": "images/assets/char/m11001.webp",
+          "after": "images/assets/char/am_moe/standing/am_moe_expression_05_mild_disgust.webp"
+        }
+      ]
+    },
+    {
+      "scenario": "scenario/v039/events/intro_momo.json",
+      "id": "intro_momo",
+      "steps": 51,
+      "semanticSha256": "46c22017259a6a99665c8c2351f2ccaef06a9bc627a47a7304b4a68d837bf72f",
+      "backgrounds": [
+        "images/assets/bgev/bg011.webp"
+      ],
+      "spriteReferences": [
+        {
+          "step": 4,
+          "character": "aj",
+          "before": "images/assets/char/j10101.webp",
+          "after": "images/assets/char/aj_momo/standing/aj_momo_expression_01_composed.webp"
+        },
+        {
+          "step": 5,
+          "character": "aj",
+          "before": "images/assets/char/j10501.webp",
+          "after": "images/assets/char/aj_momo/standing/aj_momo_expression_03_smile.webp"
+        },
+        {
+          "step": 24,
+          "character": "aj",
+          "before": "images/assets/char/j11001.webp",
+          "after": "images/assets/char/aj_momo/standing/aj_momo_expression_05_mild_disgust.webp"
+        },
+        {
+          "step": 36,
+          "character": "aj",
+          "before": "images/assets/char/j10901.webp",
+          "after": "images/assets/char/aj_momo/standing/aj_momo_expression_12_proud.webp"
+        },
+        {
+          "step": 40,
+          "character": "aj",
+          "before": "images/assets/char/j11101.webp",
+          "after": "images/assets/char/aj_momo/standing/aj_momo_expression_07_worry.webp"
+        }
+      ]
+    },
+    {
+      "scenario": "scenario/v039/events/intro_satomi.json",
+      "id": "intro_satomi",
+      "steps": 32,
+      "semanticSha256": "7983a13942a580fa7dfda684e2f21f1167cfee2177e2b358be19f2aa4aa92f07",
+      "backgrounds": [
+        "images/assets/bgev/bg011.webp"
+      ],
+      "spriteReferences": [
+        {
+          "step": 4,
+          "character": "al",
+          "before": "images/assets/char/al_satomi/standing/al_satomi_expression_05_mild_disgust.webp",
+          "after": "images/assets/char/al_satomi/standing/al_satomi_expression_05_mild_disgust.webp"
+        },
+        {
+          "step": 5,
+          "character": "al",
+          "before": "images/assets/char/al_satomi/standing/al_satomi_expression_07_worry.webp",
+          "after": "images/assets/char/al_satomi/standing/al_satomi_expression_07_worry.webp"
+        },
+        {
+          "step": 7,
+          "character": "al",
+          "before": "images/assets/char/al_satomi/standing/al_satomi_expression_04_anger.webp",
+          "after": "images/assets/char/al_satomi/standing/al_satomi_expression_04_anger.webp"
+        },
+        {
+          "step": 8,
+          "character": "al",
+          "before": "images/assets/char/al_satomi/standing/al_satomi_expression_06_sadness.webp",
+          "after": "images/assets/char/al_satomi/standing/al_satomi_expression_06_sadness.webp"
+        },
+        {
+          "step": 19,
+          "character": "al",
+          "before": "images/assets/char/al_satomi/standing/al_satomi_expression_10_shy.webp",
+          "after": "images/assets/char/al_satomi/standing/al_satomi_expression_10_shy.webp"
+        },
+        {
+          "step": 21,
+          "character": "al",
+          "before": "images/assets/char/al_satomi/standing/al_satomi_expression_04_anger.webp",
+          "after": "images/assets/char/al_satomi/standing/al_satomi_expression_04_anger.webp"
+        },
+        {
+          "step": 23,
+          "character": "al",
+          "before": "images/assets/char/al_satomi/standing/al_satomi_expression_10_shy.webp",
+          "after": "images/assets/char/al_satomi/standing/al_satomi_expression_10_shy.webp"
+        },
+        {
+          "step": 24,
+          "character": "al",
+          "before": "images/assets/char/al_satomi/standing/al_satomi_expression_06_sadness.webp",
+          "after": "images/assets/char/al_satomi/standing/al_satomi_expression_06_sadness.webp"
+        }
+      ]
+    },
+    {
+      "scenario": "scenario/v039/events/intro_yozora.json",
+      "id": "intro_yozora",
+      "steps": 53,
+      "semanticSha256": "c6e2c24d853748191803744a5a9b42fdec4771c3178e698070971c6106516e11",
+      "backgrounds": [
+        "images/assets/bgev/bg011.webp"
+      ],
+      "spriteReferences": [
+        {
+          "step": 4,
+          "character": "ai",
+          "before": "images/assets/char/i10101.webp",
+          "after": "images/assets/char/ai_yozora/standing/ai_yozora_expression_01_composed.webp"
+        },
+        {
+          "step": 5,
+          "character": "ai",
+          "before": "images/assets/char/i10101.webp",
+          "after": "images/assets/char/ai_yozora/standing/ai_yozora_expression_01_composed.webp"
+        },
+        {
+          "step": 14,
+          "character": "ai",
+          "before": "images/assets/char/i11001.webp",
+          "after": "images/assets/char/ai_yozora/standing/ai_yozora_expression_05_mild_disgust.webp"
+        },
+        {
+          "step": 21,
+          "character": "ai",
+          "before": "images/assets/char/i10901.webp",
+          "after": "images/assets/char/ai_yozora/standing/ai_yozora_expression_12_proud.webp"
+        },
+        {
+          "step": 28,
+          "character": "ai",
+          "before": "images/assets/char/i11001.webp",
+          "after": "images/assets/char/ai_yozora/standing/ai_yozora_expression_05_mild_disgust.webp"
+        },
+        {
+          "step": 40,
+          "character": "ai",
+          "before": "images/assets/char/i10901.webp",
+          "after": "images/assets/char/ai_yozora/standing/ai_yozora_expression_12_proud.webp"
+        },
+        {
+          "step": 41,
+          "character": "ai",
+          "before": "images/assets/char/i11001.webp",
+          "after": "images/assets/char/ai_yozora/standing/ai_yozora_expression_05_mild_disgust.webp"
+        }
+      ]
+    },
+    {
+      "scenario": "scenario/v039/events/intro_yukino.json",
+      "id": "intro_yukino",
+      "steps": 40,
+      "semanticSha256": "4208e03cd0a3baa16bbbcd89570edf9dc39fd61ee371185c22af0444ed5a1f30",
+      "backgrounds": [
+        "images/assets/bgev/bg011.webp"
+      ],
+      "spriteReferences": [
+        {
+          "step": 4,
+          "character": "ag",
+          "before": "images/assets/char/g10101.webp",
+          "after": "images/assets/char/ag_yukino/standing/ag_yukino_expression_01_composed.webp"
+        },
+        {
+          "step": 5,
+          "character": "ag",
+          "before": "images/assets/char/g10201.webp",
+          "after": "images/assets/char/ag_yukino/standing/ag_yukino_expression_02_gentle_smile.webp"
+        },
+        {
+          "step": 10,
+          "character": "ag",
+          "before": "images/assets/char/g10701.webp",
+          "after": "images/assets/char/ag_yukino/standing/ag_yukino_expression_10_shy.webp"
+        },
+        {
+          "step": 14,
+          "character": "ag",
+          "before": "images/assets/char/g10201.webp",
+          "after": "images/assets/char/ag_yukino/standing/ag_yukino_expression_02_gentle_smile.webp"
+        },
+        {
+          "step": 20,
+          "character": "ag",
+          "before": "images/assets/char/g11101.webp",
+          "after": "images/assets/char/ag_yukino/standing/ag_yukino_expression_07_worry.webp"
+        },
+        {
+          "step": 26,
+          "character": "ag",
+          "before": "images/assets/char/g11001.webp",
+          "after": "images/assets/char/ag_yukino/standing/ag_yukino_expression_05_mild_disgust.webp"
+        }
+      ]
+    }
+  ],
+  "backgroundReview": {
+    "action": "keep",
+    "path": "images/assets/bgev/bg011.webp",
+    "reason": "Pixel inspection: same office composition as formal bg_office_hidamari.webp, not the sales floor. Distinct encoding/pixels, no confirmed superseded artwork. Delta LM071 explicitly distinguishes both office assets from private home office."
+  },
+  "holds": [
+    {
+      "character": "af",
+      "reason": "CMS prioritises af_manaka_face_anchor_v001.webp and af_manaka_uniform_full_v001.webp over secondary simple illustration; current primary anchor pixels unavailable. Retain all 7 legacy images/10 references until confirmed."
+    }
+  ]
+}
