@@ -410,3 +410,17 @@ body[data-v039-mode="storyMenu"] .tenotsu-town-panel:has(.tenotsu-album-columns)
   body[data-v039-mode="storyMenu"] .tenotsu-story-menu-subtitle { font-size:11px !important; line-height:1.4; }
   body[data-v039-mode="storyMenu"] .tenotsu-story-menu-debug { font-size:10px; }
 }
+
+/* Arrival is a small scene overlay; location browsing retains its three columns. */
+body[data-v039-mode="town"] .tenotsu-town-panel:has([data-town-arrival]) {
+  left:8px !important; right:auto !important; top:120px !important; bottom:auto !important;
+  width:min(260px,calc(100vw - 16px)) !important; max-width:calc(100vw - 16px) !important;
+  height:auto !important; min-height:0 !important; max-height:calc(100vh - 140px) !important;
+  padding:8px !important; overflow-y:auto !important; background:rgba(18,23,28,.94) !important; z-index:1800 !important;
+}
+[data-town-arrival] b,[data-town-arrival] small { display:block; overflow-wrap:anywhere; line-height:1.4; }
+[data-town-arrival] b { font-size:12px; color:#ffe2a3; }
+[data-town-arrival] small { font-size:10px; margin:5px 0; }
+.tenotsu-town-arrival-actions { display:flex; flex-wrap:wrap; gap:5px; }
+.tenotsu-town-arrival-actions button { min-width:44px; min-height:44px; font-size:11px; border:1px solid #687989; border-radius:5px; padding:6px; background:#253444; color:#fff; }
+@media(max-width:620px) { body[data-v039-mode="town"]:has([data-town-arrival]) .tenotsu-office-menu { display:none !important; } }

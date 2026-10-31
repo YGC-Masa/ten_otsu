@@ -126,9 +126,12 @@
     if (ns.paths) ns.paths.officeBg = officeBackground();
     if (render && changed && !ns.story?.active) {
       if (ns.state?.mode === "town") {
-        ns.renderTownSeasonTop?.();
-        const bg = (window.TENOTSU_TOWN_ENCOUNTER_CONFIG?.seasons || []).find(s => s.id === snapshot.season)?.bg;
-        if (bg) Promise.resolve(ns.setBackgroundReady?.(bg)).catch(() => {});
+        if (ns.refreshTownCalendar) ns.refreshTownCalendar();
+        else {
+          ns.renderTownSeasonTop?.();
+          const bg = (window.TENOTSU_TOWN_ENCOUNTER_CONFIG?.seasons || []).find(s => s.id === snapshot.season)?.bg;
+          if (bg) Promise.resolve(ns.setBackgroundReady?.(bg)).catch(() => {});
+        }
       } else if (ns.state?.mode === "office") {
         Promise.resolve(ns.setBackgroundReady?.(ns.paths.officeBg)).catch(() => {});
         ns.renderOfficeCharacters?.({ preserveSelection: true });

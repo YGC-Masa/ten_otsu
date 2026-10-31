@@ -3495,8 +3495,8 @@ body[data-v039-mode="boot"] .tenotsu-stamina-hud {
   margin-top: 3px;
   font-weight: 900;
 }
-.tenotsu-stamina-hud-main b { font-size: 18px; color: #ffe2a3; }
-.tenotsu-stamina-hud-main span { font-size: 11px; opacity: .78; }
+.tenotsu-stamina-hud-main b { font-size: 12px; color: #ffe2a3; }
+.tenotsu-stamina-hud-main span { font-size: 10px; opacity: .78; }
 .tenotsu-stamina-hud-bar {
   overflow: hidden;
   height: 5px;

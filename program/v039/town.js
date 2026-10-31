@@ -20,6 +20,8 @@
   function getSeason(id){ return (cfg().seasons || []).find((s) => s.id === id) || (cfg().seasons || [])[0] || { id:"summer", label:"夏" }; }
   function getPlace(id){ return (cfg().places || []).find((p) => p.id === id) || null; }
   function getUnreadEncounterStories(placeId, seasonId){
+    const place = getPlace(placeId);
+    if (place?.seasons?.length && !place.seasons.includes(seasonId)) return [];
     return allStories().filter((story) => {
       if (!story || story.type !== "normal" || !story.scenario) return false;
       if (story.encounter && story.encounter.enabled === false) return false;
@@ -31,6 +33,8 @@
     }).sort((a,b)=>(a.order||0)-(b.order||0));
   }
   function getAllEncounterStories(placeId, seasonId){
+    const place = getPlace(placeId);
+    if (place?.seasons?.length && !place.seasons.includes(seasonId)) return [];
     return allStories().filter((story) => story && story.type === "normal" && story.scenario && story.placeId === placeId && (!story.season || story.season === seasonId));
   }
   function seasonOptionsHtml(currentSeason){
@@ -45,12 +49,13 @@
   function placeCard(place, data){
     const currentSeason = data.currentSeason;
     const enabledSeason = !place.seasons || !place.seasons.length || place.seasons.includes(currentSeason);
+    const selectable = enabledSeason || !!ns.resolveTownBackground?.(place.id);
     const revealed = !!data.revealedPlaces[`${currentSeason}:${place.id}`];
     const unread = getUnreadEncounterStories(place.id, currentSeason);
     const all = getAllEncounterStories(place.id, currentSeason);
-    const hint = !enabledSeason ? "この季節では気配が薄い" : (revealed ? (unread.length ? `未読 ${unread.length}件` : (all.length ? "新しい出会いなし" : "気配なし")) : "未確認");
+    const hint = !enabledSeason ? "この季節の遭遇は対象外" : (revealed ? (unread.length ? `未読 ${unread.length}件` : (all.length ? "新しい出会いなし" : "気配なし")) : "未確認");
     return `
-      <button type="button" class="tenotsu-town-place-card ${enabledSeason?"":"disabled"} ${revealed?"revealed":""}" data-town-place="${esc(place.id)}" ${enabledSeason?"":"disabled"}>
+      <button type="button" class="tenotsu-town-place-card ${selectable?"":"disabled"} ${revealed?"revealed":""}" data-town-place="${esc(place.id)}" ${selectable?"":"disabled"}>
         <span class="place-type">${esc(place.type || "場所")}</span>
         <b>${esc(place.name)}</b>
         <small>${esc(place.description || "")}</small>

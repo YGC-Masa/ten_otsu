@@ -15,11 +15,11 @@ body[data-v039-mode="tuning"] .tenotsu-stamina-hud {
   min-width: 0 !important;
   width: auto !important;
   max-width: min(330px, calc(100vw - 20px)) !important;
-  padding: 6px 8px !important;
+  padding: 4px 6px !important;
   border-radius: 12px !important;
   display: flex !important;
   align-items: center !important;
-  gap: 8px !important;
+  gap: 5px !important;
   transform: none !important;
   z-index: 910 !important;
 }
@@ -31,7 +31,7 @@ body[data-v039-mode="town"] .tenotsu-stamina-hud .tenotsu-resource-hud-row,
 body[data-v039-mode="shop"] .tenotsu-stamina-hud .tenotsu-resource-hud-row {
   display: inline-flex !important;
   align-items: baseline !important;
-  gap: 6px !important;
+  gap: 4px !important;
 }
 
 body[data-v039-mode="office"] .tenotsu-stamina-hud-main,
@@ -62,7 +62,7 @@ body[data-v039-mode="town"] .tenotsu-resource-hud-bp,
 body[data-v039-mode="shop"] .tenotsu-resource-hud-bp {
   margin-top: 0 !important;
   padding-top: 0 !important;
-  padding-left: 8px !important;
+  padding-left: 5px !important;
   border-top: 0 !important;
   border-left: 1px solid rgba(255,255,255,.18) !important;
 }
@@ -73,7 +73,7 @@ body[data-v039-mode="sales"] .tenotsu-stamina-hud-label,
 body[data-v039-mode="town"] .tenotsu-stamina-hud-label,
 body[data-v039-mode="shop"] .tenotsu-stamina-hud-label {
   padding: 1px 6px !important;
-  font-size: 10px !important;
+  font-size: 9px !important;
 }
 
 body[data-v039-mode="office"] .tenotsu-stamina-hud-main b,
@@ -81,7 +81,7 @@ body[data-v039-mode="members"] .tenotsu-stamina-hud-main b,
 body[data-v039-mode="sales"] .tenotsu-stamina-hud-main b,
 body[data-v039-mode="town"] .tenotsu-stamina-hud-main b,
 body[data-v039-mode="shop"] .tenotsu-stamina-hud-main b {
-  font-size: 15px !important;
+  font-size: 12px !important;
 }
 
 /* 設定POPアップをテキストボックスより前面へ。親レイヤーごと上げる。 */
@@ -100,7 +100,7 @@ body:not([data-v039-mode="story"]) .tenotsu-shop-info-panel:not([hidden]) ~ * {
   pointer-events: auto;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 720px), (max-height: 560px) {
   body[data-v039-mode="office"] .tenotsu-stamina-hud,
   body[data-v039-mode="members"] .tenotsu-stamina-hud,
   body[data-v039-mode="sales"] .tenotsu-stamina-hud,
@@ -108,7 +108,7 @@ body:not([data-v039-mode="story"]) .tenotsu-shop-info-panel:not([hidden]) ~ * {
   body[data-v039-mode="shop"] .tenotsu-stamina-hud {
     max-width: calc(100vw - 16px) !important;
     gap: 5px !important;
-    padding: 5px 6px !important;
+    padding: 3px 5px !important;
   }
   body[data-v039-mode="office"] .tenotsu-stamina-hud-label,
   body[data-v039-mode="members"] .tenotsu-stamina-hud-label,
@@ -123,6 +123,13 @@ body:not([data-v039-mode="story"]) .tenotsu-shop-info-panel:not([hidden]) ~ * {
   body[data-v039-mode="sales"] .tenotsu-stamina-hud-main b,
   body[data-v039-mode="town"] .tenotsu-stamina-hud-main b,
   body[data-v039-mode="shop"] .tenotsu-stamina-hud-main b {
-    font-size: 13px !important;
+    font-size: 11px !important;
   }
+}
+
+/* Apply the same compact type to the two status menus, without changing HUD visibility. */
+body:is([data-v039-mode="storeStatus"],[data-v039-mode="tuning"]) .tenotsu-stamina-hud-main b { font-size:12px !important; }
+body .tenotsu-stamina-hud-main span { font-size:10px; }
+@media(max-width:720px), (max-height:560px) {
+ body:is([data-v039-mode="storeStatus"],[data-v039-mode="tuning"]) .tenotsu-stamina-hud-main b { font-size:11px !important; }
 }
