@@ -347,12 +347,12 @@
       "candidate_expression": 1,
       "candidate": "images/assets/char/af_manaka/standing/af_manaka_expression_01_composed.webp",
       "manifest": "images/assets/char/af_manaka/manifest.json",
-      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "visual_review": "User-provided formal anchor: front/side/back normal uniform and face references compared with all seven adopted expressions. Long dark straight hair, grey eyes and soft face, white long sleeves, dark vest/gold buttons, grey ribbon and pleated skirt agree; no new accessories or event outfit.",
       "oldSha256": "506378d300a139f083e72ec3e0376cda036ae84ce3d5f08a707186922b7bb501",
       "candidateSha256": "b93792aabd013f89fb430b82bef2d68f12458bed4e8bfe1c9db5e3072a8ac1d7",
       "legacyLabel": "澄まし",
-      "action": "hold",
-      "reason": "CMS prioritises face/full-uniform anchors not yet retrieved; simple anchor is secondary.",
+      "action": "replace",
+      "reason": "Primary visual reference received under a different filename; together with user-provided byte-identical adopted char25 ZIP, resolves prior hold.",
       "occurrences": 1
     },
     {
@@ -363,12 +363,12 @@
       "candidate_expression": 2,
       "candidate": "images/assets/char/af_manaka/standing/af_manaka_expression_02_gentle_smile.webp",
       "manifest": "images/assets/char/af_manaka/manifest.json",
-      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "visual_review": "User-provided formal anchor: front/side/back normal uniform and face references compared with all seven adopted expressions. Long dark straight hair, grey eyes and soft face, white long sleeves, dark vest/gold buttons, grey ribbon and pleated skirt agree; no new accessories or event outfit.",
       "oldSha256": "181f56faa021ed217c2828ba2f592078a5900cf5eb5d9022d4cfe545ba1fad88",
       "candidateSha256": "6ac687a472f71196dddd08fdcfec09f3d3fd2407d11a4152f89697b8297ac457",
       "legacyLabel": "微笑み",
-      "action": "hold",
-      "reason": "CMS prioritises face/full-uniform anchors not yet retrieved; simple anchor is secondary.",
+      "action": "replace",
+      "reason": "Primary visual reference received under a different filename; together with user-provided byte-identical adopted char25 ZIP, resolves prior hold.",
       "occurrences": 1
     },
     {
@@ -379,12 +379,12 @@
       "candidate_expression": 8,
       "candidate": "images/assets/char/af_manaka/standing/af_manaka_expression_08_agitated.webp",
       "manifest": "images/assets/char/af_manaka/manifest.json",
-      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "visual_review": "User-provided formal anchor: front/side/back normal uniform and face references compared with all seven adopted expressions. Long dark straight hair, grey eyes and soft face, white long sleeves, dark vest/gold buttons, grey ribbon and pleated skirt agree; no new accessories or event outfit.",
       "oldSha256": "327ad7f62050dfa7f9d8974b7c6cc9e4f6af3d974730992e88d2fdaed6ae7115",
       "candidateSha256": "50baff5f01e91bf7a81e7cc58297793ca511d2ac861766fa8f0a78cc071c1dae",
       "legacyLabel": "動揺",
-      "action": "hold",
-      "reason": "CMS prioritises face/full-uniform anchors not yet retrieved; simple anchor is secondary.",
+      "action": "replace",
+      "reason": "Primary visual reference received under a different filename; together with user-provided byte-identical adopted char25 ZIP, resolves prior hold.",
       "occurrences": 2
     },
     {
@@ -395,12 +395,12 @@
       "candidate_expression": 5,
       "candidate": "images/assets/char/af_manaka/standing/af_manaka_expression_05_mild_disgust.webp",
       "manifest": "images/assets/char/af_manaka/manifest.json",
-      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "visual_review": "User-provided formal anchor: front/side/back normal uniform and face references compared with all seven adopted expressions. Long dark straight hair, grey eyes and soft face, white long sleeves, dark vest/gold buttons, grey ribbon and pleated skirt agree; no new accessories or event outfit.",
       "oldSha256": "1c4bd358151d0c9e30a1ff1ccb64f8459cf0e8b7e67c4ff069d48f2b26f318e3",
       "candidateSha256": "2099482fcb9243414a585bca275609d3cf4210caa7ee2c7bf8db7df8dfbe02e0",
       "legacyLabel": "軽い嫌悪",
-      "action": "hold",
-      "reason": "CMS prioritises face/full-uniform anchors not yet retrieved; simple anchor is secondary.",
+      "action": "replace",
+      "reason": "Primary visual reference received under a different filename; together with user-provided byte-identical adopted char25 ZIP, resolves prior hold.",
       "occurrences": 2
     },
     {
@@ -411,12 +411,12 @@
       "candidate_expression": 9,
       "candidate": "images/assets/char/af_manaka/standing/af_manaka_expression_09_surprise.webp",
       "manifest": "images/assets/char/af_manaka/manifest.json",
-      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "visual_review": "User-provided formal anchor: front/side/back normal uniform and face references compared with all seven adopted expressions. Long dark straight hair, grey eyes and soft face, white long sleeves, dark vest/gold buttons, grey ribbon and pleated skirt agree; no new accessories or event outfit.",
       "oldSha256": "5f6b4164a96a013692d7af8e68cf13ed3902d85ad06dbdcb2193d4963e3248ed",
       "candidateSha256": "e43e97257dc1367ef5b3ead305cccd946e9a4e2cf0ef9d70e8f6e7eb5a2e13b5",
       "legacyLabel": "驚き",
-      "action": "hold",
-      "reason": "CMS prioritises face/full-uniform anchors not yet retrieved; simple anchor is secondary.",
+      "action": "replace",
+      "reason": "Primary visual reference received under a different filename; together with user-provided byte-identical adopted char25 ZIP, resolves prior hold.",
       "occurrences": 2
     },
     {
@@ -427,12 +427,12 @@
       "candidate_expression": 7,
       "candidate": "images/assets/char/af_manaka/standing/af_manaka_expression_07_worry.webp",
       "manifest": "images/assets/char/af_manaka/manifest.json",
-      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "visual_review": "User-provided formal anchor: front/side/back normal uniform and face references compared with all seven adopted expressions. Long dark straight hair, grey eyes and soft face, white long sleeves, dark vest/gold buttons, grey ribbon and pleated skirt agree; no new accessories or event outfit.",
       "oldSha256": "6f8bb8f703527f412075b8ccc822257afd1634e3c1da437b176c7849eb11aa4b",
       "candidateSha256": "363f994a94d576673ae71b8b8ceb87820ae5be41f884e8cd45b36e32631f7ffa",
       "legacyLabel": "心配不安",
-      "action": "hold",
-      "reason": "CMS prioritises face/full-uniform anchors not yet retrieved; simple anchor is secondary.",
+      "action": "replace",
+      "reason": "Primary visual reference received under a different filename; together with user-provided byte-identical adopted char25 ZIP, resolves prior hold.",
       "occurrences": 1
     },
     {
@@ -443,12 +443,12 @@
       "candidate_expression": 10,
       "candidate": "images/assets/char/af_manaka/standing/af_manaka_expression_10_shy.webp",
       "manifest": "images/assets/char/af_manaka/manifest.json",
-      "visual_review": "Compared legacy/adopted pixels and Drive simple character anchor: identity, uniform colours, hair, eyes and expression.",
+      "visual_review": "User-provided formal anchor: front/side/back normal uniform and face references compared with all seven adopted expressions. Long dark straight hair, grey eyes and soft face, white long sleeves, dark vest/gold buttons, grey ribbon and pleated skirt agree; no new accessories or event outfit.",
       "oldSha256": "e957bc9dd40e87882a303977d7fa2dbc0a0a395cffd4f420aab952b4e7482300",
       "candidateSha256": "1e7411cca3bd02cac28491962f6d7e5f2f422a73ef28e04b632c7e507e50dc0d",
       "legacyLabel": "照れ",
-      "action": "hold",
-      "reason": "CMS prioritises face/full-uniform anchors not yet retrieved; simple anchor is secondary.",
+      "action": "replace",
+      "reason": "Primary visual reference received under a different filename; together with user-provided byte-identical adopted char25 ZIP, resolves prior hold.",
       "occurrences": 1
     },
     {
@@ -1425,61 +1425,61 @@
           "step": 4,
           "character": "af",
           "before": "images/assets/char/f10101.webp",
-          "after": "images/assets/char/f10101.webp"
+          "after": "images/assets/char/af_manaka/standing/af_manaka_expression_01_composed.webp"
         },
         {
           "step": 5,
           "character": "af",
           "before": "images/assets/char/f10201.webp",
-          "after": "images/assets/char/f10201.webp"
+          "after": "images/assets/char/af_manaka/standing/af_manaka_expression_02_gentle_smile.webp"
         },
         {
           "step": 7,
           "character": "af",
           "before": "images/assets/char/f11201.webp",
-          "after": "images/assets/char/f11201.webp"
+          "after": "images/assets/char/af_manaka/standing/af_manaka_expression_08_agitated.webp"
         },
         {
           "step": 8,
           "character": "af",
           "before": "images/assets/char/f11001.webp",
-          "after": "images/assets/char/f11001.webp"
+          "after": "images/assets/char/af_manaka/standing/af_manaka_expression_05_mild_disgust.webp"
         },
         {
           "step": 9,
           "character": "af",
           "before": "images/assets/char/f10601.webp",
-          "after": "images/assets/char/f10601.webp"
+          "after": "images/assets/char/af_manaka/standing/af_manaka_expression_09_surprise.webp"
         },
         {
           "step": 10,
           "character": "af",
           "before": "images/assets/char/f11201.webp",
-          "after": "images/assets/char/f11201.webp"
+          "after": "images/assets/char/af_manaka/standing/af_manaka_expression_08_agitated.webp"
         },
         {
           "step": 11,
           "character": "af",
           "before": "images/assets/char/f10601.webp",
-          "after": "images/assets/char/f10601.webp"
+          "after": "images/assets/char/af_manaka/standing/af_manaka_expression_09_surprise.webp"
         },
         {
           "step": 18,
           "character": "af",
           "before": "images/assets/char/f11001.webp",
-          "after": "images/assets/char/f11001.webp"
+          "after": "images/assets/char/af_manaka/standing/af_manaka_expression_05_mild_disgust.webp"
         },
         {
           "step": 31,
           "character": "af",
           "before": "images/assets/char/f11101.webp",
-          "after": "images/assets/char/f11101.webp"
+          "after": "images/assets/char/af_manaka/standing/af_manaka_expression_07_worry.webp"
         },
         {
           "step": 32,
           "character": "af",
           "before": "images/assets/char/f10701.webp",
-          "after": "images/assets/char/f10701.webp"
+          "after": "images/assets/char/af_manaka/standing/af_manaka_expression_10_shy.webp"
         }
       ]
     },
@@ -1866,10 +1866,24 @@
     "path": "images/assets/bgev/bg011.webp",
     "reason": "Pixel inspection: same office composition as formal bg_office_hidamari.webp, not the sales floor. Distinct encoding/pixels, no confirmed superseded artwork. Delta LM071 explicitly distinguishes both office assets from private home office."
   },
-  "holds": [
+  "holds": [],
+  "followUpReviews": [
     {
+      "baseCommit": "cf3d89a09d953daca7d922acb7c8d4bff23eb43a",
       "character": "af",
-      "reason": "CMS prioritises af_manaka_face_anchor_v001.webp and af_manaka_uniform_full_v001.webp over secondary simple illustration; current primary anchor pixels unavailable. Retain all 7 legacy images/10 references until confirmed."
+      "normalUniformAndFaceAnchor": {
+        "name": "af_大道寺真花_正式アンカー_v1_0.webp",
+        "sha256": "09b5432b659596919f2b2ab8fab4fe2a7323de350fc3ebf1653758433c331e34",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "source": "User-provided Drive reference; exact source ID retained in the local receipt, no source image republished."
+      },
+      "adopted25ZipSha256": "90414ecd59d78f2326b59e2b35127001360d4c913ba68098e28c3a6271c8d45b",
+      "zipImagesIdenticalToGit": 25,
+      "replacedImages": 7,
+      "replacedReferences": 10
     }
   ]
 }

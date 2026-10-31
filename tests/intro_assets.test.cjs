@@ -38,6 +38,8 @@ test('every reachable introduction keeps its original text, speakers, steps, dir
 });
 test('introduction sprites use their own adopted char25 set, with explicit unchanged/held legacy exceptions', () => {
   const manifests = fs.readdirSync(path.join(root,'images/assets/char')).filter(d=>fs.existsSync(path.join(root,'images/assets/char',d,'manifest.json'))).map(d=>({dir:d,data:read(`images/assets/char/${d}/manifest.json`)}));
+  assert.equal(audit.holds.length,0);
+  assert(!audit.records.some(x=>x.action==='hold'));
   const legacy = read('scenario/data/character_expressions.json');
   const expressionMap = {1:1,2:2,3:4,4:6,5:3,6:9,7:10,8:11,9:12,10:5,11:7,12:8};
   for (const item of audit.stories) {
@@ -50,10 +52,9 @@ test('introduction sprites use their own adopted char25 set, with explicit uncha
       if (adopted.includes(sprite.src)) continue;
       const exception=audit.records.find(x=>x.scenario===item.scenario&&x.legacy===sprite.src);
       assert(exception,`unreviewed legacy sprite: ${sprite.src}`);assert.equal(exception.character,sprite.id);
-      assert(['hold','keep-identical'].includes(exception.action));
+      assert.equal(exception.action,'keep-identical');
       assert.equal(sha(fs.readFileSync(path.join(root,sprite.src))),exception.oldSha256);
-      if(exception.action==='hold') assert.equal(sprite.id,'af');
-      else assert.equal(exception.oldSha256,exception.candidateSha256);
+      assert.equal(exception.oldSha256,exception.candidateSha256);
     }
   }
   for (const x of audit.records) {
