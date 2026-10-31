@@ -1130,3 +1130,62 @@
     "status": "正式採用/GitHub実装済み"
   }
 });})();
+
+/* Delta: existing canonical backgrounds, registry only; access gates unchanged. */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "hashiro_lake_entrance_bus_stop_night": {
+    "name": "羽白湖入り口バス停",
+    "path": "images/assets/bg/bg_hashiro_lake_entrance_bus_stop_night.webp",
+    "spaceId": "SPACE-HASHIRO-BUSSTOP",
+    "time": "night",
+    "status": "既存実装/整理採用",
+    "usage": "既存背景の登録補完。移動接続/開放条件は別管理。"
+  },
+  "hashiro_lake_boardwalk_night": {
+    "name": "羽白湖 遊歩道",
+    "path": "images/assets/bg/bg_hashiro_lake_boardwalk_night.webp",
+    "spaceId": "SPACE-HASHIRO-PATH",
+    "time": "night",
+    "status": "既存実装/整理採用",
+    "usage": "既存背景の登録補完。移動接続/開放条件は別管理。"
+  },
+  "hashiro_lake_observation_spot_night": {
+    "name": "羽白湖 観察スポット",
+    "path": "images/assets/bg/bg_hashiro_lake_observation_spot_night.webp",
+    "spaceId": "SPACE-HASHIRO-OBSERVATION",
+    "time": "night",
+    "status": "既存実装/整理採用",
+    "usage": "既存背景の登録補完。移動接続/開放条件は別管理。"
+  },
+  "tomizaka_retro_yokocho_entrance_evening": {
+    "name": "灯見坂レトロ横丁",
+    "path": "images/assets/bg/bg_tomizaka_retro_yokocho_entrance_evening.webp",
+    "spaceId": "SPACE-TOMIZAKA-YOKOCHO-ENTRANCE",
+    "time": "evening",
+    "status": "正式採用",
+    "usage": "既存背景の登録補完。移動接続/開放条件は別管理。"
+  },
+  "tomizaka_retro_yokocho_entrance_night_crowd": {
+    "name": "灯見坂レトロ横丁",
+    "path": "images/assets/bg/bg_tomizaka_retro_yokocho_entrance_night_crowd.webp",
+    "spaceId": "SPACE-TOMIZAKA-YOKOCHO-ENTRANCE",
+    "time": "night",
+    "status": "正式採用",
+    "usage": "既存背景の登録補完。移動接続/開放条件は別管理。"
+  },
+  "tomizaka_retro_yokocho_entrance_night": {
+    "name": "灯見坂レトロ横丁",
+    "path": "images/assets/bg/bg_tomizaka_retro_yokocho_entrance_night.webp",
+    "spaceId": "SPACE-TOMIZAKA-YOKOCHO-ENTRANCE",
+    "time": "night",
+    "status": "既存実装/台帳追補",
+    "usage": "既存背景の登録補完。移動接続/開放条件は別管理。"
+  },
+  "item_exchange_counter": {
+    "name": "テックラボつくも 交換カウンター",
+    "path": "images/assets/bgev/bg_item_exchange_counter.webp",
+    "spaceId": "SPACE-TSUKUMO-EXCHANGE-COUNTER",
+    "status": "既存実装/正規経路整理",
+    "usage": "既存交換UI背景。カタログ登録は移動/サービス/入室条件の開放を意味しない。"
+  }
+});})();

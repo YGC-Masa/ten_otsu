@@ -1,0 +1,614 @@
+{
+  "sourceAuditHead": "76ee4f40b5ce5fd59b406ff4f7b9eec3ff11b5fa",
+  "registrationBaseHead": "47975b6abec3781fedf547fe61d5a3c016827982",
+  "dateJst": "2026-10-31",
+  "scope": "既存実背景の登録補完・正本パス整流。新規画像生成/移動コード/接続/開放条件/シナリオ本文の変更なし。",
+  "counts": {
+    "backgroundPathCells": 37,
+    "spacePathCells": 15,
+    "totalSheetCells": 52,
+    "catalogAdded": 7,
+    "priorCatalogEntriesPreserved": 256
+  },
+  "catalogEntries": {
+    "hashiro_lake_entrance_bus_stop_night": {
+      "name": "羽白湖入り口バス停",
+      "path": "images/assets/bg/bg_hashiro_lake_entrance_bus_stop_night.webp",
+      "spaceId": "SPACE-HASHIRO-BUSSTOP",
+      "time": "night",
+      "status": "既存実装/整理採用",
+      "usage": "既存背景の登録補完。移動接続/開放条件は別管理。"
+    },
+    "hashiro_lake_boardwalk_night": {
+      "name": "羽白湖 遊歩道",
+      "path": "images/assets/bg/bg_hashiro_lake_boardwalk_night.webp",
+      "spaceId": "SPACE-HASHIRO-PATH",
+      "time": "night",
+      "status": "既存実装/整理採用",
+      "usage": "既存背景の登録補完。移動接続/開放条件は別管理。"
+    },
+    "hashiro_lake_observation_spot_night": {
+      "name": "羽白湖 観察スポット",
+      "path": "images/assets/bg/bg_hashiro_lake_observation_spot_night.webp",
+      "spaceId": "SPACE-HASHIRO-OBSERVATION",
+      "time": "night",
+      "status": "既存実装/整理採用",
+      "usage": "既存背景の登録補完。移動接続/開放条件は別管理。"
+    },
+    "tomizaka_retro_yokocho_entrance_evening": {
+      "name": "灯見坂レトロ横丁",
+      "path": "images/assets/bg/bg_tomizaka_retro_yokocho_entrance_evening.webp",
+      "spaceId": "SPACE-TOMIZAKA-YOKOCHO-ENTRANCE",
+      "time": "evening",
+      "status": "正式採用",
+      "usage": "既存背景の登録補完。移動接続/開放条件は別管理。"
+    },
+    "tomizaka_retro_yokocho_entrance_night_crowd": {
+      "name": "灯見坂レトロ横丁",
+      "path": "images/assets/bg/bg_tomizaka_retro_yokocho_entrance_night_crowd.webp",
+      "spaceId": "SPACE-TOMIZAKA-YOKOCHO-ENTRANCE",
+      "time": "night",
+      "status": "正式採用",
+      "usage": "既存背景の登録補完。移動接続/開放条件は別管理。"
+    },
+    "tomizaka_retro_yokocho_entrance_night": {
+      "name": "灯見坂レトロ横丁",
+      "path": "images/assets/bg/bg_tomizaka_retro_yokocho_entrance_night.webp",
+      "spaceId": "SPACE-TOMIZAKA-YOKOCHO-ENTRANCE",
+      "time": "night",
+      "status": "既存実装/台帳追補",
+      "usage": "既存背景の登録補完。移動接続/開放条件は別管理。"
+    },
+    "item_exchange_counter": {
+      "name": "テックラボつくも 交換カウンター",
+      "path": "images/assets/bgev/bg_item_exchange_counter.webp",
+      "spaceId": "SPACE-TSUKUMO-EXCHANGE-COUNTER",
+      "status": "既存実装/正規経路整理",
+      "usage": "既存交換UI背景。カタログ登録は移動/サービス/入室条件の開放を意味しない。"
+    }
+  },
+  "fileVerification": [
+    {
+      "bg": "BG-042",
+      "path": "images/assets/bg/bg_hashiro_lake_entrance_bus_stop_night.webp",
+      "sha256": "ddab453cfb9cade76630ede1c3687dfb8b6ad0c108991d28ba53f54be67aa062",
+      "existingKeys": []
+    },
+    {
+      "bg": "BG-043",
+      "path": "images/assets/bg/bg_hashiro_lake_boardwalk_night.webp",
+      "sha256": "fc9d653650aad293e87700550a56106afa8d775bf68925faebb82dc6a32eda88",
+      "existingKeys": []
+    },
+    {
+      "bg": "BG-044",
+      "path": "images/assets/bg/bg_hashiro_lake_observation_spot_night.webp",
+      "sha256": "219dfdf4152d9b39b0439b3e0b7ee8064cf969f9888d53f7be2e8e1b90537e5d",
+      "existingKeys": []
+    },
+    {
+      "bg": "BG-035",
+      "path": "images/assets/bg/bg_tomizaka_retro_yokocho_entrance_evening.webp",
+      "sha256": "f56e05e5cb07902d6af432851efed8e7d3d54cd3e7e8787e43b09b4d02ad1569",
+      "existingKeys": []
+    },
+    {
+      "bg": "BG-036",
+      "path": "images/assets/bg/bg_tomizaka_retro_yokocho_entrance_night_crowd.webp",
+      "sha256": "4be6f01cc0b433d6ea058c131c3a8540d2d1104521c20d2b18d67975e1f1012d",
+      "existingKeys": []
+    },
+    {
+      "bg": "BG-058",
+      "path": "images/assets/bg/bg_tomizaka_retro_yokocho_entrance_night.webp",
+      "sha256": "6e94a57ea0abd683ec29e877b84c7f8ca328d9a94e5549463c0a1923b3b8093a",
+      "existingKeys": []
+    },
+    {
+      "bg": "BG-076",
+      "path": "images/assets/bgev/bg_item_exchange_counter.webp",
+      "sha256": "2e9c1cb1c44b861543aebf9cda38519aa9940158523dcd8dba312bbac5d54950",
+      "existingKeys": []
+    }
+  ],
+  "sheetPathUpdates": [
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 4,
+      "col": 3,
+      "before": "images/assets/bg/bg_shiomi_beach_early_morning.png",
+      "after": "images/assets/bg/bg_shiomi_beach_early_morning.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 5,
+      "col": 3,
+      "before": "images/assets/bg/bg_shiomi_beach_morning.png",
+      "after": "images/assets/bg/bg_shiomi_beach_morning.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 6,
+      "col": 3,
+      "before": "images/assets/bg/bg_shiomi_beach_day.png",
+      "after": "images/assets/bg/bg_shiomi_beach_day.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 7,
+      "col": 3,
+      "before": "images/assets/bg/bg_shiomi_beach_evening.png",
+      "after": "images/assets/bg/bg_shiomi_beach_evening.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 8,
+      "col": 3,
+      "before": "images/assets/bg/bg_shiomi_beach_night.png",
+      "after": "images/assets/bg/bg_shiomi_beach_night.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 9,
+      "col": 3,
+      "before": "images/assets/bg/bg_shiomi_beach_midnight.png",
+      "after": "images/assets/bg/bg_shiomi_beach_midnight.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 10,
+      "col": 3,
+      "before": "images/assets/bg/bg_hiyorizaka_station_midnight.png",
+      "after": "images/assets/bg/bg_hiyorizaka_station_midnight.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 11,
+      "col": 3,
+      "before": "images/assets/bg/bg_hiyorizaka_station_early_morning.png",
+      "after": "images/assets/bg/bg_hiyorizaka_station_early_morning.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 12,
+      "col": 3,
+      "before": "images/assets/bg/bg_hiyorizaka_station_morning.png",
+      "after": "images/assets/bg/bg_hiyorizaka_station_morning.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 13,
+      "col": 3,
+      "before": "images/assets/bg/bg_hiyorizaka_station_day.png",
+      "after": "images/assets/bg/bg_hiyorizaka_station_day.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 14,
+      "col": 3,
+      "before": "images/assets/bg/bg_hiyorizaka_station_evening.png",
+      "after": "images/assets/bg/bg_hiyorizaka_station_evening.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 15,
+      "col": 3,
+      "before": "images/assets/bg/bg_hiyorizaka_station_night.png",
+      "after": "images/assets/bg/bg_hiyorizaka_station_night.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 23,
+      "col": 3,
+      "before": "images/assets/bg/bg_planetarium_exterior_twilight.png",
+      "after": "images/assets/bg/bg_planetarium_exterior_twilight.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 24,
+      "col": 3,
+      "before": "images/assets/bg/bg_planetarium_lobby.png",
+      "after": "images/assets/bg/bg_planetarium_lobby.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 25,
+      "col": 3,
+      "before": "images/assets/bg/bg_planetarium_hall_before_show.png",
+      "after": "images/assets/bg/bg_planetarium_hall_before_show.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 26,
+      "col": 3,
+      "before": "images/assets/bg/bg_planetarium_hall_showing.png",
+      "after": "images/assets/bg/bg_planetarium_hall_showing.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 35,
+      "col": 3,
+      "before": "images/assets/bg/bg_bookcafe_antostella_exterior_night.png",
+      "after": "images/assets/bg/bg_bookcafe_antostella_exterior_night.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 36,
+      "col": 3,
+      "before": "images/assets/bg/bg_bookcafe_antostella_1f_night.png",
+      "after": "images/assets/bg/bg_bookcafe_antostella_1f_night.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 37,
+      "col": 3,
+      "before": "images/assets/bg/bg_bookcafe_antostella_2f_night.png",
+      "after": "images/assets/bg/bg_bookcafe_antostella_2f_night.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 40,
+      "col": 3,
+      "before": "images/assets/bg/bg_hashiro_lake_early_morning.png",
+      "after": "images/assets/bg/bg_hashiro_lake_early_morning.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 41,
+      "col": 3,
+      "before": "images/assets/bg/bg_hashiro_lake_morning.png",
+      "after": "images/assets/bg/bg_hashiro_lake_morning.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 42,
+      "col": 3,
+      "before": "images/assets/bg/bg_hashiro_lake_day.png",
+      "after": "images/assets/bg/bg_hashiro_lake_day.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 43,
+      "col": 3,
+      "before": "images/assets/bg/bg_hashiro_lake_evening.png",
+      "after": "images/assets/bg/bg_hashiro_lake_evening.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 44,
+      "col": 3,
+      "before": "images/assets/bg/bg_hashiro_lake_night.png",
+      "after": "images/assets/bg/bg_hashiro_lake_night.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 45,
+      "col": 3,
+      "before": "images/assets/bg/bg_hashiro_lake_entrance_bus_stop_night.png",
+      "after": "images/assets/bg/bg_hashiro_lake_entrance_bus_stop_night.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 46,
+      "col": 3,
+      "before": "images/assets/bg/bg_hashiro_lake_boardwalk_night.png",
+      "after": "images/assets/bg/bg_hashiro_lake_boardwalk_night.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 47,
+      "col": 3,
+      "before": "images/assets/bg/bg_hashiro_lake_observation_spot_night.png",
+      "after": "images/assets/bg/bg_hashiro_lake_observation_spot_night.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 53,
+      "col": 3,
+      "before": "images/assets/bg/bg_minato_park_morning.png",
+      "after": "images/assets/bg/bg_minato_park_morning.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 54,
+      "col": 3,
+      "before": "images/assets/bg/bg_minato_park_evening.png",
+      "after": "images/assets/bg/bg_minato_park_evening.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 55,
+      "col": 3,
+      "before": "images/assets/bg/bg_minato_park_night.png",
+      "after": "images/assets/bg/bg_minato_park_night.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 56,
+      "col": 3,
+      "before": "images/assets/bg/bg_yunagi_observatory_early_morning.png",
+      "after": "images/assets/bg/bg_yunagi_observatory_early_morning.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 57,
+      "col": 3,
+      "before": "images/assets/bg/bg_yunagi_observatory_morning.png",
+      "after": "images/assets/bg/bg_yunagi_observatory_morning.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 58,
+      "col": 3,
+      "before": "images/assets/bg/bg_yunagi_observatory_day.png",
+      "after": "images/assets/bg/bg_yunagi_observatory_day.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 59,
+      "col": 3,
+      "before": "images/assets/bg/bg_yunagi_observatory_evening.png",
+      "after": "images/assets/bg/bg_yunagi_observatory_evening.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 60,
+      "col": 3,
+      "before": "images/assets/bg/bg_yunagi_observatory_night.png",
+      "after": "images/assets/bg/bg_yunagi_observatory_night.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 62,
+      "col": 3,
+      "before": "images/assets/bg/bg_wakaba_central_park_winter_morning.png",
+      "after": "images/assets/bg/bg_wakaba_central_park_winter_morning.webp"
+    },
+    {
+      "sheetId": 1212008120,
+      "sheet": "08_背景アセット",
+      "row": 63,
+      "col": 3,
+      "before": "images/assets/bg/bg_wakaba_central_park_winter_day.png",
+      "after": "images/assets/bg/bg_wakaba_central_park_winter_day.webp"
+    },
+    {
+      "sheetId": 190926009,
+      "sheet": "09_空間・間取り管理",
+      "row": 7,
+      "col": 12,
+      "before": "images/assets/bg/bg_planetarium_hall_before_show.png ; images/assets/bg/bg_planetarium_hall_showing.png",
+      "after": "images/assets/bg/bg_planetarium_hall_before_show.webp ; images/assets/bg/bg_planetarium_hall_showing.webp"
+    },
+    {
+      "sheetId": 190926009,
+      "sheet": "09_空間・間取り管理",
+      "row": 9,
+      "col": 12,
+      "before": "images/assets/bg/bg_hashiro_lake_early_morning.png ; images/assets/bg/bg_hashiro_lake_morning.png ; images/assets/bg/bg_hashiro_lake_day.png ; images/assets/bg/bg_hashiro_lake_evening.png ; images/assets/bg/bg_hashiro_lake_night.png",
+      "after": "images/assets/bg/bg_hashiro_lake_early_morning.webp ; images/assets/bg/bg_hashiro_lake_morning.webp ; images/assets/bg/bg_hashiro_lake_day.webp ; images/assets/bg/bg_hashiro_lake_evening.webp ; images/assets/bg/bg_hashiro_lake_night.webp"
+    },
+    {
+      "sheetId": 190926009,
+      "sheet": "09_空間・間取り管理",
+      "row": 10,
+      "col": 12,
+      "before": "images/assets/bg/bg_hashiro_lake_entrance_bus_stop_night.png",
+      "after": "images/assets/bg/bg_hashiro_lake_entrance_bus_stop_night.webp"
+    },
+    {
+      "sheetId": 190926009,
+      "sheet": "09_空間・間取り管理",
+      "row": 11,
+      "col": 12,
+      "before": "images/assets/bg/bg_hashiro_lake_boardwalk_night.png ; images/assets/bg/bg_hashiro_boardwalk_autumn_day.webp ; images/assets/bg/bg_hashiro_boardwalk_autumn_evening.webp",
+      "after": "images/assets/bg/bg_hashiro_lake_boardwalk_night.webp ; images/assets/bg/bg_hashiro_boardwalk_autumn_day.webp ; images/assets/bg/bg_hashiro_boardwalk_autumn_evening.webp"
+    },
+    {
+      "sheetId": 190926009,
+      "sheet": "09_空間・間取り管理",
+      "row": 12,
+      "col": 12,
+      "before": "images/assets/bg/bg_hashiro_lake_observation_spot_night.png",
+      "after": "images/assets/bg/bg_hashiro_lake_observation_spot_night.webp"
+    },
+    {
+      "sheetId": 190926009,
+      "sheet": "09_空間・間取り管理",
+      "row": 15,
+      "col": 12,
+      "before": "images/assets/bg/bg_shiomi_beach_early_morning.png ; images/assets/bg/bg_shiomi_beach_morning.png ; images/assets/bg/bg_shiomi_beach_day.png ; images/assets/bg/bg_shiomi_beach_evening.png ; images/assets/bg/bg_shiomi_beach_night.png ; images/assets/bg/bg_shiomi_beach_midnight.png ; images/assets/bg/bg_shiomi_beach_fireworks_night.webp",
+      "after": "images/assets/bg/bg_shiomi_beach_early_morning.webp ; images/assets/bg/bg_shiomi_beach_morning.webp ; images/assets/bg/bg_shiomi_beach_day.webp ; images/assets/bg/bg_shiomi_beach_evening.webp ; images/assets/bg/bg_shiomi_beach_night.webp ; images/assets/bg/bg_shiomi_beach_midnight.webp ; images/assets/bg/bg_shiomi_beach_fireworks_night.webp"
+    },
+    {
+      "sheetId": 190926009,
+      "sheet": "09_空間・間取り管理",
+      "row": 18,
+      "col": 12,
+      "before": "images/assets/bg/bg_minato_park_morning.png ; images/assets/bg/bg_minato_park_evening.png ; images/assets/bg/bg_minato_park_night.png",
+      "after": "images/assets/bg/bg_minato_park_morning.webp ; images/assets/bg/bg_minato_park_evening.webp ; images/assets/bg/bg_minato_park_night.webp"
+    },
+    {
+      "sheetId": 190926009,
+      "sheet": "09_空間・間取り管理",
+      "row": 19,
+      "col": 12,
+      "before": "images/assets/bg/bg_hiyorizaka_station_midnight.png ; images/assets/bg/bg_hiyorizaka_station_early_morning.png ; images/assets/bg/bg_hiyorizaka_station_morning.png ; images/assets/bg/bg_hiyorizaka_station_day.png ; images/assets/bg/bg_hiyorizaka_station_evening.png ; images/assets/bg/bg_hiyorizaka_station_night.png",
+      "after": "images/assets/bg/bg_hiyorizaka_station_midnight.webp ; images/assets/bg/bg_hiyorizaka_station_early_morning.webp ; images/assets/bg/bg_hiyorizaka_station_morning.webp ; images/assets/bg/bg_hiyorizaka_station_day.webp ; images/assets/bg/bg_hiyorizaka_station_evening.webp ; images/assets/bg/bg_hiyorizaka_station_night.webp"
+    },
+    {
+      "sheetId": 190926009,
+      "sheet": "09_空間・間取り管理",
+      "row": 23,
+      "col": 12,
+      "before": "images/assets/bg/bg_yunagi_observatory_early_morning.png ; images/assets/bg/bg_yunagi_observatory_morning.png ; images/assets/bg/bg_yunagi_observatory_day.png ; images/assets/bg/bg_yunagi_observatory_evening.png ; images/assets/bg/bg_yunagi_observatory_night.png",
+      "after": "images/assets/bg/bg_yunagi_observatory_early_morning.webp ; images/assets/bg/bg_yunagi_observatory_morning.webp ; images/assets/bg/bg_yunagi_observatory_day.webp ; images/assets/bg/bg_yunagi_observatory_evening.webp ; images/assets/bg/bg_yunagi_observatory_night.webp"
+    },
+    {
+      "sheetId": 190926009,
+      "sheet": "09_空間・間取り管理",
+      "row": 27,
+      "col": 12,
+      "before": "images/assets/bg/bg_wakaba_central_park_winter_morning.png ; images/assets/bg/bg_wakaba_central_park_winter_day.png ; images/assets/bg/bg_wakaba_central_park_winter_evening.webp ; images/assets/bg/bg_wakaba_central_park_winter_night.webp ; images/assets/bgev/bg_park_spring.webp ; images/assets/bg/bg_hiyorizaka_sakura_embankment_spring_day.webp",
+      "after": "images/assets/bg/bg_wakaba_central_park_winter_morning.webp ; images/assets/bg/bg_wakaba_central_park_winter_day.webp ; images/assets/bg/bg_wakaba_central_park_winter_evening.webp ; images/assets/bg/bg_wakaba_central_park_winter_night.webp ; images/assets/bgev/bg_park_spring.webp ; images/assets/bg/bg_hiyorizaka_sakura_embankment_spring_day.webp"
+    },
+    {
+      "sheetId": 190926009,
+      "sheet": "09_空間・間取り管理",
+      "row": 41,
+      "col": 12,
+      "before": "images/assets/bg/bg_planetarium_exterior_twilight.png",
+      "after": "images/assets/bg/bg_planetarium_exterior_twilight.webp"
+    },
+    {
+      "sheetId": 190926009,
+      "sheet": "09_空間・間取り管理",
+      "row": 42,
+      "col": 12,
+      "before": "images/assets/bg/bg_planetarium_lobby.png",
+      "after": "images/assets/bg/bg_planetarium_lobby.webp"
+    },
+    {
+      "sheetId": 190926009,
+      "sheet": "09_空間・間取り管理",
+      "row": 53,
+      "col": 12,
+      "before": "images/assets/bg/bg_bookcafe_antostella_exterior_night.png",
+      "after": "images/assets/bg/bg_bookcafe_antostella_exterior_night.webp"
+    },
+    {
+      "sheetId": 190926009,
+      "sheet": "09_空間・間取り管理",
+      "row": 54,
+      "col": 12,
+      "before": "images/assets/bg/bg_bookcafe_antostella_1f_night.png",
+      "after": "images/assets/bg/bg_bookcafe_antostella_1f_night.webp"
+    },
+    {
+      "sheetId": 190926009,
+      "sheet": "09_空間・間取り管理",
+      "row": 55,
+      "col": 12,
+      "before": "images/assets/bg/bg_bookcafe_antostella_2f_night.png",
+      "after": "images/assets/bg/bg_bookcafe_antostella_2f_night.webp"
+    }
+  ],
+  "sheetReadback": {
+    "matchedCells": 52,
+    "formatValidationChipsPreserved": true,
+    "nativeVisual": "未確認。API値/書式読み戻し。",
+    "spreadsheet": "https://docs.google.com/spreadsheets/d/19jxSOwhG1aysiBAY0onX20xJNTYJ2ilRrBoVh-p-Zx4/edit"
+  },
+  "browserVerification": {
+    "kind": "Chromium native image decode through actual modified catalog keys; request bodies from existing Git bytes",
+    "baseHead": "47975b6abec3781fedf547fe61d5a3c016827982",
+    "catalogSha256": "c99e166098a64624512a057783441b2e111f16e4a5cb8cb2c4e8f2aa0b18dfd0",
+    "results": [
+      {
+        "key": "hashiro_lake_entrance_bus_stop_night",
+        "path": "images/assets/bg/bg_hashiro_lake_entrance_bus_stop_night.webp",
+        "width": 1672,
+        "height": 941,
+        "complete": true,
+        "spaceId": "SPACE-HASHIRO-BUSSTOP"
+      },
+      {
+        "key": "hashiro_lake_boardwalk_night",
+        "path": "images/assets/bg/bg_hashiro_lake_boardwalk_night.webp",
+        "width": 1672,
+        "height": 941,
+        "complete": true,
+        "spaceId": "SPACE-HASHIRO-PATH"
+      },
+      {
+        "key": "hashiro_lake_observation_spot_night",
+        "path": "images/assets/bg/bg_hashiro_lake_observation_spot_night.webp",
+        "width": 1672,
+        "height": 941,
+        "complete": true,
+        "spaceId": "SPACE-HASHIRO-OBSERVATION"
+      },
+      {
+        "key": "tomizaka_retro_yokocho_entrance_evening",
+        "path": "images/assets/bg/bg_tomizaka_retro_yokocho_entrance_evening.webp",
+        "width": 1672,
+        "height": 941,
+        "complete": true,
+        "spaceId": "SPACE-TOMIZAKA-YOKOCHO-ENTRANCE"
+      },
+      {
+        "key": "tomizaka_retro_yokocho_entrance_night_crowd",
+        "path": "images/assets/bg/bg_tomizaka_retro_yokocho_entrance_night_crowd.webp",
+        "width": 1672,
+        "height": 941,
+        "complete": true,
+        "spaceId": "SPACE-TOMIZAKA-YOKOCHO-ENTRANCE"
+      },
+      {
+        "key": "tomizaka_retro_yokocho_entrance_night",
+        "path": "images/assets/bg/bg_tomizaka_retro_yokocho_entrance_night.webp",
+        "width": 1672,
+        "height": 941,
+        "complete": true,
+        "spaceId": "SPACE-TOMIZAKA-YOKOCHO-ENTRANCE"
+      },
+      {
+        "key": "item_exchange_counter",
+        "path": "images/assets/bgev/bg_item_exchange_counter.webp",
+        "width": 1670,
+        "height": 941,
+        "complete": true,
+        "spaceId": "SPACE-TSUKUMO-EXCHANGE-COUNTER"
+      }
+    ],
+    "pageErrors": [],
+    "limits": "ローカル検証。新規ゲーム実画面/物理端末/公開ゲーム/キャッシュの確認ではない。"
+  },
+  "tests": {
+    "existingTownTravelTests": "5/5 pass",
+    "catalogPriorEntries": "256 unchanged, 7 added, old entries deep-equal",
+    "sparseCheckoutNote": "初回テストは作業ツリーに実ファイル2件が未展開のため失敗。Git実バイトを展開後5件成功、製品コード修正なし。"
+  },
+  "restrictions": "私宅/VIP/職員/市外交通・施術/宿泊/イベントの開放条件は変更しない。7件のカタログ追加はサービス開放や新規地理の確定ではない。",
+  "limits": [
+    "新規の公開ゲーム/物理端末/キャッシュ検証は未実施。",
+    "以前の76ee4f4監査での外回り未登録数105は歴史的スナップショット。今回baseHeadには154bd4fの移動実装があり、旧数値を現行値として流用しない。",
+    "今回はAPIパス欄のみを修正。採否/用途/営業時間/地理・接続欄を変更しない。"
+  ]
+}
