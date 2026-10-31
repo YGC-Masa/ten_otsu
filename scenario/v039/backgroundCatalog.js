@@ -1189,3 +1189,28 @@
     "usage": "既存交換UI背景。カタログ登録は移動/サービス/入室条件の開放を意味しない。"
   }
 });})();
+
+/* Existing scenario-specific backgrounds: registration only, no travel unlock. */
+(function(){"use strict";window.TENOTSU_BACKGROUND_CATALOG=Object.assign({},window.TENOTSU_BACKGROUND_CATALOG||{}, {
+  "ayame100_clear_stream_day": {
+    "name": "彩愛 親愛100 清流・昼（既存シナリオ背景）",
+    "path": "images/assets/bg/bg_ayame100_clear_stream_day.webp",
+    "time": "day",
+    "status": "既存シナリオ使用/登録補完・採否未確認",
+    "usage": "シナリオ専用素材。新規の公開移動先や私宅入室条件を追加しない。"
+  },
+  "ayame93_country_road_day": {
+    "name": "彩愛 親愛93 農村道路・昼（既存シナリオ背景）",
+    "path": "images/assets/bg/bg_ayame93_country_road_day.webp",
+    "time": "day",
+    "status": "既存シナリオ使用/登録補完・採否未確認",
+    "usage": "シナリオ専用素材。新規の公開移動先や私宅入室条件を追加しない。"
+  },
+  "ayame98_washitsu_dinner": {
+    "name": "彩愛 親愛98 屋敷の和室・夕食（既存シナリオ背景）",
+    "path": "images/assets/bg/bg_ayame98_washitsu_dinner.webp",
+    "time": "evening",
+    "status": "既存シナリオ使用/登録補完・採否未確認",
+    "usage": "シナリオ専用素材。新規の公開移動先や私宅入室条件を追加しない。"
+  }
+});})();

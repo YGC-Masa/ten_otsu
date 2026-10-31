@@ -1,0 +1,1195 @@
+{
+  "baseHead": "77497a9f23c6f826414aaa3ae93f11299778c55f",
+  "dateJst": "2026-10-31",
+  "plan": {
+    "baseHead": "77497a9f23c6f826414aaa3ae93f11299778c55f",
+    "pathUpdates": [
+      {
+        "sheetId": 1212008120,
+        "row": 17,
+        "col": 3,
+        "before": "images/assets/bg/bg_hidamari_store_front_early_morning.png",
+        "after": "images/assets/bg/bg_hidamari_store_front_early_morning.webp"
+      },
+      {
+        "sheetId": 1212008120,
+        "row": 18,
+        "col": 3,
+        "before": "images/assets/bg/bg_hidamari_store_front_morning.png",
+        "after": "images/assets/bg/bg_hidamari_store_front_morning.webp"
+      },
+      {
+        "sheetId": 1212008120,
+        "row": 19,
+        "col": 3,
+        "before": "images/assets/bg/bg_hidamari_store_front_day.png",
+        "after": "images/assets/bg/bg_hidamari_store_front_day.webp"
+      },
+      {
+        "sheetId": 1212008120,
+        "row": 20,
+        "col": 3,
+        "before": "images/assets/bg/bg_hidamari_store_front_evening.png",
+        "after": "images/assets/bg/bg_hidamari_store_front_evening.webp"
+      },
+      {
+        "sheetId": 1212008120,
+        "row": 21,
+        "col": 3,
+        "before": "images/assets/bg/bg_hidamari_store_front_night_open.png",
+        "after": "images/assets/bg/bg_hidamari_store_front_night_open.webp"
+      },
+      {
+        "sheetId": 1212008120,
+        "row": 22,
+        "col": 3,
+        "before": "images/assets/bg/bg_hidamari_store_front_closed.png",
+        "after": "images/assets/bg/bg_hidamari_store_front_closed.webp"
+      },
+      {
+        "sheetId": 1212008120,
+        "row": 23,
+        "col": 3,
+        "before": "images/assets/bg/bg_hidamari_warehouse.png",
+        "after": "images/assets/bg/bg_hidamari_warehouse.webp"
+      },
+      {
+        "sheetId": 1212008120,
+        "row": 28,
+        "col": 3,
+        "before": "images/assets/bg/bg_sugosawa_house_day.png",
+        "after": "images/assets/bg/bg_sugosawa_house_day.webp"
+      },
+      {
+        "sheetId": 1212008120,
+        "row": 29,
+        "col": 3,
+        "before": "images/assets/bg/bg_sugosawa_house_night.png",
+        "after": "images/assets/bg/bg_sugosawa_house_night.webp"
+      },
+      {
+        "sheetId": 190926009,
+        "row": 6,
+        "col": 12,
+        "before": "images/assets/bg/bg_sugosawa_house_day.png ; images/assets/bg/bg_sugosawa_house_night.png",
+        "after": "images/assets/bg/bg_sugosawa_house_day.webp ; images/assets/bg/bg_sugosawa_house_night.webp"
+      },
+      {
+        "sheetId": 190926009,
+        "row": 7,
+        "col": 12,
+        "before": "images/assets/bg/bg_hidamari_warehouse.png",
+        "after": "images/assets/bg/bg_hidamari_warehouse.webp"
+      }
+    ],
+    "newRows": [
+      {
+        "path": "images/assets/bg/battle_store_lv1.webp",
+        "bytes": 1916510,
+        "sha256": "5ba0de77069eeaa7add0a87c148c860015c0bb89fe481de0043f15bc7ad416d8",
+        "ledger": [],
+        "catalogKeys": [
+          "hidamari_store_sales_floor",
+          "battle_store_lv1",
+          "hidamari_store_breakroom_day"
+        ],
+        "decodable": true,
+        "format": "WEBP",
+        "size": [
+          1672,
+          941
+        ],
+        "newBgId": "BG-214",
+        "newSheetRow": 218,
+        "catalogEntry": {
+          "name": "ひだまりストア店内売り場・正式",
+          "path": "images/assets/bg/battle_store_lv1.webp",
+          "status": "正式採用"
+        },
+        "catalogKeysAfter": [
+          "hidamari_store_sales_floor",
+          "battle_store_lv1",
+          "hidamari_store_breakroom_day"
+        ],
+        "newValues": [
+          "BG-214",
+          "ひだまりストア店内売り場・正式",
+          "時刻未特定",
+          "images/assets/bg/battle_store_lv1.webp",
+          "既存素材の管理登録（用途は既存カタログ/シナリオ参照）",
+          "正式採用",
+          "2026-10-31 デルタ（登録補完）",
+          "1672×941 WEBP / SHA256 5ba0de77069eeaa7add0a87c148c860015c0bb89fe481de0043f15bc7ad416d8",
+          "https://github.com/YGC-Masa/ten_otsu/blob/main/images/assets/bg/battle_store_lv1.webp",
+          "",
+          "実在/画像decode照合済・今回目視/実画面未確認",
+          "既存ファイルの台帳登録補完。画像本体変更なし。新規LM/SPACE/移動接続を確定しない。 battle_store_lv1.webpとbg_hidamari_store_salesfloor_day.webpはSHA256同一。用途/互換を確認するまで両パスを保持。 状態は既存カタログから転記、今回の再承認ではない。"
+        ]
+      },
+      {
+        "path": "images/assets/bg/bg_ayame100_clear_stream_day.webp",
+        "bytes": 583144,
+        "sha256": "394df99c38b541f6458f8d04e03c79103dff3b7cb0a88fb0002fb4df3f124294",
+        "ledger": [],
+        "catalogKeys": [],
+        "decodable": true,
+        "format": "WEBP",
+        "size": [
+          1672,
+          941
+        ],
+        "newBgId": "BG-215",
+        "newSheetRow": 219,
+        "catalogEntry": {
+          "name": "彩愛 親愛100 清流・昼（既存シナリオ背景）",
+          "path": "images/assets/bg/bg_ayame100_clear_stream_day.webp",
+          "time": "day",
+          "status": "既存シナリオ使用/登録補完・採否未確認",
+          "usage": "シナリオ専用素材。新規の公開移動先や私宅入室条件を追加しない。"
+        },
+        "catalogKeysAfter": [
+          "ayame100_clear_stream_day"
+        ],
+        "newValues": [
+          "BG-215",
+          "彩愛 親愛100 清流・昼（既存シナリオ背景）",
+          "day",
+          "images/assets/bg/bg_ayame100_clear_stream_day.webp",
+          "既存素材の管理登録（用途は既存カタログ/シナリオ参照）",
+          "既存シナリオ使用/登録補完・採否未確認",
+          "2026-10-31 デルタ（登録補完）",
+          "1672×941 WEBP / SHA256 394df99c38b541f6458f8d04e03c79103dff3b7cb0a88fb0002fb4df3f124294",
+          "https://github.com/YGC-Masa/ten_otsu/blob/main/images/assets/bg/bg_ayame100_clear_stream_day.webp",
+          "",
+          "実在/画像decode照合済・今回目視/実画面未確認",
+          "既存ファイルの台帳登録補完。画像本体変更なし。新規LM/SPACE/移動接続を確定しない。 彩愛の既存シナリオ素材。紫藤家屋敷とLM070マンションを同一視しない。 カタログ未登録のため今回補完。"
+        ]
+      },
+      {
+        "path": "images/assets/bg/bg_ayame93_country_road_day.webp",
+        "bytes": 408386,
+        "sha256": "e00637c2d54280c3c36ad6010d5d8287fdd1361d693bb44b18f897d2c50e770d",
+        "ledger": [],
+        "catalogKeys": [],
+        "decodable": true,
+        "format": "WEBP",
+        "size": [
+          1672,
+          941
+        ],
+        "newBgId": "BG-216",
+        "newSheetRow": 220,
+        "catalogEntry": {
+          "name": "彩愛 親愛93 農村道路・昼（既存シナリオ背景）",
+          "path": "images/assets/bg/bg_ayame93_country_road_day.webp",
+          "time": "day",
+          "status": "既存シナリオ使用/登録補完・採否未確認",
+          "usage": "シナリオ専用素材。新規の公開移動先や私宅入室条件を追加しない。"
+        },
+        "catalogKeysAfter": [
+          "ayame93_country_road_day"
+        ],
+        "newValues": [
+          "BG-216",
+          "彩愛 親愛93 農村道路・昼（既存シナリオ背景）",
+          "day",
+          "images/assets/bg/bg_ayame93_country_road_day.webp",
+          "既存素材の管理登録（用途は既存カタログ/シナリオ参照）",
+          "既存シナリオ使用/登録補完・採否未確認",
+          "2026-10-31 デルタ（登録補完）",
+          "1672×941 WEBP / SHA256 e00637c2d54280c3c36ad6010d5d8287fdd1361d693bb44b18f897d2c50e770d",
+          "https://github.com/YGC-Masa/ten_otsu/blob/main/images/assets/bg/bg_ayame93_country_road_day.webp",
+          "",
+          "実在/画像decode照合済・今回目視/実画面未確認",
+          "既存ファイルの台帳登録補完。画像本体変更なし。新規LM/SPACE/移動接続を確定しない。 彩愛の既存シナリオ素材。紫藤家屋敷とLM070マンションを同一視しない。 カタログ未登録のため今回補完。"
+        ]
+      },
+      {
+        "path": "images/assets/bg/bg_ayame93_estate_corridor_day.webp",
+        "bytes": 398806,
+        "sha256": "96e66a6cd1236d3f9450446c58af0cf10f99e9ddf9a6d0ba91b789e9e586aab7",
+        "ledger": [],
+        "catalogKeys": [
+          "ayame_estate_corridor_day"
+        ],
+        "decodable": true,
+        "format": "WEBP",
+        "size": [
+          1672,
+          941
+        ],
+        "newBgId": "BG-217",
+        "newSheetRow": 221,
+        "catalogEntry": {
+          "name": "紫藤家・屋敷廊下・昼",
+          "path": "images/assets/bg/bg_ayame93_estate_corridor_day.webp",
+          "location": "紫藤家",
+          "time": "day",
+          "status": "正式採用"
+        },
+        "catalogKeysAfter": [
+          "ayame_estate_corridor_day"
+        ],
+        "newValues": [
+          "BG-217",
+          "紫藤家・屋敷廊下・昼",
+          "day",
+          "images/assets/bg/bg_ayame93_estate_corridor_day.webp",
+          "既存素材の管理登録（用途は既存カタログ/シナリオ参照）",
+          "正式採用",
+          "2026-10-31 デルタ（登録補完）",
+          "1672×941 WEBP / SHA256 96e66a6cd1236d3f9450446c58af0cf10f99e9ddf9a6d0ba91b789e9e586aab7",
+          "https://github.com/YGC-Masa/ten_otsu/blob/main/images/assets/bg/bg_ayame93_estate_corridor_day.webp",
+          "",
+          "実在/画像decode照合済・今回目視/実画面未確認",
+          "既存ファイルの台帳登録補完。画像本体変更なし。新規LM/SPACE/移動接続を確定しない。 彩愛の既存シナリオ素材。紫藤家屋敷とLM070マンションを同一視しない。 状態は既存カタログから転記、今回の再承認ではない。"
+        ]
+      },
+      {
+        "path": "images/assets/bg/bg_ayame93_estate_gate_day.webp",
+        "bytes": 729766,
+        "sha256": "2dbbc2e2e3f43043ffb68f9a1c16790d91f0fd5a06ef8aa954a62a300ec41750",
+        "ledger": [],
+        "catalogKeys": [
+          "ayame_estate_gate_day"
+        ],
+        "decodable": true,
+        "format": "WEBP",
+        "size": [
+          1672,
+          941
+        ],
+        "newBgId": "BG-218",
+        "newSheetRow": 222,
+        "catalogEntry": {
+          "name": "紫藤家・屋敷門・昼",
+          "path": "images/assets/bg/bg_ayame93_estate_gate_day.webp",
+          "location": "紫藤家",
+          "time": "day",
+          "status": "正式採用"
+        },
+        "catalogKeysAfter": [
+          "ayame_estate_gate_day"
+        ],
+        "newValues": [
+          "BG-218",
+          "紫藤家・屋敷門・昼",
+          "day",
+          "images/assets/bg/bg_ayame93_estate_gate_day.webp",
+          "既存素材の管理登録（用途は既存カタログ/シナリオ参照）",
+          "正式採用",
+          "2026-10-31 デルタ（登録補完）",
+          "1672×941 WEBP / SHA256 2dbbc2e2e3f43043ffb68f9a1c16790d91f0fd5a06ef8aa954a62a300ec41750",
+          "https://github.com/YGC-Masa/ten_otsu/blob/main/images/assets/bg/bg_ayame93_estate_gate_day.webp",
+          "",
+          "実在/画像decode照合済・今回目視/実画面未確認",
+          "既存ファイルの台帳登録補完。画像本体変更なし。新規LM/SPACE/移動接続を確定しない。 彩愛の既存シナリオ素材。紫藤家屋敷とLM070マンションを同一視しない。 状態は既存カタログから転記、今回の再承認ではない。"
+        ]
+      },
+      {
+        "path": "images/assets/bg/bg_ayame93_estate_house_day.webp",
+        "bytes": 734378,
+        "sha256": "9973f7a8ca070bc9eaee44edeefe2125b47637d6797abe9682da561ee2e3db95",
+        "ledger": [],
+        "catalogKeys": [
+          "ayame_estate_house_day"
+        ],
+        "decodable": true,
+        "format": "WEBP",
+        "size": [
+          1672,
+          941
+        ],
+        "newBgId": "BG-219",
+        "newSheetRow": 223,
+        "catalogEntry": {
+          "name": "紫藤家・屋敷外観・昼",
+          "path": "images/assets/bg/bg_ayame93_estate_house_day.webp",
+          "location": "紫藤家",
+          "time": "day",
+          "status": "正式採用"
+        },
+        "catalogKeysAfter": [
+          "ayame_estate_house_day"
+        ],
+        "newValues": [
+          "BG-219",
+          "紫藤家・屋敷外観・昼",
+          "day",
+          "images/assets/bg/bg_ayame93_estate_house_day.webp",
+          "既存素材の管理登録（用途は既存カタログ/シナリオ参照）",
+          "正式採用",
+          "2026-10-31 デルタ（登録補完）",
+          "1672×941 WEBP / SHA256 9973f7a8ca070bc9eaee44edeefe2125b47637d6797abe9682da561ee2e3db95",
+          "https://github.com/YGC-Masa/ten_otsu/blob/main/images/assets/bg/bg_ayame93_estate_house_day.webp",
+          "",
+          "実在/画像decode照合済・今回目視/実画面未確認",
+          "既存ファイルの台帳登録補完。画像本体変更なし。新規LM/SPACE/移動接続を確定しない。 彩愛の既存シナリオ素材。紫藤家屋敷とLM070マンションを同一視しない。 状態は既存カタログから転記、今回の再承認ではない。"
+        ]
+      },
+      {
+        "path": "images/assets/bg/bg_ayame93_station_exterior_day.webp",
+        "bytes": 751334,
+        "sha256": "e425dc934b959344ab282b4161bbf0d94c8ed7f9867fdcb1662649eee0201aa7",
+        "ledger": [],
+        "catalogKeys": [
+          "ayame_station_exterior_day"
+        ],
+        "decodable": true,
+        "format": "WEBP",
+        "size": [
+          1672,
+          941
+        ],
+        "newBgId": "BG-220",
+        "newSheetRow": 224,
+        "catalogEntry": {
+          "name": "紫藤家最寄り駅・外観・昼",
+          "path": "images/assets/bg/bg_ayame93_station_exterior_day.webp",
+          "location": "紫藤家最寄り駅",
+          "time": "day",
+          "status": "正式採用"
+        },
+        "catalogKeysAfter": [
+          "ayame_station_exterior_day"
+        ],
+        "newValues": [
+          "BG-220",
+          "紫藤家最寄り駅・外観・昼",
+          "day",
+          "images/assets/bg/bg_ayame93_station_exterior_day.webp",
+          "既存素材の管理登録（用途は既存カタログ/シナリオ参照）",
+          "正式採用",
+          "2026-10-31 デルタ（登録補完）",
+          "1672×941 WEBP / SHA256 e425dc934b959344ab282b4161bbf0d94c8ed7f9867fdcb1662649eee0201aa7",
+          "https://github.com/YGC-Masa/ten_otsu/blob/main/images/assets/bg/bg_ayame93_station_exterior_day.webp",
+          "",
+          "実在/画像decode照合済・今回目視/実画面未確認",
+          "既存ファイルの台帳登録補完。画像本体変更なし。新規LM/SPACE/移動接続を確定しない。 彩愛の既存シナリオ素材。紫藤家屋敷とLM070マンションを同一視しない。 状態は既存カタログから転記、今回の再承認ではない。"
+        ]
+      },
+      {
+        "path": "images/assets/bg/bg_ayame98_estate_corridor_night.webp",
+        "bytes": 307982,
+        "sha256": "248a03ac571cb0a2144226ea99b4f59cfb3d09a6596b490835e19b82d2cafd09",
+        "ledger": [],
+        "catalogKeys": [
+          "ayame_estate_corridor_night"
+        ],
+        "decodable": true,
+        "format": "WEBP",
+        "size": [
+          1672,
+          941
+        ],
+        "newBgId": "BG-221",
+        "newSheetRow": 225,
+        "catalogEntry": {
+          "name": "紫藤家・屋敷廊下・夜",
+          "path": "images/assets/bg/bg_ayame98_estate_corridor_night.webp",
+          "location": "紫藤家",
+          "time": "night",
+          "status": "正式採用"
+        },
+        "catalogKeysAfter": [
+          "ayame_estate_corridor_night"
+        ],
+        "newValues": [
+          "BG-221",
+          "紫藤家・屋敷廊下・夜",
+          "night",
+          "images/assets/bg/bg_ayame98_estate_corridor_night.webp",
+          "既存素材の管理登録（用途は既存カタログ/シナリオ参照）",
+          "正式採用",
+          "2026-10-31 デルタ（登録補完）",
+          "1672×941 WEBP / SHA256 248a03ac571cb0a2144226ea99b4f59cfb3d09a6596b490835e19b82d2cafd09",
+          "https://github.com/YGC-Masa/ten_otsu/blob/main/images/assets/bg/bg_ayame98_estate_corridor_night.webp",
+          "",
+          "実在/画像decode照合済・今回目視/実画面未確認",
+          "既存ファイルの台帳登録補完。画像本体変更なし。新規LM/SPACE/移動接続を確定しない。 彩愛の既存シナリオ素材。紫藤家屋敷とLM070マンションを同一視しない。 状態は既存カタログから転記、今回の再承認ではない。"
+        ]
+      },
+      {
+        "path": "images/assets/bg/bg_ayame98_father_room_dusk.webp",
+        "bytes": 310638,
+        "sha256": "d0a62ce3ce2bef55d1f1aba76566e7457975d2ba779b981c90c8866a5bb7ed03",
+        "ledger": [],
+        "catalogKeys": [
+          "ayame_father_room_dusk"
+        ],
+        "decodable": true,
+        "format": "WEBP",
+        "size": [
+          1672,
+          941
+        ],
+        "newBgId": "BG-222",
+        "newSheetRow": 226,
+        "catalogEntry": {
+          "name": "紫藤家・父親の部屋・夕暮れ",
+          "path": "images/assets/bg/bg_ayame98_father_room_dusk.webp",
+          "location": "紫藤家",
+          "time": "dusk",
+          "status": "正式採用"
+        },
+        "catalogKeysAfter": [
+          "ayame_father_room_dusk"
+        ],
+        "newValues": [
+          "BG-222",
+          "紫藤家・父親の部屋・夕暮れ",
+          "dusk",
+          "images/assets/bg/bg_ayame98_father_room_dusk.webp",
+          "既存素材の管理登録（用途は既存カタログ/シナリオ参照）",
+          "正式採用",
+          "2026-10-31 デルタ（登録補完）",
+          "1672×941 WEBP / SHA256 d0a62ce3ce2bef55d1f1aba76566e7457975d2ba779b981c90c8866a5bb7ed03",
+          "https://github.com/YGC-Masa/ten_otsu/blob/main/images/assets/bg/bg_ayame98_father_room_dusk.webp",
+          "",
+          "実在/画像decode照合済・今回目視/実画面未確認",
+          "既存ファイルの台帳登録補完。画像本体変更なし。新規LM/SPACE/移動接続を確定しない。 彩愛の既存シナリオ素材。紫藤家屋敷とLM070マンションを同一視しない。 状態は既存カタログから転記、今回の再承認ではない。"
+        ]
+      },
+      {
+        "path": "images/assets/bg/bg_ayame98_guestroom_night.webp",
+        "bytes": 341628,
+        "sha256": "00767a3414d7ea14cc767972b287174dd3a8af1623de6ca45134d40169a1ce75",
+        "ledger": [],
+        "catalogKeys": [
+          "ayame_guestroom_night"
+        ],
+        "decodable": true,
+        "format": "WEBP",
+        "size": [
+          1672,
+          941
+        ],
+        "newBgId": "BG-223",
+        "newSheetRow": 227,
+        "catalogEntry": {
+          "name": "紫藤家・客間・夜",
+          "path": "images/assets/bg/bg_ayame98_guestroom_night.webp",
+          "location": "紫藤家",
+          "time": "night",
+          "status": "正式採用"
+        },
+        "catalogKeysAfter": [
+          "ayame_guestroom_night"
+        ],
+        "newValues": [
+          "BG-223",
+          "紫藤家・客間・夜",
+          "night",
+          "images/assets/bg/bg_ayame98_guestroom_night.webp",
+          "既存素材の管理登録（用途は既存カタログ/シナリオ参照）",
+          "正式採用",
+          "2026-10-31 デルタ（登録補完）",
+          "1672×941 WEBP / SHA256 00767a3414d7ea14cc767972b287174dd3a8af1623de6ca45134d40169a1ce75",
+          "https://github.com/YGC-Masa/ten_otsu/blob/main/images/assets/bg/bg_ayame98_guestroom_night.webp",
+          "",
+          "実在/画像decode照合済・今回目視/実画面未確認",
+          "既存ファイルの台帳登録補完。画像本体変更なし。新規LM/SPACE/移動接続を確定しない。 彩愛の既存シナリオ素材。紫藤家屋敷とLM070マンションを同一視しない。 状態は既存カタログから転記、今回の再承認ではない。"
+        ]
+      },
+      {
+        "path": "images/assets/bg/bg_ayame98_washitsu_dinner.webp",
+        "bytes": 441564,
+        "sha256": "3f2425f83f0601b7140edcfb8498e0452460bb061be8b30a088289e8b9d597ad",
+        "ledger": [],
+        "catalogKeys": [],
+        "decodable": true,
+        "format": "WEBP",
+        "size": [
+          1672,
+          941
+        ],
+        "newBgId": "BG-224",
+        "newSheetRow": 228,
+        "catalogEntry": {
+          "name": "彩愛 親愛98 屋敷の和室・夕食（既存シナリオ背景）",
+          "path": "images/assets/bg/bg_ayame98_washitsu_dinner.webp",
+          "time": "evening",
+          "status": "既存シナリオ使用/登録補完・採否未確認",
+          "usage": "シナリオ専用素材。新規の公開移動先や私宅入室条件を追加しない。"
+        },
+        "catalogKeysAfter": [
+          "ayame98_washitsu_dinner"
+        ],
+        "newValues": [
+          "BG-224",
+          "彩愛 親愛98 屋敷の和室・夕食（既存シナリオ背景）",
+          "evening",
+          "images/assets/bg/bg_ayame98_washitsu_dinner.webp",
+          "既存素材の管理登録（用途は既存カタログ/シナリオ参照）",
+          "既存シナリオ使用/登録補完・採否未確認",
+          "2026-10-31 デルタ（登録補完）",
+          "1672×941 WEBP / SHA256 3f2425f83f0601b7140edcfb8498e0452460bb061be8b30a088289e8b9d597ad",
+          "https://github.com/YGC-Masa/ten_otsu/blob/main/images/assets/bg/bg_ayame98_washitsu_dinner.webp",
+          "",
+          "実在/画像decode照合済・今回目視/実画面未確認",
+          "既存ファイルの台帳登録補完。画像本体変更なし。新規LM/SPACE/移動接続を確定しない。 彩愛の既存シナリオ素材。紫藤家屋敷とLM070マンションを同一視しない。 カタログ未登録のため今回補完。"
+        ]
+      },
+      {
+        "path": "images/assets/bg/bg_harumachi_flower_field_day.webp",
+        "bytes": 2296542,
+        "sha256": "b5088550fd72613907ecef45e566ada98d9a3702dea9756c4693960e6e274a89",
+        "ledger": [],
+        "catalogKeys": [
+          "harumachi_flower_field_day",
+          "haru_machi_flower_field_day",
+          "spring_flower_field_day"
+        ],
+        "decodable": true,
+        "format": "WEBP",
+        "size": [
+          1672,
+          941
+        ],
+        "newBgId": "BG-225",
+        "newSheetRow": 229,
+        "catalogEntry": {
+          "name": "春待ち花畑・昼",
+          "path": "images/assets/bg/bg_harumachi_flower_field_day.webp",
+          "location": "春待ち花畑",
+          "time": "day",
+          "season": "spring",
+          "status": "正式採用"
+        },
+        "catalogKeysAfter": [
+          "harumachi_flower_field_day",
+          "haru_machi_flower_field_day",
+          "spring_flower_field_day"
+        ],
+        "newValues": [
+          "BG-225",
+          "春待ち花畑・昼",
+          "day",
+          "images/assets/bg/bg_harumachi_flower_field_day.webp",
+          "既存素材の管理登録（用途は既存カタログ/シナリオ参照）",
+          "正式採用",
+          "2026-10-31 デルタ（登録補完）",
+          "1672×941 WEBP / SHA256 b5088550fd72613907ecef45e566ada98d9a3702dea9756c4693960e6e274a89",
+          "https://github.com/YGC-Masa/ten_otsu/blob/main/images/assets/bg/bg_harumachi_flower_field_day.webp",
+          "",
+          "実在/画像decode照合済・今回目視/実画面未確認",
+          "既存ファイルの台帳登録補完。画像本体変更なし。新規LM/SPACE/移動接続を確定しない。 状態は既存カタログから転記、今回の再承認ではない。"
+        ]
+      },
+      {
+        "path": "images/assets/bg/bg_hidamari_store_front_winter_day.webp",
+        "bytes": 1899666,
+        "sha256": "d710ee13dca22440c7bdfe0c84cba5ae044f92c29853fdc1fe45443550e83bb5",
+        "ledger": [],
+        "catalogKeys": [
+          "hidamari_store_front_winter_day"
+        ],
+        "decodable": true,
+        "format": "WEBP",
+        "size": [
+          1672,
+          941
+        ],
+        "newBgId": "BG-226",
+        "newSheetRow": 230,
+        "catalogEntry": {
+          "name": "ひだまりストア外観・冬・昼",
+          "path": "images/assets/bg/bg_hidamari_store_front_winter_day.webp",
+          "location": "ひだまりストア",
+          "time": "day",
+          "season": "winter",
+          "snow": false,
+          "status": "正式採用"
+        },
+        "catalogKeysAfter": [
+          "hidamari_store_front_winter_day"
+        ],
+        "newValues": [
+          "BG-226",
+          "ひだまりストア外観・冬・昼",
+          "day",
+          "images/assets/bg/bg_hidamari_store_front_winter_day.webp",
+          "既存素材の管理登録（用途は既存カタログ/シナリオ参照）",
+          "正式採用",
+          "2026-10-31 デルタ（登録補完）",
+          "1672×941 WEBP / SHA256 d710ee13dca22440c7bdfe0c84cba5ae044f92c29853fdc1fe45443550e83bb5",
+          "https://github.com/YGC-Masa/ten_otsu/blob/main/images/assets/bg/bg_hidamari_store_front_winter_day.webp",
+          "",
+          "実在/画像decode照合済・今回目視/実画面未確認",
+          "既存ファイルの台帳登録補完。画像本体変更なし。新規LM/SPACE/移動接続を確定しない。 状態は既存カタログから転記、今回の再承認ではない。"
+        ]
+      },
+      {
+        "path": "images/assets/bg/bg_hidamari_store_front_winter_day_snow.webp",
+        "bytes": 2083540,
+        "sha256": "6868f090a415fc70d7a9c90d85cefe5ca3e348bd84c911a1b3b641d15b11dcdd",
+        "ledger": [],
+        "catalogKeys": [
+          "hidamari_store_front_winter_day_snow"
+        ],
+        "decodable": true,
+        "format": "WEBP",
+        "size": [
+          1672,
+          941
+        ],
+        "newBgId": "BG-227",
+        "newSheetRow": 231,
+        "catalogEntry": {
+          "name": "ひだまりストア外観・冬・雪",
+          "path": "images/assets/bg/bg_hidamari_store_front_winter_day_snow.webp",
+          "location": "ひだまりストア",
+          "time": "day",
+          "season": "winter",
+          "snow": true,
+          "status": "正式採用"
+        },
+        "catalogKeysAfter": [
+          "hidamari_store_front_winter_day_snow"
+        ],
+        "newValues": [
+          "BG-227",
+          "ひだまりストア外観・冬・雪",
+          "day",
+          "images/assets/bg/bg_hidamari_store_front_winter_day_snow.webp",
+          "既存素材の管理登録（用途は既存カタログ/シナリオ参照）",
+          "正式採用",
+          "2026-10-31 デルタ（登録補完）",
+          "1672×941 WEBP / SHA256 6868f090a415fc70d7a9c90d85cefe5ca3e348bd84c911a1b3b641d15b11dcdd",
+          "https://github.com/YGC-Masa/ten_otsu/blob/main/images/assets/bg/bg_hidamari_store_front_winter_day_snow.webp",
+          "",
+          "実在/画像decode照合済・今回目視/実画面未確認",
+          "既存ファイルの台帳登録補完。画像本体変更なし。新規LM/SPACE/移動接続を確定しない。 状態は既存カタログから転記、今回の再承認ではない。"
+        ]
+      },
+      {
+        "path": "images/assets/bg/bg_hidamari_store_salesfloor_day.webp",
+        "bytes": 1916510,
+        "sha256": "5ba0de77069eeaa7add0a87c148c860015c0bb89fe481de0043f15bc7ad416d8",
+        "ledger": [],
+        "catalogKeys": [
+          "hidamari_store_salesfloor_day"
+        ],
+        "decodable": true,
+        "format": "WEBP",
+        "size": [
+          1672,
+          941
+        ],
+        "newBgId": "BG-228",
+        "newSheetRow": 232,
+        "catalogEntry": {
+          "name": "ひだまりストア店内売り場・昼",
+          "path": "images/assets/bg/bg_hidamari_store_salesfloor_day.webp",
+          "location": "ひだまりストア",
+          "time": "day",
+          "status": "正式採用"
+        },
+        "catalogKeysAfter": [
+          "hidamari_store_salesfloor_day"
+        ],
+        "newValues": [
+          "BG-228",
+          "ひだまりストア店内売り場・昼",
+          "day",
+          "images/assets/bg/bg_hidamari_store_salesfloor_day.webp",
+          "既存素材の管理登録（用途は既存カタログ/シナリオ参照）",
+          "正式採用",
+          "2026-10-31 デルタ（登録補完）",
+          "1672×941 WEBP / SHA256 5ba0de77069eeaa7add0a87c148c860015c0bb89fe481de0043f15bc7ad416d8",
+          "https://github.com/YGC-Masa/ten_otsu/blob/main/images/assets/bg/bg_hidamari_store_salesfloor_day.webp",
+          "",
+          "実在/画像decode照合済・今回目視/実画面未確認",
+          "既存ファイルの台帳登録補完。画像本体変更なし。新規LM/SPACE/移動接続を確定しない。 battle_store_lv1.webpとbg_hidamari_store_salesfloor_day.webpはSHA256同一。用途/互換を確認するまで両パスを保持。 状態は既存カタログから転記、今回の再承認ではない。"
+        ]
+      },
+      {
+        "path": "images/assets/bg/bg_hidamari_store_salesfloor_night.webp",
+        "bytes": 2141436,
+        "sha256": "1ae05b66d2f5599976a4a5624a8bccd3833123811091e9dc097edb019a459e0a",
+        "ledger": [],
+        "catalogKeys": [
+          "hidamari_store_closed_night",
+          "hidamari_store_salesfloor_night"
+        ],
+        "decodable": true,
+        "format": "WEBP",
+        "size": [
+          1672,
+          941
+        ],
+        "newBgId": "BG-229",
+        "newSheetRow": 233,
+        "catalogEntry": {
+          "name": "ひだまりストア閉店後・店内売り場",
+          "path": "images/assets/bg/bg_hidamari_store_salesfloor_night.webp",
+          "status": "正式採用・互換"
+        },
+        "catalogKeysAfter": [
+          "hidamari_store_closed_night",
+          "hidamari_store_salesfloor_night"
+        ],
+        "newValues": [
+          "BG-229",
+          "ひだまりストア閉店後・店内売り場",
+          "時刻未特定",
+          "images/assets/bg/bg_hidamari_store_salesfloor_night.webp",
+          "既存素材の管理登録（用途は既存カタログ/シナリオ参照）",
+          "正式採用・互換",
+          "2026-10-31 デルタ（登録補完）",
+          "1672×941 WEBP / SHA256 1ae05b66d2f5599976a4a5624a8bccd3833123811091e9dc097edb019a459e0a",
+          "https://github.com/YGC-Masa/ten_otsu/blob/main/images/assets/bg/bg_hidamari_store_salesfloor_night.webp",
+          "",
+          "実在/画像decode照合済・今回目視/実画面未確認",
+          "既存ファイルの台帳登録補完。画像本体変更なし。新規LM/SPACE/移動接続を確定しない。 状態は既存カタログから転記、今回の再承認ではない。"
+        ]
+      },
+      {
+        "path": "images/assets/bg/bg_homecenter_outdoor_corner_day.webp",
+        "bytes": 2112686,
+        "sha256": "5a8d07125c28ee99bd5332496d76f4a34ee1f89962a4cfddc6503dd79c7707d6",
+        "ledger": [],
+        "catalogKeys": [
+          "homecenter_outdoor_corner_day"
+        ],
+        "decodable": true,
+        "format": "WEBP",
+        "size": [
+          1672,
+          941
+        ],
+        "newBgId": "BG-230",
+        "newSheetRow": 234,
+        "catalogEntry": {
+          "name": "ホームセンター・屋外コーナー・昼",
+          "path": "images/assets/bg/bg_homecenter_outdoor_corner_day.webp",
+          "location": "ホームセンター",
+          "time": "day",
+          "status": "正式採用"
+        },
+        "catalogKeysAfter": [
+          "homecenter_outdoor_corner_day"
+        ],
+        "newValues": [
+          "BG-230",
+          "ホームセンター・屋外コーナー・昼",
+          "day",
+          "images/assets/bg/bg_homecenter_outdoor_corner_day.webp",
+          "既存素材の管理登録（用途は既存カタログ/シナリオ参照）",
+          "正式採用",
+          "2026-10-31 デルタ（登録補完）",
+          "1672×941 WEBP / SHA256 5a8d07125c28ee99bd5332496d76f4a34ee1f89962a4cfddc6503dd79c7707d6",
+          "https://github.com/YGC-Masa/ten_otsu/blob/main/images/assets/bg/bg_homecenter_outdoor_corner_day.webp",
+          "",
+          "実在/画像decode照合済・今回目視/実画面未確認",
+          "既存ファイルの台帳登録補完。画像本体変更なし。新規LM/SPACE/移動接続を確定しない。 状態は既存カタログから転記、今回の再承認ではない。"
+        ]
+      },
+      {
+        "path": "images/assets/bg/bg_manager_mansion_road_day.webp",
+        "bytes": 2093776,
+        "sha256": "0730c02e41c5acfe5b9606215958c2a19e913cba4d82dca5da8184533d460e9e",
+        "ledger": [],
+        "catalogKeys": [
+          "manager_mansion_road_day"
+        ],
+        "decodable": true,
+        "format": "WEBP",
+        "size": [
+          1672,
+          941
+        ],
+        "newBgId": "BG-231",
+        "newSheetRow": 235,
+        "catalogEntry": {
+          "name": "店長マンション前の帰り道・昼",
+          "path": "images/assets/bg/bg_manager_mansion_road_day.webp",
+          "location": "店長マンション前 / メゾン・ド・エトワール前",
+          "time": "day",
+          "status": "正式採用"
+        },
+        "catalogKeysAfter": [
+          "manager_mansion_road_day"
+        ],
+        "newValues": [
+          "BG-231",
+          "店長マンション前の帰り道・昼",
+          "day",
+          "images/assets/bg/bg_manager_mansion_road_day.webp",
+          "既存素材の管理登録（用途は既存カタログ/シナリオ参照）",
+          "正式採用",
+          "2026-10-31 デルタ（登録補完）",
+          "1672×941 WEBP / SHA256 0730c02e41c5acfe5b9606215958c2a19e913cba4d82dca5da8184533d460e9e",
+          "https://github.com/YGC-Masa/ten_otsu/blob/main/images/assets/bg/bg_manager_mansion_road_day.webp",
+          "",
+          "実在/画像decode照合済・今回目視/実画面未確認",
+          "既存ファイルの台帳登録補完。画像本体変更なし。新規LM/SPACE/移動接続を確定しない。 SPACE-LM079-ROADの対応候補だが今回の建築/地理目視照合なし、SPACE欄は未確定のまま。 状態は既存カタログから転記、今回の再承認ではない。"
+        ]
+      },
+      {
+        "path": "images/assets/bg/bg_manager_mansion_road_early_morning.webp",
+        "bytes": 1896744,
+        "sha256": "43d3a541dcd57febef8156b243a9c9f8eb8a6e7c7e6955de5845dbe643a39b46",
+        "ledger": [],
+        "catalogKeys": [
+          "manager_mansion_road_early_morning"
+        ],
+        "decodable": true,
+        "format": "WEBP",
+        "size": [
+          1672,
+          941
+        ],
+        "newBgId": "BG-232",
+        "newSheetRow": 236,
+        "catalogEntry": {
+          "name": "店長マンション前の帰り道・早朝",
+          "path": "images/assets/bg/bg_manager_mansion_road_early_morning.webp",
+          "location": "店長マンション前 / メゾン・ド・エトワール前",
+          "time": "early_morning",
+          "status": "正式採用"
+        },
+        "catalogKeysAfter": [
+          "manager_mansion_road_early_morning"
+        ],
+        "newValues": [
+          "BG-232",
+          "店長マンション前の帰り道・早朝",
+          "early_morning",
+          "images/assets/bg/bg_manager_mansion_road_early_morning.webp",
+          "既存素材の管理登録（用途は既存カタログ/シナリオ参照）",
+          "正式採用",
+          "2026-10-31 デルタ（登録補完）",
+          "1672×941 WEBP / SHA256 43d3a541dcd57febef8156b243a9c9f8eb8a6e7c7e6955de5845dbe643a39b46",
+          "https://github.com/YGC-Masa/ten_otsu/blob/main/images/assets/bg/bg_manager_mansion_road_early_morning.webp",
+          "",
+          "実在/画像decode照合済・今回目視/実画面未確認",
+          "既存ファイルの台帳登録補完。画像本体変更なし。新規LM/SPACE/移動接続を確定しない。 SPACE-LM079-ROADの対応候補だが今回の建築/地理目視照合なし、SPACE欄は未確定のまま。 状態は既存カタログから転記、今回の再承認ではない。"
+        ]
+      },
+      {
+        "path": "images/assets/bg/bg_manager_mansion_road_evening.webp",
+        "bytes": 1992168,
+        "sha256": "c059cc3d62716c0735ec190910186387f972c41a77e845d2e6496c663da080bb",
+        "ledger": [],
+        "catalogKeys": [
+          "manager_mansion_road_evening"
+        ],
+        "decodable": true,
+        "format": "WEBP",
+        "size": [
+          1672,
+          941
+        ],
+        "newBgId": "BG-233",
+        "newSheetRow": 237,
+        "catalogEntry": {
+          "name": "店長マンション前の帰り道・夕方",
+          "path": "images/assets/bg/bg_manager_mansion_road_evening.webp",
+          "location": "店長マンション前 / メゾン・ド・エトワール前",
+          "time": "evening",
+          "status": "正式採用"
+        },
+        "catalogKeysAfter": [
+          "manager_mansion_road_evening"
+        ],
+        "newValues": [
+          "BG-233",
+          "店長マンション前の帰り道・夕方",
+          "evening",
+          "images/assets/bg/bg_manager_mansion_road_evening.webp",
+          "既存素材の管理登録（用途は既存カタログ/シナリオ参照）",
+          "正式採用",
+          "2026-10-31 デルタ（登録補完）",
+          "1672×941 WEBP / SHA256 c059cc3d62716c0735ec190910186387f972c41a77e845d2e6496c663da080bb",
+          "https://github.com/YGC-Masa/ten_otsu/blob/main/images/assets/bg/bg_manager_mansion_road_evening.webp",
+          "",
+          "実在/画像decode照合済・今回目視/実画面未確認",
+          "既存ファイルの台帳登録補完。画像本体変更なし。新規LM/SPACE/移動接続を確定しない。 SPACE-LM079-ROADの対応候補だが今回の建築/地理目視照合なし、SPACE欄は未確定のまま。 状態は既存カタログから転記、今回の再承認ではない。"
+        ]
+      },
+      {
+        "path": "images/assets/bg/bg_manager_mansion_road_morning.webp",
+        "bytes": 2097620,
+        "sha256": "27cd6204df4c4c989dad50e44da57d74a31863d256aadc4ce7021856e6c22e41",
+        "ledger": [],
+        "catalogKeys": [
+          "manager_mansion_road_morning"
+        ],
+        "decodable": true,
+        "format": "WEBP",
+        "size": [
+          1672,
+          941
+        ],
+        "newBgId": "BG-234",
+        "newSheetRow": 238,
+        "catalogEntry": {
+          "name": "店長マンション前の帰り道・朝",
+          "path": "images/assets/bg/bg_manager_mansion_road_morning.webp",
+          "location": "店長マンション前 / メゾン・ド・エトワール前",
+          "time": "morning",
+          "status": "正式採用"
+        },
+        "catalogKeysAfter": [
+          "manager_mansion_road_morning"
+        ],
+        "newValues": [
+          "BG-234",
+          "店長マンション前の帰り道・朝",
+          "morning",
+          "images/assets/bg/bg_manager_mansion_road_morning.webp",
+          "既存素材の管理登録（用途は既存カタログ/シナリオ参照）",
+          "正式採用",
+          "2026-10-31 デルタ（登録補完）",
+          "1672×941 WEBP / SHA256 27cd6204df4c4c989dad50e44da57d74a31863d256aadc4ce7021856e6c22e41",
+          "https://github.com/YGC-Masa/ten_otsu/blob/main/images/assets/bg/bg_manager_mansion_road_morning.webp",
+          "",
+          "実在/画像decode照合済・今回目視/実画面未確認",
+          "既存ファイルの台帳登録補完。画像本体変更なし。新規LM/SPACE/移動接続を確定しない。 SPACE-LM079-ROADの対応候補だが今回の建築/地理目視照合なし、SPACE欄は未確定のまま。 状態は既存カタログから転記、今回の再承認ではない。"
+        ]
+      },
+      {
+        "path": "images/assets/bg/bg_misora_room_day.webp",
+        "bytes": 1234540,
+        "sha256": "04708059bc34e5567be50087863545529b8e67b74b4995245663ff09ad938a44",
+        "ledger": [],
+        "catalogKeys": [
+          "misora_room_day"
+        ],
+        "decodable": true,
+        "format": "WEBP",
+        "size": [
+          1672,
+          941
+        ],
+        "newBgId": "BG-235",
+        "newSheetRow": 239,
+        "catalogEntry": {
+          "name": "美空の部屋・昼",
+          "path": "images/assets/bg/bg_misora_room_day.webp",
+          "location": "双沢家",
+          "time": "day",
+          "status": "正式採用・互換"
+        },
+        "catalogKeysAfter": [
+          "misora_room_day"
+        ],
+        "newValues": [
+          "BG-235",
+          "美空の部屋・昼",
+          "day",
+          "images/assets/bg/bg_misora_room_day.webp",
+          "既存素材の管理登録（用途は既存カタログ/シナリオ参照）",
+          "正式採用・互換",
+          "2026-10-31 デルタ（登録補完）",
+          "1672×941 WEBP / SHA256 04708059bc34e5567be50087863545529b8e67b74b4995245663ff09ad938a44",
+          "https://github.com/YGC-Masa/ten_otsu/blob/main/images/assets/bg/bg_misora_room_day.webp",
+          "",
+          "実在/画像decode照合済・今回目視/実画面未確認",
+          "既存ファイルの台帳登録補完。画像本体変更なし。新規LM/SPACE/移動接続を確定しない。 旧個別室/互換素材を保持。SPACE-SUGOSAWA-TWINROOMへ自動統合しない。 状態は既存カタログから転記、今回の再承認ではない。"
+        ]
+      },
+      {
+        "path": "images/assets/bg/bg_misora_room_night.webp",
+        "bytes": 1393554,
+        "sha256": "c59a6536b677fd93a734da5c330c455234f12e9e5dd594cb9f6a4b45051689ce",
+        "ledger": [],
+        "catalogKeys": [
+          "misora_room_night"
+        ],
+        "decodable": true,
+        "format": "WEBP",
+        "size": [
+          1672,
+          941
+        ],
+        "newBgId": "BG-236",
+        "newSheetRow": 240,
+        "catalogEntry": {
+          "name": "美空の部屋・夜",
+          "path": "images/assets/bg/bg_misora_room_night.webp",
+          "location": "双沢家",
+          "time": "night",
+          "status": "正式採用・互換"
+        },
+        "catalogKeysAfter": [
+          "misora_room_night"
+        ],
+        "newValues": [
+          "BG-236",
+          "美空の部屋・夜",
+          "night",
+          "images/assets/bg/bg_misora_room_night.webp",
+          "既存素材の管理登録（用途は既存カタログ/シナリオ参照）",
+          "正式採用・互換",
+          "2026-10-31 デルタ（登録補完）",
+          "1672×941 WEBP / SHA256 c59a6536b677fd93a734da5c330c455234f12e9e5dd594cb9f6a4b45051689ce",
+          "https://github.com/YGC-Masa/ten_otsu/blob/main/images/assets/bg/bg_misora_room_night.webp",
+          "",
+          "実在/画像decode照合済・今回目視/実画面未確認",
+          "既存ファイルの台帳登録補完。画像本体変更なし。新規LM/SPACE/移動接続を確定しない。 旧個別室/互換素材を保持。SPACE-SUGOSAWA-TWINROOMへ自動統合しない。 状態は既存カタログから転記、今回の再承認ではない。"
+        ]
+      },
+      {
+        "path": "images/assets/bg/bg_yozora_room_day.webp",
+        "bytes": 1498512,
+        "sha256": "7963dd2e9030c79bf45409a1b58967e52547f423a4903dfdc140c1edf7329c8e",
+        "ledger": [],
+        "catalogKeys": [
+          "yozora_room_day"
+        ],
+        "decodable": true,
+        "format": "WEBP",
+        "size": [
+          1672,
+          941
+        ],
+        "newBgId": "BG-237",
+        "newSheetRow": 241,
+        "catalogEntry": {
+          "name": "夜空の部屋・昼",
+          "path": "images/assets/bg/bg_yozora_room_day.webp",
+          "location": "双沢家",
+          "time": "day",
+          "status": "正式採用・互換"
+        },
+        "catalogKeysAfter": [
+          "yozora_room_day"
+        ],
+        "newValues": [
+          "BG-237",
+          "夜空の部屋・昼",
+          "day",
+          "images/assets/bg/bg_yozora_room_day.webp",
+          "既存素材の管理登録（用途は既存カタログ/シナリオ参照）",
+          "正式採用・互換",
+          "2026-10-31 デルタ（登録補完）",
+          "1672×941 WEBP / SHA256 7963dd2e9030c79bf45409a1b58967e52547f423a4903dfdc140c1edf7329c8e",
+          "https://github.com/YGC-Masa/ten_otsu/blob/main/images/assets/bg/bg_yozora_room_day.webp",
+          "",
+          "実在/画像decode照合済・今回目視/実画面未確認",
+          "既存ファイルの台帳登録補完。画像本体変更なし。新規LM/SPACE/移動接続を確定しない。 旧個別室/互換素材を保持。SPACE-SUGOSAWA-TWINROOMへ自動統合しない。 状態は既存カタログから転記、今回の再承認ではない。"
+        ]
+      },
+      {
+        "path": "images/assets/bg/bg_yozora_room_night.webp",
+        "bytes": 1352034,
+        "sha256": "faead744177efaf5e7b76e1a8b09aa579547c8d6c0c461db5f775fdf2072ed86",
+        "ledger": [],
+        "catalogKeys": [
+          "yozora_room_night"
+        ],
+        "decodable": true,
+        "format": "WEBP",
+        "size": [
+          1672,
+          941
+        ],
+        "newBgId": "BG-238",
+        "newSheetRow": 242,
+        "catalogEntry": {
+          "name": "夜空の部屋・夜",
+          "path": "images/assets/bg/bg_yozora_room_night.webp",
+          "location": "双沢家",
+          "time": "night",
+          "status": "正式採用・互換"
+        },
+        "catalogKeysAfter": [
+          "yozora_room_night"
+        ],
+        "newValues": [
+          "BG-238",
+          "夜空の部屋・夜",
+          "night",
+          "images/assets/bg/bg_yozora_room_night.webp",
+          "既存素材の管理登録（用途は既存カタログ/シナリオ参照）",
+          "正式採用・互換",
+          "2026-10-31 デルタ（登録補完）",
+          "1672×941 WEBP / SHA256 faead744177efaf5e7b76e1a8b09aa579547c8d6c0c461db5f775fdf2072ed86",
+          "https://github.com/YGC-Masa/ten_otsu/blob/main/images/assets/bg/bg_yozora_room_night.webp",
+          "",
+          "実在/画像decode照合済・今回目視/実画面未確認",
+          "既存ファイルの台帳登録補完。画像本体変更なし。新規LM/SPACE/移動接続を確定しない。 旧個別室/互換素材を保持。SPACE-SUGOSAWA-TWINROOMへ自動統合しない。 状態は既存カタログから転記、今回の再承認ではない。"
+        ]
+      }
+    ],
+    "catalogAdditions": {
+      "ayame100_clear_stream_day": {
+        "name": "彩愛 親愛100 清流・昼（既存シナリオ背景）",
+        "path": "images/assets/bg/bg_ayame100_clear_stream_day.webp",
+        "time": "day",
+        "status": "既存シナリオ使用/登録補完・採否未確認",
+        "usage": "シナリオ専用素材。新規の公開移動先や私宅入室条件を追加しない。"
+      },
+      "ayame93_country_road_day": {
+        "name": "彩愛 親愛93 農村道路・昼（既存シナリオ背景）",
+        "path": "images/assets/bg/bg_ayame93_country_road_day.webp",
+        "time": "day",
+        "status": "既存シナリオ使用/登録補完・採否未確認",
+        "usage": "シナリオ専用素材。新規の公開移動先や私宅入室条件を追加しない。"
+      },
+      "ayame98_washitsu_dinner": {
+        "name": "彩愛 親愛98 屋敷の和室・夕食（既存シナリオ背景）",
+        "path": "images/assets/bg/bg_ayame98_washitsu_dinner.webp",
+        "time": "evening",
+        "status": "既存シナリオ使用/登録補完・採否未確認",
+        "usage": "シナリオ専用素材。新規の公開移動先や私宅入室条件を追加しない。"
+      }
+    },
+    "requiredRowCount": 242
+  },
+  "counts": {
+    "directoryImages": 234,
+    "decoded": 234,
+    "backgroundRowsAfter": 238,
+    "newBackgroundRows": 25,
+    "newCatalogEntries": 3,
+    "existingPathCellsCorrected": 11,
+    "remainingMissingLedgerReferences": 0,
+    "remainingCatalogMissingFiles": 0,
+    "directoryFilesWithoutLedger": 0,
+    "directoryFilesWithoutCatalog": 0
+  },
+  "browserVerification": {
+    "kind": "Chromium native image decode through actual modified catalog keys; request bodies from existing Git bytes",
+    "baseHead": "77497a9f23c6f826414aaa3ae93f11299778c55f",
+    "catalogSha256": "2329109ed36ea9971c05e52428e09caaf3ceb1b4066134a558643827908cc7be",
+    "results": [
+      {
+        "key": "ayame100_clear_stream_day",
+        "path": "images/assets/bg/bg_ayame100_clear_stream_day.webp",
+        "width": 1672,
+        "height": 941,
+        "complete": true,
+        "spaceId": null
+      },
+      {
+        "key": "ayame93_country_road_day",
+        "path": "images/assets/bg/bg_ayame93_country_road_day.webp",
+        "width": 1672,
+        "height": 941,
+        "complete": true,
+        "spaceId": null
+      },
+      {
+        "key": "ayame98_washitsu_dinner",
+        "path": "images/assets/bg/bg_ayame98_washitsu_dinner.webp",
+        "width": 1672,
+        "height": 941,
+        "complete": true,
+        "spaceId": null
+      }
+    ],
+    "pageErrors": [],
+    "limits": "ローカル検証。新規ゲーム実画面/物理端末/公開ゲーム/キャッシュの確認ではない。"
+  },
+  "tests": {
+    "townTravel": "5/5 passed",
+    "allExistingSheetValuesOutside11PathCells": "preserved",
+    "existingSheetFormattingValidationChips": "preserved",
+    "newRows300ValuesAnd25Links": "matched",
+    "imageSha256234": "unchanged"
+  },
+  "scopeLimits": "登録・実在・decodeの整合確認。新しい施設同定/SPACE/開放条件/画像生成/シナリオ変更なし。新規25枚の採否を再承認しない。機械検証のみで全画像の建築・構図目視QC完了とはしない。"
+}
