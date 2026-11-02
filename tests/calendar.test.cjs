@@ -26,7 +26,7 @@ function fixture(iso, storage = new Map()) {
 }
 
 test('all twelve calendar months and seasons use real JST dates', () => {
-  const seasons=['winter','winter','spring','spring','spring','summer','summer','summer','autumn','autumn','autumn','winter'];
+  const seasons=['winter','winter','spring','spring','spring','summer','summer','summer','autumn','autumn','winter','winter'];
   for(let m=1;m<=12;m++){
     const f=fixture(`2026-${String(m).padStart(2,'0')}-01T00:00:00+09:00`);
     assert.equal(f.cal.getSnapshot().month,m);
@@ -48,69 +48,97 @@ test('real JST clock crosses month end, year end and leap dates without changing
   }
 });
 
-test('TimeThymus switches morning/day/night independently of seasons, month and real clock',()=>{
+test('TimeThymus switches six periods independently of seasons, month and real clock',()=>{
   const f=fixture('2026-12-31T23:59:00+09:00');const original=JSON.stringify(f.cal.getSnapshot().real);
-  for(const period of ['morning','day','night']){
+  for(const period of ['early_morning','morning','day','evening','night','late_night']){
     assert(f.cal.usePeriod(period).ok);const s=f.cal.getSnapshot();assert.equal(s.period,period);
     assert.equal(s.month,12);assert.equal(s.season,'winter');assert.equal(JSON.stringify(s.real),original);
-    assert.equal(s.timeTrial.itemId,'time_thymus');assert(!('expiresAt' in s.timeTrial));assert(!('month' in s.timeTrial));
+    assert.equal(s.timeTrial.itemId,'time_thymus');assert.equal(Date.parse(s.timeTrial.expiresAt)-Date.parse(s.timeTrial.selectedAt),7200000);assert(!('month' in s.timeTrial));
   }
-  assert(!f.cal.usePeriod('evening').ok);
+  assert(!f.cal.usePeriod('invalid').ok);
+});
+
+test('real JST period boundaries use six configured ranges',()=>{
+  const cases=[['03:59','late_night'],['04:00','early_morning'],['06:59','early_morning'],['07:00','morning'],['09:59','morning'],['10:00','day'],['15:59','day'],['16:00','evening'],['18:59','evening'],['19:00','night'],['22:59','night'],['23:00','late_night']];
+  for(const [clock,expected] of cases){
+    const f=fixture(`2026-10-31T${clock}:00+09:00`);
+    assert.equal(f.cal.getSnapshot().realPeriod,expected);
+    assert.equal(f.cal.getSnapshot().period,expected);
+  }
 });
 
 test('SeasonRaisin switches four seasons without assigning a time period or moving the real month',()=>{
   const f=fixture('2026-12-31T23:59:00+09:00');f.cal.usePeriod('day');
   for(const season of ['spring','summer','autumn','winter']){
     assert(f.cal.useSeason(season).ok);const s=f.cal.getSnapshot();assert.equal(s.season,season);assert.equal(s.month,12);
-    assert.equal(s.period,'day');assert.equal(s.seasonTrial.itemId,'season_raisin');assert.equal(s.seasonTrial.expiresAt,'2027-01-01T15:00:00.000Z');
+    assert.equal(s.period,'day');assert.equal(s.seasonTrial.itemId,'season_raisin');assert.equal(s.seasonTrial.expiresAt,'2026-12-31T16:59:00.000Z');
   }
   assert(!f.cal.useSeason('13').ok);
   f.cal.returnToReality();assert.equal(f.cal.getSnapshot().period,'day');assert.equal(f.cal.getSnapshot().seasonTrial,null);
-  f.cal.useSeason('spring');f.cal.returnTimeToReality();assert.equal(f.cal.getSnapshot().season,'spring');assert.equal(f.cal.getSnapshot().period,null);
+  f.cal.useSeason('spring');f.cal.returnTimeToReality();assert.equal(f.cal.getSnapshot().season,'spring');assert.equal(f.cal.getSnapshot().timeTrial,null);
 });
 
-test('season expiry last millisecond and reload/resume never extend the deadline or expire TimeThymus',()=>{
+test('both trials expire exactly two hours from use; reload/focus/pageshow/visibility never extend',()=>{
   let f=fixture('2026-12-31T23:59:00+09:00');f.cal.usePeriod('night');f.cal.useSeason('spring');
-  const time=f.storage.get('tenotsu_time_thymus_period_v1'),saved=f.storage.get(key);
-  f=fixture('2027-01-01T23:59:59.999+09:00',f.storage);f.events.focus();f.events.pageshow();f.events.visibilitychange();
-  assert.equal(f.cal.getSnapshot().season,'spring');assert.equal(f.storage.get(key),saved);
-  f.setTime('2027-01-02T00:00:00+09:00');f.events.pageshow();
-  assert.equal(f.cal.getSnapshot().season,'winter');assert.equal(f.cal.getSnapshot().seasonTrial,null);
-  assert.equal(f.cal.getSnapshot().period,'night');assert.equal(f.storage.get('tenotsu_time_thymus_period_v1'),time);
-  assert(!f.storage.has(key));
-  f=fixture('2027-01-02T00:00:00.001+09:00',f.storage);assert.equal(f.cal.getSnapshot().season,'winter');
+  const periodKey='tenotsu_time_thymus_period_v1',time=f.storage.get(periodKey),saved=f.storage.get(key);
+  f=fixture('2027-01-01T01:58:59.999+09:00',f.storage);f.events.focus();f.events.pageshow();f.events.visibilitychange();
+  assert.equal(f.cal.getSnapshot().season,'spring');assert.equal(f.cal.getSnapshot().period,'night');assert.equal(f.storage.get(key),saved);assert.equal(f.storage.get(periodKey),time);
+  f.setTime('2027-01-01T01:59:00+09:00');f.events.pageshow();
+  assert.equal(f.cal.getSnapshot().season,'winter');assert.equal(f.cal.getSnapshot().seasonTrial,null);assert.equal(f.cal.getSnapshot().timeTrial,null);
+  assert(!f.storage.has(key));assert(!f.storage.has(periodKey));
+  f=fixture('2027-01-01T01:59:00.001+09:00',f.storage);assert.equal(f.cal.getSnapshot().season,'winter');assert.equal(f.cal.getSnapshot().timeTrial,null);
 });
 
-test('JST next-next midnight handles month/year ends and leap years, not a fixed 24 hours',()=>{
+test('fixed two-hour duration handles month/year ends and leap days in JST and UTC',()=>{
   for(const [used,end] of [
-    ['2026-12-31T23:59:00+09:00','2027-01-01T15:00:00.000Z'],
-    ['2026-01-31T00:01:00+09:00','2026-02-01T15:00:00.000Z'],
-    ['2028-02-28T23:59:00+09:00','2028-02-29T15:00:00.000Z'],
-    ['2027-02-28T23:59:00+09:00','2027-03-01T15:00:00.000Z']
+    ['2026-12-31T23:59:00+09:00','2026-12-31T16:59:00.000Z'],
+    ['2026-01-31T23:01:00+09:00','2026-01-31T16:01:00.000Z'],
+    ['2028-02-28T23:59:00+09:00','2028-02-28T16:59:00.000Z'],
+    ['2028-02-29T23:59:00+09:00','2028-02-29T16:59:00.000Z'],
+    ['2027-02-28T23:59:00+09:00','2027-02-28T16:59:00.000Z']
   ]){
-    const f=fixture(used);assert.equal(f.cal.useSeason('spring').seasonTrial.expiresAt,end);
-    assert.notEqual(Date.parse(end)-Date.parse(used),24*60*60*1000);
+    const f=fixture(used);for(const record of [f.cal.useSeason('spring').seasonTrial,f.cal.usePeriod('day').timeTrial]){
+      assert.equal(record.expiresAt,end);assert.equal(Date.parse(end)-Date.parse(used),7200000);
+    }
   }
 });
 
-test('published no-expiry saves migrate once from selectedAt; stale/missing/future/corrupt saves cannot extend',()=>{
-  const legacy={version:1,itemId:'season_raisin',season:'spring',selectedAt:'2026-12-31T14:59:00.000Z'};
-  const storage=new Map([[key,JSON.stringify(legacy)]]);
-  let f=fixture('2027-01-01T12:00:00+09:00',storage);
-  assert.equal(f.cal.getSnapshot().seasonTrial.expiresAt,'2027-01-01T15:00:00.000Z');
-  const migrated=storage.get(key);
-  f=fixture('2027-01-01T23:59:59.999+09:00',storage);f.events.pageshow();assert.equal(storage.get(key),migrated);
-  f=fixture('2027-01-02T00:00:00+09:00',storage);assert.equal(f.cal.getSnapshot().seasonTrial,null);
-  for(const record of [
-    {...legacy,selectedAt:'2026-12-20T00:00:00.000Z'},
-    {...legacy,selectedAt:undefined}, {...legacy,selectedAt:'invalid'},
-    {...legacy,selectedAt:'2026-12-31T14:59:00'},
-    {...legacy,selectedAt:'2099-01-01T00:00:00Z'},
-    {...legacy,expiresAt:'2099-01-01T00:00:00Z'}, {...legacy,expiresAt:null}
-  ]){
-    const f=fixture('2027-01-01T12:00:00+09:00',new Map([[key,JSON.stringify(record)]]));
-    assert.equal(f.cal.getSnapshot().seasonTrial,null);assert(!f.storage.has(key));
+test('published v1 season and no-expiry time saves migrate from selectedAt, not now or their old deadline',()=>{
+  const periodKey='tenotsu_time_thymus_period_v1';
+  const legacySeason={version:1,itemId:'season_raisin',season:'spring',selectedAt:'2026-12-31T14:59:00.000Z',expiresAt:'2027-01-01T15:00:00.000Z'};
+  const legacyTime={version:1,itemId:'time_thymus',period:'night',selectedAt:legacySeason.selectedAt};
+  const storage=new Map([[key,JSON.stringify(legacySeason)],[periodKey,JSON.stringify(legacyTime)]]);
+  let f=fixture('2027-01-01T00:59:00+09:00',storage);
+  assert.equal(f.cal.getSnapshot().seasonTrial.expiresAt,'2026-12-31T16:59:00.000Z');assert.equal(f.cal.getSnapshot().timeTrial.expiresAt,'2026-12-31T16:59:00.000Z');
+  assert.equal(f.cal.getSnapshot().seasonTrial.version,2);assert.equal(f.cal.getSnapshot().timeTrial.version,2);
+  const migrated=[storage.get(key),storage.get(periodKey)];
+  f=fixture('2027-01-01T01:58:59.999+09:00',storage);f.events.pageshow();assert.deepEqual([storage.get(key),storage.get(periodKey)],migrated);
+  f=fixture('2027-01-01T01:59:00+09:00',storage);assert.equal(f.cal.getSnapshot().seasonTrial,null);assert.equal(f.cal.getSnapshot().timeTrial,null);
+  // A still-valid old next-next midnight deadline cannot resurrect an expired two-hour use.
+  f=fixture('2027-01-01T12:00:00+09:00',new Map([[key,JSON.stringify(legacySeason)],[periodKey,JSON.stringify(legacyTime)]]));assert.equal(f.cal.getSnapshot().seasonTrial,null);assert.equal(f.cal.getSnapshot().timeTrial,null);
+  const noDeadline={...legacySeason};delete noDeadline.expiresAt;
+  assert.equal(fixture('2027-01-01T00:59:00+09:00',new Map([[key,JSON.stringify(noDeadline)]])).cal.getSnapshot().seasonTrial.version,2);
+});
+
+test('missing/future/corrupt timestamps or inconsistent v1/v2 deadlines cannot create unlimited trials',()=>{
+  const periodKey='tenotsu_time_thymus_period_v1';
+  for(const [storageKey,record] of [[key,{version:1,itemId:'season_raisin',season:'spring'}],[periodKey,{version:1,itemId:'time_thymus',period:'night'}]]){
+    for(const override of [
+      {selectedAt:undefined},{selectedAt:'invalid'},{selectedAt:'2026-12-31T14:59:00'},
+      {selectedAt:'2099-01-01T00:00:00.000Z'},{expiresAt:'2099-01-01T00:00:00.000Z'},{expiresAt:null},
+      {version:2},{version:2,expiresAt:'2026-12-31T16:58:00.000Z'}, {version:99}
+    ]){
+      const storage=new Map([[storageKey,JSON.stringify({...record,selectedAt:'2026-12-31T14:59:00.000Z',...override})]]),f=fixture('2027-01-01T00:59:00+09:00',storage);
+      assert.equal(f.cal.getSnapshot().seasonTrial,null);assert.equal(f.cal.getSnapshot().timeTrial,null);assert(!storage.has(storageKey));
+    }
   }
+});
+
+test('staggered trials and manual returns expire independently, preserving the other original deadline',()=>{
+  const f=fixture('2026-10-31T12:00:00+09:00');f.cal.usePeriod('night');f.setTime('2026-10-31T12:30:00+09:00');f.cal.useSeason('spring');
+  const saved=f.storage.get(key);f.setTime('2026-10-31T14:00:00+09:00');f.events.focus();assert.equal(f.cal.getSnapshot().timeTrial,null);assert.equal(f.cal.getSnapshot().season,'spring');assert.equal(f.storage.get(key),saved);
+  f.setTime('2026-10-31T14:30:00+09:00');f.events.pageshow();assert.equal(f.cal.getSnapshot().seasonTrial,null);assert.equal(f.cal.getSnapshot().season,'autumn');
+  f.cal.useSeason('spring');f.cal.usePeriod('night');f.cal.returnToReality();assert.equal(f.cal.getSnapshot().period,'night');f.cal.useSeason('summer');f.cal.returnTimeToReality();assert.equal(f.cal.getSnapshot().season,'summer');
 });
 
 test('legacy progress/ST and discarded unpublished wrong-name travel data remain intact',()=>{
@@ -120,7 +148,7 @@ test('legacy progress/ST and discarded unpublished wrong-name travel data remain
     ['tenotsu_time_thymus_v1','{"version":1,"itemId":"time_thymus","month":3,"expiresAt":"2099-01-01T00:00:00Z"}']
   ]);
   const wrong=storage.get('tenotsu_time_thymus_v1');const f=fixture('2026-12-31T23:59:00+09:00',storage);
-  assert.equal(f.cal.getSnapshot().month,12);assert.equal(f.cal.getSnapshot().period,null);
+  assert.equal(f.cal.getSnapshot().month,12);assert.equal(f.cal.getSnapshot().timeTrial,null);
   f.cal.usePeriod('day');f.cal.useSeason('spring');f.cal.returnToReality();f.cal.returnTimeToReality();
   assert.equal(storage.get('tenotsu_time_thymus_v1'),wrong);assert.equal(storage.get('tenotsu_story_progress_v1'),'{"clearedStories":["kept"]}');
   assert.equal(storage.get('tenotsu_stamina_v1'),'{"current":80}');assert(JSON.parse(storage.get('tenotsu_town_encounter_v1')).revealedPlaces.park);

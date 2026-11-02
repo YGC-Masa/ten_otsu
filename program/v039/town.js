@@ -40,7 +40,7 @@
   function seasonOptionsHtml(currentSeason){
     if (ns.calendar) {
       const snapshot = ns.calendar.getSnapshot();
-      return `${ns.calendar.statusHtml()}<label>タイムタイム：<select data-time-thymus-period aria-label="朝・昼・夜">${Object.entries({morning:"朝",day:"昼",night:"夜"}).map(([value,label])=>`<option value="${value}"${snapshot.period===value?" selected":""}>${label}</option>`).join("")}</select></label><label>シーズンレーズン：<select data-season-raisin-season aria-label="季節">${Object.entries({spring:"春",summer:"夏",autumn:"秋",winter:"冬"}).map(([value,label])=>`<option value="${value}"${snapshot.season===value?" selected":""}>${label}</option>`).join("")}</select></label>`;
+      return `${ns.calendar.statusHtml()}<label>タイムタイム：<select data-time-thymus-period aria-label="時間帯">${Object.entries({early_morning:"早朝",morning:"朝",day:"昼",evening:"夕方",night:"夜",late_night:"深夜"}).map(([value,label])=>`<option value="${value}"${snapshot.period===value?" selected":""}>${label}</option>`).join("")}</select></label><label>シーズンレーズン：<select data-season-raisin-season aria-label="季節">${Object.entries({spring:"春",summer:"夏",autumn:"秋",winter:"冬"}).map(([value,label])=>`<option value="${value}"${snapshot.season===value?" selected":""}>${label}</option>`).join("")}</select></label>`;
     }
     return (cfg().seasons || []).map((s) => `
       <button type="button" class="tenotsu-town-season-pill ${s.id===currentSeason?"active":""}" data-town-season="${esc(s.id)}">${esc(s.label)}</button>
@@ -74,7 +74,7 @@
       <div class="tenotsu-town-encounter-status">
         <div><span>現在の季節</span><b>${esc(season.label)}</b></div>
         <div class="tenotsu-town-season-pills">${seasonOptionsHtml(data.currentSeason)}</div>
-        ${ns.calendar ? `<div><button type="button" class="tenotsu-town-tool" data-town-tool="time-thymus">朝・昼・夜を無料試用</button><button type="button" class="tenotsu-town-tool" data-town-tool="real-time">時間帯の試用を解除</button><button type="button" class="tenotsu-town-tool" data-town-tool="season-raisin">季節を無料試用</button><button type="button" class="tenotsu-town-tool" data-town-tool="real-season">季節の試用を解除</button><small>無料試用・所持数と消費は未接続。季節は使用翌日23:59まで、時間帯は解除まで端末に保持。</small></div>` : `<button type="button" class="tenotsu-town-tool" data-town-tool="season">${esc((cfg().items && cfg().items.season && cfg().items.season.label) || "季節を変える")}</button>`}
+        ${ns.calendar ? `<div><button type="button" class="tenotsu-town-tool" data-town-tool="time-thymus">時間帯を無料試用</button><button type="button" class="tenotsu-town-tool" data-town-tool="real-time">時間帯の試用を解除</button><button type="button" class="tenotsu-town-tool" data-town-tool="season-raisin">季節を無料試用</button><button type="button" class="tenotsu-town-tool" data-town-tool="real-season">季節の試用を解除</button><small>無料試用・所持数と消費は未接続。どちらも使用から2時間。期限後は現実へ戻り、再読み込み・復帰では延長しません。</small></div>` : `<button type="button" class="tenotsu-town-tool" data-town-tool="season">${esc((cfg().items && cfg().items.season && cfg().items.season.label) || "季節を変える")}</button>`}
       </div>
       <div class="tenotsu-town-place-grid">
         ${places.map((p)=>placeCard(p, data)).join("")}

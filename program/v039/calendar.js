@@ -4,9 +4,10 @@
   const ns = window.TENOTSU_V039 = window.TENOTSU_V039 || {};
   const KEY = "tenotsu_season_raisin_v1";
   const PERIOD_KEY = "tenotsu_time_thymus_period_v1";
-  const PERIODS = { morning: "朝", day: "昼", night: "夜" };
+  const PERIODS = { early_morning: "早朝", morning: "朝", day: "昼", evening: "夕方", night: "夜", late_night: "深夜" };
   const TOWN_KEY = "tenotsu_town_encounter_v1";
   const JST = 9 * 60 * 60 * 1000;
+  const TRIAL_DURATION_MS = 2 * 60 * 60 * 1000;
   const defaultOfficeBg = ns.paths && ns.paths.officeBg;
   let previous = "";
 
@@ -16,47 +17,56 @@
       weekday: d.getUTCDay(), hour: d.getUTCHours(), minute: d.getUTCMinutes(), second: d.getUTCSeconds() };
   }
   function season(month) {
-    return month >= 3 && month <= 5 ? "spring" : month >= 6 && month <= 8 ? "summer" : month >= 9 && month <= 11 ? "autumn" : "winter";
+    return month >= 3 && month <= 5 ? "spring" : month >= 6 && month <= 8 ? "summer" : month >= 9 && month <= 10 ? "autumn" : "winter";
+  }
+  function realPeriod(hour) {
+    return hour >= 4 && hour < 7 ? "early_morning" :
+      hour >= 7 && hour < 10 ? "morning" :
+      hour >= 10 && hour < 16 ? "day" :
+      hour >= 16 && hour < 19 ? "evening" :
+      hour >= 19 && hour < 23 ? "night" : "late_night";
   }
   function read(key) {
     try { return JSON.parse(localStorage.getItem(key) || "null"); } catch (_) { return null; }
   }
-  function clearSeasonTrial() { try { localStorage.removeItem(KEY); } catch (_) {} }
-  function seasonExpiry(selectedAt) {
+  function clearTrial(key) { try { localStorage.removeItem(key); } catch (_) {} }
+  function legacySeasonExpiry(selectedAt) {
     const d = realDate(selectedAt);
     return Date.UTC(d.year, d.month - 1, d.day + 2) - JST;
   }
-  function seasonTrial(now) {
-    const data = read(KEY);
-    if (!data) return null;
-    if (data.version !== 1 || data.itemId !== "season_raisin" || !["spring", "summer", "autumn", "winter"].includes(data.season)) {
-      clearSeasonTrial();
+  function trial(key, itemId, field, allowed, now) {
+    const data = read(key);
+    if (data === null) return null;
+    const used = typeof data?.selectedAt === "string" ? Date.parse(data.selectedAt) : NaN;
+    if (![1, 2].includes(data?.version) || data.itemId !== itemId || !allowed.includes(data[field]) ||
+        !Number.isFinite(used) || new Date(used).toISOString() !== data.selectedAt || used > now || now >= used + TRIAL_DURATION_MS) {
+      clearTrial(key);
       return null;
     }
-    const used = typeof data.selectedAt === "string" ? Date.parse(data.selectedAt) : NaN;
-    const expected = seasonExpiry(used);
-    const canonicalDate = Number.isFinite(used) && new Date(used).toISOString() === data.selectedAt;
-    if (!canonicalDate || used > now || !Number.isFinite(expected) || now >= expected) {
-      clearSeasonTrial();
-      return null;
+    const expiresAt = new Date(used + TRIAL_DURATION_MS).toISOString();
+    if (data.version === 1) {
+      // Published trials: preserve the original use time, never the migration time.
+      const legacyExpiry = itemId === "season_raisin" ? new Date(legacySeasonExpiry(used)).toISOString() : undefined;
+      if (Object.hasOwn(data, "expiresAt") && data.expiresAt !== legacyExpiry) {
+        clearTrial(key);
+        return null;
+      }
+      const migrated = Object.assign({}, data, { version: 2, expiresAt });
+      try { localStorage.setItem(key, JSON.stringify(migrated)); } catch (_) { return null; }
+      return migrated;
     }
-    if (!Object.hasOwn(data, "expiresAt")) {
-      // Migrate the published trial from its original selection date, never from now.
-      data.expiresAt = new Date(expected).toISOString();
-      try { localStorage.setItem(KEY, JSON.stringify(data)); } catch (_) { return null; }
-    }
-    if (data.expiresAt !== new Date(expected).toISOString()) {
-      clearSeasonTrial();
+    if (data.expiresAt !== expiresAt) {
+      clearTrial(key);
       return null;
     }
     return data;
   }
   function getSnapshot(now = Date.now()) {
-    const real = realDate(now), active = seasonTrial(now);
+    const real = realDate(now), active = trial(KEY, "season_raisin", "season", ["spring", "summer", "autumn", "winter"], now);
     const month = real.month;
-    const selected = read(PERIOD_KEY);
-    const timeTrial = selected && selected.version === 1 && selected.itemId === "time_thymus" && Object.hasOwn(PERIODS, selected.period) ? selected : null;
-    return { real, month, season: active?.season || season(month), seasonTrial: active, period: timeTrial?.period || null, timeTrial };
+    const timeTrial = trial(PERIOD_KEY, "time_thymus", "period", Object.keys(PERIODS), now);
+    const actualPeriod = realPeriod(real.hour);
+    return { real, month, season: active?.season || season(month), seasonTrial: active, period: timeTrial?.period || actualPeriod, realPeriod: actualPeriod, timeTrial };
   }
   function monthConfig(month = getSnapshot().month) {
     return (window.TENOTSU_CALENDAR_CONFIG?.months || {})[String(month).padStart(2, "0")] || {};
@@ -107,14 +117,14 @@
     const snapshot = getSnapshot();
     document.querySelectorAll("[data-real-time-clock]").forEach(node => { node.textContent = formatReal(snapshot.real); });
     const seasonName = { spring: "春", summer: "夏", autumn: "秋", winter: "冬" }[snapshot.season];
-    const deadline = snapshot.seasonTrial ? formatReal(realDate(Date.parse(snapshot.seasonTrial.expiresAt) - 1)).replace(/:\d\d JST$/, " JST") : "";
-    const stay = `現実の${snapshot.month}月・季節：${seasonName}${snapshot.seasonTrial ? `（無料試用・${deadline}まで）` : ""}`;
+    const deadline = snapshot.seasonTrial ? formatReal(realDate(Date.parse(snapshot.seasonTrial.expiresAt))) : "";
+    const stay = `現実の${snapshot.month}月・季節：${seasonName}${snapshot.seasonTrial ? `（無料試用・2時間／${deadline}に失効）` : ""}`;
     document.querySelectorAll("[data-calendar-stay]").forEach(node => { node.textContent = stay; });
-    document.querySelectorAll("[data-calendar-period]").forEach(node => { node.textContent = snapshot.period ? `時間帯：${PERIODS[snapshot.period]}（無料試用）` : "時間帯：実時刻・区分未選択"; });
+    document.querySelectorAll("[data-calendar-period]").forEach(node => { node.textContent = snapshot.timeTrial ? `時間帯：${PERIODS[snapshot.period]}（無料試用・2時間／${formatReal(realDate(Date.parse(snapshot.timeTrial.expiresAt)))}に失効）` : `時間帯：${PERIODS[snapshot.realPeriod]}（実時刻）`; });
   }
   function tick(render = true) {
     const snapshot = getSnapshot();
-    const signature = `${snapshot.real.year}-${snapshot.real.month}-${snapshot.real.day}:${snapshot.month}:${snapshot.season}:${!!snapshot.seasonTrial}:${snapshot.period || ""}`;
+    const signature = `${snapshot.real.year}-${snapshot.real.month}-${snapshot.real.day}:${snapshot.month}:${snapshot.season}:${!!snapshot.seasonTrial}:${!!snapshot.timeTrial}:${snapshot.period || ""}`;
     const changed = signature !== previous;
     previous = signature;
     const stored = read(TOWN_KEY);
@@ -143,20 +153,21 @@
   function useSeason(selected) {
     if (!["spring", "summer", "autumn", "winter"].includes(selected)) return { ok: false, reason: "invalid-season" };
     const now = Date.now();
-    const record = { version: 1, itemId: "season_raisin", season: selected, selectedAt: new Date(now).toISOString(), expiresAt: new Date(seasonExpiry(now)).toISOString() };
+    const record = { version: 2, itemId: "season_raisin", season: selected, selectedAt: new Date(now).toISOString(), expiresAt: new Date(now + TRIAL_DURATION_MS).toISOString() };
     try { localStorage.setItem(KEY, JSON.stringify(record)); } catch (_) { return { ok: false, reason: "storage-unavailable" }; }
     tick();
     return { ok: true, seasonTrial: record };
   }
-  function returnToReality() { clearSeasonTrial(); tick(); }
+  function returnToReality() { clearTrial(KEY); tick(); }
   function usePeriod(period) {
     if (!Object.hasOwn(PERIODS, period)) return { ok: false, reason: "invalid-period" };
-    const record = { version: 1, itemId: "time_thymus", period, selectedAt: new Date().toISOString() };
+    const now = Date.now();
+    const record = { version: 2, itemId: "time_thymus", period, selectedAt: new Date(now).toISOString(), expiresAt: new Date(now + TRIAL_DURATION_MS).toISOString() };
     try { localStorage.setItem(PERIOD_KEY, JSON.stringify(record)); } catch (_) { return { ok: false, reason: "storage-unavailable" }; }
     tick();
     return { ok: true, timeTrial: record };
   }
-  function returnTimeToReality() { try { localStorage.removeItem(PERIOD_KEY); } catch (_) {} tick(); }
+  function returnTimeToReality() { clearTrial(PERIOD_KEY); tick(); }
   ns.calendar = { getSnapshot, useSeason, usePeriod, returnTimeToReality, returnToReality, tick, resolveContent, freezeStoryAssets,
     officeBackground, officeOutfit, statusHtml, updateClock };
   tick(false);
