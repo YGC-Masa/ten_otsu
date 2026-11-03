@@ -9,6 +9,7 @@ const key = 'tenotsu_season_raisin_v1';
 function fixture(iso, storage = new Map()) {
   let now = Date.parse(iso);
   const events = {}, timers = [];
+  const nodes = Object.fromEntries(['[data-real-time-clock]', '[data-calendar-stay]', '[data-calendar-period]'].map(selector => [selector, [{ textContent: '' }, { textContent: '' }]]));
   class Clock extends Date {
     constructor(...args) { super(...(args.length ? args : [now])); }
     static now() { return now; }
@@ -16,13 +17,13 @@ function fixture(iso, storage = new Map()) {
   const ns = { paths: { officeBg: 'images/office.webp', charBase: 'images/assets/char/' }, state: { mode: 'office' } };
   const context = vm.createContext({ Date: Clock, URL,
     window: { TENOTSU_V039: ns, addEventListener: (name, fn) => { events[name] = fn; }, setInterval: (fn, delay) => timers.push({ fn, delay }) },
-    document: { hidden: false, querySelectorAll: () => [], addEventListener: (name, fn) => { events[name] = fn; } },
+    document: { hidden: false, querySelectorAll: selector => nodes[selector] || [], addEventListener: (name, fn) => { events[name] = fn; } },
     localStorage: { getItem: k => storage.get(k) ?? null, setItem: (k, v) => storage.set(k, v), removeItem: k => storage.delete(k) }
   });
   for (const file of ['scenario/v039/calendarConfig.js', 'program/v039/calendar.js']) {
     vm.runInContext(fs.readFileSync(path.join(root, file), 'utf8'), context, { filename: file });
   }
-  return { cal: ns.calendar, ns, storage, events, timers, context, setTime: iso => { now = Date.parse(iso); } };
+  return { cal: ns.calendar, ns, storage, events, timers, context, nodes, setTime: iso => { now = Date.parse(iso); } };
 }
 
 test('all twelve calendar months and seasons use real JST dates', () => {
@@ -170,4 +171,54 @@ test('one-second and resume updates never redraw active playback; blocked storag
   f.setTime('2027-01-01T00:00:00+09:00');assert.equal(f.timers[0].delay,1000);f.timers[0].fn();f.events.focus();f.events.pageshow();f.events.visibilitychange();
   assert.equal(redraws,0);f.context.localStorage.setItem=()=>{throw new Error('blocked');};
   assert.equal(f.cal.usePeriod('day').reason,'storage-unavailable');assert.equal(f.cal.useSeason('spring').reason,'storage-unavailable');
+});
+
+test('season display separates November reality from spring trial and counts down without changing saves', () => {
+  const f = fixture('2026-11-02T12:00:00+09:00');
+  const text = () => f.nodes['[data-calendar-stay]'][0].textContent;
+  assert.equal(text(), '現実の11月・季節：冬');
+  f.cal.useSeason('spring');
+  const saved = f.storage.get(key);
+  assert.equal(text(), '現実の11月・季節：冬 ／ 試用中の季節：春（シーズンレーズン・無料試用2時間／残り2時間00分00秒／2026/11/02（月）14:00:00 JSTに失効・現実の季節へ戻ります）');
+  assert.equal(f.nodes['[data-real-time-clock]'][0].textContent, '2026/11/02（月）12:00:00 JST');
+  f.setTime('2026-11-02T12:30:01+09:00'); f.timers[0].fn();
+  assert.match(text(), /残り1時間29分59秒/);
+  assert.equal(f.storage.get(key), saved);
+  assert.equal(f.cal.getSnapshot().season, 'spring');
+  assert.equal(JSON.parse(f.storage.get('tenotsu_town_encounter_v1')).currentSeason, 'spring');
+  for (const selector of Object.keys(f.nodes)) {
+    assert.equal(f.nodes[selector][0].textContent, f.nodes[selector][1].textContent);
+  }
+  f.setTime('2026-11-02T13:59:59.999+09:00'); f.cal.updateClock();
+  assert.match(text(), /残り0時間00分01秒/);
+  f.setTime('2026-11-02T14:00:00+09:00'); f.timers[0].fn();
+  assert.equal(text(), '現実の11月・季節：冬');
+  assert.equal(f.cal.getSnapshot().season, 'winter');
+  assert(!f.storage.has(key));
+});
+
+test('season display follows real season at month rollover and preserves the original trial deadline', () => {
+  const f = fixture('2026-10-31T23:30:00+09:00');
+  const text = () => f.nodes['[data-calendar-stay]'][0].textContent;
+  f.cal.useSeason('spring');
+  assert.match(text(), /^現実の10月・季節：秋 ／ 試用中の季節：春/);
+  const saved = f.storage.get(key);
+  f.setTime('2026-11-01T00:00:00+09:00'); f.events.pageshow();
+  assert.match(text(), /^現実の11月・季節：冬 ／ 試用中の季節：春/);
+  assert.match(text(), /残り1時間30分00秒／2026\/11\/01（日）01:30:00 JSTに失効/);
+  assert.equal(f.storage.get(key), saved);
+  f.cal.returnToReality();
+  assert.equal(text(), '現実の11月・季節：冬');
+});
+
+test('same-season and simultaneous trials remain clearly labeled and return independently', () => {
+  const f = fixture('2026-11-02T12:00:00+09:00');
+  f.cal.usePeriod('night');
+  const timeSaved = f.storage.get('tenotsu_time_thymus_period_v1');
+  f.cal.useSeason('winter');
+  assert.match(f.nodes['[data-calendar-stay]'][0].textContent, /^現実の11月・季節：冬 ／ 試用中の季節：冬/);
+  assert.match(f.nodes['[data-calendar-period]'][0].textContent, /^時間帯：夜（無料試用/);
+  f.cal.returnToReality();
+  assert.equal(f.nodes['[data-calendar-stay]'][0].textContent, '現実の11月・季節：冬');
+  assert.equal(f.storage.get('tenotsu_time_thymus_period_v1'), timeSaved);
 });

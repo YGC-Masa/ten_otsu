@@ -114,11 +114,17 @@
   }
   function updateClock() {
     if (typeof document === "undefined") return;
-    const snapshot = getSnapshot();
+    const now = Date.now();
+    const snapshot = getSnapshot(now);
     document.querySelectorAll("[data-real-time-clock]").forEach(node => { node.textContent = formatReal(snapshot.real); });
-    const seasonName = { spring: "春", summer: "夏", autumn: "秋", winter: "冬" }[snapshot.season];
+    const seasonNames = { spring: "春", summer: "夏", autumn: "秋", winter: "冬" };
     const deadline = snapshot.seasonTrial ? formatReal(realDate(Date.parse(snapshot.seasonTrial.expiresAt))) : "";
-    const stay = `現実の${snapshot.month}月・季節：${seasonName}${snapshot.seasonTrial ? `（無料試用・2時間／${deadline}に失効）` : ""}`;
+    let stay = `現実の${snapshot.month}月・季節：${seasonNames[season(snapshot.real.month)]}`;
+    if (snapshot.seasonTrial) {
+      const remaining = Math.max(0, Math.ceil((Date.parse(snapshot.seasonTrial.expiresAt) - now) / 1000));
+      const duration = `${Math.floor(remaining / 3600)}時間${pad(Math.floor(remaining / 60) % 60)}分${pad(remaining % 60)}秒`;
+      stay += ` ／ 試用中の季節：${seasonNames[snapshot.season]}（シーズンレーズン・無料試用2時間／残り${duration}／${deadline}に失効・現実の季節へ戻ります）`;
+    }
     document.querySelectorAll("[data-calendar-stay]").forEach(node => { node.textContent = stay; });
     document.querySelectorAll("[data-calendar-period]").forEach(node => { node.textContent = snapshot.timeTrial ? `時間帯：${PERIODS[snapshot.period]}（無料試用・2時間／${formatReal(realDate(Date.parse(snapshot.timeTrial.expiresAt)))}に失効）` : `時間帯：${PERIODS[snapshot.realPeriod]}（実時刻）`; });
   }
