@@ -2,6 +2,7 @@
 (function(){
   "use strict";
   window.TENOTSU_BACKGROUND_CATALOG = Object.assign({}, window.TENOTSU_BACKGROUND_CATALOG || {}, {
+    tsukiga_irodori_shop_day: { name: "月賀友禅・呉服専門店 彩・店頭・昼", path: "images/assets/bg/bg_tsukiga_irodori_shop_day.webp", status: "初版案" },
     hidamari_store_sales_floor: { name: "ひだまりストア店内売り場・正式", path: "images/assets/bg/battle_store_lv1.webp", status: "正式採用" },
     battle_store_lv1: { name: "ひだまりストア店内売り場・正式（互換）", path: "images/assets/bg/battle_store_lv1.webp", status: "正式採用" },
     hidamari_office: { name: "ひだまりストア事務所・正式", path: "images/assets/bgev/bg_office_hidamari.webp", status: "正式採用" },
