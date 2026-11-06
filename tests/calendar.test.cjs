@@ -26,6 +26,15 @@ function fixture(iso, storage = new Map()) {
   return { cal: ns.calendar, ns, storage, events, timers, context, nodes, setTime: iso => { now = Date.parse(iso); } };
 }
 
+test('Irodori legacy background path resolves to pinned shared copy without changing other assets', () => {
+  const f = fixture('2026-11-06T12:00:00+09:00');
+  const legacy = 'images/assets/bg/bg_tsukiga_irodori_shop_day.webp';
+  const pinned = 'https://raw.githubusercontent.com/YGC-Masa/ten_otsu_backgrounds/f9faf211ea13c208afacec6939b2b23c645b7c24/' + legacy;
+  assert.equal(f.cal.resolveContent(legacy), pinned);
+  assert.equal(f.cal.resolveContent('images/assets/bg/bg_shiomi_beach_day.webp'), 'images/assets/bg/bg_shiomi_beach_day.webp');
+  assert.equal(f.cal.freezeStoryAssets({steps:[{bg:legacy}]}, 11).steps[0].bg, pinned);
+});
+
 test('all twelve calendar months and seasons use real JST dates', () => {
   const seasons=['winter','winter','spring','spring','spring','summer','summer','summer','autumn','autumn','winter','winter'];
   for(let m=1;m<=12;m++){

@@ -72,6 +72,7 @@
     return (window.TENOTSU_CALENDAR_CONFIG?.months || {})[String(month).padStart(2, "0")] || {};
   }
   function resolveContent(path, month = getSnapshot().month) {
+    if (path === "images/assets/bg/bg_tsukiga_irodori_shop_day.webp") return "https://raw.githubusercontent.com/YGC-Masa/ten_otsu_backgrounds/f9faf211ea13c208afacec6939b2b23c645b7c24/" + path;
     if (typeof path !== "string" || !path || /^(?:[a-z][a-z\d+.-]*:|\/)/i.test(path)) return path;
     const base = monthConfig(month).contentBaseUrl;
     if (!base) return path;

@@ -66,6 +66,7 @@
   };
 
   ns.preloadImage = function preloadImage(src, timeout = 2500) {
+    if (src === "images/assets/bg/bg_tsukiga_irodori_shop_day.webp" && ns.calendar) src = ns.calendar.resolveContent(src);
     if (!src || src.startsWith("data:")) return Promise.resolve(src);
     return new Promise((resolve) => {
       const img = new Image();
@@ -90,7 +91,8 @@
 
   ns.setBackground = function setBackground(src) {
     const layers = ns.layers || ns.ensureLayers();
-    const requested = src || ns.paths.officeBg;
+    const input = src || ns.paths.officeBg;
+    const requested = input === "images/assets/bg/bg_tsukiga_irodori_shop_day.webp" && ns.calendar ? ns.calendar.resolveContent(input) : input;
     const fallback = ns.paths.fallbackBg || ns.paths.officeBg;
     const pixel = ns.paths.transparentPixel;
 
